@@ -18,10 +18,10 @@
 - **Short-Race Comparative Anatomy Review — ACCEPTED / COMPLETE**
 
 ## In progress
-13. **Saurin — Part 1 authored; audit pending**
+13. **Saurin — Part 1 ACCEPTED; Part 2 authored; audit pending**
 
 ## Not yet designed
 13. Saurin
 
 ## Current next action
-Claude audits Saurin Part 1: biological foundation, stature and core skeletal architecture. Do not begin UE5 implementation.
+Claude audits Saurin Part 2: craniofacial, oral, sensory and auricular foundation. Do not begin UE5 implementation.
