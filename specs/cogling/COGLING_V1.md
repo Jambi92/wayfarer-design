@@ -1,6 +1,6 @@
 # Cogling Character Design v1.0
 
-**Status:** IN PROGRESS — Parts 1–2 FIRST-PASS ACCEPTED; Part 3 proposed for audit  
+**Status:** IN PROGRESS — Parts 1–3 FIRST-PASS ACCEPTED; Part 4 proposed for audit  
 **Phase:** DESIGN ONLY  
 **Implementation:** Not authorized
 
@@ -1678,6 +1678,433 @@ Still OPEN:
 
 > **Cogling faces are defined by Fine-Scale Planar Integration: an adult cranial envelope supports facial skeletal height at or slightly above the Marchfolk adult face-to-vault relationship, while comparatively fine skeletal mass preserves clearly angled orbit-to-zygoma, zygoma-to-maxilla and mandibular body-to-ramus junctions rather than oversized features. Their eyes, noses, ears and mouths remain broadly adult humanoid in scale, while Fine Folded Auricular Architecture gives the ear a compact, clearly articulated, rounded and non-elven fold system. Adult maturity must survive at the smallest valid stature without wrinkles, facial hair, expression or cultural cues, and camera/readability problems must be solved without enlarging biological features.**
 
-Part 3 is **PATCHED AFTER FIRST AUDIT — RE-AUDIT REQUESTED**.
+Part 3 is **FIRST-PASS ACCEPTED**.
+
+No UE5 implementation is authorized.
+
+
+# Part 4 — Surface phenotype, hair, eyes and age presentation
+
+## 105. Part 4 purpose
+
+Part 4 defines Cogling surface phenotype and presentation-facing biological variation without allowing color, hair, age or cosmetic cues to become racial shortcuts.
+
+Cogling racial identity remains anchored in approved body and craniofacial structure.
+
+## 106. Surface phenotype principle
+
+> **Cogling surface phenotype is broad, naturally overlapping and secondary to anatomy. No required skin color, hair color, eye color, freckling pattern, complexion or age cue defines the race.**
+
+Different biological populations may possess overlapping surface phenotypes without becoming anatomically interchangeable.
+
+## 107. Skin pigmentation
+
+Cogling support a broad natural humanoid pigmentation range.
+
+The range may include:
+- very light through very deep melanin expression;
+- warm, neutral and cool undertone variation within biologically plausible bounds;
+- natural regional variation in pigmentation;
+- individual variation within families/populations.
+
+No single skin tone or narrow palette is mandatory.
+
+Cogling are not biologically coded as pale workshop-dwellers, ruddy comic gnomes or any other occupational/cultural color stereotype.
+
+## 108. Pigmentation architecture
+
+Skin pigmentation must eventually distinguish biological parameters rather than using one flat color control.
+
+Relevant biological dimensions may include:
+- baseline melanin level;
+- undertone contributors;
+- localized vascular visibility;
+- sun-response/tanning tendency;
+- regional pigmentation variation.
+
+Exact implementation architecture remains deferred.
+
+## 109. Freckles and natural markings
+
+Freckling may occur across a broad range from absent to extensive.
+
+Freckles are not required and do not indicate:
+- youth;
+- personality;
+- outdoor occupation;
+- culture;
+- ancestry purity.
+
+Other ordinary natural pigment variation may occur where biologically appropriate.
+
+No mandatory fantasy marking pattern is approved.
+
+## 110. Skin texture
+
+Healthy Cogling skin may show broad individual texture variation.
+
+Texture may reflect:
+- age;
+- hydration;
+- pores;
+- fine lines;
+- environmental exposure;
+- individual biology.
+
+Small body scale does not imply doll-like, poreless or permanently smooth skin.
+
+Texture also cannot be exaggerated merely to prove adulthood.
+
+## 111. Hair architecture
+
+Cogling support broad natural scalp-hair variation.
+
+Hair architecture may vary in:
+- strand thickness;
+- density;
+- straight/wavy/curly/coily pattern;
+- growth direction;
+- hairline;
+- crown pattern;
+- length potential;
+- age-related changes.
+
+No hair texture or hairstyle is biologically required for racial recognition.
+
+## 112. Hair pigmentation
+
+Cogling natural hair pigmentation may span a broad humanoid range.
+
+This can include naturally occurring:
+- black;
+- brown;
+- blond;
+- red/auburn;
+- gray/white through aging;
+- intermediate shades.
+
+Exact population frequencies remain OPEN.
+
+Fantasy/artificial coloration belongs to presentation systems unless later biology explicitly supports it.
+
+## 113. Facial hair
+
+Where supported by individual biology, Cogling may grow facial hair.
+
+Facial hair:
+- is not mandatory;
+- is not required for adult read;
+- does not define sex;
+- does not imply occupation, wisdom or age;
+- is not a racial identifier.
+
+Valid styles eventually may include broad beard, mustache, sideburn and mixed-growth patterns according to individual growth distribution.
+
+The race must not default to a "bearded tinkerer" silhouette.
+
+## 114. Body hair
+
+Body-hair amount and distribution vary individually.
+
+Body hair remains independent from:
+- scalp hair;
+- facial hair;
+- sex-related anatomy;
+- muscularity;
+- age presentation;
+- culture.
+
+No unusually hairy or hairless Cogling racial stereotype is approved.
+
+## 115. Eyebrows and eyelashes
+
+Eyebrow and eyelash biology remains independently variable.
+
+Eyebrows may vary in:
+- density;
+- thickness;
+- arch;
+- length;
+- medial/lateral distribution.
+
+No permanently raised, bushy inventor brow or childlike fine brow is racial.
+
+Eyelashes cannot be enlarged to make the eyes appear biologically larger.
+
+## 116. Iris anatomy
+
+Cogling eyes remain ordinary adult humanoid eyes in gross scale.
+
+Iris anatomy and visible-eye-opening anatomy are distinct.
+
+Part 4 allows broad natural iris pigmentation without changing the approved orbital/eye-opening rules from Part 3.
+
+No iris size increase is authorized as a readability solution.
+
+## 117. Iris pigmentation
+
+Cogling may possess a broad natural iris-color range compatible with the setting's biological rules.
+
+First-pass natural categories may include:
+- brown;
+- amber/hazel;
+- green;
+- gray;
+- blue;
+- intermediate/mixed natural appearances.
+
+Exact pigment mechanisms and population frequencies remain OPEN.
+
+Unusual magical luminescence, emissive eyes or supernatural color changes are effects, not ordinary biological iris pigmentation.
+
+## 118. Sclera and ocular surface
+
+Sclera and ocular-surface appearance should remain biologically plausible.
+
+Variation may occur in:
+- subtle vascular visibility;
+- age-related changes;
+- ordinary pigmentation where appropriate.
+
+No mandatory glowing, black or brightly colored sclera is approved as Cogling biology.
+
+## 119. Age architecture
+
+Cogling use the project-wide distinction among:
+- **Chronological Age**;
+- **Apparent Biological Age**;
+- **Age Presentation**.
+
+These cannot be collapsed into one slider or one visual stereotype.
+
+Part 4 does not establish Cogling lifespan or exact maturation timing.
+
+## 120. Young-adult presentation
+
+A young-adult Cogling must already read as a fully mature adult through approved skeletal and facial relationships.
+
+Young adulthood cannot depend on:
+- enlarged eyes;
+- reduced jaw;
+- shortened midface;
+- smooth doll-like skin;
+- child fat distribution.
+
+A youthful adult may have smoother skin and fewer age markers while remaining structurally mature.
+
+## 121. Mature-adult presentation
+
+Mature adult appearance may include gradual changes such as:
+- fine lines;
+- altered skin texture;
+- subtle soft-tissue redistribution;
+- hair graying or density changes;
+- ordinary age-related facial/body changes.
+
+No single age marker is mandatory.
+
+## 122. Older-adult presentation
+
+Older Cogling may show stronger biological aging while preserving racial identity.
+
+Possible visible changes may include:
+- wrinkles and folds;
+- skin texture change;
+- soft-tissue redistribution;
+- hair graying/whitening;
+- hair-density change;
+- age-related posture only where individually appropriate and not biologically mandatory.
+
+Old age must not turn every Cogling into a tiny wizard, inventor, elder or comic archetype.
+
+## 123. Age and stature
+
+Age presentation does not automatically change adult stature beyond biologically plausible age-related effects.
+
+It cannot be used to make young adults taller or older adults dramatically shorter to communicate age.
+
+Any later age-related stature change must be evidence-based within the fictional biology and validated against world interaction.
+
+## 124. Baldness and hair aging
+
+Hair aging may include:
+- graying/whitening;
+- density reduction;
+- receding hairlines;
+- localized thinning;
+- other ordinary patterns.
+
+Baldness is individual, not required.
+
+Gray hair is not required for an older appearance and cannot be required to distinguish adults from children.
+
+## 125. Surface phenotype and ancestry
+
+Surface traits may correlate probabilistically within Cogling populations, families or ancestry groups once those are defined.
+
+Correlation does not create hard dependency.
+
+Creator/randomization architecture should prefer weighted distributions and conditional probabilities rather than rules such as:
+- dark skin requires dark hair;
+- light eyes require light skin;
+- freckles require red hair.
+
+Exact ancestry/population structure remains OPEN.
+
+## 126. Cosmetics and presentation firewall
+
+Makeup, dyes, tattoos, piercings, scars, jewelry, goggles, hats and other presentation traits are not biological surface phenotype.
+
+They belong to Personal Presentation unless a later system gives a specific biological basis.
+
+No presentation item is required for Cogling recognition.
+
+## 127. Scars and acquired marks
+
+Scars, burns, weathering and other acquired marks may be available broadly.
+
+They do not:
+- define race;
+- define occupation;
+- prove adulthood;
+- imply combat experience;
+- imply personality.
+
+Biological scar behavior remains a later technical/art question unless race-specific healing biology is approved.
+
+## 128. Tattoos and body modification
+
+Tattoos, piercings and intentional body modification are cultural/personal presentation.
+
+No Cogling tattoo language, piercing pattern or engineering-themed body modification is biologically required.
+
+Cultural design belongs to later culture work.
+
+## 129. Surface phenotype and attractiveness
+
+Surface parameters must support a broad range of individual appearances without silently optimizing for conventional attractiveness, cuteness or whimsy.
+
+Randomization and presets must not systematically pair:
+- large-looking eyes;
+- tiny noses;
+- freckles;
+- smooth skin;
+- rosy cheeks;
+- bright hair;
+to create a default "cute Cogling" phenotype.
+
+## 130. Surface phenotype and scale
+
+Because Cogling are extremely small, some fine surface detail may be difficult to perceive at gameplay distance.
+
+The solution is not to exaggerate:
+- freckles;
+- pores;
+- wrinkles;
+- iris saturation;
+- eyebrow thickness;
+- hair strand scale.
+
+Close-view creator/dialogue presentation may reveal detail that is naturally subtle at ordinary gameplay distance.
+
+## 131. Hair strand and grooming scale
+
+Hair rendering must respect actual Cogling body scale rather than treating each strand or clump as a uniformly scaled Marchfolk asset.
+
+However, biological hair diameter is not assumed to scale linearly with total body height.
+
+Exact strand diameter, density and grooming representation require later art/technical validation.
+
+## 132. FD-domain separation
+
+Part 4 explicitly preserves the agreed facial diagnostic domains:
+
+- **FD-STRUCT:** approved craniofacial structure from Part 3;
+- **FD-SOFT:** facial soft tissue/adipose;
+- **FD-SURF:** skin pigmentation, texture, freckles and biological surface appearance;
+- **FD-HAIR:** scalp/facial hair, eyebrows and related hair biology;
+- **FD-PRES:** makeup, scars where treated as presentation, tattoos, piercings, accessories;
+- **FD-OBS:** camera, lighting, animation and rendering appearance.
+
+FD-SURF, FD-HAIR and FD-PRES cannot compensate for an invalid FD-STRUCT racial read.
+
+## 133. Randomization requirements
+
+Biological randomization should:
+- use Cogling-valid structural anatomy first;
+- sample surface traits from broad biologically valid distributions;
+- permit overlapping phenotypes with other races;
+- avoid stereotype bundles;
+- preserve ancestry/population correlations probabilistically if later defined.
+
+Presentation randomization remains separate.
+
+Selective randomization must allow, for example:
+- surface only;
+- hair only;
+- eyes only;
+- age presentation only;
+without rewriting approved anatomy.
+
+## 134. Preset requirements
+
+Cogling presets must be legitimate outputs of the same system as custom characters.
+
+The preset library should eventually include:
+- multiple pigmentation ranges;
+- multiple hair architectures;
+- varied iris colors;
+- freckled and non-freckled individuals;
+- facial-hair and non-facial-hair adults where biologically valid;
+- multiple apparent adult ages;
+- conventionally attractive, ordinary and unusual faces;
+- no dependence on tinkerer presentation.
+
+## 135. Part 4 validation cast
+
+| ID | Target |
+| --- | --- |
+| COG-SURF-01 | Same approved anatomy across very light and very deep pigmentation; racial read unchanged |
+| COG-SURF-02 | Multiple undertones at similar melanin level; no palette lock |
+| COG-SURF-03 | Heavy freckles vs none; both equally Cogling |
+| COG-SURF-04 | Straight, wavy, curly and coily hair on equivalent anatomy |
+| COG-SURF-05 | Facial hair removed from a facial-hair preset; adult read survives |
+| COG-SURF-06 | Bald adult; race/adult read survives |
+| COG-SURF-07 | Broad natural iris-color set on same face; anatomy unchanged |
+| COG-SURF-08 | Young-adult smooth-skin presentation; no child read |
+| COG-SURF-09 | Older adult without gray hair; age still plausible |
+| COG-SURF-10 | Older adult with strong aging cues; no wizard/inventor stereotype |
+| COG-SURF-11 | High facial adiposity + youthful surface; adult structure survives |
+| COG-SURF-12 | Neutral gray/no hair/no brows presentation; FD-STRUCT still carries identity |
+| COG-SURF-13 | Presentation stripped of goggles, jewelry, tattoos and scars; race survives |
+| COG-SURF-14 | Randomized population batch; no systematic cute/tinkerer phenotype bundle |
+| COG-SURF-15 | Close-view vs gameplay-distance comparison; no biological exaggeration added for readability |
+| COG-SURF-16 | Like-for-like Cogling/Marchfolk surface phenotype overlap; anatomy, not color, separates them |
+| COG-SURF-17 | Like-for-like Cogling/Pipkin overlapping skin/hair/eye traits; structural distinction survives |
+
+## 136. Part 4 OPEN items
+
+Still OPEN:
+- exact Cogling pigmentation frequencies;
+- ancestry/population-specific surface distributions;
+- exact hair-strand properties;
+- detailed facial/body-hair growth distributions;
+- exact iris pigment mechanisms/frequencies;
+- lifespan;
+- maturation timing;
+- detailed age progression;
+- age-related skeletal change;
+- cultural hairstyles;
+- cosmetics;
+- tattoos/piercings;
+- magical eye effects;
+- rendering implementation;
+- movement/gameplay.
+
+## 137. Part 4 identity statement
+
+> **Cogling surface phenotype is intentionally broad and overlapping: skin pigmentation, hair architecture and color, iris color, freckling, facial hair, body hair and visible aging vary widely without defining the race. Their approved structural anatomy must carry racial and adult identity even when surface and presentation cues are removed. Extremely small scale does not justify exaggerated eyes, freckles, wrinkles, hair or other readability shortcuts, and biological randomization must avoid bundling surface traits into a default cute, whimsical or tinkerer stereotype.**
+
+Part 4 is **PROPOSED FOR AUDIT**.
 
 No UE5 implementation is authorized.
