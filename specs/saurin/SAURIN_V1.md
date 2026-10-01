@@ -1908,4 +1908,589 @@ In addition to unresolved earlier items:
 
 > **Saurin surface phenotype is defined by Regional Scale Architecture layered over the approved pelvic-axial body and rostral-cranial head: larger protective scale fields transition through flexible articulation fields into fine expressive facial fields, with a distinct integrated ventral field. Broad natural pigmentation and inherited topology-aware patterns allow extensive individual variation without reducing Saurin to green skin or cultural subtypes. Vertically elliptical pupils, a translucent nictitating membrane, modest claw-like nails and optional low-profile keratinous cranial ridges add positive reptilian detail without turning the race into dragons, monsters or mandatory predators. Surface phenotype never substitutes for approved anatomy and grants no automatic armor, venom, sensory, climbing or combat advantages.**
 
-Part 3 is **PROPOSED FOR AUDIT**.
+Part 3 is **ACCEPTED / COMPLETE**.
+
+
+# Part 4 — Age, individual variation and character-creator integration
+
+## 126. Part 4 objective
+
+Part 4 defines how approved Saurin biology becomes a usable adult character-creation space.
+
+It covers:
+- adult age variation;
+- individual asymmetry;
+- ancestry/population distribution without subrace lock-in;
+- creator control organization;
+- Simple and Advanced modes;
+- presets;
+- race-aware and selective randomization;
+- attribute locks;
+- saved appearances;
+- biological versus presentation controls;
+- invalid-combination prevention;
+- NPC parity.
+
+It does not authorize UE5 implementation.
+
+## 127. Adult creator scope
+
+The first-pass Saurin creator targets **adult characters**.
+
+Adult creator controls cannot be pushed far enough to manufacture juvenile anatomy through:
+- oversized eyes;
+- inflated cranial vault;
+- shortened rostrum below the approved floor;
+- reduced jaw framework;
+- disproportionately small extremities;
+- childlike body ratios.
+
+If playable juveniles are ever approved, they require a separate developmental anatomy system.
+
+## 128. Chronological, biological and presented age
+
+Saurin follow the project-wide distinction:
+- **Chronological Age** — elapsed life;
+- **Apparent Biological Age** — visible biological maturation/aging;
+- **Age Presentation** — styling and presentation choices that alter perceived age.
+
+These are not interchangeable.
+
+Exact Saurin lifespan, maturation rate and senescence curve remain OPEN.
+
+## 129. Adult aging architecture
+
+Adult aging must be systemic rather than one “old” slider.
+
+Potential coordinated biological changes include:
+- subtle soft-tissue volume redistribution;
+- eyelid/eye-region change;
+- mouth-margin change;
+- scale-edge wear and relief variation;
+- pigment/pattern contrast change;
+- localized surface roughening;
+- dental wear;
+- claw/ridge wear;
+- posture-range tendencies only where biologically justified later.
+
+Not every trait changes at the same rate.
+
+## 130. Aging firewall
+
+Aging does not automatically produce:
+- frailty;
+- stooping;
+- desaturation;
+- cloudy eyes;
+- missing teeth;
+- damaged scales;
+- reduced tail control;
+- slower movement.
+
+Those outcomes require either individual variation, acquired history or later gameplay decisions.
+
+## 131. Adult age presets
+
+Neutral biological age presets may provide starting points such as:
+- young adult;
+- established adult;
+- mature adult;
+- late adult.
+
+These are creator convenience presets, not exact chronological bins until lifecycle is approved.
+
+Each remains fully editable within valid adult anatomy.
+
+## 132. Individual asymmetry
+
+Saurin may possess mild natural asymmetry in:
+- orbital opening;
+- jaw contour;
+- rostral contour;
+- auricular recess;
+- ridge expression;
+- scale/pattern distribution;
+- claw shape;
+- tail resting curvature.
+
+Natural asymmetry must remain distinct from acquired injury.
+
+## 133. Acquired asymmetry
+
+Acquired-history controls may later include:
+- scars;
+- damaged scales;
+- chipped claws;
+- damaged ridges;
+- dental loss;
+- eye injury;
+- localized pigment change.
+
+Major rostral, jaw or tail loss remains OPEN.
+
+Acquired history is not genetic inheritance.
+
+## 134. Population variation without hard subraces
+
+The Saurin creator may eventually support ancestry/population distributions, but Part 4 does not define fixed biological subraces.
+
+Population-level variation may affect probabilities for:
+- pigmentation;
+- pattern family;
+- scale morphology;
+- ridge frequency;
+- body proportions;
+- craniofacial proportions.
+
+These are weighted distributions, not exclusive trait packages.
+
+## 135. Correlation rule
+
+Population-level anatomical correlation does not automatically create a hard creator dependency.
+
+Where traits correlate biologically, use:
+- weighted distributions;
+- conditional probabilities;
+- coupled validity envelopes
+
+before considering hard locks.
+
+A pigmentation family cannot automatically force a skull, body frame, pattern, culture or gameplay trait.
+
+## 136. Ancestry versus culture
+
+If Saurin ancestry/population selection is later exposed:
+- ancestry influences biological probability distributions;
+- birthplace influences geography/history;
+- culture influences learned presentation, traditions and social context;
+- background influences personal history.
+
+None substitutes for another.
+
+## 137. Creator layers
+
+Saurin creator controls follow the universal four-layer model:
+
+### A. Biological Anatomy
+Approved skeletal/soft-tissue configuration including Saurin-specific sex-related anatomy when later defined.
+
+### B. Skeletal Frame
+Race-valid starting frame/proportion presets.
+
+### C. Physical Composition
+Muscularity, body-fat amount/distribution and regional physique.
+
+### D. Personal Presentation
+Paint, jewelry, cosmetics, clothing, accessories, decorative claw treatment and other non-inherited styling.
+
+Biological pigmentation/patterning remains Natural appearance, not Personal Presentation.
+
+## 138. Simple Mode
+
+Saurin Simple Mode remains:
+
+> **Race → Preset → Confirm**
+
+A preset is a legitimate output of the same anatomy and appearance system used by Advanced Mode.
+
+Simple Mode cannot use a simplified fake Saurin body that Advanced Mode replaces.
+
+## 139. Advanced Mode
+
+Saurin Advanced Mode remains:
+
+> **Race → Preset → Customize → Confirm**
+
+Advanced Mode exposes race-valid controls without allowing the player to leave Saurin biological validity.
+
+## 140. Preset requirements
+
+Saurin presets must:
+- be generated from valid creator parameters;
+- remain fully editable;
+- represent broad adult diversity;
+- avoid culture/class/personality coding;
+- include varied frames and compositions;
+- include varied rostral/jaw/orbital relationships;
+- include varied pigmentation/pattern;
+- include ridge-present and ridge-absent individuals;
+- include varied adult age presentation.
+
+No preset is the canonical/default Saurin person.
+
+## 141. Biological randomization
+
+**Biological Randomization** may sample:
+- stature;
+- skeletal frame;
+- body proportions;
+- composition;
+- tail dimensions;
+- craniofacial anatomy;
+- scale architecture;
+- pigmentation;
+- inherited pattern;
+- eyes;
+- ridges;
+- claws;
+- adult age biology.
+
+It must obey coupled constraints.
+
+## 142. Presentation randomization
+
+**Presentation Randomization** is separate and may later sample:
+- applied paint;
+- jewelry;
+- cosmetics;
+- clothing;
+- accessories;
+- decorative claw treatment;
+- other culturally/personal-style appropriate presentation.
+
+It must not rewrite inherited anatomy.
+
+## 143. Selective randomization
+
+Players must be able to randomize selected domains while preserving others.
+
+Examples:
+- randomize face while preserving body, tail, age and surface phenotype;
+- randomize body while preserving face and presentation;
+- randomize Natural surface while preserving anatomy;
+- randomize pattern only;
+- randomize Personal Presentation only.
+
+Selective randomization must respect dependencies crossing the selected boundary.
+
+## 144. Attribute locks
+
+Players may lock creator attributes before randomization.
+
+Locks must support meaningful groups such as:
+- stature;
+- body frame;
+- composition;
+- tail;
+- head;
+- rostrum;
+- eyes;
+- pigmentation;
+- pattern;
+- ridges;
+- age biology;
+- presentation.
+
+A locked child control cannot force an invalid parent relationship. The randomizer must adapt unlocked related controls around it or reject the combination.
+
+## 145. Tail creator controls
+
+Because the tail is mandatory biology, Advanced Mode may vary:
+- length;
+- base dimensions;
+- taper;
+- muscularity;
+- segment/curvature relationships;
+- resting curvature.
+
+There is **no tail on/off toggle**.
+
+Tail-base size, length and mass are coupled. Randomization cannot independently maximize or minimize them into anatomically incoherent combinations.
+
+## 146. Rostrum creator controls
+
+The approved minimum rostral floor is absolute within Saurin adult biology.
+
+Advanced Mode may vary:
+- length;
+- depth;
+- base width;
+- anterior width;
+- dorsal contour;
+- orbit transition.
+
+No control combination may cross into Marchfolk, Grask or Gorrund adult projection ranges at normalized head size.
+
+## 147. Scale creator controls
+
+Scale controls are region-aware.
+
+Players may influence:
+- regional scale relief;
+- regional unit size within bounds;
+- ventral-field expression;
+- transition character;
+- facial fine-scale expression.
+
+A global scale slider cannot violate Regional Scale Architecture.
+
+## 148. Pattern creator controls
+
+Pattern controls include:
+- family;
+- contrast;
+- density;
+- element scale;
+- edge softness;
+- regional weighting;
+- continuity;
+- tail expression;
+- facial expression.
+
+Pattern editing remains biological unless the player is editing Applied paint/markings.
+
+## 149. Eye creator controls
+
+Biological eye controls may include:
+- orbital relationships from Part 2;
+- visible opening;
+- iris pigmentation/detail;
+- valid pupil/dilation presentation;
+- ocular-tissue visibility.
+
+The vertically elliptical pupil remains baseline Saurin biology and is not replaced with human round pupils as a cosmetic toggle.
+
+Magical eye effects are separate.
+
+## 150. Ridge creator controls
+
+Low-profile keratinous ridges may be:
+- absent;
+- present within valid distributions;
+- varied in height/length/number/contour/symmetry.
+
+They remain FD-SURF/Natural appearance, not hairstyle.
+
+The creator must not offer mammalian hair assets as substitutes.
+
+## 151. Claw creator controls
+
+Claw controls may include:
+- valid length;
+- curvature;
+- width;
+- thickness;
+- tip;
+- pigmentation.
+
+Hand values must preserve grasp.
+Foot values must preserve plantigrade contact and footwear compatibility.
+
+## 152. Composition independence
+
+Saurin may validly be:
+- lightly or heavily muscled;
+- lean or high in body fat;
+- narrow, balanced or broad framed
+
+within approved biological envelopes.
+
+Scale architecture must adapt to these bodies rather than forcing one “reptile physique.”
+
+Muscularity does not define sex, profession or personality.
+
+## 153. Body-fat distribution
+
+Body-fat amount and distribution remain distinct controls.
+
+Saurin adiposity must be represented as real volume distributed across approved anatomy rather than a uniform inflation scale.
+
+Exact race-specific adipose distribution tendencies remain OPEN.
+
+## 154. Sex-related creator architecture
+
+Saurin sex-related anatomy remains non-human and not yet fully defined.
+
+Therefore:
+- creator architecture must reserve biological controls without assuming human dimorphism;
+- sex selection cannot silently force frame, muscularity, rostrum, ridge, pigmentation or personality;
+- overlapping adult phenotypes remain valid.
+
+Exact anatomy is OPEN until deliberately designed.
+
+## 155. Presentation-category substitution
+
+Universal creator categories that do not biologically apply must be race-aware.
+
+For Saurin:
+- mammalian scalp Hair is empty;
+- human Facial Hair is empty;
+- ridge controls remain Natural/FD-SURF rather than being mislabeled genetically as hair.
+
+The UI may route the player to useful Saurin-specific surface/presentation controls instead of showing incompatible human assets.
+
+This is a functional requirement, not a UE5 UI implementation.
+
+## 156. Saved appearances
+
+Players must be able to save and reuse Saurin appearances.
+
+Saved appearance data conceptually includes:
+- biological anatomy;
+- frame;
+- composition;
+- Natural appearance;
+- acquired-history appearance where supported;
+- Personal Presentation.
+
+Future schema/version migration is required when creator definitions change.
+
+## 157. Preset/randomization parity with NPCs
+
+NPC Saurin must be constructible from the same valid biological system as player characters.
+
+Named NPCs may use authored values, but those values must remain legitimate outputs of the same race specification unless an explicit narrative exception is documented.
+
+No separate “NPC-only normal Saurin” anatomy may silently override player biology.
+
+## 158. Combined-proportion validity
+
+Individually valid controls can still produce an invalid Saurin when combined.
+
+Validation must therefore evaluate relationships such as:
+- stature × head share × thoracic share × lower-trunk share × leg share;
+- tail length × base size × tail mass × pelvic support;
+- rostrum length × jaw depth × cranial support;
+- orbital size × opening × eyeball size;
+- frame × composition × joint scale;
+- scale field × articulation range;
+- claw length × grip/stance;
+- ridge size × cranial surface support.
+
+Simple min/max clamping is insufficient.
+
+## 159. Invalid-combination handling
+
+When a player creates an invalid combination, the future creator should preserve agency where possible.
+
+Preferred behavior:
+1. constrain the dependent control before invalidity;
+2. adapt an unlocked related control where transparent and predictable;
+3. explain a relationship if necessary;
+4. avoid silently resetting unrelated appearance.
+
+Exact UI behavior remains implementation-phase work.
+
+## 160. Race-aware randomization distribution
+
+Randomization should not produce uniform probability across every valid extreme.
+
+Use:
+- central tendencies;
+- weighted tails;
+- correlations;
+- conditional distributions.
+
+Rare valid anatomy remains possible without becoming as common as central anatomy.
+
+## 161. Appearance inheritance firewall
+
+Biological inheritance may influence:
+- anatomy;
+- pigmentation;
+- pattern;
+- scale morphology;
+- other approved Natural traits.
+
+It does not genetically inherit:
+- paint;
+- jewelry;
+- clothing;
+- scars from another individual;
+- occupation;
+- class;
+- culture;
+- personality.
+
+Cultural inheritance is a separate concept.
+
+## 162. Creator observation conditions
+
+Creator appearance must be inspectable under conditions that reduce false biological conclusions.
+
+Future creator requirements should permit:
+- neutral lighting;
+- useful front/profile/three-quarter inspection;
+- full-body and close head views;
+- tail inspection;
+- material readability without dramatic color grading.
+
+Observed lighting appearance remains separate from biological pigmentation/material properties.
+
+## 163. First-person relevance
+
+If first-person play is supported, the player must see Saurin anatomy appropriate to the actual character:
+- hand scale fields;
+- palmar contact surface where visible;
+- claws;
+- arm proportions;
+- body/tail implications where camera/framing permits.
+
+The system cannot silently substitute generic human hands.
+
+Exact first-person camera/body rendering remains OPEN.
+
+## 164. Dialogue relevance
+
+Conversation presentation must preserve:
+- readable gaze;
+- rostral-mouth articulation;
+- neutral and varied expressions;
+- nictitating-membrane behavior that does not obscure dialogue by default.
+
+The creator must not rely on fixed facial expression to make the race recognizable.
+
+## 165. Part 4 validation cast
+
+| ID | Target |
+| --- | --- |
+| SAU-CC-01 | Simple Mode preset is reproduced exactly in Advanced Mode |
+| SAU-CC-02 | Multiple neutral presets across frame/composition/age/surface without culture coding |
+| SAU-CC-03 | Biological randomization produces coherent whole characters over a large sample |
+| SAU-CC-04 | Presentation randomization changes no inherited anatomy |
+| SAU-CC-05 | Face-only randomization preserves body/tail/surface locks |
+| SAU-CC-06 | Pattern-only randomization preserves anatomy and Applied markings |
+| SAU-CC-07 | Tail randomization preserves coupled length/base/mass validity |
+| SAU-CC-08 | Minimum-rostrum randomization never crosses approved projection floor |
+| SAU-CC-09 | Extreme valid frame × composition combinations preserve Saurin anatomy |
+| SAU-CC-10 | Scale controls preserve regional field architecture at extremes |
+| SAU-CC-11 | Claw extremes preserve grip and plantigrade stance |
+| SAU-CC-12 | Ridge absent/present extremes both remain valid Saurin |
+| SAU-CC-13 | Adult age extremes do not create juvenile anatomy |
+| SAU-CC-14 | Natural asymmetry remains distinct from acquired injury |
+| SAU-CC-15 | Locked tail control causes unlocked related values to adapt without invalid anatomy |
+| SAU-CC-16 | Locked rostrum control preserves jaw/cranial support |
+| SAU-CC-17 | Saved appearance round-trip reproduces the same conceptual character |
+| SAU-CC-18 | NPC authored appearance validates through player-equivalent biological rules |
+| SAU-CC-19 | No human hair/facial-hair asset appears through generic creator categories |
+| SAU-CC-20 | Neutral lighting vs dramatic lighting does not alter stored biological values |
+| SAU-CC-21 | First-person hand proxy uses Saurin scale/contact/claw anatomy rather than human hands |
+| SAU-CC-22 | Dialogue proxy preserves gaze and rostral-mouth readability |
+| SAU-CC-23 | Broad adiposity range retains valid scale and tail-base integration |
+| SAU-CC-24 | Randomization frequency test confirms extremes are valid but not uniformly common |
+| SAU-CC-25 | Population-weighting prototype, if later used, changes probabilities without hard trait packages |
+
+## 166. OPEN after Part 4
+
+In addition to earlier OPEN items:
+- exact lifecycle and age curves;
+- playable non-adult characters;
+- exact Saurin sex-related anatomy;
+- population/ancestry definitions;
+- population correlation strengths;
+- exact adipose distribution tendencies;
+- detailed asymmetry limits;
+- acquired major injury states;
+- presentation catalog;
+- creator UI organization;
+- randomization weights;
+- save schema/versioning;
+- first-person rendering/camera;
+- dialogue animation implementation;
+- technical implementation.
+
+## 167. Part 4 identity statement
+
+> **Saurin character creation treats the race as a coherent biological system rather than a collection of reptile-themed toggles. Adult characters may vary broadly in stature, frame, composition, tail proportions, craniofacial anatomy, scale architecture, pigmentation, pattern, eyes, ridges, claws, age and asymmetry, but relationship-aware constraints preserve the approved pelvic-axial body, true rostrum and Regional Scale Architecture. Biological and presentation randomization remain separate, presets are legitimate outputs of the same system, race-inapplicable human hair categories expose no human assets, and NPCs share the same validity rules as player characters. Individuality is broad; culture, class, profession and personality are not encoded into Saurin biology.**
+
+Part 4 is **PROPOSED FOR AUDIT**.
