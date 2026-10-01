@@ -3295,4 +3295,610 @@ In addition to prior OPEN items:
 
 > **Saurin movement treats the tail as real integrated anatomy: it participates visibly in balance, counter-rotation, turns, starts, stops, swimming and body expression while the race remains an upright plantigrade biped rather than a crouched lizard or human with an attached prop. That biomechanical participation does not itself grant gameplay advantages. Equipment, animation, collision, interactions, furniture, mounts and cameras must accommodate the approved rostrum, trunk, pelvis, feet and mandatory tail instead of shrinking or hiding the race to fit human assumptions. Legacy breath-hold and fastest-swimmer claims remain gameplay decisions under review, and tail, bite, claws, scales and eyes carry explicit firewalls against automatic combat, armor, traversal or sensory bonuses.**
 
-Part 5 is **PROPOSED FOR AUDIT**.
+Part 5 is **ACCEPTED / COMPLETE**.
+
+
+# Part 6 — Final integration, prototype reconciliation and first-pass completion
+
+## 222. Part 6 objective
+
+Part 6 consolidates the accepted Saurin design into one first-pass race specification.
+
+It does not redesign Parts 1–5. It verifies that:
+- body, face, surface, creator and movement requirements agree;
+- positive racial identity survives broad individual variation;
+- prototype assumptions cannot override approved design;
+- unresolved gameplay/physiology questions remain OPEN;
+- permanent validation requirements are recorded;
+- future technical architecture follows anatomy rather than redefining it.
+
+No UE5 implementation begins here.
+
+## 223. Final positive biological identity
+
+Saurin are a distinct reptilian humanoid population built around **Counterbalanced Pelvic-Axial Architecture**:
+
+> **deep mobile thorax → elongated lower axial trunk → strongly integrated pelvis/sacral base → substantial counterbalancing tail**
+
+Their head uses **Layered Rostral-Cranial Integration**:
+
+> **low-to-moderate cranial vault → broad integrated orbital/temporal platform → projecting but compact rostral midface → deep articulated jaw base**
+
+Their integument uses **Regional Scale Architecture**:
+
+> **protective structural fields → transitional articulation fields → fine expressive fields**, with an integrated non-scute-plated ventral field.
+
+Their locomotion extends the same organism-level logic through:
+
+> **pelvic rotation → distributed lower-axial continuation → tail counter-response**
+
+The mandatory tail is therefore neither an accessory nor the sole identity carrier. It is the posterior continuation of an anatomy already organized to support it.
+
+## 224. Final anti-caricature statement
+
+Saurin are not:
+- humans with scales and tails;
+- upright monitor lizards;
+- miniature dragons;
+- crocodile people by default;
+- permanently crouched or predatory;
+- biologically savage, primitive, deceptive or aggressive;
+- automatically aquatic specialists;
+- automatically warriors;
+- automatically stealthy or conspicuous;
+- automatically agile because of the tail;
+- automatically armored because of scales;
+- automatically dangerous because of claws, teeth or rostrum.
+
+Culture, class, profession, morality and personality remain separate from biology.
+
+## 225. Mandatory-tail authority
+
+Tyler's approved rule remains authoritative:
+
+> **The Saurin tail is a primary racial anatomical feature. It is never hidden, removed, toggled off, or treated as optional presentation. Saurin anatomy is designed as a complete integrated organism in which the thorax, spine, pelvis, hips, legs, feet and tail form one coherent biomechanical system.**
+
+The correct validation question is:
+
+> **Does the tail look biologically inevitable on this body rather than attached to an otherwise unrelated humanoid?**
+
+This supersedes any test that requires Saurin to remain fully identifiable after artificially hiding/removing the tail.
+
+Acquired tail loss/injury remains OPEN and is not equivalent to a creator toggle.
+
+## 226. Tail identity without punishment authority
+
+Tyler's Part 5 decision also remains authoritative:
+
+> **The tail is a good identifier, but it must not punish the player or make Saurin easier to hit.**
+
+Therefore the tail:
+- remains visually present;
+- remains biomechanically active;
+- occupies real design/world-fit space;
+- affects equipment/furniture/camera/animation requirements;
+- does not automatically enlarge combat hurtboxes;
+- does not add direct-hit or area-effect vulnerability;
+- does not create control lag;
+- does not create snagging/body-blocking penalties;
+- does not automatically alter stealth noise;
+- does not automatically change carry, encumbrance, stamina, fall damage or knockback.
+
+Any later gameplay consequence requires an explicit decision.
+
+## 227. Height and body summary
+
+First-pass standing height, excluding tail:
+- minimum ~168 cm / 5'6";
+- reference ~188 cm / 6'2";
+- maximum ~208 cm / 6'10".
+
+These values remain provisional until final roster-wide scale/world review.
+
+Height excludes tail length.
+
+Body identity includes:
+- deep mobile thorax;
+- elongated lower axial trunk;
+- pelvis with stronger posterior structural contribution;
+- sacral/caudal integration;
+- moderate-to-long legs;
+- upright plantigrade stance;
+- broad stable feet with longer forefoot/toe contribution than Marchfolk;
+- moderate arm reach;
+- five-digit hands with opposable thumb provisionally;
+- moderately elongated fingers;
+- moderate-to-substantial skeletal presence;
+- broad frame/composition validity.
+
+## 228. Tail summary
+
+First-pass neutral tail length remains provisionally ~55–80% of standing height, measured from caudal base to tip along relaxed centerline.
+
+Tail validity requires coupled relationships among:
+- length;
+- base dimensions;
+- taper;
+- mass;
+- muscularity/adiposity;
+- pelvic/sacral support.
+
+Longer/heavier valid tails require proportionally sufficient bases and pelvic support.
+
+Exact final range awaits world-space validation.
+
+The tail is:
+- muscular;
+- articulated;
+- non-prehensile by default;
+- not a baseline weapon;
+- not automatically aquatic-specialized.
+
+## 229. Face summary
+
+The Saurin face must preserve:
+- non-human cranial-vault/face relationship;
+- broad orbital-temporal platform;
+- compact but genuine projecting rostrum;
+- approved minimum rostral projection floor;
+- integrated lateral face;
+- deep posterior jaw architecture;
+- no default human chin;
+- no human external nose;
+- recessed auricular opening architecture.
+
+The rostrum floor must remain outside normalized Marchfolk, Grask and Gorrund adult projection ranges.
+
+A creator-valid Saurin cannot collapse into a human/Grask/Gorrund face with surface reptile traits.
+
+## 230. Surface summary
+
+Baseline Saurin use Regional Scale Architecture with:
+- structural fields;
+- articulation fields;
+- fine expressive facial fields;
+- integrated ventral field;
+- specialized flexible palmar/plantar contact surfaces.
+
+Natural biological material remains matte through satin/modest sheen.
+
+Broad natural pigmentation/pattern variation is valid.
+
+Baseline:
+- vertically elliptical pupil shape;
+- biological dilation behavior;
+- translucent nictitating membrane;
+- modest non-retractable claw-like nails;
+- no mammalian scalp/facial hair;
+- no true horns;
+- optional low-profile integumentary keratinous ridges/scale crests.
+
+No baseline venom or mandatory forked tongue is approved.
+
+## 231. Appearance architecture summary
+
+Inherited phenotype belongs to **Biological Anatomy** and is visually expressed through the Natural Skin Appearance Layer.
+
+The universal creator layers remain:
+A. Biological Anatomy
+B. Skeletal Frame
+C. Physical Composition
+D. Personal Presentation
+
+Appearance-state distinctions remain:
+- Natural;
+- Environmental;
+- Applied;
+- Acquired.
+
+Skin Appearance Layers are not inheritance-storage categories.
+
+## 232. Adult creator scope
+
+First-pass Saurin creator support is adult-only.
+
+Adult controls cannot manufacture juvenile anatomy.
+
+Chronological Age, Apparent Biological Age and Age Presentation remain distinct concepts.
+
+Exact lifecycle, maturation and senescence remain OPEN.
+
+Playable non-adults require a separate developmental system if ever supported.
+
+## 233. Creator integration summary
+
+Saurin support:
+- Simple Mode: Race → Preset → Confirm;
+- Advanced Mode: Race → Preset → Customize → Confirm;
+- legitimate editable presets;
+- Biological Randomization;
+- Presentation Randomization;
+- Acquired-History Randomization;
+- selective randomization;
+- attribute locks;
+- saved/reusable appearances;
+- NPC parity.
+
+No tail on/off control exists.
+
+Population/ancestry weighting may affect randomization and NPC generation but cannot narrow Advanced Mode manual choice below the full valid Saurin range.
+
+## 234. Composition and individuality summary
+
+Valid adult Saurin may be:
+- narrow, balanced or broad-framed;
+- lightly through heavily muscled;
+- lean through high-body-fat;
+- young-adult through late-adult presentation;
+- symmetrical or naturally asymmetric;
+- minimally or heavily marked within biological validity;
+- ridge-absent or ridge-present where valid.
+
+No single "reptile physique" is required.
+
+Individual variation cannot erase the approved body/face/surface relationships.
+
+## 235. Sex-related anatomy summary
+
+Saurin sex-related anatomy is non-human and not yet fully designed.
+
+The system must reserve appropriate biological controls without assuming human sexual dimorphism.
+
+Sex-related anatomy cannot silently determine:
+- height;
+- frame;
+- muscularity;
+- adiposity;
+- rostrum;
+- ridges;
+- pigmentation;
+- personality;
+- culture;
+- class.
+
+Overlapping adult phenotypes remain valid.
+
+## 236. Movement summary
+
+Saurin are upright obligate bipeds.
+
+Their movement must show coordinated:
+- foot placement;
+- pelvis;
+- lower axial trunk;
+- thorax;
+- tail.
+
+The positive gait signature is subtle pelvic → lower-axial → tail rotational flow.
+
+No permanent:
+- crouch;
+- hunch;
+- splay;
+- tail drag;
+- exaggerated sway
+
+is required.
+
+Tail inertia is secondary motion and cannot delay player control.
+
+## 237. Gameplay firewall summary
+
+Approved Saurin anatomy does not automatically grant or impose gameplay effects from:
+- tail;
+- stature;
+- frame;
+- composition;
+- rostrum;
+- teeth;
+- claws;
+- scales;
+- eyes;
+- pupil shape;
+- nictitating membrane;
+- auricular anatomy;
+- ridge expression.
+
+Explicitly unapproved automatic effects include:
+- bite attacks;
+- tail attacks;
+- claw damage;
+- armor from scales;
+- sensory bonuses;
+- climbing bonuses;
+- agility/balance bonuses;
+- stealth bonuses/penalties;
+- larger combat hurtbox;
+- movement-control penalties.
+
+Any such system requires its own later decision.
+
+## 238. Legacy gameplay claims
+
+The legacy brief contains:
+- **breath hold 5×**;
+- **fastest swimmer**.
+
+Both remain OPEN gameplay/physiology claims.
+
+They are not approved racial biology merely because they appear in the legacy brief.
+
+No implementation should encode them until explicitly resolved.
+
+## 239. Equipment authority
+
+Equipment must adapt to approved Saurin anatomy.
+
+Anatomy cannot be distorted to fit human equipment.
+
+Required accommodation includes:
+- rostrum;
+- recessed auricular openings;
+- optional ridges;
+- neck/thorax;
+- elongated lower trunk;
+- pelvis;
+- mandatory tail base and sweep;
+- hands/claws;
+- plantigrade feet.
+
+Canonical object dimensions do not automatically scale with the holder.
+
+## 240. World authority
+
+Approved target anatomy, not prototype-reachable anatomy, determines world compatibility.
+
+Permanent Saurin world validation includes:
+- doors;
+- closing doors/tail clearance;
+- corridors/turns;
+- stairs;
+- ladders;
+- chairs/stools/benches;
+- beds;
+- tables/counters;
+- crowds;
+- multiplayer proximity;
+- mounts;
+- vehicles/carts/boats/workstations;
+- camera framing;
+- equipment clearance.
+
+The world may use race-aware solutions. It may not solve incompatibility by deleting or shrinking approved anatomy.
+
+## 241. Camera authority
+
+Camera systems remain separate from anatomy.
+
+Third-person must account for real height, rostrum, tail and constrained spaces.
+
+If first-person is supported:
+- eye height uses actual anatomy;
+- visible hands/arms are Saurin;
+- rostral clearance is tested;
+- bow/crossbow sightlines remain usable.
+
+No generic human camera override may erase racial anatomy.
+
+## 242. Collision and reach authority
+
+Future architecture must distinguish:
+- visual anatomy;
+- world collision;
+- combat hurtbox/hit detection;
+- interaction reach;
+- combat reach;
+- equipment dimensions;
+- camera behavior.
+
+Tail world presence does not automatically become combat target volume.
+
+Standing height, arm length, rostrum length and tail length do not automatically define interaction/combat reach.
+
+## 243. Animation authority
+
+Approved anatomy determines animation requirements.
+
+Shared human animation is a prototype convenience only.
+
+Future animation/retargeting must preserve:
+- upright Saurin posture;
+- body proportions;
+- lower-axial motion;
+- pelvic-tail integration;
+- head/rostral balance;
+- hand/foot contacts;
+- tail dynamics;
+- dialogue readability.
+
+Technical convenience cannot redefine the race.
+
+## 244. Prototype reconciliation ledger
+
+The current prototype, where applicable, is non-authoritative in the following areas:
+
+| Prototype assumption | Saurin authority |
+| --- | --- |
+| Uniform race scale | Superseded. Approved anatomy uses explicit proportions and relationship-aware ranges |
+| Shared human body proportions | Superseded by Counterbalanced Pelvic-Axial Architecture |
+| Human face + cosmetic race features | Superseded by Layered Rostral-Cranial Integration |
+| Generic skin/material treatment | Superseded by Regional Scale Architecture |
+| Shared human animation | Placeholder only; Saurin anatomy determines final movement |
+| Human equipment fit | Non-authoritative; equipment must adapt |
+| Whole-body scale drives collision/reach/camera | Incompatible with approved separation |
+| Generic human first-person hands/camera | Non-authoritative if first-person is supported |
+| Legacy 5× breath | OPEN; not authorized for implementation |
+| Legacy fastest swimmer | OPEN; not authorized for implementation |
+| Any prototype Saurin height/scale | Non-authoritative unless it independently matches approved target anatomy |
+
+This is a design reconciliation, not a code audit.
+
+## 245. Technical architecture requirements for later implementation
+
+Later implementation must be capable of supporting:
+- mandatory integrated tail anatomy;
+- tail animation/secondary motion;
+- relationship-aware tail controls;
+- non-human craniofacial morph space;
+- rostrum-safe dialogue;
+- Regional Scale Architecture;
+- region-aware scale variation;
+- non-human eye/membrane behavior;
+- Saurin hand/foot geometry;
+- race-aware equipment fitting;
+- tail-aware clothing/back equipment;
+- separate visual/collision/hurtbox/reach/camera concepts;
+- creator presets/randomization/locks;
+- save schema/versioning;
+- NPC parity;
+- world-space validation.
+
+These are requirements, not implementation instructions.
+
+## 246. Permanent validation suite
+
+The following accepted test families remain permanent requirements:
+
+- **SAU-BODY** — body, tail, stature, comparative anatomy and world-space foundation;
+- **SAU-FACE** — craniofacial identity, rostrum, eyes, jaw, ears and dialogue;
+- **SAU-SURF** — scale architecture, pigmentation, pattern, eyes, ridges, claws and skin layers;
+- **SAU-CC** — creator, age, randomization, locks, presets, NPC parity and gameplay firewall;
+- **SAU-MOVE** — locomotion, tail biomechanics, swimming and dialogue movement;
+- **SAU-EQP** — equipment fit and canonical object dimensions;
+- **SAU-WORLD** — environmental/furniture/mount/crowd compatibility;
+- **SAU-CAM** — camera and first-person compatibility;
+- **SAU-GAME** — gameplay separation and legacy-trait safeguards.
+
+A future implementation is not compliant merely because a neutral reference preset looks correct. Extremes and coupled combinations must also pass.
+
+## 247. Required validation populations
+
+Testing must include at minimum:
+- minimum/reference/maximum stature;
+- Narrow/Balanced/Broad frame;
+- low/reference/high muscularity;
+- low/reference/high body fat;
+- shortest/reference/longest valid tail;
+- low/reference/high supported tail mass;
+- minimum/reference/high rostral projection;
+- ridge absent/present;
+- pigmentation/pattern diversity;
+- young/established/mature/late adult presentations;
+- natural asymmetry;
+- acquired-history examples;
+- combined valid extremes.
+
+Tests must use relationship-valid characters rather than independent slider maxima that violate the spec.
+
+## 248. Cross-race comparison set
+
+Saurin validation should include direct normalized comparison against:
+- Marchfolk — human baseline;
+- Skarn — large powerful human;
+- Aelari — tall vertically distributed elf;
+- Grask — rangy reach-oriented non-human;
+- Gorrund — massive load-bearing non-human;
+- Durrim — compact structural concentration;
+- Pipkin — light compact adult proportionality;
+- Cogling — fine-scale elongated articulation.
+
+The purpose is identity clarity, not a beauty or superiority ranking.
+
+## 249. OPEN decision register — biology
+
+The following remain OPEN:
+- exact lifecycle/lifespan;
+- maturation/senescence timing;
+- playable non-adults;
+- detailed sex-related anatomy;
+- exact population structure;
+- exact ancestry correlations;
+- exact adipose-distribution tendencies;
+- exact asymmetry distributions;
+- tongue morphology/forking;
+- thermoregulation/metabolic strategy;
+- acquired major rostral loss;
+- acquired major jaw loss;
+- acquired tail loss/injury;
+- exact tail range after world validation;
+- exact ridge frequency/distribution;
+- exact presentation catalog.
+
+## 250. OPEN decision register — gameplay and movement
+
+The following remain OPEN:
+- legacy 5× breath;
+- legacy fastest-swimmer;
+- final movement speeds;
+- acceleration/turning gameplay metrics;
+- jump metrics;
+- crouch/prone mechanics;
+- climbing mechanics;
+- final swim mechanics;
+- combat reach;
+- interaction reach;
+- tail combat;
+- bite combat;
+- racial stats;
+- class restrictions;
+- any sensory gameplay;
+- any environmental resistance/vulnerability.
+
+No OPEN item should be inferred from visual anatomy.
+
+## 251. OPEN decision register — equipment/world/camera
+
+The following remain OPEN:
+- tail equipment coverage;
+- exact helmet/armor construction;
+- exact equipment-fitting system;
+- tail collision policy;
+- multiplayer collision policy;
+- mount compatibility by mount type;
+- vehicle/station compatibility;
+- third-person camera rules;
+- first-person support and camera behavior;
+- exact furniture solutions;
+- exact world-clearance standards.
+
+## 252. OPEN decision register — technical
+
+The following remain OPEN:
+- skeleton count/topology;
+- mesh topology;
+- morph architecture;
+- rig architecture;
+- tail simulation/animation architecture;
+- animation retargeting architecture;
+- IK architecture;
+- cloth/tail interaction;
+- collision implementation;
+- hurtbox implementation;
+- equipment deformation/variant architecture;
+- save schema/versioning;
+- networking;
+- performance budgets;
+- implementation order.
+
+No choice in this list may retroactively redefine approved anatomy.
+
+## 253. First-pass completion criteria
+
+Saurin may be marked **FIRST-PASS COMPLETE** when:
+1. Parts 1–6 are accepted;
+2. Claude's final audit reports no blocking contradiction;
+3. Tyler accepts the final result.
+
+First-pass completion means the race has sufficient approved design authority to enter later comparative/system review.
+
+It does not mean:
+- all OPEN gameplay decisions are resolved;
+- technical architecture is selected;
+- implementation has begun;
+- prototype conflicts are already fixed in code.
+
+## 254. Final Saurin identity statement
+
+> **Saurin are a distinct upright reptilian humanoid population whose anatomy is organized around Counterbalanced Pelvic-Axial Architecture: a deep mobile thorax and elongated lower axial trunk feed into a strongly integrated pelvis, sacral base and mandatory muscular tail. Their Layered Rostral-Cranial head uses a broad orbital-temporal platform, compact genuine rostrum and deep articulated jaw rather than a human face or generic animal muzzle. Regional Scale Architecture gives different body regions protective, articulating and expressive surface structures while preserving broad natural phenotype variation. Their locomotion carries pelvic motion through the elongated lower trunk into responsive tail counter-motion, making the tail biologically inevitable rather than decorative. The tail is a major racial identifier but not a gameplay punishment: it does not inherently enlarge the combat target, delay controls or impose hidden movement penalties. Broad adult frame, composition, age, surface and individual variation remain valid, while culture, class, profession, morality and personality stay outside biology. Equipment, animation, world geometry, cameras and later technical systems must accommodate the approved organism rather than shrinking it back toward a human template.**
+
+Part 6 is **PROPOSED FOR FINAL AUDIT**.
