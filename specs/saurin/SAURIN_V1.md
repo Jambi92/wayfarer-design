@@ -2559,4 +2559,709 @@ Before final tail ranges are approved, creator tail extremes must also be valida
 
 > **Saurin character creation treats the race as a coherent biological system rather than a collection of reptile-themed toggles. Adult characters may vary broadly in stature, frame, composition, tail proportions, craniofacial anatomy, scale architecture, pigmentation, pattern, eyes, ridges, claws, age and asymmetry, but relationship-aware constraints preserve the approved pelvic-axial body, true rostrum and Regional Scale Architecture. Biological and presentation randomization remain separate, presets are legitimate outputs of the same system, race-inapplicable human hair categories expose no human assets, and NPCs share the same validity rules as player characters. Individuality is broad; culture, class, profession and personality are not encoded into Saurin biology.**
 
-Part 4 is **PROPOSED FOR AUDIT**.
+Part 4 is **ACCEPTED / COMPLETE**.
+
+
+# Part 5 — Movement, equipment, world interaction and gameplay boundaries
+
+## 168. Part 5 objective
+
+Part 5 defines the functional consequences of approved Saurin anatomy without converting anatomy into unapproved gameplay bonuses.
+
+It covers:
+- locomotion identity;
+- tail biomechanics during movement;
+- turning, acceleration and stopping;
+- swimming;
+- climbing and traversal;
+- idle/body language separation;
+- animation requirements;
+- equipment fit;
+- weapons/tools;
+- collision and reach;
+- interaction;
+- seating, beds, doors and constrained spaces;
+- mounts;
+- cameras;
+- multiplayer/world-space implications;
+- legacy breath/swim claims;
+- gameplay firewalls.
+
+This remains design only. No UE5 implementation is authorized.
+
+## 169. Movement identity
+
+Saurin are **upright obligate bipeds with a dynamically integrated counterbalancing tail**.
+
+Their movement identity comes from the coordination of:
+- thorax;
+- elongated lower axial trunk;
+- pelvis;
+- hips/legs;
+- feet;
+- tail.
+
+They do not move as humans with a decorative tail appended afterward.
+
+## 170. Neutral locomotor posture
+
+Neutral standing and locomotion remain upright.
+
+Saurin do not require:
+- permanent crouch;
+- forward hunch;
+- splayed legs;
+- tail dragging;
+- exaggerated reptile sway;
+- digitigrade stance.
+
+The approved plantigrade foot remains the default first-pass stance.
+
+## 171. Tail biomechanical participation
+
+The tail actively participates in:
+- whole-body balance;
+- counter-rotation;
+- turning;
+- acceleration/deceleration;
+- recovery from ordinary movement perturbations;
+- swimming motion;
+- expressive body motion.
+
+This is a biomechanical animation requirement.
+
+It does **not** automatically grant a gameplay bonus to balance, agility, acceleration, turning rate, knockback resistance or swimming.
+
+## 172. Tail rest behavior
+
+At rest, the tail remains supported by its own anatomy.
+
+It may:
+- curve behind or beside the body;
+- make small postural corrections;
+- shift with weight transfer;
+- respond to seating and nearby obstacles.
+
+The normal tail is not habitually dragged along the ground.
+
+Ground contact may occur situationally without becoming the baseline pose.
+
+## 173. Walking
+
+Walking should show coordinated pelvic/axial/tail motion.
+
+Requirements:
+- ordinary upright foot placement;
+- credible plantigrade heel-to-forefoot progression as anatomy allows;
+- tail counter-motion that responds to gait;
+- no forced swagger;
+- no dinosaur-like stalking;
+- no constant side-to-side tail whipping.
+
+Stride length emerges from actual leg proportions rather than a racial animation-speed assumption.
+
+## 174. Running
+
+Running must preserve the same organism-level integration at higher speed.
+
+The tail may show greater:
+- counter-rotation;
+- stabilization amplitude;
+- inertial response
+
+without becoming a rigid rudder or exaggerated whip.
+
+Running animation cannot imply an unapproved speed advantage.
+
+## 175. Turning
+
+Turns require coordinated:
+- foot placement;
+- pelvic rotation;
+- trunk rotation;
+- tail redirection.
+
+Sharper turns may require larger visible tail adjustments than gentle turns.
+
+This visual requirement does not set gameplay turning rate.
+
+## 176. Starting and stopping
+
+Acceleration and deceleration should visibly account for the tail's mass.
+
+The tail cannot:
+- remain motionless during strong starts/stops;
+- snap instantly to a new direction;
+- ignore inertia.
+
+Likewise, tail participation does not automatically make Saurin accelerate or stop faster than other races.
+
+## 177. Jumping and landing
+
+If ordinary jumping exists, Saurin animation must integrate:
+- takeoff posture;
+- tail counter-motion;
+- airborne body orientation;
+- landing recovery.
+
+The tail does not automatically grant:
+- greater jump height;
+- air control;
+- reduced fall damage;
+- perfect landing balance.
+
+## 178. Crouching and sneaking
+
+Crouch/sneak animation must accommodate the mandatory tail and elongated lower trunk.
+
+The tail cannot be hidden, clipped through the body, or treated as zero-volume merely to reuse a human crouch.
+
+No automatic stealth advantage or penalty is approved from tail visibility alone.
+
+## 179. Prone/crawling
+
+If prone/crawling exists, it requires a Saurin-valid solution for:
+- rostrum/head clearance;
+- thorax;
+- pelvis;
+- knees/feet;
+- tail routing.
+
+The race cannot simply inherit a human prone pose if the tail intersects the legs/world.
+
+Exact prone architecture remains implementation-phase work.
+
+## 180. Swimming
+
+Saurin swimming must visually use the whole organism.
+
+The tail may contribute meaningful propulsive and steering motion alongside the limbs and trunk.
+
+However:
+- Part 5 does not approve Saurin as fastest swimmers;
+- tail propulsion does not itself define final swim speed;
+- no automatic underwater vision is implied;
+- no automatic webbing is added;
+- no aquatic body plan is retroactively created.
+
+The approved body remains a terrestrial upright biped capable of swimming.
+
+## 181. Legacy fastest-swimmer claim
+
+The legacy brief says Saurin are the **fastest swimmer**.
+
+That remains a **legacy gameplay claim under review**, not approved biology.
+
+If later retained, its magnitude and mechanism must be designed explicitly and balanced against the rest of the game.
+
+The anatomy may support credible swimming motion without predetermining the gameplay ranking.
+
+## 182. Breath-hold legacy claim
+
+The legacy brief says Saurin can hold their breath **5× as long**.
+
+This remains a **legacy gameplay/physiology claim under review**.
+
+Part 5 does not infer:
+- lung volume;
+- blood oxygen storage;
+- metabolic suppression;
+- aquatic adaptation
+
+from that number.
+
+If retained, the physiology and gameplay meaning require a separate decision.
+
+## 183. Climbing
+
+Saurin anatomy permits ordinary humanoid climbing where the environment supports it.
+
+Claws do not automatically grant:
+- wall climbing;
+- tree-clinging;
+- climbing-speed bonuses;
+- grip bonuses.
+
+Tail use in climbing is not prehensile by default.
+
+## 184. Ladders
+
+Ladder traversal must account for:
+- rostral clearance;
+- hand claws/contact scales;
+- plantigrade feet;
+- tail clearance behind/below the body.
+
+The tail must not clip through ladder geometry or become invisibly disabled.
+
+## 185. Mantling and vaulting
+
+If mantling/vaulting exists, animation must account for:
+- rostrum;
+- thorax;
+- pelvis;
+- tail trajectory;
+- landing space.
+
+No automatic vaulting advantage is approved.
+
+## 186. Body language boundary
+
+Tail motion may contribute to visible body language.
+
+But anatomical resting alignment is distinct from cultural/personal body language.
+
+No tail pose is biologically required to mean:
+- aggression;
+- fear;
+- submission;
+- dominance;
+- attraction;
+- deception.
+
+Cultures and individuals may develop learned gestures later.
+
+## 187. Facial and body expression
+
+Animation may coordinate:
+- eyes;
+- eyelids;
+- nictitating membrane;
+- mouth;
+- head;
+- neck;
+- shoulders;
+- trunk;
+- hands;
+- tail.
+
+The race must support emotional breadth without a permanent snarl, scowl or predatory pose.
+
+## 188. Nictitating membrane animation
+
+The membrane must:
+- close/open independently of primary eyelids;
+- remain normally unobtrusive;
+- not repeatedly sweep across the eye without context;
+- not obscure gaze during ordinary dialogue.
+
+Exact triggers remain OPEN.
+
+## 189. Dialogue animation
+
+Dialogue requires readable:
+- gaze direction;
+- rostral-mouth articulation;
+- jaw movement;
+- facial expression;
+- head/neck motion.
+
+Tail/body gesture may supplement dialogue but cannot be required for every utterance.
+
+Saurin speech cannot simply use a human lip-sync solution if it visibly breaks the approved mouth anatomy.
+
+## 190. Animation reuse boundary
+
+Saurin may share abstract animation concepts with humanoid races, but approved anatomy determines the final motion.
+
+A shared human animation set is non-authoritative.
+
+Retargeting, if later used, must preserve:
+- Saurin posture;
+- limb proportions;
+- lower-trunk motion;
+- rostrum/head balance;
+- tail dynamics;
+- hand/foot contact.
+
+Technical convenience cannot redefine anatomy.
+
+## 191. Equipment-fit principle
+
+Equipment must adapt to Saurin anatomy.
+
+Saurin anatomy must not be distorted to fit generic human equipment.
+
+Fit systems must account for:
+- rostral head;
+- recessed auricular openings;
+- neck/thorax;
+- elongated lower trunk;
+- pelvis;
+- mandatory tail;
+- hands/claws;
+- plantigrade feet.
+
+## 192. Headgear
+
+Headgear must respect:
+- rostral projection;
+- jaw movement;
+- orbital visibility;
+- recessed auricular openings;
+- optional low-profile ridges.
+
+Generic human helmets cannot simply compress or hide the rostrum.
+
+Ridge-present and ridge-absent Saurin both require valid solutions.
+
+## 193. Neck and torso armor
+
+Neck/torso equipment must preserve:
+- head rotation;
+- thoracic motion;
+- lower-trunk flexion;
+- shoulder/scapular motion.
+
+Armor cannot force the Saurin into a human torso silhouette.
+
+## 194. Pelvic and tail-base equipment
+
+Waist, hip and pelvic equipment must accommodate the integrated caudal base.
+
+A tail opening/segmentation solution must not:
+- imply detachable tail anatomy;
+- pinch the tail to implausible dimensions;
+- eliminate tail motion;
+- expose impossible gaps during movement.
+
+Exact equipment construction remains later design work.
+
+## 195. Tail equipment coverage
+
+Whether armor, cloth or accessories may partially cover the tail remains OPEN.
+
+Any approved tail equipment must preserve:
+- articulation;
+- mass;
+- taper;
+- collision/clearance assumptions;
+- readable biological continuity.
+
+Full concealment cannot be used to validate an otherwise incorrect Saurin body.
+
+## 196. Cloaks and back equipment
+
+Cloaks, capes, backpacks, sheaths and back-mounted equipment must coexist with:
+- tail base;
+- tail sweep;
+- shoulder movement;
+- seated posture.
+
+They cannot assume empty space behind the pelvis.
+
+## 197. Leg and foot equipment
+
+Legwear/footwear must respect:
+- plantigrade stance;
+- longer forefoot/toe contribution;
+- claw-like nails;
+- palmar/plantar-equivalent contact architecture where relevant;
+- ankle mobility.
+
+Footwear cannot silently convert the foot to human proportions.
+
+## 198. Gloves and hand equipment
+
+Gloves/gauntlets must preserve:
+- five-digit hand;
+- opposable thumb;
+- moderately elongated fingers;
+- claws;
+- fine palmar contact scales;
+- grip articulation.
+
+Weapon/tool handling must remain credible at creator-valid hand/claw extremes.
+
+## 199. Weapon dimensions
+
+Canonical weapon dimensions do **not** automatically scale with the holder.
+
+A sword, bow, shield or tool retains its designed dimensions unless a distinct item variant exists.
+
+Saurin body size changes how an object is held and framed; it does not magically resize the object.
+
+## 200. Weapon handling
+
+Saurin can use ordinary compatible equipment where anatomy permits.
+
+Animation/IK must account for:
+- hand proportions;
+- claws;
+- rostral clearance;
+- torso dimensions;
+- tail clearance.
+
+No automatic weapon proficiency follows from anatomy.
+
+## 201. Tail and combat firewall
+
+The tail is not a baseline combat weapon.
+
+Part 5 approves no automatic:
+- tail strike;
+- sweep attack;
+- trip;
+- grapple;
+- parry;
+- damage hitbox.
+
+If tail combat is later desired, it requires an explicit gameplay decision and appropriate anatomy/animation review.
+
+## 202. Bite firewall
+
+The Part 2 bite firewall remains in force.
+
+Rostrum, jaw and teeth do not automatically grant:
+- bite attack;
+- bonus damage;
+- grapple;
+- armor penetration;
+- intimidation.
+
+## 203. Claw combat firewall
+
+Claws remain anatomical nails, not built-in weapons.
+
+They grant no automatic:
+- unarmed damage;
+- bleed;
+- armor penetration;
+- climbing;
+- disarm;
+- intimidation.
+
+## 204. Scale armor firewall
+
+Scale relief and keratinized integument do not automatically provide armor rating, damage reduction or environmental resistance.
+
+Any later defensive gameplay trait requires an explicit decision.
+
+## 205. Collision architecture
+
+Future technical architecture must separate:
+- visual anatomy;
+- physical collision;
+- interaction reach;
+- combat reach;
+- equipment dimensions;
+- camera behavior.
+
+A single whole-body scale factor cannot define all of these.
+
+## 206. Tail collision
+
+The tail occupies real world space.
+
+Future collision design must decide:
+- where collision is continuous versus simplified;
+- how it interacts with walls/furniture/characters;
+- how multiplayer overlap is handled;
+- how it avoids snagging.
+
+But it cannot be treated as nonexistent merely for convenience.
+
+Exact collision behavior remains OPEN.
+
+## 207. Interaction reach
+
+Interaction reach must not be inferred solely from:
+- standing height;
+- arm length;
+- rostrum length;
+- tail length.
+
+Interaction systems require explicit reach rules.
+
+Tail length never extends ordinary hand-interaction reach.
+
+## 208. Combat reach
+
+Combat reach is a gameplay system and remains distinct from visual anatomy.
+
+Longer arms or taller stature do not automatically change melee reach unless the combat system explicitly decides so.
+
+Tail length does not automatically extend combat reach.
+
+## 209. Doors and corridors
+
+World validation must test the approved Saurin anatomy against:
+- doors;
+- corridors;
+- turns;
+- narrow passages;
+- crowds.
+
+Tests must include tail sweep and maximum valid creator dimensions.
+
+The world should accommodate approved target anatomy rather than relying on prototype-reachable values.
+
+## 210. Seating
+
+Saurin seating requires tail-aware geometry or pose solutions.
+
+Validation must test:
+- chairs with backs;
+- stools;
+- benches;
+- floor sitting if supported;
+- tavern/dining seating;
+- dialogue seating.
+
+The tail cannot simply clip through a chair back.
+
+## 211. Beds and resting
+
+Beds/resting poses must account for:
+- rostrum/head;
+- torso;
+- pelvis;
+- tail length/curvature.
+
+A valid Saurin should be able to use world rest systems without tail deletion.
+
+## 212. Tables and counters
+
+Standing/seated interactions with tables/counters must test:
+- hand reach;
+- rostral clearance;
+- tail clearance;
+- body spacing.
+
+The world cannot assume every humanoid occupies a human-depth envelope.
+
+## 213. Crowds and multiplayer
+
+Saurin require tail-aware spacing assumptions in:
+- crowds;
+- queues;
+- narrow social spaces;
+- multiplayer proximity;
+- group interactions.
+
+Exact collision policy is OPEN, but visual overlap cannot be ignored during validation.
+
+## 214. Mounts
+
+Mount compatibility is not assumed.
+
+Any mount intended for Saurin must accommodate:
+- pelvis;
+- leg position;
+- tail base;
+- tail routing;
+- back equipment;
+- camera.
+
+The tail cannot be deleted or folded through the mount to reuse a human rider pose.
+
+## 215. Vehicles and constrained stations
+
+If vehicles, boats, carts, workstations or similar constrained interactions exist, they require Saurin validation.
+
+Tail volume and rostral projection must be included in occupancy envelopes.
+
+## 216. Third-person camera
+
+Third-person camera design must account for:
+- standing height;
+- rostral head projection;
+- tail;
+- crouch;
+- seated/mounted states;
+- tight interiors.
+
+The camera cannot frame only a human torso proxy while the tail repeatedly leaves useful view or clips unseen.
+
+Exact camera behavior remains OPEN.
+
+## 217. First-person camera
+
+If first-person is supported:
+- camera height must correspond to actual Saurin anatomy;
+- visible hands/arms must use Saurin anatomy;
+- rostral geometry must be evaluated for visual obstruction;
+- body/tail visibility must be handled consistently.
+
+No human-scale camera override may erase racial anatomy.
+
+## 218. Swimming camera
+
+If underwater/swimming cameras exist, they must accommodate:
+- tail motion;
+- whole-body propulsion;
+- surface transitions;
+- actual head/eye position.
+
+Nictitating membrane visuals do not automatically imply underwater-vision effects.
+
+## 219. Animation and interaction validation cast
+
+| ID | Target |
+| --- | --- |
+| SAU-MOVE-01 | Neutral stand with supported non-dragging tail |
+| SAU-MOVE-02 | Walk cycle with pelvis/trunk/tail integration |
+| SAU-MOVE-03 | Run cycle with credible tail inertia |
+| SAU-MOVE-04 | Gentle and sharp turn comparison |
+| SAU-MOVE-05 | Start/stop with tail mass response |
+| SAU-MOVE-06 | Jump/land without automatic gameplay advantage |
+| SAU-MOVE-07 | Crouch/sneak with real tail volume |
+| SAU-MOVE-08 | Ladder climb with rostrum/foot/tail clearance |
+| SAU-MOVE-09 | Mantle/vault tail trajectory |
+| SAU-MOVE-10 | Swim cycle using trunk/limbs/tail without deciding swim speed |
+| SAU-MOVE-11 | Dialogue with readable gaze, rostral articulation and unobtrusive membrane |
+| SAU-MOVE-12 | Human-animation retarget stress test: anatomy must win over source pose |
+| SAU-EQP-01 | Helmet fit across rostrum/ridge extremes |
+| SAU-EQP-02 | Torso armor across frame/composition extremes |
+| SAU-EQP-03 | Pelvic armor at tail-base extremes |
+| SAU-EQP-04 | Cloak/backpack/sheath vs tail sweep |
+| SAU-EQP-05 | Gloves/gauntlets preserve claws/grip |
+| SAU-EQP-06 | Footwear preserves plantigrade Saurin foot |
+| SAU-EQP-07 | Same canonical weapon on short/reference/tall Saurin without auto-scaling |
+| SAU-WORLD-01 | Door/corridor/90° turn across maximum body/tail envelope |
+| SAU-WORLD-02 | Chair/stool/bench seating without tail deletion |
+| SAU-WORLD-03 | Bed/rest pose across tail-length extremes |
+| SAU-WORLD-04 | Table/counter interaction and hand reach |
+| SAU-WORLD-05 | Crowd/multiplayer spacing with visible tail volume |
+| SAU-WORLD-06 | Mount rider proxy preserves pelvis/tail anatomy |
+| SAU-WORLD-07 | Constrained cart/boat/workstation occupancy |
+| SAU-CAM-01 | Third-person stand/run/crouch/interior framing |
+| SAU-CAM-02 | First-person eye height, rostral clearance and Saurin hands |
+| SAU-CAM-03 | Swim camera follows actual anatomy without sensory bonus |
+| SAU-GAME-01 | Tail-length extremes do not silently alter balance/agility/turn stats |
+| SAU-GAME-02 | Claw extremes do not alter unarmed/climb stats |
+| SAU-GAME-03 | Scale extremes do not alter armor/resistance |
+| SAU-GAME-04 | Eye variants do not alter perception/vision stats |
+| SAU-GAME-05 | Legacy 5× breath and fastest-swimmer claims remain unimplemented/open |
+
+## 220. OPEN after Part 5
+
+In addition to prior OPEN items:
+- final locomotion metrics;
+- gait timing;
+- jump metrics;
+- crouch/prone architecture;
+- final swimming mechanics;
+- legacy 5× breath decision;
+- legacy fastest-swimmer decision;
+- climbing mechanics;
+- tail collision policy;
+- interaction reach;
+- combat reach;
+- tail combat;
+- equipment construction;
+- tail equipment coverage;
+- mount compatibility;
+- vehicle/station compatibility;
+- third-person camera behavior;
+- first-person support;
+- animation-retarget architecture;
+- IK architecture;
+- multiplayer collision;
+- technical implementation.
+
+## 221. Part 5 identity statement
+
+> **Saurin movement treats the tail as real integrated anatomy: it participates visibly in balance, counter-rotation, turns, starts, stops, swimming and body expression while the race remains an upright plantigrade biped rather than a crouched lizard or human with an attached prop. That biomechanical participation does not itself grant gameplay advantages. Equipment, animation, collision, interactions, furniture, mounts and cameras must accommodate the approved rostrum, trunk, pelvis, feet and mandatory tail instead of shrinking or hiding the race to fit human assumptions. Legacy breath-hold and fastest-swimmer claims remain gameplay decisions under review, and tail, bite, claws, scales and eyes carry explicit firewalls against automatic combat, armor, traversal or sensory bonuses.**
+
+Part 5 is **PROPOSED FOR AUDIT**.
