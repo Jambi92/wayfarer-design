@@ -12,7 +12,7 @@ All of sections 1–20 have been received. The missing §16.11–16.13 (Pipkin, 
 - **Each race is a range, not one body.** Customization changes the individual without destroying racial identity.
 - **Race reads through silhouette, proportions, face, anatomy and movement.** Height alone never defines race: a tall Marchfolk and a short Skarn still look different.
 - **Sliders are anatomically linked.** Muscle, mass and height reshape the whole body coherently. They never stretch one region on its own.
-- **Movement is identity.** Skarn transfer weight heavily. Fenn place their feet quietly and keep their balance. Durrim are low and compact. Gorrund carry big momentum. Pipkin accelerate quickly with a short stride. Saurin move like reptiles, with the tail as a counterbalance.
+- **Movement is identity.** Skarn transfer weight heavily. Fenn place their feet quietly and keep their balance. Durrim are low and compact. Gorrund carry big momentum. Pipkin accelerate quickly with a short stride. **SUPERSEDED for Pipkin:** see `specs/pipkin/PIPKIN_V1.md` Part 5 §37; quick acceleration is not an automatic racial property, while shorter absolute stride may emerge from anatomy. Saurin move like reptiles, with the tail as a counterbalance.
 - **Appearance has five sources:**
   - race: biology
   - culture: clothing, jewelry, grooming, gestures
@@ -66,7 +66,7 @@ Height and mass are relative to an average Marchfolk adult. They are references,
 
 - Height about 0.55×, mass about 0.50× the human baseline.
 - Small, compact adult anatomy: a relatively large head, strong legs, substantial feet, dexterous hands and a low center of gravity.
-- Short stride, quick acceleration, rapid turns and excellent balance.
+- Short stride, quick acceleration, rapid turns and excellent balance. **SUPERSEDED:** see `specs/pipkin/PIPKIN_V1.md` Part 5 §37. Only anatomy-derived stride/cadence relationships remain; acceleration, turning and balance are separate gameplay decisions.
 - They are adults of a naturally small race, not human children or comic relief.
 - Individuals vary in height, physique, face, muscle, body fat, age and overall appearance.
 
