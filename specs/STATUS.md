@@ -13,11 +13,11 @@
 10. Gorrund
 
 ## In progress
-11. **Pipkin — v1.0 Parts 1–2 authored; Part 2 awaiting audit**
+11. **Pipkin — v1.0 Parts 1–4 first-pass accepted (Part 4 approved by Tyler September 30); Part 5 not started**
 
 ## Not yet designed
 12. Cogling
 13. Saurin
 
 ## Current next action
-Claude audits `specs/pipkin/PIPKIN_V1.md`, especially Part 2 and its positive differentiation from Marchfolk.
+Waiting for Tyler to start Pipkin Part 5 (movement, animation, equipment, world interaction and final first-pass review). ChatGPT should also update the Part 4 status line in `specs/pipkin/PIPKIN_V1.md` to FIRST-PASS ACCEPTED.
