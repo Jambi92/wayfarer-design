@@ -1302,7 +1302,15 @@ Face, body, hands/feet and equipment-preview views may use purpose-specific came
 
 Camera framing is presentation, not anatomy.
 
-## 16. Targeting and gameplay camera boundary
+## 16. First-person camera boundary
+
+First-person presentation remains **OPEN**.
+
+If first-person play is supported, Pipkin must retain their actual eye height, arm length, hand scale and relevant equipment geometry. First-person convenience must not silently substitute Marchfolk arm/hand proportions, raise the viewpoint to a taller racial reference, or change world-relative reach.
+
+Exact first-person camera placement, body visibility, arm presentation, weapon presentation, clipping solutions and gameplay accommodations remain technical/gameplay decisions.
+
+## 17. Targeting and gameplay camera boundary
 
 Targeting reticles, lock-on framing, aim offsets, cover systems and similar gameplay cameras must account for Pipkin's actual origin points and eye/weapon geometry.
 
@@ -1310,7 +1318,7 @@ Camera convenience must not redefine visual projectile origins, hand positions o
 
 Exact targeting rules remain **OPEN** for combat design.
 
-## 17. Interaction markers and contact points
+## 18. Interaction markers and contact points
 
 Interaction systems must support Pipkin-specific or anatomy-aware contact locations where visible contact matters.
 
@@ -1318,7 +1326,7 @@ Doors, levers, crafting stations, containers, ladders, chairs, beds and similar 
 
 Invisible interaction assistance may be used later if gameplay requires it, but visible animation must remain plausibly connected to the world.
 
-## 18. Furniture and rest systems
+## 19. Furniture and rest systems
 
 Beds, chairs, benches, stools and other furniture require validation across playable stature.
 
@@ -1326,7 +1334,7 @@ Pipkin may use oversized furniture honestly, but mandatory world functions must 
 
 Furniture use must preserve adult read even where feet do not reach the floor or seat depth is large relative to thigh length.
 
-## 19. World-scale validation set
+## 20. World-scale validation set
 
 At minimum, Pipkin world compatibility must be tested against:
 - standard doorways;
@@ -1346,7 +1354,7 @@ At minimum, Pipkin world compatibility must be tested against:
 
 The world must be evaluated against **approved target anatomy**, not merely the current prototype-reachable body.
 
-## 20. Biological preset requirements
+## 21. Biological preset requirements
 
 Pipkin presets must be legitimate outputs of the same biological system used by Advanced Mode.
 
@@ -1365,7 +1373,21 @@ Presets should collectively cover meaningful combinations of:
 
 No preset may violate the combined-proportion validity rules.
 
-## 21. Simple and Advanced Mode integration
+### Provisional biological preset concepts
+
+These are coverage concepts, not castes, cultures or canonical population frequencies:
+- **Reference Adult** — near-reference stature/frame/composition; demonstrates the central anatomical read.
+- **Light Narrow** — Narrow frame and lighter composition without frailty or child coding.
+- **Broad Adult** — Broad frame with valid pelvic/thoracic relationships without Durrim convergence.
+- **Powerfully Developed** — high muscular development within Pipkin anatomy; not a miniature Skarn/Durrim.
+- **High-Adiposity Adult** — higher body-fat amount/distribution without waddle, comic roundness or identity dependence.
+- **Tall-Boundary Adult** — near the provisional upper height boundary; tests Durrim separation.
+- **Short-Boundary Adult** — near the provisional lower height boundary; tests mature adult read.
+- **Elder Adult** — age-related surface/movement variation while preserving underlying structure.
+
+Presentation presets, when later authored, should deliberately cross biological presets rather than pairing anatomy with fixed occupations, cultures or personalities.
+
+## 22. Simple and Advanced Mode integration
 
 Simple Mode:
 **Race → Preset → Confirm**
@@ -1377,7 +1399,7 @@ Choosing a Pipkin preset does not lock the player into a subtype, caste or pheno
 
 The same data model must be capable of representing player characters, presets and appropriate NPC appearances.
 
-## 22. Race-aware randomization
+## 23. Race-aware randomization
 
 Pipkin Biological Randomization must draw only from valid Pipkin anatomy and approved biological surface envelopes.
 
@@ -1393,7 +1415,7 @@ No hidden package such as:
 - or youthful face + quick movement
 may define the race.
 
-## 23. Selective randomization and locks
+## 24. Selective randomization and locks
 
 Players must eventually be able to randomize selected appearance domains while preserving locked choices.
 
@@ -1406,7 +1428,7 @@ Examples:
 
 Selective randomization must still run relationship-aware validity checks.
 
-## 24. Saved appearances and schema boundary
+## 25. Saved appearances and schema boundary
 
 Pipkin appearances must eventually be savable and reusable through the project's unified character-appearance data architecture.
 
@@ -1416,7 +1438,7 @@ Schema/version migration is required later so prototype placeholders do not beco
 
 No final data schema is prescribed here.
 
-## 25. Presentation randomization
+## 26. Presentation randomization
 
 Presentation Randomization may choose hairstyles, grooming, clothing, cosmetics, tattoos, accessories and other non-biological choices according to approved culture/background/region/personal-style systems.
 
@@ -1424,7 +1446,7 @@ It must not be treated as genetic inheritance.
 
 A Pipkin biological preset can support many presentation identities.
 
-## 26. Culture and background firewall
+## 27. Culture and background firewall
 
 Nothing in Parts 1–6 biologically requires Pipkin to be:
 - rural,
@@ -1442,7 +1464,7 @@ Nothing in Parts 1–6 biologically requires Pipkin to be:
 
 Any such tendencies belong to culture, background, occupation, individual personality or gameplay choices if they exist at all.
 
-## 27. Lifecycle status
+## 28. Lifecycle status
 
 Exact Pipkin lifecycle remains **OPEN**.
 
@@ -1455,7 +1477,7 @@ Locked for first-pass character design:
 
 Exact maturation timing, lifespan, senescence curve, fertility timing and age-frequency distribution require later world/lifecycle design.
 
-## 28. Sex-related anatomy status
+## 29. Sex-related anatomy status
 
 Pipkin follow the universal four-layer character-creation model.
 
@@ -1466,7 +1488,7 @@ Sex-related physical anatomy may influence relevant pelvic, thoracic, facial, so
 
 Exact creator-facing control organization remains subject to the universal architecture review.
 
-## 29. Positive racial identity hierarchy
+## 30. Positive racial identity hierarchy
 
 For first-pass design, Pipkin identity is carried in this order:
 
@@ -1478,7 +1500,7 @@ For first-pass design, Pipkin identity is carried in this order:
 
 This hierarchy describes diagnostic importance, not a requirement that every individual display an exaggerated version of each tendency.
 
-## 30. Consolidated anti-caricature rules
+## 31. Consolidated anti-caricature rules
 
 A valid Pipkin must never require:
 - human-child proportions;
@@ -1496,17 +1518,41 @@ A valid Pipkin must never require:
 - miniature equipment;
 - or a uniformly scaled Marchfolk body/animation/collision solution.
 
-## 31. Consolidated OPEN decisions
+## 32. Consolidated OPEN decisions
 
 The following remain OPEN after first-pass Pipkin design:
+
+### Anatomy and population
+- final Pipkin height range; the current ~91–122 cm range remains provisional pending cross-race and world validation;
+- final head-to-body ratio envelope;
+- detailed torso ratios within Low-Set Compact Trunk Architecture;
+- detailed shoulder architecture;
+- detailed pelvic morphology, including depth and implementation-ready dimensional relationships;
+- femur-to-lower-leg balance;
+- upper-arm-to-forearm balance and total arm-span distribution;
+- detailed hand proportions;
+- detailed foot proportions and foot-arch distribution;
+- detailed joint dimensions;
+- Muscular Development Capacity distribution;
+- body-fat distribution patterns;
+- magnitude and morphology of sex-related dimorphism;
+- Pipkin ear mobility; no racial mobility behavior is approved at first pass;
 - exact lifecycle and age-frequency model;
 - final pigmentation, hair and iris population frequencies;
 - rare natural hair/iris validity;
 - detailed skin/weathering distributions;
 - detailed dentition count/replacement/lifecycle;
 - sex-related facial/body-hair distributions;
+- detailed population genetics/simulation depth.
+
+### Character creation and presentation
 - final creator-facing facial-control organization;
-- final whole-character technical skeleton/mesh/morph architecture;
+- final preset library and population-frequency weighting;
+- final presentation-preset library;
+- final saved-appearance schema/version architecture;
+- final in-game Pipkin race-description text revision.
+
+### Movement, gameplay and interaction
 - walk/run/sprint gameplay speeds;
 - stamina, acceleration and turning gameplay values;
 - jump/fall rules;
@@ -1518,16 +1564,22 @@ The following remain OPEN after first-pass Pipkin design:
 - interaction and combat reach;
 - dodge behavior;
 - encumbrance and item feasibility;
+- racial attribute bonuses, if any;
+- any final race/class restriction.
+
+### Technical and world systems
+- final whole-character technical skeleton/mesh/morph architecture;
 - collision implementation and whether body variation changes gameplay collision;
-- targeting/camera implementation;
+- first-person camera eye-line, body/arm/hand presentation and accommodation rules;
+- targeting and other gameplay-camera implementation;
+- third-person/creator camera implementation details;
 - ladder/stair universal world standards;
-- mounts/vehicles;
-- detailed population genetics/simulation depth;
-- and any final race/class restriction.
+- mounts/vehicles and their contact points;
+- technical motion architecture.
 
 OPEN means intentionally unresolved, not permission for prototype behavior to become canonical.
 
-## 32. Permanent validation suite
+## 33. Permanent validation suite
 
 The permanent Pipkin validation suite includes all approved PIP-BODY, PIP-FACE, PIP-SURF and PIP-MOVE cases from Parts 1–5 plus these integration cases:
 
@@ -1553,12 +1605,13 @@ The permanent Pipkin validation suite includes all approved PIP-BODY, PIP-FACE, 
 | PIP-INT-18 | Neutral presentation/culture removal test; biology still identifies the population |
 | PIP-INT-19 | Equipment-heavy loadout; fit and motion do not reshape anatomy |
 | PIP-INT-20 | Prototype comparison: every known prototype shortcut is identified as placeholder rather than authority |
+| PIP-INT-21 | Like-for-like sex-related movement comparison: adult male Pipkin vs adult male Marchfolk walk and adult female Pipkin vs adult female Marchfolk walk; race identity remains anatomical without sex-coded gait caricature |
 
-## 33. Prototype conflict ledger for Pipkin
+## 34. Prototype conflict ledger for Pipkin
 
 Known prototype assumptions that must not be treated as final Pipkin design include:
 - uniform whole-body race scaling;
-- prototype Pipkin scale values;
+- prototype Pipkin scale values, including the known prototype presentation at approximately 0.7× Marchfolk scale (~121 cm), which places a typical prototype Pipkin near the current provisional Pipkin maximum and Durrim boundary rather than the ~107 cm Pipkin reference;
 - shared human animation set as final solution;
 - holder-scaled weapons/equipment;
 - single human-derived collision assumptions;
@@ -1570,7 +1623,7 @@ These may remain useful prototypes. They do not override Parts 1–6.
 
 Implementation verification against actual project files remains deferred until implementation work is authorized and files are available.
 
-## 34. Short-race dependency and Cogling boundary
+## 35. Short-race dependency and Cogling boundary
 
 Pipkin are first-pass definable without Cogling, but the final **Short-Race Comparative Anatomy Review** remains required after Cogling is designed.
 
@@ -1585,7 +1638,7 @@ That review must verify at minimum:
 
 The review may refine comparative wording but must not erase approved positive Pipkin anatomy without an explicit design decision.
 
-## 35. Universal-review dependencies
+## 36. Universal-review dependencies
 
 Pipkin first-pass completion does not waive later universal reviews, including:
 - Universal Facial Customization Architecture Review;
@@ -1597,11 +1650,11 @@ Pipkin first-pass completion does not waive later universal reviews, including:
 
 Where a named review is not formally registered, the underlying OPEN item remains OPEN rather than creating an implied process requirement.
 
-## 36. Final combined Pipkin identity statement
+## 37. Final combined Pipkin identity statement
 
 > **Pipkin are a distinct short humanoid population defined primarily by Low-Set Compact Trunk Architecture: a compact adult central trunk in which a mature, structurally broad pelvis contributes strongly to the body while the thorax remains comparatively moderate and the limbs retain substantial proportional contribution to stature. Their skeleton is comparatively light rather than Durrim-like in structural concentration, and their adult face uses Integrated Mature Facial Architecture, with a moderately broad but variable cranial base integrating through the temple and zygoma into a fully mature central midface without juvenile shortening, Durrim depth-dominance or Gorrund posterior transverse continuity. Their surface phenotype is broad and overlapping rather than racially diagnostic. Their movement is upright adult short-stature locomotion generated from real anatomy, not waddling, scurrying, bouncing or innate nimbleness. Equipment, collision, cameras, interactions and world geometry must accommodate approved Pipkin anatomy without shrinking canonical objects or distorting the body. Pipkin identity is biological and anatomical; culture, presentation, personality, occupation and gameplay advantages remain separate unless independently approved.**
 
-## 37. First-pass completion criteria
+## 38. First-pass completion criteria
 
 Pipkin may be marked **FIRST-PASS COMPLETE** when:
 1. Parts 1–6 are accepted;
@@ -1611,6 +1664,6 @@ Pipkin may be marked **FIRST-PASS COMPLETE** when:
 5. known prototype conflicts are identified as non-authoritative;
 6. Short-Race Comparative Anatomy Review remains queued for after Cogling rather than being falsely treated as completed.
 
-Part 6 is **PROPOSED FOR AUDIT**.
+Part 6 is **PATCHED AFTER FINAL AUDIT — QUICK CHECK REQUESTED**.
 
 **Pipkin v1.0 is not yet FIRST-PASS COMPLETE pending Part 6 audit. No UE5 implementation is authorized.**
