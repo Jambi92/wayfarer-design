@@ -734,6 +734,10 @@ The walk must avoid:
 
 Stride length, cadence, pelvic rotation, arm swing and vertical displacement must be allowed to resolve together.
 
+A biomechanically necessary higher cadence and/or relatively greater stride excursion at a matched absolute speed is valid. The prohibited caricature is cadence beyond what anatomy and speed require, artificially shortened limb excursion, added bounce, or other stylization used merely to make a short character appear fast.
+
+Despite the mature pelvis's strong structural role, ordinary Pipkin walking retains an **adult narrow-base gait**: foot placement converges appropriately toward the line of progression relative to hip width rather than translating pelvic breadth into a toddler-like wide base or waddle.
+
 ## 5. Pelvis and trunk during gait
 
 The mature pelvis is a major part of Pipkin body architecture, but movement must not turn that into exaggerated side-to-side hip motion.
@@ -929,7 +933,7 @@ Visual weapon contact and gameplay hit reach must remain separable where necessa
 
 Pipkin swimming performance is **OPEN**.
 
-Part 5 does not infer swimming speed, buoyancy, endurance or preferred stroke from stature, body fat, foot size or the low-set trunk. Water locomotion requires its own cross-race review.
+Part 5 does not infer swimming speed, buoyancy, endurance or preferred stroke from stature, body fat, foot size or the low-set trunk. These remain OPEN gameplay and locomotion decisions; no separate review is presumed unless later added to the project plan.
 
 ## 25. Mounting and vehicles
 
@@ -1035,11 +1039,11 @@ Visual plausibility and gameplay balance may require coordination later, but nei
 | --- | --- |
 | PIP-MOVE-01 | Neutral standing reference; adult upright alignment, no stereotype |
 | PIP-MOVE-02 | Comfortable walk at reference anatomy; adult gait |
-| PIP-MOVE-03 | Narrow-frame low-muscle walk; not childlike or scurrying |
+| PIP-MOVE-03 | Narrow-frame low-muscle walk; not childlike or scurrying; adult step width maintained |
 | PIP-MOVE-04 | Broad-frame high-muscle walk; not Durrim-like by default |
-| PIP-MOVE-05 | Higher-fat walk; no waddle or comic bounce |
+| PIP-MOVE-05 | Higher-fat walk; no waddle, wide-base child read or comic bounce |
 | PIP-MOVE-06 | Maximum-height Pipkin walk beside minimum-height Durrim; locomotor identity follows anatomy |
-| PIP-MOVE-07 | Adult Pipkin beside similar-height human child; gait remains mature |
+| PIP-MOVE-07 | Adult Pipkin beside similar-height human child; gait, cadence variability and step width remain mature |
 | PIP-MOVE-08 | Run and sprint progression; no automatic rapid-cadence caricature |
 | PIP-MOVE-09 | 90° and 180° turns at multiple speeds with real foot placement |
 | PIP-MOVE-10 | Crouch/sneak; active joint flexion, no biological stealth claim |
@@ -1067,7 +1071,7 @@ Visual plausibility and gameplay balance may require coordination later, but nei
 - Young adult + smooth surface phenotype + no facial hair + neutral clothing + walk cycle: maturity must survive without age/presentation cues.
 - Oversized chair + dangling feet + youthful-looking face: must remain adult and avoid child coding.
 - High counter interaction + canonical object: solve contact honestly without limb stretching.
-- Same walk-speed gameplay target as a taller race, if later chosen: animation must solve cadence/stride without tiny rapid-step caricature.
+- Same walk-speed gameplay target as a taller race, if later chosen: permit biomechanically necessary cadence/stride changes, reject excess caricature, and verify the chosen speed remains on the intended side of the walk-run transition.
 - Same canonical large weapon, if later permitted: body and object remain true scale; no automatic weapon shrink.
 - Dialogue with Gorrund: eye-line solution must preserve both characters' resting alignment.
 
@@ -1086,4 +1090,38 @@ Visual plausibility and gameplay balance may require coordination later, but nei
 
 > **Pipkin locomotion is adult short-stature humanoid movement generated from Low-Set Compact Trunk Architecture, a mature pelvis, comparatively light skeletal construction and proportionally sustained limbs. Their motion is upright, weight-bearing and anatomically honest without requiring waddling, bouncing, scurrying, childlike cadence, exaggerated hip motion or innate nimbleness. World interactions, equipment contacts and locomotor animation must adapt to their approved anatomy, while gameplay speed, agility, stealth, reach and other statistics remain separate decisions.**
 
-Part 5 is **PROPOSED FOR AUDIT**. No UE5 implementation is authorized.
+Part 5 is **PATCHED AFTER FIRST AUDIT — TYLER DECISION PENDING ON LEGACY BRIEF MOVEMENT WORDING**. No UE5 implementation is authorized.
+
+## 37. Legacy brief conflict requiring project-owner decision
+
+The earlier approved Pipkin brief describes "short stride, quick acceleration, rapid turns and excellent balance" and elsewhere says Pipkin "accelerate quickly with a short stride."
+
+Part 5 intentionally does **not** treat short stature as automatic justification for acceleration, turning, balance or agility gameplay advantages. Until Tyler explicitly resolves the authority conflict, the older brief wording is **OPEN and not silently superseded**.
+
+Available resolution paths remain:
+- supersede the quick-acceleration / rapid-turn / excellent-balance wording and leave those as later gameplay decisions;
+- retain some or all solely as visual movement tendencies without gameplay effect, provided they can be defined biomechanically without caricature;
+- or retain selected items as intended racial gameplay traits for later gameplay review.
+
+No option is selected by this patch.
+
+## 38. Planned Part 6 scope
+
+A separate **Part 6 — Equipment, World Compatibility, Character-Creation Integration and Final First-Pass Review** is planned, subject to Tyler's continuation approval.
+
+It will cover at minimum:
+- clothing and armor fit;
+- helmets/hoods and approved head/ear geometry;
+- footwear and gloves;
+- belts, backpacks and carried-equipment fit;
+- collision requirements;
+- third-person, creator and targeting camera requirements;
+- character/presentation presets;
+- race-aware and selective randomization integration;
+- lifecycle status/dependencies;
+- consolidated OPEN decisions;
+- permanent cross-race/world validation;
+- combined Pipkin identity statement;
+- and final first-pass completion criteria.
+
+Part 6 planning does not mark Part 5 accepted or Pipkin FIRST-PASS COMPLETE.
