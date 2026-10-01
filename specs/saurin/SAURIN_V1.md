@@ -2939,7 +2939,16 @@ Exact equipment construction remains later design work.
 
 ## 195. Tail equipment coverage
 
-Whether armor, cloth or accessories may partially cover the tail remains OPEN.
+Armor, clothing and accessories **may partially cover, drape over or sheath portions of the tail**, provided the tail remains a persistent anatomical feature of the Saurin.
+
+Coverage must not:
+- erase the tail from the racial silhouette;
+- make the character functionally appear tailless;
+- collapse or hide the caudal base;
+- eliminate required articulation or motion;
+- use clothing as a substitute for solving tail fit.
+
+The garment/equipment may visually lie on top of the tail and move with/around it. The tail remains present underneath and must continue to read as part of the organism.
 
 Any approved tail equipment must preserve:
 - articulation;
@@ -3281,7 +3290,6 @@ In addition to prior OPEN items:
 - combat reach;
 - tail combat;
 - equipment construction;
-- tail equipment coverage;
 - mount compatibility;
 - vehicle/station compatibility;
 - third-person camera behavior;
@@ -3356,7 +3364,9 @@ Culture, class, profession, morality and personality remain separate from biolog
 
 Tyler's approved rule remains authoritative:
 
-> **The Saurin tail is a primary racial anatomical feature. It is never hidden, removed, toggled off, or treated as optional presentation. Saurin anatomy is designed as a complete integrated organism in which the thorax, spine, pelvis, hips, legs, feet and tail form one coherent biomechanical system.**
+> **The Saurin tail is a primary racial anatomical feature. It is never removed, toggled off, or hidden **for racial validation or creator identity**, and it is never treated as optional presentation.
+
+Garments or armor may partially cover, drape over or sheath the tail, but the tail must remain a persistent anatomical and silhouette feature. Coverage cannot make a Saurin functionally tailless. Saurin anatomy is designed as a complete integrated organism in which the thorax, spine, pelvis, hips, legs, feet and tail form one coherent biomechanical system.**
 
 The correct validation question is:
 
@@ -3368,7 +3378,7 @@ Acquired tail loss/injury remains OPEN and is not equivalent to a creator toggle
 
 ## 226. Tail identity without punishment authority
 
-Tyler's Part 5 decision also remains authoritative:
+Tyler decision — October 1, 2026 — also remains authoritative:
 
 > **The tail is a good identifier, but it must not punish the player or make Saurin easier to hit.**
 
@@ -3405,7 +3415,7 @@ Body identity includes:
 - moderate-to-long legs;
 - upright plantigrade stance;
 - broad stable feet with longer forefoot/toe contribution than Marchfolk;
-- moderate arm reach;
+- moderate arm length with modest forearm emphasis;
 - five-digit hands with opposable thumb provisionally;
 - moderately elongated fingers;
 - moderate-to-substantial skeletal presence;
@@ -3485,11 +3495,10 @@ B. Skeletal Frame
 C. Physical Composition
 D. Personal Presentation
 
-Appearance-state distinctions remain:
-- Natural;
-- Environmental;
-- Applied;
-- Acquired.
+The three Skin Appearance Layers remain:
+- **Natural**;
+- **Environmental**;
+- **Applied or Acquired**, whose two halves distinguish deliberately applied presentation from acquired history/injury/wear.
 
 Skin Appearance Layers are not inheritance-storage categories.
 
@@ -3796,6 +3805,8 @@ Saurin validation should include direct normalized comparison against:
 - Marchfolk — human baseline;
 - Skarn — large powerful human;
 - Aelari — tall vertically distributed elf;
+- Fenn — face comparison for elven craniofacial boundary;
+- Vael — face comparison for elven craniofacial boundary;
 - Grask — rangy reach-oriented non-human;
 - Gorrund — massive load-bearing non-human;
 - Durrim — compact structural concentration;
@@ -3822,7 +3833,27 @@ The following remain OPEN:
 - acquired tail loss/injury;
 - exact tail range after world validation;
 - exact ridge frequency/distribution;
-- exact presentation catalog.
+- exact presentation catalog;
+- speech articulation and lip-sync architecture;
+- hearing specialization/physiology;
+- olfactory specialization/physiology;
+- tooth count and replacement;
+- nasal soft-tissue details;
+- scale microanatomy, growth, renewal and shedding visibility/frequency;
+- pigment mechanisms and rare pigmentation;
+- pattern inheritance;
+- iris microanatomy and pupil-dilation dynamics;
+- nictitating-membrane direction, opacity and animation triggers;
+- rare filamentous integument;
+- cosmetic/body-paint feasibility;
+- claw growth and wear.
+
+**OPEN-list authority:** The OPEN lists in Parts 1–5 remain in force unless a later accepted section explicitly resolves an item. §§249–252 summarize major live decisions rather than silently closing omitted questions.
+
+**Resolved-earlier-item pointers:** Where an earlier section still labels an item OPEN and a later accepted section resolves it, the later accepted section governs. In particular:
+- Part 2 §45 nictitating membrane → resolved by Part 3 §98;
+- Part 2 §76 iris/pupil anatomy, nictitating membrane, keratinous cranial display structures and scale morphology → resolved or narrowed by Part 3 §§80–85, 95, 98 and 100–102;
+- Part 1 OPEN claw/nail anatomy, hair-equivalent structures and coloration → resolved or narrowed by Part 3 §§87–93, 104–107 and 116.
 
 ## 250. OPEN decision register — gameplay and movement
 
