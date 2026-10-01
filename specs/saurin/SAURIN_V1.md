@@ -559,6 +559,10 @@ Any modest forearm emphasis is not Cogling Fine-Scale Elongated Articulation: Sa
 - class restrictions;
 - technical implementation.
 
+### Creator-category note
+
+For Saurin, generic creator categories for mammalian **Hair** and **Facial Hair** are biologically empty under the current baseline and must not expose human assets. Where the universal creator requires equivalent navigation, Saurin-specific ridge/surface controls may occupy an appropriate race-aware category without pretending those structures are hair.
+
 ### Stature-accounting note
 The elongated lower axial trunk and moderate-to-long leg contribution cannot both expand without compensating elsewhere in total standing height. Part 2 must explicitly account for head, neck, thoracic-height, lower-trunk and leg shares rather than allowing independent proportional inflation.
 
@@ -1301,7 +1305,7 @@ It may trend toward:
 
 than adjacent dorsal/lateral fields.
 
-This is not automatically a snake belly, armor plate or aquatic adaptation.
+This is not automatically a snake belly, armor plate or aquatic adaptation. The ventral field does **not** form continuous belly-scute plating.
 
 Exact regional extent remains variable.
 
@@ -1467,7 +1471,7 @@ The eyeball must remain sized to the orbit rather than enlarged merely to look e
 
 Baseline Saurin possess **vertically elliptical pupils with biologically variable dilation**.
 
-This is a positive sensory phenotype, not an emotional indicator.
+This is a deliberate **Saurin identity phenotype**, not an emotional indicator and not an anatomy-derived claim of superior sensory performance. The vertical pupil is retained as part of the race's intended Iksar-inspired visual inheritance rather than being inferred merely from the word "reptilian."
 
 At sufficient dilation the pupil may appear broad/rounded; at contraction it becomes a clear vertical ellipse/slit.
 
@@ -1508,6 +1512,8 @@ Saurin **do possess a translucent nictitating membrane** as baseline anatomy.
 
 It provides an additional protective ocular closure moving independently from the primary eyelids.
 
+Its inclusion is a deliberate Saurin identity choice, not a trait assumed simply because Saurin are reptilian and not evidence of aquatic specialization.
+
 It is:
 - biological;
 - normally subtle;
@@ -1536,6 +1542,8 @@ Baseline Saurin **do not possess true horns**.
 Instead, race-valid cranial surface variation may include **low-profile keratinous ridges and scale crests** that remain continuous with the integument and underlying cranial architecture.
 
 These structures are not mammalian horns or dragon antlers.
+
+They are **integumentary keratin structures over the already-approved cranial skeleton**, not new bony horns. Slight underlying surface rugosity may support attachment, but the ridges remain **FD-SURF rather than FD-STRUCT**.
 
 They may add silhouette variation without becoming required for racial recognition.
 
@@ -1614,6 +1622,21 @@ Valid controls may include:
 - pigmentation.
 
 Extreme values that interfere with ordinary grasp, footwear or plantigrade stance are biologically invalid.
+
+## 106A. Palmar and plantar contact surfaces
+
+Saurin palms and soles use **fine, flexible contact scales with localized pad-like thickening**.
+
+Compared with dorsal hand/foot fields, these surfaces:
+- use smaller, lower-relief scale units;
+- preserve flexion and tactile contact;
+- tolerate compression under grip and plantigrade load;
+- may develop localized thicker contact zones at recurrent pressure points;
+- transition gradually into finger/toe articulation fields.
+
+They are not mammalian paw pads and not smooth human palms/soles.
+
+The surface must remain plausible in a closed fist, weapon/tool grip and fully planted foot.
 
 ## 107. Claw pigmentation
 
@@ -1809,6 +1832,17 @@ For Saurin:
 
 Observed appearance cannot redefine biological pigmentation or material properties.
 
+### Whole-body Skin Appearance Layers
+
+The **Facial Diagnostic Domains apply to facial analysis only**. Whole-body surface appearance uses the established Skin Appearance Layers:
+
+- **Natural** — Regional Scale Architecture, biological pigmentation, inherited patterns, claw keratin, integumentary cranial ridges and age-related biological surface change. Facial FD-SURF is the facial subset of this Natural layer.
+- **Environmental** — dirt, dust, mud, wetness, abrasion, sun exposure and weathering acquired from current/recent environment. Environmental wetness is distinct from FD-OBS lighting/material observation.
+- **Applied** — paint, dye, cosmetics, decorative claw treatment and other intentionally applied presentation.
+- **Acquired** — scars, healed burns/cuts, damaged scale fields, chipped claws, damaged ridges, localized pigment change and occupational/contact wear such as thickened, polished or abraded grip/knee/contact scales.
+
+These layers must not be collapsed into one generic surface slider.
+
 ## 123. Part 3 validation cast
 
 | ID | Target |
@@ -1839,6 +1873,8 @@ Observed appearance cannot redefine biological pigmentation or material properti
 | SAU-SURF-24 | Neutral sex-related anatomy configurations share overlapping surface-phenotype distributions |
 | SAU-SURF-25 | No horns/frills/hair test: reference Saurin remains fully identifiable |
 | SAU-SURF-26 | Closed-mouth/oral test: differentiated teeth remain contained and no venom anatomy appears |
+| SAU-SURF-27 | Palmar/plantar contact test: closed fist, weapon/tool grip and planted foot retain plausible fine contact scales and localized pad-like thickening |
+| SAU-SURF-28 | Dialogue gaze-readability test at conversation distance: gaze direction remains readable across valid pupil dilation and ocular-tissue visibility without humanizing the eye |
 
 ## 124. OPEN after Part 3
 
@@ -1859,6 +1895,7 @@ In addition to unresolved earlier items:
 - tongue morphology;
 - oral soft tissue;
 - sensory physiology;
+- thermoregulation/metabolic strategy; no automatic cold vulnerability, heat resistance or temperature-related gameplay modifier is implied while OPEN;
 - acquired major tail/rostral/jaw loss;
 - garment/armor coverage of tail;
 - cosmetic/body-paint feasibility;
