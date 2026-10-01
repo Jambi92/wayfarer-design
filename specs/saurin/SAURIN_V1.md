@@ -2630,7 +2630,9 @@ The tail actively participates in:
 
 This is a biomechanical animation requirement.
 
-It does **not** automatically grant a gameplay bonus to balance, agility, acceleration, turning rate, knockback resistance or swimming.
+It does **not** automatically grant a gameplay bonus or penalty to balance, agility, acceleration, turning rate, knockback, carry capacity, encumbrance, stamina cost, fall damage or swimming.
+
+**Tyler decision — Tail Identity Without Punishment:** The mandatory Saurin tail is a major visual and biomechanical racial identifier, but its mere existence must not make the player mechanically worse. Tail inertia is secondary motion layered over controlled character movement. It never adds input latency, turn-rate limits, start/stop delay or root-motion gating. Whatever movement responsiveness gameplay establishes for comparable characters applies to Saurin unless a later explicit gameplay decision says otherwise.
 
 ## 172. Tail rest behavior
 
@@ -2659,6 +2661,14 @@ Requirements:
 - no constant side-to-side tail whipping.
 
 Stride length emerges from actual leg proportions rather than a racial animation-speed assumption.
+
+### Positive Saurin gait signature
+
+The Saurin pelvis and elongated lower axial trunk produce a subtle organism-level rotational flow:
+
+> **pelvic rotation → distributed lower-axial continuation → tail counter-response**
+
+This low-amplitude axial-pelvic relationship gives Saurin a positive locomotor signature beyond simply having a moving tail. It must remain controlled and upright, never becoming exaggerated lateral sway, swagger or cartoon reptile motion.
 
 ## 174. Running
 
@@ -3049,6 +3059,8 @@ Future technical architecture must separate:
 
 A single whole-body scale factor cannot define all of these.
 
+Future architecture must also separate **combat hurtbox / hit detection** from visual anatomy and ordinary world collision.
+
 ## 206. Tail collision
 
 The tail occupies real world space.
@@ -3062,6 +3074,21 @@ Future collision design must decide:
 But it cannot be treated as nonexistent merely for convenience.
 
 Exact collision behavior remains OPEN.
+
+### Tail identity without gameplay punishment
+
+Real visual/world-space presence does not automatically make the tail a combat or traversal liability.
+
+Without a separate explicit gameplay decision, tail volume must not:
+- enlarge the Saurin combat hurtbox;
+- expose the character to additional direct hits;
+- create extra area-effect vulnerability;
+- cause snagging that stops or slows controlled movement;
+- allow allies/enemies to body-block the Saurin through the tail;
+- impose crowd-navigation penalties;
+- create automatic stealth noise from incidental ground contact.
+
+World-fit validation still treats the tail as real anatomy for animation, furniture, equipment, spacing and environmental design. The solution is not to pretend the tail is absent; it is to keep visual/world accommodation separate from punitive gameplay hit detection and control.
 
 ## 207. Interaction reach
 
@@ -3211,6 +3238,7 @@ Nictitating membrane visuals do not automatically imply underwater-vision effect
 | SAU-MOVE-10 | Swim cycle using trunk/limbs/tail without deciding swim speed |
 | SAU-MOVE-11 | Dialogue with readable gaze, rostral articulation and unobtrusive membrane |
 | SAU-MOVE-12 | Human-animation retarget stress test: anatomy must win over source pose |
+| SAU-MOVE-13 | Saurin/Marchfolk walk comparison: Saurin reads through pelvic → lower-axial → tail rotational flow rather than tail presence alone |
 | SAU-EQP-01 | Helmet fit across rostrum/ridge extremes |
 | SAU-EQP-02 | Torso armor across frame/composition extremes |
 | SAU-EQP-03 | Pelvic armor at tail-base extremes |
@@ -3218,7 +3246,7 @@ Nictitating membrane visuals do not automatically imply underwater-vision effect
 | SAU-EQP-05 | Gloves/gauntlets preserve claws/grip |
 | SAU-EQP-06 | Footwear preserves plantigrade Saurin foot |
 | SAU-EQP-07 | Same canonical weapon on short/reference/tall Saurin without auto-scaling |
-| SAU-WORLD-01 | Door/corridor/90° turn across maximum body/tail envelope |
+| SAU-WORLD-01 | Door/corridor/90° turn across maximum body/tail envelope, including a door closing while the tail is within the doorway |
 | SAU-WORLD-02 | Chair/stool/bench seating without tail deletion |
 | SAU-WORLD-03 | Bed/rest pose across tail-length extremes |
 | SAU-WORLD-04 | Table/counter interaction and hand reach |
@@ -3226,13 +3254,16 @@ Nictitating membrane visuals do not automatically imply underwater-vision effect
 | SAU-WORLD-06 | Mount rider proxy preserves pelvis/tail anatomy |
 | SAU-WORLD-07 | Constrained cart/boat/workstation occupancy |
 | SAU-CAM-01 | Third-person stand/run/crouch/interior framing |
-| SAU-CAM-02 | First-person eye height, rostral clearance and Saurin hands |
+| SAU-CAM-02 | First-person eye height, rostral clearance, Saurin hands and unobstructed bow/crossbow aiming sightline |
 | SAU-CAM-03 | Swim camera follows actual anatomy without sensory bonus |
 | SAU-GAME-01 | Tail-length extremes do not silently alter balance/agility/turn stats |
 | SAU-GAME-02 | Claw extremes do not alter unarmed/climb stats |
 | SAU-GAME-03 | Scale extremes do not alter armor/resistance |
 | SAU-GAME-04 | Eye variants do not alter perception/vision stats |
 | SAU-GAME-05 | Legacy 5× breath and fastest-swimmer claims remain unimplemented/open |
+| SAU-GAME-06 | Saurin and Marchfolk control proxies receive identical input-to-facing and input-to-velocity response, including aiming turns, while Saurin tail secondary motion visibly carries inertia |
+| SAU-GAME-07 | Equivalent direct attack, area-effect and crowd-pass-through tests produce no automatic Saurin disadvantage from tail volume |
+| SAU-GAME-08 | Tail mass/ground-contact tests produce no automatic carry, encumbrance, stamina, fall-damage, knockback or stealth-noise modifier |
 
 ## 220. OPEN after Part 5
 
