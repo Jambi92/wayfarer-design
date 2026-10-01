@@ -968,4 +968,18 @@ Pipkin v1.0 Part 4 (FIRST-PASS ACCEPTED; Tyler approved September 30)
 | Pipkin dentition follows the existing functional adult humanoid baseline with no diet inferred; tooth count, replacement and lifecycle OPEN | AGREED (count and lifecycle OPEN) | Pipkin Part 4 §13; re-audit |
 | Pipkin skin, hair and iris frequencies; interim randomization is broad and explicitly not an approved distribution; tanning and freckling distributions; sex-related body and facial hair distributions | OPEN | Pipkin Part 4 §2–3, §5, §11, §18; audit 4e |
 
+Pipkin v1.0 Part 5 (proposed for audit, not yet approved by Tyler)
+
+| Decision | Status | Source |
+| --- | --- | --- |
+| Pipkin movement is adult short-stature humanoid movement from approved anatomy, never scaled Marchfolk, child, miniature Durrim, scurrying or "nimble halfling" motion; no waddle, bounce or hip-sway caricature | PRELIMINARY | Pipkin Part 5 §1, §4–6, §36 |
+| Upright adult Anatomical Resting Alignment; crouching is active, not resting anatomy; resting alignment separate from cultural and personal body language | PRELIMINARY | Pipkin Part 5 §2, §12, §27 |
+| World systems (stairs, ladders, seating, counters, obstacles, mounts, dialogue eye lines) adapt to approved Pipkin anatomy; no limb stretching, object scaling or floating; dangling feet never used as child coding | PRELIMINARY | Pipkin Part 5 §14–21, §25–26 |
+| Canonical objects stay true scale; visual, interaction and combat reach are separable; no combat style or weapon class inferred from stature | PRELIMINARY | Pipkin Part 5 §21–23 |
+| Gameplay-stat firewall: speed, acceleration, turning, stamina, jumping, falls, stealth, noise, balance, climbing, swimming, reach, dodge and encumbrance are not derived from anatomy | PRELIMINARY | Pipkin Part 5 §32 |
+| Part 5 rules out racial quick acceleration, rapid turns and superior balance, contradicting brief §16.11 ("short stride, quick acceleration, rapid turns and excellent balance") and the Principles line "Pipkin accelerate quickly with a short stride"; needs Tyler's explicit supersession or reinterpretation | OPEN | Part 5 §3, §9–10; brief §16.11; Part 5 audit 4a |
+| Pipkin equipment fit, collision, cameras, presets, randomization, lifecycle and the final first-pass review not yet covered; whether a Part 6 is planned | OPEN | Part 5 audit 4b |
+| Boundary between biomechanically necessary higher cadence at equal speed and rapid-step caricature; adult narrow-base step width relative to the broad pelvis | OPEN | Part 5 audit 4c–4d |
+| Pipkin movement speeds, acceleration, turning, jumping, climbing, swimming, stealth, reach, encumbrance, ladder and stair standards, mounts, lifecycle movement and motion architecture | OPEN | Pipkin Part 5 §8–25, §28, §31–32 |
+
 Marchfolk v1.0 and v1.5 are referenced but haven't been received here. Send them and their decisions go into this register.
