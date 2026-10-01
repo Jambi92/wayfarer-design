@@ -18,10 +18,10 @@
 - **Short-Race Comparative Anatomy Review — ACCEPTED / COMPLETE**
 
 ## In progress
-13. **Saurin — Parts 1–4 ACCEPTED; Part 5 authored; audit pending**
+13. **Saurin — Parts 1–5 ACCEPTED; Part 6 authored; FINAL AUDIT pending**
 
 ## Not yet designed
 13. Saurin
 
 ## Current next action
-Claude audits Saurin Part 5: movement, equipment, world interaction and gameplay boundaries. Do not begin UE5 implementation.
+Claude performs Saurin Part 6 final integration audit. Do not begin UE5 implementation.
