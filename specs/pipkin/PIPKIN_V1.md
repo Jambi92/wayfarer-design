@@ -676,4 +676,414 @@ No single phenotype bundle such as "fair + freckles + curly brown hair" may beco
 
 > **Pipkin surface phenotype is deliberately broad and overlapping: skin pigmentation, iris color, hair pigmentation and texture, freckling, tanning response, body hair and other visible biological traits create individual people rather than carrying the race. Pipkin identity remains rooted primarily in Low-Set Compact Trunk Architecture and secondarily in Integrated Mature Facial Architecture, while surface biology, presentation and observed rendering remain distinct layers.**
 
-Part 4 is **PATCHED AFTER FIRST AUDIT — FINAL RE-AUDIT REQUESTED**. No UE5 implementation is authorized.
+**Pipkin v1.0 Part 4 is FIRST-PASS ACCEPTED.** No UE5 implementation is authorized.
+
+
+# Part 5 Movement, posture, locomotion and whole-character physical expression
+
+## 1. Part 5 core rule
+
+> **Pipkin movement is the movement of a short, fully mature adult humanoid body with Low-Set Compact Trunk Architecture—not the movement of a child, scaled-down Marchfolk, miniature Durrim, scurrying creature, or inherently nimble fantasy halfling.**
+
+Movement must reveal the approved anatomy without exaggerating it into personality or gameplay advantage.
+
+Pipkin can move gracefully, awkwardly, confidently, cautiously, quickly, slowly, heavily or lightly as individuals. Race establishes biomechanical constraints and tendencies; culture, training, occupation, injury, age, equipment, terrain, fatigue and personality shape the observed performance.
+
+## 2. Anatomical Resting Alignment
+
+Pipkin default anatomical resting alignment is upright adult humanoid alignment.
+
+Low-Set Compact Trunk Architecture does **not** require:
+- crouching,
+- forward hunch,
+- permanently flexed hips or knees,
+- low shoulders,
+- bowed legs,
+- exaggerated lumbar arch,
+- belly-led posture,
+- chest-first posture,
+- or a childlike stance.
+
+Standing posture must remain compatible with the mature pelvis, moderate thorax, compact lumbar/waist transition and sustained limb contribution established in Parts 1–2.
+
+**Anatomical Resting Alignment is separate from Cultural or Personal Body Language.**
+
+## 3. Standing base and balance
+
+Pipkin's short stature creates a low absolute center of mass, but this is not itself a racial balance bonus.
+
+The approved pelvis, foot dimensions, limb relationships and body composition determine each character's actual base of support and mass distribution. Stance width must therefore emerge from anatomy and circumstance rather than a universal "wide halfling stance."
+
+A Narrow-frame Pipkin, Broad-frame Pipkin, muscular Pipkin and high-fat Pipkin may use visibly different comfortable standing bases while all remaining anatomically valid.
+
+## 4. Walking architecture
+
+Pipkin walking must be generated from their actual limb lengths, pelvic dimensions and trunk organization rather than by uniformly retiming or spatially shrinking a Marchfolk walk.
+
+At comparable comfortable effort, Pipkin generally require more gait cycles to cover the same absolute distance as taller populations because of shorter absolute limbs. This is a biomechanical consequence, **not yet a gameplay movement-speed decision**.
+
+The walk must avoid:
+- childlike quick-stepping as a racial default,
+- Durrim-like heavy compact drive by default,
+- exaggerated hip sway,
+- waddling,
+- bouncing,
+- scurrying,
+- tiny rapid footsteps used to fake equal speed,
+- or permanently shortened stride beyond anatomical necessity.
+
+Stride length, cadence, pelvic rotation, arm swing and vertical displacement must be allowed to resolve together.
+
+## 5. Pelvis and trunk during gait
+
+The mature pelvis is a major part of Pipkin body architecture, but movement must not turn that into exaggerated side-to-side hip motion.
+
+During ordinary gait, the pelvis participates in normal three-dimensional rotation and translation appropriate to step length and speed. The compact lumbar/waist transition coordinates with the thorax rather than behaving as a rigid block.
+
+The thorax remains comparatively moderate and should not dominate locomotion. The upper body may counter-rotate against the pelvis as appropriate without creating either a toy-like twisting motion or Durrim structural-block movement.
+
+## 6. Limb swing and segment coordination
+
+Pipkin retain substantial proportional limb contribution despite short stature. Their gait should therefore preserve visible adult limb excursion rather than making arms and legs appear unusually abbreviated in motion.
+
+Arm swing emerges from shoulder anatomy, speed, load and individual behavior. It is not inherently large, cute, jaunty or energetic.
+
+Femur, lower leg, ankle and foot coordinate as an adult locomotor chain. No single segment should be retimed independently merely to make a short character match a taller character's animation.
+
+## 7. Foot contact and plantigrade locomotion
+
+Pipkin are plantigrade.
+
+Ordinary walking and running use mature humanoid heel-to-forefoot or contextually appropriate foot-contact mechanics, subject to speed, footwear, terrain and individual gait.
+
+Their somewhat substantial foot contribution may support stable contact geometry, but it does not authorize:
+- oversized slap-foot motion,
+- barefoot preference,
+- silent steps,
+- automatic traction bonuses,
+- or superior balance.
+
+Toe-off and ankle motion must remain proportional to the actual foot and lower-limb anatomy.
+
+## 8. Running
+
+Running must remain recognizably adult and anatomically Pipkin.
+
+Pipkin do not biologically require a rapid-cadence "little person run," exaggerated pumping arms, high knee lift, bounding, skipping or forward lean.
+
+Absolute stride length will generally be shorter than in taller populations, but cadence, flight phase, stride frequency and speed are systems to validate rather than assumptions.
+
+> **Pipkin anatomy does not by itself decide final gameplay run speed.**
+
+Equal gameplay speed, anatomy-relative speed, acceleration and stamina behavior remain **OPEN** for the later movement/gameplay review.
+
+## 9. Sprinting and acceleration
+
+Sprinting increases joint excursion, force demand, cadence and body lean as appropriate to the individual.
+
+Short stature must not automatically grant quicker acceleration, tighter turning, lower inertia, greater agility or superior evasiveness. Conversely, it must not automatically impose poor sprinting ability.
+
+Any gameplay-level acceleration or agility differences require explicit later approval rather than being inferred from animation.
+
+## 10. Turning and direction change
+
+Turning must account for actual foot placement, pelvis orientation, center-of-mass transfer and stride state.
+
+Pipkin must not pivot like scaled game pieces merely because their footprint is small. Sharp turns may require planted steps, crossover steps, shortened steps or body rotation depending on speed.
+
+Small body size does not automatically approve smaller gameplay turning radius or superior maneuverability.
+
+## 11. Starting, stopping and idle transitions
+
+Transitions between idle, walk, run and stop should preserve weight transfer and adult intent.
+
+Avoid animation shortcuts in which Pipkin instantly snap into motion, shuffle their feet continuously, bounce in idle, or perform unnecessary "lively halfling" motions.
+
+Neutral idle must be genuinely neutral. Personality-specific fidgeting belongs to presentation/behavior systems.
+
+## 12. Crouching and sneaking
+
+Crouching is an active posture, not Pipkin resting anatomy.
+
+A crouched Pipkin must visibly flex through hips, knees, ankles and trunk as appropriate rather than merely lowering the entire character or compressing the spine.
+
+The legacy trait **"Pipkin are harder to notice while sneaking" remains a gameplay trait subject to later review.** Part 5 provides no biological justification for it.
+
+Short stature, smaller silhouette, foot size or gait do not independently authorize stealth bonuses, reduced sound, lower detection or superior concealment.
+
+## 13. Jumping and landing
+
+Jumping ability is not inferred from short stature.
+
+Takeoff must coordinate ankle, knee, hip and trunk extension; landing must absorb force through the same chain with balance appropriate to the individual and surface.
+
+Pipkin are not inherently springy, bouncy, acrobatic or poor jumpers.
+
+Absolute jump height, gameplay jump height, fall tolerance and landing penalties remain **OPEN**.
+
+## 14. Stairs and stepped terrain
+
+Stairs are a critical world-scale validation domain because Pipkin have short absolute legs.
+
+Pipkin should ascend and descend steps through real foot placement and joint motion. They must not be forced into:
+- impossible knee elevation,
+- foot penetration,
+- floating,
+- constant hopping,
+- or animation-scale cheating.
+
+Large steps may require altered cadence, greater hip/knee flexion, step-to patterns, hand support or alternate world accommodation depending on geometry.
+
+World design must be validated against approved Pipkin anatomy rather than changing Pipkin proportions to fit Marchfolk stairs.
+
+## 15. Slopes and uneven terrain
+
+Inclines, declines and uneven terrain require anatomy-aware foot placement, ankle adaptation, knee/hip response and center-of-mass management.
+
+Pipkin's lower absolute center of mass is not an automatic terrain advantage. Their short legs may interact differently with obstacle height and ground variation, but gameplay consequences remain **OPEN**.
+
+## 16. Stepping over and climbing ordinary obstacles
+
+Obstacle negotiation must use the Pipkin's actual hip height, leg length, reach and joint ranges.
+
+A ledge that a Marchfolk character casually steps over may require a larger step, hand support, mantle or different route for a Pipkin. That is a world/interaction requirement, not evidence that Pipkin anatomy should be stretched during the action.
+
+Likewise, small size does not automatically allow squeezing through spaces unless collision and interaction rules explicitly permit it.
+
+## 17. Ladders
+
+Standard ladder geometry must be validated against Pipkin reach and step span.
+
+Pipkin should not stretch arms or legs beyond approved anatomy to reuse a taller race's rung spacing. Solutions may include alternate hand/foot sequencing, intermediate contacts, world-standard geometry that supports the playable range, or context-specific traversal design.
+
+Final ladder standards remain **OPEN** for world interaction design.
+
+## 18. Climbing and mantling
+
+Climbing ability is not biologically defined by being small.
+
+Mantling must account for hand reach, shoulder position, torso length, hip height, foot placement and obstacle geometry. Animation must not create temporary limb elongation or scale the obstacle.
+
+Maximum gameplay mantle height and climbing proficiency remain **OPEN**.
+
+## 19. Sitting and seated posture
+
+Pipkin require seat validation against their actual thigh length, lower-leg length, pelvis and foot reach.
+
+On oversized seating, valid outcomes may include feet not reaching the floor, altered seat depth use, moving toward the seat edge, using a footrest or purpose-built furniture. The body must not be enlarged or legs lengthened to make a Marchfolk chair fit.
+
+Seated posture remains adult. Dangling feet may occur as a geometric consequence on oversized furniture but must never be used as child coding.
+
+## 20. Rising, kneeling and floor transitions
+
+Sit-to-stand, kneeling, squatting, floor sitting, prone recovery and similar transitions must respect the Pipkin pelvis, limb lengths and center of mass.
+
+These motions should not be assumed easier merely because the body is small or harder merely because the legs are short.
+
+Age, composition, equipment, injury and training may alter execution.
+
+## 21. Reaching and interaction height
+
+Pipkin possess less absolute reach than taller populations as a straightforward consequence of stature.
+
+This does not automatically determine gameplay interaction reach. Visual reach, interaction targeting distance, combat reach and usability assistance must remain separate systems.
+
+For visible contact actions, hands should meet the object honestly. Pipkin must not:
+- stretch arms,
+- scale upward,
+- float,
+- interact visibly with empty space,
+- or silently move world objects to match taller-character markers.
+
+Counters, levers, shelves, handles and crafting stations require cross-stature validation.
+
+## 22. Carrying and object handling
+
+Canonical equipment and object dimensions remain independent of the holder.
+
+A Pipkin carrying the same object as a Marchfolk character experiences a different object-to-body scale relationship. Animation must preserve that fact rather than shrinking the object or pretending identical grip spacing always works.
+
+Grip placement, hand spacing, center-of-mass relationship, object clearance and locomotion may need object-specific solutions.
+
+This section does not decide strength, encumbrance or equipment restrictions.
+
+## 23. Weapons and combat-motion boundary
+
+Part 5 does not establish Pipkin combat style.
+
+Short stature must not biologically imply:
+- daggers,
+- short swords,
+- slings,
+- evasive fighting,
+- low attacks,
+- acrobatics,
+- ambush tactics,
+- or avoidance of large weapons.
+
+Weapon feasibility depends on canonical weapon dimensions, anatomy, strength systems, technique and later combat design.
+
+Visual weapon contact and gameplay hit reach must remain separable where necessary.
+
+## 24. Swimming boundary
+
+Pipkin swimming performance is **OPEN**.
+
+Part 5 does not infer swimming speed, buoyancy, endurance or preferred stroke from stature, body fat, foot size or the low-set trunk. Water locomotion requires its own cross-race review.
+
+## 25. Mounting and vehicles
+
+Mounts, saddles, carts, boats, vehicles and other constrained interaction systems must validate Pipkin reach, hip width, leg span and eye height.
+
+Pipkin anatomy must not be scaled to fit a universal mount pose. Mount and vehicle solutions may require race-aware contact points or equipment.
+
+No biological riding aptitude is implied.
+
+## 26. Head, gaze and social interaction height
+
+Pipkin eye height is substantially lower than that of many playable populations.
+
+Dialogue and social animation should preserve real eye-line differences rather than lifting Pipkin, shrinking tall characters or forcing unnatural neck extension.
+
+Looking upward is not submissive body language; looking downward by a taller character is not dominance. These are geometric consequences unless performance intentionally communicates otherwise.
+
+Camera solutions must not rewrite anatomical posture.
+
+## 27. Cultural and personal body language
+
+Culture and personality may influence stance, gesture, interpersonal distance, habitual movement, expressiveness and posture, but none is encoded as Pipkin biology.
+
+No default "cheerful bounce," "mischievous sneak," "rustic swagger," "nervous quickness" or "friendly openness" belongs to the race.
+
+Animation libraries must be capable of separating anatomical locomotion from performance style.
+
+## 28. Age and movement
+
+The youngest valid adult uses mature locomotor mechanics.
+
+Older Pipkin may show individual changes in speed, range of motion, balance strategy, posture or transition mechanics, but chronology does not mandate frailty.
+
+Lifecycle timing remains **OPEN**. Age-related movement variation should eventually be systemic rather than a single "old Pipkin" animation.
+
+## 29. Composition and movement
+
+Muscularity, body-fat amount/distribution and skeletal frame may affect inertia, soft-tissue motion, range-of-motion constraints and visible movement dynamics.
+
+These must not collapse into stereotypes:
+- muscular Pipkin are not automatically stiff or aggressive,
+- higher-fat Pipkin are not automatically slow or waddling,
+- Narrow-frame Pipkin are not automatically agile,
+- Broad-frame Pipkin are not automatically heavy-footed.
+
+Animation must preserve the underlying anatomy across composition extremes.
+
+## 30. Clothing, armor and carried-load effects
+
+Clothing, armor, backpacks, shields and carried objects may constrain stride, arm swing, joint range, clearance and posture.
+
+Those are equipment effects, not racial gait.
+
+Garments and armor must fit the Pipkin body rather than forcing the body into a Marchfolk-shaped animation envelope.
+
+## 31. Animation-system requirements
+
+Later implementation must support race-aware motion without assuming one uniformly scaled humanoid animation set can represent all approved anatomy.
+
+At minimum, future architecture must be able to account for:
+- actual limb lengths,
+- pelvis and shoulder positions,
+- foot size and contact,
+- stride and cadence relationships,
+- hand/object contact,
+- interaction heights,
+- stairs and ladders,
+- sitting geometry,
+- terrain adaptation,
+- camera/eye-line differences,
+- and equipment clearance.
+
+This is a functional requirement, not an implementation prescription. Shared source animations, retargeting, procedural adjustment, IK, motion matching or race-specific clips remain technical decisions for later.
+
+## 32. Gameplay-stat firewall
+
+> **Anatomical movement requirements do not automatically create gameplay statistics.**
+
+The following remain independent design decisions unless explicitly approved:
+- walk speed,
+- run speed,
+- sprint speed,
+- acceleration,
+- stamina,
+- jump height,
+- fall damage,
+- turning rate,
+- stealth detection,
+- footstep noise,
+- balance/knockdown resistance,
+- climbing skill,
+- swimming speed,
+- interaction reach,
+- combat reach,
+- dodge distance,
+- and encumbrance.
+
+Visual plausibility and gameplay balance may require coordination later, but neither silently defines the other.
+
+## 33. Part 5 validation cast
+
+| ID | Target |
+| --- | --- |
+| PIP-MOVE-01 | Neutral standing reference; adult upright alignment, no stereotype |
+| PIP-MOVE-02 | Comfortable walk at reference anatomy; adult gait |
+| PIP-MOVE-03 | Narrow-frame low-muscle walk; not childlike or scurrying |
+| PIP-MOVE-04 | Broad-frame high-muscle walk; not Durrim-like by default |
+| PIP-MOVE-05 | Higher-fat walk; no waddle or comic bounce |
+| PIP-MOVE-06 | Maximum-height Pipkin walk beside minimum-height Durrim; locomotor identity follows anatomy |
+| PIP-MOVE-07 | Adult Pipkin beside similar-height human child; gait remains mature |
+| PIP-MOVE-08 | Run and sprint progression; no automatic rapid-cadence caricature |
+| PIP-MOVE-09 | 90° and 180° turns at multiple speeds with real foot placement |
+| PIP-MOVE-10 | Crouch/sneak; active joint flexion, no biological stealth claim |
+| PIP-MOVE-11 | Jump takeoff and landing; adult mechanics |
+| PIP-MOVE-12 | Standard stair ascent/descent across validated step heights |
+| PIP-MOVE-13 | Uneven terrain and slope traversal |
+| PIP-MOVE-14 | Ladder traversal with honest reach |
+| PIP-MOVE-15 | Mantle/obstacle negotiation with no limb stretching |
+| PIP-MOVE-16 | Marchfolk-scale chair; honest seated geometry and adult read |
+| PIP-MOVE-17 | Pipkin-scale or universally accessible chair; compare posture/contact |
+| PIP-MOVE-18 | Counter/lever interaction above comfortable standing hand height |
+| PIP-MOVE-19 | Same canonical carried object used by Pipkin and Marchfolk; no object auto-scaling |
+| PIP-MOVE-20 | Dialogue with Marchfolk, Durrim and Gorrund; natural eye lines, no posture distortion |
+| PIP-MOVE-21 | Youngest valid adult; movement still adult |
+| PIP-MOVE-22 | Elder adult; age variation without mandatory frailty |
+| PIP-MOVE-23 | Same anatomy with contrasting personality/body-language performances; biology unchanged |
+| PIP-MOVE-24 | Heavy equipment/load versus unencumbered movement; equipment effect remains separate from race |
+
+## 34. Combined stress tests
+
+- Minimum-height Pipkin + Narrow frame + low muscle + fast locomotion: must remain an adult, not a running child.
+- Minimum-height Pipkin + high body fat + stairs: must not default to waddling or comic exertion.
+- Maximum-height Broad Pipkin + high muscle + heavy equipment: must not collapse into Durrim motion.
+- Larger-valid feet + fast turn: foot placement remains plausible without exaggerated planted pivots.
+- Young adult + smooth surface phenotype + no facial hair + neutral clothing + walk cycle: maturity must survive without age/presentation cues.
+- Oversized chair + dangling feet + youthful-looking face: must remain adult and avoid child coding.
+- High counter interaction + canonical object: solve contact honestly without limb stretching.
+- Same walk-speed gameplay target as a taller race, if later chosen: animation must solve cadence/stride without tiny rapid-step caricature.
+- Same canonical large weapon, if later permitted: body and object remain true scale; no automatic weapon shrink.
+- Dialogue with Gorrund: eye-line solution must preserve both characters' resting alignment.
+
+## 35. Cross-race movement boundaries
+
+| Population | Movement distinction relevant to Pipkin |
+| --- | --- |
+| Marchfolk | Human reference locomotion; Pipkin cannot be represented by uniform spatial/temporal scaling |
+| Durrim | Greater compact structural concentration and reduced limb contribution produce different motion relationships; Pipkin must not borrow a heavy dwarf gait |
+| Fenn | Gracile extremity-emphasized anatomy differs from Pipkin compact short-adult organization; Pipkin are not miniature light-footed elves |
+| Grask | Long reach and limb-dominant anatomy create fundamentally different stride/reach geometry |
+| Gorrund | Massive axial load-path continuity differs from Pipkin light construction; Pipkin never imitate mass through exaggerated weightiness |
+| Cogling | NOT YET DESIGNED; Part 5 makes no claim about Cogling locomotion |
+
+## 36. Part 5 identity statement and status
+
+> **Pipkin locomotion is adult short-stature humanoid movement generated from Low-Set Compact Trunk Architecture, a mature pelvis, comparatively light skeletal construction and proportionally sustained limbs. Their motion is upright, weight-bearing and anatomically honest without requiring waddling, bouncing, scurrying, childlike cadence, exaggerated hip motion or innate nimbleness. World interactions, equipment contacts and locomotor animation must adapt to their approved anatomy, while gameplay speed, agility, stealth, reach and other statistics remain separate decisions.**
+
+Part 5 is **PROPOSED FOR AUDIT**. No UE5 implementation is authorized.
