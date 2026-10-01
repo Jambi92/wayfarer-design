@@ -997,20 +997,18 @@ Pipkin v1.0 Part 6 (patched at `7222774`; quick check PASS; Tyler approved the c
 | Provisional biological preset concepts (Reference, Light Narrow, Broad, Powerfully Developed, High-Adiposity, Tall-Boundary, Short-Boundary, Elder) are coverage concepts, not castes, cultures or frequencies; presentation presets cross them | AGREED (provisional library) | Pipkin Part 6 §21 |
 | PIP-INT-21 like-for-like sex movement comparison; prototype 0.7× (about 121 cm) recorded as non-authoritative | AGREED | Pipkin Part 6 §33–34 |
 
-Cogling v1.0 Part 1 (proposed; audit PASS WITH CLARIFICATIONS)
+Cogling v1.0 Part 1 (patched at `7f95827`; re-audit PASS; pending Tyler's approval)
 
 | Decision | Status | Source |
 | --- | --- | --- |
 | Cogling are a distinct very-small adult humanoid population, never miniature humans, smaller Pipkin, slender Durrim, child-proportioned adults or biological tinkerers; positively defined, not the Durrim–Pipkin midpoint | PRELIMINARY | Cogling Part 1 §1–2 |
-| **Fine-Scale Elongated Articulation:** compact central body → narrow limb shafts → articulated distal joints → distal segment emphasis (forearm, lower leg, hand, fingers); not a slider | PRELIMINARY (Fenn and Grask convergence to resolve) | Cogling Part 1 §3, §8; audit 4a |
-| Provisional stature about 76–91–107 cm; brief 0.45× non-authoritative; no whole-body scale multiplier | PRELIMINARY (Pipkin overlap framing to resolve) | Cogling Part 1 §4; audit 4b |
+| **Fine-Scale Elongated Articulation:** narrow stable central core → near-Marchfolk total limb contribution → fine limb shafts → within-limb redistribution toward forearm, lower leg, hand and fingers; never globally limb-dominant or reach-specialized (distinct from Fenn and Grask); not a slider | PRELIMINARY | Cogling Part 1 §3, §6, §8–9, §12; re-audit |
+| Provisional stature about 76–91–107 cm, with an intentional Pipkin overlap zone of about 91–107 cm (not a single-height boundary); brief 0.45× non-authoritative; no whole-body scale multiplier | PRELIMINARY | Cogling Part 1 §4; re-audit |
 | Adult read from anatomy alone; no oversized cranium or eyes, tiny jaw, juvenile pelvis or shoulders, infant hands or feet; head size never the mechanism of smallness | PRELIMINARY | Cogling Part 1 §5, §17–18 |
 | Fine skeletal construction never means brittle, weak or low capacity; frame, muscle and fat independent; five digits, ordinary nails | PRELIMINARY | Cogling Part 1 §7, §19–24 |
 | Long fingers are anatomy; dexterity, crafting, engineering, intelligence and tinkering are never biological; no gameplay dexterity bonus approved | PRELIMINARY | Cogling Part 1 §10–11, §27 |
 | Brief Cogling movement language ("quick steps, frequent turns, efficient climbing, precise hand movements") and "fine motor control" are legacy, under review; any rejection as racial traits needs Tyler's explicit supersession | OPEN (Tyler decision when the movement part arrives) | Cogling Part 1 §11, §28; brief §16.12; audit §5 |
-| Total vs within-limb distal emphasis relative to Fenn and Grask; normalized-height Fenn and Grask tests | OPEN | Cogling Part 1 audit 4a |
-| Cogling–Pipkin overlap of about 91–107 cm framed as a single boundary; choose an explicit overlap zone or a narrower maximum | OPEN | Cogling Part 1 audit 4b |
-| Toddler-band child test at minimum height; face readability at an adult head size of about 11–13 cm | OPEN | Cogling Part 1 audit 4c |
-| Positive central-body statement; COG-BODY-10 unrunnable (no Durrim height overlap); prototype Cogling 0.72× (about 125 cm) taller than prototype Pipkin; "compact" terminology | OPEN | Cogling Part 1 audit 4d–4g |
+| Normalized-height Fenn and Grask tests (COG-BODY-16, 17); normalized Durrim test (COG-BODY-10, 10A); toddler test (COG-BODY-11); prototype 0.72× (about 125 cm) recorded as non-authoritative | PRELIMINARY | Cogling Part 1 §31–32; re-audit |
+| Face and expression readability at an adult head size of about 11–13 cm (not yet in the spec's OPEN list); §34 identity statement still uses the pre-patch "compact" anchor | OPEN | Cogling Part 1 re-audit 3a–3b |
 
 Marchfolk v1.0 and v1.5 are referenced but haven't been received here. Send them and their decisions go into this register.
