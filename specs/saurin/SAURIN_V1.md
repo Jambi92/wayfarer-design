@@ -13,14 +13,13 @@ Saurin are the thirteenth and final playable race first-pass design.
 
 Their racial identity must survive removal of:
 - scales/color pattern;
-- tail silhouette;
 - claws;
 - clothing;
 - cultural objects;
 - animation personality;
 - environmental context.
 
-The skeleton and body relationships must carry a positive non-human identity before surface phenotype is added.
+The skeleton and body relationships must carry a positive non-human identity before surface phenotype is added. **The tail is part of that skeleton and is never removed from Saurin biological validation.**
 
 ## 2. Design objective
 
@@ -80,12 +79,13 @@ Saurin are not defined by exceptional height. Individuals may overlap Marchfolk,
 
 At Marchfolk-matched height and neutral gray material, a Saurin must remain clearly non-human through:
 - axial/pelvic architecture;
-- tail integration;
-- thoracic organization;
+- mandatory tail integration;
+- thoracic/shoulder organization;
+- pelvic-femoral relationships;
 - limb-joint relationships;
 - hand/foot anatomy.
 
-Height cannot be the primary discriminator.
+Height cannot be the primary discriminator. The correct diagnostic question is not whether Saurin remain fully identifiable after deleting a primary anatomical structure; it is whether the **tail looks biologically inevitable on the body rather than attached to an otherwise unrelated humanoid**.
 
 ## 6. Axial trunk
 
@@ -124,7 +124,12 @@ The shoulder silhouette should not require:
 - wing-like shoulder blades;
 - bodybuilder width.
 
-Exact clavicular/scapular anatomy remains OPEN pending detailed comparative validation.
+Positive first-pass shoulder relationship:
+- the scapular platform is organized around a **deep, narrow-to-moderate thoracic shell** rather than a broad clavicle-led human upper-body frame;
+- scapular support and upper-arm articulation remain integrated with the lateral/posterolateral thorax;
+- clavicular contribution is present but is not the dominant transverse structural carrier.
+
+Exact dimensions remain OPEN pending detailed comparative validation.
 
 ## 9. Pelvis and sacral base
 
@@ -140,11 +145,19 @@ First-pass direction:
 
 The posterior pelvis should read as designed around a real continuation of the vertebral axis.
 
+### Pelvic-femoral relationship
+
+Saurin pelvis is provisionally **longer front-to-back and more posteriorly organized in structural mass than the Marchfolk adult tendency**. The hip joints and proximal femora are positioned relative to that posterior mass so the lower limbs support an upright biped whose axial load continues into a substantial tail.
+
+This is not a crouched-lizard pelvis and does not force splayed legs. It is a positive structural relationship between pelvis, hip, femur and caudal base.
+
 ## 10. Tail
 
 All baseline Saurin possess a biological tail.
 
 The tail:
+- is a **mandatory, always-present racial anatomical feature**, not a creator toggle or optional phenotype;
+- remains visible as part of normal Saurin anatomy rather than being biologically hidden;
 - emerges from integrated sacral/caudal anatomy;
 - is muscular and articulated;
 - tapers gradually;
@@ -197,7 +210,9 @@ Saurin center of mass must eventually be derived from:
 - muscularity;
 - adiposity.
 
-Part 1 does not grant automatic balance, knockback resistance, agility, turning or swimming benefits.
+The tail **participates biomechanically** in balance, turning, acceleration, swimming motion and body language through real counterbalancing mass and axial movement.
+
+This biomechanical participation does **not** automatically grant statistical/gameplay bonuses to balance, knockback resistance, agility, turning, acceleration or swimming. Gameplay effects remain a separate later decision.
 
 ## 14. Lower limbs
 
@@ -350,6 +365,8 @@ Selecting sex-related biological anatomy does not determine:
 
 Population-level correlations may later exist as soft distributions, not hard creator dependencies.
 
+As a non-human population, Saurin are **not assumed to share human sex-related anatomy**. Their actual sex-related anatomical configurations and dimorphism require explicit later design rather than human defaults.
+
 Exact dimorphism remains OPEN.
 
 ## 25. Posture
@@ -449,7 +466,13 @@ If those traits are retained later, their biological/gameplay basis must be deli
 ## 31. Comparative boundaries
 
 ### Marchfolk
-Saurin are not humans with scales/tails. Axial-pelvic-tail integration and non-human extremity relationships must survive surface removal.
+Saurin are not humans with scales/tails. Axial-pelvic-tail integration, pelvic-femoral organization, thoracic/shoulder organization and non-human extremity relationships must survive **surface** removal. The biological tail remains present.
+
+### Skarn
+Saurin may overlap Skarn in stature and thoracic depth, but Skarn remain large powerful humans with broad clavicular/upper-body construction and no caudal continuation. Saurin use deep narrow-to-moderate thoracic/scapular organization, posteriorly organized pelvic-femoral architecture and an integrated caudal axis rather than Skarn human robustness.
+
+### Aelari
+Aelari elongation is distributed vertically through cranium, neck, torso and limbs with gracile elven structure. Saurin lower-axial length is concentrated through the trunk-to-pelvis-to-tail system, with meaningful thoracic depth, different shoulder organization and a posteriorly integrated pelvis.
 
 ### Fenn
 Saurin do not use elven gracility, long extremities or ear anatomy as identity.
@@ -475,8 +498,8 @@ Any modest forearm emphasis is not Cogling Fine-Scale Elongated Articulation: Sa
 | --- | --- |
 | SAU-BODY-01 | Minimum/reference/maximum Saurin in neutral gray material |
 | SAU-BODY-02 | Reference Saurin with scales/color/presentation visually neutralized; identity survives |
-| SAU-BODY-03 | Saurin and Marchfolk at equal standing height; tail hidden in one pass and visible in another |
-| SAU-BODY-04 | Tail-hidden Saurin still reads non-human through trunk/pelvis/limbs/extremities |
+| SAU-BODY-03 | Saurin and Marchfolk at equal standing height with surface phenotype neutralized; the complete Saurin tail remains present |
+| SAU-BODY-04 | **Integrated-organism test:** the tail must look biologically inevitable from thorax → lower axial trunk → posterior pelvis/hip → caudal base rather than attached to a human-like body |
 | SAU-BODY-05 | Narrow/Balanced/Broad frames |
 | SAU-BODY-06 | Low/high muscularity independent of frame |
 | SAU-BODY-07 | Low/high adiposity including high-fat valid Saurin |
@@ -490,9 +513,11 @@ Any modest forearm emphasis is not Cogling Fine-Scale Elongated Articulation: Sa
 | SAU-BODY-15 | Cogling-normalized forearm/distal comparison |
 | SAU-BODY-16 | Durrim-normalized joint/structural-concentration comparison |
 | SAU-BODY-17 | Plantigrade foot reads non-human without digitigrade shortcut |
-| SAU-BODY-18 | Tail removed diagnostically; remaining anatomy still carries Saurin identity |
+| SAU-BODY-18 | **Tail-integration stress test:** vary valid tail length/base mass while preserving coherent pelvic-femoral and sacral support; the tail is never removed |
 | SAU-BODY-19 | Same body with multiple neutral sex-related anatomical configurations; race identity unchanged |
 | SAU-BODY-20 | Tail plus canonical chair/door/corridor proxy to expose world-space consequences without solving them |
+| SAU-BODY-21 | Saurin vs Skarn at normalized standing height and matched composition with surface phenotype neutralized; Saurin caudal/pelvic-femoral and thoracic/scapular system remains distinct from Skarn human robustness |
+| SAU-BODY-22 | Saurin vs Aelari at normalized standing height and matched composition with surface phenotype neutralized; lower-axial/caudal organization remains distinct from Aelari distributed vertical elongation |
 
 ## 33. OPEN after Part 1
 
@@ -506,6 +531,7 @@ Any modest forearm emphasis is not Cogling Fine-Scale Elongated Articulation: Sa
 - tail length distribution;
 - tail mass distribution;
 - tail mobility;
+- tail world-space requirements for backed seating, benches, beds, crowds/multiplayer collision, closing doors, capes/cloaks/back armor, mounts and rear camera framing;
 - limb segment ratios;
 - hand/finger proportions;
 - foot/toe proportions;
@@ -533,8 +559,14 @@ Any modest forearm emphasis is not Cogling Fine-Scale Elongated Articulation: Sa
 - class restrictions;
 - technical implementation.
 
+### Stature-accounting note
+The elongated lower axial trunk and moderate-to-long leg contribution cannot both expand without compensating elsewhere in total standing height. Part 2 must explicitly account for head, neck, thoracic-height, lower-trunk and leg shares rather than allowing independent proportional inflation.
+
+### Prototype authority
+Any existing prototype Saurin scale, collision, shared-human animation, breath-holding value or swimming value is **non-authoritative** where it conflicts with approved target anatomy or later approved gameplay design. The current ~188 cm reference intentionally revises the preliminary brief's approximate ~182 cm reference and remains provisional.
+
 ## 34. Part 1 identity statement
 
-> **Saurin are a distinct reptilian humanoid population whose body is organized around Counterbalanced Pelvic-Axial Architecture: a deep mobile thorax continues through an elongated lower axial trunk into a strongly integrated pelvis and sacral base that supports a substantial articulated tail. Their upright plantigrade bipedal skeleton uses moderate-to-substantial structural mass, mature non-human extremity relationships and broad frame/composition variation without requiring a crouched lizard posture, dragon traits, aquatic specialization, muscularity or behavioral stereotypes. The tail is a real part of their mass and axial anatomy, but the race must remain recognizable even when the tail and surface phenotype are diagnostically hidden.**
+> **Saurin are a distinct reptilian humanoid population whose body is organized around Counterbalanced Pelvic-Axial Architecture: a deep mobile thorax continues through an elongated lower axial trunk into a strongly integrated pelvis and sacral base that supports a substantial articulated tail. Their upright plantigrade bipedal skeleton uses moderate-to-substantial structural mass, mature non-human extremity relationships and broad frame/composition variation without requiring a crouched lizard posture, dragon traits, aquatic specialization, muscularity or behavioral stereotypes. The tail is a real, mandatory and visible part of their mass and axial anatomy. Validation neutralizes surface phenotype but **does not remove the tail**; instead, it must demonstrate that the tail is anatomically inevitable from the complete pelvic-axial organism rather than an attachment to a humanoid body.**
 
 Part 1 is **PROPOSED FOR AUDIT**.
