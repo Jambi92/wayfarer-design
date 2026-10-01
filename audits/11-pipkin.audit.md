@@ -1,6 +1,6 @@
 # Audit: Pipkin Character Design v1.0 (in progress)
 
-Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `races/11-pipkin.md`; Tyler decides what, if anything, changes.
+Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `specs/pipkin/PIPKIN_V1.md`; Tyler decides what, if anything, changes.
 
 ## Open notes
 

@@ -1,6 +1,6 @@
 # Audit: Vael Character Customization v1.5 (first pass complete)
 
-Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `races/06-vael.md`; Tyler decides what, if anything, changes.
+Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `specs/vael/VAEL_V1.md`; Tyler decides what, if anything, changes.
 
 ## Open notes
 

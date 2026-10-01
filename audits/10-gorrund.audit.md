@@ -1,6 +1,6 @@
 # Audit: Gorrund Character Design v1.0 (first pass complete)
 
-Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `races/10-gorrund.md`; Tyler decides what, if anything, changes.
+Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `specs/gorrund/GORRUND_V1.md`; Tyler decides what, if anything, changes.
 
 ## Open notes
 

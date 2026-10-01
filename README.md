@@ -6,13 +6,13 @@ Design specifications for **Wayfarer**, a UE5 RPG. This repo holds design docume
 
 | Who | Role | Writes to |
 | --- | --- | --- |
-| **ChatGPT** | Author. Writes the race specs, parts and clarification patches, following Tyler's rules, and owns the universal project rules. | `specs/`, `races/`, `reviews/`, `rules/`, `decisions/` |
+| **ChatGPT** | Author. Writes the race specs, parts and clarification patches, following Tyler's rules, and owns the universal project rules. | `specs/`, `reviews/`, `rules/`, `decisions/` |
 | **Claude** | Auditor. Records approved material, checks it for contradictions, ambiguities, convergence between races and coding risks, and reports them. Claude doesn't silently fix the spec. | `audits/`, `register/` |
 | **Tyler** | Decides. Approves, rejects or asks for patches. Nothing becomes AGREED without Tyler. | Anything |
 
 ## Authority order
 
-1. **Approved Design Specification** (`races/`, `reviews/`, `rules/`)
+1. **Approved Design Specification** (`specs/`, `reviews/`, `rules/`)
 2. **Open Decision Register** (`register/decision-register.md`)
 3. **Prototype implementation**, including earlier shorthand (the UE5 project and older plan wording)
 
@@ -22,7 +22,8 @@ A higher level always wins. Existing implementation never overrides an approved 
 
 | Path | Contents |
 | --- | --- |
-| `races/NN-<race>.md` | One spec per race, numbered in design order |
+| `specs/<race>/<RACE>_V1.md` | The one official spec per race (full approved text) |
+| `specs/STATUS.md` | Race status and current next action |
 | `audits/NN-<race>.audit.md` | Claude's open notes for that race (notes to check, not changes) |
 | `reviews/` | Cross-race reviews (Elf Comparative Review so far) |
 | `audits/<review>.audit.md` | Open notes for each review |
@@ -53,11 +54,12 @@ A higher level always wins. Existing implementation never overrides an approved 
 
 - **Universal rules:** ChatGPT authors and maintains `decisions/PROJECT_RULES.md`.
 - **Per-part decision log:** Claude records each approved part and patch in `register/decision-register.md`.
+- **Official spec files:** each race's full approved text lives in `specs/<race>/<RACE>_V1.md`; new parts and patches are added there.
 - **Audits:** new audits go in per-part files (for example `audits/pipkin-part-2.md`); the per-race `audits/NN-<race>.audit.md` files are kept as history.
 
 ## Workflow
 
-1. ChatGPT writes a part or patch and commits it to the race file (or opens a pull request).
+1. ChatGPT writes a part or patch and commits it to the race's file in `specs/` (or opens a pull request).
 2. Claude audits it: adds the Decision Register entries and writes its findings to a per-part audit file in `audits/`.
 3. Tyler reads the audit and decides. A patch that resolves a note moves it out of the audit file.
 

@@ -183,6 +183,12 @@ Implementation-level verification stays deferred.
 
   Keeping per-part files for new audits and the per-race files as history works.
 
+## Resolution, September 30, 2026
+
+- **Clarification 1 (canonical file): resolved.** Tyler chose `specs/` as the official location. The full approved Parts 1–2 text now lives in `specs/pipkin/PIPKIN_V1.md`, replacing the condensed copy (which stays in git history at `cb3510e`). Every §2 omission is restored by this, with no design text changed. The other ten races moved to `specs/<race>/<RACE>_V1.md` the same way.
+- **Register ownership: resolved.** ChatGPT owns `decisions/PROJECT_RULES.md`; Claude keeps `register/decision-register.md`.
+- **Clarifications 2–4: still open** for ChatGPT to patch.
+
 ## 7. Completion recommendation
 
 - **Design:** Part 2 is accepted for first pass, with clarifications 2 and 3 to be resolved by patch. They can arrive alongside Part 3.

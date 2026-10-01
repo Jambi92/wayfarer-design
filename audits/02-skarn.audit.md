@@ -1,6 +1,6 @@
 # Audit: Skarn Character Customization v1.5 (first-pass complete)
 
-Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `races/02-skarn.md`; Tyler decides what, if anything, changes.
+Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `specs/skarn/SKARN_V1.md`; Tyler decides what, if anything, changes.
 
 ## Open notes
 

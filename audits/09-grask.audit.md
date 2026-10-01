@@ -1,6 +1,6 @@
 # Audit: Grask Character Design v1.0 (first pass complete)
 
-Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `races/09-grask.md`; Tyler decides what, if anything, changes.
+Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `specs/grask/GRASK_V1.md`; Tyler decides what, if anything, changes.
 
 ## Open notes
 
