@@ -1,6 +1,6 @@
 # Cogling Character Design v1.0
 
-**Status:** IN PROGRESS — Part 1 patched after first audit  
+**Status:** IN PROGRESS — Part 1 FIRST-PASS ACCEPTED; Part 2 proposed for audit  
 **Phase:** DESIGN ONLY  
 **Implementation:** Not authorized
 
@@ -459,6 +459,7 @@ No implementation audit is performed in Part 1.
 | COG-BODY-07 | Hands hidden; body still reads as Cogling rather than relying solely on fingers |
 | COG-BODY-08 | Head/hands/feet hidden; central body + limb organization still distinct |
 | COG-BODY-09 | Same-height Cogling and Pipkin; distinct trunk/segment organization |
+| COG-BODY-09A | Maximum-height Cogling (~107 cm) vs central-reference Pipkin (~107 cm); equal stature does not erase narrow-core/distal-redistribution vs Low-Set Compact Trunk distinction |
 | COG-BODY-10 | Normalized displayed-height comparison: Broad high-muscle Cogling vs Narrow Durrim; Cogling remains distinct through fine skeletal scale, narrow central core and within-limb distribution |
 | COG-BODY-10A | Actual-height context: maximum-height Cogling (~107 cm) beside minimum-height Durrim (~122 cm); stature difference and positive anatomy both remain legible |
 | COG-BODY-11 | Minimum-height Cogling (~76 cm) beside a roughly 1–2-year-old similar-height human toddler; adult skeletal, pelvic, facial-development boundary and limb organization remain unmistakable |
@@ -494,11 +495,11 @@ No "Cogling Proportion" master slider is approved.
 
 ## 34. Part 1 identity statement
 
-> **Cogling are a very-small adult humanoid population defined by Fine-Scale Elongated Articulation: a compact stable central body transitions into comparatively narrow limb shafts and clearly articulated distal joints, with proportional emphasis toward forearms, lower legs, hands and especially fingers. Their small scale never requires juvenile anatomy, oversized heads or eyes, fragile bodies, miniature equipment, or biological tinkering stereotypes. Their anatomy supports broad frame and composition variation while culture, occupation, movement performance and gameplay traits remain separate.**
+> **Cogling are a very-small adult humanoid population defined by Fine-Scale Elongated Articulation: a narrow stable central core supports broadly near-human total limb contribution while length is redistributed within the limbs toward the forearms, lower legs, hands and especially fingers through comparatively fine skeletal shafts and clearly articulated distal joints. Their small scale never requires juvenile anatomy, oversized heads or eyes, fragile bodies, miniature equipment, or biological tinkering stereotypes. Their anatomy supports broad frame and composition variation while culture, occupation, movement performance and gameplay traits remain separate.**
 
 ## 35. Part 1 status and OPEN items
 
-Part 1 is **PATCHED AFTER FIRST AUDIT — RE-AUDIT REQUESTED**.
+**Cogling v1.0 Part 1 is FIRST-PASS ACCEPTED.**
 
 Key OPEN items include:
 - final height range;
@@ -516,6 +517,7 @@ Key OPEN items include:
 - body-fat distribution;
 - magnitude/morphology of sex-related dimorphism;
 - positive craniofacial anatomy;
+- face and expression readability at an adult-valid head size of roughly 11–13 cm in gameplay, dialogue and creator cameras, solved without head enlargement;
 - ears;
 - surface phenotype;
 - lifecycle;
@@ -524,5 +526,557 @@ Key OPEN items include:
 - equipment feasibility;
 - collision/camera/interaction architecture;
 - class restrictions and racial stats.
+
+No UE5 implementation is authorized.
+
+
+# Part 2 — Detailed body architecture and proportion system
+
+## 36. Part 2 purpose
+
+Part 2 converts Fine-Scale Elongated Articulation into a detailed whole-body proportion system suitable for later character-creation, animation, equipment and world validation.
+
+It does not define Cogling facial anatomy, surface phenotype, culture, movement performance or gameplay bonuses.
+
+## 37. Body architecture anchor
+
+> **Cogling body identity is carried by a narrow stable adult core combined with broadly near-human total limb contribution whose internal segment distribution shifts distally. The body is not globally elongated; its distinctive rhythm comes from redistribution inside otherwise adult, balanced limb totals.**
+
+This distinction is mandatory.
+
+A valid Cogling cannot be created merely by:
+- shrinking Marchfolk;
+- lengthening every limb;
+- enlarging hands;
+- thinning the body;
+- or combining Pipkin stature with Fenn-like gracility.
+
+## 38. Total limb contribution
+
+At normalized displayed height, Cogling total arm and leg contribution remains broadly within the Marchfolk adult envelope.
+
+Population tendency may move within that envelope, but Cogling are not defined by greater total limb share.
+
+This separates:
+- Cogling **within-limb redistribution**;
+- Fenn greater limb/extremity emphasis within elven anatomy;
+- Grask limb dominance and reach specialization.
+
+Exact numerical envelopes remain OPEN pending prototype measurement.
+
+## 39. Arm-segment relationship
+
+Within total arm length, Cogling trend toward:
+- somewhat reduced proximal upper-arm share;
+- somewhat increased forearm share;
+- increased hand share;
+- increased finger contribution within the hand.
+
+The transition must remain continuous and adult.
+
+The system must not create:
+- extremely short humeri;
+- ape-like reach;
+- dangling hands;
+- spider fingers;
+- or a visual impression that the arm was assembled from mismatched scales.
+
+## 40. Hand architecture
+
+Cogling hand identity is a supporting—not sole—racial identifier.
+
+The hand uses:
+- a fully mature palm;
+- comparatively fine metacarpal and phalangeal construction;
+- proportionally increased finger length relative to palm;
+- adult knuckle and tendon relationships;
+- ordinary five-digit humanoid organization.
+
+Finger length may vary substantially inside the Cogling-valid envelope.
+
+Palm width, palm length, finger length and finger segment proportions must not collapse into one control.
+
+## 41. Finger relationships
+
+Finger emphasis must preserve believable adult anatomy.
+
+Variation may include:
+- total finger length;
+- proximal/middle/distal phalanx contribution;
+- finger taper;
+- joint prominence;
+- digit-to-digit length relationships;
+- soft-tissue fullness.
+
+The thumb remains opposable and functionally adult.
+
+No approved biology grants superior tool use, crafting, lockpicking, spellcasting precision or dexterity from these proportions.
+
+## 42. Leg-segment relationship
+
+Within total leg length, Cogling trend toward:
+- somewhat reduced femoral share;
+- somewhat increased lower-leg share;
+- adult plantigrade foot contribution.
+
+This is within-limb redistribution, not longer legs overall.
+
+The pelvis, femur, knee, tibia/fibula, ankle and foot must still form a coherent adult locomotor chain.
+
+## 43. Foot architecture
+
+Cogling feet remain moderate adult humanoid feet.
+
+They are not required to be unusually small or large relative to stature.
+
+Foot controls eventually need to distinguish:
+- skeletal length;
+- width;
+- arch;
+- heel structure;
+- forefoot structure;
+- toe length;
+- soft-tissue contribution.
+
+The foot must support ordinary plantigrade stance without becoming a climbing adaptation or racial balance mechanism.
+
+## 44. Narrow stable central core
+
+The central core consists of the thorax, spinal trunk and pelvis as an integrated adult structure.
+
+At normalized height, Cogling trend toward a comparatively narrow transverse core while retaining sufficient depth and pelvic maturity for a healthy adult body.
+
+"Narrow" refers primarily to skeletal breadth relationships, not low body fat.
+
+"Stable" refers to coherent structural organization, not superior gameplay balance.
+
+## 45. Thorax
+
+Cogling thoracic anatomy trends toward:
+- narrow-to-moderate transverse breadth;
+- moderate adult depth;
+- a clear but not exaggerated ribcage-to-waist transition;
+- full adult respiratory volume for body size.
+
+The thorax must not become:
+- flattened;
+- pinched;
+- childlike;
+- Durrim-deep;
+- Gorrund-massive;
+- or an hourglass device.
+
+Exact ribcage geometry remains OPEN.
+
+## 46. Waist and lumbar transition
+
+Cogling may show a readable waist/lumbar transition, but no narrow-waist stereotype is required.
+
+The waist is an anatomical transition between thorax and pelvis, not a cosmetic cinch point.
+
+Frame, muscularity, adipose distribution and sex-related anatomy may alter its external appearance without changing the racial foundation.
+
+## 47. Pelvic architecture
+
+Cogling pelvis is fully adult and structurally mature.
+
+Compared with Pipkin, the pelvis does not carry the same primary silhouette role relative to the thorax.
+
+Compared with Durrim, it has lower structural mass and breadth/depth emphasis.
+
+The pelvis must remain capable of broad valid sex-related and individual variation.
+
+Exact pelvic breadth, depth, height, inlet/outlet morphology and external soft-tissue expression remain OPEN.
+
+## 48. Shoulder architecture
+
+Cogling shoulders are mature and integrated with the narrow thoracic core.
+
+Population tendency is toward moderate clavicular breadth compatible with the narrow core, but shoulder breadth is not forced narrow in every individual.
+
+Broad-frame Cogling must remain valid without becoming Durrim.
+
+Narrow-frame Cogling must retain adult shoulder development rather than juvenile slope or underdevelopment.
+
+## 49. Axial length and posture boundary
+
+Cogling do not require a shortened spine, long waist or compressed vertebral column.
+
+Total axial contribution remains adult and broadly balanced with the near-human total limb share.
+
+Posture is not used to create apparent smallness.
+
+Neutral anatomical alignment remains upright; movement-specific posture belongs to a later part.
+
+## 50. Neck
+
+Cogling neck proportions must bridge a small adult body and adult-valid head without caricature.
+
+Variation may occur in:
+- length;
+- circumference;
+- muscular development;
+- visible tendon/soft-tissue structure.
+
+No mandatory thin neck, thick neck or forward-head posture is approved.
+
+## 51. Head contribution and allometry
+
+Very small adult stature may naturally increase the head's proportional contribution to total height relative to much taller adults.
+
+That allometric consequence must not become intentional head enlargement.
+
+The body system must preserve an adult-valid head envelope while avoiding:
+- infant/toddler head share;
+- bobble-head silhouette;
+- oversized cranium as racial shorthand.
+
+Exact head-to-body ratios remain OPEN pending facial design and camera validation.
+
+## 52. Joint-scale system
+
+Cogling joints are fine in scale but fully adult.
+
+Joint controls must distinguish:
+- skeletal breadth;
+- skeletal depth;
+- articular-region scale;
+- muscular/tendinous coverage;
+- adipose/soft-tissue coverage.
+
+A visibly fine wrist or ankle does not imply weak material properties.
+
+Elbow, wrist, knee and ankle relationships must remain coherent with distal redistribution.
+
+## 53. Long-bone robusticity
+
+Long-bone shaft robusticity is a distinct biological parameter from limb length and muscularity.
+
+Cogling population tendency favors relatively fine shafts, but valid individuals may range within a Cogling-specific envelope.
+
+High muscularity must not automatically thicken bone to Durrim proportions.
+
+Low muscularity must not make bones implausibly thin.
+
+## 54. Frame system
+
+Cogling support editable frame variation.
+
+Provisional starting frames:
+- **Narrow**
+- **Balanced**
+- **Broad**
+
+These are Cogling-specific configurations, not copied Marchfolk measurements.
+
+Frame may influence:
+- clavicular breadth;
+- thoracic breadth;
+- pelvic breadth;
+- long-bone robusticity within limits;
+- joint dimensions.
+
+Frame must not automatically determine height, muscle, fat, face, sex-related anatomy, culture or personality.
+
+## 55. Broad-frame boundary
+
+Broad Cogling are an important stress case.
+
+A broad-frame Cogling may possess:
+- greater thoracic breadth;
+- greater pelvic breadth;
+- somewhat greater joint dimensions;
+- greater long-bone robusticity within the race envelope.
+
+They must still retain:
+- the narrow-core population relationship relative to structural-mass races;
+- near-human total limb contribution;
+- within-limb distal redistribution;
+- fine-scale articulation.
+
+Broad does not mean Durrim.
+
+## 56. Narrow-frame boundary
+
+Narrow Cogling may reduce skeletal breadth and joint dimensions within valid limits.
+
+They must not become:
+- Fenn;
+- childlike;
+- fragile;
+- undernourished;
+- or anatomically implausible.
+
+Distal redistribution remains present as a population tendency without requiring maximum expression.
+
+## 57. Muscular Development Capacity
+
+Muscular Development Capacity and Current Muscularity remain independent.
+
+Cogling may support substantial muscle development on a fine skeletal foundation.
+
+Muscle shape follows actual attachment and segment geometry rather than globally scaled Marchfolk musculature.
+
+High development must preserve wrist/ankle and long-bone identity instead of converting the skeleton into a heavy-build race.
+
+Exact population capacity remains OPEN.
+
+## 58. Current muscularity
+
+Current muscularity may range broadly.
+
+Valid examples include:
+- minimally developed;
+- moderately developed;
+- highly developed;
+- regionally specialized physiques.
+
+Muscularity cannot serve as a proxy for age, sex, occupation or racial authenticity.
+
+## 59. Body-fat amount
+
+Cogling support broad healthy body-fat variation.
+
+Body-fat amount does not automatically determine:
+- face shape;
+- skeletal frame;
+- movement style;
+- personality;
+- culture;
+- health status.
+
+At higher amounts, underlying skeletal and segment relationships must remain recoverable diagnostically.
+
+## 60. Body-fat distribution
+
+Distribution is separate from total amount.
+
+Regional adipose variation may affect:
+- abdomen;
+- hips;
+- thighs;
+- upper arms;
+- chest;
+- face;
+- other biologically appropriate regions.
+
+No required round belly, soft-cheeked gnome look or childlike distribution is approved.
+
+Exact Cogling population tendencies remain OPEN.
+
+## 61. Sex-related body variation
+
+Sex-related anatomy may alter pelvic, thoracic, soft-tissue and other body relationships where biologically appropriate.
+
+The race must remain recognizable in like-for-like comparisons and across valid anatomical configurations.
+
+No single shoulder-to-hip ratio, chest form, waist shape or external hip width defines either Cogling sex-related anatomy or Cogling racial identity.
+
+Magnitude and detailed morphology remain OPEN.
+
+## 62. Height interaction
+
+The provisional ~76–107 cm range does not scale every body dimension uniformly.
+
+Minimum, reference and maximum-height Cogling must preserve the same anatomical system while allowing biologically plausible allometry.
+
+Height changes must not automatically change:
+- head size by identical percentage;
+- hand/finger emphasis by identical percentage;
+- frame;
+- muscularity;
+- fat;
+- sex-related anatomy.
+
+## 63. Pipkin overlap-zone requirements
+
+Within the ~91–107 cm shared stature zone, Cogling and Pipkin must remain distinguishable through multiple relationships.
+
+Cogling:
+- narrow stable central core;
+- broadly near-human total limb share;
+- within-limb distal redistribution;
+- fine shafts/joints;
+- hand/finger emphasis.
+
+Pipkin:
+- Low-Set Compact Trunk Architecture;
+- mature pelvis with stronger structural participation relative to thorax;
+- comparatively light skeleton;
+- sustained limb contribution without Cogling distal redistribution.
+
+No single measurement carries the boundary.
+
+## 64. Durrim boundary requirements
+
+Cogling and Durrim do not currently share the provisional stature range, but normalized-height comparison remains mandatory.
+
+Durrim:
+- compact structural concentration;
+- broad/deep vertically compact torso;
+- substantial joints;
+- higher skeletal structural presence;
+- reduced limb contribution.
+
+Cogling:
+- narrow stable core;
+- fine joints/shafts;
+- near-human limb contribution;
+- within-limb distal redistribution.
+
+Frame or muscularity must not erase this boundary.
+
+## 65. Fenn boundary requirements
+
+At normalized height, both populations may appear gracile, so the distinction must survive without ears.
+
+Fenn:
+- elven skeletal family;
+- greater overall limb/extremity contribution;
+- longer hands/fingers as part of broader elven extremity emphasis;
+- elven craniofacial system, later reviewed separately.
+
+Cogling:
+- near-human total limb contribution;
+- distal redistribution inside the limb totals;
+- very-small humanoid body system;
+- narrow stable central core.
+
+Fine skeletal construction alone cannot carry the distinction.
+
+## 66. Grask boundary requirements
+
+At normalized height:
+
+Grask:
+- rangy limb-dominant construction;
+- reach specialization;
+- substantial functional reach;
+- large hands appropriate to scale;
+- forearm/lower-leg emphasis within a globally elongated system.
+
+Cogling:
+- no limb dominance;
+- no reach specialization;
+- near-human total limb contribution;
+- distal redistribution within that total;
+- fine-scale hand/finger articulation.
+
+## 67. Marchfolk normalized comparison
+
+At normalized displayed height, Cogling should remain distinguishable from Marchfolk without relying on absolute stature.
+
+Marchfolk provide the broad human adult reference.
+
+Cogling should show:
+- narrower central skeletal organization as a population tendency;
+- finer shaft/joint construction;
+- distal redistribution within arms and legs;
+- proportionally longer fingers relative to palm.
+
+The comparison must not require every Cogling trait to sit outside the Marchfolk human range individually. Identity may arise from the coordinated relationship among traits.
+
+## 68. Human-child boundary
+
+The minimum-height Cogling is an especially demanding maturity test.
+
+Against a roughly 1–2-year-old human toddler of similar stature, the Cogling must show adult:
+- cranial/body proportionality;
+- shoulder organization;
+- thoracic development;
+- pelvic maturity;
+- limb segmentation;
+- hand/foot maturity;
+- joint organization;
+- body-fat distribution.
+
+Facial maturity will be added when Cogling facial anatomy is defined.
+
+## 69. Body-control architecture
+
+Part 2 does not finalize creator-facing sliders, but the eventual system must be capable of representing at least:
+- height;
+- frame;
+- thoracic breadth/depth;
+- pelvic breadth/depth/height;
+- shoulder/clavicular breadth;
+- axial contribution;
+- total arm contribution;
+- upper-arm/forearm distribution;
+- palm/hand contribution;
+- finger length and internal distribution;
+- total leg contribution;
+- femur/lower-leg distribution;
+- foot dimensions;
+- joint breadth/depth;
+- long-bone robusticity;
+- neck;
+- muscular-development capacity;
+- current muscularity;
+- body-fat amount;
+- body-fat distribution;
+- sex-related anatomy.
+
+Controls may later be merged or reorganized, but the biological relationships cannot be lost.
+
+## 70. Relationship-aware validity
+
+Cogling require strong combined-proportion validation.
+
+Invalid combinations include, for example:
+- minimum height + maximum head share + minimum shoulder/pelvic maturity producing a toddler read;
+- maximum forearm + maximum hand + maximum finger contribution without compensating proximal segments;
+- minimum joint dimensions + maximum muscularity producing implausible transitions;
+- broad frame + maximum robusticity drifting into Durrim structure;
+- narrow frame + minimum soft tissue drifting into fragile caricature.
+
+Validation must evaluate relationships, not isolated slider legality.
+
+## 71. Part 2 validation additions
+
+| ID | Target |
+| --- | --- |
+| COG-BODY-18 | Normalized Marchfolk comparison; Cogling identity survives without stature cue |
+| COG-BODY-19 | Maximum forearm redistribution with total arm share held near-human; no Grask reach read |
+| COG-BODY-20 | Maximum lower-leg redistribution with total leg share held near-human; no Fenn/global limb dominance |
+| COG-BODY-21 | Maximum valid finger emphasis with ordinary tool-free neutral hand pose |
+| COG-BODY-22 | Broad-frame high-muscle Cogling; no Durrim convergence |
+| COG-BODY-23 | Narrow-frame low-muscle Cogling; no child/Fenn/fragility convergence |
+| COG-BODY-24 | High-adiposity Cogling; underlying adult structure remains diagnostic |
+| COG-BODY-25 | Minimum-height adult vs ~1–2-year-old toddler, neutral surface/presentation |
+| COG-BODY-26 | Maximum Cogling vs reference Pipkin at ~107 cm; multiple independent anatomical differences remain |
+| COG-BODY-27 | Reference Cogling vs minimum Pipkin at ~91 cm; multiple independent anatomical differences remain |
+| COG-BODY-28 | Like-for-like sex-related normalized comparison against Marchfolk |
+| COG-BODY-29 | Extreme valid combined proportions; relationship validator rejects caricatured combinations |
+| COG-BODY-30 | Head/hands hidden; narrow core + limb-segment distribution still supports identity |
+
+## 72. Part 2 OPEN items
+
+Still OPEN:
+- final stature range;
+- numerical torso/limb envelopes;
+- exact thoracic dimensions;
+- exact pelvic morphology;
+- exact shoulder/clavicular dimensions;
+- exact head-to-body ratio;
+- exact upper-arm/forearm and femur/lower-leg distributions;
+- exact hand/palm/finger proportions;
+- exact foot proportions and arch distributions;
+- exact joint dimensions;
+- exact long-bone robusticity distribution;
+- Muscular Development Capacity distribution;
+- body-fat distribution tendencies;
+- magnitude/morphology of sex-related dimorphism;
+- all facial anatomy;
+- surface phenotype;
+- lifecycle;
+- movement and gameplay consequences;
+- technical implementation.
+
+## 73. Part 2 identity statement
+
+> **Cogling whole-body anatomy is defined by a narrow stable adult core and broadly near-human total limb contribution combined with Fine-Scale Elongated Articulation: length is redistributed within the limbs toward forearms, lower legs, hands and fingers while proximal segments accommodate that redistribution. Fine long-bone shafts and joints support the system without implying fragility, and broad frame, muscularity and body-fat variation remain valid without erasing the underlying relationships. Cogling are therefore neither globally limb-dominant nor reach-specialized, and their very small stature never depends on juvenile proportions.**
+
+Part 2 is **PROPOSED FOR AUDIT**.
 
 No UE5 implementation is authorized.
