@@ -1,6 +1,6 @@
 # Cogling Character Design v1.0
 
-**Status:** IN PROGRESS — Parts 1–2 FIRST-PASS ACCEPTED  
+**Status:** IN PROGRESS — Parts 1–2 FIRST-PASS ACCEPTED; Part 3 proposed for audit  
 **Phase:** DESIGN ONLY  
 **Implementation:** Not authorized
 
@@ -1099,5 +1099,490 @@ Still OPEN:
 > **Cogling whole-body anatomy is defined by a narrow stable adult core and broadly near-human total limb contribution combined with Fine-Scale Elongated Articulation: length is redistributed within the limbs toward forearms, lower legs, hands and fingers while proximal segments accommodate that redistribution. Fine long-bone shafts and joints support the system without implying fragility, and broad frame, muscularity and body-fat variation remain valid without erasing the underlying relationships. Cogling are therefore neither globally limb-dominant nor reach-specialized, and their very small stature never depends on juvenile proportions.**
 
 Part 2 is **FIRST-PASS ACCEPTED** after Claude PASS. Non-blocking audit clarifications 4a–4c have been incorporated.
+
+No UE5 implementation is authorized.
+
+
+# Part 3 — Craniofacial anatomy, ears and facial customization requirements
+
+## 74. Part 3 purpose
+
+Part 3 defines the positive Cogling craniofacial foundation, ear anatomy and first-pass facial customization requirements.
+
+It must solve a difficult constraint: Cogling are extremely small adults, but their faces cannot depend on juvenile proportions, exaggerated features, wrinkles, facial hair, expression, tools or cultural presentation to read as adult or racial.
+
+Surface pigmentation, hair coloration, lifecycle timing, movement performance and gameplay remain outside this part.
+
+## 75. Positive craniofacial specialization — Fine-Scale Planar Integration
+
+> **Cogling craniofacial identity is organized around Fine-Scale Planar Integration: a compact adult cranial envelope supports a proportionally mature face whose brow, orbital margins, zygomatic region, midface and mandibular framework remain clearly differentiated at very small absolute scale, with relatively fine skeletal transitions rather than enlarged individual features.**
+
+The facial sequence is:
+
+**adult cranial envelope → clearly bounded orbital/brow region → integrated fine midface → readable zygomatic transition → mature lower-face framework**
+
+The identity comes from coordinated planes and transitions, not from one oversized feature.
+
+## 76. Adult facial maturity
+
+Every valid adult Cogling face must remain anatomically adult without relying on:
+- wrinkles;
+- facial hair;
+- gray hair;
+- makeup;
+- scars;
+- clothing;
+- voice;
+- expression;
+- posture;
+- occupation;
+- tools.
+
+Adult maturity must survive neutral expression, neutral gray material and presentation removal.
+
+The system must avoid:
+- oversized cranium;
+- enlarged eye opening;
+- shortened juvenile midface;
+- tiny/recessed adult-invalid mandible;
+- button-nose shorthand;
+- inflated cheeks used as age camouflage.
+
+## 77. Cranial envelope
+
+Cogling heads remain adult-valid and relatively small in absolute dimensions.
+
+The cranial vault must not become the racial identity.
+
+At very small stature, natural allometry may make the head a somewhat larger fraction of total height than in tall adults, but cranial enlargement is not an authored racial feature.
+
+Variation may include cranial:
+- length;
+- breadth;
+- height;
+- posterior contour;
+- forehead contour;
+- temporal contour.
+
+All combinations remain constrained by adult craniofacial integration.
+
+## 78. Brow and supraorbital region
+
+Cogling brow anatomy trends toward **fine but structurally readable orbital framing**.
+
+This may include:
+- modest supraorbital relief;
+- clear brow-to-forehead transition;
+- readable medial/lateral orbital boundaries;
+- broad individual variation in brow projection and contour.
+
+"Fine" does not mean absent, childlike or universally delicate.
+
+Cogling do not require heavy brows, permanently raised brows or expressive eyebrow posture.
+
+## 79. Orbital anatomy and visible eye opening
+
+The bony orbit and the visible eye opening are separate concepts.
+
+Cogling do **not** have biologically oversized eyes.
+
+The eye opening must remain adult-valid relative to the face and cannot be enlarged to improve readability at gameplay distance.
+
+Variation may include:
+- orbital width/height;
+- orbital spacing;
+- orbital orientation within humanoid limits;
+- upper/lower lid aperture;
+- lid fold relationships;
+- globe prominence within healthy bounds.
+
+Large-looking eyes may occur in some individuals through valid combinations, but are not a racial requirement.
+
+## 80. Zygomatic and cheek structure
+
+Cogling zygomatic anatomy provides an important transition between orbital and lower-face regions.
+
+Population tendency favors:
+- readable but fine zygomatic definition;
+- moderate lateral cheek structure;
+- smooth integration into the temporal and midface regions.
+
+It must not require:
+- extremely wide cheekbones;
+- hollow cheeks;
+- childlike cheek fullness;
+- permanent smiling contours.
+
+Soft-tissue fullness remains separately variable.
+
+## 81. Midface architecture
+
+The Cogling midface is fully adult and proportionally mature.
+
+The midface must retain enough vertical and structural contribution to prevent toddler coding.
+
+Variation may include:
+- midface vertical contribution;
+- maxillary projection;
+- nasal-root integration;
+- malar transition;
+- subnasal region;
+- philtral dimensions.
+
+The midface is not globally shortened as a racial feature.
+
+## 82. Nasal architecture
+
+Cogling noses are broadly variable adult humanoid noses.
+
+No oversized nose, tiny button nose, hooked inventor nose or universally narrow nose is racial.
+
+Customization must support independent variation in:
+- nasal root height and depth;
+- bridge length;
+- bridge width;
+- bridge contour;
+- nasal projection;
+- alar width;
+- tip projection/rotation;
+- nostril form within adult humanoid bounds.
+
+Nose size alone must never carry Cogling identity.
+
+## 83. Mandible and lower-face maturity
+
+A mature lower face is mandatory.
+
+Cogling mandibles are relatively fine in skeletal mass compared with structurally heavy races, but they remain fully adult.
+
+Variation may include:
+- mandibular breadth;
+- ramus height;
+- gonial contour;
+- chin width;
+- chin height;
+- chin projection;
+- lower-face vertical contribution.
+
+The lower face must not collapse into a tiny childlike jaw.
+
+Fine mandibular construction does not imply weakness.
+
+## 84. Mouth and lip region
+
+Cogling mouth anatomy remains broadly humanoid and adult.
+
+Variation may include:
+- mouth width;
+- lip thickness;
+- upper/lower lip balance;
+- vermilion shape;
+- philtrum length/definition;
+- oral projection.
+
+No permanent smile, pursed "tinkerer" expression or exaggerated mouth is biological.
+
+Expression belongs to animation/presentation.
+
+## 85. Facial vertical organization
+
+Cogling facial identity requires mature coordination among:
+- forehead;
+- orbital region;
+- midface;
+- nasal region;
+- mouth;
+- chin/lower face.
+
+No single facial-third formula defines the race.
+
+However, valid adult faces must preserve sufficient midface and lower-face contribution that the face cannot drift toward infant/toddler organization.
+
+## 86. Facial breadth/depth
+
+Cogling may vary from relatively narrow to relatively broad faces within a race-valid envelope.
+
+Breadth and depth are independent dimensions.
+
+Broad-faced Cogling must not become Durrim through mandibular/zygomatic mass.
+
+Narrow-faced Cogling must not become Fenn or Sagekin merely through reduced breadth.
+
+Fine-Scale Planar Integration must remain visible through coordinated transitions.
+
+## 87. Ear specialization — Fine Folded Auricular Architecture
+
+Cogling ears use a distinct first-pass specialization:
+
+> **Fine Folded Auricular Architecture: a relatively compact adult ear with a clearly defined helix, antihelix and conchal bowl, fine cartilage thickness, and a subtly articulated upper-ear contour that remains rounded rather than pointed.**
+
+The ear should read as structurally detailed at small scale without becoming oversized.
+
+This is not an elven ear and does not terminate in a point.
+
+## 88. Ear size and placement
+
+Cogling ears remain proportionate adult humanoid ears.
+
+They are not biologically enormous.
+
+Variation may include:
+- overall auricular height;
+- width;
+- projection from skull;
+- vertical placement;
+- rotation;
+- lobe attachment;
+- upper-ear contour.
+
+The ear cannot be enlarged merely to improve silhouette readability.
+
+## 89. Ear fold structure
+
+The defining ear signal comes from **fold clarity at fine scale**, not size.
+
+Customization may vary:
+- helix thickness;
+- helix roll;
+- antihelix prominence;
+- superior/inferior crus relationship;
+- conchal depth;
+- tragus/antitragus prominence;
+- lobular size;
+- skull attachment.
+
+The terminal upper contour remains rounded-to-softly angular and non-pointed.
+
+## 90. Ear boundary comparisons
+
+Against Fenn/Aelari/Vael:
+- Cogling lack pointed terminal elongation;
+- ear identity comes from compact fold articulation, not elven sweep.
+
+Against Grask:
+- Cogling ears are finer and more compact, without Grask's robust folded upper-ear body and later terminal taper.
+
+Against Gorrund:
+- Cogling lack the broad deep auricular bowl, substantial rim and broad skull attachment.
+
+Against ordinary human populations:
+- overlap in individual ear traits is valid;
+- Cogling identity comes from the coordinated fine-fold tendency plus the rest of craniofacial anatomy, not a single impossible-to-human ear feature.
+
+## 91. Facial soft tissue
+
+Soft tissue is layered over the skeletal foundation rather than replacing it.
+
+Variation may include:
+- cheek fullness;
+- buccal fullness;
+- submental fullness;
+- periorbital soft tissue;
+- lip fullness;
+- facial adipose distribution.
+
+High facial adiposity must not create automatic child coding.
+
+Low facial adiposity must not create automatic elderly, sickly or skeletal coding.
+
+## 92. Facial muscularity and expression boundary
+
+Facial muscular anatomy must support the full intended expression system.
+
+The legacy brief's phrase "expressive face" does **not** mean Cogling are biologically more emotional, animated or expressive than other races.
+
+Neutral facial anatomy cannot encode:
+- curiosity;
+- cheerfulness;
+- eccentricity;
+- cleverness;
+- nervous energy;
+- mischievousness.
+
+Expression range and animation quality are later system concerns.
+
+## 93. Sex-related facial variation
+
+Sex-related anatomy may affect craniofacial and soft-tissue relationships where biologically appropriate.
+
+It does not define a binary set of faces and does not determine:
+- height;
+- frame;
+- muscularity;
+- fat;
+- hairstyle;
+- facial hair;
+- attractiveness;
+- occupation;
+- personality.
+
+Cogling racial identity must survive across the full valid sex-related facial range.
+
+Exact magnitude remains OPEN.
+
+## 94. Facial age architecture
+
+Chronological Age, Apparent Biological Age and Age Presentation remain separate concepts.
+
+Part 3 requires only that:
+- adults remain adult at young-adult presentation;
+- age cannot be required to create racial identity;
+- wrinkles and tissue aging cannot compensate for juvenile base proportions.
+
+Detailed Cogling lifecycle and age progression remain OPEN.
+
+## 95. Attractiveness firewall
+
+Cogling biology does not require conventional attractiveness.
+
+Valid faces may be conventionally attractive, ordinary, unusual, asymmetrical or aesthetically challenging while remaining healthy and race-valid.
+
+Presets and randomization must not silently collapse toward one cute, youthful or whimsical facial ideal.
+
+## 96. Facial asymmetry
+
+Natural facial asymmetry is valid.
+
+Future customization should support subtle independent asymmetry in biologically appropriate regions.
+
+Asymmetry cannot be required for racial identity and should not imply injury or pathology by default.
+
+## 97. Facial customization functional requirements
+
+Part 3 does not finalize universal creator UI organization.
+
+The Cogling system must nevertheless preserve independent biological capability for at least:
+- cranial length/breadth/height;
+- forehead contour;
+- brow/supraorbital structure;
+- orbital dimensions and spacing;
+- visible eye-opening dimensions;
+- eyelid relationships;
+- zygomatic breadth/projection;
+- cheek soft tissue;
+- midface height/projection;
+- maxillary projection;
+- nasal root/bridge/tip/alar dimensions;
+- mouth width;
+- lip relationships;
+- philtrum;
+- mandibular breadth/depth;
+- ramus/gonial structure;
+- chin dimensions/projection;
+- lower-face height;
+- ear size/placement/projection;
+- ear fold architecture;
+- facial adipose distribution;
+- sex-related anatomy;
+- age-related anatomy;
+- asymmetry.
+
+Controls may later be split, merged, renamed or reorganized during the Universal Facial Customization Architecture Review.
+
+## 98. No racial master-face slider
+
+There is no "Cogling Face" slider.
+
+The racial foundation defines valid relationships and distributions among many dimensions.
+
+Individual controls must remain relationship-aware so a user cannot accidentally combine individually valid extremes into:
+- a toddler face;
+- a caricature gnome;
+- a miniature Fenn;
+- a miniature Durrim;
+- a generic scaled human.
+
+## 99. Face readability at very small scale
+
+At an adult-valid head size of roughly 11–13 cm, face and expression readability becomes a camera, animation, lighting and presentation challenge.
+
+The solution must **not** be biological enlargement of:
+- eyes;
+- head;
+- nose;
+- ears;
+- mouth.
+
+Creator cameras and dialogue presentation must show the actual approved anatomy clearly.
+
+Gameplay-distance readability may use appropriate camera, animation, lighting and rendering solutions without rewriting biology.
+
+## 100. Surface phenotype boundary
+
+Part 3 does not assign Cogling skin, hair or iris pigmentation.
+
+Surface phenotype must not be used to rescue insufficient craniofacial identity.
+
+Cogling should remain identifiable in neutral gray material with:
+- hair removed;
+- eyebrows neutralized where practical;
+- ears optionally hidden for face-only tests;
+- cultural presentation removed.
+
+## 101. Craniofacial relationship-aware validity
+
+Validation must reject combinations such as:
+- maximum cranial share + maximum eye opening + minimum midface + minimum mandible producing a toddler read;
+- minimum facial breadth + minimum mandibular mass + maximum orbital opening drifting into caricatured mini-elf;
+- maximum nose projection + minimum surrounding facial structure creating a comic nose;
+- maximum ear projection + maximum ear size + extreme fold articulation creating an oversized-ear stereotype;
+- maximum facial adiposity + reduced lower-face structure masking adult maturity.
+
+## 102. Part 3 validation cast
+
+| ID | Target |
+| --- | --- |
+| COG-FACE-01 | Reference adult, neutral gray, neutral expression, no hair/culture cues |
+| COG-FACE-02 | Minimum-height young adult; unmistakably adult without age cues |
+| COG-FACE-03 | Maximum-height adult; same racial foundation |
+| COG-FACE-04 | Maximum valid visible eye opening; no child/cute coding requirement |
+| COG-FACE-05 | Minimum valid eye opening; still healthy and Cogling |
+| COG-FACE-06 | Broad face + substantial mandible; no Durrim convergence |
+| COG-FACE-07 | Narrow face + fine mandible; no Fenn/Sagekin convergence |
+| COG-FACE-08 | Large valid nose; no gnome/inventor caricature |
+| COG-FACE-09 | Small valid nose; no child coding |
+| COG-FACE-10 | High facial adiposity; adult framework survives |
+| COG-FACE-11 | Low facial adiposity; no sickly/elderly requirement |
+| COG-FACE-12 | Maximum valid ear size/projection; no oversized-ear caricature |
+| COG-FACE-13 | Minimum valid ear size/projection; ear identity not sole carrier |
+| COG-FACE-14 | Ear-hidden test; face remains Cogling |
+| COG-FACE-15 | Face-feature-neutralized silhouette test; body remains Cogling |
+| COG-FACE-16 | Same-height Cogling/Pipkin adults with ears/hair hidden; facial systems remain independently identifiable once Pipkin comparison is applied |
+| COG-FACE-17 | Normalized Cogling vs Marchfolk; coordinated planar system survives |
+| COG-FACE-18 | Normalized Cogling vs Sagekin; fine-scale planar integration does not reduce to a narrow human face |
+| COG-FACE-19 | Normalized Cogling vs Fenn with ears hidden; no mini-elf convergence |
+| COG-FACE-20 | Minimum-height adult Cogling vs ~1–2-year-old toddler; adult midface/lower-face architecture unmistakable |
+| COG-FACE-21 | Broad sex-related facial range; race survives |
+| COG-FACE-22 | Strong natural asymmetry; healthy racial read survives |
+| COG-FACE-23 | Extreme valid combined proportions; validator rejects juvenile/caricature combinations |
+| COG-FACE-24 | Dialogue/creator camera at approved head size; readability achieved without biological enlargement |
+
+## 103. Part 3 OPEN items
+
+Still OPEN:
+- exact cranial ratios;
+- exact facial-third distributions;
+- exact orbital dimensions;
+- exact visible-eye-opening distributions;
+- exact zygomatic distributions;
+- exact midface dimensions;
+- exact nasal distributions;
+- exact mandibular/chin distributions;
+- exact ear size/fold distributions;
+- exact sex-related facial dimorphism;
+- detailed age progression;
+- lifecycle;
+- surface pigmentation;
+- hair architecture and coloration;
+- iris pigmentation/anatomy beyond universal rules;
+- facial animation implementation;
+- camera/rendering implementation;
+- movement and gameplay.
+
+## 104. Part 3 identity statement
+
+> **Cogling faces are defined by Fine-Scale Planar Integration: a compact adult cranial envelope supports clearly differentiated brow/orbital, zygomatic, midface and mature lower-face regions through fine but readable structural transitions rather than oversized features. Their eyes, noses, ears and mouths remain broadly adult humanoid in scale, while Fine Folded Auricular Architecture gives the ear a compact, clearly articulated, rounded and non-elven fold system. Adult maturity must survive at the smallest valid stature without wrinkles, facial hair, expression or cultural cues, and camera/readability problems must be solved without enlarging biological features.**
+
+Part 3 is **PROPOSED FOR AUDIT**.
 
 No UE5 implementation is authorized.
