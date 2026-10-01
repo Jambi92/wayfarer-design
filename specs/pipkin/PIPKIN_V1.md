@@ -1127,3 +1127,490 @@ It will cover at minimum:
 - and final first-pass completion criteria.
 
 Part 6 planning does not mark Part 5 accepted or Pipkin FIRST-PASS COMPLETE.
+
+
+# Part 6 Equipment, world compatibility, character-creation integration and final first-pass review
+
+## 1. Part 6 purpose
+
+Part 6 integrates the approved Pipkin anatomy into equipment, world geometry, cameras, collision and character creation, then consolidates the race for final first-pass review.
+
+> **Systems must accommodate approved Pipkin anatomy; approved Pipkin anatomy must not be distorted to fit systems authored around Marchfolk proportions.**
+
+This remains design-level functional specification. No UE5 implementation is authorized.
+
+## 2. Equipment-scale rule
+
+Canonical equipment dimensions remain independent of the holder unless an item is explicitly manufactured in multiple physical sizes.
+
+Equipping an item on a Pipkin must not automatically scale its functional dimensions. This applies to weapons, tools, shields, packs, containers and other world objects.
+
+Clothing and fitted armor are different: they may require size-appropriate manufactured geometry while preserving the item's design, material thickness, protective intent and recognizable construction.
+
+## 3. Clothing and armor fit
+
+Pipkin clothing and armor must fit:
+- Low-Set Compact Trunk Architecture;
+- moderate thoracic breadth/depth;
+- mature, structurally broad pelvis;
+- compact lumbar/waist transition;
+- proportionally sustained limbs;
+- comparatively light skeletal construction;
+- frame and composition variation.
+
+A Marchfolk garment uniformly scaled downward is not sufficient proof of fit.
+
+Fit validation must distinguish skeletal dimensions, muscular development, adipose distribution, garment ease, armor clearance and material thickness.
+
+## 4. Torso garments, belts and waist placement
+
+Shirts, coats, cuirasses, robes, harnesses and belts must respect the Pipkin thorax-to-pelvis relationship.
+
+Waist placement cannot be inferred from total character height or copied from Marchfolk normalized percentages. Belts and equipment rigs must not float, intersect the pelvis, ride unnaturally high, or force a false long-waisted silhouette.
+
+Long garments require clearance checks against shorter absolute leg length and ground distance.
+
+## 5. Lower-body equipment
+
+Trousers, skirts, faulds, belts, leg armor and similar equipment must preserve adult pelvic anatomy and real hip/knee placement.
+
+No fitted equipment may narrow the pelvis merely to reuse another race's silhouette. Leg openings, inseams, armor articulation and garment lengths must follow actual Pipkin limb geometry.
+
+## 6. Footwear
+
+Pipkin feet are adult, plantigrade and may make a modestly elevated structural contribution without becoming oversized or stereotypical.
+
+Boots, shoes, greaves and foot armor must support the approved foot envelope and ankle relationship. Footwear must not:
+- create giant fantasy feet,
+- require bare feet,
+- add racial hair,
+- shorten the foot to resemble a scaled Marchfolk shoe,
+- or change locomotor contact merely for visual convention.
+
+## 7. Gloves and hand equipment
+
+Pipkin hands are adult and moderate in structural scale.
+
+Gloves, gauntlets, grips and hand-mounted equipment must fit actual palm, finger and wrist dimensions. Hand fit cannot be solved by globally scaling an object whose canonical functional dimensions should remain fixed.
+
+Grip feasibility and equipment usability remain separate from cosmetic fit.
+
+## 8. Helmets, hoods and head equipment
+
+Head equipment must fit Integrated Mature Facial Architecture and the approved cranial envelope.
+
+Pipkin ears occupy overlapping humanoid ranges and are not a primary identifier, but helmet/hood clearance must still respect valid auricular dimensions and placement.
+
+Headgear must not:
+- enlarge the head to create a "halfling" silhouette,
+- compress the cranium,
+- force juvenile facial proportions,
+- or rely on ear visibility for racial recognition.
+
+Hair-volume accommodation is a fit problem, not justification to alter skull size.
+
+## 9. Backpacks, quivers and back-mounted equipment
+
+Back-mounted equipment must account for Pipkin torso length, shoulder position, pelvis, arm reach and head clearance.
+
+A pack that is moderate on a Marchfolk body may occupy a much larger fraction of a Pipkin's body. That relative scale must remain visible.
+
+Straps, attachment points and carried-object positions may adapt to fit; the canonical object itself does not silently shrink.
+
+## 10. Weapons, shields and tools
+
+Part 6 does not assign Pipkin preferred weapons.
+
+Canonical weapon, shield and tool dimensions remain true scale. Equipment may require different grip spacing, carry poses, draw paths, clearance solutions or feasibility rules.
+
+The design must not automatically convert:
+- large weapons into small weapons,
+- long bows into short bows,
+- full shields into miniature shields,
+- or tools into race-scaled props.
+
+Whether a particular item is practical or usable depends on later strength, technique, equipment and gameplay systems.
+
+## 11. Equipment fitting versus equipment feasibility
+
+**Fit** asks whether wearable equipment conforms safely and plausibly to the body.
+
+**Feasibility** asks whether the character can physically use, carry or operate an item under game rules.
+
+These are separate.
+
+A fitted harness can exist for a heavy object the character cannot effectively carry. Conversely, a character may be strong enough to use an object that requires a specialized grip or animation solution.
+
+## 12. Collision requirements
+
+Final Pipkin collision must be validated against approved anatomy rather than produced by uniformly scaling a Marchfolk collision capsule.
+
+Collision architecture must be capable of representing relevant differences in:
+- total stature,
+- shoulder breadth,
+- thorax/pelvis envelope,
+- body composition,
+- head clearance,
+- crouched posture,
+- and equipment where gameplay requires it.
+
+Exact collision primitives and whether body-shape variation affects gameplay collision remain **OPEN technical/gameplay decisions**.
+
+Visual mesh, navigation clearance, hit collision, interaction volumes and camera collision must not be assumed to be one identical representation.
+
+## 13. Passage and clearance validation
+
+Pipkin must be tested against:
+- doors and door handles,
+- low and high ceilings,
+- corridors,
+- tunnels,
+- crawlspaces,
+- railings,
+- gates,
+- windows where interactable,
+- furniture spacing,
+- and other constrained world geometry.
+
+Small visual stature does not automatically authorize access to spaces unless navigation/collision and gameplay rules explicitly permit it.
+
+Likewise, a world authored for taller races must not make ordinary required interactions unreachable for Pipkin.
+
+## 14. Third-person camera
+
+Third-person framing must accommodate Pipkin eye height and body scale without pretending the character is taller.
+
+The camera may use race/body-aware offsets, framing and obstruction handling, but must not alter anatomy or world scale.
+
+Validation must include:
+- neutral locomotion,
+- sprint,
+- crouch,
+- stairs/slopes,
+- tight interiors,
+- large equipped objects,
+- dialogue transitions,
+- and extreme valid body configurations.
+
+Exact camera offsets remain implementation decisions.
+
+## 15. Character-creator camera
+
+The creator must frame Pipkin at useful visual scale without changing their actual world-relative dimensions.
+
+Face, body, hands/feet and equipment-preview views may use purpose-specific camera framing. Comparing races should preserve meaningful scale context rather than making every race appear the same height through identical framing.
+
+Camera framing is presentation, not anatomy.
+
+## 16. Targeting and gameplay camera boundary
+
+Targeting reticles, lock-on framing, aim offsets, cover systems and similar gameplay cameras must account for Pipkin's actual origin points and eye/weapon geometry.
+
+Camera convenience must not redefine visual projectile origins, hand positions or anatomical reach.
+
+Exact targeting rules remain **OPEN** for combat design.
+
+## 17. Interaction markers and contact points
+
+Interaction systems must support Pipkin-specific or anatomy-aware contact locations where visible contact matters.
+
+Doors, levers, crafting stations, containers, ladders, chairs, beds and similar objects should not assume a single Marchfolk hand, pelvis or eye height.
+
+Invisible interaction assistance may be used later if gameplay requires it, but visible animation must remain plausibly connected to the world.
+
+## 18. Furniture and rest systems
+
+Beds, chairs, benches, stools and other furniture require validation across playable stature.
+
+Pipkin may use oversized furniture honestly, but mandatory world functions must remain usable. Purpose-built or broadly accessible furniture may coexist with population-specific furniture.
+
+Furniture use must preserve adult read even where feet do not reach the floor or seat depth is large relative to thigh length.
+
+## 19. World-scale validation set
+
+At minimum, Pipkin world compatibility must be tested against:
+- standard doorways;
+- handles, switches and levers;
+- stairs;
+- ladders;
+- chairs and benches;
+- beds;
+- tables and counters;
+- crafting stations;
+- storage/container interactions;
+- pickups;
+- combat-space obstacles;
+- tunnels and low passages;
+- mounts/vehicles when those systems exist;
+- and dialogue staging with short and tall populations.
+
+The world must be evaluated against **approved target anatomy**, not merely the current prototype-reachable body.
+
+## 20. Biological preset requirements
+
+Pipkin presets must be legitimate outputs of the same biological system used by Advanced Mode.
+
+The preset set must demonstrate population breadth rather than encode a single idealized Pipkin.
+
+Presets should collectively cover meaningful combinations of:
+- height;
+- frame;
+- thorax/pelvis relationships within the approved envelope;
+- limb contribution;
+- body composition;
+- head/face variation;
+- surface phenotype;
+- age where supported;
+- and sex-related anatomy where relevant.
+
+No preset may violate the combined-proportion validity rules.
+
+## 21. Simple and Advanced Mode integration
+
+Simple Mode:
+**Race → Preset → Confirm**
+
+Advanced Mode:
+**Race → Preset → Customize → Confirm**
+
+Choosing a Pipkin preset does not lock the player into a subtype, caste or phenotype package. Advanced Mode may edit all approved variable traits subject to relationship-aware validity.
+
+The same data model must be capable of representing player characters, presets and appropriate NPC appearances.
+
+## 22. Race-aware randomization
+
+Pipkin Biological Randomization must draw only from valid Pipkin anatomy and approved biological surface envelopes.
+
+Where population frequencies remain OPEN, testing randomization may sample broadly but must not be mistaken for canonical frequency.
+
+Randomization must respect relationships between traits rather than independently choosing slider extremes.
+
+No hidden package such as:
+- shortest + largest head,
+- broad pelvis + exaggerated hip circumference,
+- fair + freckled + curly-haired,
+- large feet + hairy feet,
+- or youthful face + quick movement
+may define the race.
+
+## 23. Selective randomization and locks
+
+Players must eventually be able to randomize selected appearance domains while preserving locked choices.
+
+Examples:
+- randomize face while preserving body;
+- randomize surface phenotype while preserving face/body;
+- randomize hair without altering biological anatomy;
+- randomize body composition without changing skeletal frame;
+- preserve age while randomizing other compatible traits.
+
+Selective randomization must still run relationship-aware validity checks.
+
+## 24. Saved appearances and schema boundary
+
+Pipkin appearances must eventually be savable and reusable through the project's unified character-appearance data architecture.
+
+Saved appearance data must distinguish stable conceptual traits from implementation-specific mesh/morph values wherever possible.
+
+Schema/version migration is required later so prototype placeholders do not become permanent authority.
+
+No final data schema is prescribed here.
+
+## 25. Presentation randomization
+
+Presentation Randomization may choose hairstyles, grooming, clothing, cosmetics, tattoos, accessories and other non-biological choices according to approved culture/background/region/personal-style systems.
+
+It must not be treated as genetic inheritance.
+
+A Pipkin biological preset can support many presentation identities.
+
+## 26. Culture and background firewall
+
+Nothing in Parts 1–6 biologically requires Pipkin to be:
+- rural,
+- pastoral,
+- cheerful,
+- mischievous,
+- domestic,
+- food-focused,
+- barefoot,
+- stealthy,
+- mechanically inclined,
+- adventurous,
+- peaceful,
+- or socially outgoing.
+
+Any such tendencies belong to culture, background, occupation, individual personality or gameplay choices if they exist at all.
+
+## 27. Lifecycle status
+
+Exact Pipkin lifecycle remains **OPEN**.
+
+Locked for first-pass character design:
+- valid playable adults use mature adult anatomy;
+- age presentation cannot substitute for biological maturity;
+- visible aging is supported;
+- elder appearance and movement may vary without mandatory frailty;
+- chronological age, apparent biological age and age presentation remain distinct concepts.
+
+Exact maturation timing, lifespan, senescence curve, fertility timing and age-frequency distribution require later world/lifecycle design.
+
+## 28. Sex-related anatomy status
+
+Pipkin follow the universal four-layer character-creation model.
+
+Sex-related physical anatomy may influence relevant pelvic, thoracic, facial, soft-tissue and other biological relationships, but:
+- it does not determine height, frame, muscularity, fat amount, hair, clothing, class, personality or culture;
+- like-for-like comparisons are used where sex-related anatomy materially affects a race comparison;
+- racial identity is not defined by external shoulder-to-hip ratio or sex-coded presentation.
+
+Exact creator-facing control organization remains subject to the universal architecture review.
+
+## 29. Positive racial identity hierarchy
+
+For first-pass design, Pipkin identity is carried in this order:
+
+1. **Primary:** Low-Set Compact Trunk Architecture.
+2. **Supporting:** comparatively light skeletal construction and proportionally sustained limbs.
+3. **Supporting facial identity:** Integrated Mature Facial Architecture.
+4. **Secondary population tendencies:** overlapping humanoid ear and surface traits.
+5. **Not racial identifiers:** hairstyle, facial hair, clothing, freckles, eye color, body hair, personality, culture, occupation or movement stereotype.
+
+This hierarchy describes diagnostic importance, not a requirement that every individual display an exaggerated version of each tendency.
+
+## 30. Consolidated anti-caricature rules
+
+A valid Pipkin must never require:
+- human-child proportions;
+- oversized head or eyes;
+- tiny jaw or juvenile midface;
+- Durrim-like structural concentration;
+- huge or hairy feet;
+- waddling, bouncing or scurrying;
+- automatic nimbleness, balance or acceleration bonuses;
+- rosy/freckled/fair default phenotype;
+- rustic clothing;
+- bare feet;
+- rodent-like teeth;
+- comic appetite or cheerfulness;
+- miniature equipment;
+- or a uniformly scaled Marchfolk body/animation/collision solution.
+
+## 31. Consolidated OPEN decisions
+
+The following remain OPEN after first-pass Pipkin design:
+- exact lifecycle and age-frequency model;
+- final pigmentation, hair and iris population frequencies;
+- rare natural hair/iris validity;
+- detailed skin/weathering distributions;
+- detailed dentition count/replacement/lifecycle;
+- sex-related facial/body-hair distributions;
+- final creator-facing facial-control organization;
+- final whole-character technical skeleton/mesh/morph architecture;
+- walk/run/sprint gameplay speeds;
+- stamina, acceleration and turning gameplay values;
+- jump/fall rules;
+- legacy sneak gameplay trait;
+- footstep noise/detection;
+- balance/knockdown gameplay;
+- climb/mantle limits;
+- swimming performance;
+- interaction and combat reach;
+- dodge behavior;
+- encumbrance and item feasibility;
+- collision implementation and whether body variation changes gameplay collision;
+- targeting/camera implementation;
+- ladder/stair universal world standards;
+- mounts/vehicles;
+- detailed population genetics/simulation depth;
+- and any final race/class restriction.
+
+OPEN means intentionally unresolved, not permission for prototype behavior to become canonical.
+
+## 32. Permanent validation suite
+
+The permanent Pipkin validation suite includes all approved PIP-BODY, PIP-FACE, PIP-SURF and PIP-MOVE cases from Parts 1–5 plus these integration cases:
+
+| ID | Target |
+| --- | --- |
+| PIP-INT-01 | Minimum-height adult in neutral clothing beside similar-height human child; adult anatomy unmistakable |
+| PIP-INT-02 | Maximum-height Pipkin beside minimum-height Durrim; distinct without surface/presentation cues |
+| PIP-INT-03 | Neutral silhouette with head/hands/feet hidden; Low-Set Compact Trunk Architecture remains readable |
+| PIP-INT-04 | Face-only normalized comparison with Marchfolk, Durrim, Fenn and Gorrund |
+| PIP-INT-05 | Surface phenotype strongly overlapping Marchfolk; Pipkin structure remains identity carrier |
+| PIP-INT-06 | Extreme valid frame/composition combinations; no Durrim or child convergence |
+| PIP-INT-07 | Full armor fit at min/reference/max stature |
+| PIP-INT-08 | Helmet/hood fit across cranial, hair and ear variation |
+| PIP-INT-09 | Footwear/glove fit across valid extremity variation |
+| PIP-INT-10 | Same canonical weapon/tool beside Marchfolk; no automatic object scaling |
+| PIP-INT-11 | Door/stair/ladder/chair/bed/counter interaction sequence |
+| PIP-INT-12 | Third-person and creator-camera framing at min/reference/max height |
+| PIP-INT-13 | Dialogue staging with Durrim, Marchfolk, Grask and Gorrund |
+| PIP-INT-14 | Biological preset breadth review; no hidden default phenotype |
+| PIP-INT-15 | Selective randomization with locks; no invalid combined anatomy |
+| PIP-INT-16 | Youngest valid adult through body/face/movement tests without presentation maturity cues |
+| PIP-INT-17 | Elder through body/face/surface/movement tests without losing racial structure |
+| PIP-INT-18 | Neutral presentation/culture removal test; biology still identifies the population |
+| PIP-INT-19 | Equipment-heavy loadout; fit and motion do not reshape anatomy |
+| PIP-INT-20 | Prototype comparison: every known prototype shortcut is identified as placeholder rather than authority |
+
+## 33. Prototype conflict ledger for Pipkin
+
+Known prototype assumptions that must not be treated as final Pipkin design include:
+- uniform whole-body race scaling;
+- prototype Pipkin scale values;
+- shared human animation set as final solution;
+- holder-scaled weapons/equipment;
+- single human-derived collision assumptions;
+- camera/interactions authored around one human height;
+- placeholder saved-appearance architecture;
+- any prototype racial stat or class restriction not explicitly approved.
+
+These may remain useful prototypes. They do not override Parts 1–6.
+
+Implementation verification against actual project files remains deferred until implementation work is authorized and files are available.
+
+## 34. Short-race dependency and Cogling boundary
+
+Pipkin are first-pass definable without Cogling, but the final **Short-Race Comparative Anatomy Review** remains required after Cogling is designed.
+
+That review must verify at minimum:
+- Durrim = compact structural concentration;
+- Pipkin = light compact adult proportionality centered on Low-Set Compact Trunk Architecture;
+- Cogling = its own positive anatomy, not an unused midpoint;
+- equal-height and silhouette boundary cases;
+- face and extremity boundaries;
+- movement and equipment/world-scale consequences;
+- and whether any terminology needs refinement.
+
+The review may refine comparative wording but must not erase approved positive Pipkin anatomy without an explicit design decision.
+
+## 35. Universal-review dependencies
+
+Pipkin first-pass completion does not waive later universal reviews, including:
+- Universal Facial Customization Architecture Review;
+- cross-race pigmentation/surface consistency work;
+- race-biology-gameplay review for unresolved gameplay traits;
+- world-scale/accessibility validation across the full playable roster;
+- technical character architecture review;
+- Short-Race Comparative Anatomy Review after Cogling.
+
+Where a named review is not formally registered, the underlying OPEN item remains OPEN rather than creating an implied process requirement.
+
+## 36. Final combined Pipkin identity statement
+
+> **Pipkin are a distinct short humanoid population defined primarily by Low-Set Compact Trunk Architecture: a compact adult central trunk in which a mature, structurally broad pelvis contributes strongly to the body while the thorax remains comparatively moderate and the limbs retain substantial proportional contribution to stature. Their skeleton is comparatively light rather than Durrim-like in structural concentration, and their adult face uses Integrated Mature Facial Architecture, with a moderately broad but variable cranial base integrating through the temple and zygoma into a fully mature central midface without juvenile shortening, Durrim depth-dominance or Gorrund posterior transverse continuity. Their surface phenotype is broad and overlapping rather than racially diagnostic. Their movement is upright adult short-stature locomotion generated from real anatomy, not waddling, scurrying, bouncing or innate nimbleness. Equipment, collision, cameras, interactions and world geometry must accommodate approved Pipkin anatomy without shrinking canonical objects or distorting the body. Pipkin identity is biological and anatomical; culture, presentation, personality, occupation and gameplay advantages remain separate unless independently approved.**
+
+## 37. First-pass completion criteria
+
+Pipkin may be marked **FIRST-PASS COMPLETE** when:
+1. Parts 1–6 are accepted;
+2. no blocking contradiction remains with project rules or approved race specs;
+3. Part 6 receives a clean final audit;
+4. consolidated OPEN items are recorded without accidental closure;
+5. known prototype conflicts are identified as non-authoritative;
+6. Short-Race Comparative Anatomy Review remains queued for after Cogling rather than being falsely treated as completed.
+
+Part 6 is **PROPOSED FOR AUDIT**.
+
+**Pipkin v1.0 is not yet FIRST-PASS COMPLETE pending Part 6 audit. No UE5 implementation is authorized.**
