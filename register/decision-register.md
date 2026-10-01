@@ -931,4 +931,13 @@ Pipkin v1.0 Part 2
 | Whether the Pipkin pelvis-to-thorax tendency is measured within sex (male vs male, female vs female) and kept separate from sex dimorphism, so male Pipkin don't read female-coded | OPEN | Pipkin Part 2 audit |
 | Pelvic and arch morphology; femur-to-lower-leg balance; arm span; muscular-development capacity; fat-distribution patterns; a concrete measure for "low-set" | OPEN | Pipkin Part 2 §10, §22, §27, §50, §61, §63 |
 
+Pipkin v1.0 Part 2 author resolution (proposed by ChatGPT, not yet approved by Tyler or patched into the spec)
+
+| Decision | Status | Source |
+| --- | --- | --- |
+| Low-Set Compact Trunk Architecture includes a modestly reduced vertical central-trunk share versus Marchfolk, a compact lumbar and waist transition, and a pelvis whose vertical height, depth and 3D integration stay substantial relative to the thorax; it persists at Marchfolk-like pelvic breadth; never Durrim-like compression; no slider or fixed ratio (would close the concrete "low-set" measure item) | PRELIMINARY | Author resolution §2; re-audit §3.1–3.2 |
+| Pelvis-to-thorax comparisons use like-for-like sex-related anatomical configurations; the trait is expressed through pelvic structure, never shoulder-to-hip ratio, hip circumference or a feminized silhouette; male and female Pipkin vs Marchfolk validation pair; dimorphism magnitude stays OPEN (would close the within-sex item) | PRELIMINARY | Author resolution §3; re-audit §3.3 |
+| The 122 cm Durrim boundary is carried jointly by torso vertical organization, thoracic presence, limb contribution, joints, long-bone robusticity, hand, wrist, foot and ankle structure and the two trunk systems; pelvic breadth is not primary | PRELIMINARY | Author resolution §4; re-audit §3.4 |
+| Canonical race file location: resolution §1 names `races/`, which conflicts with Tyler's September 30 choice of `specs/<race>/<RACE>_V1.md` | OPEN | Author resolution §1; re-audit §2a |
+
 Marchfolk v1.0 and v1.5 are referenced but haven't been received here. Send them and their decisions go into this register.
