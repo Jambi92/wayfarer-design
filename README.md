@@ -58,7 +58,7 @@ A higher level always wins. Existing implementation never overrides an approved 
 ## Workflow
 
 1. ChatGPT writes a part or patch and commits it to the race file (or opens a pull request).
-2. Claude audits it: adds the Decision Register entries and writes any findings to that race's audit file.
+2. Claude audits it: adds the Decision Register entries and writes its findings to a per-part audit file in `audits/`.
 3. Tyler reads the audit and decides. A patch that resolves a note moves it out of the audit file.
 
 Commit messages say which part or patch they carry, for example `Pipkin Part 3: craniofacial anatomy, ears, hair`.
