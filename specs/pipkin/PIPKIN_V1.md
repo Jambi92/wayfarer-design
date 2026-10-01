@@ -189,7 +189,7 @@ Low-fat Pipkin are validated so the pelvic architecture stays readable; higher f
 | --- | --- |
 | Human adult (normalized height, head, hands and feet hidden where useful) | Pipkin still differ from Marchfolk through thorax-pelvis relationship, compact trunk organization, mature pelvic contribution and limb-trunk relationship; fails if identical |
 | PIP-BODY-15 adult Pipkin vs human child (similar height) | Never relying mainly on the head: thorax, shoulder girdle, mature pelvis, limb segmentation, joint maturity, hands and feet make the Pipkin clearly mature before facial detail |
-| Durrim boundary (about 122 cm, single-height **Cross-Population Equal-Height Boundary Test**, no broad overlap implied) | Durrim: compact structural concentration, vertically compact broad and deep torso, higher skeletal presence, larger joints, reduced limb contribution, substantial hands and feet. Pipkin: low-set compact trunk, moderate thorax, greater pelvic contribution relative to thorax, lighter construction, smaller joints, greater limb contribution, moderate hands, modestly substantial feet |
+| Durrim boundary (about 122 cm, single-height **Cross-Population Equal-Height Boundary Test**, no broad overlap implied) | Pelvic breadth is not the primary discriminator. Durrim: compact structural concentration, stronger torso vertical compactness, broad/deep thorax, higher axial and joint scale, greater long-bone robusticity, reduced limb contribution, substantial hand/wrist and foot/ankle structure. Pipkin: Low-Set Compact Trunk Architecture, moderate thorax, lighter joint and long-bone construction, sustained limb contribution, and more moderate extremity structure. The boundary is carried jointly by torso vertical organization, thoracic breadth/depth and axial presence, limb contribution, joint dimensions, long-bone robusticity, extremity integration and the two distinct trunk systems. |
 | Broad Pipkin vs Narrow Durrim (mandatory, about 122 cm, similar composition) | The distinction stays anatomical |
 | PIP-BODY-16 normalized Marchfolk (frame, muscle, fat and presentation controlled, head, hands and feet hidden where useful) | Pipkin keep low-set compact trunk, mature pelvic contribution, distinct thorax-pelvis relationship and coordinated limb-trunk relationships; fails if they read as scaled Marchfolk |
 | Marchfolk-similar frame stress | A Pipkin with near-human normalized shoulder and thoracic breadth stays Pipkin through the whole torso, pelvis and limb system; no single width carries the race |
@@ -252,25 +252,26 @@ First-pass approved: Low-Set Compact Trunk Architecture, distinguishing Pipkin p
 
 Pipkin are not human children with adult bodies, miniature Marchfolk heads, round-faced caricatures, small Durrim, or short elves. Attractive, ordinary, unusual, soft-featured, angular, weathered and severe adult faces are all valid. No beauty standard is biological.
 
-## 2. Positive craniofacial specialization — Compact Mature Facial Integration
+## 2. Positive craniofacial specialization — Integrated Mature Facial Architecture
 
 The positive Pipkin facial anchor is:
 
-> **Pipkin possess Compact Mature Facial Integration: an adult craniofacial organization in which a moderately broad cranial base and cheek-temporal region integrate into a vertically compact but fully mature midface and lower face, with clear adult orbital, nasal, maxillary and mandibular development and without juvenile enlargement of the cranial vault or eyes.**
+> **Pipkin possess Integrated Mature Facial Architecture: an adult craniofacial organization in which a moderately broad but variable cranial base transitions through the temple and zygomatic region into a fully developed central midface, while adult nasal, maxillary, dental-arch, mandibular-ramus and gonial relationships remain mature rather than vertically shortened. Pipkin facial compactness comes from the overall cranial-base-to-face organization and restrained forehead-to-brow/lower-face soft-tissue vertical envelope, not from juvenile shortening of developmental facial structures.**
 
 This is a coordinated relationship, not a single face-width control.
 
 Its central sequence is:
 
-**moderate cranial breadth → integrated temple/zygomatic support → mature compact midface → clearly developed adult lower face**
+**moderate cranial base → temple/zygoma → central midface integration → mature adult lower-face framework**
 
-"Compact" refers to coordinated facial vertical organization, not a tiny face, flat face, compressed skull, short nose, recessed jaw, round cheeks, or childlike proportions. "Mature" requires adult skeletal development even in soft-featured individuals.
+The Pipkin-specific feature is the **distribution of integration**, not simply a shorter face. Mandibular ramus height, nasal bridge development, maxillary and dental-arch depth, and adult gonial definition never become juvenile in order to create the racial read. Craniofacial depth relative to facial height stays within the broad Marchfolk adult range rather than trending toward Durrim depth-dominance. Soft-featured individuals must preserve these mature skeletal relationships.
 
 This system is distinct from:
 - **Marchfolk:** ordinary human adult craniofacial relationships across broad variation.
-- **Durrim:** greater cranial breadth/depth and structurally substantial compact adult craniofacial construction.
-- **Gorrund:** Transverse Structural Continuity with much greater large-scale lateral structural mass.
-- **Fenn/Aelari/Vael:** elven craniofacial family and elven ear biology.
+- **Durrim:** greater craniofacial depth relative to facial height, greater structural breadth/depth, and compact structural concentration; Pipkin do not trend toward Durrim depth-dominance.
+- **Gorrund:** Transverse Structural Continuity continues through lateral orbital/zygomatic/temporal structures into the posterior mandible and ramus; Pipkin integration terminates through the central midface rather than forming that transverse chain.
+- **Fenn:** elven-family craniofacial organization, tending toward a narrower/higher cranial read, lighter midface/jaw and somewhat greater orbital/eye prominence; Pipkin retain the broader-base central-midface integration even with ears hidden.
+- **Aelari/Vael:** their respective elven-family craniofacial and ear biology, not Pipkin architecture.
 - **Human children:** juvenile orbital, midface, mandibular, dental-jaw and cranial-to-facial relationships.
 
 ## 3. Cranial vault and head contribution
@@ -293,19 +294,19 @@ Adult maturity must survive:
 - lower-valid brow projection,
 - and softer facial contours.
 
-No combination may require giant eyes, wide-eyed expression or infant-like orbital proportions.
+No combination may require giant eyes, wide-eyed expression or infant-like orbital proportions. "Larger-valid" Pipkin orbital dimensions and visible eye aperture must remain within the broad adult Marchfolk-compatible range relative to the face; the Pipkin system does not create a separate enlarged-eye envelope.
 
 ## 5. Zygomatic, temporal and cheek structure
 
-The zygomatic and temporal regions provide a major part of Compact Mature Facial Integration. Pipkin may trend toward **moderate lateral cheek support relative to facial size**, coordinating cranial breadth with the midface without requiring broad external cheeks.
+The zygomatic and temporal regions provide a major part of Integrated Mature Facial Architecture. Pipkin may trend toward **moderate lateral cheek support relative to facial size**, coordinating cranial breadth with the midface without requiring broad external cheeks.
 
 Zygomatic breadth, projection and vertical position are separate. Temporal breadth and hollowing vary with skeletal anatomy, age and composition. Soft-tissue cheek fullness is not the racial anchor.
 
-The system must remain distinct from Gorrund Transverse Structural Continuity: Pipkin do not require massive lateral brow-orbital structures, heavy temporal mass, or a broad load-bearing mandible.
+The system must remain distinct from Gorrund Transverse Structural Continuity by **relationship**, not scale. Pipkin lateral support follows **cranial base → temple → zygoma → central midface**. The posterior mandible and ramus do not participate in a continuous Pipkin lateral framework, and the lateral orbital margins and zygomatic arches do not form the Gorrund continuous transverse band.
 
 ## 6. Midface, nose and maxillary region
 
-Pipkin have a fully mature adult midface. Midface height may trend modestly compact within the racial system, but never juvenile, underdeveloped or recessed by requirement.
+Pipkin have a fully mature adult midface. Midface height itself is not required to be shortened. Nasal bridge development, maxillary projection/depth, dental-arch support and other maturity-bearing structures remain adult; the racial compactness is produced by the broader cranial-base-to-central-face organization and overall adult facial envelope, not juvenile midface reduction.
 
 Nasal root height, bridge height, bridge breadth, nasal length, projection, tip shape, alar breadth and nostril geometry vary broadly. **A small or upturned nose is not a Pipkin trait.** Large, long, broad, narrow, projecting and subtle adult noses are all valid when anatomically coherent.
 
@@ -332,7 +333,7 @@ The reference tendency is a **moderately scaled but fully mature mandible integr
 
 ## 9. Ears — Compact Rounded Auricular Architecture
 
-Pipkin ears are non-elven adult humanoid ears with their own positive tendency:
+Pipkin ears sit within the broader adult humanoid ear range. The following describes a **central population tendency, not a primary racial identifier**:
 
 > **Pipkin ears trend toward a compact rounded auricular architecture: moderate overall projection, a rounded-to-softly-angular upper contour, a proportionally clear but not deep conchal bowl, continuous moderate helix definition, and a compact attachment that integrates closely with the side of the head.**
 
@@ -345,7 +346,7 @@ Locked exclusions:
 - no mandatory tiny ears,
 - no mandatory protruding "comic halfling" ears.
 
-Ear shape is a secondary identifier. Hiding the ears must not erase Pipkin facial identity.
+Ear shape is secondary and may overlap Marchfolk and Durrim humanoid ear variation. No unique ear feature is required for Pipkin recognition. Hiding the ears must not erase Pipkin facial identity.
 
 ## 10. Eyes, iris biology and pigmentation scope
 
@@ -433,7 +434,10 @@ There is no "Pipkin Face" master slider. Validity is relationship-aware. Populat
 | PIP-FACE-17 | Adult Pipkin vs human child at similar head size; critical maturity comparison |
 | PIP-FACE-18 | Pipkin vs normalized Marchfolk adult, hairstyle/ears hidden; facial organization remains distinct |
 | PIP-FACE-19 | Pipkin vs Durrim at normalized head size; compact maturity vs structural depth/mass distinction survives |
-| PIP-FACE-20 | Pipkin vs Gorrund at normalized head size; no Transverse Structural Continuity overlap |
+| PIP-FACE-20 | Pipkin vs Gorrund at normalized head size; central-midface integration must not become Transverse Structural Continuity |
+| PIP-FACE-21 | Pipkin vs Fenn at normalized head size with ears and hairstyle hidden; broader-base central-midface integration remains distinct from the Fenn elven facial system |
+| PIP-FACE-22 | Adult male Pipkin vs adult male Marchfolk at normalized head size/presentation; racial architecture remains distinct without exaggerated dimorphism |
+| PIP-FACE-23 | Adult female Pipkin vs adult female Marchfolk at normalized head size/presentation; racial architecture remains distinct without juvenile or cross-sex coding |
 
 ## 17. Combined stress tests
 
@@ -445,9 +449,13 @@ There is no "Pipkin Face" master slider. Validity is relationship-aware. Populat
 - High ear projection + rounded contour: must not become comic halfling.
 - Lower-valid midface height + larger eye aperture: critical anti-child combination.
 - Greater head contribution to stature + youngest adult apparent age: critical whole-character anti-child test.
+- Broad cranium + greater facial depth + strong mandible at normalized head size: must remain outside Durrim depth-dominant structural concentration.
+- Broad cranium + broad zygomatics + strong ramus at normalized head size: must not form Gorrund Transverse Structural Continuity.
+
+Diagnostics should distinguish **FD-STRUCT** (skeletal structure), **FD-SOFT** (soft tissue), **FD-SURF** (surface), **FD-HAIR** (hair), **FD-PRES** (presentation), and **FD-OBS** (observed/rendered appearance) so failures are assigned to the correct domain.
 
 ## 18. Part 3 identity statement
 
-> **Pipkin craniofacial identity is defined by Compact Mature Facial Integration: a moderately broad but variable cranial foundation coordinated with temple and zygomatic support, a compact yet fully developed adult midface, and a mature lower face whose identity comes from structural relationships rather than heaviness. Their compact rounded ears are secondary, while hair, facial hair, eye color, wrinkles, cheek fullness and head size never carry racial adulthood or identity by themselves.**
+> **Pipkin craniofacial identity is defined by Integrated Mature Facial Architecture: a moderately broad but variable cranial base whose support flows through the temple and zygoma into the central midface while the nasal, maxillary, dental-arch, mandibular-ramus and gonial structures remain fully adult. Pipkin do not trend toward Durrim craniofacial depth-dominance or Gorrund posterior transverse continuity. Their broadly humanoid rounded-ear tendency is secondary, while hair, facial hair, eye color, wrinkles, cheek fullness and head size never carry racial adulthood or identity by themselves.**
 
-Part 3 remains **PROPOSED FOR AUDIT** until Claude's review is resolved. No UE5 implementation is authorized.
+Part 3 is **PATCHED AFTER FIRST AUDIT — FINAL RE-AUDIT REQUESTED**. No UE5 implementation is authorized.
