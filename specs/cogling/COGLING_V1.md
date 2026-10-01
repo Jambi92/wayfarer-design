@@ -1,6 +1,6 @@
 # Cogling Character Design v1.0
 
-**Status:** IN PROGRESS — Part 1 proposed for audit  
+**Status:** IN PROGRESS — Part 1 patched after first audit  
 **Phase:** DESIGN ONLY  
 **Implementation:** Not authorized
 
@@ -30,7 +30,7 @@ The formal Short-Race Comparative Anatomy Review occurs only after Cogling's own
 
 Cogling are built around **Fine-Scale Elongated Articulation**.
 
-> **Cogling possess a very-small adult humanoid architecture in which a compact central body is paired with comparatively narrow skeletal shafts, clearly articulated joints and proportionally emphasized distal segments—especially forearms, lower legs, hands and fingers—without turning the overall body into a long-limbed miniature elf or child.**
+> **Cogling possess a very-small adult humanoid architecture organized around a narrow stable central core and near-human total limb contribution, with comparatively fine skeletal shafts and a distinctive redistribution within the limbs toward the forearms, lower legs, hands and fingers. Their identity comes from where limb length and articulation are distributed, not from becoming globally limb-dominant or reach-specialized.**
 
 Project shorthand: **Fine-Scale Elongated Articulation**.
 
@@ -38,7 +38,7 @@ This is anatomical design terminology, not a creator-facing master slider.
 
 The core body sequence is:
 
-**compact central body → narrow limb shafts → articulated distal joints → proportionally emphasized distal segments**
+**narrow stable central core → near-human total limb contribution → fine limb shafts → within-limb distal redistribution → proportionally emphasized hands/fingers**
 
 The specialization must remain visible without tools, goggles, hats, machinery or occupation cues.
 
@@ -60,7 +60,9 @@ These values are provisional pending:
 - full-roster world-scale/accessibility validation;
 - camera/collision/interaction review.
 
-The ~91 cm reference intentionally meets the current provisional Pipkin minimum as an equal-height boundary test. Equal height must not make the two populations anatomically interchangeable.
+The current provisional ranges create an **intentional overlap zone of approximately 91–107 cm with Pipkin**. This is not a single-height boundary.
+
+The ~91 cm Cogling reference meets the current provisional Pipkin minimum, while the ~107 cm Cogling maximum meets the current Pipkin reference. Cogling and Pipkin must therefore remain anatomically distinct across a meaningful shared stature zone rather than relying on height as the discriminator.
 
 No whole-body scale multiplier is authoritative.
 
@@ -93,19 +95,17 @@ Very small stature is not juvenile anatomy.
 
 ## 6. Central body architecture
 
-Cogling possess a compact central body, but **compact** here does not mean Durrim structural concentration or Pipkin Low-Set Compact Trunk Architecture.
+Cogling possess a **narrow stable central core**.
 
-The Cogling thorax is fully adult but relatively small in absolute scale, with moderate depth and a comparatively narrow-to-moderate transverse envelope.
+At normalized displayed height, total torso contribution remains broadly near the Marchfolk adult range rather than becoming strongly limb-dominant. The Cogling-specific signal comes from a comparatively narrow adult thoracic/pelvic core combined with redistribution **within** otherwise broadly near-human total limb contribution.
 
-The central body should read as a stable adult core from which distal segment emphasis emerges.
+The thorax is fully adult, moderate in depth and comparatively narrow-to-moderate transversely. The pelvis is mature and integrated without becoming the dominant silhouette anchor. The central body therefore reads as an adult structural core rather than a shortened support between exaggerated limbs.
 
-Cogling are not defined by:
-- barrel chest;
-- deep axial mass;
-- vertically compressed Durrim torso;
-- broad mature pelvis as the dominant Pipkin silhouette feature;
-- extremely long waist;
-- or fragile pinched torso.
+This differs from:
+- Durrim structural concentration, with greater breadth/depth, joint scale and vertical compactness;
+- Pipkin Low-Set Compact Trunk Architecture, where the mature pelvis contributes strongly relative to the moderate thorax;
+- Fenn anatomy, where greater overall limb share contributes to the silhouette;
+- Grask anatomy, where limb dominance and reach specialization are major structural signals.
 
 Exact thorax-to-pelvis and torso-to-limb ratios remain OPEN pending validation.
 
@@ -133,7 +133,7 @@ Bone material properties are not inferred from visual gracility.
 
 ## 8. Distal segment emphasis
 
-Cogling positive identity includes proportional emphasis toward distal limb segments.
+Cogling positive identity includes proportional emphasis toward distal limb segments **within a broadly near-human total arm and leg contribution to stature**.
 
 At population level, Cogling may trend toward:
 - relatively greater forearm contribution within total arm length;
@@ -141,6 +141,8 @@ At population level, Cogling may trend toward:
 - hands that occupy a larger proportional share of arm length than in normalized Marchfolk;
 - fingers that are proportionally long relative to palm length;
 - feet whose length supports the distal-emphasis system without becoming oversized.
+
+The corresponding proximal segments accommodate that redistribution so the race does not become globally limb-dominant.
 
 This is **not** permission for extreme spider-like limbs, giant hands, giant feet or implausibly thin bones.
 
@@ -150,7 +152,7 @@ Exact segment ratios remain OPEN for later measurement/prototyping.
 
 Cogling arms remain adult humanoid arms.
 
-Total arm length may be somewhat emphasized relative to central-body size, but Cogling are not a reach-specialized population in the Grask sense.
+Total arm contribution remains broadly near the Marchfolk adult range at normalized height. Cogling are not a reach-specialized population in the Grask sense.
 
 The primary distinction is **segment distribution and distal articulation**, not maximum reach.
 
@@ -198,7 +200,7 @@ Whether Cogling receive any gameplay-level dexterity, interaction or crafting ef
 
 Cogling legs remain fully adult and plantigrade.
 
-The lower leg may make a somewhat greater proportional contribution than in normalized Marchfolk anatomy, consistent with Fine-Scale Elongated Articulation.
+The lower leg may make a somewhat greater contribution **within total leg length**, while total leg contribution to stature remains broadly near the Marchfolk adult range, consistent with Fine-Scale Elongated Articulation.
 
 This does not make Cogling:
 - digitigrade;
@@ -440,6 +442,8 @@ The world adapts to approved playable anatomy; Cogling are not made taller merel
 
 Any existing prototype Cogling scale, stats, collision, animation, class restriction, race description or equipment behavior is **PROTOTYPE / NON-AUTHORITATIVE** unless independently approved.
 
+The known prototype presentation is approximately **0.72× Marchfolk scale (~125 cm)**. This exceeds the current provisional Cogling maximum (~107 cm), overlaps/exceeds the Durrim minimum (~122 cm), and even places prototype Cogling above the prototype Pipkin (~0.70×/~121 cm), reversing the intended current Cogling/Pipkin stature relationship. These prototype values have no design authority.
+
 No implementation audit is performed in Part 1.
 
 ## 32. Initial body validation cast
@@ -455,12 +459,15 @@ No implementation audit is performed in Part 1.
 | COG-BODY-07 | Hands hidden; body still reads as Cogling rather than relying solely on fingers |
 | COG-BODY-08 | Head/hands/feet hidden; central body + limb organization still distinct |
 | COG-BODY-09 | Same-height Cogling and Pipkin; distinct trunk/segment organization |
-| COG-BODY-10 | Same-height Cogling and Durrim where ranges permit; distinct skeletal mass/segment organization |
-| COG-BODY-11 | Adult Cogling beside similar-height human child; maturity survives |
+| COG-BODY-10 | Normalized displayed-height comparison: Broad high-muscle Cogling vs Narrow Durrim; Cogling remains distinct through fine skeletal scale, narrow central core and within-limb distribution |
+| COG-BODY-10A | Actual-height context: maximum-height Cogling (~107 cm) beside minimum-height Durrim (~122 cm); stature difference and positive anatomy both remain legible |
+| COG-BODY-11 | Minimum-height Cogling (~76 cm) beside a roughly 1–2-year-old similar-height human toddler; adult skeletal, pelvic, facial-development boundary and limb organization remain unmistakable |
 | COG-BODY-12 | Long-finger high-end; still functional adult humanoid hand, not caricature |
 | COG-BODY-13 | Distal-emphasis low end; race identity survives without extreme proportions |
 | COG-BODY-14 | Like-for-like sex-related adult comparisons; race identity does not depend on sex coding |
 | COG-BODY-15 | Neutral culture/presentation removal; no tinkerer cues |
+| COG-BODY-16 | Cogling vs Fenn at normalized displayed height with ears hidden; Cogling retains near-human total limb share with within-limb distal redistribution rather than Fenn greater limb share/elven foundation |
+| COG-BODY-17 | Cogling vs Grask at normalized displayed height with hands neutralized; Cogling retains near-human total limb share and no reach specialization |
 
 ## 33. Combined-proportion validity
 
@@ -491,7 +498,7 @@ No "Cogling Proportion" master slider is approved.
 
 ## 35. Part 1 status and OPEN items
 
-Part 1 is **PROPOSED FOR AUDIT**.
+Part 1 is **PATCHED AFTER FIRST AUDIT — RE-AUDIT REQUESTED**.
 
 Key OPEN items include:
 - final height range;
