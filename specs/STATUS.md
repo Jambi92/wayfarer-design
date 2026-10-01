@@ -13,11 +13,11 @@
 10. Gorrund
 
 ## In progress
-11. **Pipkin — v1.0 Parts 1–5 FIRST-PASS ACCEPTED; Part 6 authored and under final audit**
+11. **Pipkin — v1.0 Parts 1–5 FIRST-PASS ACCEPTED; Part 6 final-audit clarifications patched; quick check pending**
 
 ## Not yet designed
 12. Cogling
 13. Saurin
 
 ## Current next action
-Claude final-audits Pipkin Part 6 and the consolidated v1.0 specification. If no blocking findings remain, ChatGPT records accepted corrections if any and marks Pipkin FIRST-PASS COMPLETE. Do not begin Cogling or UE5 implementation until Tyler directs it.
+Claude performs the quick check of Pipkin Part 6 final-audit clarifications. If confirmed, ChatGPT may mark Pipkin v1.0 FIRST-PASS COMPLETE. Do not begin Cogling or UE5 implementation until Tyler directs it.
