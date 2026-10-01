@@ -19,6 +19,11 @@ Prototype code or earlier shorthand never silently overrides an approved specifi
 4. ChatGPT reads the audit, resolves accepted findings in the specification, and records important decisions in `decisions/`.
 5. A race is marked FIRST-PASS COMPLETE only after its final audit has no blocking contradiction.
 
+## Ownership (Tyler's decision, September 30, 2026)
+- ChatGPT maintains the universal rules in `decisions/PROJECT_RULES.md`.
+- Claude keeps the per-part decision log in `register/decision-register.md`, recording AGREED / PRELIMINARY / OPEN entries for each approved part and patch.
+- New audits use per-part files in `audits/`; per-race `audits/NN-<race>.audit.md` files are history.
+
 ## Current phase
 DESIGN ONLY. Do not modify Unreal Engine 5 or begin technical implementation unless Tyler explicitly changes the project phase.
 

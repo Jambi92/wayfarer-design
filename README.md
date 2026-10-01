@@ -6,7 +6,7 @@ Design specifications for **Wayfarer**, a UE5 RPG. This repo holds design docume
 
 | Who | Role | Writes to |
 | --- | --- | --- |
-| **ChatGPT** | Author. Writes the race specs, parts and clarification patches, following Tyler's rules. | `races/`, `reviews/`, `rules/` |
+| **ChatGPT** | Author. Writes the race specs, parts and clarification patches, following Tyler's rules, and owns the universal project rules. | `specs/`, `races/`, `reviews/`, `rules/`, `decisions/` |
 | **Claude** | Auditor. Records approved material, checks it for contradictions, ambiguities, convergence between races and coding risks, and reports them. Claude doesn't silently fix the spec. | `audits/`, `register/` |
 | **Tyler** | Decides. Approves, rejects or asks for patches. Nothing becomes AGREED without Tyler. | Anything |
 
@@ -27,7 +27,8 @@ A higher level always wins. Existing implementation never overrides an approved 
 | `reviews/` | Cross-race reviews (Elf Comparative Review so far) |
 | `audits/<review>.audit.md` | Open notes for each review |
 | `rules/character-creation-brief.md` | The universal brief: principles, layers, the 13 races, universal amendment v0.1 |
-| `register/decision-register.md` | Every decision tagged AGREED, PRELIMINARY or OPEN |
+| `decisions/PROJECT_RULES.md` | Universal project rules (ChatGPT owns) |
+| `register/decision-register.md` | Per-part decision log: every decision tagged AGREED, PRELIMINARY or OPEN (Claude keeps) |
 | `plan/terrain-and-race-models.md` | Terrain plan, candidate technical approaches, known gaps, queued playtest feedback |
 
 ## Race status
@@ -47,6 +48,12 @@ A higher level always wins. Existing implementation never overrides an approved 
 | 11 | Pipkin | Parts 1–2 received, v1.0 in progress |
 | 12 | Cogling | Not started |
 | 13 | Saurin | Not started |
+
+## Ownership (Tyler's decision, September 30, 2026)
+
+- **Universal rules:** ChatGPT authors and maintains `decisions/PROJECT_RULES.md`.
+- **Per-part decision log:** Claude records each approved part and patch in `register/decision-register.md`.
+- **Audits:** new audits go in per-part files (for example `audits/pipkin-part-2.md`); the per-race `audits/NN-<race>.audit.md` files are kept as history.
 
 ## Workflow
 
