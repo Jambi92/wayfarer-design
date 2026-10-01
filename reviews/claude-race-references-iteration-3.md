@@ -7,7 +7,7 @@
 
 ## What changed in the tooling
 
-Tyler moved the reference bodies from MetaHuman to Blender, because MetaHuman had too many limits. The new tools are Blender 5.2 with MPFB 2 (MakeHuman), and the generated characters are CC0.
+Tyler moved the reference bodies from MetaHuman to Blender, because MetaHuman had too many limits. The new tools are Blender 5 with MPFB 2.0.17 (MakeHuman), and the generated characters are CC0. The bodies were built headless, and the files open in Tyler's Blender 5.2.
 
 Blender removes the limits the Iteration 2 diagnostics exposed. It now controls separately:
 - thigh and shin;
