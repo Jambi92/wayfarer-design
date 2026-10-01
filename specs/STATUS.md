@@ -11,13 +11,13 @@
 8. Durrim
 9. Grask
 10. Gorrund
+11. Pipkin
 
 ## In progress
-11. **Pipkin — v1.0 Parts 1–5 FIRST-PASS ACCEPTED; Part 6 final-audit clarifications patched; quick check pending**
 
 ## Not yet designed
 12. Cogling
 13. Saurin
 
 ## Current next action
-Claude performs the quick check of Pipkin Part 6 final-audit clarifications. If confirmed, ChatGPT may mark Pipkin v1.0 FIRST-PASS COMPLETE. Do not begin Cogling or UE5 implementation until Tyler directs it.
+Pipkin v1.0 is FIRST-PASS COMPLETE. The Short-Race Comparative Anatomy Review remains queued until Cogling is designed. Await Tyler's direction before beginning Cogling, Saurin, any universal review, or UE5 implementation.
