@@ -187,6 +187,37 @@ Relationships must be constrained.
 
 A long tail with an implausibly tiny base or a very massive tail with inadequate pelvic/sacral support is invalid even if each individual control lies within its nominal range.
 
+## 11a. Tail individuality and customization — revision
+
+**Added October 1, 2026 — Tyler, design authority** (`reviews/claude-saurin-targeted-sculpt-5-directive.md` §14). The mandatory-tail rule is unchanged. Every normal Saurin keeps a complete, visible, biomechanically integrated tail, and individuality operates inside that rule.
+
+**Biological variation** may additionally include:
+- proximal vs distal mass distribution;
+- cross-sectional tendency (relatively rounder, laterally broader, or dorsoventrally deeper, within Saurin bounds);
+- segment and curvature character;
+- neutral carriage;
+- scale-field morphology;
+- inherited pigmentation and patterning;
+- optional restrained dorsal keratin ridges, scutes or hornlets (§101a).
+
+These are **coupled**, never independent sliders: tail base × length × mass × pelvic support × trunk counterbalance must remain valid.
+
+**Acquired:** scars, damaged scales, chipped keratin, localized pigment change, occupational wear and minor healed injuries. Major tail loss remains an OPEN injury-system question and is never a normal creator substitute.
+
+**Applied / Personal Presentation:** bands, wraps, jewelry, paint/dye, keratin caps/fittings, draped clothing, segmented armor and ceremonial coverings. Armor and clothing may cover or lie on the tail but cannot cosmetically erase its presence.
+
+**Firewalls:**
+- Tail phenotype encodes no sex, culture, class, profession, personality, intelligence, aggression, social status or habitat.
+- Tail phenotype carries no automatic gameplay effect: no damage vulnerability, target-acquisition penalty, extra hit area, tail attacks, knockdown or balance effects, turning, swimming, climbing, grappling, armor or intimidation.
+- **The tail is a strong racial identifier but must not make a Saurin player easier to hit.**
+- The legacy "fastest swimmer" claim remains gameplay under review and is not reverse-engineered into tail phenotype.
+
+**Creator:** the tail is a first-class anatomy domain. It supports:
+- selective randomization of the tail alone;
+- attribute locks that preserve chosen tail characteristics;
+- saved-appearance and NPC preservation of valid tail phenotype;
+- neutral presets that show real silhouette diversity, not subraces.
+
 ## 12. Tail and individuality
 
 Tail anatomy must support meaningful individual variation without becoming:
@@ -906,11 +937,9 @@ Variation must not turn the structure into a human, elf or fantasy-dragon ear by
 
 ## 58. Horn firewall
 
-Horns are **not baseline Saurin anatomy** in Part 2.
+> **Superseded October 1, 2026 (Tyler, design authority):** cranial display is now governed by the **Cranial Keratin Display System** in §100. The principle below still applies: positive Saurin identity lives in skull architecture, and no display structure may be required for racial recognition.
 
-This prevents the head from becoming generically draconic and keeps the positive identity in skull architecture.
-
-Whether any Saurin population can possess keratinous cranial display structures is OPEN for Part 3 and requires an explicit biological decision.
+*Historical Part 2 wording:* Horns were not baseline Saurin anatomy in Part 2, to keep the head from becoming generically draconic; whether keratinous cranial display structures existed was left OPEN for Part 3.
 
 ## 59. Crest/frill firewall
 
@@ -1535,48 +1564,99 @@ Saurin eye anatomy grants no automatic:
 
 Any sensory gameplay requires a separate decision.
 
-## 100. Cranial display structures — decision
+## 100. Cranial Keratin Display System — decision
 
-Baseline Saurin **do not possess true horns**.
+**Revised October 1, 2026 — Tyler, design authority** (`reviews/claude-saurin-targeted-sculpt-5-directive.md`). This replaces the earlier rule that baseline Saurin "do not possess true horns" and may show only low-profile keratinous ridges. That earlier rule is superseded design history and is no longer authoritative.
 
-Instead, race-valid cranial surface variation may include **low-profile keratinous ridges and scale crests** that remain continuous with the integument and underlying cranial architecture.
+> **Saurin possess a species-specific cranial keratin display system. Expression ranges from subtle ridges and low hornlets through prominent horns, crests, spikes and plate-like growths. Configuration varies substantially between individuals and serves as the Saurin character-creation analogue to hairstyle without encoding sex, culture, personality, class or combat capability. These structures grow from anatomically valid cranial attachment regions and must remain mechanically integrated with the underlying skull. Minimal expression is valid, but mammalian scalp hair is not part of baseline Saurin biology.**
 
-These structures are not mammalian horns or dragon antlers.
+The **capacity** for these structures is racial biology. The **exact expression** is individual variation. Not every Saurin has large horns, and nearly flat/minimal expression is fully valid.
 
-They are **integumentary keratin structures over the already-approved cranial skeleton**, not new bony horns. Slight underlying surface rugosity may support attachment, but the ridges remain **FD-SURF rather than FD-STRUCT**.
+Display structures are never required for racial recognition. The bare skull must read as Saurin without them (SAU-SURF-25).
 
-They may add silhouette variation without becoming required for racial recognition.
+Structural classification:
+- low ridges, scale crests and hornlets are integumentary keratin over the approved skull (**FD-SURF**, with slight underlying rugosity);
+- prominent horns, spikes, crests and plates require a supporting bony base or core at a valid attachment region. That support is **FD-STRUCT**, and its keratin sheath is **FD-SURF**.
 
-## 101. Keratinous ridge architecture
+## 101. Display architecture and attachment
 
-Potential regions include:
-- posterior orbital margin;
-- temporal/posterior cranium;
-- midline or paired posterior cranial ridges;
-- upper neck continuation.
+Valid attachment regions follow real reptilian cranial logic (for example, parietal/occipital and squamosal/temporal horn regions in horned lizards). They include:
+- posterior cranial margin (parietal/occipital region): paired or crown arrangements, posterior spikes;
+- temporal/squamosal corners behind the orbit: swept-back paired horns;
+- supraorbital/postorbital margin: brow-region hornlets, where they do not obstruct the orbit or gaze;
+- dorsal midline of the cranium: central or paired crests;
+- temporal and posterior cranial surfaces: plate-like keratin growths;
+- optional restrained continuation onto the upper neck (see §101a).
 
-Valid ridges:
-- remain low-to-moderate in projection;
-- have broad anatomical bases;
-- transition into scale fields;
-- cannot form huge antlers, branching horns or weapon-like spikes.
+Every prominent structure must show:
+- a broad base footprint proportional to its length and mass;
+- a growth direction consistent with its attachment region;
+- a skin/scale-to-keratin transition, not a glued-on edge;
+- no interference with orbital, rostral, jaw or auricular architecture;
+- no collision with the character's own head or neck through the normal head/neck range of motion;
+- head/neck balance plausible for its mass;
+- a plausible relationship to future helmets and headgear (§192).
 
-Exact distribution remains OPEN within these constraints.
+Valid adult expression families include:
+- nearly flat/minimal cranial ridges;
+- small hornlets;
+- paired posterior or swept-back horns;
+- brow-region hornlets;
+- crown arrangements;
+- posterior spikes;
+- central or paired crests;
+- plate-like growths;
+- mixed configurations;
+- mild natural asymmetry.
 
-## 102. Ridge variation
+These are **variation families, not subraces**.
 
-Biological controls may include:
-- presence/absence within race-valid population frequency;
-- height;
+Invalid: branching antlers, deployable frills or hoods (§103), dragon-default horn sets imposed on every individual, and structures that read as weapons by design.
+
+## 101a. Cranial-to-caudal display continuity
+
+On some valid individuals, display morphology may continue in a restrained, region-aware way onto:
+- the neck;
+- the dorsal trunk;
+- the sacral region;
+- the tail.
+
+Examples are low dorsal ridges, small keratinous scutes and restrained hornlet rows.
+
+This is **optional expression**, never a mandatory dragon-like spinal crest, and never head horns duplicated down the spine at uniform intervals.
+
+## 102. Display variation, inheritance and presentation
+
+Biological controls (Biological Anatomy / Natural appearance) may include:
+- structure family;
+- count, where biologically valid;
+- attachment region;
+- spacing;
+- base dimensions;
 - length;
-- number of low-profile ridge elements;
+- thickness;
+- taper;
+- sweep;
+- curvature;
+- orientation;
 - symmetry/asymmetry;
-- edge contour;
-- posterior extension.
+- crest height and profile;
+- plate morphology;
+- horn/ridge surface morphology;
+- natural keratin coloration;
+- inherited arrangement tendencies;
+- age-related growth and wear (when later defined).
 
-Absence is fully valid.
+Coupled validity: base dimensions × length × mass × attachment region × skull support must remain coherent. Randomization cannot produce long, heavy structures on tiny bases or growths from invalid regions.
 
-Ridges do not encode sex, dominance, age, caste or personality unless later biology explicitly establishes a correlation.
+**Acquired:** breakage, chips, wear, asymmetric damage, and scars at attachment areas.
+
+**Applied / Personal Presentation:** polish, paint/dye, wraps, jewelry, caps/bands, other decorative treatments, and superficial carving of mature keratin (only if later validated as safe and plausible). Applied decoration is not inherited biology and is never randomized as Biological Anatomy.
+
+**Firewalls:**
+- Display configuration does not encode sex, culture, caste, class, profession, personality, intelligence, aggression or social rank. Overlapping expression across sexes is valid. Future population tendencies may weight distributions but do not create subraces.
+- No automatic gameplay effect: no headbutt or gore attacks, bonus armor, intimidation, magic or rank.
+- Large structures must not automatically enlarge the player's damage vulnerability. Combat hitbox treatment is a later gameplay/technical decision, consistent with the principle that distinctive Saurin anatomy must not become an arbitrary player punishment.
 
 ## 103. Frill decision
 
@@ -1758,7 +1838,7 @@ Baseline Saurin do **not** possess mammalian scalp hair.
 
 Part 3 also does not automatically substitute feathers, quills or long filamentous crests.
 
-Low-profile keratinous scale ridges from §100–102 are the current biological silhouette variation.
+The **Cranial Keratin Display System** (§100–102, revised October 1, 2026) occupies much of the identity/customization role that hairstyle serves for haired races. It is not hair and is never labelled as hair.
 
 Whether rare filamentous integument exists is OPEN and requires explicit later approval.
 
@@ -1860,7 +1940,7 @@ These layers must not be collapsed into one generic surface slider.
 | SAU-SURF-11 | Pattern families across same anatomy without subrace implication |
 | SAU-SURF-12 | Iris/pupil variants under identical lighting and pupil dilation |
 | SAU-SURF-13 | Nictitating membrane open/closed/intermediate without permanent eye obstruction |
-| SAU-SURF-14 | Low-profile cranial ridge absent/minimum/maximum valid states |
+| SAU-SURF-14 | Cranial Keratin Display range: minimal, hornlet/ridge, swept paired, crest-dominant, plate/spike-dominant and mixed configurations on one accepted skull; plus a natural-asymmetry and an acquired-breakage example; attachment integration and head/neck clearance |
 | SAU-SURF-15 | Hand claw range preserves functional grasp |
 | SAU-SURF-16 | Foot claw range preserves plantigrade support |
 | SAU-SURF-17 | Adult age spread with nonuniform surface aging |
@@ -1871,7 +1951,7 @@ These layers must not be collapsed into one generic surface slider.
 | SAU-SURF-22 | Tail-base and tail-tip scale transitions remain part of one organism |
 | SAU-SURF-23 | Broad adiposity/muscularity bodies retain valid scale-field organization |
 | SAU-SURF-24 | Neutral sex-related anatomy configurations share overlapping surface-phenotype distributions |
-| SAU-SURF-25 | No horns/frills/hair test: reference Saurin remains fully identifiable |
+| SAU-SURF-25 | Minimal-display / no-frills / no-hair test: reference Saurin bare skull remains fully identifiable without display structures |
 | SAU-SURF-26 | Closed-mouth/oral test: differentiated teeth remain contained and no venom anatomy appears |
 | SAU-SURF-27 | Palmar/plantar contact test: closed fist, weapon/tool grip and planted foot retain plausible fine contact scales and localized pad-like thickening |
 | SAU-SURF-28 | Dialogue gaze-readability test at conversation distance: gaze direction remains readable across valid pupil dilation and ocular-tissue visibility without humanizing the eye |
@@ -1906,7 +1986,7 @@ In addition to unresolved earlier items:
 
 ## 125. Part 3 identity statement
 
-> **Saurin surface phenotype is defined by Regional Scale Architecture layered over the approved pelvic-axial body and rostral-cranial head: larger protective scale fields transition through flexible articulation fields into fine expressive facial fields, with a distinct integrated ventral field. Broad natural pigmentation and inherited topology-aware patterns allow extensive individual variation without reducing Saurin to green skin or cultural subtypes. Vertically elliptical pupils, a translucent nictitating membrane, modest claw-like nails and optional low-profile keratinous cranial ridges add positive reptilian detail without turning the race into dragons, monsters or mandatory predators. Surface phenotype never substitutes for approved anatomy and grants no automatic armor, venom, sensory, climbing or combat advantages.**
+> **Saurin surface phenotype is defined by Regional Scale Architecture layered over the approved pelvic-axial body and rostral-cranial head: larger protective scale fields transition through flexible articulation fields into fine expressive facial fields, with a distinct integrated ventral field. Broad natural pigmentation and inherited topology-aware patterns allow extensive individual variation without reducing Saurin to green skin or cultural subtypes. Vertically elliptical pupils, a translucent nictitating membrane, modest claw-like nails and the individually variable Cranial Keratin Display System (revised October 1, 2026) add positive reptilian detail without turning the race into dragons, monsters or mandatory predators. Surface phenotype never substitutes for approved anatomy and grants no automatic armor, venom, sensory, climbing or combat advantages.**
 
 Part 3 is **ACCEPTED / COMPLETE**.
 
@@ -2219,9 +2299,12 @@ Because the tail is mandatory biology, Advanced Mode may vary:
 - taper;
 - muscularity;
 - segment/curvature relationships;
-- resting curvature.
+- resting curvature;
+- proximal/distal mass distribution and cross-sectional tendency (§11a);
+- restrained dorsal keratin expression (§101a);
+- inherited pattern on the tail.
 
-There is **no tail on/off toggle**.
+There is **no tail on/off toggle**. Tail phenotype is a first-class creator domain with selective randomization and attribute locks (§11a).
 
 Tail skeletal length, base dimensions and taper belong to Biological Anatomy / Skeletal Frame relationships. Tail muscularity and adiposity belong to Physical Composition and must respond coherently with the rest of the body.
 
@@ -2285,14 +2368,34 @@ The vertically elliptical pupil remains baseline Saurin biology and is not repla
 
 Magical eye effects are separate.
 
-## 150. Ridge creator controls
+## 150. Cranial display creator controls
 
-Low-profile keratinous ridges may be:
-- absent;
-- present within valid distributions;
-- varied in height/length/number/contour/symmetry.
+*(Revised October 1, 2026 — Tyler. Replaces the earlier low-profile-ridge-only controls.)*
 
-They remain FD-SURF/Natural appearance, not hairstyle.
+For Saurin, race-aware creator navigation may present **Cranial Display** controls where haired races present Hair. Human Hair and Facial Hair categories remain biologically empty.
+
+Controls and presets may cover the §102 variables:
+- structure family;
+- count;
+- attachment region;
+- spacing;
+- base dimensions;
+- length;
+- thickness;
+- taper;
+- sweep;
+- curvature;
+- orientation;
+- symmetry;
+- crest profile;
+- plate morphology;
+- surface morphology.
+
+Acquired wear/damage is a separate layer, and so is Applied decoration.
+
+Minimal expression is always selectable. Selective randomization and attribute locks must preserve coherent display configurations.
+
+This is a design requirement, not a UE5 UI implementation instruction.
 
 The creator must not offer mammalian hair assets as substitutes.
 
