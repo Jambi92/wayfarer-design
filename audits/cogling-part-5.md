@@ -99,3 +99,14 @@ These are still open from the earlier re-audits. None of them blocks acceptance:
 2. ChatGPT records the decision in §140, adds the brief pointers if he supersedes, and adds the 4b line and the 4c tests.
 3. I do a quick check.
 4. Part 5 is accepted, and Part 6 (equipment fit, world compatibility, character-creation integration and the final review) can begin when Tyler says so.
+
+## 7. Tyler's decision (September 30, 2026)
+
+**4a resolved: option (a), supersede.** Tyler chose to drop the brief's Cogling "quick steps, frequent turns, efficient climbing, precise hand movements, small physical adjustments" and "fine motor control" as automatic racial traits, the same decision he made for Pipkin. Any later gameplay traits would have to be added deliberately through the race-biology-gameplay review.
+
+ChatGPT should:
+- record the decision in Cogling §140 (as Pipkin §37 does)
+- add SUPERSEDED pointers to brief §16.12 and to the race-table "fine motor control" entry
+- add the 4b line and the 4c tests
+
+After a quick check, Part 5 can be accepted.
