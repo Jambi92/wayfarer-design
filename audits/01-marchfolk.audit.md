@@ -1,0 +1,37 @@
+# Audit: Marchfolk Character Customization v1.5 (first pass complete)
+
+Auditor: Claude. These are notes to check, not changes. Nothing here overrides the spec in `races/01-marchfolk.md`; Tyler decides what, if anything, changes.
+
+## Open notes
+
+- **Height against the brief.** The 173 cm reference height is the Marchfolk 1.00× reference, so the other races' multipliers now convert to centimeters. For example, Durrim at 0.65× is about 112 cm and Gorrund at 1.45× is about 251 cm.
+- **Race overlap.** The 147–203 cm range spans about 0.85× to 1.17× the reference height. That overlaps Skarn (1.20×, about 208 cm average), which matches the brief's rule that height alone doesn't define race.
+- **Sex and body type.** Settled by amendment v0.1: biological anatomy doesn't impose separate height limits.
+- **Basic controls.** "General physique adjustments" in Basic mode isn't defined yet: which controls does it mean?
+
+* **Headwear and faces (v1.2).** Ear projection and head and skull size will change how helmets and hoods fit, so headwear will need to fit to those same face values.
+* **Expressions and age (v1.2).** Expression previews and age changes both move the face, so they will have to layer cleanly on top of the player's face shape. This matters when the morph architecture is chosen later, not now.
+
+- **Headwear and hair (v1.3).** Helmets and hoods need a way to compress or hide hair that pokes through. That is a known trade-off to plan for with hair and headwear compatibility.
+- **Markings on morphing bodies (v1.3).** Markings are placed on the body surface, so they have to stay put when body and face sliders change the shape underneath. This matters when the morph architecture is chosen.
+- **Multiplayer size (v1.3).** A character with many markings adds to the appearance record every other player receives. Records stay small if each marking is stored as a few numbers (type, position, scale and so on) rather than as painted texture data.
+
+* **Preset list changed (v1.4).** The brief's illustrative Marchfolk presets (§12) were Frontier, Noble, Laborer, Wanderer, Scholar and Soldier. v1.4 drops Noble and adds Merchant. Since the brief called its list illustrative, v1.4's list is treated as current.
+* **Frame changed (v1.4).** v1.1 listed Athletic as one of four frames. v1.4 redefines it as a proportion-plus-muscle preset rather than a skeletal category, and v1.4 is treated as current.
+* **Age vs. apparent age (v1.4).** If character age is ever used in gameplay or story, such as dialogue, the appearance record needs a separate age number that the age-appearance slider doesn't set.
+
+- **v1.0 matches the later sections and the amendment.** v1.0 already uses Narrow, Balanced and Broad frames with Athletic as a composition preset, which matches universal amendment v0.1 and v1.4. v1.1's four-frame list is the only earlier wording that differs, and it's already read through the amendment. v1.0's 147/173/203 cm range and no sex-specific height limit match v1.1 §3 and the amendment, and v1.1 labels that height table "preliminary" while v1.0 calls it the approved first pass, which fits.
+- **Game scale and sex-related anatomy compared with v1.0 (not a change).** The game sets height by uniform scale (1.0 × a ±7.5% slider) and uses Manny and Quinn as "broad" and "slender" frames, which mixes sex-related anatomy with frame. v1.0 §4, §6 and §13 rule both out for the final system. These are known audit gaps, left unchanged.
+
+**v1.0–v1.5 consistency review (before Halvren). Findings 1–6 (Athletic through the three kinds of age) are resolved by consistency resolution Part 1. The Halvren gaps (findings 7–10, last item) are resolved by pre-inheritance resolution Part 2, with listed subtopics still open.**
+
+- **"Athletic" still crosses layers in v1.4.** v1.0 §7 puts Athletic purely in physical composition and says the layers mustn't merge. v1.4 §1 still says "the four frames stay" and defines Athletic as "suitable proportions and muscularity values." The first part is settled by the amendment, but "proportions" could mean skeletal proportions, which would make Athletic set frame and composition together. Worth one line saying whether the Athletic preset touches skeletal values or only muscle and fat.
+- **Body fat: "distribution" versus "amount."** v1.0 §8 separates body-fat amount from distribution. v1.1 §1 (Basic), §4 and §5 say only "overall body-fat distribution," and v1.4 §5 says "fat distribution." Read literally, Basic mode has no body-fat amount control. The older wording probably means both.
+- **"Thickness" and "size" controls mix skeletal and soft tissue.** v1.1 §5 lists neck, arm, thigh and calf "thickness" and hand and foot "size" beside skeletal controls (shoulder width, torso length, leg length, pelvis). Under the terminology rule, it's unclear whether thickness is bone, muscle or fat, and whether hand and foot size is absolute or proportional. v1.0 §9 and v1.5 §4 use regional development and "scale/proportion" instead.
+- **"Frame" wording.** v1.1 §2 calls frames "editable starting points, not permanent biological categories," while v1.0 §6 defines frame as skeletal structure. These fit together if frames are starting categories over continuous skeletal variation, but that reading isn't stated.
+- **"Baseline" means two things.** v1.1 §3 calls 173 cm the "Baseline" height, and v1.0 §2 uses "baseline" for Marchfolk as the human reference population. v1.0, v1.5 and the other race specs say "reference" for the height.
+- **"Layers" names two systems.** The four character layers (anatomy, frame, composition, presentation, v1.0 §13) and the three skin layers (Natural, Environmental, Applied, v1.3 §1) share the word. They don't conflict, but mixed-ancestry inheritance will need to say which layer each inherited trait belongs to.
+- **Three kinds of age.** v1.4 separates actual age from apparent age, and the Elf Review separates biological age from age presentation. Together that's chronological age, biological apparent age and age presentation. This matters for Halvren if human and elven aging rates differ.
+- **Gaps that affect Halvren (mixed ancestry).** (1) Marchfolk have no enumerated natural skin, undertone, hair color, hair texture or iris families. v1.0 says "broad" and v1.3 lists controls only, while Fenn, Aelari and Vael each have families, so inheritance has no defined human side to draw from. (2) Marchfolk ear anatomy isn't specified beyond a face region and asymmetry, so the human half of Halvren ear inheritance is undefined. (3) Marchfolk lifespan and aging rate are unstated, with v1.4 covering adults only. (4) Which human population Halvren descend from is undefined: Marchfolk are the reference, but Sagekin and Skarn are also human populations, and the Elf Review phrase "midpoint between Marchfolk and elves" implies Marchfolk without deciding it.
+
+* **Current in-game Halvren description compared with Part 2 §12 and §14 (not a change).** The prototype describes Halvren as "Born between two peoples and fully at home in neither. Agile and adaptable - natural wanderers." That implies first-generation parentage, a fixed cultural and social identity, and personality traits (adaptable, wanderers), all of which Part 2 separates from biological ancestry. It stays as prototype text under the authority rule and the deferred race-description decision, alongside Halvren's 1.0 scale and current attributes.
