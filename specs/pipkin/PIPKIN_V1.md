@@ -1664,6 +1664,6 @@ Pipkin may be marked **FIRST-PASS COMPLETE** when:
 5. known prototype conflicts are identified as non-authoritative;
 6. Short-Race Comparative Anatomy Review remains queued for after Cogling rather than being falsely treated as completed.
 
-Part 6 is **PATCHED AFTER FINAL AUDIT — QUICK CHECK REQUESTED**.
+**Pipkin v1.0 Part 6 is FIRST-PASS ACCEPTED.**
 
-**Pipkin v1.0 is not yet FIRST-PASS COMPLETE pending Part 6 audit. No UE5 implementation is authorized.**
+**Pipkin v1.0 is FIRST-PASS COMPLETE.** Tyler approved completion after Claude's clean Part 6 quick check. The Short-Race Comparative Anatomy Review remains queued until Cogling is designed. No UE5 implementation is authorized.
