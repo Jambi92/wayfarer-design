@@ -14,10 +14,10 @@
 11. Pipkin
 
 ## In progress
-12. **Cogling — v1.0 Parts 1–2 FIRST-PASS ACCEPTED; ready for Part 3**
+12. **Cogling — v1.0 Parts 1–2 FIRST-PASS ACCEPTED; Part 3 authored; Claude audit pending**
 
 ## Not yet designed
 13. Saurin
 
 ## Current next action
-Begin Cogling Part 3 when authorized. Parts 1–2 are FIRST-PASS ACCEPTED and the Part 2 audit clarifications are incorporated. Do not begin the Short-Race Comparative Anatomy Review, Saurin, or UE5 implementation yet.
+Claude audits Cogling Part 3 (craniofacial anatomy, ears and facial customization requirements). Do not begin Part 4, the Short-Race Comparative Anatomy Review, Saurin, or UE5 implementation until this checkpoint is resolved.
