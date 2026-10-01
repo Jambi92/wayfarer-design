@@ -1610,14 +1610,16 @@ Validation must reject combinations such as:
 
 ## 101A. Facial Diagnostic Domains
 
-Cogling facial validation uses the project AGREED diagnostic domains:
+Cogling facial validation uses the project AGREED facial-analysis domains:
 
-- **FD-STRUCT** — skeletal and structural facial anatomy;
-- **FD-SOFT** — facial soft tissue and adipose expression;
-- **FD-SURF** — surface phenotype/material traits;
-- **FD-HAIR** — scalp/facial hair;
-- **FD-PRES** — cosmetics, scars, accessories and other presentation;
-- **FD-OBS** — observed appearance under camera, lighting, animation and rendering conditions.
+- **FD-STRUCT** — structural facial anatomy;
+- **FD-SOFT** — facial soft tissue;
+- **FD-SURF** — facial surface appearance, including scars where appropriate;
+- **FD-HAIR** — facial/scalp hair as relevant to facial analysis;
+- **FD-PRES** — facial presentation;
+- **FD-OBS** — observed appearance under lighting, camera, expression and pose.
+
+These domains apply to **facial analysis only**.
 
 Racial identity must remain diagnosable primarily through approved biological structure rather than FD-SURF, FD-HAIR, FD-PRES or FD-OBS compensation.
 
@@ -1806,13 +1808,9 @@ The race must not default to a "bearded tinkerer" silhouette.
 
 Body-hair amount and distribution vary individually.
 
-Body hair remains independent from:
-- scalp hair;
-- facial hair;
-- sex-related anatomy;
-- muscularity;
-- age presentation;
-- culture.
+Body hair is **not determined by** scalp hair, facial hair, sex-related anatomy, muscularity, age presentation or culture.
+
+Any sex-related or hormonal distributions in scalp, facial or body hair remain OPEN and, if later approved, must use **soft correlations rather than hard creator dependencies**.
 
 No unusually hairy or hairless Cogling racial stereotype is approved.
 
@@ -1867,6 +1865,21 @@ Variation may occur in:
 - ordinary pigmentation where appropriate.
 
 No mandatory glowing, black or brightly colored sclera is approved as Cogling biology.
+
+## 118A. Dentition
+
+Cogling use the project baseline of **functional adult humanoid dentition, with no diet inferred from dentition alone**.
+
+Adult Cogling dentition must not default to:
+- childlike teeth;
+- rodent-like incisors;
+- oversized incisors or canines;
+- tiny pointed teeth used as a small-race caricature;
+- occupation-coded wear patterns.
+
+Natural individual variation remains valid.
+
+Exact tooth count, replacement pattern, eruption/maturation timing, age-related wear and lifecycle-specific dentition remain OPEN.
 
 ## 119. Age architecture
 
@@ -2015,18 +2028,26 @@ However, biological hair diameter is not assumed to scale linearly with total bo
 
 Exact strand diameter, density and grooming representation require later art/technical validation.
 
-## 132. FD-domain separation
+## 132. Facial Diagnostic Domains and whole-body Skin Appearance Layers
 
-Part 4 explicitly preserves the agreed facial diagnostic domains:
+The **Facial Diagnostic Domains apply to facial analysis only** and use the project AGREED meanings:
 
-- **FD-STRUCT:** approved craniofacial structure from Part 3;
-- **FD-SOFT:** facial soft tissue/adipose;
-- **FD-SURF:** skin pigmentation, texture, freckles and biological surface appearance;
-- **FD-HAIR:** scalp/facial hair, eyebrows and related hair biology;
-- **FD-PRES:** makeup, scars where treated as presentation, tattoos, piercings, accessories;
-- **FD-OBS:** camera, lighting, animation and rendering appearance.
+- **FD-STRUCT** — structural facial anatomy;
+- **FD-SOFT** — facial soft tissue;
+- **FD-SURF** — facial surface appearance, including scars where appropriate;
+- **FD-HAIR** — facial/scalp hair as relevant to facial analysis;
+- **FD-PRES** — facial presentation;
+- **FD-OBS** — observed appearance under lighting, camera, expression and pose.
 
 FD-SURF, FD-HAIR and FD-PRES cannot compensate for an invalid FD-STRUCT racial read.
+
+Whole-body biological and presentation-facing surface appearance instead uses the project AGREED **Skin Appearance Layers**:
+
+1. **Natural** — baseline pigmentation, undertones, freckles, natural markings and ordinary vascular visibility.
+2. **Environmental** — tanning, weathering and other environment-driven appearance changes.
+3. **Applied or Acquired** — scars, burns, tattoos, cosmetics, paint and comparable acquired/applied surface changes.
+
+These Skin Appearance Layers are separate from the Character Architecture Layers and from the facial-only diagnostic domains.
 
 ## 133. Randomization requirements
 
@@ -2038,6 +2059,8 @@ Biological randomization should:
 - preserve ancestry/population correlations probabilistically if later defined.
 
 Presentation randomization remains separate.
+
+Until population frequencies are explicitly approved, any interim sampling weights used for presets, randomization or validation are **testing distributions only and are not approved Cogling population distributions**.
 
 Selective randomization must allow, for example:
 - surface only;
@@ -2105,6 +2128,6 @@ Still OPEN:
 
 > **Cogling surface phenotype is intentionally broad and overlapping: skin pigmentation, hair architecture and color, iris color, freckling, facial hair, body hair and visible aging vary widely without defining the race. Their approved structural anatomy must carry racial and adult identity even when surface and presentation cues are removed. Extremely small scale does not justify exaggerated eyes, freckles, wrinkles, hair or other readability shortcuts, and biological randomization must avoid bundling surface traits into a default cute, whimsical or tinkerer stereotype.**
 
-Part 4 is **PROPOSED FOR AUDIT**.
+Part 4 is **PATCHED AFTER FIRST AUDIT — RE-AUDIT REQUESTED**.
 
 No UE5 implementation is authorized.
