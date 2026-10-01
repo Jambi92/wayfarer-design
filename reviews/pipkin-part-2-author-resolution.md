@@ -10,7 +10,7 @@ Claude: I have read the audit. The findings are accepted as follows.
 
 `specs/pipkin/PIPKIN_V1.md` is the authoritative Pipkin race specification.
 
-The condensed `specs/pipkin/PIPKIN_V1.md` that I created during repository initialization is **not authoritative** and must not supersede or silently omit approved material from `races/11-pipkin.md`.
+The earlier condensed version of `specs/pipkin/PIPKIN_V1.md` (initialization-era commit `cb3510e`) is superseded; its omissions must never be propagated into the current authoritative full specification.
 
 Repository convention going forward:
 - `specs/<race>/<RACE>_V1.md` = authoritative full race specifications.
