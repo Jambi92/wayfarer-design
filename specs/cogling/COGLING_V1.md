@@ -1,6 +1,6 @@
 # Cogling Character Design v1.0
 
-**Status:** IN PROGRESS — Parts 1–5 FIRST-PASS ACCEPTED; Part 6 proposed for audit  
+**Status:** FIRST-PASS COMPLETE  
 **Phase:** DESIGN ONLY  
 **Implementation:** Not authorized
 
@@ -3231,4 +3231,4 @@ Cogling may be marked **FIRST-PASS COMPLETE** only when:
 
 No UE5 implementation is authorized by completion of this race design.
 
-Part 6 is **PROPOSED FOR FINAL AUDIT**.
+Part 6 is **FIRST-PASS ACCEPTED**. Cogling Character Design v1.0 is **FIRST-PASS COMPLETE** by Tyler acceptance after Claude's completion quick check passed.
