@@ -53,7 +53,7 @@ Muscularity and adiposity cannot substitute for skeletal structural presence.
 Broad/deep, vertically compact thoracic architecture with strong torso-pelvis continuity and high structural presence.
 
 ### Pipkin
-Moderate thorax transitioning through a compact lower trunk into a mature pelvis that carries strong silhouette importance.
+Moderate thorax transitioning through a compact lower trunk into a mature pelvis that carries strong silhouette importance. Pipkin have a **modestly reduced vertical central-trunk contribution to total stature** relative to the Marchfolk adult proportional reference.
 
 ### Cogling
 Comparatively narrow stable central core with adult axial/trunk contribution broadly near the Marchfolk adult proportional range; the pelvis is mature but not the primary silhouette anchor.
@@ -87,8 +87,8 @@ No race gains crafting, dexterity, stability or climbing skill from extremity an
 
 | Race | Positive facial anchor |
 | --- | --- |
-| **Durrim** | Compact adult craniofacial foundation with greater cranial breadth/depth relative to facial vertical height and strong integrated midface/mandible/head-neck structural presence |
-| **Pipkin** | **Integrated Mature Facial Architecture** — mature adult facial relationships integrated across cranial base, temple/zygoma, central midface and adult lower-face framework |
+| **Durrim** | Compact adult craniofacial foundation with **greater cranial breadth relative to cranial height**, compact vertical facial relationships, **greater craniofacial depth relative to facial vertical height**, and integrated midface/mandible/head-neck structural presence |
+| **Pipkin** | **Integrated Mature Facial Architecture** — a **moderately broad but variable cranial base** flows through temple/zygoma into the central midface and mature lower-face framework, while craniofacial depth remains within the Marchfolk adult range rather than trending toward Durrim depth-dominance |
 | **Cogling** | **Fine-Scale Planar Integration** — adult face-to-vault contribution broadly at/slightly above Marchfolk adult relationship plus clearly angled orbit→zygoma, zygoma→maxilla and mandibular body→ramus junctions despite fine skeletal mass |
 
 All three must remain adult without beard, wrinkles, hairstyle, makeup or presentation.
@@ -97,7 +97,7 @@ All three must remain adult without beard, wrinkles, hairstyle, makeup or presen
 
 **Durrim:** broadly humanoid, non-elven ears; exact population distribution remains race-specific.
 
-**Pipkin:** adult short-race ear variation must not become oversized/cute shorthand.
+**Pipkin:** secondary **Compact Rounded Auricular Architecture** tendency, overlapping human and Durrim ears; adult short-race ear variation must not become oversized/cute shorthand.
 
 **Cogling:** secondary **Fine Folded Auricular Architecture** tendency: relatively compact adult ear, fine cartilage, clear folds, rounded/non-pointed termination. It is secondary and may overlap Pipkin/Durrim/human ears.
 
@@ -130,10 +130,10 @@ Failure conditions include:
 ## 12. Equal-height and boundary tests
 
 ### SR-COMP-01 — Cogling/Pipkin at ~91 cm
-Match frame neighborhood, muscularity, adiposity, age, surface and presentation. Cogling must retain narrow-core/fine-distal organization; Pipkin must retain Low-Set Compact Trunk identity.
+Match frame neighborhood, muscularity, adiposity, age, surface and presentation. Cogling must retain narrow-core/fine-distal organization **and axial/trunk contribution broadly near the Marchfolk adult proportional range**; Pipkin must retain Low-Set Compact Trunk identity **including modestly reduced vertical central-trunk contribution to total stature**.
 
 ### SR-COMP-02 — Cogling/Pipkin at ~107 cm
-Repeat at the opposite end of their overlap. Height cannot decide the result.
+Repeat at the opposite end of their overlap. Height cannot decide the result. The same **near-Marchfolk Cogling axial/trunk share versus modestly reduced Pipkin vertical central-trunk share** must remain legible.
 
 ### SR-COMP-03 — Pipkin/Durrim around ~122 cm
 Use maximum-height Pipkin and minimum-height Durrim with matched composition/presentation. Pipkin remains light compact adult proportionality; Durrim retains structural concentration, torso depth/breadth, joint presence and lower limb contribution.
@@ -160,10 +160,13 @@ Apply overlapping plausible surface phenotypes across the three. Race identity m
 Broad/high-muscle Cogling vs Narrow/low-muscle Durrim; heavy Pipkin vs lean Durrim; lean Pipkin vs higher-fat Cogling.
 
 ### SR-COMP-11 — adult/child firewall
-Minimum-height Cogling and Pipkin plus age-appropriate human children at similar absolute scales where possible. Adult skeletal and facial maturity must remain clear.
+Minimum-height Cogling is compared specifically against a roughly **1–2-year-old toddler** of similar height; minimum-height Pipkin is compared against a **human child of similar height** where possible; Durrim retain their canonical adult-read rule. Adult skeletal and facial maturity must remain clear in every case.
 
 ### SR-COMP-12 — movement neutralization
 Neutral locomotion without racial personality stereotypes. Anatomy may change gait geometry, but movement style cannot rescue an anatomically weak distinction.
+
+### Like-for-like sex-related comparison rule
+Where comparative cases include sex-related anatomical variation, compare like-for-like configurations and presentation states first. Race identity must survive without relying on a sex-linked stereotype or mismatched anatomy to create separation.
 
 ## 13. Creator-control implications
 
@@ -238,6 +241,20 @@ It does not decide:
 - race/class restrictions.
 
 Those remain for the later race-biology-gameplay review.
+
+## 17A. Terminology resolution
+
+The comparative review **retains** the word **compact** where it names different, explicitly defined anatomical relationships:
+- Durrim **Compact Structural Concentration**;
+- Pipkin **Low-Set Compact Trunk Architecture**;
+- Pipkin **Compact Rounded Auricular Architecture**;
+- Cogling's descriptive "relatively compact adult ear" inside Fine Folded Auricular Architecture.
+
+This terminology overlap is acceptable because none of these phrases functions as a shared master dimension, and each is anatomically qualified. The prior terminology concern is therefore resolved rather than left OPEN by default.
+
+## 17B. Canonical cross-reference updates
+
+This review requires status/cross-reference cleanup in the canonical Durrim, Pipkin and Cogling specs now that all three short-race first passes exist. Those updates do **not** alter approved anatomy.
 
 ## 18. Comparative identity summary
 
