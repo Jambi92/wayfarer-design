@@ -56,7 +56,7 @@ For first-pass testing, use a provisional adult stature envelope of approximatel
 
 These values are provisional pending:
 - Cogling body validation;
-- the Short-Race Comparative Anatomy Review;
+- the Short-Race Comparative Anatomy Review — authored after Cogling completion; acceptance tracked in `specs/STATUS.md`;
 - full-roster world-scale/accessibility validation;
 - camera/collision/interaction review.
 
@@ -3227,7 +3227,7 @@ Cogling may be marked **FIRST-PASS COMPLETE** only when:
 1. Part 6 receives a clean audit with no blocking contradiction;
 2. all accepted prior audit findings are reflected in the canonical spec;
 3. the final identity and OPEN list are internally consistent;
-4. the required **Short-Race Comparative Anatomy Review** is queued immediately after Cogling rather than silently skipped.
+4. the required **Short-Race Comparative Anatomy Review** has been authored immediately after Cogling and is tracked at `reviews/short-race-comparative-anatomy-v1.md`.
 
 No UE5 implementation is authorized by completion of this race design.
 
