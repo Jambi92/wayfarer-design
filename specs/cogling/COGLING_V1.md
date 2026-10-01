@@ -1115,13 +1115,17 @@ Surface pigmentation, hair coloration, lifecycle timing, movement performance an
 
 ## 75. Positive craniofacial specialization — Fine-Scale Planar Integration
 
-> **Cogling craniofacial identity is organized around Fine-Scale Planar Integration: a compact adult cranial envelope supports a proportionally mature face whose brow, orbital margins, zygomatic region, midface and mandibular framework remain clearly differentiated at very small absolute scale, with relatively fine skeletal transitions rather than enlarged individual features.**
+> **Cogling craniofacial identity is organized around Fine-Scale Planar Integration: an adult cranial envelope supports facial skeletal height at or slightly above the Marchfolk adult face-to-vault relationship, while comparatively fine skeletal mass retains clearly angled junctions from orbit to zygoma, zygoma to maxilla, and mandibular body to ramus. The result is a mature face with defined planar transitions at very small absolute scale rather than enlarged individual features.**
 
 The facial sequence is:
 
-**adult cranial envelope → clearly bounded orbital/brow region → integrated fine midface → readable zygomatic transition → mature lower-face framework**
+**adult face-to-vault relationship → bounded orbital/brow region → angled orbit-to-zygoma transition → integrated mature midface → angled zygoma-to-maxilla transition → mature mandibular body/ramus junction**
 
-The identity comes from coordinated planes and transitions, not from one oversized feature.
+Two relational tendencies carry the anchor:
+- **Adult face-to-vault proportion:** facial skeletal height relative to cranial-vault size sits broadly at or slightly above the Marchfolk adult relationship rather than moving toward the large-vault/small-face relationship of a toddler.
+- **Defined planar junctions at fine mass:** orbital, zygomatic, maxillary and mandibular regions retain clearly readable angular transitions even where overall projection and skeletal mass are modest.
+
+The identity comes from these coordinated relationships, not from one oversized feature.
 
 ## 76. Adult facial maturity
 
@@ -1365,9 +1369,83 @@ Against Grask:
 Against Gorrund:
 - Cogling lack the broad deep auricular bowl, substantial rim and broad skull attachment.
 
+Against Pipkin:
+- both may possess relatively compact rounded humanoid ears;
+- Cogling may trend toward finer cartilage and crisper fold articulation;
+- Pipkin's approved ear tendency emphasizes a clear but not deep conchal bowl and continuous moderate helix;
+- overlap is expected and neither ear system alone may classify the race.
+
+Against Durrim:
+- Cogling trend toward finer cartilage, smaller structural mass and more delicate fold transitions;
+- Durrim ears remain compatible with their more structurally substantial craniofacial foundation;
+- substantial overlap remains valid.
+
 Against ordinary human populations:
 - overlap in individual ear traits is valid;
 - Cogling identity comes from the coordinated fine-fold tendency plus the rest of craniofacial anatomy, not a single impossible-to-human ear feature.
+
+**Fine Folded Auricular Architecture is a secondary population tendency, not a primary racial identifier.** Individual Cogling ears may overlap Pipkin, Durrim, Marchfolk and other broadly humanoid ears.
+
+## 90A. Craniofacial boundary comparisons
+
+### Marchfolk
+
+Marchfolk provide the broad human adult reference.
+
+Cogling differ as a coordinated tendency through:
+- facial skeletal height at or slightly above the Marchfolk adult face-to-vault relationship;
+- finer skeletal mass;
+- more consistently readable planar junctions despite that fine mass.
+
+No single Cogling facial measurement must lie outside the Marchfolk range.
+
+### Pipkin
+
+Pipkin use **Integrated Mature Facial Architecture**: a moderately broad cranial base flows through temple and zygoma into the central midface, with Marchfolk-range depth and adult structures that are never shortened.
+
+Cogling do not use that broad-base continuity as their anchor. Cogling instead emphasize:
+- the adult face-to-vault relationship;
+- comparatively fine mass;
+- distinct orbit-to-zygoma, zygoma-to-maxilla and mandibular body-to-ramus junctions.
+
+At equal stature, neither cranial breadth nor one distal facial feature may classify the race alone.
+
+### Durrim
+
+Durrim emphasize:
+- greater cranial breadth relative to cranial height;
+- compact vertical facial relationships;
+- greater depth relative to facial height;
+- structurally substantial integration.
+
+Cogling instead retain:
+- non-compressed adult facial vertical organization;
+- fine skeletal mass;
+- mature face-to-vault contribution;
+- defined planar junctions without Durrim depth dominance.
+
+### Fenn
+
+Fenn may trend toward:
+- narrower skull;
+- slightly larger orbits;
+- higher cheekbones;
+- lighter midface and jaw within the elven foundation.
+
+Cogling fine mass must not reduce to Fenn-like gracility. Cogling:
+- do not require larger orbits;
+- retain a mature face-to-vault relationship;
+- use clearly angled planar junctions as a positive carrier;
+- remain outside the elven craniofacial foundation.
+
+### Sagekin
+
+Sagekin remain fully human and may trend toward:
+- moderate-to-slightly longer faces;
+- somewhat higher foreheads;
+- gracile or linear individual presentations within human anatomy.
+
+Cogling differ through the coordinated Fine-Scale Planar Integration system rather than simple facial narrowness or elongation: fine mass plus mature face-to-vault contribution plus defined orbital/zygomatic/maxillary/mandibular junctions.
 
 ## 91. Facial soft tissue
 
@@ -1507,6 +1585,8 @@ Creator cameras and dialogue presentation must show the actual approved anatomy 
 
 Gameplay-distance readability may use appropriate camera, animation, lighting and rendering solutions without rewriting biology.
 
+Fine auricular fold detail is principally a **close-view/creator-camera trait**. It is not required to remain legible at ordinary gameplay or dialogue distance.
+
 ## 100. Surface phenotype boundary
 
 Part 3 does not assign Cogling skin, hair or iris pigmentation.
@@ -1528,6 +1608,19 @@ Validation must reject combinations such as:
 - maximum ear projection + maximum ear size + extreme fold articulation creating an oversized-ear stereotype;
 - maximum facial adiposity + reduced lower-face structure masking adult maturity.
 
+## 101A. Facial Diagnostic Domains
+
+Cogling facial validation uses the project AGREED diagnostic domains:
+
+- **FD-STRUCT** — skeletal and structural facial anatomy;
+- **FD-SOFT** — facial soft tissue and adipose expression;
+- **FD-SURF** — surface phenotype/material traits;
+- **FD-HAIR** — scalp/facial hair;
+- **FD-PRES** — cosmetics, scars, accessories and other presentation;
+- **FD-OBS** — observed appearance under camera, lighting, animation and rendering conditions.
+
+Racial identity must remain diagnosable primarily through approved biological structure rather than FD-SURF, FD-HAIR, FD-PRES or FD-OBS compensation.
+
 ## 102. Part 3 validation cast
 
 | ID | Target |
@@ -1547,15 +1640,17 @@ Validation must reject combinations such as:
 | COG-FACE-13 | Minimum valid ear size/projection; ear identity not sole carrier |
 | COG-FACE-14 | Ear-hidden test; face remains Cogling |
 | COG-FACE-15 | Face-feature-neutralized silhouette test; body remains Cogling |
-| COG-FACE-16 | Same-height Cogling/Pipkin adults with ears/hair hidden; facial systems remain independently identifiable once Pipkin comparison is applied |
-| COG-FACE-17 | Normalized Cogling vs Marchfolk; coordinated planar system survives |
-| COG-FACE-18 | Normalized Cogling vs Sagekin; fine-scale planar integration does not reduce to a narrow human face |
-| COG-FACE-19 | Normalized Cogling vs Fenn with ears hidden; no mini-elf convergence |
-| COG-FACE-20 | Minimum-height adult Cogling vs ~1–2-year-old toddler; adult midface/lower-face architecture unmistakable |
-| COG-FACE-21 | Broad sex-related facial range; race survives |
+| COG-FACE-16 | **FD-STRUCT:** same-height Cogling/Pipkin adults with ears/hair hidden; Cogling shows mature face-to-vault contribution + fine angled planar junctions rather than Pipkin's moderately broad cranial-base/temple/zygoma-to-midface continuity |
+| COG-FACE-17 | **FD-STRUCT:** normalized Cogling vs Marchfolk; mature face-to-vault tendency + fine mass + defined planar junctions survive without requiring an out-of-human-range single feature |
+| COG-FACE-18 | **FD-STRUCT:** normalized Cogling vs Sagekin; Cogling retains fine mass + mature face-to-vault contribution + defined planar junctions rather than relying on narrowness, forehead height or facial elongation |
+| COG-FACE-19 | **FD-STRUCT:** normalized Cogling vs Fenn with ears hidden; Cogling does not require larger orbits/high cheekbones and retains mature face-to-vault + defined planar-junction identity outside the elven foundation |
+| COG-FACE-20 | **FD-STRUCT + FD-SOFT:** minimum-height adult Cogling vs ~1–2-year-old toddler; adult face-to-vault, midface, mandible and soft-tissue maturity remain unmistakable |
+| COG-FACE-21 | **FD-STRUCT + FD-SOFT:** broad sex-related facial range; race survives |
+| COG-FACE-21A | **FD-STRUCT + FD-SOFT:** like-for-like sex-related Cogling vs Marchfolk comparisons; racial relationships survive without sex becoming a proxy for race |
 | COG-FACE-22 | Strong natural asymmetry; healthy racial read survives |
 | COG-FACE-23 | Extreme valid combined proportions; validator rejects juvenile/caricature combinations |
-| COG-FACE-24 | Dialogue/creator camera at approved head size; readability achieved without biological enlargement |
+| COG-FACE-24 | **FD-OBS:** dialogue/creator camera at approved head size; readability achieved without biological enlargement; fine ear folds may remain creator-close-view detail |
+| COG-FACE-25 | **FD-STRUCT:** normalized-head Cogling vs Durrim; Cogling retains non-compressed facial vertical organization, fine mass and planar junctions rather than Durrim breadth/depth/vertical compactness |
 
 ## 103. Part 3 OPEN items
 
@@ -1581,8 +1676,8 @@ Still OPEN:
 
 ## 104. Part 3 identity statement
 
-> **Cogling faces are defined by Fine-Scale Planar Integration: a compact adult cranial envelope supports clearly differentiated brow/orbital, zygomatic, midface and mature lower-face regions through fine but readable structural transitions rather than oversized features. Their eyes, noses, ears and mouths remain broadly adult humanoid in scale, while Fine Folded Auricular Architecture gives the ear a compact, clearly articulated, rounded and non-elven fold system. Adult maturity must survive at the smallest valid stature without wrinkles, facial hair, expression or cultural cues, and camera/readability problems must be solved without enlarging biological features.**
+> **Cogling faces are defined by Fine-Scale Planar Integration: an adult cranial envelope supports facial skeletal height at or slightly above the Marchfolk adult face-to-vault relationship, while comparatively fine skeletal mass preserves clearly angled orbit-to-zygoma, zygoma-to-maxilla and mandibular body-to-ramus junctions rather than oversized features. Their eyes, noses, ears and mouths remain broadly adult humanoid in scale, while Fine Folded Auricular Architecture gives the ear a compact, clearly articulated, rounded and non-elven fold system. Adult maturity must survive at the smallest valid stature without wrinkles, facial hair, expression or cultural cues, and camera/readability problems must be solved without enlarging biological features.**
 
-Part 3 is **PROPOSED FOR AUDIT**.
+Part 3 is **PATCHED AFTER FIRST AUDIT — RE-AUDIT REQUESTED**.
 
 No UE5 implementation is authorized.
