@@ -14,7 +14,7 @@ They need a distinct adult humanoid anatomy.
 | --- | --- |
 | Durrim | **Compact structural concentration**: high skeletal presence relative to stature, broad and deep vertically compact torso, substantial joints, coordinated shorter limb contribution, structural power |
 | Pipkin | **Light compact adult proportionality**: short adult stature, lower skeletal presence than Durrim, compact but lighter torso, adult limbs that stay proportionally expressive rather than heavily shortened, smaller joints, an efficient, balanced adult silhouette |
-| Cogling | **NOT YET DESIGNED**: never defined here to make Pipkin different, with room reserved for Cogling to be independently recognizable later |
+| Cogling | **Fine-Scale Elongated Articulation**: narrow stable central core, near-human total limb contribution, fine shafts/joints and distal redistribution toward forearms/lower legs/hands/fingers. See `specs/cogling/COGLING_V1.md` and `reviews/short-race-comparative-anatomy-v1.md`. |
 
 > **Pipkin are a distinct short humanoid population characterized by compact adult stature, comparatively light skeletal construction, moderate torso compactness, relatively preserved limb contribution, small-to-moderate joint scale and an adult proportional system that remains balanced rather than childlike or dwarf-like.**
 
