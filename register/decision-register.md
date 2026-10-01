@@ -982,4 +982,16 @@ Pipkin v1.0 Part 5 (FIRST-PASS ACCEPTED; Tyler chose to supersede the brief move
 | At matched speed, biomechanically necessary higher cadence and greater relative stride are valid, while excess cadence, shortened excursion and bounce are caricature; adult narrow-base gait, so the broad pelvis never produces a wide-based walk | AGREED | Pipkin Part 5 §4; PIP-MOVE-03, 05, 07 |
 | Pipkin movement speeds, acceleration, turning, jumping, climbing, swimming, stealth, reach, encumbrance, ladder and stair standards, mounts, lifecycle movement and motion architecture | OPEN | Pipkin Part 5 §8–25, §28, §31–32 |
 
+Pipkin v1.0 Part 6 (final audit PASS WITH CLARIFICATIONS; FIRST-PASS COMPLETE after the §31 OPEN-list patch and Tyler's confirmation)
+
+| Decision | Status | Source |
+| --- | --- | --- |
+| Systems accommodate approved Pipkin anatomy, never the reverse; canonical objects stay true scale unless manufactured in multiple sizes; fitted clothing and armor are sized to the Pipkin body; fit and feasibility are separate | PRELIMINARY | Pipkin Part 6 §1–11 |
+| Collision, navigation, hit, interaction and camera volumes are separate representations, never a scaled Marchfolk capsule; small size never automatically grants access | PRELIMINARY | Pipkin Part 6 §12–13 |
+| Third-person, creator and targeting cameras adapt to Pipkin eye and origin geometry without changing anatomy or world scale | PRELIMINARY | Pipkin Part 6 §14–16 |
+| Presets are outputs of the one biological system; Simple and Advanced Mode; race-aware and selective randomization with locks; no hidden phenotype packages; saved appearance via the unified architecture with schema migration | PRELIMINARY | Pipkin Part 6 §20–25 |
+| Identity hierarchy: primary Low-Set Compact Trunk Architecture; supporting light skeleton, sustained limbs and Integrated Mature Facial Architecture; secondary ear and surface tendencies; not identifiers: hair, facial hair, clothing, freckles, eye color, body hair, personality, culture, occupation, movement stereotype | PRELIMINARY | Pipkin Part 6 §29–30, §36 |
+| Short-Race Comparative Anatomy Review stays queued for after Cogling; Cogling must have its own positive anatomy, not a midpoint | PRELIMINARY | Pipkin Part 6 §34 |
+| Consolidated OPEN list omits Part 1–4 anatomical items (height range, head-to-body ratio, torso ratios, shoulder, pelvic morphology, limb segments, hands, feet, arches, joints, muscular capacity, fat distribution, dimorphism magnitude), first-person camera, racial attribute bonuses, race description text and ear mobility | OPEN | Part 6 final audit 3a–3b |
+
 Marchfolk v1.0 and v1.5 are referenced but haven't been received here. Send them and their decisions go into this register.
