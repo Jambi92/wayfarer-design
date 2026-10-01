@@ -14,10 +14,10 @@
 11. Pipkin
 
 ## In progress
-12. **Cogling — v1.0 Parts 1–4 FIRST-PASS ACCEPTED; Part 5 authored; Claude audit pending**
+12. **Cogling — v1.0 Parts 1–5 FIRST-PASS ACCEPTED; Part 6 authored; FINAL AUDIT pending**
 
 ## Not yet designed
 13. Saurin
 
 ## Current next action
-Claude audits Cogling Part 5 (movement, physical expression and gameplay boundaries). Do not begin Part 6, the Short-Race Comparative Anatomy Review, Saurin, or UE5 implementation until this checkpoint is resolved.
+Claude performs the final Cogling Part 6 audit. If clean and accepted, mark Cogling FIRST-PASS COMPLETE and begin the required Short-Race Comparative Anatomy Review. Do not begin Saurin or UE5 implementation yet.
