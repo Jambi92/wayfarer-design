@@ -1,6 +1,6 @@
 # Pipkin Character Design v1.0 (in progress)
 
-This is the Pipkin (Halfling) specification, a distinct short adult humanoid population. It's design only, with no UE5 changes. v1.0 arrives in parts: Part 1 (biological foundation, stature and core skeletal architecture) and Part 2 (detailed body proportions, human differentiation, hands, feet and composition architecture) are complete, and next is Part 3: craniofacial anatomy, ears, hair and facial-hair biology. Pipkin v1.0 as a whole isn't complete.
+This is the Pipkin (Halfling) specification, a distinct short adult humanoid population. It's design only, with no UE5 changes. v1.0 arrives in parts: Part 1 (biological foundation, stature and core skeletal architecture) and Part 2 (detailed body proportions, human differentiation, hands, feet and composition architecture) are complete, Part 3 (craniofacial anatomy, ears, hair and facial-hair biology) is now authored for audit. Pipkin v1.0 as a whole isn't complete.
 
 # Part 1 Biological foundation, stature and core skeletal architecture
 
@@ -134,6 +134,8 @@ This part resolves the open question: **what makes an adult Pipkin anatomically 
 
 **Low-Set Compact Trunk Architecture** is project anatomical terminology, not a creator-facing slider. Pipkin aren't defined by short height, a larger relative head or larger relative feet; the body stays recognizably Pipkin with the head obscured, hands and feet neutralized and scale reference removed. The core relationship is **moderate thorax → compact lower trunk → mature structurally broad pelvis → proportionally sustained limbs**, distinct from scaled humans, Durrim and children. **Low-set** means the relative structural importance of the lower trunk and pelvis within the adult body, never a sagging torso, low posture, short legs, crouching, low shoulders or a heavy belly. **Compact trunk** never means Durrim-like vertical compression, no waist, a barrel or round body or high fat; Pipkin stay less vertically compact than Durrim.
 
+More concretely, compared with normalized Marchfolk adult anatomy, Pipkin trend toward a **modestly reduced vertical central-trunk contribution to total stature**, a compact lumbar/waist transition, and a mature pelvis whose vertical height, depth and three-dimensional structural participation remain substantial relative to the thorax. This lower-trunk-centered organization persists even when pelvic breadth approaches Marchfolk-like values. It is a population-level relational tendency, not a fixed ratio. The reduced trunk share is absorbed primarily through **sustained limb contribution and pelvic vertical contribution, not through enlargement of the head**. This never requires unusually long legs and never creates Durrim-like compression.
+
 At normalized displayed height, Marchfolk show human adult torso, pelvis and limb relationships, while Pipkin show more compact central trunk organization, greater pelvic structural contribution relative to thoracic scale, proportionally sustained limbs despite short stature and a distinct thorax-to-pelvis relationship.
 
 > **Pipkin are not ordinary human proportions miniaturized to approximately one meter tall.**
@@ -147,6 +149,7 @@ At normalized displayed height, Marchfolk show human adult torso, pelvis and lim
 | Pelvic breadth | Meaningful adult breadth relative to torso scale, never extremely wide hips, feminized anatomy, high fat or one hourglass silhouette; this is skeletal anatomy |
 | Pelvic depth | Appropriate adult three-dimensional depth, never a widened scaled human pelvis (morphology **OPEN**) |
 | Pelvic maturity | Fully mature adult anatomy, especially important for the adult Pipkin and human child test |
+| Sex-comparable population measurement | Where sex-related anatomy materially affects pelvis or thorax, compare like-for-like anatomical configurations (for example male Pipkin with male Marchfolk and female Pipkin with female Marchfolk); racial identity is never defined by shoulder-to-hip ratio or external hip circumference |
 | External hip width | Skeletal breadth, gluteal muscle, fat distribution and external circumference stay separate |
 | Thorax-to-pelvis transition | A coherent adult transition through lower ribcage, waist, abdomen and pelvis, never an abrupt "small chest → huge hips" |
 | Waist and abdomen | Visible or less-defined waists are both valid and neither defines the race; abdominal roundness is never an identifier, and a lean flat-bellied Pipkin is fully recognizable |
@@ -216,6 +219,8 @@ The head-size tendency is secondary. Part 3 must build an unmistakably adult cra
 | PIP-BODY-25 | Lower limb contribution, distinct from Durrim |
 | PIP-BODY-26 | Larger valid foot with moderate hand, testing foot contribution independently |
 | PIP-BODY-27 | Smaller valid foot with larger valid hand, preventing a fixed extremity package |
+| PIP-BODY-28 | Adult male Pipkin vs adult male Marchfolk at normalized displayed height, frame and composition; Pipkin anatomy remains distinct without cross-sex coding |
+| PIP-BODY-29 | Adult female Pipkin vs adult female Marchfolk at normalized displayed height, frame and composition; Pipkin anatomy remains distinct without cross-sex coding |
 
 | Stress | Configuration |
 | --- | --- |
@@ -237,3 +242,212 @@ Approved Pipkin anatomy, not prototype convenience, sets later furniture, intera
 > **Existing prototype Pipkin values remain non-authoritative unless explicitly reconciled with the approved design specification.** The implementation-level audit stays deferred until project access is available.
 
 First-pass approved: Low-Set Compact Trunk Architecture, distinguishing Pipkin positively from scaled Marchfolk; a moderate rather than Durrim-massive thorax; a mature pelvis contributing more relative to thoracic scale than Marchfolk; less vertical compactness than Durrim; greater limb contribution than Durrim at matched height, without required unusually long limbs relative to humans; pelvic breadth not a single identifier; mandatory adult pelvic maturity; moderate adult hands; feet with modestly elevated contribution as secondary identifiers; five digits per hand and foot; plantigrade; frame, muscle, fat amount and distribution separate; head contribution secondary and never a maturity signal; "large head" superseded; the 122 cm Durrim comparison as a single-height boundary test; mandatory combined-proportion validity; and prototype values non-authoritative pending audit. **Pipkin v1.0 Part 2 is complete**, and v1.0 as a whole isn't.
+
+
+# Part 3 Craniofacial anatomy, ears, hair and facial-hair biology
+
+## 1. Part 3 core rule
+
+> **An adult Pipkin face must read as biologically mature and recognizably Pipkin before hairstyle, facial hair, wrinkles, cosmetics, expression, clothing, or scale context are visible.**
+
+Pipkin are not human children with adult bodies, miniature Marchfolk heads, round-faced caricatures, small Durrim, or short elves. Attractive, ordinary, unusual, soft-featured, angular, weathered and severe adult faces are all valid. No beauty standard is biological.
+
+## 2. Positive craniofacial specialization — Compact Mature Facial Integration
+
+The positive Pipkin facial anchor is:
+
+> **Pipkin possess Compact Mature Facial Integration: an adult craniofacial organization in which a moderately broad cranial base and cheek-temporal region integrate into a vertically compact but fully mature midface and lower face, with clear adult orbital, nasal, maxillary and mandibular development and without juvenile enlargement of the cranial vault or eyes.**
+
+This is a coordinated relationship, not a single face-width control.
+
+Its central sequence is:
+
+**moderate cranial breadth → integrated temple/zygomatic support → mature compact midface → clearly developed adult lower face**
+
+"Compact" refers to coordinated facial vertical organization, not a tiny face, flat face, compressed skull, short nose, recessed jaw, round cheeks, or childlike proportions. "Mature" requires adult skeletal development even in soft-featured individuals.
+
+This system is distinct from:
+- **Marchfolk:** ordinary human adult craniofacial relationships across broad variation.
+- **Durrim:** greater cranial breadth/depth and structurally substantial compact adult craniofacial construction.
+- **Gorrund:** Transverse Structural Continuity with much greater large-scale lateral structural mass.
+- **Fenn/Aelari/Vael:** elven craniofacial family and elven ear biology.
+- **Human children:** juvenile orbital, midface, mandibular, dental-jaw and cranial-to-facial relationships.
+
+## 3. Cranial vault and head contribution
+
+Pipkin may trend toward somewhat greater head contribution to total stature than tall humanoids, but the head is **secondary** and never oversized. The cranial vault must not be enlarged relative to the mature face as a shortcut to small-race identity.
+
+Cranial breadth, cranial length, vault height, forehead height/slope, posterior cranial projection and cranial-base relationships vary independently within validity. The central tendency may support moderate breadth, but broad and narrow adult Pipkin heads are both valid.
+
+A narrow-headed Pipkin must remain Pipkin through mature facial integration. A broad-headed Pipkin must not become Durrim through cranial breadth alone.
+
+## 4. Forehead, brow and orbital anatomy
+
+Forehead height, slope and curvature vary broadly. Pipkin do not require a high childlike forehead, a heavy brow, or a permanently soft brow.
+
+Orbital size means skeletal orbital dimensions; visible eye opening is separate. Pipkin **do not possess biologically oversized eyes**. Orbital breadth/height, interorbital spacing, orbital depth, brow projection, upper/lower lid exposure and visible aperture vary independently within coherent limits.
+
+Adult maturity must survive:
+- larger-valid visible eye openings,
+- smaller-valid visible eye openings,
+- lower-valid brow projection,
+- and softer facial contours.
+
+No combination may require giant eyes, wide-eyed expression or infant-like orbital proportions.
+
+## 5. Zygomatic, temporal and cheek structure
+
+The zygomatic and temporal regions provide a major part of Compact Mature Facial Integration. Pipkin may trend toward **moderate lateral cheek support relative to facial size**, coordinating cranial breadth with the midface without requiring broad external cheeks.
+
+Zygomatic breadth, projection and vertical position are separate. Temporal breadth and hollowing vary with skeletal anatomy, age and composition. Soft-tissue cheek fullness is not the racial anchor.
+
+The system must remain distinct from Gorrund Transverse Structural Continuity: Pipkin do not require massive lateral brow-orbital structures, heavy temporal mass, or a broad load-bearing mandible.
+
+## 6. Midface, nose and maxillary region
+
+Pipkin have a fully mature adult midface. Midface height may trend modestly compact within the racial system, but never juvenile, underdeveloped or recessed by requirement.
+
+Nasal root height, bridge height, bridge breadth, nasal length, projection, tip shape, alar breadth and nostril geometry vary broadly. **A small or upturned nose is not a Pipkin trait.** Large, long, broad, narrow, projecting and subtle adult noses are all valid when anatomically coherent.
+
+Maxillary projection and dental-jaw support remain adult. Pipkin identity never depends on a shortened muzzle-like facial plane, flattened midface, or childlike dental region.
+
+## 7. Mouth, lips, philtrum and lower-face maturity
+
+Mouth width, lip volume, vermilion shape, philtrum length/depth and oral projection vary broadly. Full lips, thin lips and intermediate forms are valid and are not sex-locked or race-defining.
+
+The lower face must carry adult maturity through coordinated maxillary, mandibular and chin development. A soft-featured Pipkin may have a modest chin and lighter jaw while still showing mature proportions.
+
+## 8. Mandible, jaw and chin
+
+Mandibular breadth, ramus height, body depth, gonial shape, chin width, chin height and projection vary independently within validity.
+
+Pipkin do **not** require:
+- a heavy Durrim-like jaw,
+- a tiny childlike jaw,
+- an exaggerated square jaw,
+- a pointed "cute" chin,
+- or a large chin as an adulthood marker.
+
+The reference tendency is a **moderately scaled but fully mature mandible integrated closely with the compact midface**. Adult read comes from maturity of relationships, not massiveness.
+
+## 9. Ears — Compact Rounded Auricular Architecture
+
+Pipkin ears are non-elven adult humanoid ears with their own positive tendency:
+
+> **Pipkin ears trend toward a compact rounded auricular architecture: moderate overall projection, a rounded-to-softly-angular upper contour, a proportionally clear but not deep conchal bowl, continuous moderate helix definition, and a compact attachment that integrates closely with the side of the head.**
+
+Variation includes ear height, breadth, projection, rotation, helix thickness, antihelix definition, conchal depth, tragus/antitragus prominence and lobule size/attachment.
+
+Locked exclusions:
+- no elven terminal point,
+- no Grask robust folded terminal taper,
+- no Gorrund deep broad bowl/strong load-bearing-looking folds,
+- no mandatory tiny ears,
+- no mandatory protruding "comic halfling" ears.
+
+Ear shape is a secondary identifier. Hiding the ears must not erase Pipkin facial identity.
+
+## 10. Eyes, iris biology and pigmentation scope
+
+Eye color is biological pigmentation and separate from magical eye effects and observed lighting appearance. Pipkin support a broad natural fantasy-humanoid iris range consistent with later world-wide pigmentation review; no eye color is required for racial recognition.
+
+Iris color, limbal appearance, scleral appearance and visible eye aperture are separate systems. Part 3 does not authorize glowing eyes or magical ocular effects as racial biology.
+
+## 11. Hair biology
+
+Pipkin scalp hair follows a broad adult humanoid biological range. Hair density, strand diameter, curl pattern, growth direction, hairline geometry, widow's peak, temple recession and age-related thinning vary independently within coherent biological limits.
+
+No hairstyle is biological. Pipkin are not required to have curly hair, shaggy hair, rustic hair, thick hair or any culturally coded style.
+
+Natural hair pigmentation supports broad population variation subject to the later cross-race pigmentation review. Premature graying and age-related graying may occur as individual biological variation; exact lifecycle distributions remain OPEN.
+
+## 12. Facial-hair biology
+
+Facial-hair capability is biologically variable and must not be required for adult male recognition or adult recognition generally.
+
+Where anatomy/hormonal configuration supports facial-hair growth, density, coverage, strand character and pattern vary. Valid outcomes may include little facial hair, patchier growth, mustache-dominant patterns, chin/jaw-dominant patterns, broad beard coverage and age-related changes.
+
+Pipkin do not biologically require Durrim-like beard prominence, elaborate beards, sideburns, mustaches or "halfling whiskers." Grooming is Personal Presentation.
+
+Sex-related facial-hair distributions and hormonal relationships remain **OPEN** pending universal review and must use soft biological correlations rather than hard presentation locks.
+
+## 13. Skin, brows, lashes and body-hair boundary
+
+Skin pigmentation remains broad and is not used as a racial identifier. Exact population frequencies await the universal pigmentation review.
+
+Eyebrow density, thickness, shape and growth direction vary; brow grooming is presentation. Eyelash density/length vary within plausible adult anatomy and are never used as sex or youth shorthand.
+
+Body-hair biology belongs to the later universal/race surface review. Pipkin do not require hairy feet or unusually hairy bodies.
+
+## 14. Aging and adult readability
+
+Adult Pipkin must read adult at the youngest valid adult apparent age without wrinkles, gray hair, facial hair, scars or weathering.
+
+Age can later affect skin texture, soft-tissue distribution, orbital exposure, facial volume, hairline, pigmentation, tooth wear and other features, but aging must not be the mechanism that makes the race look mature.
+
+Chronological Age, Apparent Biological Age and Age Presentation remain separate concepts.
+
+## 15. Creator architecture
+
+Race-specific facial controls remain **APPROVED FIRST-PASS FUNCTIONAL REQUIREMENTS / PROVISIONAL CONTROL ORGANIZATION** pending the universal Facial Customization Architecture Review.
+
+Required independent or relationship-aware control families include:
+- cranial breadth/length/vault height,
+- forehead height/slope,
+- brow and orbital dimensions,
+- interorbital spacing,
+- visible eye aperture,
+- zygomatic breadth/projection/height,
+- temporal breadth,
+- midface height/projection,
+- nasal root/bridge/length/projection/alar dimensions,
+- maxillary projection,
+- mouth/lip/philtrum dimensions,
+- mandibular breadth/ramus/body depth,
+- chin width/height/projection,
+- ear height/breadth/projection/rotation/fold architecture,
+- and soft-tissue facial composition where appropriate.
+
+There is no "Pipkin Face" master slider. Validity is relationship-aware. Population tendencies may bias randomization without forcing creator controls to move together.
+
+## 16. Part 3 validation cast
+
+| ID | Target |
+| --- | --- |
+| PIP-FACE-01 | Reference adult Pipkin, neutral hair/presentation; unmistakably mature and Pipkin |
+| PIP-FACE-02 | Youngest valid adult apparent age, no facial hair/wrinkles; still adult |
+| PIP-FACE-03 | Soft-featured adult with low brow and mandibular mass; never childlike |
+| PIP-FACE-04 | Angular/severe adult; never Durrim or Gorrund |
+| PIP-FACE-05 | Narrow-valid cranium/face; still Pipkin |
+| PIP-FACE-06 | Broad-valid cranium/face; still Pipkin, not Durrim |
+| PIP-FACE-07 | Larger-valid eye aperture with modest jaw/chin; critical anti-child test |
+| PIP-FACE-08 | Smaller-valid eye aperture with stronger jaw/chin; identity survives |
+| PIP-FACE-09 | Small/subtle nose; never child-coded |
+| PIP-FACE-10 | Large/projecting nose; still Pipkin without caricature |
+| PIP-FACE-11 | Low cheek soft tissue with clear skeletal integration |
+| PIP-FACE-12 | High cheek soft tissue; identity does not depend on round cheeks |
+| PIP-FACE-13 | Ears hidden; face remains Pipkin |
+| PIP-FACE-14 | Maximum-valid ear projection; no comic-halfling read |
+| PIP-FACE-15 | Minimal facial hair; adult recognition unchanged |
+| PIP-FACE-16 | Dense facial hair; underlying face remains valid Pipkin |
+| PIP-FACE-17 | Adult Pipkin vs human child at similar head size; critical maturity comparison |
+| PIP-FACE-18 | Pipkin vs normalized Marchfolk adult, hairstyle/ears hidden; facial organization remains distinct |
+| PIP-FACE-19 | Pipkin vs Durrim at normalized head size; compact maturity vs structural depth/mass distinction survives |
+| PIP-FACE-20 | Pipkin vs Gorrund at normalized head size; no Transverse Structural Continuity overlap |
+
+## 17. Combined stress tests
+
+- Broad cranium + soft jaw + large eye aperture + young adult: must remain mature.
+- Narrow cranium + small nose + low facial hair: must remain adult and Pipkin.
+- Broad zygomatics + high cheek fat: must not become round-face stereotype.
+- Strong mandible + broad cranium + dense facial hair: must not become Durrim.
+- Low ear projection + ears obscured: facial identity survives.
+- High ear projection + rounded contour: must not become comic halfling.
+- Lower-valid midface height + larger eye aperture: critical anti-child combination.
+- Greater head contribution to stature + youngest adult apparent age: critical whole-character anti-child test.
+
+## 18. Part 3 identity statement
+
+> **Pipkin craniofacial identity is defined by Compact Mature Facial Integration: a moderately broad but variable cranial foundation coordinated with temple and zygomatic support, a compact yet fully developed adult midface, and a mature lower face whose identity comes from structural relationships rather than heaviness. Their compact rounded ears are secondary, while hair, facial hair, eye color, wrinkles, cheek fullness and head size never carry racial adulthood or identity by themselves.**
+
+Part 3 remains **PROPOSED FOR AUDIT** until Claude's review is resolved. No UE5 implementation is authorized.
