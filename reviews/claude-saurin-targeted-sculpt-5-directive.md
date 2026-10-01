@@ -312,3 +312,152 @@ Preserve historical wording only where useful as superseded design history; the 
 Record Tyler as the design authority for this revision dated October 1, 2026.
 
 Do not mark the Saurin visual reference final after TS5. Return diagnostics to Tyler/ChatGPT for review.
+
+
+## 14. ADDENDUM — Tail Individuality and Customization System
+
+Tyler has expanded the TS5 direction: because the Saurin tail is a mandatory primary racial feature, it must also support meaningful **individual biological variation** rather than appearing as one standardized appendage repeated across the population.
+
+This does **not** reopen the mandatory-tail ruling. Every normal Saurin reference retains a complete, visibly present, biomechanically integrated tail. Tail individuality must operate inside that rule.
+
+### Biological tail variation
+
+Future creator anatomy should support relationship-aware variation in:
+- total tail length;
+- caudal-base breadth/depth;
+- muscular mass;
+- rate of taper;
+- proximal vs distal mass distribution;
+- cross-sectional tendency (e.g. relatively rounder, laterally broader, or dorsoventrally deeper within plausible Saurin bounds);
+- segment/curvature character;
+- neutral resting curvature/carriage;
+- scale-field morphology;
+- pigmentation and inherited patterning;
+- optional low-profile dorsal keratin ridges, scutes, hornlets, or spine-like display elements where anatomically valid.
+
+Do not make these independent unconstrained sliders. Tail base × tail length × tail mass × pelvic support × trunk counterbalance must remain a coupled validity relationship.
+
+A very long/heavy tail requires anatomy capable of supporting it. A slender tail should transition coherently from its base. No tail may look pasted onto an otherwise unrelated humanoid pelvis.
+
+### Tail identity range
+
+Explore tail phenotypes broad enough that two Saurin can be recognizable as individuals in silhouette without requiring clothing or color.
+
+Possible neutral examples for later exploration:
+- shorter/heavier taper;
+- long gradual taper;
+- substantial proximal base with finer distal tail;
+- moderately laterally broadened tail;
+- stronger dorsal ridge expression;
+- nearly smooth/minimal display expression;
+- patterned/banded tail;
+- mild natural asymmetry or resting curvature.
+
+These are **variation examples, not subraces**.
+
+Do not turn tail phenotype into a code for sex, culture, class, profession, personality, intelligence, aggression, social status, or habitat.
+
+### Cranial-to-caudal display continuity
+
+The new Cranial Keratin Display System may, on some valid individuals, have restrained anatomical continuity onto the neck, dorsal trunk, sacral region, and/or tail.
+
+Examples may include:
+- low dorsal ridges;
+- small keratinous scutes;
+- restrained spine/hornlet rows;
+- regionally changing display scale morphology.
+
+This is **optional expression**, not a mandatory dragon-like spinal crest.
+
+If used, transitions must be biological and region-aware. Do not simply duplicate head horns down the spine at uniform intervals.
+
+### Acquired and presentation variation
+
+Keep biological anatomy separate from history and presentation.
+
+**Acquired tail features** may include:
+- scars;
+- damaged scales;
+- chipped/broken keratin structures;
+- localized pigment change;
+- occupational wear;
+- minor healed injuries.
+
+Major tail loss/amputation remains a separate OPEN injury-system question and must not become a normal creator substitute for the mandatory-tail phenotype.
+
+**Personal Presentation** may eventually include:
+- tail bands;
+- wraps;
+- jewelry;
+- paint/dye;
+- decorative caps/fittings on keratin structures;
+- clothing draped over/around the tail;
+- segmented protective armor;
+- ceremonial coverings.
+
+Armor/clothing may lie on top of or partially cover the tail, per Tyler's prior ruling, but the tail must remain visibly/readably part of the Saurin silhouette and cannot be cosmetically erased.
+
+### Gameplay and hitbox firewall
+
+Tail variation must not become a punishment or automatic advantage.
+
+Do not automatically infer from longer, thicker, more ornamented, or more strongly ridged tails:
+- larger damage vulnerability;
+- easier target acquisition;
+- extra combat hit area;
+- tail attacks;
+- knockdown resistance;
+- balance bonuses;
+- faster turning;
+- faster swimming;
+- climbing;
+- grappling;
+- armor;
+- intimidation.
+
+Tyler's established ruling remains authoritative: **the tail is a strong racial identifier but should not make a Saurin player easier to hit.**
+
+The legacy “fastest swimmer” claim remains gameplay under later review and must not be reverse-engineered into mandatory tail phenotype.
+
+### Creator integration
+
+The Saurin creator should eventually treat the tail as a first-class anatomy domain alongside body, head, rostrum, cranial display, scales, pigmentation and pattern.
+
+Selective randomization should be capable of randomizing the tail while preserving the rest of the character.
+
+Attribute locks should support preserving chosen tail characteristics while randomizing other anatomy.
+
+Saved appearances and NPC generation must preserve valid tail phenotype.
+
+Neutral presets should demonstrate meaningful tail diversity without presenting variants as biological castes/subraces.
+
+### TS5 tail diagnostic request
+
+TS5 remains primarily a **head pass**. Do not delay the needed skull/jaw work by fully resculpting the tail.
+
+However, add a compact **tail-variation concept sheet** using the accepted Saurin body/pelvic foundation. Show at least five biologically plausible silhouettes at the same body scale:
+1. reference/balanced;
+2. shorter/heavier;
+3. longer/gradual taper;
+4. alternate cross-section/mass distribution;
+5. restrained dorsal keratin/ridge expression.
+
+If time permits, add a sixth example combining inherited patterning with a distinct but valid tail silhouette.
+
+Label these **exploratory phenotype examples — not subraces, not gameplay variants**.
+
+Do not use shortened/cropped renders that hide the tail tip. Show the complete tail.
+
+### Additional TS5 success tests
+
+Reject a tail exploration if:
+- variation is only color while silhouette remains identical;
+- length/base/mass combinations look mechanically incompatible;
+- the tail appears attached rather than integrated through pelvis/sacrum/trunk;
+- every individual receives dragon-like dorsal spikes;
+- a variant implies an automatic gameplay ability;
+- a large tail is treated as a larger damage target;
+- armor/clothing erases the tail's racial presence;
+- any normal customization option removes the tail entirely.
+
+This addendum is part of Tyler's October 1, 2026 Saurin visual/customization direction and should be reflected in the canonical Saurin specification alongside the Cranial Keratin Display System.
