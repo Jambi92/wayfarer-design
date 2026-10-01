@@ -14,10 +14,10 @@
 11. Pipkin
 
 ## In progress
+12. **Cogling — v1.0 Part 1 authored; Claude audit pending**
 
 ## Not yet designed
-12. Cogling
 13. Saurin
 
 ## Current next action
-Pipkin v1.0 is FIRST-PASS COMPLETE. The Short-Race Comparative Anatomy Review remains queued until Cogling is designed. Await Tyler's direction before beginning Cogling, Saurin, any universal review, or UE5 implementation.
+Claude audits Cogling Part 1 (racial foundation, scale and positive body anatomy). Do not begin Cogling Part 2, the Short-Race Comparative Anatomy Review, Saurin, or UE5 implementation until the Part 1 checkpoint is resolved.
