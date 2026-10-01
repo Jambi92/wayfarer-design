@@ -3147,16 +3147,28 @@ Any of these may occur individually where otherwise valid.
 
 ## 207. Consolidated OPEN list
 
-The following remain OPEN after first-pass Cogling design unless later audit identifies additional items:
+The following remain OPEN after first-pass Cogling design unless later review resolves them:
 - exact height distribution and final min/reference/max after world/animation validation;
 - exact body segment ratios;
+- thoracic dimensions;
+- pelvic morphology, including breadth, depth, height, inlet and outlet relationships;
+- shoulder and clavicular dimensions;
+- hand, palm and finger proportions;
+- foot proportions and arch distribution;
+- joint dimensions and long-bone robusticity distribution;
+- Muscular Development Capacity distribution;
+- body-fat distribution tendencies;
 - exact head allometry;
 - exact craniofacial ratios;
-- exact ear distributions;
+- face/expression readability at an adult head size of approximately 11–13 cm;
+- exact ear distributions and ear mobility;
+- morphology and distribution magnitudes of sex-related dimorphism;
 - ancestry/population structure;
 - surface phenotype frequencies;
 - hair/iris frequencies and mechanisms;
-- sex-related distribution magnitudes;
+- dentition tooth count, replacement pattern, eruption/maturation timing, wear and lifecycle;
+- magical eye effects;
+- cosmetics, tattoos and piercing culture;
 - lifespan/maturation;
 - detailed age progression;
 - final locomotion speeds;
@@ -3164,7 +3176,8 @@ The following remain OPEN after first-pass Cogling design unless later audit ide
 - jumping/climbing/swimming;
 - stealth/balance/fall mechanics;
 - strength/leverage gameplay;
-- racial gameplay traits;
+- racial gameplay traits and racial attribute/stat bonuses;
+- final race/class restrictions;
 - collision;
 - interaction reach;
 - combat reach;
@@ -3172,10 +3185,41 @@ The following remain OPEN after first-pass Cogling design unless later audit ide
 - first-person support;
 - mounting/vehicles;
 - technical skeleton/mesh/morph architecture;
+- facial animation implementation;
+- camera and rendering implementation;
 - animation/IK/warping implementation;
 - networking;
 - schema/version migration;
+- in-game Cogling race-description revision;
 - culture/background design.
+
+## 207A. Permanent Cogling validation suite
+
+The permanent first-pass Cogling validation suite consists of every active approved Cogling validation case across the **COG-BODY, COG-FACE, COG-SURF, COG-MOVE, COG-WORLD and COG-CC** families, plus any later formally approved integration cases.
+
+**COG-BODY-25 and COG-BODY-26 are retired IDs** and are not active validation cases; their canonical coverage remains COG-BODY-11 and COG-BODY-09A respectively.
+
+## 207B. Universal-review dependencies
+
+Cogling first-pass completion does not close project-wide questions that require later comparative or universal review. Dependencies include:
+- the Short-Race Comparative Anatomy Review;
+- the Universal Facial Customization Architecture Review;
+- cross-race pigmentation/surface-phenotype review;
+- the race-biology-gameplay review;
+- full-roster world-scale/accessibility review;
+- technical character-architecture review.
+
+If any dependency has not yet been formally registered or scheduled, the underlying design question remains OPEN rather than being treated as silently resolved.
+
+## 207C. Prototype-conflict ledger
+
+Known prototype shortcuts are non-authoritative where they conflict with approved Cogling design, including:
+- the ~0.72× / ~125 cm prototype scale;
+- shared human animation as a placeholder rather than approved Cogling movement architecture;
+- holder-scaled weapon/equipment behavior where canonical object dimensions should remain meaningful;
+- a single human-derived collision/capsule solution if it fails approved Cogling anatomy, navigation or interaction requirements.
+
+These entries record conflicts for later implementation review; they do not authorize implementation changes now.
 
 ## 208. First-pass completion gate
 
