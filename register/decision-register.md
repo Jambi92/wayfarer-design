@@ -1027,17 +1027,31 @@ Cogling v1.0 Part 2 (FIRST-PASS ACCEPTED; clarifications incorporated at `f50d13
 | COG-BODY-25 and 26 retired as duplicates of COG-BODY-11 and 09A | AGREED | Cogling Part 2 §71 |
 | Cogling numerical torso and limb envelopes, thorax, pelvis, shoulders, head ratio, segment distributions, hands, feet, joints, robusticity, muscular capacity, fat distribution, dimorphism, face, surface, lifecycle, movement, gameplay, implementation | OPEN | Cogling Part 2 §72 |
 
-Cogling v1.0 Part 3 (patched at `21cbd41`; re-audit PASS; pending Tyler's approval)
+Cogling v1.0 Part 3 (FIRST-PASS ACCEPTED; Tyler approved September 30)
 
 | Decision | Status | Source |
 | --- | --- | --- |
-| Adult facial maturity at the smallest stature without wrinkles, facial hair, expression or presentation; midface never shortened; mature lower face mandatory; no oversized cranium, enlarged eyes, button nose or tiny jaw | PRELIMINARY | Cogling Part 3 §76, §81, §83, §85 |
-| Orbit separate from visible eye opening; no biologically enlarged eyes; readability at an 11–13 cm head solved by camera, animation, lighting and rendering, never by enlarging features | PRELIMINARY | Cogling Part 3 §79, §99 |
-| "Expressive face" is not biology; no personality encoded in neutral anatomy; attractiveness, sex, age, adiposity and asymmetry independent; no "Cogling Face" master slider | PRELIMINARY | Cogling Part 3 §91–98 |
-| **Fine-Scale Planar Integration:** facial skeletal height relative to the cranial vault at or slightly above the Marchfolk adult relationship (opposite of the toddler pattern), plus clearly angled orbit-to-zygoma, zygoma-to-maxilla and mandibular body-to-ramus junctions at fine skeletal mass | PRELIMINARY | Cogling Part 3 §75; re-audit |
-| **Fine Folded Auricular Architecture:** rounded non-pointed ear with crisp folds and fine cartilage; a secondary tendency overlapping Pipkin, Durrim and human ears; fold detail is a close-view trait | PRELIMINARY | Cogling Part 3 §87–90, §99 |
-| Craniofacial boundaries with Marchfolk, Pipkin, Durrim, Fenn and Sagekin based on their approved anchors; FD-labeled tests with pass criteria (COG-FACE-16 to 19, 21A, 25) | PRELIMINARY | Cogling Part 3 §90A, §101A–102 |
+| Adult facial maturity at the smallest stature without wrinkles, facial hair, expression or presentation; midface never shortened; mature lower face mandatory; no oversized cranium, enlarged eyes, button nose or tiny jaw | AGREED | Cogling Part 3 §76, §81, §83, §85 |
+| Orbit separate from visible eye opening; no biologically enlarged eyes; readability at an 11–13 cm head solved by camera, animation, lighting and rendering, never by enlarging features | AGREED | Cogling Part 3 §79, §99 |
+| "Expressive face" is not biology; no personality encoded in neutral anatomy; attractiveness, sex, age, adiposity and asymmetry independent; no "Cogling Face" master slider | AGREED | Cogling Part 3 §91–98 |
+| **Fine-Scale Planar Integration:** facial skeletal height relative to the cranial vault at or slightly above the Marchfolk adult relationship (opposite of the toddler pattern), plus clearly angled orbit-to-zygoma, zygoma-to-maxilla and mandibular body-to-ramus junctions at fine skeletal mass | AGREED | Cogling Part 3 §75; re-audit |
+| **Fine Folded Auricular Architecture:** rounded non-pointed ear with crisp folds and fine cartilage; a secondary tendency overlapping Pipkin, Durrim and human ears; fold detail is a close-view trait | AGREED | Cogling Part 3 §87–90, §99 |
+| Craniofacial boundaries with Marchfolk, Pipkin, Durrim, Fenn and Sagekin based on their approved anchors; FD-labeled tests with pass criteria (COG-FACE-16 to 19, 21A, 25) | AGREED | Cogling Part 3 §90A, §101A–102 |
 | Align §101A FD-PRES, FD-SURF and FD-OBS wording with AGREED definitions; add that cranial-vault proportion has no cognitive meaning; "compact" in the ear term (Short-Race Review) | OPEN | Cogling Part 3 re-audit 3a–3c |
 | Cogling cranial, facial-third, orbital, eye-opening, zygomatic, midface, nasal, mandible, ear and dimorphism distributions; age progression; surface; hair; iris; facial animation; camera and rendering | OPEN | Cogling Part 3 §103 |
+
+Cogling v1.0 Part 4 (proposed; audit PASS WITH CLARIFICATIONS)
+
+| Decision | Status | Source |
+| --- | --- | --- |
+| Surface phenotype is broad, overlapping and secondary; no required skin, hair or eye color, freckling, complexion or age cue; no workshop-pale or ruddy-gnome coding | PRELIMINARY | Cogling Part 4 §106–109 |
+| Hair architecture and color broad; no racial hairstyle; facial hair optional and never an adult, sex, occupation or race marker; no bearded-tinkerer default | PRELIMINARY | Cogling Part 4 §111–113 |
+| Eyes ordinary adult scale; no iris or lash enlargement for readability; natural iris range with frequencies OPEN; magical eye effects are not biology | PRELIMINARY | Cogling Part 4 §115–118 |
+| Chronological Age, Apparent Biological Age and Age Presentation separate; young adults structurally adult; no wizard or inventor elder; age doesn't change stature to signal age | PRELIMINARY | Cogling Part 4 §119–124 |
+| Surface correlations probabilistic only; cosmetics, scars, tattoos and piercings are presentation or acquired; no "cute Cogling" bundle; small scale never justifies exaggerated surface detail | PRELIMINARY | Cogling Part 4 §125–131 |
+| Whole-body surface not mapped to the AGREED Skin Appearance Layers; FD domains not stated as facial-only; FD-PRES and FD-OBS wording differs from AGREED (carried from the Part 3 re-audit) | OPEN | Cogling Part 4 audit 4a |
+| Dentition not covered (functional adult humanoid baseline; no childlike, rodent or oversized teeth) | OPEN | Cogling Part 4 audit 4b |
+| Body hair "independent from sex-related anatomy" pre-decides an OPEN distribution question; interim randomization not marked non-authoritative | OPEN | Cogling Part 4 audit 4c–4d |
+| Cogling pigmentation, hair, iris and body-hair frequencies; lifespan and maturation; age progression; age-related skeletal change; rendering | OPEN | Cogling Part 4 §136 |
 
 Marchfolk v1.0 and v1.5 are referenced but haven't been received here. Send them and their decisions go into this register.
