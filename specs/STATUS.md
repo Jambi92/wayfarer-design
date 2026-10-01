@@ -13,11 +13,11 @@
 10. Gorrund
 
 ## In progress
-11. **Pipkin — v1.0 Parts 1–4 first-pass accepted (Part 4 approved by Tyler September 30); Part 5 not started**
+11. **Pipkin — v1.0 Parts 1–4 first-pass accepted; Part 5 authored and patched after first audit; legacy brief movement wording awaiting Tyler decision; Part 6 planned**
 
 ## Not yet designed
 12. Cogling
 13. Saurin
 
 ## Current next action
-Waiting for Tyler to start Pipkin Part 5 (movement, animation, equipment, world interaction and final first-pass review). ChatGPT should also update the Part 4 status line in `specs/pipkin/PIPKIN_V1.md` to FIRST-PASS ACCEPTED.
+Resolve the Pipkin legacy brief movement wording decision, then final-audit Part 5. After acceptance, proceed to planned Part 6 covering equipment fit, world compatibility, character-creation integration and final first-pass review.
