@@ -485,7 +485,7 @@ Pigmentation is biological; observed appearance under lighting is not. Base pigm
 - magical effects,
 - and renderer/lighting conditions.
 
-Exact allele/population-frequency models remain **OPEN** for the cross-race pigmentation review.
+Exact population-frequency models remain **OPEN** for the cross-race pigmentation review; no allele-level genetic simulation is implied.
 
 ## 3. Tanning, freckling and localized pigmentation
 
@@ -503,7 +503,7 @@ Palms, soles, lips and other specialized skin regions may differ naturally from 
 
 ## 5. Iris pigmentation
 
-Pipkin iris pigmentation spans the broad natural/fantasy-humanoid biological range approved at the world level. Commonality distributions remain **OPEN** until cross-population review.
+Pipkin iris pigmentation may span a broad natural humanoid range, with exact validity limits, rare colors and population frequencies **OPEN** for the cross-race pigmentation review.
 
 Iris pigmentation is separate from:
 - pupil size,
@@ -580,7 +580,7 @@ Tooth size must coordinate with the mature maxillary and mandibular dental arche
 
 Extreme stylized perfect whiteness is not biological default. Wear, staining, loss, restoration and damage belong to age/history/health systems where appropriate rather than racial identity.
 
-Exact tooth count and replacement/lifecycle mechanics follow the future universal dentition review unless separately approved.
+Exact tooth count, replacement pattern and lifecycle details remain **OPEN**. First-pass Pipkin dentition follows the existing functional adult humanoid baseline used elsewhere in the project without inferring diet, culture or specialized feeding anatomy.
 
 ## 14. Lips and mucosal pigmentation
 
@@ -596,35 +596,46 @@ Scar prevalence, placement or severity must not be used to make Pipkin look adve
 
 Tattoos, ritual markings, paint and cosmetic markings belong to culture/presentation unless a later biological mechanism explicitly establishes otherwise.
 
-## 16. Health-neutral variation principle
+## 16. Aging and environmental appearance
+
+Pipkin skin may show ordinary adult aging through changes in texture, elasticity, wrinkling, localized pigmentation and other surface characteristics. Hair may gray or thin as already established, but no single aging marker is mandatory.
+
+**Apparent Biological Age and surface aging are related but not identical.** A younger-looking adult must remain structurally mature without wrinkles, while an elder Pipkin must remain recognizably Pipkin beneath age-related surface and soft-tissue change. Pipkin lifecycle timing remains **OPEN**.
+
+Environmental exposure may produce tanning, weathering and localized wear according to exposure history. Face, hands, forearms, feet and other exposed regions may differ, but no fixed regional-weathering map is approved yet.
+
+These traits use the project Skin Appearance Layers:
+- **Layer 1 — Natural:** constitutive pigmentation, freckles, birthmarks, vascularity and other inherent biological surface traits.
+- **Layer 2 — Environmental:** tanning, weathering and other exposure-driven appearance changes.
+- **Layer 3 — Applied or Acquired:** scars, tattoos, cosmetics, paint and comparable history/presentation marks.
+
+The layers must remain distinguishable even when their rendered appearances overlap.
+
+## 17. Health-neutral variation principle
 
 Ordinary visible variation should not automatically be framed as disease, defect or gameplay penalty.
 
 Surface features such as freckles, moles, hair loss, graying, tooth spacing, scars and pigmentation variation may exist without gameplay consequence. Actual health conditions, injuries and disabilities require their own design rather than being smuggled into racial sliders.
 
-## 17. Biological versus observed appearance
+## 18. Biological versus observed appearance
 
 A stored biological value and its rendered appearance are different things.
 
-Validation must separate:
-- **FD-STRUCT:** underlying skeletal structure,
-- **FD-SOFT:** soft tissue,
-- **FD-SURF:** biological surface phenotype,
-- **FD-HAIR:** biological hair systems,
-- **FD-PRES:** grooming/cosmetics/cultural presentation,
-- **FD-OBS:** final observed result under lighting/material/render conditions.
+For **facial analysis only**, the existing Facial Diagnostic Domains retain their agreed meanings: FD-STRUCT (cranium/facial skeleton), FD-SOFT (facial soft tissue), FD-SURF (facial skin surface), FD-HAIR (eyebrows/facial/scalp hair), FD-PRES (facial presentation), and FD-OBS (lighting, camera, expression and pose).
 
-A Pipkin must not gain or lose racial identity because FD-OBS changes lighting, exposure, wetness, dirt or color grading.
+Whole-body surface analysis instead uses the Skin Appearance Layers defined above. Rendered observation remains separate from stored biological and appearance-layer values: lighting, exposure, wetness, dirt, camera and color grading must not cause a Pipkin to gain or lose racial identity.
 
-## 18. Randomization and inheritance
+## 19. Randomization and inheritance
 
 Biological Randomization may use ancestry/population-weighted distributions for pigmentation, hair and other surface traits once those distributions are approved. Overlap with other populations is expected.
 
 Presentation Randomization handles grooming, hairstyle, dye, cosmetics, tattoos and other non-biological choices and must not be mistaken for genetic inheritance.
 
+Until population frequencies are approved, interim randomization may sample broadly across the valid biological envelope for testing and content generation, but that sampling is explicitly **not an approved population distribution**.
+
 No single phenotype bundle such as "fair + freckles + curly brown hair" may become the default hidden Pipkin package.
 
-## 19. Part 4 validation cast
+## 20. Part 4 validation cast
 
 | ID | Target |
 | --- | --- |
@@ -648,8 +659,9 @@ No single phenotype bundle such as "fair + freckles + curly brown hair" may beco
 | PIP-SURF-18 | Surface phenotype closely overlapping Marchfolk; body/face anatomy still carries Pipkin identity |
 | PIP-SURF-19 | Surface phenotype closely overlapping Durrim; structural distinction remains |
 | PIP-SURF-20 | Surface phenotype closely overlapping Fenn with ears obscured; structural distinction remains |
+| PIP-SURF-21 | Elder Pipkin with aged skin, localized pigment change and graying/thinning hair; age reads through surface/soft tissue while race remains structural |
 
-## 20. Stress tests
+## 21. Stress tests
 
 - Dark complexion + tightly curled hair + minimal facial hair: must remain ordinary Pipkin without importing real-world ethnic stereotypes.
 - Light complexion + freckles + curly hair: must not become the hidden "default halfling."
@@ -660,8 +672,8 @@ No single phenotype bundle such as "fair + freckles + curly brown hair" may beco
 - Marchfolk-overlapping skin/hair/eyes + ears hidden: Pipkin structural identity survives.
 - Durrim-overlapping skin/hair/eyes + similar presentation: race is not decided by phenotype.
 
-## 21. Part 4 identity statement and status
+## 22. Part 4 identity statement and status
 
 > **Pipkin surface phenotype is deliberately broad and overlapping: skin pigmentation, iris color, hair pigmentation and texture, freckling, tanning response, body hair and other visible biological traits create individual people rather than carrying the race. Pipkin identity remains rooted primarily in Low-Set Compact Trunk Architecture and secondarily in Integrated Mature Facial Architecture, while surface biology, presentation and observed rendering remain distinct layers.**
 
-Part 4 is **PROPOSED FOR AUDIT**. No UE5 implementation is authorized.
+Part 4 is **PATCHED AFTER FIRST AUDIT — FINAL RE-AUDIT REQUESTED**. No UE5 implementation is authorized.
