@@ -997,18 +997,34 @@ Pipkin v1.0 Part 6 (patched at `7222774`; quick check PASS; Tyler approved the c
 | Provisional biological preset concepts (Reference, Light Narrow, Broad, Powerfully Developed, High-Adiposity, Tall-Boundary, Short-Boundary, Elder) are coverage concepts, not castes, cultures or frequencies; presentation presets cross them | AGREED (provisional library) | Pipkin Part 6 §21 |
 | PIP-INT-21 like-for-like sex movement comparison; prototype 0.7× (about 121 cm) recorded as non-authoritative | AGREED | Pipkin Part 6 §33–34 |
 
-Cogling v1.0 Part 1 (patched at `7f95827`; re-audit PASS; pending Tyler's approval)
+Cogling v1.0 Part 1 (FIRST-PASS ACCEPTED; Tyler approved September 30)
 
 | Decision | Status | Source |
 | --- | --- | --- |
-| Cogling are a distinct very-small adult humanoid population, never miniature humans, smaller Pipkin, slender Durrim, child-proportioned adults or biological tinkerers; positively defined, not the Durrim–Pipkin midpoint | PRELIMINARY | Cogling Part 1 §1–2 |
-| **Fine-Scale Elongated Articulation:** narrow stable central core → near-Marchfolk total limb contribution → fine limb shafts → within-limb redistribution toward forearm, lower leg, hand and fingers; never globally limb-dominant or reach-specialized (distinct from Fenn and Grask); not a slider | PRELIMINARY | Cogling Part 1 §3, §6, §8–9, §12; re-audit |
-| Provisional stature about 76–91–107 cm, with an intentional Pipkin overlap zone of about 91–107 cm (not a single-height boundary); brief 0.45× non-authoritative; no whole-body scale multiplier | PRELIMINARY | Cogling Part 1 §4; re-audit |
-| Adult read from anatomy alone; no oversized cranium or eyes, tiny jaw, juvenile pelvis or shoulders, infant hands or feet; head size never the mechanism of smallness | PRELIMINARY | Cogling Part 1 §5, §17–18 |
-| Fine skeletal construction never means brittle, weak or low capacity; frame, muscle and fat independent; five digits, ordinary nails | PRELIMINARY | Cogling Part 1 §7, §19–24 |
-| Long fingers are anatomy; dexterity, crafting, engineering, intelligence and tinkering are never biological; no gameplay dexterity bonus approved | PRELIMINARY | Cogling Part 1 §10–11, §27 |
+| Cogling are a distinct very-small adult humanoid population, never miniature humans, smaller Pipkin, slender Durrim, child-proportioned adults or biological tinkerers; positively defined, not the Durrim–Pipkin midpoint | AGREED | Cogling Part 1 §1–2 |
+| **Fine-Scale Elongated Articulation:** narrow stable central core → near-Marchfolk total limb contribution → fine limb shafts → within-limb redistribution toward forearm, lower leg, hand and fingers; never globally limb-dominant or reach-specialized (distinct from Fenn and Grask); not a slider | AGREED | Cogling Part 1 §3, §6, §8–9, §12; re-audit |
+| Provisional stature about 76–91–107 cm, with an intentional Pipkin overlap zone of about 91–107 cm (not a single-height boundary); brief 0.45× non-authoritative; no whole-body scale multiplier | AGREED | Cogling Part 1 §4; re-audit |
+| Adult read from anatomy alone; no oversized cranium or eyes, tiny jaw, juvenile pelvis or shoulders, infant hands or feet; head size never the mechanism of smallness | AGREED | Cogling Part 1 §5, §17–18 |
+| Fine skeletal construction never means brittle, weak or low capacity; frame, muscle and fat independent; five digits, ordinary nails | AGREED | Cogling Part 1 §7, §19–24 |
+| Long fingers are anatomy; dexterity, crafting, engineering, intelligence and tinkering are never biological; no gameplay dexterity bonus approved | AGREED | Cogling Part 1 §10–11, §27 |
 | Brief Cogling movement language ("quick steps, frequent turns, efficient climbing, precise hand movements") and "fine motor control" are legacy, under review; any rejection as racial traits needs Tyler's explicit supersession | OPEN (Tyler decision when the movement part arrives) | Cogling Part 1 §11, §28; brief §16.12; audit §5 |
-| Normalized-height Fenn and Grask tests (COG-BODY-16, 17); normalized Durrim test (COG-BODY-10, 10A); toddler test (COG-BODY-11); prototype 0.72× (about 125 cm) recorded as non-authoritative | PRELIMINARY | Cogling Part 1 §31–32; re-audit |
-| Face and expression readability at an adult head size of about 11–13 cm (not yet in the spec's OPEN list); §34 identity statement still uses the pre-patch "compact" anchor | OPEN | Cogling Part 1 re-audit 3a–3b |
+| Normalized-height Fenn and Grask tests (COG-BODY-16, 17); normalized Durrim test (COG-BODY-10, 10A); toddler test (COG-BODY-11); prototype 0.72× (about 125 cm) recorded as non-authoritative | AGREED | Cogling Part 1 §31–32; re-audit |
+| Face and expression readability at an adult head size of about 11–13 cm in gameplay, dialogue and creator cameras, without head enlargement | OPEN | Cogling Part 1 §35 |
+
+Cogling v1.0 Part 2 (proposed; audit PASS; pending Tyler's approval)
+
+| Decision | Status | Source |
+| --- | --- | --- |
+| Body anchor: narrow stable adult core plus near-Marchfolk total limb contribution with distal redistribution inside the limbs (shorter upper arm and femur share; longer forearm, lower leg, hand and finger share); never globally elongated | PRELIMINARY | Cogling Part 2 §37–39, §42 |
+| Narrow stable central core: integrated adult thorax, spine and pelvis; narrow transverse breadth with adult depth; full respiratory volume; mature non-dominant pelvis; adult axial length; "stable" is not a balance bonus | PRELIMINARY | Cogling Part 2 §44–49 |
+| Adult hands with an opposable thumb; finger length variable; no tool-use, crafting, lockpicking, spellcasting or dexterity advantage from proportions | PRELIMINARY | Cogling Part 2 §40–41 |
+| Moderate adult plantigrade feet; not a climbing or balance adaptation | PRELIMINARY | Cogling Part 2 §43 |
+| Head share may rise allometrically but never by deliberate enlargement or to toddler or infant share | PRELIMINARY | Cogling Part 2 §51 |
+| Joints, long-bone robusticity, frame, muscular capacity, current muscularity, fat amount and distribution are separate; broad isn't Durrim; narrow isn't Fenn, childlike or fragile | PRELIMINARY | Cogling Part 2 §52–60 |
+| Multi-factor boundaries with Pipkin (overlap zone), Durrim, Fenn, Grask and Marchfolk; toddler maturity test; body-control dimensions preserved; invalid-combination examples | PRELIMINARY | Cogling Part 2 §63–71 |
+| Add trunk vertical share (reduced in Pipkin, near-human in Cogling) to the Pipkin overlap carriers; note leg segmentation alone can't separate them | OPEN | Cogling Part 2 audit 4a |
+| Normalized Sagekin comparison missing (Sagekin have slightly longer forearms, hands and fingers) | OPEN | Cogling Part 2 audit 4b |
+| Duplicate validation IDs (COG-BODY-26 and 09A; 25 and 11) | OPEN | Cogling Part 2 audit 4c |
+| Cogling numerical torso and limb envelopes, thorax, pelvis, shoulders, head ratio, segment distributions, hands, feet, joints, robusticity, muscular capacity, fat distribution, dimorphism, face, surface, lifecycle, movement, gameplay, implementation | OPEN | Cogling Part 2 §72 |
 
 Marchfolk v1.0 and v1.5 are referenced but haven't been received here. Send them and their decisions go into this register.
