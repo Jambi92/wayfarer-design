@@ -59,7 +59,7 @@ Height and mass are relative to an average Marchfolk adult. They are references,
 | 9 | Grask | Troll | \~1.15× | \~1.40× | Heavy torso, thick textured skin, dense muscle, strong swimmers. Regeneration shows without being grotesque |
 | 10 | Gorrund | Ogre | \~1.45×+ | \~2.00×+ | Massive frame, huge hands and feet, long arms, their own momentum, turning and landing. Giant-kin, not scaled humans |
 | 11 | Pipkin | Halfling | \~0.55× | \~0.50× | Small compact adults: large head, strong legs, substantial feet, dexterous hands, low center of gravity. Not children or comic relief |
-| 12 | Cogling | Gnome | \~0.45× | \~0.40× | Very small: compact torso, long fingers, narrow limbs, expressive face, fine motor control. Tinkering shows through culture, not caricature |
+| 12 | Cogling | Gnome | \~0.45× | \~0.40× | Very small: compact torso, long fingers, narrow limbs, expressive face. **SUPERSEDED:** “fine motor control” is not an automatic racial trait; see `specs/cogling/COGLING_V1.md` Part 5 §§140–141. Tinkering shows through culture, not caricature |
 | 13 | Saurin | Iksar-inspired | \~1.05× | \~1.00× | Truly reptilian: own skull, jaw, teeth, scales and a working tail. Not humans with lizard heads |
 
 ### 16.11 Pipkin (halflings)
@@ -73,8 +73,8 @@ Height and mass are relative to an average Marchfolk adult. They are references,
 ### 16.12 Cogling (gnomes)
 
 - Height about 0.45×, mass about 0.40× the human baseline.
-- Very small, compact, dexterous anatomy: a compact torso, relatively long fingers, narrow limbs, an expressive face and fine motor control.
-- Quick steps, frequent turns, efficient climbing, precise hand movements and small physical adjustments.
+- Very small, compact anatomy: a compact torso, relatively long fingers, narrow limbs and an expressive face. **SUPERSEDED:** “dexterous”/“fine motor control” are not automatic racial traits; see `specs/cogling/COGLING_V1.md` Part 5 §§140–141.
+- ~~Quick steps, frequent turns, efficient climbing, precise hand movements and small physical adjustments.~~ **SUPERSEDED:** these are not automatic Cogling racial movement/performance traits; see `specs/cogling/COGLING_V1.md` Part 5 §§140–141. Any future gameplay traits require deliberate approval through the race-biology-gameplay review.
 - Engineering and tinkering show through culture, occupation, clothing, tools and equipment, not biological stereotypes.
 - Avoid universally oversized noses, enormous hats, giant goggles and comedic proportions.
 - Individuals vary meaningfully within the race's anatomy.
