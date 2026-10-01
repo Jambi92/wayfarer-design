@@ -1090,20 +1090,22 @@ Visual plausibility and gameplay balance may require coordination later, but nei
 
 > **Pipkin locomotion is adult short-stature humanoid movement generated from Low-Set Compact Trunk Architecture, a mature pelvis, comparatively light skeletal construction and proportionally sustained limbs. Their motion is upright, weight-bearing and anatomically honest without requiring waddling, bouncing, scurrying, childlike cadence, exaggerated hip motion or innate nimbleness. World interactions, equipment contacts and locomotor animation must adapt to their approved anatomy, while gameplay speed, agility, stealth, reach and other statistics remain separate decisions.**
 
-Part 5 is **PATCHED AFTER FIRST AUDIT — TYLER DECISION PENDING ON LEGACY BRIEF MOVEMENT WORDING**. No UE5 implementation is authorized.
+**Pipkin v1.0 Part 5 is FIRST-PASS ACCEPTED.** No UE5 implementation is authorized.
 
-## 37. Legacy brief conflict requiring project-owner decision
+## 37. Legacy brief movement decision — RESOLVED
 
-The earlier approved Pipkin brief describes "short stride, quick acceleration, rapid turns and excellent balance" and elsewhere says Pipkin "accelerate quickly with a short stride."
+**Tyler decision:** the earlier brief wording that gives Pipkin "quick acceleration, rapid turns and excellent balance," including the statement that Pipkin "accelerate quickly with a short stride," is **SUPERSEDED**.
 
-Part 5 intentionally does **not** treat short stature as automatic justification for acceleration, turning, balance or agility gameplay advantages. Until Tyler explicitly resolves the authority conflict, the older brief wording is **OPEN and not silently superseded**.
+Locked interpretation:
+- shorter absolute stride may emerge from approved stature and limb geometry;
+- biomechanically necessary cadence differences may emerge from anatomy and chosen speed;
+- quick acceleration is not an automatic racial property;
+- rapid turning/smaller gameplay turning radius is not an automatic racial property;
+- excellent/superior balance is not an automatic racial property;
+- agility is not inferred from short stature, low absolute center of mass, foot size or Pipkin identity;
+- any future gameplay differences in acceleration, turning, balance, agility, dodge, stealth or related systems require explicit approval through gameplay design.
 
-Available resolution paths remain:
-- supersede the quick-acceleration / rapid-turn / excellent-balance wording and leave those as later gameplay decisions;
-- retain some or all solely as visual movement tendencies without gameplay effect, provided they can be defined biomechanically without caricature;
-- or retain selected items as intended racial gameplay traits for later gameplay review.
-
-No option is selected by this patch.
+This decision supersedes only those legacy movement claims. It does not erase the legacy stealth trait, which remains separately OPEN for later gameplay review.
 
 ## 38. Planned Part 6 scope
 
