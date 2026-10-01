@@ -952,7 +952,7 @@ Pipkin v1.0 Part 3 (FIRST-PASS ACCEPTED; Tyler approved September 30)
 | Facial controls are APPROVED FIRST-PASS FUNCTIONAL REQUIREMENTS / PROVISIONAL CONTROL ORGANIZATION; no "Pipkin Face" master slider; tendencies bias randomization only | AGREED | Pipkin Part 3 §15 |
 | Facial identity is supporting; Low-Set Compact Trunk Architecture is the primary identifier; the facial vertical envelope is primarily skeletal, with soft tissue only modulating it | AGREED | Pipkin Part 3 status note; re-audit §3a–3b |
 
-Pipkin v1.0 Part 4 (proposed for audit, not yet approved by Tyler)
+Pipkin v1.0 Part 4 (patched at `988e247`; re-audit PASS; pending Tyler's approval)
 
 | Decision | Status | Source |
 | --- | --- | --- |
@@ -962,10 +962,10 @@ Pipkin v1.0 Part 4 (proposed for audit, not yet approved by Tyler)
 | Body hair varies; hairy feet and hairy bodies not required; body hair never encodes rusticity, masculinity, youth or femininity | PRELIMINARY | Pipkin Part 4 §11 |
 | Mature adult humanoid dentition; no oversized incisors, tusks, fangs, rodent or childlike teeth; ordinary nails | PRELIMINARY | Pipkin Part 4 §12–13 |
 | No hidden phenotype bundle; biological and presentation randomization stay separate | PRELIMINARY | Pipkin Part 4 §18 |
-| Part 4 uses the Facial Diagnostic Domains for whole-body surface and redefines FD-STRUCT and FD-OBS, against the AGREED facial-only scope; the Skin Appearance Layers should be used for body surface | OPEN | Part 4 audit 4a |
-| Iris range described as "approved at the world level," but no world-level iris range is approved | OPEN | Part 4 audit 4b |
-| Pipkin aging and environmental surface appearance (skin aging, weathering) not yet specified | OPEN | Part 4 audit 4c |
-| "Universal dentition review" is cited but not among the required reviews; Pipkin tooth count and lifecycle | OPEN | Part 4 §13; audit 4d |
-| Pipkin skin, hair and iris frequencies; interim randomization weighting; tanning and freckling distributions; sex-related body and facial hair distributions | OPEN | Pipkin Part 4 §2–3, §5, §11, §18; audit 4e |
+| FD domains used for facial analysis only, with their AGREED meanings; whole-body surface uses the Skin Appearance Layers (Natural, Environmental, Applied or Acquired) | PRELIMINARY | Pipkin Part 4 §16, §18; re-audit |
+| Pipkin iris may span a broad natural humanoid range; validity limits, rare colors and frequencies OPEN | PRELIMINARY | Pipkin Part 4 §5; re-audit |
+| Skin aging and environmental weathering are covered; Apparent Biological Age is distinct from surface aging; young-looking adults stay structurally mature without wrinkles; no fixed regional-weathering map; Pipkin lifecycle timing OPEN | PRELIMINARY | Pipkin Part 4 §16; PIP-SURF-21 |
+| Pipkin dentition follows the existing functional adult humanoid baseline with no diet inferred; tooth count, replacement and lifecycle OPEN | PRELIMINARY (count and lifecycle OPEN) | Pipkin Part 4 §13; re-audit |
+| Pipkin skin, hair and iris frequencies; interim randomization is broad and explicitly not an approved distribution; tanning and freckling distributions; sex-related body and facial hair distributions | OPEN | Pipkin Part 4 §2–3, §5, §11, §18; audit 4e |
 
 Marchfolk v1.0 and v1.5 are referenced but haven't been received here. Send them and their decisions go into this register.
