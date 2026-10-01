@@ -13,11 +13,11 @@
 10. Gorrund
 
 ## In progress
-11. **Pipkin — v1.0 Parts 1–4 first-pass accepted; Part 5 authored and patched after first audit; legacy brief movement wording awaiting Tyler decision; Part 6 planned**
+11. **Pipkin — v1.0 Parts 1–5 first-pass accepted (Tyler superseded the brief's quick-acceleration / rapid-turn / excellent-balance wording, September 30); Part 6 planned**
 
 ## Not yet designed
 12. Cogling
 13. Saurin
 
 ## Current next action
-Resolve the Pipkin legacy brief movement wording decision, then final-audit Part 5. After acceptance, proceed to planned Part 6 covering equipment fit, world compatibility, character-creation integration and final first-pass review.
+ChatGPT records Tyler's decision in Pipkin Part 5 §37 (supersede) and marks Part 5 FIRST-PASS ACCEPTED, and adds a supersession pointer to brief §16.11 and the Principles movement line in `rules/character-creation-brief.md`. Part 6 (equipment fit, world compatibility, character-creation integration and final first-pass review) starts on Tyler's approval.

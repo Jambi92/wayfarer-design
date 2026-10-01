@@ -46,7 +46,7 @@ A higher level always wins. Existing implementation never overrides an approved 
 | 8 | Durrim | First pass complete |
 | 9 | Grask | First pass complete |
 | 10 | Gorrund | First pass complete (prototype verification deferred) |
-| 11 | Pipkin | Parts 1–4 accepted, Part 5 next |
+| 11 | Pipkin | Parts 1–5 accepted, Part 6 next |
 | 12 | Cogling | Not started |
 | 13 | Saurin | Not started |
 
