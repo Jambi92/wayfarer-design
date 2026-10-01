@@ -1011,20 +1011,20 @@ Cogling v1.0 Part 1 (FIRST-PASS ACCEPTED; Tyler approved September 30)
 | Normalized-height Fenn and Grask tests (COG-BODY-16, 17); normalized Durrim test (COG-BODY-10, 10A); toddler test (COG-BODY-11); prototype 0.72× (about 125 cm) recorded as non-authoritative | AGREED | Cogling Part 1 §31–32; re-audit |
 | Face and expression readability at an adult head size of about 11–13 cm in gameplay, dialogue and creator cameras, without head enlargement | OPEN | Cogling Part 1 §35 |
 
-Cogling v1.0 Part 2 (proposed; audit PASS; pending Tyler's approval)
+Cogling v1.0 Part 2 (FIRST-PASS ACCEPTED; clarifications incorporated at `f50d137`)
 
 | Decision | Status | Source |
 | --- | --- | --- |
-| Body anchor: narrow stable adult core plus near-Marchfolk total limb contribution with distal redistribution inside the limbs (shorter upper arm and femur share; longer forearm, lower leg, hand and finger share); never globally elongated | PRELIMINARY | Cogling Part 2 §37–39, §42 |
-| Narrow stable central core: integrated adult thorax, spine and pelvis; narrow transverse breadth with adult depth; full respiratory volume; mature non-dominant pelvis; adult axial length; "stable" is not a balance bonus | PRELIMINARY | Cogling Part 2 §44–49 |
-| Adult hands with an opposable thumb; finger length variable; no tool-use, crafting, lockpicking, spellcasting or dexterity advantage from proportions | PRELIMINARY | Cogling Part 2 §40–41 |
-| Moderate adult plantigrade feet; not a climbing or balance adaptation | PRELIMINARY | Cogling Part 2 §43 |
-| Head share may rise allometrically but never by deliberate enlargement or to toddler or infant share | PRELIMINARY | Cogling Part 2 §51 |
-| Joints, long-bone robusticity, frame, muscular capacity, current muscularity, fat amount and distribution are separate; broad isn't Durrim; narrow isn't Fenn, childlike or fragile | PRELIMINARY | Cogling Part 2 §52–60 |
-| Multi-factor boundaries with Pipkin (overlap zone), Durrim, Fenn, Grask and Marchfolk; toddler maturity test; body-control dimensions preserved; invalid-combination examples | PRELIMINARY | Cogling Part 2 §63–71 |
-| Add trunk vertical share (reduced in Pipkin, near-human in Cogling) to the Pipkin overlap carriers; note leg segmentation alone can't separate them | OPEN | Cogling Part 2 audit 4a |
-| Normalized Sagekin comparison missing (Sagekin have slightly longer forearms, hands and fingers) | OPEN | Cogling Part 2 audit 4b |
-| Duplicate validation IDs (COG-BODY-26 and 09A; 25 and 11) | OPEN | Cogling Part 2 audit 4c |
+| Body anchor: narrow stable adult core plus near-Marchfolk total limb contribution with distal redistribution inside the limbs (shorter upper arm and femur share; longer forearm, lower leg, hand and finger share); never globally elongated | AGREED | Cogling Part 2 §37–39, §42 |
+| Narrow stable central core: integrated adult thorax, spine and pelvis; narrow transverse breadth with adult depth; full respiratory volume; mature non-dominant pelvis; adult axial length; "stable" is not a balance bonus | AGREED | Cogling Part 2 §44–49 |
+| Adult hands with an opposable thumb; finger length variable; no tool-use, crafting, lockpicking, spellcasting or dexterity advantage from proportions | AGREED | Cogling Part 2 §40–41 |
+| Moderate adult plantigrade feet; not a climbing or balance adaptation | AGREED | Cogling Part 2 §43 |
+| Head share may rise allometrically but never by deliberate enlargement or to toddler or infant share | AGREED | Cogling Part 2 §51 |
+| Joints, long-bone robusticity, frame, muscular capacity, current muscularity, fat amount and distribution are separate; broad isn't Durrim; narrow isn't Fenn, childlike or fragile | AGREED | Cogling Part 2 §52–60 |
+| Multi-factor boundaries with Pipkin (overlap zone), Durrim, Fenn, Grask and Marchfolk; toddler maturity test; body-control dimensions preserved; invalid-combination examples | AGREED | Cogling Part 2 §63–71 |
+| Pipkin overlap carriers include trunk vertical share (modestly reduced in Pipkin, near-Marchfolk in Cogling); leg segmentation alone can't separate them | AGREED | Cogling Part 2 §63 |
+| Sagekin normalized comparison: Sagekin slightly longer human limbs overall vs Cogling near-human totals with proximal reduction and fine construction (COG-BODY-31) | AGREED | Cogling Part 2 §67A |
+| COG-BODY-25 and 26 retired as duplicates of COG-BODY-11 and 09A | AGREED | Cogling Part 2 §71 |
 | Cogling numerical torso and limb envelopes, thorax, pelvis, shoulders, head ratio, segment distributions, hands, feet, joints, robusticity, muscular capacity, fat distribution, dimorphism, face, surface, lifecycle, movement, gameplay, implementation | OPEN | Cogling Part 2 §72 |
 
 Marchfolk v1.0 and v1.5 are referenced but haven't been received here. Send them and their decisions go into this register.

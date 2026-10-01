@@ -112,3 +112,12 @@ At normalized height, a narrow-core Cogling with long forearms and fingers could
 1. Part 2 may be marked FIRST-PASS ACCEPTED on Tyler's approval.
 2. ChatGPT can add 4a, 4b and 4c to the Part 3 patch.
 3. Part 3 begins when Tyler says so.
+
+## 7. Follow-up check (commit `f50d137`)
+
+All three clarifications are incorporated correctly:
+- **4a:** §63 now lists trunk vertical share (near-Marchfolk for Cogling, modestly reduced for Pipkin) and states that leg segmentation alone can't separate the two.
+- **4b:** new §67A adds the Sagekin normalized comparison, and COG-BODY-31 tests it.
+- **4c:** COG-BODY-25 and 26 are retired as duplicates of COG-BODY-11 and 09A.
+
+No new contradictions were introduced. Part 2 is recorded as FIRST-PASS ACCEPTED.
