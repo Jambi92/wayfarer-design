@@ -2044,6 +2044,8 @@ Population-level variation may affect probabilities for:
 
 These are weighted distributions, not exclusive trait packages.
 
+**Population and ancestry weighting affects Biological Randomization and NPC generation only. Advanced Mode manual choice always retains the full valid Saurin biological range.**
+
 ## 135. Correlation rule
 
 Population-level anatomical correlation does not automatically create a hard creator dependency.
@@ -2083,7 +2085,9 @@ Muscularity, body-fat amount/distribution and regional physique.
 ### D. Personal Presentation
 Paint, jewelry, cosmetics, clothing, accessories, decorative claw treatment and other non-inherited styling.
 
-Biological pigmentation/patterning remains Natural appearance, not Personal Presentation.
+Inherited pigmentation, pattern, scale morphology, biological eye traits, ridges and claw keratin are stored in **Biological Anatomy**. They are visually expressed through the **Natural Skin Appearance Layer**.
+
+Natural is an appearance layer, not an inheritance-storage category. Biological pigmentation/patterning therefore remains inherited Anatomy and Natural appearance, never Personal Presentation.
 
 ## 138. Simple Mode
 
@@ -2150,6 +2154,25 @@ It must obey coupled constraints.
 
 It must not rewrite inherited anatomy.
 
+## 142A. Acquired-History Randomization
+
+**Acquired-History Randomization** is a third, separate domain.
+
+It may sample only supported Acquired-layer states such as:
+- scars;
+- healed cuts/burns;
+- damaged scale fields;
+- chipped claws;
+- damaged low-profile ridges;
+- localized acquired pigment change;
+- occupational/contact scale wear.
+
+It must not alter inherited Biological Anatomy or Personal Presentation.
+
+Major rostral, jaw or tail loss remains OPEN and is excluded from randomization until explicitly designed.
+
+Applied tattoo-equivalent markings, paint and cosmetics remain Presentation rather than Acquired History.
+
 ## 143. Selective randomization
 
 Players must be able to randomize selected domains while preserving others.
@@ -2159,13 +2182,18 @@ Examples:
 - randomize body while preserving face and presentation;
 - randomize Natural surface while preserving anatomy;
 - randomize pattern only;
-- randomize Personal Presentation only.
+- randomize Personal Presentation only;
+- randomize Acquired History only.
+
+Selective randomization must treat Acquired History as independently lockable from inherited anatomy and presentation.
 
 Selective randomization must respect dependencies crossing the selected boundary.
 
 ## 144. Attribute locks
 
 Players may lock creator attributes before randomization.
+
+Acquired History must be independently lockable as its own domain.
 
 Locks must support meaningful groups such as:
 - stature;
@@ -2195,7 +2223,9 @@ Because the tail is mandatory biology, Advanced Mode may vary:
 
 There is **no tail on/off toggle**.
 
-Tail-base size, length and mass are coupled. Randomization cannot independently maximize or minimize them into anatomically incoherent combinations.
+Tail skeletal length, base dimensions and taper belong to Biological Anatomy / Skeletal Frame relationships. Tail muscularity and adiposity belong to Physical Composition and must respond coherently with the rest of the body.
+
+Tail-base support must scale relationally with tail demands: **as valid tail length and/or mass increases, the caudal base and pelvic support must remain proportionally sufficient to carry and control it.** Randomization cannot independently maximize or minimize these variables into anatomically incoherent combinations.
 
 ## 146. Rostrum creator controls
 
@@ -2245,10 +2275,13 @@ Biological eye controls may include:
 - orbital relationships from Part 2;
 - visible opening;
 - iris pigmentation/detail;
-- valid pupil/dilation presentation;
+- baseline vertically elliptical pupil shape and valid biological dilation range;
+- preview of pupil dilation state under different lighting;
 - ocular-tissue visibility.
 
 The vertically elliptical pupil remains baseline Saurin biology and is not replaced with human round pupils as a cosmetic toggle.
+
+**Pupil dilation itself is a responsive state, not saved character identity.** The creator may preview dilation, but saved biology stores pupil shape and valid dilation behavior/range rather than a fixed pupil opening.
 
 Magical eye effects are separate.
 
@@ -2325,13 +2358,18 @@ This is a functional requirement, not a UE5 UI implementation.
 
 Players must be able to save and reuse Saurin appearances.
 
-Saved appearance data conceptually includes:
-- biological anatomy;
-- frame;
-- composition;
-- Natural appearance;
-- acquired-history appearance where supported;
-- Personal Presentation.
+Saved appearance data conceptually follows the architecture layers:
+- **Biological Anatomy**, including inherited pigmentation, pattern, scale morphology, eye biology, ridges and claw keratin;
+- **Skeletal Frame**;
+- **Physical Composition**;
+- **Personal Presentation**.
+
+Appearance-state data is tracked separately:
+- **Environmental** state is transient/contextual unless a future system explicitly persists it;
+- **Applied** presentation is stored with Personal Presentation;
+- **Acquired** history is stored as individual-history state, not inheritance.
+
+The Natural Skin Appearance Layer is the visible expression of relevant inherited anatomy; it is not a separate inheritance-storage layer.
 
 Future schema/version migration is required when creator definitions change.
 
@@ -2342,6 +2380,8 @@ NPC Saurin must be constructible from the same valid biological system as player
 Named NPCs may use authored values, but those values must remain legitimate outputs of the same race specification unless an explicit narrative exception is documented.
 
 No separate “NPC-only normal Saurin” anatomy may silently override player biology.
+
+A documented narrative anatomical exception, if ever approved, must be explicitly marked **non-baseline** and may not enter ordinary player presets, Biological Randomization, population distributions or NPC baseline generation.
 
 ## 158. Combined-proportion validity
 
@@ -2403,6 +2443,26 @@ It does not genetically inherit:
 - personality.
 
 Cultural inheritance is a separate concept.
+
+Inherited pigmentation, pattern, scale morphology, eye biology, ridges, claw keratin and other inherited phenotype are **Biological Anatomy-layer traits** that appear through the Natural Skin Appearance Layer. Skin Appearance Layers themselves are not inheritance categories.
+
+## 161A. Creator gameplay firewall
+
+No valid creator value for:
+- stature;
+- frame;
+- composition;
+- tail;
+- rostrum;
+- claws;
+- scales;
+- ridges;
+- eyes;
+- age
+
+automatically grants or changes a gameplay statistic.
+
+Any later gameplay consequence requires its own explicit race/gameplay decision. Visual extrema cannot be used as hidden min-max controls.
 
 ## 162. Creator observation conditions
 
@@ -2468,7 +2528,11 @@ The creator must not rely on fixed facial expression to make the race recognizab
 | SAU-CC-22 | Dialogue proxy preserves gaze and rostral-mouth readability |
 | SAU-CC-23 | Broad adiposity range retains valid scale and tail-base integration |
 | SAU-CC-24 | Randomization frequency test confirms extremes are valid but not uniformly common |
-| SAU-CC-25 | Population-weighting prototype, if later used, changes probabilities without hard trait packages |
+| SAU-CC-25 | Population/ancestry weighting changes randomization/NPC probabilities without hard trait packages while Advanced Mode manual choice retains the full valid Saurin range |
+| SAU-CC-26 | Acquired-History Randomization changes no inherited anatomy or Personal Presentation and never creates unresolved major rostral/jaw/tail loss states |
+| SAU-CC-27 | Minimum and maximum valid creator builds carry no automatic gameplay-stat differences solely from selected appearance values |
+| SAU-CC-28 | Pupil preview changes dilation state under lighting while saved biological identity retains pupil shape/dilation behavior rather than a fixed opening |
+| SAU-CC-29 | Increasing valid tail length/mass retains proportionally sufficient base and pelvic support and coherent tail composition |
 
 ## 166. OPEN after Part 4
 
@@ -2488,6 +2552,8 @@ In addition to earlier OPEN items:
 - first-person rendering/camera;
 - dialogue animation implementation;
 - technical implementation.
+
+Before final tail ranges are approved, creator tail extremes must also be validated against the Part 1 world-space proxies in SAU-BODY-20, including seating, beds, crowds/multiplayer spacing, doors, capes/cloaks/back armor, mounts and camera framing.
 
 ## 167. Part 4 identity statement
 
