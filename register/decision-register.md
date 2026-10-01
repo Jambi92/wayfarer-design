@@ -940,14 +940,14 @@ Pipkin v1.0 Part 2 author resolution (approved by Tyler September 30; §§2–3 
 | The 122 cm Durrim boundary is carried jointly by torso vertical organization, thoracic presence, limb contribution, joints, long-bone robusticity, hand, wrist, foot and ankle structure and the two trunk systems; pelvic breadth is not primary (approved, but not yet written into the spec) | AGREED | Author resolution §4; re-audit §3.4; Part 3 audit §2 |
 | Canonical race file location is `specs/<race>/<RACE>_V1.md` (Tyler, September 30); the author resolution's §1 wording naming `races/` is stale, and ChatGPT's Part 3 request treats `specs/` as authoritative | AGREED | Tyler; Part 3 audit request; re-audit §2a |
 
-Pipkin v1.0 Part 3 (proposed for audit, not yet approved by Tyler)
+Pipkin v1.0 Part 3 (patched at `c42bda8`; re-audit PASS; pending Tyler's approval)
 
 | Decision | Status | Source |
 | --- | --- | --- |
 | Adult Pipkin faces read mature and Pipkin before hair, facial hair, wrinkles, cosmetics, expression, clothing or scale context; no beauty standard is biological | PRELIMINARY | Pipkin Part 3 §1, §14 |
-| **Compact Mature Facial Integration:** moderate cranial breadth → integrated temple and zygomatic support → mature compact midface → developed adult lower face; not a single control | PRELIMINARY (the Durrim and Gorrund distinctions need clarifying; see the Part 3 audit) | Pipkin Part 3 §2 |
-| Head contribution secondary; no enlarged vault; no biologically oversized eyes; orbit separate from visible aperture; small or upturned nose isn't a Pipkin trait; moderately scaled mature mandible | PRELIMINARY | Pipkin Part 3 §3–8 |
-| **Compact Rounded Auricular Architecture:** non-elven ears; no elven point, Grask taper or Gorrund deep bowl; no mandatory tiny or comic ears; ears secondary | PRELIMINARY (distinction from Marchfolk ears needs clarifying) | Pipkin Part 3 §9 |
+| **Integrated Mature Facial Architecture** (renamed from Compact Mature Facial Integration): moderately broad cranial base → temple and zygoma → central midface → mature lower face; nasal, maxillary, dental-arch, ramus and gonial structures never juvenile-shortened; depth relative to facial height within the Marchfolk adult range (not Durrim depth-dominance); lateral support ends at the central midface with no ramus participation (not Gorrund Transverse Structural Continuity); not a single control | PRELIMINARY | Pipkin Part 3 §2, §5–6; re-audit |
+| Head contribution secondary; no enlarged vault; no biologically oversized eyes; larger valid orbit and aperture stay within the adult Marchfolk-compatible range; orbit separate from visible aperture; small or upturned nose isn't a Pipkin trait; moderately scaled mature mandible | PRELIMINARY | Pipkin Part 3 §3–8 |
+| **Compact Rounded Auricular Architecture:** non-elven ears; no elven point, Grask taper or Gorrund deep bowl; no mandatory tiny or comic ears; a central tendency only, overlapping Marchfolk and Durrim ears, not an identifier | PRELIMINARY | Pipkin Part 3 §9 |
 | Hair, facial-hair, brow and lash biology separate from presentation; facial hair never required for adult or male recognition; sex-related facial-hair distributions OPEN; no hairy-feet requirement | PRELIMINARY | Pipkin Part 3 §11–13 |
 | Facial controls are approved first-pass functional requirements with provisional organization; no "Pipkin Face" master slider; tendencies bias randomization only | PRELIMINARY | Pipkin Part 3 §15 |
 
