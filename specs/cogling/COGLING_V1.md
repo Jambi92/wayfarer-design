@@ -1,6 +1,6 @@
 # Cogling Character Design v1.0
 
-**Status:** IN PROGRESS — Part 1 FIRST-PASS ACCEPTED; Part 2 proposed for audit  
+**Status:** IN PROGRESS — Parts 1–2 FIRST-PASS ACCEPTED  
 **Phase:** DESIGN ONLY  
 **Implementation:** Not authorized
 
@@ -894,6 +894,7 @@ Within the ~91–107 cm shared stature zone, Cogling and Pipkin must remain dist
 
 Cogling:
 - narrow stable central core;
+- adult axial/trunk contribution broadly near the Marchfolk adult range;
 - broadly near-human total limb share;
 - within-limb distal redistribution;
 - fine shafts/joints;
@@ -901,11 +902,12 @@ Cogling:
 
 Pipkin:
 - Low-Set Compact Trunk Architecture;
+- modestly reduced vertical central-trunk contribution to total stature;
 - mature pelvis with stronger structural participation relative to thorax;
 - comparatively light skeleton;
 - sustained limb contribution without Cogling distal redistribution.
 
-No single measurement carries the boundary.
+No single measurement carries the boundary. **Leg segmentation alone cannot separate Cogling from Pipkin**, because valid Pipkin anatomy may also include slight lower-leg emphasis; the boundary must remain relational and multi-factor.
 
 ## 64. Durrim boundary requirements
 
@@ -976,6 +978,24 @@ Cogling should show:
 
 The comparison must not require every Cogling trait to sit outside the Marchfolk human range individually. Identity may arise from the coordinated relationship among traits.
 
+## 67A. Sagekin normalized comparison
+
+At normalized displayed height, Sagekin are an important human comparison because their approved population tendencies may include somewhat longer forearms, hands and fingers, a more linear silhouette and somewhat greater leg share.
+
+Sagekin:
+- remain fully human in bone and joint scale;
+- may trend toward slightly longer limbs overall;
+- may show somewhat greater leg contribution to height;
+- do not use Cogling-style compensating proximal reduction as a racial anchor.
+
+Cogling:
+- retain broadly near-human total limb contribution;
+- redistribute length within those totals toward forearms, lower legs, hands and fingers;
+- trend toward finer shaft and joint construction;
+- do not gain greater total leg share as the defining mechanism.
+
+No individual long forearm, long finger or narrow silhouette is sufficient to distinguish the populations.
+
 ## 68. Human-child boundary
 
 The minimum-height Cogling is an especially demanding maturity test.
@@ -1043,12 +1063,13 @@ Validation must evaluate relationships, not isolated slider legality.
 | COG-BODY-22 | Broad-frame high-muscle Cogling; no Durrim convergence |
 | COG-BODY-23 | Narrow-frame low-muscle Cogling; no child/Fenn/fragility convergence |
 | COG-BODY-24 | High-adiposity Cogling; underlying adult structure remains diagnostic |
-| COG-BODY-25 | Minimum-height adult vs ~1–2-year-old toddler, neutral surface/presentation |
-| COG-BODY-26 | Maximum Cogling vs reference Pipkin at ~107 cm; multiple independent anatomical differences remain |
+| COG-BODY-25 | **Reserved/retired:** duplicate of canonical COG-BODY-11; do not implement separately |
+| COG-BODY-26 | **Reserved/retired:** duplicate of canonical COG-BODY-09A; do not implement separately |
 | COG-BODY-27 | Reference Cogling vs minimum Pipkin at ~91 cm; multiple independent anatomical differences remain |
 | COG-BODY-28 | Like-for-like sex-related normalized comparison against Marchfolk |
 | COG-BODY-29 | Extreme valid combined proportions; relationship validator rejects caricatured combinations |
 | COG-BODY-30 | Head/hands hidden; narrow core + limb-segment distribution still supports identity |
+| COG-BODY-31 | Cogling vs Sagekin at normalized displayed height with presentation neutral; Cogling retains near-human limb totals with compensating proximal reduction and fine shaft/joint scale rather than Sagekin's slightly longer overall human limb tendency |
 
 ## 72. Part 2 OPEN items
 
@@ -1077,6 +1098,6 @@ Still OPEN:
 
 > **Cogling whole-body anatomy is defined by a narrow stable adult core and broadly near-human total limb contribution combined with Fine-Scale Elongated Articulation: length is redistributed within the limbs toward forearms, lower legs, hands and fingers while proximal segments accommodate that redistribution. Fine long-bone shafts and joints support the system without implying fragility, and broad frame, muscularity and body-fat variation remain valid without erasing the underlying relationships. Cogling are therefore neither globally limb-dominant nor reach-specialized, and their very small stature never depends on juvenile proportions.**
 
-Part 2 is **PROPOSED FOR AUDIT**.
+Part 2 is **FIRST-PASS ACCEPTED** after Claude PASS. Non-blocking audit clarifications 4a–4c have been incorporated.
 
 No UE5 implementation is authorized.
