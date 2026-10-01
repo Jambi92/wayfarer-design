@@ -1196,4 +1196,679 @@ In addition to unresolved Part 1 items:
 
 > **The Saurin head is defined by Layered Rostral-Cranial Integration: a low-to-moderate, longitudinally organized cranial vault flows into a broad orbital-temporal platform, a compact projecting rostral midface and a deep articulated jaw base. Forward facial depth is real skeletal anatomy without becoming a long animal muzzle or a dragon head. Forward-facing eyes remain structurally integrated rather than oversized or predatory by expression, nasal openings belong to the rostrum rather than a human external nose, and recessed auricular openings replace mammalian or elven pinnae. Broad adult variation in vault, rostrum, orbit and jaw remains valid without encoding intelligence, aggression, culture, sex stereotypes or gameplay power.**
 
-Part 2 is **PROPOSED FOR AUDIT**.
+Part 2 is **ACCEPTED / COMPLETE**.
+
+
+# Part 3 — Surface phenotype, integument, eyes and extremity detail
+
+## 78. Part 3 objective
+
+Part 3 defines the visible biological surface system layered over the approved Part 1 body and Part 2 head.
+
+It establishes:
+- integument and scale architecture;
+- regional scale organization;
+- pigmentation and pattern;
+- eyes, iris and pupil anatomy;
+- eyelid/nictitating-membrane decision;
+- claws/nails;
+- oral/tongue surface direction;
+- cranial display-structure decision;
+- scars, wear and age-related surface variation;
+- biological versus presentation boundaries.
+
+Surface phenotype must enrich Saurin individuality without becoming the only thing that makes them Saurin.
+
+## 79. Integument foundation
+
+Saurin possess a **scaled integument** as baseline biological anatomy.
+
+“Scales” are not one uniform tile texture. The integument is regionally organized and must vary with:
+- mobility;
+- abrasion;
+- load;
+- articulation;
+- facial expression;
+- tail deformation.
+
+The approved skeleton and body remain primary; scales conform to anatomy rather than replacing it.
+
+## 80. Regional Scale Architecture
+
+The positive surface specialization is **Regional Scale Architecture**.
+
+Saurin scale morphology changes coherently across anatomical zones:
+
+> **protective structural fields → transitional articulation fields → fine expressive fields**
+
+This prevents a procedural “same scales everywhere” result.
+
+Regional changes are biological and coupled to function, not arbitrary decorative masks.
+
+## 81. Structural scale fields
+
+Larger or more structurally pronounced scales may occur where the body tolerates lower surface deformation, provisionally including:
+- dorsal/posterolateral cranium;
+- upper posterior neck;
+- dorsal trunk;
+- selected lateral trunk regions;
+- dorsal tail;
+- portions of forearm/shin;
+- dorsal hands/feet.
+
+“Larger” is relative to the individual Saurin's scale system and does not imply armor statistics.
+
+## 82. Articulation scale fields
+
+High-mobility regions require smaller, more flexible scale organization, including:
+- neck flexion zones;
+- axilla;
+- elbow;
+- wrist;
+- lower trunk flexion;
+- hip crease;
+- knee;
+- ankle;
+- tail articulation transitions;
+- finger and toe joints.
+
+These regions cannot use rigid plate-like geometry that visually or mechanically prevents the approved range of motion.
+
+## 83. Fine expressive scale fields
+
+The face uses finer scale organization where readable expression requires deformation, particularly around:
+- eyelids;
+- mouth margins;
+- rostrum-to-cheek transition;
+- jaw corners;
+- auricular recess;
+- throat/upper-neck transition.
+
+The face must remain expressive without turning into human skin pasted over a reptilian skull.
+
+## 84. Ventral surface
+
+Saurin have a distinct but integrated **ventral scale field** across portions of:
+- throat;
+- anterior neck;
+- chest/abdomen;
+- underside of tail.
+
+It may trend toward:
+- broader scale units;
+- smoother relief;
+- more regular transverse organization
+
+than adjacent dorsal/lateral fields.
+
+This is not automatically a snake belly, armor plate or aquatic adaptation.
+
+Exact regional extent remains variable.
+
+## 85. Scale morphology variation
+
+Race-valid variation may include:
+- scale-unit size;
+- relief;
+- edge definition;
+- overlap impression;
+- local shape;
+- regional transition sharpness;
+- ventral-field organization.
+
+These are constrained by anatomical region.
+
+A single global “scale size” slider cannot validly enlarge eyelid scales and dorsal trunk scales identically.
+
+## 86. Scale surface and material response
+
+Saurin scales are biological keratinized integument, not metal, stone or plastic.
+
+Surface response may vary from:
+- relatively matte;
+- softly satin;
+- modest localized sheen.
+
+No baseline Saurin requires:
+- mirror gloss;
+- wet amphibian appearance;
+- metallic scales;
+- gemstone scales;
+- emissive scales.
+
+Observed gloss is also lighting-dependent and must remain distinct from biological material properties.
+
+## 87. Pigmentation principle
+
+Saurin support broad natural pigmentation.
+
+Their biological color range is not limited to “green lizard.”
+
+First-pass families may include:
+- warm earth browns;
+- cool browns;
+- ochres;
+- sand/tan;
+- muted olive;
+- muted green;
+- slate/gray;
+- charcoal;
+- rust/terracotta;
+- subdued blue-gray;
+- low-saturation near-black;
+- pale cream/stone regional values.
+
+These are families, not a fixed palette.
+
+Exact pigment mechanisms remain OPEN.
+
+## 88. Saturation boundary
+
+Natural Saurin pigmentation may produce rich coloration, but baseline biology does not require:
+- neon saturation;
+- fluorescent fantasy color;
+- emissive color;
+- metallic pigment;
+- magical glow.
+
+Unusual colors may later exist only if biologically or magically approved rather than because the creator has an unrestricted RGB picker.
+
+## 89. Regional pigmentation
+
+Pigmentation may vary coherently between:
+- dorsal;
+- lateral;
+- ventral;
+- facial;
+- limb;
+- tail regions.
+
+Common biological variation may include lighter or darker ventral fields, but this is not mandatory.
+
+Regional color relationships must permit both high-contrast and low-contrast individuals within plausible race-valid envelopes.
+
+## 90. Biological patterning
+
+Saurin may possess inherited biological patterns.
+
+First-pass pattern families may include:
+- mottling;
+- banding;
+- striping;
+- speckling;
+- broken blotches;
+- dorsal emphasis;
+- lateral emphasis;
+- tail banding;
+- facial accents.
+
+Patterns are not tattoos and are not cultural markings.
+
+No pattern family implies sex, caste, clan, morality, habitat, profession or personality unless later culture/biology explicitly establishes such a relationship.
+
+## 91. Pattern architecture
+
+Patterns must follow body topology and anatomical regions.
+
+They may:
+- continue across the trunk into the tail;
+- break or transition at ventral fields;
+- interact with facial structures;
+- vary in edge softness;
+- vary in density/frequency.
+
+They may not simply project a flat texture across unrelated body parts.
+
+## 92. Pattern controls
+
+Provisional biological controls include:
+- pattern family;
+- primary/secondary pigment relationship;
+- contrast;
+- density;
+- element scale;
+- edge softness;
+- regional weighting;
+- continuity/break frequency;
+- tail-pattern expression;
+- facial-pattern expression.
+
+Controls must preserve coherent inherited-looking outcomes.
+
+## 93. Pattern and identity firewall
+
+Surface pattern cannot compensate for invalid anatomy.
+
+A Saurin with neutral uniform pigmentation remains Saurin.
+
+Likewise:
+- stripes do not make a Saurin predatory;
+- spots do not make one stealthy;
+- bright coloration does not make one poisonous;
+- dark coloration does not make one evil;
+- pale coloration does not imply subterranean or aquatic adaptation.
+
+## 94. Eye anatomy
+
+Saurin retain the Part 2 forward-facing orbital system.
+
+Baseline eye anatomy supports:
+- visible scleral-equivalent/outer ocular tissue as biologically appropriate;
+- iris;
+- pupil;
+- corneal surface;
+- primary eyelid closure.
+
+Exact tissue coloration and scleral visibility may differ from humans.
+
+The eyeball must remain sized to the orbit rather than enlarged merely to look exotic.
+
+## 95. Pupil decision
+
+Baseline Saurin possess **vertically elliptical pupils with biologically variable dilation**.
+
+This is a positive sensory phenotype, not an emotional indicator.
+
+At sufficient dilation the pupil may appear broad/rounded; at contraction it becomes a clear vertical ellipse/slit.
+
+Pupil state must not be used as a fixed “sinister” expression.
+
+## 96. Iris variation
+
+Natural iris pigmentation may include broad subdued-to-rich biological families such as:
+- amber;
+- gold-brown;
+- copper;
+- rust;
+- olive;
+- green;
+- gray;
+- blue-gray;
+- deep brown.
+
+Exact distribution and rare variants remain OPEN.
+
+Biological iris anatomy/pigmentation is distinct from magical eye effects and from observed lighting appearance.
+
+## 97. Eye pattern/detail
+
+Iris detail may differ visibly from human radial iris structure, but exact microanatomy remains OPEN.
+
+Potential biological variation may include:
+- radial fiber/striational density;
+- inner/outer iris tonal difference;
+- subtle flecking;
+- limbal contrast.
+
+No magical glow is baseline biology.
+
+## 98. Nictitating membrane
+
+Saurin **do possess a translucent nictitating membrane** as baseline anatomy.
+
+It provides an additional protective ocular closure moving independently from the primary eyelids.
+
+It is:
+- biological;
+- normally subtle;
+- not permanently covering the eye;
+- not an automatic underwater-vision mechanic;
+- not proof of aquatic specialization.
+
+Exact direction of travel, opacity and resting visibility remain OPEN pending movement/animation review.
+
+## 99. Eye gameplay firewall
+
+Saurin eye anatomy grants no automatic:
+- darkvision;
+- underwater vision;
+- enhanced perception;
+- motion detection;
+- targeting bonus;
+- intimidation effect.
+
+Any sensory gameplay requires a separate decision.
+
+## 100. Cranial display structures — decision
+
+Baseline Saurin **do not possess true horns**.
+
+Instead, race-valid cranial surface variation may include **low-profile keratinous ridges and scale crests** that remain continuous with the integument and underlying cranial architecture.
+
+These structures are not mammalian horns or dragon antlers.
+
+They may add silhouette variation without becoming required for racial recognition.
+
+## 101. Keratinous ridge architecture
+
+Potential regions include:
+- posterior orbital margin;
+- temporal/posterior cranium;
+- midline or paired posterior cranial ridges;
+- upper neck continuation.
+
+Valid ridges:
+- remain low-to-moderate in projection;
+- have broad anatomical bases;
+- transition into scale fields;
+- cannot form huge antlers, branching horns or weapon-like spikes.
+
+Exact distribution remains OPEN within these constraints.
+
+## 102. Ridge variation
+
+Biological controls may include:
+- presence/absence within race-valid population frequency;
+- height;
+- length;
+- number of low-profile ridge elements;
+- symmetry/asymmetry;
+- edge contour;
+- posterior extension.
+
+Absence is fully valid.
+
+Ridges do not encode sex, dominance, age, caste or personality unless later biology explicitly establishes a correlation.
+
+## 103. Frill decision
+
+Baseline Saurin do **not** possess large deployable neck frills, cobra hoods or sail structures.
+
+This keeps their silhouette centered on the approved skull, body and tail rather than accumulating generic reptile traits.
+
+Small local skin/scale folds may exist where anatomically required, but they are not display organs by default.
+
+## 104. Hand claws/nails
+
+Saurin fingers terminate in **keratinous claw-like nails**.
+
+They are:
+- integrated with the distal digit;
+- modestly projecting;
+- variable in curvature and thickness;
+- compatible with functional grasp;
+- not retractable;
+- not oversized talons.
+
+They do not automatically grant climbing, unarmed-damage or weapon bonuses.
+
+## 105. Foot claws/nails
+
+Toe tips use the same biological family as the hand claws but may be:
+- somewhat broader;
+- somewhat more robust;
+- shaped for load-bearing contact.
+
+They must remain compatible with the approved plantigrade foot.
+
+Saurin do not stand on giant talons.
+
+## 106. Claw variation
+
+Valid controls may include:
+- length within functional bounds;
+- curvature;
+- base width;
+- thickness;
+- tip shape;
+- pigmentation.
+
+Extreme values that interfere with ordinary grasp, footwear or plantigrade stance are biologically invalid.
+
+## 107. Claw pigmentation
+
+Claw/nail keratin may range through:
+- pale translucent/cream;
+- horn/tan;
+- brown;
+- gray;
+- charcoal;
+- near-black.
+
+It need not match body pigmentation exactly.
+
+## 108. Tongue
+
+Saurin possess a mobile tongue appropriate to their oral anatomy.
+
+Part 3 does **not** make a forked tongue mandatory.
+
+Exact:
+- length;
+- width;
+- tip morphology;
+- pigmentation;
+- sensory specialization
+
+remain OPEN.
+
+A later decision may approve mild bifurcation or another distinct structure only if it supports the overall Saurin design rather than generic reptile shorthand.
+
+## 109. Oral pigmentation
+
+Mouth interior pigmentation may vary independently within biologically plausible ranges.
+
+It is not required to be bright red, black, blue or otherwise exotic.
+
+Oral color does not imply venom, toxicity or magical properties.
+
+## 110. Venom firewall
+
+Saurin are not biologically venomous by default.
+
+Part 3 approves no:
+- venom glands;
+- venom grooves;
+- injection fangs;
+- poisonous skin;
+- toxic saliva.
+
+Any later venomous biology would require an explicit major design decision and gameplay review.
+
+## 111. Surface aging
+
+Adult aging may affect:
+- scale relief;
+- scale-edge wear;
+- local surface roughness;
+- pigmentation uniformity;
+- pattern contrast;
+- eye-region tissue;
+- oral/dental wear;
+- keratinous ridge/claw wear.
+
+Aging does not simply desaturate every Saurin or make all scales uniformly rough.
+
+## 112. Shedding / renewal
+
+Saurin integument undergoes biological renewal, but Part 3 does not require dramatic whole-body snake-style shedding.
+
+The exact renewal mechanism, frequency and visibility remain OPEN.
+
+Any shedding system must not be turned into a cultural behavior by biological default.
+
+## 113. Scars and acquired surface change
+
+Saurin may carry:
+- scars;
+- healed cuts;
+- burns;
+- damaged scale fields;
+- localized pigment loss/change;
+- chipped claws;
+- damaged low-profile ridges.
+
+Scars must interact credibly with scaled integument rather than using unchanged human-skin scar textures.
+
+Major tail, rostral or jaw loss remains OPEN as established previously.
+
+## 114. Tail surface integration
+
+The mandatory tail uses the same Regional Scale Architecture as the rest of the body.
+
+It must show coherent transitions between:
+- dorsal structural scales;
+- lateral fields;
+- ventral field;
+- articulation zones;
+- tip.
+
+Tail patterning may continue from the trunk or form tail-specific bands/markings.
+
+Surface design cannot make the tail look like a separately attached asset.
+
+## 115. Garment visibility decision remains OPEN
+
+Tyler's rule that the biological tail is mandatory and not hidden for **racial validation** does not yet decide whether clothing may partially cover portions of it.
+
+Part 3 therefore keeps OPEN:
+- tail sleeves/guards;
+- robes around the tail base;
+- cloaks that visually overlap it;
+- armor coverage.
+
+Equipment design must never imply that the tail is biologically optional.
+
+## 116. Hair-equivalent structures
+
+Baseline Saurin do **not** possess mammalian scalp hair.
+
+Part 3 also does not automatically substitute feathers, quills or long filamentous crests.
+
+Low-profile keratinous scale ridges from §100–102 are the current biological silhouette variation.
+
+Whether rare filamentous integument exists is OPEN and requires explicit later approval.
+
+## 117. Facial hair firewall
+
+Saurin do not possess human-style facial hair by default.
+
+Beards, mustaches and eyebrows cannot simply be transferred from human creator systems.
+
+Expression around the brow must come from anatomy, soft tissue and animation rather than hair.
+
+## 118. Cosmetics and body marking boundary
+
+Biological pigmentation/patterning is distinct from presentation.
+
+Later Personal Presentation may include:
+- paint;
+- dye;
+- tattoo-equivalent marking if biologically feasible;
+- jewelry;
+- piercings;
+- applied cosmetics;
+- decorative claw treatment.
+
+None are genetically inherited biological traits.
+
+## 119. Surface randomization
+
+Biological Randomization must couple:
+- scale morphology to anatomical region;
+- pigmentation families;
+- regional color relationships;
+- pattern family/topology;
+- eye anatomy/pigmentation;
+- ridge variation;
+- claw morphology.
+
+Randomization cannot treat every region as independent noise.
+
+## 120. Surface presets
+
+Neutral biological presets should demonstrate combinations such as:
+- low-contrast earth-toned individual;
+- high-contrast banded individual;
+- muted cool-toned individual;
+- warm mottled individual;
+- pale/stone-toned individual;
+- dark low-saturation individual.
+
+These are biological demonstrations, not cultures or named subraces.
+
+No preset is the “default tribe,” “swamp Saurin,” “desert Saurin,” “warrior Saurin” or similar cultural package.
+
+## 121. Surface phenotype overlap
+
+Saurin pigmentation may overlap colors seen in humans, elves, Grask, Gorrund or other races.
+
+Shared brown, gray, olive, pale or dark values do not make populations anatomically interchangeable.
+
+**Different biological populations may possess overlapping surface phenotypes without becoming anatomically interchangeable.**
+
+## 122. Part 3 Facial Diagnostic Domain mapping
+
+For Saurin:
+- **FD-STRUCT:** approved skull, rostrum, orbit, jaw, auricular-opening structure;
+- **FD-SOFT:** eyelids, nictitating membrane, mouth margins, expressive soft tissue;
+- **FD-SURF:** scales, pigmentation, biological patterns, keratinous ridges;
+- **FD-HAIR:** biologically empty under the current baseline;
+- **FD-PRES:** paint, jewelry, cosmetics, adornment and other personal presentation;
+- **FD-OBS:** lighting, wetness, environment, pose, expression and camera appearance.
+
+Observed appearance cannot redefine biological pigmentation or material properties.
+
+## 123. Part 3 validation cast
+
+| ID | Target |
+| --- | --- |
+| SAU-SURF-01 | Reference full-body Regional Scale Architecture under neutral lighting |
+| SAU-SURF-02 | Dorsal/ventral/lateral scale-field transitions |
+| SAU-SURF-03 | Joint flexion cast: neck, elbow, wrist, hip, knee, ankle and tail articulation scales remain plausible |
+| SAU-SURF-04 | Facial-expression cast with fine scales around eyes/mouth |
+| SAU-SURF-05 | Uniform neutral pigmentation: anatomy still carries race |
+| SAU-SURF-06 | Low/high scale relief without stone/armor/plastic failure |
+| SAU-SURF-07 | Matte/satin/material-response range under controlled identical lighting |
+| SAU-SURF-08 | Pigmentation family spread including non-green valid adults |
+| SAU-SURF-09 | Low/high biological pattern contrast |
+| SAU-SURF-10 | Pattern topology follows trunk into mandatory tail coherently |
+| SAU-SURF-11 | Pattern families across same anatomy without subrace implication |
+| SAU-SURF-12 | Iris/pupil variants under identical lighting and pupil dilation |
+| SAU-SURF-13 | Nictitating membrane open/closed/intermediate without permanent eye obstruction |
+| SAU-SURF-14 | Low-profile cranial ridge absent/minimum/maximum valid states |
+| SAU-SURF-15 | Hand claw range preserves functional grasp |
+| SAU-SURF-16 | Foot claw range preserves plantigrade support |
+| SAU-SURF-17 | Adult age spread with nonuniform surface aging |
+| SAU-SURF-18 | Scar/damaged-scale examples that respect scaled integument |
+| SAU-SURF-19 | Surface-neutral Part 2 head identity test |
+| SAU-SURF-20 | Same pigmentation under multiple lighting conditions: FD-SURF remains distinct from FD-OBS |
+| SAU-SURF-21 | Biological pattern vs applied body paint comparison |
+| SAU-SURF-22 | Tail-base and tail-tip scale transitions remain part of one organism |
+| SAU-SURF-23 | Broad adiposity/muscularity bodies retain valid scale-field organization |
+| SAU-SURF-24 | Neutral sex-related anatomy configurations share overlapping surface-phenotype distributions |
+| SAU-SURF-25 | No horns/frills/hair test: reference Saurin remains fully identifiable |
+| SAU-SURF-26 | Closed-mouth/oral test: differentiated teeth remain contained and no venom anatomy appears |
+
+## 124. OPEN after Part 3
+
+In addition to unresolved earlier items:
+- exact scale microanatomy;
+- scale growth/renewal mechanism;
+- shedding visibility/frequency;
+- pigment mechanisms;
+- exact pigmentation distributions;
+- rare pigmentation states;
+- pattern inheritance;
+- iris microanatomy;
+- pupil dilation dynamics;
+- nictitating-membrane direction/opacity;
+- exact keratinous ridge distributions;
+- rare filamentous integument;
+- exact claw growth/wear;
+- tongue morphology;
+- oral soft tissue;
+- sensory physiology;
+- acquired major tail/rostral/jaw loss;
+- garment/armor coverage of tail;
+- cosmetic/body-paint feasibility;
+- lifecycle;
+- movement/animation;
+- gameplay traits;
+- technical implementation.
+
+## 125. Part 3 identity statement
+
+> **Saurin surface phenotype is defined by Regional Scale Architecture layered over the approved pelvic-axial body and rostral-cranial head: larger protective scale fields transition through flexible articulation fields into fine expressive facial fields, with a distinct integrated ventral field. Broad natural pigmentation and inherited topology-aware patterns allow extensive individual variation without reducing Saurin to green skin or cultural subtypes. Vertically elliptical pupils, a translucent nictitating membrane, modest claw-like nails and optional low-profile keratinous cranial ridges add positive reptilian detail without turning the race into dragons, monsters or mandatory predators. Surface phenotype never substitutes for approved anatomy and grants no automatic armor, venom, sensory, climbing or combat advantages.**
+
+Part 3 is **PROPOSED FOR AUDIT**.
