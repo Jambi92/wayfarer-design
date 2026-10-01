@@ -91,7 +91,7 @@ Skeletal frame, current muscularity, body-fat amount and body-fat distribution s
 | Aelari | Never compressed Aelari; Aelari vertical elongation is fundamentally different |
 | Grask | Preserved limb contribution never means miniature Grask; Grask are limb-dominant and reach-oriented, Pipkin aren't |
 | Halvren | Mixed ancestry never defines Pipkin, who are their own population |
-| Cogling placeholder | No claim that Pipkin are broader, taller, larger-headed or bigger-footed than Cogling while Cogling are unapproved |
+| Cogling | Cogling and Pipkin intentionally overlap at approximately **91–107 cm**. Their separation comes from approved anatomy rather than size: see Cogling §63 and `reviews/short-race-comparative-anatomy-v1.md` SR-COMP-01 and SR-COMP-02. |
 
 ## 95–115. Validity, validation cast and world scale
 
@@ -116,7 +116,7 @@ Pipkin need relationship-aware constraints across height, torso vertical and lim
 | PIP-BODY-15 | Adult Pipkin vs human child at matched height (critical maturity) |
 | PIP-BODY-16 | Normalized Marchfolk comparison, never scaled human |
 
-If the range survives, Pipkin set a new lower playable-stature boundary of about **91 cm (3'0")**, with major implications for cameras, furniture, interaction points, counters, ladders, combat, equipment, dialogue and world geometry, and biology is never altered just to avoid them. With the provisional Gorrund and Pipkin ranges, current first-pass playable stature potentially spans about **91 cm (3'0") to 251 cm (8'3")**, not a permanent envelope, since Cogling and Saurin are undesigned.
+**SUPERSEDED by completed Cogling design:** Pipkin no longer set the roster’s lower playable-stature boundary. Cogling provisionally extend that boundary to about **76 cm (2'6")**. With the current completed/provisional race ranges, first-pass playable stature spans approximately **76 cm (2'6") to 251 cm (8'3")**. This remains a provisional roster envelope because **Saurin is still undesigned**. The world-scale implications for cameras, furniture, interaction points, counters, ladders, combat, equipment, dialogue and world geometry remain mandatory; biology is never altered merely to avoid them.
 
 ## 116–118. Part 1 identity, open items and status
 
@@ -1084,7 +1084,7 @@ Visual plausibility and gameplay balance may require coordination later, but nei
 | Fenn | Gracile extremity-emphasized anatomy differs from Pipkin compact short-adult organization; Pipkin are not miniature light-footed elves |
 | Grask | Long reach and limb-dominant anatomy create fundamentally different stride/reach geometry |
 | Gorrund | Massive axial load-path continuity differs from Pipkin light construction; Pipkin never imitate mass through exaggerated weightiness |
-| Cogling | NOT YET DESIGNED; Part 5 makes no claim about Cogling locomotion |
+| Cogling | FIRST-PASS COMPLETE. Cogling Part 5 rejects automatic quickness/agility/fine-motor stereotypes and preserves anatomy-driven gait geometry; see `specs/cogling/COGLING_V1.md` Part 5 and `reviews/short-race-comparative-anatomy-v1.md` SR-COMP-12. |
 
 ## 36. Part 5 identity statement and status
 
@@ -1625,7 +1625,7 @@ Implementation verification against actual project files remains deferred until 
 
 ## 35. Short-race dependency and Cogling boundary
 
-Pipkin are first-pass definable without Cogling, but the final **Short-Race Comparative Anatomy Review** remains required after Cogling is designed.
+Pipkin were first-pass definable before Cogling. Cogling is now FIRST-PASS COMPLETE, and the required **Short-Race Comparative Anatomy Review** has been authored at `reviews/short-race-comparative-anatomy-v1.md`; its acceptance/closure is tracked in `specs/STATUS.md`.
 
 That review must verify at minimum:
 - Durrim = compact structural concentration;
