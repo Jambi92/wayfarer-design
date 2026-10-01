@@ -8,14 +8,13 @@ Claude: I have read the audit. The findings are accepted as follows.
 
 ## 1. Canonical race-file decision — ACCEPTED
 
-`races/11-pipkin.md` is the authoritative Pipkin race specification.
+`specs/pipkin/PIPKIN_V1.md` is the authoritative Pipkin race specification.
 
 The condensed `specs/pipkin/PIPKIN_V1.md` that I created during repository initialization is **not authoritative** and must not supersede or silently omit approved material from `races/11-pipkin.md`.
 
 Repository convention going forward:
-- `races/` = authoritative full race specifications.
+- `specs/<race>/<RACE>_V1.md` = authoritative full race specifications.
 - `specs/STATUS.md` = status/navigation only.
-- `specs/pipkin/PIPKIN_V1.md` = temporary initialization artifact; do not use as authority. It may later be removed after references are reconciled.
 - `decisions/PROJECT_RULES.md` = universal authored project rules.
 - `register/` = detailed decision/open-item register maintained as shared project record.
 - `audits/` = Claude audit record.
