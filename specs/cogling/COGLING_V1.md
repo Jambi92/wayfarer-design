@@ -1,6 +1,6 @@
 # Cogling Character Design v1.0
 
-**Status:** IN PROGRESS — Parts 1–4 FIRST-PASS ACCEPTED; Part 5 proposed for audit  
+**Status:** IN PROGRESS — Parts 1–5 FIRST-PASS ACCEPTED; Part 6 proposed for audit  
 **Phase:** DESIGN ONLY  
 **Implementation:** Not authorized
 
@@ -1615,7 +1615,7 @@ Cogling facial validation uses the project AGREED facial-analysis domains:
 - **FD-STRUCT** — structural facial anatomy;
 - **FD-SOFT** — facial soft tissue;
 - **FD-SURF** — facial surface appearance, including scars where appropriate;
-- **FD-HAIR** — facial/scalp hair as relevant to facial analysis;
+- **FD-HAIR** — scalp hair, facial hair and eyebrows as relevant to facial analysis;
 - **FD-PRES** — facial presentation;
 - **FD-OBS** — observed appearance under lighting, camera, expression and pose.
 
@@ -2167,6 +2167,8 @@ The legacy Cogling brief described:
 
 For the authoritative design, these are **superseded as automatic racial movement/performance traits**.
 
+**Tyler decision — September 30, 2026:** supersede. This is an explicit project-owner decision, not an author inference. Any future Cogling gameplay traits must be added deliberately through the later race-biology-gameplay review.
+
 They may still appear through:
 - individual skill;
 - training;
@@ -2211,6 +2213,8 @@ However:
 - cadence must be derived from actual gait and target speed rather than caricature.
 
 Exact locomotion speeds remain OPEN.
+
+If later design chooses equal gameplay walking speed across substantially different race heights, minimum-height Cogling may physically cross into a brisk-walk/jog or run transition where taller races still walk. Animation must use an honest adult gait transition rather than artificial rapid-leg cycling. The speed decision must explicitly weigh this consequence.
 
 ## 143. Walking
 
@@ -2466,6 +2470,8 @@ It must not automatically express:
 
 Those belong to individual, cultural, occupational or contextual layers.
 
+Cogling cranial-vault proportion, head size and other craniofacial anatomy imply **nothing about intelligence, cognition, curiosity, memory, inventiveness or learning ability**.
+
 ## 162. Anatomical resting alignment
 
 Cogling Anatomical Resting Alignment must remain distinct from Cultural/Personal Body Language.
@@ -2591,6 +2597,9 @@ Those consequences must be modeled explicitly and consistently rather than conve
 | COG-MOVE-22 | Camera at actual Cogling scale; no artificial height normalization |
 | COG-MOVE-23 | Same canonical weapon held by Cogling and larger race; dimensions do not auto-scale |
 | COG-MOVE-24 | Interaction/combat reach visualization uses actual anatomy, not hidden arm extension |
+| COG-MOVE-25 | Minimum-height adult Cogling walk beside a ~1–2-year-old toddler walk; adult gait mechanics, cadence organization and step-width relationships remain unmistakable |
+| COG-MOVE-26 | Cogling/Pipkin adults within the shared ~91–107 cm height zone; movement reflects their different approved body architectures rather than one generic short-race gait |
+| COG-MOVE-27 | Minimum-height Cogling at a target speed matched to a taller race; gait transitions honestly to brisk walk/adult jog/run as required without comic rapid-leg cycling |
 
 ## 170. Part 5 OPEN items
 
@@ -2621,6 +2630,561 @@ Still OPEN:
 
 > **Cogling movement is the movement of a very-small upright adult body, not a behavioral stereotype. Their approved proportions naturally change stride geometry, reach, object fit and interaction scale, but do not automatically grant quickness, agility, climbing efficiency, fine-motor skill, balance, stealth or other gameplay advantages. The legacy brief's quick steps, frequent turns, efficient climbing, precise hand movements, small physical adjustments and fine-motor wording are superseded as automatic racial traits. Animation must preserve adult weight, real mass and truthful anatomy while personality, occupation, culture and skill remain separate.**
 
-Part 5 is **PROPOSED FOR AUDIT**.
+Part 5 is **FIRST-PASS ACCEPTED**.
 
 No UE5 implementation is authorized.
+
+
+# Part 6 — Equipment fit, world compatibility, character-creation integration and final Cogling review
+
+## 172. Part 6 purpose
+
+Part 6 consolidates Cogling first-pass design into requirements for:
+- equipment fit;
+- world compatibility;
+- interaction validation;
+- character-creation integration;
+- presets and randomization;
+- saved appearance data;
+- final cross-part consistency.
+
+It does not authorize UE5 implementation.
+
+## 173. Approved-anatomy authority
+
+All future Cogling implementation must target the approved anatomy in this specification.
+
+Prototype-reachable anatomy is not the authority.
+
+Known prototype Cogling scale (~0.72× Marchfolk / ~125 cm) is non-authoritative and lies above the provisional Cogling maximum (~107 cm). It cannot be used to redefine the race or to validate world compatibility.
+
+## 174. Character-data principle
+
+Cogling should participate in the unified conceptual character-data model while retaining race-specific biological validity.
+
+A shared conceptual schema does not require:
+- one skeleton;
+- one mesh;
+- one morph topology;
+- uniform whole-body scaling;
+- identical control ranges across races.
+
+Implementation architecture must adapt to approved Cogling anatomy.
+
+## 175. Height implementation boundary
+
+Cogling height variation cannot be implemented as simple whole-body uniform scale.
+
+Valid height change must preserve or appropriately vary:
+- adult head/body relationships;
+- central-core structure;
+- total limb contribution;
+- within-limb distal redistribution;
+- hand/finger proportions;
+- joint scale;
+- frame;
+- composition.
+
+Height and body shape are related but distinct biological dimensions.
+
+## 176. Equipment-fit principle
+
+Equipment must fit the approved Cogling body without erasing it.
+
+Fit systems must account for:
+- shoulder breadth;
+- thorax dimensions;
+- pelvic dimensions;
+- limb segment lengths;
+- joint locations;
+- hand dimensions;
+- finger proportions;
+- foot dimensions;
+- head and ear geometry.
+
+A Cogling cannot be visually converted into a generic scaled human underneath equipment.
+
+## 177. Armor and clothing
+
+Armor/clothing adaptation may require:
+- race-compatible patterning;
+- proportion-aware deformation;
+- alternate construction;
+- fitted variants;
+- carefully constrained procedural adjustment.
+
+The system must avoid:
+- crushed or stretched torso forms;
+- misplaced elbows/knees;
+- sleeves that erase distal redistribution;
+- gloves that erase hand/finger anatomy;
+- boots that distort foot scale;
+- helmets that enlarge or compress the head.
+
+Exact technical method remains OPEN.
+
+## 178. Gloves and hand equipment
+
+Cogling hands are a high-priority equipment-fit case.
+
+Gloves, gauntlets, rings, grips and hand-held interfaces must respect:
+- palm dimensions;
+- finger length;
+- phalanx distribution;
+- joint placement;
+- finger spacing.
+
+Equipment cannot shorten the fingers visually just to reuse another race's asset.
+
+Nor may hand equipment exaggerate the fingers into a caricature.
+
+## 179. Helmets and headwear
+
+Helmets/headwear must preserve:
+- approved cranial envelope;
+- facial visibility where intended;
+- ear placement;
+- actual head scale.
+
+Goggles, caps, helmets and workshop-style headwear are optional presentation, never racial anatomy.
+
+Helmet fit cannot use an oversized "gnome head" shell as a universal Cogling solution.
+
+## 180. Weapons and canonical objects
+
+Canonical equipment dimensions do not automatically scale to Cogling.
+
+A sword, mug, book, lever, tool or other world object retains its authored dimensions unless a distinct object variant exists.
+
+Cogling interaction with an object must therefore respect:
+- actual grip geometry;
+- leverage;
+- reach;
+- object mass;
+- contact position.
+
+This preserves meaningful world scale.
+
+## 181. Furniture
+
+World compatibility must test Cogling against:
+- chairs;
+- stools;
+- benches;
+- beds;
+- tables;
+- desks;
+- counters;
+- shelves.
+
+A world may contain furniture designed for different populations.
+
+Cogling do not require every object to be miniaturized, but the game must deliberately solve essential interactions.
+
+## 182. Doors and thresholds
+
+Doorways and ceilings are unlikely to constrain Cogling from above, but handles, latches, windows and interaction points may be high relative to their reach.
+
+Validation must include:
+- handle height;
+- latch height;
+- push/pull contact;
+- sightlines;
+- threshold/step geometry.
+
+The solution cannot be hidden arm extension.
+
+## 183. Stairs and vertical circulation
+
+Stairs must be validated against Cogling:
+- leg length;
+- step height;
+- tread depth;
+- cadence;
+- foot placement.
+
+Large-race stairs may create physically meaningful difficulty.
+
+The game must decide whether world architecture provides:
+- universally accessible geometry;
+- alternate routes;
+- assisted interactions;
+- population-specific construction;
+- deliberate limitations.
+
+No solution is chosen here.
+
+## 184. Ladders
+
+Ladders require validation against:
+- rung spacing;
+- hand reach;
+- foot reach;
+- simultaneous contact geometry.
+
+Cogling are not assumed to solve oversized ladders through superior climbing ability.
+
+## 185. Counters and work surfaces
+
+Counters, crafting surfaces and tables must use actual Cogling standing height and reach.
+
+Engineering/tinkering culture cannot be used as an excuse to assume every workbench is automatically Cogling-accessible.
+
+World cultures may build appropriate environments, but culture and anatomy remain separate design layers.
+
+## 186. Interaction-point architecture
+
+Future interaction systems must distinguish:
+- visual anatomy;
+- collision;
+- interaction reach;
+- combat reach;
+- IK target;
+- animation contact;
+- camera.
+
+These cannot be collapsed into one whole-body scale factor.
+
+## 187. Collision
+
+Final Cogling collision architecture remains OPEN.
+
+Collision must eventually represent approved anatomy sufficiently to support:
+- navigation;
+- cover;
+- doorway/obstacle interaction;
+- combat;
+- multiplayer fairness;
+without requiring a Marchfolk-sized invisible capsule merely for convenience.
+
+Exact collision simplification is a technical/gameplay decision.
+
+## 188. Combat reach
+
+Combat reach remains OPEN and separate from interaction reach.
+
+Cogling's short absolute dimensions cannot be hidden by:
+- invisible arm extension;
+- automatic weapon enlargement;
+- race-specific hitbox inflation
+unless later gameplay architecture deliberately approves a consistent abstraction.
+
+Part 6 does not choose that abstraction.
+
+## 189. Camera and dialogue framing
+
+Camera systems must frame Cogling at their actual height.
+
+Dialogue scenes should accommodate:
+- large height differences;
+- eyelines;
+- seated/standing states;
+- multi-character conversations.
+
+The camera cannot simply lift Cogling to Marchfolk eye height.
+
+Any first-person mode remains OPEN and must preserve actual eye height if implemented.
+
+## 190. Mounting and vehicles
+
+Mount compatibility remains OPEN.
+
+Future validation must consider:
+- seat dimensions;
+- stirrup/foot placement;
+- hand controls;
+- reach;
+- camera;
+- mounting/dismounting geometry.
+
+No universal scale transform may be assumed.
+
+## 191. Character-creation modes
+
+Cogling participate in the approved character-creation flow:
+
+**Simple Mode:** Race → Preset → Confirm
+
+**Advanced Mode:** Race → Preset → Customize → Confirm
+
+A preset is a legitimate output of the same biological system used by Advanced Mode and NPC generation.
+
+## 192. Cogling preset requirements
+
+The first-pass preset library must eventually demonstrate the valid envelope rather than one stereotype.
+
+It should include combinations spanning:
+- minimum/reference/maximum stature neighborhoods;
+- Narrow/Balanced/Broad frames;
+- low/moderate/high muscularity;
+- low/moderate/high adiposity;
+- multiple face breadth/depth relationships;
+- multiple valid nose/jaw/orbit configurations;
+- varied ear forms within the secondary tendency;
+- broad surface phenotypes;
+- multiple adult age presentations;
+- varied hair and facial-hair states.
+
+No preset may require tinkerer clothing, goggles or tools to read as Cogling.
+
+## 193. Neutral biological preset set
+
+At minimum, first-pass validation should support neutral biological presets approximately covering:
+- small/narrow;
+- small/broad;
+- reference/balanced;
+- reference/high muscularity;
+- reference/high adiposity;
+- tall/narrow;
+- tall/broad;
+- multiple sex-related anatomical configurations;
+- young-adult;
+- mature-adult;
+- older-adult.
+
+These are validation coverage targets, not social archetypes or fixed creator categories.
+
+## 194. Randomization architecture
+
+Cogling randomization must remain:
+- race-aware;
+- relationship-aware;
+- ancestry/population-aware when those distributions are later defined;
+- separated between Biological Randomization and Presentation Randomization.
+
+Randomization cannot generate invalid combinations merely because each individual slider value is valid.
+
+Interim sampling weights are testing distributions only until population frequencies are approved.
+
+## 195. Selective randomization
+
+Selective randomization must support preserving chosen attributes while randomizing others.
+
+Examples:
+- randomize face while preserving body/height/age;
+- randomize surface phenotype while preserving face;
+- randomize hair only;
+- randomize body composition while preserving frame and height;
+- randomize presentation while preserving all biology.
+
+Dependency rules may constrain combinations where anatomy genuinely requires it.
+
+## 196. Attribute locks
+
+Players should be able to lock attributes during randomization.
+
+Locks must respect biological validity.
+
+If a locked combination leaves no valid solution for another randomized domain, the system should preserve the lock and communicate/resolve the constraint rather than silently changing the locked value.
+
+Exact UI behavior remains OPEN.
+
+## 197. Saved appearances
+
+Cogling appearances must be savable/reusable within the unified appearance-data architecture.
+
+Saved data must eventually preserve enough semantic information to reconstruct:
+- race;
+- biological anatomy;
+- frame;
+- composition;
+- face;
+- surface phenotype;
+- age presentation;
+- hair/presentation selections.
+
+Schema versioning and migration are required future architecture concerns.
+
+## 198. Cross-race appearance reuse
+
+A saved Cogling appearance cannot simply be applied numerically to another race.
+
+If future systems support cross-race transfer, they must use semantic mapping and race-valid reinterpretation rather than raw slider copying.
+
+No such transfer feature is required by first-pass design.
+
+## 199. NPC generation
+
+NPC Cogling use the same biological validity system as player-created Cogling.
+
+NPC generation must not use a simplified stereotype generator that makes:
+- all Cogling tiny and narrow;
+- all Cogling old;
+- all Cogling freckled;
+- all Cogling goggle-wearing;
+- all Cogling tinkers;
+- all Cogling quick/fidgety.
+
+Culture/background distributions belong to separate systems.
+
+## 200. Creator camera
+
+The character creator must allow inspection of actual Cogling anatomy at useful scales.
+
+Camera behavior should support:
+- whole-body proportion review;
+- face close-up;
+- ear close-up;
+- hand/finger inspection;
+- feet;
+- surface detail.
+
+Close inspection is preferable to biologically exaggerating features for visibility.
+
+## 201. World-compatibility validation principle
+
+Cogling world compatibility is validated against **approved target anatomy**, including provisional min/reference/max and extreme valid body combinations.
+
+Prototype anatomy cannot substitute for target validation.
+
+Tests must cover both:
+- environments intended to accommodate Cogling;
+- environments intentionally built for substantially larger populations.
+
+The latter may reveal legitimate access problems requiring explicit design decisions.
+
+## 202. World-compatibility validation cast
+
+| ID | Target |
+| --- | --- |
+| COG-WORLD-01 | Minimum/reference/maximum Cogling through representative doors and thresholds |
+| COG-WORLD-02 | Door handles/latches at multiple authored heights; actual reach used |
+| COG-WORLD-03 | Standard stairs; foot placement and step height validated |
+| COG-WORLD-04 | Large-population stairs; accessibility problem documented rather than hidden |
+| COG-WORLD-05 | Multiple ladder rung spacings; actual simultaneous hand/foot reach |
+| COG-WORLD-06 | Chair/stool/bench seating across Cogling body extremes |
+| COG-WORLD-07 | Bed and sleeping interaction across sizes |
+| COG-WORLD-08 | Table/desk/counter interactions at multiple world scales |
+| COG-WORLD-09 | Shelf/container access above and below comfortable reach |
+| COG-WORLD-10 | Narrow passages/cover using truthful collision |
+| COG-WORLD-11 | Dialogue between Cogling and Marchfolk |
+| COG-WORLD-12 | Dialogue between Cogling and Gorrund/other very-large race |
+| COG-WORLD-13 | Canonical object pickup without object scaling |
+| COG-WORLD-14 | Same canonical weapon on Cogling and larger race |
+| COG-WORLD-15 | Helmet/hood fit without head inflation |
+| COG-WORLD-16 | Gloves/gauntlets preserve Cogling finger anatomy |
+| COG-WORLD-17 | Long sleeves/trousers align with actual joints and distal redistribution |
+| COG-WORLD-18 | Camera follows actual eye/body height |
+| COG-WORLD-19 | Mount/vehicle mock validation if those systems are later supported |
+| COG-WORLD-20 | Prototype ~125 cm Cogling compared with approved ~76–107 cm target to prove prototype is not the validation authority |
+
+## 203. Character-creation validation cast
+
+| ID | Target |
+| --- | --- |
+| COG-CC-01 | Simple Mode preset → confirm produces valid Cogling |
+| COG-CC-02 | Advanced Mode edits same preset without hidden race swap |
+| COG-CC-03 | Race-aware full randomization produces only valid combinations |
+| COG-CC-04 | Face-only randomization preserves body/height/age |
+| COG-CC-05 | Body-only randomization preserves face/surface where compatible |
+| COG-CC-06 | Surface-only randomization preserves FD-STRUCT |
+| COG-CC-07 | Hair-only randomization |
+| COG-CC-08 | Presentation-only randomization does not alter biology |
+| COG-CC-09 | Attribute locks remain unchanged during randomization |
+| COG-CC-10 | Invalid combined extremes are rejected despite individually valid controls |
+| COG-CC-11 | Save/reload preserves semantic appearance |
+| COG-CC-12 | Preset stripped of all presentation remains racially readable |
+| COG-CC-13 | NPC generator samples broad valid anatomy without stereotype bundle |
+| COG-CC-14 | Neutral biological preset set spans the intended envelope |
+| COG-CC-15 | Creator camera inspects face/ears/hands without biological exaggeration |
+
+## 204. Final Cogling anti-convergence review
+
+Before first-pass completion, Cogling must remain distinct from:
+
+**Marchfolk**
+- not a uniformly scaled small human;
+- Fine-Scale Elongated Articulation and Fine-Scale Planar Integration remain positive structural carriers.
+
+**Pipkin**
+- Cogling: narrow stable central core, near-human total limb share, distal redistribution, fine shafts/joints.
+- Pipkin: Low-Set Compact Trunk Architecture and Integrated Mature Facial Architecture.
+- overlap in height and surface phenotype is valid.
+
+**Durrim**
+- Cogling: fine structural mass and non-compressed vertical facial organization.
+- Durrim: compact structural concentration, high skeletal presence, broad/deep vertically compact body/face relationships.
+
+**Fenn**
+- Cogling are not mini-elves: no elven skeletal family, no pointed ears, no required larger orbits/high cheekbones, and no overall limb-dominant extremity specialization.
+
+**Sagekin**
+- Cogling distal redistribution occurs inside near-human total limb contribution with fine shafts/joints.
+- Sagekin remain human, with tendencies toward slightly longer limbs overall and ordinary human bone/joint scale.
+
+**Grask**
+- Cogling are not tiny reach-specialists; Grask are globally rangy with long absolute/relative reach and limb-dominant architecture.
+
+## 205. Final Cogling stereotype firewall
+
+No first-pass Cogling identity depends on:
+- tinkering;
+- engineering;
+- intelligence;
+- curiosity;
+- eccentricity;
+- goggles;
+- oversized hats;
+- freckles;
+- large eyes;
+- large nose;
+- large ears;
+- beard;
+- old age;
+- quickness;
+- fidgeting;
+- dexterity;
+- climbing;
+- cuteness;
+- weakness;
+- fragility.
+
+Any of these may occur individually where otherwise valid.
+
+## 206. Final positive biological identity
+
+> **Cogling are a very-small adult humanoid population defined in the body by Fine-Scale Elongated Articulation: a narrow stable central core supports broadly near-human total limb contribution while length is redistributed within the limbs toward the forearms, lower legs, hands and especially fingers through comparatively fine skeletal shafts and clearly articulated distal joints. Their face is defined by Fine-Scale Planar Integration: mature face-to-vault contribution combines with fine skeletal mass and clearly angled orbital, zygomatic, maxillary and mandibular junctions. Their ears show a secondary Fine Folded Auricular tendency without becoming a primary identifier. Broad frame, composition, surface phenotype and adult age variation remain valid. Their small size changes real reach, stride geometry, equipment fit and world interaction, but does not biologically require child proportions, miniature objects, quickness, dexterity, tinkering, cuteness or any other behavioral stereotype.**
+
+## 207. Consolidated OPEN list
+
+The following remain OPEN after first-pass Cogling design unless later audit identifies additional items:
+- exact height distribution and final min/reference/max after world/animation validation;
+- exact body segment ratios;
+- exact head allometry;
+- exact craniofacial ratios;
+- exact ear distributions;
+- ancestry/population structure;
+- surface phenotype frequencies;
+- hair/iris frequencies and mechanisms;
+- sex-related distribution magnitudes;
+- lifespan/maturation;
+- detailed age progression;
+- final locomotion speeds;
+- acceleration/turning;
+- jumping/climbing/swimming;
+- stealth/balance/fall mechanics;
+- strength/leverage gameplay;
+- racial gameplay traits;
+- collision;
+- interaction reach;
+- combat reach;
+- equipment compatibility/restrictions;
+- first-person support;
+- mounting/vehicles;
+- technical skeleton/mesh/morph architecture;
+- animation/IK/warping implementation;
+- networking;
+- schema/version migration;
+- culture/background design.
+
+## 208. First-pass completion gate
+
+Cogling may be marked **FIRST-PASS COMPLETE** only when:
+1. Part 6 receives a clean audit with no blocking contradiction;
+2. all accepted prior audit findings are reflected in the canonical spec;
+3. the final identity and OPEN list are internally consistent;
+4. the required **Short-Race Comparative Anatomy Review** is queued immediately after Cogling rather than silently skipped.
+
+No UE5 implementation is authorized by completion of this race design.
+
+Part 6 is **PROPOSED FOR FINAL AUDIT**.
