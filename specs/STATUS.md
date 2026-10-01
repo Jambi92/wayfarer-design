@@ -15,10 +15,10 @@
 12. Cogling
 
 ## In progress
-- **Short-Race Comparative Anatomy Review — authored; Claude audit pending**
+- **Short-Race Comparative Anatomy Review — audit cleanup complete; awaiting Tyler acceptance/closure**
 
 ## Not yet designed
 13. Saurin
 
 ## Current next action
-Claude audits the Short-Race Comparative Anatomy Review for Durrim, Pipkin and Cogling. If accepted, proceed to Saurin. Do not begin UE5 implementation.
+Tyler accepts/closes the Short-Race Comparative Anatomy Review after final text-only Pipkin cleanup. Then proceed to Saurin, the final race first-pass design. Do not begin UE5 implementation.
