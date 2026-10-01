@@ -569,4 +569,605 @@ Any existing prototype Saurin scale, collision, shared-human animation, breath-h
 
 > **Saurin are a distinct reptilian humanoid population whose body is organized around Counterbalanced Pelvic-Axial Architecture: a deep mobile thorax continues through an elongated lower axial trunk into a strongly integrated pelvis and sacral base that supports a substantial articulated tail. Their upright plantigrade bipedal skeleton uses moderate-to-substantial structural mass, mature non-human extremity relationships and broad frame/composition variation without requiring a crouched lizard posture, dragon traits, aquatic specialization, muscularity or behavioral stereotypes. The tail is a real, mandatory and visible part of their mass and axial anatomy. Validation neutralizes surface phenotype but **does not remove the tail**; instead, it must demonstrate that the tail is anatomically inevitable from the complete pelvic-axial organism rather than an attachment to a humanoid body.**
 
-Part 1 is **PROPOSED FOR AUDIT**.
+Part 1 is **ACCEPTED / COMPLETE**.
+
+**Tail validation decision:** Tyler decision, September 30, 2026: the Saurin tail is mandatory, always present biological anatomy and is not removed or hidden for racial validation. Validation tests the integration of the complete organism instead.
+
+**Carried OPEN questions:** whether garments may partially cover the tail; whether acquired tail loss/injury is possible; exact coupled relationship between tail-base dimensions, tail length and tail mass.
+
+
+# Part 2 — Craniofacial, oral, sensory and auricular foundation
+
+## 35. Part 2 objective
+
+Part 2 establishes the Saurin head as a positive non-human anatomical system that belongs on the Part 1 body.
+
+It defines:
+- cranial organization;
+- face-to-vault relationship;
+- orbital architecture;
+- midface and rostral projection;
+- jaw and oral framework;
+- provisional dentition;
+- nasal openings;
+- eye placement and visible-eye architecture;
+- external ear strategy;
+- neck-to-skull integration;
+- adult facial variation;
+- age/sex firewalls;
+- creator-control requirements.
+
+It does not yet finalize:
+- scale morphology or coloration;
+- iris/pupil pigmentation;
+- magical eye effects;
+- soft-tissue display structures;
+- exact dentition counts;
+- tongue anatomy;
+- hearing acuity;
+- smell acuity;
+- bite gameplay;
+- facial animation implementation;
+- culture or presentation.
+
+## 36. Positive craniofacial specialization — Layered Rostral-Cranial Integration
+
+Saurin facial identity is provisionally anchored by **Layered Rostral-Cranial Integration**.
+
+The head is organized as:
+
+> **low-to-moderate cranial vault → broad integrated orbital/temporal platform → projecting but compact rostral midface → deep articulated jaw base**
+
+The rostrum is real skeletal projection, but it is not an animal muzzle grafted onto a human skull and not a dragon snout.
+
+The orbital platform, rostrum, jaw and cranial base must transition into one another as a continuous skull.
+
+## 37. Overall skull
+
+Compared with Marchfolk at matched adult head size, Saurin provisionally trend toward:
+- lower relative cranial-vault height;
+- greater front-to-back cranial length;
+- stronger temporal/postorbital structural contribution;
+- less human-like forehead-to-nasal-root organization;
+- broader integration between orbit, cheek region and rostral base;
+- a deeper posterior jaw attachment.
+
+This does not mean a tiny braincase, primitive intelligence or animal cognition.
+
+Cranial shape has no relationship to intelligence, class or personality.
+
+## 38. Face-to-vault relationship
+
+Saurin have a visibly substantial facial skeleton relative to the cranial vault.
+
+The face is not vertically enormous. Its distinction comes from **forward structural contribution and depth**, not simply increasing facial height.
+
+Valid adults may vary from relatively compact-faced to more rostrally expressed while remaining within the same integrated cranial system.
+
+## 39. Rostral midface
+
+Saurin possess a **compact projecting rostrum**.
+
+It includes the nasal/premaxillary/maxillary region and should:
+- project farther forward than Marchfolk adult tendency;
+- remain broad enough at the base to integrate with the orbital/zygomatic region;
+- taper moderately toward the anterior end;
+- avoid a long canine muzzle;
+- avoid a flat human midface;
+- avoid a dragon-like wedge head.
+
+Rostral projection is a primary racial carrier.
+
+## 40. Rostral variation
+
+Valid biological controls may include:
+- rostral length;
+- rostral depth;
+- rostral width at base;
+- anterior width;
+- dorsal contour;
+- transition angle into the orbital platform.
+
+These controls are relationship-aware.
+
+A very long rostrum cannot combine freely with an extremely shallow jaw base or incompatible cranial support merely because each slider is individually valid.
+
+## 41. Forehead and cranial transition
+
+The Saurin forehead does not use the human brow → vertical forehead → rounded vault sequence as its default.
+
+Instead:
+- the rostral/nasal dorsum transitions into the interorbital and frontal region with a lower, longer slope;
+- the frontal region remains structurally integrated with the orbital platform;
+- the vault rises posterior to that platform rather than producing a human-like vertical forehead.
+
+Individual variation remains broad enough to avoid one identical silhouette.
+
+## 42. Orbital platform
+
+The orbit is embedded in a broad **orbital-temporal platform**.
+
+Positive tendencies:
+- meaningful lateral bony support around the orbit;
+- strong transition into the temporal region;
+- clear structural relationship between orbit and rostral base;
+- less isolated human-style brow ridge;
+- no mandatory heavy “angry brow.”
+
+The platform must read anatomically even when scale pattern and pigmentation are neutralized.
+
+## 43. Eye placement
+
+Saurin eyes remain compatible with strong binocular forward vision.
+
+They are not laterally placed like many real reptiles.
+
+Provisional tendency:
+- somewhat greater lateral spacing than Marchfolk adult tendency;
+- forward-facing visual axes;
+- moderate orbital depth;
+- visible eye opening shaped by Saurin orbital anatomy rather than oversized eyeballs.
+
+Exact field of view is OPEN and no gameplay vision bonus is implied.
+
+## 44. Visible eye opening
+
+The visible eye opening may be somewhat more horizontally extended than the Marchfolk tendency while remaining highly variable.
+
+Saurin must not require:
+- permanently narrowed “predator” eyes;
+- enormous gecko-like eyes;
+- human eyelid proportions;
+- a fixed expression.
+
+**Orbital size ≠ visible eye opening ≠ eyeball size.**
+
+These remain separate anatomical controls.
+
+## 45. Eyelid system
+
+Saurin possess functional protective eyelid anatomy, but exact configuration remains partially OPEN.
+
+Baseline requirement:
+- a credible primary closure system;
+- soft-tissue coverage compatible with the approved eye opening;
+- no permanently unblinking presentation.
+
+Whether Saurin possess a biologically distinct nictitating membrane is **OPEN for later sensory/surface review** and cannot be assumed from “reptilian.”
+
+## 46. Brow expression firewall
+
+Bony orbital structure cannot encode personality.
+
+A Saurin may appear:
+- relaxed;
+- frightened;
+- amused;
+- tired;
+- gentle;
+- angry;
+- focused
+
+through soft-tissue pose and animation without requiring different racial skulls.
+
+Neutral anatomy must not force a permanent scowl.
+
+## 47. Jaw architecture
+
+The mandible is a major structural carrier.
+
+Provisional Saurin jaw:
+- deep posterior mandibular/attachment region;
+- substantial jaw joint integrated beneath/posterior to the orbital-temporal platform;
+- mandibular body tapering forward with the rostrum;
+- adult structural depth without Gorrund-like transverse mass;
+- no human chin prominence as the default endpoint.
+
+The jaw should look capable of normal Saurin mastication without implying a gameplay bite weapon.
+
+## 48. Mouth line
+
+The mouth opening extends along the rostral jaw system rather than occupying a human-like small central facial opening.
+
+Variation may include:
+- mouth-line length;
+- anterior curvature;
+- corner position;
+- soft-tissue lip/edge expression.
+
+A longer mouth line must not force a grin, snarl or threatening neutral expression.
+
+## 49. Oral soft tissue
+
+Saurin do not default to human external lips.
+
+The mouth margin may use thinner, differently organized soft-tissue boundaries appropriate to the rostral skeleton.
+
+Exact external oral tissue, moisture, scale transition and expressive deformation are deferred to Part 3/animation design.
+
+This is not permission for a rigid mouth incapable of nuanced expression.
+
+## 50. Dentition
+
+Baseline Saurin dentition is provisionally **heterodont enough to support an omnivorous/generalized diet**, rather than rows of identical monster fangs.
+
+First-pass direction:
+- differentiated anterior and posterior tooth roles;
+- modest pointedness may occur;
+- teeth fit inside the closed mouth under normal anatomy;
+- no mandatory protruding tusks;
+- no saber teeth;
+- no automatic venom fangs.
+
+Exact tooth count, replacement pattern and degree of differentiation remain OPEN.
+
+Dentition does not determine culture, aggression or diet preference at the individual level.
+
+## 51. Bite firewall
+
+Having a projecting rostrum, deep jaw and teeth does not automatically grant:
+- a bite attack;
+- increased melee damage;
+- grappling;
+- armor penetration;
+- intimidation bonuses.
+
+Any gameplay bite mechanic requires a separate decision.
+
+## 52. Nasal openings
+
+Saurin nasal openings are positioned on the anterior-to-dorsal rostral region rather than using a projecting human external nose.
+
+They should read as integrated respiratory openings, not decorative dots.
+
+Valid variation may include:
+- spacing;
+- size;
+- orientation;
+- surrounding soft-tissue contour.
+
+Part 2 does not approve closable aquatic nostrils or enhanced underwater respiration.
+
+## 53. External nose firewall
+
+Saurin do not possess a human-like projecting nasal pyramid as their baseline.
+
+They also do not require:
+- crocodilian nostril placement;
+- snake-like facial proportions;
+- dragon nostril flares;
+- permanent nasal slits.
+
+Their nasal architecture must follow their own rostral structure.
+
+## 54. Zygomatic/lateral facial region
+
+The human zygomatic cheekbone is not copied directly.
+
+Instead, the lateral facial skeleton forms a transition zone connecting:
+- orbital support;
+- rostral base;
+- temporal platform;
+- posterior jaw attachment.
+
+This gives Saurin a continuous lateral skull architecture rather than a human face with a muzzle attached.
+
+## 55. Neck-to-skull integration
+
+The Saurin head must belong on the Part 1 axial body.
+
+Provisional tendencies:
+- skull base accommodates an upright head over a non-human axial trunk;
+- posterior cranial/neck musculature has meaningful attachment area;
+- head balance accounts for rostral projection;
+- neutral posture does not require forward-head carriage.
+
+Exact occipital and cervical anatomy remains OPEN.
+
+## 56. External ears — recessed auricular opening architecture
+
+Saurin do **not** have projecting mammalian or elven pinnae as baseline anatomy.
+
+Their auditory exterior is provisionally a **Recessed Auricular Opening Architecture**:
+- an external auditory opening positioned posterolateral to the orbital/temporal platform;
+- a shallow surrounding soft-tissue/cartilaginous rim or recess;
+- no large projecting ear flap;
+- no pointed elven ear;
+- no human lobule.
+
+The exact internal hearing apparatus and hearing performance remain OPEN.
+
+## 57. Ear variation
+
+Valid visible variation may include:
+- opening size;
+- surrounding recess depth;
+- rim prominence;
+- orientation;
+- local cranial contour.
+
+Variation must not turn the structure into a human, elf or fantasy-dragon ear by slider extremes.
+
+## 58. Horn firewall
+
+Horns are **not baseline Saurin anatomy** in Part 2.
+
+This prevents the head from becoming generically draconic and keeps the positive identity in skull architecture.
+
+Whether any Saurin population can possess keratinous cranial display structures is OPEN for Part 3 and requires an explicit biological decision.
+
+## 59. Crest/frill firewall
+
+Part 2 does not assume:
+- neck frills;
+- cobra hoods;
+- dinosaur crests;
+- dragon fins;
+- cheek spikes;
+- eyebrow horns.
+
+If later approved, any display structure must have anatomy, inheritance and variation rather than being added merely to make Saurin “more reptilian.”
+
+## 60. Facial skeletal mass
+
+Saurin facial skeletal mass is provisionally moderate-to-substantial relative to their own cranial scale.
+
+This supports:
+- rostral projection;
+- orbital-temporal integration;
+- posterior jaw attachment
+
+without turning every Saurin into a heavy-headed brute.
+
+Cranial robusticity varies independently within race-valid relationships.
+
+## 61. Adult read
+
+All adult Saurin presets and randomization must read as adults.
+
+The system must not use:
+- oversized eyes;
+- shortened rostrum;
+- inflated cranial vault;
+- tiny jaw;
+- rounded juvenile face
+
+as default attractiveness controls.
+
+Young Saurin anatomy, if represented later, requires age-specific developmental rules rather than adult sliders pushed toward juvenile extremes.
+
+## 62. Sex-related facial variation
+
+Part 2 does not assume human facial sexual dimorphism.
+
+Any Saurin population-level sex-related craniofacial correlations must be:
+- biologically justified later;
+- probabilistic rather than absolute;
+- compatible with overlapping adult phenotypes.
+
+Sex-related anatomy cannot hard-lock rostral length, jaw depth, eye shape, head size or other identity controls unless a later biological decision explicitly requires it.
+
+## 63. Age
+
+Saurin must support visible adult aging.
+
+Part 2 reserves later design space for:
+- cranial/soft-tissue maturation;
+- surface wear;
+- oral/dental age;
+- eye-region age;
+- scars/injury.
+
+Exact lifecycle and age-rate remain OPEN.
+
+Chronological Age, Apparent Biological Age and Age Presentation remain distinct concepts.
+
+## 64. Injury and asymmetry
+
+Facial asymmetry and acquired injury may exist without redefining race.
+
+Potential later systems include:
+- scars;
+- damaged scale regions;
+- dental loss;
+- eye injury;
+- localized jaw asymmetry.
+
+Whether major rostral, jaw or tail loss is supported as an acquired-history state remains OPEN and must not be silently decided by equipment or customization implementation.
+
+## 65. Surface-neutral identity
+
+When pigmentation, scale pattern and presentation are neutralized, Saurin head identity must still be carried by:
+- cranial-vault relationship;
+- orbital-temporal platform;
+- rostral projection;
+- lateral facial integration;
+- mandibular architecture;
+- recessed auricular openings.
+
+Unlike the Part 1 tail decision, this test removes **surface phenotype**, not biological structures.
+
+## 66. Human comparison
+
+At normalized head size, Saurin differ from Marchfolk through:
+- lower/longer vault organization;
+- projecting integrated rostrum;
+- orbital-temporal platform;
+- non-human lateral facial continuity;
+- deep posterior jaw attachment;
+- absence of a human external nose;
+- recessed non-pinna auditory opening.
+
+No single feature carries the entire difference.
+
+## 67. Elf comparison
+
+Saurin do not use the elven craniofacial family as a base.
+
+They differ from Fenn/Aelari/Vael through:
+- rostral projection rather than elven facial organization;
+- recessed auditory openings rather than elven pinnae;
+- greater facial depth;
+- different vault/orbit/temporal integration.
+
+Saurin cannot become an elf by shortening the rostrum and changing surface phenotype.
+
+## 68. Grask comparison
+
+Grask facial identity is elongated/vertically organized without a snout or tusks.
+
+Saurin identity uses **forward rostral projection and orbital-temporal integration**, not Grask vertical facial elongation.
+
+A minimum-rostrum Saurin must remain distinct from Grask.
+
+## 69. Gorrund comparison
+
+Gorrund use Transverse Structural Continuity across brow/orbit, zygomatic, temporal and posterior mandibular structure.
+
+Saurin may have substantial lateral cranial support, but their defining relationship runs **cranial/orbital platform → rostral projection → deep articulated jaw**, not Gorrund transverse facial breadth/mass.
+
+A broad Saurin cannot become a scaled Gorrund.
+
+## 70. Durrim comparison
+
+Durrim use compact adult craniofacial breadth and depth relative to facial vertical height.
+
+Saurin are not compact-depth specialists. Their positive distinction is forward rostral projection integrated into a longer cranial system.
+
+## 71. Pipkin comparison
+
+Pipkin Integrated Mature Facial Architecture retains depth within Marchfolk adult range and a moderately broad cranial base.
+
+Saurin depart from the human-range midface through true rostral projection and non-human orbital/temporal/oral organization.
+
+## 72. Cogling comparison
+
+Cogling Fine-Scale Planar Integration uses mature face-to-vault contribution with fine skeletal mass and clearly angled planar junctions.
+
+Saurin use greater depth, rostral projection and a different orbital-temporal/jaw system rather than fine planar articulation.
+
+## 73. Face controls — provisional organization
+
+The following are **first-pass functional requirements / provisional control organization**, consistent with the project-wide facial architecture status.
+
+### Cranial
+- overall head scale within race-valid bounds;
+- vault height;
+- cranial length;
+- posterior cranial depth;
+- temporal breadth.
+
+### Rostral
+- rostral length;
+- rostral base width;
+- anterior width;
+- rostral depth;
+- dorsal contour;
+- rostrum-to-orbit transition.
+
+### Orbital
+- orbital spacing;
+- orbital size;
+- orbital depth;
+- visible eye-opening width/height;
+- eye-opening angle;
+- orbital-platform breadth.
+
+### Jaw
+- posterior jaw depth;
+- mandibular-body depth;
+- jaw width;
+- anterior taper;
+- mouth-line length;
+- mouth-corner position.
+
+### Nasal
+- opening size;
+- spacing;
+- orientation;
+- local contour.
+
+### Auricular
+- opening size;
+- recess depth;
+- rim prominence;
+- orientation.
+
+Controls must use coupled validity constraints rather than unconstrained independent extremes.
+
+## 74. Presets and randomization
+
+Neutral biological presets must demonstrate meaningful adult diversity across:
+- rostral expression;
+- cranial length/vault relationship;
+- orbital spacing/opening;
+- jaw depth;
+- auricular structure;
+- frame/body context;
+- age.
+
+Race-aware randomization must sample coherent correlated faces rather than independently randomizing every slider.
+
+No preset may encode culture, profession, class or personality as biology.
+
+## 75. Part 2 validation cast
+
+| ID | Target |
+| --- | --- |
+| SAU-FACE-01 | Reference adult Saurin head, neutral material, front/profile/three-quarter |
+| SAU-FACE-02 | Minimum and maximum valid rostral expression without human-face or animal-muzzle failure |
+| SAU-FACE-03 | Low/high vault variants with rostral/orbital relationships preserved |
+| SAU-FACE-04 | Narrow/broad cranial variants without elf/Gorrund convergence |
+| SAU-FACE-05 | Shallow/deep jaw variants with valid rostral support |
+| SAU-FACE-06 | Orbital-size variants separated from visible eye-opening variants |
+| SAU-FACE-07 | Eye-opening shape variants without permanent expression |
+| SAU-FACE-08 | Nasal-opening variants without human/crocodile/dragon default |
+| SAU-FACE-09 | Auricular-opening variants; none become human/elven pinnae |
+| SAU-FACE-10 | Marchfolk-normalized head comparison |
+| SAU-FACE-11 | Aelari/Fenn/Vael normalized comparison |
+| SAU-FACE-12 | Grask normalized comparison, especially minimum-rostrum Saurin |
+| SAU-FACE-13 | Gorrund normalized comparison, especially broad/deep Saurin |
+| SAU-FACE-14 | Durrim normalized comparison |
+| SAU-FACE-15 | Pipkin/Cogling normalized comparison |
+| SAU-FACE-16 | Surface-neutral test: no pigmentation/scale-pattern identity carrier |
+| SAU-FACE-17 | Closed-mouth test: teeth do not protrude by default |
+| SAU-FACE-18 | Neutral-expression test across orbital/jaw extremes |
+| SAU-FACE-19 | Multiple sex-related anatomy configurations with overlapping face distributions |
+| SAU-FACE-20 | Adult age spread without juvenile-slider shortcuts |
+| SAU-FACE-21 | Head/neck balance test on Part 1 reference body |
+| SAU-FACE-22 | Stature-accounting cast: minimum/reference/maximum bodies with head, neck, thorax, lower trunk and legs summing coherently rather than independently inflating |
+
+## 76. OPEN after Part 2
+
+In addition to unresolved Part 1 items:
+- exact cranial measurements;
+- exact rostral length/depth/width distributions;
+- exact orbital dimensions;
+- eyeball anatomy;
+- eyelid configuration;
+- nictitating membrane;
+- iris/pupil anatomy;
+- detailed jaw joint anatomy;
+- exact tooth count;
+- tooth replacement;
+- tongue anatomy;
+- oral soft tissue;
+- nasal soft tissue;
+- olfactory specialization;
+- hearing specialization;
+- keratinous cranial display structures;
+- scale morphology;
+- facial scale pattern;
+- sex-related dimorphism;
+- age/lifecycle;
+- facial soft-tissue expression;
+- acquired major rostral/jaw/tail loss;
+- gameplay bite;
+- sensory gameplay;
+- technical implementation.
+
+## 77. Part 2 identity statement
+
+> **The Saurin head is defined by Layered Rostral-Cranial Integration: a low-to-moderate, longitudinally organized cranial vault flows into a broad orbital-temporal platform, a compact projecting rostral midface and a deep articulated jaw base. Forward facial depth is real skeletal anatomy without becoming a long animal muzzle or a dragon head. Forward-facing eyes remain structurally integrated rather than oversized or predatory by expression, nasal openings belong to the rostrum rather than a human external nose, and recessed auricular openings replace mammalian or elven pinnae. Broad adult variation in vault, rostrum, orbit and jaw remains valid without encoding intelligence, aggression, culture, sex stereotypes or gameplay power.**
+
+Part 2 is **PROPOSED FOR AUDIT**.
