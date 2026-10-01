@@ -928,16 +928,27 @@ Pipkin v1.0 Part 2
 | Moderate adult dexterous hands; feet with modestly elevated contribution as a secondary identifier; five digits per hand and foot; plantigrade; no flat feet inferred | AGREED | Pipkin Part 2 §36–54 |
 | Frame, muscle, fat amount and distribution separate; no hidden physique packages; no "human → Pipkin" master slider; relationship-aware validity mandatory | AGREED | Pipkin Part 2 §55–68, §84–86 |
 | Pipkin leg contribution greater than Durrim at matched height without exceeding ordinary human proportions by default; no unusual arm span | PRELIMINARY | Pipkin Part 2 §19–27 |
-| Whether the Pipkin pelvis-to-thorax tendency is measured within sex (male vs male, female vs female) and kept separate from sex dimorphism, so male Pipkin don't read female-coded | OPEN | Pipkin Part 2 audit |
-| Pelvic and arch morphology; femur-to-lower-leg balance; arm span; muscular-development capacity; fat-distribution patterns; a concrete measure for "low-set" | OPEN | Pipkin Part 2 §10, §22, §27, §50, §61, §63 |
+| Whether the Pipkin pelvis-to-thorax tendency is measured within sex (male vs male, female vs female) and kept separate from sex dimorphism, so male Pipkin don't read female-coded | AGREED (resolved by the Part 2 patch below) | Pipkin Part 2 audit; patch `da3692b` |
+| Pelvic and arch morphology; femur-to-lower-leg balance; arm span; muscular-development capacity; fat-distribution patterns (a concrete measure for "low-set" is resolved by the Part 2 patch below) | OPEN | Pipkin Part 2 §10, §22, §27, §50, §61, §63 |
 
-Pipkin v1.0 Part 2 author resolution (proposed by ChatGPT, not yet approved by Tyler or patched into the spec)
+Pipkin v1.0 Part 2 author resolution (approved by Tyler September 30; §§2–3 patched into the spec at `da3692b`)
 
 | Decision | Status | Source |
 | --- | --- | --- |
-| Low-Set Compact Trunk Architecture includes a modestly reduced vertical central-trunk share versus Marchfolk, a compact lumbar and waist transition, and a pelvis whose vertical height, depth and 3D integration stay substantial relative to the thorax; it persists at Marchfolk-like pelvic breadth; never Durrim-like compression; no slider or fixed ratio (would close the concrete "low-set" measure item) | PRELIMINARY | Author resolution §2; re-audit §3.1–3.2 |
-| Pelvis-to-thorax comparisons use like-for-like sex-related anatomical configurations; the trait is expressed through pelvic structure, never shoulder-to-hip ratio, hip circumference or a feminized silhouette; male and female Pipkin vs Marchfolk validation pair; dimorphism magnitude stays OPEN (would close the within-sex item) | PRELIMINARY | Author resolution §3; re-audit §3.3 |
-| The 122 cm Durrim boundary is carried jointly by torso vertical organization, thoracic presence, limb contribution, joints, long-bone robusticity, hand, wrist, foot and ankle structure and the two trunk systems; pelvic breadth is not primary | PRELIMINARY | Author resolution §4; re-audit §3.4 |
-| Canonical race file location: resolution §1 names `races/`, which conflicts with Tyler's September 30 choice of `specs/<race>/<RACE>_V1.md` | OPEN | Author resolution §1; re-audit §2a |
+| Low-Set Compact Trunk Architecture includes a modestly reduced vertical central-trunk share versus Marchfolk, a compact lumbar and waist transition, and a pelvis whose vertical height, depth and 3D integration stay substantial relative to the thorax; it persists at Marchfolk-like pelvic breadth; never Durrim-like compression; no slider or fixed ratio (closes the concrete "low-set" measure item); reduced trunk share is absorbed mainly by limbs and pelvic height, not head enlargement | AGREED | Pipkin Part 2 patch `da3692b`; re-audit §3.1–3.2, §4a |
+| Pelvis-to-thorax comparisons use like-for-like sex-related anatomical configurations; the trait is expressed through pelvic structure, never shoulder-to-hip ratio, hip circumference or a feminized silhouette; male and female Pipkin vs Marchfolk validation pair; PIP-BODY-28 and PIP-BODY-29; dimorphism magnitude stays OPEN (closes the within-sex item) | AGREED | Pipkin Part 2 patch `da3692b`; re-audit §3.3 |
+| The 122 cm Durrim boundary is carried jointly by torso vertical organization, thoracic presence, limb contribution, joints, long-bone robusticity, hand, wrist, foot and ankle structure and the two trunk systems; pelvic breadth is not primary (approved, but not yet written into the spec) | AGREED | Author resolution §4; re-audit §3.4; Part 3 audit §2 |
+| Canonical race file location is `specs/<race>/<RACE>_V1.md` (Tyler, September 30); the author resolution's §1 wording naming `races/` is stale, and ChatGPT's Part 3 request treats `specs/` as authoritative | AGREED | Tyler; Part 3 audit request; re-audit §2a |
+
+Pipkin v1.0 Part 3 (proposed for audit, not yet approved by Tyler)
+
+| Decision | Status | Source |
+| --- | --- | --- |
+| Adult Pipkin faces read mature and Pipkin before hair, facial hair, wrinkles, cosmetics, expression, clothing or scale context; no beauty standard is biological | PRELIMINARY | Pipkin Part 3 §1, §14 |
+| **Compact Mature Facial Integration:** moderate cranial breadth → integrated temple and zygomatic support → mature compact midface → developed adult lower face; not a single control | PRELIMINARY (the Durrim and Gorrund distinctions need clarifying; see the Part 3 audit) | Pipkin Part 3 §2 |
+| Head contribution secondary; no enlarged vault; no biologically oversized eyes; orbit separate from visible aperture; small or upturned nose isn't a Pipkin trait; moderately scaled mature mandible | PRELIMINARY | Pipkin Part 3 §3–8 |
+| **Compact Rounded Auricular Architecture:** non-elven ears; no elven point, Grask taper or Gorrund deep bowl; no mandatory tiny or comic ears; ears secondary | PRELIMINARY (distinction from Marchfolk ears needs clarifying) | Pipkin Part 3 §9 |
+| Hair, facial-hair, brow and lash biology separate from presentation; facial hair never required for adult or male recognition; sex-related facial-hair distributions OPEN; no hairy-feet requirement | PRELIMINARY | Pipkin Part 3 §11–13 |
+| Facial controls are approved first-pass functional requirements with provisional organization; no "Pipkin Face" master slider; tendencies bias randomization only | PRELIMINARY | Pipkin Part 3 §15 |
 
 Marchfolk v1.0 and v1.5 are referenced but haven't been received here. Send them and their decisions go into this register.
