@@ -1027,17 +1027,17 @@ Cogling v1.0 Part 2 (FIRST-PASS ACCEPTED; clarifications incorporated at `f50d13
 | COG-BODY-25 and 26 retired as duplicates of COG-BODY-11 and 09A | AGREED | Cogling Part 2 §71 |
 | Cogling numerical torso and limb envelopes, thorax, pelvis, shoulders, head ratio, segment distributions, hands, feet, joints, robusticity, muscular capacity, fat distribution, dimorphism, face, surface, lifecycle, movement, gameplay, implementation | OPEN | Cogling Part 2 §72 |
 
-Cogling v1.0 Part 3 (proposed; audit PASS WITH CLARIFICATIONS)
+Cogling v1.0 Part 3 (patched at `21cbd41`; re-audit PASS; pending Tyler's approval)
 
 | Decision | Status | Source |
 | --- | --- | --- |
 | Adult facial maturity at the smallest stature without wrinkles, facial hair, expression or presentation; midface never shortened; mature lower face mandatory; no oversized cranium, enlarged eyes, button nose or tiny jaw | PRELIMINARY | Cogling Part 3 §76, §81, §83, §85 |
 | Orbit separate from visible eye opening; no biologically enlarged eyes; readability at an 11–13 cm head solved by camera, animation, lighting and rendering, never by enlarging features | PRELIMINARY | Cogling Part 3 §79, §99 |
 | "Expressive face" is not biology; no personality encoded in neutral anatomy; attractiveness, sex, age, adiposity and asymmetry independent; no "Cogling Face" master slider | PRELIMINARY | Cogling Part 3 §91–98 |
-| **Fine-Scale Planar Integration** as the facial anchor | PRELIMINARY (needs a Cogling-specific relational tendency) | Cogling Part 3 §75; audit 4a |
-| **Fine Folded Auricular Architecture:** compact rounded non-pointed ear with crisp folds and fine cartilage | PRELIMINARY (secondary tendency; Pipkin and Durrim rows missing) | Cogling Part 3 §87–90; audit 4c |
-| Facial anchor names no relationship distinct from Marchfolk; facial boundary rows vs Pipkin, Durrim, Fenn and Sagekin missing; pass criteria for COG-FACE-16, 18 and 19 | OPEN | Cogling Part 3 audit 4a |
-| "Compact cranial envelope" terminology; FD domain labels; normalized Durrim face test; like-for-like sex face comparisons | OPEN | Cogling Part 3 audit 4b, 4d, §5 |
+| **Fine-Scale Planar Integration:** facial skeletal height relative to the cranial vault at or slightly above the Marchfolk adult relationship (opposite of the toddler pattern), plus clearly angled orbit-to-zygoma, zygoma-to-maxilla and mandibular body-to-ramus junctions at fine skeletal mass | PRELIMINARY | Cogling Part 3 §75; re-audit |
+| **Fine Folded Auricular Architecture:** rounded non-pointed ear with crisp folds and fine cartilage; a secondary tendency overlapping Pipkin, Durrim and human ears; fold detail is a close-view trait | PRELIMINARY | Cogling Part 3 §87–90, §99 |
+| Craniofacial boundaries with Marchfolk, Pipkin, Durrim, Fenn and Sagekin based on their approved anchors; FD-labeled tests with pass criteria (COG-FACE-16 to 19, 21A, 25) | PRELIMINARY | Cogling Part 3 §90A, §101A–102 |
+| Align §101A FD-PRES, FD-SURF and FD-OBS wording with AGREED definitions; add that cranial-vault proportion has no cognitive meaning; "compact" in the ear term (Short-Race Review) | OPEN | Cogling Part 3 re-audit 3a–3c |
 | Cogling cranial, facial-third, orbital, eye-opening, zygomatic, midface, nasal, mandible, ear and dimorphism distributions; age progression; surface; hair; iris; facial animation; camera and rendering | OPEN | Cogling Part 3 §103 |
 
 Marchfolk v1.0 and v1.5 are referenced but haven't been received here. Send them and their decisions go into this register.
