@@ -658,6 +658,12 @@ It includes the nasal/premaxillary/maxillary region and should:
 
 Rostral projection is a primary racial carrier.
 
+### Minimum rostral floor
+
+At normalized adult head size, the **minimum valid Saurin rostral projection remains clearly outside the approved adult projection ranges of Marchfolk, Grask and Gorrund**. The compact end of Saurin variation is still a true rostrum, not a human-range midface.
+
+This is an intentional non-overlap boundary because rostral projection is a defining Saurin skeletal structure.
+
 ## 40. Rostral variation
 
 Valid biological controls may include:
@@ -789,7 +795,7 @@ This is not permission for a rigid mouth incapable of nuanced expression.
 
 ## 50. Dentition
 
-Baseline Saurin dentition is provisionally **heterodont enough to support an omnivorous/generalized diet**, rather than rows of identical monster fangs.
+Baseline Saurin dentition is provisionally **functional differentiated dentition**, with distinct anterior and posterior tooth roles and **no diet inferred from dentition**, rather than rows of identical monster fangs.
 
 First-pass direction:
 - differentiated anterior and posterior tooth roles;
@@ -801,7 +807,7 @@ First-pass direction:
 
 Exact tooth count, replacement pattern and degree of differentiation remain OPEN.
 
-Dentition does not determine culture, aggression or diet preference at the individual level.
+Dentition does not determine culture, aggression, population diet or individual diet preference.
 
 ## 51. Bite firewall
 
@@ -864,6 +870,10 @@ Provisional tendencies:
 
 Exact occipital and cervical anatomy remains OPEN.
 
+### Stature-share accounting
+
+Saurin head-height share trends **near to modestly below the Marchfolk adult range**, while neck-height share remains broadly near Marchfolk. The elongated lower axial trunk is therefore paid for primarily through modestly reduced vertical head/thoracic contribution rather than by forcing shortened legs. Exact proportional distributions remain OPEN and must still satisfy SAU-FACE-22.
+
 ## 56. External ears — recessed auricular opening architecture
 
 Saurin do **not** have projecting mammalian or elven pinnae as baseline anatomy.
@@ -876,6 +886,8 @@ Their auditory exterior is provisionally a **Recessed Auricular Opening Architec
 - no human lobule.
 
 The exact internal hearing apparatus and hearing performance remain OPEN.
+
+No automatic **hearing, smell or vision gameplay bonus** follows from Saurin sensory anatomy. Any such mechanic requires a separate gameplay decision.
 
 ## 57. Ear variation
 
@@ -987,6 +999,18 @@ When pigmentation, scale pattern and presentation are neutralized, Saurin head i
 
 Unlike the Part 1 tail decision, this test removes **surface phenotype**, not biological structures.
 
+### Facial Diagnostic Domains
+
+Saurin facial validation uses the established diagnostic separation:
+- **FD-STRUCT** — skull, rostrum, orbit, jaw and auricular-opening structure;
+- **FD-SOFT** — eyelids, mouth margins and other facial soft tissue;
+- **FD-SURF** — scales, pigmentation, pattern and surface microstructure;
+- **FD-HAIR** — empty unless later biology explicitly establishes hair-equivalent structures;
+- **FD-PRES** — cosmetics, adornment and other personal presentation;
+- **FD-OBS** — observed appearance under lighting, pose, expression and camera conditions.
+
+No surface or presentation domain may compensate for failure of FD-STRUCT.
+
 ## 66. Human comparison
 
 At normalized head size, Saurin differ from Marchfolk through:
@@ -1016,7 +1040,7 @@ Saurin cannot become an elf by shortening the rostrum and changing surface pheno
 
 Grask facial identity is elongated/vertically organized without a snout or tusks.
 
-Saurin identity uses **forward rostral projection and orbital-temporal integration**, not Grask vertical facial elongation.
+Saurin identity uses **forward rostral projection and orbital-temporal integration**, not Grask vertical facial elongation. Approved Grask anatomy does not require a snout; limited tusk-like canine variation remains an OPEN Grask detail rather than a racial requirement.
 
 A minimum-rostrum Saurin must remain distinct from Grask.
 
@@ -1115,7 +1139,7 @@ No preset may encode culture, profession, class or personality as biology.
 | ID | Target |
 | --- | --- |
 | SAU-FACE-01 | Reference adult Saurin head, neutral material, front/profile/three-quarter |
-| SAU-FACE-02 | Minimum and maximum valid rostral expression without human-face or animal-muzzle failure |
+| SAU-FACE-02 | Minimum and maximum valid rostral expression; the minimum remains clearly beyond Marchfolk, Grask and Gorrund adult projection ranges at normalized head size, while the maximum avoids animal-muzzle/dragon failure |
 | SAU-FACE-03 | Low/high vault variants with rostral/orbital relationships preserved |
 | SAU-FACE-04 | Narrow/broad cranial variants without elf/Gorrund convergence |
 | SAU-FACE-05 | Shallow/deep jaw variants with valid rostral support |
@@ -1125,7 +1149,7 @@ No preset may encode culture, profession, class or personality as biology.
 | SAU-FACE-09 | Auricular-opening variants; none become human/elven pinnae |
 | SAU-FACE-10 | Marchfolk-normalized head comparison |
 | SAU-FACE-11 | Aelari/Fenn/Vael normalized comparison |
-| SAU-FACE-12 | Grask normalized comparison, especially minimum-rostrum Saurin |
+| SAU-FACE-12 | Grask normalized comparison; minimum-rostrum Saurin remains outside approved Grask adult projection range |
 | SAU-FACE-13 | Gorrund normalized comparison, especially broad/deep Saurin |
 | SAU-FACE-14 | Durrim normalized comparison |
 | SAU-FACE-15 | Pipkin/Cogling normalized comparison |
@@ -1136,6 +1160,7 @@ No preset may encode culture, profession, class or personality as biology.
 | SAU-FACE-20 | Adult age spread without juvenile-slider shortcuts |
 | SAU-FACE-21 | Head/neck balance test on Part 1 reference body |
 | SAU-FACE-22 | Stature-accounting cast: minimum/reference/maximum bodies with head, neck, thorax, lower trunk and legs summing coherently rather than independently inflating |
+| SAU-FACE-23 | Neutral dialogue-articulation test: rostral mouth forms readable speech shapes without requiring human external lips, a fixed grin or a snarl |
 
 ## 76. OPEN after Part 2
 
@@ -1161,6 +1186,7 @@ In addition to unresolved Part 1 items:
 - sex-related dimorphism;
 - age/lifecycle;
 - facial soft-tissue expression;
+- speech articulation and lip-sync capability for the rostral mouth in dialogue without defaulting to human external lips;
 - acquired major rostral/jaw/tail loss;
 - gameplay bite;
 - sensory gameplay;
