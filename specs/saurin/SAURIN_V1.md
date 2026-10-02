@@ -657,6 +657,55 @@ The rostrum is real skeletal projection, but it is not an animal muzzle grafted 
 
 The orbital platform, rostrum, jaw and cranial base must transition into one another as a continuous skull.
 
+## 36a. Craniofacial Ridge-and-Plane Architecture
+
+**Added October 1, 2026 — Tyler, visual-development direction** (`reviews/claude-saurin-targeted-sculpt-6-directive.md`). **Status: PROVISIONAL, pending Tyler/ChatGPT acceptance of the Targeted Sculpt 6 diagnostics.** Strength values, exact ridge placement and transition sharpness remain open until that review.
+
+> **Saurin craniofacial anatomy is organized through deliberate plane changes and structurally integrated ridges around the orbital platform, rostrum, temporal region, jaw and posterior skull. Broad surfaces may remain relatively smooth, but transitions between major anatomical regions are comparatively decisive rather than continuously rounded. This creates a recognizable reptilian skeletal landscape even when scales, pigmentation, pupils and optional keratin display structures are removed.**
+
+This is the structural form language that connects Layered Rostral-Cranial Integration (§36), Counterbalanced Pelvic-Axial Architecture, Regional Scale Architecture and the Cranial Keratin Display System (§100). It does not replace or weaken any of them.
+
+**Region hierarchy.** Transitions between these regions read as edges or decisive changes of curvature, not as a faceted low-poly surface:
+- orbital platform and rim;
+- dorsal rostral plane;
+- canthal transition;
+- lateral rostral plane;
+- maxillary/cheek transition;
+- temporal plane;
+- cranial roof and temporal line;
+- posterior skull and occipital transition;
+- mandible, with lateral and inferior planes and a posterior turn;
+- jaw hinge;
+- throat.
+
+The anterior rostrum ends in a terminal plane bearing laterally placed nostrils, not a rounded nasal pad.
+
+**Structural ridge anatomy vs display structures.**
+- Structural ridges and planes are skull/body form. They are present on every normal adult Saurin, including minimal-display individuals, vary only in strength and expression, and cannot be toggled off.
+- Horns, hornlets, crests, spikes and keratin plates belong to the Cranial Keratin Display System (§100–102). Display bases follow this structural landscape.
+
+**Body and tail extension (restrained).** Body expression is subtler than the head and appears only where anatomy supports it:
+- the neck-shoulder transition;
+- clavicular and scapular-spine edges;
+- elbow/olecranon;
+- the ulnar border;
+- wrist;
+- iliac crest;
+- sacral transition;
+- knee;
+- tibial crest;
+- malleoli;
+- a low dorsal vertebral line.
+
+The tail may add a dorsal caudal line and a flatter venter.
+
+Composition variation and soft tissue are retained. This is not armour plating, and not sharpened musculature.
+
+**Safeguards:**
+- No forced expression (scowl, aggression, smile or sadness). The orbital and oral regions keep their articulation capacity for dialogue.
+- No spikes everywhere, no razor edges, no faceted stone head, no crocodile or dinosaur copy.
+- Creator variation (ridge prominence, transition strength, orbital rim, temporal definition, mandibular angle, posterior contour) must stay inside the Saurin identity envelope.
+
 ## 37. Overall skull
 
 Compared with Marchfolk at matched adult head size, Saurin provisionally trend toward:
