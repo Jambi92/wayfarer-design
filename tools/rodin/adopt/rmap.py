@@ -26,7 +26,7 @@ for yaw,nm in ((0,"front"),(90,"profile"),(180,"rear"),(45,"front34"),(150,"rear
         me.color_attributes.active_color=ca_
     ob=bpy.data.objects.new(nm,me); sc.collection.objects.link(ob)
     lo,hi=vb.min(0),vb.max(0); s=max(hi[0]-lo[0],hi[2]-lo[2])*1.06; cx,cz=(lo[0]+hi[0])/2,(lo[2]+hi[2])/2
-    cd.ortho_scale=s; cam.location=(cx,lo[1]-10*H,cz); cam.rotation_euler=(math.radians(90),0,0)
+    cd.ortho_scale=s; cd.clip_end=40*H; cam.location=(cx,lo[1]-10*H,cz); cam.rotation_euler=(math.radians(90),0,0)
     sc.render.resolution_x=RES; sc.render.resolution_y=RES
     sc.render.filepath=os.path.abspath("%s_%s.png"%(TAG,nm)); bpy.ops.render.render(write_still=True)
     lab={}
