@@ -549,6 +549,7 @@ Any modest forearm emphasis is not Cogling Fine-Scale Elongated Articulation: Sa
 | SAU-BODY-20 | Tail plus canonical chair/door/corridor proxy to expose world-space consequences without solving them |
 | SAU-BODY-21 | Saurin vs Skarn at normalized standing height and matched composition with surface phenotype neutralized; Saurin caudal/pelvic-femoral and thoracic/scapular system remains distinct from Skarn human robustness |
 | SAU-BODY-22 | Saurin vs Aelari at normalized standing height and matched composition with surface phenotype neutralized; lower-axial/caudal organization remains distinct from Aelari distributed vertical elongation |
+| SAU-SILHOUETTE | **Neutral tail-silhouette test:** in a neutral straight-front view the tail must not be readily mistaken for external genital anatomy; the resting path reads sacral origin → posterior projection → caudal sweep, with a substantial base anchored to the posterior pelvis (checked again in rear 3/4 so the base does not read as a tube attached to the posterior). Added per `reviews/saurin-ts6-1-body-integration-correction.md` §6 |
 
 ## 33. OPEN after Part 1
 
