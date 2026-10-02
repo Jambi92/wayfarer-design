@@ -12,7 +12,7 @@
 
 **Mesh on Tyler's PC:**
 - `RaceBodies/out/SaurinPhaseA_bare_3_5mm.blend` / `.fbx`
-- `RaceBodies/out/saurin_phaseA.npz`
+- `RaceBodies/out/saurin_phaseA_035.npz` (3.5 mm; the 1.5 mm review mesh used for the renders is regenerable with `python3 wf_saurin_phaseA.py 0.15`)
 
 ## 1. What was built, and how
 
