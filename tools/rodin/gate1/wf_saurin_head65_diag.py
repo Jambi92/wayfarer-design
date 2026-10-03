@@ -31,7 +31,7 @@ def build(name):
     if name=="crest":                # dorsal-midline keratin crest + very low paired side ridges
         roof=lambda F: surf_u(np.zeros_like(F),F)
         side=_sym(ridge([S(3.3,0.5,0.05),S(3.7,-5.0,0.05),S(3.2,-9.5,0.05)],0.36,0.18))
-        return lambda X,F,U: smin(blade(X,F,U,-11.5,2.0,roof,CREST_H,0.50,peak=0.38),side(X,F,U),0.3)
+        return lambda X,F,U: smin(blade(X,F,U,-11.5,2.0,roof,3.2,0.50,peak=0.38),side(X,F,U),0.3)
     if name=="mixed_asym":           # paired up-curving posterior horns (left ~15 % shorter) + unequal brow hornlets
         bR=S(3.6,-7.4,0.45); bL=S(-3.6,-7.4,0.45); a1=S(4.6,3.6); a2=S(4.7,1.2); a3=S(-4.6,3.6)
         hR=lambda X,F,U: horn(X,F,U,bR,(bR[0]+1.1,bR[1]-3.6,bR[2]+2.0),(bR[0]+1.3,bR[1]-7.2,bR[2]+3.6),1.10,0.12)
@@ -42,7 +42,6 @@ def build(name):
         return lambda X,F,U: smin(smin(smin(smin(hR(X,F,U),hL(X,F,U),0.2),b1(X,F,U),0.2),b2(X,F,U),0.2),b3(X,F,U),0.2)
     return None
 DISPLAY=os.environ.get("DISPLAY_VARIANT","")
-CREST_H=float(os.environ.get("CREST_H","2.40"))   # Gate 7 closure: crest constrained to ~<=2.5 cm above the roof (was 3.2 -> 3.27 cm)
 _D=build(DISPLAY) if DISPLAY else None
 def head_sdf(X,F,U,neck_rings,cut_u):
     d=H.head_sdf(X,F,U,neck_rings,cut_u)
