@@ -96,7 +96,7 @@ P = dict(
     nuchal_lat=((3.2, -8.6, 0.8), (3.4, -6.2, -7.5), 1.6),
     rictal=((4.7, -0.6, -0.85), (0.45, 0.85, 0.6)),
     supraorbital=((2.7, 8.1, 4.55), (4.85, 3.4, 6.15), 0.58),
-    postorbital=((4.8, 4.6, 6.0), (5.8, 4.0, 3.2), 0.74),
+    postorbital=((4.8, 4.6, 6.0), (5.8, 4.0, 3.2), 0.64),
     jugal=((3.0, 9.2, 1.7), (5.6, 0.5, 1.6), 0.50),
     canthal=((2.3, 9.4, 5.4), (1.4, 13.9, 1.3), 0.22),
     temporal_line=((4.5, 4.3, 6.4), (4.3, -9.8, 7.0), 0.33),
@@ -161,16 +161,16 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     # ridges are raised from the existing surface (tent profiles), so they always sit on the skull, never float
     # canthus rostralis: plan-view line from the orbit to the nostril, on the upper half of the rostrum
     xr = np.interp(F, [6.5, 14.2], [2.6, 1.45])
-    skull = skull - 0.27 * tent(Xa - xr, 0.62) * along(F, 6.5, 14.4, 2.0) * np.clip(U / 0.8, 0, 1)
+    skull = skull - 0.20 * tent(Xa - xr, 0.62) * along(F, 6.5, 14.4, 2.0) * np.clip(U / 0.8, 0, 1)
     # temporal line: dorsolateral cranial edge from the postorbital bar back to the occiput
     xt = np.interp(F, [-10.5, -6, 0, 4.5], [3.6, 4.6, 4.9, 4.6])
-    skull = skull - 0.26 * tent(Xa - xt, 0.8) * along(F, -10.5, 4.6, 2.5) * np.clip((U - 3.6) / 1.0, 0, 1)   # pass 2: stronger temporal line
+    skull = skull - 0.15 * tent(Xa - xt, 0.8) * along(F, -10.5, 4.6, 2.5) * np.clip((U - 3.6) / 1.0, 0, 1)
     # jugal/maxillary ridge: side-view line from the rostral base under the orbit to the jaw hinge (lateral surfaces)
     uj = np.interp(F, [-0.5, 3.0, 7.0, 11.5], [1.2, 1.9, 2.3, 1.2])
-    skull = skull - 0.28 * tent(U - uj, 0.62) * along(F, -0.5, 11.5, 2.0) * np.clip((Xa - 2.0) / 1.2, 0, 1)
+    skull = skull - 0.22 * tent(U - uj, 0.62) * along(F, -0.5, 11.5, 2.0) * np.clip((Xa - 2.0) / 1.2, 0, 1)
     # occipital transition: transverse ridge across the back of the cranial roof
     fo = -10.6 + 0.0 * X
-    skull = skull - 0.20 * tent(F - fo, 0.95) * np.clip((U - 4.0) / 1.0, 0, 1)
+    skull = skull - 0.12 * tent(F - fo, 0.95) * np.clip((U - 4.0) / 1.0, 0, 1)
     # mandibular lateral ridge (inferior-lateral edge), turning up behind toward the hinge
     um = np.interp(F, [-1.5, 2.0, 8.0, 14.0], [-3.2, -4.4, -3.6, -2.6])
     skull = skull - 0.05 * tent(U - um, 1.2) * along(F, -1.5, 14.0, 2.0) * np.clip((Xa - 2.0) / 1.2, 0, 1)   # TS6.3: soft (no lip edge)
@@ -187,15 +187,15 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     skull = smin(skull, ellipsoid(Xa, F, U, (0.0, 14.7, 0.2), (1.25, 1.0, 0.85)), 0.6)
     skull = skull - 0.12 * tent(Xa - np.interp(F, [7.5, 14.5], [1.55, 0.95]), 0.42) * along(F, 7.5, 14.6, 1.6) * np.clip((U - 0.4) / 0.9, 0, 1)
     # maxillary swelling over the tooth row and a shallow suborbital/antorbital fossa above it
-    skull = smin(skull, capsule(Xa, F, U, (2.35, 13.2, -0.9), (4.75, 1.8, -0.6), 0.62), 0.9)
+    skull = smin(skull, capsule(Xa, F, U, (2.35, 13.2, -0.9), (4.75, 1.8, -0.6), 0.55), 0.9)
     skull = smax(skull, -(ellipsoid(Xa, F, U, (3.15, 9.6, 1.9), (0.55, 1.9, 0.8)) + 0.22), 0.6)
     # orbital-temporal platform: broad flat shelf behind the brow, edged by the temporal line
     skull = smin(skull, ellipsoid(Xa, F, U, (4.15, 1.6, 6.05), (1.45, 3.6, 0.75)), 1.0)
     # supratemporal fossa: depression behind the postorbital bar, above the jaw adductor
-    skull = smax(skull, -(ellipsoid(Xa, F, U, (3.5, -3.6, 7.1), (1.3, 2.8, 1.1)) + 0.42), 0.8)
+    skull = smax(skull, -(ellipsoid(Xa, F, U, (3.5, -3.6, 7.1), (1.25, 2.7, 1.05)) + 0.28), 0.8)
     # occipital: paired occipital bosses and a short midline nuchal crest that runs into the nuchal mass
     skull = smin(skull, capsule(Xa, F, U, (1.7, -10.0, 5.6), (2.0, -11.6, 3.0), 0.7), 1.0)
-    skull = smin(skull, capsule(Xa, F, U, (0.0, -8.6, 7.4), (0.0, -12.2, 3.6), 0.55), 0.8)
+    skull = smin(skull, capsule(Xa, F, U, (0.0, -8.6, 7.4), (0.0, -11.8, 4.2), 0.45), 0.7)
     # intermandibular groove on the underside (rami read as a V around a soft gular floor)
     skull = skull + 0.12 * tent(Xa, 0.55) * along(F, 2.5, 13.5, 2.0) * np.clip((m - 2.6 - U) / 0.8, 0, 1)
     # neck column fitted to the body's own neck cross-sections (exact match at the cut so the seam closes)

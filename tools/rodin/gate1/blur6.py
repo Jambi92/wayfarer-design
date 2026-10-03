@@ -1,9 +1,11 @@
 # Gate 6: low-pass grids of the CURRENT (Gate 5) surface for regional relax / rebuild.
 import numpy as np, sys, g1
 from g1 import blurred, sd
-z=np.load("g5_body.npz"); V=z["V"].astype(np.float64); Fc=z["F"].astype(np.int64)
+import os
+z=np.load(os.environ.get("BLUR_SRC","g5_body.npz")); V=z["V"].astype(np.float64); Fc=z["F"].astype(np.int64)
 ZONES={"pelvis":((-28,28,-46,16,54,112),3.0),"torso":((-24,24,-20,19,94,160),2.2),"neck":((-16,16,-20,16,146,182),1.6),
-       "legL":((-34,-2,-14,30,-1,72),2.4),"legR":((2,34,-14,30,-1,72),2.4)}
+       "legL":((-34,-2,-14,30,-1,72),2.4),"legR":((2,34,-14,30,-1,72),2.4),
+       "armL":((-44,-12,-22,16,110,154),3.5),"armR":((12,44,-22,16,110,154),3.5),"thighL":((-32,-1,-18,22,56,98),3.5),"thighR":((1,32,-18,22,56,98),3.5)}
 name=sys.argv[1]; box,r=ZONES[name]; h=0.6
 a,b,c=(np.arange(box[2*i],box[2*i+1]+h,h) for i in range(3)); A,B,C=np.meshgrid(a,b,c,indexing="ij"); X,F,U=A.ravel(),B.ravel(),C.ravel()
 from scipy.ndimage import gaussian_filter
