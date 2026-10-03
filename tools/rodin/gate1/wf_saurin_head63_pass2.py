@@ -84,34 +84,34 @@ def wedge(X, F, U, prof, n=2.2, cap_front=0.6, cap_back=0.5, oct_from=(3.0, 10.0
 EYE = dict(x=3.3, f=6.55, u=4.5, r=1.35, yaw=np.radians(24))
 P = dict(
     # cranium + upper jaw (rostral-maxillary complex): F, top, bottom, half-width
-    wedge=[(-12.6, 4.2, 0.4, 3.4), (-11.6, 5.8, -1.2, 5.0), (-10.5, 7.1, -1.0, 5.5), (-8.0, 8.8, -1.8, 6.0),   # pass 3: occiput slopes into the nuchal mass
+    wedge=[(-12.6, 5.2, 0.4, 3.6), (-11.6, 7.2, -1.2, 5.3), (-10.5, 8.2, -1.0, 5.6), (-8.0, 9.3, -1.8, 6.0),
            (-3.5, 9.8, -3.9, 6.8), (0.5, 9.3, -5.6, 7.0), (4.5, 7.8, -5.2, 6.6), (8.5, 5.3, -4.1, 5.2),
-           (12.5, 2.9, -3.0, 3.45), (14.6, 1.15, -2.25, 2.35), (15.6, 0.3, -1.85, 1.75)],
+           (12.5, 2.9, -3.0, 3.6), (14.6, 1.25, -2.35, 2.75), (15.6, 0.35, -1.95, 2.35)],
     # mandible (lower jaw): F, top (ignored; the oral margin sets it), bottom, half-width -- narrower than the upper jaw
     mandible=[(-2.5, 0, -6.3, 5.7), (1.5, 0, -6.2, 5.8), (4.5, 0, -5.6, 5.6), (8.5, 0, -4.5, 4.75),
-              (12.5, 0, -3.75, 3.3), (14.5, 0, -3.1, 2.3), (15.3, 0, -2.65, 1.65)],
+              (12.5, 0, -3.75, 3.45), (14.5, 0, -3.2, 2.6), (15.3, 0, -2.75, 2.0)],
     retroarticular=((5.0, -1.4, -0.9), (4.7, -3.2, -0.7), 0.5),
-    jowl=((4.6, 0.4, -2.6), (0.75, 2.3, 1.8)),
+    jowl=((5.0, 0.4, -2.6), (0.8, 2.4, 1.9)),
     cervical_lat=((3.9, -2.4, -3.6), (3.8, -1.9, -8.5), 0.85),
     nuchal_lat=((3.2, -8.6, 0.8), (3.4, -6.2, -7.5), 1.6),
     rictal=((4.7, -0.6, -0.85), (0.45, 0.85, 0.6)),
-    supraorbital=((3.1, 8.0, 4.95), (5.15, 3.2, 6.2), 0.62),
-    postorbital=((5.0, 4.4, 6.1), (6.2, 3.6, 3.0), 0.78),
-    jugal=((3.1, 9.0, 1.7), (6.0, 0.4, 1.7), 0.60),
+    supraorbital=((2.7, 8.1, 4.55), (4.85, 3.4, 6.15), 0.58),
+    postorbital=((4.8, 4.6, 6.0), (5.8, 4.0, 3.2), 0.74),
+    jugal=((3.0, 9.2, 1.7), (5.6, 0.5, 1.6), 0.50),
     canthal=((2.3, 9.4, 5.4), (1.4, 13.9, 1.3), 0.22),
     temporal_line=((4.5, 4.3, 6.4), (4.3, -9.8, 7.0), 0.33),
     occipital=((-4.2, -10.9, 6.3), (4.2, -10.9, 6.3), 0.38),
     temporal_plane=(6.0, -0.8, -9.5, 3.5),
     orbitframe=((3.2, 6.3, 4.35), (1.5, 1.7, 1.35)),
-    adductor=((4.6, 1.2, 3.0), (0.85, 3.2, 2.2)),          # jaw-closing muscle between orbit, temporal platform and hinge
-    hinge=((4.8, -0.9, 0.3), (0.75, 1.3, 1.2)),             # quadrate / jaw articulation
-    ramus=((4.7, -1.4, 0.3), (4.65, -0.8, -3.9), 0.95),      # posterior mandible rising to the hinge
-    angle=((4.7, -1.4, -4.2), (1.15, 2.2, 1.8)),             # mandibular angle (posterior depth)
+    adductor=((4.85, 1.2, 3.0), (0.9, 3.3, 2.3)),          # jaw-closing muscle between orbit, temporal platform and hinge
+    hinge=((5.1, -0.7, 0.4), (0.8, 1.4, 1.3)),             # quadrate / jaw articulation
+    ramus=((5.0, -1.4, 0.3), (4.95, -0.8, -3.9), 1.15),      # posterior mandible rising to the hinge
+    angle=((4.95, -1.4, -4.2), (1.25, 2.2, 1.8)),             # mandibular angle (posterior depth)
     nuchal=((0, -8.4, -3.2), (4.6, 3.8, 5.6)),
     gular=((0, -0.5, -6.6), (3.4, 4.0, 1.4)),                # throat under the mandibles
     mouth=dict(curve=[(-1.0, -0.75), (0.5, -1.15), (2.5, -1.55), (5.5, -1.95), (9.0, -2.05), (12.5, -1.9), (16.2, -2.05)],
                overhang=0.10),
-    nostril=((1.35, 13.4, 0.75), (0.22, 0.42, 0.26)),
+    nostril=((1.55, 13.7, 0.35), (0.22, 0.42, 0.26)),
     ear=((6.75, -4.5, 2.6),),
 )
 
@@ -129,7 +129,7 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     # upper jaw: cranium wedge whose ventral face is the oral margin; lateral wall overhangs the mandible a little
     upper_edge = m - P["mouth"]["overhang"] * np.clip(Xa / 2.0, 0, 1) + scal
     upper_edge = upper_edge - 0.22 * np.clip((F - 13.8) / 1.6, 0, 1) * np.clip(1 - Xa / 2.0, 0, 1)   # premaxilla closes over the mandible tip
-    upper = wedge(X, F, U, P["wedge"], cap_front=0.55, plane=dict(p_cranium=2.7, p_rostrum=4.0, p_tip=2.8, chamfer=0.80))
+    upper = wedge(X, F, U, P["wedge"], cap_front=0.55, plane=dict(p_cranium=2.7, p_rostrum=4.0, p_tip=3.6, chamfer=0.80))
     upper = np.where(mouth_zone > 0, smax(upper, (upper_edge - U) * mouth_zone + (upper - 1.0) * (1 - mouth_zone), 0.45), upper)
     # mandible: its own volume, top at the oral margin, narrower, deepening posteriorly
     mp = [(f, -99.0, b, w * 0.93) for f, _, b, w in P["mandible"]]
@@ -175,23 +175,22 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     um = np.interp(F, [-1.5, 2.0, 8.0, 14.0], [-3.2, -4.4, -3.6, -2.6])
     skull = skull - 0.05 * tent(U - um, 1.2) * along(F, -1.5, 14.0, 2.0) * np.clip((Xa - 2.0) / 1.2, 0, 1)   # TS6.3: soft (no lip edge)
     tp = (Xa - P["temporal_plane"][0]) * (U > P["temporal_plane"][1]) * (F > P["temporal_plane"][2]) * (F < P["temporal_plane"][3])
-    pass   # pass 3: flat temporal-plane cut removed (it sliced an ear-like disk into the skull side)
-    skull = smin(skull, ellipsoid(Xa, F, U, (3.15, 6.25, 4.3), (1.55, 1.72, 1.42)), 1.1)           # orbit / lids (thinner rim, sits under the brow shelf)
+    skull = smax(skull, np.where(tp != 0, tp, -10.0), 2.0)              # flattened temporal plane
+    skull = smin(skull, ellipsoid(Xa, F, U, (3.2, 6.3, 4.35), (1.62, 1.78, 1.5)), 1.0)           # orbit / lids
     skull = smin(skull, ellipsoid(X, F, U, (0.0, 5.6, 5.55), (2.55, 3.4, 0.95)), 1.3)            # interorbital roof: brow, orbits and rostrum share one roof
     skull = smin(skull, capsule(Xa, F, U, *P["postorbital"]), 0.5)
-    skull = smin(skull, capsule(Xa, F, U, (3.1, 9.0, 1.7), (5.7, 3.0, 1.8), 0.58), 0.55)      # pass 3: jugal flares under the orbit ...
-    skull = smin(skull, capsule(Xa, F, U, (5.7, 3.0, 1.8), (4.9, -0.8, 0.6), 0.48), 0.6)       # ... and sweeps into the quadrate/hinge (no free end knob)
+    skull = smin(skull, capsule(Xa, F, U, *P["jugal"]), 0.55)
     skull = smin(skull, ellipsoid(Xa, F, U, *P["adductor"]), 1.8)
     skull = smin(skull, ellipsoid(Xa, F, U, *P["hinge"]), 0.9)
     # ---- TS6.3 naked-skull refinement (no display structures) ---------------------------------------------------
     # premaxillary tip boss and paired low nasal ridges framing a flat dorsal nasal plane
-    skull = smin(skull, ellipsoid(Xa, F, U, (0.0, 14.5, 0.3), (1.0, 0.85, 0.7)), 0.45)
+    skull = smin(skull, ellipsoid(Xa, F, U, (0.0, 14.7, 0.2), (1.25, 1.0, 0.85)), 0.6)
     skull = skull - 0.12 * tent(Xa - np.interp(F, [7.5, 14.5], [1.55, 0.95]), 0.42) * along(F, 7.5, 14.6, 1.6) * np.clip((U - 0.4) / 0.9, 0, 1)
     # maxillary swelling over the tooth row and a shallow suborbital/antorbital fossa above it
     skull = smin(skull, capsule(Xa, F, U, (2.35, 13.2, -0.9), (4.75, 1.8, -0.6), 0.62), 0.9)
     skull = smax(skull, -(ellipsoid(Xa, F, U, (3.15, 9.6, 1.9), (0.55, 1.9, 0.8)) + 0.22), 0.6)
     # orbital-temporal platform: broad flat shelf behind the brow, edged by the temporal line
-    skull = smin(skull, ellipsoid(Xa, F, U, (4.5, 0.8, 6.0), (1.6, 3.8, 0.75)), 1.0)
+    skull = smin(skull, ellipsoid(Xa, F, U, (4.15, 1.6, 6.05), (1.45, 3.6, 0.75)), 1.0)
     # supratemporal fossa: depression behind the postorbital bar, above the jaw adductor
     skull = smax(skull, -(ellipsoid(Xa, F, U, (3.5, -3.6, 7.1), (1.3, 2.8, 1.1)) + 0.42), 0.8)
     # occipital: paired occipital bosses and a short midline nuchal crest that runs into the nuchal mass
@@ -232,17 +231,17 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     pass   # TS6.3: contact shadow removed (the carved oral line replaces it)
     # nostrils: small openings belonging to the rostral tip
     nc = P["nostril"][0]
-    skull = smin(skull, ellipsoid(Xa, F, U, (nc[0] + 0.05, nc[1] - 0.05, nc[2] + 0.02), (0.5, 0.85, 0.42)), 0.4)   # narial rim
+    skull = smin(skull, ellipsoid(Xa, F, U, (nc[0] + 0.05, nc[1] - 0.05, nc[2] + 0.05), (0.62, 0.95, 0.52)), 0.45)   # narial rim
     nost = rotated_ellipsoid_about_U(Xa, F, U, nc, (0.17, 0.50, 0.21), np.radians(28))
     skull = smax(skull, -nost, 0.10)
     narial = ellipsoid(Xa, F, U, (1.75, 13.4, 0.4), (0.45, 1.0, 0.45))     # shallow lateral narial fossa
     pass
     # recessed auricular opening: shallow recess + small canal, no pinna
     c = P["ear"][0]
-    recess = ellipsoid(Xa, F, U, (c[0] + 0.2, c[1], c[2]), (0.25, 0.75, 0.75))
+    recess = ellipsoid(Xa, F, U, (c[0] + 0.72, c[1], c[2]), (0.40, 1.0, 1.05))
     canal = ellipsoid(Xa, F, U, (c[0] + 0.25, c[1] + 0.1, c[2] + 0.1), (0.7, 0.36, 0.48))
-    pass   # pass 3: auricular recess removed (its rim read as an external ear)
-    pass   # pass 3: no canal (small shallow auricular recess only)
+    skull = smax(skull, -recess, 0.35)
+    skull = smax(skull, -(canal + 0.08), 0.2)
     return skull
 
 def build_mesh(neck_rings, cut_u, step=0.13, body_sdf=None, tilt=0.0, blend=1.5, band=2.6):
