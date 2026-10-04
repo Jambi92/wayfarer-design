@@ -10,7 +10,9 @@ scaly=(FAM!=6)&(FAM!=7)
 # ---- seeds (closure): variable-radius Poisson-disk seeding along the graded size field; replaces the per-size-bin grid,
 #      whose bins produced density steps along size iso-lines once the size field is graded.
 import seedpd
-S=seedpd.poisson_seeds(V,R,scaly,rng,c=0.50); print('seeds',len(S))
+import os
+if os.environ.get('SEEDS'): S=np.load(os.environ['SEEDS']); print('seeds (carried from file)',len(S))   # post-Gate-8 polish: preserve scales
+else: S=seedpd.poisson_seeds(V,R,scaly,rng,c=0.50); print('seeds',len(S))
 SP=V[S]; SR=R[S]; SH=H[S]; SE=EL[S]; ST=T[S]; SF=FAM[S]; SPL=PL[S]; SIM=IMB[S]
 tree=cKDTree(SP); disp=np.zeros(n); edge=np.zeros(n)
 K=12

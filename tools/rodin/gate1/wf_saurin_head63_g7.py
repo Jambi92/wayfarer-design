@@ -116,12 +116,6 @@ P = dict(
 )
 
 OPEN_DEG = 0.0
-import os as _os
-BROW_INT = float(_os.environ.get("BROW_INT", "0"))   # post-Gate-8 polish: supraorbital integration (0 = Gate 7 skull exactly)
-def cone(X, F, U, a, b, ra, rb):
-    a = np.asarray(a, float); b = np.asarray(b, float); ab = b - a; L2 = ab @ ab
-    t = np.clip(((X - a[0]) * ab[0] + (F - a[1]) * ab[1] + (U - a[2]) * ab[2]) / L2, 0, 1)
-    return np.sqrt((X - a[0] - t * ab[0]) ** 2 + (F - a[1] - t * ab[1]) ** 2 + (U - a[2] - t * ab[2]) ** 2) - (ra + t * (rb - ra))
 
 def tent(dist, wdt): return np.clip(1 - np.abs(dist) / wdt, 0, 1) ** 1.6
 def along(F, f0, f1, fade=1.2): return np.clip((F - f0) / fade, 0, 1) * np.clip((f1 - F) / fade, 0, 1)
@@ -162,16 +156,7 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     pass   # TS6.3: labial scale rows removed (surface detail, later gate)
     # rictal fold: soft tissue where the oral opening ends, below the jugal, in front of the hinge
     skull = smin(skull, ellipsoid(Xa, F, U, *P["rictal"]), 0.5)
-    if BROW_INT:
-        # supraorbital ridge integrated: sharp crest kept (tapering cone), broad low root web into the frontal roof, and a
-        # tapering continuation that runs into the temporal line instead of ending as a block (no slab termination)
-        skull = smin(skull, ellipsoid(Xa, F, U, (3.55, 5.7, 5.3), (1.55, 3.3, 0.55)), 2.0)                   # broad biological root
-        skull = smin(skull, cone(Xa, F, U, (3.1, 8.0, 4.95), (4.95, 2.6, 6.15), 0.60, 0.40), 1.5)            # crest
-        skull = smin(skull, cone(Xa, F, U, (4.95, 2.6, 6.15), (4.6, -1.2, 6.45), 0.40, 0.16), 1.2)           # dissolves into temporal line
-        if BROW_INT >= 2:   # lateral root web under the ridge's outer face: fills the concave crease so the ridge grows out of the
-            skull = smin(skull, ellipsoid(Xa, F, U, (4.75, 3.4, 5.55), (0.85, 3.1, 0.65)), 1.4)              # temporal plane
-    else:
-        skull = smin(skull, capsule(Xa, F, U, *P["supraorbital"]), 1.5)
+    skull = smin(skull, capsule(Xa, F, U, *P["supraorbital"]), 1.5)
     # Craniofacial Ridge-and-Plane Architecture (TS6): structural transitions between regions
     # ridges are raised from the existing surface (tent profiles), so they always sit on the skull, never float
     # canthus rostralis: plan-view line from the orbit to the nostril, on the upper half of the rostrum
@@ -193,10 +178,7 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     pass   # pass 3: flat temporal-plane cut removed (it sliced an ear-like disk into the skull side)
     skull = smin(skull, ellipsoid(Xa, F, U, (3.15, 6.25, 4.3), (1.55, 1.72, 1.42)), 1.1)           # orbit / lids (thinner rim, sits under the brow shelf)
     skull = smin(skull, ellipsoid(X, F, U, (0.0, 5.6, 5.55), (2.55, 3.4, 0.95)), 1.3)            # interorbital roof: brow, orbits and rostrum share one roof
-    if BROW_INT:   # postorbital bar grows out of the brow: tapered toward the brow, filleted root (no L-corner)
-        skull = smin(skull, cone(Xa, F, U, (5.0, 4.2, 6.0), (6.2, 3.6, 3.0), 0.55 if BROW_INT >= 2 else 0.60, 0.78), 1.3 if BROW_INT >= 2 else 0.95)
-    else:
-        skull = smin(skull, capsule(Xa, F, U, *P["postorbital"]), 0.5)
+    skull = smin(skull, capsule(Xa, F, U, *P["postorbital"]), 0.5)
     skull = smin(skull, capsule(Xa, F, U, (3.1, 9.0, 1.7), (5.7, 3.0, 1.8), 0.58), 0.55)      # pass 3: jugal flares under the orbit ...
     skull = smin(skull, capsule(Xa, F, U, (5.7, 3.0, 1.8), (4.9, -0.8, 0.6), 0.48), 0.6)       # ... and sweeps into the quadrate/hinge (no free end knob)
     skull = smin(skull, ellipsoid(Xa, F, U, *P["adductor"]), 1.8)

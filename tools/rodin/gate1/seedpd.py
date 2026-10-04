@@ -1,9 +1,9 @@
 # variable-radius Poisson-disk seeding (dart throwing in batches): seed spacing follows the graded size field with no seams
 import numpy as np
 from scipy.spatial import cKDTree
-def poisson_seeds(V,R,mask,rng,c=0.80,ncand=None,batch=25000):
+def poisson_seeds(V,R,mask,rng,c=0.80,ncand=None,batch=25000,init=None):
     idx=np.where(mask)[0]; ncand=ncand or min(len(idx),2_500_000)
-    cand=rng.choice(idx,ncand,replace=False); acc=np.zeros(0,np.int64); Rmax=float(R[idx].max())
+    cand=rng.choice(idx,ncand,replace=False); acc=np.zeros(0,np.int64) if init is None else np.asarray(init,np.int64); Rmax=float(R[idx].max()) if init is None else float(max(R[idx].max(),R[acc].max()))
     for b0 in range(0,ncand,batch):
         cb=cand[b0:b0+batch]; rc=c*R[cb]
         if len(acc):

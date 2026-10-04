@@ -1,6 +1,6 @@
 # Gate 8: per-vertex anatomical fields for pigmentation on any Gate 7 mesh (full body or head crop), world cm.
 # argv: base_mesh(V,F) region(g7regc-type) surf(V,F,disp,edge) out
-import sys, numpy as np
+import sys, os, numpy as np
 sys.path.insert(0,'/tmp/claude-0/rodin/g1'); sys.path.insert(0,'/tmp/claude-0/rodin/g8')
 from scipy.spatial import cKDTree
 from scipy.sparse import coo_matrix, diags
@@ -74,7 +74,7 @@ for lid in (1,2,3,4):
     LG[m]=med[tb]
 # ---- scale cells (same seeds as g7surfc: same rng, same field)
 scaly=(FAM!=6)&(FAM!=7); rng=np.random.default_rng(7)
-Sd=seedpd.poisson_seeds(V,R,scaly,rng,c=0.50)
+Sd=np.load(os.environ['SEEDS']) if os.environ.get('SEEDS') else seedpd.poisson_seeds(V,R,scaly,rng,c=0.50)
 SP=V[Sd]; SR=R[Sd]; SE=EL[Sd]; ST=Tf[Sd]; tree=cKDTree(SP); CELL=np.full(n,-1,np.int64)
 for i0 in range(0,n,400000):
     sl=slice(i0,min(n,i0+400000)); P=V[sl]; _,nb=tree.query(P,k=12)
