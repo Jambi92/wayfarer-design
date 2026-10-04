@@ -1,6 +1,6 @@
 # Saurin Character Design v1.0
 
-**Status:** IN PROGRESS — Part 1 proposed for audit  
+**Status:** FIRST-PASS COMPLETE — Gate 7 surface anatomy CLOSED; later design gates remain active  
 **Phase:** DESIGN ONLY — no UE5 implementation authorized
 
 Saurin are the thirteenth and final playable race first-pass design.
