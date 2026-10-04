@@ -206,8 +206,15 @@ def head_sdf(X, F, U, neck_rings, cut_u):
             for i in range(len(pf) - 1):
                 af, au, bf, bu = pf[i], pu[i], pf[i + 1], pu[i + 1]; vf, vu = bf - af, bu - au; L2 = vf * vf + vu * vu
                 t = np.clip(((F - af) * vf + (U - au) * vu) / L2, 0, 1); dmin = np.minimum(dmin, np.sqrt((F - af - t * vf) ** 2 + (U - au - t * vu) ** 2))
-            hgt = np.interp(U, [1.0, 2.5, 4.5, 6.2], [0.22, 0.42, 0.50, 0.30])
-            skull = skull - hgt * tent(dmin, 0.90) * np.clip((Xa - 4.4) / 0.9, 0, 1)
+            if BROW_INT >= 5:   # final: ridge height fades to zero where it meets the brow (no T-junction / vertical notch), lateral gate is a
+                # smooth wide ramp instead of a near-step at |x| = 4.4 (that step cut the short vertical crease under the brow)
+                _g = lambda k, d: float(_os.environ.get(k, d))
+                hgt = np.interp(U, [1.0, 2.5, 3.6, _g("B5_UF", "4.6"), _g("B5_UT", "5.4")], [0.22, 0.42, 0.44, _g("B5_HF", "0.14"), 0.0])
+                gx = np.clip((Xa - 3.9) / 1.6, 0, 1); gx = gx * gx * (3 - 2 * gx)
+                skull = skull - hgt * tent(dmin, _g("B5_TW", "1.05")) * gx
+            else:
+                hgt = np.interp(U, [1.0, 2.5, 4.5, 6.2], [0.22, 0.42, 0.50, 0.30])
+                skull = skull - hgt * tent(dmin, 0.90) * np.clip((Xa - 4.4) / 0.9, 0, 1)
         elif BROW_INT >= 3:   # final cleanup: postorbital bar = sharp descending ridge that sweeps back into the jugal/quadrate line
             skull = smin(skull, cone(Xa, F, U, (5.0, 4.2, 6.0), (6.05, 3.4, 3.5), 0.46, 0.50), 1.1)               # brow -> mid bar (sharp)
             skull = smin(skull, cone(Xa, F, U, (6.05, 3.4, 3.5), (6.15, 1.9, 2.15), 0.50, 0.36), 1.15)            # lower limb sweeps back into
@@ -229,6 +236,19 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     skull = smax(skull, -(ellipsoid(Xa, F, U, (3.15, 9.6, 1.9), (0.55, 1.9, 0.8)) + 0.22), 0.6)
     # orbital-temporal platform: broad flat shelf behind the brow, edged by the temporal line
     if BROW_INT >= 4: skull = smin(skull, ellipsoid(Xa, F, U, (4.5, 0.8, 6.0), (1.7, 4.0, 0.6)), 1.6)   # convergence: flatter platform
+    if BROW_INT >= 5:   # final brow/orbit: the lateral roof edge (brow shelf -> platform) is bevelled progressively from the orbit backward:
+        # crisp supraorbital plane break kept over the eye, an increasingly obtuse inclined plane behind it, so the rear brow
+        # dissolves into the temporal/postorbital planes instead of reading as one long projecting bar. Cut only (no added volume).
+        _g = lambda k, d: float(_os.environ.get(k, d))
+        w = np.clip((_g("B5_F0", "6.5") - F) / _g("B5_FL", "5.5"), 0, 1); w = w * w * (3 - 2 * w)
+        w = w * np.clip((F - _g("B5_FB", "-9.0")) / _g("B5_FBL", "4.5"), 0, 1)   # fades out again before the temporal line runs on to the occiput
+        xc = np.interp(F, [-4.0, -2.0, 0.0, 2.0, 4.0, 6.0], [5.7, 5.95, 6.3, 6.5, 6.15, 6.0])
+        uc = np.interp(F, [-4.0, -2.0, 0.0, 2.0, 4.0, 6.0], [6.1, 6.2, 6.5, 6.7, 6.9, 6.4])
+        ca, sa = _g("B5_NX", "0.62"), _g("B5_NU", "0.78")
+        gxl = np.clip((Xa - 3.6) / 1.4, 0, 1); gxl = gxl * gxl * (3 - 2 * gxl)   # lateral only: the midline roof / apex is never touched
+        w = w * gxl
+        cut = ca * (Xa - xc) + sa * (U - uc) + _g("B5_D", "0.65") * w - 3.0 * (1 - w)
+        skull = smax(skull, cut, _g("B5_K", "1.0"))
     else: skull = smin(skull, ellipsoid(Xa, F, U, (4.5, 0.8, 6.0), (1.6, 3.8, 0.75)), 1.0)
     # supratemporal fossa: depression behind the postorbital bar, above the jaw adductor
     skull = smax(skull, -(ellipsoid(Xa, F, U, (3.5, -3.6, 7.1), (1.3, 2.8, 1.1)) + 0.42), 0.8)
@@ -310,4 +330,5 @@ def build_mesh(neck_rings, cut_u, step=0.13, body_sdf=None, tilt=0.0, blend=1.5,
 
 def eye_centers():
     return [(s * EYE["x"], EYE["f"], EYE["u"]) for s in (1, -1)], EYE["r"], EYE["yaw"]
+
 
