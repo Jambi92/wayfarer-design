@@ -194,7 +194,12 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     skull = smin(skull, ellipsoid(Xa, F, U, (3.15, 6.25, 4.3), (1.55, 1.72, 1.42)), 1.1)           # orbit / lids (thinner rim, sits under the brow shelf)
     skull = smin(skull, ellipsoid(X, F, U, (0.0, 5.6, 5.55), (2.55, 3.4, 0.95)), 1.3)            # interorbital roof: brow, orbits and rostrum share one roof
     if BROW_INT:   # postorbital bar grows out of the brow: tapered toward the brow, filleted root (no L-corner)
-        skull = smin(skull, cone(Xa, F, U, (5.0, 4.2, 6.0), (6.2, 3.6, 3.0), 0.55 if BROW_INT >= 2 else 0.60, 0.78), 1.3 if BROW_INT >= 2 else 0.95)
+        if BROW_INT >= 3:   # final cleanup: postorbital bar = sharp descending ridge that sweeps back into the jugal/quadrate line
+            skull = smin(skull, cone(Xa, F, U, (5.0, 4.2, 6.0), (6.05, 3.4, 3.5), 0.46, 0.50), 1.1)               # brow -> mid bar (sharp)
+            skull = smin(skull, cone(Xa, F, U, (6.05, 3.4, 3.5), (6.15, 1.9, 2.15), 0.50, 0.36), 1.15)            # lower limb sweeps back into
+            skull = smin(skull, cone(Xa, F, U, (6.15, 1.9, 2.15), (5.6, -0.2, 1.3), 0.36, 0.22), 1.0)             # the jugal / quadrate line
+        else:
+            skull = smin(skull, cone(Xa, F, U, (5.0, 4.2, 6.0), (6.2, 3.6, 3.0), 0.55 if BROW_INT >= 2 else 0.60, 0.78), 1.3 if BROW_INT >= 2 else 0.95)
     else:
         skull = smin(skull, capsule(Xa, F, U, *P["postorbital"]), 0.5)
     skull = smin(skull, capsule(Xa, F, U, (3.1, 9.0, 1.7), (5.7, 3.0, 1.8), 0.58), 0.55)      # pass 3: jugal flares under the orbit ...
