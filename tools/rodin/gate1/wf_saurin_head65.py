@@ -27,6 +27,9 @@ def build(name):
         return _sym(lambda X,F,U: smin(smin(h1(X,F,U),h2(X,F,U),0.2),h3(X,F,U),0.2))
     if name=="swept_paired":         # swept-back paired horns from the squamosal/temporal corners
         b=S(4.1,-4.6,0.45)
+        if H.BROW_INT >= 4:   # convergence: slimmer base that starts further forward and lies along the cranial surface (grown, not socketed)
+            r=S(3.95,-2.9,0.62); tip=(b[0]+1.0,b[1]-12.5,b[2]+0.2)
+            return _sym(lambda X,F,U: horn(X,F,U,r,(r[0]+1.05,r[1]-6.2,r[2]+1.15),tip,0.98,0.14))
         return _sym(lambda X,F,U: horn(X,F,U,b,(b[0]+1.2,b[1]-6.5,b[2]+1.4),(b[0]+1.0,b[1]-12.5,b[2]+0.2),1.30,0.14))
     if name=="crest":                # dorsal-midline keratin crest + very low paired side ridges
         roof=lambda F: surf_u(np.zeros_like(F),F)

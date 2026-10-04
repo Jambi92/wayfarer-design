@@ -166,10 +166,15 @@ def head_sdf(X, F, U, neck_rings, cut_u):
         # supraorbital ridge integrated: sharp crest kept (tapering cone), broad low root web into the frontal roof, and a
         # tapering continuation that runs into the temporal line instead of ending as a block (no slab termination)
         skull = smin(skull, ellipsoid(Xa, F, U, (3.55, 5.7, 5.3), (1.55, 3.3, 0.55)), 2.0)                   # broad biological root
-        skull = smin(skull, cone(Xa, F, U, (3.1, 8.0, 4.95), (4.95, 2.6, 6.15), 0.60, 0.40), 1.5)            # crest
-        skull = smin(skull, cone(Xa, F, U, (4.95, 2.6, 6.15), (4.6, -1.2, 6.45), 0.40, 0.16), 1.2)           # dissolves into temporal line
-        if BROW_INT >= 2:   # lateral root web under the ridge's outer face: fills the concave crease so the ridge grows out of the
-            skull = smin(skull, ellipsoid(Xa, F, U, (4.75, 3.4, 5.55), (0.85, 3.1, 0.65)), 1.4)              # temporal plane
+        if BROW_INT >= 4:   # convergence: crest tapers further toward its rear so no knob forms where it meets the postorbital
+            skull = smin(skull, cone(Xa, F, U, (3.1, 8.0, 4.95), (4.95, 2.6, 6.15), 0.58, 0.30), 1.6)
+            skull = smin(skull, cone(Xa, F, U, (4.95, 2.6, 6.15), (4.6, -1.2, 6.45), 0.30, 0.12), 1.4)
+            skull = smin(skull, ellipsoid(Xa, F, U, (4.7, 3.2, 5.6), (1.1, 3.6, 0.42)), 2.0)                 # flat lateral shelf (no boss)
+        else:
+            skull = smin(skull, cone(Xa, F, U, (3.1, 8.0, 4.95), (4.95, 2.6, 6.15), 0.60, 0.40), 1.5)            # crest
+            skull = smin(skull, cone(Xa, F, U, (4.95, 2.6, 6.15), (4.6, -1.2, 6.45), 0.40, 0.16), 1.2)           # dissolves into temporal line
+            if BROW_INT >= 2:   # lateral root web under the ridge's outer face: fills the concave crease so the ridge grows out of the
+                skull = smin(skull, ellipsoid(Xa, F, U, (4.75, 3.4, 5.55), (0.85, 3.1, 0.65)), 1.4)              # temporal plane
     else:
         skull = smin(skull, capsule(Xa, F, U, *P["supraorbital"]), 1.5)
     # Craniofacial Ridge-and-Plane Architecture (TS6): structural transitions between regions
@@ -194,7 +199,16 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     skull = smin(skull, ellipsoid(Xa, F, U, (3.15, 6.25, 4.3), (1.55, 1.72, 1.42)), 1.1)           # orbit / lids (thinner rim, sits under the brow shelf)
     skull = smin(skull, ellipsoid(X, F, U, (0.0, 5.6, 5.55), (2.55, 3.4, 0.95)), 1.3)            # interorbital roof: brow, orbits and rostrum share one roof
     if BROW_INT:   # postorbital bar grows out of the brow: tapered toward the brow, filleted root (no L-corner)
-        if BROW_INT >= 3:   # final cleanup: postorbital bar = sharp descending ridge that sweeps back into the jugal/quadrate line
+        if BROW_INT >= 4:   # convergence: postorbital = a raised plane-change ridge (tent profile, broad base, crisp edge) drawn on the
+            # lateral skull surface from the brow down behind the orbit and back along the jugal to the quadrate -- no round column/boss
+            pf = np.array([3.3, 2.9, 2.4, 1.6, 0.4, -0.7]); pu = np.array([6.0, 4.6, 3.3, 2.4, 1.8, 1.2])
+            dmin = np.full(np.shape(F), 1e9)
+            for i in range(len(pf) - 1):
+                af, au, bf, bu = pf[i], pu[i], pf[i + 1], pu[i + 1]; vf, vu = bf - af, bu - au; L2 = vf * vf + vu * vu
+                t = np.clip(((F - af) * vf + (U - au) * vu) / L2, 0, 1); dmin = np.minimum(dmin, np.sqrt((F - af - t * vf) ** 2 + (U - au - t * vu) ** 2))
+            hgt = np.interp(U, [1.0, 2.5, 4.5, 6.2], [0.22, 0.42, 0.50, 0.30])
+            skull = skull - hgt * tent(dmin, 0.90) * np.clip((Xa - 4.4) / 0.9, 0, 1)
+        elif BROW_INT >= 3:   # final cleanup: postorbital bar = sharp descending ridge that sweeps back into the jugal/quadrate line
             skull = smin(skull, cone(Xa, F, U, (5.0, 4.2, 6.0), (6.05, 3.4, 3.5), 0.46, 0.50), 1.1)               # brow -> mid bar (sharp)
             skull = smin(skull, cone(Xa, F, U, (6.05, 3.4, 3.5), (6.15, 1.9, 2.15), 0.50, 0.36), 1.15)            # lower limb sweeps back into
             skull = smin(skull, cone(Xa, F, U, (6.15, 1.9, 2.15), (5.6, -0.2, 1.3), 0.36, 0.22), 1.0)             # the jugal / quadrate line
@@ -214,7 +228,8 @@ def head_sdf(X, F, U, neck_rings, cut_u):
     skull = smin(skull, capsule(Xa, F, U, (2.35, 13.2, -0.9), (4.75, 1.8, -0.6), 0.62), 0.9)
     skull = smax(skull, -(ellipsoid(Xa, F, U, (3.15, 9.6, 1.9), (0.55, 1.9, 0.8)) + 0.22), 0.6)
     # orbital-temporal platform: broad flat shelf behind the brow, edged by the temporal line
-    skull = smin(skull, ellipsoid(Xa, F, U, (4.5, 0.8, 6.0), (1.6, 3.8, 0.75)), 1.0)
+    if BROW_INT >= 4: skull = smin(skull, ellipsoid(Xa, F, U, (4.5, 0.8, 6.0), (1.7, 4.0, 0.6)), 1.6)   # convergence: flatter platform
+    else: skull = smin(skull, ellipsoid(Xa, F, U, (4.5, 0.8, 6.0), (1.6, 3.8, 0.75)), 1.0)
     # supratemporal fossa: depression behind the postorbital bar, above the jaw adductor
     skull = smax(skull, -(ellipsoid(Xa, F, U, (3.5, -3.6, 7.1), (1.3, 2.8, 1.1)) + 0.42), 0.8)
     # occipital: paired occipital bosses and a short midline nuchal crest that runs into the nuchal mass
