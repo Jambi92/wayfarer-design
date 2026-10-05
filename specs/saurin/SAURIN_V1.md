@@ -1,6 +1,6 @@
 # Saurin Character Design v1.0
 
-**Status:** FIRST-PASS COMPLETE (October 4, 2026) — anatomical/surface convergence CLOSED (aff1b52); creator-biology validation CLOSED (Part 7)  
+**Status:** FIRST-PASS COMPLETE (October 4, 2026) — anatomical/surface convergence CLOSED (aff1b52); creator-biology validation CLOSED (Part 7); female / sex-related anatomy CLOSED (October 5, 2026, §263)  
 **Phase:** DESIGN ONLY — no UE5 implementation authorized
 
 Saurin are the thirteenth and final playable race first-pass design.
@@ -98,6 +98,8 @@ First-pass direction:
 - lumbar/sacral organization must support the continuation into the tail;
 - the abdomen remains flexible and adult, not barrel-rigid.
 
+**Sex-correlated tendency (§263):** the lower axial trunk is longer on average in females (female distribution centre **+7 %**; male centre 0 %), a soft distribution inside the unchanged ±10 % species bound. Overlap is mandatory.
+
 Exact vertebral count and rib arrangement remain OPEN.
 
 ## 7. Thorax
@@ -144,6 +146,8 @@ First-pass direction:
 - no Pipkin low-set compact-trunk specialization.
 
 The posterior pelvis should read as designed around a real continuation of the vertebral axis.
+
+**Sex-correlated tendency (§263):** the skeletal pelvic band is wider on average in females (female centre **+5.5 %**; male centre 0 %) inside the unchanged ±7 % species bound. This is internal-capacity widening only: no human-style hip flare, paired buttocks or gluteal cleft, and the sacral platform, posterior pelvic mass and tail root are unchanged.
 
 ### Pelvic-femoral relationship
 
@@ -378,6 +382,8 @@ No universal “dry lizard” silhouette is allowed.
 
 Exact regional fat-distribution tendencies remain OPEN.
 
+The sex-correlated coelomic body-wall fullness and ventral fullness (§263) are biological tissue tendencies, not adipose; they are not part of body fat and are not controlled by it.
+
 ## 24. Sex-related anatomy
 
 Selecting sex-related biological anatomy does not determine:
@@ -394,11 +400,11 @@ Selecting sex-related biological anatomy does not determine:
 - class;
 - personality.
 
-Population-level correlations may later exist as soft distributions, not hard creator dependencies.
+Population-level correlations exist only as soft distributions, not hard creator dependencies.
 
-As a non-human population, Saurin are **not assumed to share human sex-related anatomy**. Their actual sex-related anatomical configurations and dimorphism require explicit later design rather than human defaults.
+As a non-human population, Saurin are **not assumed to share human sex-related anatomy**.
 
-Exact dimorphism remains OPEN.
+**Resolved October 5, 2026 (§263):** Saurin sexual dimorphism is low-to-moderate and regionally limited to the trunk — a longer lower axial trunk, a wider skeletal pelvic band, a fuller coelomic body wall and subtle ventral/ventrolateral fullness, each a sex-shifted soft distribution with mandatory male/female overlap and identical hard bounds. The female tendency is anti-hourglass. Reproductive biology remains OPEN (§263).
 
 ## 25. Posture
 
@@ -1045,6 +1051,8 @@ Any Saurin population-level sex-related craniofacial correlations must be:
 - compatible with overlapping adult phenotypes.
 
 Sex-related anatomy cannot hard-lock rostral length, jaw depth, eye shape, head size or other identity controls unless a later biological decision explicitly requires it.
+
+**Resolved (§263):** no craniofacial sex shift is canon. The naked skull, face and cranial-display family are sex-neutral and fully available to both sexes.
 
 ## 63. Age
 
@@ -2208,13 +2216,15 @@ None substitutes for another.
 Saurin creator controls follow the universal four-layer model:
 
 ### A. Biological Anatomy
-Approved skeletal/soft-tissue configuration including Saurin-specific sex-related anatomy when later defined.
+Approved skeletal/soft-tissue configuration, including Saurin sex-related anatomy (§263: sex-shifted lower-trunk, pelvic-band, coelomic body-wall and ventral-fullness tendencies).
 
 ### B. Skeletal Frame
 Race-valid starting frame/proportion presets.
 
 ### C. Physical Composition
 Muscularity, body-fat amount/distribution and regional physique.
+
+Sex-correlated body-wall and ventral fullness (§263) belong to Biological Anatomy, not Physical Composition, and are never folded into the generic fat control.
 
 ### D. Personal Presentation
 Paint, jewelry, cosmetics, clothing, accessories, decorative claw treatment and other non-inherited styling.
@@ -2487,16 +2497,19 @@ Saurin adiposity must be represented as real volume distributed across approved 
 
 Exact race-specific adipose distribution tendencies remain OPEN.
 
+Coelomic body-wall and ventral fullness (§263) are separate sex-correlated tissue tendencies; they persist at low fat and stack with high fat under the combined-proportion guards.
+
 ## 154. Sex-related creator architecture
 
-Saurin sex-related anatomy remains non-human and not yet fully defined.
+Saurin sex-related anatomy is non-human and is defined in §263.
 
 Therefore:
 - creator architecture must reserve biological controls without assuming human dimorphism;
 - sex selection cannot silently force frame, muscularity, rostrum, ridge, pigmentation or personality;
-- overlapping adult phenotypes remain valid.
+- overlapping adult phenotypes remain valid and mandatory;
+- sex sets distribution centres only; no control is named or implemented as “female body”.
 
-Exact anatomy is OPEN until deliberately designed.
+Reproductive anatomy and physiology remain OPEN (§263).
 
 ## 155. Presentation-category substitution
 
@@ -2696,7 +2709,7 @@ The creator must not rely on fixed facial expression to make the race recognizab
 In addition to earlier OPEN items:
 - exact lifecycle and age curves;
 - playable non-adult characters;
-- exact Saurin sex-related anatomy;
+- Saurin reproductive anatomy and physiology (body/external sex-related anatomy resolved by §263);
 - population/ancestry definitions;
 - population correlation strengths;
 - exact adipose distribution tendencies;
@@ -3706,9 +3719,9 @@ Individual variation cannot erase the approved body/face/surface relationships.
 
 ## 235. Sex-related anatomy summary
 
-Saurin sex-related anatomy is non-human and not yet fully designed.
+Saurin sex-related anatomy is non-human and is defined in §263: low-to-moderate, trunk-limited, anti-hourglass, with sex-shifted soft distributions and mandatory overlap. Reproductive biology remains OPEN.
 
-The system must reserve appropriate biological controls without assuming human sexual dimorphism.
+The system holds these biological tendencies without assuming human sexual dimorphism.
 
 Sex-related anatomy cannot silently determine:
 - height;
@@ -3978,7 +3991,7 @@ The following remain OPEN:
 - exact lifecycle/lifespan;
 - maturation/senescence timing;
 - playable non-adults;
-- detailed sex-related anatomy;
+- reproductive life history and physiology: internal gestation, egg vs live young, provisioning mechanism, reproductive organs, and whether ventral fullness relates to a reproductive fat body (body/external sex-related anatomy resolved by §263);
 - exact population structure;
 - exact ancestry correlations;
 - exact adipose-distribution tendencies;
@@ -4013,6 +4026,7 @@ The following remain OPEN:
 - Part 2 §45 nictitating membrane → resolved by Part 3 §98;
 - Part 2 §76 iris/pupil anatomy, nictitating membrane, keratinous cranial display structures and scale morphology → resolved or narrowed by Part 3 §§80–85, 95, 98 and 100–102;
 - Part 1 OPEN claw/nail anatomy, hair-equivalent structures and coloration → resolved or narrowed by Part 3 §§87–93, 104–107 and 116.
+- Part 1 §33, Part 2 and Part 4 §166 OPEN sex-related dimorphism / sex-related anatomy → resolved by Part 7 §263 (reproductive life history and physiology remain OPEN).
 
 ## 250. OPEN decision register — gameplay and movement
 
@@ -4068,7 +4082,8 @@ The following remain OPEN:
 - save schema/versioning;
 - networking;
 - performance budgets;
-- implementation order.
+- implementation order;
+- production-safe fat displacement: the diagnostic raw-vertex-normal fat tool produces surface speckling and flipped faces at high fat; production fat morphs require a smoothed-normal or otherwise production-safe method (a production-morph item, not an anatomy issue; §263).
 
 No choice in this list may retroactively redefine approved anatomy.
 
@@ -4095,7 +4110,7 @@ Part 6 is **ACCEPTED / COMPLETE**.
 
 # Part 7 — Creator-biology validation and closure
 
-**Accepted October 4, 2026.** Audit history: `reviews/claude-saurin-creator-biology-variation.md`, `reviews/saurin-creator-parameter-register.md` (diagnostic register; candidate numbers there are **not** canon unless restated here) and `reviews/claude-saurin-creator-biology-closure.md`. Author orders: `reviews/chatgpt-saurin-creator-biology-variation-order.md`, `reviews/chatgpt-saurin-creator-biology-closure-order.md`.
+**Accepted October 4, 2026.** Audit history: `reviews/claude-saurin-creator-biology-variation.md`, `reviews/saurin-creator-parameter-register.md` (diagnostic register; candidate numbers there are **not** canon unless restated here) and `reviews/claude-saurin-creator-biology-closure.md`. Author orders: `reviews/chatgpt-saurin-creator-biology-variation-order.md`, `reviews/chatgpt-saurin-creator-biology-closure-order.md`. Sex-related anatomy (§263, accepted October 5, 2026): `reviews/claude-saurin-female-sex-related-anatomy.md`, `reviews/claude-saurin-female-pass2-readability.md`, `reviews/claude-saurin-female-pass3-closure.md`; orders `reviews/chatgpt-saurin-female-sex-related-anatomy-order.md`, `reviews/chatgpt-saurin-female-pass2-readability-order.md`, `reviews/chatgpt-saurin-female-pass3-closure-order.md`, `reviews/chatgpt-saurin-female-closure-reconciliation-order.md`.
 
 All validation was derived from the frozen closure reference (aff1b52) without modifying it.
 
@@ -4137,11 +4152,11 @@ Under a uniform-density static model the frozen reference's centre of mass lies 
 
 **First-pass creator hard bounds (validated at the extremes, constant standing height):** head-to-body proportion ±8 % (head length 0.156–0.184 of standing height; the +8 % head-scale decision is the centre); neck length ±15 %; neck depth ±10 %; thoracic depth ±8 %; thoracic width ±7 %; axial trunk length ±10 %; shoulder breadth ±8 %; pelvic width ±7 %; arm length ±6 %; leg length ±6 %; hand size ±8 %; foot size ±8 %. Stature 168–208 cm remains the racial hard bound (§4) and is **independent**.
 
-**Coupled:** thoracic depth/width ratio stays 0.80–1.00 (deep narrow-to-moderate shell); the thoracic depth floor scales with breadth.
+**Coupled:** thoracic depth/width ratio stays 0.80–1.00 (deep narrow-to-moderate shell); the thoracic depth floor scales with breadth. Ventral fullness (§263) counts against this shared guard.
 
 **Frame (§21)** — Narrow / Balanced / Broad are editable starting distributions, not castes. Frame changes shoulder breadth, thoracic width (depth ±2 % only), pelvic width, limb and joint girth, hand/foot breadth and the frame component of the tail base. Frame does **not** change stature, long-bone or axial lengths, the skull, or pelvic depth / sacral-caudal organization.
 
-**Composition (§22, §152–153)** stays independent of frame. Muscle follows Saurin anatomy (limbs, girdle, epaxial neck and dorsal trunk, thigh, posterior shank, proximal-mid tail; joints, hands and feet excluded). Body fat is genuine soft-tissue volume (ventral-abdominal strongest, flank/hip, graded proximal caudal, minor gular, light general). Prohibited: human pectoral blocks, rectus/six-pack segmentation, human gluteal/buttock mass, generic bodybuilder-width transformation, uniform inflation. Exact population adipose tendencies remain OPEN.
+**Composition (§22, §152–153)** stays independent of frame. Muscle follows Saurin anatomy (limbs, girdle, epaxial neck and dorsal trunk, thigh, posterior shank, proximal-mid tail; joints, hands and feet excluded). Body fat is genuine soft-tissue volume (ventral-abdominal strongest, flank/hip, graded proximal caudal, minor gular, light general). Prohibited: human pectoral blocks, rectus/six-pack segmentation, human gluteal/buttock mass, generic bodybuilder-width transformation, uniform inflation. Exact population adipose tendencies remain OPEN. Sex-correlated coelomic body-wall and ventral fullness (§263) are separate biological tissue tendencies, not part of the fat control.
 
 ## 259. Cranial identity
 
@@ -4182,11 +4197,53 @@ Regional Scale Architecture is retained. There is **no global scale-size control
 
 ## 263. Sex-related anatomy
 
-Canon audit (§24, §62, §154, §235): no established Saurin sex-related anatomical requirement exists. Therefore: no assumed human dimorphic ranges; no automatic differences in height, frame, muscle, fat, skull, display anatomy, coloration or tail; sex-related anatomy remains **OPEN** for later dedicated design. This does not block first-pass completion.
+**CLOSED — accepted October 5, 2026** (supersedes the October 4 OPEN audit). Female reference package: A-structure + E coelomic body wall + B subtle ventral fullness. Paired breasts (Pass-2 comparison D) were **rejected**.
+
+### Distribution model
+- Sex influences **soft population distributions**, not body presets or separate anatomical envelopes.
+- Male and female hard bounds are identical; sex never extends a species bound.
+- **Overlap is mandatory.** A female may occur at the male mean and is then geometrically identical to the male reference; a male may occur inside the female-shifted range, including at the female sampling centre.
+- No control is named or implemented as “female body”.
+- Stature, skeletal frame, muscle, generic fat, tail, skull/face and the cranial-display family receive **no sex shift, no sex-exclusive control and no sex-specific hard bound**.
+- The female tendency is **anti-hourglass**: a fuller, continuous coelomic body wall and ventral organization, not a narrower waist.
+
+### Sex-correlated tendencies
+
+| Tendency | Male centre | Female centre | Reference female individual | Hard bound / ceiling | Classification |
+|---|---|---|---|---|---|
+| Lower axial trunk length | 0 % | **+7 %** | +10 % | existing **±10 %** species bound | Biological Anatomy; sex-shifted soft distribution |
+| Pelvic band (skeletal) | 0 % | **+5.5 %** | +5.5 % | existing **±7 %** species bound | Biological Anatomy; sex-shifted soft distribution |
+| Coelomic body-wall fullness (E) | 0 cm | **2.0 cm** | 2.0 cm | no separate ceiling | Biological tissue tendency; not Presentation, not generic fat |
+| Ventral / ventrolateral fullness (B) | 0 cm | **1.6 cm** | 1.6 cm | **3.0 cm** ceiling, subject to the shared thoracic depth/width ≤ 1.00 guard | Biological tissue tendency; not Presentation, not generic fat |
+
+The +10 % lower-trunk reference female is a valid individual above the female sampling centre, **not** the female mean. C-level ventral fullness (up to 3.0 cm) is valid individual variation where the combined-proportion guard permits it.
+
+**Form.** E is ventrolateral-to-lateral fullness of the lower rib cage and upper abdomen that fills the sub-costal waist. B is one continuous field across the midline over the lower thorax and upper abdomen, fading into the flanks. Both follow the thoracic shell; neither forms paired or discrete masses. Both persist at low body fat, stack with high fat under the guards below, and are never folded into the fat control.
+
+**Reference accounting** (equal stature 187.9 cm, Balanced, reference composition; male → female centre / reference female): lower trunk 32.0 → 33.6 / 34.3 cm; external pelvic width 41.7 → 43.1 / 42.8 cm; frontal waist/shoulder 0.468 → 0.539 / 0.539; waist/hip 0.613 → 0.692 / 0.697; thoracic depth/width 0.880 → 0.922 / 0.922; ventral projection +1.3 cm. Head length/H (0.170) and tail length (64.7 % H) unchanged; tail RSI 1.01–1.02; balance −0.4° relative to the reference. Sex is not reliably readable at gameplay distance; anatomy is not exaggerated to force it.
+
+### Biological interpretation (canon only what the anatomy requires)
+- A and E: sex-correlated differences in coelomic/body-cavity capacity and body-wall organization.
+- B: a sex-correlated ventral soft-tissue tendency.
+
+**Excluded from Saurin baseline anatomy:** mammary glands; lactation; nipples; human breasts; human external genital anatomy; human-style hip flare; paired buttocks; gluteal cleft; hourglass construction. No external primary-sex anatomy is modelled; the ventral pelvic field is identical in both sexes.
+
+**OPEN:** internal gestation; egg vs live young; provisioning mechanism; reproductive organs and physiology; whether B later proves related to a reproductive fat body (a plausible future explanation, not canon).
+
+### Coupled rules and clamps
+- Ventral fullness shares the thoracic depth/width **≤ 1.00** guard (§258) with thoracic depth, frame and fat.
+- Narrow + B 3.0 cm → **CONSTRAIN** B to ~2.1 cm (demonstrated).
+- Narrow + high fat + female-centre B 1.6 cm → **CONSTRAIN** B to ~1.5 cm (demonstrated).
+- Requests beyond ±10 % trunk or ±7 % pelvis → **CONSTRAIN** to the species bound; sex never extends either bound.
+- A relationship-aware clamp is valid creator behaviour, not evidence that the female distribution should be weakened.
+- Unchanged: tail length → base → RSI / taper / A50 coupling (§256), the balance guard, head/tail stature compensation, and frame/composition independence. Validated on the reference female: Narrow/Balanced/Broad, low/high muscle, low/high fat, 168/208 cm, tails 55 % / 78 % / Broad 80 %.
+
+### Frozen anatomy
+Unchanged by sex: Gate 6 skull, rostrum, orbit, jaw, neck and naked-head identity; limb ratios; hands, feet and claws; tail envelope, path and coupling; sacral platform; posterior pelvic mass; tail root; Gate 7 scale-field topology; the accepted cranial-display family. E and B deform the existing scale fields smoothly (edge stretch ≤ 1.20 at the 99th percentile, no flipped faces); field layout and size classes are unchanged.
 
 ## 264. Randomization, presets and NPCs
 
-Biological Randomization samples **driver** variables (stature, frame, composition, head proportions, tail length, display family) from soft distributions, then samples **dependent** variables inside their coupled bands (for example tail base around length^1.18, rostral minimum from cranial length), and rejects FAIL shapes before presentation. It never rolls every slider independently and repairs afterwards. Presets, saved appearances and NPCs use the same validity system as Advanced Mode (§157). Soft distributions remain provisional.
+Biological Randomization samples **driver** variables (stature, frame, composition, head proportions, tail length, display family) from soft distributions, then samples **dependent** variables inside their coupled bands (for example tail base around length^1.18, rostral minimum from cranial length), and rejects FAIL shapes before presentation. It never rolls every slider independently and repairs afterwards. Presets, saved appearances and NPCs use the same validity system as Advanced Mode (§157). Sex shifts only the soft-distribution centres of lower-trunk length, pelvic band, coelomic body-wall fullness and ventral fullness (§263); every other driver is sampled identically for both sexes and hard bounds are identical. Soft distributions remain provisional.
 
 ## 265. OPEN items carried forward from creator-biology closure
 
@@ -4200,12 +4257,14 @@ Biological Randomization samples **driver** variables (stature, frame, compositi
 - Orbital placement/spacing tolerance.
 - Hand and foot claw / digit numeric ranges (grasp, footwear, gloves).
 - Numeric per-field scale ranges.
-- Sex-related anatomy.
+- Reproductive life history and physiology (§263); statistical spreads of the sex-shifted distributions around their centres.
 - World-space validation of the longest tails (up to ~170 cm tail reach behind the heel at the stature/tail extremes).
 - Universal facial-control architecture and statistical calibration of soft distributions.
 
 ## 266. Creator-biology closure
 
 Creator-biology validation is **CLOSED** with no blocking contradiction.
+
+Female / sex-related anatomy is **CLOSED** (October 5, 2026; §263).
 
 **SAURIN — FIRST-PASS COMPLETE.**

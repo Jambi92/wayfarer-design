@@ -13,7 +13,7 @@
 10. Gorrund
 11. Pipkin
 12. Cogling
-13. Saurin — **FIRST-PASS COMPLETE** (October 4, 2026: anatomical/surface convergence CLOSED aff1b52; creator-biology validation CLOSED, `specs/saurin/SAURIN_V1.md` Part 7)
+13. Saurin — **FIRST-PASS COMPLETE** (October 4, 2026: anatomical/surface convergence CLOSED aff1b52; creator-biology validation CLOSED, `specs/saurin/SAURIN_V1.md` Part 7; female / sex-related anatomy CLOSED October 5, 2026, §263 — reproductive biology and other listed OPEN items carried forward to later phases)
 
 ## Completed reviews
 - **Short-Race Comparative Anatomy Review — ACCEPTED / COMPLETE**
