@@ -161,6 +161,8 @@ The editor uses the same seven regions as Marchfolk: head and skull, brow and ey
 
 **Interpretation (Durrim consistency-resolution patch):** "the same seven regions as Marchfolk" means Skarn must support at least the facial anatomical coverage represented by the Marchfolk first-pass regions, subject to later reorganization in the Universal Facial Customization Architecture Review. The final creator needn't keep seven regions, their names, nesting, UI layout or control grouping. Skarn biological requirements stay approved, and only the final control organization is deferred (APPROVED FIRST-PASS FUNCTIONAL REQUIREMENTS / PROVISIONAL CONTROL ORGANIZATION).
 
+**UFCA status (UFCA Phase 2, October 5, 2026):** the universal facial creator organization is now canonical in `decisions/UFCA_V1.md`. The Skarn facial control organization in this spec stays as approved requirements and is routed to its UFCA slots (`reviews/claude-ufca-08-phase1-architecture-audit.md` Appendix A); Skarn anatomy, tendencies, validators, tests and OPEN items are unchanged. Mouth and lips are bound through normal human-family coverage (UFCA AD-U12; a coverage clarification, not new Skarn anatomy). Ears use the human-auricle family (Pass 2 AC-4). Under UFCA AC-U1, "eye size" in this spec means bony orbit size (direct control) plus visible eye aperture (direct control); eyeball size is derived from the orbit and is never an independent slider.
+
 ## 3–6. Region controls
 
 | Region | Controls to explore | Skarn tendency |

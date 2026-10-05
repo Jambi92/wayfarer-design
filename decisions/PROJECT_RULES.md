@@ -29,19 +29,27 @@ Canonical shared rules for Wayfarer first-pass character design.
 - Current prototype race scales, uniform whole-body scaling, shared-human-animation assumptions, class restrictions, and racial stats remain non-authoritative unless explicitly approved.
 
 ## Facial architecture status
-Race-specific facial control organizations are **APPROVED FIRST-PASS FUNCTIONAL REQUIREMENTS / PROVISIONAL CONTROL ORGANIZATION**.
-Do not delete them. A universal facial-customization architecture review occurs after all 13 playable races complete first-pass design.
+The **Universal Facial Customization Architecture (UFCA)** is canonical in `decisions/UFCA_V1.md` (UFCA Phase 2, October 5, 2026). It governs facial creator organization; race specs govern each population's anatomy.
+Race-specific facial control organizations (formerly **APPROVED FIRST-PASS FUNCTIONAL REQUIREMENTS / PROVISIONAL CONTROL ORGANIZATION**) are kept, not deleted: their requirements are preserved and routed to UFCA slots.
+Universal UFCA rules (details in `decisions/UFCA_V1.md`):
+- Navigation slots are not anatomy; each population binds a slot as Bound, Bound-locked or Absent. Absent anatomy is hidden, never a dead control. A shared slot never by itself authorizes a control.
+- No master or whole-face sliders (face shape/width/length/depth, elfness, humanity, masculinity, femininity, beauty, ancestry percentage) and no broad relationship tools in v1.
+- Diagnostic measurements and indices never become sliders because they are measurable; latent generation variables are never player-facing.
+- Combined validity outcomes are PASS / CONSTRAIN / FAIL. CONSTRAIN is reported and biologically deterministic; locks are absolute; no silent reset.
+- Eye "size" means bony orbit size + visible aperture; eyeball size is derived from the orbit.
+- Randomization strengths Subtle / Diverse / Extreme are all biologically valid; Extreme samples valid tails only. Internal frequency vocabulary Very Common / Common / Uncommon / Rare describes weighting, never validity.
+- Natural asymmetry is distinct from Acquired history; Naturalize Face remains provisional.
 
 ## Reviews
 - Short-Race Comparative Anatomy Review (Durrim, Pipkin, Cogling) — ACCEPTED / COMPLETE (`reviews/short-race-comparative-anatomy-v1.md`).
 - Large-Race Comparative Anatomy Review (Skarn, Grask, Gorrund) — ACCEPTED / COMPLETE (`reviews/claude-pass2-r2-large-race-comparative-review.md`; author decisions AD-1–AD-5, October 5, 2026, reconciled into the Skarn, Grask and Gorrund specs).
 - Pass 2 Roster-Wide Comparative & System Review — **CLOSED / FINAL-AUTHOR ACCEPTED / FROZEN** (October 5, 2026; `reviews/claude-pass2-closure-canonicalization.md`, `reviews/chatgpt-pass2-final-author-acceptance-freeze-order.md`).
-- Universal Facial Customization Architecture Review — **next authorized design phase** (Pass 2 closed); not yet begun; begins under a separate author order. Uses `reviews/claude-pass2-r3-craniofacial-framework.md` as its cross-race comparison/measurement framework (not creator controls).
+- Universal Facial Customization Architecture Review — Phase 1 **ACCEPTED** (`reviews/claude-ufca-01…08`); Phase 2 canonicalization completed in `decisions/UFCA_V1.md` (`reviews/claude-ufca-phase2-canonicalization-report.md`); closure awaits author review. Uses `reviews/claude-pass2-r3-craniofacial-framework.md` as its cross-race comparison/measurement framework (not creator controls).
 - Implementation-level prototype conflict audits when project files are accessible.
 
 ## Authority hierarchy (adopted October 5, 2026 — Pass 2 resolution order)
 1. Approved canonical race specifications (`specs/<race>/<RACE>_V1.md`).
-2. `decisions/PROJECT_RULES.md`.
+2. `decisions/PROJECT_RULES.md`, with `decisions/UFCA_V1.md` as its facial-creator companion (UFCA governs facial creator organization; race specs govern anatomy).
 3. Accepted cross-race comparative reviews and explicit author resolutions.
 4. `register/decision-register.md` — supporting decision history only; historical until reconciled.
 5. Other reviews and diagnostics.

@@ -1563,6 +1563,8 @@ The Cogling system must nevertheless preserve independent biological capability 
 
 Controls may later be split, merged, renamed or reorganized during the Universal Facial Customization Architecture Review.
 
+**UFCA status (UFCA Phase 2, October 5, 2026):** the universal facial creator organization is now canonical in `decisions/UFCA_V1.md`. The Cogling facial control organization in this spec stays as approved requirements and is routed to its UFCA slots (`reviews/claude-ufca-08-phase1-architecture-audit.md` Appendix A); Cogling anatomy, tendencies, validators, tests and OPEN items are unchanged. The sex-related anatomy capability is met by the body-level sex-related anatomy selection plus any canonically permitted soft facial distribution; there is no face-level sex slider and the magnitude stays OPEN (UFCA AC-U2).
+
 ## 98. No racial master-face slider
 
 There is no "Cogling Face" slider.
@@ -3212,7 +3214,7 @@ The permanent first-pass Cogling validation suite consists of every active appro
 
 Cogling first-pass completion does not close project-wide questions that require later comparative or universal review. Dependencies include:
 - the Short-Race Comparative Anatomy Review (ACCEPTED / COMPLETE; `specs/STATUS.md`);
-- the Universal Facial Customization Architecture Review;
+- the Universal Facial Customization Architecture Review (performed; canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA closure pending author review);
 - cross-race pigmentation/surface-phenotype review;
 - the race-biology-gameplay review;
 - full-roster world-scale/accessibility review;

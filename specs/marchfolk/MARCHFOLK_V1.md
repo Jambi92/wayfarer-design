@@ -101,6 +101,8 @@ This is a design update only, pending further refinement. The morph-target archi
 
 **Classification (Durrim consistency-resolution patch):** the three-level facial editing model and seven-region organization below are **APPROVED FIRST-PASS FUNCTIONAL REQUIREMENTS / PROVISIONAL CONTROL ORGANIZATION**, meaning approved design proposals that demonstrate required functionality, not the final universal facial-control hierarchy. They stay as requirements and reference, never constrain later races, and will be reconciled in the Universal Facial Customization Architecture Review after all 13 first-pass races are complete.
 
+**UFCA status (UFCA Phase 2, October 5, 2026):** the universal facial creator organization is now canonical in `decisions/UFCA_V1.md`. The Marchfolk facial control organization in this spec stays as approved requirements and is routed to its UFCA slots (`reviews/claude-ufca-08-phase1-architecture-audit.md` Appendix A); Marchfolk anatomy, tendencies, validators, tests and OPEN items are unchanged. The three editing levels map to Starting Face / Quick controls / Detailed controls, and the seven regions to UFCA slots 2–9 with asymmetry in slot 13. Orbit and midface controls are bound, as required by the v1.5 face validation (§2–6). Forehead controls stay hidden pending author confirmation, because this spec does not state forehead variation (UFCA §19.2).
+
 ## 1. Three levels of facial editing
 
 All three levels use the same character data.

@@ -199,6 +199,8 @@ This is design only, preserving v1.0–v1.1. It arrived in two parts: craniofaci
 
 **Classification (race-specific facial-control organization status):** where this spec defines facial regions, editing levels, control groupings, slider organization or other creator-facing control structure (including ear controls), that material is **APPROVED FIRST-PASS FUNCTIONAL REQUIREMENTS / PROVISIONAL CONTROL ORGANIZATION.** Aelari craniofacial anatomy, population tendencies, valid biological variation, anatomical relationships, ear biology, facial identity, validation, required customization capability and preset and randomization requirements stay approved as established. Only their organization into a final facial-control system is provisional, and the section is kept as input to the Universal Facial Customization Architecture Review after all 13 first-pass races are complete.
 
+**UFCA status (UFCA Phase 2, October 5, 2026):** the universal facial creator organization is now canonical in `decisions/UFCA_V1.md`. The Aelari facial control organization in this spec stays as approved requirements and is routed to its UFCA slots (`reviews/claude-ufca-08-phase1-architecture-audit.md` Appendix A); Aelari anatomy, tendencies, validators, tests and OPEN items are unchanged. Under UFCA AC-U1, "eye size" in this spec means bony orbit size (direct control) plus visible eye aperture (direct control); eyeball size is derived from the orbit and is never an independent slider.
+
 ## 1. Facial identity principle
 
 Aelari faces come from combined craniofacial relationships, never from pointed ears alone, one eye shape, one nose, one jaw, conventional attractiveness or cultural styling. They're related to Fenn but a distinct population.

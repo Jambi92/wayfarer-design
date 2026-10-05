@@ -58,6 +58,18 @@
 | RM-CF-09 | P3 | Skarn craniofacial tendencies (skull size, brow, jaw mass, midface) vs Marchfolk | Skarn | Skarn v1.0 §8 promise (S L48) |
 | RM-CF-10 | P2 | HSR | Grask, Gorrund, Pipkin, Cogling (all OPEN) | Head-to-height OPEN items; world scale |
 
+## 3A. Universal facial architecture (RM-UF; added October 5, 2026 by UFCA Phase 2, author decision AD-U11)
+
+Semantics only; no numbers are set here. Priority is assigned at measurement planning.
+
+| ID | Pri | Measure | Cases | Feeds |
+|---|---|---|---|---|
+| RM-UF-01 | — | Visible-aperture distribution relative to bony orbit (ORB vs aperture) | Every population with a bound External Eye slot; first non-elf races (elves and Saurin are covered by RM-CF-08) | UFCA aperture validators; Pipkin/Cogling anti-enlargement (with RM-SR-04) |
+| RM-UF-02 | — | Ear-family parameter envelopes (family-specific variables; ear landmarks are not in r3 and must be defined) | All eight ear-architecture families. **Dependency:** Grask ear-length ranges and Gorrund projection ranges are OPEN and must be authored first; no numbers are derived before then | UFCA slot 9 family validators |
+| RM-UF-03 | — | Saurin orbital placement/spacing tolerance (IOD) | Saurin frozen reference and creator extremes | SAURIN §259 lock (tolerance OPEN, §265) |
+| RM-UF-04 | — | Saurin structural-ridge strength and facial scale-field ranges | Saurin reference and extremes | SAURIN §36a (numerics OPEN), §262 |
+| RM-UF-05 | — | Batch diversity / anti-convergence threshold (distance over DIR vectors; convergence toward named cliché bundles) | Generated batches per population | UFCA validation tier G |
+
 ## 4. Other populations
 
 | ID | Pri | Measure | Populations | Feeds |

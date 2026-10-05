@@ -392,6 +392,8 @@ Chronological Age, Apparent Biological Age and Age Presentation remain separate 
 
 Race-specific facial controls remain **APPROVED FIRST-PASS FUNCTIONAL REQUIREMENTS / PROVISIONAL CONTROL ORGANIZATION** pending the universal Facial Customization Architecture Review.
 
+**UFCA status (UFCA Phase 2, October 5, 2026):** the universal facial creator organization is now canonical in `decisions/UFCA_V1.md`. The Pipkin facial control organization in this spec stays as approved requirements and is routed to its UFCA slots (`reviews/claude-ufca-08-phase1-architecture-audit.md` Appendix A); Pipkin anatomy, tendencies, validators, tests and OPEN items are unchanged.
+
 Required independent or relationship-aware control families include:
 - cranial breadth/length/vault height,
 - forehead height/slope,
@@ -410,6 +412,8 @@ Required independent or relationship-aware control families include:
 - and soft-tissue facial composition where appropriate.
 
 There is no "Pipkin Face" master slider. Validity is relationship-aware. Population tendencies may bias randomization without forcing creator controls to move together.
+
+**Natural facial asymmetry (author confirmation UFCA AC-U3, October 5, 2026):** ordinary biological left/right facial variation is available to Pipkin, consistent with the universal individuality architecture. It does not create deformity, pathology, juvenile cues, a racial identifier or an acquired-injury system, and it stays distinct from Acquired history.
 
 ## 16. Part 3 validation cast
 
@@ -1547,7 +1551,7 @@ The following remain OPEN after first-pass Pipkin design:
 - detailed population genetics/simulation depth.
 
 ### Character creation and presentation
-- final creator-facing facial-control organization;
+- final creator-facing facial-control organization (canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA closure pending author review);
 - final preset library and population-frequency weighting;
 - final presentation-preset library;
 - final saved-appearance schema/version architecture;
@@ -1642,7 +1646,7 @@ The review may refine comparative wording but must not erase approved positive P
 ## 36. Universal-review dependencies
 
 Pipkin first-pass completion does not waive later universal reviews, including:
-- Universal Facial Customization Architecture Review;
+- Universal Facial Customization Architecture Review (performed; canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA closure pending author review);
 - cross-race pigmentation/surface consistency work;
 - race-biology-gameplay review for unresolved gameplay traits;
 - world-scale/accessibility validation across the full playable roster;

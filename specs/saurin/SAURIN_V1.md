@@ -1171,6 +1171,8 @@ Saurin use greater depth, rostral projection and a different orbital-temporal/ja
 
 The following are **first-pass functional requirements / provisional control organization**, consistent with the project-wide facial architecture status.
 
+**UFCA status (UFCA Phase 2, October 5, 2026):** the universal facial creator organization is now canonical in `decisions/UFCA_V1.md`. The Saurin facial control organization in this spec stays as approved requirements and is routed to its UFCA slots (`reviews/claude-ufca-08-phase1-architecture-audit.md` Appendix A); Saurin anatomy, tendencies, validators, tests and OPEN items are unchanged. Saurin routing follows UFCA §12: rostral controls sit in Rostrum & Lateral Face, nasal openings in Nasal Openings, the mouth line in Mouth Line, the jaw in Jaw, auricular controls in Auricular Openings, structural ridges in Cranium & Forehead and the keratin display in Hair / Cranial Display. No human forehead, cheek, chin, lip, nose or pinna controls exist (UFCA AC-U4). Orbital spacing below is Bound-locked by §259, which governs.
+
 ### Cranial
 - overall head scale within race-valid bounds;
 - vault height;
@@ -4268,7 +4270,7 @@ Biological Randomization samples **driver** variables (stature, frame, compositi
 - Numeric per-field scale ranges.
 - Reproductive life history and physiology (§263); statistical spreads of the sex-shifted distributions around their centres.
 - World-space validation of the longest tails (up to ~170 cm tail reach behind the heel at the stature/tail extremes).
-- Universal facial-control architecture and statistical calibration of soft distributions.
+- Statistical calibration of soft distributions (the universal facial-control architecture is canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA closure pending author review).
 
 ## 266. Creator-biology closure
 

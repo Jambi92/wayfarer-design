@@ -28,7 +28,9 @@
 
 **PASS 2 CLOSED — FINAL-AUTHOR ACCEPTED / FROZEN (October 5, 2026; `reviews/chatgpt-pass2-final-author-acceptance-freeze-order.md`).** The freeze covers Pass 2 findings and canonical reconciliations; intentionally OPEN biology and named future measurement work stay open for their later phases. Roster-wide comparative and system review, resolution sequence and author canonicalization complete (`reviews/claude-pass2-01`…`06`, `claude-pass2-r1`…`r6`, `claude-pass2-closure-canonicalization.md`). No blocking contradiction; all 13 first-pass completions remain valid. Authority hierarchy, terminology and R-SEX are in `decisions/PROJECT_RULES.md`; Large-Race decisions AD-1–AD-5 and confirmations AC-1–AC-10 are reconciled into the race specs. Numeric validators stay DEFERRED WITH NAMED INPUT in the Reference-Mesh Measurement Queue (`reviews/claude-pass2-r5-reference-mesh-queue.md`), including the Saurin cross-race rostral closure (RM-CF-01…05); the provisional Saurin rostral floor remains protective canon.
 
-**Next authorized design phase: Universal Facial Customization Architecture.** Not yet begun; it starts under a separate author order. Do not begin UE5 implementation.
+**UNIVERSAL FACIAL CUSTOMIZATION ARCHITECTURE (UFCA): Phase 1 ACCEPTED; Phase 2 canonicalization COMPLETED (October 5, 2026).** Canonical document: `decisions/UFCA_V1.md`. Phase 1 package: `reviews/claude-ufca-01`…`08`. Phase 2 report and regression audit: `reviews/claude-ufca-phase2-canonicalization-report.md`. Minimal conforming pointers were applied to all 13 race specs. RM-UF-01…05 were added to the Reference-Mesh Measurement Queue.
+
+**UFCA is NOT CLOSED.** Closure awaits author review of the Phase 2 report, including the named coverage confirmations held hidden under AD-U12 (UFCA §19.2). Naturalize Face stays provisional, and OPEN biology and measurement-deferred variables stay open. Do not begin UE5 implementation.
 
 
 ## Pass 1 Completion Milestone — October 1, 2026
