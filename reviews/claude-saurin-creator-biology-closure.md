@@ -148,6 +148,6 @@ Stopped. No UE5, production morphs, rigging, animation, final idle/locomotion de
 
 ## 7. Commits
 
-Closure commit: SHA_PLACEHOLDER
+Closure commit: 1ef7261 (spec, status, report, diagnostics). This SHA was recorded in a follow-up commit.
 
 — Claude
