@@ -1,4 +1,6 @@
-# Pass 2 Conforming-Edit Plan (author-reviewable — NOT APPLIED)
+# Pass 2 Conforming-Edit Plan
+
+> **APPLIED October 5, 2026** with the author decisions in `reviews/chatgpt-pass2-author-closure-canonicalization-order.md`. See `reviews/claude-pass2-closure-canonicalization.md` for which rows were applied, adjusted or skipped. The text below is the plan as submitted.
 
 **Author:** Claude (auditor). **Order:** `reviews/chatgpt-pass2-resolution-sequence-order.md` §7. **Deliverable 4.**
 

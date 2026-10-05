@@ -8,11 +8,11 @@ This is the Marchfolk working specification at v1.5, with the first pass complet
 
 This is the recovered opening section that v1.1–v1.4 build on, recorded without replacing them. It's a design specification only, with no UE5 changes, and v1.0 is complete.
 
-## 1–3. Core identity, baseline role and locked foundation
+## 1–3. Core identity, Human Reference Population role and locked foundation
 
 Marchfolk are the primary broad-spectrum human population and the primary Human Reference Population for the playable races. **They represent the breadth of believable human physical diversity, not one idealized fantasy-human body:** fully human, anatomically grounded, highly variable, with broad body, facial and pigmentation diversity. They aren't biologically defined by heroic proportions, conventional attractiveness, one ethnicity or phenotype, one body composition, culture, occupation or personality. Their adaptability is a population and cultural identity, never an excuse to make them biologically generic.
 
-As the Human Reference Population, Marchfolk are the grounded reference for judging how another race differs in skeletal proportions, craniofacial anatomy, joints, limbs, hands and feet, composition, movement, height and mass. This doesn't make Marchfolk the default anatomy for every humanoid race, and non-human races depart from it wherever their approved biology requires. Marchfolk keep recognizably human skeletal and cranial architecture, shoulders, ribcage, spine, pelvis, limbs, joints, hands, feet, face, skin and hair biology and baseline locomotor anatomy, with variation inside believable human boundaries.
+As the Human Reference Population, Marchfolk are the grounded reference for judging how another race differs in skeletal proportions, craniofacial anatomy, joints, limbs, hands and feet, composition, movement, height and mass. This doesn't make Marchfolk the default anatomy for every humanoid race, and non-human races depart from it wherever their approved biology requires. Marchfolk keep recognizably human skeletal and cranial architecture, shoulders, ribcage, spine, pelvis, limbs, joints, hands, feet, face, skin and hair biology and human locomotor anatomy, with variation inside believable human boundaries.
 
 ## 4–5. Height
 
@@ -20,7 +20,7 @@ As the Human Reference Population, Marchfolk are the grounded reference for judg
 | --- | --- | --- |
 | About 147 cm (4'10") | About 173 cm (5'8") | About 203 cm (6'8") |
 
-This is the approved first-pass playable envelope. It isn't produced by uniformly scaling the whole character, and height should come from anatomically appropriate proportional relationships. There's no hard sex-specific height restriction from the selected anatomy or starting frame: population distributions may differ where appropriate, individual overlap stays broad, and a player character can sit anywhere in the supported range.
+This is the approved first-pass playable envelope. It isn't produced by uniformly scaling the whole character, and height should come from anatomically appropriate proportional relationships. There's no hard sex-specific height restriction from the selected sex-related anatomy or starting frame: population distributions may differ where appropriate, individual overlap stays broad, and a player character can sit anywhere in the supported range.
 
 ## 6–8. Frame and physical composition
 
@@ -46,12 +46,12 @@ No architecture is chosen. Candidates include MetaHuman, modified MetaHuman, cus
 
 ## 1. Two-tier body editing
 
-Basic and Advanced editing use the same character data, so switching between them keeps the character's appearance.
+Quick and detailed body controls (both within Advanced Mode's Customize step) use the same character data, so switching between them keeps the character's appearance.
 
-| Mode | Controls |
+| Tier | Controls |
 | --- | --- |
-| Basic | Starting body frame, height, overall muscularity, overall body-fat distribution, general physique adjustments |
-| Advanced | All Basic controls, plus individual body regions, detailed anatomical proportions and regional muscle development |
+| Quick controls | Starting body frame, height, overall muscularity, overall body-fat distribution, general physique adjustments |
+| Detailed controls | All quick controls, plus individual body regions, detailed anatomical proportions and regional muscle development |
 
 ## 2. Starting body frames
 
@@ -67,7 +67,7 @@ There are three skeletal-frame starting categories plus independent physical-com
 
 Muscularity and body-fat distribution adjust separately, giving a wide range of plausible physiques without a single thin-to-heavy slider.
 
-## 5. Advanced body regions
+## 5. Detailed body regions
 
 | Group | Controls |
 | --- | --- |
@@ -108,14 +108,14 @@ All three levels use the same character data.
 | Level | What it offers |
 | --- | --- |
 | Face presets | Curated starting faces showing meaningful variation in human facial anatomy |
-| Basic | Accessible adjustments to the major features |
-| Advanced | Detailed regional controls, anatomical proportions and optional asymmetry |
+| Quick controls | Accessible adjustments to the major features |
+| Detailed controls | Detailed regional controls, anatomical proportions and optional asymmetry |
 
 ## 2. Facial regions
 
 Detailed editing is split into seven regions: head and skull, brow and eyes, nose, cheeks, jaw and chin, mouth and lips, and ears. Edits keep believable relationships between neighboring features and the underlying skull.
 
-## 3. Natural asymmetry (Advanced)
+## 3. Natural asymmetry (detailed controls)
 
 Subtle independent left and right adjustment covers brow height, eye opening, cheek fullness, mouth corner position, ear projection and jaw contour. Asymmetry stays subtle by default, and a restore-symmetry option is included.
 
@@ -148,13 +148,14 @@ This is a design update only, pending further refinement.
 
 ## 1. Skin layers
 
-The three layers stay independently editable.
+The four layers stay independently editable.
 
 | Layer | Covers |
 | --- | --- |
 | Natural | Base pigmentation, undertone, complexion, freckles, moles, birthmarks, natural pigmentation variation |
-| Environmental | Sun exposure, tanning, weathering, dryness, roughness, calluses, minor discoloration |
-| Applied or acquired | Scars, tattoos, makeup, dirt, paint, decorative markings |
+| Environmental | Sun exposure, tanning, weathering, dryness, roughness, calluses, minor discoloration, dirt |
+| Applied | Tattoos, makeup, paint, decorative markings |
+| Acquired | Scars |
 
 ## 2. Hair
 
@@ -249,7 +250,7 @@ Marchfolk are validated as a complete anatomical system, not slider by slider, i
 
 ## 7–8. Age and skin, hair and marking validation
 
-Adult aging must do more than wrinkles and gray hair, and may affect facial volume, skin elasticity, eye region, jawline, neck, hair density and pigmentation, and body composition where appropriate, with exact implementation later. Broad combinations of natural pigmentation, undertones, hair color and texture, facial hair, freckles, moles, birthmarks, scars, tattoos, makeup and weathering are tested, keeping the Natural, Environmental and Applied or Acquired layers separate.
+Adult aging must do more than wrinkles and gray hair, and may affect facial volume, skin elasticity, eye region, jawline, neck, hair density and pigmentation, and body composition where appropriate, with exact implementation later. Broad combinations of natural pigmentation, undertones, hair color and texture, facial hair, freckles, moles, birthmarks, scars, tattoos, makeup and weathering are tested, keeping the Natural, Environmental, Applied and Acquired layers separate.
 
 ## 9–13. Presets, randomization and appearance data
 
@@ -274,12 +275,12 @@ These clarify the approved design and aren't UE5 instructions. They resolve cons
 | Topic | Resolution |
 | --- | --- |
 | Athletic (§1) | Skeletal frame describes skeletal structure, and Marchfolk frame presets stay Narrow, Balanced and Broad. Athletic belongs exclusively to physical-composition presets and may initialize muscularity, body-fat amount and distribution, regional muscle and other non-skeletal parameters. It never automatically changes skeletal shoulder breadth, ribcage or pelvic dimensions, limb-bone proportions, joint scale or other frame parameters. v1.4's "proportions" means physical-composition relationships, and "four frames" becomes three skeletal-frame starting categories plus independent physical-composition presets (the v1.1 and v1.4 text is corrected) |
-| Body fat (§2) | **Body-fat amount** (how much adipose tissue overall) and **body-fat distribution** (where it's preferentially represented) are separate parameters, and Basic Mode conceptually supports both. v1.1's "overall body-fat distribution" is incomplete wording, not a removal of amount. Advanced may add regional distribution, and distribution never substitutes for amount |
+| Body fat (§2) | **Body-fat amount** (how much adipose tissue overall) and **body-fat distribution** (where it's preferentially represented) are separate parameters, and the quick body controls (v1.1 §1) conceptually support both. v1.1's "overall body-fat distribution" is incomplete wording, not a removal of amount. Detailed controls may add regional distribution, and distribution never substitutes for amount |
 | Thickness (§3) | "Thickness" isn't used alone where several tissues could produce the visible dimension. Specs distinguish skeletal breadth or diameter, muscular development, adipose contribution and total external circumference or visible volume. Neck, upper-arm, forearm, thigh and calf "thickness" aren't automatically skeletal controls, and a control that changes circumference through several systems documents which components contribute |
 | Hand and foot size (§4) | These distinguish absolute dimensions (measured size) from proportional dimensions (relative to height, limb length or neighboring anatomy), plus skeletal dimensions, soft-tissue contribution, length, breadth and depth where relevant. One generic size scalar isn't a sufficient biological definition, and exact controls are future work |
 | Frame (§5) | **Skeletal Frame** is the underlying continuous configuration of shoulder, ribcage, pelvis, joints and related structural dimensions. A **Frame Preset** is a starting configuration within that space: Narrow, Balanced and Broad are editable starting points, not immutable biological castes, and players may customize away from them within valid Marchfolk anatomy. "Frame" means the anatomical layer when discussing biology, and "Frame Preset" means the starting configurations |
 | Baseline (§6) | Marchfolk are the primary **Human Reference Population**, and about 173 cm (5'8") is the Marchfolk **Reference Height**. Minimum and maximum remain the approved playable envelope, and "baseline" isn't used for both where it could be ambiguous (the v1.0 section, v1.1 height table and notes now use these terms) |
-| Layers (§7) | **Character Architecture Layers** are A, Biological Anatomy; B, Skeletal Frame; C, Physical Composition; and D, Personal Presentation. **Skin Appearance Layers** are 1, Natural; 2, Environmental; and 3, Applied or Acquired. Inheritance discussions name the relevant Character Architecture Layer, and Skin Appearance Layers organize appearance state and aren't inheritance categories |
+| Layers (§7) | **Character Architecture Layers** are A, Biological Anatomy; B, Skeletal Frame; C, Physical Composition; and D, Personal Presentation. **Skin Appearance Layers** are 1, Natural; 2, Environmental; 3, Applied; and 4, Acquired. Inheritance discussions name the relevant Character Architecture Layer, and Skin Appearance Layers organize appearance state and aren't inheritance categories |
 | Age (§8) | **Chronological age** is elapsed time since birth. **Apparent biological age** is the physical age state expressed by the character's biology, which may not map one-to-one to chronological age if populations mature or age at different rates. **Age presentation** is social or personal presentation through hair, grooming, clothing, cosmetics and similar choices. All three stay distinct: the same chronological age can mean different apparent biological ages across populations, and similar apparent ages can be presented differently |
 
 **Halvren importance (§9).** These corrections are required before mixed-ancestry design. Halvren inheritance must say whether an inherited characteristic affects biological anatomy, skeletal frame, physical-composition tendencies, pigmentation, hair biology, ocular biology, external ears or lifecycle biology. Personal presentation is never treated as genetically inherited, and cultural inheritance is separate from biological inheritance.
@@ -328,4 +329,4 @@ Biological ancestry never determines culture, birthplace, language, clothing, re
 
 ## 16–17. Still open, and status
 
-These stay open and don't block the Halvren first pass: Marchfolk pigmentation frequencies, human and elven lifecycle numbers, Halvren lifecycle expression, the mixed-ancestry genetic model, trait dominance, multigenerational inheritance math, population frequency of specific combinations, the social and lore definition of who counts as Halvren, and whether ancestry shows to the player as percentages, family populations, neither or something else. **Findings 7–10 are resolved sufficiently to begin the Halvren first pass**, with those subtopics OPEN. Preserved: Marchfolk v1.0–v1.5, consistency resolution Part 1, this Part 2, and the Elf Comparative Review v1.0 with all clarifications. The next step waits for Halvren Character Design v1.0 (mixed-ancestry biological foundation).
+These stay open and don't block the Halvren first pass: Marchfolk pigmentation frequencies, human and elven lifecycle numbers, Halvren lifecycle expression, the mixed-ancestry genetic model, trait dominance, multigenerational inheritance math, population frequency of specific combinations, the social and lore definition of who counts as Halvren, and whether ancestry shows to the player as percentages, family populations, neither or something else. **Findings 7–10 are resolved sufficiently to begin the Halvren first pass**, with those subtopics OPEN. Preserved: Marchfolk v1.0–v1.5, consistency resolution Part 1, this Part 2, and the Elf Comparative Review v1.0 with all clarifications. The next step then waited for Halvren Character Design v1.0 (mixed-ancestry biological foundation), since completed.

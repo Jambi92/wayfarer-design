@@ -1,5 +1,7 @@
 # Character Creation & Race Design
 
+> **SUPERSEDED — HISTORICAL BRIEF (September 30, 2026).** This is Tyler's original direction and is retained for history only. It does not govern anatomy, terminology, creator modes, layers, height/mass values or gameplay. Authority order (`reviews/chatgpt-pass2-resolution-sequence-order.md` §2): approved race specifications (`specs/<race>/<RACE>_V1.md`) → `decisions/PROJECT_RULES.md` → accepted cross-race reviews / explicit author resolutions → `register/decision-register.md`. Where this brief conflicts with any of them (including its three-layer model, "baseline" wording, height/mass multipliers and race descriptors), the approved source governs.
+
 This is the agreed direction from Tyler's four-part brief, received September 30, 2026. Race provides the biological foundation, individual customization creates the person, and presentation creates the character's identity. Nothing here is implemented yet, and every number is a design reference, not a final value.
 
 ## Status of the brief

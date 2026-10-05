@@ -1,6 +1,6 @@
 # Sagekin Character Customization v1.5 (first-pass complete)
 
-This is the working concept for Sagekin before their customization spec begins. It is design only, with no UE5 changes. Sagekin are a fully human population with a distinct ancestral homeland. Their famous scholarly tradition is culture, never biology. The foundational direction below comes first, then v1.0 (racial anatomy, height and population variation), v1.1 (body proportions and anatomical relationships) v1.2 (facial anatomy, population variation and individual identity) v1.3 (skin, hair, cultural presentation and homeland visual language) v1.4 (presets, population-aware randomization and racial validation) and v1.5 (final validation and technical handoff). The next race is Fenn, and Sagekin stay fully human, never pushed toward elven anatomy to look more different.
+This document opens with the working concept written before the Sagekin customization spec began. It is design only, with no UE5 changes. Sagekin are a fully human population with a distinct ancestral homeland. Their famous scholarly tradition is culture, never biology. The foundational direction below comes first, then v1.0 (racial anatomy, height and population variation), v1.1 (body proportions and anatomical relationships) v1.2 (facial anatomy, population variation and individual identity) v1.3 (skin, hair, cultural presentation and homeland visual language) v1.4 (presets, population-aware randomization and racial validation) and v1.5 (final validation and technical handoff). The next race was Fenn; Sagekin stay fully human, never pushed toward elven anatomy to look more different.
 
 ## 1. Geographic origin
 
@@ -86,6 +86,8 @@ Compared with Marchfolk, Sagekin trend toward:
 
 None of this is exaggerated into elf-like anatomy.
 
+> **Clarified by v1.1 §1 (Pass 2 AC-6):** hands and feet remain human anatomy while the population may trend toward longer forearms, hands and fingers; the ribcage tendency is reduced depth, not an undefined global narrowing. The bullets above are kept as history.
+
 ## 4. Skeletal frames
 
 Narrow, Balanced and Broad all apply within Sagekin ranges. Broad Sagekin stay possible, and Sagekin ancestry never means narrow or thin.
@@ -96,7 +98,7 @@ Subtle population differences are explored in arm length, forearm proportion, le
 
 ## 6. Physical composition
 
-Sagekin have the full human range of muscle, fat distribution, regional development, conditioning and age-related composition. Their scholarly reputation never reduces muscle potential.
+Sagekin have the full human range of muscle, fat distribution, regional development, conditioning and age-related composition. Their scholarly reputation never reduces Muscular Development Capacity.
 
 ## 7. Craniofacial foundation
 
@@ -142,7 +144,9 @@ Sagekin are never defined by thinness.
 
 ## 2. Elven boundary (cross-race rule)
 
-Sagekin customization stays within human proportional ranges and never reproduces Fenn or Aelari baseline anatomy, which will get more strongly different skeletons later. Pointed ears, exaggerated limbs, very light bones and other elven traits are never used to set Sagekin apart.
+Sagekin customization stays within human proportional ranges and never reproduces Fenn or Aelari central-tendency anatomy, which will get more strongly different skeletons later. Pointed ears, exaggerated limbs, very light bones and other elven traits are never used to set Sagekin apart.
+
+**Ears (Pass 2 AC-4):** Sagekin follow the Marchfolk human-family auricular anatomical foundation (Marchfolk Part 2 §3–4) unless this spec explicitly modifies a tendency. This does not make Sagekin head anatomy Marchfolk-equivalent.
 
 ## 3–5. Region controls
 
@@ -258,7 +262,7 @@ The scholarly tradition grows out of a whole civilization, never just universiti
 
 ## 2. Skin
 
-The universal three layers stay: natural, environmental and applied or acquired. A proposed universal rule is that natural pigmentation and environmental tanning or sun exposure are separate systems.
+The universal four layers stay: natural, environmental, applied and acquired. A proposed universal rule is that natural pigmentation and environmental tanning or sun exposure are separate systems.
 
 ## 3. Regional environmental appearance
 
@@ -353,7 +357,7 @@ Generate 100 Marchfolk, 100 Sagekin and 100 Skarn, first with presentation neutr
 
 | Race | Expected result |
 | --- | --- |
-| Marchfolk | Broad baseline human variation |
+| Marchfolk | Human Reference Population; broad human variation |
 | Sagekin | Overlapping but statistically shifted human traits |
 | Skarn | A much stronger skeletal and mass distinction |
 
@@ -452,15 +456,15 @@ Generated characters should be exactly reproducible, from stored configuration d
 
 The test uses neutralized samples of 100 Marchfolk, 100 Sagekin and 100 Skarn. It checks for **within-population diversity** (no clones or templates) and **between-population coherence** (distributions reflect the intended ancestry). Perfect classification of every individual isn't required.
 
-## 9. Fenn and Aelari boundary (reserved test)
+## 9. Fenn and Aelari boundary (active test)
 
-Once the elves are defined, the most extreme valid Sagekin are compared against Fenn and Aelari. Single measurements may overlap, but complete Sagekin anatomy must never reproduce elven anatomy.
+Activated by Pass 2 AC-7: Fenn and Aelari are defined and carry their own Sagekin-boundary tests (FN-17, AE-21), so the most extreme valid Sagekin are compared against Fenn and Aelari. Single measurements may overlap, but complete Sagekin anatomy must never reproduce elven anatomy.
 
 ## 10. Universal architecture lessons
 
 | Race | What it established |
 | --- | --- |
-| Marchfolk | Deep baseline human customization |
+| Marchfolk | Human Reference Population; deep human customization |
 | Skarn | Large-scale skeletal and mass variation, and world-scale compatibility |
 | Sagekin | Population distributions, ancestry and culture separation, subtle population variation, population-aware generation |
 

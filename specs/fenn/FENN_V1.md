@@ -1,6 +1,6 @@
 # Fenn Character Customization v1.5 (first-pass complete)
 
-This is the Fenn (Wood Elf) specification at v1.5, first-pass complete: v1.0 covers elven anatomy and the physical foundation, v1.1 covers detailed body proportions, hands and feet, and anatomical relationships, v1.2 covers facial anatomy, ear anatomy, age and individual identity, v1.3 covers skin, hair, forest adaptation and cultural presentation, v1.4 covers presets, population-aware randomization and racial validation, and v1.5 covers final validation and technical handoff. It is design only, with no UE5 implementation. Fenn are the first playable race with a genuinely non-human skeleton, and they are never thin humans with pointed ears. The next race is Aelari (High Elf), who must never simply be taller Fenn.
+This is the Fenn (Wood Elf) specification at v1.5, first-pass complete: v1.0 covers elven anatomy and the physical foundation, v1.1 covers detailed body proportions, hands and feet, and anatomical relationships, v1.2 covers facial anatomy, ear anatomy, age and individual identity, v1.3 covers skin, hair, forest adaptation and cultural presentation, v1.4 covers presets, population-aware randomization and racial validation, and v1.5 covers final validation and technical handoff. It is design only, with no UE5 implementation. Fenn are the first playable race with a genuinely non-human skeleton, and they are never thin humans with pointed ears. The next race was Aelari (High Elf), who must never simply be taller Fenn.
 
 ## 1. Core biological identity
 
@@ -55,7 +55,7 @@ Joints and anatomy stay coherent throughout, and nothing is exaggerated into ani
 
 ## 8. Physical composition
 
-Muscle, fat, regional development and conditioning all vary. Very lean, average, Broad, highly muscular, high-body-fat and elder Fenn are all explicitly allowed. Fenn identity never depends on thinness, and muscle and fat modify the Fenn foundation rather than replace it.
+Muscle, fat, regional development and conditioning all vary. Very lean, average, Broad-framed, highly muscular, high-body-fat and elder Fenn are all explicitly allowed. Fenn identity never depends on thinness, and muscle and fat modify the Fenn foundation rather than replace it.
 
 ## 9. External ears
 
@@ -176,7 +176,7 @@ Body composition and age can influence facial soft tissue without replacing skel
 
 ## 8. External ear morphology
 
-Fenn ears are their own external-ear anatomy, not human ears with stretched tips. Future work keeps coherent structures analogous to the helix, antihelix, concha, tragus region, lobe, upper-ear extension and tip. The point emerges naturally from the whole ear.
+Fenn ears are their own external-ear anatomy, not human ears with stretched tips. **Population tendency (Elf Comparative Review, final clarification §3; Pass 2 AC-5):** Fenn have the greatest average lateral (outward) ear projection of Fenn, Aelari and Vael, with individual overlap and the Fenn ear bounds (§9) preserved. Future work keeps coherent structures analogous to the helix, antihelix, concha, tragus region, lobe, upper-ear extension and tip. The point emerges naturally from the whole ear.
 
 ## 9. Ear customization
 
@@ -249,7 +249,7 @@ Once Fenn, Aelari and Vael each have a first-pass design, review all three toget
 
 ## 5. Skin layers
 
-The universal three layers stay: natural (pigmentation, undertone, complexion, freckles, moles, birthmarks), environmental (sun and tanning, weathering, roughness, dryness, calluses, localized wear), and applied or acquired (scars, tattoos, body paint, dirt, makeup, ceremonial markings). Natural pigmentation and tanning stay separate.
+The universal four layers stay: natural (pigmentation, undertone, complexion, freckles, moles, birthmarks), environmental (sun and tanning, weathering, roughness, dryness, calluses, localized wear, dirt), applied (tattoos, body paint, makeup, ceremonial markings) and acquired (scars). Natural pigmentation and tanning stay separate.
 
 ## 6. Regional environmental appearance
 

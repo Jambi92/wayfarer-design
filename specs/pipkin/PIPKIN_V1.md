@@ -1,6 +1,6 @@
-# Pipkin Character Design v1.0 (in progress)
+# Pipkin Character Design v1.0 (first pass complete)
 
-This is the Pipkin (Halfling) specification, a distinct short adult humanoid population. It's design only, with no UE5 changes. v1.0 arrives in parts: Part 1 (biological foundation, stature and core skeletal architecture) and Part 2 (detailed body proportions, human differentiation, hands, feet and composition architecture) are complete, Part 3 (craniofacial anatomy, ears, hair and facial-hair biology) is now authored for audit. Pipkin v1.0 as a whole isn't complete.
+This is the Pipkin (Halfling) specification, a distinct short adult humanoid population. It's design only, with no UE5 changes. v1.0 arrived in six parts, all complete: Part 1 (biological foundation, stature and core skeletal architecture), Part 2 (detailed body proportions, human differentiation, hands, feet and composition architecture), Part 3 (craniofacial anatomy, ears, hair and facial-hair biology), Part 4 (surface phenotype and visible biological traits), Part 5 (movement, posture, locomotion and whole-character physical expression) and Part 6 (equipment, world compatibility, character-creation integration and final first-pass review). **Pipkin Character Design v1.0 is FIRST-PASS COMPLETE** (Part 6 §38).
 
 # Part 1 Biological foundation, stature and core skeletal architecture
 
@@ -30,7 +30,7 @@ This is a **FIRST-PASS BIOLOGICAL RANGE — SUBJECT TO CROSS-RACE AND WORLD VALI
 
 > **Every adult Pipkin must read as a biologically mature adult rather than as a human child.**
 
-Short stature never justifies juvenile proportions: no oversized cranium, huge eyes, tiny jaw, extremely short face, childlike shoulders or pelvis, infant-like limbs, childlike hands and feet or juvenile fat distribution. Pipkin may have somewhat greater head contribution to standing height than taller humans as a natural consequence of short adult architecture, but never an oversized "cute halfling head" (ratio **OPEN**). Skull, face, ears and hair are Part 3; Part 1 only leaves room for an adult craniofacial system.
+Short stature never justifies juvenile proportions: no oversized cranium, huge eyes, tiny jaw, extremely short face, childlike shoulders or pelvis, infant-like limbs, childlike hands and feet or juvenile fat distribution. Pipkin may have somewhat greater head contribution to standing height than the Marchfolk Human Reference Population as a natural consequence of short adult architecture, but never an oversized "cute halfling head" (ratio **OPEN**). Skull, face, ears and hair are Part 3; Part 1 only leaves room for an adult craniofacial system.
 
 ## 12–25. Skeletal identity, torso, shoulders, neck, spine and pelvis
 
@@ -79,7 +79,7 @@ Skeletal frame, current muscularity, body-fat amount and body-fat distribution s
 
 | Test | Requirement |
 | --- | --- |
-| Short-Race Comparative Anatomy Review | After Cogling's first pass: Durrim, Pipkin and Cogling, not finalized now |
+| Short-Race Comparative Anatomy Review | Durrim, Pipkin and Cogling — ACCEPTED / COMPLETE (`reviews/short-race-comparative-anatomy-v1.md`; `specs/STATUS.md`) |
 | Durrim / Pipkin boundary (about 122 cm, height controlled) | Durrim: higher skeletal presence, broader and deeper vertically compact torso, larger joints, greater long-bone dimensions relative to length, lower limb contribution, more substantial hands and feet. Pipkin: lighter skeleton, less vertically compact torso, smaller joints, lighter long bones, greater proportional limb contribution, more moderate hand and foot presence |
 | Composition-neutral boundary | Similar muscle, fat, presentation and neutral clothing at about 122 cm; fails if the distinction disappears |
 | Broad Pipkin vs Narrow Durrim (critical) | Population anatomy stays distinct; fails if frame breadth alone sets the race |
@@ -116,13 +116,13 @@ Pipkin need relationship-aware constraints across height, torso vertical and lim
 | PIP-BODY-15 | Adult Pipkin vs human child at matched height (critical maturity) |
 | PIP-BODY-16 | Normalized Marchfolk comparison, never scaled human |
 
-**SUPERSEDED by completed Cogling design:** Pipkin no longer set the roster’s lower playable-stature boundary. Cogling provisionally extend that boundary to about **76 cm (2'6")**. With the current completed/provisional race ranges, first-pass playable stature spans approximately **76 cm (2'6") to 251 cm (8'3")**. This remains a provisional roster envelope because **Saurin is still undesigned**. The world-scale implications for cameras, furniture, interaction points, counters, ladders, combat, equipment, dialogue and world geometry remain mandatory; biology is never altered merely to avoid them.
+**SUPERSEDED by completed Cogling design:** Pipkin no longer set the roster’s lower playable-stature boundary. Cogling provisionally extend that boundary to about **76 cm (2'6")**. With the current completed/provisional race ranges, first-pass playable stature spans approximately **76 cm (2'6") to 251 cm (8'3")**. This remains a provisional roster envelope pending world validation (Saurin, now FIRST-PASS COMPLETE at 168–208 cm, falls inside it). The world-scale implications for cameras, furniture, interaction points, counters, ladders, combat, equipment, dialogue and world geometry remain mandatory; biology is never altered merely to avoid them.
 
 ## 116–118. Part 1 identity, open items and status
 
 > **Pipkin are a distinct short adult humanoid population defined by compact stature, comparatively light skeletal construction, moderate torso compactness, relatively preserved functional limb contribution, smaller adult joint architecture and proportionally coherent dexterous hands and plantigrade feet. Their anatomy must remain recognizably mature and Pipkin across height, frame and composition, without depending on childlike proportions, Durrim structural massiveness, exaggerated feet, body-fat stereotypes or cultural tropes.**
 
-OPEN (non-exhaustive): final height range; head-to-body ratio; torso ratios; shoulder architecture; pelvic morphology; femur-to-lower-leg and arm-segment relationships; hand and foot proportions; joint dimensions; muscular-development capacity; sex-related anatomy and dimorphism; face; ears; pigmentation; hair; eyes; lifecycle; movement; the sneaking trait; size gameplay consequences; equipment practicality; collision; camera; furniture and world accommodation; mounts; and technical skeleton and animation architecture. **Pipkin v1.0 Part 1 is complete**, and v1.0 as a whole isn't.
+OPEN (non-exhaustive; historical Part 1 list — Part 6 §32 governs): final height range; head-to-body ratio; torso ratios; shoulder architecture; pelvic morphology; femur-to-lower-leg and arm-segment relationships; hand and foot proportions; joint dimensions; muscular-development capacity; sex-related anatomy and dimorphism; face; ears; pigmentation; hair; eyes; lifecycle; movement; the sneaking trait; size gameplay consequences; equipment practicality; collision; camera; furniture and world accommodation; mounts; and technical skeleton and animation architecture. **Pipkin v1.0 Part 1 is complete**, and v1.0 as a whole isn't.
 
 # Part 2 Detailed body proportions, human differentiation, hands, feet and composition architecture
 
@@ -276,7 +276,7 @@ This system is distinct from:
 
 ## 3. Cranial vault and head contribution
 
-Pipkin may trend toward somewhat greater head contribution to total stature than tall humanoids, but the head is **secondary** and never oversized. The cranial vault must not be enlarged relative to the mature face as a shortcut to small-race identity.
+Pipkin may trend toward somewhat greater head contribution to total stature than the Marchfolk Human Reference Population and other taller populations, but the head is **secondary** and never oversized. The cranial vault must not be enlarged relative to the mature face as a shortcut to small-race identity.
 
 Cranial breadth, cranial length, vault height, forehead height/slope, posterior cranial projection and cranial-base relationships vary independently within validity. The central tendency may support moderate breadth, but broad and narrow adult Pipkin heads are both valid.
 
@@ -580,7 +580,7 @@ Tooth size must coordinate with the mature maxillary and mandibular dental arche
 
 Extreme stylized perfect whiteness is not biological default. Wear, staining, loss, restoration and damage belong to age/history/health systems where appropriate rather than racial identity.
 
-Exact tooth count, replacement pattern and lifecycle details remain **OPEN**. First-pass Pipkin dentition follows the existing functional adult humanoid baseline used elsewhere in the project without inferring diet, culture or specialized feeding anatomy.
+Exact tooth count, replacement pattern and lifecycle details remain **OPEN**. First-pass Pipkin dentition follows the existing functional adult humanoid first-pass default used elsewhere in the project without inferring diet, culture or specialized feeding anatomy.
 
 ## 14. Lips and mucosal pigmentation
 
@@ -607,7 +607,8 @@ Environmental exposure may produce tanning, weathering and localized wear accord
 These traits use the project Skin Appearance Layers:
 - **Layer 1 — Natural:** constitutive pigmentation, freckles, birthmarks, vascularity and other inherent biological surface traits.
 - **Layer 2 — Environmental:** tanning, weathering and other exposure-driven appearance changes.
-- **Layer 3 — Applied or Acquired:** scars, tattoos, cosmetics, paint and comparable history/presentation marks.
+- **Layer 3 — Applied:** tattoos, cosmetics, paint and comparable presentation marks.
+- **Layer 4 — Acquired:** scars and comparable history marks.
 
 The layers must remain distinguishable even when their rendered appearances overlap.
 
@@ -623,7 +624,7 @@ A stored biological value and its rendered appearance are different things.
 
 For **facial analysis only**, the existing Facial Diagnostic Domains retain their agreed meanings: FD-STRUCT (cranium/facial skeleton), FD-SOFT (facial soft tissue), FD-SURF (facial skin surface), FD-HAIR (eyebrows/facial/scalp hair), FD-PRES (facial presentation), and FD-OBS (lighting, camera, expression and pose).
 
-Whole-body surface analysis instead uses the Skin Appearance Layers defined above. Rendered observation remains separate from stored biological and appearance-layer values: lighting, exposure, wetness, dirt, camera and color grading must not cause a Pipkin to gain or lose racial identity.
+Whole-body surface analysis instead uses the Skin Appearance Layers defined above. Rendered observation remains separate from stored biological and appearance-layer values: lighting, exposure, camera and color grading (observation) and wetness or dirt (Environmental layer) must not cause a Pipkin to gain or lose racial identity.
 
 ## 19. Randomization and inheritance
 
@@ -1646,7 +1647,7 @@ Pipkin first-pass completion does not waive later universal reviews, including:
 - race-biology-gameplay review for unresolved gameplay traits;
 - world-scale/accessibility validation across the full playable roster;
 - technical character architecture review;
-- Short-Race Comparative Anatomy Review after Cogling.
+- Short-Race Comparative Anatomy Review (ACCEPTED / COMPLETE; `specs/STATUS.md`).
 
 Where a named review is not formally registered, the underlying OPEN item remains OPEN rather than creating an implied process requirement.
 
@@ -1662,8 +1663,8 @@ Pipkin may be marked **FIRST-PASS COMPLETE** when:
 3. Part 6 receives a clean final audit;
 4. consolidated OPEN items are recorded without accidental closure;
 5. known prototype conflicts are identified as non-authoritative;
-6. Short-Race Comparative Anatomy Review remains queued for after Cogling rather than being falsely treated as completed.
+6. Short-Race Comparative Anatomy Review remains queued for after Cogling rather than being falsely treated as completed. *(Since satisfied: the review is ACCEPTED / COMPLETE — `specs/STATUS.md`.)*
 
 **Pipkin v1.0 Part 6 is FIRST-PASS ACCEPTED.**
 
-**Pipkin v1.0 is FIRST-PASS COMPLETE.** Tyler approved completion after Claude's clean Part 6 quick check. The Short-Race Comparative Anatomy Review remains queued until Cogling is designed. No UE5 implementation is authorized.
+**Pipkin v1.0 is FIRST-PASS COMPLETE.** Tyler approved completion after Claude's clean Part 6 quick check. The Short-Race Comparative Anatomy Review was then queued until Cogling was designed; it is now ACCEPTED / COMPLETE (`specs/STATUS.md`). No UE5 implementation is authorized.

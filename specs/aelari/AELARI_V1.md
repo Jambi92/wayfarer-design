@@ -1,6 +1,6 @@
 # Aelari Character Customization v1.5 (first-pass complete)
 
-This is the Aelari (High Elf) specification at v1.5, first-pass complete. v1.0 covers elven lineage, core anatomy, limbs, composition and initial validation. v1.1 covers detailed proportions, skeletal relationships and Fenn and Aelari differentiation. v1.2 covers craniofacial anatomy, ear morphology, aging and individuality. v1.3 covers complexion, hair, eyes, personal appearance and cultural presentation. v1.4 covers presets, population-aware randomization and racial validation. v1.5 covers final validation, animation, equipment, world compatibility and technical handoff. It is design only, with no UE5 changes. Aelari share deeper ancestry with Fenn but have their own population anatomy, defined by whole-body vertical elongation. Each version arrived in parts, kept together here. The next race is Vael (Dark Elf), who must never be dark-skinned Aelari or subterranean Fenn, and the Elf Comparative Review follows Vael v1.5.
+This is the Aelari (High Elf) specification at v1.5, first-pass complete. v1.0 covers elven lineage, core anatomy, limbs, composition and initial validation. v1.1 covers detailed proportions, skeletal relationships and Fenn and Aelari differentiation. v1.2 covers craniofacial anatomy, ear morphology, aging and individuality. v1.3 covers complexion, hair, eyes, personal appearance and cultural presentation. v1.4 covers presets, population-aware randomization and racial validation. v1.5 covers final validation, animation, equipment, world compatibility and technical handoff. It is design only, with no UE5 changes. Aelari share deeper ancestry with Fenn but have their own population anatomy, defined by whole-body vertical elongation. Each version arrived in parts, kept together here. The next race was Vael (Dark Elf), who must never be dark-skinned Aelari or subterranean Fenn, and the Elf Comparative Review followed Vael v1.5 (`reviews/elf-comparative-review.md`).
 
 ## 1. Core identity
 
@@ -59,7 +59,7 @@ They look ancestrally related, never like two presets of one elf body.
 
 ## 12. Physical composition
 
-The full system applies: overall muscle, fat distribution, regional development and conditioning. Explicitly supported: Narrow and lean, Narrow and muscular, Balanced, Broad, Broad and highly muscular, high body fat, and elder composition. Aelari identity never depends on thinness.
+The full system applies: overall muscle, fat distribution, regional development and conditioning. Explicitly supported frame × composition combinations: Narrow and lean, Narrow and muscular, Balanced, Broad, Broad and highly muscular, high body fat, and elder composition (Narrow/Balanced/Broad are Skeletal Frame presets). Aelari identity never depends on thinness.
 
 ## 13. Anatomy versus body language (universal)
 
@@ -123,7 +123,7 @@ The result is related but distinct elven silhouettes, and the difference never c
 | Ribcage | Vertically longer than Fenn, moderate width, relatively shallow depth | A functional 3D structure with enough thoracic volume, never an extremely flat or narrow chest |
 | Torso and spine | Longer overall torso and waist transition than Fenn. Controls: torso length, ribcage length, width and depth, waist and lumbar length, shoulder width, pelvic width | Spine and ribcage relationships stay coherent |
 | Shoulders and clavicles | Relatively long clavicles, broad width variation, light shoulder joints, coherent shoulder-to-neck transition | Broad Aelari gain real skeletal breadth, not just muscle or fat |
-| Pelvis | A distinct elven pelvis, not a stock human pelvis with longer legs attached. Stable with long femurs, coherent with the spine, Narrow to Broad variation, plausible muscle attachment, natural locomotion | Exact shape awaits prototyping. No mandatory hip width by race or anatomy configuration |
+| Pelvis | A distinct elven pelvis, not a stock human pelvis with longer legs attached. Stable with long femurs, coherent with the spine, Narrow to Broad variation, plausible muscle attachment, natural locomotion | Exact shape awaits prototyping. No mandatory hip width by race or sex-related anatomy |
 
 ## 6. Joint scale
 
@@ -131,7 +131,7 @@ Shoulders, elbows, wrists, hips, knees and ankles are gracile compared with huma
 
 ## 7. Frame interaction
 
-Narrow, Balanced and Broad change the real skeleton: clavicle, ribcage and pelvic breadth, joint relationships and overall skeletal presence. Frame stays separate from muscle, fat, anatomy configuration, height and presentation.
+Narrow, Balanced and Broad change the real skeleton: clavicle, ribcage and pelvic breadth, joint relationships and overall skeletal presence. Frame stays separate from muscle, fat, sex-related anatomy, height and presentation.
 
 ## 8. Anatomical coupling
 
@@ -296,7 +296,7 @@ Shared ancestry doesn't mean one elven complexion. Fenn, Aelari and Vael each ha
 
 ## 4–5. Skin layers and regional appearance
 
-The universal three layers stay: natural (pigmentation, undertone, complexion, freckles, moles, birthmarks), environmental (tanning, sun, weathering, dryness, roughness, calluses) and applied or acquired (scars, tattoos, makeup, paint, dirt, markings). Natural pigmentation stays separate from tanning. Face, hands, forearms, exposed feet and general exposed skin each show their own history, with no automatic occupation or culture.
+The universal four layers stay: natural (pigmentation, undertone, complexion, freckles, moles, birthmarks), environmental (tanning, sun, weathering, dryness, roughness, calluses, dirt), applied (tattoos, makeup, paint, markings) and acquired (scars). Natural pigmentation stays separate from tanning. Face, hands, forearms, exposed feet and general exposed skin each show their own history, with no automatic occupation or culture.
 
 ## 6. Eyes
 
@@ -524,7 +524,7 @@ Aelari design fails if:
 
 ## 25. Elf Comparative Review
 
-The review isn't performed yet. It happens after Vael's first-pass design and decides what is genuinely shared elven ancestry versus Fenn-, Aelari- or Vael-specific, across anatomy, ears, pigmentation, hair, eyes and aging.
+The review isn't performed yet (since performed and accepted: `reviews/elf-comparative-review.md`). It happens after Vael's first-pass design and decides what is genuinely shared elven ancestry versus Fenn-, Aelari- or Vael-specific, across anatomy, ears, pigmentation, hair, eyes and aging.
 
 ## 26. Status
 
@@ -583,7 +583,7 @@ Aelari use the same conceptual record as every race: ancestry, skeleton and body
 
 ## 22. Appearance schema and reproducibility
 
-The kept requirements are appearance-data versioning and migration, reproducible generation, preset reproducibility, save and load continuity, Basic and Advanced continuity, and selective randomization locks. The implementation is unresolved.
+The kept requirements are appearance-data versioning and migration, reproducible generation, preset reproducibility, save and load continuity, Simple Mode and Advanced Mode continuity, and selective randomization locks. The implementation is unresolved.
 
 ## 23–24. Validation suite and maximum-height stress character
 
@@ -593,7 +593,7 @@ AE-01 to AE-50 together cover every range, frame, composition, extreme, boundary
 
 | Race | Population |
 | --- | --- |
-| Marchfolk | Baseline broad human customization |
+| Marchfolk | Human Reference Population; broad human customization |
 | Sagekin | Subtly shifted, fully human population |
 | Skarn | Large, robust human population |
 | Fenn | Compact-centered, gracile elven population |
@@ -607,4 +607,4 @@ No changes now to uniform race scaling, the human animation placeholder, Manny a
 
 ## 27. Elf Comparative Review
 
-The review isn't performed until Vael v1.0–v1.5 are complete. It then settles shared elven anatomy, race-specific skeletons, craniofacial distributions, ears, pigmentation and undertones, hair color and texture, eye color, aging and any shared technical architecture. Shared ancestry never automatically means one skeleton.
+The review isn't performed until Vael v1.0–v1.5 are complete (since performed and accepted: `reviews/elf-comparative-review.md`). It then settles shared elven anatomy, race-specific skeletons, craniofacial distributions, ears, pigmentation and undertones, hair color and texture, eye color, aging and any shared technical architecture. Shared ancestry never automatically means one skeleton.

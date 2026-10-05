@@ -150,6 +150,6 @@ Per order §5.6, these validators come from approved reference meshes. They are 
 - the GR-BODY-10 limb floor relative to Gorrund;
 - the ALPC proxy measurements.
 
-**Review status:** performed. No contradiction, no redesign. Author decisions AD-1 to AD-4 pending (AD-5 optional).
+**Review status:** performed. No contradiction, no redesign. **Accepted October 5, 2026:** AD-1, AD-2, AD-4 and AD-5 approved; AD-3 option (a) approved (`reviews/chatgpt-pass2-author-closure-canonicalization-order.md`). All five are reconciled into the specs.
 
 — Claude

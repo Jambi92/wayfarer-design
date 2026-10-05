@@ -169,7 +169,7 @@ They should be:
 - capable of broad natural hand-shape variation;
 - and integrated with relatively long fingers.
 
-Five digits per hand are the first-pass humanoid baseline unless later evidence establishes otherwise.
+Five digits per hand are the first-pass humanoid default unless later evidence establishes otherwise.
 
 Long fingers must not become:
 - claws;
@@ -277,7 +277,7 @@ Head size cannot be used as the main mechanism that makes Cogling look small.
 
 The old gnome archetype often relies on a large head. Cogling do not.
 
-A Cogling head may occupy a somewhat greater fraction of total stature than a tall adult population simply because of allometric scaling, but **racial identity cannot depend on deliberate head enlargement**.
+A Cogling head may occupy a somewhat greater fraction of total stature than the Marchfolk Human Reference Population or other taller populations simply because of allometric scaling, but **racial identity cannot depend on deliberate head enlargement**.
 
 Head-to-body ratio must remain within an adult-valid Cogling envelope and survive direct comparison with a human child.
 
@@ -498,6 +498,8 @@ No "Cogling Proportion" master slider is approved.
 > **Cogling are a very-small adult humanoid population defined by Fine-Scale Elongated Articulation: a narrow stable central core supports broadly near-human total limb contribution while length is redistributed within the limbs toward the forearms, lower legs, hands and especially fingers through comparatively fine skeletal shafts and clearly articulated distal joints. Their small scale never requires juvenile anatomy, oversized heads or eyes, fragile bodies, miniature equipment, or biological tinkering stereotypes. Their anatomy supports broad frame and composition variation while culture, occupation, movement performance and gameplay traits remain separate.**
 
 ## 35. Part 1 status and OPEN items
+
+> *Historical Part 1 list. Items later defined at first-pass level in Parts 2–6 (e.g. craniofacial anatomy, ears, surface phenotype, movement) are governed by the consolidated OPEN list in §207.*
 
 **Cogling v1.0 Part 1 is FIRST-PASS ACCEPTED.**
 
@@ -722,7 +724,7 @@ No mandatory thin neck, thick neck or forward-head posture is approved.
 
 ## 51. Head contribution and allometry
 
-Very small adult stature may naturally increase the head's proportional contribution to total height relative to much taller adults.
+Very small adult stature may naturally increase the head's proportional contribution to total height relative to the Marchfolk Human Reference Population and other much taller populations.
 
 That allometric consequence must not become intentional head enlargement.
 
@@ -777,6 +779,8 @@ Frame may influence:
 - joint dimensions.
 
 Frame must not automatically determine height, muscle, fat, face, sex-related anatomy, culture or personality.
+
+**Clarification (Pass 2 AC-9):** Skeletal Frame may set starting correlated values or distribution tendencies for long-bone robusticity and joint dimensions inside the valid population envelope, but those parameters remain separately adjustable (§53, §69) and are never hard-determined by Narrow, Balanced or Broad. Combined-proportion validity governs the result.
 
 ## 55. Broad-frame boundary
 
@@ -1073,6 +1077,8 @@ Validation must evaluate relationships, not isolated slider legality.
 
 ## 72. Part 2 OPEN items
 
+> *Historical Part 2 list; the consolidated OPEN list in §207 governs.*
+
 Still OPEN:
 - final stature range;
 - numerical torso/limb envelopes;
@@ -1158,7 +1164,7 @@ Cogling heads remain adult-valid and relatively small in absolute dimensions.
 
 The cranial vault must not become the racial identity.
 
-At very small stature, natural allometry may make the head a somewhat larger fraction of total height than in tall adults, but cranial enlargement is not an authored racial feature.
+At very small stature, natural allometry may make the head a somewhat larger fraction of total height than in the Marchfolk Human Reference Population and other taller populations, but cranial enlargement is not an authored racial feature.
 
 Variation may include cranial:
 - length;
@@ -1380,7 +1386,7 @@ Against Durrim:
 - Durrim ears remain compatible with their more structurally substantial craniofacial foundation;
 - substantial overlap remains valid.
 
-Against ordinary human populations:
+Against human populations (the Marchfolk Human Reference Population and other human-family populations):
 - overlap in individual ear traits is valid;
 - Cogling identity comes from the coordinated fine-fold tendency plus the rest of craniofacial anatomy, not a single impossible-to-human ear feature.
 
@@ -1868,7 +1874,7 @@ No mandatory glowing, black or brightly colored sclera is approved as Cogling bi
 
 ## 118A. Dentition
 
-Cogling use the project baseline of **functional adult humanoid dentition, with no diet inferred from dentition alone**.
+Cogling use the project first-pass default of **functional adult humanoid dentition, with no diet inferred from dentition alone**.
 
 Adult Cogling dentition must not default to:
 - childlike teeth;
@@ -2035,7 +2041,7 @@ The **Facial Diagnostic Domains apply to facial analysis only** and use the proj
 - **FD-STRUCT** — structural facial anatomy;
 - **FD-SOFT** — facial soft tissue;
 - **FD-SURF** — facial surface appearance, including scars where appropriate;
-- **FD-HAIR** — facial/scalp hair as relevant to facial analysis;
+- **FD-HAIR** — scalp hair, facial hair and eyebrows as relevant to facial analysis (Pass 2 AC-8);
 - **FD-PRES** — facial presentation;
 - **FD-OBS** — observed appearance under lighting, camera, expression and pose.
 
@@ -2045,7 +2051,8 @@ Whole-body biological and presentation-facing surface appearance instead uses th
 
 1. **Natural** — baseline pigmentation, undertones, freckles, natural markings and ordinary vascular visibility.
 2. **Environmental** — tanning, weathering and other environment-driven appearance changes.
-3. **Applied or Acquired** — scars, burns, tattoos, cosmetics, paint and comparable acquired/applied surface changes.
+3. **Applied** — tattoos, cosmetics, paint and comparable applied surface changes.
+4. **Acquired** — scars, burns and comparable acquired surface changes.
 
 These Skin Appearance Layers are separate from the Character Architecture Layers and from the facial-only diagnostic domains.
 
@@ -3171,6 +3178,7 @@ The following remain OPEN after first-pass Cogling design unless later review re
 - cosmetics, tattoos and piercing culture;
 - lifespan/maturation;
 - detailed age progression;
+- exact center-of-mass values (§150);
 - final locomotion speeds;
 - acceleration/turning;
 - jumping/climbing/swimming;
@@ -3189,6 +3197,7 @@ The following remain OPEN after first-pass Cogling design unless later review re
 - camera and rendering implementation;
 - animation/IK/warping implementation;
 - networking;
+- exact attribute-lock UI behavior (§196);
 - schema/version migration;
 - in-game Cogling race-description revision;
 - culture/background design.
@@ -3202,7 +3211,7 @@ The permanent first-pass Cogling validation suite consists of every active appro
 ## 207B. Universal-review dependencies
 
 Cogling first-pass completion does not close project-wide questions that require later comparative or universal review. Dependencies include:
-- the Short-Race Comparative Anatomy Review;
+- the Short-Race Comparative Anatomy Review (ACCEPTED / COMPLETE; `specs/STATUS.md`);
 - the Universal Facial Customization Architecture Review;
 - cross-race pigmentation/surface-phenotype review;
 - the race-biology-gameplay review;

@@ -38,7 +38,7 @@ This is a **FIRST-PASS BIOLOGICAL RANGE — SUBJECT TO CROSS-RACE AND WORLD VALI
 | --- | --- |
 | Axial skeleton | A major identifier: broad skeletal thorax, substantial thoracic depth, strong vertebral and torso integration, substantial shoulder girdle and pelvis, strong neck-to-torso integration; never a rectangular block |
 | Torso contribution | Greater torso structural presence than Grask; against Grask at equal height, greater skeletal breadth and depth, more axial presence and less dependence on limb elongation for stature (torso-height contribution in Part 2) |
-| Thoracic breadth | Trends high relative to relevant comparison populations, but never maximum width on everyone, a square torso or a bodybuilder V; Narrow-frame Gorrund stay valid |
+| Thoracic breadth | Trends high: greater than Grask at matched height and, at equal height, greater axial breadth than Skarn (§80–87 comparative tests; Large-Race Comparative Anatomy Review), but never maximum width on everyone, a square torso or a bodybuilder V; Narrow-frame Gorrund stay valid |
 | Thoracic depth | A major dimension: **Gorrund trend toward substantial thoracic skeletal depth relative to stature and breadth, producing a genuinely three-dimensional load-bearing torso rather than a wide but shallow body** |
 | Breadth vs depth | Never one Torso Size or Body Thickness; breadth, depth, vertical contribution, muscle and adipose contribution stay separate |
 | Ribcage | Coherent, never a barrel-chest caricature, a perfect cylinder or uniformly enlarged human ribs (morphology for prototyping) |
@@ -105,7 +105,7 @@ Armor and clothing fit actual anatomy (torso depth, shoulder breadth, pelvis, jo
 
 | Test | Requirement |
 | --- | --- |
-| Large-Race Comparative Anatomy Review | After Gorrund first pass, at least Skarn, Grask and Gorrund, so all three have positive, independent identities |
+| Large-Race Comparative Anatomy Review | After Gorrund first pass, at least Skarn, Grask and Gorrund, so all three have positive, independent identities. (Performed and accepted in Pass 2: `reviews/claude-pass2-r2-large-race-comparative-review.md`; AD-1–AD-5.) |
 | Equal-height Skarn (shared about 208–229 cm) | Skarn large powerful human architecture; Gorrund massive non-human load-bearing architecture with greater axial breadth, depth and structural scale; never distinguished only by muscle |
 | Equal-height Grask (shared about 208–239 cm) | A major comparison: Grask rangy, limb-dominant and reach-oriented; Gorrund massive, axial and load-bearing; silhouette and skeletal relationships strongly different |
 | Equal-height Aelari (overlap to about 221 cm) | Aelari vertically distributed gracile elven elongation; Gorrund massive load-bearing non-human structure, obvious even under neutral presentation |
@@ -122,32 +122,34 @@ Individually valid values can combine into invalid anatomy (maximum height, tors
 
 A valid maximum in one dimension never implies compatibility with every other maximum, and there's no canonical "max size" Gorrund made by maximizing everything.
 
+GOR-BODY-01…18 and GOR-STRESS-01…09 were cited with the prefix GRR- before Pass 2; historical GRR- citations refer to the same cases.
+
 | ID | Target (internal validation only, not subraces) |
 | --- | --- |
-| GRR-BODY-01 | Reference: about 229 cm, Balanced, moderate composition |
-| GRR-BODY-02 | Minimum height, about 208 cm |
-| GRR-BODY-03 | Maximum height, about 251 cm |
-| GRR-BODY-04 | Narrow frame |
-| GRR-BODY-05 | Broad frame |
-| GRR-BODY-06 | Low muscle |
-| GRR-BODY-07 | High muscle |
-| GRR-BODY-08 | Low body fat |
-| GRR-BODY-09 | Higher body fat |
-| GRR-BODY-10 | High muscle and high fat |
-| GRR-BODY-11 | Low muscle and higher fat |
-| GRR-BODY-12 | Lower axial-breadth valid extreme |
-| GRR-BODY-13 | Greater axial-breadth valid extreme |
-| GRR-BODY-14 | Lower thoracic-depth valid extreme |
-| GRR-BODY-15 | Greater thoracic-depth valid extreme |
+| GOR-BODY-01 | Reference: about 229 cm, Balanced, moderate composition |
+| GOR-BODY-02 | Minimum height, about 208 cm |
+| GOR-BODY-03 | Maximum height, about 251 cm |
+| GOR-BODY-04 | Narrow frame |
+| GOR-BODY-05 | Broad frame |
+| GOR-BODY-06 | Low muscle |
+| GOR-BODY-07 | High muscle |
+| GOR-BODY-08 | Low body fat |
+| GOR-BODY-09 | Higher body fat |
+| GOR-BODY-10 | High muscle and high fat |
+| GOR-BODY-11 | Low muscle and higher fat |
+| GOR-BODY-12 | Lower axial-breadth valid extreme |
+| GOR-BODY-13 | Greater axial-breadth valid extreme |
+| GOR-BODY-14 | Lower thoracic-depth valid extreme |
+| GOR-BODY-15 | Greater thoracic-depth valid extreme |
 
 | Test | Fails if |
 | --- | --- |
 | Silhouette neutralization (neutral clothing, pose, expression, composition and pigmentation, head neutralized where useful) | The body isn't recognizably Gorrund |
-| Low muscle (GRR-BODY-06) | It converges on Skarn or Grask or looks like a giant human |
-| Higher fat (GRR-BODY-09) | Identity depends on a large abdomen |
-| Narrow frame (GRR-BODY-04) | It loses massive structural organization and becomes Grask |
-| Maximum height (GRR-BODY-03) | It needs uniform scaling, extreme limb elongation, a tiny head or monster posture |
-| Minimum height (GRR-BODY-02) | It becomes Skarn, Grask or a tall human |
+| Low muscle (GOR-BODY-06) | It converges on Skarn or Grask or looks like a giant human |
+| Higher fat (GOR-BODY-09) | Identity depends on a large abdomen |
+| Narrow frame (GOR-BODY-04) | It loses massive structural organization and becomes Grask |
+| Maximum height (GOR-BODY-03) | It needs uniform scaling, extreme limb elongation, a tiny head or monster posture |
+| Minimum height (GOR-BODY-02) | It becomes Skarn, Grask or a tall human |
 | Anti-stereotype (low muscle, moderate fat, narrow, upright, neutrally dressed, neutral expression) | It isn't unmistakably Gorrund; this is critical |
 
 ## 98–100. Part 1 identity, open items and status
@@ -219,35 +221,36 @@ Narrow, Balanced and Broad alter skeletal breadth relationships only, never dire
 
 > **Narrow skeletal breadth does not automatically mean low skeletal depth.**
 
-GRR-BODY-04 never converges on Grask: at matched height it keeps greater axial contribution, thoracic depth and joint scale, and different limb contribution and hand and foot relationships. **Broad** Gorrund may increase thoracic, shoulder and pelvic breadth within valid relationships, never automatically raising muscle, fat, aggression or strength stats, and **broad frame never hard-links to maximum thoracic depth**. As height changes, bone diameter, joint size, hands and feet never scale linearly with stature. About 251 cm with a Narrow frame stays credible, load-bearing Gorrund without becoming a tall Grask, and about 208 cm with a Broad frame stays Gorrund without becoming Skarn, Durrim-like in proportion or a generic fantasy ogre.
+GOR-BODY-04 never converges on Grask: at matched height it keeps greater axial contribution, thoracic depth and joint scale, and different limb contribution and hand and foot relationships. **Broad** Gorrund may increase thoracic, shoulder and pelvic breadth within valid relationships, never automatically raising muscle, fat, aggression or strength stats, and **broad frame never hard-links to maximum thoracic depth**. As height changes, bone diameter, joint size, hands and feet never scale linearly with stature. About 251 cm with a Narrow frame stays credible, load-bearing Gorrund without becoming a tall Grask, and about 208 cm with a Broad frame stays Gorrund without becoming Skarn, Durrim-like in proportion or a generic fantasy ogre.
 
 ## 69–84. Composition
 
-**Skeletal frame** (bone architecture), **current muscularity**, **body-fat amount** and **body-fat distribution** stay distinct. Low-muscle Gorrund show less muscle while keeping the large skeletal torso, joints, long-bone scale, hands, feet and silhouette. High muscle wraps the skeleton without erasing joint relationships, creating a generic bodybuilder, turning the Gorrund into Skarn or becoming the racial identifier. Regional muscle varies (neck, shoulders, upper arms, forearms, chest, back, abdomen, glutes, thighs, calves) with controls provisional, and equal total muscle can be distributed differently, supporting individuality and later training effects without encoding occupation biologically. Whether Gorrund have a different muscular-development ceiling or distribution is **OPEN**, never settled from appearance. Body fat ranges broadly: very low fat isn't required for strong characters and high fat isn't required for Gorrund identity. Distribution (face and neck, chest, upper back, abdomen, flanks, pelvis, glutes, thighs, limbs) is separate from amount, with biological distributions future work; high-fat Gorrund may carry abdominal fat without all sharing one large-belly silhouette, limbs aren't left unnaturally lean while the torso gains fat unless that's a valid distribution, and facial soft tissue responds to composition coherently but not deterministically (Part 3). GRR-BODY-10 (high muscle and high fat) keeps skeleton, joints and axial architecture readable, never letting circumference alone carry identity; GRR-BODY-11 (low muscle and higher fat) fails if it becomes a generic obese human. New cases: **GRR-BODY-16** low muscle and low fat (the skeleton alone carries the race), **GRR-BODY-17** broad frame and low muscle (separating breadth from muscle) and **GRR-BODY-18** narrow frame and high muscle (muscle needs no Broad frame and never erases skeletal identity).
+**Skeletal frame** (bone architecture), **current muscularity**, **body-fat amount** and **body-fat distribution** stay distinct. Low-muscle Gorrund show less muscle while keeping the large skeletal torso, joints, long-bone scale, hands, feet and silhouette. High muscle wraps the skeleton without erasing joint relationships, creating a generic bodybuilder, turning the Gorrund into Skarn or becoming the racial identifier. Regional muscle varies (neck, shoulders, upper arms, forearms, chest, back, abdomen, glutes, thighs, calves) with controls provisional, and equal total muscle can be distributed differently, supporting individuality and later training effects without encoding occupation biologically. Whether Gorrund have a different muscular-development ceiling or distribution is **OPEN**, never settled from appearance. Body fat ranges broadly: very low fat isn't required for strong characters and high fat isn't required for Gorrund identity. Distribution (face and neck, chest, upper back, abdomen, flanks, pelvis, glutes, thighs, limbs) is separate from amount, with biological distributions future work; high-fat Gorrund may carry abdominal fat without all sharing one large-belly silhouette, limbs aren't left unnaturally lean while the torso gains fat unless that's a valid distribution, and facial soft tissue responds to composition coherently but not deterministically (Part 3). GOR-BODY-10 (high muscle and high fat) keeps skeleton, joints and axial architecture readable, never letting circumference alone carry identity; GOR-BODY-11 (low muscle and higher fat) fails if it becomes a generic obese human. New cases: **GOR-BODY-16** low muscle and low fat (the skeleton alone carries the race), **GOR-BODY-17** broad frame and low muscle (separating breadth from muscle) and **GOR-BODY-18** narrow frame and high muscle (muscle needs no Broad frame and never erases skeletal identity).
 
 ## 85–97. Proportion families, relationship-aware constraints and world geometry
 
-Presets may use internal proportion families (more axial, more balanced, slightly more limb-present), never subraces, castes or bloodlines unless future lore or genetics establishes them. Relationship-aware constraints are required: a large thoracic-depth increase may need valid adjustment in spine, shoulder placement, neck, ribcage and abdomen, and a large pelvic-breadth change needs validated hip-joint placement, femur alignment and gait. Large bones need scaled joints, never maximum long-bone scale with minimum knees, maximum forearm structure with a tiny wrist or a massive femur with a tiny hip articulation. Hands and wrists, and feet and ankles, correlate biologically inside valid envelopes without being hard-locked to one linked control. Shoulder-joint scale, upper-arm structure and thorax stay compatible, and pelvis, hip, femur and knee work as one biomechanical chain, especially at maximum height and Broad frame. Sitting is validated against femur length, pelvic and torso depth, lower-leg length and foot placement without distorting femora for prototype chairs; maximum-height Gorrund stay a door stress test, never shortening neck, spine or legs to clear doors; ladders check hand and foot size against rungs, rung spacing, knee clearance and torso distance with canonical geometry. Canonical weapon grips don't enlarge, large hands may make some handles look or feel small, and practical incompatibility is **OPEN**. Armor accounts for thoracic breadth and depth, shoulder placement, pelvis, limb segments, joint scale, hands, feet and composition, and uniformly scaled human armor fails. Part 2 anatomy creates biomechanical requirements without setting walking or running speed, acceleration, jump performance, agility or stamina, which stay **OPEN**.
+Presets may use internal proportion families (more axial, more balanced, slightly more limb-present; at matched height the limb-present family stays below the shortest-limbed valid Grask in relative limb contribution — Pass 2 AD-3), never subraces, castes or bloodlines unless future lore or genetics establishes them. Relationship-aware constraints are required: a large thoracic-depth increase may need valid adjustment in spine, shoulder placement, neck, ribcage and abdomen, and a large pelvic-breadth change needs validated hip-joint placement, femur alignment and gait. Large bones need scaled joints, never maximum long-bone scale with minimum knees, maximum forearm structure with a tiny wrist or a massive femur with a tiny hip articulation. Hands and wrists, and feet and ankles, correlate biologically inside valid envelopes without being hard-locked to one linked control. Shoulder-joint scale, upper-arm structure and thorax stay compatible, and pelvis, hip, femur and knee work as one biomechanical chain, especially at maximum height and Broad frame. Sitting is validated against femur length, pelvic and torso depth, lower-leg length and foot placement without distorting femora for prototype chairs; maximum-height Gorrund stay a door stress test, never shortening neck, spine or legs to clear doors; ladders check hand and foot size against rungs, rung spacing, knee clearance and torso distance with canonical geometry. Canonical weapon grips don't enlarge, large hands may make some handles look or feel small, and practical incompatibility is **OPEN**. Armor accounts for thoracic breadth and depth, shoulder placement, pelvis, limb segments, joint scale, hands, feet and composition, and uniformly scaled human armor fails. Part 2 anatomy creates biomechanical requirements without setting walking or running speed, acceleration, jump performance, agility or stamina, which stay **OPEN**.
 
 ## 98–108. Comparative, neutralization and stress tests
 
 | Test | Requirement |
 | --- | --- |
 | Equal-height Grask (about 218–229 cm, similar muscle, fat, presentation and pigmentation) | Grask: greater limb contribution, relative arm length and span, forearm and lower-leg emphasis, a reach-oriented silhouette. Gorrund: greater axial contribution, thoracic breadth and depth, joint presence, larger load-bearing relationships and pelvis-torso integration. Fails if the distinction depends on muscle or fat |
-| Equal-height Skarn (about 208–229 cm) | Skarn: human skeletal family, powerful large-human relationships, the already-approved greater natural muscle-volume potential, human cranial and body foundation. Gorrund: a distinct non-human load-bearing system with greater axial depth and structural scale beyond "big human" and distinct joint, torso and pelvis relationships. Fails as "extra-broad Skarn" |
+| Equal-height Skarn (about 208–229 cm) | Skarn: human skeletal family, powerful large-human relationships, the already-approved higher Muscular Development Capacity (not a default Current Muscularity), human cranial and body foundation. Gorrund: a distinct non-human load-bearing system with greater axial depth and structural scale beyond "big human" and distinct joint, torso and pelvis relationships. Fails as "extra-broad Skarn" |
 | Minimum Gorrund vs maximum Sagekin (about 208 cm) | Muscle, fat, clothing and face where useful neutralized; the Gorrund stays clearly non-human through body architecture |
 | Gorrund vs Durrim (conceptual) | Durrim structural presence is expressed relative to short stature through compact architecture; Gorrund through massive absolute load-bearing architecture at large stature; the same proportion recipe is never reused at a different scale |
 | Gorrund vs Aelari (about 208–221 cm) | Aelari gracile, vertically distributed elven elongation; Gorrund massive axial load-bearing architecture; height has little diagnostic value |
-| Composition-neutral recognition (GRR-BODY-16, neutral pose and presentation) | Fails if it needs muscle bulk or fat volume to read Gorrund |
+| Composition-neutral recognition (GOR-BODY-16, neutral pose and presentation) | Fails if it needs muscle bulk or fat volume to read Gorrund |
+| Lower-breadth / lower-depth Gorrund (GOR-BODY-12, GOR-BODY-14) vs Broad Grask at matched height (Pass 2 author decision AD-3) | The Gorrund stays Gorrund through body architecture: lower relative limb contribution than the Grask distribution, greater axial contribution, joint presence and Axial Load-Path Continuity. Ears, face, surface phenotype, muscle and absolute height never rescue an otherwise collapsed body architecture. Numeric validator deferred to approved reference meshes (RM-LR-04) |
 | Hand neutralization | Ordinary nails, no claws, dirt, scars or oversized accessories; hands stay credible Gorrund through structure |
 | Foot neutralization | No claws or exaggerated monster feet |
 | Fine dexterity | Believably writing, threading or handling a small object, turning a small key, handling a coin and using delicate tools |
 
-Stress tests find where combinations stop being coherent: **GRR-STRESS-01** maximum height, Narrow, low muscle; **02** maximum height, Broad, high muscle; **03** maximum height, Broad, high fat; **04** minimum height, Broad, low muscle; **05** minimum height, Narrow, high muscle; **06** greater thoracic depth with lower breadth; **07** greater breadth with moderate depth; **08** large hands with lower valid wrists; **09** large feet with lower valid ankles. There's no valid assumption that maximum height, breadth, depth, joint scale, hand and foot size, muscle and fat together produce a valid character; relationship-aware validity overrides independent slider maxima.
+Stress tests find where combinations stop being coherent: **GOR-STRESS-01** maximum height, Narrow, low muscle; **02** maximum height, Broad, high muscle; **03** maximum height, Broad, high fat; **04** minimum height, Broad, low muscle; **05** minimum height, Narrow, high muscle; **06** greater thoracic depth with lower breadth; **07** greater breadth with moderate depth; **08** large hands with lower valid wrists; **09** large feet with lower valid ankles. There's no valid assumption that maximum height, breadth, depth, joint scale, hand and foot size, muscle and fat together produce a valid character; relationship-aware validity overrides independent slider maxima.
 
 ## 109–111. Validation cast, approved decisions and status
 
-GRR-BODY-01 to 15 are kept and GRR-BODY-16 (low muscle and low fat), 17 (Broad and low muscle) and 18 (Narrow and high muscle) are added, all internal validation cases, never presets, subraces or canon individuals.
+GOR-BODY-01 to 15 are kept and GOR-BODY-16 (low muscle and low fat), 17 (Broad and low muscle) and 18 (Narrow and high muscle) are added, all internal validation cases, never presets, subraces or canon individuals.
 
 First-pass approved: coordinated massive load-bearing relationships; axial architecture as a major identifier; thoracic breadth and depth as separate dimensions, with depth an especially important signal and skeletal depth separate from abdominal projection; greater torso contribution than Grask at matched height, with fully functional adult limbs; lower proportional lower-limb contribution than Grask at matched height, and greater relative arm length and span for Grask; substantial absolute joint scale; large, substantial, dexterous hands; five digits per hand and foot; ordinary protective nails; large plantigrade humanoid feet; frames independent of composition, with Narrow keeping depth and scale and Broad not automatically more muscular or fatter; all muscle and fat combinations valid, with fat amount and distribution separate and regional muscle variation required; muscular-development capacity OPEN; combined-proportion validity mandatory; canonical objects and equipment never scaling; fine dexterity fully compatible; numerical ratios OPEN; and technical implementation OPEN. **Gorrund v1.0 Part 2 is complete**, and v1.0 as a whole isn't.
 
@@ -265,6 +268,7 @@ This patch doesn't reopen Part 2, which stays complete; Gorrund v1.0 stays in pr
 | Fenn neutralization | Representative Fenn and minimum Gorrund near 208–211 cm with age, clothing, hair, pigmentation, expression, muscle and fat controlled where useful stay distinct through skeleton alone; fails if Gorrund identity needs more muscle, more fat or monster facial features |
 | Hands (Fenn added) | Fenn: longer, gracile extremity organization. Gorrund: large absolute dimensions with greater palm breadth and depth and load-bearing integration. Never distinguished by claws or presentation |
 | Feet (Fenn added) | Fenn: gracile, extremity-emphasized elven architecture. Gorrund: large, substantial plantigrade architecture supporting massive scale |
+| Gorrund / Skarn (208 cm Gorrund minimum vs Broad Skarn at equal and greater valid Skarn height through 229 cm; added by Pass 2 author decision AD-1) | **Cross-Population Boundary Test.** Passes only on proportional and architectural carriers: thoracic depth relative to stature and breadth, Axial Load-Path Continuity, craniofacial identity (Transverse Structural Continuity) and ear architecture. Fails if it relies on absolute size or Current Muscularity |
 
 Part 2 cross-population testing now explicitly covers Skarn, Grask, Aelari, Fenn, Sagekin, Halvren where actually valid, and Durrim as a conceptual structural comparison; others may be added, and omission never means a race is anatomically irrelevant.
 
@@ -309,7 +313,7 @@ Cheekbone lateral and forward projection and vertical position vary, and promine
 
 ## 22–39. Nose, mouth, teeth, jaw and face shape
 
-Nose root height, bridge length and breadth, projection, nasal breadth, tip and nostril dimensions and orientation vary separately, with no mandatory "ogre nose"; large noses may be valid, moderate ones must be, and a moderate-nosed Gorrund stays recognizable. Greater nasal breadth may occur naturally, but broad face never hard-links to broad nose. Mouth width, lip dimensions and projection and commissure position vary, never requiring a huge mouth, thin or thick lips, a downturned mouth or a permanent snarl. Dentition is **functional humanoid** as a baseline, detailed dental morphology is **OPEN**, and no specialized diet is set from face shape.
+Nose root height, bridge length and breadth, projection, nasal breadth, tip and nostril dimensions and orientation vary separately, with no mandatory "ogre nose"; large noses may be valid, moderate ones must be, and a moderate-nosed Gorrund stays recognizable. Greater nasal breadth may occur naturally, but broad face never hard-links to broad nose. Mouth width, lip dimensions and projection and commissure position vary, never requiring a huge mouth, thin or thick lips, a downturned mouth or a permanent snarl. Dentition is **functional humanoid** as the first-pass default, detailed dental morphology is **OPEN**, and no specialized diet is set from face shape.
 
 > **Tusks are NOT required for Gorrund racial identity.** A completely non-tusked Gorrund is fully valid and immediately recognizable.
 
@@ -664,7 +668,7 @@ Retargeting preserves proportions, joint relationships, hand and foot placement 
 
 ## 113–127. Comparative and identity tests
 
-Gorrund completion provides enough anatomy for a future dedicated **Large-Race Comparative Anatomy Review** (Skarn, Grask, Gorrund), not performed here. The triangle shorthand stays: Skarn **large-scale powerful human architecture**, Grask **rangy reach-oriented non-human architecture**, Gorrund **massive load-bearing non-human architecture**, with detailed anatomy authoritative.
+Gorrund completion provided enough anatomy for the dedicated **Large-Race Comparative Anatomy Review** (Skarn, Grask, Gorrund), performed and accepted in Pass 2 (`reviews/claude-pass2-r2-large-race-comparative-review.md`; author decisions AD-1–AD-5, October 5, 2026). **Skarn–Gorrund torso and limb proportional separation is undetermined by design (AD-4):** their distinction is architectural — the human skeletal family versus Gorrund Axial Load-Path Continuity and load-bearing non-human architecture, plus the established craniofacial and auricular differences — and no Gorrund torso-share or limb-share relationship to Skarn is defined. The triangle shorthand stays: Skarn **large-scale powerful human architecture**, Grask **rangy reach-oriented non-human architecture**, Gorrund **massive load-bearing non-human architecture**, with detailed anatomy authoritative.
 
 | Test | Requirement |
 | --- | --- |
@@ -692,7 +696,7 @@ Every preset is a legitimate output of the same system available in Advanced cus
 
 ## 136–137. Final audit and completion status
 
-The complete Gorrund specification (Parts 1–5, all clarifications and the final clarification below) was audited against the full list in §136. The two clarification gaps (a body-level Gorrund–Durrim anchor and the prototype audit scope) are resolved by the final clarification, and no contradiction remains, so **Gorrund Character Design v1.0 is FIRST-PASS COMPLETE.** **Implementation-level prototype verification is DEFERRED until project-file access is available.** No UE5 change or technical implementation is authorized.
+The complete Gorrund specification (Parts 1–5, all clarifications and the final clarification below) was audited in full (the final-audit checklist is not reproduced in this spec; see `audits/10-gorrund.audit.md`). The two clarification gaps (a body-level Gorrund–Durrim anchor and the prototype audit scope) are resolved by the final clarification, and no contradiction remains, so **Gorrund Character Design v1.0 is FIRST-PASS COMPLETE.** **Implementation-level prototype verification is DEFERRED until project-file access is available.** No UE5 change or technical implementation is authorized.
 
 # Final clarification Body identity anchor and prototype audit scope
 
@@ -728,7 +732,7 @@ The distinction is never merely a small versus a large structural body. **Matche
 
 ## 18–20. Identity update and face-body relationship
 
-> **Their massive body architecture is further distinguished by axial load-path continuity: coordinated structural integration from the shoulder girdle through the thorax and lower axial trunk into the pelvis and proximal lower limbs. This separates Gorrund from Durrim compact structural concentration as well as from Grask limb-dominant reach specialization and Skarn large-scale human anatomy.** (Added to the §134 identity statement.)
+> **Their massive body architecture is further distinguished by axial load-path continuity: coordinated structural integration from the shoulder girdle through the thorax and lower axial trunk into the pelvis and proximal lower limbs. This separates Gorrund from Durrim compact structural concentration as well as from Grask limb-dominant reach specialization and Skarn large-scale human anatomy.** (Supplements the Part 5 §128–135 identity statement; read the two together.)
 
 **Axial Load-Path Continuity** (body) and **Transverse Structural Continuity** (face) describe different anatomical systems and never collapse into one universal Gorrund slider; they may share a design language without being mechanically coupled, and more body continuity never requires more facial continuity, each varying independently within relationship-aware Gorrund limits.
 
@@ -738,4 +742,4 @@ This session has no access to the actual UE5 project files or current Gorrund cl
 
 > **The Gorrund v1.0 final audit is complete at the approved design-specification level, but implementation-level prototype verification is DEFERRED until the current project files can be inspected.**
 
-No claim is made that current code has been verified. Known prototype conflicts are already resolved at design level: the legacy slow-swimming trait is a gameplay trait subject to later review with no biological explanation; the easy-to-spot-while-sneaking trait is a gameplay trait subject to later review with no automatic biological stealth penalty; and the "long arms" shorthand is superseded (large absolute arms, no unusual proportional reach). Any other prototype assumptions (strength bonuses, intelligence penalties, mandatory brutishness, automatic movement penalties, hidden reach bonuses, uniform body scaling, weapon scaling, collision assumptions, fixed class restrictions, other racial statistics) aren't approved just by existing: **Approved Design Specification > Open Decision Register > Prototype Implementation**. When project files are accessible, a dedicated **Gorrund Prototype Implementation Conflict Audit** compares the implementation against v1.0, without modifying implementation unless separately authorized. With the body gap resolved, the face distinction intact and the audit scope documented, **Gorrund Character Design v1.0 is FIRST-PASS COMPLETE**, with **implementation-level prototype verification DEFERRED**. The recommended next race is **Pipkin — Halfling**, not started.
+No claim is made that current code has been verified. Known prototype conflicts are already resolved at design level: the legacy slow-swimming trait is a gameplay trait subject to later review with no biological explanation; the easy-to-spot-while-sneaking trait is a gameplay trait subject to later review with no automatic biological stealth penalty; and the "long arms" shorthand is superseded (large absolute arms, no unusual proportional reach). Any other prototype assumptions (strength bonuses, intelligence penalties, mandatory brutishness, automatic movement penalties, hidden reach bonuses, uniform body scaling, weapon scaling, collision assumptions, fixed class restrictions, other racial statistics) aren't approved just by existing: **Approved Design Specification > Open Decision Register > Prototype Implementation**. When project files are accessible, a dedicated **Gorrund Prototype Implementation Conflict Audit** compares the implementation against v1.0, without modifying implementation unless separately authorized. With the body gap resolved, the face distinction intact and the audit scope documented, **Gorrund Character Design v1.0 is FIRST-PASS COMPLETE**, with **implementation-level prototype verification DEFERRED**. The recommended next race was **Pipkin — Halfling** (since FIRST-PASS COMPLETE).

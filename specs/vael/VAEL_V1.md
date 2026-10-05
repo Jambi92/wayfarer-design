@@ -1,6 +1,6 @@
 # Vael Character Customization v1.5 (first pass complete)
 
-This is the Vael (Dark Elf) specification at v1.5, and the Vael first pass is complete. v1.0 covers elven lineage, the core physical foundation, limbs, composition, low-light adaptation and initial validation. v1.1 covers detailed body proportions, skeletal relationships and three-elf differentiation. v1.2 covers craniofacial anatomy, eyes and low-light adaptation, ears, aging and facial validation. v1.3 covers complexion, pigmentation, lighting, hair, eyes, the subterranean environment and cultural presentation. v1.4 covers presets, population-aware randomization and racial boundary validation. v1.5 covers skeleton, animation, movement, eyes, equipment, world compatibility, cameras, lighting and technical handoff. It is design only, with no UE5 changes. Vael share deeper ancestry with Fenn and Aelari as a third distinct elven branch: more compact and deeper-bodied, with somewhat greater structural presence. Each version arrived in parts, kept together here. Next is the Elf Comparative Review v1.0.
+This is the Vael (Dark Elf) specification at v1.5, and the Vael first pass is complete. v1.0 covers elven lineage, the core physical foundation, limbs, composition, low-light adaptation and initial validation. v1.1 covers detailed body proportions, skeletal relationships and three-elf differentiation. v1.2 covers craniofacial anatomy, eyes and low-light adaptation, ears, aging and facial validation. v1.3 covers complexion, pigmentation, lighting, hair, eyes, the subterranean environment and cultural presentation. v1.4 covers presets, population-aware randomization and racial boundary validation. v1.5 covers skeleton, animation, movement, eyes, equipment, world compatibility, cameras, lighting and technical handoff. It is design only, with no UE5 changes. Vael share deeper ancestry with Fenn and Aelari as a third distinct elven branch: more compact and deeper-bodied, with somewhat greater structural presence. Each version arrived in parts, kept together here. The Elf Comparative Review v1.0 followed (`reviews/elf-comparative-review.md`).
 
 ## 1. Core identity
 
@@ -48,7 +48,7 @@ Height never defines Vael, and minimum, reference and maximum-height Vael share 
 
 ## 13. Physical composition
 
-Vael support the full range of muscle, fat, regional development and conditioning: Narrow and lean, Narrow and muscular, Balanced, Broad, Broad and highly muscular, high body fat, and elder composition. Identity never depends on thinness, muscle or fat.
+Vael support the full range of muscle, fat, regional development and conditioning: Narrow and lean, Narrow and muscular, Balanced, Broad, Broad and highly muscular, high body fat, and elder composition (Narrow/Balanced/Broad are Skeletal Frame presets combined with composition). Identity never depends on thinness, muscle or fat.
 
 ## 14. Low-light adaptation (major design question)
 
@@ -176,7 +176,7 @@ All three should still plausibly share ancestry. The possible shared signals are
 | --- | --- |
 | Marchfolk and Sagekin (matched height and composition, ears, pigmentation, hair and clothing hidden) | Vael never become human when cultural and fantasy signals are removed |
 | Skarn (tall, Broad, muscular Vael against a matched Skarn) | Skarn keep human ancestry, greater robustness and skeletal mass, larger joints and a different torso. Vael keep elven ancestry, gracility, limb segmentation, hands and feet, and torso and pelvis relationships |
-| Durrim (warning) | Durrim anatomy is never used to solve Vael compactness. They'll differ in stature, bone proportions, limb share, center of mass, joints, hands and feet, and torso construction. Durrim aren't designed yet, so flexibility stays |
+| Durrim (warning) | Durrim anatomy is never used to solve Vael compactness. They'll differ in stature, bone proportions, limb share, center of mass, joints, hands and feet, and torso construction. Durrim weren't designed when this was written, so flexibility stayed; Durrim v1.0 is now FIRST-PASS COMPLETE and the comparison uses it |
 
 ## 28. Expanded validation characters
 
@@ -364,7 +364,7 @@ The target is living tissue, not painted stone.
 
 ## 4–5. Living skin and layers
 
-Vael skin shows blood-flow influence, localized redness or equivalent perfusion, subsurface variation, regional differences (lips, eyes, ears, palms), freckles, moles, birthmarks or Vael equivalents, aging and environmental effects. It's never flat or monochrome. The universal natural, environmental and applied layers stay.
+Vael skin shows blood-flow influence, localized redness or equivalent perfusion, subsurface variation, regional differences (lips, eyes, ears, palms), freckles, moles, birthmarks or Vael equivalents, aging and environmental effects. It's never flat or monochrome. The universal Natural, Environmental, Applied and Acquired layers stay.
 
 ## 6–7. Lighting invariance and the cave-lighting trap
 
@@ -597,7 +597,7 @@ Under the universal rule, Vael across their full range must work with doors, cei
 
 ## 24–26. Architecture and appearance data
 
-Vael share the high-level character system (ancestry, body configuration, composition, face, age, skin, hair, markings, presentation), and shared concepts don't require identical implementation. **Shared ancestry does not automatically require one shared skeleton.** Fenn, Aelari and Vael could use one adaptable elven architecture, closely related race-specific skeletons, a shared hierarchy with different proportions, different skeletons with retargeting, or a hybrid, to be settled by testing. The future appearance-data requirements are unified concepts, schema and version tracking, migration, preset reproducibility, deterministic generation, save and load continuity, Simple and Advanced continuity, and randomization locks, all unresolved.
+Vael share the high-level character system (ancestry, skeleton and body, composition, face, age, skin, hair, markings, presentation), and shared concepts don't require identical implementation. **Shared ancestry does not automatically require one shared skeleton.** Fenn, Aelari and Vael could use one adaptable elven architecture, closely related race-specific skeletons, a shared hierarchy with different proportions, different skeletons with retargeting, or a hybrid, to be settled by testing. The future appearance-data requirements are unified concepts, schema and version tracking, migration, preset reproducibility, deterministic generation, save and load continuity, Simple and Advanced continuity, and randomization locks, all unresolved.
 
 ## 27–28. Validation suite and stress characters
 
@@ -613,4 +613,4 @@ The open items are Vael lifespan and aging rate; elven lifespan relationships; e
 
 ## 31–35. Completion and next steps
 
-**Vael v1.0–v1.5 first pass is complete.** The completed first-pass races are Marchfolk, Skarn, Sagekin, Fenn, Aelari and Vael. The Elf Comparative Review v1.0 comes next, sorting features into shared elven ancestry, Fenn-specific, Aelari-specific, Vael-specific and unresolved. It must not force similarities just because all three are elves, or exaggerate differences just to make each instantly identifiable: the goal is believable shared ancestry with believable divergence. Detailed Halvren anatomy waits for the review, and Halvren must be built from established human and elven foundations, not humans with pointed ears, a 50/50 slider average, Aelari with shorter ears or generic half-elves. Mixed ancestry needs its own biological design review.
+**Vael v1.0–v1.5 first pass is complete.** The completed first-pass races are Marchfolk, Skarn, Sagekin, Fenn, Aelari and Vael. The Elf Comparative Review v1.0 came next (`reviews/elf-comparative-review.md`), sorting features into shared elven ancestry, Fenn-specific, Aelari-specific, Vael-specific and unresolved. It must not force similarities just because all three are elves, or exaggerate differences just to make each instantly identifiable: the goal is believable shared ancestry with believable divergence. Detailed Halvren anatomy waits for the review, and Halvren must be built from established human and elven foundations, not humans with pointed ears, a 50/50 slider average, Aelari with shorter ears or generic half-elves. Mixed ancestry needs its own biological design review.

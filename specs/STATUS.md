@@ -17,8 +17,8 @@
 
 ## Completed reviews
 - **Short-Race Comparative Anatomy Review — ACCEPTED / COMPLETE**
-- **Pass 2 Roster-Wide Comparative & System Review — audit DELIVERED** (`reviews/claude-pass2-01`…`06`; no blocking contradiction, no race reopened)
-- **Large-Race Comparative Anatomy Review (Skarn / Grask / Gorrund) — PERFORMED, author decisions pending** (`reviews/claude-pass2-r2-large-race-comparative-review.md`; no contradiction, no redesign; AD-1–AD-4 open)
+- **Pass 2 Roster-Wide Comparative & System Review — CLOSED** (`reviews/claude-pass2-01`…`06`; no blocking contradiction, no race reopened)
+- **Large-Race Comparative Anatomy Review (Skarn / Grask / Gorrund) — ACCEPTED / COMPLETE** (`reviews/claude-pass2-r2-large-race-comparative-review.md`; AD-1–AD-5 approved and reconciled)
 
 ## Not yet designed
 - None
@@ -26,7 +26,9 @@
 ## Current next action
 **PASS 1 COMPLETE — all 13 playable races are FIRST-PASS COMPLETE.**
 
-**Pass 2 — resolution sequence deliverables complete; awaiting author closure (October 5, 2026).** Authority hierarchy, terminology and R-SEX adopted in `decisions/PROJECT_RULES.md`; decision register marked historical/supporting. Delivered: authority & terminology report, Large-Race review, common craniofacial landmark & metric framework, conforming-edit plan (166 rows, not applied), Reference-Mesh Measurement Queue and closure audit (`reviews/claude-pass2-r1`…`r6`). Open for author action: Large-Race decisions AD-1–AD-4, confirmations AC-1–AC-10, approval of conforming edits. Numeric validators deferred to approved reference meshes. **Do not begin the Universal Facial Customization Architecture until ChatGPT closes the Pass 2 resolution sequence. Do not begin UE5 implementation.**
+**PASS 2 CLOSED (October 5, 2026).** Roster-wide comparative and system review, resolution sequence and author canonicalization complete (`reviews/claude-pass2-01`…`06`, `claude-pass2-r1`…`r6`, `claude-pass2-closure-canonicalization.md`). No blocking contradiction; all 13 first-pass completions remain valid. Authority hierarchy, terminology and R-SEX are in `decisions/PROJECT_RULES.md`; Large-Race decisions AD-1–AD-5 and confirmations AC-1–AC-10 are reconciled into the race specs. Numeric validators stay DEFERRED WITH NAMED INPUT in the Reference-Mesh Measurement Queue (`reviews/claude-pass2-r5-reference-mesh-queue.md`), including the Saurin cross-race rostral closure (RM-CF-01…05); the provisional Saurin rostral floor remains protective canon.
+
+**Next authorized design phase: Universal Facial Customization Architecture.** Not yet begun. Do not begin UE5 implementation.
 
 
 ## Pass 1 Completion Milestone — October 1, 2026

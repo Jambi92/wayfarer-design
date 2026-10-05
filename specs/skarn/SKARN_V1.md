@@ -1,6 +1,6 @@
 # Skarn Character Customization v1.5 (first-pass complete)
 
-This is the Skarn specification at v1.5, first-pass complete: v1.0 covers racial anatomy and the physical foundation, v1.1 covers body proportions, mass and anatomical relationships, v1.2 covers facial anatomy, age and individuality, v1.3 covers skin, hair, scars, weathering and cultural presentation, v1.4 covers presets, randomization and racial validation, and v1.5 covers final validation and technical handoff. It is design only, built on universal amendment v0.1 (four independent layers), with nothing implemented in UE5. The next race is Sagekin, and scholarly culture must never be confused with biological frailty or a universally thin body.
+This is the Skarn specification at v1.5, first-pass complete: v1.0 covers racial anatomy and the physical foundation, v1.1 covers body proportions, mass and anatomical relationships, v1.2 covers facial anatomy, age and individuality, v1.3 covers skin, hair, scars, weathering and cultural presentation, v1.4 covers presets, randomization and racial validation, and v1.5 covers final validation and technical handoff. It is design only, built on universal amendment v0.1 (four independent layers), with nothing implemented in UE5. The next race was Sagekin, and scholarly culture must never be confused with biological frailty or a universally thin body.
 
 ## 1. Racial identity
 
@@ -23,7 +23,7 @@ Compared with Marchfolk, Skarn ranges trend toward:
 - a more substantial neck base and pelvis
 - heavier joints
 - larger hands and feet
-- greater skeletal robustness and more natural muscle volume
+- greater skeletal robustness and a higher Muscular Development Capacity (biological range; Current Muscularity stays free, §5)
 
 These are ranges, not identical proportions for every Skarn.
 
@@ -49,7 +49,7 @@ Skarn faces are fully human and diverse. There are no mandatory square jaws, hea
 
 ## 9. Racial trait
 
-Skarn hold their breath about 1.5× as long as the baseline. This is kept as is, with no rebalance yet.
+Skarn hold their breath about 1.5× as long as the baseline (read as the Marchfolk Human Reference Population). This is kept as is, with no rebalance yet.
 
 ## 10. Validation comparisons (later)
 
@@ -70,20 +70,20 @@ This is design only. It adds to v1.0 and universal amendment v0.1 without replac
 
 ## 1. Core proportional identity
 
-Skarn are never uniformly scaled Marchfolk. Relative to Marchfolk, the baseline trends toward:
+Skarn are never uniformly scaled Marchfolk. Relative to Marchfolk, the Skarn central tendency trends toward:
 
 - a slightly larger torso share of total height and greater torso depth
 - broader clavicles, a wider and deeper ribcage, and a broader upper back
 - a thicker neck base and a more substantial pelvis
 - more substantial limbs and larger joints
 - larger hands and feet
-- more natural muscle volume
+- a higher Muscular Development Capacity (not a default Current Muscularity)
 
 Individual variation stays essential.
 
 ## 2. Torso and leg relationships
 
-Torso, leg and arm length, shoulder width, chest width and depth, and hip and pelvis width all vary. The baseline is slightly more torso-dominant than Marchfolk, but Skarn aren't universally short-legged. Long-legged and long-torso Skarn are both possible.
+Torso, leg and arm length, shoulder width, chest width and depth, and hip and pelvis width all vary. The Skarn central tendency is slightly more torso-dominant than Marchfolk, but Skarn aren't universally short-legged. Long-legged and long-torso Skarn are both possible.
 
 ## 3. Upper body
 
@@ -93,9 +93,9 @@ Shoulders, clavicles, chest, upper back and neck act as one connected system, wi
 
 The pelvis, hips, thighs, knees, calves, ankles and feet plausibly carry the greater mass at every setting. There is no default "huge upper body, tiny legs" silhouette.
 
-## 5. Hands and feet (Advanced)
+## 5. Hands and feet (detailed controls)
 
-Advanced controls to explore: hand size and breadth, finger proportions, foot length and breadth. All stay anatomically constrained, and they matter for both racial identity and equipment.
+Detailed controls to explore: hand size and breadth, finger proportions, foot length and breadth. All stay anatomically constrained, and they matter for both racial identity and equipment.
 
 ## 6. Regional muscle development
 
@@ -142,7 +142,7 @@ This is design only, preserving v1.0–v1.1 and the universal rules.
 
 ## 1. Facial principle
 
-Skarn faces are biologically human. Their identity comes from population ranges and combinations, not mandatory features. The baseline tends toward:
+Skarn faces are biologically human. Their identity comes from population ranges and combinations, not mandatory features. The Skarn facial central tendency trends toward:
 
 - a slightly larger, more robust skull suited to body size
 - a somewhat stronger brow
@@ -156,6 +156,8 @@ These are tendencies, not requirements. Skarn are not all square-jawed, heavy-br
 ## 2. Facial editor
 
 The editor uses the same seven regions as Marchfolk: head and skull, brow and eyes, nose, cheeks, jaw and chin, mouth and lips, and ears. Race changes the supported ranges, not how the editor works.
+
+**Ears (Pass 2 AC-4):** Skarn follow the Marchfolk human-family auricular anatomical foundation (Marchfolk Part 2 §3–4) unless this spec explicitly modifies a tendency. This does not make Skarn head anatomy Marchfolk-equivalent.
 
 **Interpretation (Durrim consistency-resolution patch):** "the same seven regions as Marchfolk" means Skarn must support at least the facial anatomical coverage represented by the Marchfolk first-pass regions, subject to later reorganization in the Universal Facial Customization Architecture Review. The final creator needn't keep seven regions, their names, nesting, UI layout or control grouping. Skarn biological requirements stay approved, and only the final control organization is deferred (APPROVED FIRST-PASS FUNCTIONAL REQUIREMENTS / PROVISIONAL CONTROL ORGANIZATION).
 
@@ -198,13 +200,14 @@ Race defines the biological foundation, culture influences presentation, and per
 
 ## 2. Skin layers
 
-The three layers stay, as in Marchfolk v1.3.
+The four layers stay, as in Marchfolk v1.3 (as conformed).
 
 | Layer | Covers |
 | --- | --- |
 | Natural | Base pigmentation, undertone, complexion, freckles, moles, birthmarks, natural variation |
-| Environmental | Sun exposure, wind and weather, dryness, roughness, calluses, localized wear |
-| Applied or acquired | Scars, tattoos, paint, makeup, dirt, decorative markings |
+| Environmental | Sun exposure, wind and weather, dryness, roughness, calluses, localized wear, dirt |
+| Applied | Tattoos, paint, makeup, decorative markings |
+| Acquired | Scars |
 
 Skarn have full natural human skin-tone variation. A northern origin never means one mandatory skin color.
 
@@ -291,6 +294,8 @@ All of these must still read as the same population: lean, heavy, elderly, soft-
 ## 8. Marchfolk, Skarn and Gorrund separation (cross-race requirement)
 
 The three are never differently scaled versions of one anatomy. Skarn are large, robust humans. Gorrund are giant-kin on their own anatomical foundation. Even extreme Skarn settings must not recreate Gorrund anatomy.
+
+Skarn–Grask separation is carried by the Grask spec (Part 1 §60–70 and Part 5 comparative tests) and the Pass 2 Large-Race Comparative Anatomy Review (`reviews/claude-pass2-r2-large-race-comparative-review.md`). This pointer adds no Skarn anatomy (Pass 2 AD-5).
 
 ## 9. Acceptance criteria
 
