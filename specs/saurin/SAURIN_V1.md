@@ -1,6 +1,6 @@
 # Saurin Character Design v1.0
 
-**Status:** FIRST-PASS COMPLETE — Gate 7 surface anatomy CLOSED; later design gates remain active  
+**Status:** FIRST-PASS COMPLETE (October 4, 2026) — anatomical/surface convergence CLOSED (aff1b52); creator-biology validation CLOSED (Part 7)  
 **Phase:** DESIGN ONLY — no UE5 implementation authorized
 
 Saurin are the thirteenth and final playable race first-pass design.
@@ -167,7 +167,7 @@ The tail:
 - is not a decorative cosmetic toggle;
 - is not automatically aquatic-specialized.
 
-Provisional neutral tail length: approximately **55–80% of standing height**, measured anatomically from the caudal base to tip along the relaxed centerline.
+Provisional neutral tail length: approximately **55–80% of standing height**, measured anatomically from the caudal base to tip along the relaxed centerline. This is the **racial envelope**; reachability of its upper end depends on frame and composition and is governed by the coupled tail rule (§256). The 80 % endpoint is not an entitlement for every body.
 
 Exact distribution and segment count remain OPEN.
 
@@ -426,6 +426,8 @@ It should not require:
 
 Individual pose and animation remain later questions.
 
+Resting carriage is distinct from anatomical tail proportions (§256). The frozen reference stance is an anatomical/reference stance, not the final balanced neutral standing pose (§257).
+
 ## 27. Biological randomization
 
 Biological Randomization must preserve coupled relationships among:
@@ -467,7 +469,7 @@ Saurin are not miniature dragons.
 
 Part 1 does not approve:
 - wings;
-- horns;
+- mandatory or default dragon-style horn sets (controlled Saurin cranial keratin display anatomy is biologically valid within the accepted family and attachment constraints of §100–102 and §260);
 - dragon ancestry;
 - breath weapons;
 - magical elemental organs;
@@ -593,7 +595,7 @@ Any modest forearm emphasis is not Cogling Fine-Scale Elongated Articulation: Sa
 
 ### Creator-category note
 
-For Saurin, generic creator categories for mammalian **Hair** and **Facial Hair** are biologically empty under the current baseline and must not expose human assets. Where the universal creator requires equivalent navigation, Saurin-specific ridge/surface controls may occupy an appropriate race-aware category without pretending those structures are hair.
+For Saurin, generic creator categories for mammalian **Hair** and **Facial Hair** are biologically empty under the current baseline and must not expose human assets. Where the universal creator requires equivalent navigation, Saurin **Cranial Display** controls (§100–102, §150, §260) occupy that race-aware category without pretending those structures are hair.
 
 ### Stature-accounting note
 The elongated lower axial trunk and moderate-to-long leg contribution cannot both expand without compensating elsewhere in total standing height. Part 2 must explicitly account for head, neck, thoracic-height, lower-trunk and leg shares rather than allowing independent proportional inflation.
@@ -992,6 +994,8 @@ Variation must not turn the structure into a human, elf or fantasy-dragon ear by
 *Historical Part 2 wording:* Horns were not baseline Saurin anatomy in Part 2, to keep the head from becoming generically draconic; whether keratinous cranial display structures existed was left OPEN for Part 3.
 
 ## 59. Crest/frill firewall
+
+> **Reconciled October 4, 2026 (creator-biology closure):** this firewall rejects dragon/dinosaur-default structures, not the accepted Cranial Keratin Display family. Restrained crest-dominant expression (current first-pass ceiling ~2.5 cm), brow-region hornlets and the other §100–102 families are valid; neck frills, hoods, dragon fins and cheek spikes remain unapproved.
 
 Part 2 does not assume:
 - neck frills;
@@ -2362,7 +2366,7 @@ Tail-base support must scale relationally with tail demands: **as valid tail len
 
 ## 146. Rostrum creator controls
 
-The approved minimum rostral floor is absolute within Saurin adult biology.
+The approved minimum rostral floor is absolute within Saurin adult biology. Its first-pass numeric form is provisional (§259); the cross-race numeric check is OPEN.
 
 Advanced Mode may vary:
 - length;
@@ -3062,11 +3066,11 @@ Headgear must respect:
 - jaw movement;
 - orbital visibility;
 - recessed auricular openings;
-- optional low-profile ridges.
+- the full Cranial Keratin Display family (§100–102, §260), from neutral/naked to the restrained crest ceiling.
 
 Generic human helmets cannot simply compress or hide the rostrum.
 
-Ridge-present and ridge-absent Saurin both require valid solutions.
+Display-present and display-absent Saurin both require valid solutions.
 
 ## 193. Neck and torso armor
 
@@ -4001,6 +4005,8 @@ The following remain OPEN:
 - cosmetic/body-paint feasibility;
 - claw growth and wear.
 
+**Creator-biology closure (Part 7):** additional OPEN items are listed in §265.
+
 **OPEN-list authority:** The OPEN lists in Parts 1–5 remain in force unless a later accepted section explicitly resolves an item. §§249–252 summarize major live decisions rather than silently closing omitted questions.
 
 **Resolved-earlier-item pointers:** Where an earlier section still labels an item OPEN and a later accepted section resolves it, the later accepted section governs. In particular:
@@ -4085,4 +4091,121 @@ It does not mean:
 
 > **Saurin are a distinct upright reptilian humanoid population whose anatomy is organized around Counterbalanced Pelvic-Axial Architecture: a deep mobile thorax and elongated lower axial trunk feed into a strongly integrated pelvis, sacral base and mandatory muscular tail. Their Layered Rostral-Cranial head uses a broad orbital-temporal platform, compact genuine rostrum and deep articulated jaw rather than a human face or generic animal muzzle. Regional Scale Architecture gives different body regions protective, articulating and expressive surface structures while preserving broad natural phenotype variation. Their locomotion carries pelvic motion through the elongated lower trunk into responsive tail counter-motion, making the tail biologically inevitable rather than decorative. The tail is a major racial identifier but not a gameplay punishment: it does not inherently enlarge the combat target, delay controls or impose hidden movement penalties. Broad adult frame, composition, age, surface and individual variation remain valid, while culture, class, profession, morality and personality stay outside biology. Equipment, animation, world geometry, cameras and later technical systems must accommodate the approved organism rather than shrinking it back toward a human template.**
 
-Part 6 is **PROPOSED FOR FINAL AUDIT**.
+Part 6 is **ACCEPTED / COMPLETE**.
+
+# Part 7 — Creator-biology validation and closure
+
+**Accepted October 4, 2026.** Audit history: `reviews/claude-saurin-creator-biology-variation.md`, `reviews/saurin-creator-parameter-register.md` (diagnostic register; candidate numbers there are **not** canon unless restated here) and `reviews/claude-saurin-creator-biology-closure.md`. Author orders: `reviews/chatgpt-saurin-creator-biology-variation-order.md`, `reviews/chatgpt-saurin-creator-biology-closure-order.md`.
+
+All validation was derived from the frozen closure reference (aff1b52) without modifying it.
+
+## 255. Value categories used in Part 7
+
+| Category | Meaning |
+|---|---|
+| **Racial hard bound** | Canon biological envelope (for example §4 stature, §10 tail envelope) |
+| **First-pass creator hard bound** | Advanced Mode validity limit, geometrically validated at its extremes in the creator-biology diagnostics; may be revised by the universal creator-control review |
+| **Soft distribution** | Provisional central target for presets, Biological Randomization and NPC generation; not statistically validated |
+| **Coupled rule** | Relationship enforced across controls; individually legal controls may still form an illegal combination |
+| **Locked biology** | Not a creator control |
+| **OPEN** | Deliberately carried forward |
+
+**Creator outcomes:** **PASS** — the requested combination is valid; **CONSTRAIN** — the creator adapts an unlocked dependent control (§159); **FAIL** — the requested combination is itself an invalid shape and is refused.
+
+## 256. Tail coupling (coupled rule)
+
+Tail length is **not** a free independent slider. Measured on the frozen reference (tail 121.4 cm along the relaxed centreline, 64.6 % of standing height):
+
+1. **Length drives the base.** Tail length is the driver; tail-base mass and allowable mid/distal fullness are dependents. Root sufficiency (size-normalized tail weight × lever / root section) follows approximately (length)² / (base)^1.7, so the constant-sufficiency base is base ≈ length^1.18 (multipliers on reference). First-pass creator hard band: root-sufficiency index 0.75–1.20 of reference.
+2. **Abrupt-taper guard:** peak cross-sectional loss rate ≤ 1.25 × reference.
+3. **Threadlike / cylindrical guard:** mid-tail area 0.27–0.48 of root area; distal area (25 % from tip) ≥ 0.065 of root.
+4. **Counterbalance guard (creator-variation guard, relative):** no variant may require more than **+3°** of additional forward whole-body lean beyond the frozen reference under the uniform-density static model. This is a guard relative to the frozen reference, not a claim that the reference stance is the final idle (§257).
+5. **Frame/composition set the reachable upper length.** Validated: ~78 % H on a Balanced frame at reference composition; 80 % H on a Broad frame; ~72 % H on a Narrow, high-fat body. **The 80 % endpoint is a racial envelope, not an entitlement for every body.**
+6. **Tail muscularity follows Physical Composition** (proximal-mid emphasis, zero at the tip); there is no independent tail-muscle slider.
+7. **Caudal adipose is graded through the proximal tail** (over roughly its proximal half). Fat concentrated at the caudal root is invalid (it recreates a root mass step).
+8. **Resting carriage is distinct from tail proportions.** Validated carriage +8° lift … +10° droop with no ground contact; carriage changes clearance and reach, not balance. Carriage pose is later animation work (§172).
+9. **Stature is isometric** for every tail relationship; tail length is defined in % of standing height.
+10. The frozen pelvis/sacral-caudal architecture is never altered to support tail extremes; tail-base breadth carries only a frame component that follows pelvic width.
+
+Refused shapes (FAIL): heavy root + threadlike tail; cylindrical / attached-appendage tail; caudal fat concentrated at the root. Auto-constrained (CONSTRAIN): root too small (base raised), root oversized for a short tail (base lowered), length beyond the frame/composition limit (length capped). There is no tail-off control (§10).
+
+## 257. Frozen reference stance and balance
+
+Under a uniform-density static model the frozen reference's centre of mass lies ~6.3 cm behind the heel contact and the reference stance would need ~**8.8° of forward whole-body lean** to stand over the feet. **Anatomy is not reopened for this.** The frozen pose is an anatomical/reference stance, not the final dynamically balanced neutral standing pose. Living balance (axial inclination, pelvic organization, knees/ankles, tail carriage) is carried forward to the posture/locomotion/animation phase (§170–172, §265).
+
+## 258. Body proportions, frame and composition
+
+**First-pass creator hard bounds (validated at the extremes, constant standing height):** head-to-body proportion ±8 % (head length 0.156–0.184 of standing height; the +8 % head-scale decision is the centre); neck length ±15 %; neck depth ±10 %; thoracic depth ±8 %; thoracic width ±7 %; axial trunk length ±10 %; shoulder breadth ±8 %; pelvic width ±7 %; arm length ±6 %; leg length ±6 %; hand size ±8 %; foot size ±8 %. Stature 168–208 cm remains the racial hard bound (§4) and is **independent**.
+
+**Coupled:** thoracic depth/width ratio stays 0.80–1.00 (deep narrow-to-moderate shell); the thoracic depth floor scales with breadth.
+
+**Frame (§21)** — Narrow / Balanced / Broad are editable starting distributions, not castes. Frame changes shoulder breadth, thoracic width (depth ±2 % only), pelvic width, limb and joint girth, hand/foot breadth and the frame component of the tail base. Frame does **not** change stature, long-bone or axial lengths, the skull, or pelvic depth / sacral-caudal organization.
+
+**Composition (§22, §152–153)** stays independent of frame. Muscle follows Saurin anatomy (limbs, girdle, epaxial neck and dorsal trunk, thigh, posterior shank, proximal-mid tail; joints, hands and feet excluded). Body fat is genuine soft-tissue volume (ventral-abdominal strongest, flank/hip, graded proximal caudal, minor gular, light general). Prohibited: human pectoral blocks, rectus/six-pack segmentation, human gluteal/buttock mass, generic bodybuilder-width transformation, uniform inflation. Exact population adipose tendencies remain OPEN.
+
+## 259. Cranial identity
+
+Every valid naked skull keeps the compact projecting rostrum, Layered Rostral-Cranial Integration, the brow → temporal/postorbital transition, the embedded orbit, the deep articulated jaw base, and no human chin, lips, external nose or pinnae. Displays never rescue an invalid skull.
+
+**First-pass creator hard bounds (validated):** rostrum length −15 % / +20 %; rostral base width ±12 %; anterior rostral width ±15 %; rostral depth ±12 %; posterior jaw depth −12 % / +15 %; cranial length ±8 %; cranial width ±8 %; cranial depth ±7 %; orbit size ±8 %.
+
+**Coupled rules:**
+- **Rostral index** (rostral projection ahead of the eye centres ÷ head length; reference 0.288) stays 0.255–0.335. The floor is a **provisional Saurin floor**; the cross-race numeric check (§146) is OPEN because Marchfolk, Grask and Gorrund canon contain no numeric projection ranges.
+- **Cranial length × rostrum floor:** the rostrum minimum rises with cranial length so the index floor holds.
+- **Long rostrum → depth:** rostral length above +10 % requires rostral depth and posterior jaw depth ≥ reference (§40).
+- **Base/anterior taper:** anterior rostral width never exceeds rostral base width; the rostrum keeps a moderate anterior taper (validated anterior/base width ratio 0.60–0.73; reference 0.685).
+- **Orbit/eyeball:** orbit size scales the orbit, lids, aperture and eyeball together; the eyeball never scales independently of its orbit (§158).
+
+**Locked:** orbital placement and spacing remain locked to the accepted brow/orbit architecture; their numeric tolerance is OPEN (no clean validation without rebuilding the brow/postorbital planes).
+
+## 260. Cranial display family
+
+The canon is the **family range**, not one mandatory default: neutral/naked; minimal ridges (near-naked end); low hornlets; swept-back paired keratin structures; mixed/asymmetric structures; restrained crest-dominant structures. **No mandatory or default dragon-style horns; controlled Saurin cranial display anatomy is biologically valid within the accepted family and attachment constraints** (§100–102 govern; §29 and §59 are reconciled to this rule).
+
+Validated first-pass rules:
+- growth only from §101 attachment regions;
+- **structural footprint:** base radius ÷ structure chord ≥ 0.060 (the accepted swept-back pair is 0.069); base follows length;
+- **neck clearance** ≥ ~7 cm at neutral for swept structures (validated sweep −12° … +10°); clearance through head/neck range of motion and the display mass-moment limit are OPEN (§265);
+- **restrained crest ceiling ~2.5 cm** above the cranial roof as the first-pass upper reference (accepted crest 2.43 cm);
+- count, length, sweep and modest natural asymmetry (paired length ratio ≥ 0.70) vary within these rules;
+- displays remain valid on the accepted cranial extremes.
+
+Displays are biological phenotype occupying the creator role analogous to hair selection; they are **not hair**, equipment, mandatory sex markers, mandatory cultural markers or gameplay-stat features. Natural asymmetry is inherited variation; breakage and injury belong to the acquired/presentation-history layer.
+
+## 261. Digit and claw proportion
+
+The accepted reference hand and foot anatomy is retained: five-digit hand with opposable-thumb function, plantigrade foot, integrated terminal claws (§104–106). Diagnostic finding: lengthening the foot claws along their own axes at reference curvature brings their tips to the ground plane at about +15 % length in neutral stance, so foot-claw length above ~+15 % requires a compensating curvature or tip change to preserve plantigrade contact. **No numeric creator range is canonized**: grasp, footwear and glove compatibility cannot be validated without a grip pose and equipment, so hand and foot claw ranges remain OPEN for the universal creator-control review.
+
+## 262. Scale-field creator controls
+
+Regional Scale Architecture is retained. There is **no global scale-size control** (§85, §147). Any creator scale variation stays field-aware and preserves the functional distinction among structural, transitional, fine expressive, ventral and contact fields; field boundaries and functions are locked; expressive and articulation fields never coarsen toward structural size. Numeric per-field ranges have not been geometrically validated and remain first-pass rules, not numeric canon.
+
+## 263. Sex-related anatomy
+
+Canon audit (§24, §62, §154, §235): no established Saurin sex-related anatomical requirement exists. Therefore: no assumed human dimorphic ranges; no automatic differences in height, frame, muscle, fat, skull, display anatomy, coloration or tail; sex-related anatomy remains **OPEN** for later dedicated design. This does not block first-pass completion.
+
+## 264. Randomization, presets and NPCs
+
+Biological Randomization samples **driver** variables (stature, frame, composition, head proportions, tail length, display family) from soft distributions, then samples **dependent** variables inside their coupled bands (for example tail base around length^1.18, rostral minimum from cranial length), and rejects FAIL shapes before presentation. It never rolls every slider independently and repairs afterwards. Presets, saved appearances and NPCs use the same validity system as Advanced Mode (§157). Soft distributions remain provisional.
+
+## 265. OPEN items carried forward from creator-biology closure
+
+- Balanced neutral standing posture and living balance (posture/locomotion/animation phase); final density model for balance.
+- Absolute (rather than reference-relative) balance limits once posture is fixed.
+- Exact caudal-base landmark for measuring tail length.
+- Cross-race numeric rostral-floor comparison (Marchfolk, Grask, Gorrund normalized midface/rostral projection ranges) in the universal comparative review.
+- Numeric lower-trunk minimum relative to Marchfolk (§6) and a numeric Broad-vs-Gorrund boundary.
+- Population adipose tendencies.
+- Display mass-moment limit and neck clearance through head/neck range of motion; prominent horns/spikes/plates beyond the validated families (§100) and crest heights above ~2.5 cm.
+- Orbital placement/spacing tolerance.
+- Hand and foot claw / digit numeric ranges (grasp, footwear, gloves).
+- Numeric per-field scale ranges.
+- Sex-related anatomy.
+- World-space validation of the longest tails (up to ~170 cm tail reach behind the heel at the stature/tail extremes).
+- Universal facial-control architecture and statistical calibration of soft distributions.
+
+## 266. Creator-biology closure
+
+Creator-biology validation is **CLOSED** with no blocking contradiction.
+
+**SAURIN — FIRST-PASS COMPLETE.**

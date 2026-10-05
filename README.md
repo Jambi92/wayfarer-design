@@ -46,9 +46,9 @@ A higher level always wins. Existing implementation never overrides an approved 
 | 8 | Durrim | First pass complete |
 | 9 | Grask | First pass complete |
 | 10 | Gorrund | First pass complete (prototype verification deferred) |
-| 11 | Pipkin | Parts 1–5 accepted, Part 6 next |
-| 12 | Cogling | Not started |
-| 13 | Saurin | Not started |
+| 11 | Pipkin | First pass complete |
+| 12 | Cogling | First pass complete |
+| 13 | Saurin | First pass complete (October 4, 2026; anatomical/surface convergence and creator-biology validation closed) |
 
 ## Ownership (Tyler's decision, September 30, 2026)
 

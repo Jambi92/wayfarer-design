@@ -13,15 +13,13 @@
 10. Gorrund
 11. Pipkin
 12. Cogling
+13. Saurin — **FIRST-PASS COMPLETE** (October 4, 2026: anatomical/surface convergence CLOSED aff1b52; creator-biology validation CLOSED, `specs/saurin/SAURIN_V1.md` Part 7)
 
-## In progress
+## Completed reviews
 - **Short-Race Comparative Anatomy Review — ACCEPTED / COMPLETE**
 
-## In progress
-13. **Saurin — FIRST-PASS COMPLETE**
-
 ## Not yet designed
-13. Saurin
+- None
 
 ## Current next action
 **PASS 1 COMPLETE — all 13 playable races are FIRST-PASS COMPLETE.** Next phase: Pass 2 roster-wide comparative and system review. Do not begin UE5 implementation.
