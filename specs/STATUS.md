@@ -36,6 +36,8 @@ Closure freezes the universal facial creator architecture at the design level. I
 
 Closure freezes the whole-character creator architecture at the design level. It does not freeze later legitimate resolution of named OPEN biology (UCCA §25, including Halvren stature-tail limits, RM-UB-05), measurement work (RM-LR, RM-SR, RM-OT, RM-CF, RM-UF, RM-UB), gameplay review or implementation choices. **Closure is not permission to begin UE5 implementation.**
 
+**REFERENCE ANATOMY: BIOLOGICAL AUTHORSHIP CANONICALIZED / MEASUREMENT PHASE READY (RAC Phase 2, October 5, 2026; `reviews/chatgpt-reference-anatomy-closure-phase2-order.md`).** Method: `decisions/REFERENCE_ANATOMY_V1.md`. Phase 1 package: `reviews/claude-rac-01`…`12`. Phase 2 report: `reviews/claude-rac-phase2-canonicalization-report.md`. Wave 1 manifest: `reviews/claude-rac-wave1-execution-manifest.md` (15 bodies + 1 Marchfolk head variant). **Measurement has not started**; no measured value is canon. Numeric envelopes and the OPEN biology listed in the report stay OPEN. **Not permission to generate meshes, run measurements or begin UE5 implementation.**
+
 
 ## Pass 1 Completion Milestone — October 1, 2026
 

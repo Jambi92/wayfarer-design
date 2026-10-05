@@ -489,6 +489,15 @@ The 152–213 cm range is **no longer an absolute hard biological envelope.** It
 
 Exact tail heights are unresolved until the ancestry-dependent distribution is designed.
 
+**Stature-tail authorship (RAC Phase 2, October 5, 2026; AD-R28–R34; `reviews/claude-rac-09-halvren-stature-tail-authorship.md`):**
+- **H-5 (outer bounding rule):** inherited stature tails stay strictly inside the union of source-population stature extremes, currently 147–229 cm, and never automatically reach a named source population's own extreme. This is a bound, **not** the final Halvren minimum or maximum; RM-UB-05 determines the actual valid limits and frequencies. 152–213 cm stays the central envelope, not a hard clip.
+- **H-1 (contributors, under H-5):** the lower tail is supported only by human-family ancestry, and among the sources only Marchfolk ancestry reaches below 152 cm; the upper tail by Skarn ancestry and Aelari ancestry. Fenn, Vael and Sagekin ancestry do not by themselves extend either tail.
+- **H-2:** the tails are asymmetric in direction; the lower tail is narrower and has fewer contributing ancestries. No magnitude is set.
+- **H-3:** a tail Halvren must remain Halvren against the matched-stature source it approaches. Permanent tests: HV-50 vs matched-stature Skarn and vs matched-stature Aelari; HV-49 vs matched-stature Marchfolk, each under N3/N4.
+- **H-4:** a tail stature is valid only if the whole body reaches it through Halvren mixed development (coherent segment shares, allometry and joints), never by one source's stature on another source's proportions.
+- **H-6:** tails are minority outcomes relative to the central envelope; no ordering between upper and lower tail is authored.
+- **Reachability (Y-2):** valid tail statures may be created manually without a player-entered genealogy and may appear through Extreme biological randomization, under the same hidden inheritance/development validity system, source-protection tests and eventual frequency weights. This creates no ancestry-percentage slider, no visible genealogy requirement and no guaranteed random access to source extrema.
+
 ## 15–16. Missing source information and the source-first rule
 
 | Class | Items | Handling |
@@ -505,3 +514,5 @@ When mixed-ancestry design exposes missing source biology: identify the dependen
 Halvren v1.0 stays first-pass biological foundation complete, and this is recorded as the **Halvren v1.0 consistency resolution and pre-v1.1 clarification.** No UE5 changes and no implementation. The next step was then Halvren Character Design v1.1 (detailed body proportions and mixed-ancestry morphology); current sequencing is in `specs/STATUS.md`.
 
 **UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Halvren body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Halvren anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13. Stature: 152–213 cm is the central envelope; ancestry-dependent tails are supported and never hard-clipped, and their limits stay OPEN (UCCA §22, RM-UB-05).
+
+**Reference-anatomy status (RAC Phase 2, October 5, 2026):** the reference-anatomy method (approved reference meshes, reference composition, measurement stance, acceptance and circularity rules, measurement waves) is canonical in `decisions/REFERENCE_ANATOMY_V1.md`. Measurement has not started; no new numeric envelope is set. Halvren directional constraints for measurement are consolidated in `reviews/claude-rac-03-pelvis-axial-closure.md` §2 and `reviews/claude-rac-04-segment-stature-closure.md` §2 (constraints, not magnitudes). Stature-tail authorship (H-1…H-6, Y-2) is recorded in the height-envelope section above. **Sex-related anatomy and body hair follow the sources and development rules; nothing is invented inside Halvren** (AD-R22).

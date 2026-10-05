@@ -380,7 +380,7 @@ Skin pigmentation remains broad and is not used as a racial identifier. Exact po
 
 Eyebrow density, thickness, shape and growth direction vary; brow grooming is presentation. Eyelash density/length vary within plausible adult anatomy and are never used as sex or youth shorthand.
 
-Body-hair biology belongs to the later universal/race surface review. Pipkin do not require hairy feet or unusually hairy bodies.
+Body-hair biology is set in Part 4 §11 below (superseding the earlier pointer to a later review; RAC Phase 2). Pipkin do not require hairy feet or unusually hairy bodies.
 
 ## 14. Aging and adult readability
 
@@ -1676,3 +1676,5 @@ Pipkin may be marked **FIRST-PASS COMPLETE** when:
 **Pipkin v1.0 is FIRST-PASS COMPLETE.** Tyler approved completion after Claude's clean Part 6 quick check. The Short-Race Comparative Anatomy Review was then queued until Cogling was designed; it is now ACCEPTED / COMPLETE (`specs/STATUS.md`). No UE5 implementation is authorized.
 
 **UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Pipkin body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Pipkin anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13.
+
+**Reference-anatomy status (RAC Phase 2, October 5, 2026):** the reference-anatomy method (approved reference meshes, reference composition, measurement stance, acceptance and circularity rules, measurement waves) is canonical in `decisions/REFERENCE_ANATOMY_V1.md`. Measurement has not started; no new numeric envelope is set. Pipkin directional constraints for measurement are consolidated in `reviews/claude-rac-03-pelvis-axial-closure.md` §2 and `reviews/claude-rac-04-segment-stature-closure.md` §2 (constraints, not magnitudes). **Sex-related anatomy:** no authored shift by default; the regions that may later shift are already named; magnitude OPEN; second-configuration external biology needs per-race authorship and never transfers human patterns; PIP-BODY-29 and other second-configuration tests wait (AD-R19, AD-R22). **Neck:** adult neck contribution within the human-adult range, neither Durrim-compact nor Aelari-elongated by default (AD-R7). **Arm span:** no racial span tendency; derived (AD-R11). **Trunk share (T-2):** constraints adopted (AD-R12); the numeric split stays deferred.

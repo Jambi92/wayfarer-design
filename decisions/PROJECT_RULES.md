@@ -56,17 +56,29 @@ Universal UCCA rules (details in `decisions/UCCA_V1.md`):
 - Locks are absolute and never silently broken. Saved appearance stores semantic resolved values, never preset references, seeds, mesh weights or prototype slider values.
 - Diagnostic and measurement-deferred quantities never become creator controls unless canon separately authorizes them.
 
+## Reference anatomy status
+The **reference-anatomy method** is canonical in `decisions/REFERENCE_ANATOMY_V1.md` (RAC Phase 2, October 5, 2026): biological authorship canonicalized; measurement phase ready, **not started**.
+Universal rules (details in `decisions/REFERENCE_ANATOMY_V1.md`):
+- Numbers come only from **approved reference meshes** (ARMs) that pass the acceptance test and author acceptance. Derived values are diagnostic envelopes first and become canon only by author acceptance.
+- **Circularity:** a mesh built to builder-chosen targets cannot discover canon; no measured value becomes canon merely because a candidate mesh embodies it.
+- **Reference composition** (population-centre muscularity and fat, neutral distribution) is a measurement state, never a body preset.
+- **Obstetric firewall:** no pelvic inlet/outlet, gestation or fertility geometry is authored or measured; pelvic measurement uses external skeletal landmarks only.
+- **Structure lives in geometry:** skin texture, pores and roughness are surface detail; no skin-thickness difference is modelled geometrically unless authored; durability never has an effect.
+- Spinal curvature is never a racial identity carrier (except Vael's natural lumbar curve). Joints are never implausibly tiny or cosmetically oversized; bone robusticity never follows muscularity; thoracic depth and breadth are independent.
+- Human sex-related anatomy applies directly only to Marchfolk, Skarn and Sagekin (Halvren via its sources); it is never transferred to elves, Durrim, Grask, Gorrund, Pipkin or Cogling by assumption.
+
 ## Reviews
 - Short-Race Comparative Anatomy Review (Durrim, Pipkin, Cogling) — ACCEPTED / COMPLETE (`reviews/short-race-comparative-anatomy-v1.md`).
 - Large-Race Comparative Anatomy Review (Skarn, Grask, Gorrund) — ACCEPTED / COMPLETE (`reviews/claude-pass2-r2-large-race-comparative-review.md`; author decisions AD-1–AD-5, October 5, 2026, reconciled into the Skarn, Grask and Gorrund specs).
 - Pass 2 Roster-Wide Comparative & System Review — **CLOSED / FINAL-AUTHOR ACCEPTED / FROZEN** (October 5, 2026; `reviews/claude-pass2-closure-canonicalization.md`, `reviews/chatgpt-pass2-final-author-acceptance-freeze-order.md`).
 - Universal Facial Customization Architecture Review — Phase 1 **ACCEPTED** (`reviews/claude-ufca-01…08`); Phase 2 canonicalization completed in `decisions/UFCA_V1.md` (`reviews/claude-ufca-phase2-canonicalization-report.md`); **CLOSED / FINAL-AUTHOR ACCEPTED** October 5, 2026 (`reviews/claude-ufca-final-closure-report.md`). Uses `reviews/claude-pass2-r3-craniofacial-framework.md` as its cross-race comparison/measurement framework (not creator controls).
 - Universal Character Creation Architecture Review — Phase 1 **ACCEPTED** (`reviews/claude-ucca-01…11`); Phase 2 canonicalization completed in `decisions/UCCA_V1.md` (`reviews/claude-ucca-phase2-canonicalization-report.md`); **CLOSED / FINAL-AUTHOR ACCEPTED** October 5, 2026 (`reviews/claude-ucca-final-closure-report.md`).
+- Reference Anatomy Closure — Phase 1 **ACCEPTED** (`reviews/claude-rac-01…12`); Phase 2 canonicalization completed in `decisions/REFERENCE_ANATOMY_V1.md` (`reviews/claude-rac-phase2-canonicalization-report.md`); measurement phase ready.
 - Implementation-level prototype conflict audits when project files are accessible.
 
 ## Authority hierarchy (adopted October 5, 2026 — Pass 2 resolution order)
 1. Approved canonical race specifications (`specs/<race>/<RACE>_V1.md`).
-2. `decisions/PROJECT_RULES.md`, with `decisions/UFCA_V1.md` as its facial-creator companion and `decisions/UCCA_V1.md` as its whole-character-creator companion (UFCA governs facial creator organization; UCCA governs whole-character creator organization; race specs govern anatomy).
+2. `decisions/PROJECT_RULES.md`, with `decisions/UFCA_V1.md` as its facial-creator companion, `decisions/UCCA_V1.md` as its whole-character-creator companion and `decisions/REFERENCE_ANATOMY_V1.md` as its reference-anatomy method companion (UFCA governs facial creator organization; UCCA governs whole-character creator organization; REFERENCE_ANATOMY governs reference-mesh method; race specs govern anatomy).
 3. Accepted cross-race comparative reviews and explicit author resolutions.
 4. `register/decision-register.md` — supporting decision history only; historical until reconciled.
 5. Other reviews and diagnostics.

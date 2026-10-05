@@ -195,6 +195,8 @@ Hands and feet are **multidimensional**: absolute vs proportional dimensions; le
 | **Body hair** | **Bound only where canon supports it** (Pipkin, Cogling). **Hidden** for Marchfolk, Skarn, Sagekin, Fenn, Aelari, Vael and Halvren pending biological authorship. **Durrim, Grask, Gorrund: BIO OPEN.** Body hair is never inferred from scalp or facial hair | Shaving, grooming |
 | Saurin | **No mammalian hair (Absent).** Cranial display in UFCA slot 10; optional restrained body continuation, never a mandatory spinal crest | Display polish, paint, wraps |
 
+**Binding update (RAC Phase 2, October 5, 2026; rule above unchanged):** race canon now supports body hair for **Marchfolk, Skarn and Sagekin** (ordinary human body-hair biology) and a qualitative baseline for **Durrim, Grask and Gorrund** (may occur with broad individual variation; never universal, a racial identifier, or inferred from size or stature), so under "bound only where canon supports it" those populations bind body hair. Their sex-related and population distributions stay OPEN. Fenn, Aelari and Vael stay hidden; Halvren follows its sources.
+
 Hair colour is related across scalp, brows, face and body without identical values. Hair is never locked to frame, sex, physique or occupation.
 
 ## 14. Skin Appearance Layers (AD-C9)
@@ -293,6 +295,7 @@ The prototype's "race + slider values" record is non-authoritative and supersede
 - **No Elf Percentage, Elf Gracility or ancestry-percentage body slider.** No 50/50 default. Frame never encodes ancestry. Source protection applies to body and face.
 - **Stature:** 152–213 cm is the established **central population envelope**, not the complete biological hard bound. The architecture **supports ancestry-dependent stature tails outside it** through envelope B. Inherited stature is **never hard-clipped** to 152–213 cm.
 - **Tail limits and frequencies are BIO/MEAS deferred** (RM-UB-05). They are derived later from approved source-population biology, Halvren inheritance/development rules and reference-mesh measurement. **No tail number is invented.**
+- **RAC Phase 2 (October 5, 2026):** the biological authorship for RM-UB-05 is recorded in HALVREN (H-1…H-6): tails stay strictly inside the union of source extremes (currently 147–229 cm) and never automatically reach a named source extreme. This is an outer bound, not a final range. Valid tail statures are reachable without a player-entered genealogy (manual creation, Extreme randomization) under the same hidden validity system (Y-2); no ancestry-percentage slider or genealogy requirement is created.
 - Any temporary central-only testing scope must be **explicitly labelled non-canonical interim test scope** (T-12).
 - HV-49 / HV-50 stay validation targets. Tails never make a source-race height automatically valid.
 
@@ -353,6 +356,8 @@ UCCA never humanizes Saurin architecture.
 | RM-UB-05 | Halvren inherited stature-tail limits and frequencies (authorship + measurement) |
 
 **BIO OPEN (carried, not resolved):** pelvic morphology; segment ratios and numeric proportions; arm span (Grask, Pipkin); joint/robusticity distributions; head-to-stature (all but Saurin); capacity distributions (Grask, Gorrund, Pipkin, Cogling); fat-distribution tendencies; sex dimorphism magnitude (Durrim, Grask, Gorrund, Pipkin, Cogling); reproductive biology; lifecycle; body hair (Durrim, Grask, Gorrund; hidden elsewhere where silent); Halvren stature-tail limits; Saurin balanced posture and density model, caudal-base landmark, numeric lower-trunk minimum, numeric Broad-vs-Gorrund boundary, claw/digit and per-field scale ranges, tail world-space validation, acquired tail/rostral/jaw loss, thermoregulation, tail-equipment construction and coverage extent; skin thickness/durability (Durrim, Grask, Gorrund); Pipkin trunk-share numeric relation (T-2).
+
+**RAC Phase 2 pointer (October 5, 2026):** in this list, body hair for Durrim, Grask and Gorrund now has an authored qualitative baseline (distributions stay OPEN); the Halvren stature-tail **authorship** is done (H-1…H-6 in HALVREN; the limits and frequencies stay OPEN under RM-UB-05); the Saurin caudal-base landmark is resolved (posterior-pelvic-plane axis point). Every other item stays as listed. Method: `decisions/REFERENCE_ANATOMY_V1.md`.
 
 **Later gameplay review:** legacy racial traits (breath, swim, sneak and similar) stay outside creator biology. No creator value feeds a gameplay stat.
 

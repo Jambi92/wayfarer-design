@@ -971,6 +971,8 @@ Saurin head-height share trends **near to modestly below the Marchfolk adult ran
 
 **Reconciliation T-1 (UCCA Phase 2, October 5, 2026; `decisions/UCCA_V1.md`):** this stature-share statement is a reference / central-morphology description. The §258 head-to-body creator bound (±8 %, head length 0.156–0.184 of standing height, with the +8 % head-scale decision as the centre) is authoritative for creator variation. The two describe different things and are not competing hard controls. No new number is introduced.
 
+**Metric note (RAC Phase 2, October 5, 2026; AD-R13):** this section speaks of head-**height** share (head height ÷ standing height); the §258 bound is on head **length** ÷ standing height, which includes the rostrum. They are different measurements, which is why T-1 found no conflict. No number is added.
+
 ## 56. External ears — recessed auricular opening architecture
 
 Saurin do **not** have projecting mammalian or elven pinnae as baseline anatomy.
@@ -4262,14 +4264,14 @@ Biological Randomization samples **driver** variables (stature, frame, compositi
 
 - Balanced neutral standing posture and living balance (posture/locomotion/animation phase); final density model for balance.
 - Absolute (rather than reference-relative) balance limits once posture is fixed.
-- Exact caudal-base landmark for measuring tail length.
+- Exact caudal-base landmark for measuring tail length — **resolved (RAC Phase 2, October 5, 2026; AD-R35):** the axis point at the posterior pelvic plane. Every §256 and §263 tail figure already uses it, so no number changes.
 - Cross-race numeric rostral-floor comparison (Marchfolk, Grask, Gorrund normalized midface/rostral projection ranges) in the universal comparative review.
-- Numeric lower-trunk minimum relative to Marchfolk (§6) and a numeric Broad-vs-Gorrund boundary.
+- Numeric lower-trunk minimum relative to Marchfolk (§6) and a numeric Broad-vs-Gorrund boundary. Numbers stay OPEN; interim rules (RAC Phase 2, October 5, 2026; AD-R36): the −10 % lower-trunk Saurin at 168 cm and at 203 cm, against matched-stature Marchfolk, must still show the longer lower-trunk relationship; the frame-scope ban (§258: frame never changes axial lengths or pelvic depth) plus the thoracic d/w ≤ 1.00 guard is the interim structural never-Gorrund boundary.
 - Population adipose tendencies.
 - Display mass-moment limit and neck clearance through head/neck range of motion; prominent horns/spikes/plates beyond the validated families (§100) and crest heights above ~2.5 cm.
 - Orbital placement/spacing tolerance.
 - Hand and foot claw / digit numeric ranges (grasp, footwear, gloves).
-- Numeric per-field scale ranges.
+- Numeric per-field scale ranges (body fields queued as RM-UB-08; RAC Phase 2).
 - Reproductive life history and physiology (§263); statistical spreads of the sex-shifted distributions around their centres.
 - World-space validation of the longest tails (up to ~170 cm tail reach behind the heel at the stature/tail extremes).
 - Statistical calibration of soft distributions (the universal facial-control architecture is canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA CLOSED / FINAL-AUTHOR ACCEPTED, October 5, 2026).
@@ -4283,3 +4285,5 @@ Female / sex-related anatomy is **CLOSED** (October 5, 2026; §263).
 **SAURIN — FIRST-PASS COMPLETE.**
 
 **UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Saurin body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Saurin anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13. Saurin canon governs wherever it is more specific (UCCA §23): mandatory tail (Slot 5), §256 coupling, §258 bounds, §263 E/B and anti-hourglass rules.
+
+**Reference-anatomy status (RAC Phase 2, October 5, 2026):** the reference-anatomy method (approved reference meshes, reference composition, measurement stance, acceptance and circularity rules, measurement waves) is canonical in `decisions/REFERENCE_ANATOMY_V1.md`. Measurement has not started; no new numeric envelope is set. Saurin directional constraints for measurement are consolidated in `reviews/claude-rac-03-pelvis-axial-closure.md` §2 and `reviews/claude-rac-04-segment-stature-closure.md` §2 (constraints, not magnitudes). Saurin canon governs: the caudal-base landmark, the interim lower-trunk test and never-Gorrund rule, and the head-metric note are recorded in place (AD-R35, AD-R36, AD-R13). **Foot-claw coupling (AD-R37):** foot-claw length above ~+15 % requires a compensating curvature or tip change to preserve plantigrade contact (§261). Male-centre candidate: the closure reference aff1b52; female-centre candidate: the §263 female-centre configuration derived from it (the +10 % reference female is above the centre and is not this candidate); both still need the reference-mesh acceptance record. Sex-related anatomy stays exactly §263.

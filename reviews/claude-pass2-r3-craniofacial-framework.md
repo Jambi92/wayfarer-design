@@ -63,10 +63,10 @@ Unless stated otherwise, every distance is measured in the MSP / FH\* frame. "He
 | Index | Formula | Layer | Purpose / canon link |
 |---|---|---|---|
 | **FPI — facial projection index** | (f(FAL) − f(OC_mid)) ÷ HL | E (S where a skull exists) | General projection. **Saurin rostral index** in canon is this form, measured on the Part 7 surface reference: tip, eye centres, occiput; reference 0.288; creator band 0.255–0.335 (§259). It needs a confirmation re-measure under this framework's FAL definition (RM-CF-01) |
-| MPI — maxillary projection | (f(Pr) − f(N\*)) ÷ HL | S/E | Grask "maxillary projection distribution OPEN" (GR L360); Gorrund prognathism OPEN (GO L308) |
+| MPI — maxillary projection | (f(Pr) − f(N\*)) ÷ HL | S/E | Grask "maxillary projection distribution OPEN" (GR L362; central projection authored RAC Phase 2); Gorrund prognathism OPEN (GO L312; comparator authored RAC Phase 2) |
 | MdPI — mandibular projection | (f(Gn) − f(N\*)) ÷ HL | S/E | Same |
 | CI — cranial index | Eu–Eu ÷ (f(G\*) − f(Op)) | S/E | Vault breadth to length |
-| CBH — cranial breadth to height | Eu–Eu ÷ (V − Po\*) | S/E | Durrim (P3 L170) and Gorrund (GO L297): "greater cranial breadth relative to cranial height than Marchfolk" |
+| CBH — cranial breadth to height | Eu–Eu ÷ (V − Po\*) | S/E | Durrim (P3 L170) and Gorrund (GO L301): "greater cranial breadth relative to cranial height than Marchfolk" |
 | FVB — facial vertical to breadth | (N\* − Me) ÷ Zy–Zy | S/E | Grask facial verticality (GR L349). Must be paired with MVI, because canon says it is "not defined solely by height-to-width" (GR L471–473) |
 | MVI — midface vertical | (N\* − Pr) ÷ HH | S/E | Grask midface (GR L358); Pipkin midface "not shortened" (P3 §6) |
 | FDH — facial depth to facial height | (f(FAL) − f(Po\*)) ÷ (N\* − Me) | S/E | Durrim depth : facial height tendency (C2 L282). Durrim's five depth domains A–E use regional variants of this (C3 L292–298) |
@@ -104,8 +104,8 @@ These stay race-conditional.
 **Findings:**
 1. **The source ranges cannot be derived legitimately today.**
    - Marchfolk canon has no projection values.
-   - Grask keeps maxillary and mandibular projection OPEN (GR L360).
-   - Gorrund keeps prognathism OPEN (GO L308).
+   - Grask keeps maxillary and mandibular projection numbers OPEN (GR L362; central ≈ Marchfolk authored RAC Phase 2).
+   - Gorrund keeps prognathism numbers OPEN (GO L312; comparator authored RAC Phase 2).
    - No approved reference meshes exist for these populations.
    - Under order §8, no value is fabricated.
 2. **The Saurin value is not yet framework-conformant.** The Part 7 rostral index used the frozen surface reference (tip, eye centres, occiput). It needs a re-measure under this framework's FAL and OC definitions to confirm 0.288 and the 0.255 floor. This is expected to be identical or close, because the Saurin tip has no nasal pyramid or lips, but it must be verified.
@@ -117,8 +117,8 @@ These stay race-conditional.
 |---|---|---|
 | RM-CF-01 | Saurin | FPI on the frozen reference (aff1b52) under this framework. Also FPI at the minimum-rostrum creator extreme and at the cranial-length × rostrum-floor coupling corner (§259) |
 | RM-CF-02 | Marchfolk | FPI, MPI and MdPI distribution over an approved reference set spanning its facial range, including the most prognathic valid adult face |
-| RM-CF-03 | Grask | FPI, MPI and MdPI at the reference and at the maximum valid midface / projection extremes. Requires the Grask projection distribution to be authored first (GR L360) |
-| RM-CF-04 | Gorrund | Same as RM-CF-03, with the Gorrund prognathism distribution authored first (GO L308) |
+| RM-CF-03 | Grask | FPI, MPI and MdPI at the reference and at the maximum valid midface / projection extremes. Prerequisite authored RAC Phase 2 (GR L362; GR-FACE-14) |
+| RM-CF-04 | Gorrund | Same as RM-CF-03, with the Gorrund comparator authored RAC Phase 2 (GO L312; GOR-FACE-05) |
 | RM-CF-05 | Decision | Author sets the required FPI margin between the Saurin floor and max(RM-CF-02…04) |
 
 ## 8. What the UFCA inherits from this framework
