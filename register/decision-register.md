@@ -18,7 +18,7 @@ This register tracks every character-system decision and its status: 14 agreed, 
 | Muscularity and body fat are independent controls, not one thin-to-heavy slider | AGREED | Marchfolk v1.1 |
 | Regional muscle emphasis is cosmetic, with no gameplay advantage | AGREED | Marchfolk v1.1 |
 | The initial creator covers adults only. Age is continuous and carries no gameplay penalties | AGREED | Marchfolk v1.4 |
-| Skin has three independent layers: natural, environmental, and applied or acquired | AGREED | Marchfolk v1.3 |
+| Skin has four Skin Appearance Layers: Natural, Environmental (persistent / transient), Applied and Acquired (superseded three-layer wording; T-8, UCCA Phase 2) | AGREED | Marchfolk v1.3 as amended; `decisions/UCCA_V1.md` §14 |
 | Facial-hair color is linked to hair color by default and can be unlinked | AGREED | Marchfolk v1.3 |
 | Body frame, apparent age, presets and class stay uncoupled | AGREED | Marchfolk v1.4; amendment v0.1 |
 | Marchfolk height is 147 cm minimum, 173 cm baseline, 203 cm maximum, with no separate limits by anatomy | PRELIMINARY | Marchfolk v1.1; amendment v0.1 |
@@ -275,7 +275,7 @@ This register tracks every character-system decision and its status: 14 agreed, 
 | Universal (proposed): biological iris color is separate from magical or supernatural eye effects, and there's no baked-in racial glow | PRELIMINARY | Aelari v1.3 §7 |
 | Aelari skin and undertone range (fair through deeper brown; cool through olive and reddish undertones) | PRELIMINARY | Aelari v1.3 §2 |
 | Aelari cultural pillars: Continuity, Record, Mastery, Form, Arcana | PRELIMINARY | Aelari v1.3 §18 |
-| Aelari presentation presets: White-Tower Formal, Institutional Practical, Artisan, Military, Traveler, Provincial, Ceremonial, Foreign/Urban (v1.4 list, replacing v1.3 §24) | PRELIMINARY | Aelari v1.3 §24 |
+| Aelari presentation presets: White-Tower Formal, Institutional Practical, Artisan, Military, Traveler, Provincial, Ceremonial, Foreign/Urban (superseded by T-3, UCCA Phase 2: one system, the union of the v1.3 §24 and v1.4 lists, recorded in AELARI v1.4 presets §4) | PRELIMINARY | Aelari v1.3 §24; v1.4 §4 |
 | Whether naturally silver or white hair is a valid trait (Aelari, Vael, and any other applicable population), always kept distinct from age graying in the data | OPEN | Aelari v1.3 §11–12 |
 | Aelari hair, eye and facial-hair frequencies | OPEN | Aelari v1.3 §6, §10–13, after the Elf Comparative Review |
 
@@ -673,7 +673,7 @@ Grask Part 1 comparative anatomy clarification
 | **Grask arm-length direction:** greater arm length and arm span relative to total standing height than Marchfolk and Skarn reference anatomy; long-arm identity isn't just an artifact of reduced torso contribution | AGREED | Grask Part 1 clarification §10–14 |
 | **Grask/Aelari neck distinction:** moderate-to-long neck is possible, but the primary elongation signal is limb-dominant, not Aelari-style vertically distributed elongation | AGREED | Grask Part 1 clarification §15–16 |
 | **Equal-height comparison classification:** boundary-overlap comparisons are labeled as such, never treated as central-population comparisons | AGREED | Grask Part 1 clarification §3–9 |
-| **Current world-validation ceiling:** about 239 cm Grask are the tallest approved playable anatomy, without setting a permanent project maximum | AGREED | Grask Part 1 clarification §19 |
+| **World-validation ceiling (historical; T-7, UCCA Phase 2):** about 239 cm Grask were the tallest approved anatomy when recorded; Gorrund (about 251 cm) now sets the tallest. No permanent project maximum | AGREED | Grask Part 1 clarification §19 |
 | Gorrund references in Grask are future comparative placeholders only; Grask prototype scale, stats, trait, environmental and aquatic text are PROTOTYPE / NON-AUTHORITATIVE | AGREED | Grask Part 1 clarification §20–21 |
 | Exact arm-span, arm-length and forearm ratios (pending prototype validation, no invented numbers) | OPEN | Grask Part 1 clarification §12–13, §22 |
 
@@ -764,7 +764,7 @@ Grask v1.0 Part 5 and final review
 | Grask movement emerges from anatomy, not a troll animation style; resting alignment is upright, bipedal and plantigrade; no permanent hunch or lowered head to fit the world; body language stays separate from anatomy | AGREED | Grask Part 5 §1–5 |
 | Grask anatomy establishes no movement speed, jump, climbing, fall or stealth performance; anatomical reach never silently becomes interaction, combat or targeting reach | AGREED | Grask Part 5 §7, §17, §19, §23, §27–30, §70 |
 | Weapons never scale with the wielder; Grask armor, gloves, boots, helmets and clothing are never uniformly enlarged human gear; ears never clip through helmets | AGREED | Grask Part 5 §31–50 |
-| The world is validated against approved Grask anatomy (tallest current anatomy about 239 cm, not a permanent maximum); no shortening, crouching or deforming to fit prototype spaces or collision | AGREED | Grask Part 5 §4, §15, §51–60, §67 |
+| The world is validated against approved Grask anatomy (about 239 cm maximum; Gorrund, about 251 cm, now sets the tallest approved anatomy; T-7, UCCA Phase 2); no shortening, crouching or deforming to fit prototype spaces or collision | AGREED | Grask Part 5 §4, §15, §51–60, §67 |
 | Retargeting adapts animation to anatomy; a shared animation system that only works by compressing Grask relationships is unacceptable; NPCs, presets and randomization use one biological system | AGREED | Grask Part 5 §74–80 |
 | Final first-pass Grask identity statement and "What Grask are NOT" list | AGREED | Grask Part 5 §101–102 |
 | Grask swimming and breath traits: legacy gameplay traits under later review, no biological explanation | OPEN | Grask Part 5 §24–26, §103 |

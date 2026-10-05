@@ -40,7 +40,7 @@
 | RM-SR-02 | P2 | Cogling segment ratios: upper arm ÷ arm, forearm ÷ arm, hand ÷ arm, finger ÷ hand; femur ÷ leg; total arm and leg ÷ stature | Cogling reference and extremes | Cogling §8, §38–§42; SR-COMP-01/02 |
 | RM-SR-03 | P2 | Long-bone shaft breadth ÷ length; joint breadth ÷ adjacent length | Cogling, Pipkin, Durrim | Structural-mass axis (short-race review §4) |
 | RM-SR-04 | P1 | Head ÷ stature; FVI; ORB vs aperture (anti-juvenile) | Pipkin and Cogling references, plus their minimum-height cases | UFCA anti-juvenile constraints; SR-COMP-11 |
-| RM-SR-05 | P2 | Durrim depth domains A–E; FDH; CBH | Durrim reference; Marchfolk at ~150–152 cm | Durrim C3 (numeric thresholds deferred) |
+| RM-SR-05 | P2 | Durrim depth domains A–E; FDH; CBH | Durrim reference; Marchfolk at 152 cm (corrected comparison point, UCCA T-6) | Durrim C3 (numeric thresholds deferred) |
 | RM-SR-06 | P3 | Durrim torso contribution and thoracic depth vs equal-height Marchfolk | 152 cm three-population test | Durrim P2 §54–63 |
 
 ## 3. Craniofacial (UFCA floors)
@@ -69,6 +69,18 @@ Semantics only; no numbers are set here. Priority is assigned at measurement pla
 | RM-UF-03 | — | Saurin orbital placement/spacing tolerance (IOD) | Saurin frozen reference and creator extremes | SAURIN §259 lock (tolerance OPEN, §265) |
 | RM-UF-04 | — | Saurin structural-ridge strength and facial scale-field ranges | Saurin reference and extremes | SAURIN §36a (numerics OPEN), §262 |
 | RM-UF-05 | — | Batch diversity / anti-convergence threshold (distance over DIR vectors; convergence toward named cliché bundles) | Generated batches per population | UFCA validation tier G |
+
+## 3B. Universal body architecture (RM-UB; added October 5, 2026 by UCCA Phase 2, `decisions/UCCA_V1.md` §25)
+
+Semantics only; no numbers are set here. Measurement-deferred values are not creator controls unless canon separately authorizes them.
+
+| ID | Pri | Measure | Cases | Feeds |
+|---|---|---|---|---|
+| RM-UB-01 | — | Per-race segment-share and within-limb distribution bands (torso/axial, neck, arm, upper-arm/forearm, leg, femur/lower-leg, hand, palm/finger, foot), absolute and proportional | Approved reference meshes per race and frame; extends RM-LR / RM-SR / RM-OT | UCCA Slot 2 CLAMP bands; Pipkin trunk-share split (T-2) |
+| RM-UB-02 | — | Per-race allometric response of head, hands, feet, joints, bone breadth and torso breadth/depth to stature | Min / ref / max reference meshes per race | DER absolute dimensions at any stature; no-uniform-scale validator |
+| RM-UB-03 | — | Joint-scale and long-bone robusticity envelopes, including race hard minimums | Reference meshes per race and frame | UCCA Slot 3 bounds |
+| RM-UB-04 | — | Saurin reachable tail-length cap as a continuous function of resolved frame and composition, through the canon points (~78 % H Balanced reference composition; 80 % H Broad; ~72 % H Narrow high-fat) | Saurin reference variants | Slot 5 CLAMP (SAURIN §256.5) |
+| RM-UB-05 | — | Halvren inherited stature-tail limits and frequencies outside the 152–213 cm central envelope. **Dependency:** biological authorship first (source-population biology, Halvren inheritance/development rules), then reference-mesh measurement; never hard clipping | Halvren genealogy cases with strong short-human, Skarn or Aelari ancestry; HV-49 / HV-50 | UCCA §22 envelope B (AD-C3b) |
 
 ## 4. Other populations
 

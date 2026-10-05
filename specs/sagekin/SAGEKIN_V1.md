@@ -473,3 +473,5 @@ Activated by Pass 2 AC-7: Fenn and Aelari are defined and carry their own Sageki
 | Sagekin | Population distributions, ancestry and culture separation, subtle population variation, population-aware generation |
 
 One universal system supports all three, without forcing identical anatomy or separate creators.
+
+**UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Sagekin body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Sagekin anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13.

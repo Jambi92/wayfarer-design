@@ -546,3 +546,5 @@ Fenn are compared against Marchfolk, Sagekin and Skarn now, and Aelari and Vael 
 ## 25. Elf comparative review
 
 Once Fenn, Aelari and Vael finish first pass, a dedicated review compares shared elven ancestry, race-specific skeletal differences, craniofacial distributions, ear morphology, skin, undertones, hair color and texture, eye color, age appearance and population overlap, before frequencies are final. Fenn are never the default elf.
+
+**UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Fenn body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Fenn anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13.

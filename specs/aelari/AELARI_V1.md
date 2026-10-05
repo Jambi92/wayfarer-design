@@ -377,7 +377,7 @@ Clothing varies by region, climate, wealth, occupation, institution, military ro
 
 ## 24. Presentation presets (provisional)
 
-The presets are White-Tower Formal, Artisan Practical, Arcane Institutional, Military Formal, Traveler, Rural/Provincial, Foreign/Urban and Ceremonial. They affect grooming, hair, markings, accessories and clothing, and never overwrite ancestry, skeleton, height, frame, muscle, fat, face, ears or natural pigmentation.
+**Unified (T-3) (UCCA Phase 2, October 5, 2026; `decisions/UCCA_V1.md`):** Aelari has one presentation-preset system, listed in the v1.4 presets section, §4 (Presentation presets), below. This earlier list is merged into it; presentation presets never alter biology.
 
 ## 25. Cross-cultural validation
 
@@ -428,7 +428,7 @@ The library as a whole varies height, frame, muscle, fat, age, face, ears, natur
 
 ## 4. Presentation presets (provisional)
 
-The presets are White-Tower Formal, Institutional Practical, Artisan, Military, Traveler, Provincial, Ceremonial and Foreign/Urban. They may change hair and grooming, markings, accessories, clothing and styling. They never overwrite ancestry, height, skeleton, frame, proportions, muscle, fat, face, ears or natural skin pigmentation.
+The single Aelari presentation-preset system (union of the v1.3 §24 and v1.4 lists, T-3, UCCA Phase 2) is: White-Tower Formal, Arcane Institutional, Institutional Practical, Artisan (Practical), Military (Formal), Traveler, Rural/Provincial, Foreign/Urban and Ceremonial. They may change hair and grooming, markings, accessories, clothing and styling. They never overwrite ancestry, height, skeleton, frame, proportions, muscle, fat, face, ears or natural skin pigmentation.
 
 ## 5. Editable preset rule
 
@@ -612,3 +612,5 @@ No changes now to uniform race scaling, the human animation placeholder, Manny a
 ## 27. Elf Comparative Review
 
 The review isn't performed until Vael v1.0–v1.5 are complete (since performed and accepted: `reviews/elf-comparative-review.md`). It then settles shared elven anatomy, race-specific skeletons, craniofacial distributions, ears, pigmentation and undertones, hair color and texture, eye color, aging and any shared technical architecture. Shared ancestry never automatically means one skeleton.
+
+**UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Aelari body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Aelari anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13.

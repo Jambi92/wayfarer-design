@@ -27,6 +27,7 @@ Canonical shared rules for Wayfarer first-pass character design.
 - Visual anatomy, equipment dimensions, collision, interaction reach, combat reach, and camera/targeting reach must not be assumed to be one system.
 - Retargeting/IK/animation architecture must adapt to approved anatomy rather than redefine it.
 - Current prototype race scales, uniform whole-body scaling, shared-human-animation assumptions, class restrictions, and racial stats remain non-authoritative unless explicitly approved.
+- Canonical design supersedes the prototype plan where they conflict: Apparent Biological Age never automatically imposes movement-speed or other gameplay penalties, and appearance records are semantic resolved values, not "race + slider values" tied to prototype controls (UCCA T-11). Implementation stays deferred.
 
 ## Facial architecture status
 The **Universal Facial Customization Architecture (UFCA)** is canonical in `decisions/UFCA_V1.md` (UFCA Phase 2, October 5, 2026). It governs facial creator organization; race specs govern each population's anatomy.
@@ -40,16 +41,32 @@ Universal UFCA rules (details in `decisions/UFCA_V1.md`):
 - Randomization strengths Subtle / Diverse / Extreme are all biologically valid; Extreme samples valid tails only. Internal frequency vocabulary Very Common / Common / Uncommon / Rare describes weighting, never validity.
 - Natural asymmetry is distinct from Acquired history; Naturalize Face remains provisional.
 
+## Whole-character architecture status
+The **Universal Character Creation Architecture (UCCA)** is canonical in `decisions/UCCA_V1.md` (UCCA Phase 2, October 5, 2026; closure pending author review). It governs whole-character creator organization; UFCA governs the face; race specs govern each population's anatomy.
+Universal UCCA rules (details in `decisions/UCCA_V1.md`):
+- 15 navigation slots, with Face routing into UFCA. Slots are not anatomy; Bound / Bound-locked / Absent; a shared slot never by itself authorizes a control.
+- Stature is the only absolute size control. Other dimensions are stored race-relatively; absolute dimensions are derived through race-specific allometry. No uniform whole-body scaling.
+- No persistent driving frame state: Narrow / Balanced / Broad and Lean / Athletic / Muscular / Heavy are write-and-vanish starting operations. Frame writes only skeletal values; composition operations write only Physical Composition. "Custom" is a UI state, not a preset.
+- Muscular Development Capacity is a Detailed control only where race canon explicitly requires it; otherwise a validator ceiling. No invented population shifts. Capacity and muscularity never imply gameplay strength.
+- Sex-related anatomy selection is a SOFT input under R-SEX; it never moves stored values or invents dimorphism.
+- Body hair is bound only where race canon supports it; silent races keep it hidden pending biological authorship.
+- Natural subtle body asymmetry is a universal representable capability (near-zero default; never injury, deformity, race identity or Presentation). Acquired asymmetry stays Acquired history.
+- Environmental appearance has persistent (tanning, weathering, dryness, ordinary callusing) and transient (dirt, dust, soot, mud, wetness) subtypes. Permanent history-like tissue change is Acquired.
+- Body Language never rewrites Anatomical Resting Alignment.
+- Locks are absolute and never silently broken. Saved appearance stores semantic resolved values, never preset references, seeds, mesh weights or prototype slider values.
+- Diagnostic and measurement-deferred quantities never become creator controls unless canon separately authorizes them.
+
 ## Reviews
 - Short-Race Comparative Anatomy Review (Durrim, Pipkin, Cogling) — ACCEPTED / COMPLETE (`reviews/short-race-comparative-anatomy-v1.md`).
 - Large-Race Comparative Anatomy Review (Skarn, Grask, Gorrund) — ACCEPTED / COMPLETE (`reviews/claude-pass2-r2-large-race-comparative-review.md`; author decisions AD-1–AD-5, October 5, 2026, reconciled into the Skarn, Grask and Gorrund specs).
 - Pass 2 Roster-Wide Comparative & System Review — **CLOSED / FINAL-AUTHOR ACCEPTED / FROZEN** (October 5, 2026; `reviews/claude-pass2-closure-canonicalization.md`, `reviews/chatgpt-pass2-final-author-acceptance-freeze-order.md`).
 - Universal Facial Customization Architecture Review — Phase 1 **ACCEPTED** (`reviews/claude-ufca-01…08`); Phase 2 canonicalization completed in `decisions/UFCA_V1.md` (`reviews/claude-ufca-phase2-canonicalization-report.md`); **CLOSED / FINAL-AUTHOR ACCEPTED** October 5, 2026 (`reviews/claude-ufca-final-closure-report.md`). Uses `reviews/claude-pass2-r3-craniofacial-framework.md` as its cross-race comparison/measurement framework (not creator controls).
+- Universal Character Creation Architecture Review — Phase 1 **ACCEPTED** (`reviews/claude-ucca-01…11`); Phase 2 canonicalization completed in `decisions/UCCA_V1.md` (`reviews/claude-ucca-phase2-canonicalization-report.md`); closure pending author review.
 - Implementation-level prototype conflict audits when project files are accessible.
 
 ## Authority hierarchy (adopted October 5, 2026 — Pass 2 resolution order)
 1. Approved canonical race specifications (`specs/<race>/<RACE>_V1.md`).
-2. `decisions/PROJECT_RULES.md`, with `decisions/UFCA_V1.md` as its facial-creator companion (UFCA governs facial creator organization; race specs govern anatomy).
+2. `decisions/PROJECT_RULES.md`, with `decisions/UFCA_V1.md` as its facial-creator companion and `decisions/UCCA_V1.md` as its whole-character-creator companion (UFCA governs facial creator organization; UCCA governs whole-character creator organization; race specs govern anatomy).
 3. Accepted cross-race comparative reviews and explicit author resolutions.
 4. `register/decision-register.md` — supporting decision history only; historical until reconciled.
 5. Other reviews and diagnostics.

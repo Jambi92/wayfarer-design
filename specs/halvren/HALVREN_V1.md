@@ -153,7 +153,7 @@ World validation covers the full approved Halvren envelope: doors, ceilings, sta
 
 ## 42–43. Part 2 decisions and status
 
-First-pass approved: Halvren have their own mixed-population envelope; the provisional height range is **152–213 cm (5'0"–7'0")** with reference **about 178 cm (5'10")**; height is ancestry-informed, not ancestry-locked; Halvren occupy a mixed human and elven skeletal developmental space; gracility and robustness are multidimensional, not one slider; torso inheritance is population-aware; shoulder inheritance is multidimensional; exact pelvic inheritance is unresolved; limb segments may express ancestry differently but stay coupled; hands and feet need multidimensional inheritance; Narrow, Balanced and Broad are frame presets, not ancestry categories; composition is independent of ancestry; exact source-race duplication is prevented at the system level without demanding visible hybridity from every individual; movement follows final anatomy; and gameplay consequences are OPEN. **Halvren v1.0 Part 2 is complete**, and v1.0 as a whole isn't.
+First-pass approved: Halvren have their own mixed-population envelope; the provisional height range is **152–213 cm (5'0"–7'0")** with reference **about 178 cm (5'10")** (reconciled T-5, UCCA Phase 2: per §10–14 this is the **central population envelope**, not a hard bound; ancestry-dependent tails may fall outside it, with limits OPEN); height is ancestry-informed, not ancestry-locked; Halvren occupy a mixed human and elven skeletal developmental space; gracility and robustness are multidimensional, not one slider; torso inheritance is population-aware; shoulder inheritance is multidimensional; exact pelvic inheritance is unresolved; limb segments may express ancestry differently but stay coupled; hands and feet need multidimensional inheritance; Narrow, Balanced and Broad are frame presets, not ancestry categories; composition is independent of ancestry; exact source-race duplication is prevented at the system level without demanding visible hybridity from every individual; movement follows final anatomy; and gameplay consequences are OPEN. **Halvren v1.0 Part 2 is complete**, and v1.0 as a whole isn't.
 
 # Part 3 Craniofacial anatomy, eyes and mixed external-ear inheritance
 
@@ -407,7 +407,7 @@ Halvren strengthen the need for unified appearance data, which may preserve race
 | Sources | Human: Marchfolk, Skarn, Sagekin. Elven: Fenn, Aelari, Vael |
 | Generational model | Not restricted to first-generation 50/50 ancestry |
 | Fertility | Multigenerational viability provisionally approved |
-| Height | Provisional 152–213 cm (5'0"–7'0"), reference about 178 cm (5'10") |
+| Height | Central population envelope about 152–213 cm (5'0"–7'0"), reference about 178 cm (5'10"); ancestry-dependent tails outside it, limits OPEN (§10–14; T-5, UCCA Phase 2) |
 | Anatomy | Mixed, regional, relationship-aware and developmentally coherent |
 | Face and ears | Genuine mixed craniofacial and external-ear anatomy, never a pointiness slider |
 | Pigmentation | Inherited multidimensional expression, not RGB blending |
@@ -503,3 +503,5 @@ When mixed-ancestry design exposes missing source biology: identify the dependen
 ## 17–18. Status
 
 Halvren v1.0 stays first-pass biological foundation complete, and this is recorded as the **Halvren v1.0 consistency resolution and pre-v1.1 clarification.** No UE5 changes and no implementation. The next step was then Halvren Character Design v1.1 (detailed body proportions and mixed-ancestry morphology); current sequencing is in `specs/STATUS.md`.
+
+**UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Halvren body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Halvren anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13. Stature: 152–213 cm is the central envelope; ancestry-dependent tails are supported and never hard-clipped, and their limits stay OPEN (UCCA §22, RM-UB-05).

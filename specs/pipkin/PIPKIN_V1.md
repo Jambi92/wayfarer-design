@@ -136,6 +136,8 @@ This part resolves the open question: **what makes an adult Pipkin anatomically 
 
 More concretely, compared with normalized Marchfolk adult anatomy, Pipkin trend toward a **modestly reduced vertical central-trunk contribution to total stature**, a compact lumbar/waist transition, and a mature pelvis whose vertical height, depth and three-dimensional structural participation remain substantial relative to the thorax. This lower-trunk-centered organization persists even when pelvic breadth approaches Marchfolk-like values. It is a population-level relational tendency, not a fixed ratio. The reduced trunk share is absorbed primarily through **sustained limb contribution and pelvic vertical contribution, not through enlargement of the head**. This never requires unusually long legs and never creates Durrim-like compression.
 
+**Reconciliation T-2 (UCCA Phase 2, October 5, 2026; `decisions/UCCA_V1.md`):** the absorption of the reduced trunk share is relationship-aware stature/proportion behaviour, never permission for global scaling or juvenile proportions. It operates inside the leg rule below (legs never automatically exceed ordinary human adult proportions; Pipkin are not defined by long legs), so the positive identity is the low-set compact trunk on a mature pelvic foundation. The numeric split between limb and pelvic contribution stays deferred (UCCA RM-UB-01; short-race RM-SR items); no winner is invented.
+
 At normalized displayed height, Marchfolk show human adult torso, pelvis and limb relationships, while Pipkin show more compact central trunk organization, greater pelvic structural contribution relative to thoracic scale, proportionally sustained limbs despite short stature and a distinct thorax-to-pelvis relationship.
 
 > **Pipkin are not ordinary human proportions miniaturized to approximately one meter tall.**
@@ -1672,3 +1674,5 @@ Pipkin may be marked **FIRST-PASS COMPLETE** when:
 **Pipkin v1.0 Part 6 is FIRST-PASS ACCEPTED.**
 
 **Pipkin v1.0 is FIRST-PASS COMPLETE.** Tyler approved completion after Claude's clean Part 6 quick check. The Short-Race Comparative Anatomy Review was then queued until Cogling was designed; it is now ACCEPTED / COMPLETE (`specs/STATUS.md`). No UE5 implementation is authorized.
+
+**UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Pipkin body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Pipkin anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13.

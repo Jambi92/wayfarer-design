@@ -969,6 +969,8 @@ Exact occipital and cervical anatomy remains OPEN.
 
 Saurin head-height share trends **near to modestly below the Marchfolk adult range**, while neck-height share remains broadly near Marchfolk. The elongated lower axial trunk is therefore paid for primarily through modestly reduced vertical head/thoracic contribution rather than by forcing shortened legs. Exact proportional distributions remain OPEN and must still satisfy SAU-FACE-22.
 
+**Reconciliation T-1 (UCCA Phase 2, October 5, 2026; `decisions/UCCA_V1.md`):** this stature-share statement is a reference / central-morphology description. The §258 head-to-body creator bound (±8 %, head length 0.156–0.184 of standing height, with the +8 % head-scale decision as the centre) is authoritative for creator variation. The two describe different things and are not competing hard controls. No new number is introduced.
+
 ## 56. External ears — recessed auricular opening architecture
 
 Saurin do **not** have projecting mammalian or elven pinnae as baseline anatomy.
@@ -2369,7 +2371,7 @@ Because the tail is mandatory biology, Advanced Mode may vary:
 - length;
 - base dimensions;
 - taper;
-- muscularity;
+- muscularity (**superseded by §256.6, T-4, UCCA Phase 2:** tail muscularity follows Physical Composition; there is no independent tail-muscle slider);
 - segment/curvature relationships;
 - resting curvature;
 - proximal/distal mass distribution and cross-sectional tendency (§11a);
@@ -4279,3 +4281,5 @@ Creator-biology validation is **CLOSED** with no blocking contradiction.
 Female / sex-related anatomy is **CLOSED** (October 5, 2026; §263).
 
 **SAURIN — FIRST-PASS COMPLETE.**
+
+**UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Saurin body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Saurin anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13. Saurin canon governs wherever it is more specific (UCCA §23): mandatory tail (Slot 5), §256 coupling, §258 bounds, §263 E/B and anti-hourglass rules.

@@ -3243,3 +3243,5 @@ Cogling may be marked **FIRST-PASS COMPLETE** only when:
 No UE5 implementation is authorized by completion of this race design.
 
 Part 6 is **FIRST-PASS ACCEPTED**. Cogling Character Design v1.0 is **FIRST-PASS COMPLETE** by Tyler acceptance after Claude's completion quick check passed.
+
+**UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Cogling body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Cogling anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13. Muscular Development Capacity is a Detailed control under §69 (UCCA §10).

@@ -378,3 +378,5 @@ Compare equal-height and equal-physique Marchfolk and Skarn, minimum and maximum
 ## 10. Universal technical questions (tracked, unresolved)
 
 Open questions: deformation architecture, skeleton strategy, morph targets versus alternatives, animation retargeting, IK and procedural correction, equipment fitting, character-data serialization, LOD and performance, networking, collision and reach, first-person, and mount support. None is resolved without a dedicated review.
+
+**UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Skarn body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Skarn anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13.
