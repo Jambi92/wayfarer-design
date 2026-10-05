@@ -1,6 +1,6 @@
 # Universal Facial Customization Architecture (UFCA) v1
 
-**Status:** CANONICAL. Accepted by the author in `reviews/chatgpt-ufca-phase2-canonicalization-order.md` (UFCA Phase 2, October 5, 2026).
+**Status:** **CLOSED / FINAL-AUTHOR ACCEPTED** (October 5, 2026; `reviews/chatgpt-ufca-final-closure-order.md`). Canonicalized in UFCA Phase 2 (`reviews/chatgpt-ufca-phase2-canonicalization-order.md`). See §21 for what closure freezes.
 **Phase:** DESIGN ONLY. This document defines creator **design behaviour**. It does not define UE5 mesh, topology, morph, bone, rig, camera or UI implementation (§20).
 **Sources:**
 - Phase 1 package: `reviews/claude-ufca-01…08`
@@ -200,6 +200,12 @@ The family-specific parameter sets are those in each race spec, summarized in `r
 | Grask and Gorrund regional controls | Their canonical required-coverage lists and anatomy |
 | Fenn brow structure and brow-to-eye distance | Stated as supported variation (FENN §2–7) |
 | Pipkin natural asymmetry | AC-U3 (§10.4) |
+| Fenn forehead-to-cranium transition contour | Final closure Q-1. The Fenn "smoother forehead-to-cranium line" relationship (FENN §2–7) inside the Fenn craniofacial envelope, preserving existing broad individual variation where canon supports it. **Not** a generic forehead-height/slope package and no Marchfolk forehead architecture |
+| Fenn brow prominence, brow contour/shape, brow vertical position relative to the orbit, medial/lateral brow relationship where needed for coherent regional editing | Final closure Q-4. Anatomical brow/orbital controls (slot 3) inside the Fenn craniofacial envelope, not eyebrow grooming. They preserve the Fenn compact face and approved visible-eye/orbital relationships; no Marchfolk default range; no permanent surprised, delicate, severe, youthful, feminine, masculine or other personality/presentation read |
+| Marchfolk forehead height, slope/contour, forehead-to-brow relationship, forehead-to-cranium transition | Final closure Q-3. Regional DIR controls (slot 2), not global face-shape controls; no numeric bounds; inside believable Marchfolk adult human anatomy. Relationship validity keeps brow, orbit, cranium and hairline-region coherence. No preferred or ideal forehead; no sex, personality, attractiveness, culture, age or ancestry stereotype; not a template for other populations |
+| Eyebrow-hair biology for Marchfolk, Skarn, Sagekin, Fenn, Aelari, Vael and Halvren | Final closure Q-2. Slot 11: ordinary variation in density/fullness, distribution/coverage, strand/coarseness character where the population's ordinary hair biology supports it, and natural colour relationship to the individual's hair/pigmentation. Grooming, trimming, shaping, cosmetics, dye, styling and deliberate removal stay Presentation. No culture, personality, class, attractiveness or sex encoding; no race-specific eyebrow morphology |
+
+The final-closure rows (Q-1…Q-4) are explicit author authorizations for the named coverage only. They do not change the rule that a shared slot never authorizes anatomy by itself. Durrim, Grask, Gorrund, Pipkin and Cogling keep their already-authored eyebrow biology and routing; Saurin eyebrows stay Absent.
 
 Items held hidden are in §19.2.
 
@@ -382,14 +388,11 @@ The full manually creatable valid range is available regardless of strength.
 
 Full register: `reviews/claude-ufca-07-open-deferred-decision-register.md` §4.
 
-### 19.2 Coverage confirmations pending (AD-U12): hidden until the author confirms
+### 19.2 Coverage items held hidden (AD-U12)
 
 | Population | Hidden item | Note |
 |---|---|---|
-| Fenn | Forehead height/slope | Borderline. FENN §2–7 pairs the cranium tendency "smoother forehead-to-cranium line" with "Broad individual variation" for the cranium, but never names forehead dimensions. Held hidden as an explicit author question (Phase 2 report) |
-| Fenn | Brow dimensions beyond "brow structure" and brow-to-eye distance | Those two are bound (FENN §2–7, Eyes and orbits row) |
-| Marchfolk | Forehead | Marchfolk canon never mentions the forehead; "head and skull" lists no sub-controls |
-| Marchfolk, Skarn, Sagekin, Fenn, Aelari, Vael, Halvren | Eyebrow-hair biology | Eyebrow grooming remains Presentation |
+| Fenn | Forehead height and any other forehead dimension beyond the bound forehead-to-cranium transition contour | Hidden unless later canon independently authorizes it (final closure Q-1) |
 | Durrim | Sclera / ocular-tissue visibility as a player control | DURRIM §21–28 describes sclera responding to biology, age, vascularity and lighting: a derived appearance, kept as DER in slot 4b, not a player dimension |
 
 ## 20. Implementation firewall
@@ -403,3 +406,16 @@ UFCA defines **design behaviour only**. It does not decide or imply:
 - animation, speech or lip-sync solutions.
 
 A shared slot does not imply a shared mesh. The Elf Comparative Review guard against a single superficial "Elf Head" (unless prototyping proves it reproduces approved diversity) is carried to implementation.
+
+## 21. Closure
+
+UFCA is **CLOSED / FINAL-AUTHOR ACCEPTED** (October 5, 2026; `reviews/chatgpt-ufca-final-closure-order.md`). Final author decisions Q-1…Q-4 are recorded in §10.3 and §19.2.
+
+Closure freezes the universal facial creator architecture **at the design level**. It does not freeze later legitimate resolution of:
+- named OPEN biology (§19.1);
+- measurement work (§18);
+- implementation choices (§20).
+
+Every named OPEN, DEFERRED and PROVISIONAL item stays as listed. That includes Naturalize Face, which stays provisional.
+
+**Closure is not permission to begin UE5 implementation.**

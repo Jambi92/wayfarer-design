@@ -163,6 +163,8 @@ The editor uses the same seven regions as Marchfolk: head and skull, brow and ey
 
 **UFCA status (UFCA Phase 2, October 5, 2026):** the universal facial creator organization is now canonical in `decisions/UFCA_V1.md`. The Skarn facial control organization in this spec stays as approved requirements and is routed to its UFCA slots (`reviews/claude-ufca-08-phase1-architecture-audit.md` Appendix A); Skarn anatomy, tendencies, validators, tests and OPEN items are unchanged. Mouth and lips are bound through normal human-family coverage (UFCA AD-U12; a coverage clarification, not new Skarn anatomy). Ears use the human-auricle family (Pass 2 AC-4). Under UFCA AC-U1, "eye size" in this spec means bony orbit size (direct control) plus visible eye aperture (direct control); eyeball size is derived from the orbit and is never an independent slider.
 
+**UFCA final closure (author decision, October 5, 2026; `reviews/chatgpt-ufca-final-closure-order.md`):** Eyebrow-hair biology is bound in UFCA slot 11 (ordinary variation in density/fullness, distribution/coverage, strand/coarseness character where ordinary hair biology supports it, and natural colour relationship to the individual's hair/pigmentation). Grooming, trimming, shaping, cosmetics, dye, styling and deliberate removal stay Personal Presentation. Eyebrows encode no culture, personality, class, attractiveness or sex stereotype, and no race-specific eyebrow morphology is implied; no numeric ranges are set.
+
 ## 3–6. Region controls
 
 | Region | Controls to explore | Skarn tendency |

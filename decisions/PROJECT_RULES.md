@@ -44,7 +44,7 @@ Universal UFCA rules (details in `decisions/UFCA_V1.md`):
 - Short-Race Comparative Anatomy Review (Durrim, Pipkin, Cogling) — ACCEPTED / COMPLETE (`reviews/short-race-comparative-anatomy-v1.md`).
 - Large-Race Comparative Anatomy Review (Skarn, Grask, Gorrund) — ACCEPTED / COMPLETE (`reviews/claude-pass2-r2-large-race-comparative-review.md`; author decisions AD-1–AD-5, October 5, 2026, reconciled into the Skarn, Grask and Gorrund specs).
 - Pass 2 Roster-Wide Comparative & System Review — **CLOSED / FINAL-AUTHOR ACCEPTED / FROZEN** (October 5, 2026; `reviews/claude-pass2-closure-canonicalization.md`, `reviews/chatgpt-pass2-final-author-acceptance-freeze-order.md`).
-- Universal Facial Customization Architecture Review — Phase 1 **ACCEPTED** (`reviews/claude-ufca-01…08`); Phase 2 canonicalization completed in `decisions/UFCA_V1.md` (`reviews/claude-ufca-phase2-canonicalization-report.md`); closure awaits author review. Uses `reviews/claude-pass2-r3-craniofacial-framework.md` as its cross-race comparison/measurement framework (not creator controls).
+- Universal Facial Customization Architecture Review — Phase 1 **ACCEPTED** (`reviews/claude-ufca-01…08`); Phase 2 canonicalization completed in `decisions/UFCA_V1.md` (`reviews/claude-ufca-phase2-canonicalization-report.md`); **CLOSED / FINAL-AUTHOR ACCEPTED** October 5, 2026 (`reviews/claude-ufca-final-closure-report.md`). Uses `reviews/claude-pass2-r3-craniofacial-framework.md` as its cross-race comparison/measurement framework (not creator controls).
 - Implementation-level prototype conflict audits when project files are accessible.
 
 ## Authority hierarchy (adopted October 5, 2026 — Pass 2 resolution order)

@@ -222,6 +222,8 @@ This is design only, preserving v1.0–v1.1. It arrived in three parts: craniofa
 
 **UFCA status (UFCA Phase 2, October 5, 2026):** the universal facial creator organization is now canonical in `decisions/UFCA_V1.md`. The Vael facial control organization in this spec stays as approved requirements and is routed to its UFCA slots (`reviews/claude-ufca-08-phase1-architecture-audit.md` Appendix A); Vael anatomy, tendencies, validators, tests and OPEN items are unchanged. Under UFCA AC-U1, "eye size" in this spec means bony orbit size (direct control) plus visible eye aperture (direct control); eyeball size is derived from the orbit and is never an independent slider. Naturalize Face stays provisional (UFCA §19.1).
 
+**UFCA final closure (author decision, October 5, 2026; `reviews/chatgpt-ufca-final-closure-order.md`):** Eyebrow-hair biology is bound in UFCA slot 11 (ordinary variation in density/fullness, distribution/coverage, strand/coarseness character where ordinary hair biology supports it, and natural colour relationship to the individual's hair/pigmentation). Grooming, trimming, shaping, cosmetics, dye, styling and deliberate removal stay Personal Presentation. Eyebrows encode no culture, personality, class, attractiveness or sex stereotype, and no race-specific eyebrow morphology is implied; no numeric ranges are set.
+
 ## 1. Facial identity principle
 
 Vael faces come from combined craniofacial relationships, never from dark complexion, pointed ears, glowing eyes, one eye, nose or jaw, conventional attractiveness, sinister expressions or cultural styling. With ears hidden, presentation neutral and complexion neutralized, a Vael still belongs to a recognizable Vael distribution.
