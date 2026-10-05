@@ -39,7 +39,7 @@
 | RM-SR-01 | P2 | Pipkin central-trunk share (thorax + lumbar ÷ stature) and pelvic vertical contribution, vs Marchfolk at normalized height | Pipkin reference, Narrow, Broad | Pipkin primary identifier; SR-COMP-01/02 |
 | RM-SR-02 | P2 | Cogling segment ratios: upper arm ÷ arm, forearm ÷ arm, hand ÷ arm, finger ÷ hand; femur ÷ leg; total arm and leg ÷ stature | Cogling reference and extremes | Cogling §8, §38–§42; SR-COMP-01/02 |
 | RM-SR-03 | P2 | Long-bone shaft breadth ÷ length; joint breadth ÷ adjacent length | Cogling, Pipkin, Durrim | Structural-mass axis (short-race review §4) |
-| RM-SR-04 | P1 | Head ÷ stature; FVI; ORB vs aperture (anti-juvenile) | Pipkin and Cogling references, plus their minimum-height cases; Durrim reference (head-share scope, RAC Phase 2) | UFCA anti-juvenile constraints; SR-COMP-11 |
+| RM-SR-04 | P1 | Head ÷ stature; FVI; ORB vs aperture (anti-juvenile) | Pipkin and Cogling references, plus their minimum-height cases; Durrim reference (head-share scope, RAC Phase 2). Cogling's canon head size "roughly 11–13 cm" is **head height** (menton–vertex; W1-A1), tested here | UFCA anti-juvenile constraints; SR-COMP-11 |
 | RM-SR-05 | P2 | Durrim depth domains A–E; FDH; CBH | Durrim reference; Marchfolk at 152 cm (corrected comparison point, UCCA T-6) | Durrim C3 (numeric thresholds deferred) |
 | RM-SR-06 | P3 | Durrim torso contribution and thoracic depth vs equal-height Marchfolk | 152 cm three-population test | Durrim P2 §54–63 |
 
