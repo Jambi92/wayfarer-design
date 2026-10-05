@@ -109,8 +109,8 @@ The audit was independent: a separate agent read every diff hunk against the ord
 | Large-race numeric validators, including the AD-3 floor | DEFERRED | RM-LR-01…07 |
 | Short-race, other-population and Saurin coverage validators | DEFERRED | RM-SR-01…06, RM-OT-01…05 |
 | Legacy gameplay traits | DEFERRED | Race → Biology → Gameplay review |
-| Halvren "robust humans" referent (E2-11/12) | OPEN, MINOR, non-blocking | Author choice of comparator population |
-| E10-06 and E10-15 | Applied, flagged for author veto | Author |
+| Halvren "robust humans" referent (E2-11/12) | RESOLVED in the final acceptance (§7): Skarn named as the example | — |
+| E10-06 and E10-15 | Applied; accepted by the author in the final acceptance (§7) | — |
 | Register content reconciliation | OPEN, optional | The register is historical under the PROJECT_RULES hierarchy |
 | Intentionally OPEN biology (reproduction, lifecycle, pelvic morphology, and so on) | OPEN | Per-race canon, unchanged |
 
@@ -136,3 +136,40 @@ The commit SHA is the commit containing this report; it is given in the delivery
 STOP. No UFCA, UE5, rigging, animation, clothing/armor, gameplay balancing or class work was started.
 
 — Claude
+
+---
+
+## 7. Final author acceptance and freeze (October 5, 2026)
+
+**Order:** `reviews/chatgpt-pass2-final-author-acceptance-freeze-order.md` (29128e8).
+
+### Author decisions
+
+- **E10-06** (Saurin §44 reconciliation pointer) and **E10-15** (Fenn low-light restored to the elf review's OPEN register) are accepted and retained.
+- **E2-11 and E2-12 are resolved** with Skarn as the named robust-human comparator, applied in `specs/halvren/HALVREN_V1.md`:
+
+| Row | Location | New wording |
+|---|---|---|
+| E2-11 | Part 1 elven-family row (§16) | "more gracility than equivalent robust human populations such as Skarn," |
+| E2-12 | Part 3 Jaw row (§15–20) | "Elven ancestry may lower average apparent mandibular mass relative to robust human populations such as Skarn," |
+
+"Such as" keeps the comparison open: Skarn is the named example, not the only robust human phenotype.
+
+### Verification
+
+| # | Check | Result |
+|---|---|---|
+| 1 | Both edits verified against the canonical Halvren spec | ✔ Each target phrase occurred exactly once; no "robust humans" remains |
+| 2 | No Halvren inheritance rule, phenotype range or positive identity changed | ✔ Comparator words only; no number or rule changed |
+| 3 | Marchfolk Human Reference Population rule intact | ✔ PROJECT_RULES |
+| 4 | No new Pass 2 finding created | ✔ |
+| 5 | E10-06 and E10-15 still in place | ✔ |
+| 6 | Named measurement-deferred items still deferred | ✔ RM-CF-01…05; RM-LR, RM-SR and RM-OT queues; provisional Saurin rostral floor (§259) |
+| 7 | All 13 first-pass completions still valid | ✔ |
+| 8 | No UFCA work begun | ✔ |
+
+## **PASS 2 FINAL-AUTHOR ACCEPTED / FROZEN**
+
+Pass 2 findings and canonical reconciliations are accepted as the foundation for subsequent design. Intentionally OPEN biology and named future measurement work are not frozen.
+
+**The Universal Facial Customization Architecture is the next authorized design phase.** It begins only under a separate author order.
