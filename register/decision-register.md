@@ -1,5 +1,8 @@
 # Character System Decision Register
 
+> **STATUS / PRECEDENCE NOTICE (October 5, 2026 — Pass 2 resolution order):** This register is **supporting decision history** (authority level 4 of 6 in `decisions/PROJECT_RULES.md`). Its entries stop at September 30, 2026 and do **not** reflect later canon (e.g. Saurin first-pass completion and §263 sex-related anatomy, Cogling Parts 5–6, the accepted Short-Race review, the Pass 1 milestone and Pass 2). Where it conflicts with an approved race specification, `PROJECT_RULES.md`, an accepted comparative review or an explicit author resolution, those govern. Treat this file as historical until it is reconciled.
+
+
 This register tracks every character-system decision and its status: 14 agreed, 3 preliminary and 7 open as of September 30, 2026. Nothing here is implemented in UE5 yet.
 
 | Decision | Status | Source |

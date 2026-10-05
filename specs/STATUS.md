@@ -17,12 +17,16 @@
 
 ## Completed reviews
 - **Short-Race Comparative Anatomy Review — ACCEPTED / COMPLETE**
+- **Pass 2 Roster-Wide Comparative & System Review — audit DELIVERED** (`reviews/claude-pass2-01`…`06`; no blocking contradiction, no race reopened)
+- **Large-Race Comparative Anatomy Review (Skarn / Grask / Gorrund) — PERFORMED, author decisions pending** (`reviews/claude-pass2-r2-large-race-comparative-review.md`; no contradiction, no redesign; AD-1–AD-4 open)
 
 ## Not yet designed
 - None
 
 ## Current next action
-**PASS 1 COMPLETE — all 13 playable races are FIRST-PASS COMPLETE.** Next phase: Pass 2 roster-wide comparative and system review. Do not begin UE5 implementation.
+**PASS 1 COMPLETE — all 13 playable races are FIRST-PASS COMPLETE.**
+
+**Pass 2 — resolution sequence deliverables complete; awaiting author closure (October 5, 2026).** Authority hierarchy, terminology and R-SEX adopted in `decisions/PROJECT_RULES.md`; decision register marked historical/supporting. Delivered: authority & terminology report, Large-Race review, common craniofacial landmark & metric framework, conforming-edit plan (166 rows, not applied), Reference-Mesh Measurement Queue and closure audit (`reviews/claude-pass2-r1`…`r6`). Open for author action: Large-Race decisions AD-1–AD-4, confirmations AC-1–AC-10, approval of conforming edits. Numeric validators deferred to approved reference meshes. **Do not begin the Universal Facial Customization Architecture until ChatGPT closes the Pass 2 resolution sequence. Do not begin UE5 implementation.**
 
 
 ## Pass 1 Completion Milestone — October 1, 2026
