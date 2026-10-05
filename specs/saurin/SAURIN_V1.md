@@ -4272,7 +4272,7 @@ Biological Randomization samples **driver** variables (stature, frame, compositi
 - Numeric per-field scale ranges.
 - Reproductive life history and physiology (§263); statistical spreads of the sex-shifted distributions around their centres.
 - World-space validation of the longest tails (up to ~170 cm tail reach behind the heel at the stature/tail extremes).
-- Statistical calibration of soft distributions (the universal facial-control architecture is canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA closure pending author review).
+- Statistical calibration of soft distributions (the universal facial-control architecture is canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA CLOSED / FINAL-AUTHOR ACCEPTED, October 5, 2026).
 
 ## 266. Creator-biology closure
 

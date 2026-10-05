@@ -1553,7 +1553,7 @@ The following remain OPEN after first-pass Pipkin design:
 - detailed population genetics/simulation depth.
 
 ### Character creation and presentation
-- final creator-facing facial-control organization (canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA closure pending author review);
+- final creator-facing facial-control organization (canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA CLOSED / FINAL-AUTHOR ACCEPTED, October 5, 2026);
 - final preset library and population-frequency weighting;
 - final presentation-preset library;
 - final saved-appearance schema/version architecture;
@@ -1648,7 +1648,7 @@ The review may refine comparative wording but must not erase approved positive P
 ## 36. Universal-review dependencies
 
 Pipkin first-pass completion does not waive later universal reviews, including:
-- Universal Facial Customization Architecture Review (performed; canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA closure pending author review);
+- Universal Facial Customization Architecture Review (performed; canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA CLOSED / FINAL-AUTHOR ACCEPTED, October 5, 2026);
 - cross-race pigmentation/surface consistency work;
 - race-biology-gameplay review for unresolved gameplay traits;
 - world-scale/accessibility validation across the full playable roster;

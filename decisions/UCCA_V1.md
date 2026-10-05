@@ -1,6 +1,6 @@
 # Universal Character Creation Architecture (UCCA) v1
 
-**Status:** **CANONICAL: UCCA Phase 2** (October 5, 2026; `reviews/chatgpt-ucca-phase2-canonicalization-order.md`). Closure pending author review of the Phase 2 report (`reviews/claude-ucca-phase2-canonicalization-report.md`).
+**Status:** **CLOSED / FINAL-AUTHOR ACCEPTED** (October 5, 2026; `reviews/chatgpt-ucca-final-closure-order.md`). Canonicalized in UCCA Phase 2 (`reviews/chatgpt-ucca-phase2-canonicalization-order.md`; report `reviews/claude-ucca-phase2-canonicalization-report.md`). See §27 for what closure freezes.
 **Phase:** DESIGN ONLY. This document defines whole-character creator **design behaviour**. It does not define UE5 mesh, skeleton, morph, rig, animation, camera, UI or save-file implementation (§26).
 **Sources:**
 - Phase 1 package: `reviews/claude-ucca-01…11` (line citations there refer to commit 571b71f)
@@ -181,7 +181,7 @@ Hands and feet are **multidimensional**: absolute vs proportional dimensions; le
 - Slot 8 routes into closed UFCA **unchanged in substance.**
 - **One Apparent Biological Age driver** (UFCA slot 14 = UCCA slot 11).
 - **Scalp hair** is one variable shown in UFCA slot 10 and UCCA slot 9.
-- **Saurin head scale** is one variable: the SAURIN §258 ±8 % head-to-body control is shown in UFCA slot 1 (AD-U4) and UCCA Slot 2. There is no second head control.
+- **Saurin head scale** is one variable (author-confirmed, final closure Q-2): the SAURIN §258 ±8 % head-to-body control is exposed in two navigation contexts, UFCA slot 1 (AD-U4) and UCCA Slot 2. One stored semantic value, one canonical bound; no second head-scale control, no double application and no independent face/body copies. This is an integration clarification, not a new anatomical rule.
 - **One randomization strength** for face and body; face-only and body-only selective randomization each preserve the other side.
 - Head-to-stature and head-neck balance validators run with face extremes.
 - UFCA machinery (classes, relations, outcomes, N-levels, frequency vocabulary, strengths, AD-U12) is reused, never redefined.
@@ -273,7 +273,7 @@ Body Language (Slot 13) is a universal Presentation slot for idle, stance and ge
 
 ## 21. Saved / reusable appearance (AD-C13)
 
-**Conceptual domains** (not a format): 1 schema/version; 2 race; 3 Halvren lineage record (constraints B recomputed, not stored); 4 sex-related anatomy; 5 Biological Anatomy (stature, shares, hands/feet, Saurin tail and E/B, head-to-body where bound, capacity, Natural surface, hair biology, ocular per UFCA, display); 6 Skeletal Frame (resolved values); 7 Physical Composition; 8 Face (UFCA values); 9 Age (Chronological, Apparent Biological, Age Presentation); 10 natural body asymmetry; 11 Environmental (persistent and transient subtypes); 12 Acquired history; 13 Presentation; 14 optional non-driving provenance.
+**Conceptual domains** (not a format): 1 schema/version; 2 race; 3 Halvren lineage record (constraints B recomputed, not stored); 4 sex-related anatomy; 5 Biological Anatomy (stature, shares, hands/feet, Saurin tail and E/B, head-to-body where bound, capacity, Natural surface, hair biology, ocular per UFCA, display); 6 Skeletal Frame (resolved values); 7 Physical Composition; 8 Face (UFCA values); 9 Age (Chronological, Apparent Biological, Age Presentation); 10 natural body asymmetry; 11 Environmental (persistent and transient subtypes); 12 Acquired history; 13 Presentation; 14 optional non-driving provenance. **Each variable is stored once:** a variable shown in both UFCA and UCCA navigation (Apparent Biological Age, scalp-hair biology, ocular values, Saurin head scale) has one stored value, not a face copy and a body copy.
 
 | # | Rule |
 |---|---|
@@ -360,4 +360,10 @@ UCCA never humanizes Saurin architecture.
 
 UCCA is **DESIGN ONLY**. It does not decide or authorize: UE5 implementation; mesh, skeleton or morph construction; Manny/Quinn asset fate; animation, locomotion, IK or retargeting; camera or first-person geometry; collision or reach; equipment fitting; save serialization; gameplay balancing. The prototype (level 6) stays non-authoritative where it conflicts. **Canonical status is not permission to begin UE5 implementation.**
 
-— Claude, canonicalized under `reviews/chatgpt-ucca-phase2-canonicalization-order.md`
+## 27. Closure
+
+UCCA is **CLOSED / FINAL-AUTHOR ACCEPTED** (October 5, 2026; `reviews/chatgpt-ucca-final-closure-order.md`; report `reviews/claude-ucca-final-closure-report.md`). Final author confirmations: **Q-1** the Aelari presentation-preset union stands exactly as canonicalized (both institutional entries kept); **Q-2** Saurin head scale is one §258 variable in two navigation contexts (§12).
+
+Closure freezes the whole-character creator **design architecture**. It does **not** freeze legitimate future resolution of named OPEN biology (§25), measurement work (RM-LR, RM-SR, RM-OT, RM-CF, RM-UF, RM-UB), later gameplay review or implementation choices. **Closure is not permission to begin UE5 implementation.**
+
+— Claude, canonicalized under `reviews/chatgpt-ucca-phase2-canonicalization-order.md`; closed under `reviews/chatgpt-ucca-final-closure-order.md`

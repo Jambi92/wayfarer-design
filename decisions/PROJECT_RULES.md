@@ -42,7 +42,7 @@ Universal UFCA rules (details in `decisions/UFCA_V1.md`):
 - Natural asymmetry is distinct from Acquired history; Naturalize Face remains provisional.
 
 ## Whole-character architecture status
-The **Universal Character Creation Architecture (UCCA)** is canonical in `decisions/UCCA_V1.md` (UCCA Phase 2, October 5, 2026; closure pending author review). It governs whole-character creator organization; UFCA governs the face; race specs govern each population's anatomy.
+The **Universal Character Creation Architecture (UCCA)** is canonical in `decisions/UCCA_V1.md` (UCCA Phase 2, October 5, 2026; **CLOSED / FINAL-AUTHOR ACCEPTED** October 5, 2026). It governs whole-character creator organization; UFCA governs the face; race specs govern each population's anatomy.
 Universal UCCA rules (details in `decisions/UCCA_V1.md`):
 - 15 navigation slots, with Face routing into UFCA. Slots are not anatomy; Bound / Bound-locked / Absent; a shared slot never by itself authorizes a control.
 - Stature is the only absolute size control. Other dimensions are stored race-relatively; absolute dimensions are derived through race-specific allometry. No uniform whole-body scaling.
@@ -61,7 +61,7 @@ Universal UCCA rules (details in `decisions/UCCA_V1.md`):
 - Large-Race Comparative Anatomy Review (Skarn, Grask, Gorrund) — ACCEPTED / COMPLETE (`reviews/claude-pass2-r2-large-race-comparative-review.md`; author decisions AD-1–AD-5, October 5, 2026, reconciled into the Skarn, Grask and Gorrund specs).
 - Pass 2 Roster-Wide Comparative & System Review — **CLOSED / FINAL-AUTHOR ACCEPTED / FROZEN** (October 5, 2026; `reviews/claude-pass2-closure-canonicalization.md`, `reviews/chatgpt-pass2-final-author-acceptance-freeze-order.md`).
 - Universal Facial Customization Architecture Review — Phase 1 **ACCEPTED** (`reviews/claude-ufca-01…08`); Phase 2 canonicalization completed in `decisions/UFCA_V1.md` (`reviews/claude-ufca-phase2-canonicalization-report.md`); **CLOSED / FINAL-AUTHOR ACCEPTED** October 5, 2026 (`reviews/claude-ufca-final-closure-report.md`). Uses `reviews/claude-pass2-r3-craniofacial-framework.md` as its cross-race comparison/measurement framework (not creator controls).
-- Universal Character Creation Architecture Review — Phase 1 **ACCEPTED** (`reviews/claude-ucca-01…11`); Phase 2 canonicalization completed in `decisions/UCCA_V1.md` (`reviews/claude-ucca-phase2-canonicalization-report.md`); closure pending author review.
+- Universal Character Creation Architecture Review — Phase 1 **ACCEPTED** (`reviews/claude-ucca-01…11`); Phase 2 canonicalization completed in `decisions/UCCA_V1.md` (`reviews/claude-ucca-phase2-canonicalization-report.md`); **CLOSED / FINAL-AUTHOR ACCEPTED** October 5, 2026 (`reviews/claude-ucca-final-closure-report.md`).
 - Implementation-level prototype conflict audits when project files are accessible.
 
 ## Authority hierarchy (adopted October 5, 2026 — Pass 2 resolution order)

@@ -3214,7 +3214,7 @@ The permanent first-pass Cogling validation suite consists of every active appro
 
 Cogling first-pass completion does not close project-wide questions that require later comparative or universal review. Dependencies include:
 - the Short-Race Comparative Anatomy Review (ACCEPTED / COMPLETE; `specs/STATUS.md`);
-- the Universal Facial Customization Architecture Review (performed; canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA closure pending author review);
+- the Universal Facial Customization Architecture Review (performed; canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA CLOSED / FINAL-AUTHOR ACCEPTED, October 5, 2026);
 - cross-race pigmentation/surface-phenotype review;
 - the race-biology-gameplay review;
 - full-roster world-scale/accessibility review;

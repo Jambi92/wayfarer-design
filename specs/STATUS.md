@@ -32,7 +32,9 @@
 
 Closure freezes the universal facial creator architecture at the design level. It does not freeze later legitimate resolution of named OPEN biology (UFCA §19.1), measurement work (RM-CF, RM-SR, RM-OT, RM-UF) or implementation choices. Naturalize Face stays provisional. Durrim sclera stays a derived appearance, not a player control. The provisional Saurin rostral floor remains protective canon. **Closure is not permission to begin UE5 implementation.**
 
-**UNIVERSAL CHARACTER CREATION ARCHITECTURE (UCCA): CANONICALIZED — UCCA Phase 2 (October 5, 2026; `reviews/chatgpt-ucca-phase2-canonicalization-order.md`); closure pending author review.** Canonical document: `decisions/UCCA_V1.md`. Phase 1 package: `reviews/claude-ucca-01`…`11`. Phase 2 report: `reviews/claude-ucca-phase2-canonicalization-report.md`. Author rulings AD-C1…AD-C17, AD-C3b and T-1…T-12 applied; regression audit passed with no stop condition. Halvren stature-tail limits stay OPEN (RM-UB-05); RM-UB-01…05 are queued in `reviews/claude-pass2-r5-reference-mesh-queue.md` §3B. **Canonical status is not permission to begin UE5 implementation.**
+**UNIVERSAL CHARACTER CREATION ARCHITECTURE (UCCA): CLOSED / FINAL-AUTHOR ACCEPTED (October 5, 2026; `reviews/chatgpt-ucca-final-closure-order.md`).** Canonical document: `decisions/UCCA_V1.md`. Phase 1 package: `reviews/claude-ucca-01`…`11`. Phase 2 report: `reviews/claude-ucca-phase2-canonicalization-report.md`. Final closure report: `reviews/claude-ucca-final-closure-report.md`. Final author confirmations: Q-1 Aelari presentation-preset union kept as canonicalized; Q-2 Saurin head scale is one §258 variable shown in the face and body creators.
+
+Closure freezes the whole-character creator architecture at the design level. It does not freeze later legitimate resolution of named OPEN biology (UCCA §25, including Halvren stature-tail limits, RM-UB-05), measurement work (RM-LR, RM-SR, RM-OT, RM-CF, RM-UF, RM-UB), gameplay review or implementation choices. **Closure is not permission to begin UE5 implementation.**
 
 
 ## Pass 1 Completion Milestone — October 1, 2026
