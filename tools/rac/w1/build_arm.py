@@ -13,7 +13,6 @@ if hm is None:
     json.dump(rec, open(os.path.join(out, tag + "_build.json"), "w"), indent=1); print("UNREACHABLE", info); sys.exit(0)
 c = dict(cfg); c["height_macro"] = hm
 b, r = A.build(c)
-if cfg.get("face_proj_cm"): A.face_forward(b, cfg["face_proj_cm"])
 A.ground(b, r)
 k_scale = None
 if cfg.get("proxy_scale"):

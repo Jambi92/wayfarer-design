@@ -45,7 +45,48 @@ def build(cfg):
     st = HumanService.get_default_deserialization_settings()
     st.update({"subdiv_levels": 0, "load_clothes": False, "override_skin_model": "PRESET"})
     body = HumanService.deserialize_from_dict(info, st)
-    return body, body.parent
+    rig = body.parent
+    if cfg.get("face_proj_cm"): face_forward(body, cfg["face_proj_cm"])
+    bs = dict(cfg.get("bone_scales", {}))
+    for k in list(bs):
+        if k.startswith("LR:"):
+            v = bs.pop(k); bs[k[3:] + "_l"] = v; bs[k[3:] + "_r"] = v
+    if bs: apply_bone_scales(body, rig, bs)
+    return body, rig
+
+def bake(body, rig):
+    """Apply the scaled pose as the new rest shape (mesh + armature)."""
+    bpy.context.view_layer.objects.active = body
+    for md in body.modifiers:
+        if md.type == "MASK": md.show_viewport = False
+    # bake shape keys first (applying a modifier requires no shape keys)
+    if body.data.shape_keys:
+        body.shape_key_add(name="__mix", from_mix=True)
+        keys = body.data.shape_keys.key_blocks
+        mix = [tuple(v.co) for v in keys["__mix"].data]
+        body.shape_key_clear()
+        for v, co in zip(body.data.vertices, mix): v.co = co
+    arm_mod = [m for m in body.modifiers if m.type == "ARMATURE"][0]
+    bpy.ops.object.select_all(action="DESELECT"); body.select_set(True); bpy.context.view_layer.objects.active = body
+    bpy.ops.object.modifier_apply(modifier=arm_mod.name)
+    bpy.ops.object.select_all(action="DESELECT"); rig.select_set(True); bpy.context.view_layer.objects.active = rig
+    bpy.ops.object.mode_set(mode="POSE"); bpy.ops.pose.armature_apply(selected=False); bpy.ops.object.mode_set(mode="OBJECT")
+    for pb in rig.pose.bones: pb.scale = (1, 1, 1); pb.bone.inherit_scale = "FULL"
+    md = body.modifiers.new("Armature", "ARMATURE"); md.object = rig
+    # keep the mask modifier last
+    for m in body.modifiers:
+        if m.type == "MASK": m.show_viewport = True
+    bpy.context.view_layer.update()
+
+def apply_bone_scales(body, rig, scales):
+    """Regional non-uniform re-proportioning (PV-D21 route c): per-bone scale in bone space (X breadth, Y length, Z depth),
+    inherit-scale off so each region gets only its own factor; child joints follow the scaled parent (e.g. pelvis X spreads the
+    hip joints). Baked into the rest mesh and rig. scales: {bone: [sx, sy, sz]} (missing bones = 1)."""
+    for pb in rig.pose.bones:
+        pb.bone.inherit_scale = "NONE"
+        pb.scale = tuple(scales.get(pb.name, (1.0, 1.0, 1.0)))
+    bpy.context.view_layer.update()
+    bake(body, rig)
 
 def groups(body):
     names = {g.index: g.name for g in body.vertex_groups}

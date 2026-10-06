@@ -505,6 +505,8 @@ Exact tail heights are unresolved until the ancestry-dependent distribution is d
 | A. Blocks specific future systems, not Halvren v1.1 body refinement | Human and elven lifespan numbers, elven eye biology, Vael low-light mechanism, elven ear mobility, pigmentation, hair and iris frequencies, facial-hair distributions, Marchfolk hair-texture distribution, Vael sunlight response | Stay OPEN until their Halvren subsystem needs them |
 | B. Potentially blocks detailed anatomical work | Shared elven pelvic anatomy, the sex-related anatomy system | Never invented inside Halvren. If v1.1 needs either for a definitive rule, that section stops, the dependency is recorded, and only the parts that don't need it continue |
 
+**Dependency status (RAC W1d, author-accepted October 5, 2026; `reviews/chatgpt-rac-w1d-author-decisions-continuation-order.md` §2, PV-D18):** the shared elven pelvic foundation (E-A1…E-A3, PV-D2) is now defined in the source specs (FENN, AELARI, VAEL pelvic-architecture notes) and supplies the "shared elven pelvic anatomy" dependency. The sex-related anatomy dependency remains separate and unresolved; Halvren pelvic inheritance invents nothing.
+
 > **Source-first dependency rule (locked, permanent for mixed-ancestry design):** Halvren must not invent missing human or elven biology and then retroactively make that invention canonical for the source populations.
 
 When mixed-ancestry design exposes missing source biology: identify the dependency, return to the relevant source population or family, define the source biology, validate it, then resume Halvren inheritance design.

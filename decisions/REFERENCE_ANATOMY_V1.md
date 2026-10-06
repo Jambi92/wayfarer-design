@@ -130,12 +130,20 @@ A mesh built from **numeric targets chosen by a builder** (a solver, a sculptor 
 | **Composition sex default** | Races that state no sex-related composition tendency have no authored sex shift in muscle, fat amount or fat distribution (current default; distributions OPEN where race canon says so). Saurin §263 tissue (E/B) is not composition | AD-R17 |
 | **Arm span** | Span is always DER from shoulder and segment anatomy; Pipkin, Skarn and Cogling have **no racial span tendency**; Grask span > Marchfolk and Skarn and > Gorrund (direction only) | AD-R11, RAC-04 |
 
+**Pelvic clarifications (RAC W1d, author-accepted October 5, 2026; `reviews/chatgpt-rac-w1d-author-decisions-continuation-order.md` §2):**
+- **Distinct / non-human pelvis (PV-D1):** a human-homologous underlying bone plan satisfies a race's "distinct / non-human / not a scaled human" pelvis wording when the pelvic descriptors (spine–sacral relation, hip-joint organization, iliac structure, AP depth, transverse breadth, lower-trunk relation) are resolved independently from race canon with at least two canon-motivated relational departures plus construction. Decorative pelvic markers are never invented to make a population look different.
+- **Validation layer (PV-D16):** pelvic canon is validated on skeletal / bony-landmark geometry. Skin-surface pelvic readings are composition-inclusive diagnostics only.
+- **Sex and obstetric firewall (PV-D20):** no sex-related pelvic shift is authored by the RAC W1d pelvic architecture; the obstetric firewall above stays absolute.
+
+Per-race architecture lives in each race spec ("Pelvic architecture (RAC W1d)"); exact morphology and numeric envelopes remain OPEN.
+
 ## 11. Consolidated directional constraints
 
 Phase 1 consolidated the race-by-race directional constraints that every measurement must satisfy. They are adopted as **constraints, not magnitudes**:
 - **Pelvic-axial requirement per race:** `reviews/claude-rac-03-pelvis-axial-closure.md` §2, "close now (directional)" column (AD-R6).
 - **Segment, neck, head-share, hand and foot directions:** `reviews/claude-rac-04-segment-stature-closure.md` §2 and §5 (AD-R10). Pipkin T-2 constraints (§3; AD-R12); the split stays deferred.
 - **Frame, joint and robusticity directions:** `reviews/claude-rac-05-frame-joint-robusticity.md` §2 (AD-R14). SK–GR and SK–GO orderings stay undetermined (AD-R15).
+  - **AD-R15 scope (RAC W1d clarification, AD-G13, October 5, 2026):** AD-R15 covers only Skarn–Grask thoracic depth and Skarn–Gorrund / Skarn–Grask joint scale. Gorrund > Skarn thoracic depth remains canon and a pass condition (R2 L55; RAC-05 §2).
 - **Ear landmarks (method):**
   - **superaurale**: the highest point of the auricle's free margin;
   - **subaurale**: the lowest point of the auricle (lobule where present);

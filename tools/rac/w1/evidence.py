@@ -16,8 +16,8 @@ def sphere(c, r, n=16):
             F += [(a, c_, b), (b, c_, d)]
     return np.array(V), np.array(F)
 
-def render(V, F, hx, hy, depth, ppcm, origin, size, tick, shade_col=(205, 205, 200), light=(-0.35, -0.45, 0.82), amb=0.25):
-    """Orthographic z-buffer. hx, hy, depth: (N,) view coords in cm. origin=(x0,y0) cm at image bottom-left."""
+def render(V, F, hx, hy, depth, ppcm, origin, size, tick, shade_col=(205, 205, 200), light=(-0.35, -0.45, 0.82), amb=0.25, fcol=None):
+    """Orthographic z-buffer. fcol: optional (nF,3) per-face colour (default shade_col). hx, hy, depth: (N,) view coords in cm. origin=(x0,y0) cm at image bottom-left."""
     W, H = size; px = (hx - origin[0]) * ppcm; py = H - (hy - origin[1]) * ppcm
     T = F; P = np.stack([px[T], py[T], depth[T]], 2)
     e1 = np.stack([px[T[:, 1]] - px[T[:, 0]], py[T[:, 1]] - py[T[:, 0]], depth[T[:, 1]] - depth[T[:, 0]]], 1)
@@ -42,7 +42,7 @@ def render(V, F, hx, hy, depth, ppcm, origin, size, tick, shade_col=(205, 205, 2
         if not m.any(): continue
         z = w1 * az + w2 * bz + w3 * cz
         yy, xx = np.nonzero(m); zz = z[m]; Y = yy + y0; X = xx + x0
-        ok = zz > zb[Y, X]; zb[Y[ok], X[ok]] = zz[ok]; img[Y[ok], X[ok]] = col * c[t]
+        ok = zz > zb[Y, X]; zb[Y[ok], X[ok]] = zz[ok]; img[Y[ok], X[ok]] = (col if fcol is None else fcol[t]) * c[t]
     im = Image.fromarray(img.astype(np.uint8)); d = ImageDraw.Draw(im)
     # ground line and ticks
     gy = H - (0 - origin[1]) * ppcm

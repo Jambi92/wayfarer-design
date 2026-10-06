@@ -125,6 +125,19 @@ The result is related but distinct elven silhouettes, and the difference never c
 | Shoulders and clavicles | Relatively long clavicles, broad width variation, light shoulder joints, coherent shoulder-to-neck transition | Broad Aelari gain real skeletal breadth, not just muscle or fat |
 | Pelvis | A distinct elven pelvis, not a stock human pelvis with longer legs attached. Stable with long femurs, coherent with the spine, Narrow to Broad variation, plausible muscle attachment, natural locomotion | Exact shape awaits prototyping. No mandatory hip width by race or sex-related anatomy |
 
+**Pelvic architecture (RAC W1d, author-accepted October 5, 2026; `reviews/chatgpt-rac-w1d-author-decisions-continuation-order.md` §2):** relational architecture only, read at matched stature against Marchfolk (MF).
+- **Basis (PV-D1):** a human-homologous underlying bone plan with each pelvic descriptor resolved from Aelari canon; distinctness comes from the canon-motivated relational departures below plus construction. No decorative pelvic marker is authored.
+- **Shared elven foundation (PV-D2; E-A1…E-A3):** construction gracile relative to MF, with gracility ordered Fenn > Aelari > Vael (E-A1; ECR L21, L316); a hip apparatus serving relatively long femora — hip-joint height ÷ stature > MF and bitrochanteric ÷ iliac-crest breadth not lower than MF (E-A2; FN L111, L139, VA L124); no breadth identity, all three frames, no mandatory hip width by race or sex (E-A3; FN L111, L139, VA L38).
+- **Spine/sacrum (AE-P1; PV-D1, PV-D19):** *(PV-D1/PV-D22 general acceptance)* human-homologous lumbosacral relationship "coherent with the spine"; neutral adult curvature (L126; RA L124).
+- **Hip-joint placement (AE-P2a; PV-D13):** leg share > MF through even thigh and lower-leg elongation; the pelvis is never truncated below the hip joints to add leg length (L58, L126, L167).
+- **Hip-joint spacing (AE-P2b; PV-D2):** bitrochanteric ÷ iliac-crest breadth not lower than MF — stable with long femurs (L126, L156).
+- **Hip-joint scale (AE-P2c; PV-D1):** *(PV-D1/PV-D22 general acceptance)* gracile relative to MF and structurally sufficient; ≥ Fenn at matched stature (ordering only) (L143; ECR L316).
+- **Vertical elongation (AE-P3; PV-D5):** the pelvis participates in whole-body vertical elongation — pelvic vertical contribution ÷ iliac-crest breadth > MF and > Fenn, achieved by iliac height, never by narrowing. Construction gracile: lighter than MF, not lighter than Fenn (L33, L115, L126; ECR L46, L316).
+- **AP depth (AE-P4; PV-D3 (a)):** ≈ MF relative to stature; the "relatively shallow" ribcage (L48) is not transferred to the pelvis.
+- **Transverse breadth (AE-P5; PV-D2 E-A3):** no breadth direction relative to MF; no mandatory hip width by race (L126).
+- **Lower trunk (AE-P6; PV-D1, PV-D15):** *(PV-D1/PV-D22 general acceptance)* the longest elven waist interval — costal-margin-to-crest interval ÷ torso length > Fenn and > Vael, and ≥ MF (L48, L124; ECR L46).
+- **Validation and scope (PV-D16, PV-D17, PV-D20, PV-D22):** canon is validated on skeletal/bony-landmark geometry; skin-surface pelvic readings are composition-inclusive diagnostics only. Construction is checked visually on orthographic renders for W1. No sex-related pelvic shift is authored (L631; RA L52); the obstetric firewall is absolute (RA L122). **Exact morphology and numeric envelopes remain OPEN.**
+
 ## 6. Joint scale
 
 Shoulders, elbows, wrists, hips, knees and ankles are gracile compared with humans but structurally sufficient. Gracile never means fragile, and hard minimum boundaries prevent implausibly tiny joints.

@@ -186,4 +186,6 @@
 | 132 | HV | finger_over_hand within source span (MF, SG, FN, AE, VA) | HV L13, L31, L41 (source-plausible) | 0.448 | in | range [0.435, 0.468] | PASS |
 | 133 | HV | wrist_over_forearm within source span (MF, SG, FN, AE, VA) | HV L13, L31, L41 (source-plausible) | 0.202 | in | range [0.187, 0.218] | PASS |
 
+**Erratum (RAC W1e, October 5, 2026; PV-D10):** row 106 tested PK "pelvic vertical contribution / stature **> MF**" as a canon requirement. The author ruled the direction is **≥ MF** (PV-D10), so a strict ">" is not mandatory and a value within the 1 % marginal tolerance is not a canon failure. The row's PASS is unaffected; the W1c PK body is a superseded proxy (S-D4). The table above is kept as issued.
+
 — Claude

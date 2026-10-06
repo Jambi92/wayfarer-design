@@ -62,4 +62,6 @@
 | AD-R14 | Adopt J-1…J-6 |
 | AD-R15 | Keep SK–GR and SK–GO joint/depth orderings **undetermined** until measured (no authored direction) |
 
+*Scope clarified (RAC W1d, AD-G13, October 5, 2026): AD-R15 covers exactly the L34 list — SK vs GR thoracic depth; SK vs GO and SK vs GR joint scale. GO > SK thoracic depth (L32) stays canon.*
+
 — Claude

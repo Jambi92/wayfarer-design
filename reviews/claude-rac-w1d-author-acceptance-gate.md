@@ -44,6 +44,8 @@
 - **AD-R15 may be ambiguous** (girdle packet AD-G13), affecting whether GO > SK thoracic depth is a pass condition.
 - **The PK "pelvic vertical > MF" check may overstate canon** (PV-D10).
 
+**Correction note (RAC W1e, October 5, 2026; PV-D10):** the author ruled that the PK direction is pelvic vertical contribution ÷ stature **≥ MF**, not a strict "> MF" (PV-D10). PK-NAT's 0.0553 vs MF 0.0555 is therefore marginal within the 1 % diagnostic tolerance and **not a canon failure**. The text above is kept as issued. The PK pelvis was rebuilt to the accepted architecture in W1e (`reviews/claude-rac-w1e-rebuild-record.md`).
+
 STOP.
 
 — Claude

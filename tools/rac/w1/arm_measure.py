@@ -131,6 +131,26 @@ def measure(path, pitch_deg=0.0, eye_ref_ext=None):
     out["pelvic_depth"] = slab(hipc[2], keep & (armw < 0.2))[1]
     out["pelvic_vertical"] = float(crest_u - hipc[2])
     out["waist_breadth"], out["waist_depth"] = slab(head("spine_01")[2] + 0.5 * (head("spine_02")[2] - head("spine_01")[2]), trunk)
+    # --- W1e: pelvic / lower-trunk / ALPC station readings (SKIN surface; composition-inclusive DIAGNOSTICS, PV-D16) ---
+    s02 = head("spine_03")[2]; s01 = head("spine_01")[2]; hipz = hipc[2]
+    out["waist_interval"] = float(s02 - s01)                 # costal-margin proxy (spine_03 joint, lower thorax) -> crest proxy (spine_01 joint)
+    out["thoracic_vertical"] = float(sst[2] - s02)           # suprasternal proxy -> costal-margin proxy
+    def sec(z): return slab(z, trunk)
+    st = {}
+    st["S1"] = (float(shj), sec(sh_u - 2)[1])
+    st["S2"] = (out["thorax_breadth_max"], out["thorax_depth_max"])
+    st["S3"] = sec(s02)
+    zs = np.linspace(s01, s02, 9); vals = [sec(z) for z in zs]; k = int(np.nanargmin([v[0] for v in vals])); st["S4"] = vals[k]
+    st["S5"] = (out["iliac_crest_breadth"], sec(s01)[1])
+    st["S6"] = (out["bitrochanteric_breadth"], out["pelvic_depth"])
+    th = [] 
+    for sd in ("l", "r"):
+        hp_, kn_ = head("thigh_" + sd), head("calf_" + sd); ax = (kn_ - hp_) / np.linalg.norm(kn_ - hp_)
+        tv = np.where(keep & (w("thigh_" + sd) > 0.5))[0]; P = V[tv] - hp_; t = P @ ax
+        m_ = np.abs(t - 0.2 * np.linalg.norm(kn_ - hp_)) < 0.8; Q = P[m_] - np.outer(t[m_], ax)
+        th.append((float(Q[:, 0].max() - Q[:, 0].min()), float(Q[:, 1].max() - Q[:, 1].min())))
+    st["S7"] = tuple(np.mean(th, axis=0))
+    out["alpc_stations"] = {k: [float(a), float(b)] for k, (a, b) in st.items()}
     # --- ratios to stature ---
     R = {"torso_share": out["torso_len"] / H, "leg_share": M["hip_height"] / H, "arm_share": M["arm"] / H,
          "span_der": (2 * M["arm"] + shj) / H, "upperarm_over_arm": M["upperarm"] / M["arm"], "forearm_over_arm": M["forearm"] / M["arm"],
@@ -146,7 +166,18 @@ def measure(path, pitch_deg=0.0, eye_ref_ext=None):
          "palm_breadth_over_hand": M.get("palm_breadth", np.nan) / M["hand"], "palm_depth_over_hand": M.get("palm_depth", np.nan) / M["hand"],
          "crest_share": out["iliac_crest_breadth"] / H, "bitroch_share": out["bitrochanteric_breadth"] / H,
          "pelvic_depth_share": out["pelvic_depth"] / H, "pelvic_vertical_share": out["pelvic_vertical"] / H,
-         "pelvis_over_thorax_breadth": out["iliac_crest_breadth"] / out["thorax_breadth_max"]}
+         "pelvis_over_thorax_breadth": out["iliac_crest_breadth"] / out["thorax_breadth_max"],
+         "pelvic_vertical_over_crest": out["pelvic_vertical"] / out["iliac_crest_breadth"],
+         "bitroch_over_crest": out["bitrochanteric_breadth"] / out["iliac_crest_breadth"],
+         "pelvic_depth_over_thorax_depth": out["pelvic_depth"] / out["thorax_depth_max"],
+         "pelvic_depth_over_crest": out["pelvic_depth"] / out["iliac_crest_breadth"],
+         "pelvic_vertical_over_thoracic_vertical": out["pelvic_vertical"] / out["thoracic_vertical"],
+         "waist_interval_over_torso": out["waist_interval"] / out["torso_len"],
+         "hip_joint_breadth_share": out["hip_joint_breadth"] / H,
+         "S3_over_S2_b": st["S3"][0] / st["S2"][0], "S4_over_S2_b": st["S4"][0] / st["S2"][0], "S5_over_S2_b": st["S5"][0] / st["S2"][0],
+         "S6_over_S2_b": st["S6"][0] / st["S2"][0], "S3_over_S2_d": st["S3"][1] / st["S2"][1], "S4_over_S2_d": st["S4"][1] / st["S2"][1],
+         "S6_over_S2_d": st["S6"][1] / st["S2"][1], "S5_over_S4_b": st["S5"][0] / st["S4"][0], "S6_over_S4_b": st["S6"][0] / st["S4"][0],
+         "S1_over_S2_b": st["S1"][0] / st["S2"][0]}
     out["mean"] = M; out["ratio"] = {k: float(v) for k, v in R.items()}
     out["volume_L"] = abs(volume(V, F)) / 1000.0
     out["cranio"] = cranio(d, V, F, keep, pitch_deg)

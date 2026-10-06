@@ -94,4 +94,6 @@ The first native builds used the generator's girth allometry for the trunk and l
 - **S-D3:** the PK and CG globe/orbit reading: absolute adult-human, or relative (scaled).
 - **S-D4:** if S-D1 is accepted, replace the W1c proxies with PK-NAT and CG-NAT as CONSTRAINED candidates. The PK pelvis (pelvic packet PV-D decisions) and the PK/CG ears remain open.
 
+**Correction note (RAC W1e, October 5, 2026; PV-D10):** the author ruled that the PK direction is pelvic vertical contribution ÷ stature **≥ MF**, not a strict "> MF" (PV-D10). PK-NAT's 0.0553 vs MF 0.0555 is therefore marginal within the 1 % diagnostic tolerance and **not a canon failure**. The text above is kept as issued. The PK pelvis was rebuilt to the accepted architecture in W1e (`reviews/claude-rac-w1e-rebuild-record.md`).
+
 — Claude

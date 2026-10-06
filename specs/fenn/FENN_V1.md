@@ -110,6 +110,19 @@ Proportions behave as connected anatomy, not independent mesh stretching. Changi
 | Ribcage and spine | Somewhat shallower front to back, moderately narrow for height, somewhat vertically compact, with a relatively longer waist and lumbar transition | Enough thoracic volume, never an implausibly tiny chest |
 | Pelvis and hips | A distinct elven pelvis, not a scaled human one, supporting longer femurs, stable hips, light visual build, Narrow to Broad frames, plausible muscle attachment and natural locomotion | Exact shape awaits prototyping, and not every Fenn has narrow hips |
 
+**Pelvic architecture (RAC W1d, author-accepted October 5, 2026; `reviews/chatgpt-rac-w1d-author-decisions-continuation-order.md` §2):** relational architecture only, read at matched stature against Marchfolk (MF).
+- **Basis (PV-D1):** a human-homologous underlying bone plan with each pelvic descriptor resolved from Fenn canon; distinctness comes from the canon-motivated relational departures below plus construction. No decorative pelvic marker is authored.
+- **Shared elven foundation (PV-D2; E-A1…E-A3):** construction gracile relative to MF, with gracility ordered Fenn > Aelari > Vael (E-A1; ECR L21, L316); a hip apparatus serving relatively long femora — hip-joint height ÷ stature > MF and bitrochanteric ÷ iliac-crest breadth not lower than MF, so the hip base is not reduced with gracility (E-A2; L111, AE L126, VA L124); no breadth identity, all three frames, no mandatory hip width by race or sex (E-A3; L111, AE L126, VA L38).
+- **Spine/sacrum (FN-P1; PV-D1, PV-D19):** *(PV-D1/PV-D22 general acceptance)* human-homologous lumbosacral relationship; neutral adult curvature (RA L124).
+- **Hip-joint placement (FN-P2a; PV-D13):** leg share > MF is reached by femur and lower-leg length coordinated with pelvic vertical contribution, never by truncating the pelvis below the hip joints (L34, L52, L136, L151).
+- **Hip-joint spacing (FN-P2b; PV-D2):** inter-acetabular spacing is not reduced in proportion to the gracile construction (bitrochanteric ÷ iliac-crest breadth not lower than MF) — the reading of "different pelvis-to-leg relationships … supporting longer femurs, stable hips" (L38, L111).
+- **Hip-joint scale (FN-P2c; PV-D1):** *(PV-D1/PV-D22 general acceptance)* follows Fenn joint gracility (smaller relative to limb length than MF), above the J-1 floor (L33, L128; RA L125).
+- **Iliac construction (FN-P3; PV-D2, PV-D17):** lighter than MF at matched stature; flare and height human-homologous (L32; ECR L21, L316).
+- **AP depth (FN-P4; PV-D3 (a)):** ≈ MF relative to stature; the shallower ribcage (L110) is not transferred to the pelvis.
+- **Transverse breadth (FN-P5; PV-D4 (a)):** central iliac-crest breadth ≈ MF relative to stature. The light build is carried by construction and limb share; gracility is construction, never a forced narrowing. Narrow–Broad frames apply (L44, L111).
+- **Lower trunk (FN-P6; PV-D1, PV-D15):** *(PV-D1/PV-D22 general acceptance)* the crest leaves a relatively gradual waist/lumbar interval within the compact torso — costal-margin-to-crest interval ÷ torso length ≥ MF and < Aelari (L50, L110; ECR L45).
+- **Validation and scope (PV-D16, PV-D17, PV-D20, PV-D22):** canon is validated on skeletal/bony-landmark geometry; skin-surface pelvic readings are composition-inclusive diagnostics only. Construction is checked visually on orthographic renders for W1. No sex-related pelvic shift is authored (L565; RA L52); the obstetric firewall is absolute (RA L122). **Exact morphology and numeric envelopes remain OPEN.**
+
 ## 5. Joint scale
 
 Wrists, elbows, knees and ankles look smaller relative to limb length than on same-height humans, with minimum anatomical boundaries. A Narrow, low-muscle, low-fat Fenn never gets implausibly tiny or fragile joints.

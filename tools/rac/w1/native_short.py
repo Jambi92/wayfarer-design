@@ -37,29 +37,7 @@ def set_factors(rig, f):
         pb.scale = s
     bpy.context.view_layer.update()
 
-def bake(body, rig):
-    """Apply the scaled pose as the new rest shape (mesh + armature)."""
-    bpy.context.view_layer.objects.active = body
-    for md in body.modifiers:
-        if md.type == "MASK": md.show_viewport = False
-    # bake shape keys first (applying a modifier requires no shape keys)
-    if body.data.shape_keys:
-        body.shape_key_add(name="__mix", from_mix=True)
-        keys = body.data.shape_keys.key_blocks
-        mix = [tuple(v.co) for v in keys["__mix"].data]
-        body.shape_key_clear()
-        for v, co in zip(body.data.vertices, mix): v.co = co
-    arm_mod = [m for m in body.modifiers if m.type == "ARMATURE"][0]
-    bpy.ops.object.select_all(action="DESELECT"); body.select_set(True); bpy.context.view_layer.objects.active = body
-    bpy.ops.object.modifier_apply(modifier=arm_mod.name)
-    bpy.ops.object.select_all(action="DESELECT"); rig.select_set(True); bpy.context.view_layer.objects.active = rig
-    bpy.ops.object.mode_set(mode="POSE"); bpy.ops.pose.armature_apply(selected=False); bpy.ops.object.mode_set(mode="OBJECT")
-    for pb in rig.pose.bones: pb.scale = (1, 1, 1); pb.bone.inherit_scale = "FULL"
-    md = body.modifiers.new("Armature", "ARMATURE"); md.object = rig
-    # keep the mask modifier last
-    for m in body.modifiers:
-        if m.type == "MASK": m.show_viewport = True
-    bpy.context.view_layer.update()
+bake = A.bake
 
 def head_HH(body):
     """Head height (vertex to lowest chin point) on the current rest mesh, cm - quick check used for CG."""
