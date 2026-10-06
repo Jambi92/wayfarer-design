@@ -113,3 +113,5 @@ Semantics only; no numbers are set here. Measurement-deferred values are not cre
 4. Record every derived value as a **diagnostic envelope** first. Canonize it only by author acceptance, as Saurin Part 7 did.
 
 — Claude
+
+**W1h status (October 6, 2026; `reviews/claude-rac-w1h-author-acceptance-gate.md`):** CIB kept as validation upper-bound proxy with refined stations (fixed reference levels, plane sections). GO re-solved for lower-trunk continuity and thoracic breadth > SK (+1.19 %): skeletal table 79 PASS, 1 REPORT, 3 placeholders run separately; GOR-BODY-03 (251 cm) 15 / 15; frames GOR-BODY-04 / -12 / -14 all PASS; residuals: ribcage row at 208 / 215 / 222 cm, ALPC-7 at 5 cross-height pairs (NOT DEMONSTRATED), ALPC-6 skin 7 / 12 (diagnostic), armpit band NOT DEMONSTRATED. GR pelvis re-tuned to 0.985 for the new method. AE budget: compatible, margins limited by head / neck-base share (author decision). Nothing accepted.

@@ -18,7 +18,7 @@ def sub(skp_dir, repl):
             dst = tmp + "/s/t%s/%s_meas.json" % (t, idn)
             if os.path.lexists(dst): os.remove(dst)
             shutil.copy(os.path.join(d, "t%s" % t, sid + "_meas.json"), dst)
-    return SC.run(tmp + "/s")
+    rows = SC.run(tmp + "/s"); shutil.rmtree(tmp, ignore_errors=True); return rows
 
 def main(skp, sd, go16, mflow, sklow, out):
     res = {}
@@ -26,7 +26,7 @@ def main(skp, sd, go16, mflow, sklow, out):
     for n, depth in (("GOR-BODY-04", False), ("GOR-BODY-12", False), ("GOR-BODY-14", True)):
         rows = sub(skp, {"GO": (sd + "/skp_" + n, n)})
         res["ALPC-5 " + n] = [r for r in rows if keep(r, depth) and (not depth or r.get("b") in ("MF", "MF-M-R"))]
-    for n in ("GOR-BODY-02", "GOR-BODY-03"):
+    for n in [k for k in ("GOR-BODY-02", "GO-H215", "GO-H222", "GOR-BODY-03") if os.path.isdir(sd + "/skp_" + k)]:   # W1h: full stature series
         rows = sub(skp, {"GO": (sd + "/skp_" + n, n)})
         res["Stature stress %s: ALPC-0...4" % n] = [r for r in rows if keep(r)]
     GOH = {208: (sd + "/skp_GOR-BODY-02", "GOR-BODY-02"), 215: (sd + "/skp_GO-H215", "GO-H215"), 222: (sd + "/skp_GO-H222", "GO-H222"), 229: (skp, "GO")}

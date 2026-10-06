@@ -81,3 +81,40 @@ def clear(p):
     return out
 if __name__ == "__main__":
     for p in sys.argv[1:]: print(p.split("/")[-1], clear(p))
+
+def arm_tube_test(p, step=0.5):
+    """W1h (AD-W1H-6) complementary test for the band the trunk-section test cannot decide: slice the UPPER-ARM tube (faces whose three
+    vertices have upper-arm weight > 0.5) by planes perpendicular to the humerus axis (shoulder joint -> elbow joint), keep only the
+    slices whose section is CLOSED, and test every trunk vertex (arm weight < 0.05) lying in that slab against the arm section polygon
+    (even-odd). A trunk vertex inside the arm tube = interpenetration. Reports per side: slices tested, closed fraction, the
+    tested axial range (cm below the shoulder joint) and the trunk vertices found inside."""
+    d = load(p); V = d["V"].astype(float); F = d["F"]; keep = d["keep"]; J = d["joints"]; w = lambda k: d["w_" + k]
+    armw = np.maximum.reduce([w(x) for x in ("upperarm_l", "upperarm_r", "lowerarm_l", "lowerarm_r", "hand_l", "hand_r", "fingers_l", "fingers_r")])
+    trunk = keep & (armw < 0.05); out = {}
+    for s in ("l", "r"):
+        sh = np.asarray(J["upperarm_" + s][0], float); el = np.asarray(J["lowerarm_" + s][0], float); L = np.linalg.norm(el - sh); ax = (el - sh) / L
+        u = np.cross(ax, [0, 1.0, 0]); u /= np.linalg.norm(u); v = np.cross(ax, u)
+        AF = F[(keep & (w("upperarm_" + s) > 0.5))[F].all(1)]
+        P = V - sh; tt = P @ ax; U = np.c_[P @ u, P @ v]
+        tv = np.where(trunk & (tt > 0) & (tt < L))[0]
+        tested, closed_n, inside, rng = 0, 0, 0, []
+        for t0 in np.arange(step, L - step, step):
+            tested += 1
+            A, B = tt[AF], None
+            segs = {}; ek = {}
+            for (i, j) in ((0, 1), (1, 2), (2, 0)):
+                a, b = AF[:, i], AF[:, j]; m = (tt[a] - t0) * (tt[b] - t0) < 0
+                f = (t0 - tt[a[m]]) / (tt[b[m]] - tt[a[m]]); q = U[a[m]] + (U[b[m]] - U[a[m]]) * f[:, None]
+                for fi, qq, e1, e2 in zip(np.where(m)[0], q, a[m], b[m]):
+                    segs.setdefault(fi, []).append(qq); k = (min(e1, e2), max(e1, e2)); ek[k] = ek.get(k, 0) + 1
+            S = np.array([x for x in segs.values() if len(x) == 2])
+            if not len(S) or not all(c == 2 for c in ek.values()): continue
+            closed_n += 1; rng.append(t0)
+            cand = tv[np.abs(tt[tv] - t0) < step / 2]
+            for pt in U[cand]:
+                a, b = S[:, 0], S[:, 1]; cr = ((a[:, 1] > pt[1]) != (b[:, 1] > pt[1]))
+                xint = a[cr, 0] + (pt[1] - a[cr, 1]) * (b[cr, 0] - a[cr, 0]) / (b[cr, 1] - a[cr, 1])
+                inside += int((xint > pt[0]).sum() % 2 == 1)
+        out[s] = {"slices": tested, "closed_slices": closed_n, "tested_range_cm_below_shoulder": [min(rng), max(rng)] if rng else None,
+                  "trunk_verts_inside_arm_tube": inside, "humerus_cm": float(L)}
+    return out

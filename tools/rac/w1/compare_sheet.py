@@ -5,13 +5,16 @@ from PIL import Image, ImageDraw
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import evidence as EV
 def panel(lab, p, pp=2.2):
-    D = np.load(p, allow_pickle=True); V = D["V"].astype(float); F = D["F"]; x, f, u = V.T; H = int(245 * pp)
+    D = np.load(p, allow_pickle=True); V = D["V"].astype(float); F = D["F"]; x, f, u = V.T; H = int(WIN * pp)   # W1h: window height WIN (default 245 cm; 262 cm when any body is above 240 cm)
     s = EV.render(V, F, f, u, x, pp, (-40, -2), (int(80 * pp), H), 10); fr = EV.render(V, F, x, u, f, pp, (-45, -2), (int(90 * pp), H), 10)
     a = np.radians(45); hx = x * np.cos(a) - f * np.sin(a); dp = -f * np.cos(a) - x * np.sin(a)
     bk = EV.render(V, F, hx, u, dp, pp, (-50, -2), (int(100 * pp), H), 10)
     T = Image.new("RGB", (s.width + fr.width + bk.width + 20, H + 24), "white"); ImageDraw.Draw(T).text((4, 4), lab + "   side | front | 3/4 back", fill=(0, 0, 0))
     T.paste(s, (0, 24)); T.paste(fr, (s.width + 10, 24)); T.paste(bk, (s.width + fr.width + 20, 24)); return T
+WIN = 245
 if __name__ == "__main__":
+    import json as _j
+    if any(float(np.load(a.split("=", 1)[1])["V"][:, 2].max()) > 240 for a in sys.argv[2:]): WIN = 262
     ims = [panel(*a.split("=", 1)) for a in sys.argv[2:]]
     cols = 2 if len(ims) > 2 else 1; rows = (len(ims) + cols - 1) // cols; W = max(i.width for i in ims); Hh = max(i.height for i in ims)
     S = Image.new("RGB", (W * cols + 20 * (cols - 1), Hh * rows), "white")

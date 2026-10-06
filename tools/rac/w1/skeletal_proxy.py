@@ -103,7 +103,8 @@ def main(ref_dir, lean_dir, cid, out_dir, cib=None):
     if cib:
         C = json.load(open(cib))
         for S, bv in C["bony"].items():
-            mlean["alpc_stations"][S] = [min(bv[0], w1f_st[S][0]), min(bv[1], w1f_st[S][1])]
+            if S not in w1f_st: mlean["alpc_stations"][S] = list(bv); continue
+            mlean["alpc_stations"][S] = list(bv) if C.get("no_lean_clamp") else [min(bv[0], w1f_st[S][0]), min(bv[1], w1f_st[S][1])]
         dS6 = (w1f_st["S6"][0] - mlean["alpc_stations"]["S6"][0]) / 2
         for s_ in ("l", "r"): g["hip_to_trochanter_" + s_] -= dS6
         g["cib"] = {"file": os.path.basename(cib), "argmin": C["argmin"], "S6_half_correction_cm": dS6}
@@ -111,7 +112,7 @@ def main(ref_dir, lean_dir, cid, out_dir, cib=None):
            "landmarks": g, "t_set_cm": [t * k for t in T_SET], "leg_share": m6["mean"]["hip_height"] / H,
            "tissue_per_side_over_H": {st: [(mref["alpc_stations"][st][0] - mlean["alpc_stations"][st][0]) / 2 / H,
                                            (mref["alpc_stations"][st][1] - mlean["alpc_stations"][st][1]) / 2 / H] for st in mref["alpc_stations"]},
-           "w1f_stations": w1f_st, "station_method": "CIB (composition infimum, W1g)" if cib else "W1f minimum-composition proxy", "by_t": {}}
+           "w1f_stations": w1f_st, "station_method": (C.get("variant", "CIB (composition infimum, W1g)") if cib else None) if cib else "W1f minimum-composition proxy", "by_t": {}}
     for t in T_SET:
         stn, R, ex = readings(mlean, g, mlean["alpc_stations"], H, t * k)
         R["leg_share"] = out["leg_share"]
@@ -122,6 +123,7 @@ def main(ref_dir, lean_dir, cid, out_dir, cib=None):
         tdir = os.path.join(out_dir, "t%.1f" % t); os.makedirs(tdir, exist_ok=True)
         json.dump({"id": cid, "combined": comb}, open(os.path.join(tdir, cid + "_meas.json"), "w"), indent=1, default=float)
     json.dump(out, open(os.path.join(out_dir, cid + "_skp.json"), "w"), indent=1, default=float)
+    import shutil; shutil.rmtree(tmp, ignore_errors=True)    # W1h: no temp build-up
     print("SKP", cid, "align s %.4f resid %.3f/%.3f" % (s, res_j, res_j6), "GH breadth %.2f biac %.2f" % (out["by_t"]["0.0"]["extra"]["gh_breadth"], out["by_t"]["0.0"]["extra"]["biacromial"]))
 
 if __name__ == "__main__":

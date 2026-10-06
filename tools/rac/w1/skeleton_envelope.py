@@ -64,6 +64,8 @@ def trunk_sculpt(V, L, sc):
     deg = np.bincount(E[:, 0], minlength=n).astype(float); deg[deg == 0] = 1
     for it in range(sc.get("disp_smooth_iters", 40)):
         nb = np.zeros_like(Dsp); np.add.at(nb, E[:, 0], Dsp[E[:, 1]]); Dsp = 0.5 * Dsp + 0.5 * nb / deg[:, None]
+    if sc.get("confine_legs"):      # W1h (AD-W1H-7): no trunk-sculpt displacement on the free thigh (legw >= 0.5), tapered below
+        Dsp = Dsp * np.clip(1 - legw / 0.5, 0, 1)[:, None]
     return V + Dsp
 
 def make(lean_b, donor_ref, donor_lean, out, tag=None, smooth=None, sculpt=None, tissue_scale=None):

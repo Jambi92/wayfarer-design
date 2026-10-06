@@ -30,7 +30,7 @@ def skeletal_variant(skp_dir, vdir, vid, skb=None):
             d2 = tmp + "/s/t%s/SKB_meas.json" % t
             if os.path.lexists(d2): os.remove(d2)
             shutil.copy(os.path.join(skb[0], "t%s" % t, skb[1] + "_meas.json"), d2)
-    return SC.run(tmp + "/s")
+    rows = SC.run(tmp + "/s"); shutil.rmtree(tmp, ignore_errors=True); return rows
 
 def main(skp_dir, skin_dir, vfile, out):
     V = json.load(open(vfile)); res = {}
