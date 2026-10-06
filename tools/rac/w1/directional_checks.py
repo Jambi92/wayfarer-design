@@ -59,6 +59,10 @@ def run(outdir):
         gt("FN", "bony orbit slightly larger: ORB height / HH (E proxy) > MF", "FN L186", c("FN", "ORB_height_over_HH"), c(MF, "ORB_height_over_HH"), "FN", "MF")
     gt("FN", "aperture slightly more open (aperture height cm) than MF", "FN L186", aph("FN"), aph(MF), "FN", "MF")
     gt("AE", "neck longer than FN (neck / stature)", "AE L33–58", r("AE", "neck_share"), r("FN", "neck_share"), "AE", "FN")
+    # W1g (AD-W1G-6): canon rows the AE leg-share correction must not break (added; AE L40, L48, L50, L58: "longer torso than Fenn", "neck somewhat
+    # longer on average than humans and Fenn", "distinctly long-legged while keeping the longer torso")
+    gt("AE", "longer torso than FN (torso / stature)", "AE L40, L48, L58", r("AE", "torso_share"), r("FN", "torso_share"), "AE", "FN")
+    gt("AE", "neck longer than humans (neck / stature) vs MF", "AE L50", r("AE", "neck_share"), r(MF, "neck_share"), "AE", "MF")
     gt("AE", "neck longer relative to torso than VA (neck / torso)", "VA L123", M["AE"]["neck_len"] / M["AE"]["torso_len"], M["VA"]["neck_len"] / M["VA"]["torso_len"], "AE", "VA")
     gt("AE", "longer arms (even elongation) than MF", "AE L33–58", r("AE", "arm_share"), r(MF, "arm_share"), "AE", "MF")
     gt("AE", "longer legs (even elongation) than MF", "AE L33–58", r("AE", "leg_share"), r(MF, "leg_share"), "AE", "MF")

@@ -83,9 +83,9 @@ def run(d):
     wi = lambda i: M[i]["waist_interval"] / M[i]["stature"]
     C.append({"cand": "GO", "check": "ALPC-1c costal-iliac gap / stature (REPORT ONLY, AD-G9)", "canon": "GO ALPC-1c", "va": wi("GO"), "op": "vs", "vb": wi(MF), "b": "MF", "result": "REPORT", "pass": None, "marginal": False})
     notrun("GO", "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)", "GO ALPC-3", "needs skeletal femur geometry (soft tissue excluded)")
-    notrun("GO", "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)", "GO ALPC-5", "frame bodies not built")
-    notrun("GO", "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)", "GO ALPC-6", "skeletal proxy / low-composition body not built")
-    notrun("GO", "ALPC-8 separation from Durrim (matched-display silhouette)", "GO ALPC-8", "silhouette test not run")
+    notrun("GO", "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)", "GO ALPC-5", "placeholder in this table: run separately on the frame bodies (W1f alpc_invariance.py, W1g w1g_drivers/alpc_w1g.py)")
+    notrun("GO", "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)", "GO ALPC-6", "placeholder in this table: run separately (skeletal half + GOR-BODY-16 skin; alpc_invariance.py / alpc_w1g.py)")
+    notrun("GO", "ALPC-8 separation from Durrim (matched-display silhouette)", "GO ALPC-8", "placeholder in this table: run separately (silhouette_test.py)")
     # RM-LR-02 (d): skeletal shoulder breadth / stature SK > GR, GO > GR (generator shoulder joint used: AD-G10 asks for anatomical landmarks)
     add("SK", "shoulder-joint breadth / stature > GR (RM-LR-02 d; GR L42)", "RM-LR-02 (d)", r("SK", "shoulder_joint_share"), ">", r("GR", "shoulder_joint_share"), "GR")
     add("GO", "shoulder-joint breadth / stature > GR (AD-G6)", "AD-G6", r("GO", "shoulder_joint_share"), ">", r("GR", "shoulder_joint_share"), "GR")

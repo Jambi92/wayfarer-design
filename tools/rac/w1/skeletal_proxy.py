@@ -15,7 +15,12 @@ Method (BUILDER-CHOSEN, declared under R-14; measurer method, not canon):
    proxy = skeletal-envelope thigh section at 20 % of femur length, inset 2t.
 5. Soft tissue at the reference composition = (reference skin - skeletal envelope) per station, reported per side / stature.
 Anatomy on rest geometry, leg share on R-6 (D-W1c-1). External skeletal landmarks only (obstetric firewall, RA).
-Usage: python3 skeletal_proxy.py ref_dir lean_dir ID out_dir"""
+W1g (AD-W1G-1): optional 5th argument = a bony_envelope.py CIB json. The ALPC stations S2...S7 are then the COMPOSITION-INFIMUM
+bony values (min over the {0, .25, .5}^2 composition grid of the same skeleton; inside every tested composition by construction)
+instead of the single minimum-composition body; the proximal-femur scale is reduced by half the S6-breadth correction. Girdle
+landmarks (GH sphere fit, acromion), joints and vertical intervals are unchanged. The W1f stations are kept in the output
+("w1f_stations") for before/after.
+Usage: python3 skeletal_proxy.py ref_dir lean_dir ID out_dir [cib.json]"""
 import sys, os, json, tempfile, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from arm_measure import measure, load
@@ -85,7 +90,7 @@ def readings(m, g, mlean_stations, H, t):
     R["S5_over_S4_b"] = st["S5"][0] / st["S4"][0]; R["S6_over_S4_b"] = st["S6"][0] / st["S4"][0]
     return st, R, {"gh_breadth": ghb, "biacromial": biac, "prox_femur": pf, "femur_len": fl}
 
-def main(ref_dir, lean_dir, cid, out_dir):
+def main(ref_dir, lean_dir, cid, out_dir, cib=None):
     os.makedirs(out_dir, exist_ok=True)
     rest = os.path.join(ref_dir, cid + "_rest.npz"); r6 = os.path.join(ref_dir, cid + "_r6.npz")
     lean_rest = os.path.join(lean_dir, cid + "-LEAN_rest.npz"); lean_r6 = os.path.join(lean_dir, cid + "-LEAN_r6.npz")
@@ -94,11 +99,19 @@ def main(ref_dir, lean_dir, cid, out_dir):
     mref = measure(rest); m6 = measure(r6); mlean = measure(al)
     H = m6["stature"]; k = H / 173.14
     g = girdle_femur(load(al), H)
+    w1f_st = {k: list(v) for k, v in mlean["alpc_stations"].items()}
+    if cib:
+        C = json.load(open(cib))
+        for S, bv in C["bony"].items():
+            mlean["alpc_stations"][S] = [min(bv[0], w1f_st[S][0]), min(bv[1], w1f_st[S][1])]
+        dS6 = (w1f_st["S6"][0] - mlean["alpc_stations"]["S6"][0]) / 2
+        for s_ in ("l", "r"): g["hip_to_trochanter_" + s_] -= dS6
+        g["cib"] = {"file": os.path.basename(cib), "argmin": C["argmin"], "S6_half_correction_cm": dS6}
     out = {"id": cid, "stature_r6": H, "align_scale": s, "align_joint_resid_cm": res_j, "align_joint_resid_r6_cm": res_j6,
            "landmarks": g, "t_set_cm": [t * k for t in T_SET], "leg_share": m6["mean"]["hip_height"] / H,
            "tissue_per_side_over_H": {st: [(mref["alpc_stations"][st][0] - mlean["alpc_stations"][st][0]) / 2 / H,
                                            (mref["alpc_stations"][st][1] - mlean["alpc_stations"][st][1]) / 2 / H] for st in mref["alpc_stations"]},
-           "by_t": {}}
+           "w1f_stations": w1f_st, "station_method": "CIB (composition infimum, W1g)" if cib else "W1f minimum-composition proxy", "by_t": {}}
     for t in T_SET:
         stn, R, ex = readings(mlean, g, mlean["alpc_stations"], H, t * k)
         R["leg_share"] = out["leg_share"]
@@ -112,4 +125,4 @@ def main(ref_dir, lean_dir, cid, out_dir):
     print("SKP", cid, "align s %.4f resid %.3f/%.3f" % (s, res_j, res_j6), "GH breadth %.2f biac %.2f" % (out["by_t"]["0.0"]["extra"]["gh_breadth"], out["by_t"]["0.0"]["extra"]["biacromial"]))
 
 if __name__ == "__main__":
-    main(*sys.argv[1:5])
+    main(*sys.argv[1:6])

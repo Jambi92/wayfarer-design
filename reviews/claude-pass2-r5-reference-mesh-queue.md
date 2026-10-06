@@ -93,6 +93,8 @@ Semantics only; no numbers are set here. Measurement-deferred values are not cre
 
 **W1f status (October 6, 2026; `reviews/claude-rac-w1f-author-acceptance-gate.md`):** RM-CF-08 FN ORB — the O-1 ring at δ = 0.03 (accepted O-D2a) fits and is the bony-orbit surrogate; the old E-proxy is historical, non-vetoing evidence. RM-SR-04 — PK/CG species-scaled adult ocular geometry built under the Species-Scaled Adult Ocular Anatomy Rule (UFCA). RM-UB-06 / RM-LR-02 / RM-LR-06 — run on the W1f skeletal proxy (PV-D16, AD-G10) for every affected race, with the AD-G14 Gorrund and Grask skeleton + envelope rebuilds, GOR-BODY-02/04/12/14/16 and equal-height Broad Skarn (208, 229 cm); ALPC-6 (GOR-BODY-16 skin profile) does not hold — see the gate.
 
+**W1g status (October 6, 2026; `reviews/claude-rac-w1g-author-acceptance-gate.md`):** RM-UB-06 / RM-LR-02 / RM-LR-06 re-run with composition-infimum bony stations (M-1(a)); after the GO re-solve, GR pelvis and AE / VA / FN bone-length corrections the skeletal table has 79 PASS, 1 REPORT, 3 placeholders run separately; ALPC-7 passes at 10 Gorrund / Broad Skarn height pairs (208–229 cm); ALPC-6 on a GOR-BODY-16 valid by construction (skin 11 / 12); GOR-BODY-12 and GOR-BODY-03 (251 cm) have FAIL rows (see gate); RM-SR-04 G-S1 globes PK 1.716 / CG 1.222 cm returned for acceptance. Nothing accepted.
+
 ## 4. Other populations
 
 | ID | Pri | Measure | Populations | Feeds |
