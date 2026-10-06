@@ -91,6 +91,8 @@ Semantics only; no numbers are set here. Measurement-deferred values are not cre
 
 **W1e status (October 5, 2026; `reviews/claude-rac-w1e-author-acceptance-gate.md`):** RM-CF-08 FN ORB — O-1 landmark orbital-margin rings built for MF-M-R / MF-F-R / FN, FN increment δ proposed; stays NOT DEMONSTRATED until the author confirms δ (O-D4). RM-SR-04 — PK/CG adult globes do not fit the authored sockets (S-D3 contradiction flagged; PK/CG eye/orbit readings blocked). RM-UF-02 — ear-family v2 reference centres built and attached for FN, AE, VA, HV, GR, GO, PK, CG; envelopes stay OPEN. RM-UB-06 / RM-LR-02 / RM-LR-06 — re-run on skin diagnostics only (PV-D16); skeletal validation and the AD-G14 GR/GO skeletal-trunk proxy are not built.
 
+**W1f status (October 6, 2026; `reviews/claude-rac-w1f-author-acceptance-gate.md`):** RM-CF-08 FN ORB — the O-1 ring at δ = 0.03 (accepted O-D2a) fits and is the bony-orbit surrogate; the old E-proxy is historical, non-vetoing evidence. RM-SR-04 — PK/CG species-scaled adult ocular geometry built under the Species-Scaled Adult Ocular Anatomy Rule (UFCA). RM-UB-06 / RM-LR-02 / RM-LR-06 — run on the W1f skeletal proxy (PV-D16, AD-G10) for every affected race, with the AD-G14 Gorrund and Grask skeleton + envelope rebuilds, GOR-BODY-02/04/12/14/16 and equal-height Broad Skarn (208, 229 cm); ALPC-6 (GOR-BODY-16 skin profile) does not hold — see the gate.
+
 ## 4. Other populations
 
 | ID | Pri | Measure | Populations | Feeds |

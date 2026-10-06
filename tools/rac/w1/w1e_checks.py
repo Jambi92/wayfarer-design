@@ -70,13 +70,16 @@ def run(d):
     for k, lab in (("S5_over_S4_b", "ALPC-2b crest / lumbar breadth"), ("S6_over_S4_b", "ALPC-2b hip-level / lumbar breadth")):
         add("GO", "%s <= MF" % lab, "GO ALPC-2(b)", r("GO", k), "<=", r(MF, k), "MF")
     add("GO", "ALPC-4 shoulder-joint / thoracic breadth <= MF", "GO ALPC-4 / GO-G1", r("GO", "S1_over_S2_b"), "<=", r(MF, "S1_over_S2_b"), "MF")
+    skb = os.path.exists(os.path.join(d, "SKB_meas.json"))      # W1f: equal-height (229 cm) Broad Skarn, when built
+    if skb: M["SKB"] = L("SKB")
     for k in ("S3_over_S2_b", "S4_over_S2_b", "S3_over_S2_d", "S4_over_S2_d", "S5_over_S2_b", "S6_over_S2_b", "pelvic_depth_over_thorax_depth"):
-        add("GO", "ALPC-7 %s > Skarn central (beyond 1 %%; equal-height Broad Skarn not built)" % k, "GO ALPC-7", r("GO", k), ">", r("SK", k), "SK")
+        if skb: add("GO", "ALPC-7 %s > equal-height Broad Skarn (beyond 1 %%)" % k, "GO ALPC-7", r("GO", k), ">", r("SKB", k), "SK-Broad-equal-height")
+        else: add("GO", "ALPC-7 %s > Skarn central (beyond 1 %%; equal-height Broad Skarn not built)" % k, "GO ALPC-7", r("GO", k), ">", r("SK", k), "SK")
     # ALPC-0 validity screen on the skin stations (GO and the MF comparator)
     for i in ("GO", MF):
         st = M[i]["alpc_stations"]; b = [st["S%d" % k][0] for k in range(2, 7)]
-        ok0 = b[0] >= b[1] >= b[2] and b[2] <= b[3] <= b[4] and b[2] < b[0]
-        add(i, "ALPC-0 valid shape: breadth non-increasing S2->S4, non-decreasing S4->S6, S4 < S2 (1 = holds)", "GO ALPC-0", 1.0 if ok0 else 0.0, ">=", 1.0, "-")
+        ok0 = b[0] >= b[1] >= b[2] and b[2] < b[3] <= b[4] and b[2] < b[0]      # S4 < S5 strictly: no minimum (pinch) at the crest
+        add(i, "ALPC-0 valid shape: breadth non-increasing S2->S4, rising S4->S5 (no minimum at S5), non-decreasing S5->S6, S4 < S2 (1 = holds)", "GO ALPC-0", 1.0 if ok0 else 0.0, ">=", 1.0, "-")
     wi = lambda i: M[i]["waist_interval"] / M[i]["stature"]
     C.append({"cand": "GO", "check": "ALPC-1c costal-iliac gap / stature (REPORT ONLY, AD-G9)", "canon": "GO ALPC-1c", "va": wi("GO"), "op": "vs", "vb": wi(MF), "b": "MF", "result": "REPORT", "pass": None, "marginal": False})
     notrun("GO", "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)", "GO ALPC-3", "needs skeletal femur geometry (soft tissue excluded)")

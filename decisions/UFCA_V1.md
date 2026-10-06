@@ -95,6 +95,12 @@ Each population supplies a **binding** for each slot:
 | **Sex** | Sex-related facial tendency is **SOFT only**, never a control or preset (R-SEX). The default is "no shift"; Saurin has none (§263). **AC-U2:** Cogling's sex-related facial capability is met by the body-level sex-related anatomy selection plus any canonically permitted SOFT facial distribution. No face-level sex slider; magnitude OPEN |
 | **Pupil** | Pupil dilation **state** is preview only, never saved |
 
+**Ocular scale clarification (RAC W1e author decision, October 6, 2026; `reviews/chatgpt-rac-w1e-author-decisions-w1f-continuation-order.md` §5):** this replaces the W1d S-D3 reading that "Marchfolk-compatible adult range" meant an absolute 2.2–2.4 cm globe for every population.
+
+> **Species-Scaled Adult Ocular Anatomy Rule:** "Adult humanoid in scale" means mature, non-juvenile ocular/orbital anatomy appropriate to that biological population. It does not require Marchfolk absolute globe diameter. Globe size, socket size and inter-orbital spacing may scale allometrically with species cranial architecture, provided the result preserves adult facial presentation, fits physically, and does not create a "huge-eyed child" phenotype unless independently authored.
+
+It applies with AC-U1 (globe DER from the orbit) and with each population's anti-enlargement rule (PIPKIN Part 3 §4 Forehead, brow and orbital anatomy; COGLING §79). Ocular anatomy implies no visual acuity, magical property or gameplay effect. Landmark globe values in reference meshes are W1 construction geometry, never population canon.
+
 ## 6. Dependency relations and resolution order (AD-U2)
 
 **Relations:**

@@ -1,0 +1,169 @@
+{
+ "id": "GO",
+ "route": "AD-G14 skeletal-trunk proxy + sculpted envelope (tools/rac/w1/skeleton_envelope.py; driver W1f gn2/frames)",
+ "generator_inputs": {
+  "gender": 1.0,
+  "age_years": 35,
+  "age": 0.5769230769,
+  "muscle": 0.5,
+  "weight": 0.5,
+  "proportions": 0.5,
+  "stature": 229.0,
+  "targets": {
+   "measure-napetowaist-dist-incr": 0.1,
+   "torso-scale-depth-incr": 0.8,
+   "measure-underbust-circ-incr": 0.4,
+   "torso-scale-horiz-incr": 0.7,
+   "measure-shoulder-dist-incr": 0.45,
+   "hip-scale-horiz-incr": 0.3,
+   "hip-scale-depth-incr": 0.3,
+   "measure-wrist-circ-incr": 0.5,
+   "measure-knee-circ-incr": 0.5,
+   "measure-ankle-circ-incr": 0.5,
+   "LR:hand-scale-incr": 0.35,
+   "LR:foot-scale-incr": 0.2,
+   "head-scale-horiz-incr": 0.25,
+   "measure-neck-circ-incr": 0.4,
+   "measure-upperarm-length-decr": 0.7,
+   "measure-lowerarm-length-decr": 0.4,
+   "LR:hand-fingers-distance-incr": 0.8,
+   "LR:hand-fingers-diameter-incr": 1.0,
+   "LR:hand-fingers-length-decr": 1.0,
+   "LR:lowerarm-scale-depth-incr": 0.8,
+   "LR:upperarm-scale-depth-incr": 0.4
+  },
+  "id": "GO"
+ },
+ "height_macro": 0.8369140625,
+ "skeleton": {
+  "composition": {
+   "muscle": 0.0,
+   "weight": 0.0
+  },
+  "bone_scales": {
+   "pelvis": [
+    1.1,
+    1.045,
+    1.28
+   ],
+   "LR:thigh": [
+    1.2,
+    1.0,
+    1.2
+   ],
+   "LR:clavicle": [
+    1.0,
+    0.9,
+    1.0
+   ],
+   "spine_03": [
+    1.0,
+    1.186,
+    1.0
+   ]
+  },
+  "trunk_sculpt": {
+   "r": [
+    0.0,
+    0.18,
+    0.31,
+    0.44,
+    0.6,
+    0.8,
+    1.0,
+    1.15
+   ],
+   "ka": [
+    1.0,
+    1.0,
+    1.0,
+    1.06,
+    1.16,
+    1.08,
+    1.02,
+    1.0
+   ],
+   "kp": [
+    1.0,
+    1.25,
+    1.5,
+    1.65,
+    1.35,
+    1.0,
+    0.97,
+    1.0
+   ],
+   "kb": [
+    1.0,
+    1.16,
+    1.19,
+    1.16,
+    1.11,
+    1.06,
+    1.03,
+    1.0
+   ]
+  },
+  "sculpt_displacement_smoothing_iters": 40
+ },
+ "tissue_donor": "same generator inputs without skeletal scales, reference composition (muscle 0.5, weight 0.5) minus minimum composition, vertex-wise, lean->ref joint similarity removed",
+ "frames": {
+  "GOR-BODY-04": {
+   "bone_scales": {
+    "LR:clavicle": [
+     1,
+     0.92,
+     1
+    ],
+    "pelvis": [
+     0.91,
+     1,
+     1
+    ]
+   },
+   "kb_nodes": [
+    0.95,
+    0.93,
+    0.92,
+    0.83,
+    0.85,
+    0.92
+   ]
+  },
+  "GOR-BODY-12": {
+   "bone_scales": {
+    "LR:clavicle": [
+     1,
+     0.88,
+     1
+    ],
+    "pelvis": [
+     0.865,
+     1,
+     1
+    ]
+   },
+   "kb_nodes": [
+    0.925,
+    0.895,
+    0.88,
+    0.75,
+    0.78,
+    0.88
+   ]
+  },
+  "GOR-BODY-14": {
+   "ka": 0.88,
+   "kp": 0.88,
+   "kd_from": 0.44
+  },
+  "GOR-BODY-16": {
+   "muscle": 0.25,
+   "weight": 0.25
+  }
+ },
+ "GOR-BODY-02": {
+  "height_macro": 0.701904296875,
+  "stature_target": 208.0
+ }
+}

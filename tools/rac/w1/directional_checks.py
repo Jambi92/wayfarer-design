@@ -44,8 +44,19 @@ def run(outdir):
     gt("FN", "longer palms and fingers (hand / stature) than MF", "FN L32–52", r("FN", "hand_share"), r(MF, "hand_share"), "FN", "MF")
     lt("FN", "narrow wrists (wrist breadth / forearm) vs MF", "FN L32–52", r("FN", "wrist_over_forearm"), r(MF, "wrist_over_forearm"), "FN", "MF")
     lt("FN", "joints smaller relative to limb length (knee / femur) vs MF", "FN L110–137", r("FN", "knee_over_femur"), r(MF, "knee_over_femur"), "FN", "MF")
-    gt("FN", "bony orbit slightly larger: ORB breadth / HL (E proxy) > MF", "FN L186", c("FN", "ORB_breadth_over_HL"), c(MF, "ORB_breadth_over_HL"), "FN", "MF")
-    gt("FN", "bony orbit slightly larger: ORB height / HH (E proxy) > MF", "FN L186", c("FN", "ORB_height_over_HH"), c(MF, "ORB_height_over_HH"), "FN", "MF")
+    oc = os.path.join(outdir, "ocular_w1f.json")
+    if os.path.exists(oc):
+        # W1f (O-D2a): the accepted O-1 landmark orbital-margin ring (delta 0.03) is the RM-CF-08 bony-orbit surrogate; the W1d
+        # E-proxy rows stay as HISTORICAL DIAGNOSTIC evidence only and never veto (marked 'historical', pass not counted)
+        O = json.load(open(oc)); fb, mb = O["bodies"]["FN"], O["bodies"]["MF-M-R"]
+        gt("FN", "bony orbit slightly larger: O-1 ring breadth / HL > MF (accepted surrogate, O-D2a)", "FN L186; O-D2a", fb["ORB_breadth_over_HL"], mb["ORB_breadth_over_HL"], "FN", "MF")
+        gt("FN", "bony orbit slightly larger: O-1 ring height / HH > MF (accepted surrogate, O-D2a)", "FN L186; O-D2a", fb["ORB_height_over_HH"], mb["ORB_height_over_HH"], "FN", "MF")
+        for desc, k in (("ORB breadth / HL (E proxy) > MF", "ORB_breadth_over_HL"), ("ORB height / HH (E proxy) > MF", "ORB_height_over_HH")):
+            C.append({"cand": "FN", "check": "HISTORICAL DIAGNOSTIC (superseded, non-vetoing): " + desc, "canon": "FN L186; O-D2a", "a": "FN", "va": c("FN", k),
+                      "b": "MF", "vb": c(MF, k), "op": ">", "pass": True, "historical": True, "holds": c("FN", k) > c(MF, k)})
+    else:
+        gt("FN", "bony orbit slightly larger: ORB breadth / HL (E proxy) > MF", "FN L186", c("FN", "ORB_breadth_over_HL"), c(MF, "ORB_breadth_over_HL"), "FN", "MF")
+        gt("FN", "bony orbit slightly larger: ORB height / HH (E proxy) > MF", "FN L186", c("FN", "ORB_height_over_HH"), c(MF, "ORB_height_over_HH"), "FN", "MF")
     gt("FN", "aperture slightly more open (aperture height cm) than MF", "FN L186", aph("FN"), aph(MF), "FN", "MF")
     gt("AE", "neck longer than FN (neck / stature)", "AE L33–58", r("AE", "neck_share"), r("FN", "neck_share"), "AE", "FN")
     gt("AE", "neck longer relative to torso than VA (neck / torso)", "VA L123", M["AE"]["neck_len"] / M["AE"]["torso_len"], M["VA"]["neck_len"] / M["VA"]["torso_len"], "AE", "VA")
@@ -124,7 +135,7 @@ def run(outdir):
     gt("CG", "hand / arm > MF", "CG L571–575", r("CG", "hand_over_arm"), r(MF, "hand_over_arm"), "CG", "MF")
     gt("CG", "finger / hand > MF", "CG L571–575", r("CG", "finger_over_hand"), r(MF, "finger_over_hand"), "CG", "MF")
     lt("CG", "femur / leg < MF", "CG L619–622", r("CG", "femur_over_leg"), r(MF, "femur_over_leg"), "CG", "MF")
-    rng("CG", "head height (menton–vertex) roughly 11–13 cm", "CG L1585 (W1-A1)", c("CG", "HH"), 11.0, 13.0, "CG")
+    rng("CG", "head height (menton–vertex) roughly 11–13 cm", "CG L1589 (W1-A1)", c("CG", "HH"), 11.0, 13.0, "CG")
     C.append({"cand": "CG", "check": "face-to-vault (FVI) at or slightly above MF", "canon": "CG L1131", "a": "CG", "va": c("CG", "FVI"), "b": "MF",
               "vb": c(MF, "FVI"), "op": "≥", "pass": c("CG", "FVI") >= c(MF, "FVI")})
     # structural-mass axis Cogling -> Pipkin -> Durrim (joint breadth / adjacent bone)

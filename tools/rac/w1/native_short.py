@@ -8,7 +8,7 @@ Workflow (strategy option 2, "modelling workflow directly authored at target sta
    space, inherit-scale off, baked into the rest mesh):
      - segment LENGTHS (bone Y): one length factor k_len, solved so the R-6 stature equals the target exactly;
      - trunk/limb BREADTH and DEPTH (bone X/Z) and joint size: k_len ** beta_girth;
-     - HEAD (uniform): PK -> k_len ** beta_head; CG -> factor that puts HH at the canon centre value 12 cm (CG L1585: 11-13 cm);
+     - HEAD (uniform): PK -> k_len ** beta_head; CG -> factor that puts HH at the canon centre value 12 cm (CG L1589: 11-13 cm);
      - HANDS / FEET (uniform): k_len ** beta_hand, k_len ** beta_foot.
    The betas are BUILDER-CHOSEN: log-log slopes of the generator's own adult size allometry measured on MPFB configuration-1
    builds at 137.6-243.5 cm (tools/rac/w1/native_short_allometry.json). They replace the single global factor of a uniform

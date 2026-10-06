@@ -157,15 +157,15 @@ At normalized displayed height, Marchfolk show human adult torso, pelvis and lim
 | Waist and abdomen | Visible or less-defined waists are both valid and neither defines the race; abdominal roundness is never an identifier, and a lean flat-bellied Pipkin is fully recognizable |
 
 **Pelvic architecture (RAC W1d, author-accepted October 5, 2026; `reviews/chatgpt-rac-w1d-author-decisions-continuation-order.md` §2):** relational architecture only, read at normalized stature against Marchfolk (MF). The pelvis is defined by its proportion to the thorax in three dimensions, not by breadth (L137, L205, L209).
-- **Spine/sacrum (PK-P1; PV-D1, PV-D19):** *(PV-D1/PV-D22 general acceptance)* upright adult lumbosacral relationship; neutral adult curvature; no exaggerated lumbar arch (L49, L720; RA L124).
+- **Spine/sacrum (PK-P1; PV-D1, PV-D19):** *(PV-D1/PV-D22 general acceptance)* upright adult lumbosacral relationship; neutral adult curvature; no exaggerated lumbar arch (L49, L722; RA L124).
 - **Hip-joint placement (PK-P2a; PV-D1, PV-D13):** *(PV-D1/PV-D22 general acceptance)* hip joints sit below a vertically substantial pelvis; leg share > Durrim at matched height and not above MF; no truncation below the hip joints (L137, L177; RAC-04 L31).
-- **Convergent femora (PK-P2b; PV-D11, frame statement):** broad pelvis, convergent femora — femoral shafts converge medially from the hip joints so knees and feet sit on an adult narrow base; bitrochanteric breadth does not translate into a wide stance. Hip-joint scale lighter than Durrim at matched height, adult, above J-1 (L179, L757; RA L125).
+- **Convergent femora (PK-P2b; PV-D11, frame statement):** broad pelvis, convergent femora — femoral shafts converge medially from the hip joints so knees and feet sit on an adult narrow base; bitrochanteric breadth does not translate into a wide stance. Hip-joint scale lighter than Durrim at matched height, adult, above J-1 (L179, L759; RA L125).
 - **Iliac height and vertical contribution (PK-P3; PV-D10, PV-D17):** iliac height substantial relative to the thorax — pelvic vertical contribution ÷ thoracic vertical length > MF *(PV-D1/PV-D22 general acceptance)*; pelvic vertical contribution ÷ stature **≥ MF** (direction only; magnitude and the limb/pelvis split stay with T-2 / RM-SR-01, L139). Light construction (lighter than Durrim); fully mature form (L50, L137, L150, L179).
 - **AP depth (PK-P4; PV-D1):** *(PV-D1/PV-D22 general acceptance)* AP depth ÷ thoracic depth > MF (three-dimensional pelvic participation relative to a moderate thorax); AP depth ÷ stature has no direction (OPEN) (L137, L149, L152).
 - **Transverse breadth (PK-P5; PV-D1):** *(PV-D1/PV-D22 general acceptance)* iliac-crest breadth ÷ thoracic breadth > MF at the population centre; crest breadth ÷ stature is not a carrier (may approach MF); never extreme (L133, L137, L150, L151, L209).
-- **Lower trunk (PK-P6; PV-D1, PV-D15):** *(PV-D1/PV-D22 general acceptance)* compact waist interval (costal-margin-to-crest interval ÷ torso length < MF) with a coherent, non-abrupt transition (L137, L156, L725).
+- **Lower trunk (PK-P6; PV-D1, PV-D15):** *(PV-D1/PV-D22 general acceptance)* compact waist interval (costal-margin-to-crest interval ÷ torso length < MF) with a coherent, non-abrupt transition (L137, L156, L727).
 - **Never juvenile, never Durrim (PV-D1):** *(PV-D1/PV-D22 general acceptance)* fully mature adult pelvis; Pipkin and Durrim never share one pelvis — Durrim are thorax-led (crest ÷ thoracic breadth not above MF), Pipkin pelvis-led (L50, L153, L173).
-- **Validation and scope (PV-D16, PV-D17, PV-D20, PV-D22):** canon is validated on skeletal/bony-landmark geometry; skin-surface pelvic readings are composition-inclusive diagnostics only, and low-fat Pipkin must show the architecture (L155, L195, L197). Construction is checked visually on orthographic renders for W1. No sex-related pelvic shift is authored (RA L53); the obstetric firewall is absolute (RA L122). **Exact morphology and numeric envelopes remain OPEN** (L152, L1548).
+- **Validation and scope (PV-D16, PV-D17, PV-D20, PV-D22):** canon is validated on skeletal/bony-landmark geometry; skin-surface pelvic readings are composition-inclusive diagnostics only, and low-fat Pipkin must show the architecture (L155, L195, L197). Construction is checked visually on orthographic renders for W1. No sex-related pelvic shift is authored (RA L53); the obstetric firewall is absolute (RA L122). **Exact morphology and numeric envelopes remain OPEN** (L152, L1550).
 
 | At matched displayed size | Durrim | Pipkin |
 | --- | --- | --- |
@@ -308,6 +308,8 @@ Adult maturity must survive:
 - and softer facial contours.
 
 No combination may require giant eyes, wide-eyed expression or infant-like orbital proportions. "Larger-valid" Pipkin orbital dimensions and visible eye aperture must remain within the broad adult Marchfolk-compatible range relative to the face; the Pipkin system does not create a separate enlarged-eye envelope.
+
+**Ocular scale (RAC W1e author decision, October 6, 2026; `reviews/chatgpt-rac-w1e-author-decisions-w1f-continuation-order.md` §5; UFCA Species-Scaled Adult Ocular Anatomy Rule):** "adult" and "Marchfolk-compatible range relative to the face" mean mature, non-juvenile, species-scaled ocular anatomy. Pipkin globe, socket and inter-orbital dimensions may scale allometrically with the Pipkin cranium; Marchfolk absolute globe diameter is not required. The anti-enlargement rule above is unchanged: orbits are never enlarged relative to the face to fit a larger globe. Values **OPEN**.
 
 ## 5. Zygomatic, temporal and cheek structure
 

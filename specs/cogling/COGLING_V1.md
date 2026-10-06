@@ -1208,6 +1208,8 @@ Variation may include:
 
 Large-looking eyes may occur in some individuals through valid combinations, but are not a racial requirement.
 
+**Ocular scale (RAC W1e author decision, October 6, 2026; `reviews/chatgpt-rac-w1e-author-decisions-w1f-continuation-order.md` §5; UFCA Species-Scaled Adult Ocular Anatomy Rule):** "adult humanoid in scale" means mature, non-juvenile, species-scaled ocular anatomy. Cogling globe, socket and inter-orbital dimensions may scale allometrically with the Cogling cranium; Marchfolk absolute globe diameter is not required. The anti-enlargement rule of this section is unchanged (no biologically oversized eyes; no enlargement for readability). Values **OPEN**.
+
 ## 80. Zygomatic and cheek structure
 
 Cogling zygomatic anatomy provides an important transition between orbital and lower-face regions.
@@ -1335,6 +1337,8 @@ This is not an elven ear and does not terminate in a point.
 Cogling ears remain proportionate adult humanoid ears.
 
 They are not biologically enormous.
+
+**Ear scale (RAC W1e author decision EA-W2, October 6, 2026; `reviews/chatgpt-rac-w1e-author-decisions-w1f-continuation-order.md` §3, §5):** "adult" ear scale here, and "broadly adult humanoid in scale" in the face identity statement, mean anatomically adult, proportionally mature Cogling ear anatomy. They do not require Marchfolk absolute ear dimensions. The anti-juvenile presentation rule is unchanged.
 
 Variation may include:
 - overall auricular height;
