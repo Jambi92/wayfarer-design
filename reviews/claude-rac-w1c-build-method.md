@@ -100,3 +100,15 @@ This is a method choice for author acceptance (gate D-W1c-1).
 - Directional checks whose relative margin is **under 1 %** are flagged "marginal (inside landmark uncertainty)" in the cross-race audit. That threshold is a method choice.
 
 — Claude
+
+## 5. Author rulings on this method (October 5, 2026; `reviews/chatgpt-rac-w1c-author-acceptance-blocker-resolution-order.md` §3)
+
+| Item | Ruling |
+|---|---|
+| D-W1c-1 (rest-geometry anatomy, R-6 stance values, R-6 stature for shares) | **Accepted, scope-limited** to this generator-specific W1c diagnostic pass; **not a universal anatomy rule** |
+| Generator joint system | Accepted **only for like-for-like W1c directional diagnostics**; absolute segment values are not anthropometric canon |
+| 8° arm abduction | Accepted only as the W1c evidence/measurement stance convention |
+| FAL / Pr / Po\* proxies, ±0.010 "≈" tolerance, 1 % marginal threshold | Accepted for this pass |
+| Soft-tissue orbit proxies | Low confidence; **cannot overrule authored bony-orbit canon** (FN orbit: `reviews/claude-rac-w1d-fenn-orbit-packet.md`) |
+| Generator-derived large-race globe allometry | **Not canonized** |
+| MF-F-R globe | Fitting ordinary-human landmark globe (2.30 cm) instead of the generator-derived 2.44 cm; face anatomy unchanged |

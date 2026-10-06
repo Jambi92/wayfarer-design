@@ -5,7 +5,7 @@
 **Evidence sheet:** `reviews/rac-w1c-evidence/PK_evidence.jpg` (front, side, 3/4, head front, head side; 10 cm / 1 cm ticks; common scale)
 **Measurements:** `reviews/rac-w1c-evidence/PK_meas.json`; invariance `PK_inv.json`
 
-## Technical verdict: **FAIL (R-2)** — not an ARM candidate in this form
+## Technical verdict: **FAIL (R-2)** — **diagnostic proxy only** (author ruling, W1c acceptance order §5); replaced by a native short-adult build once that method is accepted
 
 | Req. | Finding |
 |---|---|

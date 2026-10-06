@@ -8,6 +8,10 @@ from eyefit import eyefit
 out, cid = sys.argv[1], sys.argv[2]
 ref = sys.argv[3] if len(sys.argv) > 3 else os.path.join(out, "MF-M-R_rest.npz")
 ext = float(np.load(ref)["helper_eye_ext"])
+_cfgp = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cfg", cid + ".json")
+_ov = json.load(open(_cfgp)).get("eye_diam_cm") if os.path.exists(_cfgp) else None
+if _ov:   # author ruling (W1c acceptance §2): fitting ordinary human landmark globe instead of the generator-derived size
+    ext = 2.4 * float(np.load(os.path.join(out, cid + "_rest.npz"))["helper_eye_ext"]) / _ov
 rest, r6 = os.path.join(out, cid + "_rest.npz"), os.path.join(out, cid + "_r6.npz")
 mr = measure(rest, 0.0, ext); m6 = measure(r6, 0.0, ext)
 H = m6["stature"]

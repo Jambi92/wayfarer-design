@@ -48,7 +48,7 @@
 | ID | Pri | Measure | Cases | Feeds |
 |---|---|---|---|---|
 | RM-CF-01 | P1 | FPI conformance re-measure; also FPI at the minimum-rostrum and cranial-length coupling corners | Saurin frozen reference aff1b52 and creator extremes | Saurin floor **W1 status (October 5, 2026):** SA-M and SA-F **author-accepted as W1 ARMs** (continuation order D-3; bilateral limb readings only from a verified D-2 measurement copy). Diagnostic RM-CF-01 done (`reviews/claude-rac-w1-measurements.md`). **D-1:** the Saurin floor stays in the Part 7 convention; r3 FPI is reported alongside; measured conversion on the accepted anatomy: r3 FPI = Part 7 index + 1.194 cm ÷ HL (`reviews/claude-rac-w1c-saurin-d1-d2.md`); RM-CF-05 compares populations in r3 |
-| RM-CF-02 | P1 | FPI, MPI, MdPI distributions including the most prognathic valid face | Marchfolk, including the diagnostic head **MF-FACE-PROJ-MAX** (authored RAC Phase 2) | Saurin floor audit |
+| RM-CF-02 | P1 | FPI, MPI, MdPI distributions including the most prognathic valid face | Marchfolk, including the diagnostic head **MF-FACE-PROJ-MAX** (authored RAC Phase 2) | Saurin floor audit **W1 status:** MF-FACE-PROJ-MAX accepted as the W1 diagnostic Marchfolk maximum reference (1.2 cm, r3 FPI 0.191); central MF-M-R 0.143, MF-F-R 0.169 (diagnostic). |
 | RM-CF-03 | P1 | Same | Grask; central projection and max-valid rule **authored RAC Phase 2** (GR L362); max-valid case **GR-FACE-14** | Saurin floor audit |
 | RM-CF-04 | P1 | Same | Gorrund; comparator **authored RAC Phase 2** (GO L312 and the note after it); max-valid case **GOR-FACE-05** | Saurin floor audit |
 | RM-CF-05 | P1 | *Decision:* the required FPI margin | — | Author |
@@ -82,7 +82,7 @@ Semantics only; no numbers are set here. Measurement-deferred values are not cre
 | RM-UB-04 | — | Saurin reachable tail-length cap as a continuous function of resolved frame and composition, through the canon points (~78 % H Balanced reference composition; 80 % H Broad; ~72 % H Narrow high-fat) | Saurin reference variants | Slot 5 CLAMP (SAURIN §256.5) |
 | RM-UB-05 | — | Halvren inherited stature-tail limits and frequencies outside the 152–213 cm central envelope. **Authorship done (RAC Phase 2):** H-1…H-6 and the H-5 outer bound (inside 147–229 cm, never automatically a source extreme) in HALVREN; this item measures the actual limits and frequencies; never hard clipping | Halvren genealogy cases with strong short-human, Skarn or Aelari ancestry; HV-49 / HV-50 | UCCA §22 envelope B (AD-C3b) |
 | RM-UB-06 | — | Per-race pelvic breadth, depth and vertical contribution, **external skeletal landmarks only** (obstetric firewall) | ARMs per race; frame variants | Pelvic-axial constraints (RAC-03 §2); Pipkin T-2 (with RM-SR-01) |
-| RM-UB-07 | — | **Marchfolk baseline set:** segments, torso, neck, pelvis, head share and joints at 147 / 173 / 203 cm, both sex-related configurations | Marchfolk ARMs and stature variants | Every "than Marchfolk" constraint; Saurin lower-trunk floor; **run first in W1** |
+| RM-UB-07 | — | **Marchfolk baseline set:** segments, torso, neck, pelvis, head share and joints at 147 / 173 / 203 cm, both sex-related configurations | Marchfolk ARMs and stature variants | Every "than Marchfolk" constraint; Saurin lower-trunk floor; **run first in W1** **W1 status (October 5, 2026):** MF-M-R and MF-F-R accepted W1 reference assets (`reviews/chatgpt-rac-w1c-author-acceptance-blocker-resolution-order.md` §2); central diagnostic readings in `reviews/claude-rac-w1c-measurements.md` (diagnostic, not canon); 147/203 cm variants W2. |
 | RM-UB-08 | — | Saurin **body** scale-field size and relief ranges (body analogue of RM-UF-04) | Saurin ARM and creator extremes | SAURIN §262 numeric per-field ranges |
 
 **Method:** all items use approved reference meshes as defined in `decisions/REFERENCE_ANATOMY_V1.md` (added RAC Phase 2). Waves W1–W3 are in its §9.
@@ -91,7 +91,7 @@ Semantics only; no numbers are set here. Measurement-deferred values are not cre
 
 | ID | Pri | Measure | Populations | Feeds |
 |---|---|---|---|---|
-| RM-OT-01 | P2 | Leg share; forearm, hand and finger ratios; ribcage depth and breadth | Sagekin vs Marchfolk | Sagekin v1.1 §1 tendencies; F-19 hand/ribcage wording |
+| RM-OT-01 | P2 | Leg share; forearm, hand and finger ratios; ribcage depth and breadth | Sagekin vs Marchfolk | Sagekin v1.1 §1 tendencies; F-19 hand/ribcage wording **W1 status:** SG accepted W1 reference asset; diagnostic readings and directions in `reviews/claude-rac-w1c-cross-race-audit.md`. |
 | RM-OT-02 | P2 | Elf limb share; segment emphasis; thoracic depth; neck relative length; joint ratios | Fenn, Aelari, Vael | Elf review matrix |
 | RM-OT-03 | P3 | Halvren source-passing statistics over a generated sample | Halvren vs its six sources | Halvren P2 §32–36 phenotypic boundary protection |
 | RM-OT-04 | P2 | Saurin vs Sagekin and Halvren matched-height checks (body and face) | Saurin | F-25 |

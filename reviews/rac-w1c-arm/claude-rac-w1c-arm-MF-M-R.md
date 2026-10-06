@@ -5,7 +5,7 @@
 **Evidence sheet:** `reviews/rac-w1c-evidence/MF-M-R_evidence.jpg` (front, side, 3/4, head front, head side; 10 cm / 1 cm ticks; common scale)
 **Measurements:** `reviews/rac-w1c-evidence/MF-M-R_meas.json`; invariance `MF-M-R_inv.json`
 
-## Technical verdict: **PASS** — author acceptance pending
+## Technical verdict: **PASS** — **AUTHOR-ACCEPTED W1 reference asset** (October 5, 2026; `reviews/chatgpt-rac-w1c-author-acceptance-blocker-resolution-order.md` §2). Generator-target magnitudes stay reference construction values, not population-envelope canon; diagnostics are not canon
 
 | Req. | Finding |
 |---|---|

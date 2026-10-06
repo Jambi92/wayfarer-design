@@ -5,7 +5,7 @@
 **Evidence sheet:** `reviews/rac-w1c-evidence/MF-F-R_evidence.jpg` (front, side, 3/4, head front, head side; 10 cm / 1 cm ticks; common scale)
 **Measurements:** `reviews/rac-w1c-evidence/MF-F-R_meas.json`; invariance `MF-F-R_inv.json`
 
-## Technical verdict: **PASS** — author acceptance pending
+## Technical verdict: **PASS** — **AUTHOR-ACCEPTED W1 reference asset** (October 5, 2026; `reviews/chatgpt-rac-w1c-author-acceptance-blocker-resolution-order.md` §2). Generator-target magnitudes stay reference construction values, not population-envelope canon; diagnostics are not canon
 
 | Req. | Finding |
 |---|---|
@@ -19,15 +19,15 @@
 | R-11 | See notes |
 | R-13 | cm, up = u, ground at the sole |
 | R-14 | Builder-chosen values listed below |
-| D-4c eyes | Landmark globes 2.44 cm (DER) at the generator's eye-helper centres. Fit on this candidate: skin vertices inside the globe 1 (clearance -0.044 cm); at +0.2 cm diameter 9 inside |
+| D-4c eyes | Landmark globes 2.30 cm (fitting ordinary-human size, author ruling) at the generator's eye-helper centres. Fit on this candidate: skin vertices inside the globe 0 (clearance 0.026 cm); at +0.2 cm diameter 4 inside |
 | Directional checks | 0 / 0 pass (`reviews/claude-rac-w1c-cross-race-audit.md`) |
 
 **Notes:**
-- D-4c: the DER globe (2.44 cm) touches the lid/socket skin at one vertex (0.044 cm intrusion; see the D-4c row). Within mesh tolerance, but the fit is not clean; the author may prefer a globe at the fitting size (about 2.35 cm). Placement was not tuned.
+- D-4c (author ruling, W1c acceptance order §2): the generator-derived globe (2.44 cm) touched the socket skin at one vertex (0.044 cm), so it is replaced by a fitting ordinary-human landmark globe of 2.30 cm (BUILDER-CHOSEN size; 0.026 cm clearance; 2.35 cm leaves 0.001 cm, 2.40 cm intersects). Placement (generator eye centres) and face anatomy unchanged; FPI is unaffected (it uses the globe centre).
 
 **BUILDER-CHOSEN / AUTHOR ACCEPTANCE REQUIRED:**
 - MPFB/MakeHuman generator default proportions, 'race' mix asian 0.333 / caucasian 0.334 / african 0.333 (not Marchfolk biology, D-4d)
 - muscle 0.50, weight 0.50, proportions 0.50 (provisional reference composition, D-4d)
 - height macro 0.6060 (solved for native stature)
 - R-6 arm abduction 8.0 deg (canon gives no angle)
-- landmark globe diameter 2.44 cm = 2.4 cm x (generator orbit helper extent / MF-M-R helper extent) (D-4c: globe DER from orbit)
+- landmark globe diameter 2.30 cm (fitting ordinary-human landmark globe; author ruling W1c acceptance §2)

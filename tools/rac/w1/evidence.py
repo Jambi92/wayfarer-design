@@ -16,15 +16,15 @@ def sphere(c, r, n=16):
             F += [(a, c_, b), (b, c_, d)]
     return np.array(V), np.array(F)
 
-def render(V, F, hx, hy, depth, ppcm, origin, size, tick, shade_col=(205, 205, 200)):
+def render(V, F, hx, hy, depth, ppcm, origin, size, tick, shade_col=(205, 205, 200), light=(-0.35, -0.45, 0.82), amb=0.25):
     """Orthographic z-buffer. hx, hy, depth: (N,) view coords in cm. origin=(x0,y0) cm at image bottom-left."""
     W, H = size; px = (hx - origin[0]) * ppcm; py = H - (hy - origin[1]) * ppcm
     T = F; P = np.stack([px[T], py[T], depth[T]], 2)
     e1 = np.stack([px[T[:, 1]] - px[T[:, 0]], py[T[:, 1]] - py[T[:, 0]], depth[T[:, 1]] - depth[T[:, 0]]], 1)
     e2 = np.stack([px[T[:, 2]] - px[T[:, 0]], py[T[:, 2]] - py[T[:, 0]], depth[T[:, 2]] - depth[T[:, 0]]], 1)
     n = np.cross(e1 / ppcm, e2 / ppcm); n /= np.linalg.norm(n, axis=1)[:, None] + 1e-12
-    L = np.array([-0.35, -0.45, 0.82]); L /= np.linalg.norm(L)
-    c = 0.25 + 0.75 * np.abs(n @ L)
+    L = np.array(light, float); L /= np.linalg.norm(L)
+    c = amb + (1 - amb) * np.clip(np.abs(n @ L), 0, 1) ** 1.5
     img = np.full((H, W, 3), 250.0); zb = np.full((H, W), -1e18)
     xmin = np.floor(P[:, :, 0].min(1)).astype(int); xmax = np.ceil(P[:, :, 0].max(1)).astype(int)
     ymin = np.floor(P[:, :, 1].min(1)).astype(int); ymax = np.ceil(P[:, :, 1].max(1)).astype(int)
@@ -71,12 +71,13 @@ def make(npz, out, title):
     views.append(("3/4 front-left", render(hx, F2, hx, u, dp, ppcm, (-60, -2), (int(120 * ppcm), Hpx), 10)))
     # head views
     hw = D["w_head"]; hv = np.where(keep & (hw > 0.5))[0]
-    top = V[keep, 2].max(); hz0 = top - 32
-    hpp = 14.0; HH = int(34 * hpp)
-    hwid = max(13.0, float(np.abs(V[keep & (hw > 0.5), 0]).max()) + 1.5)
+    top = V[keep, 2].max(); hspan = top - V[keep & (hw > 0.5), 2].min()
+    win = max(16.0, min(34.0, 1.25 * hspan)); hz0 = top - win + 2
+    hpp = 476.0 / win; HH = 476
+    hwid = max(win * 0.38, float(np.abs(V[keep & (hw > 0.5) & (V[:, 2] > hz0), 0]).max()) + 1.5)
     views.append(("head front", render(x, F2, x, u, f, hpp, (-hwid, hz0), (int(2 * hwid * hpp), HH), 1)))
     ef = float(D["eye_l"][1])
-    views.append(("head side", render(f, F2, f, u, x, hpp, (ef - 22, hz0), (int(30 * hpp), HH), 1)))
+    views.append(("head side", render(f, F2, f, u, x, hpp, (ef - 0.65 * win, hz0), (int(0.88 * win * hpp), HH), 1)))
     Wt = sum(v[1].width for v in views) + 10 * len(views); Ht = max(v[1].height for v in views) + 60
     S = Image.new("RGB", (Wt, Ht), "white"); d = ImageDraw.Draw(S); xo = 0
     d.text((8, 6), title, fill=(0, 0, 0))

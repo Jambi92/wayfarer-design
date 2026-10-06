@@ -114,6 +114,7 @@ def run(outdir):
     gt("PK", "head share somewhat > MF only as allometry", "PK L33; RAC-04 L44", r("PK", "HH_share"), r(MF, "HH_share"), "PK", "MF")
     for k in ("torso_share", "arm_share", "leg_share"):
         ap("CG", "%s ≈ MF" % k, "CG L558", r("CG", k), r(MF, k), "CG", "MF")
+    lt("CG", "narrow-to-moderate thorax (thoracic breadth / stature) vs MF", "CG L98, L102", r("CG", "thorax_breadth_share"), r(MF, "thorax_breadth_share"), "CG", "MF")
     lt("CG", "upper arm / arm < MF", "CG L571–575", r("CG", "upperarm_over_arm"), r(MF, "upperarm_over_arm"), "CG", "MF")
     gt("CG", "forearm / arm > MF", "CG L571–575", r("CG", "forearm_over_arm"), r(MF, "forearm_over_arm"), "CG", "MF")
     gt("CG", "hand / arm > MF", "CG L571–575", r("CG", "hand_over_arm"), r(MF, "hand_over_arm"), "CG", "MF")

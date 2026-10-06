@@ -11,7 +11,7 @@ CONFIG = {"MF-F-R": "Configuration 2 (MPFB gender macro 0.0)"}
 # Technical verdicts and the reason lines (judgement recorded by the inspector; numbers come from the evidence files)
 V = {
  "MF-M-R": ("PASS", []),
- "MF-F-R": ("PASS", ["D-4c: the DER globe (2.44 cm) touches the lid/socket skin at one vertex (0.044 cm intrusion; see the D-4c row). Within mesh tolerance, but the fit is not clean; the author may prefer a globe at the fitting size (about 2.35 cm). Placement was not tuned."]),
+ "MF-F-R": ("PASS", ["D-4c (author ruling, W1c acceptance order §2): the generator-derived globe (2.44 cm) touched the socket skin at one vertex (0.044 cm), so it is replaced by a fitting ordinary-human landmark globe of 2.30 cm (BUILDER-CHOSEN size; 0.026 cm clearance; 2.35 cm leaves 0.001 cm, 2.40 cm intersects). Placement (generator eye centres) and face anatomy unchanged; FPI is unaffected (it uses the globe centre)."]),
  "MF-FACE-PROJ-MAX": ("PASS", ["The forward displacement (1.2 cm, bimaxillary, nose and orbits untouched) is BUILDER-CHOSEN; canon gives only the rule (MF L340). Reads as an adult human face with bimaxillary protrusion, no muzzle (evidence sheet, head side)."]),
  "SK": ("PASS", []),
  "SG": ("PASS", []),
@@ -31,6 +31,13 @@ V = {
                        "Pelvis: Pipkin LSCTA pelvis not authored in detail; generator human pelvis with targets."]),
  "CG": ("FAIL (R-2)", ["Uniform-scale PROXY, not an ARM (as PK). Globe diameter DER from the scaled socket (1.30 cm) is far below an adult human globe - a proxy artefact."]),
 }
+ACC = "**AUTHOR-ACCEPTED W1 reference asset** (October 5, 2026; `reviews/chatgpt-rac-w1c-author-acceptance-blocker-resolution-order.md` §2). Generator-target magnitudes stay reference construction values, not population-envelope canon; diagnostics are not canon"
+STATUS = {k: ACC for k in ("MF-M-R", "MF-F-R", "SK", "SG")}
+STATUS["MF-FACE-PROJ-MAX"] = ACC + "; the 1.2 cm bimaxillary displacement / r3 FPI 0.191 is accepted as the W1 diagnostic Marchfolk maximum reference (not a complete Marchfolk population envelope)"
+for k in ("FN", "AE", "VA", "DU", "GR", "GO"): STATUS[k] = "**CONSTRAINED diagnostic candidate** (author ruling, W1c acceptance order §4): proportion evidence may remain; human-generator ears/pelvis and missing non-human structures do not satisfy canon"
+STATUS["HV"] = STATUS["FN"] + "; early build accepted only as a diagnostic ordering deviation; source-span checks re-run after FN/AE/VA are accepted"
+for k in ("PK", "CG"): STATUS[k] = "**diagnostic proxy only** (author ruling, W1c acceptance order §5); replaced by a native short-adult build once that method is accepted"
+EYEOV = {k: json.load(open(os.path.join(R, "tools", "rac", "w1", "cfg", k + ".json"))).get("eye_diam_cm") for k in ids}
 def f3(x): return "%.3f" % x
 def f2(x): return "%.2f" % x
 def main():
@@ -49,7 +56,7 @@ def main():
               "muscle %.2f, weight %.2f, proportions %.2f (provisional reference composition, D-4d)" % (cfg["muscle"], cfg["weight"], cfg["proportions"]),
               ("height macro %.4f (solved for native stature)" % b["height_macro"]) if not b.get("proxy_uniform_scale") else ("height macro %.4f (generator adult minimum; NOT solved - proxy)" % b["height_macro"]),
               "R-6 arm abduction %.1f deg (canon: 'small fixed abduction', no angle)" % m["r6"]["cranio"]["pitch_deg"] if False else "R-6 arm abduction 8.0 deg (canon gives no angle)",
-              "landmark globe diameter %.2f cm = 2.4 cm x (generator orbit helper extent / MF-M-R helper extent) (D-4c: globe DER from orbit)" % cr["eye_diam_cm"]]
+              ("landmark globe diameter %.2f cm (fitting ordinary-human landmark globe; author ruling W1c acceptance §2)" % cr["eye_diam_cm"]) if EYEOV.get(i) else ("landmark globe diameter %.2f cm = 2.4 cm x (generator orbit helper extent / MF-M-R helper extent) (D-4c: globe DER from orbit)" % cr["eye_diam_cm"])]
         if cfg.get("face_proj_cm"): bc.append("lower-face bimaxillary forward displacement %.1f cm (identity-relevant for the MF maximum)" % cfg["face_proj_cm"])
         if tg: bc.append("generator targets (identity-relevant race proportion inputs): " + ", ".join("%s %.2f" % (k, v) for k, v in sorted(tg.items())))
         if b.get("proxy_uniform_scale"): bc.append("NON-COMPLIANT uniform scale %.4f (proxy only)" % b["proxy_uniform_scale"])
@@ -62,7 +69,7 @@ def main():
 **Evidence sheet:** `reviews/rac-w1c-evidence/{i}_evidence.jpg` (front, side, 3/4, head front, head side; 10 cm / 1 cm ticks; common scale)
 **Measurements:** `reviews/rac-w1c-evidence/{i}_meas.json`; invariance `{i}_inv.json`
 
-## Technical verdict: **{verdict}**{' — author acceptance pending' if verdict.startswith(('PASS','CONSTRAIN')) else ' — not an ARM candidate in this form'}
+## Technical verdict: **{verdict}** — {STATUS[i]}
 
 | Req. | Finding |
 |---|---|
@@ -76,7 +83,7 @@ def main():
 | R-11 | See notes |
 | R-13 | cm, up = u, ground at the sole |
 | R-14 | Builder-chosen values listed below |
-| D-4c eyes | Landmark globes {cr['eye_diam_cm']:.2f} cm (DER) at the generator's eye-helper centres. Fit on this candidate: skin vertices inside the globe {m['eyefit']['at_derived_diameter']['l']['skin_verts_inside_globe']} (clearance {m['eyefit']['at_derived_diameter']['l']['min_skin_clearance_cm']:.3f} cm); at +0.2 cm diameter {m['eyefit']['at_plus_0.2cm']['l']['skin_verts_inside_globe']} inside |
+| D-4c eyes | Landmark globes {cr['eye_diam_cm']:.2f} cm ({'fitting ordinary-human size, author ruling' if EYEOV.get(i) else 'DER'}) at the generator's eye-helper centres. Fit on this candidate: skin vertices inside the globe {m['eyefit']['at_derived_diameter']['l']['skin_verts_inside_globe']} (clearance {m['eyefit']['at_derived_diameter']['l']['min_skin_clearance_cm']:.3f} cm); at +0.2 cm diameter {m['eyefit']['at_plus_0.2cm']['l']['skin_verts_inside_globe']} inside |
 | Directional checks | {npass} / {len(ck)} pass (`reviews/claude-rac-w1c-cross-race-audit.md`) |
 
 **Notes:**
@@ -107,7 +114,7 @@ def main():
         t2 += "| %s | " % lab + " | ".join(f2(M[i]["combined"][k]) for i in ids) + " |\n"
     ck = [("HL", "HL (cm)"), ("HH", "HH (cm)"), ("FPI", "FPI"), ("MPI", "MPI"), ("MdPI", "MdPI"), ("FVI", "FVI"), ("CBH", "CBH"), ("FVB", "FVB"), ("MVI", "MVI"),
           ("FDH", "FDH"), ("Eu_Eu", "Eu-Eu (cm)"), ("Zy_Zy", "Zy-Zy (cm)"), ("ORB_breadth_over_HL", "ORB breadth / HL (E proxy)"), ("ORB_height_over_HH", "ORB height / HH (E proxy)"),
-          ("aperture_width_over_orbit_breadth", "aperture width / orbit breadth"), ("aperture_height_over_orbit_height", "aperture height / orbit height"), ("eye_diam_cm", "globe diameter (cm, DER)")]
+          ("aperture_width_over_orbit_breadth", "aperture width / orbit breadth"), ("aperture_height_over_orbit_height", "aperture height / orbit height"), ("eye_diam_cm", "globe diameter (cm; DER except MF-F-R, fitting 2.30 cm by author ruling)")]
     t3 = hdr
     for k, lab in ck: t3 += "| %s | " % lab + " | ".join(f3(M[i]["combined"]["cranio"].get(k, float('nan'))) for i in ids) + " |\n"
     t3 += "| aperture width L/R (cm) | " + " | ".join("%.2f/%.2f" % (M[i]["combined"]["cranio"]["aperture"]["l"]["width"], M[i]["combined"]["cranio"]["aperture"]["r"]["width"]) for i in ids) + " |\n"

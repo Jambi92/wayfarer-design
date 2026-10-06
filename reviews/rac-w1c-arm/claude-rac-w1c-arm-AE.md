@@ -5,7 +5,7 @@
 **Evidence sheet:** `reviews/rac-w1c-evidence/AE_evidence.jpg` (front, side, 3/4, head front, head side; 10 cm / 1 cm ticks; common scale)
 **Measurements:** `reviews/rac-w1c-evidence/AE_meas.json`; invariance `AE_inv.json`
 
-## Technical verdict: **CONSTRAIN** — author acceptance pending
+## Technical verdict: **CONSTRAIN** — **CONSTRAINED diagnostic candidate** (author ruling, W1c acceptance order §4): proportion evidence may remain; human-generator ears/pelvis and missing non-human structures do not satisfy canon
 
 | Req. | Finding |
 |---|---|

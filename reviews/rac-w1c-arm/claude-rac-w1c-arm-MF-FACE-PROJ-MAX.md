@@ -5,7 +5,7 @@
 **Evidence sheet:** `reviews/rac-w1c-evidence/MF-FACE-PROJ-MAX_evidence.jpg` (front, side, 3/4, head front, head side; 10 cm / 1 cm ticks; common scale)
 **Measurements:** `reviews/rac-w1c-evidence/MF-FACE-PROJ-MAX_meas.json`; invariance `MF-FACE-PROJ-MAX_inv.json`
 
-## Technical verdict: **PASS** — author acceptance pending
+## Technical verdict: **PASS** — **AUTHOR-ACCEPTED W1 reference asset** (October 5, 2026; `reviews/chatgpt-rac-w1c-author-acceptance-blocker-resolution-order.md` §2). Generator-target magnitudes stay reference construction values, not population-envelope canon; diagnostics are not canon; the 1.2 cm bimaxillary displacement / r3 FPI 0.191 is accepted as the W1 diagnostic Marchfolk maximum reference (not a complete Marchfolk population envelope)
 
 | Req. | Finding |
 |---|---|
