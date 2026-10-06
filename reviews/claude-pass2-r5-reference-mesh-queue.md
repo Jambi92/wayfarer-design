@@ -47,7 +47,7 @@
 
 | ID | Pri | Measure | Cases | Feeds |
 |---|---|---|---|---|
-| RM-CF-01 | P1 | FPI conformance re-measure; also FPI at the minimum-rostrum and cranial-length coupling corners | Saurin frozen reference aff1b52 and creator extremes | Saurin floor |
+| RM-CF-01 | P1 | FPI conformance re-measure; also FPI at the minimum-rostrum and cranial-length coupling corners | Saurin frozen reference aff1b52 and creator extremes | Saurin floor **W1 status (October 5, 2026):** SA-M and SA-F **author-accepted as W1 ARMs** (continuation order D-3; bilateral limb readings only from a verified D-2 measurement copy). Diagnostic RM-CF-01 done (`reviews/claude-rac-w1-measurements.md`). **D-1:** the Saurin floor stays in the Part 7 convention; r3 FPI is reported alongside; measured conversion on the accepted anatomy: r3 FPI = Part 7 index + 1.194 cm ÷ HL (`reviews/claude-rac-w1c-saurin-d1-d2.md`); RM-CF-05 compares populations in r3 |
 | RM-CF-02 | P1 | FPI, MPI, MdPI distributions including the most prognathic valid face | Marchfolk, including the diagnostic head **MF-FACE-PROJ-MAX** (authored RAC Phase 2) | Saurin floor audit |
 | RM-CF-03 | P1 | Same | Grask; central projection and max-valid rule **authored RAC Phase 2** (GR L362); max-valid case **GR-FACE-14** | Saurin floor audit |
 | RM-CF-04 | P1 | Same | Gorrund; comparator **authored RAC Phase 2** (GO L312 and the note after it); max-valid case **GOR-FACE-05** | Saurin floor audit |

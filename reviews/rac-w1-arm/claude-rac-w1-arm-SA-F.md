@@ -4,7 +4,7 @@
 **Asset:** derived from SA-M (`a925e067…8b8c9c`) by `tools/rodin/v5/tissue.py` with the §263 female-centre parameters (`fsets3.CEN`: trunk 1.07, pelvis 1.055, head 1.0133, tail 1.0133, flank E 2.0 cm, ventral B 1.6 cm). Not saved as a file; regenerable bit-for-bit.
 **Evidence:** `reviews/rac-w1-evidence/saurin_w1.json` (`stature_accounting`)
 
-## Technical verdict: **PASS** — pending author acceptance
+## Technical verdict: **PASS** — **AUTHOR-ACCEPTED as a W1 ARM** (October 5, 2026; continuation order §4, D-3), subject to the D-2 measurement-copy rule for bilateral limb/segment readings
 
 | Check | Measured | Canon (§263 accounting) | Result |
 |---|---|---|---|

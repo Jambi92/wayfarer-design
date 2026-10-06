@@ -4,6 +4,8 @@
 **Asset:** `RaceBodies/out/Marchfolk_Masc.blend`, SHA-256 `d1dea7b6…50d5`; evaluated with `tools/rac/w1/mf_extract.py` (Blender 5.0.1 bpy, depsgraph-evaluated "Marchfolk.body")
 **Evidence:** `reviews/rac-w1-evidence/mf_checks.json`, `mf_Masc_inspect.jpg`
 
+**Superseded (W1 continuation, October 5, 2026):** the corrected/rebuilt candidate is **MF-M-R** (`reviews/rac-w1c-arm/claude-rac-w1c-arm-MF-M-R.md`). This record stays as history.
+
 ## Technical verdict: **CONSTRAIN — requires correction before acceptance.** Not measured.
 
 | Req. | Finding | Result |

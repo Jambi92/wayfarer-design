@@ -4,6 +4,8 @@
 **Asset:** `RaceBodies/out/Marchfolk_Fem.blend`, SHA-256 `4592b725…2663`
 **Evidence:** `reviews/rac-w1-evidence/mf_checks.json`, `mf_Fem_inspect.jpg`
 
+**Superseded (W1 continuation, October 5, 2026):** the corrected/rebuilt candidate is **MF-F-R** (`reviews/rac-w1c-arm/claude-rac-w1c-arm-MF-F-R.md`). This record stays as history.
+
 ## Technical verdict: **FAIL (R-2)** — rebuild required. Not measured.
 
 | Req. | Finding | Result |

@@ -4,7 +4,10 @@
 **Asset:** `RaceBodies/out/saurin_final_base.npz`, SHA-256 `a925e067…8b8c9c`; closure reference aff1b52
 **Evidence:** `reviews/rac-w1-evidence/saurin_w1.json`, `saurin_symmetry_regions.json`, `saurin_inspect.jpg`; tools `tools/rac/w1/saurin_w1.py`, `saurin_sym_regions.py`
 
-## Technical verdict: **PASS (CONSTRAIN note on R-5/R-6)** — pending author acceptance
+## Technical verdict: **PASS (CONSTRAIN note on R-5/R-6)** — **AUTHOR-ACCEPTED as a W1 ARM** (October 5, 2026; `reviews/chatgpt-rac-wave1-continuation-asset-build-order.md` §4, D-3)
+
+**Acceptance condition (D-2):** bilateral limb/segment readings use a verified measurement-only re-posed copy; the frozen body stays the canonical anatomical source for head, torso, pelvis, tail and the readings already taken. Status of that copy: `reviews/claude-rac-w1c-saurin-d1-d2.md`.
+**Rostral convention (D-1):** the 0.288 reference, 0.255–0.335 band and provisional 0.255 floor stay in the Part 7 convention; r3 FPI is reported alongside (conversion in the same file).
 
 | Req. | Check | Finding | Result |
 |---|---|---|---|
