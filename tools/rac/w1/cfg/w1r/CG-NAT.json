@@ -1,0 +1,91 @@
+{
+ "id": "CG-NAT",
+ "item": "native short-adult route (base factors reused), 91 cm; W1r bounded CG-only candidate CGJ7 (not replacing the as-built body)",
+ "as_built": {
+  "targets": {
+   "measure-upperarm-length-decr": 0.8,
+   "measure-lowerarm-length-incr": 0.3,
+   "LR:hand-scale-incr": 0.05,
+   "LR:hand-fingers-length-incr": 0.35,
+   "measure-lowerleg-height-incr": 0.15,
+   "torso-scale-horiz-decr": 0.2,
+   "torso-scale-depth-decr": 0.15,
+   "measure-wrist-circ-decr": 0.7,
+   "measure-knee-circ-decr": 1.0,
+   "measure-ankle-circ-decr": 0.45,
+   "measure-calf-circ-decr": 0.5,
+   "measure-thigh-circ-decr": 0.4
+  },
+  "bone_scales": {},
+  "stature_cm": 90.99
+ },
+ "w1r_candidate_CGJ7": {
+  "override": {
+   "targets": {
+    "measure-ankle-circ-decr": 1.0
+   },
+   "bone_scales": {
+    "LR:upperarm": [
+     0.95,
+     1,
+     0.95
+    ],
+    "LR:lowerarm": [
+     0.95,
+     1,
+     0.95
+    ],
+    "LR:thigh": [
+     0.95,
+     1,
+     0.95
+    ]
+   }
+  },
+  "net_targets": {
+   "measure-upperarm-length-decr": 0.8,
+   "measure-lowerarm-length-incr": 0.3,
+   "LR:hand-scale-incr": 0.05,
+   "LR:hand-fingers-length-incr": 0.35,
+   "measure-lowerleg-height-incr": 0.15,
+   "torso-scale-horiz-decr": 0.2,
+   "torso-scale-depth-decr": 0.15,
+   "measure-wrist-circ-decr": 0.7,
+   "measure-knee-circ-decr": 1.0,
+   "measure-ankle-circ-decr": 1.0,
+   "measure-calf-circ-decr": 0.5,
+   "measure-thigh-circ-decr": 0.4
+  },
+  "net_bone_scales": {
+   "LR:upperarm": [
+    0.95,
+    1,
+    0.95
+   ],
+   "LR:lowerarm": [
+    0.95,
+    1,
+    0.95
+   ],
+   "LR:thigh": [
+    0.95,
+    1,
+    0.95
+   ]
+  },
+  "stature_cm": 90.99,
+  "r6_sha256_8": "6a5ee208",
+  "unchanged": "bone lengths, stature, every share (arm, leg, torso, head, hand, finger, forearm and lower-leg shares), trunk, pelvis, head, tissue macros; inherit_scale NONE so hands are not scaled"
+ },
+ "probes": {
+  "CGJ1": "wrist 1.0, ankle 1.0 (targets only)",
+  "CGJ2": "CGJ1 + upperarm 0.97, lowerarm 0.92, calf 0.92 radial",
+  "CGJ3": "CGJ1 + upperarm 0.95, lowerarm 0.88, calf 0.88 radial",
+  "CGJ4": "ankle 1.0 + upperarm/lowerarm 0.97 radial",
+  "CGJ5": "ankle 1.0 + upperarm/lowerarm 0.95 radial (passes joints; S7 shaft depth still FAIL)",
+  "CGJ6": "ankle 1.0 only",
+  "CGJ7": "CGJ5 + thigh 0.95 radial (chosen: smallest tested write clearing joints and femoral shaft)"
+ },
+ "frames": "diagnostic breadth-only writes on CGJ7 (Narrow -8 %; Broad +8 % with pelvis X x1.12), as Vael / Fenn / Pipkin",
+ "status": "CANDIDATE \u2014 awaiting author ruling (W1r gate reviews/claude-rac-w1r-cogling-acceptance-gate.md)"
+}

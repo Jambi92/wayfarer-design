@@ -1,0 +1,408 @@
+[
+ {
+  "cand": "CG",
+  "check": "narrow core: skeletal thoracic breadth / stature < MF",
+  "canon": "CG L100-102, L649-661",
+  "reading": "thorax_breadth_share",
+  "op": "<",
+  "b": "MF-M-R",
+  "by_t": {
+   "0.0": [
+    0.15672143296222255,
+    0.16140725492086164
+   ],
+   "0.5": [
+    0.15094576009633368,
+    0.15563158205497277
+   ],
+   "1.0": [
+    0.14517008723044478,
+    0.14985590918908387
+   ]
+  },
+  "result_by_t": {
+   "0.0": "PASS",
+   "0.5": "PASS",
+   "1.0": "PASS"
+  },
+  "result": "PASS",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "less pelvis-led than Pipkin: crest / thoracic breadth < PK",
+  "canon": "CG L102, L258-262, L685-687; order L32",
+  "reading": "pelvis_over_thorax_breadth",
+  "op": "<",
+  "b": "PK-NAT",
+  "by_t": {
+   "0.0": [
+    0.959389335743494,
+    1.0329998993097202
+   ],
+   "0.5": [
+    0.9578354404140569,
+    1.0342203866490558
+   ],
+   "1.0": [
+    0.9561578999003828,
+    1.0355346195458528
+   ]
+  },
+  "result_by_t": {
+   "0.0": "PASS",
+   "0.5": "PASS",
+   "1.0": "PASS"
+  },
+  "result": "PASS",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "less pelvis-led than Pipkin: pelvic depth / thoracic depth < PK",
+  "canon": "CG L258-262; order L32",
+  "reading": "pelvic_depth_over_thorax_depth",
+  "op": "<",
+  "b": "PK-NAT",
+  "by_t": {
+   "0.0": [
+    0.820123558702646,
+    0.8552455565725281
+   ],
+   "0.5": [
+    0.8105747173948606,
+    0.8477344476232868
+   ],
+   "1.0": [
+    0.7999552290477603,
+    0.8394011966317836
+   ]
+  },
+  "result_by_t": {
+   "0.0": "PASS",
+   "0.5": "PASS",
+   "1.0": "PASS"
+  },
+  "result": "PASS",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "less pelvis-led than Pipkin: pelvic vertical / thoracic vertical < PK",
+  "canon": "CG L258-262, L685-687; order L32",
+  "reading": "pelvic_vertical_over_thoracic_vertical",
+  "op": "<",
+  "b": "PK-NAT",
+  "by_t": {
+   "0.0": [
+    0.3614725179925349,
+    0.3992633198077511
+   ],
+   "0.5": [
+    0.3614725179925349,
+    0.3992633198077511
+   ],
+   "1.0": [
+    0.3614725179925349,
+    0.3992633198077511
+   ]
+  },
+  "result_by_t": {
+   "0.0": "PASS",
+   "0.5": "PASS",
+   "1.0": "PASS"
+  },
+  "result": "PASS",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "fine shafts: S7 subtrochanteric section breadth / stature < height-normalized MF",
+  "canon": "CG L116-121",
+  "reading": "shaft_b_share",
+  "op": "<",
+  "b": "MF-M-R",
+  "by_t": {
+   "0.0": [
+    0.07523004658945609,
+    0.0754920148389841
+   ],
+   "0.5": [
+    0.0694543737235672,
+    0.06971634197309522
+   ],
+   "1.0": [
+    0.06367870085767834,
+    0.06394066910720635
+   ]
+  },
+  "result_by_t": {
+   "0.0": "NOT DEMONSTRATED",
+   "0.5": "NOT DEMONSTRATED",
+   "1.0": "NOT DEMONSTRATED"
+  },
+  "result": "NOT DEMONSTRATED",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "fine shafts: S7 subtrochanteric section depth / stature < height-normalized MF",
+  "canon": "CG L116-121",
+  "reading": "shaft_d_share",
+  "op": "<",
+  "b": "MF-M-R",
+  "by_t": {
+   "0.0": [
+    0.06719434546659613,
+    0.06531102598929892
+   ],
+   "0.5": [
+    0.061418672600707255,
+    0.05953535312341004
+   ],
+   "1.0": [
+    0.05564299973481838,
+    0.053759680257521154
+   ]
+  },
+  "result_by_t": {
+   "0.0": "FAIL",
+   "0.5": "FAIL",
+   "1.0": "FAIL"
+  },
+  "result": "FAIL",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "structural-mass axis: S7 breadth / stature CG < PK",
+  "canon": "SRR L41-48; RAC-05 L32",
+  "reading": "shaft_b_share",
+  "op": "<",
+  "b": "PK-NAT",
+  "by_t": {
+   "0.0": [
+    0.07523004658945609,
+    0.08127195714488707
+   ],
+   "0.5": [
+    0.0694543737235672,
+    0.0754962842789982
+   ],
+   "1.0": [
+    0.06367870085767834,
+    0.06972061141310931
+   ]
+  },
+  "result_by_t": {
+   "0.0": "PASS",
+   "0.5": "PASS",
+   "1.0": "PASS"
+  },
+  "result": "PASS",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "structural-mass axis: S7 depth / stature CG < PK",
+  "canon": "SRR L41-48; RAC-05 L32",
+  "reading": "shaft_d_share",
+  "op": "<",
+  "b": "PK-NAT",
+  "by_t": {
+   "0.0": [
+    0.06719434546659613,
+    0.07293894841819583
+   ],
+   "0.5": [
+    0.061418672600707255,
+    0.06716327555230694
+   ],
+   "1.0": [
+    0.05564299973481838,
+    0.06138760268641807
+   ]
+  },
+  "result_by_t": {
+   "0.0": "PASS",
+   "0.5": "PASS",
+   "1.0": "PASS"
+  },
+  "result": "PASS",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "structural-mass axis: S7 breadth / stature CG < DU",
+  "canon": "SRR L41-48; RAC-05 L32",
+  "reading": "shaft_b_share",
+  "op": "<",
+  "b": "DU-NAT",
+  "by_t": {
+   "0.0": [
+    0.07523004658945609,
+    0.08521910785873693
+   ],
+   "0.5": [
+    0.0694543737235672,
+    0.07944343499284805
+   ],
+   "1.0": [
+    0.06367870085767834,
+    0.07366776212695918
+   ]
+  },
+  "result_by_t": {
+   "0.0": "PASS",
+   "0.5": "PASS",
+   "1.0": "PASS"
+  },
+  "result": "PASS",
+  "dependency": true
+ },
+ {
+  "cand": "CG",
+  "check": "structural-mass axis: S7 depth / stature CG < DU",
+  "canon": "SRR L41-48; RAC-05 L32",
+  "reading": "shaft_d_share",
+  "op": "<",
+  "b": "DU-NAT",
+  "by_t": {
+   "0.0": [
+    0.06719434546659613,
+    0.07477819395292563
+   ],
+   "0.5": [
+    0.061418672600707255,
+    0.06900252108703675
+   ],
+   "1.0": [
+    0.05564299973481838,
+    0.06322684822114788
+   ]
+  },
+  "result_by_t": {
+   "0.0": "PASS",
+   "0.5": "PASS",
+   "1.0": "PASS"
+  },
+  "result": "PASS",
+  "dependency": true
+ },
+ {
+  "cand": "CG",
+  "check": "S7 breadth / femur length vs MF (per-segment; femur shortened by design) \u2014 REPORT ONLY",
+  "canon": "method comparison",
+  "reading": "shaft_b_over_femur",
+  "op": "<",
+  "b": "MF-M-R",
+  "by_t": {
+   "0.0": [
+    0.3191010687915317,
+    0.317951943033548
+   ],
+   "0.5": [
+    0.29460256762014336,
+    0.29362637146213993
+   ],
+   "1.0": [
+    0.27010406644875506,
+    0.26930079989073186
+   ]
+  },
+  "result_by_t": {
+   "0.0": "REPORT",
+   "0.5": "REPORT",
+   "1.0": "REPORT"
+  },
+  "result": "REPORT",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "S7 depth / femur length vs MF (per-segment; femur shortened by design) \u2014 REPORT ONLY",
+  "canon": "method comparison",
+  "reading": "shaft_d_over_femur",
+  "op": "<",
+  "b": "MF-M-R",
+  "by_t": {
+   "0.0": [
+    0.2850162724496229,
+    0.2750723723443223
+   ],
+   "0.5": [
+    0.26051777127823456,
+    0.2507468007729143
+   ],
+   "1.0": [
+    0.2360192701068462,
+    0.22642122920150615
+   ]
+  },
+  "result_by_t": {
+   "0.0": "REPORT",
+   "0.5": "REPORT",
+   "1.0": "REPORT"
+  },
+  "result": "REPORT",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "crest / thoracic breadth vs MF (W1d packet default, not authored canon) \u2014 REPORT ONLY",
+  "canon": "W1d packet L700",
+  "reading": "pelvis_over_thorax_breadth",
+  "op": "<=",
+  "b": "MF-M-R",
+  "by_t": {
+   "0.0": [
+    0.959389335743494,
+    0.965293526834304
+   ],
+   "0.5": [
+    0.9578354404140569,
+    0.9640055283915264
+   ],
+   "1.0": [
+    0.9561578999003828,
+    0.9626182471417178
+   ]
+  },
+  "result_by_t": {
+   "0.0": "REPORT",
+   "0.5": "REPORT",
+   "1.0": "REPORT"
+  },
+  "result": "REPORT",
+  "dependency": false
+ },
+ {
+  "cand": "CG",
+  "check": "bitrochanteric / crest vs MF (hip apparatus) \u2014 REPORT ONLY",
+  "canon": "report",
+  "reading": "bitroch_over_crest",
+  "op": ">=",
+  "b": "MF-M-R",
+  "by_t": {
+   "0.0": [
+    1.243005152774271,
+    1.191799778143272
+   ],
+   "0.5": [
+    1.2527126270567854,
+    1.1991834677310316
+   ],
+   "1.0": [
+    1.2632279538439188,
+    1.207158416707876
+   ]
+  },
+  "result_by_t": {
+   "0.0": "REPORT",
+   "0.5": "REPORT",
+   "1.0": "REPORT"
+  },
+  "result": "REPORT",
+  "dependency": false
+ }
+]
