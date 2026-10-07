@@ -65,3 +65,7 @@ FIRST-PASS COMPLETE does not mean every OPEN question is resolved. OPEN biology,
 No UE5 implementation is authorized by this milestone.
 
 **Next phase:** Pass 2 — Roster-Wide Comparative & System Review.
+
+
+### RAC W1 update — Gorrund
+**Gorrund W1 ARM: AUTHOR ACCEPTED (October 7, 2026).** Final ruling: `reviews/chatgpt-rac-w1j-gorrund-final-author-acceptance.md`; robustness gate: `reviews/claude-rac-w1j-author-acceptance-gate.md`. The accepted central reference preserves the canonical large-race/load-path relationships; W1j sensitivity remains diagnostic for later parameterization. Eight W1 bodies remain pending author acceptance: Grask, Aelari, Vael, Fenn, Pipkin, Cogling, Halvren and Durrim. Wave 2 remains pending completion of W1 acceptance.
