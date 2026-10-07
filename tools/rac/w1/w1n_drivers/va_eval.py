@@ -6,7 +6,7 @@ import sys, os, json, shutil
 sys.path.insert(0, '/home/claude/wayfarer-design/tools/rac/w1')
 import directional_checks as DC, w1e_checks as WC
 R = '/home/claude/wayfarer-design'; S = '/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad'
-EV = R + '/reviews/rac-w1n-va-evidence'; G = S + '/w1g'; VAM, TAG = sys.argv[1], sys.argv[2]
+EV = os.environ.get('EVDIR', R + '/reviews/rac-w1n-va-evidence'); os.makedirs(EV, exist_ok=True); G = S + '/w1g'; VAM, TAG = sys.argv[1], sys.argv[2]
 def cls(op, va, vb, tol=0.010):
     if op in ('~', '≈'): return "PASS" if abs(va - vb) <= tol else "FAIL"
     rel = abs(va - vb) / abs(vb); holds = {">": va > vb, "<": va < vb, ">=": va >= vb, "<=": va <= vb}[op]

@@ -13,5 +13,5 @@ for a in sys.argv[1:]:
         shutil.copy(skp + '/t%s/VA_meas.json' % t, tmp + '/t%s/VA_meas.json' % t)
         for slot, (d, nm) in SLOTS.items(): shutil.copy(d + '/t%s/%s_meas.json' % (t, nm), tmp + '/t%s/%s_meas.json' % (t, slot))
     rows = [r for r in SC.run(tmp) if 'VA' in (r.get('cand'), r.get('b'))]
-    json.dump(rows, open(R + '/reviews/rac-w1n-va-evidence/skeletal_%s.json' % tag, 'w'), indent=1, default=float)
+    json.dump(rows, open(os.environ.get('EVDIR', R + '/reviews/rac-w1n-va-evidence') + '/skeletal_%s.json' % tag, 'w'), indent=1, default=float)
     print(tag, len(rows), 'non-PASS:', [(r['cand'], r['check'], r['result']) for r in rows if r['result'] not in ('PASS', 'REPORT')])
