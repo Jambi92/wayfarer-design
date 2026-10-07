@@ -5,7 +5,7 @@
 import sys, os, json, shutil
 sys.path.insert(0, '/home/claude/wayfarer-design/tools/rac/w1/w1g_drivers'); sys.path.insert(0, '/home/claude/wayfarer-design/tools/rac/w1')
 import gn3, directional_checks as DC, w1e_checks as WC
-R = '/home/claude/wayfarer-design'; EV = R + '/reviews/rac-w1k-gr-evidence'; os.makedirs(EV, exist_ok=True)
+R = '/home/claude/wayfarer-design'; EV = os.environ.get('EVDIR', R + '/reviews/rac-w1k-gr-evidence'); os.makedirs(EV, exist_ok=True)   # W1l: EVDIR=reviews/rac-w1l-gr-evidence
 GO_ACC = R + '/reviews/rac-w1i-evidence/candidates/GO_meas.json'
 def cls(op, va, vb):
     if va is None or vb is None: return "NOT RUN"

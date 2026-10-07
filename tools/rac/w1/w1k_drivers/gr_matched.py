@@ -3,9 +3,9 @@
 # Same measurement layer as directional_checks.py (arm_measure 'combined' ratios). AD-G10 classes on strict directions.
 import json, os
 S = '/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad'; M = S + '/w1k/matched'
-EV = '/home/claude/wayfarer-design/reviews/rac-w1k-gr-evidence'
+EV = os.environ.get('EVDIR', '/home/claude/wayfarer-design/reviews/rac-w1k-gr-evidence')
 L = lambda p: json.load(open(p))["combined"]
-B = {"GR 218": L(S + '/w1g/final/GR_meas.json'), "GO 217": L(M + '/GO217_meas.json'), "GO 224": L(M + '/GO224_meas.json'),
+B = {"GR 218": L(os.environ.get('GRMEAS', S + '/w1g/final/GR_meas.json')), "GO 217": L(M + '/GO217_meas.json'), "GO 224": L(M + '/GO224_meas.json'),
      "Broad SK 215": L(M + '/SKB215_meas.json'), "Broad SK 222": L(M + '/SKB222_meas.json')}
 H = {k: v["stature"] for k, v in B.items()}
 ROWS = [("torso_share", "<", ("GO 217", "GO 224", "Broad SK 215", "Broad SK 222"), "GR L198; R2 L53 (GO > GR)"),
