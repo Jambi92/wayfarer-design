@@ -50,7 +50,8 @@ def head_HH(body):
     return top - c[chin, 2].min()
 
 def build_native(cfg, betas, k_len, head_override=None):
-    c = dict(cfg); c["height_macro"] = 0.5; c.pop("proxy_scale", None)
+    c = dict(cfg); c["height_macro"] = cfg.get("base_height_macro", 0.5);   # W2A: optional base macro (default 0.5 = W1 behaviour)
+    c.pop("proxy_scale", None)
     body, rig = A.build(c)
     gb = cfg.get("girth_beta", betas["girth"])     # per-race override: canon may require a narrower core than generator allometry
     f = {"len": k_len, "girth": k_len ** gb, "hand": k_len ** betas["hand"], "foot": k_len ** betas["foot"],
@@ -81,7 +82,7 @@ def main(cfgp, out):
     A.export(b, r, os.path.join(out, tag + "_rest.npz"), meta)
     pose = A.pose_r6(r); A.ground(b, r); meta.update({"state": "R-6", "pose": pose})
     A.export(b, r, os.path.join(out, tag + "_r6.npz"), meta)
-    rec = {"id": tag, "cfg": cfg, "height_macro": 0.5, "native_factors": f, "betas": betas, "stature_r6": A.stature(b), "iters": it + 1, "pose": pose}
+    rec = {"id": tag, "cfg": cfg, "height_macro": cfg.get("base_height_macro", 0.5), "native_factors": f, "betas": betas, "stature_r6": A.stature(b), "iters": it + 1, "pose": pose}
     json.dump(rec, open(os.path.join(out, tag + "_build.json"), "w"), indent=1)
     print("BUILT", tag, rec["stature_r6"], f)
 

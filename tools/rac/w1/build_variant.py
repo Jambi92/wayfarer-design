@@ -30,9 +30,9 @@ def main(basep, ovp, out, new_id):
     rec = {"id": new_id, "base": os.path.basename(basep), "overrides": ov, "cfg": cfg}
     if "native_factors" in base:
         import native_short as N
-        c = dict(cfg); c["height_macro"] = 0.5
+        c = dict(cfg); c["height_macro"] = cfg.get("base_height_macro", 0.5)   # W2A optional base macro; default = W1 behaviour
         b, r = A.build(c); N.set_factors(r, base["native_factors"]); A.bake(b, r); A.ground(b, r)
-        rec.update({"route": "native short-adult, base factors reused", "native_factors": base["native_factors"], "height_macro": 0.5})
+        rec.update({"route": "native short-adult, base factors reused", "native_factors": base["native_factors"], "height_macro": c["height_macro"]})
     else:
         if ov.get("resolve_stature"):
             hm, info = A.solve_height(cfg, cfg["stature"]); rec["height_solve"] = info

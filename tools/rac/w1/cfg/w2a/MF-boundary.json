@@ -1,0 +1,92 @@
+{
+ "item": "RAC W2A Marchfolk boundary foundation (RM-UB-07) construction records \u2014 NON-CANON diagnostic bodies",
+ "route_rule": "147 cm: native regional route (native_short.py) from each configuration's accepted base macro (config 1 0.5, config 2 0.60596); one length factor, girth k^0.654, hands k^0.842, feet k^0.942, head k^0.688 (generator adult allometry slopes; native_short_allometry.json). 203 cm: generator height macro re-solved, plus measure-knee-circ-incr restoring knee breadth / stature to the generator's own adult allometric slope from the accepted central body. No uniform scaling.",
+ "bodies": {
+  "MF config 1 147": {
+   "stature_cm": 147.0,
+   "route": "native short-adult (native_short.py)",
+   "height_macro": 0.5,
+   "height_solve": null,
+   "native_factors": {
+    "len": 0.8441438926066572,
+    "girth": 0.8951127173548826,
+    "hand": 0.8670729816312415,
+    "foot": 0.8525004591985178,
+    "head": 0.8899278891428406
+   },
+   "targets": {},
+   "base_height_macro": null
+  },
+  "MF config 2 147": {
+   "stature_cm": 147.0,
+   "route": "native short-adult (native_short.py)",
+   "height_macro": 0.60595703125,
+   "height_solve": null,
+   "native_factors": {
+    "len": 0.8452661752110321,
+    "girth": 0.8958908062470519,
+    "hand": 0.8680433058913523,
+    "foot": 0.8535679152134567,
+    "head": 0.8907420462397025
+   },
+   "targets": {},
+   "base_height_macro": 0.60595703125
+  },
+  "MF config 1 203": {
+   "stature_cm": 203.002,
+   "route": "height macro held from base",
+   "height_macro": 0.718017578125,
+   "height_solve": {
+    "reachable": true,
+    "stature": 203.00239454954863,
+    "iters": 12
+   },
+   "native_factors": null,
+   "targets": {
+    "measure-knee-circ-incr": 0.6
+   },
+   "base_height_macro": null
+  },
+  "MF config 2 203": {
+   "stature_cm": 203.005,
+   "route": "height macro held from base",
+   "height_macro": 0.8154296875,
+   "height_solve": {
+    "reachable": true,
+    "stature": 203.00466790795326,
+    "iters": 10
+   },
+   "native_factors": null,
+   "targets": {
+    "measure-knee-circ-incr": 0.3
+   },
+   "base_height_macro": null
+  },
+  "MF config 1 203 macro only (route comparison)": {
+   "stature_cm": 203.002,
+   "route": "height macro re-solved",
+   "height_macro": 0.718017578125,
+   "height_solve": {
+    "reachable": true,
+    "stature": 203.00239454954863,
+    "iters": 12
+   },
+   "native_factors": null,
+   "targets": {},
+   "base_height_macro": null
+  },
+  "MF config 2 203 macro only (route comparison)": {
+   "stature_cm": 203.005,
+   "route": "height macro re-solved",
+   "height_macro": 0.8154296875,
+   "height_solve": {
+    "reachable": true,
+    "stature": 203.00466790795326,
+    "iters": 10
+   },
+   "native_factors": null,
+   "targets": {},
+   "base_height_macro": null
+  }
+ }
+}
