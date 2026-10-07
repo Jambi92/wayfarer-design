@@ -1,0 +1,39 @@
+LIMITS {"lean_hip_max": 1.1061116130687616, "lean_waist_min": 0.7313921248647165, "lean_d2b_max": 0.014744393179114607, "lean_d2d_max": 0.0026933848476319855, "lean_shelf_min": 0.6649586271517894, "skin_hip_max": 0.9711162779155175, "skin_shelf_min": 0.8392390852630365} margins 0.025 0.008 0.006
+iter 0 {"pelvisX": 1.1811, "pelvisY": 1.0302, "pelvisZ": 1.2197, "thigh": 1.3146, "clavY": 0.9984, "s03Y": 1.2092, "Aka": 1.0675, "kpL": 1.5207, "kpU": 1.2321, "kb0": 0.9107, "kb18": 1.1524, "kb31": 1.3691, "kb44": 0.911, "kb60": 0.9068, "kb80": 1.1429, "thorX": 1.0221} H 229.49 neg 16 sumneg 0.0462
+   neg bitrochanteric / crest ~ MF (GO-P2b, hip joints under the lo|1.0 -0.0005
+   neg pelvic vertical / stature >= GR (GO-P3)|0.0 -0.0007
+   neg pelvic vertical / stature >= GR (GO-P3)|0.5 -0.0007
+   neg pelvic vertical / stature >= GR (GO-P3)|1.0 -0.0007
+   neg ALPC-4 shoulder-joint / thoracic breadth <= MF|0.0 -0.0009
+   neg thoracic depth / breadth > SK (AD-G7)|0.0 -0.0013
+   neg skin TB/H > SK 0.1969 -0.024
+   neg 02:ALPC-1b ribcage vertical / breadth >= MF|0.5 -0.0001
+   neg 02:ALPC-1b ribcage vertical / breadth >= MF|1.0 -0.0043
+   neg 02 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 -0.0019
+   neg 02 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 -0.0011
+   neg 02 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 -0.0002
+   neg 02 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 -0.0039
+   neg 02 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 -0.0032
+   neg 02 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 -0.0024
+   neg 215 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 -0.0005
+   step a=1.00 sumneg 0.0276 neg 11 score 0.02795
+   step a=0.50 sumneg 0.0310 neg 12 score 0.03125
+   step a=0.25 sumneg 0.0397 neg 14 score 0.04001
+iter 1 {"pelvisX": 1.2115, "pelvisY": 1.035, "pelvisZ": 1.2163, "thigh": 1.3881, "clavY": 1.0145, "s03Y": 1.2304, "Aka": 1.0741, "kpL": 1.6207, "kpU": 1.2709, "kb0": 1.0107, "kb18": 1.1497, "kb31": 1.3421, "kb44": 0.9115, "kb60": 0.9082, "kb80": 1.1427, "thorX": 1.0402} H 230.38 neg 11 sumneg 0.0276
+   neg bitrochanteric / crest ~ MF (GO-P2b, hip joints under the lo|0.0 -0.0002
+   neg pelvic vertical / stature >= GR (GO-P3)|0.0 -0.0003
+   neg pelvic vertical / stature >= GR (GO-P3)|0.5 -0.0003
+   neg pelvic vertical / stature >= GR (GO-P3)|1.0 -0.0003
+   neg thoracic depth / breadth > SK (AD-G7)|0.0 -0.0
+   neg skin TB/H > SK 0.1993 -0.0119
+   neg 02:ALPC-2a pelvic AP / thoracic depth >= MF|0.0 -0.0036
+   neg 02:ALPC-2a pelvic AP / thoracic depth >= MF|0.5 -0.0003
+   neg 02:ALPC-1b ribcage vertical / breadth >= MF|0.5 -0.0025
+   neg 02:ALPC-1b ribcage vertical / breadth >= MF|1.0 -0.0071
+   neg 215:ALPC-1b ribcage vertical / breadth >= MF|1.0 -0.0013
+   Jacobian Broyden update
+   step a=1.00 sumneg 0.0331 neg 15 score 0.03335
+   step a=0.50 sumneg 0.0289 neg 15 score 0.02924
+   step a=0.25 sumneg 0.0284 neg 13 score 0.02872
+no improvement
+DONE {"pelvisX": 1.2115, "pelvisY": 1.035, "pelvisZ": 1.2163, "thigh": 1.3881, "clavY": 1.0145, "s03Y": 1.2304, "Aka": 1.0741, "kpL": 1.6207, "kpU": 1.2709, "kb0": 1.0107, "kb18": 1.1497, "kb31": 1.3421, "kb44": 0.9115, "kb60": 0.9082, "kb80": 1.1427, "thorX": 1.0402}

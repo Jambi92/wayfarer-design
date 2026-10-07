@@ -44,7 +44,12 @@ def trunk_sculpt(V, L, sc):
     legw = np.maximum.reduce([L["w_" + k] for k in ("thigh_l", "thigh_r", "calf_l", "calf_r", "foot_l", "foot_r")])
     r = (V[:, 2] - hip) / (sst - hip)
     wt = np.clip(1 - armw / 0.3, 0, 1) * np.clip(1 - np.maximum(legw - 0.5, 0) / 0.3, 0, 1) * L["keep"] * (r > -0.25) * (r < 1.15)
-    kd = np.interp(r, sc["r"], sc.get("kd", [1.0] * len(sc["r"]))); kb = np.interp(r, sc["r"], sc["kb"])
+    if sc.get("interp") == "pchip":   # W1i: C1 monotone-cubic profile between nodes (no slope break at the nodes -> no sculpt crease)
+        from scipy.interpolate import PchipInterpolator as _P
+        _rc = np.clip(r, sc["r"][0], sc["r"][-1]); ip = lambda vals: _P(sc["r"], vals)(_rc)
+    else:
+        ip = lambda vals: np.interp(r, sc["r"], vals)
+    kd = ip(sc.get("kd", [1.0] * len(sc["r"]))); kb = ip(sc["kb"])
     kd = 1 + (kd - 1) * wt; kb = 1 + (kb - 1) * wt
     trunk = L["keep"] & (armw < 0.05) & (legw < 0.5)
     zs = np.linspace(V[trunk, 2].min(), V[trunk, 2].max(), 120); cen = []
@@ -54,7 +59,7 @@ def trunk_sculpt(V, L, sc):
     cen = np.array(cen); ok = ~np.isnan(cen); c = np.interp(V[:, 2], zs[ok], cen[ok])
     X = V.copy(); X[:, 0] = V[:, 0] * kb
     if "ka" in sc:      # separate anterior / posterior depth factors about the section centre (posterolateral ribcage depth, GO-G2)
-        ka = 1 + (np.interp(r, sc["r"], sc["ka"]) - 1) * wt; kp = 1 + (np.interp(r, sc["r"], sc["kp"]) - 1) * wt
+        ka = 1 + (ip(sc["ka"]) - 1) * wt; kp = 1 + (ip(sc["kp"]) - 1) * wt
         X[:, 1] = c + (V[:, 1] - c) * np.where(V[:, 1] >= c, ka, kp)
     else:
         X[:, 1] = c + (V[:, 1] - c) * kd

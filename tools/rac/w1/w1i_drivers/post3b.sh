@@ -1,0 +1,7 @@
+# RAC W1i driver AS RUN after post3.sh: true 208 cm body (height macro 0.685) and the full-body four-view sheets re-rendered at 2.2 px/cm
+S=/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad; G=$S/w1g; F=$S/w1f; R=/home/claude/wayfarer-design/reviews; SH=$S/w1i/sheets
+cd /home/claude/wayfarer-design/tools/rac/w1/w1i_drivers && python3 true208.py $S/w1i/GO_W1i_x.json 0.685 $S/w1i/ev/true208.json
+cd /home/claude/wayfarer-design/tools/rac/w1; W=w1i_drivers/sheet4.py
+python3 $W $SH/go_stature_series_4view.jpg --cols 1 --pp 2.2 "GO-H208 208.3 cm (true minimum, height macro 0.685)=$G/true208/GO-H208_r6.npz" "GOR-BODY-02 210.8 cm (W1f 208 cm donor)=$G/stress/GOR-BODY-02_r6.npz" "GO 217.0 cm (215 cm donor)=$G/stress/GO-H215_r6.npz" "GO 224.1 cm (222 cm donor)=$G/stress/GO-H222_r6.npz" "GO W1i reference 230.9 cm=$G/final/GO_r6.npz" "GOR-BODY-03 253.0 cm=$G/stress/GOR-BODY-03_r6.npz"
+python3 $W $SH/go_frames_composition_4view.jpg --cols 1 --pp 2.2 "GO W1i reference=$G/final/GO_r6.npz" "GOR-BODY-04 Narrow frame=$G/stress/GOR-BODY-04_r6.npz" "GOR-BODY-05 Broad frame=$G/stress/GOR-BODY-05_r6.npz" "GOR-BODY-16 low composition 0.25 / 0.25=$G/go16/GOR-BODY-16_r6.npz" "GO W1i skeleton (minimum composition)=$G/final_lean/GO-LEAN_r6.npz" "GO W1h reference (before)=$R/rac-w1h-evidence/geometry/GO_r6.npz"
+python3 $W $SH/references_4view.jpg --cols 1 --pp 2.2 "GO W1i 230.9 cm=$G/final/GO_r6.npz" "SK 208 cm=$F/final/SK_r6.npz" "GR 218 cm=$G/final/GR_r6.npz" "MF-M-R 173 cm=$F/final/MF-M-R_r6.npz" "DU-NAT=$F/final/DU-NAT_r6.npz"

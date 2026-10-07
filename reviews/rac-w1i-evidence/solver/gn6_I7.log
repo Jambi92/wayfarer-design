@@ -1,0 +1,39 @@
+LIMITS {"lean_hip_max": 1.1061116130687616, "lean_waist_min": 0.7313921248647165, "lean_d2b_max": 0.014744393179114607, "lean_d2d_max": 0.0026933848476319855, "skin_hip_max": 0.9711162779155175, "skin_shelf_min": 0.8392390852630365} margins 0.025 0.008 0.006
+iter 0 {"pelvisX": 1.1876, "pelvisY": 1.0293, "pelvisZ": 1.2253, "thigh": 1.29, "clavY": 0.9957, "s03Y": 1.2062, "Aka": 1.0671, "kpL": 1.4957, "kpU": 1.2278, "kb0": 0.9106, "kb18": 1.1382, "kb31": 1.3691, "kb44": 0.9109, "kb60": 0.9066, "kb80": 1.1429, "thorX": 1.0195} H 229.37 neg 13 sumneg 0.0693
+   neg pelvic vertical / stature >= GR (GO-P3)|0.0 -0.0007
+   neg pelvic vertical / stature >= GR (GO-P3)|0.5 -0.0007
+   neg pelvic vertical / stature >= GR (GO-P3)|1.0 -0.0007
+   neg ALPC-4 shoulder-joint / thoracic breadth <= MF|0.0 -0.0008
+   neg skin TB/H > SK 0.1966 -0.0258
+   neg skeleton hip/thorax 1.135 <= ref max -0.0263
+   neg 02:ALPC-1b ribcage vertical / breadth >= MF|1.0 -0.0037
+   neg 02 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 -0.0015
+   neg 02 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 -0.0007
+   neg 02 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 -0.0035
+   neg 02 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 -0.0028
+   neg 02 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 -0.002
+   neg 215 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 -0.0001
+   Jacobian loaded /tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w1g/gn6_I6_J0.npy
+   step a=1.00 sumneg 0.0838 neg 23 score 0.08407
+   step a=0.50 sumneg 0.0743 neg 23 score 0.07468
+   step a=0.25 sumneg 0.0692 neg 17 score 0.06958
+iter 1 {"pelvisX": 1.1811, "pelvisY": 1.0302, "pelvisZ": 1.2197, "thigh": 1.3146, "clavY": 0.9984, "s03Y": 1.2092, "Aka": 1.0675, "kpL": 1.5207, "kpU": 1.2321, "kb0": 0.9107, "kb18": 1.1524, "kb31": 1.3691, "kb44": 0.911, "kb60": 0.9068, "kb80": 1.1429, "thorX": 1.0221} H 229.49 neg 17 sumneg 0.0692
+   neg bitrochanteric / crest ~ MF (GO-P2b, hip joints under the lo|1.0 -0.0005
+   neg pelvic vertical / stature >= GR (GO-P3)|0.0 -0.0007
+   neg pelvic vertical / stature >= GR (GO-P3)|0.5 -0.0007
+   neg pelvic vertical / stature >= GR (GO-P3)|1.0 -0.0007
+   neg ALPC-4 shoulder-joint / thoracic breadth <= MF|0.0 -0.0009
+   neg thoracic depth / breadth > SK (AD-G7)|0.0 -0.0013
+   neg skin TB/H > SK 0.1969 -0.024
+   neg skeleton hip/thorax 1.131 <= ref max -0.0229
+   neg 02:ALPC-1b ribcage vertical / breadth >= MF|0.5 -0.0001
+   neg 02:ALPC-1b ribcage vertical / breadth >= MF|1.0 -0.0043
+   neg 02 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 -0.0019
+   neg 02 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 -0.0011
+   neg 02 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 -0.0002
+   neg 02 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 -0.0039
+   neg 02 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 -0.0032
+   neg 02 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 -0.0024
+   neg 215 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 -0.0005
+   Jacobian Broyden update
+   step a=1.00 sumneg 0.0870 neg 25 score 0.08722
