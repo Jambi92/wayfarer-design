@@ -1,6 +1,7 @@
 # RAC W2B — Skarn Boundary Foundation Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; reviews/chatgpt-rac-w2b-skarn-constrain-w2b1-order.md):** W2B CONSTRAIN — everything provisionally accepted except final closure of the 229 cm maximum-height bodies (configuration 2 S7-depth drop; configuration 1 knee +14.9 %), reopened as the W2B1 bounded correction. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-rac-w2a-final-acceptance-w2b-skarn-order.md`, the same text as GitHub Issue #1 comment 2026-10-07T22:24Z.
 **Evidence:** `reviews/rac-w2b-sk-evidence/` (`tables.md` holds every number quoted; `construction.json` holds the routes and writes)
 

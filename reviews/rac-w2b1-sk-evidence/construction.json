@@ -1,0 +1,20 @@
+{
+ "route": "W2B1 bounded correction of the 229 cm Skarn bodies only; all other W2B bodies unchanged.",
+ "SK config 1 229": {
+  "base": "W2B SKM229 (height macro 0.929443 re-solved from the accepted SK ARM; stature 229.0 cm)",
+  "change": {
+   "targets": {
+    "measure-knee-circ-incr": "1.0 -> removed",
+    "measure-knee-circ-decr": "0 -> 0.5"
+   }
+  },
+  "stature_cm": 229.0,
+  "rule": "W2A knee rule: smallest probed 0.1 step that returns the knee to the generator allometric slope from the 208 cm anchor within the 1 % AD-G10 resolution"
+ },
+ "SK config 2 229": {
+  "base": "W2B SKF229N-NAT unchanged (height macro 1.0 + native regional extension, k_len 1.018)",
+  "change": null,
+  "finding": "S7 depth drop is a vertex-slab station artifact (see probes.json, s7_band_probe.json, s7_section.json); no anatomical correction applied",
+  "candidate": "S7 read on an exact plane section (w2b1_drivers/s7_section.py) - author ruling required"
+ }
+}

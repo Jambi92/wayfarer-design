@@ -630,3 +630,7 @@ Return one concise `RAC W2B — Skarn Boundary Foundation Author-Acceptance Gate
 STOP after the W2B Skarn gate for author review. Do not begin Grask, Gorrund or any other W2 population before author acceptance.
 
 Wave 3 remains gated. DESIGN / REFERENCE-ANATOMY VALIDATION ONLY. NO UE5 IMPLEMENTATION.
+
+## W2B Skarn CONSTRAIN / W2B1 order (repo file, October 7, 2026)
+
+Recorded from `reviews/chatgpt-rac-w2b-skarn-constrain-w2b1-order.md` (commit 4e93836; no new Issue #1 comment at the time of recording). W2B provisionally accepted except the 229 cm maximum-height bodies; W2B1 bounded correction ordered: configuration 2 · 229 cm S7-depth continuity; configuration 1 · 229 cm knee continuity; regression re-checks; final W2B1 gate, then STOP.

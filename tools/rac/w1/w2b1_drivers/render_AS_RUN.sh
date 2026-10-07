@@ -1,0 +1,4 @@
+# RAC W2B1 AS RUN: 229 cm render sheet (w1i_drivers/sheet4.py)
+cd /home/claude/wayfarer-design/tools/rac/w1
+python3 w1i_drivers/sheet4.py /tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w2b1/sheets/sk_229_w2b1.jpg --cols 1 --pp 2.6 "SK config 1 208 cm (accepted ARM)=/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w1f/final/SK_r6.npz" "SK config 1 229 cm W2B (knee incr 1.0)=/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w2b/st/SKM229_r6.npz" "SK config 1 229 cm W2B1 (knee decr 0.5)=/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w2b1/k/SKM229KD5_r6.npz" "SK config 2 229 cm (unchanged)=/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w2b/st/SKF229N-NAT_r6.npz"
+echo RENDER_DONE

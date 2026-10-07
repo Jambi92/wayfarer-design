@@ -23,10 +23,24 @@ B = {"SK-M183": (W + '/st/SKM183',) + G("SKM183", "MF-M-R"), "SK-M208": (S + '/w
      "SK W1 Broad (SKB208)": (W + '/ref/SKB208', BS, 'SKB208'), "GO-H208": (W + '/ref/GO-H208', S + '/w1g/true208/skp_GO-H208', 'GO-H208'),
      "SK-02": (W + '/nx/SK02',) + G("SK02", "MF-M-R"), "SK-04": (W + '/nx/SK04',) + G("SK04", "MF-M-R"),
      "SG": (S + '/w1f/final/SG', BS, 'SG')}
+# W2B1 (bounded 229 cm correction): optional replacement 229 cm bodies, MEAS_STEM|GRID_SKP|JBW_KEY, and output file
+for _b, _e, _sid in (("SK-M229", "W2B1_M229", "MF-M-R"), ("SK-F229", "W2B1_F229", "MF-F-R")):
+    if os.environ.get(_e):
+        _p, _g, _k = os.environ[_e].split("|"); B[_b] = (_p, _g, _sid)
+OUTF = os.environ.get("W2B_OUT", EV + '/w2b.json')
+# W2B1 CANDIDATE: femoral S7 composition infimum on an exact plane section (w2b1_drivers/s7_section.py), when W2B_S7 names its JSON
+S7C = json.load(open(os.environ["W2B_S7"])) if os.environ.get("W2B_S7") else {}
+S7MAP = {"SK-M183": "SKM183", "SK-M229": os.environ.get("W2B1_M229_S7", "SKM229"), "SK-M190": "SKM190", "SK-M203": "SKM203", "MF-M190": "MFM190", "SK-M Broad": "SKMBroad",
+         "SK-M Narrow": "SKMNarrow", "SK-02": "SK02", "SK-04": "SK04", "SK-F183": "SKF183", "SK-F190": "SKF190", "SK-F203": "SKF203", "SK-F208": "SKF208",
+         "SK-F229": os.environ.get("W2B1_F229_S7", "SKF229"), "MF-F190": "MFF190", "SK-F Broad": "SKFBroad", "SK-F Narrow": "SKFNarrow", "MF-M203": "MFM203", "MF-F203": "MFF203",
+         "SK-M208": "W1-SK", "SG": "W1-SG", "MF-M173": "W1-MF-M-R", "MF-F173": "W1-MF-F-R", "GO-H208": "GO-H208"}
 for c in ("M", "F"):
     for comp in ("LOWMUS", "HIMUS", "HIFAT", "HIBOTH"): B["SK-%s %s" % (c, comp)] = (W + '/comp/SK%s-%s' % (c, comp), None, None)
 JK = {"MF-M190": "MFM190K8", "MF-F190": "MFF190K3", "MF-M190 macro only": "MFM190", "MF-F190 macro only": "MFF190", "SK-F229": "SKF229N-NAT", "SK-M208": "SK", "MF-M203": "MFM203K6", "MF-F203": "MFF203K3", "MF-M173": "MF-M-R", "MF-F173": "MF-F-R", "SK W1 Broad (SKB208)": "SKB208", "GO-H208": "GO-H208", "SG": "SG"}
-def jkey(b): return JK.get(b, b.replace("SK-M", "SKM").replace("SK-F", "SKF").replace("MF-M", "MFM").replace("MF-F", "MFF").replace(" ", "").replace("SK-0", "SK0"))
+def jkey(b):
+    for _b, _e in (("SK-M229", "W2B1_M229"), ("SK-F229", "W2B1_F229")):
+        if b == _b and os.environ.get(_e): return os.environ[_e].split("|")[2]
+    return JK.get(b, b.replace("SK-M", "SKM").replace("SK-F", "SKF").replace("MF-M", "MFM").replace("MF-F", "MFF").replace(" ", "").replace("SK-0", "SK0"))
 def cls(op, va, vb):
     rel = abs(va - vb) / abs(vb) if vb else 1.0; holds = {">": va > vb, "<": va < vb, ">=": va >= vb, "<=": va <= vb}[op]
     if op in (">", "<"): return ("PASS" if rel >= 0.01 else "NOT DEMONSTRATED") if holds else "FAIL"
@@ -45,6 +59,7 @@ for b, (p, skd, sid) in B.items():
     if skd and os.path.exists(skd + '/t0.0/%s_meas.json' % sid):
         for t in ("0.0", "0.5", "1.0"):
             q = json.load(open(skd + '/t%s/%s_meas.json' % (t, sid)))["combined"]; qr = q["ratio"]; st = q["stature"]; b7, d7 = q["alpc_stations"]["S7"]
+            if t == "0.0" and S7C and S7MAP.get(b, "") in S7C: b7, d7 = S7C[S7MAP[b]]["section"]      # W2B1 CANDIDATE S7 reading (diagnostic only)
             for k, val in (("thoracic breadth / stature", qr["thorax_breadth_share"]), ("thoracic depth / stature", qr["thorax_depth_share"]), ("shoulder-joint breadth / stature", qr["shoulder_joint_share"]),
                            ("biacromial / stature", qr["biacromial_share"]), ("crest breadth / stature", qr["crest_share"]), ("AP pelvic depth / stature", qr["pelvic_depth_share"]),
                            ("pelvic vertical / stature", qr["pelvic_vertical_share"]), ("hip-joint spacing / stature", qr["hip_joint_breadth_share"]),
@@ -181,7 +196,7 @@ six = [x for x in ("SK-M183", "SK-M208", "SK-M229", "SK-F183", "SK-F208", "SK-F2
 for k in V.get("SK-M208", {}):
     vals = [(V[x][k], x) for x in six if k in V[x]]
     if len(vals) == len(six) and not k.startswith("ALPC"): out["envelope_candidates"][k] = {"min": min(vals)[0], "min_body": min(vals)[1], "max": max(vals)[0], "max_body": max(vals)[1], "status": "NON-CANON diagnostic candidate"}
-json.dump(out, open(EV + '/w2b.json', 'w'), indent=1, default=float)
+json.dump(out, open(OUTF, 'w'), indent=1, default=float)
 for c in C:
     if c["result"] not in ("PASS", "REPORT"): print(c["code"], c["check"][:100], c["note"][:40], c["result"])
 print(len(C), 'checks;', sum(c["result"] == "PASS" for c in C), 'PASS;', sum(c["result"].startswith("REPORT") for c in C), 'REPORT')
