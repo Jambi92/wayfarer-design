@@ -2,6 +2,7 @@
 # Usage: python3 sheet4.py out.jpg [--crop trunk|axilla] [--noarms] [--pp 2.2] [--cols 2] "label=path_r6.npz" ...
 #  --crop trunk : u from 30 cm below the hip joints to 12 cm above the suprasternal proxy (same cm scale for every body)
 #  --crop axilla: 16 cm above to 30 cm below the shoulder joints, front and back 3/4 plus horizontal sections (arm vs trunk outline)
+#  --crop hips  : knee joints - 10 cm to spine_02 + 10 cm (W1j femur trade)
 #  --noarms     : faces with arm weight > 0.5 removed (trunk outline without arm occlusion)
 import sys, os, json, numpy as np
 from PIL import Image, ImageDraw
@@ -70,6 +71,13 @@ if __name__ == "__main__":
         for _, p in bodies:
             d = load(p); J = d["joints"]; hd = lambda n: np.asarray(J[n][0], float); spans.append(ur(hd))
         L = max(b - a_ for a_, b in spans); ur2 = lambda hd: (ur(hd)[0], ur(hd)[0] + L)   # same window height for every body
+        ims = [panel(l, p, pp, ur2, noarms) for l, p in bodies]
+    elif crop == "hips":   # W1j femur trade: knee joints - 10 cm to spine_02 + 10 cm, same window for every body
+        ur = lambda hd: ((hd("calf_l")[2] + hd("calf_r")[2]) / 2 - 10, hd("spine_02")[2] + 10)
+        spans = []
+        for _, p in bodies:
+            d = load(p); J = d["joints"]; hd = lambda n: np.asarray(J[n][0], float); spans.append(ur(hd))
+        L = max(b - a_ for a_, b in spans); ur2 = lambda hd: (ur(hd)[0], ur(hd)[0] + L)
         ims = [panel(l, p, pp, ur2, noarms) for l, p in bodies]
     elif crop == "axilla":
         ur = lambda hd: ((hd("upperarm_l")[2] + hd("upperarm_r")[2]) / 2 - 30, (hd("upperarm_l")[2] + hd("upperarm_r")[2]) / 2 + 16)

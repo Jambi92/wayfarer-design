@@ -1,0 +1,86 @@
+W1j gn7 FEMUR_HI 1.400 LOWLIM {"waist_over_hip_min": 0.8190611302978885, "waist_over_thorax_min": 0.8061878516008585} margins 0.011 0.001 0.0095
+iter 0 {"pelvisX": 1.2138, "pelvisY": 1.045, "pelvisZ": 1.2512, "thigh": 1.3863, "clavY": 1.0069, "s03Y": 1.2404, "Aka": 1.0723, "kpL": 1.6225, "kpU": 1.2782, "kb0": 1.0243, "kb18": 1.1599, "kb31": 1.3039, "kb44": 0.9116, "kb60": 0.9083, "kb80": 1.1427, "thorX": 1.046} H 230.90 ordinary-neg 1 sum 0.0003 | robust-neg 42 sum 0.4046
+   rneg bitrochanteric / crest ~ MF (GO-P2b, hip joints under the lo|0.0 slack 0.0044 robust -0.0009
+   rneg bitrochanteric / crest ~ MF (GO-P2b, hip joints under the lo|0.5 slack 0.0052 robust -0.0002
+   rneg pelvic vertical / stature >= GR (GO-P3)|0.0 slack 0.0152 robust -0.0030
+   rneg pelvic vertical / stature >= GR (GO-P3)|0.5 slack 0.0152 robust -0.0030
+   rneg pelvic vertical / stature >= GR (GO-P3)|1.0 slack 0.0152 robust -0.0030
+   rneg ALPC-4 shoulder-joint / thoracic breadth <= MF|0.0 slack 0.0191 robust -0.0194
+   rneg ALPC-4 shoulder-joint / thoracic breadth <= MF|0.5 slack 0.0224 robust -0.0166
+   rneg ALPC-4 shoulder-joint / thoracic breadth <= MF|1.0 slack 0.0259 robust -0.0136
+   rneg thoracic depth / breadth > SK (AD-G7)|0.0 slack 0.0100 robust -0.0095
+   rneg thoracic depth / breadth > SK (AD-G7)|0.5 slack 0.0118 robust -0.0084
+   rneg thoracic depth / breadth > SK (AD-G7)|1.0 slack 0.0137 robust -0.0072
+   rneg skin TB/H > SK 0.1995 slack 0.0031 robust -0.0135
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|0.0 slack 0.0091 robust -0.0102
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|0.5 slack 0.0046 robust -0.0153
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|1.0 slack -0.0003 robust -0.0208
+   rneg 208 vs SKB208:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0173 robust -0.0006
+   rneg 208 vs SKB208:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0182 robust -0.0003
+   rneg 208 vs SKB215:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0142 robust -0.0036
+   rneg 208 vs SKB215:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0151 robust -0.0033
+   rneg 208 vs SKB215:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0160 robust -0.0030
+   rneg 208 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0121 robust -0.0057
+   rneg 208 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0129 robust -0.0055
+   rneg 208 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0137 robust -0.0053
+   rneg 208 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0101 robust -0.0077
+   rneg 208 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0108 robust -0.0075
+   rneg 208 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0116 robust -0.0074
+   rneg 215:ALPC-4 shoulder-joint / thoracic breadth <= MF|0.0 slack 0.0193 robust -0.0044
+   rneg 215:ALPC-4 shoulder-joint / thoracic breadth <= MF|0.5 slack 0.0233 robust -0.0009
+   rneg 215:ALPC-1b ribcage vertical / breadth >= MF|0.0 slack 0.0165 robust -0.0030
+   rneg 215:ALPC-1b ribcage vertical / breadth >= MF|0.5 slack 0.0123 robust -0.0077
+   rneg 215:ALPC-1b ribcage vertical / breadth >= MF|1.0 slack 0.0079 robust -0.0127
+   rneg 215 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0172 robust -0.0007
+   rneg 215 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0182 robust -0.0003
+   rneg 215 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0152 robust -0.0027
+   rneg 215 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0161 robust -0.0024
+   rneg 215 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0171 robust -0.0020
+   rneg 222:ALPC-4 shoulder-joint / thoracic breadth <= MF|0.0 slack 0.0190 robust -0.0030
+   rneg 222:ALPC-1b ribcage vertical / breadth >= MF|0.5 slack 0.0181 robust -0.0020
+   rneg 222:ALPC-1b ribcage vertical / breadth >= MF|1.0 slack 0.0141 robust -0.0067
+   rneg 03:ALPC-3 proximal-femur proxy / S6 breadth >= MF|0.0 slack 0.0443 robust -0.0577
+   rneg 03:ALPC-3 proximal-femur proxy / S6 breadth >= MF|0.5 slack 0.0577 robust -0.0543
+   rneg 03:ALPC-3 proximal-femur proxy / S6 breadth >= MF|1.0 slack 0.0748 robust -0.0494
+   predicted robust-neg sum 0.0503
+   step a=1.00 ordinary-neg 5 sum 0.0699 robust-neg 19 sum 0.2335 score 0.24375
+   step a=0.50 ordinary-neg 5 sum 0.0165 robust-neg 26 sum 0.2609 score 0.26740
+iter 1 {"pelvisX": 1.1727, "pelvisY": 1.0503, "pelvisZ": 1.244, "thigh": 1.3818, "clavY": 0.9835, "s03Y": 1.25, "Aka": 1.045, "kpL": 1.66, "kpU": 1.3023, "kb0": 1.1043, "kb18": 1.2282, "kb31": 1.2239, "kb44": 0.9191, "kb60": 0.9135, "kb80": 1.1376, "thorX": 1.0434} H 231.33 ordinary-neg 5 sum 0.0699 | robust-neg 13 sum 0.1306
+   rneg bitrochanteric / crest ~ MF (GO-P2b, hip joints under the lo|0.0 slack -0.0191 robust -0.0265
+   rneg bitrochanteric / crest ~ MF (GO-P2b, hip joints under the lo|0.5 slack -0.0208 robust -0.0284
+   rneg bitrochanteric / crest ~ MF (GO-P2b, hip joints under the lo|1.0 slack -0.0226 robust -0.0305
+   rneg pelvic vertical / stature >= GR (GO-P3)|0.0 slack 0.0179 robust -0.0004
+   rneg pelvic vertical / stature >= GR (GO-P3)|0.5 slack 0.0179 robust -0.0004
+   rneg pelvic vertical / stature >= GR (GO-P3)|1.0 slack 0.0179 robust -0.0004
+   rneg stature slack -0.0033 robust -0.0033
+   rneg skin TB/H > SK 0.1981 slack -0.0041 robust -0.0206
+   rneg 208:ALPC-2a pelvic AP / thoracic depth >= MF|0.0 slack 0.0126 robust -0.0009
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|0.0 slack 0.0191 robust -0.0004
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|0.5 slack 0.0147 robust -0.0054
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|1.0 slack 0.0099 robust -0.0108
+   rneg 215:ALPC-1b ribcage vertical / breadth >= MF|1.0 slack 0.0182 robust -0.0027
+   predicted robust-neg sum 0.0456
+   step a=1.00 ordinary-neg 3 sum 0.0086 robust-neg 18 sum 0.0751 score 0.07814
+   step a=0.50 ordinary-neg 5 sum 0.0265 robust-neg 17 sum 0.0959 score 0.10194
+iter 2 {"pelvisX": 1.2128, "pelvisY": 1.0496, "pelvisZ": 1.2345, "thigh": 1.3801, "clavY": 0.9925, "s03Y": 1.2443, "Aka": 1.0361, "kpL": 1.6573, "kpU": 1.2775, "kb0": 1.0243, "kb18": 1.173, "kb31": 1.2931, "kb44": 0.9196, "kb60": 0.9141, "kb80": 1.1379, "thorX": 1.037} H 231.09 ordinary-neg 3 sum 0.0086 | robust-neg 16 sum 0.0523
+   rneg bitrochanteric / crest ~ MF (GO-P2b, hip joints under the lo|1.0 slack 0.0068 robust -0.0006
+   rneg pelvic vertical / stature >= GR (GO-P3)|0.0 slack 0.0179 robust -0.0004
+   rneg pelvic vertical / stature >= GR (GO-P3)|0.5 slack 0.0179 robust -0.0004
+   rneg pelvic vertical / stature >= GR (GO-P3)|1.0 slack 0.0179 robust -0.0004
+   rneg thoracic depth / breadth > SK (AD-G7)|0.0 slack 0.0167 robust -0.0030
+   rneg thoracic depth / breadth > SK (AD-G7)|0.5 slack 0.0186 robust -0.0017
+   rneg thoracic depth / breadth > SK (AD-G7)|1.0 slack 0.0208 robust -0.0003
+   rneg stature slack -0.0009 robust -0.0009
+   rneg skin TB/H > SK 0.1977 slack -0.0061 robust -0.0226
+   rneg 208:ALPC-2a pelvic AP / thoracic depth >= MF|0.0 slack 0.0098 robust -0.0031
+   rneg 208:ALPC-2a pelvic AP / thoracic depth >= MF|0.5 slack 0.0136 robust -0.0001
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|0.0 slack 0.0195 robust -0.0000
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|0.5 slack 0.0151 robust -0.0049
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|1.0 slack 0.0105 robust -0.0102
+   rneg 215:ALPC-1b ribcage vertical / breadth >= MF|1.0 slack 0.0188 robust -0.0020
+   rneg J1c low-comp waist/hip 0.8177 >= low refs slack -0.0016 robust -0.0016
+   predicted robust-neg sum 0.0448
+   step a=1.00 ordinary-neg 7 sum 0.0234 robust-neg 17 sum 0.0814 score 0.08404
+   step a=0.50 ordinary-neg 3 sum 0.0079 robust-neg 16 sum 0.0620 score 0.06481
+no improvement
+DONE {"pelvisX": 1.2128, "pelvisY": 1.0496, "pelvisZ": 1.2345, "thigh": 1.3801, "clavY": 0.9925, "s03Y": 1.2443, "Aka": 1.0361, "kpL": 1.6573, "kpU": 1.2775, "kb0": 1.0243, "kb18": 1.173, "kb31": 1.2931, "kb44": 0.9196, "kb60": 0.9141, "kb80": 1.1379, "thorX": 1.037}

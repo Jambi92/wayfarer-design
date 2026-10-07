@@ -1,0 +1,80 @@
+W1j gn7 FEMUR_HI 1.400 LOWLIM {"waist_over_hip_min": 0.8190611302978885, "waist_over_thorax_min": 0.8061878516008585} margins 0.011 0.001 0.0095
+iter 0 {"pelvisX": 1.2231, "pelvisY": 1.0348, "pelvisZ": 1.2248, "thigh": 1.294, "clavY": 1.021, "s03Y": 1.2441, "Aka": 0.9672, "kpL": 1.684, "kpU": 1.2566, "kb0": 0.9478, "kb18": 1.1766, "kb31": 1.2543, "kb44": 0.908, "kb60": 0.906, "kb80": 1.1258, "thorX": 1.0493} H 230.92 ordinary-neg 2 sum 0.0042 | robust-neg 76 sum 0.6159
+   rneg bitrochanteric / crest ~ MF (GO-P2b, hip joints under the lo|1.0 slack 0.0074 robust -0.0004
+   rneg pelvic vertical / stature >= GR (GO-P3)|0.0 slack 0.0046 robust -0.0135
+   rneg pelvic vertical / stature >= GR (GO-P3)|0.5 slack 0.0046 robust -0.0135
+   rneg pelvic vertical / stature >= GR (GO-P3)|1.0 slack 0.0046 robust -0.0135
+   rneg ALPC-4 shoulder-joint / thoracic breadth <= MF|0.0 slack 0.0041 robust -0.0172
+   rneg ALPC-4 shoulder-joint / thoracic breadth <= MF|0.5 slack 0.0073 robust -0.0145
+   rneg ALPC-4 shoulder-joint / thoracic breadth <= MF|1.0 slack 0.0108 robust -0.0116
+   rneg ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0172 robust -0.0008
+   rneg ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0182 robust -0.0004
+   rneg ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0193 robust -0.0000
+   rneg thoracic depth / breadth > SK (AD-G7)|0.0 slack 0.0036 robust -0.0158
+   rneg thoracic depth / breadth > SK (AD-G7)|0.5 slack 0.0051 robust -0.0150
+   rneg thoracic depth / breadth > SK (AD-G7)|1.0 slack 0.0067 robust -0.0141
+   rneg hip-joint scale (proximal-femur proxy) / crest breadth >= MF|0.0 slack 0.0082 robust -0.0040
+   rneg hip-joint scale (proximal-femur proxy) / crest breadth >= SK|0.0 slack 0.0025 robust -0.0096
+   rneg hip-joint scale (proximal-femur proxy) / crest breadth >= SK|0.5 slack 0.0110 robust -0.0023
+   rneg ALPC-3 proximal-femur proxy / S6 breadth >= MF|0.0 slack 0.0069 robust -0.0035
+   rneg biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|0.0 slack 0.0126 robust -0.0041
+   rneg biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|0.5 slack 0.0135 robust -0.0037
+   rneg biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|1.0 slack 0.0144 robust -0.0032
+   rneg chest-lead J2c slack -0.0037 robust -0.0037
+   rneg skin TB/H > SK 0.1995 slack 0.0032 robust -0.0134
+   rneg 208:ALPC-2a pelvic AP / thoracic depth >= MF|0.0 slack 0.0045 robust -0.0092
+   rneg 208:ALPC-2a pelvic AP / thoracic depth >= MF|0.5 slack 0.0078 robust -0.0065
+   rneg 208:ALPC-2a pelvic AP / thoracic depth >= MF|1.0 slack 0.0119 robust -0.0032
+   rneg 208:ALPC-4 shoulder-joint / thoracic breadth <= MF|0.0 slack 0.0058 robust -0.0132
+   rneg 208:ALPC-4 shoulder-joint / thoracic breadth <= MF|0.5 slack 0.0102 robust -0.0087
+   rneg 208:ALPC-4 shoulder-joint / thoracic breadth <= MF|1.0 slack 0.0150 robust -0.0038
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|0.0 slack 0.0133 robust -0.0061
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|0.5 slack 0.0088 robust -0.0112
+   rneg 208:ALPC-1b ribcage vertical / breadth >= MF|1.0 slack 0.0039 robust -0.0166
+   rneg 208:ALPC-3 proximal-femur proxy / S6 breadth >= MF|0.0 slack 0.0023 robust -0.0081
+   rneg 208:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|0.0 slack 0.0096 robust -0.0072
+   rneg 208:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|0.5 slack 0.0105 robust -0.0067
+   rneg 208:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|1.0 slack 0.0116 robust -0.0061
+   rneg 208 vs SKB208:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0110 robust -0.0068
+   rneg 208 vs SKB208:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0118 robust -0.0066
+   rneg 208 vs SKB208:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0126 robust -0.0064
+   rneg 208 vs SKB215:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0080 robust -0.0098
+   rneg 208 vs SKB215:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0086 robust -0.0097
+   rneg 208 vs SKB215:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0093 robust -0.0096
+   rneg 208 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0059 robust -0.0119
+   rneg 208 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0065 robust -0.0118
+   rneg 208 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0071 robust -0.0118
+   rneg 208 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0039 robust -0.0138
+   rneg 208 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0044 robust -0.0139
+   rneg 208 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0050 robust -0.0139
+   rneg 215:ALPC-4 shoulder-joint / thoracic breadth <= MF|0.0 slack 0.0051 robust -0.0178
+   rneg 215:ALPC-4 shoulder-joint / thoracic breadth <= MF|0.5 slack 0.0092 robust -0.0143
+   rneg 215:ALPC-4 shoulder-joint / thoracic breadth <= MF|1.0 slack 0.0134 robust -0.0106
+   rneg 215:ALPC-1b ribcage vertical / breadth >= MF|0.5 slack 0.0166 robust -0.0035
+   rneg 215:ALPC-1b ribcage vertical / breadth >= MF|1.0 slack 0.0122 robust -0.0085
+   rneg 215:ALPC-3 proximal-femur proxy / S6 breadth >= MF|0.0 slack 0.0040 robust -0.0063
+   rneg 215:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|0.0 slack 0.0106 robust -0.0062
+   rneg 215:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|0.5 slack 0.0115 robust -0.0057
+   rneg 215:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|1.0 slack 0.0125 robust -0.0051
+   rneg 215 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0110 robust -0.0069
+   rneg 215 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0117 robust -0.0067
+   rneg 215 vs SKB222:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0126 robust -0.0065
+   rneg 215 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0090 robust -0.0089
+   rneg 215 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0097 robust -0.0088
+   rneg 215 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0104 robust -0.0086
+   rneg 222:ALPC-4 shoulder-joint / thoracic breadth <= MF|0.0 slack 0.0039 robust -0.0176
+   rneg 222:ALPC-4 shoulder-joint / thoracic breadth <= MF|0.5 slack 0.0076 robust -0.0144
+   rneg 222:ALPC-4 shoulder-joint / thoracic breadth <= MF|1.0 slack 0.0115 robust -0.0111
+   rneg 222:ALPC-1b ribcage vertical / breadth >= MF|1.0 slack 0.0185 robust -0.0023
+   rneg 222:ALPC-3 proximal-femur proxy / S6 breadth >= MF|0.0 slack 0.0054 robust -0.0050
+   rneg 222:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|0.0 slack 0.0113 robust -0.0054
+   rneg 222:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|0.5 slack 0.0123 robust -0.0049
+   rneg 222:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|1.0 slack 0.0133 robust -0.0044
+   rneg 222 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.0 slack 0.0128 robust -0.0051
+   rneg 222 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|0.5 slack 0.0137 robust -0.0049
+   rneg 222 vs SKB229:ALPC-7 S5_over_S2_b > equal-height Broad Skarn (beyond 1 %)|1.0 slack 0.0146 robust -0.0046
+   rneg 03:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|0.0 slack 0.0160 robust -0.0006
+   rneg 03:biacromial / thoracic breadth <= MF (ALPC-4, acromial landma|0.5 slack 0.0169 robust -0.0002
+   rneg J2c low-comp waist/hip 0.8187 >= low refs slack -0.0005 robust -0.0005
+   predicted robust-neg sum 0.0571
+   step a=1.00 ordinary-neg 7 sum 0.0198 robust-neg 18 sum 0.0751 score 0.07683
