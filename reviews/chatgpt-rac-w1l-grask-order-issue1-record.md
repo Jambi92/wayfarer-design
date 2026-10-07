@@ -52,3 +52,56 @@ Record the disclosed thin margins and the Fenn/Vael comparison dependencies; rec
 NEXT: proceed to VAEL, the next locked Wave 1 body. Build/review the Vael central reference against established Vael canon and accepted comparators, preserving Vael's deeper, more compact-continuity elven organization rather than treating Vael as a scaled or thicker Aelari/Fenn. Validate canonical proportions, pelvic/trunk relations, limb distribution, gracility/robusticity relations, silhouette, and cross-population separation. Use Fenn only as an unaccepted dependency until its own W1 pass; do not alter accepted Aelari or other accepted comparator bodies to make Vael pass.
 
 After the central Vael body is sound, run the appropriate W1 frame/composition and separation diagnostics under the established RAC method. Surface genuine canon/construction conflicts rather than silently redefining them. Return the Vael W1 evidence and author-acceptance gate, then STOP for author review. Do not begin Fenn before final Vael author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.
+
+## Vael W1n ruling / W1o order comment (2026-10-07T15:53Z)
+
+VAEL W1n AUTHOR RULING / W1o BOUNDED FRAME CORRECTION — 2026-10-07
+
+Author decision:
+- ACCEPT VAL4 as the Vael W1 central reference.
+- ACCEPT the added limb-balance rows using the same +/-0.010 convention approved for Aelari.
+- ACCEPT the joint-gracility rows versus Marchfolk.
+- ACCEPT current Vael-vs-Marchfolk/Sagekin visual separation. Do not exaggerate body proportions merely to force stronger earless-body separation.
+- ACCEPT breadth-only frame behavior as the Vael W1 frame principle. Do not use the borrowed Skarn depth/robusticity write for Vael.
+
+One bounded correction remains before final Vael W1 acceptance:
+- On the Broad breadth-only Vael frame, carry the hip apparatus with the increased crest breadth sufficiently to preserve E-A2 (bitrochanteric / iliac-crest breadth >= MF).
+- Keep central VAL4 unchanged.
+- Do not change limb lengths, thoracic depth, joint robusticity, head, tissue, or accepted comparator bodies.
+- Re-run the affected Broad-frame skeletal/skin/directional rows and confirm no regression to Vael's compact-continuity identity.
+- Keep the known skin AP-depth diagnostic and Fenn-dependent rows disclosed; they are not blockers to this bounded correction.
+
+Return a final Vael W1o author-acceptance gate and STOP. Do not begin Fenn until final Vael author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.
+
+## Final Vael ruling / Fenn order comment (2026-10-07T16:06Z)
+
+FINAL VAEL AUTHOR RULING / NEXT W1 BODY — 2026-10-07
+
+VAEL W1: ACCEPTED.
+
+Lock for W1:
+- Central reference: VAL4.
+- Frame principle: breadth-only; do not use the borrowed Skarn depth/robusticity frame write for Vael.
+- Broad diagnostic frame: pelvis X x1.12, with hip-joint spacing carried outward with crest breadth so E-A2 remains satisfied.
+- Preserve the distinction between wider hip-joint spacing and actual joint size/robusticity.
+- Carry forward as disclosed, non-blocking W1 residuals: the skin AP-depth diagnostic, arm-vs-Aelari BM-3 NOT DEMONSTRATED case, thin margins, and the Fenn-dependent comparison rows for recheck after Fenn.
+- Do not reopen accepted Vael central anatomy unless Fenn acceptance reveals a genuine cross-canon contradiction.
+
+NEXT: proceed to FENN, the next locked Wave 1 body.
+
+FENN W1 goals:
+1. Establish/review the central Fenn reference against the already-approved Fenn canon and the accepted reference bodies.
+2. Preserve Fenn's positive identity as a distinct gracile elf with long limbs and extremities organized around a compact-centered torso. Do not turn Fenn into a shorter Aelari, a shallower Vael, or a generic slender human.
+3. Re-run every previously dependent elf-family row now that Aelari and Vael are accepted. In particular verify the intended comparative chain:
+   - Fenn carries more limb-focused elongation than Aelari while Aelari carries more distributed head/neck/torso elongation.
+   - Aelari retains the longer torso and neck relation where canon requires it.
+   - Vael remains deeper, more compact-continuity, more joint-present/broader-palmed and shorter-legged than Fenn where authored.
+4. Validate central Fenn anatomy for stature distribution, torso/waist organization, limb-segment balance, hands/feet, thoracic breadth/depth, pelvis/girdle relations, joint gracility, face/head identity, and any canon-derived rows that were previously stated but not quantitatively tested.
+5. Keep Fenn complexion/pigmentation as Fenn-specific. Do not treat Fenn as the universal elven complexion baseline.
+6. Preserve established Fenn facial/ear identity, including the more open eye read and greater outward/backward ear projection relative to the other elf populations where already authored. Do not use cosmetic presentation to solve an anatomical separation problem.
+7. Do not alter accepted Aelari, Vael, Marchfolk, Sagekin, Skarn, Grask, Gorrund, or other accepted comparator bodies to make Fenn pass.
+8. If the current as-built Fenn fails a real canon relation, propose the smallest bounded Fenn-only construction correction, document exactly what changes and what remains untouched, and rerun affected comparisons.
+9. After the central Fenn body is sound, run the appropriate W1 frame/composition and separation diagnostics under the established RAC method. Treat borrowed frame writes as diagnostic only unless they preserve Fenn canon; do not let a borrowed frame convention redefine Fenn anatomy.
+10. Keep W2 work out of scope: no stature extremes, creator envelopes, combined-proportion stress, face extremes, or other Wave 2 items unless required to expose a blocking W1 contradiction.
+
+Return the Fenn W1 evidence and author-acceptance gate, then STOP for author review. Do not begin Pipkin until final Fenn author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.

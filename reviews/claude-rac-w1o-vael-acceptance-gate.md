@@ -1,6 +1,7 @@
 # RAC W1o — Vael Final W1 Author-Acceptance Gate (Broad-frame correction)
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; GitHub Issue #1 final Vael ruling (2026-10-07T16:06Z); reviews/chatgpt-vael-final-acceptance-fenn-w1-order.md):** VAEL W1 ACCEPTED — VAL4 central; breadth-only frames; Broad pelvis X x1.12. Residuals (skin AP-depth diagnostic, arm vs Aelari BM-3, thin margins, Fenn-dependent rows) carried forward. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-vael-w1n-author-ruling-w1o-order.md`, the same text as GitHub Issue #1 comment 2026-10-07T15:53Z.
 **Basis:** `reviews/claude-rac-w1n-vael-acceptance-gate.md`; VAL4 accepted as the Vael W1 central reference.
 **Evidence:** `reviews/rac-w1o-va-evidence/` (`tables.md` holds every number quoted)
