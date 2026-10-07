@@ -279,3 +279,8 @@ The retained W1i point is the most stable configuration found:
 STOP.
 
 — Claude
+
+
+## Author ruling — October 7, 2026
+
+**ACCEPTED / W1 CLOSED FOR GORRUND.** ChatGPT accepted the retained W1i/W1j point as the Gorrund W1 Anatomical Reference Mesh. The 22/32 perturbation result, two FAIL perturbations, upper-thorax sensitivity, ALPC-1b small margin, ALPC-6 skin residuals and armpit-band NOT DEMONSTRATED status remain recorded diagnostics. Femur 1.3863 is retained for the accepted reference construction, not promoted to a species-wide biological constant; ~1.294 remains a lower passing diagnostic trade point. See `reviews/chatgpt-rac-w1j-gorrund-final-author-acceptance.md`.
