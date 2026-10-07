@@ -259,3 +259,70 @@ HALVREN W1 goals:
 16. Keep Wave 2 out of scope: no full ancestry-envelope generation, creator inheritance UI, genetic simulation, probability distributions, source-extreme stress sweeps, gameplay attributes, implementation architecture, or UE5 work.
 
 Return the Halvren W1 evidence and author-acceptance gate, then STOP for author review. Do not begin Durrim before final Halvren author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.
+
+## Final Halvren ruling / Durrim order comment (2026-10-07T19:28Z)
+
+FINAL HALVREN AUTHOR RULING / NEXT W1 BODY — 2026-10-07
+
+HALVREN W1: ACCEPTED.
+
+Lock for W1:
+- Diagnostic reference anchor: HVC1 at about 178 cm.
+- HVC1 uses the accepted HV body with the eye-scale target removed; no other anatomical correction.
+- This is a diagnostic anchor inside the Halvren mixed-population envelope, never "the Halvren body" and never a mandatory phenotype.
+- Orbit-breadth metric carries no verdict at W1 because the eye-target probe demonstrated measurement instability.
+- Hidden-ear craniofacial separation remains NOT DEMONSTRATED due to a source-method limitation. Do not invent stronger elven craniofacial anatomy inside Halvren to force separation; carry this to source-head / W2 work.
+- The ankle/source-span miss of about 0.17% is accepted as MARGINAL and does not warrant correction.
+- Detailed mixed pelvic inheritance remains OPEN; do not reduce it to a linear human-to-elf morph.
+- Human-leaning, balanced and elf-leaning panel bodies remain diagnostic expression points only, not ancestry percentages, creator presets or castes.
+- Breadth-only frame principle retained; Broad diagnostic pelvis x1.12.
+- Composition remains independent of ancestry.
+- No accepted source body is reopened by this decision.
+
+NEXT: proceed to DURRIM, the next locked Wave 1 body.
+
+DURRIM W1 goals:
+1. Establish/review the central Durrim reference at about 137 cm against approved Durrim canon and accepted comparator bodies.
+2. Preserve Durrim's core identity as COMPACT STRUCTURAL CONCENTRATION / compact structural power:
+   - short adult stature;
+   - high skeletal structural presence relative to stature;
+   - broad and deep compact thorax;
+   - strong shoulder/pelvis integration;
+   - substantial joints and long-bone structure;
+   - lower proportional limb contribution, especially legs;
+   - relatively substantial hands and feet;
+   - low center-of-mass architecture.
+   Do not turn Durrim into uniformly scaled humans, broad short humans, muscular Pipkin, large Cogling, or a composition-driven dwarf stereotype.
+3. Close every short-race dependency now that Pipkin and Cogling are accepted. Re-run all Pipkin-vs-Durrim, Cogling-vs-Durrim and structural-mass-axis rows with the accepted PK-NAT and CGJ7 bodies.
+4. Validate central Durrim against Marchfolk and Sagekin as well as the accepted short races. At the reference point, confirm that Durrim identity comes from anatomy, not stature alone:
+   - torso contribution and vertical compactness;
+   - skeletal thoracic breadth and depth;
+   - shoulder / thorax integration;
+   - pelvis / thorax integration;
+   - arm and especially leg contribution;
+   - long-bone shaft presence;
+   - elbow, wrist, knee and ankle structural scale;
+   - hand and palm dimensions relative to stature;
+   - foot length/breadth/depth and ankle-foot integration;
+   - head/neck adult compactness without juvenile allometry.
+5. Preserve the short-race structural-mass ordering wherever canon supports it:
+   Cogling < Pipkin < Durrim.
+   Use the stature-scaled joint-sampling method for height-normalized joint comparisons across strongly different statures, per the accepted Cogling ruling; keep segment-relative metrics where those are the authored relation.
+6. Re-run Broad Pipkin vs Narrow Durrim now with the accepted Durrim W1 candidate. The purpose is to prove that breadth convergence does not collapse identity. Do not force thoracic breadth separation if depth, pelvis-led vs thorax-led organization, limb contribution, joints and hands/feet still separate the populations.
+7. Re-run Cogling vs Durrim actual-height and normalized comparisons required by the short-race review. Cogling must remain fine-scale, narrow-core and distally redistributed; Durrim must remain structurally concentrated, deeper/broader, more joint-substantial and less limb-contributing.
+8. Keep the 152 cm Durrim / 152 cm Marchfolk / 152 cm Sagekin equal-height comparison as a mandatory Durrim boundary validation if the current W1 tooling can run it without entering full W2. This specific 152 cm equal-height case is already a permanent Durrim validation requirement, not a newly invented W2 stress body. Do not use uniform scaling to construct it.
+9. Keep the 122 cm Pipkin / Durrim boundary case in its authored scope. If current W1 tooling already supports the approved boundary diagnostic cleanly, run it; otherwise disclose it for W2 rather than improvising a bad proxy.
+10. Composition must not carry Durrim identity:
+   - low-muscle / low-fat must still look unmistakably Durrim through skeleton;
+   - high muscle must not become the only valid Durrim read;
+   - high fat must not become a round/comic dwarf;
+   - high muscle + fat must retain coherent anatomical transitions.
+11. Frame is skeletal only. Narrow/Balanced/Broad must all preserve Durrim compact structural concentration. Narrow Durrim must not collapse into a short human or Broad Pipkin; Broad Durrim must not become a caricature. Do not automatically reuse breadth-only elf/short-race frame writes if they erase Durrim depth, joint presence or long-bone structural identity. If Durrim requires a Durrim-specific diagnostic frame construction, derive the smallest canon-consistent rule and document it.
+12. Pelvis: preserve the already authored Durrim relational pelvic architecture and strong torso-pelvis integration. Do not invent a simply widened human pelvis. If an existing RAC pelvic relation is measurable, test it; if detailed morphology remains OPEN, report that boundary rather than over-specifying it.
+13. Face/head: preserve compact adult craniofacial identity, substantial facial skeletal presence and strong midface integration without depending on beard, large nose, heavy brow, age, hair or culture. Adult Durrim must remain adult when bald and clean-shaven.
+14. Treat head-size allometry carefully. A somewhat greater head share than Marchfolk may occur due to stature, but do not enlarge the head deliberately to create a fantasy-dwarf silhouette.
+15. If the as-built Durrim fails real canon, propose the smallest bounded Durrim-only correction. Document exactly what changes and what remains untouched. Do not alter accepted Marchfolk, Sagekin, Pipkin, Cogling or other comparator bodies.
+16. After central Durrim anatomy is sound, run appropriate W1 frame/composition/separation diagnostics. Distinguish true anatomy failures from composition-mismatched skin diagnostics and from unmatched-frame comparator artifacts.
+17. Keep Wave 2 out of scope except for the already-authored permanent Durrim boundary tests explicitly called above. No creator envelopes, full height sweeps, combined-proportion stress, gameplay/collision/camera/equipment implementation, or UE5 work.
+
+Return the Durrim W1 evidence and author-acceptance gate, then STOP for author review. Wave 2 remains gated. Design only; no UE5 implementation.

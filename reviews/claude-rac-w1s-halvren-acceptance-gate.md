@@ -1,6 +1,7 @@
 # RAC W1s — Halvren W1 Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; GitHub Issue #1 final Halvren ruling (2026-10-07T19:28Z); reviews/chatgpt-halvren-final-acceptance-durrim-w1-order.md):** HALVREN W1 ACCEPTED — diagnostic anchor HVC1 (eye-scale target removed); orbit-breadth carries no W1 verdict; hidden-ear craniofacial NOT DEMONSTRATED (source-method limit); ankle MARGINAL accepted; pelvic inheritance OPEN; panel diagnostic only; breadth-only frames, Broad pelvis x1.12. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-cogling-final-acceptance-halvren-w1-order.md`, the same text as GitHub Issue #1 comment 2026-10-07T18:57Z.
 **Evidence:** `reviews/rac-w1s-hv-evidence/` (`tables.md` holds every number quoted)
 **Construction record:** `tools/rac/w1/cfg/w1s/HV.json`
