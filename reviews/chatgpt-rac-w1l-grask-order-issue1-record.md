@@ -32,3 +32,23 @@ Grask W1 is therefore closed.
 Proceed to the next locked Wave 1 body: AELARI. Begin the Aelari W1 reference-body acceptance/convergence pass using the established RAC methods and already-approved Aelari canon. Preserve the Aelari identity as a vertically elongated elf, with elongation distributed through the cranium, neck, torso, and limbs rather than produced by uniform scaling. Use accepted comparator bodies and the existing RAC/large-race rules where applicable. Establish the central/reference Aelari body first and test its canonical anatomical relations, proportions, silhouette, and cross-population separation before diagnostic frame/composition variants. Do not alter accepted comparator bodies to make Aelari pass. Surface any genuine canon/construction conflict rather than silently redefining anatomy.
 
 Return the Aelari W1 evidence and author-acceptance gate, then STOP for author review. Do not advance to Vael until Aelari receives final author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.
+
+## Final Aelari author ruling comment (2026-10-07T15:23Z)
+
+FINAL AELARI AUTHOR RULING / NEXT W1 BODY — 2026-10-07
+
+AELARI W1m: ACCEPT AEL1 as the W1 central reference.
+
+Lock the W1 central leg construction at thigh 0.9875 / calf 1.0523. Retain the existing total leg length, stature, hip height, torso/head/neck budget, and other accepted AEL1 construction relations.
+
+Author rulings on W1m questions:
+1. Torso interpretation: ACCEPT CURRENT AEL1. 'Distributed elongation' does not require Aelari torso share to equal or exceed Marchfolk. The existing absolute torso elongation, Aelari-vs-Fenn torso relation, waist transition, and distributed head/neck/limb pattern satisfy the intended identity. Do not rebudget the body to force torso share >= MF.
+2. Leg-evenness: ACCEPT the canon-derived lower-leg/thigh row and +/-0.010 tolerance for W1. AEL1 is the accepted correction.
+3. Sagekin overlap: ACCEPTABLE for W1. Preserve separation through thorax, joint gracility, face, head/neck shares, and Aelari ear identity. Do not exaggerate limb proportions solely to increase Sagekin separation.
+4. High-muscle + fat Aelari: ACCEPTABLE for W1. Do not restrict muscularity merely to preserve a stereotypically slender elf silhouette.
+
+Record the disclosed thin margins and the Fenn/Vael comparison dependencies; recheck dependent rows after those bodies are accepted. Aelari W1 is closed unless a later comparator acceptance reveals a genuine contradiction.
+
+NEXT: proceed to VAEL, the next locked Wave 1 body. Build/review the Vael central reference against established Vael canon and accepted comparators, preserving Vael's deeper, more compact-continuity elven organization rather than treating Vael as a scaled or thicker Aelari/Fenn. Validate canonical proportions, pelvic/trunk relations, limb distribution, gracility/robusticity relations, silhouette, and cross-population separation. Use Fenn only as an unaccepted dependency until its own W1 pass; do not alter accepted Aelari or other accepted comparator bodies to make Vael pass.
+
+After the central Vael body is sound, run the appropriate W1 frame/composition and separation diagnostics under the established RAC method. Surface genuine canon/construction conflicts rather than silently redefining them. Return the Vael W1 evidence and author-acceptance gate, then STOP for author review. Do not begin Fenn before final Vael author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.

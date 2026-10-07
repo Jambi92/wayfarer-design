@@ -1,6 +1,7 @@
 # RAC W1m — Aelari W1 Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; GitHub Issue #1, final Aelari author ruling comment (2026-10-07T15:23Z)):** ACCEPTED — AEL1 is the Aelari W1 central reference (thigh 0.9875 / calf 1.0523). Torso share below MF accepted (no rebudget); leg-evenness row and ±0.010 tolerance accepted for W1; Sagekin overlap and high muscle + fat accepted. Thin margins and Fenn / Vael dependencies recorded; dependent rows to be re-checked after those bodies are accepted. Aelari W1 is closed. The analysis below is unchanged.
 **Order:** GitHub Issue #1, final author ruling comment (2026-10-07T14:57Z): "Proceed to the next locked Wave 1 body: AELARI." Recorded in `reviews/chatgpt-rac-w1l-grask-order-issue1-record.md`.
 **Evidence:** `reviews/rac-w1m-ae-evidence/` (`tables.md` holds every number quoted; `README.md` maps the files)
 **Construction record:** `tools/rac/w1/cfg/w1m/AE.json`
