@@ -1,6 +1,7 @@
 # RAC W2A — Marchfolk Boundary Foundation (RM-UB-07) Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; GitHub Issue #1 W2A ruling (2026-10-07T21:46Z); reviews/chatgpt-rac-w2a1-marchfolk-frame-closure-order.md):** W2A PARTIALLY ACCEPTED — 147 / 203 cm boundary bodies (both configurations; knee 0.6 / 0.3), routes as construction methods only, route kinks technical, composition evidence accepted; envelope values NON-CANON. Frames not closed: the breadth-only ±8 % write is insufficient for Marchfolk frame canon (shoulders, ribcage dimensions, pelvis, joint scale, skeletal visual mass) — W2A1 ordered. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-durrim-final-acceptance-rac-w2-kickoff-order.md` §W2A, the same text as GitHub Issue #1 comment 2026-10-07T21:18Z.
 **Evidence:** `reviews/rac-w2a-mf-evidence/` (`tables.md` holds every number quoted)
 **Construction record:** `tools/rac/w1/cfg/w2a/MF-boundary.json`
