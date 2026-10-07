@@ -202,3 +202,60 @@ COGLING W1 goals:
 13. Keep Wave 2 out of scope: no full stature extremes, creator envelopes, combined-proportion stress, gameplay/collision/camera/equipment implementation, or UE5 work unless needed to expose a blocking W1 contradiction.
 
 Return the Cogling W1 evidence and author-acceptance gate, then STOP for author review. Do not begin Halvren before final Cogling author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.
+
+## Final Cogling ruling / Halvren order comment (2026-10-07T18:57Z)
+
+FINAL COGLING AUTHOR RULING / NEXT W1 BODY — 2026-10-07
+
+COGLING W1: ACCEPTED.
+
+Lock for W1:
+- Central reference: CGJ7 at the ~91 cm reference point.
+- CGJ7 construction values: ankle target 1.0; upper-arm, forearm and thigh shafts narrowed radially x0.95 in X/Z; all lengths unchanged.
+- Preserve FINE-SCALE ELONGATED ARTICULATION: narrow stable central core, near-human total limb contribution, within-limb distal redistribution, proportionally emphasized hands/fingers, and fine skeletal construction.
+- For height-normalized joint comparisons across substantially different statures, use a stature-scaled measurement slab. Retain segment-relative metrics when they are the authored relationship; do not retroactively replace unrelated accepted joint tests.
+- Breadth-only frame principle accepted for Cogling. Broad diagnostic pelvis x1.12 with hip apparatus following crest breadth.
+- Composition variants are acceptable for W1; composition does not carry Cogling identity.
+- Durrim-dependent rows remain provisional and must be re-run after Durrim W1 acceptance.
+- No accepted comparator body is reopened by this decision.
+
+NEXT: proceed to HALVREN, the next locked Wave 1 body.
+
+HALVREN W1 goals:
+1. Establish/review a representative Halvren W1 reference body at about 178 cm, but DO NOT turn that body into a mandatory Halvren phenotype. Halvren canon explicitly has no single mandatory body or face. The reference is a diagnostic anchor inside a broader mixed-population envelope.
+2. Preserve the core identity: biologically viable mixed human-and-elven ancestry expressed through developmentally coherent inheritance, not arithmetic averaging, not a single human-to-elf slider, and not a human body with pointed ears.
+3. Use accepted source populations directly: Marchfolk, Skarn, Sagekin, Fenn, Aelari and Vael. Do not create a generic averaged Human parent or generic averaged Elf parent.
+4. The central/reference Halvren should demonstrate a coherent mixed state without exactly reproducing any one source population. Record the expression recipe used for the diagnostic body by domain (axial skeleton, appendicular skeleton, distal anatomy, craniofacial, external ear) without converting it into player-facing ancestry percentages.
+5. Validate that the body reads as one organism:
+   - torso, shoulders, pelvis, limbs, joints, hands and feet must transition coherently;
+   - no copied-source patchwork;
+   - no independently inherited extreme that produces an implausible joint/shaft/segment transition;
+   - no exact 50/50 arithmetic averaging requirement.
+6. Validate source-boundary protection. At matched height/composition where possible, compare the diagnostic Halvren with Marchfolk, Skarn, Sagekin, Fenn, Aelari and Vael. Strong resemblance to one source can be valid, but systematic exact duplication of a source population is not.
+7. Preserve multidimensional mixed skeletal expression:
+   - structural presence/gracility is not one global slider;
+   - broad shoulders may coexist with gracile joints;
+   - robust long bones may coexist with moderately elongated limbs;
+   - frame presets are not ancestry categories.
+8. Preserve source-specific inheritance directions where represented:
+   - Fenn influence may increase extremity emphasis and distal shares with lighter construction;
+   - Aelari influence may increase vertical continuity, neck/torso contribution and even elongation;
+   - Vael influence may increase thoracic depth, compact continuity, joint/base presence and broader hand/foot bases;
+   - Skarn influence may increase structural presence, depth and joint scale;
+   - Sagekin influence may increase linearity/longer-limbed human tendencies;
+   - Marchfolk provides broad human-family distributions.
+   These are tendencies, not mandatory packages.
+9. Pelvis: do not invent a simple linear human-to-elf morph. The Halvren pelvis must be a viable mixed structure. If current W1 methods cannot support a stronger quantitative pelvic inheritance claim, report that limit rather than inventing one.
+10. Face/head/ears: preserve the rule that Halvren are not human faces with pointed ears. Hidden-ear neutral-gray comparison must still be able to show coherent mixed craniofacial anatomy. External ears must inherit whole-ear architecture, not a pointiness scalar.
+11. Do not use ear length, eye shape, pigmentation, beauty, thinness, muscularity, or body fat as ancestry meters. Genealogical ancestry and phenotypic expression remain distinct.
+12. Composition must remain independent of ancestry. Muscular, high-fat, lean, broad and narrow Halvren all remain valid if anatomy is coherent.
+13. Frame is skeletal only. Narrow/Balanced/Broad do not mean elf-leaning/human-leaning. If borrowed frame writes distort source-coherent mixed anatomy, treat them as diagnostics and propose a Halvren-specific bounded frame rule instead of redefining ancestry.
+14. Because Halvren canon is a distribution rather than one phenotype, include at minimum a small W1 diagnostic expression panel in addition to the central reference if the current RAC tooling supports it without becoming W2:
+   - human-leaning mixed body with nontrivial elven contribution;
+   - balanced mixed body;
+   - elf-leaning mixed body with nontrivial human contribution.
+   These are diagnostic expression points, not ancestry percentages or creator presets. They should prove the envelope is not secretly one midpoint body.
+15. If the current as-built/reference Halvren fails a real canon relation or collapses into a source population, propose the smallest bounded Halvren-only correction. Document exactly what changed and what remained untouched. Do not alter accepted source bodies.
+16. Keep Wave 2 out of scope: no full ancestry-envelope generation, creator inheritance UI, genetic simulation, probability distributions, source-extreme stress sweeps, gameplay attributes, implementation architecture, or UE5 work.
+
+Return the Halvren W1 evidence and author-acceptance gate, then STOP for author review. Do not begin Durrim before final Halvren author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.

@@ -1,6 +1,7 @@
 # RAC W1r — Cogling W1 Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; GitHub Issue #1 final Cogling ruling (2026-10-07T18:57Z); reviews/chatgpt-cogling-final-acceptance-halvren-w1-order.md):** COGLING W1 ACCEPTED — CGJ7 central; stature-scaled measurement slab for height-normalized joint comparisons across strongly different statures (segment-relative metrics kept where authored); breadth-only frames, Broad pelvis x1.12. Durrim rows provisional. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-pipkin-final-acceptance-cogling-w1-order.md`, the same text as GitHub Issue #1 comment 2026-10-07T18:10Z.
 **Evidence:** `reviews/rac-w1r-cg-evidence/` (`tables.md` holds every number quoted)
 **Construction record:** `tools/rac/w1/cfg/w1r/CG-NAT.json`
