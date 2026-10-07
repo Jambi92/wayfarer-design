@@ -105,3 +105,49 @@ FENN W1 goals:
 10. Keep W2 work out of scope: no stature extremes, creator envelopes, combined-proportion stress, face extremes, or other Wave 2 items unless required to expose a blocking W1 contradiction.
 
 Return the Fenn W1 evidence and author-acceptance gate, then STOP for author review. Do not begin Pipkin until final Fenn author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.
+
+## Final Fenn ruling / Pipkin order comment (2026-10-07T17:19Z)
+
+FINAL FENN AUTHOR RULING / NEXT W1 BODY — 2026-10-07
+
+FENN W1: ACCEPTED.
+
+Lock for W1:
+- Central reference: FNL4.
+- FNL4 construction values: arm-bone cross-section x0.95; leg-bone cross-section x0.96; knee target 0.6.
+- Elf-family neck relation: use neck / torso for the authored Aelari > Fenn >= Vael relative-contribution rule. Keep neck / stature as a disclosed secondary reading, not a new hard constraint.
+- Frame breadth ruling: central-value breadth relations such as crest ~= Marchfolk and ribcage narrower than Marchfolk do not veto legitimate Narrow/Broad Fenn when compared against an unmatched central Marchfolk. Use frame-matched logic or the underlying Fenn anatomical identity.
+- Keep the breadth-only frame principle; Broad hip apparatus follows crest breadth. The x1.12 Broad diagnostic relationship is acceptable for W1.
+- High-muscle / high-fat Fenn is visually acceptable for W1. Do not restrict muscularity merely to preserve a stereotypically slender elf silhouette.
+- Aelari/Vael dependency rows were re-run and pass. Do not reopen accepted elf bodies absent a genuine later contradiction.
+- Keep Fenn complexion/pigmentation population-specific rather than a universal elven baseline.
+
+NEXT: proceed to PIPKIN, the next locked Wave 1 body.
+
+PIPKIN W1 goals:
+1. Establish/review the central Pipkin reference at about 107 cm against the approved Pipkin canon and accepted comparator bodies.
+2. Preserve Pipkin's positive identity as LIGHT COMPACT ADULT PROPORTIONALITY with LOW-SET COMPACT TRUNK ARCHITECTURE: short adult stature, moderate thorax, mature structurally important pelvis, relatively preserved adult limb contribution, lighter long-bone/joint construction than Durrim, and an unmistakably adult—not juvenile—silhouette.
+3. Do not solve Pipkin by uniformly scaling Marchfolk, by using child proportions, by making them slender Durrim, or by making them small Cogling.
+4. Run the short-race comparative checks with special attention to:
+   - Pipkin vs Durrim at matched/normalized height: Pipkin lighter construction, less thorax-led vertical compression, smaller joints, greater proportional limb contribution, more moderate hand/foot presence.
+   - Broad Pipkin vs Narrow Durrim: frame breadth must not collapse population identity.
+   - Pipkin vs Cogling: respect the intentional 91–107 cm overlap; separation must come from anatomy rather than stature. Pipkin remain low-set compact and pelvis-led; Cogling remain fine-scale, narrow-core and distally redistributed.
+   - Pipkin vs normalized Marchfolk: adult short-stature anatomy must not read as a scaled human.
+   - Adult Pipkin vs human-child proxy where the current W1 method can support it: never rely on oversized head, large eyes, juvenile pelvis, childlike hands/feet, or juvenile fat distribution.
+5. Validate the central body for:
+   - torso/trunk share and thorax-to-pelvis relationship;
+   - mature pelvic vertical contribution and pelvis/thorax relations;
+   - convergent femora and adult narrow stance;
+   - limb contribution relative to Durrim and Marchfolk;
+   - joint scale and long-bone construction;
+   - adult hand/finger and plantigrade foot proportions;
+   - head/face/ear adult identity and any already-authored craniofacial rows;
+   - any canon-derived relations previously stated but not quantitatively tested.
+6. Treat the pelvis as three-dimensional adult anatomy, not just width. Preserve the pelvis-led Pipkin relationship: pelvic vertical contribution / thoracic vertical length > MF; pelvic vertical contribution / stature >= MF; AP pelvic depth / thoracic depth > MF; crest breadth / thoracic breadth > MF at population centre; compact waist interval / torso < MF. Do not invent exact envelopes beyond existing canon.
+7. Composition must not carry identity. Low-muscle/low-fat Pipkin must remain adult and Pipkin; muscular Pipkin must not become Durrim/Skarn; higher-fat Pipkin must not become a round-halfling stereotype.
+8. Frame is skeletal only. Narrow/Balanced/Broad must preserve mature pelvis and Pipkin trunk architecture. Broad must not become Durrim; Narrow must not become childlike/Fenn-like/fragile.
+9. If the current as-built Pipkin fails a real canon relation, propose the smallest bounded Pipkin-only construction correction and document exactly what changes and what remains untouched. Do not alter accepted comparator bodies.
+10. After the central Pipkin body is sound, run appropriate W1 frame/composition/separation diagnostics under established RAC methods. Treat borrowed frame writes as diagnostic only unless they preserve Pipkin canon.
+11. Keep Wave 2 out of scope: no full stature extremes, creator envelopes, combined-proportion stress, gameplay/collision/camera/equipment implementation, or UE5 work unless needed to identify a blocking W1 contradiction.
+
+Return the Pipkin W1 evidence and author-acceptance gate, then STOP for author review. Do not begin Cogling before final Pipkin author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.

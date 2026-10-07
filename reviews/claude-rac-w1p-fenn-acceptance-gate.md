@@ -1,6 +1,7 @@
 # RAC W1p — Fenn W1 Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; GitHub Issue #1 final Fenn ruling (2026-10-07T17:19Z); reviews/chatgpt-fenn-final-acceptance-pipkin-w1-order.md):** FENN W1 ACCEPTED — FNL4 central; neck rule = neck / torso (neck / stature secondary); frame breadth rows do not veto Narrow / Broad against unmatched central MF; breadth-only frames, Broad x1.12 acceptable; high muscle + fat acceptable. Aelari / Vael dependency rows pass; accepted elves not reopened. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-vael-final-acceptance-fenn-w1-order.md`, the same text as GitHub Issue #1 comment 2026-10-07T16:06Z.
 **Evidence:** `reviews/rac-w1p-fn-evidence/` (`tables.md` holds every number quoted; `README.md` maps the files)
 **Construction record:** `tools/rac/w1/cfg/w1p/FN.json`
