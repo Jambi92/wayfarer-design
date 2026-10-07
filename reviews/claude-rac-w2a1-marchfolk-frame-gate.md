@@ -1,6 +1,7 @@
 # RAC W2A1 — Marchfolk Frame Closure Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; GitHub Issue #1 (2026-10-07T22:24Z); reviews/chatgpt-rac-w2a-final-acceptance-w2b-skarn-order.md):** W2A1 ACCEPTED — multi-domain Marchfolk frames for both configurations, including the Aelari-capped Narrow joint/shaft reduction; Marchfolk W2A FULLY ACCEPTED. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-rac-w2a1-marchfolk-frame-closure-order.md`, the same text as GitHub Issue #1 comment 2026-10-07T21:46Z.
 **Evidence:** `reviews/rac-w2a1-mf-frame-evidence/` (`tables.md` holds every number quoted; `writes.json` the exact writes)
 

@@ -89,5 +89,275 @@
    "base_height_macro": null
   }
  },
- "status": "AUTHOR-ACCEPTED (W2A partial): 147 cm configurations 1 and 2 accepted W2 boundary bodies; 173 cm W1 anchors unchanged; 203 cm configuration 1 accepted with knee correction 0.6, configuration 2 with 0.3. Native-short (147) and macro (203) routes accepted as reference-body construction methods only; route kinks are technical route characteristics, not Marchfolk allometric rules. Composition evidence accepted. All W2 envelope values NON-CANON. Frames NOT closed (breadth-only write insufficient for Marchfolk frame canon) -> W2A1. Source: GitHub Issue #1 (2026-10-07T21:46Z); reviews/chatgpt-rac-w2a1-marchfolk-frame-closure-order.md"
+ "status": "AUTHOR-ACCEPTED W2A (FULL): 147 cm configurations 1 / 2; 173 cm W1 anchors = Balanced; 203 cm configuration 1 knee 0.6, configuration 2 knee 0.3; routes are reference-construction methods only (route kinks technical); composition accepted; multi-domain frames accepted (Broad breadth x1.05, thoracic/pelvic depth x1.025, long-bone radial x1.035, wrist/ankle +0.15; Narrow x0.95 / x0.975 / x0.985, wrist/ankle -0.10; Aelari-capped Narrow joint/shaft reduction). Envelopes DIAGNOSTIC / NON-CANON. Source: GitHub Issue #1 (2026-10-07T22:24Z); reviews/chatgpt-rac-w2a-final-acceptance-w2b-skarn-order.md",
+ "frames": {
+  "Broad (both configurations; set B)": {
+   "bone_scales": {
+    "LR:clavicle": [
+     1,
+     1.05,
+     1
+    ],
+    "spine_01": [
+     1.05,
+     1,
+     1.025
+    ],
+    "spine_02": [
+     1.05,
+     1,
+     1.025
+    ],
+    "spine_03": [
+     1.05,
+     1,
+     1.025
+    ],
+    "pelvis": [
+     1.05,
+     1,
+     1.025
+    ],
+    "LR:upperarm": [
+     1.035,
+     1,
+     1.035
+    ],
+    "LR:lowerarm": [
+     1.035,
+     1,
+     1.035
+    ],
+    "LR:thigh": [
+     1.035,
+     1,
+     1.035
+    ],
+    "LR:calf": [
+     1.035,
+     1,
+     1.035
+    ]
+   },
+   "targets": {
+    "measure-wrist-circ-incr": 0.15,
+    "measure-ankle-circ-incr": 0.15
+   }
+  },
+  "Narrow (both configurations; set C)": {
+   "bone_scales": {
+    "LR:clavicle": [
+     1,
+     0.95,
+     1
+    ],
+    "spine_01": [
+     0.95,
+     1,
+     0.975
+    ],
+    "spine_02": [
+     0.95,
+     1,
+     0.975
+    ],
+    "spine_03": [
+     0.95,
+     1,
+     0.975
+    ],
+    "pelvis": [
+     0.95,
+     1,
+     0.975
+    ],
+    "LR:upperarm": [
+     0.985,
+     1,
+     0.985
+    ],
+    "LR:lowerarm": [
+     0.985,
+     1,
+     0.985
+    ],
+    "LR:thigh": [
+     0.985,
+     1,
+     0.985
+    ],
+    "LR:calf": [
+     0.985,
+     1,
+     0.985
+    ]
+   },
+   "targets": {
+    "measure-wrist-circ-decr": 0.1,
+    "measure-ankle-circ-decr": 0.1
+   }
+  },
+  "Balanced": "accepted W1 ARMs MF-M-R / MF-F-R, unchanged",
+  "probe set A (not proposed)": {
+   "Broad": {
+    "bone_scales": {
+     "LR:clavicle": [
+      1,
+      1.05,
+      1
+     ],
+     "spine_01": [
+      1.05,
+      1,
+      1.025
+     ],
+     "spine_02": [
+      1.05,
+      1,
+      1.025
+     ],
+     "spine_03": [
+      1.05,
+      1,
+      1.025
+     ],
+     "pelvis": [
+      1.05,
+      1,
+      1.025
+     ],
+     "LR:upperarm": [
+      1.025,
+      1,
+      1.025
+     ],
+     "LR:lowerarm": [
+      1.025,
+      1,
+      1.025
+     ],
+     "LR:thigh": [
+      1.025,
+      1,
+      1.025
+     ],
+     "LR:calf": [
+      1.025,
+      1,
+      1.025
+     ]
+    },
+    "targets": {
+     "measure-wrist-circ-incr": 0.1,
+     "measure-ankle-circ-incr": 0.1
+    }
+   },
+   "Narrow": {
+    "bone_scales": {
+     "LR:clavicle": [
+      1,
+      0.95,
+      1
+     ],
+     "spine_01": [
+      0.95,
+      1,
+      0.975
+     ],
+     "spine_02": [
+      0.95,
+      1,
+      0.975
+     ],
+     "spine_03": [
+      0.95,
+      1,
+      0.975
+     ],
+     "pelvis": [
+      0.95,
+      1,
+      0.975
+     ],
+     "LR:upperarm": [
+      0.975,
+      1,
+      0.975
+     ],
+     "LR:lowerarm": [
+      0.975,
+      1,
+      0.975
+     ],
+     "LR:thigh": [
+      0.975,
+      1,
+      0.975
+     ],
+     "LR:calf": [
+      0.975,
+      1,
+      0.975
+     ]
+    },
+    "targets": {
+     "measure-wrist-circ-decr": 0.1,
+     "measure-ankle-circ-decr": 0.1
+    }
+   }
+  },
+  "probe set B Narrow (not proposed; knee falls below matched-stature Aelari)": {
+   "bone_scales": {
+    "LR:clavicle": [
+     1,
+     0.95,
+     1
+    ],
+    "spine_01": [
+     0.95,
+     1,
+     0.975
+    ],
+    "spine_02": [
+     0.95,
+     1,
+     0.975
+    ],
+    "spine_03": [
+     0.95,
+     1,
+     0.975
+    ],
+    "pelvis": [
+     0.95,
+     1,
+     0.975
+    ],
+    "LR:upperarm": [
+     0.965,
+     1,
+     0.965
+    ],
+    "LR:lowerarm": [
+     0.965,
+     1,
+     0.965
+    ],
+    "LR:thigh": [
+     0.965,
+     1,
+     0.965
+    ],
+    "LR:calf": [
+     0.965,
+     1,
+     0.965
+    ]
+   },
+   "targets": {
+    "measure-wrist-circ-decr": 0.15,
+    "measure-ankle-circ-decr": 0.15
+   }
+  }
+ }
 }
