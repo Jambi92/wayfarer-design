@@ -69,3 +69,8 @@ No UE5 implementation is authorized by this milestone.
 
 ### RAC W1 update — Gorrund
 **Gorrund W1 ARM: AUTHOR ACCEPTED (October 7, 2026).** Final ruling: `reviews/chatgpt-rac-w1j-gorrund-final-author-acceptance.md`; robustness gate: `reviews/claude-rac-w1j-author-acceptance-gate.md`. The accepted central reference preserves the canonical large-race/load-path relationships; W1j sensitivity remains diagnostic for later parameterization. Eight W1 bodies remain pending author acceptance: Grask, Aelari, Vael, Fenn, Pipkin, Cogling, Halvren and Durrim. Wave 2 remains pending completion of W1 acceptance.
+
+### RAC W1 closed / Wave 2 ungated
+**RAC Wave 1: CLOSED (October 7, 2026).** Final ruling: `reviews/chatgpt-durrim-final-acceptance-rac-w2-kickoff-order.md` (GitHub Issue #1, 2026-10-07T21:18Z). All W1 reference bodies and diagnostic anchors are author accepted: Marchfolk (both configurations, MF-FACE-PROJ-MAX), Skarn, Sagekin, Gorrund, Grask (W1l), Aelari (AEL1), Vael (VAL4), Fenn (FNL4), Pipkin (PK-NAT), Cogling (CGJ7), Halvren (HVC1 diagnostic anchor) and Durrim (DU-NAT); records in `tools/rac/w1/cfg/`. W1 evidence is accepted reference-anatomy evidence; construction/search values are reproducibility data, and W1 measurements are diagnostic, not species-wide constants or creator envelopes. Carried: Durrim DU-P4 at the 152 cm boundary (OPEN, W2 re-test).
+**RAC Wave 2: UNGATED.** Scope per `decisions/REFERENCE_ANATOMY_V1.md` §9. Order: W2A Marchfolk boundary foundation (RM-UB-07: 147 / 203 cm, both configurations) first, then STOP for author review. All W2 values are DIAGNOSTIC ENVELOPES until author ruling. Wave 3 remains gated. No UE5 implementation.
+

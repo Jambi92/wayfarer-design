@@ -326,3 +326,90 @@ DURRIM W1 goals:
 17. Keep Wave 2 out of scope except for the already-authored permanent Durrim boundary tests explicitly called above. No creator envelopes, full height sweeps, combined-proportion stress, gameplay/collision/camera/equipment implementation, or UE5 work.
 
 Return the Durrim W1 evidence and author-acceptance gate, then STOP for author review. Wave 2 remains gated. Design only; no UE5 implementation.
+
+## Final Durrim ruling / RAC W1 closure / W2 kickoff comment (2026-10-07T21:18Z)
+
+FINAL DURRIM AUTHOR RULING / RAC WAVE 1 CLOSURE / WAVE 2 KICKOFF — 2026-10-07
+
+## 1. Durrim W1 — FINAL AUTHOR ACCEPTANCE
+
+DURRIM W1 is ACCEPTED.
+
+Lock for W1:
+- Central reference: DU-NAT as built at 137 cm. No central anatomy correction.
+- Identity carrier: COMPACT STRUCTURAL CONCENTRATION / compact structural power.
+- Durrim-specific frame rule: breadth-only; Broad diagnostic pelvis x1.08, NOT x1.12. Depth, joints and long-bone construction remain untouched by the frame write.
+- Composition variants are acceptable for W1; composition does not carry Durrim identity.
+- Adult identity is accepted. Do not enlarge the head to manufacture a fantasy-dwarf silhouette.
+- Short-race structural-mass axis is closed for W1 as Cogling < Pipkin < Durrim on joint scale and femoral shaft structure.
+- Broad Pipkin vs Narrow Durrim is accepted as a successful population-separation test even though thoracic breadth itself converges.
+- DU vs Cogling palm depth / stature is NOT part of the structural-mass axis. Treat it as hand-size/report context because Cogling canon intentionally emphasizes the hands. Do not correct Durrim to force this row.
+- Palm share of hand is accepted MARGINAL / provisional; no correction.
+- 122 cm Pipkin/Durrim and 107 cm Cogling/Durrim cases used in W1 are accepted as diagnostics only. Authored maximum-height Pipkin/Cogling boundary bodies belong to W2.
+- DU-P4 at the permanent 152 cm equal-height boundary remains OPEN / CARRIED: skeletal NOT DEMONSTRATED (+0.8%); skin also fails. Do not weaken canon and do not force a non-monotonic pelvis-depth correction into DU-NAT. Re-test in W2 with the authored height boundary construction.
+- No accepted comparator is reopened by this ruling.
+
+Record the final Durrim acceptance in the RAC records and update STATUS / queue bookkeeping to show W1 closure. Do not rewrite unrelated canonical anatomy.
+
+## 2. RAC WAVE 1 — CLOSED
+
+All W1 reference bodies / diagnostic anchors required for the current RAC sequence are author accepted.
+
+W1 evidence may now be used as accepted reference-anatomy evidence. Construction/search values remain reproducibility data unless separately adopted by canon. W1 measurements are diagnostic evidence, not automatic species-wide numeric constants or creator envelopes.
+
+Formally mark RAC W1 CLOSED and Wave 2 UNGATED.
+
+## 3. WAVE 2 SCOPE
+
+Proceed under decisions/REFERENCE_ANATOMY_V1.md §9:
+- frame boundaries;
+- stature boundaries;
+- composition variants;
+- named extremes;
+- diagnostic faces GR-FACE-14 and GOR-FACE-05;
+- ear-family envelopes.
+
+Use the accepted W1 ARMs/anchors as the only starting references. Never obtain a boundary by uniform scaling. Every stature variant must be rebuilt through the approved proportional/allometric route for that population.
+
+Derived values are DIAGNOSTIC ENVELOPES first. Do not canonize a numeric envelope, min/max, tolerance, or creator clamp without a later author ruling.
+
+Do not run a combinatorial cross-product of every height x frame x composition state. Run the minimum axis-isolating variants needed for the authored boundary and named-extreme tests, plus any explicitly named combined extreme.
+
+Do not reopen an accepted W1 central body merely because an edge case fails. If an edge case exposes a genuine contradiction, report whether the issue lies in the allometric/frame/composition route, the boundary rule, or the central canon before proposing a change.
+
+Wave 3 remains gated. Do NOT start W3 items such as Halvren genealogy-conditioned RM-UB-05 / RM-OT-03, Saurin rebuilt brow-plane / scale-field work RM-UF-03/04 or RM-UB-08, RM-CF-09, or the final RM-CF-05 FPI-margin author decision.
+
+## 4. W2A — MARCHFOLK BOUNDARY FOUNDATION FIRST
+
+Start Wave 2 with the Marchfolk baseline boundary set because every 'than Marchfolk' validator depends on it.
+
+Build and validate the RM-UB-07 boundary bodies:
+- Marchfolk 147 cm;
+- Marchfolk 203 cm;
+- BOTH ordinary human sex-related configurations at each boundary;
+- retain the accepted 173 cm W1 references as the central anchors.
+
+Requirements:
+1. Reach 147 / 203 cm by Marchfolk proportion + allometry, never uniform scaling of the 173 cm ARM.
+2. Measure and report, for each configuration and stature: torso/stature; neck/stature; arm and leg contribution; within-limb distribution where supported; hand, palm/finger and foot contribution; head share; thoracic breadth/depth; pelvic breadth/depth/vertical contribution using accepted skeletal-layer rules; joint scale and long-bone robusticity using accepted measurement conventions.
+3. Verify ordinary-human continuity across 147 -> 173 -> 203 cm. No boundary body may become juvenile, giant-like, elf-like, Skarn-like, or uniformly scaled.
+4. Run Narrow and Broad Marchfolk frame variants at the 173 cm reference point if they are not already author-accepted as W2-valid boundary evidence. Frame remains skeletal only.
+5. Run the minimum reference-height composition variants needed to prove that low/high muscle and higher fat do not redefine Marchfolk anatomy. Separate skin/composition diagnostics from skeletal canon.
+6. Re-check MF-FACE-PROJ-MAX only as a dependency where needed; it remains the accepted W1 diagnostic maximum and is not to be redesigned in W2A.
+7. Produce the Marchfolk W2 diagnostic envelope candidates, but mark them NON-CANON until author acceptance.
+8. Report every FAIL / MARGINAL / NOT DEMONSTRATED / method limitation and any construction value that reaches a technical/search bound.
+
+## 5. W2A ACCEPTANCE GATE
+
+Return one concise Marchfolk W2A Boundary Foundation Author-Acceptance Gate containing:
+- candidate 147 / 173 / 203 measurements for both sex-related configurations;
+- frame/composition evidence;
+- allometric construction records;
+- which RM-UB-07 rows pass / fail;
+- proposed diagnostic envelope values and their source bodies;
+- all residuals and method limits;
+- explicit statement whether any accepted Marchfolk canon would need to be challenged.
+
+STOP after the W2A Marchfolk gate for author review. Do not start the next W2 population/block until author acceptance is recorded.
+
+DESIGN / REFERENCE-ANATOMY VALIDATION ONLY. NO UE5 IMPLEMENTATION.

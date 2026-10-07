@@ -1,6 +1,7 @@
 # RAC W1t — Durrim W1 Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; GitHub Issue #1 final Durrim ruling (2026-10-07T21:18Z); reviews/chatgpt-durrim-final-acceptance-rac-w2-kickoff-order.md):** DURRIM W1 ACCEPTED — DU-NAT as built; Durrim frame rule breadth-only with Broad pelvis x1.08; structural-mass axis closed; palm depth vs CG is report context; palm share MARGINAL; 122/107 cm proxies diagnostic only; DU-P4 at 152 cm OPEN/CARRIED to W2. RAC W1 CLOSED. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-halvren-final-acceptance-durrim-w1-order.md`, the same text as GitHub Issue #1 comment 2026-10-07T19:28Z.
 **Evidence:** `reviews/rac-w1t-du-evidence/` (`tables.md` holds every number quoted)
 **Construction record:** `tools/rac/w1/cfg/w1t/DU-NAT.json`
