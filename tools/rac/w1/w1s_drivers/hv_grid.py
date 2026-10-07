@@ -1,6 +1,6 @@
-# RAC W1r: CIB grid (reference, minimum composition, composition grid) for a Cogling (CG-NAT native route) candidate (copy of w1q_drivers/pk_grid.py) build record, generator route,
-# height macro held; files named CG-NAT* in their own folder; then cib_all.py CG-NAT. Optional frame write (diagnostic, as Grask / Aelari).
-# Usage: python3 cg_grid.py BUILD_JSON OUTDIR [NARROW|BROAD]
+# RAC W1s: CIB grid (reference, minimum composition, composition grid) for a Halvren (HV, height macro held) body (copy of w1r_drivers/cg_grid.py) build record, generator route,
+# height macro held; files named HV* in their own folder; then cib_all.py HV. Optional frame write (diagnostic, as Grask / Aelari).
+# Usage: python3 hv_grid.py BUILD_JSON OUTDIR [NARROW|BROAD]
 import sys, os, json, subprocess
 S = '/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad'; T = '/home/claude/wayfarer-design/tools/rac/w1'
 BROAD = {"LR:clavicle": [1, 1.08, 1], "spine_01": [1.08, 1, 1], "spine_02": [1.08, 1, 1.04], "spine_03": [1.08, 1, 1.04], "pelvis": [1.08, 1, 1],
@@ -22,15 +22,15 @@ def bv(base, ov, out, nid):
     subprocess.run(['python3', T + '/build_variant.py', base, out + '/%s.ov.json' % nid, out, nid], check=True, capture_output=True, cwd=T); print('BUILT', nid, flush=True)
 b = json.load(open(src)); os.makedirs(D + '/final', exist_ok=True)
 if fr:
-    Bs = b["cfg"]["bone_scales"]; W = {'BROAD': BROAD, 'NARROW': NARROW, 'BROADB': BROADB, 'NARROWB': NARROWB}.get(fr) or globals()[fr]
+    Bs = b["cfg"].get("bone_scales", {}); W = {'BROAD': BROAD, 'NARROW': NARROW, 'BROADB': BROADB, 'NARROWB': NARROWB}.get(fr) or globals()[fr]
     sc = dict(Bs); sc.update({k: [round(x * y, 6) for x, y in zip(Bs.get(k, [1, 1, 1]), v)] for k, v in W.items()})
-    tmpb = D + '/src_build.json'; json.dump(b, open(tmpb, 'w')); bv(tmpb, {"bone_scales": sc}, D + '/final', 'CG-NAT')
+    tmpb = D + '/src_build.json'; json.dump(b, open(tmpb, 'w')); bv(tmpb, {"bone_scales": sc}, D + '/final', 'HV')
 else:
-    b["id"] = "CG-NAT"; b["cfg"]["id"] = "CG-NAT"; json.dump(b, open(D + '/final/CG-NAT_build.json', 'w'))
+    b["id"] = "HV"; b["cfg"]["id"] = "HV"; json.dump(b, open(D + '/final/HV_build.json', 'w'))
     stem = src[:-len('_build.json')]
-    for st in ('rest', 'r6'): subprocess.run(['cp', stem + '_%s.npz' % st, D + '/final/CG-NAT_%s.npz' % st], check=True)
-bv(D + '/final/CG-NAT_build.json', {"muscle": 0.0, "weight": 0.0}, D + '/lean', 'CG-NAT-LEAN')
-for m, w in GRID: bv(D + '/final/CG-NAT_build.json', {"muscle": m, "weight": w}, D + '/comp', 'CG-NAT-C%03d%03d' % (round(m * 100), round(w * 100)))
-subprocess.run(['python3', T + '/run_candidate.py', D + '/final', 'CG-NAT', S + '/w1f/final/MF-M-R_rest.npz'], capture_output=True, cwd=T)
+    for st in ('rest', 'r6'): subprocess.run(['cp', stem + '_%s.npz' % st, D + '/final/HV_%s.npz' % st], check=True)
+bv(D + '/final/HV_build.json', {"muscle": 0.0, "weight": 0.0}, D + '/lean', 'HV-LEAN')
+for m, w in GRID: bv(D + '/final/HV_build.json', {"muscle": m, "weight": w}, D + '/comp', 'HV-C%03d%03d' % (round(m * 100), round(w * 100)))
+subprocess.run(['python3', T + '/run_candidate.py', D + '/final', 'HV', S + '/w1f/final/MF-M-R_rest.npz'], capture_output=True, cwd=T)
 env = dict(os.environ, REF=D + '/final', LEAN=D + '/lean', COMP=D + '/comp', OUT=D + '/skp', CIBD=D + '/cib')
-r = subprocess.run(['python3', T + '/w1g_drivers/cib_all.py', 'CG-NAT'], env=env, capture_output=True, text=True, cwd=T); print(r.stdout[-300:], 'GRID_DONE', flush=True)
+r = subprocess.run(['python3', T + '/w1g_drivers/cib_all.py', 'HV'], env=env, capture_output=True, text=True, cwd=T); print(r.stdout[-300:], 'GRID_DONE', flush=True)

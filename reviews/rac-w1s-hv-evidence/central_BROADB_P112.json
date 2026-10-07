@@ -1,0 +1,1332 @@
+{
+ "hv_meas": "/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w1s/frame_BROADB_P112/final/HV_meas.json",
+ "sources": "/home/claude/wayfarer-design/reviews/rac-w1s-hv-evidence/sources_BROADB_P112.json",
+ "directional": [
+  {
+   "cand": "HV",
+   "check": "torso_share within source span (MF, SG, FN, AE, VA)",
+   "canon": "HV L13, L31, L41 (source-plausible)",
+   "a": "HV",
+   "va": 0.27955687338783725,
+   "b": "range",
+   "vb": [
+    0.2709754210657979,
+    0.28337282954044574
+   ],
+   "op": "in",
+   "pass": true,
+   "result": "PASS"
+  },
+  {
+   "cand": "HV",
+   "check": "leg_share within source span (MF, SG, FN, AE, VA)",
+   "canon": "HV L13, L31, L41 (source-plausible)",
+   "a": "HV",
+   "va": 0.5381183907231548,
+   "b": "range",
+   "vb": [
+    0.5320848803196605,
+    0.5503887276285244
+   ],
+   "op": "in",
+   "pass": true,
+   "result": "PASS"
+  },
+  {
+   "cand": "HV",
+   "check": "arm_share within source span (MF, SG, FN, AE, VA)",
+   "canon": "HV L13, L31, L41 (source-plausible)",
+   "a": "HV",
+   "va": 0.41320876355681524,
+   "b": "range",
+   "vb": [
+    0.40719334338651564,
+    0.42968678373286423
+   ],
+   "op": "in",
+   "pass": true,
+   "result": "PASS"
+  },
+  {
+   "cand": "HV",
+   "check": "forearm_over_arm within source span (MF, SG, FN, AE, VA)",
+   "canon": "HV L13, L31, L41 (source-plausible)",
+   "a": "HV",
+   "va": 0.3737880492540487,
+   "b": "range",
+   "vb": [
+    0.3684673105657931,
+    0.37540241831068605
+   ],
+   "op": "in",
+   "pass": true,
+   "result": "PASS"
+  },
+  {
+   "cand": "HV",
+   "check": "shin_over_leg within source span (MF, SG, FN, AE, VA)",
+   "canon": "HV L13, L31, L41 (source-plausible)",
+   "a": "HV",
+   "va": 0.516486740739763,
+   "b": "range",
+   "vb": [
+    0.5101177724787572,
+    0.5260141458222388
+   ],
+   "op": "in",
+   "pass": true,
+   "result": "PASS"
+  },
+  {
+   "cand": "HV",
+   "check": "thorax_depth_share within source span (MF, SG, FN, AE, VA)",
+   "canon": "HV L13, L31, L41 (source-plausible)",
+   "a": "HV",
+   "va": 0.1306267326009905,
+   "b": "range",
+   "vb": [
+    0.12017417561085265,
+    0.1356234702999726
+   ],
+   "op": "in",
+   "pass": true,
+   "result": "PASS"
+  },
+  {
+   "cand": "HV",
+   "check": "finger_over_hand within source span (MF, SG, FN, AE, VA)",
+   "canon": "HV L13, L31, L41 (source-plausible)",
+   "a": "HV",
+   "va": 0.4476259353522687,
+   "b": "range",
+   "vb": [
+    0.4354290362764316,
+    0.4682035173443887
+   ],
+   "op": "in",
+   "pass": true,
+   "result": "PASS"
+  },
+  {
+   "cand": "HV",
+   "check": "wrist_over_forearm within source span (MF, SG, FN, AE, VA)",
+   "canon": "HV L13, L31, L41 (source-plausible)",
+   "a": "HV",
+   "va": 0.20249457365866283,
+   "b": "range",
+   "vb": [
+    0.1815261125055952,
+    0.21155945052392572
+   ],
+   "op": "in",
+   "pass": true,
+   "result": "PASS"
+  }
+ ],
+ "added": [
+  {
+   "cand": "HV",
+   "check": "axial skeleton: torso / stature inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.27955687338783725,
+   "op": "in",
+   "vb": [
+    0.2709754210657979,
+    0.29580022921760835
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: neck / stature inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.05426348589428772,
+   "op": "in",
+   "vb": [
+    0.05340555968236271,
+    0.05535382600463428
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: thoracic breadth / stature inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.20364666463031952,
+   "op": "in",
+   "vb": [
+    0.1752676922296252,
+    0.19672663177052996
+   ],
+   "b": "span",
+   "result": "FAIL",
+   "note": "+3.52 % beyond"
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: thoracic depth / stature inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.1306267326009905,
+   "op": "in",
+   "vb": [
+    0.12017417561085265,
+    0.14214489639727415
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: thoracic depth / breadth inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.6414381145800627,
+   "op": "in",
+   "vb": [
+    0.6787105843892535,
+    0.7225503487655794
+   ],
+   "b": "span",
+   "result": "FAIL",
+   "note": "-5.49 % beyond"
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: waist interval / torso inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.26419208944659717,
+   "op": "in",
+   "vb": [
+    0.26222223572038156,
+    0.27971252437834965
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: shoulder breadth / stature inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.31510299349227616,
+   "op": "in",
+   "vb": [
+    0.272772456203171,
+    0.30608034660024563
+   ],
+   "b": "span",
+   "result": "FAIL",
+   "note": "+2.95 % beyond"
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: arm / stature inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.41320876355681524,
+   "op": "in",
+   "vb": [
+    0.4021722077162782,
+    0.42968678373286423
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: leg / stature inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.5381183907231548,
+   "op": "in",
+   "vb": [
+    0.5244250727560815,
+    0.5503887276285244
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: upper arm / arm inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.34965003435657044,
+   "op": "in",
+   "vb": [
+    0.3433294169054973,
+    0.35319356909498645
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: forearm / arm inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.3737880492540487,
+   "op": "in",
+   "vb": [
+    0.35496523824780896,
+    0.37540241831068605
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: femur / leg inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.48351325926023714,
+   "op": "in",
+   "vb": [
+    0.4739858541777611,
+    0.4901405375150603
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: lower leg / leg inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.516486740739763,
+   "op": "in",
+   "vb": [
+    0.5098594624849396,
+    0.5260141458222388
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: crest / thoracic breadth inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.8798650088465486,
+   "op": "in",
+   "vb": [
+    0.8358597986981606,
+    0.8778782588735874
+   ],
+   "b": "span",
+   "result": "MARGINAL",
+   "note": "+0.23 % beyond"
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: pelvic depth / thoracic depth inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.973956432162699,
+   "op": "in",
+   "vb": [
+    0.8699306756890701,
+    1.017187560362338
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: pelvic vertical / thoracic vertical inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.3640994459066168,
+   "op": "in",
+   "vb": [
+    0.33124472715866005,
+    0.3886614210503477
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: bitrochanteric / crest inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 1.1565353939651448,
+   "op": "in",
+   "vb": [
+    1.161361363192274,
+    1.1759770356615162
+   ],
+   "b": "span",
+   "result": "MARGINAL",
+   "note": "-0.42 % beyond"
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: elbow breadth / stature (scaled slab) inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.05074996087444283,
+   "op": "in",
+   "vb": [
+    0.0478196650240952,
+    0.051566139501464214
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: wrist breadth / stature (scaled slab) inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.031275769431005594,
+   "op": "in",
+   "vb": [
+    0.030470771702696877,
+    0.039316237516659705
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: knee breadth / stature (scaled slab) inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.07004183683445714,
+   "op": "in",
+   "vb": [
+    0.06201701174782848,
+    0.07113646041191228
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: ankle breadth / stature (scaled slab) inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.08663468339642809,
+   "op": "in",
+   "vb": [
+    0.08678581559077143,
+    0.09646909336756625
+   ],
+   "b": "span",
+   "result": "MARGINAL",
+   "note": "-0.17 % beyond"
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: hand / stature inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.11427780751815937,
+   "op": "in",
+   "vb": [
+    0.1124910119006772,
+    0.12011247480930475
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: finger / palm inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.810367401369099,
+   "op": "in",
+   "vb": [
+    0.7712565191178186,
+    0.8804186048887332
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: palm breadth / hand inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.42881025623219654,
+   "op": "in",
+   "vb": [
+    0.41215057375343783,
+    0.44097819624382334
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: foot / stature inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.14836121939199667,
+   "op": "in",
+   "vb": [
+    0.14780255843114906,
+    0.1597700451351067
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: foot breadth / foot length inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.3750986263401111,
+   "op": "in",
+   "vb": [
+    0.33214578032464653,
+    0.40780876702762475
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: head height / stature inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.12873506788992048,
+   "op": "in",
+   "vb": [
+    0.1251680809171577,
+    0.13139311615158084
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: face vertical index FVI inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.8421734889132282,
+   "op": "in",
+   "vb": [
+    0.8389943804099703,
+    0.8628005916035519
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: face vertical / bizygomatic FVB inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.8173303851190633,
+   "op": "in",
+   "vb": [
+    0.8142847410313688,
+    0.8642764790346207
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: facial projection FPI inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.1436683788581984,
+   "op": "in",
+   "vb": [
+    0.14219334434197928,
+    0.1449301179006861
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: midface projection MPI inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.05080274528896062,
+   "op": "in",
+   "vb": [
+    0.0495677973512332,
+    0.05126357471530746
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: cranial base height CBH inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 1.0768066691959777,
+   "op": "in",
+   "vb": [
+    1.038052755858533,
+    1.077021843503324
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: midface vertical MVI inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.26552010451915053,
+   "op": "in",
+   "vb": [
+    0.25484172807414107,
+    0.26578151318973087
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: orbit breadth / head length inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.15074208127320918,
+   "op": "in",
+   "vb": [
+    0.12582101691028919,
+    0.14898872046708542
+   ],
+   "b": "span",
+   "result": "FAIL",
+   "note": "+1.18 % beyond"
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: orbit height / head height inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.09059188136363,
+   "op": "in",
+   "vb": [
+    0.07956164363468347,
+    0.11422707611704469
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: eye diameter / head height inside the six-source span",
+   "canon": "HV L13, L31, L82, L105",
+   "va": 0.10654625680016891,
+   "op": "in",
+   "vb": [
+    0.09700175754014295,
+    0.10660319173018452
+   ],
+   "b": "span",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: not every reading within 1 % of MF",
+   "canon": "HV L82, L141, L145",
+   "va": 2,
+   "op": "<",
+   "vb": 7,
+   "b": "MF",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: not every reading within 1 % of SK",
+   "canon": "HV L82, L141, L145",
+   "va": 0,
+   "op": "<",
+   "vb": 7,
+   "b": "SK",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: not every reading within 1 % of SG",
+   "canon": "HV L82, L141, L145",
+   "va": 3,
+   "op": "<",
+   "vb": 7,
+   "b": "SG",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: not every reading within 1 % of FN",
+   "canon": "HV L82, L141, L145",
+   "va": 1,
+   "op": "<",
+   "vb": 7,
+   "b": "FN",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: not every reading within 1 % of AE",
+   "canon": "HV L82, L141, L145",
+   "va": 0,
+   "op": "<",
+   "vb": 7,
+   "b": "AE",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "axial skeleton: not every reading within 1 % of VA",
+   "canon": "HV L82, L141, L145",
+   "va": 2,
+   "op": "<",
+   "vb": 7,
+   "b": "VA",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: not every reading within 1 % of MF",
+   "canon": "HV L82, L141, L145",
+   "va": 7,
+   "op": "<",
+   "vb": 14,
+   "b": "MF",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: not every reading within 1 % of SK",
+   "canon": "HV L82, L141, L145",
+   "va": 2,
+   "op": "<",
+   "vb": 14,
+   "b": "SK",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: not every reading within 1 % of SG",
+   "canon": "HV L82, L141, L145",
+   "va": 5,
+   "op": "<",
+   "vb": 14,
+   "b": "SG",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: not every reading within 1 % of FN",
+   "canon": "HV L82, L141, L145",
+   "va": 2,
+   "op": "<",
+   "vb": 14,
+   "b": "FN",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: not every reading within 1 % of AE",
+   "canon": "HV L82, L141, L145",
+   "va": 6,
+   "op": "<",
+   "vb": 14,
+   "b": "AE",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "appendicular skeleton: not every reading within 1 % of VA",
+   "canon": "HV L82, L141, L145",
+   "va": 8,
+   "op": "<",
+   "vb": 14,
+   "b": "VA",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: not every reading within 1 % of MF",
+   "canon": "HV L82, L141, L145",
+   "va": 2,
+   "op": "<",
+   "vb": 5,
+   "b": "MF",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: not every reading within 1 % of SK",
+   "canon": "HV L82, L141, L145",
+   "va": 1,
+   "op": "<",
+   "vb": 5,
+   "b": "SK",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: not every reading within 1 % of SG",
+   "canon": "HV L82, L141, L145",
+   "va": 2,
+   "op": "<",
+   "vb": 5,
+   "b": "SG",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: not every reading within 1 % of FN",
+   "canon": "HV L82, L141, L145",
+   "va": 0,
+   "op": "<",
+   "vb": 5,
+   "b": "FN",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: not every reading within 1 % of AE",
+   "canon": "HV L82, L141, L145",
+   "va": 1,
+   "op": "<",
+   "vb": 5,
+   "b": "AE",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "distal anatomy: not every reading within 1 % of VA",
+   "canon": "HV L82, L141, L145",
+   "va": 1,
+   "op": "<",
+   "vb": 5,
+   "b": "VA",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: not every reading within 1 % of MF \u2014 REPORT ONLY",
+   "canon": "HV L82, L141, L145",
+   "va": 8,
+   "op": "<",
+   "vb": 10,
+   "b": "MF",
+   "result": "REPORT",
+   "note": "craniofacial: the accepted FN / VA / SG heads are themselves within 1 % of MF on most head readings (method limit)"
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: not every reading within 1 % of SK \u2014 REPORT ONLY",
+   "canon": "HV L82, L141, L145",
+   "va": 6,
+   "op": "<",
+   "vb": 10,
+   "b": "SK",
+   "result": "REPORT",
+   "note": "craniofacial: the accepted FN / VA / SG heads are themselves within 1 % of MF on most head readings (method limit)"
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: not every reading within 1 % of SG \u2014 REPORT ONLY",
+   "canon": "HV L82, L141, L145",
+   "va": 8,
+   "op": "<",
+   "vb": 10,
+   "b": "SG",
+   "result": "REPORT",
+   "note": "craniofacial: the accepted FN / VA / SG heads are themselves within 1 % of MF on most head readings (method limit)"
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: not every reading within 1 % of FN \u2014 REPORT ONLY",
+   "canon": "HV L82, L141, L145",
+   "va": 7,
+   "op": "<",
+   "vb": 10,
+   "b": "FN",
+   "result": "REPORT",
+   "note": "craniofacial: the accepted FN / VA / SG heads are themselves within 1 % of MF on most head readings (method limit)"
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: not every reading within 1 % of AE \u2014 REPORT ONLY",
+   "canon": "HV L82, L141, L145",
+   "va": 1,
+   "op": "<",
+   "vb": 10,
+   "b": "AE",
+   "result": "REPORT",
+   "note": "craniofacial: the accepted FN / VA / SG heads are themselves within 1 % of MF on most head readings (method limit)"
+  },
+  {
+   "cand": "HV",
+   "check": "craniofacial: not every reading within 1 % of VA \u2014 REPORT ONLY",
+   "canon": "HV L82, L141, L145",
+   "va": 8,
+   "op": "<",
+   "vb": 10,
+   "b": "VA",
+   "result": "REPORT",
+   "note": "craniofacial: the accepted FN / VA / SG heads are themselves within 1 % of MF on most head readings (method limit)"
+  },
+  {
+   "cand": "HV",
+   "check": "body (axial + appendicular + distal): within 1 % of MF on fewer than all readings",
+   "canon": "HV L82, L141, L145",
+   "va": 11,
+   "op": "<",
+   "vb": 26,
+   "b": "MF",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "body (axial + appendicular + distal): within 1 % of SK on fewer than all readings",
+   "canon": "HV L82, L141, L145",
+   "va": 3,
+   "op": "<",
+   "vb": 26,
+   "b": "SK",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "body (axial + appendicular + distal): within 1 % of SG on fewer than all readings",
+   "canon": "HV L82, L141, L145",
+   "va": 10,
+   "op": "<",
+   "vb": 26,
+   "b": "SG",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "body (axial + appendicular + distal): within 1 % of FN on fewer than all readings",
+   "canon": "HV L82, L141, L145",
+   "va": 3,
+   "op": "<",
+   "vb": 26,
+   "b": "FN",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "body (axial + appendicular + distal): within 1 % of AE on fewer than all readings",
+   "canon": "HV L82, L141, L145",
+   "va": 7,
+   "op": "<",
+   "vb": 26,
+   "b": "AE",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "body (axial + appendicular + distal): within 1 % of VA on fewer than all readings",
+   "canon": "HV L82, L141, L145",
+   "va": 11,
+   "op": "<",
+   "vb": 26,
+   "b": "VA",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "body readings nearest an ELVEN source (not a human body with pointed ears)",
+   "canon": "HV L9, L162",
+   "va": 12,
+   "op": ">=",
+   "vb": 5.2,
+   "b": "20 % of body readings",
+   "result": "PASS",
+   "note": "20 % is a builder diagnostic floor, not canon"
+  },
+  {
+   "cand": "HV",
+   "check": "body readings nearest a HUMAN source (not a generic elf with human proportions)",
+   "canon": "HV L9",
+   "va": 14,
+   "op": ">=",
+   "vb": 5.2,
+   "b": "20 % of body readings",
+   "result": "PASS",
+   "note": "20 % is a builder diagnostic floor, not canon"
+  },
+  {
+   "cand": "HV",
+   "check": "body readings differing from MF by >= 1 % (elven contribution expressed somewhere)",
+   "canon": "HV L9, L41",
+   "va": 15,
+   "op": ">",
+   "vb": 0,
+   "b": "MF",
+   "result": "PASS",
+   "note": "torso / stature; thoracic breadth / stature; thoracic depth / stature; thoracic depth / breadth; shoulder breadth / stature; arm / stature; leg / stature; upper arm / arm; crest / thoracic breadth; wrist breadth / stature (scaled slab); knee breadth / stature (scaled slab); ankle breadth / stature (scaled slab); hand / stature; finger / palm; palm breadth / hand"
+  },
+  {
+   "cand": "HV",
+   "check": "not the arithmetic MF + FN midpoint (readings where the pair differs >= 3 %) \u2014 REPORT ONLY",
+   "canon": "HV L13",
+   "va": 1,
+   "op": "of",
+   "vb": 15,
+   "b": "MF+FN",
+   "result": "REPORT",
+   "note": "wrist breadth / stature (scaled slab)"
+  },
+  {
+   "cand": "HV",
+   "check": "not the arithmetic MF + AE midpoint (readings where the pair differs >= 3 %) \u2014 REPORT ONLY",
+   "canon": "HV L13",
+   "va": 1,
+   "op": "of",
+   "vb": 10,
+   "b": "MF+AE",
+   "result": "REPORT",
+   "note": "torso / stature"
+  },
+  {
+   "cand": "HV",
+   "check": "not the arithmetic MF + VA midpoint (readings where the pair differs >= 3 %) \u2014 REPORT ONLY",
+   "canon": "HV L13",
+   "va": 0,
+   "op": "of",
+   "vb": 3,
+   "b": "MF+VA",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "not the arithmetic SK + FN midpoint (readings where the pair differs >= 3 %) \u2014 REPORT ONLY",
+   "canon": "HV L13",
+   "va": 4,
+   "op": "of",
+   "vb": 22,
+   "b": "SK+FN",
+   "result": "REPORT",
+   "note": "arm / stature; leg / stature; femur / leg; lower leg / leg"
+  },
+  {
+   "cand": "HV",
+   "check": "not the arithmetic SK + AE midpoint (readings where the pair differs >= 3 %) \u2014 REPORT ONLY",
+   "canon": "HV L13",
+   "va": 3,
+   "op": "of",
+   "vb": 17,
+   "b": "SK+AE",
+   "result": "REPORT",
+   "note": "neck / stature; thoracic depth / stature; pelvic vertical / thoracic vertical"
+  },
+  {
+   "cand": "HV",
+   "check": "not the arithmetic SK + VA midpoint (readings where the pair differs >= 3 %) \u2014 REPORT ONLY",
+   "canon": "HV L13",
+   "va": 1,
+   "op": "of",
+   "vb": 13,
+   "b": "SK+VA",
+   "result": "REPORT",
+   "note": "knee breadth / stature (scaled slab)"
+  },
+  {
+   "cand": "HV",
+   "check": "not the arithmetic SG + FN midpoint (readings where the pair differs >= 3 %) \u2014 REPORT ONLY",
+   "canon": "HV L13",
+   "va": 3,
+   "op": "of",
+   "vb": 10,
+   "b": "SG+FN",
+   "result": "REPORT",
+   "note": "femur / leg; lower leg / leg; wrist breadth / stature (scaled slab)"
+  },
+  {
+   "cand": "HV",
+   "check": "not the arithmetic SG + AE midpoint (readings where the pair differs >= 3 %) \u2014 REPORT ONLY",
+   "canon": "HV L13",
+   "va": 1,
+   "op": "of",
+   "vb": 10,
+   "b": "SG+AE",
+   "result": "REPORT",
+   "note": "finger / palm"
+  },
+  {
+   "cand": "HV",
+   "check": "not the arithmetic SG + VA midpoint (readings where the pair differs >= 3 %) \u2014 REPORT ONLY",
+   "canon": "HV L13",
+   "va": 3,
+   "op": "of",
+   "vb": 6,
+   "b": "SG+VA",
+   "result": "REPORT",
+   "note": "thoracic depth / stature; finger / palm; palm breadth / hand"
+  },
+  {
+   "cand": "HV",
+   "check": "joint coupling: spread of joint-breadth % vs MF across elbow / wrist / knee / ankle no larger than the widest source spread",
+   "canon": "HV L133",
+   "va": 3.897708732679872,
+   "op": "<=",
+   "vb": 22.195193266963507,
+   "b": "max source spread",
+   "result": "PASS",
+   "note": "HV 3.9; SK 22.2; SG 2.7; FN 10.8; AE 7.5; VA 0.4"
+  },
+  {
+   "cand": "HV",
+   "check": "pelvis: MF -> FN interpolation fractions differ across pelvic readings (not one linear morph) \u2014 REPORT ONLY",
+   "canon": "HV L122",
+   "va": [
+    1.22,
+    0.1,
+    0.24,
+    -0.49
+   ],
+   "op": "spread",
+   "vb": 1.71,
+   "b": "FN",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "pelvis: MF -> AE interpolation fractions differ across pelvic readings (not one linear morph) \u2014 REPORT ONLY",
+   "canon": "HV L122",
+   "va": [
+    -0.85,
+    0.07,
+    0.1,
+    -0.47
+   ],
+   "op": "spread",
+   "vb": 0.94,
+   "b": "AE",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "pelvis: MF -> VA interpolation fractions differ across pelvic readings (not one linear morph) \u2014 REPORT ONLY",
+   "canon": "HV L122",
+   "va": [
+    1.3,
+    -0.09,
+    0.34,
+    -0.87
+   ],
+   "op": "spread",
+   "vb": 2.16,
+   "b": "VA",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "hidden-ear craniofacial: head readings differing from MF by >= 1 % \u2014 REPORT ONLY",
+   "canon": "HV L64, L162, L218",
+   "va": 2,
+   "op": "of",
+   "vb": 10,
+   "b": "MF",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "hidden-ear craniofacial: head readings differing from FN by >= 1 % \u2014 REPORT ONLY",
+   "canon": "HV L64, L162, L218",
+   "va": 3,
+   "op": "of",
+   "vb": 10,
+   "b": "FN",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "hidden-ear craniofacial: head readings differing from AE by >= 1 % \u2014 REPORT ONLY",
+   "canon": "HV L64, L162, L218",
+   "va": 9,
+   "op": "of",
+   "vb": 10,
+   "b": "AE",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "hidden-ear craniofacial: head readings differing from VA by >= 1 % \u2014 REPORT ONLY",
+   "canon": "HV L64, L162, L218",
+   "va": 2,
+   "op": "of",
+   "vb": 10,
+   "b": "VA",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "method context: accepted FN head readings differing from MF by >= 1 % \u2014 REPORT ONLY",
+   "canon": "W1g / W1i heads",
+   "va": 3,
+   "op": "of",
+   "vb": 10,
+   "b": "FN",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "method context: accepted VA head readings differing from MF by >= 1 % \u2014 REPORT ONLY",
+   "canon": "W1g / W1i heads",
+   "va": 2,
+   "op": "of",
+   "vb": 10,
+   "b": "VA",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "method context: accepted SG head readings differing from MF by >= 1 % \u2014 REPORT ONLY",
+   "canon": "W1g / W1i heads",
+   "va": 3,
+   "op": "of",
+   "vb": 10,
+   "b": "SG",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "ear: whole-ear architecture, not a human ear with a pointiness scalar \u2014 HV ear carries the elven continuous taper law (human ear has none)",
+   "canon": "HV L196-198",
+   "va": "continuous",
+   "op": "vs",
+   "vb": "none",
+   "b": "MF",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "ear: length between human and elven families (mixed, not a copy)",
+   "canon": "HV L198",
+   "va": 7.6,
+   "op": "in",
+   "vb": [
+    6.4,
+    8.4
+   ],
+   "b": "MF..min elf",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "ear: taper starts later on the ear than every elven ear (human-influenced base; mixed, not the elven taper)",
+   "canon": "HV L198 (example: broader human-influenced base)",
+   "va": 0.48,
+   "op": ">",
+   "vb": 0.4,
+   "b": "max elf",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "ear: human-family lobe fraction retained \u2014 REPORT ONLY",
+   "canon": "HV L198 (example: more human-like lobe)",
+   "va": 0.18,
+   "op": "=",
+   "vb": 0.18,
+   "b": "MF",
+   "result": "REPORT",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "ear: parameters within 2 % of the MF-human ear (not a copy)",
+   "canon": "HV L219",
+   "va": 1,
+   "op": "<",
+   "vb": 9,
+   "b": "MF-human",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "ear: parameters within 2 % of the FN-elven ear (not a copy)",
+   "canon": "HV L219",
+   "va": 1,
+   "op": "<",
+   "vb": 9,
+   "b": "FN-elven",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "ear: parameters within 2 % of the AE-elven ear (not a copy)",
+   "canon": "HV L219",
+   "va": 0,
+   "op": "<",
+   "vb": 9,
+   "b": "AE-elven",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "ear: parameters within 2 % of the VA-elven ear (not a copy)",
+   "canon": "HV L219",
+   "va": 2,
+   "op": "<",
+   "vb": 9,
+   "b": "VA-elven",
+   "result": "PASS",
+   "note": ""
+  },
+  {
+   "cand": "HV",
+   "check": "ear: parameters within 2 % of the MF / elven-mean midpoint ear (never one midpoint ear) \u2014 REPORT ONLY",
+   "canon": "HV L219",
+   "va": 3,
+   "op": "of",
+   "vb": 9,
+   "b": "midpoint",
+   "result": "REPORT",
+   "note": "L, wb, thick"
+  }
+ ]
+}
