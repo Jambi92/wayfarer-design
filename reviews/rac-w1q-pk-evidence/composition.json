@@ -1,0 +1,182 @@
+{
+ "continuity": {
+  "PK central (PK-NAT, as built)": {
+   "hip_over_thorax": 1.0211392076041133,
+   "waist_over_thorax": 0.8322383613061869,
+   "waist_over_hip": 0.8150097020159062,
+   "d2b": 0.004929168841413312,
+   "d2d": 0.0020648517087474144,
+   "waist_rise": 1.1264108939758661
+  },
+  "PK minimum composition": {
+   "hip_over_thorax": 1.162611044351561,
+   "waist_over_thorax": 0.7164792238990108,
+   "waist_over_hip": 0.616267347003075,
+   "d2b": 0.016002039655989397,
+   "d2d": 0.0032052349859399004,
+   "waist_rise": 1.540400872106132
+  },
+  "PK Narrow (breadth only)": {
+   "hip_over_thorax": 1.0343570606517933,
+   "waist_over_thorax": 0.8335416869470968,
+   "waist_over_hip": 0.8058548818933434,
+   "d2b": 0.004611012286386773,
+   "d2d": 0.0020648519764242396,
+   "waist_rise": 1.128915500099856
+  },
+  "PK Broad (breadth only, pelvis x1.12)": {
+   "hip_over_thorax": 1.0368855204851188,
+   "waist_over_thorax": 0.8320243098580777,
+   "waist_over_hip": 0.802426394640756,
+   "d2b": 0.005202160463525007,
+   "d2d": 0.002064865291020304,
+   "waist_rise": 1.1430178329550473
+  },
+  "PK low (0.25 / 0.25)": {
+   "hip_over_thorax": 1.0659170023723743,
+   "waist_over_thorax": 0.8316541140272986,
+   "waist_over_hip": 0.780224081402506,
+   "d2b": 0.002208685721529269,
+   "d2d": 0.0017595411962142427,
+   "waist_rise": 1.165321147615844
+  },
+  "DU (DU-NAT, unaccepted)": {
+   "hip_over_thorax": 0.9220202281296127,
+   "waist_over_thorax": 0.8004128277904063,
+   "waist_over_hip": 0.8681076655054563,
+   "d2b": 0.005612826838470614,
+   "d2d": 0.0020579482137407373,
+   "waist_rise": 1.067843459484599
+  },
+  "DU Narrow (diagnostic)": {
+   "hip_over_thorax": 0.9339285353026628,
+   "waist_over_thorax": 0.8022051807871474,
+   "waist_over_hip": 0.8589577793842361,
+   "d2b": 0.0053016972641496685,
+   "d2d": 0.002058257144383624,
+   "waist_rise": 1.069551321165029
+  },
+  "CG (CG-NAT, unaccepted)": {
+   "hip_over_thorax": 0.9795494103856903,
+   "waist_over_thorax": 0.8063751320955136,
+   "waist_over_hip": 0.8232102674412405,
+   "d2b": 0.005304531189206152,
+   "d2d": 0.0021053574959422477,
+   "waist_rise": 1.097486228504206
+  },
+  "Human child proxy (107 cm, generator age ~6 y)": {
+   "hip_over_thorax": 1.0493004182060348,
+   "waist_over_thorax": 0.9393157591170925,
+   "waist_over_hip": 0.8951828692902071,
+   "d2b": 0.001209480045524347,
+   "d2d": 0.001028912484442479,
+   "waist_rise": 1.066523550354505
+  },
+  "MF-M-R": {
+   "hip_over_thorax": 0.9455107041761568,
+   "waist_over_thorax": 0.807428105236125,
+   "waist_over_hip": 0.8539597718670503,
+   "d2b": 0.005714548131764752,
+   "d2d": 0.001986158240995975,
+   "waist_rise": 1.083442582160142
+  },
+  "MF-M-R low (0.25 / 0.25)": {
+   "hip_over_thorax": 0.9963069090942468,
+   "waist_over_thorax": 0.8042756062146281,
+   "waist_over_hip": 0.8072568792540078,
+   "d2b": 0.0016001632319806725,
+   "d2d": 0.001273783813108595,
+   "waist_rise": 1.1111381406954763
+  },
+  "SK low (0.25 / 0.25)": {
+   "hip_over_thorax": 0.9842828841208127,
+   "waist_over_thorax": 0.8061878516008585,
+   "waist_over_hip": 0.8190611302978885,
+   "d2b": 0.002416034141147272,
+   "d2d": 0.0019355435192254244,
+   "waist_rise": 1.1098045797557097
+  },
+  "MF-M-R minimum composition": {
+   "hip_over_thorax": 1.0920760002160022,
+   "waist_over_thorax": 0.680993672662132,
+   "waist_over_hip": 0.6235771800931784,
+   "d2b": 0.012678911964548387,
+   "d2d": 0.002502341581828771,
+   "waist_rise": 1.502160097934715
+  }
+ },
+ "low_same_composition_skin": [
+  {
+   "cand": "PK",
+   "check": "pelvic vertical / stature >= MF (PV-D10)",
+   "canon": "PK-P3",
+   "va": 0.05847387393662918,
+   "op": ">=",
+   "vb": 0.05550727946484378,
+   "b": "MF",
+   "result": "PASS",
+   "pass": true,
+   "marginal": false
+  },
+  {
+   "cand": "PK",
+   "check": "pelvic vertical / thoracic vertical > MF (PK-P3)",
+   "canon": "PK-P3",
+   "va": 0.3992633198077511,
+   "op": ">",
+   "vb": 0.361472255488306,
+   "b": "MF",
+   "result": "PASS",
+   "pass": true,
+   "marginal": false
+  },
+  {
+   "cand": "PK",
+   "check": "AP pelvic depth / thoracic depth > MF (PK-P4)",
+   "canon": "PK-P4",
+   "va": 1.0330050171811243,
+   "op": ">",
+   "vb": 0.9832190508018178,
+   "b": "MF",
+   "result": "PASS",
+   "pass": true,
+   "marginal": false
+  },
+  {
+   "cand": "PK",
+   "check": "crest / thoracic breadth > MF (PK-P5)",
+   "canon": "PK-P5",
+   "va": 0.9632092997232652,
+   "op": ">",
+   "vb": 0.86381469763734,
+   "b": "MF",
+   "result": "PASS",
+   "pass": true,
+   "marginal": false
+  },
+  {
+   "cand": "PK",
+   "check": "waist interval / torso < MF (PK-P6)",
+   "canon": "PK-P6",
+   "va": 0.24770679723785016,
+   "op": "<",
+   "vb": 0.26222223572038156,
+   "b": "MF",
+   "result": "PASS",
+   "pass": true,
+   "marginal": false
+  },
+  {
+   "cand": "PK",
+   "check": "hip-joint height / stature <= MF (PK-P2a)",
+   "canon": "PK-P2a",
+   "va": 0.5311830323878326,
+   "op": "<=",
+   "vb": 0.5320848803196605,
+   "b": "MF",
+   "result": "PASS",
+   "pass": true,
+   "marginal": false
+  }
+ ]
+}
