@@ -1,6 +1,7 @@
 # RAC W1l — Grask Final W1 Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; GitHub Issue #1, final author ruling comment (2026-10-07T14:57Z)):** ACCEPTED as presented; construction point locked at pelvis X 0.925, femur cross-section 1.20, no lumbar narrowing; fuller thighs accepted; residuals non-blocking for W1. Grask W1 is closed. The analysis below is unchanged.
 **Order:** GitHub Issue #1, "AUTHOR ORDER — Grask W1l bounded corrective pass", with the author confirmation comment: option (b).
 **Basis:** `reviews/claude-rac-w1k-grask-acceptance-gate.md`
 **Evidence:** `reviews/rac-w1l-gr-evidence/` (`tables.md` holds every number quoted; `README.md` maps the files)

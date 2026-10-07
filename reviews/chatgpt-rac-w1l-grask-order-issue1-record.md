@@ -20,3 +20,15 @@ Visual rulings are also confirmed:
 - span vs Broad Skarn remaining NOT DEMONSTRATED: non-blocking for W1; do not distort shoulder or limb anatomy solely to force that metric.
 
 Run only the bounded W1l correction and affected regression checks, then return the final Grask W1l author-acceptance gate. Do not begin Aelari before final Grask author acceptance.
+
+## Final author ruling comment (2026-10-07T14:57Z)
+
+FINAL AUTHOR RULING AND NEXT STEP — 2026-10-07
+
+Grask W1l is ACCEPTED as presented in Claude's final gate. Lock the accepted W1 construction point at pelvis X 0.925, femur cross-section 1.20, with no lumbar narrowing. The fuller-thigh read is accepted; do not substitute the 1.17 alternative. The disclosed diagnostic/deferred residuals remain non-blocking for W1.
+
+Grask W1 is therefore closed.
+
+Proceed to the next locked Wave 1 body: AELARI. Begin the Aelari W1 reference-body acceptance/convergence pass using the established RAC methods and already-approved Aelari canon. Preserve the Aelari identity as a vertically elongated elf, with elongation distributed through the cranium, neck, torso, and limbs rather than produced by uniform scaling. Use accepted comparator bodies and the existing RAC/large-race rules where applicable. Establish the central/reference Aelari body first and test its canonical anatomical relations, proportions, silhouette, and cross-population separation before diagnostic frame/composition variants. Do not alter accepted comparator bodies to make Aelari pass. Surface any genuine canon/construction conflict rather than silently redefining anatomy.
+
+Return the Aelari W1 evidence and author-acceptance gate, then STOP for author review. Do not advance to Vael until Aelari receives final author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.
