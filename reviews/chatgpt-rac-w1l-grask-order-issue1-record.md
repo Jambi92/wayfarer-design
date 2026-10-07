@@ -151,3 +151,54 @@ PIPKIN W1 goals:
 11. Keep Wave 2 out of scope: no full stature extremes, creator envelopes, combined-proportion stress, gameplay/collision/camera/equipment implementation, or UE5 work unless needed to identify a blocking W1 contradiction.
 
 Return the Pipkin W1 evidence and author-acceptance gate, then STOP for author review. Do not begin Cogling before final Pipkin author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.
+
+## Final Pipkin ruling / Cogling order comment (2026-10-07T18:10Z)
+
+FINAL PIPKIN AUTHOR RULING / NEXT W1 BODY — 2026-10-07
+
+PIPKIN W1: ACCEPTED.
+
+Lock for W1:
+- Central reference: PK-NAT as built at the 107 cm reference point.
+- No construction correction.
+- Preserve Pipkin's LIGHT COMPACT ADULT PROPORTIONALITY and LOW-SET COMPACT TRUNK ARCHITECTURE.
+- PK-P2b convergent femora remains NOT DEMONSTRATED because the current R-6 stance forces hips over knees/ankles and cannot express natural femoral obliquity. Treat this as method-limited and non-blocking for W1. Do not alter Pipkin anatomy to manufacture convergence in that pose. Re-test later with a natural anatomical stance.
+- PK-P2a leg share <= Marchfolk remains accepted but thin (+0.17%); carry it into W2 stress testing.
+- Broad Pipkin vs Narrow Durrim passes as a population-separation test even though thoracic breadth intentionally converges. Do not narrow Pipkin artificially just to make breadth itself separate.
+- High-muscle / high-fat and higher-fat Pipkin visuals are accepted for W1. Do not restrict composition merely to preserve a stereotypical halfling silhouette.
+- Durrim and Cogling comparison rows remain provisional dependencies and must be re-run after those W1 bodies are formally accepted.
+- Full 122 cm Pipkin/Durrim boundary remains W2 scope.
+
+NEXT: proceed to COGLING, the next locked Wave 1 body.
+
+COGLING W1 goals:
+1. Establish/review the central Cogling reference at about 91 cm against approved Cogling canon and accepted comparator bodies.
+2. Preserve Cogling's positive identity as FINE-SCALE ELONGATED ARTICULATION:
+   narrow stable central core -> near-human total limb contribution -> fine skeletal shafts -> within-limb distal redistribution -> proportionally emphasized hands/fingers.
+3. Do not solve Cogling by making them miniature humans, smaller Pipkin, slender Durrim, child-proportioned adults, miniature Fenn, or miniature Grask.
+4. Re-run the short-race comparative structure now that Pipkin is accepted. In particular:
+   - Cogling vs Pipkin across the intentional 91–107 cm overlap: separation must come from anatomy, not stature.
+   - Cogling remain near-human in total limb contribution while redistributing length distally; Pipkin remain low-set compact and pelvis-led.
+   - Structural-mass axis should remain Cogling < Pipkin < Durrim where canon supports it.
+   - Cogling central core should remain narrower/stabler and less pelvis-led than Pipkin.
+   - Durrim remain broader/deeper, more vertically compact, more joint-substantial, and less limb-contributing.
+5. Validate the central body for:
+   - torso share and narrow stable central-core organization;
+   - total arm/leg contribution versus Marchfolk/Pipkin/Durrim;
+   - forearm share within arm and lower-leg share within leg;
+   - hand share, finger/palm relationship, and fine hand construction;
+   - feet as adult plantigrade supports without caricature;
+   - long-bone shaft/joint scale and the structural-mass axis;
+   - mature adult pelvis and adult stance without turning the pelvis into Pipkin's main identity mechanism;
+   - adult head/face/ear identity and anti-child allometry;
+   - any canon-derived rows stated previously but not quantitatively tested.
+6. Preserve adult identity. Do not use deliberate head enlargement, huge eyes, shortened midface/jaw, juvenile pelvis/shoulders, childlike hands/feet, toddler-like limb taper, or childlike fat distribution to make Cogling read small.
+7. Distal emphasis is within-limb redistribution, not global reach specialization. Do not increase total arm/leg share just to make the distal signal easier to see. Cogling are not Grask or Fenn.
+8. Composition must not carry identity. Low-muscle/low-fat Cogling stay healthy adults, highly muscular Cogling retain fine skeletal organization, and higher-fat Cogling do not collapse into Pipkin/Durrim or comic gnome shapes.
+9. Frame is skeletal only. Narrow/Balanced/Broad must preserve Fine-Scale Elongated Articulation. Broad Cogling remain fine-scale relative to Durrim; Narrow Cogling remain adult and healthy.
+10. Use accepted Pipkin for dependency closure. Durrim remains an unaccepted dependency until its W1 pass, so mark Durrim-dependent rows accordingly and recheck them later.
+11. If the current as-built Cogling fails a real canon relation, propose the smallest bounded Cogling-only correction. Document exactly what changes and what remains untouched. Do not alter accepted comparator bodies.
+12. After the central Cogling body is sound, run appropriate W1 frame/composition/separation diagnostics under established RAC methods. Treat borrowed frame writes as diagnostic only unless they preserve Cogling canon.
+13. Keep Wave 2 out of scope: no full stature extremes, creator envelopes, combined-proportion stress, gameplay/collision/camera/equipment implementation, or UE5 work unless needed to expose a blocking W1 contradiction.
+
+Return the Cogling W1 evidence and author-acceptance gate, then STOP for author review. Do not begin Halvren before final Cogling author acceptance. Wave 2 remains gated. Design only; no UE5 implementation.

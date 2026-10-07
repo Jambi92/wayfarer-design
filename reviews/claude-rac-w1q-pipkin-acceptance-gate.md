@@ -1,6 +1,7 @@
 # RAC W1q — Pipkin W1 Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; GitHub Issue #1 final Pipkin ruling (2026-10-07T18:10Z); reviews/chatgpt-pipkin-final-acceptance-cogling-w1-order.md):** PIPKIN W1 ACCEPTED — PK-NAT as built; PK-P2b method-limited and non-blocking; PK-P2a thin margin carried to W2; Broad PK vs Narrow DU accepted as separation; composition visuals accepted; Durrim / Cogling rows provisional until their W1 acceptance. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-fenn-final-acceptance-pipkin-w1-order.md`, the same text as GitHub Issue #1 comment 2026-10-07T17:19Z.
 **Evidence:** `reviews/rac-w1q-pk-evidence/` (`tables.md` holds every number quoted; `README.md` maps the files)
 **Construction record:** `tools/rac/w1/cfg/w1q/PK-NAT.json`
