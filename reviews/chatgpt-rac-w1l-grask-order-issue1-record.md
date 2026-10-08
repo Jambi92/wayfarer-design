@@ -646,3 +646,7 @@ Recorded from `reviews/chatgpt-rac-s7-skarn-final-acceptance-w2c-grask-order.md`
 ## W2C ruling / W2C1 joint normalization order (repo file, October 7, 2026)
 
 Recorded from `reviews/chatgpt-rac-w2c1-grask-joint-normalization-order.md` (commit c70b79b; no new Issue #1 comment at the time of recording). Grask W2C anatomy provisionally accepted; boundary-stature ruling; knee exact-plane normalization (MF 190 / 203, SK 229 knee corrections re-evaluated; slab-derived 0.575 slope not reused); elbow / wrist / ankle slab-vs-plane sanity check; return the W2C1 gate, then STOP.
+
+## Final Grask W2 acceptance / Gorrund W2 order (repo file, October 8, 2026)
+
+Recorded from `reviews/chatgpt-rac-final-grask-w2-acceptance-gorrund-w2-order.md` (commit 445a9d0; no new Issue #1 comment at the time of recording). Grask W2 closed; W2C1 knee decisions confirmed; exact-plane joint-breadth rule for new decisions; record reconciliation (STATUS, measurement documentation); next block Gorrund W2 (208–251 cm family, frames, composition, matched-height Grask / Skarn / Broad Skarn, AD-3 closure); return the Gorrund W2 gate, then STOP.

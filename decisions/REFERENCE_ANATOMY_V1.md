@@ -137,6 +137,11 @@ A mesh built from **numeric targets chosen by a builder** (a solver, a sculptor 
 
 Per-race architecture lives in each race spec ("Pelvic architecture (RAC W1d)"); exact morphology and numeric envelopes remain OPEN.
 
+**Measurement standards adopted during RAC Wave 2** (author-accepted; method clarifications, not biology):
+- **Exact-plane sections (S7):** the femoral subtrochanteric station S7 is read as the composition infimum on an exact plane section of the thigh faces, never on a vertex slab (a slab misses whole vertex rings where the mesh is stretched; the W1h trunk-station rule extended). Vertex-slab S7 values are historical / reproduction evidence only. Ruling: `reviews/chatgpt-rac-s7-skarn-final-acceptance-w2c-grask-order.md`; code `tools/rac/w1/s7_station.py`; record `reviews/claude-rac-s7-normalization-skarn-w2-final-gate.md`.
+- **Joint breadths:** newly scored elbow, wrist, knee and ankle breadth decisions use an exact plane section through the anatomical joint centre, perpendicular to the limb axis (`tools/rac/w1/w2c1_drivers/joint_section.py`). The stature-scaled slab breadth is not an authority where a section is available: its error is body-dependent (knee 0.81–1.02 of the section; elbow ≈ 1.01–1.03, wrist ≈ 1.02–1.10, ankle ≈ 1.04–1.17). Existing accepted elbow / wrist / ankle conclusions stand unless a later phase depends on them or a named re-check applies (elf W1 wrist / ankle rows before elf W2). Slab-derived allometry slopes (e.g. the old 0.575 knee slope) are not authorities. Ruling: `reviews/chatgpt-rac-final-grask-w2-acceptance-gorrund-w2-order.md` §2; record `reviews/claude-rac-w2c1-grask-joint-normalization-gate.md`.
+- **Boundary statures:** within the real overlap of two populations, stature-matched comparison is the primary boundary diagnostic. A W1 relation authored against a central / reference body is a reference-state validation relation, not an invariant clamp at every stature extreme when the comparator itself changes with stature; extrapolated comparator values beyond a comparator's valid range are report-only. Ruling: `reviews/chatgpt-rac-w2c1-grask-joint-normalization-order.md` §1.
+
 ## 11. Consolidated directional constraints
 
 Phase 1 consolidated the race-by-race directional constraints that every measurement must satisfy. They are adopted as **constraints, not magnitudes**:

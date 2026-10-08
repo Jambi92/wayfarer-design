@@ -1,6 +1,7 @@
 # RAC W2C1 — Grask Joint-Measurement Normalization Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 8, 2026; reviews/chatgpt-rac-final-grask-w2-acceptance-gorrund-w2-order.md):** ACCEPT — Grask W2 closed; the four knee-only reverts and the retained Marchfolk 190 configuration-2 correction confirmed; exact-plane joint sections are the standard for newly scored joint decisions. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-rac-w2c1-grask-joint-normalization-order.md` (commit c70b79b)
 **Evidence:** `reviews/rac-w2c1-joint-evidence/` (`tables.md` holds every number; `joint_sections.json`, `knee_normalization.json`, `elbow_wrist_ankle_check.json`)
 
