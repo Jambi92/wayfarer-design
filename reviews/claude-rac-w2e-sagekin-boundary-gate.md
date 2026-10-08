@@ -1,6 +1,7 @@
 # RAC W2E — Sagekin W2 Author-Acceptance Gate
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026 · **Order:** `reviews/chatgpt-rac-w2d-gorrund-final-acceptance-w2e-sagekin-order.md` §5–§15
+**Author ruling (October 8, 2026; reviews/chatgpt-rac-w2e-sagekin-final-acceptance-w2f-elf-family-order.md):** ACCEPT — Sagekin W2E FINAL AUTHOR ACCEPTED / CLOSED. SG-04 x1.5 accepted as the W2E long-limbed boundary diagnostic. Isolated scalar overlap with W1 Fenn / Aelari is not an elf failure and no Sagekin change is made; the overlap is carried to Elf W2F as a complete-anatomy dependency. Route seam, fixed-reference drift and composition-vs-neutral skin items retained as diagnostics. DU-P4 stays OPEN with Durrim W2.
 **Evidence:** `reviews/rac-w2e-sg-evidence/` (`tables.md` is generated; every number below is from `w2e.json`)
 **Status:** DESIGN ONLY / NO UE5. NON-CANON diagnostics. No Sagekin canon was rewritten, and no Marchfolk, Skarn, Fenn, Aelari or Durrim body was changed. Comparators are the accepted bodies, with the W2C1 knee reverts applied (Marchfolk 190 and 203 configuration 1 = uncorrected bodies).
 
