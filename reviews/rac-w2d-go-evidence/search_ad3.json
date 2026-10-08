@@ -1,0 +1,2739 @@
+{
+ "GOL050": {
+  "targets": {
+   "measure-upperarm-length-decr": 0.35,
+   "measure-lowerarm-length-decr": 0.2,
+   "measure-napetowaist-dist-incr": 0.05,
+   "LR:hand-fingers-length-decr": 0.5
+  },
+  "stature": 217.53451538085938,
+  "ratio": {
+   "torso_share": 0.3012418205440245,
+   "leg_share": 0.5218380656730893,
+   "arm_share": 0.3866134322287787,
+   "span_der": 1.000931942851564,
+   "forearm_over_arm": 0.3571430458380715,
+   "shin_over_leg": 0.4791241112897482,
+   "thorax_depth_share": 0.16218958464239985,
+   "thorax_breadth_share": 0.20957538581776447,
+   "shoulder_joint_share": 0.22770507839400655
+  },
+  "vs_GR_BODY_10_pct": {
+   "leg_share": -5.237264926341645,
+   "arm_share": -9.278452164725726,
+   "span_der": -3.7656130305221525,
+   "torso_share": 8.640041378234509
+  },
+  "rows": [
+   {
+    "check": "torso share > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.3012418205440245,
+    "vb": 0.26555338992162975,
+    "result": "PASS"
+   },
+   {
+    "check": "leg share < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5218380656730893,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "arm / stature < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.3866134322287787,
+    "vb": 0.43123658535458853,
+    "result": "PASS"
+   },
+   {
+    "check": "span < GR (span GR > GO)",
+    "cand": "GO",
+    "op": "<",
+    "va": 1.000931942851564,
+    "vb": 1.0519724666550347,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic breadth GO > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.20957538581776447,
+    "vb": 0.19672663177052996,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16218958464239985,
+    "vb": 0.14214489639727415,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16218958464239985,
+    "vb": 0.12099269962426451,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > MF-M-R",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16218958464239985,
+    "vb": 0.13243759613635098,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (elbow)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.3453014726841707,
+    "vb": 0.30724920895852703,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (wrist)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.26230927417034183,
+    "vb": 0.1932170219935873,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (knee)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.267049970266935,
+    "vb": 0.21095843390286648,
+    "result": "PASS"
+   },
+   {
+    "check": "palm breadth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.4335717947597234,
+    "vb": 0.43833781346741746,
+    "result": "FAIL"
+   },
+   {
+    "check": "palm depth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.1760320690523035,
+    "vb": 0.18455614464609668,
+    "result": "FAIL"
+   },
+   {
+    "check": "cranial breadth / height (CBH) > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.1222581744710491,
+    "vb": 1.077021843503324,
+    "result": "PASS"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7562156488252482,
+    "vb": 0.7774857267671242,
+    "result": "FAIL"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7562156488252482,
+    "vb": 0.7520025656216514,
+    "result": "NOT DEMONSTRATED"
+   },
+   {
+    "check": "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "cand": "GO",
+    "op": "~",
+    "va": 1.189211673671903,
+    "vb": 1.162784220276553,
+    "result": "FAIL"
+   },
+   {
+    "check": "leg share < GR (GO-P2b)",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5218380656730893,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "pelvic vertical / stature >= GR (GO-P3)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.05274656624695498,
+    "vb": 0.050829661818288456,
+    "result": "PASS"
+   },
+   {
+    "check": "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-1 lower-thorax breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8574657081116333,
+    "vb": 0.8319379508230125,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8483232545653591,
+    "vb": 0.8051964703822942,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lower-thorax depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9648181654059474,
+    "vb": 0.8795241709169775,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9288715929369381,
+    "vb": 0.828198101388275,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a crest breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.9028467514763373,
+    "vb": 0.8687351346495111,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a hip-level breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.0736758963924156,
+    "vb": 1.0101515061702782,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8822202309388368,
+    "vb": 0.9705404342512031,
+    "result": "FAIL"
+   },
+   {
+    "check": "ALPC-2b crest / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.0642720762604976,
+    "vb": 1.0789107585593982,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2b hip-level / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.2656447770520174,
+    "vb": 1.2545404051394744,
+    "result": "MARGINAL"
+   },
+   {
+    "check": "ALPC-4 shoulder-joint / thoracic breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.0865067837308275,
+    "vb": 1.1227288589593143,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8574657081116333,
+    "vb": 0.7987624844131281,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8483232545653591,
+    "vb": 0.7735877287317506,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9648181654059474,
+    "vb": 0.9010498007603815,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9288715929369381,
+    "vb": 0.8259401690558831,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S5_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9028467514763373,
+    "vb": 0.8358597986981606,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S6_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.0736758963924156,
+    "vb": 0.9707352752537155,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 pelvic_depth_over_thorax_depth > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8822202309388368,
+    "vb": 0.8699306756890701,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-0 valid shape: breadth non-increasing S2->S4, rising S4->S5 (no minimum at S5), non-decreasing S5->S6, S4 < S2 (1 = holds)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.0,
+    "vb": 1.0,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1c costal-iliac gap / stature (REPORT ONLY, AD-G9)",
+    "cand": "GO",
+    "op": "vs",
+    "va": 0.07401832295553372,
+    "vb": 0.07430665690450627,
+    "result": "REPORT"
+   },
+   {
+    "check": "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "shoulder-joint breadth / stature > GR (AD-G6)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.22770507839400655,
+    "vb": 0.18949929594585765,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1b ribcage vertical / breadth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.832525874451934,
+    "vb": 0.8069188510473357,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > SK (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7738961520196423,
+    "vb": 0.7225503487655794,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > GR (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7738961520196423,
+    "vb": 0.709482537999663,
+    "result": "PASS"
+   }
+  ],
+  "non_pass": [
+   [
+    "palm breadth / hand substantial (> MF)",
+    "FAIL"
+   ],
+   [
+    "palm depth / hand substantial (> MF)",
+    "FAIL"
+   ],
+   [
+    "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "FAIL"
+   ],
+   [
+    "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "NOT DEMONSTRATED"
+   ],
+   [
+    "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "FAIL"
+   ],
+   [
+    "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "FAIL"
+   ],
+   [
+    "ALPC-2b hip-level / lumbar breadth <= MF",
+    "MARGINAL"
+   ],
+   [
+    "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "NOT RUN"
+   ]
+  ]
+ },
+ "GOL000": {
+  "targets": {
+   "measure-upperarm-length-decr": null,
+   "measure-lowerarm-length-decr": null,
+   "measure-napetowaist-dist-incr": null,
+   "LR:hand-fingers-length-decr": null
+  },
+  "stature": 217.0673065185547,
+  "ratio": {
+   "torso_share": 0.30004326999300085,
+   "leg_share": 0.5229802306820426,
+   "arm_share": 0.4026446122760339,
+   "span_der": 1.0334810702823016,
+   "forearm_over_arm": 0.3540294929443091,
+   "shin_over_leg": 0.47912411128974813,
+   "thorax_depth_share": 0.16253015751818028,
+   "thorax_breadth_share": 0.21004583563169338,
+   "shoulder_joint_share": 0.2281918457302339
+  },
+  "vs_GR_BODY_10_pct": {
+   "leg_share": -5.029854453105587,
+   "arm_share": -5.5166235621118105,
+   "span_der": -0.6361841547039893,
+   "torso_share": 8.207795346717495
+  },
+  "rows": [
+   {
+    "check": "torso share > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.30004326999300085,
+    "vb": 0.26555338992162975,
+    "result": "PASS"
+   },
+   {
+    "check": "leg share < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5229802306820426,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "arm / stature < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.4026446122760339,
+    "vb": 0.43123658535458853,
+    "result": "PASS"
+   },
+   {
+    "check": "span < GR (span GR > GO)",
+    "cand": "GO",
+    "op": "<",
+    "va": 1.0334810702823016,
+    "vb": 1.0519724666550347,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic breadth GO > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.21004583563169338,
+    "vb": 0.19672663177052996,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16253015751818028,
+    "vb": 0.14214489639727415,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16253015751818028,
+    "vb": 0.12099269962426451,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > MF-M-R",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16253015751818028,
+    "vb": 0.13243759613635098,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (elbow)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.3264328010479693,
+    "vb": 0.30724920895852703,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (wrist)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.25538844160813345,
+    "vb": 0.1932170219935873,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (knee)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.26705328801384526,
+    "vb": 0.21095843390286648,
+    "result": "PASS"
+   },
+   {
+    "check": "palm breadth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.4233228689827754,
+    "vb": 0.43833781346741746,
+    "result": "FAIL"
+   },
+   {
+    "check": "palm depth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.17552450380055912,
+    "vb": 0.18455614464609668,
+    "result": "FAIL"
+   },
+   {
+    "check": "cranial breadth / height (CBH) > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.1222570656802477,
+    "vb": 1.077021843503324,
+    "result": "PASS"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.756953859572774,
+    "vb": 0.7774857267671242,
+    "result": "FAIL"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.756953859572774,
+    "vb": 0.7520025656216514,
+    "result": "NOT DEMONSTRATED"
+   },
+   {
+    "check": "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "cand": "GO",
+    "op": "~",
+    "va": 1.1887520274259225,
+    "vb": 1.162784220276553,
+    "result": "FAIL"
+   },
+   {
+    "check": "leg share < GR (GO-P2b)",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5229802306820426,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "pelvic vertical / stature >= GR (GO-P3)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.05285933589577294,
+    "vb": 0.050829661818288456,
+    "result": "PASS"
+   },
+   {
+    "check": "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-1 lower-thorax breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.856807928203771,
+    "vb": 0.8319379508230125,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8476626781034864,
+    "vb": 0.8051964703822942,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lower-thorax depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9648148887011815,
+    "vb": 0.8795241709169775,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.930047712932219,
+    "vb": 0.828198101388275,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a crest breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.9031101807024815,
+    "vb": 0.8687351346495111,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a hip-level breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.073574058299066,
+    "vb": 1.0101515061702782,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8834668640189541,
+    "vb": 0.9705404342512031,
+    "result": "FAIL"
+   },
+   {
+    "check": "ALPC-2b crest / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.065412225914028,
+    "vb": 1.0789107585593982,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2b hip-level / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.2665109435996655,
+    "vb": 1.2545404051394744,
+    "result": "MARGINAL"
+   },
+   {
+    "check": "ALPC-4 shoulder-joint / thoracic breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.0863907158357513,
+    "vb": 1.1227288589593143,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.856807928203771,
+    "vb": 0.7987624844131281,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8476626781034864,
+    "vb": 0.7735877287317506,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9648148887011815,
+    "vb": 0.9010498007603815,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.930047712932219,
+    "vb": 0.8259401690558831,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S5_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9031101807024815,
+    "vb": 0.8358597986981606,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S6_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.073574058299066,
+    "vb": 0.9707352752537155,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 pelvic_depth_over_thorax_depth > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8834668640189541,
+    "vb": 0.8699306756890701,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-0 valid shape: breadth non-increasing S2->S4, rising S4->S5 (no minimum at S5), non-decreasing S5->S6, S4 < S2 (1 = holds)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.0,
+    "vb": 1.0,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1c costal-iliac gap / stature (REPORT ONLY, AD-G9)",
+    "cand": "GO",
+    "op": "vs",
+    "va": 0.07373831386666775,
+    "vb": 0.07430665690450627,
+    "result": "REPORT"
+   },
+   {
+    "check": "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "shoulder-joint breadth / stature > GR (AD-G6)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.2281918457302339,
+    "vb": 0.18949929594585765,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1b ribcage vertical / breadth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8257512923735838,
+    "vb": 0.8069188510473357,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > SK (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7737842410890265,
+    "vb": 0.7225503487655794,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > GR (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7737842410890265,
+    "vb": 0.709482537999663,
+    "result": "PASS"
+   }
+  ],
+  "non_pass": [
+   [
+    "palm breadth / hand substantial (> MF)",
+    "FAIL"
+   ],
+   [
+    "palm depth / hand substantial (> MF)",
+    "FAIL"
+   ],
+   [
+    "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "FAIL"
+   ],
+   [
+    "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "NOT DEMONSTRATED"
+   ],
+   [
+    "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "FAIL"
+   ],
+   [
+    "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "FAIL"
+   ],
+   [
+    "ALPC-2b hip-level / lumbar breadth <= MF",
+    "MARGINAL"
+   ],
+   [
+    "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "NOT RUN"
+   ]
+  ]
+ },
+ "GOLX": {
+  "targets": {
+   "measure-upperarm-length-decr": null,
+   "measure-lowerarm-length-decr": null,
+   "measure-napetowaist-dist-incr": null,
+   "LR:hand-fingers-length-decr": null,
+   "measure-upperarm-length-incr": 0.3,
+   "measure-lowerarm-length-incr": 0.3,
+   "measure-napetowaist-dist-decr": 0.2
+  },
+  "stature": 215.95252990722656,
+  "ratio": {
+   "torso_share": 0.29717783567421,
+   "leg_share": 0.5257128563620653,
+   "arm_share": 0.423400774724801,
+   "span_der": 1.0761684823263244,
+   "forearm_over_arm": 0.3597792154950588,
+   "shin_over_leg": 0.4791241112897482,
+   "thorax_depth_share": 0.16310127809850652,
+   "thorax_breadth_share": 0.21117730300265003,
+   "shoulder_joint_share": 0.22936693287672252
+  },
+  "vs_GR_BODY_10_pct": {
+   "leg_share": -4.533625641132155,
+   "arm_share": -0.6460447681544745,
+   "span_der": 3.4679879208386666,
+   "torso_share": 7.174403295116383
+  },
+  "rows": [
+   {
+    "check": "torso share > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.29717783567421,
+    "vb": 0.26555338992162975,
+    "result": "PASS"
+   },
+   {
+    "check": "leg share < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5257128563620653,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "arm / stature < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.423400774724801,
+    "vb": 0.43123658535458853,
+    "result": "PASS"
+   },
+   {
+    "check": "span < GR (span GR > GO)",
+    "cand": "GO",
+    "op": "<",
+    "va": 1.0761684823263244,
+    "vb": 1.0519724666550347,
+    "result": "FAIL"
+   },
+   {
+    "check": "thoracic breadth GO > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.21117730300265003,
+    "vb": 0.19672663177052996,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16310127809850652,
+    "vb": 0.14214489639727415,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16310127809850652,
+    "vb": 0.12099269962426451,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > MF-M-R",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16310127809850652,
+    "vb": 0.13243759613635098,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (elbow)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.30602829470379,
+    "vb": 0.30724920895852703,
+    "result": "FAIL"
+   },
+   {
+    "check": "joint scale GO > GR (wrist)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.2463403631043342,
+    "vb": 0.1932170219935873,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (knee)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.26705619831990646,
+    "vb": 0.21095843390286648,
+    "result": "PASS"
+   },
+   {
+    "check": "palm breadth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.42475107930462447,
+    "vb": 0.43833781346741746,
+    "result": "FAIL"
+   },
+   {
+    "check": "palm depth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.1788859484566085,
+    "vb": 0.18455614464609668,
+    "result": "FAIL"
+   },
+   {
+    "check": "cranial breadth / height (CBH) > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.122254848105218,
+    "vb": 1.077021843503324,
+    "result": "PASS"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7553401380016086,
+    "vb": 0.7774857267671242,
+    "result": "FAIL"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7553401380016086,
+    "vb": 0.7520025656216514,
+    "result": "NOT DEMONSTRATED"
+   },
+   {
+    "check": "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "cand": "GO",
+    "op": "~",
+    "va": 1.1876668970287823,
+    "vb": 1.162784220276553,
+    "result": "FAIL"
+   },
+   {
+    "check": "leg share < GR (GO-P2b)",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5257128563620653,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "pelvic vertical / stature >= GR (GO-P3)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.05313152845764481,
+    "vb": 0.050829661818288456,
+    "result": "PASS"
+   },
+   {
+    "check": "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-1 lower-thorax breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8551927280949091,
+    "vb": 0.8319379508230125,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8460104995559765,
+    "vb": 0.8051964703822942,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lower-thorax depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9678505862115386,
+    "vb": 0.8795241709169775,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9305089713060518,
+    "vb": 0.828198101388275,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a crest breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.9037312483058706,
+    "vb": 0.8687351346495111,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a hip-level breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.0733316874233811,
+    "vb": 1.0101515061702782,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8838361020704364,
+    "vb": 0.9705404342512031,
+    "result": "FAIL"
+   },
+   {
+    "check": "ALPC-2b crest / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.0682269886487088,
+    "vb": 1.0789107585593982,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2b hip-level / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.268697832930812,
+    "vb": 1.2545404051394744,
+    "result": "FAIL"
+   },
+   {
+    "check": "ALPC-4 shoulder-joint / thoracic breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.0861343980410822,
+    "vb": 1.1227288589593143,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8551927280949091,
+    "vb": 0.7987624844131281,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8460104995559765,
+    "vb": 0.7735877287317506,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9678505862115386,
+    "vb": 0.9010498007603815,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9305089713060518,
+    "vb": 0.8259401690558831,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S5_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9037312483058706,
+    "vb": 0.8358597986981606,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S6_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.0733316874233811,
+    "vb": 0.9707352752537155,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 pelvic_depth_over_thorax_depth > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8838361020704364,
+    "vb": 0.8699306756890701,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-0 valid shape: breadth non-increasing S2->S4, rising S4->S5 (no minimum at S5), non-decreasing S5->S6, S4 < S2 (1 = holds)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.0,
+    "vb": 1.0,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1c costal-iliac gap / stature (REPORT ONLY, AD-G9)",
+    "cand": "GO",
+    "op": "vs",
+    "va": 0.07306916789581881,
+    "vb": 0.07430665690450627,
+    "result": "REPORT"
+   },
+   {
+    "check": "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "shoulder-joint breadth / stature > GR (AD-G6)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.22936693287672252,
+    "vb": 0.18949929594585765,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1b ribcage vertical / breadth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8096378582815827,
+    "vb": 0.8069188510473357,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > SK (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7723428407287681,
+    "vb": 0.7225503487655794,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > GR (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7723428407287681,
+    "vb": 0.709482537999663,
+    "result": "PASS"
+   }
+  ],
+  "non_pass": [
+   [
+    "span < GR (span GR > GO)",
+    "FAIL"
+   ],
+   [
+    "joint scale GO > GR (elbow)",
+    "FAIL"
+   ],
+   [
+    "palm breadth / hand substantial (> MF)",
+    "FAIL"
+   ],
+   [
+    "palm depth / hand substantial (> MF)",
+    "FAIL"
+   ],
+   [
+    "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "FAIL"
+   ],
+   [
+    "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "NOT DEMONSTRATED"
+   ],
+   [
+    "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "FAIL"
+   ],
+   [
+    "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "FAIL"
+   ],
+   [
+    "ALPC-2b hip-level / lumbar breadth <= MF",
+    "FAIL"
+   ],
+   [
+    "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "NOT RUN"
+   ]
+  ]
+ },
+ "GOLA": {
+  "targets": {
+   "measure-upperarm-length-decr": null,
+   "measure-lowerarm-length-decr": null,
+   "measure-napetowaist-dist-incr": null
+  },
+  "stature": 217.0673065185547,
+  "ratio": {
+   "torso_share": 0.30004326999300085,
+   "leg_share": 0.5229802306820426,
+   "arm_share": 0.39619060319437716,
+   "span_der": 1.0205730521189884,
+   "forearm_over_arm": 0.3597966907127929,
+   "shin_over_leg": 0.47912411128974813,
+   "thorax_depth_share": 0.16253015751818028,
+   "thorax_breadth_share": 0.21004583563169338,
+   "shoulder_joint_share": 0.2281918457302339
+  },
+  "vs_GR_BODY_10_pct": {
+   "leg_share": -5.029854453105587,
+   "arm_share": -7.031101965656605,
+   "span_der": -1.8772227925542673,
+   "torso_share": 8.207795346717495
+  },
+  "rows": [
+   {
+    "check": "torso share > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.30004326999300085,
+    "vb": 0.26555338992162975,
+    "result": "PASS"
+   },
+   {
+    "check": "leg share < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5229802306820426,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "arm / stature < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.39619060319437716,
+    "vb": 0.43123658535458853,
+    "result": "PASS"
+   },
+   {
+    "check": "span < GR (span GR > GO)",
+    "cand": "GO",
+    "op": "<",
+    "va": 1.0205730521189884,
+    "vb": 1.0519724666550347,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic breadth GO > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.21004583563169338,
+    "vb": 0.19672663177052996,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16253015751818028,
+    "vb": 0.14214489639727415,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16253015751818028,
+    "vb": 0.12099269962426451,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > MF-M-R",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16253015751818028,
+    "vb": 0.13243759613635098,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (elbow)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.3264328010479693,
+    "vb": 0.30724920895852703,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (wrist)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.25538844160813345,
+    "vb": 0.1932170219935873,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (knee)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.26705328801384526,
+    "vb": 0.21095843390286648,
+    "result": "PASS"
+   },
+   {
+    "check": "palm breadth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.44843472774272397,
+    "vb": 0.43833781346741746,
+    "result": "PASS"
+   },
+   {
+    "check": "palm depth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.18593675884719885,
+    "vb": 0.18455614464609668,
+    "result": "NOT DEMONSTRATED"
+   },
+   {
+    "check": "cranial breadth / height (CBH) > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.1222570656802477,
+    "vb": 1.077021843503324,
+    "result": "PASS"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.756953859572774,
+    "vb": 0.7774857267671242,
+    "result": "FAIL"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.756953859572774,
+    "vb": 0.7520025656216514,
+    "result": "NOT DEMONSTRATED"
+   },
+   {
+    "check": "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "cand": "GO",
+    "op": "~",
+    "va": 1.1887520274259225,
+    "vb": 1.162784220276553,
+    "result": "FAIL"
+   },
+   {
+    "check": "leg share < GR (GO-P2b)",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5229802306820426,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "pelvic vertical / stature >= GR (GO-P3)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.05285933589577294,
+    "vb": 0.050829661818288456,
+    "result": "PASS"
+   },
+   {
+    "check": "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-1 lower-thorax breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.856807928203771,
+    "vb": 0.8319379508230125,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8476626781034864,
+    "vb": 0.8051964703822942,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lower-thorax depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9648148887011815,
+    "vb": 0.8795241709169775,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.930047712932219,
+    "vb": 0.828198101388275,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a crest breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.9031101807024815,
+    "vb": 0.8687351346495111,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a hip-level breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.073574058299066,
+    "vb": 1.0101515061702782,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8834668640189541,
+    "vb": 0.9705404342512031,
+    "result": "FAIL"
+   },
+   {
+    "check": "ALPC-2b crest / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.065412225914028,
+    "vb": 1.0789107585593982,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2b hip-level / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.2665109435996655,
+    "vb": 1.2545404051394744,
+    "result": "MARGINAL"
+   },
+   {
+    "check": "ALPC-4 shoulder-joint / thoracic breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.0863907158357513,
+    "vb": 1.1227288589593143,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.856807928203771,
+    "vb": 0.7987624844131281,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8476626781034864,
+    "vb": 0.7735877287317506,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9648148887011815,
+    "vb": 0.9010498007603815,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.930047712932219,
+    "vb": 0.8259401690558831,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S5_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9031101807024815,
+    "vb": 0.8358597986981606,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S6_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.073574058299066,
+    "vb": 0.9707352752537155,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 pelvic_depth_over_thorax_depth > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8834668640189541,
+    "vb": 0.8699306756890701,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-0 valid shape: breadth non-increasing S2->S4, rising S4->S5 (no minimum at S5), non-decreasing S5->S6, S4 < S2 (1 = holds)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.0,
+    "vb": 1.0,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1c costal-iliac gap / stature (REPORT ONLY, AD-G9)",
+    "cand": "GO",
+    "op": "vs",
+    "va": 0.07373831386666775,
+    "vb": 0.07430665690450627,
+    "result": "REPORT"
+   },
+   {
+    "check": "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "shoulder-joint breadth / stature > GR (AD-G6)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.2281918457302339,
+    "vb": 0.18949929594585765,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1b ribcage vertical / breadth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8257512923735838,
+    "vb": 0.8069188510473357,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > SK (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7737842410890265,
+    "vb": 0.7225503487655794,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > GR (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7737842410890265,
+    "vb": 0.709482537999663,
+    "result": "PASS"
+   }
+  ],
+  "non_pass": [
+   [
+    "palm depth / hand substantial (> MF)",
+    "NOT DEMONSTRATED"
+   ],
+   [
+    "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "FAIL"
+   ],
+   [
+    "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "NOT DEMONSTRATED"
+   ],
+   [
+    "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "FAIL"
+   ],
+   [
+    "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "FAIL"
+   ],
+   [
+    "ALPC-2b hip-level / lumbar breadth <= MF",
+    "MARGINAL"
+   ],
+   [
+    "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "NOT RUN"
+   ]
+  ]
+ },
+ "GOLB": {
+  "targets": {
+   "measure-upperarm-length-decr": null,
+   "measure-lowerarm-length-decr": null,
+   "measure-napetowaist-dist-incr": null,
+   "measure-upperarm-length-incr": 0.2,
+   "measure-lowerarm-length-incr": 0.2
+  },
+  "stature": 217.0672149658203,
+  "ratio": {
+   "torso_share": 0.30003485298086674,
+   "leg_share": 0.5229933025933404,
+   "arm_share": 0.40857843383689285,
+   "span_der": 1.0453423120155318,
+   "forearm_over_arm": 0.36356074640274705,
+   "shin_over_leg": 0.47912411128974813,
+   "thorax_depth_share": 0.162529663706933,
+   "thorax_breadth_share": 0.2100456869766213,
+   "shoulder_joint_share": 0.22818544434174606
+  },
+  "vs_GR_BODY_10_pct": {
+   "leg_share": -5.0274806706073205,
+   "arm_share": -4.124210801189177,
+   "span_der": 0.5042123877844862,
+   "torso_share": 8.204759830118658
+  },
+  "rows": [
+   {
+    "check": "torso share > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.30003485298086674,
+    "vb": 0.26555338992162975,
+    "result": "PASS"
+   },
+   {
+    "check": "leg share < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5229933025933404,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "arm / stature < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.40857843383689285,
+    "vb": 0.43123658535458853,
+    "result": "PASS"
+   },
+   {
+    "check": "span < GR (span GR > GO)",
+    "cand": "GO",
+    "op": "<",
+    "va": 1.0453423120155318,
+    "vb": 1.0519724666550347,
+    "result": "NOT DEMONSTRATED"
+   },
+   {
+    "check": "thoracic breadth GO > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.2100456869766213,
+    "vb": 0.19672663177052996,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.162529663706933,
+    "vb": 0.14214489639727415,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.162529663706933,
+    "vb": 0.12099269962426451,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > MF-M-R",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.162529663706933,
+    "vb": 0.13243759613635098,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (elbow)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.31254747582824227,
+    "vb": 0.30724920895852703,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (wrist)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.24935327088167542,
+    "vb": 0.1932170219935873,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (knee)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.2670598084233976,
+    "vb": 0.21095843390286648,
+    "result": "PASS"
+   },
+   {
+    "check": "palm breadth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.448667730837274,
+    "vb": 0.43833781346741746,
+    "result": "PASS"
+   },
+   {
+    "check": "palm depth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.1860315487499822,
+    "vb": 0.18455614464609668,
+    "result": "NOT DEMONSTRATED"
+   },
+   {
+    "check": "cranial breadth / height (CBH) > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.1222570656802477,
+    "vb": 1.077021843503324,
+    "result": "PASS"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7569541690690166,
+    "vb": 0.7774857267671242,
+    "result": "FAIL"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7569541690690166,
+    "vb": 0.7520025656216514,
+    "result": "NOT DEMONSTRATED"
+   },
+   {
+    "check": "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "cand": "GO",
+    "op": "~",
+    "va": 1.1887511240496387,
+    "vb": 1.162784220276553,
+    "result": "FAIL"
+   },
+   {
+    "check": "leg share < GR (GO-P2b)",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5229933025933404,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "pelvic vertical / stature >= GR (GO-P3)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.05285785305074303,
+    "vb": 0.050829661818288456,
+    "result": "PASS"
+   },
+   {
+    "check": "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-1 lower-thorax breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8568074318021064,
+    "vb": 0.8319379508230125,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8476612092064709,
+    "vb": 0.8051964703822942,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lower-thorax depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9648135505326109,
+    "vb": 0.8795241709169775,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9300460652454197,
+    "vb": 0.828198101388275,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a crest breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.9031071011015376,
+    "vb": 0.8687351346495111,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a hip-level breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.0735695815716635,
+    "vb": 1.0101515061702782,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8834662715858866,
+    "vb": 0.9705404342512031,
+    "result": "FAIL"
+   },
+   {
+    "check": "ALPC-2b crest / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.0654104390915466,
+    "vb": 1.0789107585593982,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2b hip-level / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.2665078570442954,
+    "vb": 1.2545404051394744,
+    "result": "MARGINAL"
+   },
+   {
+    "check": "ALPC-4 shoulder-joint / thoracic breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.0863610085321285,
+    "vb": 1.1227288589593143,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8568074318021064,
+    "vb": 0.7987624844131281,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8476612092064709,
+    "vb": 0.7735877287317506,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9648135505326109,
+    "vb": 0.9010498007603815,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9300460652454197,
+    "vb": 0.8259401690558831,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S5_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9031071011015376,
+    "vb": 0.8358597986981606,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S6_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.0735695815716635,
+    "vb": 0.9707352752537155,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 pelvic_depth_over_thorax_depth > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8834662715858866,
+    "vb": 0.8699306756890701,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-0 valid shape: breadth non-increasing S2->S4, rising S4->S5 (no minimum at S5), non-decreasing S5->S6, S4 < S2 (1 = holds)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.0,
+    "vb": 1.0,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1c costal-iliac gap / stature (REPORT ONLY, AD-G9)",
+    "cand": "GO",
+    "op": "vs",
+    "va": 0.07373624531074734,
+    "vb": 0.07430665690450627,
+    "result": "REPORT"
+   },
+   {
+    "check": "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "shoulder-joint breadth / stature > GR (AD-G6)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.22818544434174606,
+    "vb": 0.18949929594585765,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1b ribcage vertical / breadth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8257287122428791,
+    "vb": 0.8069188510473357,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > SK (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7737824377466177,
+    "vb": 0.7225503487655794,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > GR (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7737824377466177,
+    "vb": 0.709482537999663,
+    "result": "PASS"
+   }
+  ],
+  "non_pass": [
+   [
+    "span < GR (span GR > GO)",
+    "NOT DEMONSTRATED"
+   ],
+   [
+    "palm depth / hand substantial (> MF)",
+    "NOT DEMONSTRATED"
+   ],
+   [
+    "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "FAIL"
+   ],
+   [
+    "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "NOT DEMONSTRATED"
+   ],
+   [
+    "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "FAIL"
+   ],
+   [
+    "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "FAIL"
+   ],
+   [
+    "ALPC-2b hip-level / lumbar breadth <= MF",
+    "MARGINAL"
+   ],
+   [
+    "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "NOT RUN"
+   ]
+  ]
+ },
+ "GOLC": {
+  "targets": {
+   "measure-upperarm-length-decr": null,
+   "measure-lowerarm-length-decr": null,
+   "measure-napetowaist-dist-incr": null,
+   "measure-upperarm-length-incr": 0.4,
+   "measure-lowerarm-length-incr": 0.4,
+   "measure-napetowaist-dist-decr": 0.3
+  },
+  "stature": 215.39491271972656,
+  "ratio": {
+   "torso_share": 0.29573486727551207,
+   "leg_share": 0.5270873203807864,
+   "arm_share": 0.42423888357003553,
+   "span_der": 1.0784382518480258,
+   "forearm_over_arm": 0.36713658843487185,
+   "shin_over_leg": 0.4791241112897483,
+   "thorax_depth_share": 0.16366239174345418,
+   "thorax_breadth_share": 0.21174863654115744,
+   "shoulder_joint_share": 0.22996048470795472
+  },
+  "vs_GR_BODY_10_pct": {
+   "leg_share": -4.284031028852686,
+   "arm_share": -0.4493766615763284,
+   "span_der": 3.686214424691303,
+   "torso_share": 6.654010255866627
+  },
+  "rows": [
+   {
+    "check": "torso share > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.29573486727551207,
+    "vb": 0.26555338992162975,
+    "result": "PASS"
+   },
+   {
+    "check": "leg share < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5270873203807864,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "arm / stature < GR",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.42423888357003553,
+    "vb": 0.43123658535458853,
+    "result": "PASS"
+   },
+   {
+    "check": "span < GR (span GR > GO)",
+    "cand": "GO",
+    "op": "<",
+    "va": 1.0784382518480258,
+    "vb": 1.0519724666550347,
+    "result": "FAIL"
+   },
+   {
+    "check": "thoracic breadth GO > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.21174863654115744,
+    "vb": 0.19672663177052996,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > SK",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16366239174345418,
+    "vb": 0.14214489639727415,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > GR",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16366239174345418,
+    "vb": 0.12099269962426451,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / stature > MF-M-R",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.16366239174345418,
+    "vb": 0.13243759613635098,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (elbow)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.29977969871382637,
+    "vb": 0.30724920895852703,
+    "result": "FAIL"
+   },
+   {
+    "check": "joint scale GO > GR (wrist)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.24157964191725337,
+    "vb": 0.1932170219935873,
+    "result": "PASS"
+   },
+   {
+    "check": "joint scale GO > GR (knee)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.26705643641421006,
+    "vb": 0.21095843390286648,
+    "result": "PASS"
+   },
+   {
+    "check": "palm breadth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.4501119326324169,
+    "vb": 0.43833781346741746,
+    "result": "PASS"
+   },
+   {
+    "check": "palm depth / hand substantial (> MF)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.18956748189668152,
+    "vb": 0.18455614464609668,
+    "result": "PASS"
+   },
+   {
+    "check": "cranial breadth / height (CBH) > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.122254848105218,
+    "vb": 1.077021843503324,
+    "result": "PASS"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7555618862436563,
+    "vb": 0.7774857267671242,
+    "result": "FAIL"
+   },
+   {
+    "check": "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7555618862436563,
+    "vb": 0.7520025656216514,
+    "result": "NOT DEMONSTRATED"
+   },
+   {
+    "check": "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "cand": "GO",
+    "op": "~",
+    "va": 1.187128653834865,
+    "vb": 1.162784220276553,
+    "result": "FAIL"
+   },
+   {
+    "check": "leg share < GR (GO-P2b)",
+    "cand": "GO",
+    "op": "<",
+    "va": 0.5270873203807864,
+    "vb": 0.5633352710681223,
+    "result": "PASS"
+   },
+   {
+    "check": "pelvic vertical / stature >= GR (GO-P3)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.05326902131948262,
+    "vb": 0.050829661818288456,
+    "result": "PASS"
+   },
+   {
+    "check": "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-1 lower-thorax breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8543585576698098,
+    "vb": 0.8319379508230125,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar breadth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8451400111782283,
+    "vb": 0.8051964703822942,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lower-thorax depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9639265835147013,
+    "vb": 0.8795241709169775,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1 lumbar depth / thorax > MF",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9274941464028276,
+    "vb": 0.828198101388275,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a crest breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.9040355997090231,
+    "vb": 0.8687351346495111,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a hip-level breadth / thorax >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.0732065645013675,
+    "vb": 1.0101515061702782,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8837456799708909,
+    "vb": 0.9705404342512031,
+    "result": "FAIL"
+   },
+   {
+    "check": "ALPC-2b crest / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.0696873745791389,
+    "vb": 1.0789107585593982,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-2b hip-level / lumbar breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.2698565330082843,
+    "vb": 1.2545404051394744,
+    "result": "FAIL"
+   },
+   {
+    "check": "ALPC-4 shoulder-joint / thoracic breadth <= MF",
+    "cand": "GO",
+    "op": "<=",
+    "va": 1.0860069205841496,
+    "vb": 1.1227288589593143,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8543585576698098,
+    "vb": 0.7987624844131281,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8451400111782283,
+    "vb": 0.7735877287317506,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S3_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9639265835147013,
+    "vb": 0.9010498007603815,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S4_over_S2_d > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9274941464028276,
+    "vb": 0.8259401690558831,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S5_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.9040355997090231,
+    "vb": 0.8358597986981606,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 S6_over_S2_b > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 1.0732065645013675,
+    "vb": 0.9707352752537155,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-7 pelvic_depth_over_thorax_depth > Skarn central (beyond 1 %; equal-height Broad Skarn not built)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.8837456799708909,
+    "vb": 0.8699306756890701,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-0 valid shape: breadth non-increasing S2->S4, rising S4->S5 (no minimum at S5), non-decreasing S5->S6, S4 < S2 (1 = holds)",
+    "cand": "GO",
+    "op": ">=",
+    "va": 1.0,
+    "vb": 1.0,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1c costal-iliac gap / stature (REPORT ONLY, AD-G9)",
+    "cand": "GO",
+    "op": "vs",
+    "va": 0.07273241611070706,
+    "vb": 0.07430665690450627,
+    "result": "REPORT"
+   },
+   {
+    "check": "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "cand": "GO",
+    "op": "n/a",
+    "va": null,
+    "vb": null,
+    "result": "NOT RUN"
+   },
+   {
+    "check": "shoulder-joint breadth / stature > GR (AD-G6)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.22996048470795472,
+    "vb": 0.18949929594585765,
+    "result": "PASS"
+   },
+   {
+    "check": "ALPC-1b ribcage vertical / breadth >= MF",
+    "cand": "GO",
+    "op": ">=",
+    "va": 0.8015798005496552,
+    "vb": 0.8069188510473357,
+    "result": "MARGINAL"
+   },
+   {
+    "check": "thoracic depth / breadth > SK (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7729088338740883,
+    "vb": 0.7225503487655794,
+    "result": "PASS"
+   },
+   {
+    "check": "thoracic depth / breadth > GR (AD-G7)",
+    "cand": "GO",
+    "op": ">",
+    "va": 0.7729088338740883,
+    "vb": 0.709482537999663,
+    "result": "PASS"
+   }
+  ],
+  "non_pass": [
+   [
+    "span < GR (span GR > GO)",
+    "FAIL"
+   ],
+   [
+    "joint scale GO > GR (elbow)",
+    "FAIL"
+   ],
+   [
+    "AP pelvic depth / crest breadth > MF-M-R (PV-D14)",
+    "FAIL"
+   ],
+   [
+    "AP pelvic depth / crest breadth > SK (PV-D14)",
+    "NOT DEMONSTRATED"
+   ],
+   [
+    "bitrochanteric / crest ~ MF (GO-P2b, hip joints under the load path)",
+    "FAIL"
+   ],
+   [
+    "hip-joint scale / crest breadth >= MF and >= SK (GO-P2a)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-2a pelvic AP / thoracic depth >= MF",
+    "FAIL"
+   ],
+   [
+    "ALPC-2b hip-level / lumbar breadth <= MF",
+    "FAIL"
+   ],
+   [
+    "ALPC-3 pelvis -> proximal femur (femoral head/neck, subtrochanteric shaft)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-5 frame invariance (GOR-BODY-04, -12, -14)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-6 composition invariance (skeletal proxy + GOR-BODY-16)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-8 separation from Durrim (matched-display silhouette)",
+    "NOT RUN"
+   ],
+   [
+    "ALPC-1b ribcage vertical / breadth >= MF",
+    "MARGINAL"
+   ]
+  ]
+ }
+}
