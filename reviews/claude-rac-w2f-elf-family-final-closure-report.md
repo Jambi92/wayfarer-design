@@ -1,6 +1,7 @@
 # RAC W2F — Elf Family Final Closure Report
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026
+**Author ruling (October 8, 2026; reviews/chatgpt-rac-w2f-final-acceptance-w2g-halvren-order.md):** W2F FINAL AUTHOR ACCEPTED / CLOSED — Fenn, Aelari, Vael and the elf family accepted; RM-OT-02 answered. 1A: Aelari short-end neck accepted under R1 (general clause). 1B: **bookkeeping correction** — the Aelari 168 cm foot near-equality (§5, §6 row 7 note) is classified under the reference-state / complete-anatomy interpretation, *not* 'resolved by R2'; Marchfolk 168 stays on its macro route; no body changed. 1C: route-junction discontinuities accepted as generator / construction limits, with a permanent implementation dependency (no visible anatomical pop at a construction boundary in the continuous creator height control).
 **Order:** `reviews/chatgpt-rac-w2f-elf-family-closure-order.md` (author rulings R1–R3)
 **Basis:** `reviews/claude-rac-w2f-elf-family-gate.md`
 **Evidence:** `reviews/rac-w2f-elf-evidence/closure/` (`w2f_closure.json`, `tables_closure.md`, `r2_cutoff_sensitivity.json`). The gate-time evidence at the top level is unchanged.
