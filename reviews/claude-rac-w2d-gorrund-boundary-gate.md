@@ -1,6 +1,7 @@
 # RAC W2D — Gorrund W2 Author-Acceptance Gate
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026 · **Order:** `reviews/chatgpt-rac-final-grask-w2-acceptance-gorrund-w2-order.md` §4–§5
+**Author ruling (October 8, 2026; reviews/chatgpt-rac-w2d-gorrund-final-acceptance-w2e-sagekin-order.md):** ACCEPT — Gorrund W2 FINAL AUTHOR ACCEPTED / CLOSED. R1 accept current Broad (headroom diagnostic, not a maximum); R2 option (a) (GOR-BODY-14 bound by ALPC-5 depth vs Marchfolk; AD-G7 vs Skarn is a population direction); R3 joint presence = joint / adjacent bone, per-stature elbow report-only, no correction; R4 218 cm palm depth = generator-route dip, no correction. AD-3 CLOSED; Grask 198 vs Gorrund NOT APPLICABLE. Residual list (§9) is the closure record.
 **Evidence:** `reviews/rac-w2d-go-evidence/` (`tables.md` is generated; every number below is from `w2d.json`, `probes.json`, `search_ad3.json`)
 **Status:** DESIGN ONLY / NO UE5. NON-CANON diagnostics. No canon was rewritten, and no Skarn or Grask body was changed. Every comparator is the accepted body, with the W2C1 knee reverts applied (Skarn 229 configuration 1 = original W2B body; Marchfolk 203 configuration 1 = uncorrected body).
 

@@ -150,6 +150,8 @@ Per order §5.6, these validators come from approved reference meshes. They are 
 - the GR-BODY-10 limb floor relative to Gorrund;
 - the ALPC proxy measurements.
 
+**AD-3 measurement closure (October 8, 2026; `reviews/chatgpt-rac-w2d-gorrund-final-acceptance-w2e-sagekin-order.md`):** RAC W2D measured the floor at real overlap — the limb-present Gorrund family stays below GR-BODY-10 in leg, arm and span share while keeping greater torso contribution (`reviews/claude-rac-w2d-gorrund-boundary-gate.md` §8). AD-3 / LR-07 / RM-LR-04 CLOSED; Grask 198 vs Gorrund NOT APPLICABLE.
+
 **Review status:** performed. No contradiction, no redesign. **Accepted October 5, 2026:** AD-1, AD-2, AD-4 and AD-5 approved; AD-3 option (a) approved (`reviews/chatgpt-pass2-author-closure-canonicalization-order.md`). All five are reconciled into the specs.
 
 — Claude
