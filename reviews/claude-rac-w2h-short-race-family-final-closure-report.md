@@ -1,6 +1,7 @@
 # RAC W2H — Short-Race Family Final Closure Report (W2H1)
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026 · **Order:** `reviews/chatgpt-rac-w2h1-durrim-pelvic-closure-order.md`
+**Author ruling (October 8, 2026; `reviews/chatgpt-rac-w2h-final-acceptance-w2i-saurin-order.md`):** W2H / W2H1 FINAL AUTHOR ACCEPTED / CLOSED — Durrim, Pipkin, Cogling, structural-mass axis and short-race family accepted; D1–D4 preserved; DU-P4 PASS under D1; DU137C accepted as the current W2 Durrim reference realization (record `tools/rac/w1/cfg/w2h/DU-W2-REF.json`; W1 DU-NAT history preserved).
 **Gate closed by this report:** `reviews/claude-rac-w2h-short-race-family-gate.md`
 **Evidence:** `reviews/rac-w2h-sr-evidence/closure/`
 - `w2h_closure.json` — every number below comes from it.

@@ -1,0 +1,25 @@
+{
+ "id": "DU-W2-REF",
+ "realization": "DU137C",
+ "item": "current W2 Durrim reference realization = DU-NAT identity + author-approved W2H D1 pelvic AP correction",
+ "provenance": {
+  "w1_record": "tools/rac/w1/cfg/w1t/DU-NAT.json (historical W1 DU-NAT as built; unchanged; did NOT contain D1)",
+  "d1_order": "reviews/chatgpt-rac-w2h1-durrim-pelvic-closure-order.md",
+  "acceptance": "reviews/chatgpt-rac-w2h-final-acceptance-w2i-saurin-order.md",
+  "builder": "tools/rac/w1/w2h1_drivers/du_d1.py",
+  "evidence": "reviews/rac-w2h-sr-evidence/closure/"
+ },
+ "as_built": {
+  "base": "DU-NAT cfg (targets, native short-adult route, 137 cm) unchanged",
+  "bone_scales": {
+   "pelvis": [
+    1.0,
+    0.9,
+    1.04
+   ]
+  },
+  "change_vs_w1": "pelvis bone Z 1.0 -> 1.04 (D1) only",
+  "family": "DU122C / DU137C / DU152C on the same route; frames Durrim breadth-only, Broad pelvis X x1.08"
+ },
+ "status": "ACCEPTED current W2 Durrim reference realization (October 8, 2026). Downstream RAC work uses DU137C; the W1 DU-NAT artifact and record stay as history."
+}

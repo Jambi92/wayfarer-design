@@ -1,6 +1,7 @@
 # RAC W2H — Short-Race Family (Durrim / Pipkin / Cogling) Gate
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026 · **Order:** `reviews/chatgpt-rac-w2g-final-acceptance-w2h-short-race-order.md` §2–§20
+**Author ruling (October 8, 2026; `reviews/chatgpt-rac-w2h-final-acceptance-w2i-saurin-order.md`):** W2H / W2H1 FINAL AUTHOR ACCEPTED / CLOSED — Durrim, Pipkin, Cogling, structural-mass axis and short-race family accepted; D1–D4 preserved; DU-P4 PASS under D1; DU137C accepted as the current W2 Durrim reference realization (record `tools/rac/w1/cfg/w2h/DU-W2-REF.json`; W1 DU-NAT history preserved).
 **Author ruling (October 8, 2026; `reviews/chatgpt-rac-w2h1-durrim-pelvic-closure-order.md`):** Pipkin, Cogling and the structural-mass axis accepted in principle; Durrim constrained solely by D1. D1 option (b) APPROVED at the smallest tested write only (pelvis bone Z x1.04; bounded Durrim-specific correction; W2H1 closure rerun). D2 APPROVED (Broad Cogling may reach about Broad-Marchfolk thoracic breadth; narrow-to-moderate read at Balanced). D3 APPROVED (COG-BODY-12 near-human limb read at arm-to-wrist; COG-BODY-13 sub-1 % directional reading). D4 APPROVED (real-height comparisons govern; normalized cross-stature inversion is a report item; robusticity across short-race creator envelopes carried as a named dependency).
 **Evidence:** `reviews/rac-w2h-sr-evidence/`. `tables.md` is generated, and every number below comes from `w2h.json`.
 **Status:** DESIGN ONLY / NO UE5. NON-CANON diagnostics.
