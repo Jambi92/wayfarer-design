@@ -88,7 +88,7 @@ for _p, SER in SERIES.items():
 # G. accepted W1 rows of the body's own population
 CANON = {}
 import directional_checks as DC, skeletal_checks as SCK
-CAND = S + '/w2h/cand0'; SKB = S + '/w2h/skb0'
+CAND = os.environ.get('W2H_CAND', S + '/w2h/cand0'); SKB = os.environ.get('W2H_SKB', S + '/w2h/skb0')   # W2H1: slot references with the D1-corrected Durrim
 if not os.path.exists(CAND):      # W1 slot references with the accepted Cogling CGJ7 (W1r ruling) instead of the as-built CG-NAT
     shutil.copytree(S + '/w1g/cand', CAND); shutil.copy(S + '/w1r/probe/CGJ7_meas.json', CAND + '/CG_meas.json')
 if not os.path.exists(SKB):
@@ -101,7 +101,7 @@ def mine(x, race): return x.get("cand") == race or x.get("b") == race or x.get("
 for b, e in REG.items():
     race = e.get("race")
     if not race or b not in V: continue
-    tmp = S + '/w2h/cand_' + b
+    tmp = S + '/w2h/cand_' + b + os.environ.get('W2H_TAG', '')
     if os.path.exists(tmp): shutil.rmtree(tmp)
     shutil.copytree(CAND, tmp); shutil.copy(e["meas"] + '_meas.json', tmp + '/%s_meas.json' % race)
     rows = []
@@ -112,7 +112,7 @@ for b, e in REG.items():
         else: res = "PASS" if x.get("pass") else "FAIL"
         rows.append({"layer": "directional (skin)", "check": x["check"], "cand": x.get("cand"), "op": op, "va": va, "vb": vb, "result": res})
     if e.get("skp") and os.path.exists('%s/t0.0/%s_meas.json' % (e["skp"], e["skp_id"])):
-        tk = S + '/w2h/skc_' + b
+        tk = S + '/w2h/skc_' + b + os.environ.get('W2H_TAG', '')
         if os.path.exists(tk): shutil.rmtree(tk)
         shutil.copytree(SKB, tk, symlinks=True, ignore=shutil.ignore_patterns('*_skp.json', '*.jpg', 'skeletal_checks.json'))
         for t in ("0.0", "0.5", "1.0"):

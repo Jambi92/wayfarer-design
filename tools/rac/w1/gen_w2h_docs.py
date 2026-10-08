@@ -17,11 +17,12 @@ GROUPS = [("Durrim family (native route; DU137 = accepted DU-NAT)", ["DU122", "D
           ("Named validators", ["COG04", "COG05", "COG12", "COG13", "PKBHM", "DUNLOW"]),
           ("DU-P4 composition at 152 cm", ["DU152-LOW", "MF152-LOW", "DU152-MIN", "MF152-MIN", "DU152-HIBOTH", "MF152-HIBOTH"]),
           ("Generator human-child proxies (diagnostic only)", ["CHILD1", "CHILD3", "CHILD6", "CHILD9"]),
-          ("Route reproduction", ["DU137R", "PK107R", "CG91R"])]
+          ("Route reproduction", ["DU137R", "PK107R", "CG91R"]),
+          ("W2H1 D1 before (uncorrected W2H Durrim, suffix -W2H) / after (pelvis Z x1.04)", ["DU122-W2H", "DU122", "DU137-W2H", "DU137", "DU152-W2H", "DU152", "DU152P4", "DU152P6"])]
 CODES = {"U": "head height / allometry", "C": "continuity per family", "O": "real-height overlaps and Cogling-Durrim context", "P": "body-only collision (complete package)",
          "D": "Durrim 152 cm boundary (DU-P2...P6, RM-SR-06)", "P4": "DU-P4 closure", "R": "RM-SR-01 Pipkin trunk / pelvis (normalized)", "Q": "RM-SR-02 Cogling segment distribution (normalized)",
          "A": "RM-SR-03 structural-mass axis", "F": "frames", "M": "composition firewall", "K": "RM-SR-04 adult read (child proxies; report)", "S5": "RM-SR-05 craniofacial depth proxies (report)",
-         "Z": "route reproduction", "G": "accepted W1 rows per body (normalized: fixed W1 references)"}
+         "Z": "route reproduction", "B1": "W2H1 D1 before / after and bounded-correction guard", "G": "accepted W1 rows per body (normalized: fixed W1 references)"}
 def main():
     src = os.environ.get("W2H_JSON", "w2h.json"); out = os.environ.get("W2H_TABLES", "tables.md")     # closure: W2F_JSON=closure/w2f_closure.json W2H_TABLES=closure/tables_closure.md
     d = json.load(open(os.path.join(EV, src))); V = d["values"]

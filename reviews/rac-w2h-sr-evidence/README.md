@@ -20,3 +20,14 @@ Comparison rule: real matched height is used only where adult ranges overlap:
 - Durrim–Marchfolk–Sagekin at 152 cm.
 
 Every other comparison is a NORMALIZED ratio diagnostic against Marchfolk 173, or against its accepted W2A1 frames and W2A composition states. These are labelled as such and never treated as a same-height Marchfolk adult. Child proxies are generator human children, used as diagnostics only and never as a race baseline.
+
+## W2H1 closure (author rulings D1–D4, `reviews/chatgpt-rac-w2h1-durrim-pelvic-closure-order.md`)
+
+`closure/` holds the closure rerun for `reviews/claude-rac-w2h-short-race-family-final-closure-report.md`:
+- `w2h_closure.json`, `registry_closure.json`, `spec_closure.json` — `w2h1_drivers/w2h1_reg.py` / `w2h1_spec.py`, with `w2h_drivers/w2h_eval.py` run using `W2H_CAND` / `W2H_SKB` pointing at slot dirs that carry the D1 Durrim (`w2h1_drivers/slots.py`). Every Durrim body is replaced by its D1 rebuild under the same name; the uncorrected W2H Durrim bodies are kept as `<name>-W2H` (BEFORE).
+- `construction_closure.json` — the D1 rebuilds (`w2h1_drivers/du_d1.py`: pelvis bone Z x1.04 on the DU-NAT construction).
+- `joint_sections_closure.json` — exact-plane sections of the D1 bodies.
+- `tables_closure.md` — `W2H_JSON=closure/w2h_closure.json W2H_TABLES=closure/tables_closure.md python3 tools/rac/w1/gen_w2h_docs.py`.
+- `sheets/` — D1 before / after renders (`w2h1_drivers/render_AS_RUN.sh`). Grids: `w2h1_drivers/grids_AS_RUN.py`.
+
+The top-level `w2h.json` / `tables.md` are the gate-time evidence and are unchanged.
