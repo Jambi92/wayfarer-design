@@ -114,6 +114,14 @@ for row in SPEC.get("rows", []):
         beyond = ve is not None and vm is not None and ((ve > vm * 1.01) if row["op"] == "<" else (ve < vm * 0.99))
         if not beyond: row = dict(row, report=True, note=row.get("note", "") + "; W1 elf not beyond matched Marchfolk (%s) by 1 %% on this reading" % mf)
     (tsweep if "[t=0.0]" in row["k"] else add)(row["code"], row["check"], row["a"], row["op"], row["b"], row["k"], row.get("note", ""), row.get("report", False))
+    # W2F closure ruling R1 (reviews/chatgpt-rac-w2f-elf-family-closure-order.md §1): E-A2, VA-P2a and the Aelari longer-leg relation are
+    # reference-state directional relations - at matched height a difference below 1 % in (or effectively equal to) the intended direction is accepted;
+    # an isolated scalar overlap with Sagekin is an accepted complete-anatomy overlap (W2E rule). Rows keep their raw class in 'raw_result'.
+    c = C[-1]
+    if row.get("r1") and c["result"] in ("NOT DEMONSTRATED", "FAIL", "MARGINAL", "T-SENSITIVE"):
+        c["raw_result"] = c["result"]; m = c.get("margin_pct")
+        if row["r1"] == "ref" and m is not None and abs(m) < 1.0: c["result"] = "PASS (R1 reference-state)"
+        elif row["r1"] == "overlap": c["result"] = "OVERLAP (R1 complete anatomy)"
 for row in SPEC.get("invariance", []):
     a, b = row["a"], row["b"]
     if a not in V or b not in V: continue

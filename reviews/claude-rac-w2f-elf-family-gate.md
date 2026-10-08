@@ -1,6 +1,7 @@
 # RAC W2F — Elf Family (Fenn / Aelari / Vael) Author-Acceptance Gate
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026 · **Order:** `reviews/chatgpt-rac-w2e-sagekin-final-acceptance-w2f-elf-family-order.md` §4–§17
+**Author ruling (October 8, 2026; reviews/chatgpt-rac-w2f-elf-family-closure-order.md):** elf-family anatomy approved; no redesign. R1 option (a) approved (reference-state reading of E-A2, VA-P2a and the Aelari longer-leg relation; W2E complete-anatomy rule for Sagekin overlap). R2 approved (native route below re-solved macro ~0.40; construction only). R3 approved (FN-09 x0.75). Fenn substantively accepted; Aelari and Vael approved in principle pending the closure re-run. Closure: `reviews/claude-rac-w2f-elf-family-final-closure-report.md`.
 **Evidence:** `reviews/rac-w2f-elf-evidence/` (`tables.md` is generated; every number below is from `w2f.json`)
 **Status:** DESIGN ONLY / NO UE5. NON-CANON diagnostics. No elf, Marchfolk, Sagekin or Skarn canon or body was changed. The leg probes in §12 are diagnostics only and were **not applied**.
 

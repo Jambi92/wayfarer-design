@@ -160,7 +160,21 @@ for x in ("AEP175_190", "AEP200_190", "AEP250_190"):
     r("Q", "Vael 190 < %s: leg share (VA-P2a)" % x, "VA190", "<", x, "leg_share", "probe")
 r("Q", "VAP0_190 vs Marchfolk 190: > leg share (E-A2)", "VAP0_190", ">", "MF190", "leg_share", "probe")
 for o in ("AE190", "FN190"): r("Q", "VAP0_190 < %s: leg share (VA-P2a)" % o, "VAP0_190", "<", o, "leg_share", "probe")
-for k, op, src in HUM["FN"]: r("X", "FN-09 at x0.75 keeps the Fenn direction vs Marchfolk 181: %s %s" % (op, k.replace(T0, "")), "FN09x75", op, "MF181", k, src)
-for k, op in (("arm_share", "<"), ("leg_share", "<")): r("X", "FN-09 at x0.75 moves %s vs Fenn reference: %s" % (op, k), "FN09x75", op, "FN181", k, "FN-09")
+# W2F closure: FN-09 is the x0.75 body (R3); the rejected x0.5 build is kept as FN09x50 (before)
+for k, op, src in HUM["FN"]: r("X", "BEFORE (rejected x0.5) FN-09 vs Marchfolk 181: %s %s" % (op, k.replace(T0, "")), "FN09x50", op, "MF181", k, src, True)
+# W2F closure R2 before / after: the macro-route bodies (before) vs the native-route bodies (after) on each population's directions vs Marchfolk
+for p, h, mf in (("FN", 163, "MF163"), ("VA", 163, "MF163"), ("AE", 168, "MF168"), ("AE", 173, "MF173")):
+    for k, op, src in HUM[p]:
+        r("B", "BEFORE (macro route) %s%d vs Marchfolk %d: %s %s" % (p, h, h, op, k.replace(T0, "")), "%s%dM" % (p, h), op, mf + ("M" if h == 163 else ""), k, src + "; macro route (superseded by R2)", True)
+    for k in ("femur_over_leg", "leg_share", "torso_share", "HH_share", JP("knee"), JP("wrist")):
+        r("B", "AFTER vs BEFORE %s%d: %s" % (p, h, k), "%s%d" % (p, h), ">", "%s%dM" % (p, h), k, "R2 route change", True)
+# W2F closure R1 flags
+for d in rows:
+    a, b, k = d["a"], d["b"], d["k"]
+    if d["code"] == "Q": d["report"] = True; continue
+    if d.get("report"): continue
+    if d["code"] in ("H", "F", "M", "X") and k == "leg_share" and a[:2] in ("AE", "VA") and b.startswith("MF"): d["r1"] = "ref"
+    elif "VA-P2a" in d["check"] or "VA-P2a" in d.get("note", ""): d["r1"] = "ref"
+    elif d["code"] == "S" or (d["code"] == "M" and b.startswith("SG")): d["r1"] = "overlap"
 json.dump({"rows": rows, "invariance": inv, "moves": mv, "series": {p: [nm(p, h) for h in FAM[p]] for p in FAM}}, open(sys.argv[1], "w"), indent=1)
 print(len(rows), "rows", len(inv), "invariance", len(mv), "moves")

@@ -39,4 +39,19 @@ R["SK190"] = {"meas": S + '/w2b/st/SKM190', "skp": N + '/w2b_g_SKM190', "skp_id"
 R["SK203"] = {"meas": S + '/w2b/st/SKM203', "skp": N + '/w2b_g_SKM203', "skp_id": "MF-M-R", "joint": "SKM203"}
 R["SK208"] = {"meas": S + '/w1f/final/SK', "skp": N + '/w1i_base', "skp_id": "SK", "joint": "SK"}
 R["SK229"] = {"meas": S + '/w2b/st/SKM229', "skp": N + '/w2b_g_SKM229', "skp_id": "MF-M-R", "joint": "SKM229"}
+# W2F closure (R2): the four macro-route bodies below re-solved macro ~0.40 are replaced by their native-route builds; the macro builds stay as
+# '<name>M' (before). Aelari 173 composition states and Aelari 168 frames follow (r2_rebuild.py). Matched Marchfolk 163 = native MF163N.
+for n in ("FN163", "VA163", "AE168", "AE173"):
+    R[n + "M"] = dict(R[n]); R[n + "M"]["race"] = None
+    R[n] = {"meas": W + '/rt/%sN-NAT' % n, "skp": W + '/g/%sN-NAT/skp' % n, "skp_id": "MF-M-R", "joint": n + "N-NAT", "race": n[:2]}
+for c in ("LOWMUS", "HIMUS", "HIFAT", "HIBOTH", "LOW", "MIN"):
+    R["AE173M-" + c] = dict(R["AE173-" + c]); R["AE173M-" + c]["race"] = None
+    R["AE173-" + c] = {"meas": W + '/comp/AE173N-' + c, "skp": None, "joint": "AE173N-" + c, "race": "AE"}
+for t in "NB":
+    R["AE%s168M" % t] = dict(R["AE%s168" % t]); R["AE%s168M" % t]["race"] = None
+    R["AE%s168" % t] = {"meas": W + '/fr/AE%s168N' % t, "skp": W + '/g/AE%s168N/skp' % t, "skp_id": "MF-M-R", "joint": "AE%s168N" % t, "race": "AE"}
+R["MF163M"] = dict(R["MF163"]); R["MF163"] = {"meas": E + '/rt/MF163N-NAT', "skp": W + '/g/MF163N-NAT/skp', "skp_id": "MF-M-R", "joint": "MF163N-NAT"}
+# R3: FN-09 = the x0.75 build; the rejected x0.5 build kept as FN09x50
+R["FN09x50"] = dict(R["FN09"]); R["FN09x50"]["race"] = None; R["FN09"] = dict(R["FN09x75"]); R["FN09"]["race"] = "FN"
+R.pop("FN09x75", None)
 json.dump(R, open(sys.argv[1], 'w'), indent=1); print(len(R), "bodies")

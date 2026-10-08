@@ -9,3 +9,12 @@ NON-CANON diagnostics for `reviews/claude-rac-w2f-elf-family-gate.md`.
 - `sheets/` — render sheets (`w2f_drivers/render_AS_RUN.sh`).
 
 Builders: `w2f_drivers/el_build.py` (job sets stature / frames / comp / fcomp / named), `w2f_drivers/leg_probe.py` (diagnostic leg probes and native-route cross-checks; NOT applied). Skeletal grids: `w2a_drivers/mfm_grid.py` per body (`w2f_drivers/grids_AS_RUN.py`). Record: `tools/rac/w1/cfg/w2f/ELF-family-boundary.json`.
+
+## W2F closure (author rulings R1–R3, `reviews/chatgpt-rac-w2f-elf-family-closure-order.md`)
+
+`closure/` holds the closure re-run for `reviews/claude-rac-w2f-elf-family-final-closure-report.md`:
+- `w2f_closure.json`, `registry_closure.json`, `spec_closure.json` — the current `w2f_reg.py` / `w2f_spec.py` / `w2f_eval.py` (R2 native-route bodies replace FN163 / VA163 / AE168 / AE173 and their dependants, the macro builds kept with suffix M as BEFORE; matched Marchfolk 163 = native MF163N; FN-09 = x0.75, the rejected x0.5 kept as FN09x50; R1 classifications recorded with the raw class in `raw_result`).
+- `r2_cutoff_sensitivity.json` — continuity with FN173 / AE178 / VA173 also on the native route (diagnostic only; the ruled cutoff ~0.40 is unchanged).
+- `joint_sections_closure.json` — exact-plane sections of the R2-dependent bodies.
+- `tables_closure.md` — `W2F_JSON=closure/w2f_closure.json W2F_TABLES=closure/tables_closure.md python3 tools/rac/w1/gen_w2f_docs.py`.
+The top-level `w2f.json` / `tables.md` are the gate-time evidence and are unchanged. Drivers: `w2f_drivers/r2_rebuild.py`, `r2_sensitivity.py`, `leg_probe.py route`.
