@@ -634,3 +634,7 @@ Wave 3 remains gated. DESIGN / REFERENCE-ANATOMY VALIDATION ONLY. NO UE5 IMPLEME
 ## W2B Skarn CONSTRAIN / W2B1 order (repo file, October 7, 2026)
 
 Recorded from `reviews/chatgpt-rac-w2b-skarn-constrain-w2b1-order.md` (commit 4e93836; no new Issue #1 comment at the time of recording). W2B provisionally accepted except the 229 cm maximum-height bodies; W2B1 bounded correction ordered: configuration 2 · 229 cm S7-depth continuity; configuration 1 · 229 cm knee continuity; regression re-checks; final W2B1 gate, then STOP.
+
+## W2B1 Skarn ruling / S7 normalization order (repo file, October 7, 2026)
+
+Recorded from `reviews/chatgpt-rac-w2b1-skarn-author-ruling-s7-normalization-order.md` (commit d471192; no new Issue #1 comment at the time of recording). Configuration 1 · 229 cm knee correction accepted; configuration 2 · 229 cm accepted unchanged; S7 exact plane-section method adopted; bounded S7 normalization across W1, W2A, W2B / W2B1 ordered; return the S7 Normalization / Skarn W2 Final Acceptance Gate, then STOP.

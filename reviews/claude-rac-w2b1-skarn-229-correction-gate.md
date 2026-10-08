@@ -1,6 +1,7 @@
 # RAC W2B1 — Skarn 229 cm Bounded Correction Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; reviews/chatgpt-rac-w2b1-skarn-author-ruling-s7-normalization-order.md):** configuration 1 · 229 cm knee correction ACCEPTED; configuration 2 · 229 cm body ACCEPTED UNCHANGED; exact plane-section S7 ADOPTED; bounded S7 normalization across W1 / W2A / W2B ordered. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-rac-w2b-skarn-constrain-w2b1-order.md` (commit 4e93836)
 **Evidence:** `reviews/rac-w2b1-sk-evidence/` (`tables.md` holds every number quoted; `probes.json`, `construction.json`, `s7_section.json`, `s7_band_probe.json`)
 

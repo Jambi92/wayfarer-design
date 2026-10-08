@@ -143,13 +143,8 @@ def measure(path, pitch_deg=0.0, eye_ref_ext=None):
     zs = np.linspace(s01, s02, 9); vals = [sec(z) for z in zs]; k = int(np.nanargmin([v[0] for v in vals])); st["S4"] = vals[k]
     st["S5"] = (out["iliac_crest_breadth"], sec(s01)[1])
     st["S6"] = (out["bitrochanteric_breadth"], out["pelvic_depth"])
-    th = [] 
-    for sd in ("l", "r"):
-        hp_, kn_ = head("thigh_" + sd), head("calf_" + sd); ax = (kn_ - hp_) / np.linalg.norm(kn_ - hp_)
-        tv = np.where(keep & (w("thigh_" + sd) > 0.5))[0]; P = V[tv] - hp_; t = P @ ax
-        m_ = np.abs(t - 0.2 * np.linalg.norm(kn_ - hp_)) < 0.8; Q = P[m_] - np.outer(t[m_], ax)
-        th.append((float(Q[:, 0].max() - Q[:, 0].min()), float(Q[:, 1].max() - Q[:, 1].min())))
-    st["S7"] = tuple(np.mean(th, axis=0))
+    import s7_station    # S7 normalization 2026-10-07: exact plane section (s7_station.METHOD)
+    st["S7"] = s7_station.s7(V, keep, d["F"], head, lambda sd: w("thigh_" + sd))
     out["alpc_stations"] = {k: [float(a), float(b)] for k, (a, b) in st.items()}
     # --- ratios to stature ---
     R = {"torso_share": out["torso_len"] / H, "leg_share": M["hip_height"] / H, "arm_share": M["arm"] / H,

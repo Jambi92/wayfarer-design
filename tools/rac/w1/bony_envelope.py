@@ -59,14 +59,8 @@ def fast_stations(d, levels=None, want_levels=False, section=None):
     st["S5"] = (slab(s01, trunk)[0], slab(s01, trunk)[1])
     bt = trunk & (np.abs(V[:, 2] - hipc[2]) < 3)
     st["S6"] = (float(V[bt, 0].max() - V[bt, 0].min()), slab(hipc[2], trunk)[1])
-    for key, frac in (("S7", 0.2),):
-        th = []
-        for sd in ("l", "r"):
-            hp_, kn_ = head("thigh_" + sd), head("calf_" + sd); ax = (kn_ - hp_) / np.linalg.norm(kn_ - hp_)
-            tv = np.where(keep & (w("thigh_" + sd) > 0.5))[0]; P = V[tv] - hp_; t = P @ ax
-            m_ = np.abs(t - frac * np.linalg.norm(kn_ - hp_)) < 0.8; Q = P[m_] - np.outer(t[m_], ax)
-            th.append((float(Q[:, 0].max() - Q[:, 0].min()), float(Q[:, 1].max() - Q[:, 1].min())))
-        st[key] = tuple(np.mean(th, axis=0))
+    import s7_station    # S7 normalization 2026-10-07: exact plane section (s7_station.METHOD)
+    st["S7"] = s7_station.s7(V, keep, d["F"], head, lambda sd: w("thigh_" + sd))
     out = {k: [float(a), float(b)] for k, (a, b) in st.items()}
     return (out, {"S2b": i2b, "S2d": i2d, "S4": k}) if want_levels else out
 

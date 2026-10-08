@@ -1,0 +1,3 @@
+cd /home/claude/wayfarer-design/tools/rac/w1
+python3 s7n_drivers/s7_normalize.py /tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/s7n/w1i_base /home/claude/wayfarer-design/reviews/rac-w1i-evidence/skeletal /home/claude/wayfarer-design/reviews/rac-w1i-evidence/cib "/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w1i;/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w1h;/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w1g;/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/w1f"
+echo BASE_DONE
