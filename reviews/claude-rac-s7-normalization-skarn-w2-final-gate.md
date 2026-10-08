@@ -1,6 +1,7 @@
 # RAC S7 Normalization / Skarn W2 Final Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; reviews/chatgpt-rac-s7-skarn-final-acceptance-w2c-grask-order.md):** S7 normalization ACCEPTED (exact plane section is the standard; vertex-slab readings historical only); SKARN W2 FULLY ACCEPTED. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-rac-w2b1-skarn-author-ruling-s7-normalization-order.md` (commit d471192)
 **Evidence:** `reviews/rac-s7n-evidence/` (`tables.md` holds every number; `normalized/` holds the re-run evidence files; `status_diff.json`, `s7_values.json`, `baseline_reproduction.txt`)
 
