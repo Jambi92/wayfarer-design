@@ -1,6 +1,7 @@
 # RAC W2G — Halvren Central-Envelope Boundary Gate
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026 · **Order:** `reviews/chatgpt-rac-w2f-final-acceptance-w2g-halvren-order.md` §2–§17
+**Author ruling (October 8, 2026; `reviews/chatgpt-rac-w2g-final-acceptance-w2h-short-race-order.md`):** W2G FINAL AUTHOR ACCEPTED / CLOSED — central stature envelope, frame system, composition firewall, mixed-development body system and overall accepted; no redesign. D1 approved (endpoint source-family diagnostic, labeled, not matched height). D2 approved (reading-space expression; HVXAEc diagnostic only). D3 approved with precedence clarification (D3 governs where matched-height allometry contradicts the accepted tendency). HV-49 / HV-50, RM-UB-05, RM-OT-03 remain Wave 3.
 **Evidence:** `reviews/rac-w2g-hv-evidence/`. `tables.md` is generated, and every number below comes from `w2g.json`.
 **Status:** DESIGN ONLY / NO UE5. NON-CANON diagnostics.
 - No Halvren, Marchfolk, Sagekin, Skarn, Fenn, Aelari or Vael canon, body or accepted comparator was changed.
