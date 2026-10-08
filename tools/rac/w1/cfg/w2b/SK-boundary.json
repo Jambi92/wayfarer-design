@@ -33,5 +33,13 @@
   "evidence": "reviews/rac-s7n-evidence/",
   "result": "no regression, no contradiction; 15 historical status changes, all improvements; W2B1 Skarn 375 PASS / 57 REPORT / 0 reversals",
   "status": "ACCEPTED (October 7, 2026): S7 measured by exact plane section from now on; vertex-slab readings historical / reproduction evidence only"
+ },
+ "w2c1_knee_normalization": {
+  "ruling": "reviews/chatgpt-rac-w2c1-grask-joint-normalization-order.md",
+  "gate": "reviews/claude-rac-w2c1-grask-joint-normalization-gate.md",
+  "SK config1 229": "W2B1 knee correction (incr 1.0 -> decr 0.5) REVERTED -> original W2B body SKM229 (ARM knee incr 1.0); exact-plane knee: original +4.0 % vs normalized trend, corrected -8.6 %; knee-only write",
+  "MF190 config1 comparator": "knee target 0.8 REVERTED -> height-macro body MFM190 (uncorrected +0.7 %, corrected +11.4 %)",
+  "MF190 config2 comparator": "knee target 0.3 KEPT (corrected +1.8 % vs uncorrected -2.2 %)",
+  "status": "knee-only reverts applied per the W2C1 rule; awaiting author confirmation"
  }
 }

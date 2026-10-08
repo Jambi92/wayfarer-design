@@ -1,6 +1,7 @@
 # RAC W2C — Grask Boundary Foundation Author-Acceptance Gate
 
 **Author:** Claude **Date:** October 7, 2026
+**Author ruling (October 7, 2026; reviews/chatgpt-rac-w2c1-grask-joint-normalization-order.md):** W2C anatomy PROVISIONALLY ACCEPTED (AD-3 provisional pending Gorrund W2); boundary-stature ruling issued (stature-matched comparison primary; GR-P6 validated at the central construction; no 239 cm lower-leg correction; 198 cm GO-P3 provisional); knee exact-plane normalization and joint sanity check ordered as W2C1. The analysis below is unchanged.
 **Order:** `reviews/chatgpt-rac-s7-skarn-final-acceptance-w2c-grask-order.md` (commit eaee210)
 **Evidence:** `reviews/rac-w2c-gr-evidence/` (`tables.md` holds every number quoted; `construction.json` holds every write)
 

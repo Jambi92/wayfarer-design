@@ -642,3 +642,7 @@ Recorded from `reviews/chatgpt-rac-w2b1-skarn-author-ruling-s7-normalization-ord
 ## S7 / Skarn W2 final acceptance + W2C Grask order (repo file, October 7, 2026)
 
 Recorded from `reviews/chatgpt-rac-s7-skarn-final-acceptance-w2c-grask-order.md` (commit eaee210; no new Issue #1 comment at the time of recording). S7 normalization accepted; Skarn W2 FULLY ACCEPTED; next block RAC W2C Grask boundary foundation (198 / 218 / 239 cm, one configuration; Grask-specific frames; composition; GR-BODY-10…18; Grask vs Skarn / Gorrund / Marchfolk boundaries; W1 residuals); return the W2C gate, then STOP.
+
+## W2C ruling / W2C1 joint normalization order (repo file, October 7, 2026)
+
+Recorded from `reviews/chatgpt-rac-w2c1-grask-joint-normalization-order.md` (commit c70b79b; no new Issue #1 comment at the time of recording). Grask W2C anatomy provisionally accepted; boundary-stature ruling; knee exact-plane normalization (MF 190 / 203, SK 229 knee corrections re-evaluated; slab-derived 0.575 slope not reused); elbow / wrist / ankle slab-vs-plane sanity check; return the W2C1 gate, then STOP.
