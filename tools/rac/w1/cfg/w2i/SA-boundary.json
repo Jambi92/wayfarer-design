@@ -6,10 +6,10 @@
  "order": "reviews/chatgpt-rac-w2h-final-acceptance-w2i-saurin-order.md",
  "references": {
   "SA-M": "frozen closure reference aff1b52, 187.88 cm, unchanged",
-  "SA-F": "\u00a7263 female centre (fsets3.CEN), regenerated, unchanged"
+  "SA-F": "§263 female centre (fsets3.CEN), regenerated, unchanged"
  },
  "toolchain": "creator-biology / female-closure numpy chain rebuilt from repo sources + PC-staged saurin_final_base.npz; centreline re-derived on the frozen base (tail taper_raw +2.3 %, RSI_raw -0.3 %, other Part 7 metrics exact)",
- "stature_route": "regional factors (no uniform scale): vertical k, girth k^0.654, head k^0.688 about the neck / head junction, hands k^0.842, feet k^0.942 (accepted W2 generator-allometry betas); tail isometric (k about the caudal-base landmark; SAURIN \u00a7256.9)",
+ "stature_route": "regional factors (no uniform scale): vertical k, girth k^0.654, head k^0.688 about the neck / head junction, hands k^0.842, feet k^0.942 (accepted W2 generator-allometry betas); tail isometric (k about the caudal-base landmark; SAURIN §256.9)",
  "statures_cm": [
   168,
   173,
@@ -22,8 +22,54 @@
  ],
  "frames": "accepted creator-biology NARROW / BROAD (sets.py)",
  "composition": "muscle / fat +/-1, both high, minimum",
- "tail": "\u00a7256 coupled base; RM-UB-04 anchors 78 / 80 / 72; reachable cap sweep under RSI 1.00 and RSI 1.19 base conventions",
+ "tail": "§256 coupled base; RM-UB-04 anchors 78 / 80 / 72; reachable cap sweep under RSI 1.00 and RSI 1.19 base conventions",
  "not_run": "limb segment lengths, within-limb distribution, exact-plane joints, femoral S7 (verified measurement-only re-posed copy does not exist; W1d J-3)",
  "canon": "NON-CANON diagnostics; construction values are reproducibility data, not constants or creator limits",
- "status": "GATE RETURNED (October 8, 2026): awaiting author review"
+ "status": "W2I1 CLOSURE REPORT RETURNED (October 8, 2026): awaiting author review",
+ "rulings": {
+  "order": "reviews/chatgpt-rac-w2i1-saurin-closure-order.md",
+  "accepted_in_principle": [
+   "axial / pelvic body system",
+   "frame system",
+   "composition firewall",
+   "RM-OT-04",
+   "stature family (D1)",
+   "tail coupling / RM-UB-04 (D2)"
+  ],
+  "D1": "APPROVED: regional stature route (vertical k; accepted W2 girth / head / hand / foot betas; isometric tail from the caudal-base landmark, SAURIN §256.9) is the accepted W2 Saurin measurement / reference construction route; not the production creator implementation; Part 7 uniform route = historical / diagnostic cross-check; 168-208 stays a W2 diagnostic family",
+  "D2": "APPROVED (a) cap on the most permissive admissible coupled base inside the RSI band; (b) ~72 % Narrow + high fat = validated reachable point, not that state's cap; (c) CLARIFIED: +3 deg interim guard judged primarily against the same-stature, same-frame / composition reference, frozen SA-M188 secondary; no production cap function",
+  "D3": "J-2 measurement-only joint landmarks from existing Saurin construction geometry authorized (supersedes W1d J-3 for measurement only); deform nothing; invariance audit first; UNRESOLVED where not defensible",
+  "D4": "SAU-SILHOUETTE CONSTRAIN pending neutral-carriage closure test (0 / +4 / +8 / +12 deg; carriage only; +8 not pre-approved)",
+  "RM-UB-08": "NAMED DEPENDENCY / INSUFFICIENT EVIDENCE (as-built only; RM-UF-04 not begun)"
+ },
+ "stature_route_status": "D1 APPROVED: accepted W2 measurement / reference construction route (not production)",
+ "closure": {
+  "report": "reviews/claude-rac-w2i-saurin-final-closure-report.md",
+  "evidence": "reviews/rac-w2i-sa-evidence/closure/",
+  "verdicts": {
+   "stature family": "ACCEPT",
+   "axial / pelvic": "ACCEPT",
+   "frames": "ACCEPT",
+   "composition": "ACCEPT",
+   "tail coupling / RM-UB-04": "ACCEPT (Broad 80 % marginal, D-B)",
+   "limb / joint": "CONSTRAIN (legs and forearm-emphasis canon wording contradicted, D-A; structural mass MEASUREMENT LIMIT, D-D)",
+   "RM-OT-04": "ACCEPT",
+   "RM-UB-08 body": "NAMED DEPENDENCY",
+   "SAU-SILHOUETTE": "CONSTRAIN (carriage 0..+12 deg does not remove the end-on tail read, D-C)",
+   "overall": "CONSTRAIN"
+  },
+  "J2_joints": "gate1/g7geo.py ARM / LEG (Gate 4 / 5 B1 construction axes) + hand.py FING[1] MCP-III; measurement-only; invariance audit passed",
+  "D2_caps_rsi119_same_state": {
+   "Balanced 188": 78.375,
+   "Broad 188": 79.75,
+   "Narrow 188": 77.125,
+   "Narrow + high fat 188": 79.125,
+   "Balanced + high fat 188": 80.5,
+   "female centre 188": 79.0,
+   "Balanced 168": 78.875,
+   "Balanced 208": 77.875,
+   "Broad 208": 79.375
+  },
+  "anatomy_changed": false
+ }
 }

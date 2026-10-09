@@ -1,6 +1,7 @@
 # RAC W2I — Saurin Boundary Gate
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026 · **Order:** `reviews/chatgpt-rac-w2h-final-acceptance-w2i-saurin-order.md` §2–§25
+**Author ruling (October 8, 2026; `reviews/chatgpt-rac-w2i1-saurin-closure-order.md`):** axial / pelvic, frames, composition firewall and RM-OT-04 ACCEPTED IN PRINCIPLE; RM-UB-08 body NAMED DEPENDENCY; stature family accepted in principle with **D1 APPROVED** (regional route = accepted W2 measurement / reference construction route, not the production creator implementation; uniform route historical cross-check only); tail coupling / RM-UB-04 accepted in principle with **D2 (a) + (b) APPROVED** and **D2 (c) CLARIFIED** (+3° interim guard judged primarily against the same-stature, same-state reference; SA-M188 secondary); **D3**: bounded J-2 measurement-only landmark pass authorized; **D4**: SAU-SILHOUETTE CONSTRAIN pending a neutral-carriage closure test (0 / +4 / +8 / +12°). Closure: `reviews/claude-rac-w2i-saurin-final-closure-report.md`.
 **Evidence:** `reviews/rac-w2i-sa-evidence/`. `tables.md` is generated, and every number below comes from its JSON files.
 **Status:** DESIGN ONLY / NO UE5. NON-CANON diagnostics.
 - The frozen SA-M (aff1b52) and the §263 SA-F are **never written back**.
