@@ -25,7 +25,7 @@
  "tail": "§256 coupled base; RM-UB-04 anchors 78 / 80 / 72; reachable cap sweep under RSI 1.00 and RSI 1.19 base conventions",
  "not_run": "limb segment lengths, within-limb distribution, exact-plane joints, femoral S7 (verified measurement-only re-posed copy does not exist; W1d J-3)",
  "canon": "NON-CANON diagnostics; construction values are reproducibility data, not constants or creator limits",
- "status": "W2I4 FINAL ASSET GATE RETURNED (October 9, 2026): awaiting author review; canonicalization NOT READY (medial / posterior thigh relief); canonical SA-M / SA-F not overwritten",
+ "status": "W2I5 FAILURE PACKAGE RETURNED (October 9, 2026): canonicalization NOT completed (medial / posterior thigh relief); awaiting author decision; W1 / W2I4 files unchanged",
  "rulings": {
   "order": "reviews/chatgpt-rac-w2i1-saurin-closure-order.md",
   "accepted_in_principle": [
@@ -160,5 +160,42 @@
   "regression": "0 result changes vs W2I3 (493 internal checks, limb / cross-race rows, sa_compare); max W2I3 -> W2I4 measurement change 0.044 %",
   "candidate_base_sha256": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee",
   "candidate_surface_delta_sha256": "33b94baba2f41aaa246992443e34c4b1fc704987d85b6492a435cc2a0f17bc1f"
+ },
+ "rulings_w2i4": {
+  "order": "reviews/chatgpt-rac-w2i5-saurin-final-thigh-canonicalization-order.md",
+  "L1": "ACCEPT",
+  "F2": "ACCEPT",
+  "scale_field": "W2I4 regenerated realization ACCEPTED; saved W2I4 seed set is the reproducible W2 seed realization",
+  "SAU-SILHOUETTE": "ACCEPT WITH PRESENTATION CONTEXT",
+  "tail_coupling": "ACCEPT",
+  "biological_design": "Saurin W2 biological design ACCEPT",
+  "W2I4_asset": "CONSTRAIN only by medial / posterior thigh finish",
+  "option": "(a) localized artist sculpt pass on the medial / posterior thigh (not b / c); W2I4 anterior / lateral improvement retained",
+  "canonicalization": "HOLD until the localized thigh finish closes; conditionally authorized in the same pass if all W2I5 §12 conditions pass"
+ },
+ "w2i5": {
+  "report": "reviews/claude-rac-w2i5-saurin-canonicalization-closure-report.md",
+  "evidence": "reviews/rac-w2i5-sa-evidence/",
+  "verdicts": {
+   "medial_posterior_relief": "REJECT (procedural candidate)",
+   "scale_field": "ACCEPT (saved W2I4 seeds reused)",
+   "topology_fold_strain": "ACCEPT (0 new flips / 0 new folds vs W2I4, 62 bodies)",
+   "measurement_invariance": "ACCEPT (0 verdict changes)",
+   "tail_coupling": "ACCEPT",
+   "SAU-SILHOUETTE": "ACCEPT WITH PRESENTATION CONTEXT",
+   "W2_reference_asset": "CONSTRAIN",
+   "canonicalization": "NOT COMPLETED",
+   "overall": "CONSTRAIN"
+  },
+  "failed_conditions": [
+   1,
+   2,
+   3
+  ],
+  "medial_posterior_corrlen_cm": {
+   "frozen": 3.94,
+   "W2I4": 6.75,
+   "W2I5": ">9"
+  }
  }
 }

@@ -2,6 +2,8 @@
 
 **Author:** Claude (auditor) · **Date:** October 9, 2026 · **Order:** `reviews/chatgpt-rac-w2i4-saurin-final-asset-order.md` §1–§19
 
+**Author ruling (October 9, 2026; `reviews/chatgpt-rac-w2i5-saurin-final-thigh-canonicalization-order.md` §1):** W2I4 reviewed. L1, F2, tail coupling and the Saurin W2 biological design **ACCEPTED**; the W2I4 regenerated scale-field realization **ACCEPTED** as the new W2 realization (the saved W2I4 seed set is the reproducible W2 seed realization); SAU-SILHOUETTE ACCEPT WITH PRESENTATION CONTEXT; W2I4 asset CONSTRAIN only by the medial / posterior thigh. **Option (a) selected:** localized sculpt pass on the medial / posterior thigh (anterior / lateral improvement retained); canonicalization held until the thigh finish closes, then conditionally authorized in the same pass.
+
 **Evidence:** `reviews/rac-w2i4-sa-evidence/`. `tables.md` is generated, and every number below comes from its JSON files.
 **Status:** DESIGN / MEASUREMENT / REFERENCE-ASSET FINISH ONLY — NO UE5.
 - **Nothing canonical was overwritten.** SA-M (aff1b52), SA-F (§263), the tool-chain sources (`tools/rodin/*`, gate-1 `g7*.py`) and Saurin canon are unchanged.
