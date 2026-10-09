@@ -5,8 +5,10 @@
  "evidence": "reviews/rac-w2i-sa-evidence/",
  "order": "reviews/chatgpt-rac-w2h-final-acceptance-w2i-saurin-order.md",
  "references": {
-  "SA-M": "frozen closure reference aff1b52, 187.88 cm, unchanged",
-  "SA-F": "§263 female centre (fsets3.CEN), regenerated, unchanged"
+  "SA-M": "frozen closure reference aff1b52, 187.88 cm, unchanged — W1 / W2I PROVENANCE since RAC W2I6",
+  "SA-F": "§263 female centre (fsets3.CEN), regenerated, unchanged — W1 / W2I PROVENANCE since RAC W2I6",
+  "SA-M_W2": "CANONICAL W2 reference = accepted W2I4 candidate: saurin_w2_final_base.npz f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee (array b50a3d4b9cf1ffbc28551a3a8258b84ac9047b31ddb8bfd7cf07bb98f0317700), surface delta f32286c4759b7c8a1cbeb1afa3727cf19a19624c1708b0715e4ab88ed57a7f63, seeds a1d07b8d7001241a2079271686b9e5a91b773b988763c5af9c5f8a92aefe6b05 (130,949)",
+  "SA-F_W2": "§263 female centre on the W2 reference: saurin_w2_SA-F188_realization.npz 8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187"
  },
  "toolchain": "creator-biology / female-closure numpy chain rebuilt from repo sources + PC-staged saurin_final_base.npz; centreline re-derived on the frozen base (tail taper_raw +2.3 %, RSI_raw -0.3 %, other Part 7 metrics exact)",
  "stature_route": "regional factors (no uniform scale): vertical k, girth k^0.654, head k^0.688 about the neck / head junction, hands k^0.842, feet k^0.942 (accepted W2 generator-allometry betas); tail isometric (k about the caudal-base landmark; SAURIN §256.9)",
@@ -25,7 +27,7 @@
  "tail": "§256 coupled base; RM-UB-04 anchors 78 / 80 / 72; reachable cap sweep under RSI 1.00 and RSI 1.19 base conventions",
  "not_run": "limb segment lengths, within-limb distribution, exact-plane joints, femoral S7 (verified measurement-only re-posed copy does not exist; W1d J-3)",
  "canon": "NON-CANON diagnostics; construction values are reproducibility data, not constants or creator limits",
- "status": "W2I5 FAILURE PACKAGE RETURNED (October 9, 2026): canonicalization NOT completed (medial / posterior thigh relief); awaiting author decision; W1 / W2I4 files unchanged",
+ "status": "W2I CLOSED (October 9, 2026; RAC W2I6): canonical Saurin reference = W2 reference (accepted W2I4 candidate promoted); FINAL ACCEPT; deferred production art-pass item: medial / posterior thigh relief",
  "rulings": {
   "order": "reviews/chatgpt-rac-w2i1-saurin-closure-order.md",
   "accepted_in_principle": [
@@ -196,6 +198,71 @@
    "frozen": 3.94,
    "W2I4": 6.75,
    "W2I5": ">9"
+  }
+ },
+ "rulings_w2i5": {
+  "order": "reviews/chatgpt-rac-w2i6-saurin-canonicalize-w2i4-order.md",
+  "W2I5_thigh_delta": "REJECT (provenance only; not promoted)",
+  "W2I4_anatomy": "FINAL ACCEPT",
+  "W2I4_scale_field": "FINAL ACCEPT",
+  "W2I4_seeds": "FINAL ACCEPT (reproducible W2 realization)",
+  "biological_design": "FINAL ACCEPT",
+  "tail_coupling_RM-UB-04": "FINAL ACCEPT (same-state rule)",
+  "SAU-SILHOUETTE": "ACCEPT WITH PRESENTATION CONTEXT",
+  "medial_posterior_thigh": "DEFERRED PRODUCTION ART-PASS ITEM",
+  "W2I": "AUTHORIZE FINAL CLOSURE after canonicalization verification"
+ },
+ "w2i6": {
+  "report": "reviews/claude-rac-w2i6-saurin-canonicalization-final-closure-report.md",
+  "evidence": "reviews/rac-w2i6-sa-evidence/",
+  "canonical_files": {
+   "base": {
+    "name": "saurin_w2_final_base.npz",
+    "sha256": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee"
+   },
+   "surface_delta": {
+    "name": "saurin_w2_final_surface_delta.npz",
+    "sha256": "f32286c4759b7c8a1cbeb1afa3727cf19a19624c1708b0715e4ab88ed57a7f63"
+   },
+   "rebuild": {
+    "name": "rebuild_w2_final.py",
+    "sha256": "2a96c00f5e765701f04860c5eaa5d36a8944e38dd2230ee4a327cc0dae461747"
+   },
+   "seeds": {
+    "name": "saurin_w2_seeds.npy",
+    "sha256": "a1d07b8d7001241a2079271686b9e5a91b773b988763c5af9c5f8a92aefe6b05"
+   },
+   "female_realization": {
+    "name": "saurin_w2_SA-F188_realization.npz",
+    "sha256": "8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187"
+   },
+   "regfields": {
+    "name": "saurin_w2_regfields.npz",
+    "sha256": "eea2d2fc23a382798caed597fd35b13b94e20a60c432f9900c11659a4217f0af"
+   },
+   "blend": {
+    "name": "SaurinW2Final.blend",
+    "sha256": "a87fe5903e07d873ab828673c3b06a00b9dc8d86329877776fb401d73695b3e9"
+   },
+   "fbx": {
+    "name": "SaurinW2Final.fbx",
+    "sha256": "01ac9d2a35f815dc72ae75df03ce2a23e02df05283f2761a85f31d0c8ecc5e48"
+   }
+  },
+  "toolchain": "tools/rodin/w2/",
+  "final_dispositions": {
+   "stature_family": "FINAL ACCEPT",
+   "axial_pelvic": "FINAL ACCEPT",
+   "frames": "FINAL ACCEPT",
+   "composition_firewall": "FINAL ACCEPT",
+   "limb_joint_body_validation": "FINAL ACCEPT under prior rulings / named measurement dependencies",
+   "tail_coupling_RM-UB-04": "FINAL ACCEPT",
+   "RM-OT-04": "FINAL ACCEPT",
+   "RM-UB-08": "NAMED DEPENDENCY",
+   "SAU-SILHOUETTE": "ACCEPT WITH PRESENTATION CONTEXT",
+   "W2_reference_anatomy": "FINAL ACCEPT",
+   "W2_reference_asset": "FINAL ACCEPT with deferred medial / posterior thigh production art-pass item",
+   "W2I": "FINAL ACCEPT / CLOSED"
   }
  }
 }

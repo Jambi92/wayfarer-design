@@ -2,6 +2,8 @@
 
 **Author:** Claude (auditor) · **Date:** October 9, 2026 · **Order:** `reviews/chatgpt-rac-w2i5-saurin-final-thigh-canonicalization-order.md` §1–§16
 
+**Author ruling (October 9, 2026; `reviews/chatgpt-rac-w2i6-saurin-canonicalize-w2i4-order.md` §1-§3):** W2I5 failure package accepted as a valid audit result. **W2I5 procedural thigh delta REJECTED** (provenance only, never promoted). W2I4 candidate anatomy, regenerated scale field and saved seed realization, Saurin W2 biological design and tail coupling FINAL ACCEPT; SAU-SILHOUETTE ACCEPT WITH PRESENTATION CONTEXT; medial / posterior thigh relief = **DEFERRED PRODUCTION ART-PASS ITEM** (non-biological, non-blocking). Canonicalize the W2I4 candidate and close W2I after verification (supersedes the W2I5 §12 requirement).
+
 **Evidence:** `reviews/rac-w2i5-sa-evidence/` (README lists every file and driver).
 **Status:** REFERENCE-ASSET FINISH — NO UE5. **Canonicalization NOT performed.**
 - Of the §12 conditions, 1 (reference-quality relief) and 3 (relief diagnostic toward native) failed, and condition 2 (sector-boundary marks) is not met. Per §12 this report is the failure package.

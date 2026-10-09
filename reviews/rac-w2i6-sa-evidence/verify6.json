@@ -1,0 +1,135 @@
+{
+ "hashes": {
+  "base": {
+   "file": "saurin_w2_final_base.npz",
+   "sha256_recorded": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee",
+   "sha256_on_disk": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee",
+   "match": true
+  },
+  "surface_delta": {
+   "file": "saurin_w2_final_surface_delta.npz",
+   "sha256_recorded": "f32286c4759b7c8a1cbeb1afa3727cf19a19624c1708b0715e4ab88ed57a7f63",
+   "sha256_on_disk": "f32286c4759b7c8a1cbeb1afa3727cf19a19624c1708b0715e4ab88ed57a7f63",
+   "match": true
+  },
+  "rebuild": {
+   "file": "rebuild_w2_final.py",
+   "sha256_recorded": "2a96c00f5e765701f04860c5eaa5d36a8944e38dd2230ee4a327cc0dae461747",
+   "sha256_on_disk": "2a96c00f5e765701f04860c5eaa5d36a8944e38dd2230ee4a327cc0dae461747",
+   "match": true
+  },
+  "seeds": {
+   "file": "saurin_w2_seeds.npy",
+   "sha256_recorded": "a1d07b8d7001241a2079271686b9e5a91b773b988763c5af9c5f8a92aefe6b05",
+   "sha256_on_disk": "a1d07b8d7001241a2079271686b9e5a91b773b988763c5af9c5f8a92aefe6b05",
+   "match": true
+  },
+  "female_realization": {
+   "file": "saurin_w2_SA-F188_realization.npz",
+   "sha256_recorded": "8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187",
+   "sha256_on_disk": "8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187",
+   "match": true
+  },
+  "regfields": {
+   "file": "saurin_w2_regfields.npz",
+   "sha256_recorded": "eea2d2fc23a382798caed597fd35b13b94e20a60c432f9900c11659a4217f0af",
+   "sha256_on_disk": "eea2d2fc23a382798caed597fd35b13b94e20a60c432f9900c11659a4217f0af",
+   "match": true
+  },
+  "blend": {
+   "file": "SaurinW2Final.blend",
+   "sha256_recorded": "a87fe5903e07d873ab828673c3b06a00b9dc8d86329877776fb401d73695b3e9",
+   "sha256_on_disk": "a87fe5903e07d873ab828673c3b06a00b9dc8d86329877776fb401d73695b3e9",
+   "match": true
+  },
+  "fbx": {
+   "file": "SaurinW2Final.fbx",
+   "sha256_recorded": "01ac9d2a35f815dc72ae75df03ce2a23e02df05283f2761a85f31d0c8ecc5e48",
+   "sha256_on_disk": "01ac9d2a35f815dc72ae75df03ce2a23e02df05283f2761a85f31d0c8ecc5e48",
+   "match": true
+  }
+ },
+ "identity_with_W2I4": {
+  "base_v_sha256": "b50a3d4b9cf1ffbc28551a3a8258b84ac9047b31ddb8bfd7cf07bb98f0317700",
+  "W2I4_base_v_sha256": "b50a3d4b9cf1ffbc28551a3a8258b84ac9047b31ddb8bfd7cf07bb98f0317700",
+  "base_identical": true,
+  "female_identical": true,
+  "seeds_count": 130949,
+  "seeds_identical": true,
+  "regfields_identical": true
+ },
+ "rebuild": {
+  "stdout": "final surface: 4496934 verts 8993864 tris; height 187.86 cm",
+  "max_dev_cm": 6.23166561126709e-05,
+  "rms_dev_cm": 5.3624012617902605e-06,
+  "note": "float16 delta storage (same format as W1) quantizes the scale relief by <= 6e-5 cm"
+ },
+ "W2I5_not_promoted": {
+  "W2I5_delta_sha256": "568074c9c08ea3bf9b812c8c2ec1cbfee78c2458d287f799b91266478c6ab072",
+  "W2I5_delta_max_cm": 0.3997521413081095,
+  "vertices_W2I5_would_move": 93166,
+  "canonical_minus_W2I4_max_cm": 0.0,
+  "canonical_delta_differs_from_W2I5_delta": true
+ },
+ "measurements_vs_W2I4": {
+  "SA-M188": {
+   "n_measures": 61,
+   "max_abs_rel_diff": 1.5480396360345594e-06,
+   "key_values": {
+    "height": 187.8814697265625,
+    "lower_trunk": 31.99987030029297,
+    "thorax_d_over_w": 0.8795546118075211,
+    "pelvis_w": 41.73224639892578,
+    "head_len_over_H": 0.16963407577357265,
+    "tail_len_pct": 64.61465122643813,
+    "tail_root_area": 529.2085213542466,
+    "tail_RSI_raw": 50.08639438819327,
+    "lean_scaled_deg": 8.421015005556075,
+    "u_hip": 100.20000457763672,
+    "u_costal": 132.1998748779297,
+    "u_inlet": 157.5010223388672
+   }
+  },
+  "SA-F188": {
+   "n_measures": 61,
+   "max_abs_rel_diff": 5.558233303615268e-07,
+   "key_values": {
+    "height": 187.8814697265625,
+    "lower_trunk": 33.640113830566406,
+    "thorax_d_over_w": 0.9216725386132405,
+    "pelvis_w": 43.05463981628418,
+    "head_len_over_H": 0.16977765369934217,
+    "tail_len_pct": 64.65904822947974,
+    "tail_root_area": 516.2803843914556,
+    "tail_RSI_raw": 50.79550600284544,
+    "lean_scaled_deg": 8.046152265196579,
+    "u_hip": 99.1205062866211,
+    "u_costal": 132.7606201171875,
+    "u_inlet": 157.70712280273438
+   }
+  }
+ },
+ "W1_provenance": {
+  "saurin_final_base.npz": {
+   "sha256": "a925e067370be91b84a800c25268e3d472f93e190c29673a2ac3d64ec89b8c9c",
+   "recorded": "a925e067370be91b84a800c25268e3d472f93e190c29673a2ac3d64ec89b8c9c"
+  },
+  "saurin_final_surface_delta.npz": {
+   "sha256": "b72691ab8356ddb60c0155eb531868002799aea2f371bec57dc74fc5742c60a8",
+   "recorded": "b72691ab8356ddb60c0155eb531868002799aea2f371bec57dc74fc5742c60a8"
+  },
+  "rebuild_final.py": {
+   "sha256": "722b04201c230949009d773c5cd5f1dec6b050653add4cad21e655c897d6db15",
+   "recorded": "722b04201c230949009d773c5cd5f1dec6b050653add4cad21e655c897d6db15"
+  },
+  "SaurinFinal.blend": {
+   "sha256": "0c8a85fa5ed27a7566a1d2374a546d545e8d87f48c983935b9ec034e05d569d1",
+   "recorded": "0c8a85fa5ed27a7566a1d2374a546d545e8d87f48c983935b9ec034e05d569d1"
+  },
+  "SaurinFinal.fbx": {
+   "sha256": "b635e9aaa81709d95d13d744e31eb56ddaa0a32ea7a0bb2edd73a05ba7d0c656",
+   "recorded": "b635e9aaa81709d95d13d744e31eb56ddaa0a32ea7a0bb2edd73a05ba7d0c656"
+  }
+ },
+ "W1_toolchain_git_diff_since_W2I4": "none"
+}

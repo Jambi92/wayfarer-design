@@ -1,6 +1,6 @@
 # Saurin Character Design v1.0
 
-**Status:** FIRST-PASS COMPLETE (October 4, 2026) — anatomical/surface convergence CLOSED (aff1b52); creator-biology validation CLOSED (Part 7); female / sex-related anatomy CLOSED (October 5, 2026, §263)  
+**Status:** FIRST-PASS COMPLETE (October 4, 2026) — anatomical/surface convergence CLOSED (aff1b52); creator-biology validation CLOSED (Part 7); female / sex-related anatomy CLOSED (October 5, 2026, §263); **W2 reference canonical (RAC W2I6, October 9, 2026): the accepted W2I4 candidate (L1 + F2) — see Part 7 W2 reference update**  
 **Phase:** DESIGN ONLY — no UE5 implementation authorized
 
 Saurin are the thirteenth and final playable race first-pass design.
@@ -300,6 +300,8 @@ Provisional direction:
 - hands distinctly non-human in proportion.
 
 Exact humerus/forearm ratios remain OPEN.
+
+**Forearm interpretation (author rulings W2I3 1B / W2I4; RAC W2I6 canonical):** "modest forearm emphasis" is a modest tendency inside a moderate arm system — W2 reference forearm / arm ≈ 0.366 with total arm ≈ 0.400 H, inside the Marchfolk range and below Cogling distal redistribution and Grask reach specialization. Exact humerus / forearm ratios beyond this reference remain OPEN.
 
 ## 18. Hands
 
@@ -972,6 +974,8 @@ Saurin head-height share trends **near to modestly below the Marchfolk adult ran
 **Reconciliation T-1 (UCCA Phase 2, October 5, 2026; `decisions/UCCA_V1.md`):** this stature-share statement is a reference / central-morphology description. The §258 head-to-body creator bound (±8 %, head length 0.156–0.184 of standing height, with the +8 % head-scale decision as the centre) is authoritative for creator variation. The two describe different things and are not competing hard controls. No new number is introduced.
 
 **Metric note (RAC Phase 2, October 5, 2026; AD-R13):** this section speaks of head-**height** share (head height ÷ standing height); the §258 bound is on head **length** ÷ standing height, which includes the rostrum. They are different measurements, which is why T-1 found no conflict. No number is added.
+
+**W2 stature budget (author-accepted RAC W2I3; canonical RAC W2I6):** on the W2 reference the elongated lower axial trunk (0.170 H, unchanged) is paid for by reduced thoracic (0.135 H) and neck (0.082 H) vertical shares, not by the legs; head height (0.080 H) and head length are unchanged; hip at the pelvic station 0.533 H, femur / leg 0.42.
 
 ## 56. External ears — recessed auricular opening architecture
 
@@ -4129,6 +4133,8 @@ Part 6 is **ACCEPTED / COMPLETE**.
 
 All validation was derived from the frozen closure reference (aff1b52) without modifying it.
 
+**W2 reference update (RAC W2I6, October 9, 2026; `reviews/chatgpt-rac-w2i6-saurin-canonicalize-w2i4-order.md`):** the canonical Saurin reference is the W2 reference — the accepted RAC W2I4 candidate promoted unchanged (`RaceBodies/out/saurin_w2_final_base.npz` SHA-256 `f86ae800…`, surface `saurin_w2_final_surface_delta.npz` `f32286c4…`, rebuild `rebuild_w2_final.py`, seed realization `saurin_w2_seeds.npy` (130,949 seeds) `a1d07b8d…`, §263 female-centre realization `saurin_w2_SA-F188_realization.npz` `8019420a…`; tool-chain records `tools/rodin/w2/`). aff1b52 (`saurin_final_base.npz` `a925e067…`) and the historical SA-F remain the W1 / W2I provenance references; Part 7 figures below are aff1b52 measurements unless a W2 value is given. The canonical W2 Saurin reference preserves the accepted W2I3 L1 + F2 biological target, the accepted W2I4 regenerated scale-field realization and saved seed set, the accepted tail / caudal system, the accepted regional stature route, and the accepted §263 sex-related system. The W2I5 procedural medial / posterior thigh experiment was rejected and is not part of the canonical asset. The remaining medial / posterior thigh relief cleanup is a deferred production art-pass item and does not reopen Saurin W2 biology.
+
 ## 255. Value categories used in Part 7
 
 | Category | Meaning |
@@ -4159,15 +4165,21 @@ Tail length is **not** a free independent slider. Measured on the frozen referen
 
 Refused shapes (FAIL): heavy root + threadlike tail; cylindrical / attached-appendage tail; caudal fat concentrated at the root. Auto-constrained (CONSTRAIN): root too small (base raised), root oversized for a short tail (base lowered), length beyond the frame/composition limit (length capped). There is no tail-off control (§10).
 
+**Presentation context (author ruling W2I3 SAU-SILHOUETTE, October 8, 2026):** Do not judge the Saurin tail solely from a dead-flat orthographic front view. Final character-creator and showcase presentation should rely on complete front / 3/4 / profile context, material definition, lighting and natural tail motion. The strict orthographic end-on projection is not a biological defect.
+
 ## 257. Frozen reference stance and balance
 
 Under a uniform-density static model the frozen reference's centre of mass lies ~6.3 cm behind the heel contact and the reference stance would need ~**8.8° of forward whole-body lean** to stand over the feet. **Anatomy is not reopened for this.** The frozen pose is an anatomical/reference stance, not the final dynamically balanced neutral standing pose. Living balance (axial inclination, pelvic organization, knees/ankles, tail carriage) is carried forward to the posture/locomotion/animation phase (§170–172, §265).
+
+**W2 reference (RAC W2I6):** on the canonical W2 reference the centre of mass lies ~6.2 cm behind the heel contact and the stance would need ~**8.4°** of forward whole-body lean (aff1b52: ~6.3 cm / 8.8°; the longer legs lower it). The §256.4 +3° guard is judged against the same-state reference (RAC W2I D2(c)).
 
 ## 258. Body proportions, frame and composition
 
 **First-pass creator hard bounds (validated at the extremes, constant standing height):** head-to-body proportion ±8 % (head length 0.156–0.184 of standing height; the +8 % head-scale decision is the centre); neck length ±15 %; neck depth ±10 %; thoracic depth ±8 %; thoracic width ±7 %; axial trunk length ±10 %; shoulder breadth ±8 %; pelvic width ±7 %; arm length ±6 %; leg length ±6 %; hand size ±8 %; foot size ±8 %. Stature 168–208 cm remains the racial hard bound (§4) and is **independent**.
 
 **Coupled:** thoracic depth/width ratio stays 0.80–1.00 (deep narrow-to-moderate shell); the thoracic depth floor scales with breadth. Ventral fullness (§263) counts against this shared guard.
+
+**W2 re-verification (RAC W2I4 / W2I6):** the bounds are unchanged and hold on the W2 reference (neck length ±15 %, leg length ±6 %, arm length ±6 %; full 62-body W2I regression with 0 new failures). The W2 reference body plan is hip 0.533 H (pelvic station), femur / leg 0.42, forearm / arm 0.37, total arm ~0.40 H.
 
 **Frame (§21)** — Narrow / Balanced / Broad are editable starting distributions, not castes. Frame changes shoulder breadth, thoracic width (depth ±2 % only), pelvic width, limb and joint girth, hand/foot breadth and the frame component of the tail base. Frame does **not** change stature, long-bone or axial lengths, the skull, or pelvic depth / sacral-caudal organization.
 
@@ -4237,6 +4249,8 @@ The +10 % lower-trunk reference female is a valid individual above the female sa
 
 **Reference accounting** (equal stature 187.9 cm, Balanced, reference composition; male → female centre / reference female): lower trunk 32.0 → 33.6 / 34.3 cm; external pelvic width 41.7 → 43.1 / 42.8 cm; frontal waist/shoulder 0.468 → 0.539 / 0.539; waist/hip 0.613 → 0.692 / 0.697; thoracic depth/width 0.880 → 0.922 / 0.922; ventral projection +1.3 cm. Head length/H (0.170) and tail length (frozen reference, §256) unchanged; tail root-sufficiency index (§256.1) 1.01–1.02; balance −0.4° relative to the reference. Sex is not reliably readable at gameplay distance; anatomy is not exaggerated to force it.
 
+**W2 reference accounting (RAC W2I6 re-verification, `tools/rodin/w2/s263_w2.json`):** lower trunk 32.0 → 33.6 / 34.3 cm, external pelvic width 41.7 → 43.1 / 42.8 cm, thoracic depth/width 0.880 → 0.922 / 0.922, head length/H 0.170 and waist/hip 0.613 → 0.692 / 0.697 are identical on the W2 reference; frontal waist/shoulder reads 0.465 → 0.532 / 0.532 (silhouette bands carried with the moved stations; the W2 F2 arm distribution widens the shoulder band by 0.4–0.7 cm, the sex difference is preserved). The §263 clamps and sex cases reproduce (W2I SX suite).
+
 ### Biological interpretation (canon only what the anatomy requires)
 - A and E: sex-correlated differences in coelomic/body-cavity capacity and body-wall organization.
 - B: a sex-correlated ventral soft-tissue tendency.
@@ -4275,6 +4289,8 @@ Biological Randomization samples **driver** variables (stature, frame, compositi
 - Reproductive life history and physiology (§263); statistical spreads of the sex-shifted distributions around their centres.
 - World-space validation of the longest tails (up to ~170 cm tail reach behind the heel at the stature/tail extremes).
 - Statistical calibration of soft distributions (the universal facial-control architecture is canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA CLOSED / FINAL-AUTHOR ACCEPTED, October 5, 2026).
+- **Saurin W2 medial / posterior thigh relief — DEFERRED PRODUCTION ART-PASS ITEM (RAC W2I6):** non-biological, non-measurement-bearing, non-blocking; a future localized hand sculpt (Blender / ZBrush) restores native-scale hamstring / adductor relief, removes the W2I4 sector-transition marks and cleans the inherited medial-thigh Rodin tear, preserving the canonical W2 measurement-bearing anatomy, thigh volume / silhouette and the W2 seed realization, with regression before production acceptance.
+- Accepted W2 marginals / dependencies (RAC W2I): Broad ~80 % tail cap and Broad 208 span (D-B accepted marginal); surface sections are not skeletal mass on the rig-less mesh (D-D accepted dependency); SAU-SILHOUETTE accepted with presentation context.
 
 ## 266. Creator-biology closure
 
@@ -4289,3 +4305,5 @@ Female / sex-related anatomy is **CLOSED** (October 5, 2026; §263).
 **Reference-anatomy status (RAC Phase 2, October 5, 2026):** the reference-anatomy method (approved reference meshes, reference composition, measurement stance, acceptance and circularity rules, measurement waves) is canonical in `decisions/REFERENCE_ANATOMY_V1.md`. Measurement has not started; no new numeric envelope is set. Saurin directional constraints for measurement are consolidated in `reviews/claude-rac-03-pelvis-axial-closure.md` §2 and `reviews/claude-rac-04-segment-stature-closure.md` §2 (constraints, not magnitudes). Saurin canon governs: the caudal-base landmark, the interim lower-trunk test and never-Gorrund rule, and the head-metric note are recorded in place (AD-R35, AD-R36, AD-R13). **Foot-claw coupling (AD-R37):** foot-claw length above ~+15 % requires a compensating curvature or tip change to preserve plantigrade contact (§261). Male-centre candidate: the closure reference aff1b52; female-centre candidate: the §263 female-centre configuration derived from it (the +10 % reference female is above the centre and is not this candidate); both still need the reference-mesh acceptance record. Sex-related anatomy stays exactly §263.
 
 **Update (supersedes "measurement has not started" in the line above) — W1 ARMs (author acceptance, October 5, 2026; `reviews/chatgpt-rac-wave1-continuation-asset-build-order.md` D-3):** SA-M (frozen closure reference aff1b52) and SA-F (§263 female centre) are accepted W1 ARMs. Bilateral limb/segment readings need a verified measurement-only re-posed copy (D-2), which is not yet available; the rostral floor stays in the Part 7 convention (D-1). This supersedes the RAC Phase 2 sentence above that both configurations still need the reference-mesh acceptance record.
+
+**Update — W2 reference (RAC W2I6, October 9, 2026; `reviews/chatgpt-rac-w2i6-saurin-canonicalize-w2i4-order.md`):** the canonical Saurin reference is the W2 reference (accepted W2I4 candidate: L1 + F2 body plan, regenerated scale field and saved seeds; Part 7 W2 reference update). aff1b52 and the historical SA-F are W1 / W2I provenance. Saurin W2I is FINAL ACCEPT / CLOSED; the medial / posterior thigh relief is a deferred production art-pass item (§265).
