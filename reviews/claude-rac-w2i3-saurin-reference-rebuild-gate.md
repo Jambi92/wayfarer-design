@@ -1,6 +1,9 @@
 # RAC W2I3 — Saurin Reference-Quality Rebuild / Caudal-Base Closure Gate
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026 · **Order:** `reviews/chatgpt-rac-w2i3-saurin-reference-rebuild-order.md` §1–§18
+
+**Author ruling (October 8, 2026; `reviews/chatgpt-rac-w2i4-saurin-final-asset-order.md` §1-§3):** W2I3 evidence accepted. **L1 ACCEPTED** as the Saurin W2 leg-proportion target; **F2 ACCEPTED** as the Saurin W2 forearm distribution; **L1 + F2 body plan ACCEPTED** (no longer CONSTRAINED; remaining work is asset finish / surface regeneration / final verification); **stature-budget restoration ACCEPTED**; D-B accepted marginal and D-D accepted dependency preserved. **SAU-SILHOUETTE — ACCEPT WITH PRESENTATION CONTEXT:** the dark rounded front-view read is an inherent end-on projection of the approved free tail through the thigh gap in a strict orthographic front camera; no further tail, root-pitch, pelvic, yaw or caudal-base contour change is authorized; caudal biology frozen. Presentation note carried forward (not anatomy). W2I4 final asset finish / canonicalization prep authorized.
+
 **Evidence:** `reviews/rac-w2i3-sa-evidence/`. `tables.md` is generated, and every number below comes from its JSON files.
 **Status:** DESIGN / MEASUREMENT / CANDIDATE ONLY — NO UE5.
 - **No accepted source anatomy was modified.** SA-M (aff1b52), SA-F (§263), the tool-chain sources and Saurin canon are unchanged.
