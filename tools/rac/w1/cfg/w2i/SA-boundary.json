@@ -25,7 +25,7 @@
  "tail": "§256 coupled base; RM-UB-04 anchors 78 / 80 / 72; reachable cap sweep under RSI 1.00 and RSI 1.19 base conventions",
  "not_run": "limb segment lengths, within-limb distribution, exact-plane joints, femoral S7 (verified measurement-only re-posed copy does not exist; W1d J-3)",
  "canon": "NON-CANON diagnostics; construction values are reproducibility data, not constants or creator limits",
- "status": "W2I2 CANDIDATE GATE RETURNED (October 8, 2026): awaiting author review",
+ "status": "W2I3 GATE RETURNED (October 8, 2026): awaiting author review",
  "rulings": {
   "order": "reviews/chatgpt-rac-w2i1-saurin-closure-order.md",
   "accepted_in_principle": [
@@ -100,6 +100,33 @@
    "D-B": "ACCEPTED MARGINAL",
    "D-D": "ACCEPTED DEPENDENCY",
    "overall": "CONSTRAIN"
+  },
+  "source_anatomy_modified": false
+ },
+ "rulings_w2i2": {
+  "order": "reviews/chatgpt-rac-w2i3-saurin-reference-rebuild-order.md",
+  "L1": "ACCEPTED target leg direction (G 9.2 cm at 188; thorax 40 % / neck 60 % funding; hip = pelvic station)",
+  "F2": "ACCEPTED target forearm distribution (elbow 4.2 cm toward the shoulder); 'modest forearm emphasis' = modest tendency inside a moderate arm system",
+  "L1+F2": "ACCEPTED AS TARGET ANATOMY; warped study mesh NOT canonical; clean rebuild required",
+  "D-B": "ACCEPTED MARGINAL preserved",
+  "D-D": "ACCEPTED DEPENDENCY preserved",
+  "root_carriage": "REJECTED as closure method; carriage reset to neutral",
+  "caudal_base": "bounded local caudal-base ventral-contour correction authorized (C0-C3)"
+ },
+ "w2i3": {
+  "gate": "reviews/claude-rac-w2i3-saurin-reference-rebuild-gate.md",
+  "evidence": "reviews/rac-w2i3-sa-evidence/",
+  "verdicts": {
+   "clean L1": "CONSTRAIN",
+   "clean F2": "ACCEPT (candidate)",
+   "combined rebuilt reference": "CONSTRAIN",
+   "caudal-base silhouette": "REJECT - CAUDAL-BASE LEVER INSUFFICIENT",
+   "tail coupling after correction": "NOT RUN",
+   "stature-budget restoration": "ACCEPT",
+   "overall": "CONSTRAIN"
+  },
+  "candidate_hashes_preview": {
+   "SA-M188_rebuilt_base_file": "f59b050f1c34a6e9920c67098c77086a7d4a83d99f6bb87dc51d9bfc62d70ff9"
   },
   "source_anatomy_modified": false
  }

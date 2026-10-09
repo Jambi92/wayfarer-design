@@ -1,6 +1,7 @@
 # RAC W2I2 — Saurin Canon-Restoration Candidate Study / Silhouette Closure Gate
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026 · **Order:** `reviews/chatgpt-rac-w2i2-saurin-canon-restoration-order.md` §1–§19
+**Author ruling (October 8, 2026; `reviews/chatgpt-rac-w2i3-saurin-reference-rebuild-order.md` §1):** W2I2 accepted as evidence. **L1 ACCEPTED** as the target leg direction (not L2 / L3); **F2 ACCEPTED** as the target forearm distribution ("modest forearm emphasis" = a modest tendency inside a moderate arm system; not F3); **L1 + F2 ACCEPTED AS TARGET ANATOMY** — the warped study mesh is NOT the canonical asset, a clean reference-quality rebuild is required; D-B accepted marginal and D-D accepted dependency preserved; root carriage REJECTED as closure method (carriage reset to neutral). Next: `reviews/claude-rac-w2i3-saurin-reference-rebuild-gate.md`.
 **Evidence:** `reviews/rac-w2i2-sa-evidence/`. `tables.md` is generated, and every number below comes from its JSON files.
 **Status:** DESIGN ONLY / NO UE5. CANDIDATE STUDY.
 - **No accepted source anatomy was modified.** SA-M (aff1b52), SA-F (§263), the tool-chain files and Saurin canon are unchanged.
