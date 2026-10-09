@@ -12,7 +12,10 @@ import sys, os, json, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import sa_build as B
 C = B.C; Mx = B.Mx; NAR, BRD = B.NAR, B.BRD; H0 = B.H0
 CURV = float(os.environ.get('CURV', '0'))
-def car(p): return Mx(p, {'tail_curv': CURV}) if CURV else dict(p)
+RPITCH = float(os.environ.get('RPITCH', '0')); RLEN = float(os.environ.get('RLEN', '20'))      # W2I2 root pitch (needs the sa_cand in-memory warp extension; run via w2i2_drivers/run_tailcap_root.py)
+def car(p):
+    p = Mx(p, {'tail_curv': CURV}) if CURV else dict(p)
+    return Mx(p, {'tail_root_pitch': RPITCH, 'tail_root_len': RLEN}) if RPITCH else p
 REF = B.measure(*C.build({})[:2])                      # frozen SA-M188 (0 deg carriage): normalization and the secondary lean reference
 def ev(state, pct, base, h):
     p = car(Mx(state, {'tail_len': pct / 64.613, 'tail_base': base})); P, q = C.build(p); P2, q2, k = B.at_stature(P, q, h); M = B.measure(P2, q2, k)

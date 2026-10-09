@@ -25,7 +25,7 @@
  "tail": "§256 coupled base; RM-UB-04 anchors 78 / 80 / 72; reachable cap sweep under RSI 1.00 and RSI 1.19 base conventions",
  "not_run": "limb segment lengths, within-limb distribution, exact-plane joints, femoral S7 (verified measurement-only re-posed copy does not exist; W1d J-3)",
  "canon": "NON-CANON diagnostics; construction values are reproducibility data, not constants or creator limits",
- "status": "W2I1 CLOSURE REPORT RETURNED (October 8, 2026): awaiting author review",
+ "status": "W2I2 CANDIDATE GATE RETURNED (October 8, 2026): awaiting author review",
  "rulings": {
   "order": "reviews/chatgpt-rac-w2i1-saurin-closure-order.md",
   "accepted_in_principle": [
@@ -71,5 +71,36 @@
    "Broad 208": 79.375
   },
   "anatomy_changed": false
+ },
+ "rulings_w2i1": {
+  "order": "reviews/chatgpt-rac-w2i2-saurin-canon-restoration-order.md",
+  "D-A": "option (b): preserve canon (moderate-to-long legs; lower trunk paid primarily by modestly reduced head / thoracic contribution, not shortened legs; moderate arm; modest forearm emphasis); bounded correction studied on copies; SA-M / SA-F stay frozen",
+  "D-B": "ACCEPTED MARGINAL: Broad ~80 % (caps 79.75 % at 188, 79.4 % at 208); SAU-BODY-13 Broad 208 span +0.6 % vs Grask",
+  "D-C": "option (a): measurement-only proximal / root carriage family (0 / +2 / +4 / +6 / +8 deg)",
+  "D-D": "ACCEPTED MEASUREMENT LIMIT: Saurin internal skeletal model required before SAU-BODY-14 / 16 skeletal-mass rows receive final scoring; surface sections diagnostic only"
+ },
+ "w2i2": {
+  "gate": "reviews/claude-rac-w2i2-saurin-canon-restoration-gate.md",
+  "evidence": "reviews/rac-w2i2-sa-evidence/",
+  "candidates": {
+   "L1": "thigh +9.2 cm at 188 (thorax -40 %, neck -60 % of G); hip = pelvic station",
+   "L2": "+10.3",
+   "L3": "+11.6",
+   "F1": "elbow 2.2 cm toward shoulder",
+   "F2": "4.2 cm",
+   "F3": "5.0 cm",
+   "combined": "L1 + F2"
+  },
+  "verdicts": {
+   "leg L1": "CONSTRAIN",
+   "forearm F2": "ACCEPT (candidate)",
+   "combined L1+F2": "CONSTRAIN",
+   "root carriage": "REJECT - ROOT-CARRIAGE LEVER INSUFFICIENT",
+   "tail coupling under root carriage": "NOT RUN",
+   "D-B": "ACCEPTED MARGINAL",
+   "D-D": "ACCEPTED DEPENDENCY",
+   "overall": "CONSTRAIN"
+  },
+  "source_anatomy_modified": false
  }
 }

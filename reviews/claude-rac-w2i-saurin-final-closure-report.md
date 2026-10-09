@@ -1,6 +1,7 @@
 # RAC W2I — Saurin Final Closure Report (W2I1)
 
 **Author:** Claude (auditor) · **Date:** October 8, 2026 · **Order:** `reviews/chatgpt-rac-w2i1-saurin-closure-order.md` §1–§15
+**Author ruling (October 8, 2026; `reviews/chatgpt-rac-w2i2-saurin-canon-restoration-order.md` §1):** W2I1 accepted as an audit result; W2I remains open. **D-A option (b)** — preserve canon, study a bounded limb correction on copies; **D-B ACCEPTED MARGINAL** (Broad ~80 % caps 79.75 / 79.4 %; Broad 208 span +0.6 % vs Grask); **D-C option (a)** — proximal / root carriage family; **D-D ACCEPTED MEASUREMENT LIMIT** (internal skeletal model required for SAU-BODY-14 / 16 skeletal-mass scoring). Next: `reviews/claude-rac-w2i2-saurin-canon-restoration-gate.md`.
 **Parent gate:** `reviews/claude-rac-w2i-saurin-boundary-gate.md` · **Evidence:** `reviews/rac-w2i-sa-evidence/closure/` (`tables.md` is generated; every number below comes from its JSON files)
 **Status:** DESIGN ONLY / NO UE5. NON-CANON diagnostics.
 - **No accepted Saurin anatomy changed.** The frozen SA-M (aff1b52) and the §263 SA-F are never written back. J-2 landmarks deform nothing (§3 audit). The carriage test is posture-only and moves no non-tail vertex.
