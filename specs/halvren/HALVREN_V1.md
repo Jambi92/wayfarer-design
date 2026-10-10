@@ -407,7 +407,7 @@ Halvren strengthen the need for unified appearance data, which may preserve race
 | Sources | Human: Marchfolk, Skarn, Sagekin. Elven: Fenn, Aelari, Vael |
 | Generational model | Not restricted to first-generation 50/50 ancestry |
 | Fertility | Multigenerational viability provisionally approved |
-| Height | Central population envelope about 152–213 cm (5'0"–7'0"), reference about 178 cm (5'10"); ancestry-dependent tails outside it, limits OPEN (§10–14; T-5, UCCA Phase 2) |
+| Height | Central population envelope about 152–213 cm (5'0"–7'0"), reference about 178 cm (5'10"); ancestry-dependent tails outside it (W3A1: conditional tails, Marchfolk-supported below, Skarn / Aelari-supported above; reachability demonstrated, frequencies OPEN) (§10–14; T-5, UCCA Phase 2) |
 | Anatomy | Mixed, regional, relationship-aware and developmentally coherent |
 | Face and ears | Genuine mixed craniofacial and external-ear anatomy, never a pointiness slider |
 | Pigmentation | Inherited multidimensional expression, not RGB blending |
@@ -484,8 +484,8 @@ The 152–213 cm range is **no longer an absolute hard biological envelope.** It
 | --- | --- |
 | HV-11 | Central short boundary, about 152 cm (renamed from short boundary) |
 | HV-12 | Central tall boundary, about 213 cm (renamed from tall boundary) |
-| HV-49 | Lower-tail Halvren below 152 cm where ancestry supports it, not automatically a minimum |
-| HV-50 | Upper-tail Halvren above 213 cm where ancestry supports it, not automatically a maximum |
+| HV-49 | Lower-tail Halvren below 152 cm where ancestry supports it, not automatically a minimum (W3A1: Marchfolk-supported; reachable to just above 147 cm, bound-limited; no biological minimum discovered) |
+| HV-50 | Upper-tail Halvren above 213 cm where ancestry supports it, not automatically a maximum (W3A1: Skarn- and Aelari-supported within each source's valid stature; source-conditioned leg-segment development) |
 
 Exact tail heights are unresolved until the ancestry-dependent distribution is designed.
 
@@ -497,6 +497,15 @@ Exact tail heights are unresolved until the ancestry-dependent distribution is d
 - **H-4:** a tail stature is valid only if the whole body reaches it through Halvren mixed development (coherent segment shares, allometry and joints), never by one source's stature on another source's proportions.
 - **H-6:** tails are minority outcomes relative to the central envelope; no ordering between upper and lower tail is authored.
 - **Reachability (Y-2):** valid tail statures may be created manually without a player-entered genealogy and may appear through Extreme biological randomization, under the same hidden inheritance/development validity system, source-protection tests and eventual frequency weights. This creates no ancestry-percentage slider, no visible genealogy requirement and no guaranteed random access to source extrema.
+
+**Stature-tail closure (RAC W3A1, October 9, 2026; order `reviews/chatgpt-rac-w3a1-halvren-tail-closure-order.md`, AD-W3A-1…4; report `reviews/claude-rac-w3a1-halvren-tail-final-closure-report.md`; returned for author review):**
+- *Accepted design rules:* 152–213 cm stays the central envelope; tails exist only conditionally outside it. The lower tail is Marchfolk-supported. The upper tail is Skarn- and Aelari-supported, each only within its own valid adult stature; above Aelari's adult ceiling (221 cm) only Skarn supplies stature support, while Aelari may still contribute mixed anatomy.
+- *Source-conditioned development (AD-W3A-1):* a source that supports exceptional stature may also carry the source-linked leg-segment development needed for that stature to be coherent (Skarn: short-femur relation; Aelari: thigh / calf relation). The coupling is partial, continuous, hidden and limited to what coherence requires. It stays Halvren mixed development, never copied source anatomy, never an ancestry slider.
+- *Validity (AD-W3A-4):* a generated Halvren is invalid when, after neutralization and matched-source comparison, the complete-body source-passing protocol classifies it as a near-duplicate of a valid source population. The criterion is the resulting anatomy, never a hidden ancestry coordinate. Ambiguous and source-leaning Halvren stay valid. This applies to Halvren generation generally.
+- *Coherence (AD-W3A-3):* tail coherence is scored against the boundary-stature span (matched supporting source(s) plus the nearest valid adult of each other span source). The matched-supporting-source-only comparison is a diagnostic report.
+- *Lower tail (AD-W3A-2):* Marchfolk-supported Halvren may reach to just above 147 cm. No biological minimum above the H-5 bound was discovered, and no Marchfolk-supported Halvren is guaranteed that reach. No hard clip at 152 cm; the lower tail is not common.
+- *Diagnostic evidence, not species constants:* demonstrated reachable bodies at 147.2 cm (Marchfolk-supported), 228.8 cm (Skarn-supported) and 221.0 cm (Aelari-supported, the source ceiling); every coupling rate, strength, coordinate and measurement (`reviews/rac-w3a1-hv-evidence/`).
+- *Still OPEN:* any true biological lower minimum above H-5; genealogy-conditioned stature distributions; genealogy prevalence; exact tail frequencies and their ordering; creator randomization weights; runtime interpolation / clamping; UE5. Tails are minority outcomes relative to the central envelope (H-6); no frequency is authored.
 
 ## 15–16. Missing source information and the source-first rule
 

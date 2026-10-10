@@ -113,7 +113,7 @@ A mesh built from **numeric targets chosen by a builder** (a solver, a sculptor 
 | **W0** | Author method and authorship decisions | Done: RAC Phase 2 |
 | **W1** | Central bootstrap: one ARM per population (one configuration), plus the second configuration for Marchfolk and Saurin; the Marchfolk head variant MF-FACE-PROJ-MAX. Skarn and Sagekin second configurations are available but not required in W1. **Marchfolk baseline (RM-UB-07) first.** RM-CF-01 can run at once (no biological dependency). Manifest: `reviews/claude-rac-wave1-execution-manifest.md` | ARM acceptance per §6 |
 | **W2** | Boundaries: frame, stature and composition variants; named extremes; diagnostic faces GR-FACE-14 and GOR-FACE-05; ear-family envelopes | W1 accepted |
-| **W3** | Dependent items: Halvren genealogy-conditioned references (RM-UB-05, RM-OT-03), Saurin rebuilt brow planes (RM-UF-03), scale fields (RM-UF-04, RM-UB-08), RM-CF-09; then the **RM-CF-05 FPI-margin author decision** | W2 accepted |
+| **W3** | Dependent items: Halvren genealogy-conditioned references (RM-UB-05, RM-OT-03; W3A / W3A1 closure returned October 9, 2026, `reviews/claude-rac-w3a1-halvren-tail-final-closure-report.md`), Saurin rebuilt brow planes (RM-UF-03), scale fields (RM-UF-04, RM-UB-08), RM-CF-09; then the **RM-CF-05 FPI-margin author decision** | W2 accepted |
 | **LB / LS** | Later biology; later systems (generator diversity RM-UF-05, world scale RM-OT-05, posture, equipment) | — |
 
 ## 10. Universal method rules adopted in RAC Phase 2
