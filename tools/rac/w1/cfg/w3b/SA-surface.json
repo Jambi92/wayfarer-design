@@ -1,0 +1,19 @@
+{
+ "id": "SA-surface",
+ "block": "RAC W3B Saurin orbital spacing (RM-UF-03), structural-ridge strength + facial scale fields (RM-UF-04), body scale fields (RM-UB-08)",
+ "status": "DIAGNOSTIC - returned for author review; no numeric range promoted to SAURIN_V1",
+ "order": "reviews/chatgpt-rac-w3a1-final-acceptance-w3b-saurin-orbit-ridge-scale-order.md",
+ "gate": "reviews/claude-rac-w3b-saurin-orbit-ridge-scale-gate.md",
+ "evidence": "reviews/rac-w3b-sa-evidence/",
+ "canonical_source": "w2i6/canon (W2I4 promoted unchanged; 130,949 seeds); unmodified (SHA-256 identical before / after)",
+ "orbit": {"metric": "IOD = bony orbital-margin ring centre separation (36 sectors, max convexity in 1.15-1.6 x orbit radius, circle fit)", "reference_IOD_cm": 8.883, "reference_IOD_over_bitemporal": 0.716,
+           "deformation": "integrated orbital-platform shift: rigid within 2.4 cm (head-local) of the orbit centre, zero beyond 5.2 cm, interorbital roof shares the change to the midline",
+           "valid_reference_pct": [-9.1, 14.9], "corner_safe_pct": [-8.6, 3.5], "outward_clamp": "cranial width 0.92 -> +3.5 %; >= 1.0 -> +14.9 %; between NOT DEMONSTRATED", "vertical_AP": "REMAINS LOCKED"},
+ "ridges": {"hidden_strength_valid_naked": [0.40, 1.30], "first_invalid": [0.25, 1.40], "single_family_max": {"canthal": 2.0, "supraorbital": 1.5, "temporal": ">=2.5", "jugal": ">=2.5", "occipital": ">=2.5", "mandibular": ">=2.5"},
+            "legibility_reference": {"temporal": 1.18, "occipital": 1.94, "canthal": 2.57, "postorbital": 3.51, "jugal": 8.31, "mandibular": 11.46, "supraorbital": 11.95}},
+ "scale_guards": "S1 span (deformable <= 30 deg, structural / ventral <= 60 deg), S2 hierarchy (<= 0.80 x adjacent structural), S3 floor 0.0097 cm / aspect <= 0.30, S4 excess folds, S5 CV, S6 ventral >= 6 units, S7 resolution 1.7 edges (generator limit)",
+ "scale_envelopes": "reviews/rac-w3b-sa-evidence/scale_envelope.json",
+ "clamps": ["C-R1 legibility: local relief <= L_F(1) x S_F(m) / S_F(1)", "C-R2 m_temporal >= 0.90 x r_cranial; m_canthal >= 0.53 x r_rostral", "C-O1 orbit outward clamp by cranial width",
+            "C-B1 extreme-body relief clamps (extremes_clamp.json)", "C-B2 relief <= 0.30 x unit size (hand 0.40)", "C-T1 tail size x tail stretch (<= 1.20 at T80) within field maximum"],
+ "construction_only": "warp radii, contribution fields, level-set transfer, fairing (4), reseed rule (rng 7), smooth weights (60 its), guard thresholds, absolute cm values"
+}
