@@ -2,6 +2,8 @@
 
 **Author:** Claude (auditor) · **Date:** October 9, 2026 · **Order:** `reviews/chatgpt-rac-w2i6-saurin-canonicalize-w2i4-order.md` §1–§13
 
+**Author ruling (October 9, 2026; `reviews/chatgpt-rac-w2-final-acceptance-w3a-halvren-genealogy-tail-order.md` §1):** W2I6 canonicalization package ACCEPTED. All Saurin W2 dispositions FINAL ACCEPT (SAU-SILHOUETTE accept with presentation context); Saurin W2I FINAL ACCEPT / CLOSED; no further Saurin W2 rerun required. **RAC Wave 2 complete; Wave 3 released** (W3A Halvren genealogy-conditioned stature tails first).
+
 **Evidence:** `reviews/rac-w2i6-sa-evidence/`:
 - `canon6.json` — the canonical file set;
 - `verify6.json` — verification;

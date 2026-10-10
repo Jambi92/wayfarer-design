@@ -1,0 +1,2673 @@
+{
+ "readings": [
+  "torso_share",
+  "leg_share",
+  "arm_share",
+  "span_der",
+  "forearm_over_arm",
+  "shin_over_leg",
+  "neck_share",
+  "hand_share",
+  "finger_over_hand",
+  "palm_breadth_over_hand",
+  "foot_share",
+  "thorax_breadth_share",
+  "thorax_depth_share",
+  "elbow breadth / adjacent segment (exact-plane section)",
+  "wrist breadth / adjacent segment (exact-plane section)",
+  "knee breadth / adjacent segment (exact-plane section)",
+  "ankle breadth / adjacent segment (exact-plane section)"
+ ],
+ "adult_read": "HH_share",
+ "design": "coverage sampling (w3a_sample.py); NOT a prevalence model",
+ "strata": {
+  "L-MF": {
+   "n": 8000,
+   "seed": 30491,
+   "accepted": 7996,
+   "rejected_duplicate_matched": 0,
+   "rejected_adult_read": 4,
+   "accepted_ambiguous": 188,
+   "per_source": {
+    "MF": {
+     "matched_fraction": 1.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 81,
+     "distinct": 7919,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "matched height",
+     "nsep_quantiles": [
+      3.0,
+      5.0,
+      7.0,
+      9.0,
+      12.0,
+      15.0,
+      17.0
+     ]
+    },
+    "FN": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      6.0,
+      14.0,
+      16.0,
+      17.0,
+      17.0,
+      17.0,
+      17.0
+     ]
+    },
+    "AE": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      9.0,
+      11.0,
+      12.0,
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ]
+    },
+    "VA": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      4.0,
+      7.0,
+      9.0,
+      11.0,
+      13.0,
+      15.0,
+      16.0
+     ]
+    },
+    "SK": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      10.0,
+      13.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0,
+      17.0
+     ]
+    },
+    "SG": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 17,
+     "ambiguous_2_3": 90,
+     "distinct": 7893,
+     "near_duplicate_rate": 0.002125,
+     "ci95": [
+      0.0013272044603142793,
+      0.0034007251878686645
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      0.0,
+      6.0,
+      11.0,
+      14.0,
+      15.0,
+      15.0,
+      17.0
+     ]
+    }
+   },
+   "convergence": {
+    "250": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9848661527503766,
+      1.0
+     ],
+     "ambiguous_rate": 0.032,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.004
+    },
+    "500": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9923753814690964,
+      0.9999999999999999
+     ],
+     "ambiguous_rate": 0.03,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.002
+    },
+    "1000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9961731014136095,
+      1.0
+     ],
+     "ambiguous_rate": 0.025,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.003
+    },
+    "2000": {
+     "accept_rate": 0.9995,
+     "accept_ci95": [
+      0.9971730649772383,
+      0.9999117345398496
+     ],
+     "ambiguous_rate": 0.0275,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.003
+    },
+    "4000": {
+     "accept_rate": 0.99975,
+     "accept_ci95": [
+      0.9985851325891636,
+      0.9999558686332625
+     ],
+     "ambiguous_rate": 0.02475,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.00225
+    },
+    "8000": {
+     "accept_rate": 0.9995,
+     "accept_ci95": [
+      0.9987149641803398,
+      0.9998055462705419
+     ],
+     "ambiguous_rate": 0.0235,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.002125
+    }
+   },
+   "frontier": {
+    "0.0-0.1": {
+     "n": 836,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.04066985645933014,
+     "accept_rate": 0.9964114832535885,
+     "adult_read_reject": 0.0035885167464114833
+    },
+    "0.1-0.2": {
+     "n": 807,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.03841387856257745,
+     "accept_rate": 0.9987608426270136,
+     "adult_read_reject": 0.0012391573729863693
+    },
+    "0.2-0.3": {
+     "n": 816,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.03799019607843137,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.3-0.4": {
+     "n": 780,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.014102564102564103,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.4-0.5": {
+     "n": 818,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0024449877750611247,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.5-0.6": {
+     "n": 793,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.007566204287515763,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.6-0.7": {
+     "n": 803,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0410958904109589,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.7-0.8": {
+     "n": 792,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.050505050505050504,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.8-0.9": {
+     "n": 785,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.9-1.0": {
+     "n": 770,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    }
+   },
+   "noise_band": {
+    "replicates": 20,
+    "accept": [
+     0.993375,
+     0.995625
+    ],
+    "dup_matched": [
+     0.0,
+     0.0
+    ],
+    "adult_read": [
+     0.004375,
+     0.006625
+    ],
+    "ambiguous": [
+     0.000125,
+     0.00075
+    ]
+   },
+   "by_stature": {
+    "147.0-148.0": {
+     "n": 1625,
+     "accept_rate": 1.0
+    },
+    "148.0-149.0": {
+     "n": 1591,
+     "accept_rate": 0.9987429289754871
+    },
+    "149.0-150.0": {
+     "n": 1640,
+     "accept_rate": 1.0
+    },
+    "150.0-151.0": {
+     "n": 1594,
+     "accept_rate": 0.9993726474278545
+    },
+    "151.0-152.0": {
+     "n": 1550,
+     "accept_rate": 0.9993548387096775
+    }
+   }
+  },
+  "U-SK": {
+   "n": 8000,
+   "seed": 30502,
+   "accepted": 8000,
+   "rejected_duplicate_matched": 0,
+   "rejected_adult_read": 0,
+   "accepted_ambiguous": 14,
+   "per_source": {
+    "MF": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      6.0,
+      11.0,
+      13.0,
+      14.0,
+      15.0,
+      17.0,
+      17.0
+     ]
+    },
+    "FN": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      5.0,
+      13.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0,
+      17.0
+     ]
+    },
+    "AE": {
+     "matched_fraction": 0.494,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "mixed",
+     "nsep_quantiles": [
+      7.0,
+      11.0,
+      13.0,
+      15.0,
+      16.0,
+      16.0,
+      17.0
+     ]
+    },
+    "VA": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      7.0,
+      9.0,
+      12.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0
+     ]
+    },
+    "SK": {
+     "matched_fraction": 1.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "matched height",
+     "nsep_quantiles": [
+      12.0,
+      14.0,
+      15.0,
+      16.0,
+      16.0,
+      17.0,
+      17.0
+     ]
+    },
+    "SG": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 2,
+     "ambiguous_2_3": 12,
+     "distinct": 7986,
+     "near_duplicate_rate": 0.00025,
+     "ci95": [
+      6.856025950630708e-05,
+      0.0009111692743715249
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      1.0,
+      7.0,
+      11.0,
+      13.0,
+      15.0,
+      17.0,
+      17.0
+     ]
+    }
+   },
+   "convergence": {
+    "250": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9848661527503766,
+      1.0
+     ],
+     "ambiguous_rate": 0.008,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "500": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9923753814690964,
+      0.9999999999999999
+     ],
+     "ambiguous_rate": 0.004,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "1000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9961731014136095,
+      1.0
+     ],
+     "ambiguous_rate": 0.002,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "2000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9980828823994873,
+      1.0
+     ],
+     "ambiguous_rate": 0.003,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0005
+    },
+    "4000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9990405214831674,
+      0.9999999999999999
+     ],
+     "ambiguous_rate": 0.002,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0005
+    },
+    "8000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9995200304813631,
+      1.0
+     ],
+     "ambiguous_rate": 0.00175,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.00025
+    }
+   },
+   "frontier": {
+    "0.0-0.1": {
+     "n": 774,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.014211886304909561,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.1-0.2": {
+     "n": 777,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.003861003861003861,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.2-0.3": {
+     "n": 837,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.3-0.4": {
+     "n": 803,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.4-0.5": {
+     "n": 799,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.5-0.6": {
+     "n": 819,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.6-0.7": {
+     "n": 756,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.7-0.8": {
+     "n": 790,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.8-0.9": {
+     "n": 827,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.9-1.0": {
+     "n": 818,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    }
+   },
+   "noise_band": {
+    "replicates": 20,
+    "accept": [
+     1.0,
+     1.0
+    ],
+    "dup_matched": [
+     0.0,
+     0.0
+    ],
+    "adult_read": [
+     0.0,
+     0.0
+    ],
+    "ambiguous": [
+     0.0,
+     0.000125
+    ]
+   },
+   "by_stature": {
+    "213.0-216.2": {
+     "n": 1593,
+     "accept_rate": 1.0
+    },
+    "216.2-219.4": {
+     "n": 1545,
+     "accept_rate": 1.0
+    },
+    "219.4-222.6": {
+     "n": 1614,
+     "accept_rate": 1.0
+    },
+    "222.6-225.8": {
+     "n": 1603,
+     "accept_rate": 1.0
+    },
+    "225.8-229.0": {
+     "n": 1645,
+     "accept_rate": 1.0
+    }
+   }
+  },
+  "U-AE": {
+   "n": 8000,
+   "seed": 30513,
+   "accepted": 8000,
+   "rejected_duplicate_matched": 0,
+   "rejected_adult_read": 0,
+   "accepted_ambiguous": 35,
+   "per_source": {
+    "MF": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      4.0,
+      10.0,
+      13.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0
+     ]
+    },
+    "FN": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      5.0,
+      12.0,
+      13.0,
+      14.0,
+      16.0,
+      17.0,
+      17.0
+     ]
+    },
+    "AE": {
+     "matched_fraction": 1.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "matched height",
+     "nsep_quantiles": [
+      7.0,
+      9.0,
+      11.0,
+      12.0,
+      14.0,
+      15.0,
+      17.0
+     ]
+    },
+    "VA": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      7.0,
+      9.0,
+      12.0,
+      14.0,
+      15.0,
+      15.0,
+      17.0
+     ]
+    },
+    "SK": {
+     "matched_fraction": 1.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "matched height",
+     "nsep_quantiles": [
+      13.0,
+      15.0,
+      16.0,
+      16.0,
+      16.0,
+      17.0,
+      17.0
+     ]
+    },
+    "SG": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 1,
+     "ambiguous_2_3": 34,
+     "distinct": 7965,
+     "near_duplicate_rate": 0.000125,
+     "ci95": [
+      2.2065342566469426e-05,
+      0.0007077841836910217
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      1.0,
+      6.0,
+      10.0,
+      12.0,
+      15.0,
+      16.0,
+      17.0
+     ]
+    }
+   },
+   "convergence": {
+    "250": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9848661527503766,
+      1.0
+     ],
+     "ambiguous_rate": 0.008,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "500": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9923753814690964,
+      0.9999999999999999
+     ],
+     "ambiguous_rate": 0.004,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "1000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9961731014136095,
+      1.0
+     ],
+     "ambiguous_rate": 0.003,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "2000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9980828823994873,
+      1.0
+     ],
+     "ambiguous_rate": 0.004,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "4000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9990405214831674,
+      0.9999999999999999
+     ],
+     "ambiguous_rate": 0.0035,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.00025
+    },
+    "8000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9995200304813631,
+      1.0
+     ],
+     "ambiguous_rate": 0.004375,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.000125
+    }
+   },
+   "frontier": {
+    "0.0-0.1": {
+     "n": 789,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.015209125475285171,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.1-0.2": {
+     "n": 814,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.007371007371007371,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.2-0.3": {
+     "n": 818,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.011002444987775062,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.3-0.4": {
+     "n": 821,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0097442143727162,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.4-0.5": {
+     "n": 820,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.5-0.6": {
+     "n": 754,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.6-0.7": {
+     "n": 760,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.7-0.8": {
+     "n": 779,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.8-0.9": {
+     "n": 808,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.9-1.0": {
+     "n": 837,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    }
+   },
+   "noise_band": {
+    "replicates": 20,
+    "accept": [
+     1.0,
+     1.0
+    ],
+    "dup_matched": [
+     0.0,
+     0.0
+    ],
+    "adult_read": [
+     0.0,
+     0.0
+    ],
+    "ambiguous": [
+     0.0,
+     0.00025
+    ]
+   },
+   "by_stature": {
+    "213.0-214.6": {
+     "n": 1584,
+     "accept_rate": 1.0
+    },
+    "214.6-216.2": {
+     "n": 1618,
+     "accept_rate": 1.0
+    },
+    "216.2-217.8": {
+     "n": 1630,
+     "accept_rate": 1.0
+    },
+    "217.8-219.4": {
+     "n": 1604,
+     "accept_rate": 1.0
+    },
+    "219.4-221.0": {
+     "n": 1564,
+     "accept_rate": 1.0
+    }
+   }
+  },
+  "U-SA": {
+   "n": 8000,
+   "seed": 30524,
+   "accepted": 8000,
+   "rejected_duplicate_matched": 0,
+   "rejected_adult_read": 0,
+   "accepted_ambiguous": 33,
+   "per_source": {
+    "MF": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      5.0,
+      10.0,
+      12.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0
+     ]
+    },
+    "FN": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      6.0,
+      11.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0,
+      17.0
+     ]
+    },
+    "AE": {
+     "matched_fraction": 0.493125,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "mixed",
+     "nsep_quantiles": [
+      6.0,
+      9.0,
+      11.0,
+      13.0,
+      14.0,
+      16.0,
+      17.0
+     ]
+    },
+    "VA": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      6.0,
+      9.0,
+      11.0,
+      12.0,
+      14.0,
+      15.0,
+      17.0
+     ]
+    },
+    "SK": {
+     "matched_fraction": 1.0,
+     "near_duplicate": 0,
+     "ambiguous_2_3": 0,
+     "distinct": 8000,
+     "near_duplicate_rate": 0.0,
+     "ci95": [
+      0.0,
+      0.00047996951863715044
+     ],
+     "comparison": "matched height",
+     "nsep_quantiles": [
+      12.0,
+      14.0,
+      16.0,
+      16.0,
+      16.0,
+      17.0,
+      17.0
+     ]
+    },
+    "SG": {
+     "matched_fraction": 0.0,
+     "near_duplicate": 1,
+     "ambiguous_2_3": 32,
+     "distinct": 7967,
+     "near_duplicate_rate": 0.000125,
+     "ci95": [
+      2.2065342566469426e-05,
+      0.0007077841836910217
+     ],
+     "comparison": "ENDPOINT (nearest valid adult)",
+     "nsep_quantiles": [
+      1.0,
+      6.0,
+      9.0,
+      12.0,
+      13.0,
+      15.0,
+      17.0
+     ]
+    }
+   },
+   "convergence": {
+    "250": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9848661527503766,
+      1.0
+     ],
+     "ambiguous_rate": 0.004,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "500": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9923753814690964,
+      0.9999999999999999
+     ],
+     "ambiguous_rate": 0.002,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "1000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9961731014136095,
+      1.0
+     ],
+     "ambiguous_rate": 0.003,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "2000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9980828823994873,
+      1.0
+     ],
+     "ambiguous_rate": 0.003,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "4000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9990405214831674,
+      0.9999999999999999
+     ],
+     "ambiguous_rate": 0.00275,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.0
+    },
+    "8000": {
+     "accept_rate": 1.0,
+     "accept_ci95": [
+      0.9995200304813631,
+      1.0
+     ],
+     "ambiguous_rate": 0.004125,
+     "dup_MF": 0.0,
+     "dup_FN": 0.0,
+     "dup_AE": 0.0,
+     "dup_VA": 0.0,
+     "dup_SK": 0.0,
+     "dup_SG": 0.000125
+    }
+   },
+   "frontier": {
+    "0.0-0.1": {
+     "n": 795,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.010062893081761006,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.1-0.2": {
+     "n": 785,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.01019108280254777,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.2-0.3": {
+     "n": 854,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.01053864168618267,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.3-0.4": {
+     "n": 808,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.006188118811881188,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.4-0.5": {
+     "n": 797,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0037641154328732747,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.5-0.6": {
+     "n": 792,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.6-0.7": {
+     "n": 778,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.7-0.8": {
+     "n": 785,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.8-0.9": {
+     "n": 810,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    },
+    "0.9-1.0": {
+     "n": 796,
+     "dup_rate_matched": 0.0,
+     "ambiguous_rate": 0.0,
+     "accept_rate": 1.0,
+     "adult_read_reject": 0.0
+    }
+   },
+   "noise_band": {
+    "replicates": 20,
+    "accept": [
+     1.0,
+     1.0
+    ],
+    "dup_matched": [
+     0.0,
+     0.0
+    ],
+    "adult_read": [
+     0.0,
+     0.0
+    ],
+    "ambiguous": [
+     0.0,
+     0.00025
+    ]
+   },
+   "by_stature": {
+    "213.0-216.2": {
+     "n": 1594,
+     "accept_rate": 1.0
+    },
+    "216.2-219.4": {
+     "n": 1540,
+     "accept_rate": 1.0
+    },
+    "219.4-222.6": {
+     "n": 1616,
+     "accept_rate": 1.0
+    },
+    "222.6-225.8": {
+     "n": 1587,
+     "accept_rate": 1.0
+    },
+    "225.8-229.0": {
+     "n": 1663,
+     "accept_rate": 1.0
+    }
+   }
+  }
+ },
+ "validation": {
+  "bodies": [
+   {
+    "id": "VLMF0",
+    "stratum": "L-MF",
+    "h": 150.88687109947205,
+    "e": {
+     "MF": 0.8369,
+     "FN": 0.0409,
+     "AE": 0.0147,
+     "VA": 0.0263,
+     "SK": 0.0355,
+     "SG": 0.0371
+    },
+    "rel_err": {
+     "torso_share": 0.0095173126934609,
+     "leg_share": -0.0062985802784005784,
+     "arm_share": -0.009931507560328456,
+     "span_der": -0.007058038269066369,
+     "forearm_over_arm": -0.009861239985135106,
+     "shin_over_leg": -0.00908159940123121,
+     "neck_share": 0.0026970914147497194,
+     "hand_share": -0.01070395380762934,
+     "finger_over_hand": -0.019534813936734508,
+     "palm_breadth_over_hand": 0.015093320866214066,
+     "foot_share": 0.0065372823539546765,
+     "thorax_breadth_share": 0.003058780731457489,
+     "thorax_depth_share": 0.01100759764230319,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.0013917229057063274,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.04762520878433252,
+     "knee breadth / adjacent segment (exact-plane section)": 0.00371473916948295,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.03201204837969618,
+     "HH_share": 0.0008220303198660517
+    },
+    "nsep_real": {
+     "MF": 0,
+     "FN": 17,
+     "AE": 11,
+     "VA": 7,
+     "SK": 14,
+     "SG": 13
+    },
+    "nsep_emul": {
+     "MF": 5,
+     "FN": 17,
+     "AE": 15,
+     "VA": 13,
+     "SK": 15,
+     "SG": 15
+    }
+   },
+   {
+    "id": "VLMF1",
+    "stratum": "L-MF",
+    "h": 149.9467921257019,
+    "e": {
+     "MF": 0.828,
+     "FN": 0.0448,
+     "AE": 0.0137,
+     "VA": 0.0228,
+     "SK": 0.0622,
+     "SG": 0.0101
+    },
+    "rel_err": {
+     "torso_share": 0.010384774551028375,
+     "leg_share": -0.006750911377444768,
+     "arm_share": -0.010052787548294528,
+     "span_der": -0.006651607140552573,
+     "forearm_over_arm": -0.010125026526825676,
+     "shin_over_leg": -0.008502874373392144,
+     "neck_share": 0.0022127565875635913,
+     "hand_share": -0.010115439731096632,
+     "finger_over_hand": -0.019864918467037973,
+     "palm_breadth_over_hand": 0.015312969898588769,
+     "foot_share": 0.00790109796784555,
+     "thorax_breadth_share": 0.0049112967996134405,
+     "thorax_depth_share": 0.014081351928673769,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.003371407486972844,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.054092491411134924,
+     "knee breadth / adjacent segment (exact-plane section)": 0.009789480463046063,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.03513320635468897,
+     "HH_share": 0.0005437250438304897
+    },
+    "nsep_real": {
+     "MF": 1,
+     "FN": 17,
+     "AE": 11,
+     "VA": 8,
+     "SK": 14,
+     "SG": 14
+    },
+    "nsep_emul": {
+     "MF": 7,
+     "FN": 17,
+     "AE": 15,
+     "VA": 13,
+     "SK": 15,
+     "SG": 14
+    }
+   },
+   {
+    "id": "VLMF2",
+    "stratum": "L-MF",
+    "h": 148.27455174922943,
+    "e": {
+     "MF": 0.0687,
+     "FN": 0.1833,
+     "AE": 0.1262,
+     "VA": 0.0714,
+     "SK": 0.2318,
+     "SG": 0.1102
+    },
+    "rel_err": {
+     "torso_share": 0.003970972759129943,
+     "leg_share": -0.0026988904038980355,
+     "arm_share": 0.004573423472023608,
+     "span_der": 0.00605468316652602,
+     "forearm_over_arm": -0.0006191698181851057,
+     "shin_over_leg": -0.0018938697962690432,
+     "neck_share": 0.007213730062292756,
+     "hand_share": 0.018319117494645765,
+     "finger_over_hand": 0.009316700655564558,
+     "palm_breadth_over_hand": -0.008784547602996406,
+     "foot_share": 0.011565980984407975,
+     "thorax_breadth_share": 0.008998710716869862,
+     "thorax_depth_share": 0.025944172397584397,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.011149203736661839,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.06861055670129201,
+     "knee breadth / adjacent segment (exact-plane section)": 0.03592676913536019,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.029107922477650705,
+     "HH_share": -0.004281007593171959
+    },
+    "nsep_real": {
+     "MF": 7,
+     "FN": 16,
+     "AE": 13,
+     "VA": 10,
+     "SK": 16,
+     "SG": 12
+    },
+    "nsep_emul": {
+     "MF": 12,
+     "FN": 14,
+     "AE": 12,
+     "VA": 12,
+     "SK": 15,
+     "SG": 11
+    }
+   },
+   {
+    "id": "VLMF3",
+    "stratum": "L-MF",
+    "h": 150.35560595989227,
+    "e": {
+     "MF": 0.2498,
+     "FN": 0.0875,
+     "AE": 0.132,
+     "VA": 0.0601,
+     "SK": 0.045,
+     "SG": 0.1872
+    },
+    "rel_err": {
+     "torso_share": -0.0009010458142276745,
+     "leg_share": -0.0009664446555759376,
+     "arm_share": 0.0012124047281873995,
+     "span_der": 0.00045341576177726495,
+     "forearm_over_arm": -0.0012132059912032256,
+     "shin_over_leg": -0.006711545712150491,
+     "neck_share": 0.013193840358313391,
+     "hand_share": 0.004968043497431518,
+     "finger_over_hand": 0.002094508957344088,
+     "palm_breadth_over_hand": -0.0022902346825010023,
+     "foot_share": 0.000800648861692288,
+     "thorax_breadth_share": -0.00200907046020371,
+     "thorax_depth_share": -0.0019610900546773724,
+     "elbow breadth / adjacent segment (exact-plane section)": -0.0014449233877729117,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.017116751862358726,
+     "knee breadth / adjacent segment (exact-plane section)": -0.006485185948552741,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.01044697436969888,
+     "HH_share": -0.0004079831900385411
+    },
+    "nsep_real": {
+     "MF": 11,
+     "FN": 16,
+     "AE": 12,
+     "VA": 4,
+     "SK": 15,
+     "SG": 6
+    },
+    "nsep_emul": {
+     "MF": 12,
+     "FN": 16,
+     "AE": 13,
+     "VA": 8,
+     "SK": 15,
+     "SG": 6
+    }
+   },
+   {
+    "id": "VLMF4",
+    "stratum": "L-MF",
+    "h": 148.2161726951599,
+    "e": {
+     "MF": 0.6935,
+     "FN": 0.0853,
+     "AE": 0.063,
+     "VA": 0.0203,
+     "SK": 0.0635,
+     "SG": 0.0532
+    },
+    "rel_err": {
+     "torso_share": 0.0069604133086149655,
+     "leg_share": -0.005047061342410175,
+     "arm_share": -0.007038844722909943,
+     "span_der": -0.004905391554306582,
+     "forearm_over_arm": -0.007448695185939935,
+     "shin_over_leg": -0.007514324072783407,
+     "neck_share": 0.0065349977036675,
+     "hand_share": -0.005903506801858693,
+     "finger_over_hand": -0.013280684390401643,
+     "palm_breadth_over_hand": 0.010058815434403012,
+     "foot_share": 0.006726837100671013,
+     "thorax_breadth_share": 0.0025090420324105356,
+     "thorax_depth_share": 0.009659941634784008,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.002006541432736153,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.04617610617420986,
+     "knee breadth / adjacent segment (exact-plane section)": 0.006280045341488849,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.02828147004306647,
+     "HH_share": -4.11525277758118e-05
+    },
+    "nsep_real": {
+     "MF": 4,
+     "FN": 17,
+     "AE": 11,
+     "VA": 8,
+     "SK": 15,
+     "SG": 15
+    },
+    "nsep_emul": {
+     "MF": 4,
+     "FN": 17,
+     "AE": 12,
+     "VA": 11,
+     "SK": 13,
+     "SG": 15
+    }
+   },
+   {
+    "id": "VLMF5",
+    "stratum": "L-MF",
+    "h": 151.6972354054451,
+    "e": {
+     "MF": 0.9252,
+     "FN": 0.0176,
+     "AE": 0.0101,
+     "VA": 0.0062,
+     "SK": 0.0046,
+     "SG": 0.0082
+    },
+    "rel_err": {
+     "torso_share": 0.009650676413740511,
+     "leg_share": -0.006599328983029729,
+     "arm_share": -0.012202320172980174,
+     "span_der": -0.009214685951732915,
+     "forearm_over_arm": -0.010735015631521239,
+     "shin_over_leg": -0.009619205769775596,
+     "neck_share": 0.0034707490182348533,
+     "hand_share": -0.016239933550879826,
+     "finger_over_hand": -0.023612298959712175,
+     "palm_breadth_over_hand": 0.018247283031486816,
+     "foot_share": 0.005079053212132978,
+     "thorax_breadth_share": 0.0017175681798653475,
+     "thorax_depth_share": 0.007185729729038526,
+     "elbow breadth / adjacent segment (exact-plane section)": -0.0010020365280652976,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.04220796170036634,
+     "knee breadth / adjacent segment (exact-plane section)": -0.002128373954547458,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.03055655496363774,
+     "HH_share": 0.001714510774155631
+    },
+    "nsep_real": {
+     "MF": 1,
+     "FN": 17,
+     "AE": 12,
+     "VA": 4,
+     "SK": 14,
+     "SG": 12
+    },
+    "nsep_emul": {
+     "MF": 8,
+     "FN": 17,
+     "AE": 15,
+     "VA": 10,
+     "SK": 16,
+     "SG": 14
+    }
+   },
+   {
+    "id": "VLMF6",
+    "stratum": "L-MF",
+    "h": 150.25549352169037,
+    "e": {
+     "MF": 0.4479,
+     "FN": 0.1426,
+     "AE": 0.0335,
+     "VA": 0.0476,
+     "SK": 0.2766,
+     "SG": 0.0397
+    },
+    "rel_err": {
+     "torso_share": 0.01182175683583675,
+     "leg_share": -0.006532261043423859,
+     "arm_share": -0.002125091543818569,
+     "span_der": 0.002714378322252964,
+     "forearm_over_arm": -0.007226098541925796,
+     "shin_over_leg": -0.003951320754935095,
+     "neck_share": -0.00211529805550148,
+     "hand_share": 0.011573194572134016,
+     "finger_over_hand": -0.00468282310231416,
+     "palm_breadth_over_hand": 0.0026644536002058405,
+     "foot_share": 0.017610924627091906,
+     "thorax_breadth_share": 0.016396798315106098,
+     "thorax_depth_share": 0.03520923905431039,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.01577445334852734,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.08837007467653146,
+     "knee breadth / adjacent segment (exact-plane section)": 0.05012847486766603,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.050422038673685776,
+     "HH_share": -0.0039753669699278404
+    },
+    "nsep_real": {
+     "MF": 12,
+     "FN": 17,
+     "AE": 12,
+     "VA": 9,
+     "SK": 16,
+     "SG": 14
+    },
+    "nsep_emul": {
+     "MF": 13,
+     "FN": 16,
+     "AE": 13,
+     "VA": 13,
+     "SK": 16,
+     "SG": 13
+    }
+   },
+   {
+    "id": "VLMF7",
+    "stratum": "L-MF",
+    "h": 148.28617918491364,
+    "e": {
+     "MF": 0.5955,
+     "FN": 0.052,
+     "AE": 0.0631,
+     "VA": 0.0269,
+     "SK": 0.1272,
+     "SG": 0.0729
+    },
+    "rel_err": {
+     "torso_share": 0.008639681710362002,
+     "leg_share": -0.005897448380561943,
+     "arm_share": -0.006183098034321599,
+     "span_der": -0.0030545562347735755,
+     "forearm_over_arm": -0.007678644565521031,
+     "shin_over_leg": -0.008000688943309409,
+     "neck_share": 0.005633491492049947,
+     "hand_share": -0.0025068864400570323,
+     "finger_over_hand": -0.011815215220691844,
+     "palm_breadth_over_hand": 0.0087270185380659,
+     "foot_share": 0.0072089320989126016,
+     "thorax_breadth_share": 0.0068614357162219974,
+     "thorax_depth_share": 0.018787695256458292,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.006651618915630708,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.061709452493251105,
+     "knee breadth / adjacent segment (exact-plane section)": 0.019062010583378974,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.03529410777686581,
+     "HH_share": -0.0006736062974644907
+    },
+    "nsep_real": {
+     "MF": 4,
+     "FN": 17,
+     "AE": 11,
+     "VA": 8,
+     "SK": 15,
+     "SG": 15
+    },
+    "nsep_emul": {
+     "MF": 7,
+     "FN": 17,
+     "AE": 12,
+     "VA": 9,
+     "SK": 13,
+     "SG": 16
+    }
+   },
+   {
+    "id": "VUSK0",
+    "stratum": "U-SK",
+    "h": 215.89419554173946,
+    "e": {
+     "MF": 0.0011,
+     "FN": 0.0984,
+     "AE": 0.3563,
+     "VA": 0.1637,
+     "SK": 0.1992,
+     "SG": 0.1293
+    },
+    "rel_err": {
+     "torso_share": -4.991249914454432e-05,
+     "leg_share": -0.0043938612543029665,
+     "arm_share": 0.0037566235469010945,
+     "span_der": 0.004529020082034707,
+     "forearm_over_arm": 0.004090248089697823,
+     "shin_over_leg": -0.0017765978210455557,
+     "neck_share": 0.036073601485764994,
+     "hand_share": 0.008451345059333759,
+     "finger_over_hand": 0.005984441011262165,
+     "palm_breadth_over_hand": -0.0049148278460110495,
+     "foot_share": -0.0023908045343186135,
+     "thorax_breadth_share": 0.0036513364434700435,
+     "thorax_depth_share": 0.01867965816738759,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.003712498703998257,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.03876717347455472,
+     "knee breadth / adjacent segment (exact-plane section)": 0.023592081282066468,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.008000193031515002,
+     "HH_share": 0.0006198780784487656
+    },
+    "nsep_real": {
+     "MF": 13,
+     "FN": 16,
+     "AE": 12,
+     "VA": 10,
+     "SK": 16,
+     "SG": 6
+    },
+    "nsep_emul": {
+     "MF": 13,
+     "FN": 16,
+     "AE": 14,
+     "VA": 12,
+     "SK": 17,
+     "SG": 8
+    }
+   },
+   {
+    "id": "VUSK1",
+    "stratum": "U-SK",
+    "h": 220.55789183080196,
+    "e": {
+     "MF": 0.0741,
+     "FN": 0.0721,
+     "AE": 0.3367,
+     "VA": 0.0111,
+     "SK": 0.3044,
+     "SG": 0.038
+    },
+    "rel_err": {
+     "torso_share": 0.0032682226457463326,
+     "leg_share": -0.005788517408707339,
+     "arm_share": -0.00016120823450571642,
+     "span_der": 0.0030874327327112816,
+     "forearm_over_arm": 0.002301585478842849,
+     "shin_over_leg": 0.0006818520941695994,
+     "neck_share": 0.032709554096453486,
+     "hand_share": 0.004047919609876605,
+     "finger_over_hand": 0.0015383870116956189,
+     "palm_breadth_over_hand": -0.002101910224598491,
+     "foot_share": 0.0006218198069667391,
+     "thorax_breadth_share": 0.00415758823509349,
+     "thorax_depth_share": 0.02667496707353534,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.008950084109470957,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.06326241440259728,
+     "knee breadth / adjacent segment (exact-plane section)": 0.03946321127366481,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.017665960430806482,
+     "HH_share": -0.0006284177744469988
+    },
+    "nsep_real": {
+     "MF": 12,
+     "FN": 17,
+     "AE": 13,
+     "VA": 11,
+     "SK": 16,
+     "SG": 8
+    },
+    "nsep_emul": {
+     "MF": 11,
+     "FN": 16,
+     "AE": 14,
+     "VA": 10,
+     "SK": 16,
+     "SG": 11
+    }
+   },
+   {
+    "id": "VUSK2",
+    "stratum": "U-SK",
+    "h": 214.8619537409395,
+    "e": {
+     "MF": 0.0114,
+     "FN": 0.0072,
+     "AE": 0.0123,
+     "VA": 0.0103,
+     "SK": 0.9123,
+     "SG": 0.0116
+    },
+    "rel_err": {
+     "torso_share": 0.02620150837646329,
+     "leg_share": -0.014206131068119632,
+     "arm_share": -0.0006720354775399118,
+     "span_der": 0.013652889043014094,
+     "forearm_over_arm": -0.00795454061094747,
+     "shin_over_leg": 0.0013931947366812025,
+     "neck_share": -0.008792098981921792,
+     "hand_share": 0.029932055790017786,
+     "finger_over_hand": -0.000938593919916797,
+     "palm_breadth_over_hand": -0.0020989738138718073,
+     "foot_share": 0.02798648338822285,
+     "thorax_breadth_share": 0.05181468425384206,
+     "thorax_depth_share": 0.09686798008575592,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.042217976090569875,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.15134864900727285,
+     "knee breadth / adjacent segment (exact-plane section)": 0.12836870086931618,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.09114994700792778,
+     "HH_share": -0.009131420572843107
+    },
+    "nsep_real": {
+     "MF": 14,
+     "FN": 15,
+     "AE": 16,
+     "VA": 13,
+     "SK": 17,
+     "SG": 14
+    },
+    "nsep_emul": {
+     "MF": 15,
+     "FN": 16,
+     "AE": 16,
+     "VA": 16,
+     "SK": 17,
+     "SG": 16
+    }
+   },
+   {
+    "id": "VUSK3",
+    "stratum": "U-SK",
+    "h": 216.98336789011955,
+    "e": {
+     "MF": 0.0699,
+     "FN": 0.01,
+     "AE": 0.2551,
+     "VA": 0.1213,
+     "SK": 0.3676,
+     "SG": 0.0915
+    },
+    "rel_err": {
+     "torso_share": 0.007992989555142938,
+     "leg_share": -0.007585773088163772,
+     "arm_share": 0.0008143837110270447,
+     "span_der": 0.005446721601237492,
+     "forearm_over_arm": -0.000768092954957833,
+     "shin_over_leg": -0.003381701844549445,
+     "neck_share": 0.02467685598406888,
+     "hand_share": 0.010126022194800521,
+     "finger_over_hand": 0.00019743900294710848,
+     "palm_breadth_over_hand": -0.0007622817665583481,
+     "foot_share": 0.0037928605591597275,
+     "thorax_breadth_share": 0.016725448536969667,
+     "thorax_depth_share": 0.03843789803716424,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.01337871562582671,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.07871751391759685,
+     "knee breadth / adjacent segment (exact-plane section)": 0.050511157478799085,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.03344025816661689,
+     "HH_share": -0.0010652642224012743
+    },
+    "nsep_real": {
+     "MF": 10,
+     "FN": 17,
+     "AE": 12,
+     "VA": 8,
+     "SK": 15,
+     "SG": 10
+    },
+    "nsep_emul": {
+     "MF": 12,
+     "FN": 17,
+     "AE": 13,
+     "VA": 9,
+     "SK": 17,
+     "SG": 14
+    }
+   },
+   {
+    "id": "VUSK4",
+    "stratum": "U-SK",
+    "h": 224.5721130669117,
+    "e": {
+     "MF": 0.0185,
+     "FN": 0.2111,
+     "AE": 0.2579,
+     "VA": 0.1981,
+     "SK": 0.2003,
+     "SG": 0.1101
+    },
+    "rel_err": {
+     "torso_share": 0.0008719016971585614,
+     "leg_share": -0.003331363145478994,
+     "arm_share": 0.006096742951975154,
+     "span_der": 0.006572441956625985,
+     "forearm_over_arm": 0.004185553816528964,
+     "shin_over_leg": 0.001019647467603857,
+     "neck_share": 0.024869585166019226,
+     "hand_share": 0.016421127637700428,
+     "finger_over_hand": 0.00990628008171801,
+     "palm_breadth_over_hand": -0.008585571838079953,
+     "foot_share": 0.005124281310457723,
+     "thorax_breadth_share": 0.019260964591415908,
+     "thorax_depth_share": 0.018515256709813244,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.00659588771688302,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.03812622276895028,
+     "knee breadth / adjacent segment (exact-plane section)": 0.024270107119698014,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.01014407040393639,
+     "HH_share": -0.0013169062531137588
+    },
+    "nsep_real": {
+     "MF": 14,
+     "FN": 16,
+     "AE": 9,
+     "VA": 10,
+     "SK": 15,
+     "SG": 10
+    },
+    "nsep_emul": {
+     "MF": 14,
+     "FN": 15,
+     "AE": 14,
+     "VA": 13,
+     "SK": 17,
+     "SG": 9
+    }
+   },
+   {
+    "id": "VUAE0",
+    "stratum": "U-AE",
+    "h": 214.48292542248964,
+    "e": {
+     "MF": 0.2314,
+     "FN": 0.0877,
+     "AE": 0.2526,
+     "VA": 0.1156,
+     "SK": 0.0054,
+     "SG": 0.1513
+    },
+    "rel_err": {
+     "torso_share": -0.0030743340550751785,
+     "leg_share": -0.0016321980818273518,
+     "arm_share": 0.0012981783341179387,
+     "span_der": -1.3182685009827111e-05,
+     "forearm_over_arm": 0.0021551543534756856,
+     "shin_over_leg": -0.003857249909885674,
+     "neck_share": 0.027131801184017812,
+     "hand_share": 0.00031689098395837334,
+     "finger_over_hand": 0.0013771284734149791,
+     "palm_breadth_over_hand": -0.000920142580703498,
+     "foot_share": -0.0046302559290689604,
+     "thorax_breadth_share": -0.005564576268498822,
+     "thorax_depth_share": -0.008965855552831803,
+     "elbow breadth / adjacent segment (exact-plane section)": -0.00539391241718612,
+     "wrist breadth / adjacent segment (exact-plane section)": -0.004179066258207964,
+     "knee breadth / adjacent segment (exact-plane section)": -0.012234886706708803,
+     "ankle breadth / adjacent segment (exact-plane section)": -0.0037244045940809656,
+     "HH_share": 0.001884099051903565
+    },
+    "nsep_real": {
+     "MF": 14,
+     "FN": 16,
+     "AE": 10,
+     "VA": 11,
+     "SK": 15,
+     "SG": 8
+    },
+    "nsep_emul": {
+     "MF": 14,
+     "FN": 16,
+     "AE": 11,
+     "VA": 12,
+     "SK": 16,
+     "SG": 9
+    }
+   },
+   {
+    "id": "VUAE1",
+    "stratum": "U-AE",
+    "h": 215.34690856188536,
+    "e": {
+     "MF": 0.269,
+     "FN": 0.2002,
+     "AE": 0.0845,
+     "VA": 0.0577,
+     "SK": 0.0166,
+     "SG": 0.0052
+    },
+    "rel_err": {
+     "torso_share": -0.000429960702820531,
+     "leg_share": -0.0006169269671321143,
+     "arm_share": 0.001084328602429352,
+     "span_der": 0.0005319093522642149,
+     "forearm_over_arm": 0.0010022094415549354,
+     "shin_over_leg": 0.0017825085628542237,
+     "neck_share": 0.007841468847940902,
+     "hand_share": 0.004324081752389963,
+     "finger_over_hand": 0.0018977328857348041,
+     "palm_breadth_over_hand": -0.0015107080246197224,
+     "foot_share": 0.005598887860553292,
+     "thorax_breadth_share": -0.002039783392170147,
+     "thorax_depth_share": -0.0044360447815762205,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.00017257223576327974,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.002729575549630381,
+     "knee breadth / adjacent segment (exact-plane section)": -0.005432674793680814,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.00015762738560076706,
+     "HH_share": -0.0007049218840261551
+    },
+    "nsep_real": {
+     "MF": 11,
+     "FN": 16,
+     "AE": 8,
+     "VA": 10,
+     "SK": 16,
+     "SG": 7
+    },
+    "nsep_emul": {
+     "MF": 11,
+     "FN": 16,
+     "AE": 7,
+     "VA": 9,
+     "SK": 15,
+     "SG": 8
+    }
+   },
+   {
+    "id": "VUAE2",
+    "stratum": "U-AE",
+    "h": 218.26351929455996,
+    "e": {
+     "MF": 0.0801,
+     "FN": 0.091,
+     "AE": 0.7658,
+     "VA": 0.0014,
+     "SK": 0.0023,
+     "SG": 0.0402
+    },
+    "rel_err": {
+     "torso_share": -0.01454939283915535,
+     "leg_share": -0.002253498622184269,
+     "arm_share": -7.833423122072247e-05,
+     "span_der": -0.0034011256404771206,
+     "forearm_over_arm": 0.01099677268422794,
+     "shin_over_leg": -0.0002580609226606745,
+     "neck_share": 0.07971171974232649,
+     "hand_share": -0.017287687451578715,
+     "finger_over_hand": 0.002440461827067253,
+     "palm_breadth_over_hand": -0.0020048765770076526,
+     "foot_share": -0.023202789666279644,
+     "thorax_breadth_share": -0.004620456898714598,
+     "thorax_depth_share": -0.03620207641309492,
+     "elbow breadth / adjacent segment (exact-plane section)": -0.018618282933468788,
+     "wrist breadth / adjacent segment (exact-plane section)": -0.04148241621329096,
+     "knee breadth / adjacent segment (exact-plane section)": -0.028340502737856377,
+     "ankle breadth / adjacent segment (exact-plane section)": -0.036082654912202194,
+     "HH_share": 0.006657425164001918
+    },
+    "nsep_real": {
+     "MF": 15,
+     "FN": 15,
+     "AE": 10,
+     "VA": 14,
+     "SK": 16,
+     "SG": 12
+    },
+    "nsep_emul": {
+     "MF": 15,
+     "FN": 13,
+     "AE": 14,
+     "VA": 15,
+     "SK": 16,
+     "SG": 15
+    }
+   },
+   {
+    "id": "VUAE3",
+    "stratum": "U-AE",
+    "h": 218.24754330515862,
+    "e": {
+     "MF": 0.0912,
+     "FN": 0.1305,
+     "AE": 0.2741,
+     "VA": 0.1768,
+     "SK": 0.1006,
+     "SG": 0.0098
+    },
+    "rel_err": {
+     "torso_share": -2.7237664590895605e-05,
+     "leg_share": -0.0034917683277413403,
+     "arm_share": 0.0026949850815525256,
+     "span_der": 0.0025050980056950944,
+     "forearm_over_arm": 0.002966240192162628,
+     "shin_over_leg": -0.0009237090334655029,
+     "neck_share": 0.028596574176157574,
+     "hand_share": 0.004963706017734992,
+     "finger_over_hand": 0.0029807329816124994,
+     "palm_breadth_over_hand": -0.0017394447168518345,
+     "foot_share": -0.0006449017900469478,
+     "thorax_breadth_share": -0.001235102206812666,
+     "thorax_depth_share": 0.007476600237509068,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.0010390382184930491,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.017190209484496677,
+     "knee breadth / adjacent segment (exact-plane section)": 0.008140255980135791,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.002664430884193214,
+     "HH_share": 0.0010439407605549178
+    },
+    "nsep_real": {
+     "MF": 13,
+     "FN": 16,
+     "AE": 9,
+     "VA": 11,
+     "SK": 16,
+     "SG": 8
+    },
+    "nsep_emul": {
+     "MF": 13,
+     "FN": 16,
+     "AE": 12,
+     "VA": 9,
+     "SK": 16,
+     "SG": 8
+    }
+   },
+   {
+    "id": "VUSA0",
+    "stratum": "U-SA",
+    "h": 217.71148678660393,
+    "e": {
+     "MF": 0.0143,
+     "FN": 0.023,
+     "AE": 0.384,
+     "VA": 0.0474,
+     "SK": 0.0491,
+     "SG": 0.2026
+    },
+    "rel_err": {
+     "torso_share": -0.005199435154127574,
+     "leg_share": -0.0020799687063955963,
+     "arm_share": 0.0013352130396127038,
+     "span_der": 4.568545384797673e-05,
+     "forearm_over_arm": 0.005431400418545174,
+     "shin_over_leg": -0.0027939044133593605,
+     "neck_share": 0.04044957809263838,
+     "hand_share": -0.0023101348067107175,
+     "finger_over_hand": 0.004600950420054595,
+     "palm_breadth_over_hand": -0.0041363774403272435,
+     "foot_share": -0.012079780212060354,
+     "thorax_breadth_share": -0.004899364467630618,
+     "thorax_depth_share": -0.010494370503809414,
+     "elbow breadth / adjacent segment (exact-plane section)": -0.005217665933806792,
+     "wrist breadth / adjacent segment (exact-plane section)": -0.005626680982717347,
+     "knee breadth / adjacent segment (exact-plane section)": -0.005649076934667319,
+     "ankle breadth / adjacent segment (exact-plane section)": -0.010966359782626944,
+     "HH_share": 0.002192236314747964
+    },
+    "nsep_real": {
+     "MF": 14,
+     "FN": 16,
+     "AE": 11,
+     "VA": 12,
+     "SK": 16,
+     "SG": 9
+    },
+    "nsep_emul": {
+     "MF": 15,
+     "FN": 14,
+     "AE": 10,
+     "VA": 13,
+     "SK": 16,
+     "SG": 12
+    }
+   },
+   {
+    "id": "VUSA1",
+    "stratum": "U-SA",
+    "h": 216.20115662552416,
+    "e": {
+     "MF": 0.0597,
+     "FN": 0.0505,
+     "AE": 0.0527,
+     "VA": 0.3121,
+     "SK": 0.1864,
+     "SG": 0.3214
+    },
+    "rel_err": {
+     "torso_share": 0.00688234076330918,
+     "leg_share": -0.004246911152445798,
+     "arm_share": 0.006026163384340366,
+     "span_der": 0.007477910837163204,
+     "forearm_over_arm": -0.0015618521743886449,
+     "shin_over_leg": -0.007630500773507798,
+     "neck_share": 0.0033589522456585197,
+     "hand_share": 0.021429244493599287,
+     "finger_over_hand": 0.006970776819676727,
+     "palm_breadth_over_hand": -0.005358289784155645,
+     "foot_share": 0.005840599831525406,
+     "thorax_breadth_share": 0.009477258173217873,
+     "thorax_depth_share": 0.027903431958691494,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.010407964949154858,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.056496128622773645,
+     "knee breadth / adjacent segment (exact-plane section)": 0.024096833204036328,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.02726361116206477,
+     "HH_share": -0.0018704052348936795
+    },
+    "nsep_real": {
+     "MF": 14,
+     "FN": 17,
+     "AE": 12,
+     "VA": 10,
+     "SK": 17,
+     "SG": 9
+    },
+    "nsep_emul": {
+     "MF": 12,
+     "FN": 15,
+     "AE": 14,
+     "VA": 11,
+     "SK": 16,
+     "SG": 10
+    }
+   },
+   {
+    "id": "VUSA2",
+    "stratum": "U-SA",
+    "h": 224.4354705736041,
+    "e": {
+     "MF": 0.0601,
+     "FN": 0.0698,
+     "AE": 0.1153,
+     "VA": 0.0224,
+     "SK": 0.4543,
+     "SG": 0.0324
+    },
+    "rel_err": {
+     "torso_share": 0.011694844968228146,
+     "leg_share": -0.007362773048806059,
+     "arm_share": 9.452594504288925e-05,
+     "span_der": 0.0063961266442413844,
+     "forearm_over_arm": -0.001854430151488562,
+     "shin_over_leg": 0.001352038953101209,
+     "neck_share": 0.007255450596314494,
+     "hand_share": 0.014710581207462603,
+     "finger_over_hand": 0.0015025737802349948,
+     "palm_breadth_over_hand": -0.0030312770327297622,
+     "foot_share": 0.012145988090926929,
+     "thorax_breadth_share": 0.02215221945495971,
+     "thorax_depth_share": 0.045106337707388144,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.020613187268937017,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.09061504133290343,
+     "knee breadth / adjacent segment (exact-plane section)": 0.061431449321784015,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.04242229412137566,
+     "HH_share": -0.0043174886273116275
+    },
+    "nsep_real": {
+     "MF": 13,
+     "FN": 15,
+     "AE": 12,
+     "VA": 10,
+     "SK": 16,
+     "SG": 13
+    },
+    "nsep_emul": {
+     "MF": 13,
+     "FN": 17,
+     "AE": 15,
+     "VA": 10,
+     "SK": 16,
+     "SG": 11
+    }
+   }
+  ],
+  "probes": [
+   {
+    "id": "HL148X",
+    "e": {
+     "MF": 0.5,
+     "FN": 0.5
+    },
+    "rel_err": {
+     "torso_share": -0.0033521194440240265,
+     "leg_share": 0.0035379770557206758,
+     "arm_share": 0.004369415313857372,
+     "span_der": 0.0020593344326780283,
+     "forearm_over_arm": 0.001283536388868356,
+     "shin_over_leg": 0.007952254986382412,
+     "neck_share": -0.007420288495757266,
+     "hand_share": 0.016521298568272336,
+     "finger_over_hand": 0.009913026104182432,
+     "palm_breadth_over_hand": -0.009109844552648738,
+     "foot_share": 0.023578412149392936,
+     "thorax_breadth_share": -0.005469773233846342,
+     "thorax_depth_share": -0.020662350862043488,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.002394152094999491,
+     "wrist breadth / adjacent segment (exact-plane section)": -0.00482927672394784,
+     "knee breadth / adjacent segment (exact-plane section)": -0.027077706101076515,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.0008802193957389015,
+     "HH_share": -0.005134515941316753
+    }
+   },
+   {
+    "id": "HU221SA",
+    "e": {
+     "SK": 0.5,
+     "AE": 0.5
+    },
+    "rel_err": {
+     "torso_share": 0.005488814901696504,
+     "leg_share": -0.00924955130407179,
+     "arm_share": -0.00103244258795554,
+     "span_der": 0.004958803111774879,
+     "forearm_over_arm": 0.002330971990233799,
+     "shin_over_leg": -0.00032870132277662556,
+     "neck_share": 0.048917459668953,
+     "hand_share": 0.0033102579943025123,
+     "finger_over_hand": -0.0007120096899708717,
+     "palm_breadth_over_hand": -0.0005671290131168405,
+     "foot_share": -0.0008793390554932001,
+     "thorax_breadth_share": 0.01435544124370125,
+     "thorax_depth_share": 0.04373430880014184,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.013078432991897149,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.08720951330964155,
+     "knee breadth / adjacent segment (exact-plane section)": 0.06143520447118789,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.031158441180491492,
+     "HH_share": 7.707197315998116e-05
+    }
+   },
+   {
+    "id": "HU225SA",
+    "e": {
+     "SK": 0.5,
+     "AE": 0.5
+    },
+    "rel_err": {
+     "torso_share": 0.005130779069720592,
+     "leg_share": -0.009149471392162156,
+     "arm_share": -0.0010629426296476785,
+     "span_der": 0.004758338779992766,
+     "forearm_over_arm": 0.0025473786928427167,
+     "shin_over_leg": -0.0004042256022462887,
+     "neck_share": 0.05014693134462611,
+     "hand_share": 0.002751877490178245,
+     "finger_over_hand": -0.0007206893352015298,
+     "palm_breadth_over_hand": -0.0022040663085938217,
+     "foot_share": -0.0014806275528546076,
+     "thorax_breadth_share": 0.044976758221964896,
+     "thorax_depth_share": 0.04252780109442922,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.012177998572709958,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.08522675861113727,
+     "knee breadth / adjacent segment (exact-plane section)": 0.05948354027067371,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.03132929992763955,
+     "HH_share": 0.00023442176778520896
+    }
+   },
+   {
+    "id": "HU228p8SA",
+    "e": {
+     "SK": 0.5,
+     "AE": 0.5
+    },
+    "rel_err": {
+     "torso_share": 0.00478490839027601,
+     "leg_share": -0.00903434373152312,
+     "arm_share": -0.0010865310535915773,
+     "span_der": 0.004567099725435231,
+     "forearm_over_arm": 0.002717259945895778,
+     "shin_over_leg": -0.0005421983900016913,
+     "neck_share": 0.05124947207284469,
+     "hand_share": 0.0022222579916104657,
+     "finger_over_hand": -0.0007252960403002495,
+     "palm_breadth_over_hand": -0.000754785803271707,
+     "foot_share": -0.0020259667055397834,
+     "thorax_breadth_share": 0.04464654722411088,
+     "thorax_depth_share": 0.04135039034959198,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.011241582810994633,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.08340672413572014,
+     "knee breadth / adjacent segment (exact-plane section)": 0.07272099988639691,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.03032090101068463,
+     "HH_share": 0.00033309946025150694
+    }
+   },
+   {
+    "id": "HL148M1",
+    "e": {
+     "MF": 1.0
+    },
+    "rel_err": {
+     "torso_share": 0.010762638893988319,
+     "leg_share": -0.007282176425147724,
+     "arm_share": -0.013798253390316484,
+     "span_der": -0.010374653715600868,
+     "forearm_over_arm": -0.011865743922985117,
+     "shin_over_leg": -0.010420457818976492,
+     "neck_share": 0.002913473692504054,
+     "hand_share": -0.0188776623395146,
+     "finger_over_hand": -0.02660735848596396,
+     "palm_breadth_over_hand": 0.020488521458919218,
+     "foot_share": 0.004924441332534002,
+     "thorax_breadth_share": 0.0020848374889468335,
+     "thorax_depth_share": 0.008130975352102388,
+     "elbow breadth / adjacent segment (exact-plane section)": -0.0011160309971984805,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.0446395821756691,
+     "knee breadth / adjacent segment (exact-plane section)": -0.0017478496921460307,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.03276032047217692,
+     "HH_share": 0.002026838574062051
+    }
+   },
+   {
+    "id": "HU225S1",
+    "e": {
+     "SK": 1.0
+    },
+    "rel_err": {
+     "torso_share": 0.02809434162347335,
+     "leg_share": -0.014956475957090487,
+     "arm_share": -0.0008831363315616736,
+     "span_der": 0.014529025071627233,
+     "forearm_over_arm": -0.008701295727914782,
+     "shin_over_leg": 0.0015478676250326728,
+     "neck_share": -0.01094313292309923,
+     "hand_share": 0.03173897088673194,
+     "finger_over_hand": -0.0013177513821516218,
+     "palm_breadth_over_hand": -0.004177467942896418,
+     "foot_share": 0.029983320446772987,
+     "thorax_breadth_share": 0.03532977169293394,
+     "thorax_depth_share": 0.10364417746879862,
+     "elbow breadth / adjacent segment (exact-plane section)": 0.04468095578247122,
+     "wrist breadth / adjacent segment (exact-plane section)": 0.15881603136850586,
+     "knee breadth / adjacent segment (exact-plane section)": 0.13450804021736085,
+     "ankle breadth / adjacent segment (exact-plane section)": 0.09777263431670202,
+     "HH_share": -0.009935543537060498
+    }
+   }
+  ],
+  "rms_rel_err": {
+   "torso_share": 0.010305035575655059,
+   "leg_share": 0.006794303477620701,
+   "arm_share": 0.005468679536336367,
+   "span_der": 0.00636069712459495,
+   "forearm_over_arm": 0.006186664314209981,
+   "shin_over_leg": 0.005231860507239577,
+   "neck_share": 0.02868401678335836,
+   "hand_share": 0.013943993561992751,
+   "finger_over_hand": 0.010381116143394377,
+   "palm_breadth_over_hand": 0.008228789430745348,
+   "foot_share": 0.01226019015480153,
+   "thorax_breadth_share": 0.019589121964588174,
+   "thorax_depth_share": 0.03723851399677431,
+   "elbow breadth / adjacent segment (exact-plane section)": 0.015093208338408883,
+   "wrist breadth / adjacent segment (exact-plane section)": 0.06915067491966569,
+   "knee breadth / adjacent segment (exact-plane section)": 0.049209177949363504,
+   "ankle breadth / adjacent segment (exact-plane section)": 0.03727965073100014,
+   "HH_share": 0.0035704745323879225
+  },
+  "max_abs_rel_err": {
+   "torso_share": 0.02809434162347335,
+   "leg_share": 0.014956475957090487,
+   "arm_share": 0.013798253390316484,
+   "span_der": 0.014529025071627233,
+   "forearm_over_arm": 0.011865743922985117,
+   "shin_over_leg": 0.010420457818976492,
+   "neck_share": 0.07971171974232649,
+   "hand_share": 0.03173897088673194,
+   "finger_over_hand": 0.02660735848596396,
+   "palm_breadth_over_hand": 0.020488521458919218,
+   "foot_share": 0.029983320446772987,
+   "thorax_breadth_share": 0.05181468425384206,
+   "thorax_depth_share": 0.10364417746879862,
+   "elbow breadth / adjacent segment (exact-plane section)": 0.04468095578247122,
+   "wrist breadth / adjacent segment (exact-plane section)": 0.15881603136850586,
+   "knee breadth / adjacent segment (exact-plane section)": 0.13450804021736085,
+   "ankle breadth / adjacent segment (exact-plane section)": 0.09777263431670202,
+   "HH_share": 0.009935543537060498
+  },
+  "nsep_agreement": {
+   "MF": {
+    "exact": 8,
+    "class_same": 17,
+    "n": 20
+   },
+   "FN": {
+    "exact": 11,
+    "class_same": 20,
+    "n": 20
+   },
+   "AE": {
+    "exact": 1,
+    "class_same": 20,
+    "n": 20
+   },
+   "VA": {
+    "exact": 1,
+    "class_same": 20,
+    "n": 20
+   },
+   "SK": {
+    "exact": 8,
+    "class_same": 20,
+    "n": 20
+   },
+   "SG": {
+    "exact": 4,
+    "class_same": 20,
+    "n": 20
+   }
+  }
+ },
+ "controls": {
+  "L": {
+   "FN": {
+    "source_range": [
+     157.0,
+     211.0
+    ],
+    "reaches_below_152": false
+   },
+   "VA": {
+    "source_range": [
+     157.0,
+     203.0
+    ],
+    "reaches_below_152": false
+   },
+   "SG": {
+    "source_range": [
+     152.0,
+     208.0
+    ],
+    "reaches_below_152": false
+   },
+   "MF": {
+    "source_range": [
+     147.0,
+     203.0
+    ],
+    "reaches_below_152": true
+   },
+   "AE": {
+    "source_range": [
+     168.0,
+     221.0
+    ],
+    "reaches_below_152": false
+   },
+   "SK": {
+    "source_range": [
+     183.0,
+     229.0
+    ],
+    "reaches_below_152": false
+   }
+  },
+  "U": {
+   "FN": {
+    "source_range": [
+     157.0,
+     211.0
+    ],
+    "reaches_above_213": false
+   },
+   "VA": {
+    "source_range": [
+     157.0,
+     203.0
+    ],
+    "reaches_above_213": false
+   },
+   "SG": {
+    "source_range": [
+     152.0,
+     208.0
+    ],
+    "reaches_above_213": false
+   },
+   "MF": {
+    "source_range": [
+     147.0,
+     203.0
+    ],
+    "reaches_above_213": false
+   },
+   "AE": {
+    "source_range": [
+     168.0,
+     221.0
+    ],
+    "reaches_above_213": true
+   },
+   "SK": {
+    "source_range": [
+     183.0,
+     229.0
+    ],
+    "reaches_above_213": true
+   }
+  }
+ }
+}
