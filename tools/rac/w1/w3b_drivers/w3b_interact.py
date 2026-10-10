@@ -26,11 +26,13 @@ def field_multipliers(which):
     """per-vertex multiplier array: every facial field at its own valid-interval end ('rmin' / 'rmax' / 'smin' / 'smax'), blended by the
     fields' smooth weights (w3b_scale_eval envelope)"""
     env = json.load(open(C.W + '/scale/envelope.json')); M = RG.masks(); n = len(SC.ref()['Vu']); acc = np.zeros(n); wsum = np.zeros(n)
-    key = {'rmin': ('relief', 'min_valid'), 'rmax': ('relief', 'max_valid'), 'smin': ('size', 'min_valid'), 'smax': ('size', 'max_valid')}[which]
+    CAP = {'face_cranial_structural': 1.18}                     # W3B1 'rC1': per-field max relief limited by C-R1 at m = 1 (temporal 1.18; others canthal 2.57 -> 2.5)
+    key = {'rmin': ('relief', 'min_valid'), 'rmax': ('relief', 'max_valid'), 'smin': ('size', 'min_valid'), 'smax': ('size', 'max_valid'), 'rC1': ('relief', 'max_valid')}[which]
     for k in FACE:
         e = env[k][key[0]]
         if not e or e.get(key[1]) is None: continue
-        wk = SC.weight(M[k]); acc += wk * (e[key[1]] - 1.0); wsum += wk
+        v = e[key[1]] if which != 'rC1' else min(e[key[1]], CAP.get(k, 2.5))
+        wk = SC.weight(M[k]); acc += wk * (v - 1.0); wsum += wk
     return 1.0 + acc / np.maximum(wsum, 1.0)
 def corner(tag, m, r, s=1.0, render=True):
     Z = SC.ref(); w = face_weight()
@@ -49,16 +51,17 @@ def corner(tag, m, r, s=1.0, render=True):
     Sc0 = SC.ref()['Vu'] + SC.ref()['disp'][:, None] * SC.ref()['N']; V0u = SC.ref()['Vu']
     cr0 = lambda X: np.cross(X[Fq[:, 1]] - X[Fq[:, 0]], X[Fq[:, 2]] - X[Fq[:, 0]])
     fa = (cr(Sv) * cr(Vu)).sum(1) < 0; fc = (cr0(Sc0) * cr0(V0u)).sum(1) < 0; folds = int((fa & ~fc & ok).sum())
+    excess = int((fa & ok).sum()) - int((fc & ok).sum())                  # W3B1: excess folds over the canonical surfaced head (own-base orientation)
     fm = SC.field_metrics(w >= 0.9, pure, seeds)
     out = dict(tag=tag, m=m, r=r if np.isscalar(r) else 'per-field', s=s if np.isscalar(s) else 'per-field', legibility=leg, min_legibility_required=min(v for k, v in leg.items() if k in ('canthal', 'supraorbital', 'temporal', 'jugal', 'occipital', 'mandibular') and v is not None),
-               new_folds=folds, face_relief_cm=fm['relief_cm'], face_size_cm=fm['size_cm'], face_aspect=fm['aspect'], eye_vis_0=eye_vis_surf(Sv, Fu, 0), eye_vis_10=eye_vis_surf(Sv, Fu, 10))
+               new_folds=folds, excess_folds=excess, face_relief_cm=fm['relief_cm'], face_size_cm=fm['size_cm'], face_aspect=fm['aspect'], eye_vis_0=eye_vis_surf(Sv, Fu, 0), eye_vis_10=eye_vis_surf(Sv, Fu, 10))
     if render: SS.ensure('ix_' + tag, Sv, Fu, "hF:0:4:0:12:182:22;hF34:35:12:0:9:182:24;hP:90:0:0:6:181.5:26", res=900, box=lambda X: X[:, 2] > 168)
     return out
 if __name__ == '__main__':
     cases = [tuple(a.split('@')) for a in sys.argv[1].split(';')]
-    rp = W + '/results.json'; res = json.load(open(rp)) if os.path.exists(rp) else {}
-    num = lambda v: v if v in ('rmin', 'rmax', 'smin', 'smax') else float(v)
+    rp = W + '/' + os.environ.get('W3B_IX', 'results.json'); res = json.load(open(rp)) if os.path.exists(rp) else {}
+    num = lambda v: v if v in ('rmin', 'rmax', 'smin', 'smax', 'rC1') else float(v)
     for tag, m, r, s in cases:
         if tag in res: continue
         res[tag] = corner(tag, float(m), num(r), num(s)); json.dump(res, open(rp, 'w'), indent=1)
-        x = res[tag]; print(tag, 'minleg %.2f folds %d asp %.3f eye %.3f/%.3f' % (x['min_legibility_required'], x['new_folds'], x['face_aspect'], x['eye_vis_0'], x['eye_vis_10']), {k: (round(v, 2) if v else v) for k, v in x['legibility'].items()}, flush=True)
+        x = res[tag]; print(tag, 'excess %d minleg %.2f folds %d asp %.3f eye %.3f/%.3f' % (x['excess_folds'], x['min_legibility_required'], x['new_folds'], x['face_aspect'], x['eye_vis_0'], x['eye_vis_10']), {k: (round(v, 2) if v else v) for k, v in x['legibility'].items()}, flush=True)

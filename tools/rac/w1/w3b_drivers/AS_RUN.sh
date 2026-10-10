@@ -17,3 +17,14 @@ python3 w3b_interact.py "I0_ref@1.0@1.0@1.0;I1_minR_minRel@0.4@rmin@1.0;I2_minR_
 python3 w3b_scale_sheets.py interact; python3 w3b_scale_sheets.py face; python3 w3b_scale_sheets.py body; python3 w3b_scale_sheets.py extreme
 python3 w3b_tables.py EVIDENCE/tables.md
 # canonical hashes after: identical (canon_hash_check.json)
+# ---- RAC W3B1 (surfaced-envelope closure) ----
+W3B_IX=surf_ridge.json python3 w3b_interact.py "$(for m in 1.0 0.9 0.8 0.7 0.6 0.5 0.4; do for r in 1.0 rmin rC1; do printf 'S_m%s_%s@%s@%s@1.0;' $m $r $m $r; done; done | sed 's/;$//')"
+W3B_IX=surf_ridge.json python3 w3b_interact.py "S_m0.95_1.0@0.95@1.0@1.0;S_m0.85_1.0@0.85@1.0@1.0;S_m0.65_rmin@0.65@rmin@1.0;S_m0.55_rmin@0.55@rmin@1.0"
+W3B_IX=surf_ridge.json python3 w3b_interact.py "S_m1.3_1.0@1.3@1.0@1.0;S_m1.3_rC1@1.3@rC1@1.0;S_m1.3_rmin@1.3@rmin@1.0"
+python3 w3b1_ridge_transport.py
+python3 w3b1_transport.py; python3 w3b1_transport_split.py
+python3 w3b1_caps.py
+python3 w3b1_seeds.py; python3 w3b1_seeds2.py
+# seeds3: eyelid s1.0/0.9 rng1007, shin s1.0/0.8 rng4007 (inline in session; results_w3b1_seeds3.json)
+python3 w3b1_transport_sheet.py; python3 w3b1_ridge_sheet.py
+# canonical hashes after W3B1: identical (rac-w3b1-sa-evidence/canon_hash_check.json)
