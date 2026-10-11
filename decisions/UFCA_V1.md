@@ -70,7 +70,7 @@ Each population supplies a **binding** for each slot:
 | State | Meaning |
 |---|---|
 | **Bound** | The population has this anatomy, and the bound controls are authorized |
-| **Bound-locked** | The anatomy exists, but no editable control is authorized (for example Saurin orbital spacing, §259; the Saurin nictitating membrane). The anatomy is still validated |
+| **Bound-locked** | The anatomy exists, but no editable control is authorized (for example Saurin vertical and AP orbital placement, §259 / §267.2; the Saurin nictitating membrane). The anatomy is still validated. *Update (RM-UF-05 ruling, October 10, 2026): Saurin horizontal orbital spacing is no longer an example; it is Bound / DIR (§12)* |
 | **Absent** | The population lacks the anatomy. The slot or sub-panel is **hidden, never shown as a dead or empty control** |
 
 ## 5. Universal control taxonomy
@@ -244,7 +244,7 @@ Items held hidden are in §19.2.
 | Slot | Saurin binding |
 |---|---|
 | 2 | Cranium with **structural ridges** (skull anatomy; vary in strength, never toggled off) |
-| 3 | Orbital-temporal platform; orbit size drives the **FOLLOW** coupling; spacing Bound-locked |
+| 3 | Orbital-temporal platform; orbit size drives the **FOLLOW** coupling. **Horizontal orbital spacing (IOD) = Bound / DIR over the common creator-safe interval −8 % … +3 % of the canonical W2 reference state** (SAURIN §267.2; author ruling `reviews/chatgpt-rac-rm-uf-05-final-ruling-rm-ot-05-order.md` §3): the whole orbital complex (orbit, rim, lids, aperture, eyeball) moves together and the eyeball never translates or scales independently; the +14.9 % outward result is conditional diagnostic headroom, not a creator interval. **Vertical and AP orbital placement = Bound-locked** |
 | 4a | Aperture inside the orbit coupling |
 | 4b | Vertical-elliptical pupil (species anatomy; shape and dilation range only); nictitating membrane Bound-locked |
 | 5 | Rostrum & Lateral Face |
@@ -351,6 +351,21 @@ The full manually creatable valid range is available regardless of strength.
 - **Generic pairwise harness:** every population pair is run at N4 matched-scale. It **fills coverage gaps** (pairs without an explicit test; matrix in UFCA-06 §3). It never overwrites an accepted population test.
 - Population-sample tests apply where identity is statistical (Sagekin; elf populations at population level).
 
+### 17.1 Tier-G batch-diversity / anti-convergence architecture (RM-UF-05, FINAL CLOSED)
+
+Author ruling `reviews/chatgpt-rac-rm-uf-05-final-ruling-rm-ot-05-order.md` §1-§2; evidence `reviews/claude-rac-rm-uf-05-diversity-author-gate.md`.
+
+1. **D2 — UFCA-slot-balanced structural distance** (within-slot normalized distance, slots combined with equal weight) is the primary generic pairwise construction.
+2. A **per-slot coverage check** is a separate, required anti-collapse diagnostic.
+3. A **canon-bundle convergence check** is a separate, required anti-stereotype diagnostic (only bundles canon already prohibits; legitimate FOLLOW / CLAMP couplings are not bundles).
+4. **Race-specific Tier-G tests remain authoritative** and are never replaced by the generic metric (UFCA-06 §2.G).
+5. **Halvren anti-50/50 and source-passing** remain separate dedicated bundle diagnostics.
+6. Presentation, hair, pigmentation, scars, cosmetics, expression and acquired history never rescue structural convergence; DER outputs are not double-counted; bound-locked anatomy is not a diversity axis; missing numeric coverage stays explicitly missing (no ranges manufactured to make the metric runnable).
+
+**Current diagnostic calibration (Option B; W3-era evidence regime only — not anatomy canon, not a frequency model, not a membership test):** N = 256; near-clone fraction (D2 NN < 0.015) ≤ 5 %; D2 NN 5th percentile ≥ 0.010; every participating slot's coverage ≥ 0.05; multi-slot tercile-tuple lift ≤ 4; canon-prohibited bundle share ≤ max(3 × its broad-coverage expectation, 2 %). Re-derive when batch size or the participating dimensionality / accepted numeric spans materially change. It never forces broad spread or rejects legitimate central concentration. Option C (spread floor) is rejected for canon use; Option A alone is insufficient (it misses single-slot collapse and canon bundles).
+
+**Calibration status — PARTIAL / DEFERRED:** Saurin supports a numeric batch on its demonstrated axes (horizontal IOD now participates where the vector rules permit; the completed 10-axis experiment excluded it and is preserved as provenance); Skarn and Marchfolk support constrained diagnostic anchor-scale batches only; the other ten populations are NOT FULLY CALIBRATABLE until their qualitative facial ranges gain author-accepted numeric spans / anchors. No population fails because the generic metric cannot yet be calibrated for it. No frequencies were authored and no creator ranges were invented.
+
 ## 18. Measurement-deferred policy and RM-UF links (AD-U11)
 
 - Where a control or validator needs a number, UFCA defines the semantic variable, its landmarks or index, and its exposure.
@@ -365,7 +380,7 @@ The full manually creatable valid range is available regardless of strength.
 | RM-UF-02 | Ear-family parameter envelopes. **Depends on authored Grask ear-length and Gorrund projection ranges, which do not yet exist** |
 | RM-UF-03 | Saurin orbital spacing tolerance |
 | RM-UF-04 | Saurin structural-ridge strength and facial scale-field ranges |
-| RM-UF-05 | Batch diversity / anti-convergence threshold |
+| RM-UF-05 | Batch diversity / anti-convergence threshold — **VALIDATION ARCHITECTURE FINAL CLOSED (October 10, 2026; §17.1); ROSTER-WIDE NUMERIC CALIBRATION PARTIAL / DEFERRED** |
 
 **Existing links:** RM-CF-01…10, RM-SR-04, RM-SR-05, RM-OT-03, RM-OT-04.
 
@@ -385,7 +400,7 @@ The full manually creatable valid range is available regardless of strength.
 | Sex-related facial magnitude (Durrim, Grask, Gorrund, Pipkin, Cogling) | OPEN |
 | Non-Saurin head-to-stature | OPEN |
 | Scleral tint (Gorrund OPEN; Grask "comes later") | OPEN |
-| Saurin membrane, iris, pupil-dynamics, spacing, ridge, scale-field and display-beyond-family numerics | OPEN |
+| Saurin membrane, iris, pupil-dynamics, spacing, ridge, scale-field and display-beyond-family numerics | OPEN — *update (October 10, 2026): horizontal spacing (−8 % … +3 %, Bound / DIR), ridge strength and scale-field ranges are resolved in SAURIN §267; vertical / AP orbital placement stays Bound-locked; membrane, iris, pupil-dynamics and display-beyond-family numerics remain OPEN* |
 | Frequencies | OPEN |
 | Lifecycle | OPEN |
 | Halvren genetic-simulation depth and ancestry UI | OPEN |

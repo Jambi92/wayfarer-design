@@ -1179,7 +1179,7 @@ Saurin use greater depth, rostral projection and a different orbital-temporal/ja
 
 The following are **first-pass functional requirements / provisional control organization**, consistent with the project-wide facial architecture status.
 
-**UFCA status (UFCA Phase 2, October 5, 2026):** the universal facial creator organization is now canonical in `decisions/UFCA_V1.md`. The Saurin facial control organization in this spec stays as approved requirements and is routed to its UFCA slots (`reviews/claude-ufca-08-phase1-architecture-audit.md` Appendix A); Saurin anatomy, tendencies, validators, tests and OPEN items are unchanged. Saurin routing follows UFCA §12: rostral controls sit in Rostrum & Lateral Face, nasal openings in Nasal Openings, the mouth line in Mouth Line, the jaw in Jaw, auricular controls in Auricular Openings, structural ridges in Cranium & Forehead and the keratin display in Hair / Cranial Display. No human forehead, cheek, chin, lip, nose or pinna controls exist (UFCA AC-U4). Orbital spacing below is Bound-locked by §259, which governs.
+**UFCA status (UFCA Phase 2, October 5, 2026):** the universal facial creator organization is now canonical in `decisions/UFCA_V1.md`. The Saurin facial control organization in this spec stays as approved requirements and is routed to its UFCA slots (`reviews/claude-ufca-08-phase1-architecture-audit.md` Appendix A); Saurin anatomy, tendencies, validators, tests and OPEN items are unchanged. Saurin routing follows UFCA §12: rostral controls sit in Rostrum & Lateral Face, nasal openings in Nasal Openings, the mouth line in Mouth Line, the jaw in Jaw, auricular controls in Auricular Openings, structural ridges in Cranium & Forehead and the keratin display in Hair / Cranial Display. No human forehead, cheek, chin, lip, nose or pinna controls exist (UFCA AC-U4). Orbital spacing below is Bound-locked by §259, which governs. *(Update, October 10, 2026: horizontal orbital spacing is now Bound / DIR over −8 % … +3 % per §267.2 and the RM-UF-05 author ruling; vertical / AP placement stays Bound-locked.)*
 
 ### Cranial
 - overall head scale within race-valid bounds;
@@ -4329,6 +4329,7 @@ Female / sex-related anatomy is **CLOSED** (October 5, 2026; §263).
 - Inward travel is interorbital tissue-strain limited; outward travel is cranial-width / platform limited.
 - The ~+14.9 % outward result on reference-width or wider crania is **conditional diagnostic headroom**, not universal range. No interpolation is authorized across the unmeasured cranial-width gap 0.92–1.00.
 - **Vertical and AP orbital placement remain locked** (§259).
+- **Binding (author ruling, October 10, 2026; `reviews/chatgpt-rac-rm-uf-05-final-ruling-rm-ot-05-order.md` §3):** horizontal IOD is **Bound / DIR** over −8 % … +3 % in UFCA slot 3; vertical and AP placement are **Bound-locked**. The interval above is unchanged.
 - The orbit, rim, lids, aperture and eyeball remain **one integrated system**: spacing moves the whole orbital complex; the eyeball never moves or scales independently of its orbit (§158, §259).
 
 ### 267.3 Structural ridges (RM-UF-04)

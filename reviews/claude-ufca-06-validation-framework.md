@@ -209,22 +209,23 @@ The protocol unifies the neutral states already written in DU L290, GR L406, GO 
 
 **Validators:**
 - UFCA-05 P-1…P-7;
-- the batch diversity check;
+- the batch diversity check (RM-UF-05 architecture FINAL CLOSED: D2 slot-balanced distance + per-slot coverage + canon-bundle check; Option B is the current diagnostic calibration only; UFCA_V1 §17.1);
 - the cliché-bundle checks.
 
 **Carried forward:**
 
 | Race | Tests |
 |---|---|
-| MF | Identity stress L249; randomization sample L257 |
-| SG | Clone / stereotype L368 |
+| MF | Identity stress L253; randomization sample L261 |
+| SK | Anti-stereotype validation L294–296 (lean, heavy, elderly, soft-featured, clean-shaven … Skarn read as the same population); relationship-aware randomization L282–284; SK-12; the six permanent W3C overlap validators (`reviews/claude-rac-w3c-skarn-craniofacial-gate.md` §5); C1R central face is the reference state, never a mandatory template |
+| SG | Clone / stereotype L370 |
 | FN | FN-34, final gate population randomization |
-| AE | Generic-elf convergence L464; AE-48 |
-| VA | Cliché convergence L490; VL-55 |
-| HV | Anti-generic-half-elf L223; anti-beauty L222; anti-50/50 (L60, L377); HV-FAMILY-01/02 |
-| DU | Population sampling L222 |
-| GR | Biological diversity L716; anti-caricature L715 |
-| GO | Minimum-stereotype L684; biological diversity L687 |
+| AE | Generic-elf convergence L479; AE-48 |
+| VA | Cliché convergence L505; VL-55 |
+| HV | Anti-generic-half-elf L223; anti-beauty L222; anti-50/50 (L60, L381); HV-FAMILY-01/02 |
+| DU | Population sampling L233 |
+| GR | Biological diversity L740; anti-caricature L739 |
+| GO | Minimum-stereotype L713; biological diversity L716 |
 | PK | PIP-INT-15 |
 | CG | COG-SURF-14; COG-CC-04, 06 |
 | SA | SAU-CC-01, 03, 05, 17, 18, 24, 25, 26 |
@@ -296,7 +297,7 @@ Following order §11, each validator that will need a number is defined now. Its
 | **Proposed RM-UF-02** | Ear-family parameter envelopes, incl. GR length and GO projection ranges (both OPEN) | Ear landmarks (not in r3) | VAL | Proposed; needs authored ranges first |
 | **Proposed RM-UF-03** | Saurin orbital spacing tolerance | IOD | VAL | Proposed (§259 L4183 OPEN) |
 | **Proposed RM-UF-04** | Saurin structural-ridge strength and facial scale-field ranges | — | VAL | Proposed (§36a L671; §262) |
-| **Proposed RM-UF-05** | Batch diversity / anti-convergence threshold | Distance over DIR vectors | VAL | Proposed |
+| **Proposed RM-UF-05** | Batch diversity / anti-convergence threshold | Distance over DIR vectors | VAL | Proposed — *status (October 10, 2026): architecture FINAL CLOSED (UFCA_V1 §17.1); roster-wide numeric calibration PARTIAL / DEFERRED* |
 
 ## 5. What is deliberately not set
 
