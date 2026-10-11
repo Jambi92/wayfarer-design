@@ -1,0 +1,36 @@
+{
+ "id": "SK-face",
+ "block": "RAC W3C RM-CF-09 Skarn craniofacial tendencies vs Marchfolk",
+ "status": "DIAGNOSTIC - returned for author review; SKARN_V1 numeric ranges unchanged",
+ "order": "reviews/chatgpt-rac-w3b1-final-acceptance-w3c-skarn-craniofacial-order.md",
+ "gate": "reviews/claude-rac-w3c-skarn-craniofacial-gate.md",
+ "evidence": "reviews/rac-w3c-sk-evidence/",
+ "metrics": "tools/rac/w1/w3c_drivers/w3c_face.py (W1c cranio landmarks + skull / brow / jaw / midface proxies)",
+ "accepted_finding": "accepted Skarn ARMs carry the default human face: SK vs MF face shape identical within metric noise; head height / stature +1.6 % at matched stature (both configurations); neck-to-jaw transition +1.5-2.3 %",
+ "builder_chosen_package_per_k": {
+  "head-scale-horiz-incr": 0.12,
+  "head-scale-depth-incr": 0.08,
+  "eyebrows-trans-forward": 0.3,
+  "chin-bones-incr": 0.3,
+  "chin-jaw-drop-incr": 0.15,
+  "LR:cheek-bones-incr": 0.3,
+  "nose-scale-vert-incr": 0.15,
+  "nose-scale-horiz-incr": 0.15,
+  "nose-scale-depth-incr": 0.15,
+  "neck-scale-horiz-incr": 0.1
+ },
+ "candidates": {
+  "C1": "k 1.0 restrained (valid)",
+  "C2": "k 2.0 stronger (valid)",
+  "C3": "k 3.3 first caricatured (invalid: brow shelf)"
+ },
+ "overlap_cases": [
+  "SKOV_BROW (eyebrows-trans-backward 0.30)",
+  "SKOV_JAW (chin-bones-decr 0.30)",
+  "SKOV_MID (cheek-bones-decr 0.30, nose horiz/depth decr 0.15)",
+  "MFOV_BROW (eyebrows-trans-forward 0.60)",
+  "MFOV_JAW (chin-bones-incr 0.60, jaw-drop 0.30)",
+  "MFOV_MID (cheek-bones-incr 0.60, nose scale 0.30)"
+ ],
+ "builder_chosen_note": "all target magnitudes are REFERENCE_ANATOMY s7 builder-chosen diagnostic values, not canon"
+}
