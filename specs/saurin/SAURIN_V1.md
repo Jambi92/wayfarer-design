@@ -4198,7 +4198,7 @@ Every valid naked skull keeps the compact projecting rostrum, Layered Rostral-Cr
 - **Base/anterior taper:** anterior rostral width never exceeds rostral base width; the rostrum keeps a moderate anterior taper (validated anterior/base width ratio 0.60–0.73; reference 0.685).
 - **Orbit/eyeball:** orbit size scales the orbit, lids, aperture and eyeball together; the eyeball never scales independently of its orbit (§158).
 
-**Locked:** orbital placement and spacing remain locked to the accepted brow/orbit architecture; their numeric tolerance is OPEN (no clean validation without rebuilding the brow/postorbital planes).
+**Locked:** orbital placement and spacing remain locked to the accepted brow/orbit architecture; their numeric tolerance is OPEN (no clean validation without rebuilding the brow/postorbital planes). **Update (RAC W3B / W3B1, October 10, 2026):** horizontal orbital spacing is resolved (IOD −8 % … +3 %, §267.2); vertical / AP placement remains locked.
 
 ## 260. Cranial display family
 
@@ -4220,7 +4220,7 @@ The accepted reference hand and foot anatomy is retained: five-digit hand with o
 
 ## 262. Scale-field creator controls
 
-Regional Scale Architecture is retained. There is **no global scale-size control** (§85, §147). Any creator scale variation stays field-aware and preserves the functional distinction among structural, transitional, fine expressive, ventral and contact fields; field boundaries and functions are locked; expressive and articulation fields never coarsen toward structural size. Numeric per-field ranges have not been geometrically validated and remain first-pass rules, not numeric canon.
+Regional Scale Architecture is retained. There is **no global scale-size control** (§85, §147). Any creator scale variation stays field-aware and preserves the functional distinction among structural, transitional, fine expressive, ventral and contact fields; field boundaries and functions are locked; expressive and articulation fields never coarsen toward structural size. Numeric per-field ranges have not been geometrically validated and remain first-pass rules, not numeric canon. **Update (RAC W3B / W3B1, October 10, 2026):** per-field ranges, C-B2 and the creator-safe caps are now canon in §267.4 (still no global scale-size control).
 
 ## 263. Sex-related anatomy
 
@@ -4283,9 +4283,9 @@ Biological Randomization samples **driver** variables (stature, frame, compositi
 - Numeric lower-trunk minimum relative to Marchfolk (§6) and a numeric Broad-vs-Gorrund boundary. Numbers stay OPEN; interim rules (RAC Phase 2, October 5, 2026; AD-R36): the −10 % lower-trunk Saurin at 168 cm and at 203 cm, against matched-stature Marchfolk, must still show the longer lower-trunk relationship; the frame-scope ban (§258: frame never changes axial lengths or pelvic depth) plus the thoracic d/w ≤ 1.00 guard is the interim structural never-Gorrund boundary.
 - Population adipose tendencies.
 - Display mass-moment limit and neck clearance through head/neck range of motion; prominent horns/spikes/plates beyond the validated families (§100) and crest heights above ~2.5 cm.
-- Orbital placement/spacing tolerance.
+- Orbital placement/spacing tolerance — **horizontal spacing resolved (§267.2, RAC W3B1)**; vertical / AP placement remains locked.
 - Hand and foot claw / digit numeric ranges (grasp, footwear, gloves).
-- Numeric per-field scale ranges (body fields queued as RM-UB-08; RAC Phase 2).
+- Numeric per-field scale ranges (body fields queued as RM-UB-08; RAC Phase 2) — **resolved (§267.4, RAC W3B / W3B1)**; production dependencies PD-1 … PD-4 remain OPEN (§267.5).
 - Reproductive life history and physiology (§263); statistical spreads of the sex-shifted distributions around their centres.
 - World-space validation of the longest tails (up to ~170 cm tail reach behind the heel at the stature/tail extremes).
 - Statistical calibration of soft distributions (the universal facial-control architecture is canonicalized in `decisions/UFCA_V1.md`, October 5, 2026; UFCA CLOSED / FINAL-AUTHOR ACCEPTED, October 5, 2026).
@@ -4307,3 +4307,105 @@ Female / sex-related anatomy is **CLOSED** (October 5, 2026; §263).
 **Update (supersedes "measurement has not started" in the line above) — W1 ARMs (author acceptance, October 5, 2026; `reviews/chatgpt-rac-wave1-continuation-asset-build-order.md` D-3):** SA-M (frozen closure reference aff1b52) and SA-F (§263 female centre) are accepted W1 ARMs. Bilateral limb/segment readings need a verified measurement-only re-posed copy (D-2), which is not yet available; the rostral floor stays in the Part 7 convention (D-1). This supersedes the RAC Phase 2 sentence above that both configurations still need the reference-mesh acceptance record.
 
 **Update — W2 reference (RAC W2I6, October 9, 2026; `reviews/chatgpt-rac-w2i6-saurin-canonicalize-w2i4-order.md`):** the canonical Saurin reference is the W2 reference (accepted W2I4 candidate: L1 + F2 body plan, regenerated scale field and saved seeds; Part 7 W2 reference update). aff1b52 and the historical SA-F are W1 / W2I provenance. Saurin W2I is FINAL ACCEPT / CLOSED; the medial / posterior thigh relief is a deferred production art-pass item (§265).
+
+## 267. Orbit, structural-ridge and scale-field envelopes (RAC W3B / W3B1)
+
+**Accepted October 10, 2026 — FINAL ACCEPT / CLOSED** (`reviews/chatgpt-rac-w3b1-final-acceptance-w3c-skarn-craniofacial-order.md` §1–§4). Evidence: `reviews/claude-rac-w3b-saurin-orbit-ridge-scale-gate.md` (+ `reviews/rac-w3b-sa-evidence/`) and `reviews/claude-rac-w3b1-saurin-surface-closure-gate.md` (+ `reviews/rac-w3b1-sa-evidence/`). All values are measured on the canonical W2 reference (§254 W2 update), which W3B / W3B1 did not modify. Multipliers are relative to the canonical W2 reference state. **Absolute centimetre readings in the evidence are reference / construction measurements, not species constants.** This section supersedes the "numeric tolerance is OPEN" sentence in §259 (orbital spacing only) and the "not numeric canon" sentence in §262 for the values below; the §259 / §262 architecture rules stand.
+
+### 267.1 Value categories used here
+
+| Category | Meaning |
+|---|---|
+| **Biological bound** | Anatomical / relationship failure demonstrated beyond it and seed-stable |
+| **Conditional biological reach** | Demonstrated valid on a valid realization; not every current procedural realization reaches it (PD-3) |
+| **Unconditional production-safe value** | Valid on every tested realization with the current generator |
+| **Creator-safe exposure cap** | Presentation-valid cap where no biological failure was reached; **not a species maximum** |
+| **Construction-only** | Measurement / generator implementation value; never canon biology |
+
+### 267.2 Orbital spacing (RM-UF-03)
+
+- **Common creator-safe horizontal orbital-spacing interval: IOD −8 % … +3 % relative to the canonical W2 reference state.**
+- Inward travel is interorbital tissue-strain limited; outward travel is cranial-width / platform limited.
+- The ~+14.9 % outward result on reference-width or wider crania is **conditional diagnostic headroom**, not universal range. No interpolation is authorized across the unmeasured cranial-width gap 0.92–1.00.
+- **Vertical and AP orbital placement remain locked** (§259).
+- The orbit, rim, lids, aperture and eyeball remain **one integrated system**: spacing moves the whole orbital complex; the eyeball never moves or scales independently of its orbit (§158, §259).
+
+### 267.3 Structural ridges (RM-UF-04)
+
+- **Surfaced Saurin structural-ridge strength is valid over a hidden biological range m = 0.60 … 1.30, subject to the facial-relief relationship.** At canonical facial relief the lower usable strength is **m = 0.90**. Strengths down to 0.60 require correspondingly lower local facial-scale relief.
+- **Rule: m ≥ max(0.60, temporal-legibility floor).** C-R1 is the relationship implementation / validation rule: scale relief near each ridge family stays low enough that the family remains structurally legible (legibility ≥ 1 against the local scale relief). The same rule prevents high ridge + high relief from becoming armor.
+- One global hidden ridge-strength control is defensible; the **temporal line is the binding structural family**.
+- **Scales may not become the structure that creates Saurin skull identity.** Ridges cannot be toggled off.
+- The upper accepted surfaced bound is **m = 1.30** under the relief relationship.
+- The naked-skull m = 0.40 is a diagnostic measurement only, never a creator bound. **C-R2 is retired / superseded.**
+- Not canon (construction / diagnostic): the W2 linear calibration of the temporal floor, the legibility constants, fairing / level-set settings and absolute ridge-centimetre readings.
+
+### 267.4 Scale fields (RM-UF-04 facial, RM-UB-08 body)
+
+Regional Scale Architecture stands (§80–85, §262): **no global scale-size control**; every range is per field, and field boundaries, functions and the structural → transitional / articulation → fine hierarchy are locked.
+
+**C-B2 (accepted biological relationship) — relief stays proportionate to scale-unit size** so the field remains biologically integrated rather than plate-like or structurally inverted. Demonstrated on the structural and articulation fields as relief ≤ 0.30 × unit size (canonical dorsal hand 0.40); smaller units must lose relief. The numeric ratio is the W2 measurement of the relationship.
+
+**Ridge relationship:** facial relief near the ridges is limited by §267.3 (C-R1), not by the integument guards alone.
+
+**Facial fields (size × / relief ×):**
+
+| Field | Size | Relief |
+|---|---|---|
+| orbital / eyelid | lower 0.8 (generator-limited; finer NOT DEMONSTRATED). Upper: **conditional biological reach ~×1.3**; **unconditional production-safe ×1.0** (see below); lid-span failure at 1.75 | 0.75 – C-R1 |
+| mouth margin | 0.7 – **1.2** (biological bound: margin span at 1.3) | 1.0 (the relief floor) – C-R1 |
+| rostrum → cheek | 0.5 – creator cap **1.5** | 0.5 – C-R1 |
+| jaw corner | 0.5 – **1.75** (plate rigidity at 2.0) | 0.5 – C-R1 |
+| auricular recess | 0.5 – **1.3 current seed-robust creator-safe endpoint** (not a species maximum; larger reach unclosed, PD-4) | 1.0 – C-R1 |
+| throat / upper neck | 0.5 – **1.5** (hierarchy at 1.75) | 0.25 – C-R1 |
+| cranial structural | 0.7 – creator cap **1.5** (metric bound 2.0, crowding at 2.5) | 0.4 – C-R1 (≈ ×1.18 near the temporal line at m 1.0, rising with m) |
+
+**Body fields (size × / relief ×):**
+
+| Field | Size | Relief |
+|---|---|---|
+| upper posterior neck | 0.6 – 2.0 | 0.5 – 1.25 |
+| dorsal trunk | 0.9 – creator cap **1.5** | 0.25 – 1.0 |
+| lateral trunk | 1.0 – creator cap **1.5** | 0.4 – 1.0 |
+| dorsal tail | 1.0 – creator cap **1.5** | 0.4 – 1.0 |
+| forearm | 0.6 – 2.0 | 0.5 – 1.5 |
+| shin | lower: **conditional biological reach ~×0.6**; **unconditional production-safe ×0.8**. Upper 1.2 | 0.4 – 1.0 |
+| dorsal hand | 1.0 – creator cap **1.5** | 0.4 – 1.0 |
+| dorsal foot | 0.7 – creator cap **1.5** | 0.6 – 1.75 |
+| neck flexion | 0.8 – 2.0 (creator cap **1.5**) | 0.25 – **1.0** (×1.25 sits on the C-B2 threshold) |
+| axilla | 0.7 – **1.2** seed-robust (1.3 on the canonical realization) | 0.25 – 1.5 |
+| elbow | 0.7 – 2.0 | 0.25 – 1.5 |
+| wrist | 0.7 – creator cap **1.5** | 0.25 – 1.5 |
+| lower-trunk flexion | 0.9 – **1.3** (hierarchy at 1.5) | 0.25 – 1.5 |
+| hip crease | 0.6 – **1.5** (hierarchy at 1.75) | 0.25 – 1.5 |
+| knee | 0.6 – creator cap **1.5** | 0.25 – 1.5 |
+| ankle | 0.7 – creator cap **1.5** | 0.25 – 1.5 |
+| tail articulation | 0.6 – **1.5** (hierarchy at 1.75) | 0.25 – 1.75 |
+| throat / anterior neck (ventral) | 0.5 – creator cap **1.5** | 0.25 – 2.0 |
+| chest / abdomen (ventral) | 0.5 – creator cap **1.5** | 0.25 – creator cap **1.5** |
+| tail underside (ventral) | 0.5 – creator cap **1.5** | 0.25 – creator cap **1.5** |
+| palmar (contact) | 1.0 – **1.2** (hierarchy at 1.3) | 0.4 – 1.75 |
+| plantar (contact) | 1.0 – 1.3 | 0.4 – 1.75 |
+
+Bold upper ends without "cap" are biological bounds (demonstrated failure beyond, seed-stable). **"Creator cap ×1.5" is a creator-safe exposure / presentation-valid cap, not a demonstrated biological species maximum** — larger units begin to read as plates or tiles at ~×1.75 on the cranial, trunk, tail and ventral fields, while knee, wrist and foot showed no visible failure through ×2.0. **There is no "maximum Saurin scale size".** Fine-field and contact-field minima are generator-resolution limited; finer biology is NOT DEMONSTRATED, not invalid. Long tails: tail-field size × the tail stretch (≤ 1.20 at the 80 % tail) stays inside the field's range (C-T1).
+
+**Eyelid / shin seed ruling.** A seed-specific, non-monotonic procedural failure does not define the species envelope and does not justify weakening the validity test. Eyelid size through ~×1.3 and shin size down through ~×0.6 are **demonstrated biological reach conditional on a valid realization**; eyelid ×1.0 and shin ×0.8 are the **current unconditional production-safe / seed-robust exposure values**. The fold tolerance is not raised to admit the bad seed, and biology is not narrowed to accommodate it; invalid realizations must eventually be rejected / resampled (PD-3).
+
+**Auricular ruling.** The auricular no-unit events at larger multipliers are generator robustness failures (PD-4); ×1.3 is the current seed-robust creator-safe endpoint, not the biological species maximum.
+
+### 267.5 Extreme bodies — production dependencies, not biology
+
+The folds found on accepted high-muscle / high-fat / Narrow + high-fat bodies are **not Saurin biology**. Canonical scale biology sits on every accepted body wherever the base is clean once relief is transported correctly. The W3B extreme-body relief clamps (C-B1) are **not** biological scale rules, and no frame, composition or scale range is reduced because of them. Open production dependencies (owners recorded; not solved by W3B closure):
+
+| ID | Dependency | Owner | Status |
+|---|---|---|---|
+| **PD-1** | Raw per-vertex-normal relief transport folds relief in compressed / high-curvature regions; smoothed-base / deformation-aware normal transport removes the false folds on clean geometry | Procedural surface / skin-detail transport implementation | OPEN |
+| **PD-2** | Accepted high-muscle / high-fat / Narrow + high-fat bodies invert the unsurfaced base in deep creases before scales are applied | Character-body deformation / composition solver | OPEN (no biology or composition range reduced) |
+| **PD-3** | Isolated seed realizations produce tolerance-level sliver flips non-monotonically across size values; invalid realizations must be rejected / resampled, not anatomy relaxed | Procedural scale-field generation + validity / resampling layer | OPEN |
+| **PD-4** | Some larger auricular settings generate no valid units | Procedural scale-field generator robustness | OPEN (never defines a biological maximum) |
+
+### 267.6 Construction-only (never canon)
+
+Orbit warp radii; level-set transfer, Newton / fairing settings; the W2 temporal-floor calibration and legibility constants; smoothed-normal diagnostic transport; reseed rule and diagnostic seeds (the canonical 130,949-seed realization is unchanged); smooth field weights and the generator resolution limit; guard thresholds (G1–G6, S1–S7, fold tolerance, sliver rule); all absolute centimetre values.
+
+**Closure note:** W3B / W3B1 closure does **not** mean PD-1 … PD-4 are solved. The deferred medial / posterior thigh production-art item (§265) is unchanged.
