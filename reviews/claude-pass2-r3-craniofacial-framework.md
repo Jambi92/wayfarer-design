@@ -119,7 +119,7 @@ These stay race-conditional.
 | RM-CF-02 | Marchfolk | FPI, MPI and MdPI distribution over an approved reference set spanning its facial range, including the most prognathic valid adult face |
 | RM-CF-03 | Grask | FPI, MPI and MdPI at the reference and at the maximum valid midface / projection extremes. Prerequisite authored RAC Phase 2 (GR L362; GR-FACE-14) |
 | RM-CF-04 | Gorrund | Same as RM-CF-03, with the Gorrund comparator authored RAC Phase 2 (GO L312; GOR-FACE-05) |
-| RM-CF-05 | Decision | Author sets the required FPI margin between the Saurin floor and max(RM-CF-02…04) |
+| RM-CF-05 | Decision | Author sets the required FPI margin between the Saurin floor and max(RM-CF-02…04) — *closure status (October 10, 2026): FINAL CLOSED, 0.05 r3 FPI; operational comparison limit 0.24196 conditional on the current Saurin minimum; collision = author review (SAURIN_V1 §268)* |
 
 ## 8. What the UFCA inherits from this framework
 

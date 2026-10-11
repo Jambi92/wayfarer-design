@@ -4194,6 +4194,7 @@ Every valid naked skull keeps the compact projecting rostrum, Layered Rostral-Cr
 **Coupled rules:**
 - **Rostral index** (rostral projection ahead of the eye centres ÷ head length; reference 0.288) stays 0.255–0.335. The floor is a **provisional Saurin floor**; the cross-race numeric check (§146) is OPEN because Marchfolk, Grask and Gorrund canon contain no numeric projection ranges.
 - **Cranial length × rostrum floor:** the rostrum minimum rises with cranial length so the index floor holds.
+- **Update — cross-race check closed (§268):** the 0.255 floor is unchanged and is now cross-race checked under RM-CF-05 (0.05 r3 FPI margin).
 - **Long rostrum → depth:** rostral length above +10 % requires rostral depth and posterior jaw depth ≥ reference (§40).
 - **Base/anterior taper:** anterior rostral width never exceeds rostral base width; the rostrum keeps a moderate anterior taper (validated anterior/base width ratio 0.60–0.73; reference 0.685).
 - **Orbit/eyeball:** orbit size scales the orbit, lids, aperture and eyeball together; the eyeball never scales independently of its orbit (§158).
@@ -4279,7 +4280,7 @@ Biological Randomization samples **driver** variables (stature, frame, compositi
 - Balanced neutral standing posture and living balance (posture/locomotion/animation phase); final density model for balance.
 - Absolute (rather than reference-relative) balance limits once posture is fixed.
 - Exact caudal-base landmark for measuring tail length — **resolved (RAC Phase 2, October 5, 2026; AD-R35):** the axis point at the posterior pelvic plane. Every §256 and §263 tail figure already uses it, so no number changes.
-- Cross-race numeric rostral-floor comparison (Marchfolk, Grask, Gorrund normalized midface/rostral projection ranges) in the universal comparative review.
+- Cross-race numeric rostral-floor comparison (Marchfolk, Grask, Gorrund normalized midface/rostral projection ranges) in the universal comparative review — **resolved for the current comparator state (RM-CF-05, §268)**; Grask GR-FACE-14 and Gorrund GOR-FACE-05 maxima remain NOT DEMONSTRATED.
 - Numeric lower-trunk minimum relative to Marchfolk (§6) and a numeric Broad-vs-Gorrund boundary. Numbers stay OPEN; interim rules (RAC Phase 2, October 5, 2026; AD-R36): the −10 % lower-trunk Saurin at 168 cm and at 203 cm, against matched-stature Marchfolk, must still show the longer lower-trunk relationship; the frame-scope ban (§258: frame never changes axial lengths or pelvic depth) plus the thoracic d/w ≤ 1.00 guard is the interim structural never-Gorrund boundary.
 - Population adipose tendencies.
 - Display mass-moment limit and neck clearance through head/neck range of motion; prominent horns/spikes/plates beyond the validated families (§100) and crest heights above ~2.5 cm.
@@ -4409,3 +4410,21 @@ The folds found on accepted high-muscle / high-fat / Narrow + high-fat bodies ar
 Orbit warp radii; level-set transfer, Newton / fairing settings; the W2 temporal-floor calibration and legibility constants; smoothed-normal diagnostic transport; reseed rule and diagnostic seeds (the canonical 130,949-seed realization is unchanged); smooth field weights and the generator resolution limit; guard thresholds (G1–G6, S1–S7, fold tolerance, sliver rule); all absolute centimetre values.
 
 **Closure note:** W3B / W3B1 closure does **not** mean PD-1 … PD-4 are solved. The deferred medial / posterior thigh production-art item (§265) is unchanged.
+
+## 268. Cross-architecture rostral-projection margin (RM-CF-05)
+
+**RM-CF-05 FINAL CLOSED (author ruling, October 10, 2026; `reviews/chatgpt-rac-w3d-final-ruling-rm-uf-05-order.md` §3-§5; evidence `reviews/claude-rac-w3d-fpi-margin-author-gate.md`):** required Saurin-to-non-Saurin rostral-projection separation **0.05 r3 FPI** (VAL / DIAG cross-architecture safety margin; not a player control, race classifier or frequency statement). Saurin Part 7 floor **0.255 unchanged**; Saurin coupled minimum corner r3 FPI 0.29196; current operational non-Saurin comparison limit **0.24196**, conditional on the current Saurin minimum (not a universal ceiling). A future accepted non-Saurin maximum-valid face that exceeds that limit or reduces the margin below 0.05 is **AUTHOR REVIEW REQUIRED — RM-CF-05 COLLISION** (no automatic invalidation, clipping, floor raise or margin change). FPI is one diagnostic dimension, never a membership test; precision is meaningful to hundredths, not thousandths.
+
+| Term | Value | Class |
+|---|---|---|
+| Required separation | **0.05 r3 FPI** | relational canon (VAL / DIAG) |
+| Saurin Part 7 rostral-index floor | **0.255** (unchanged) | first-pass creator hard bound (§259) |
+| Saurin coupled minimum corner (W1 = W2) | r3 FPI 0.29196 (Part 7 0.25499) | measured reference |
+| Accepted Marchfolk maximum-valid diagnostic (MF-FACE-PROJ-MAX) | r3 FPI 0.1905 | accepted comparator; raw gap 0.1015, ~0.082 after uncertainty |
+| Current operational non-Saurin comparison limit | **0.24196** = 0.29196 − 0.05 | conditional; moves with the accepted Saurin minimum |
+| Grask / Gorrund maximum-valid faces (GR-FACE-14 / GOR-FACE-05) and other populations' maxima | NOT DEMONSTRATED | excluded from the margin until built and accepted |
+
+**Collision rule.** If a legitimately authored non-Saurin maximum-valid face exceeds the current operational limit or reduces the margin below 0.05: do not invalidate the race, silently clip its creator envelope, raise the Saurin floor or weaken the margin; mark **AUTHOR REVIEW REQUIRED — RM-CF-05 COLLISION** and return both anatomies with the uncertainty package. Only an author ruling may adjust an envelope or the margin.
+
+**Convention.** r3 FPI = (FAL.f − eye-centre.f) ÷ HL under the accepted r3 / D-1 conventions (Saurin FAL = rostral tip; humanoid FAL = the more anterior of subnasale / A′). The Part 7 ↔ r3 conversion (+ 1.194 cm ÷ HL) applies only to the accepted Saurin eye / cranial geometry. Uncertainty (W3D): head pitch ±3° ≈ ±0.008–0.010, landmark ±0.001–0.002; margins are meaningful to hundredths only.
+

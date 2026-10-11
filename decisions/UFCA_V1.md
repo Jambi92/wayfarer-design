@@ -265,7 +265,7 @@ Items held hidden are in §19.2.
 
 **Further rules:**
 - The rostral index floor (0.255, provisional, SAURIN §259) remains protective canon.
-- Cross-race closure is deferred to RM-CF-01…05. No margin is set.
+- Cross-race closure is deferred to RM-CF-01…05. No margin is set. **Update — **RM-CF-05 FINAL CLOSED (author ruling, October 10, 2026; `reviews/chatgpt-rac-w3d-final-ruling-rm-uf-05-order.md` §3-§5; evidence `reviews/claude-rac-w3d-fpi-margin-author-gate.md`):** required Saurin-to-non-Saurin rostral-projection separation **0.05 r3 FPI** (VAL / DIAG cross-architecture safety margin; not a player control, race classifier or frequency statement). Saurin Part 7 floor **0.255 unchanged**; Saurin coupled minimum corner r3 FPI 0.29196; current operational non-Saurin comparison limit **0.24196**, conditional on the current Saurin minimum (not a universal ceiling). A future accepted non-Saurin maximum-valid face that exceeds that limit or reduces the margin below 0.05 is **AUTHOR REVIEW REQUIRED — RM-CF-05 COLLISION** (no automatic invalidation, clipping, floor raise or margin change). FPI is one diagnostic dimension, never a membership test; precision is meaningful to hundredths, not thousandths. (SAURIN_V1 §268).**
 - No craniofacial sex shift (§263).
 
 ## 13. Presets and randomization

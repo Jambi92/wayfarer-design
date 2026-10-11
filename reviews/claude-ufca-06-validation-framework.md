@@ -281,7 +281,7 @@ Following order §11, each validator that will need a number is defined now. Its
 
 | Validator | Semantic variable | Landmarks / index (r3) | Exposure | Number from |
 |---|---|---|---|---|
-| Saurin rostral floor (cross-race) | Rostral projection relative to head length | FPI | VAL + DIAG | RM-CF-01…05. **Provisional floor 0.255 stays protective canon; no margin set** |
+| Saurin rostral floor (cross-race) | Rostral projection relative to head length | FPI | VAL + DIAG | RM-CF-01…05. **Provisional floor 0.255 stays protective canon; no margin set** — *closure status (October 10, 2026): RM-CF-05 FINAL CLOSED, margin 0.05 r3 FPI, floor unchanged, collision = author review (SAURIN_V1 §268)* |
 | Grask verticality | Multiregional facial vertical contribution | FVB **with** MVI | VAL | RM-CF-07 |
 | Durrim depth | Craniofacial depth relative to facial height, domains A–E | FDH (regional variants) | VAL + DIAG | RM-SR-05 |
 | Durrim / Gorrund cranial breadth | Cranial breadth relative to height | CBH | VAL | RM-CF-06 |
@@ -301,7 +301,7 @@ Following order §11, each validator that will need a number is defined now. Its
 ## 5. What is deliberately not set
 
 - No numeric facial envelope for any race.
-- No FPI margin (RM-CF-05).
+- No FPI margin (RM-CF-05). *Closure status (October 10, 2026): RM-CF-05 FINAL CLOSED at 0.05 r3 FPI (VAL / DIAG; SAURIN_V1 §268).*
 - No diversity threshold.
 - No asymmetry magnitude limits (SA L2724 OPEN).
 - No head-to-stature ratios for GR, GO, PK or CG.

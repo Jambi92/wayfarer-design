@@ -225,3 +225,9 @@ Option C would buy little visual separation beyond what sheet 3 already shows, a
 ## 11. Stop
 
 W3D stops here for the author's RM-CF-05 decision. Not begun: RM-CF-05 canon writeback, RM-UF-05, RM-OT-05, later biology, posture, equipment, UE5, rigging, animation and gameplay.
+
+---
+
+## Closure status (added October 10, 2026)
+
+Author ruling `reviews/chatgpt-rac-w3d-final-ruling-rm-uf-05-order.md`: W3D accepted; C1R FINAL ACCEPT with neck width 0.30; configuration-2 replication PASS; RM-CF-09 FINAL CLOSED; **RM-CF-05 = option B, 0.05 r3 FPI, FINAL CLOSED** (SAURIN_V1 §268; floor 0.255 unchanged; operational comparison limit 0.24196 conditional; collision = author review). **Neck-to-jaw interpretation (author clarification, October 10, 2026; `reviews/chatgpt-rac-w3d-final-ruling-rm-uf-05-order.md` §2):** the C1R neck width 0.30 is final for the reference construction. The more substantial neck-to-jaw transition is a central / reference population tendency, not an invariant clamp: configuration-1 C1R (+1.7 to +2.0 % NJT over matched Marchfolk) is valid evidence of it, and configuration-2 / Narrow-low-muscle parity is not a failure while the absolute Skarn neck stays substantial and the complete read is canon-valid. No neck widening to force a percentage, no creator minimum from NJT, no neck-breadth membership test, no jaw change to recover a ratio. RAC W3 FINAL CLOSED.
