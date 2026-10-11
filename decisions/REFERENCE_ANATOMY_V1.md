@@ -30,7 +30,7 @@ An **ARM** is a mesh of **one adult individual** of one population, in the state
 | # | Requirement | Content |
 |---|---|---|
 | R-1 | **Central-tendency adult anatomy** | The population's central tendencies as stated in its spec. Every positive tendency is present; every prohibition is absent. Adult read; Apparent Biological Age at a mid-adult value |
-| R-2 | **Stature** | The race **reference height**: MF 173, SK 208, SG 178, FN 181, AE 190, VA 178, HV 178, DU 137, GR 218, GO 229, PK 107, CG 91, SA 188 cm (race height tables). Reached by proportion, **never by uniform scaling** from another population or stature |
+| R-2 | **Stature** | The race **reference height**: MF 173, SK 208, SG 178, FN 181, AE 190, VA 178, HV 178, DU 137, GR 218, GO 229 (nominal design reference; accepted ARM realization GOREF 230.9, RM-OT-05 D1), PK 107, CG 91, SA 188 cm (race height tables). Reached by proportion, **never by uniform scaling** from another population or stature |
 | R-3 | **Skeletal Frame reference state** | The population's **central skeletal values** for every frame variable. Recorded as central values, **not** as a "Balanced" state: Balanced is not the default body and frame has no persistent state (UCCA §7) |
 | R-4 | **Reference composition** | **Current Muscularity and Body-Fat Amount at the population centre, neutral (untilted) fat distribution, no regional muscle offsets.** Saurin: fat placed by the canonical depot ordering (SAURIN §258). This defines the "moderate composition" and "reference composition" wording in race specs. **Reference composition is a measurement state, never a body preset, composition starting operation or creator default** |
 | R-5 | **Natural asymmetry** | Zero; bilaterally symmetric |

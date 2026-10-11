@@ -796,3 +796,6 @@ No claim is made that current code has been verified. Known prototype conflicts 
 ## RAC W1 author acceptance — October 7, 2026
 
 The retained W1i/W1j Gorrund point is **AUTHOR ACCEPTED as the W1 Anatomical Reference Mesh (ARM)**. The acceptance covers the central reference outcome and its canonical anatomical relationships. W1j sensitivity and residuals remain diagnostic constraints for later creator parameterization. Raw solver/search values are reproducibility data rather than species-wide biological constants. The accepted reference retains femur robusticity 1.3863 as a construction value; the lower passing ~1.294 trade remains diagnostic evidence only. Source ruling: `reviews/chatgpt-rac-w1j-gorrund-final-author-acceptance.md`.
+
+**RM-OT-05 stature bookkeeping (author rulings D1 / D5, October 10, 2026; `reviews/chatgpt-rac-rm-ot-05-visual-readability-correction-order.md` §9):** **229 cm = nominal design reference stature; GOREF 230.9 cm = accepted ARM realization** (W1i / W1j / W2D skeleton route; the two are kept distinct — 229 references are not replaced by 230.9). **251 cm = current accepted world-validation / creator upper end for the present design state, not a permanent project-wide maximum**; it may be revisited only by later author decision. No race is inferred above 251 cm.
+
