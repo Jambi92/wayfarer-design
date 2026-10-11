@@ -37,13 +37,13 @@ def donor(H, targets, grid=True):
                 if not os.path.lexists(q): os.symlink(dd + '/%s_%s.npz' % (did, st), q)
         elif not os.path.exists(dd + '/%s_rest.npz' % cid): bv(dd + '/%s_build.json' % did, {"muscle": m, "weight": w}, dd, cid)
     return dd + '/' + did, did, dd, b["height_macro"]
-def build(name, H, extra_bones=None, targets=None, out=None, arch=None):
+def build(name, H, extra_bones=None, targets=None, out=None, arch=None, surface=None):
     out = out or W + '/b/' + name; os.makedirs(out, exist_ok=True)
     dp, did, dd, hm = donor(H, targets or {})
     B = dict(W1L); B.update(extra_bones or {})
     base = json.load(open(dp + '_build.json')); base_p = out + '/%s_base.json' % name; json.dump(base, open(base_p, 'w'))
     bv(base_p, {"muscle": 0.0, "weight": 0.0, "bone_scales": B}, out, name + '-LEAN')       # height macro held = donor's
-    r = SE.make(out + '/' + name + '-LEAN', dp, dp + '-LEAN', out + '/' + name, tag=name, arch=arch)
+    r = SE.make(out + '/' + name + '-LEAN', dp, dp + '-LEAN', out + '/' + name, tag=name, arch=arch, surface=surface)
     gd = out + '/grid_' + name
     if os.path.exists(gd): shutil.rmtree(gd)
     os.makedirs(gd)
@@ -51,7 +51,7 @@ def build(name, H, extra_bones=None, targets=None, out=None, arch=None):
     C = BE.cib(out + '/' + name + '_rest.npz', comps); cj = out + '/%s_cib.json' % name; json.dump(C, open(cj, 'w'), indent=1, default=float)
     SP.main(out, out, name, out + '/skp_' + name, cj)
     subprocess.run(['python3', T + '/run_candidate.py', out, name, F + '/final/MF-M-R_rest.npz'], capture_output=True, text=True, cwd=T)
-    rec = {"name": name, "stature_target": H, "height_macro": hm, "donor": did, "bone_scales": B, "extra_targets": targets or {}, "arch": arch, "stature_r6": r['r6']['stature'] if isinstance(r, dict) and 'r6' in r else None}
+    rec = {"name": name, "stature_target": H, "height_macro": hm, "donor": did, "bone_scales": B, "extra_targets": targets or {}, "arch": arch, "surface": surface, "stature_r6": r['r6']['stature'] if isinstance(r, dict) and 'r6' in r else None}
     json.dump(rec, open(out + '/%s_w2c.json' % name, 'w'), indent=1, default=float); print('BUILT', name, H, 'macro', hm, rec["stature_r6"], flush=True)
     return rec
 def quick(name, H, extra_bones=None, targets=None, out=None):

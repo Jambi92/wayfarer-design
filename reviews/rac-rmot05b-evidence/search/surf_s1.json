@@ -1,0 +1,10 @@
+{"GR": {"limbs": [{"seg": "shank", "map": [[0, 0.15, 0.4, 0.7, 1], [0, 0.25, 0.62, 0.92, 1]]},
+                  {"seg": "forearm", "map": [[0, 0.15, 0.4, 0.7, 1], [0, 0.25, 0.62, 0.92, 1]]},
+                  {"seg": "upperarm", "lowpass": 0.15, "t_range": [0, 0.6]}],
+        "trunk": [{"r": [-0.35, 0.15], "sector": [110, 180], "sigma_cm": 6},
+                  {"r": [0.35, 1.0], "sector": [120, 180], "sigma_cm": 5}]},
+ "GO": {"limbs": [{"seg": "thigh", "lowpass": 0.25}, {"seg": "shank", "lowpass": 0.25},
+                  {"seg": "upperarm", "lowpass": 0.2, "t_range": [0, 0.6]}, {"seg": "forearm", "lowpass": 0.25}],
+        "trunk": [{"r": [-0.35, 0.2], "sector": [100, 180], "sigma_cm": 8},
+                  {"r": [0.05, 0.6], "sector": [140, 180], "sigma_cm": 8},
+                  {"r": [0.0, 0.55], "sector": [0, 60], "sigma_cm": 8}]}}

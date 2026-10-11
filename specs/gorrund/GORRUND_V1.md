@@ -801,3 +801,9 @@ The retained W1i/W1j Gorrund point is **AUTHOR ACCEPTED as the W1 Anatomical Ref
 
 
 **RM-OT-05A status (October 11, 2026; author Option (a), `reviews/chatgpt-rac-rm-ot-05a-grask-gorrund-architecture-rebuild-order.md`):** the accepted W2 Gorrund bodies (W2D, incl. GOREF 230.9) are now **constraint / provenance references, not final body realizations**. A canon-constrained architecture rebuild (`reviews/claude-rac-rm-ot-05a-grask-gorrund-architecture-rebuild-gate.md`: structural joint shape, columnar long bones, ALPC depth chain, broad neck base / thorax-carried girdle, large supportive feet; GOA208–GOA251 with 229 nominal / 230.9 ARM kept distinct, frames and composition states, PENDING AUTHOR) returned candidate **CONSTRAIN** and body-only readability **FAIL** (reference read as a heavy human by 2 of 3 blind scorers). 251 cm remains the current world-validation upper end, not a permanent maximum. RM-OT-05 remains OPEN; no Gorrund canon relation was changed.
+
+**RM-OT-05B status (October 11, 2026; `reviews/claude-rac-rm-ot-05b-grask-gorrund-surface-anatomy-gate.md`):**
+- **Knee:** the Gorrund knee now exceeds Skarn under the existing femur-normalized row at 208 / 218 / 229 (+8.1 / +5.8 / +1.6 %).
+- **Surface stage:** it removes the human gluteal shelf, lumbar hollow and paunch. Blind gate: 12 / 12, reference 3 / 3, no human control drawn in. Scorers still read Gorrund as a "stocky / heavy human", so the result is **CONSTRAIN**.
+- **Skin-row conflict:** the same flattening fails the skin-layer PV-D14 and ALPC-7 pelvic-depth rows. This is a canon conflict reported in the gate.
+- **Status:** candidates GO5B* are PENDING AUTHOR. The gate escalates to a hand-authored race base mesh / tissue donor. 251 cm remains the current upper end, not permanent. RM-OT-05 remains OPEN.

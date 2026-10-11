@@ -16,7 +16,7 @@ SETS = {'NEW': dict(HUM, **{'GR-ref': 'w2c/b/GRA218/GRA218', 'GR-nar': 'w2c/b/GR
 SEED = {'NEW': 20261011, 'W2': 20261012}
 def sheet(setname, mode):
     B = SETS[setname]; rng = np.random.default_rng(SEED[setname]); order = [str(k) for k in rng.permutation(list(B))]
-    codes = {k: '%s%02d' % ('N' if setname == 'NEW' else 'P', i + 1) for i, k in enumerate(order)}
+    codes = {k: '%s%02d' % ({'NEW': 'N', 'W2': 'P'}.get(setname, 'Q'), i + 1) for i, k in enumerate(order)}
     for k, p in B.items(): PK.BODIES[setname + ':' + k] = (S + '/' + p, k)
     th = 380; tiles = []
     for k in order:

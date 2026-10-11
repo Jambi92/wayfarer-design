@@ -15,6 +15,7 @@ B = {'MF203': (S + '/w2a/st/MFM203', 'MF 203 max'),
      'GOW208': (S + '/w2d/b/GO208/GO208', 'GO 208 W2'), 'GOW218': (S + '/w2d/b/GO218/GO218', 'GO 218 W2'), 'GOW229': (S + '/w2d/b/GO229/GO229', 'GO 229 W2'),
      'GOA208': (S + '/w2d/b/GOA208/GOA208', 'GO 208 05A'), 'GOA218': (S + '/w2d/b/GOA218/GOA218', 'GO 218 05A'), 'GOA229': (S + '/w2d/b/GOA229/GOA229', 'GO 229 05A'),
      'GOAREF': (S + '/w2d/b/GOAREF/GOAREF', 'GO 230.9 05A')}
+PFX = 'RM-OT-05A'
 PK.BODIES.clear(); PK.BODIES.update(B)
 PK.R = S + '/rmot05a/rend'; os.makedirs(PK.R, exist_ok=True)
 SETS = {208: ['MF203', 'SK208', 'GRW208', 'GRA208', 'GOW208', 'GOA208'], 218: ['SK218', 'GRW218', 'GRA218', 'GOW218', 'GOA218'],
@@ -47,7 +48,7 @@ def close_sheets(ids, h):
     for nm, jn, yaw, el, ext, mode in CLOSE:
         tiles = [Image.open('%s/%s_%s.png' % (PK.R, t, nm)).convert('RGBA').resize((420, 420), Image.LANCZOS) for t in tags]
         W = 420 * len(tiles) + 20; img = Image.new('RGB', (W, 420 + 110), 'white'); d = ImageDraw.Draw(img)
-        d.text((10, 8), 'RM-OT-05A close architecture - %s - matched %d cm (each tile %d cm wide, centred on that body\'s own joint)' % (nm.replace('_', ' '), h, ext), font=PK.SS.font(18), fill='black')
+        d.text((10, 8), PFX + ' close architecture - %s - matched %d cm (each tile %d cm wide, centred on that body\'s own joint)' % (nm.replace('_', ' '), h, ext), font=PK.SS.font(18), fill='black')
         for i, (b, t) in enumerate(zip(ids, tiles)):
             bg = Image.new('RGBA', t.size, (236, 236, 236, 255)); bg.alpha_composite(t); img.paste(bg.convert('RGB'), (10 + 420 * i, 44)); d.text((14 + 420 * i, 470), B[b][1], font=PK.SS.font(15), fill='black')
         img.save(OUT + '/c_%d_%s.jpg' % (h, nm), quality=86); print('c', h, nm, flush=True)
