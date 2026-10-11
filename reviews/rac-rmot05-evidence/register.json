@@ -1,0 +1,714 @@
+{
+ "register": [
+  {
+   "race": "Marchfolk",
+   "hard_min": 147,
+   "hard_max": 203,
+   "reference": "173 (MF-M-R 173.14; MF-F-R 172.99)",
+   "sex_rule": "no sex-specific restriction; both configurations built at both bounds",
+   "conditional_reach": "none",
+   "source": "MARCHFOLK L62-64, L23, L249; W2A",
+   "status": "SUPPORTED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Skarn",
+   "hard_min": 183,
+   "hard_max": 229,
+   "reference": "208 (SK 208.01; central face C1R)",
+   "sex_rule": "ordinary human configurations; bounds identical, both demonstrated (configuration 2 at 229 = macro 1.0 + native extension)",
+   "conditional_reach": "none",
+   "source": "SKARN L11-13; W2B / W2B1; W2C1 knee reversion",
+   "status": "SUPPORTED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Sagekin",
+   "hard_min": 152,
+   "hard_max": 208,
+   "reference": "178 (SG 177.99)",
+   "sex_rule": "both human configurations allowed; configuration-2 boundaries NOT DEMONSTRATED",
+   "conditional_reach": "none",
+   "source": "SAGEKIN L70-72; W2E",
+   "status": "CONSTRAINED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Fenn",
+   "hard_min": 157,
+   "hard_max": 211,
+   "reference": "181 (FNL4 181.16)",
+   "sex_rule": "one configuration (AD-R21)",
+   "conditional_reach": "none",
+   "source": "FENN L22-24; W2F",
+   "status": "SUPPORTED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Aelari",
+   "hard_min": 168,
+   "hard_max": 221,
+   "reference": "190 (AEL1 190.01)",
+   "sex_rule": "one configuration",
+   "conditional_reach": "none",
+   "source": "AELARI L25-27; W2F (168 native route, R2)",
+   "status": "SUPPORTED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Vael",
+   "hard_min": 157,
+   "hard_max": 203,
+   "reference": "178 (VAL4 178.00)",
+   "sex_rule": "one configuration",
+   "conditional_reach": "none",
+   "source": "VAEL L15-17; W2F",
+   "status": "SUPPORTED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Halvren",
+   "hard_min": "152 central (outer reach > 147, H-5)",
+   "hard_max": "213 central (outer reach < 229, H-5)",
+   "reference": "178 (HVC1 177.73, diagnostic anchor)",
+   "sex_rule": "follows sources (AD-R22); no sex shift",
+   "conditional_reach": "ancestry-conditional outer reach: 147.2 (MF-supported, bound-limited), 228.8 (SK-supported), 221.0 (AE-supported, source ceiling); H-1...H-6; AD-W3A-1...4",
+   "source": "HALVREN L86-88, L481, L493-509; UCCA L296; W2G; W3A1 FINAL ACCEPT",
+   "status": "NOT FULLY DEMONSTRATABLE",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Durrim",
+   "hard_min": 122,
+   "hard_max": 152,
+   "reference": "137 (DU137C 137.00; D1 pelvis rebuild)",
+   "sex_rule": "one configuration, no shift (AD-R18/19)",
+   "conditional_reach": "none",
+   "source": "DURRIM L15-17, L19; W2H / W2H1",
+   "status": "SUPPORTED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Grask",
+   "hard_min": 198,
+   "hard_max": 239,
+   "reference": "218 (GR218R 217.99)",
+   "sex_rule": "one configuration",
+   "conditional_reach": "none",
+   "source": "GRASK L15-17; W2C",
+   "status": "SUPPORTED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Gorrund",
+   "hard_min": 208,
+   "hard_max": 251,
+   "reference": "229 in R-2 / GORRUND L29; accepted ARM GOREF 230.9 (W1i / W1j / W2D)",
+   "sex_rule": "one configuration",
+   "conditional_reach": "251 = current world-validation upper stature, \"never a permanent maximum\" (GORRUND L31)",
+   "source": "GORRUND L27-31; W2D",
+   "status": "SUPPORTED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Pipkin",
+   "hard_min": 91,
+   "hard_max": 122,
+   "reference": "107 (PK-NAT 107.00)",
+   "sex_rule": "one configuration",
+   "conditional_reach": "none",
+   "source": "PIPKIN L25-27, L119; W2H",
+   "status": "SUPPORTED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Cogling",
+   "hard_min": 76,
+   "hard_max": 107,
+   "reference": "91 (CGJ7 90.99)",
+   "sex_rule": "one configuration (sex via AC-U2, no stature shift)",
+   "conditional_reach": "none",
+   "source": "COGLING L50-56 (provisional), L63, L1589; W2H",
+   "status": "CONSTRAINED",
+   "frequency": "OPEN"
+  },
+  {
+   "race": "Saurin",
+   "hard_min": 168,
+   "hard_max": 208,
+   "reference": "188 (W2 reference 187.88; tail excluded)",
+   "sex_rule": "no sex shift, no sex-specific bound (s263); SA-F built at the same statures",
+   "conditional_reach": "none (tail length coupled per s256, not stature)",
+   "source": "SAURIN L64-68, L3587-3593, s263; W2I D1 regional route; W2I6",
+   "status": "SUPPORTED",
+   "frequency": "OPEN"
+  }
+ ],
+ "measurements": {
+  "Marchfolk": {
+   "min": {
+    "body": "w2a/st/MFM147-NAT",
+    "stature": 146.99967968463898,
+    "HH_share": 0.137195081648522,
+    "torso_share": 0.28239809639898694,
+    "leg_share": 0.5294520211362359,
+    "arm_share": 0.40789866029445265,
+    "shoulder_breadth_share": 0.27811601478042386,
+    "thorax_d_over_b": 0.7437097612501705
+   },
+   "ref": {
+    "body": "w1f/final/MF-M-R",
+    "stature": 173.1429596170783,
+    "HH_share": 0.13002788288577505,
+    "torso_share": 0.2833728639655502,
+    "leg_share": 0.5320848803196605,
+    "arm_share": 0.4071935696383613,
+    "shoulder_breadth_share": 0.2747871327439503,
+    "thorax_d_over_b": 0.7397245177199231
+   },
+   "max": {
+    "body": "w2a/st/MFM203",
+    "stature": 203.00239562243223,
+    "HH_share": 0.12411164641974039,
+    "torso_share": 0.2784169395278735,
+    "leg_share": 0.5454559857919301,
+    "arm_share": 0.409842297648707,
+    "shoulder_breadth_share": 0.26110610634705467,
+    "thorax_d_over_b": 0.7364812172297073
+   }
+  },
+  "Skarn": {
+   "min": {
+    "body": "w2b/st/SKM183",
+    "stature": 182.9841001033783,
+    "HH_share": 0.13000292043837186,
+    "torso_share": 0.3021061383391465,
+    "leg_share": 0.5109485376689324,
+    "arm_share": 0.3990190155757645,
+    "shoulder_breadth_share": 0.2960130410294627,
+    "thorax_d_over_b": 0.7903805121417433
+   },
+   "ref": {
+    "body": "w1f/final/SK",
+    "stature": 208.00521844625473,
+    "HH_share": 0.1251680809171577,
+    "torso_share": 0.2958002865283289,
+    "leg_share": 0.5244250727560815,
+    "arm_share": 0.40217226177144677,
+    "shoulder_breadth_share": 0.2822688884106252,
+    "thorax_d_over_b": 0.784571010165633
+   },
+   "max": {
+    "body": "w2b/st/SKM229",
+    "stature": 229.00369304418564,
+    "HH_share": 0.12151024105949022,
+    "torso_share": 0.2915673211100714,
+    "leg_share": 0.5334687406866561,
+    "arm_share": 0.4042882854200496,
+    "shoulder_breadth_share": 0.2730505940326552,
+    "thorax_d_over_b": 0.7800070540995171
+   }
+  },
+  "Sagekin": {
+   "min": {
+    "body": "w2e/st/SG152-NAT",
+    "stature": 151.9967349767685,
+    "HH_share": 0.13500051869311339,
+    "torso_share": 0.2760300198559807,
+    "leg_share": 0.5392102571143383,
+    "arm_share": 0.4185830690215489,
+    "shoulder_breadth_share": 0.27386962505952367,
+    "thorax_d_over_b": 0.7244122812076854
+   },
+   "ref": {
+    "body": "w1f/final/SG",
+    "stature": 177.9890899695456,
+    "HH_share": 0.1281544229212644,
+    "torso_share": 0.27694179482969566,
+    "leg_share": 0.541745967124273,
+    "arm_share": 0.41778222886720623,
+    "shoulder_breadth_share": 0.27068256317880934,
+    "thorax_d_over_b": 0.720362867829449
+   },
+   "max": {
+    "body": "w2e/st/SG208",
+    "stature": 208.01698302850127,
+    "HH_share": 0.12262003413948201,
+    "torso_share": 0.2730087053869362,
+    "leg_share": 0.5534699619232694,
+    "arm_share": 0.41888143042393405,
+    "shoulder_breadth_share": 0.25784967593953284,
+    "thorax_d_over_b": 0.719631053141929
+   }
+  },
+  "Fenn": {
+   "min": {
+    "body": "w2f/st/FN157-NAT",
+    "stature": 156.99327099323273,
+    "HH_share": 0.13286746988636117,
+    "torso_share": 0.27017331462991534,
+    "leg_share": 0.5480953374011579,
+    "arm_share": 0.43043136892996314,
+    "shoulder_breadth_share": 0.26188047248620927,
+    "thorax_d_over_b": 0.7316957347726508
+   },
+   "ref": {
+    "body": "w1p/cand/FNL4",
+    "stature": 181.16229248791933,
+    "HH_share": 0.12665603269919443,
+    "torso_share": 0.2709754539670402,
+    "leg_share": 0.5503887276285244,
+    "arm_share": 0.4296867590026099,
+    "shoulder_breadth_share": 0.259163348666621,
+    "thorax_d_over_b": 0.7268102833536475
+   },
+   "max": {
+    "body": "w2f/st/FN211",
+    "stature": 211.01335143111646,
+    "HH_share": 0.12144374299968691,
+    "torso_share": 0.26797236261566804,
+    "leg_share": 0.5606490330402886,
+    "arm_share": 0.4291809417876118,
+    "shoulder_breadth_share": 0.2479681604763903,
+    "thorax_d_over_b": 0.7261703047323678
+   }
+  },
+  "Aelari": {
+   "min": {
+    "body": "w2f/rt/AE168N-NAT",
+    "stature": 168.00003081560135,
+    "HH_share": 0.13610891842831074,
+    "torso_share": 0.2733975502186824,
+    "leg_share": 0.5422349556799899,
+    "arm_share": 0.41612578844947723,
+    "shoulder_breadth_share": 0.2563134131992024,
+    "thorax_d_over_b": 0.7324769973088805
+   },
+   "ref": {
+    "body": "w1m/legs/AEL1",
+    "stature": 190.013580404222,
+    "HH_share": 0.13139311615158084,
+    "torso_share": 0.2741340401685093,
+    "leg_share": 0.5442133093166702,
+    "arm_share": 0.4155440055033217,
+    "shoulder_breadth_share": 0.25397952887727043,
+    "thorax_d_over_b": 0.729205067994937
+   },
+   "max": {
+    "body": "w2f/st/AE221",
+    "stature": 220.98759470134974,
+    "HH_share": 0.125517628184528,
+    "torso_share": 0.27092371223472606,
+    "leg_share": 0.5556647185512225,
+    "arm_share": 0.4167120958700383,
+    "shoulder_breadth_share": 0.24378304073728455,
+    "thorax_d_over_b": 0.727114296305665
+   }
+  },
+  "Vael": {
+   "min": {
+    "body": "w2f/st/VA157-NAT",
+    "stature": 156.9966579079628,
+    "HH_share": 0.13394965286125254,
+    "torso_share": 0.27899937408513487,
+    "leg_share": 0.5359669218402283,
+    "arm_share": 0.4129900872370257,
+    "shoulder_breadth_share": 0.2753263149374628,
+    "thorax_d_over_b": 0.7668002313392168
+   },
+   "ref": {
+    "body": "w1n/cand/VAL4",
+    "stature": 178.0022582784295,
+    "HH_share": 0.12921973030597828,
+    "torso_share": 0.27969124717756305,
+    "leg_share": 0.5380069995839115,
+    "arm_share": 0.41240926288278684,
+    "shoulder_breadth_share": 0.2728086857068469,
+    "thorax_d_over_b": 0.7616172317043405
+   },
+   "max": {
+    "body": "w2f/st/VA203",
+    "stature": 202.99487303569913,
+    "HH_share": 0.12439609750680954,
+    "torso_share": 0.2757162049652858,
+    "leg_share": 0.5488065681576928,
+    "arm_share": 0.41407472657751193,
+    "shoulder_breadth_share": 0.26165663746965023,
+    "thorax_d_over_b": 0.7619238686996076
+   }
+  },
+  "Halvren": {
+   "min": {
+    "body": "w2g/st/HV152N-NAT",
+    "stature": 151.99687218666077,
+    "HH_share": 0.1355519330906401,
+    "torso_share": 0.27865462502370647,
+    "leg_share": 0.5356051837212243,
+    "arm_share": 0.41392168678937635,
+    "shoulder_breadth_share": 0.27503444046852543,
+    "thorax_d_over_b": 0.7381260022754819
+   },
+   "ref": {
+    "body": "w1s/probe/HVC1",
+    "stature": 177.7264251857996,
+    "HH_share": 0.12873498203982872,
+    "torso_share": 0.2795568398622565,
+    "leg_share": 0.5381183572084134,
+    "arm_share": 0.4132087162403337,
+    "shoulder_breadth_share": 0.27187486234012503,
+    "thorax_d_over_b": 0.7338399912951277
+   },
+   "max": {
+    "body": "w2g/st/HV213M",
+    "stature": 213.01321411505342,
+    "HH_share": 0.12228573368590256,
+    "torso_share": 0.27460546030424837,
+    "leg_share": 0.5521807266812667,
+    "arm_share": 0.4152119209844998,
+    "shoulder_breadth_share": 0.25694709983781333,
+    "thorax_d_over_b": 0.7314410144726805
+   },
+   "reach_lo_147.2_MF": {
+    "body": "w3a/lo/HL147p2C-NAT",
+    "stature": 147.19679236412048,
+    "HH_share": 0.13679455221759662,
+    "torso_share": 0.278465605981599,
+    "leg_share": 0.5350755103238588,
+    "arm_share": 0.414062893885582,
+    "shoulder_breadth_share": 0.2757028089438621,
+    "thorax_d_over_b": 0.7381480105444901
+   },
+   "reach_hi_228.8_SK": {
+    "body": "w3a1/up/HU228p8Sc",
+    "stature": 228.78176885843277,
+    "HH_share": 0.1207914099729841,
+    "torso_share": 0.28107392711440476,
+    "leg_share": 0.5467903586857574,
+    "arm_share": 0.4220142276172514,
+    "shoulder_breadth_share": 0.2619766194431308,
+    "thorax_d_over_b": 0.7570107479245929
+   },
+   "reach_hi_221.0_AE": {
+    "body": "w3a1/up/HU221Ac",
+    "stature": 221.01986695080996,
+    "HH_share": 0.12130944817585264,
+    "torso_share": 0.27064812930377213,
+    "leg_share": 0.5548523726443394,
+    "arm_share": 0.4133891418451139,
+    "shoulder_breadth_share": 0.25066937603497436,
+    "thorax_d_over_b": 0.7239115420526455
+   }
+  },
+  "Durrim": {
+   "min": {
+    "body": "w2h1/st/DU122C-NAT",
+    "stature": 122.0001311302185,
+    "HH_share": 0.14684004712881432,
+    "torso_share": 0.2958301878237269,
+    "leg_share": 0.514692150020829,
+    "arm_share": 0.39817718857825574,
+    "shoulder_breadth_share": 0.30845352538406073,
+    "thorax_d_over_b": 0.7709895888389068
+   },
+   "ref": {
+    "body": "w2h1/st/DU137C-NAT",
+    "stature": 137.00022971630096,
+    "HH_share": 0.14206014606212922,
+    "torso_share": 0.29655827965370507,
+    "leg_share": 0.5167057081801181,
+    "arm_share": 0.39750638414682,
+    "shoulder_breadth_share": 0.3059494847236262,
+    "thorax_d_over_b": 0.7686155065796092
+   },
+   "max": {
+    "body": "w2h1/st/DU152C-NAT",
+    "stature": 152.00013780593872,
+    "HH_share": 0.13793581453295006,
+    "torso_share": 0.29719597920104707,
+    "leg_share": 0.5184548863189404,
+    "arm_share": 0.39688675407481283,
+    "shoulder_breadth_share": 0.30378326681612633,
+    "thorax_d_over_b": 0.7626827872754289
+   }
+  },
+  "Grask": {
+   "min": {
+    "body": "w2c/b/GR198/GR198",
+    "stature": 198.01361083984375,
+    "HH_share": 0.1270861877380169,
+    "torso_share": 0.2670496357398754,
+    "leg_share": 0.5574402586732862,
+    "arm_share": 0.4319094954884251,
+    "shoulder_breadth_share": 0.25166954739994235,
+    "thorax_d_over_b": 0.7503973421063116
+   },
+   "ref": {
+    "body": "w2c/b/GR218R/GR218R",
+    "stature": 217.98880004882812,
+    "HH_share": 0.12367029970501425,
+    "torso_share": 0.2655668976078944,
+    "leg_share": 0.5633352710939518,
+    "arm_share": 0.4312636322313256,
+    "shoulder_breadth_share": 0.2450356689019841,
+    "thorax_d_over_b": 0.752376036440809
+   },
+   "max": {
+    "body": "w2c/b/GR239/GR239",
+    "stature": 239.01498413085938,
+    "HH_share": 0.12028477116379468,
+    "torso_share": 0.2640002704842371,
+    "leg_share": 0.5687616246968454,
+    "arm_share": 0.4308469957555944,
+    "shoulder_breadth_share": 0.23557322463627944,
+    "thorax_d_over_b": 0.7380134316607763
+   }
+  },
+  "Gorrund": {
+   "min": {
+    "body": "w2d/b/GO208/GO208",
+    "stature": 208.26585388183594,
+    "HH_share": 0.11893249212336428,
+    "torso_share": 0.30389734098392174,
+    "leg_share": 0.5170614599640156,
+    "arm_share": 0.3689566716506947,
+    "shoulder_breadth_share": 0.28707360792373837,
+    "thorax_d_over_b": 0.8385371956930203
+   },
+   "ref": {
+    "body": "w2d/b/GOREF/GOREF",
+    "stature": 230.89718627929688,
+    "HH_share": 0.11575693701816762,
+    "torso_share": 0.3003852458596421,
+    "leg_share": 0.5254125428945171,
+    "arm_share": 0.37303321767304315,
+    "shoulder_breadth_share": 0.2762724739457462,
+    "thorax_d_over_b": 0.8298653175013156
+   },
+   "max": {
+    "body": "w2d/b/GO251/GO251",
+    "stature": 251.00283813476562,
+    "HH_share": 0.11302914420073482,
+    "torso_share": 0.29793260552742246,
+    "leg_share": 0.53140875935876,
+    "arm_share": 0.37595045832992274,
+    "shoulder_breadth_share": 0.2647032727969506,
+    "thorax_d_over_b": 0.8189947560346363
+   }
+  },
+  "Pipkin": {
+   "min": {
+    "body": "w2h/st/PK91-NAT",
+    "stature": 90.99962651729584,
+    "HH_share": 0.15902548861615715,
+    "torso_share": 0.2708271617437427,
+    "leg_share": 0.5285408220689317,
+    "arm_share": 0.4155209308020607,
+    "shoulder_breadth_share": 0.27075053867591303,
+    "thorax_d_over_b": 0.7552350123238685
+   },
+   "ref": {
+    "body": "w1f/final/PK-NAT",
+    "stature": 106.99991536140442,
+    "HH_share": 0.1514414621551885,
+    "torso_share": 0.2724048059759989,
+    "leg_share": 0.5311830323878326,
+    "arm_share": 0.4146863038834908,
+    "shoulder_breadth_share": 0.2718686088520927,
+    "thorax_d_over_b": 0.7498926588294789
+   },
+   "max": {
+    "body": "w2h/st/PK122-NAT",
+    "stature": 122.00001442432404,
+    "HH_share": 0.14592215892078325,
+    "torso_share": 0.27363805193373,
+    "leg_share": 0.5332364757318833,
+    "arm_share": 0.41398198282738036,
+    "shoulder_breadth_share": 0.27309989827081055,
+    "thorax_d_over_b": 0.7445205188343939
+   }
+  },
+  "Cogling": {
+   "min": {
+    "body": "w2h/st/CG76-NAT",
+    "stature": 75.99643874168396,
+    "HH_share": 0.14353250185119526,
+    "torso_share": 0.2782174811065677,
+    "leg_share": 0.5313518386213826,
+    "arm_share": 0.414537930096714,
+    "shoulder_breadth_share": 0.26021978385483413,
+    "thorax_d_over_b": 0.7663164803053507
+   },
+   "ref": {
+    "body": "w1r/probe/CGJ7",
+    "stature": 90.99093723297119,
+    "HH_share": 0.1297885913742383,
+    "torso_share": 0.28137111527273617,
+    "leg_share": 0.5368891868794925,
+    "arm_share": 0.4151355281636384,
+    "shoulder_breadth_share": 0.26316964391693853,
+    "thorax_d_over_b": 0.7597786543816047
+   },
+   "max": {
+    "body": "w2h/st/CG107-NAT",
+    "stature": 106.98456478118896,
+    "HH_share": 0.11871089521603335,
+    "torso_share": 0.2839276310992851,
+    "leg_share": 0.5413331626931145,
+    "arm_share": 0.4153136478203056,
+    "shoulder_breadth_share": 0.26497133701618236,
+    "thorax_d_over_b": 0.7594135614562426
+   }
+  },
+  "Saurin": {
+   "min": {
+    "body": "SA-M168",
+    "stature": 168.00003691231313,
+    "head_len_over_H": 0.1751340670296759,
+    "lower_trunk_over_H": 0.16958904112626352,
+    "shoulder_b_over_H": 0.21368147001664703,
+    "thorax_d_over_w": 0.8795546118075213,
+    "tail_len_pct": 64.33754507440362,
+    "foot_len_over_H": 0.18131962707500093
+   },
+   "ref": {
+    "body": "SA-M188",
+    "stature": 187.88147308230913,
+    "head_len_over_H": 0.16963407577356893,
+    "lower_trunk_over_H": 0.17031949971574892,
+    "shoulder_b_over_H": 0.20614835945747945,
+    "thorax_d_over_w": 0.8795546118075211,
+    "tail_len_pct": 64.61465007235735,
+    "foot_len_over_H": 0.18087509009786007
+   },
+   "max": {
+    "body": "SA-M208",
+    "stature": 207.99996634943867,
+    "head_len_over_H": 0.1647680623373892,
+    "lower_trunk_over_H": 0.1709657591633548,
+    "shoulder_b_over_H": 0.19951184290822482,
+    "thorax_d_over_w": 0.8795546118075211,
+    "tail_len_pct": 64.85983250807936,
+    "foot_len_over_H": 0.1804510108816873
+   }
+  }
+ },
+ "allometry_check": {
+  "Marchfolk": {
+   "head_share_min_ref_max": [
+    0.137195081648522,
+    0.13002788288577505,
+    0.12411164641974039
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Skarn": {
+   "head_share_min_ref_max": [
+    0.13000292043837186,
+    0.1251680809171577,
+    0.12151024105949022
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Sagekin": {
+   "head_share_min_ref_max": [
+    0.13500051869311339,
+    0.1281544229212644,
+    0.12262003413948201
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Fenn": {
+   "head_share_min_ref_max": [
+    0.13286746988636117,
+    0.12665603269919443,
+    0.12144374299968691
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Aelari": {
+   "head_share_min_ref_max": [
+    0.13610891842831074,
+    0.13139311615158084,
+    0.125517628184528
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Vael": {
+   "head_share_min_ref_max": [
+    0.13394965286125254,
+    0.12921973030597828,
+    0.12439609750680954
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Halvren": {
+   "head_share_min_ref_max": [
+    0.1355519330906401,
+    0.12873498203982872,
+    0.12228573368590256
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Durrim": {
+   "head_share_min_ref_max": [
+    0.14684004712881432,
+    0.14206014606212922,
+    0.13793581453295006
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Grask": {
+   "head_share_min_ref_max": [
+    0.1270861877380169,
+    0.12367029970501425,
+    0.12028477116379468
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Gorrund": {
+   "head_share_min_ref_max": [
+    0.11893249212336428,
+    0.11575693701816762,
+    0.11302914420073482
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Pipkin": {
+   "head_share_min_ref_max": [
+    0.15902548861615715,
+    0.1514414621551885,
+    0.14592215892078325
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Cogling": {
+   "head_share_min_ref_max": [
+    0.14353250185119526,
+    0.1297885913742383,
+    0.11871089521603335
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  },
+  "Saurin": {
+   "head_share_min_ref_max": [
+    0.1751340670296759,
+    0.16963407577356893,
+    0.1647680623373892
+   ],
+   "decreasing_with_stature": true,
+   "uniform_scale_would_be_constant": true
+  }
+ }
+}
