@@ -1,0 +1,318 @@
+{
+ "protocol": "RM-OT-05C \u00a77.2 lightweight blind read (FINAL bodies): 20 bodies = 8 human-family controls (MF / SK x ref / Narrow / Broad / low-muscle) + Grask A / B / C reference + low composition + Gorrund A / B / C reference + low composition; body only, height-normalized, front + profile, neutral grey + pure silhouette; 3 independent uninformed scorers (sonnet subagents, never shown the key); written reasons",
+ "key": {
+  "GR-C-ref": "R01",
+  "GO-C-low": "R02",
+  "GR-C-low": "R03",
+  "GR-A-ref": "R04",
+  "MF-ref": "R05",
+  "GR-B-ref": "R06",
+  "GO-B-ref": "R07",
+  "GO-A-ref": "R08",
+  "SK-nar": "R09",
+  "SK-ref": "R10",
+  "MF-nar": "R11",
+  "SK-brd": "R12",
+  "MF-low": "R13",
+  "GO-B-low": "R14",
+  "GR-A-low": "R15",
+  "GO-A-low": "R16",
+  "GO-C-ref": "R17",
+  "SK-low": "R18",
+  "MF-brd": "R19",
+  "GR-B-low": "R20"
+ },
+ "scorers": {
+  "scorer_1": {
+   "order": "grey, silhouette",
+   "groups": {
+    "slim/narrow": [
+     "R01",
+     "R03",
+     "R04",
+     "R06"
+    ],
+    "deep-torso thick-limbed": [
+     "R02",
+     "R07",
+     "R08",
+     "R14",
+     "R16",
+     "R17"
+    ],
+    "mid build with belly": [
+     "R09",
+     "R10",
+     "R11",
+     "R12",
+     "R13",
+     "R15",
+     "R18",
+     "R19",
+     "R20"
+    ],
+    "between": [
+     "R05"
+    ]
+   },
+   "class": {
+    "R01": "b thin/lanky",
+    "R02": "b stocky/heavy-muscular",
+    "R03": "b thin/lanky",
+    "R04": "b thin/lanky",
+    "R05": "a",
+    "R06": "b thin",
+    "R07": "b stocky/heavy",
+    "R08": "b stocky/heavy",
+    "R09": "a",
+    "R10": "a",
+    "R11": "a",
+    "R12": "a",
+    "R13": "b soft/heavy",
+    "R14": "b heavy/stocky",
+    "R15": "b lanky/thin",
+    "R16": "b stocky",
+    "R17": "b stocky/heavy",
+    "R18": "b soft/heavy",
+    "R19": "a",
+    "R20": "a (leaning thin)"
+   },
+   "driver": {
+    "deep-torso": "torso depth in profile (flat-backed slab chest) + thick thighs and calves; without it -> medium group",
+    "slim": "shallow torso, thin limbs"
+   },
+   "non_human_any": false
+  },
+  "scorer_2": {
+   "order": "silhouette, grey",
+   "groups": {
+    "thin/lanky": [
+     "R01",
+     "R03",
+     "R04",
+     "R06"
+    ],
+    "slim/average-light": [
+     "R11",
+     "R15",
+     "R20"
+    ],
+    "ordinary": [
+     "R05",
+     "R09",
+     "R10",
+     "R12",
+     "R19"
+    ],
+    "rear/belly bulge": [
+     "R13",
+     "R18"
+    ],
+    "bulky/heavy": [
+     "R02",
+     "R07",
+     "R08",
+     "R14",
+     "R16",
+     "R17"
+    ]
+   },
+   "class": {
+    "R01": "b thin/lanky",
+    "R02": "b heavy/stocky bulky",
+    "R03": "b thin/lanky",
+    "R04": "b thin/lanky",
+    "R05": "a",
+    "R06": "b thin",
+    "R07": "b heavy/bulky",
+    "R08": "b stocky/heavy",
+    "R09": "a",
+    "R10": "a",
+    "R11": "a",
+    "R12": "a",
+    "R13": "b heavy/soft",
+    "R14": "b heavy/bulky",
+    "R15": "a/b slender",
+    "R16": "b heavy/stocky",
+    "R17": "b heavy/bulky",
+    "R18": "b heavy/soft",
+    "R19": "a",
+    "R20": "a slender"
+   },
+   "driver": {
+    "bulky": "slab-like trunk with no waist taper in profile; thick tubular legs and low thigh gap would partly hold the group",
+    "thin": "overall thinness, spindly shins"
+   },
+   "non_human_any": false
+  },
+  "scorer_3": {
+   "order": "grey, silhouette",
+   "groups": {
+    "slender long-limbed": [
+     "R01",
+     "R03",
+     "R04",
+     "R06",
+     "R20"
+    ],
+    "broad deep boxy": [
+     "R02",
+     "R07",
+     "R08",
+     "R14",
+     "R16",
+     "R17"
+    ],
+    "average": [
+     "R05",
+     "R09",
+     "R10",
+     "R11",
+     "R12",
+     "R19"
+    ],
+    "soft/belly": [
+     "R13",
+     "R18"
+    ],
+    "borderline slender": [
+     "R15"
+    ]
+   },
+   "class": {
+    "R01": "b thin/lanky",
+    "R02": "b heavy/stocky broad",
+    "R03": "b lanky/thin",
+    "R04": "b thin/lanky",
+    "R05": "a",
+    "R06": "b thin",
+    "R07": "b stocky/heavy",
+    "R08": "b stocky/heavy",
+    "R09": "a",
+    "R10": "a",
+    "R11": "a",
+    "R12": "a",
+    "R13": "b heavy/soft",
+    "R14": "b heavy/stocky",
+    "R15": "a/b thin-average",
+    "R16": "b stocky/heavy",
+    "R17": "b stocky/heavy",
+    "R18": "b soft/heavy",
+    "R19": "a",
+    "R20": "a/b lean"
+   },
+   "driver": {
+    "stocky": "deep wide boxy trunk + thick leg mass, no waist",
+    "thin": "limb and torso slenderness"
+   },
+   "non_human_any": false
+  }
+ },
+ "decoded_per_body": {
+  "GR-C-ref": {
+   "scorer_1": "b thin/lanky",
+   "scorer_2": "b thin/lanky",
+   "scorer_3": "b thin/lanky"
+  },
+  "GO-C-low": {
+   "scorer_1": "b stocky/heavy-muscular",
+   "scorer_2": "b heavy/stocky bulky",
+   "scorer_3": "b heavy/stocky broad"
+  },
+  "GR-C-low": {
+   "scorer_1": "b thin/lanky",
+   "scorer_2": "b thin/lanky",
+   "scorer_3": "b lanky/thin"
+  },
+  "GR-A-ref": {
+   "scorer_1": "b thin/lanky",
+   "scorer_2": "b thin/lanky",
+   "scorer_3": "b thin/lanky"
+  },
+  "MF-ref": {
+   "scorer_1": "a",
+   "scorer_2": "a",
+   "scorer_3": "a"
+  },
+  "GR-B-ref": {
+   "scorer_1": "b thin",
+   "scorer_2": "b thin",
+   "scorer_3": "b thin"
+  },
+  "GO-B-ref": {
+   "scorer_1": "b stocky/heavy",
+   "scorer_2": "b heavy/bulky",
+   "scorer_3": "b stocky/heavy"
+  },
+  "GO-A-ref": {
+   "scorer_1": "b stocky/heavy",
+   "scorer_2": "b stocky/heavy",
+   "scorer_3": "b stocky/heavy"
+  },
+  "SK-nar": {
+   "scorer_1": "a",
+   "scorer_2": "a",
+   "scorer_3": "a"
+  },
+  "SK-ref": {
+   "scorer_1": "a",
+   "scorer_2": "a",
+   "scorer_3": "a"
+  },
+  "MF-nar": {
+   "scorer_1": "a",
+   "scorer_2": "a",
+   "scorer_3": "a"
+  },
+  "SK-brd": {
+   "scorer_1": "a",
+   "scorer_2": "a",
+   "scorer_3": "a"
+  },
+  "MF-low": {
+   "scorer_1": "b soft/heavy",
+   "scorer_2": "b heavy/soft",
+   "scorer_3": "b heavy/soft"
+  },
+  "GO-B-low": {
+   "scorer_1": "b heavy/stocky",
+   "scorer_2": "b heavy/bulky",
+   "scorer_3": "b heavy/stocky"
+  },
+  "GR-A-low": {
+   "scorer_1": "b lanky/thin",
+   "scorer_2": "a/b slender",
+   "scorer_3": "a/b thin-average"
+  },
+  "GO-A-low": {
+   "scorer_1": "b stocky",
+   "scorer_2": "b heavy/stocky",
+   "scorer_3": "b stocky/heavy"
+  },
+  "GO-C-ref": {
+   "scorer_1": "b stocky/heavy",
+   "scorer_2": "b heavy/bulky",
+   "scorer_3": "b stocky/heavy"
+  },
+  "SK-low": {
+   "scorer_1": "b soft/heavy",
+   "scorer_2": "b heavy/soft",
+   "scorer_3": "b soft/heavy"
+  },
+  "MF-brd": {
+   "scorer_1": "a",
+   "scorer_2": "a",
+   "scorer_3": "a"
+  },
+  "GR-B-low": {
+   "scorer_1": "a (leaning thin)",
+   "scorer_2": "a slender",
+   "scorer_3": "a/b lean"
+  }
+ },
+ "summary": {
+  "Gorrund": "all 3 scorers grouped exactly the 6 Gorrund bodies (A/B/C x ref/low) together, no human control pulled in; all 3 classed them (b) stocky / heavy human; driver = deep slab trunk without waist in profile + thick legs",
+  "Grask": "reference A/B/C and C-low grouped as thin / lanky by all 3, no human control pulled in; A-low and B-low drift to slim/ordinary for 2-3 of 3 scorers (collapse toward human at low composition); all classed (b) thin / lanky human",
+  "non_human_reads": 0
+ }
+}

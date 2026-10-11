@@ -10,12 +10,12 @@ SKP = os.environ.get('SKPBASE', G + '/skp')       # comparator skeletal readings
 RACE = {"GO": {"base": F + '/base_w1c/GO_build.json', "donor": F + '/go/GO0', "did": "GO0"},
         "GR": {"base": F + '/base/GR_build.json', "donor": F + '/gr/GR0', "did": "GR0"}}
 
-def build(race, name, B, sculpt=None, wd=None, base=None, donor=None, did=None, extra_ov=None, arch=None, surface=None):
+def build(race, name, B, sculpt=None, wd=None, base=None, donor=None, did=None, extra_ov=None, arch=None, surface=None, racebase=None):
     R = RACE[race]; base = base or R["base"]; donor = donor or R["donor"]; did = did or R["did"]
     wd = wd or G + '/solve_' + race; os.makedirs(wd, exist_ok=True)
     ov = {"muscle": 0.0, "weight": 0.0, "bone_scales": B}; ov.update(extra_ov or {}); json.dump(ov, open(wd + '/%s_ov.json' % name, 'w'))
     subprocess.run(['python3', T + '/build_variant.py', base, wd + '/%s_ov.json' % name, wd, name + '-LEAN'], check=True, capture_output=True)
-    r = SE.make(wd + '/' + name + '-LEAN', donor, donor + '-LEAN', wd + '/' + name, tag=name, sculpt=sculpt, arch=arch, surface=surface)   # sculpt / arch written back into -LEAN
+    r = SE.make(wd + '/' + name + '-LEAN', donor, donor + '-LEAN', wd + '/' + name, tag=name, sculpt=sculpt, arch=arch, surface=surface, racebase=racebase)   # sculpt / arch written back into -LEAN
     gd = wd + '/grid_' + name
     if os.path.exists(gd): shutil.rmtree(gd)
     os.makedirs(gd)

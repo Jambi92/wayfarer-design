@@ -807,3 +807,13 @@ The retained W1i/W1j Gorrund point is **AUTHOR ACCEPTED as the W1 Anatomical Ref
 - **Surface stage:** it removes the human gluteal shelf, lumbar hollow and paunch. Blind gate: 12 / 12, reference 3 / 3, no human control drawn in. Scorers still read Gorrund as a "stocky / heavy human", so the result is **CONSTRAIN**.
 - **Skin-row conflict:** the same flattening fails the skin-layer PV-D14 and ALPC-7 pelvic-depth rows. This is a canon conflict reported in the gate.
 - **Status:** candidates GO5B* are PENDING AUTHOR. The gate escalates to a hand-authored race base mesh / tissue donor. 251 cm remains the current upper end, not permanent. RM-OT-05 remains OPEN.
+
+**RM-OT-05C status (October 11, 2026; `reviews/claude-rac-rm-ot-05c-grask-gorrund-base-surface-candidate-gate.md`):**
+- A dedicated race base-surface stage (`tools/rac/w1/race_base.py`) was built on the unchanged 05A / 05B skeleton.
+- Three Gorrund candidates were made, built at reference, low-composition and Narrow / Broad:
+  - A: axial-chain trunk loft (flat abdominal wall, no waist, continuous posterior column, sacral-hamstring fold);
+  - B: A plus columnar limbs;
+  - C: B plus graviportal joints, load ridges and neck-root mass.
+- All minimal guards pass. The deep pelvis (skeletal pelvic depth ÷ thoracic depth) is unchanged; skin pelvic AP is within 0.4 cm of 05B.
+- Blind read (3 uninformed scorers): a stable, separable group, 18 / 18 placements, surviving low composition, but read as **"heavy / stocky human"**. 0 non-human reads on the delivered bodies; 1 / 3 before the skeleton guard restored the MPFB-skeleton buttock.
+- B is recommended for author review only. Acceptance standard not met. Candidates GO5C* are PENDING AUTHOR / NOT ACCEPTED. RM-OT-05 remains OPEN. No Gorrund canon relation was changed.

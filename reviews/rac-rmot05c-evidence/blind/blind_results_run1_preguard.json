@@ -1,0 +1,308 @@
+{
+ "protocol": "RM-OT-05C \u00a77.2 lightweight blind read: 20 bodies (8 human-family controls + Grask A/B/C ref + low + Gorrund A/B/C ref + low), body only, height-normalized, front + profile, grey + silhouette, 3 independent uninformed scorers (never shown the key); written reasons",
+ "key": {
+  "GR-C-ref": "R01",
+  "GO-C-low": "R02",
+  "GR-C-low": "R03",
+  "GR-A-ref": "R04",
+  "MF-ref": "R05",
+  "GR-B-ref": "R06",
+  "GO-B-ref": "R07",
+  "GO-A-ref": "R08",
+  "SK-nar": "R09",
+  "SK-ref": "R10",
+  "MF-nar": "R11",
+  "SK-brd": "R12",
+  "MF-low": "R13",
+  "GO-B-low": "R14",
+  "GR-A-low": "R15",
+  "GO-A-low": "R16",
+  "GO-C-ref": "R17",
+  "SK-low": "R18",
+  "MF-brd": "R19",
+  "GR-B-low": "R20"
+ },
+ "scorers": {
+  "scorer_1": {
+   "agent": "sonnet, uninformed, grey then silhouette",
+   "groups": {
+    "slim/gracile": [
+     "R01",
+     "R03",
+     "R04",
+     "R06",
+     "R11",
+     "R15",
+     "R20"
+    ],
+    "broad boxy flat-sided": [
+     "R02",
+     "R07",
+     "R08",
+     "R14",
+     "R16",
+     "R17"
+    ],
+    "ordinary mid-build": [
+     "R05",
+     "R09",
+     "R10",
+     "R12",
+     "R13",
+     "R18",
+     "R19"
+    ]
+   },
+   "class": {
+    "R01": "b thin/lanky",
+    "R02": "b heavy/stocky blocky",
+    "R03": "b thin/lanky",
+    "R04": "b thin/lanky",
+    "R05": "a",
+    "R06": "b thin",
+    "R07": "b heavy/stocky",
+    "R08": "b stocky",
+    "R09": "a",
+    "R10": "a",
+    "R11": "a slim",
+    "R12": "a",
+    "R13": "b heavier",
+    "R14": "b heavy/stocky blocky",
+    "R15": "a slim",
+    "R16": "b stocky/heavy",
+    "R17": "b stocky",
+    "R18": "a",
+    "R19": "a",
+    "R20": "a slim"
+   },
+   "driver": {
+    "boxy": "deep flat-fronted torso slab in profile, no waist, little spine curve; without it -> thick-limbed ordinary humans",
+    "thin": "narrow torso / limb girth; without it -> normal slim bodies"
+   },
+   "non_human_any": false
+  },
+  "scorer_2": {
+   "agent": "sonnet, uninformed, grey then silhouette",
+   "groups": {
+    "slab-torso": [
+     "R02",
+     "R07",
+     "R08",
+     "R14",
+     "R16",
+     "R17"
+    ],
+    "thin/lanky": [
+     "R01",
+     "R03",
+     "R04",
+     "R06"
+    ],
+    "ordinary": [
+     "R05",
+     "R09",
+     "R10",
+     "R11",
+     "R13",
+     "R15",
+     "R18",
+     "R19",
+     "R20"
+    ],
+    "borderline slab/ordinary": [
+     "R12"
+    ]
+   },
+   "class": {
+    "R01": "b thin",
+    "R02": "c non-human",
+    "R03": "b lanky",
+    "R04": "b lanky",
+    "R05": "a",
+    "R06": "b thin",
+    "R07": "c non-human",
+    "R08": "c non-human",
+    "R09": "a",
+    "R10": "a",
+    "R11": "a",
+    "R12": "b stocky (between a and c)",
+    "R13": "b heavy/soft",
+    "R14": "c non-human",
+    "R15": "a",
+    "R16": "c non-human",
+    "R17": "c non-human",
+    "R18": "b heavy/soft",
+    "R19": "a/b muscular",
+    "R20": "a"
+   },
+   "driver": {
+    "slab-torso": "deep flat-backed slab trunk in profile with no waist, no lumbar curve, no buttock; abrupt thigh-to-shin step; squared shoulders. Without the torso depth -> stocky / muscular human",
+    "thin": "narrow slight mass; without it -> ordinary"
+   },
+   "non_human_any": true,
+   "note": "silhouette made the slab group clearer than grey; grey surface detail (nipples, navel, hands) pulls toward all-human"
+  },
+  "scorer_3": {
+   "agent": "sonnet, uninformed, silhouette then grey",
+   "groups": {
+    "thin/lanky": [
+     "R01",
+     "R03",
+     "R04",
+     "R06",
+     "R15",
+     "R20"
+    ],
+    "ordinary": [
+     "R05",
+     "R09",
+     "R10",
+     "R11",
+     "R12"
+    ],
+    "soft midsection": [
+     "R13",
+     "R18",
+     "R19"
+    ],
+    "deep-bodied/stocky": [
+     "R02",
+     "R07",
+     "R08",
+     "R14",
+     "R16",
+     "R17"
+    ]
+   },
+   "class": {
+    "R01": "b thin/lanky",
+    "R02": "b stocky/heavy",
+    "R03": "b lanky",
+    "R04": "b thin/lanky",
+    "R05": "a",
+    "R06": "b thin",
+    "R07": "b stocky/heavy",
+    "R08": "b stocky (milder)",
+    "R09": "a",
+    "R10": "a",
+    "R11": "a",
+    "R12": "a",
+    "R13": "b heavy-ish",
+    "R14": "b heavy/stocky",
+    "R15": "b lean/thin",
+    "R16": "b heavy/stocky",
+    "R17": "b stocky/heavy",
+    "R18": "b heavier",
+    "R19": "b heavier/burly",
+    "R20": "b lean/thin"
+   },
+   "driver": {
+    "deep-bodied": "torso depth in profile (deep slab, no waist) plus thick thighs; without it -> stocky humans",
+    "thin": "narrow limbs and shallow torso"
+   },
+   "non_human_any": false
+  }
+ },
+ "decoded_per_body": {
+  "GR-C-ref": {
+   "scorer_1": "b thin/lanky",
+   "scorer_2": "b thin",
+   "scorer_3": "b thin/lanky"
+  },
+  "GO-C-low": {
+   "scorer_1": "b heavy/stocky blocky",
+   "scorer_2": "c non-human",
+   "scorer_3": "b stocky/heavy"
+  },
+  "GR-C-low": {
+   "scorer_1": "b thin/lanky",
+   "scorer_2": "b lanky",
+   "scorer_3": "b lanky"
+  },
+  "GR-A-ref": {
+   "scorer_1": "b thin/lanky",
+   "scorer_2": "b lanky",
+   "scorer_3": "b thin/lanky"
+  },
+  "MF-ref": {
+   "scorer_1": "a",
+   "scorer_2": "a",
+   "scorer_3": "a"
+  },
+  "GR-B-ref": {
+   "scorer_1": "b thin",
+   "scorer_2": "b thin",
+   "scorer_3": "b thin"
+  },
+  "GO-B-ref": {
+   "scorer_1": "b heavy/stocky",
+   "scorer_2": "c non-human",
+   "scorer_3": "b stocky/heavy"
+  },
+  "GO-A-ref": {
+   "scorer_1": "b stocky",
+   "scorer_2": "c non-human",
+   "scorer_3": "b stocky (milder)"
+  },
+  "SK-nar": {
+   "scorer_1": "a",
+   "scorer_2": "a",
+   "scorer_3": "a"
+  },
+  "SK-ref": {
+   "scorer_1": "a",
+   "scorer_2": "a",
+   "scorer_3": "a"
+  },
+  "MF-nar": {
+   "scorer_1": "a slim",
+   "scorer_2": "a",
+   "scorer_3": "a"
+  },
+  "SK-brd": {
+   "scorer_1": "a",
+   "scorer_2": "b stocky (between a and c)",
+   "scorer_3": "a"
+  },
+  "MF-low": {
+   "scorer_1": "b heavier",
+   "scorer_2": "b heavy/soft",
+   "scorer_3": "b heavy-ish"
+  },
+  "GO-B-low": {
+   "scorer_1": "b heavy/stocky blocky",
+   "scorer_2": "c non-human",
+   "scorer_3": "b heavy/stocky"
+  },
+  "GR-A-low": {
+   "scorer_1": "a slim",
+   "scorer_2": "a",
+   "scorer_3": "b lean/thin"
+  },
+  "GO-A-low": {
+   "scorer_1": "b stocky/heavy",
+   "scorer_2": "c non-human",
+   "scorer_3": "b heavy/stocky"
+  },
+  "GO-C-ref": {
+   "scorer_1": "b stocky",
+   "scorer_2": "c non-human",
+   "scorer_3": "b stocky/heavy"
+  },
+  "SK-low": {
+   "scorer_1": "a",
+   "scorer_2": "b heavy/soft",
+   "scorer_3": "b heavier"
+  },
+  "MF-brd": {
+   "scorer_1": "a",
+   "scorer_2": "a/b muscular",
+   "scorer_3": "b heavier/burly"
+  },
+  "GR-B-low": {
+   "scorer_1": "a slim",
+   "scorer_2": "a",
+   "scorer_3": "b lean/thin"
+  }
+ }
+}

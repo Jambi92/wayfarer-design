@@ -73,7 +73,7 @@ def trunk_sculpt(V, L, sc):
         Dsp = Dsp * np.clip(1 - legw / 0.5, 0, 1)[:, None]
     return V + Dsp
 
-def make(lean_b, donor_ref, donor_lean, out, tag=None, smooth=None, sculpt=None, tissue_scale=None, arch=None, surface=None):
+def make(lean_b, donor_ref, donor_lean, out, tag=None, smooth=None, sculpt=None, tissue_scale=None, arch=None, surface=None, racebase=None):
     """tissue_scale=None: the donor pair is the same race (its lean is aligned to the skeleton like the donor lean);
     tissue_scale=k: the donor pair is ANOTHER body (W1f: the accepted human reference MF-M-R) and its tissue field is carried
     vertex-wise onto this skeleton, multiplied by k (stature ratio), with no alignment of the skeleton."""
@@ -96,7 +96,11 @@ def make(lean_b, donor_ref, donor_lean, out, tag=None, smooth=None, sculpt=None,
             Vs, Ja = _AS.apply(Vs, L, arch)
             L2 = dict(L); L2["V"] = Vs.astype(np.float32); L2["joints"] = json.dumps(Ja); m2 = json.loads(str(L["meta"])); m2["arch_sculpt"] = arch
             if surface: m2["race_surface"] = surface          # RM-OT-05B: the race-surface spec rides in the skeleton's meta (grid / composition bodies)
+            if racebase: m2["race_base"] = racebase           # RM-OT-05C: the race base-surface spec rides in the skeleton's meta likewise
             L2["meta"] = json.dumps(m2); np.savez_compressed("%s_%s.npz" % (lean_b, st), **L2); L = L2
+        elif racebase:
+            L2 = dict(L); m2 = json.loads(str(L["meta"])); m2["race_base"] = racebase; L2["meta"] = json.dumps(m2)
+            np.savez_compressed("%s_%s.npz" % (lean_b, st), **L2); L = L2
         if smooth:      # {"lo_joint": "spine_01", "hi_joint": "neck_01", "iters": n}: trunk band between two rig joints, arms excluded
             Jl = json.loads(str(L["joints"])); lo = Jl[smooth["lo_joint"]][0][2]; hi = Jl[smooth["hi_joint"]][0][2]
             armw = np.maximum.reduce([L["w_" + k] for k in ("upperarm_l", "upperarm_r", "lowerarm_l", "lowerarm_r", "hand_l", "hand_r", "fingers_l", "fingers_r")])
@@ -111,13 +115,18 @@ def make(lean_b, donor_ref, donor_lean, out, tag=None, smooth=None, sculpt=None,
             Jl = json.loads(str(L["joints"])); Jf = {k: [f(a).tolist(), f(b).tolist()] for k, (a, b) in Jl.items()}
             tissue, _ = _RS.apply(f(Vs), tissue, L, Jf, surf)
         V = f(Vs) + tissue
+        rb = racebase or json.loads(str(L["meta"])).get("race_base")
+        if rb:          # RM-OT-05C race base-surface organization of this composition state's composed surface (race_base.py); -LEAN untouched
+            import race_base as _RB
+            Jl = json.loads(str(L["joints"])); Jf = {k: [f(a).tolist(), f(b).tolist()] for k, (a, b) in Jl.items()}
+            V, _ = _RB.organize(V, L, Jf, rb, skel=f(Vs))
         # re-ground (feet on u = 0) after adding plantar tissue
         keep = L["keep"]; z0 = V[keep, 2].min(); V[:, 2] -= z0
         J = json.loads(str(L["joints"])); J = {k: [(f(a) - [0, 0, z0]).tolist(), (f(b) - [0, 0, z0]).tolist()] for k, (a, b) in J.items()}
         L["V"] = V.astype(np.float32); L["joints"] = json.dumps(J)
         L["eye_l"] = f(L["eye_l"]) - np.array([0, 0, z0]); L["eye_r"] = f(L["eye_r"]) - np.array([0, 0, z0])
         meta = json.loads(str(L["meta"])); meta.update({"id": tag or os.path.basename(out), "construction": "AD-G14 skeletal proxy + sculpted envelope",
-                                                       "skeleton": os.path.basename(lean_b), "tissue_donor": [os.path.basename(donor_ref), os.path.basename(donor_lean)], "skeleton_seam_smoothing": smooth, "trunk_sculpt": sculpt, "tissue_scale": tissue_scale, "arch_sculpt": arch, "race_surface": surface or json.loads(str(L["meta"])).get("race_surface")})
+                                                       "skeleton": os.path.basename(lean_b), "tissue_donor": [os.path.basename(donor_ref), os.path.basename(donor_lean)], "skeleton_seam_smoothing": smooth, "trunk_sculpt": sculpt, "tissue_scale": tissue_scale, "arch_sculpt": arch, "race_surface": surface or json.loads(str(L["meta"])).get("race_surface"), "race_base": racebase or json.loads(str(L["meta"])).get("race_base")})
         L["meta"] = json.dumps(meta)
         np.savez_compressed("%s_%s.npz" % (out, st), **L)
         rec[st] = {"stature": float(V[keep, 2].max()), "tissue_max_cm": float(np.linalg.norm(tissue, axis=1).max()), "lean_to_ref_scale": sc}

@@ -126,6 +126,10 @@ def apply(V, T, L, J, spec):
         d, inf = limb_remap(V, T, L, J, s); dT += d; info["limb%d_%s" % (i, s["seg"])] = inf
     for s in spec.get("trunk", []): dT += trunk_redistribute(V, T, L, J, s)
     dT = _smooth(dT * L["keep"][:, None], L["F"], spec.get("smooth", 1))
+    # RM-OT-05C provenance note (behaviour deliberately left unchanged so the 05B evidence reproduces): _normals() returns INWARD normals
+    # on this mesh (negative signed volume; the chest-front normal points -y). The guard below therefore stops tissue moving further
+    # OUTWARD than min(original, 0) and does not stop inward cuts. It is the opposite of the intent stated next. race_base.skeleton_guard
+    # (05C) uses outward normals.
     # SKELETON GUARD: the surface layer never cuts into the skeletal-envelope surface (so the CIB / skeletal proxy, which are minima over
     # composition states that include the bare skeleton, read the 05A skeleton unchanged): (tissue') . n >= min(tissue . n, 0)
     Tb = T0 if spec.get("relief") else T

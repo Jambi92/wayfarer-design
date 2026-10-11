@@ -31,13 +31,13 @@ def donor(macro, targets=None, grid=True):
                 if not os.path.lexists(q): os.symlink(hd + '/%s_%s.npz' % (n, st), q)
         elif not os.path.exists(G + '/donor/%s_rest.npz' % cid): bv(hd + '/%s_build.json' % n, {"muscle": m, "weight": w}, G + '/donor', cid)
     return hd + '/' + n, n
-def build(name, macro, frame=None, targets=None, out=None, arch=None, surface=None):
+def build(name, macro, frame=None, targets=None, out=None, arch=None, surface=None, racebase=None):
     out = out or W + '/b/' + name; os.makedirs(out, exist_ok=True)
     dp, did = donor(macro, targets)
     B, sc = gn6.unpack(X, frame)
-    r, C = gn3.build("GO", name, B, sc, wd=out, base=dp + '_build.json', donor=dp, did=did, arch=arch, surface=surface)
+    r, C = gn3.build("GO", name, B, sc, wd=out, base=dp + '_build.json', donor=dp, did=did, arch=arch, surface=surface, racebase=racebase)
     subprocess.run(['python3', T + '/run_candidate.py', out, name, F + '/final/MF-M-R_rest.npz'], capture_output=True, text=True, cwd=T)
-    rec = {"name": name, "height_macro": macro, "donor": did, "frame": frame, "extra_targets": targets, "bone_scales": B, "sculpt": sc, "arch": arch, "surface": surface, "stature_r6": r['r6']['stature']}
+    rec = {"name": name, "height_macro": macro, "donor": did, "frame": frame, "extra_targets": targets, "bone_scales": B, "sculpt": sc, "arch": arch, "surface": surface, "race_base": racebase, "stature_r6": r['r6']['stature']}
     json.dump(rec, open(out + '/%s_w2d.json' % name, 'w'), indent=1, default=float); print('BUILT', name, macro, round(r['r6']['stature'], 2), flush=True)
     return rec
 def quick(name, macro, frame=None, targets=None, out=None):
