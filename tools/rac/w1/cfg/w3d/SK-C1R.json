@@ -1,0 +1,43 @@
+{
+ "id": "SK-C1R",
+ "status": "Skarn central / reference face (author-selected C1, neck-corrected C1R; RAC W3D). Reference-construction values only - not creator limits, not population statistics.",
+ "order": "reviews/chatgpt-rac-w3c-final-acceptance-w3d-fpi-margin-order.md",
+ "gate": "reviews/claude-rac-w3d-fpi-margin-author-gate.md",
+ "c1r_reference_construction_targets": {
+  "head-scale-horiz-incr": 0.12,
+  "head-scale-depth-incr": 0.08,
+  "eyebrows-trans-forward": 0.3,
+  "chin-bones-incr": 0.3,
+  "chin-jaw-drop-incr": 0.15,
+  "LR:cheek-bones-incr": 0.3,
+  "nose-scale-vert-incr": 0.15,
+  "nose-scale-horiz-incr": 0.15,
+  "nose-scale-depth-incr": 0.15,
+  "neck-scale-horiz-incr": 0.3
+ },
+ "change_from_C1": {
+  "neck-scale-horiz-incr": [
+   0.1,
+   0.3
+  ]
+ },
+ "route": "build_variant.py on the accepted body build, height macro held (no re-solve); only head / face / neck vertices move",
+ "canonical_pointer": {
+  "SK central config 1 (208)": {
+   "new": "reviews/rac-w3d-evidence/geometry/SK208-C1R_r6.npz",
+   "new_sha256": "fd8a43d2e6dc6e63f21306755baedd70cfef9151ff2b4fd442ad1a78ed4448d0",
+   "old": "reviews/rac-w1c-evidence/geometry/SK_r6.npz",
+   "old_sha256": "a49d5572839a5ab114fce212c79054b6390fef0d34683b20a439c8acabfb0da7",
+   "old_status": "historical W1 accepted ARM (generic human face) - retained for provenance"
+  },
+  "SK config 2 (208)": {
+   "new": "reviews/rac-w3d-evidence/geometry/SKF208-C1R_r6.npz",
+   "new_sha256": "9456cbbdb4ba396db6aa17f8bdca9c15ca400d3e55ebfadda1dbcfd4271c0137",
+   "old": "$S/w2b/st/SKF208_r6.npz",
+   "old_sha256": "0245683ec889d36e4d284ad0fe4ae533a3c7ab8ce17c28e46cda92a99769ab4f",
+   "body_max_disp_cm": 0.0
+  }
+ },
+ "validation": "reviews/rac-w3d-evidence/c1r.json",
+ "variant_rule": "apply the C1R face layer (these targets merged into the body build, height macro held) to any accepted Skarn body variant; historical W1 / W2 files are not overwritten"
+}
