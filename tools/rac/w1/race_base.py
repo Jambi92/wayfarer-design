@@ -391,6 +391,39 @@ def skeleton_guard(Vn, V0, Vsk, L, J, info, region="trunk", mode="lean"):
     info["guard_restored_inside_vertices"] = int((inside > 0.5).sum())
     return Vn
 
+# ---- RM-OT-05F hand-sculpt re-entry layer ---------------------------------------------------------------------------------------------
+# A hand-sculpted reference surface (same vertex order as the exported template) is ingested as a per-vertex displacement from the
+# unorganized route reference body, stored in each vertex's SKINNED BONE FRAME (weight-blended joint frames, orthonormalized) and scaled by
+# the blended bone-length ratio. Applied here to every composition / frame / pose state of the same skeleton route, then guarded by the
+# true skeletal floor and volume-restored exactly like every other organization. No joint, bone or -LEAN is touched.
+SKIN_BONES = {"head": "head", "ears": "head", "neck_01": "neck_01", "pelvis": "pelvis", "spine_01": "spine_01", "spine_02": "spine_02",
+              "spine_03": "spine_03", "fingers_l": "hand_l", "fingers_r": "hand_r"}
+
+def skin_frames(L, J):
+    """per-vertex skinned frame M (n, 3, 3; columns = bone axis, anterior, lateral) and blended bone length (n,)"""
+    n = len(L["V"]); M = np.zeros((n, 3, 3)); ln = np.zeros(n); W = np.zeros(n)
+    for k in [f[2:] for f in L.keys() if f.startswith("w_")]:
+        jn = SKIN_BONES.get(k, k)
+        if jn not in J: continue
+        h = np.array(J[jn][0], float); tl = np.array(J[jn][1], float); ax = tl - h; l = np.linalg.norm(ax)
+        if l < 1e-6: continue
+        ax = ax / l; ea = np.array([0, 1.0, 0]) - ax[1] * ax; ea = ea / max(np.linalg.norm(ea), 1e-9); el = np.cross(ax, ea)
+        w = L["w_" + k].astype(float); Fb = np.stack([ax, ea, el], 1)
+        M += w[:, None, None] * Fb[None]; ln += w * l; W += w
+    W = np.maximum(W, 1e-9); M /= W[:, None, None]; ln /= W
+    U, _, Vt = np.linalg.svd(M); R = U @ Vt
+    R[np.linalg.det(R) < 0] *= -1
+    return R, ln
+
+def sculpt_layer(V, L, J, spec, info):
+    """spec = {"delta": path of the ingested sculpt npz (D_local (n,3), len_ref (n,)), "strength": 1.0}"""
+    S = np.load(spec["delta"], allow_pickle=True)
+    R, ln = skin_frames(L, J)
+    s = np.where(S["len_ref"] > 1e-6, ln / np.maximum(S["len_ref"], 1e-6), 1.0) if spec.get("scale_by_bone", True) else np.ones(len(ln))
+    D = np.einsum('nij,nj->ni', R, S["D_local"]) * (s * spec.get("strength", 1.0))[:, None] * L["keep"][:, None]
+    info["sculpt"] = {"max_cm": float(np.linalg.norm(D, axis=1).max()), "bone_scale_range": [float(s[L["keep"]].min()), float(s[L["keep"]].max())]}
+    return D
+
 def organize(V, L, J, spec, skel=None):
     """the race base surface / tissue organization applied to one surface (a composition state on the race skeleton, in its own frame).
     Relative and volume-conserving per limb segment, so the composition layer keeps setting the amount. Returns (V', info)."""
@@ -411,6 +444,7 @@ def organize(V, L, J, spec, skel=None):
     if spec.get("yoke"): D += yoke(V + D, L, J, spec["yoke"], info)
     if spec.get("fold"): D += gluteal_fold(V + D, L, J, spec["fold"], info)
     if spec.get("trunk"): D += trunk_base(V + D, L, J, spec["trunk"], info, spec.get("hold_r"))
+    if spec.get("sculpt"): D += sculpt_layer(V, L, J, spec["sculpt"], info)      # RM-OT-05F hand-sculpt re-entry layer
     info["max_disp_cm"] = float(np.linalg.norm(D, axis=1).max())
     Vn = V + D
     if skel is not None and spec.get("guard", True): Vn = skeleton_guard(Vn, V, skel, L, J, info, mode=spec.get("floor", "lean"))
