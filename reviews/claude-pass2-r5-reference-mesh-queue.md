@@ -300,3 +300,4 @@ The retained Gorrund W1i/W1j reference is **AUTHOR ACCEPTED as the W1 ARM** (`re
 
 - **RM-OT-05H Claude-direct sculpt gate (2026-10-12):** `reviews/claude-rac-rm-ot-05h-claude-sculpt-stage-c-gate.md`. Final revision S2: exporter, preflight and 05F re-entry PASS. Blind gate FAIL (run2 G3). Readability REJECT (boxy trunk vs Q1). Stage C NOT RUN. RM-OT-05 OPEN.
 - **RM-OT-05I S3 gate (2026-10-12):** `reviews/claude-rac-rm-ot-05i-gorrund-s3-trunk-resculpt-stage-c-gate.md`. Protection overlay PASS. S3 exporter, preflight and re-entry PASS. Blind gate FAIL (obese read / boxy read). Readability REJECT. Stage C NOT RUN. RM-OT-05 OPEN.
+- **RM-OT-05J S4 gate (2026-10-12):** `reviews/claude-rac-rm-ot-05j-gorrund-structural-articulation-stage-c-gate.md`. S4 exporter, preflight and re-entry PASS. Canon audit FAIL. Cue audit FAIL (1/6 CLEAR in low). Blind NOT RUN. Readability REJECT. Design-level blocker (box-vs-fat). Stage C NOT RUN. RM-OT-05 OPEN.

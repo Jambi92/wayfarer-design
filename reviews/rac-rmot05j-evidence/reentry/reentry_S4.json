@@ -1,0 +1,234 @@
+{
+ "sid": "S4",
+ "sculpt_obj": "GO_sculpt_S4_r6.obj",
+ "ingest": {
+  "I1_topology": true,
+  "I2_rigid_scale": true,
+  "I3_stature_ground": true,
+  "I4_no_touch": true,
+  "I5_true_floor_raw": true,
+  "I6_posture_anchors": true
+ },
+ "ingest_pass": true,
+ "guards": {
+  "GO5FS4": {
+   "ground": true,
+   "skeleton_unchanged": true,
+   "outward_normal_test": true,
+   "true_floor": true,
+   "plantigrade": true,
+   "hand_foot_topology": true,
+   "self_intersection": true,
+   "arm_clearance": true,
+   "posture": true,
+   "composition_ordering": true,
+   "frame_ordering": true
+  },
+  "GO5FS4-LOW": {
+   "ground": true,
+   "skeleton_unchanged": true,
+   "outward_normal_test": true,
+   "true_floor": true,
+   "plantigrade": true,
+   "hand_foot_topology": true,
+   "self_intersection": true,
+   "arm_clearance": true,
+   "posture": true
+  },
+  "GO5FS4N": {
+   "ground": true,
+   "skeleton_unchanged": true,
+   "outward_normal_test": true,
+   "true_floor": true,
+   "plantigrade": true,
+   "hand_foot_topology": true,
+   "self_intersection": true,
+   "arm_clearance": true,
+   "posture": true
+  },
+  "GO5FS4B": {
+   "ground": true,
+   "skeleton_unchanged": true,
+   "outward_normal_test": true,
+   "true_floor": true,
+   "plantigrade": true,
+   "hand_foot_topology": true,
+   "self_intersection": true,
+   "arm_clearance": true,
+   "posture": true
+  }
+ },
+ "volume_ratio_vs_route": {
+  "GO5FS4": 0.9999998218253703,
+  "GO5FS4-LOW": 0.999999795889437,
+  "GO5FS4N": 0.999999812881326,
+  "GO5FS4B": 0.999999821656847
+ },
+ "protected_relations": {
+  "GO5FS4": {
+   "bitroch_over_crest": 1.1846108221073552,
+   "pelvis_over_thorax_breadth": 1.0234334184225446,
+   "pelvic_depth_over_thorax_depth": 0.8570461794588585,
+   "S4_over_S2_b": 0.8391216568173385,
+   "S3_over_S2_d": 0.9187133266119357
+  },
+  "GO5FS4N": {
+   "bitroch_over_crest": 1.190268530598462,
+   "pelvis_over_thorax_breadth": 1.0738045271996994,
+   "pelvic_depth_over_thorax_depth": 0.8545039304419098,
+   "S4_over_S2_b": 0.8563797376246053,
+   "S3_over_S2_d": 0.918685808270958
+  },
+  "GO5FS4B": {
+   "bitroch_over_crest": 1.1833962943798118,
+   "pelvis_over_thorax_breadth": 1.0712134583230812,
+   "pelvic_depth_over_thorax_depth": 0.8633632679933327,
+   "S4_over_S2_b": 0.8740036928209659,
+   "S3_over_S2_d": 0.9187403522438191
+  }
+ },
+ "transport": {
+  "reference": {
+   "families": {
+    "A_trunk_section_S2_S5": {
+     "n_signal_vertices": 524,
+     "retention_median": 0.937,
+     "retention_p10": 0.791
+    },
+    "B_posterior_axial_load_path": {
+     "n_signal_vertices": 472,
+     "retention_median": 1.002,
+     "retention_p10": 0.803
+    },
+    "C_pelvis_to_thigh": {
+     "n_signal_vertices": 198,
+     "retention_median": 0.872,
+     "retention_p10": 0.687
+    },
+    "D_knee_shank_ankle": {
+     "n_signal_vertices": 253,
+     "retention_median": 0.826,
+     "retention_p10": 0.62
+    },
+    "E_elbow_forearm_wrist": {
+     "n_signal_vertices": 242,
+     "retention_median": 1.0,
+     "retention_p10": 1.0
+    },
+    "F_shoulder_girdle_neck_root": {
+     "n_signal_vertices": 276,
+     "retention_median": 1.0,
+     "retention_p10": 1.0
+    }
+   },
+   "reproduction_error_vs_delivered_cm": {
+    "p50": 0.0,
+    "p90": 0.235,
+    "max": 0.407
+   }
+  },
+  "low": {
+   "families": {
+    "A_trunk_section_S2_S5": {
+     "n_signal_vertices": 524,
+     "retention_median": 0.925,
+     "retention_p10": 0.71
+    },
+    "B_posterior_axial_load_path": {
+     "n_signal_vertices": 472,
+     "retention_median": 1.004,
+     "retention_p10": 0.82
+    },
+    "C_pelvis_to_thigh": {
+     "n_signal_vertices": 198,
+     "retention_median": 0.854,
+     "retention_p10": 0.702
+    },
+    "D_knee_shank_ankle": {
+     "n_signal_vertices": 253,
+     "retention_median": 0.833,
+     "retention_p10": 0.639
+    },
+    "E_elbow_forearm_wrist": {
+     "n_signal_vertices": 242,
+     "retention_median": 0.991,
+     "retention_p10": 0.902
+    },
+    "F_shoulder_girdle_neck_root": {
+     "n_signal_vertices": 276,
+     "retention_median": 1.007,
+     "retention_p10": 0.93
+    }
+   }
+  },
+  "narrow": {
+   "families": {
+    "A_trunk_section_S2_S5": {
+     "n_signal_vertices": 524,
+     "retention_median": 0.94,
+     "retention_p10": 0.796
+    },
+    "B_posterior_axial_load_path": {
+     "n_signal_vertices": 472,
+     "retention_median": 1.017,
+     "retention_p10": 0.793
+    },
+    "C_pelvis_to_thigh": {
+     "n_signal_vertices": 198,
+     "retention_median": 0.868,
+     "retention_p10": 0.678
+    },
+    "D_knee_shank_ankle": {
+     "n_signal_vertices": 253,
+     "retention_median": 0.82,
+     "retention_p10": 0.608
+    },
+    "E_elbow_forearm_wrist": {
+     "n_signal_vertices": 242,
+     "retention_median": 1.0,
+     "retention_p10": 1.0
+    },
+    "F_shoulder_girdle_neck_root": {
+     "n_signal_vertices": 276,
+     "retention_median": 0.994,
+     "retention_p10": 0.978
+    }
+   }
+  },
+  "broad": {
+   "families": {
+    "A_trunk_section_S2_S5": {
+     "n_signal_vertices": 524,
+     "retention_median": 0.934,
+     "retention_p10": 0.783
+    },
+    "B_posterior_axial_load_path": {
+     "n_signal_vertices": 472,
+     "retention_median": 1.006,
+     "retention_p10": 0.817
+    },
+    "C_pelvis_to_thigh": {
+     "n_signal_vertices": 198,
+     "retention_median": 0.857,
+     "retention_p10": 0.681
+    },
+    "D_knee_shank_ankle": {
+     "n_signal_vertices": 253,
+     "retention_median": 0.819,
+     "retention_p10": 0.605
+    },
+    "E_elbow_forearm_wrist": {
+     "n_signal_vertices": 242,
+     "retention_median": 1.0,
+     "retention_p10": 1.0
+    },
+    "F_shoulder_girdle_neck_root": {
+     "n_signal_vertices": 276,
+     "retention_median": 1.004,
+     "retention_p10": 0.996
+    }
+   }
+  }
+ },
+ "reentry_pass": true
+}
