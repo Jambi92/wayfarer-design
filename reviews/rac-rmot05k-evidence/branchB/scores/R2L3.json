@@ -1,0 +1,20 @@
+{"bodies": {
+"L01": {"class": "C", "confidence": "medium", "drivers": "Profile has a strong S-curve: the upper back bulges, the upper trunk leans forward and the knee bends forward. The narrow front torso and thin arms are joined with an odd chain of segments, so the body does not stack the way a human body does.", "basis": "organization", "axial_cues": ["pronounced dorsal hump / rounded upper back", "forward-pitched thorax", "deep lumbar/pelvic recess in profile"], "limb_cues": ["knee kinked forward in profile", "shank angled back from knee", "thin, long forearms"], "posture_read": true},
+"L02": {"class": "A", "confidence": "medium", "drivers": "Fairly broad, full-bodied female form. Shoulders are wide and the thighs are thick, but the stacking and joints are normal.", "basis": "n/a", "axial_cues": ["upright straight back"], "limb_cues": ["straight knees"], "posture_read": false},
+"L03": {"class": "B", "confidence": "medium", "drivers": "Large lower-belly protrusion in profile, with a soft trunk and a thick waist. Limbs and joints are otherwise human.", "basis": "fatness", "axial_cues": ["protruding abdomen", "slightly sloped back"], "limb_cues": [], "posture_read": false},
+"L04": {"class": "A", "confidence": "high", "drivers": "Slim, average male proportions with normal stacking.", "basis": "n/a", "axial_cues": [], "limb_cues": [], "posture_read": false},
+"L05": {"class": "A", "confidence": "high", "drivers": "Average, mildly fit male. Normal profile.", "basis": "n/a", "axial_cues": [], "limb_cues": [], "posture_read": false},
+"L06": {"class": "A", "confidence": "high", "drivers": "Average build with normal proportions.", "basis": "n/a", "axial_cues": [], "limb_cues": [], "posture_read": false},
+"L07": {"class": "A", "confidence": "low", "drivers": "Mild belly and a fuller back in profile. Within the normal range, but leaning toward heavier.", "basis": "n/a", "axial_cues": ["slight abdominal protrusion"], "limb_cues": [], "posture_read": false},
+"L08": {"class": "A", "confidence": "medium", "drivers": "Curvy female: broad shoulders, narrow waist, wide hips, full thighs. The proportions are pronounced but human.", "basis": "n/a", "axial_cues": ["narrow waist", "wide pelvis"], "limb_cues": ["full thighs"], "posture_read": false},
+"L09": {"class": "A", "confidence": "high", "drivers": "Average build. Normal profile.", "basis": "n/a", "axial_cues": [], "limb_cues": [], "posture_read": false},
+"L10": {"class": "A", "confidence": "high", "drivers": "Average build. Normal profile.", "basis": "n/a", "axial_cues": [], "limb_cues": [], "posture_read": false},
+"L11": {"class": "C", "confidence": "medium", "drivers": "Same pattern as L01: a large dorsal bulge with a forward-pitched upper trunk, a deep concavity at the lower back and pelvis, and forward-bent knees. The front view shows a compact, broad upper chest over thin hips and legs.", "basis": "organization", "axial_cues": ["dorsal hump", "forward-leaning thorax", "pelvis set back / recessed"], "limb_cues": ["bent knee in profile", "thin lower legs", "long arms reaching the knees"], "posture_read": true},
+"L12": {"class": "A", "confidence": "medium", "drivers": "Broad-shouldered, solid male with a slightly heavier trunk. Stacking is normal.", "basis": "n/a", "axial_cues": [], "limb_cues": [], "posture_read": false}},
+"groups": [
+{"label": "hunched dorsal-hump bent-knee bodies", "codes": ["L01", "L11"], "stable": true},
+{"label": "ordinary average/slim builds", "codes": ["L04", "L05", "L06", "L09", "L10", "L12"], "stable": true},
+{"label": "fuller/curvier female-type builds", "codes": ["L02", "L08"], "stable": false},
+{"label": "belly-protrusion heavier builds", "codes": ["L03", "L07"], "stable": false}],
+"nonhuman_groups_distinguishable": null,
+"distinguishing_features": "I found only one non-human group (L01, L11), set apart by the dorsal hump, the forward-pitched thorax and the bent-knee profile. L03 is a human with belly fat, not a different organization."}
