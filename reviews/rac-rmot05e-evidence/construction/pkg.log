@@ -1,0 +1,44 @@
+e_GO_F_grey.jpg
+e_GO_P_grey.jpg
+e_GO_Q_grey.jpg
+e_GO_RQ_grey.jpg
+e_GO_F_sil.jpg
+e_GO_P_sil.jpg
+e_GO_low_F.jpg
+e_GO_low_P.jpg
+e_GO_low_Q.jpg
+e_GO_low_RQ.jpg
+e_GO_low_F_sil.jpg
+e_GO_low_P_sil.jpg
+e_GO_frames_F.jpg
+e_GO_frames_P.jpg
+e_GO_frames_RQ.jpg
+c 229 pelvis_Q
+c 229 pelvis_P
+c 229 thorax_P
+c 229 thorax_RQ
+c 229 knee_F
+c 229 knee_P
+c 229 elbow_F
+c 229 elbow_P
+c 229 pelvis_RQ
+c 229 wrist_P
+c 229 shank_P
+c 229 ankle_F
+c 229 ankle_P
+c 229 forearm_F
+c 229 back_R
+c 229 sacrum_RQ
+Traceback (most recent call last):
+  File "/home/claude/wayfarer-design/tools/rac/w1/rmot05e_drivers/e_sections.py", line 29, in <module>
+    names = sys.argv[1:]; L = {n: load(n) for n in names}; base = 'GO5DE1'
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/wayfarer-design/tools/rac/w1/rmot05e_drivers/e_sections.py", line 29, in <dictcomp>
+    names = sys.argv[1:]; L = {n: load(n) for n in names}; base = 'GO5DE1'
+                                  ^^^^^^^
+  File "/home/claude/wayfarer-design/tools/rac/w1/rmot05e_drivers/e_sections.py", line 16, in load
+    B = np.load(CG.path(n) + '_r6.npz', allow_pickle=True); return B, B['V'].astype(float), json.loads(str(B['joints']))
+                ^^^^^^^^^^
+  File "/home/claude/wayfarer-design/tools/rac/w1/rmot05c_drivers/c_guard.py", line 21, in path
+    raise FileNotFoundError(n)
+FileNotFoundError: SK229

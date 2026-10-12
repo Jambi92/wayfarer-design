@@ -287,3 +287,5 @@ The retained Gorrund W1i/W1j reference is **AUTHOR ACCEPTED as the W1 ARM** (`re
 - RM-OT-05 stays OPEN; nothing promoted; D4 still blocked.
 
 - **RM-OT-05D returned (2026-10-11):** `reviews/claude-rac-rm-ot-05d-true-skeletal-envelope-race-anatomy-gate.md`. Grask PASS (E3, pending author canon ruling); Gorrund CONSTRAIN; stopped before Stage C. RM-OT-05 OPEN; nothing promoted; D4 blocked.
+
+- **RM-OT-05E returned (2026-10-11):** `reviews/claude-rac-rm-ot-05e-gorrund-structural-readability-closure-gate.md`. Gorrund FAIL (replicated blind gate); procedural route exhausted; hand-sculpted Gorrund base mesh recommended. Grask E3 accepted direction, Stage C pending. RM-OT-05 OPEN; nothing promoted; D4 blocked.

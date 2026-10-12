@@ -142,6 +142,8 @@ def limb_base(V, L, J, spec, info):
             lin = RL[ia][None, :] * (1 - x[:, None]) + RL[ib][None, :] * x[:, None] + fl.get("convex", 0.0) * np.sin(np.pi * np.clip(x, 0, 1))[:, None]
             wsec = _sector(pg, fl["phi"], fl["hw"])[None, :] * ((tg >= tg[ia]) & (tg <= tg[ib]))[:, None] * fl.get("strength", 1.0)
             RA = RA + (lin - RA) * wsec
+        for pd in spec.get("pads", []):          # RM-OT-05E periarticular pad / collar: Gaussian in t (t = 0 / 1 = the joint) x sector, cm outward
+            RA = RA + pd["cm"] * np.exp(-0.5 * ((tg - pd["t"]) / pd.get("w", 0.06)) ** 2)[:, None] * _sector(pg, pd.get("phi", 0.0), pd.get("hw", 180.0))[None, :]
         st = spec.get("strength", 1.0)
         Dt = (RA - RL) * st
         d = _lookup(Dt, tc, ph) * ((t >= 0) & (t <= 1)).astype(float)
