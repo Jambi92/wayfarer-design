@@ -297,3 +297,5 @@ The retained Gorrund W1i/W1j reference is **AUTHOR ACCEPTED as the W1 ARM** (`re
 - **RM-OT-05G Blender handoff prepared (2026-10-11):** `reviews/claude-rac-rm-ot-05g-blender-sculpt-production-handoff-report.md`; companion `reviews/rac-rmot05f-handoff/blender/`. Waiting for the sculptor's `GO_sculpt_S1_r6.obj`. Stage C blocked. RM-OT-05 OPEN.
 
 - **RM-OT-05G sculptor release (2026-10-12):** `reviews/claude-rac-rm-ot-05g-sculptor-release-closure.md`; release `gorrund-sculpt-release-8b76d2eae245`. Waiting for the genuine `GO_sculpt_S1_r6.obj`. Stage C blocked. RM-OT-05 OPEN.
+
+- **RM-OT-05H Claude-direct sculpt gate (2026-10-12):** `reviews/claude-rac-rm-ot-05h-claude-sculpt-stage-c-gate.md`. Final revision S2: exporter, preflight and 05F re-entry PASS. Blind gate FAIL (run2 G3). Readability REJECT (boxy trunk vs Q1). Stage C NOT RUN. RM-OT-05 OPEN.

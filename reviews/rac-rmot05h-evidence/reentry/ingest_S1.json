@@ -1,0 +1,107 @@
+{
+ "sculpt_obj": "GO_sculpt_S1_r6.obj",
+ "sha256": "64667338789ed5b40b7190b0b3c81094143c6473d5519d69352794d00433ccb5",
+ "sid": "S1",
+ "checks": {
+  "I1_topology": {
+   "n_vertices": 13380,
+   "expected": 13380,
+   "faces_present": true,
+   "faces_identical": true,
+   "pass": true
+  },
+  "I2_rigid_scale": {
+   "scale": 1.000000001191943,
+   "rotation_deg": 0.0,
+   "translation_cm": 1.0849263318530919e-07,
+   "pass": true
+  },
+  "I3_stature_ground": {
+   "stature_cm": 230.89728,
+   "template_cm": 230.89727782609933,
+   "min_z_cm": 0.0,
+   "pass": true
+  },
+  "I4_no_touch": {
+   "max_change_cm": {
+    "NO_TOUCH_head_neck": 2.0537187015727015e-05,
+    "NO_TOUCH_hands_digits": 2.38144515588366e-05,
+    "NO_TOUCH_toes_forefoot": 2.5182945468391485e-05
+   },
+   "limit_cm": 0.5,
+   "pass": true
+  },
+  "I5_true_floor_raw": {
+   "n_inside_0p2cm": 0,
+   "min_signed_cm": -0.1537593171377411,
+   "pass": true
+  },
+  "I6_posture_anchors": {
+   "anchor_centroid_shift_cm": {
+    "hand_l": 0.0,
+    "hand_r": 0.0,
+    "foot_l": 0.0,
+    "foot_r": 0.0,
+    "head": 0.0
+   },
+   "limit_cm": 0.3,
+   "segment_axis_change_deg_advisory": {
+    "thigh_l": 0.303,
+    "thigh_r": 0.257,
+    "calf_l": 0.607,
+    "calf_r": 0.44,
+    "upperarm_l": 2.441,
+    "upperarm_r": 2.481,
+    "lowerarm_l": 0.326,
+    "lowerarm_r": 0.309
+   },
+   "pass": true
+  }
+ },
+ "coverage_advisory": {
+  "A_trunk_section_S2_S5": {
+   "n": 664,
+   "p50_cm": 3.01,
+   "p90_cm": 4.42,
+   "max_cm": 5.75,
+   "mean_normal_cm": 2.1
+  },
+  "B_posterior_axial_load_path": {
+   "n": 616,
+   "p50_cm": 1.93,
+   "p90_cm": 3.66,
+   "max_cm": 6.03,
+   "mean_normal_cm": -0.15
+  },
+  "C_pelvis_to_thigh": {
+   "n": 288,
+   "p50_cm": 0.78,
+   "p90_cm": 2.53,
+   "max_cm": 3.71,
+   "mean_normal_cm": -0.29
+  },
+  "D_knee_shank_ankle": {
+   "n": 956,
+   "p50_cm": 0.0,
+   "p90_cm": 1.29,
+   "max_cm": 3.45,
+   "mean_normal_cm": -0.15
+  },
+  "E_elbow_forearm_wrist": {
+   "n": 851,
+   "p50_cm": 0.0,
+   "p90_cm": 0.37,
+   "max_cm": 3.13,
+   "mean_normal_cm": -0.06
+  },
+  "F_shoulder_girdle_neck_root": {
+   "n": 588,
+   "p50_cm": 0.59,
+   "p90_cm": 2.69,
+   "max_cm": 5.54,
+   "mean_normal_cm": 0.35
+  }
+ },
+ "raw_volume_ratio_vs_template": 1.0304435711520261,
+ "pass": true
+}

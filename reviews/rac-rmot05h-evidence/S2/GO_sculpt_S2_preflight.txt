@@ -1,0 +1,94 @@
+{
+ "file": "GO_sculpt_S2_r6.obj",
+ "sha256": "5b9db47c802f75625d962470ac6bb38eb574ecc50d2bab08468b7193af5323af",
+ "checks": {
+  "P1_topology": {
+   "n_vertices": 13380,
+   "expected": 13380,
+   "faces_identical": true,
+   "pass": true
+  },
+  "P2_identity": {
+   "median_displacement_cm": 0.0,
+   "pass": true,
+   "note": "a median vertex displacement above 1 cm means the vertex order no longer matches the template (fail closed)"
+  },
+  "P3_stature_ground": {
+   "stature_cm": 230.89728,
+   "template_cm": 230.89728,
+   "min_z_cm": 0.0,
+   "pass": true
+  },
+  "P4_no_touch": {
+   "max_change_cm": {
+    "NO_TOUCH_head_neck": 2.0000000006348273e-05,
+    "NO_TOUCH_hands_digits": 0.0,
+    "NO_TOUCH_toes_forefoot": 2.000000000279556e-05
+   },
+   "limit_cm": 0.5,
+   "pass": true
+  },
+  "P5_anchor_fit": {
+   "scale": 1.0000000004582532,
+   "rotation_deg": 0.0,
+   "shift_cm": 9.008251690960265e-08,
+   "pass": true
+  },
+  "P6_true_floor": {
+   "n_inside_0p2cm": 0,
+   "min_signed_cm": -0.11130916680876288,
+   "pass": true
+  },
+  "P7_posture_anchors": {
+   "centroid_shift_cm": {
+    "NO_TOUCH_head_neck": 1.3090281300588217e-07,
+    "NO_TOUCH_hands_digits": 0.0,
+    "NO_TOUCH_toes_forefoot": 2.077435921514921e-07
+   },
+   "limit_cm": 0.3,
+   "pass": true
+  }
+ },
+ "families": {
+  "A_trunk_section_S2_S5": {
+   "n": 664,
+   "p50_cm": 2.96,
+   "p90_cm": 4.42,
+   "max_cm": 5.75
+  },
+  "B_posterior_axial_load_path": {
+   "n": 616,
+   "p50_cm": 1.9,
+   "p90_cm": 3.66,
+   "max_cm": 6.03
+  },
+  "C_pelvis_to_thigh": {
+   "n": 288,
+   "p50_cm": 0.78,
+   "p90_cm": 2.5,
+   "max_cm": 3.71
+  },
+  "D_knee_shank_ankle": {
+   "n": 956,
+   "p50_cm": 0.0,
+   "p90_cm": 1.26,
+   "max_cm": 3.45
+  },
+  "E_elbow_forearm_wrist": {
+   "n": 851,
+   "p50_cm": 0.0,
+   "p90_cm": 0.37,
+   "max_cm": 3.13
+  },
+  "F_shoulder_girdle_neck_root": {
+   "n": 588,
+   "p50_cm": 0.59,
+   "p90_cm": 2.69,
+   "max_cm": 5.54
+  }
+ },
+ "raw_volume_ratio": 1.0279365330219838,
+ "n_moved_vertices_over_0p01cm": 2693,
+ "pass": true
+}
+PREFLIGHT PASS
