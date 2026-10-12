@@ -1,10 +1,27 @@
 # Sculptor checklist — Gorrund hand-sculpt in Blender (RM-OT-05G)
 
 Read first:
-- `../../gorrund-rm-ot-05f-hand-sculpt-production-brief.md` (anatomy: governs);
+- [`../brief/gorrund-rm-ot-05f-hand-sculpt-production-brief.md`](../brief/gorrund-rm-ot-05f-hand-sculpt-production-brief.md) (anatomy: governs; exact frozen copy of the repository brief);
 - `README.md` (tooling).
 
 Blender 4.2 LTS or 5.0. `<pkg>` = the `rac-rmot05f-handoff` folder.
+
+## 0. First-session desktop verification (tooling fixture; do this once, before sculpting)
+
+**Status: PENDING.** The 05G tooling was verified headless only, through the `bpy` module; no interactive Blender session was available to Claude. The first person to open the package in desktop Blender completes this section and records the result in the delivery manifest (`desktop_verification`). The steps below are a **tooling fixture, never a sculpt candidate**.
+
+1. [ ] Run `g_setup.py` and *Save As* a **disposable** file, e.g. `DESKTOP_CHECK_disposable.blend`, outside the package.
+2. [ ] Confirm the start state:
+   - `GO_SCULPT_BASE` is the only selectable object;
+   - its N-panel transform is Location 0 0 0, Rotation 0 0 0, Scale 1 1 1, all locked;
+   - in Sculpt mode, head / neck, hands / digits and toes / forefoot show as masked;
+   - `GO_VIEW_ANATOMICAL` (eye icon on) faces the viewer in Blender's Front view (Numpad 1), with the body's left on the viewer's right.
+3. [ ] Make one **small, reversible** Draw or Grab stroke in an allowed region (e.g. the mid-thigh, family C / D), about 0.5–1 cm, with no mask change.
+4. [ ] Run `g_export.py` with `SCULPT_ID = 'DT'` (desktop-test ID, never used for a delivery) → expect `RAC_EXPORT PASS`. Then `python3 g_preflight.py GO_sculpt_DT_r6.obj` → expect `PREFLIGHT PASS`.
+5. [ ] Check in the preflight output:
+   - `n_moved_vertices_over_0p01cm` is small and the moved vertices sit in the stroked area (family statistics);
+   - every `NO_TOUCH` maximum change is 0.0.
+6. [ ] Delete `GO_sculpt_DT_r6.obj`, its report and the disposable `.blend`. Write in the manifest: Blender version, OS, and pass / fail of steps 2–5. If anything failed, stop and report it before sculpting.
 
 ## A. Open and set up
 
@@ -39,7 +56,9 @@ Blender 4.2 LTS or 5.0. `<pkg>` = the `rac-rmot05f-handoff` folder.
     - shape keys;
     - re-posing (armatures, proportional transforms of whole limbs), re-scaling, re-centring, re-grounding.
 
-    The exporter refuses every one of these.
+    > These operations are forbidden by the sculpt contract. The exporter rejects detectable topology, identity, transform and protected-region violations; it cannot determine every editing action used to produce a mesh. A manually re-posed limb or another forbidden coordinate edit may preserve topology and object transforms. The sculptor must follow this checklist, and the returned asset must pass the complete 05F re-entry and replicated blind gates.
+
+    The exporter writes the **base mesh data** of `GO_SCULPT_BASE` and ignores every non-Multires modifier (Multires is refused). An unapplied modifier that is visible in the viewport (Subdivision, Smooth, Displace, a Mask, …) therefore does **not** become the delivered sculpt: the exported base itself must express the intended forms. Nothing is repaired automatically, no vertex correspondence is guessed, and no morphology is corrected procedurally.
 11. [ ] Work Symmetry X on: the body is bilaterally symmetric about x = 0.
 12. [ ] Build the six hard-form families of brief §4, within the canon guardrails of brief §3:
     - **A — trunk S2–S5:**
@@ -57,7 +76,7 @@ Blender 4.2 LTS or 5.0. `<pkg>` = the `rac-rmot05f-handoff` folder.
       - not a pillar, not a human thick-thigh / thin-shin taper.
     - **E — elbow / forearm / wrist:** integrated elbow block (not a knob); flattened forearm with tendon border; broad flattened wrist (not a column); hands unchanged.
     - **F — shoulder girdle / neck root:** low broad girdle, trapezius plane, shoulder block; no deltoid cap, no overhang, no hump.
-13. [ ] Limbs (D, E) have about 1.5 cm of inward room (`figures/floor_margin.png`). Build those forms mainly by reshaping and outward planes.
+13. [ ] Limbs (D, E) have about 1.5 cm of inward room ([`../figures/floor_margin.png`](../figures/floor_margin.png)). Build those forms mainly by reshaping and outward planes.
 14. [ ] **Not as identity:**
     - bulk, obesity, muscle amount;
     - posture, crouch, hunch or digitigrade illusion;
@@ -71,6 +90,7 @@ Blender 4.2 LTS or 5.0. `<pkg>` = the `rac-rmot05f-handoff` folder.
 16. [ ] Run `g_preview.py`. It builds `PREVIEW_low` / `narrow` / `broad` beside the base and prints how many vertices of each state fall inside that state's true floor because of the sculpt (`new_inside_caused_by_sculpt`; aim for 0).
     - **Every family must still read on `PREVIEW_low`.**
     - Never judge persistence by scaling the body.
+    - **The preview is advisory.** It shows the transported forms *before* the pipeline's authoritative true-floor clamp and volume restoration. Its views and penetration counts do not prove final persistence and do not replace `f_reentry.py`. Where the pipeline clamps (mostly at low composition), the final body differs from the preview: in the 05G tooling check the median difference was 0.000 cm, but up to 1.24 cm at clamped low-composition vertices.
 17. [ ] Run `g_views.py` (and `--previews` from the CLI if wanted). It writes F / ¾ / P / rear ¾ grey and silhouette PNGs, body only, to `views/` next to your `.blend`. Compare them with `../evidence/05e/*` (failed examples) and `../evidence/05d/d_GR_*` (Grask contrast only).
 
 ## E. Export and preflight

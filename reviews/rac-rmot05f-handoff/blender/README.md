@@ -1,7 +1,7 @@
 # Gorrund hand-sculpt — Blender production companion (RM-OT-05G)
 
 **Order:** `reviews/chatgpt-rac-rm-ot-05g-blender-sculpt-production-handoff-order.md`
-**Governs anatomy:** the frozen brief `reviews/gorrund-rm-ot-05f-hand-sculpt-production-brief.md` (canon governs any conflict). This companion is **tooling only**: it adds no anatomy, no target shape and no Gorrund body.
+**Governs anatomy:** the frozen brief, included in this handoff as [`../brief/gorrund-rm-ot-05f-hand-sculpt-production-brief.md`](../brief/gorrund-rm-ot-05f-hand-sculpt-production-brief.md) (exact copy of `reviews/gorrund-rm-ot-05f-hand-sculpt-production-brief.md`; canon governs any conflict). This companion is **tooling only**: it adds no anatomy, no target shape and no Gorrund body.
 **Status:** Gorrund **EXTERNAL SCULPT REQUIRED — AWAITING ASSET**. RM-OT-05 OPEN; Stage C blocked; Grask E3 frozen.
 
 The route is:
@@ -30,7 +30,7 @@ Results are in `tooling_evidence/blender_4.2.0/` and `tooling_evidence/blender_5
 - the `blender` command-line binary;
 - real brush strokes.
 
-The UI steps in §4 are the documented route. The first genuine sculptor session should confirm them, and the exporter's checks catch any deviation regardless. Blender 3.x is not supported: its sculpt mask is stored differently.
+The UI steps in §4 are the documented route. The first genuine sculptor session should confirm them with the **first-session desktop verification** in `CHECKLIST_SCULPTOR.md` §0 (status: PENDING). The exporter rejects detectable topology, identity, transform and protected-region violations; it cannot determine every editing action used to produce a mesh (a manually re-posed limb, for example, may keep topology and transforms). The contract therefore also relies on the checklist and on the complete 05F re-entry and replicated blind gates. Blender 3.x is not supported: its sculpt mask is stored differently.
 
 ## 2. Coordinates, units and the mirror note (read once)
 
@@ -61,7 +61,7 @@ Neither is needed. The setup parses the OBJ itself in file order, and the export
 |---|---|
 | `scripts/g_setup.py` | **Scene setup** (run in Blender) |
 | `scripts/g_export.py` | **Controlled exporter** (run in Blender): writes `GO_sculpt_<ID>_r6.obj` plus `GO_sculpt_<ID>_r6_export_report.json`, or refuses |
-| `scripts/g_preview.py` | **Persistence preview** (run in Blender): low composition, Narrow, Broad |
+| `scripts/g_preview.py` | **Persistence preview** (run in Blender): low composition, Narrow, Broad. **Advisory only:** forms are shown before the authoritative true-floor clamp and volume restoration; it does not prove final persistence and does not replace `f_reentry.py` |
 | `scripts/g_views.py` | **Matched view captures** (run in Blender): F / ¾ / P / rear ¾, grey and silhouette, body only |
 | `scripts/g_preflight.py` | **Standalone preflight** (Python 3 + numpy, no Blender): same thresholds as the 05F ingest |
 | `scripts/SHA256SUMS.txt` | Hashes. The scripts are byte-identical copies of `tools/rac/w1/rmot05g_blender/` |

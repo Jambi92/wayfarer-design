@@ -2,29 +2,86 @@
  "order": "RM-OT-05G",
  "asset": "GO_sculpt_<ID>_r6.obj",
  "version_id": "<ID, two characters, e.g. S1>",
- "sculptor": {"name": "", "studio_or_contact": "", "statement": "Sculpted by hand in Blender by moving existing vertices of the supplied start mesh; no procedural / AI-generated replacement mesh."},
+ "sculptor": {
+  "name": "",
+  "studio_or_contact": "",
+  "statement": "Sculpted by hand in Blender by moving existing vertices of the supplied start mesh; no procedural / AI-generated replacement mesh."
+ },
  "source": {
   "repository_commit": "<commit of wayfarer-design the package was taken from>",
   "template": "reviews/rac-rmot05f-handoff/template/GO_ref_route_r6.obj",
   "template_sha256": "d0eb0d1643d135f3d5bd0920a9d6007f6dec8d1238530b30b298f3a1b2034eee",
   "regions_sha256": "62833d43f79e7e1efeb9a64f4c8452a182db39b548392dfcc01da285be5b3ae2",
   "joints_sha256": "f23a676c13b4b60da02e5a2f4ce6f543a9f4212def579494fc8f0faf524e0d1c",
-  "brief": "reviews/gorrund-rm-ot-05f-hand-sculpt-production-brief.md (frozen)"
+  "brief": "brief/gorrund-rm-ot-05f-hand-sculpt-production-brief.md (exact frozen copy of reviews/gorrund-rm-ot-05f-hand-sculpt-production-brief.md, sha256 22bedaa07ee3020996df3f608e6ec3470812953ae4d2f9d3fac5ece23c61db0c)",
+  "release_manifest": "<RELEASE_MANIFEST.json release id / sha256 of the release zip>"
  },
- "blender": {"version": "<Help > About, e.g. 4.2.x LTS / 5.0.x>", "os": "", "addons_used": []},
- "scripts": {"g_setup.py": "<sha256>", "g_export.py": "<sha256>", "g_preview.py": "<sha256>", "g_views.py": "<sha256>", "g_preflight.py": "<sha256>",
-             "note": "must equal blender/scripts/SHA256SUMS.txt"},
- "settings": {"scene_units": "None, scale 1.0", "symmetry": "X", "dyntopo": false, "remesh": false, "multires": false, "shape_keys": false},
+ "blender": {
+  "version": "<Help > About, e.g. 4.2.x LTS / 5.0.x>",
+  "os": "",
+  "addons_used": []
+ },
+ "scripts": {
+  "g_setup.py": "<sha256>",
+  "g_export.py": "<sha256>",
+  "g_preview.py": "<sha256>",
+  "g_views.py": "<sha256>",
+  "g_preflight.py": "<sha256>",
+  "note": "must equal blender/scripts/SHA256SUMS.txt"
+ },
+ "settings": {
+  "scene_units": "None, scale 1.0",
+  "symmetry": "X",
+  "dyntopo": false,
+  "remesh": false,
+  "multires": false,
+  "shape_keys": false
+ },
  "outputs": {
   "obj_sha256": "<from GO_sculpt_<ID>_r6_export_report.json>",
   "export_report": "GO_sculpt_<ID>_r6_export_report.json",
   "preflight": "GO_sculpt_<ID>_preflight.txt (PREFLIGHT PASS)",
-  "views": ["views/GO_SCULPT_BASE_F_grey.png", "views/GO_SCULPT_BASE_Q_grey.png", "views/GO_SCULPT_BASE_P_grey.png", "views/GO_SCULPT_BASE_RQ_grey.png",
-            "views/GO_SCULPT_BASE_F_sil.png", "views/GO_SCULPT_BASE_Q_sil.png", "views/GO_SCULPT_BASE_P_sil.png", "views/GO_SCULPT_BASE_RQ_sil.png"],
-  "persistence_preview": {"low": {"new_inside_caused_by_sculpt": null}, "narrow": {"new_inside_caused_by_sculpt": null}, "broad": {"new_inside_caused_by_sculpt": null}},
+  "views": [
+   "views/GO_SCULPT_BASE_F_grey.png",
+   "views/GO_SCULPT_BASE_Q_grey.png",
+   "views/GO_SCULPT_BASE_P_grey.png",
+   "views/GO_SCULPT_BASE_RQ_grey.png",
+   "views/GO_SCULPT_BASE_F_sil.png",
+   "views/GO_SCULPT_BASE_Q_sil.png",
+   "views/GO_SCULPT_BASE_P_sil.png",
+   "views/GO_SCULPT_BASE_RQ_sil.png"
+  ],
+  "persistence_preview": {
+   "low": {
+    "new_inside_caused_by_sculpt": null
+   },
+   "narrow": {
+    "new_inside_caused_by_sculpt": null
+   },
+   "broad": {
+    "new_inside_caused_by_sculpt": null
+   }
+  },
   "working_blend": "<file name or null>",
   "high_resolution_reference": "<optional; separate file; never replaces the base OBJ>"
  },
- "families_addressed": {"A_trunk": "", "B_posterior_load_path": "", "C_pelvis_thigh": "", "D_knee_shank_ankle": "", "E_elbow_forearm_wrist": "", "F_girdle_neck_root": ""},
- "date": "<YYYY-MM-DD>"
+ "families_addressed": {
+  "A_trunk": "",
+  "B_posterior_load_path": "",
+  "C_pelvis_thigh": "",
+  "D_knee_shank_ankle": "",
+  "E_elbow_forearm_wrist": "",
+  "F_girdle_neck_root": ""
+ },
+ "date": "<YYYY-MM-DD>",
+ "desktop_verification": {
+  "checklist": "blender/CHECKLIST_SCULPTOR.md section 0 (tooling fixture, ID DT, deleted afterwards)",
+  "blender_version": "",
+  "os": "",
+  "step2_start_state": null,
+  "step3_small_stroke": null,
+  "step4_export_and_preflight_pass": null,
+  "step5_moved_vs_protected": null,
+  "notes": ""
+ }
 }

@@ -1,6 +1,8 @@
 # RM-OT-05F Gorrund hand-sculpt handoff package
 
-Brief: `reviews/gorrund-rm-ot-05f-hand-sculpt-production-brief.md` (read first)
+**Sculptor: start with [`START_HERE.md`](START_HERE.md).**
+
+Brief: [`brief/gorrund-rm-ot-05f-hand-sculpt-production-brief.md`](brief/gorrund-rm-ot-05f-hand-sculpt-production-brief.md) (read first; exact frozen copy of `reviews/gorrund-rm-ot-05f-hand-sculpt-production-brief.md`)
 Gate: `reviews/claude-rac-rm-ot-05f-gorrund-hand-sculpt-handoff-gate.md`
 
 **FROZEN** (freeze order `reviews/chatgpt-rac-rm-ot-05f-handoff-author-ruling-freeze-order.md`): Q1 approved, waist wording corrected in the brief. Gorrund: **EXTERNAL SCULPT REQUIRED — AWAITING ASSET**. `figures/region_map.png` is an editing-jurisdiction guide only; the brief text governs anatomy.

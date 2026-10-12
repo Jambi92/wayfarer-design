@@ -130,7 +130,7 @@ Not run here:
 - the `blender` command-line binary;
 - real brush strokes.
 
-The scripts were executed through the official `bpy` module of the same versions, and Edit / Sculpt mode enter and exit were exercised. The first genuine session should confirm the UI steps in `CHECKLIST_SCULPTOR.md`. Any deviation (transform, topology, identity, protected zones) is caught by the exporter, the preflight and `f_ingest`. Blender 3.x is unsupported.
+The scripts were executed through the official `bpy` module of the same versions, and Edit / Sculpt mode enter and exit were exercised. The first genuine session should confirm the UI steps in `CHECKLIST_SCULPTOR.md`. ~~Any deviation (transform, topology, identity, protected zones) is caught by the exporter, the preflight and `f_ingest`.~~ **Corrected (sculptor-release order §2):** the exporter rejects detectable topology, identity, transform and protected-region violations; it cannot determine every editing action used to produce a mesh. A manually re-posed limb or another forbidden coordinate edit may preserve topology and object transforms, so the returned asset must also pass the complete 05F re-entry and replicated blind gates. Blender 3.x is unsupported.
 
 No production `.blend` is shipped: the setup script generates the scene reproducibly in the sculptor's own version.
 
