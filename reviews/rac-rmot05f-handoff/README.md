@@ -3,6 +3,8 @@
 Brief: `reviews/gorrund-rm-ot-05f-hand-sculpt-production-brief.md` (read first)
 Gate: `reviews/claude-rac-rm-ot-05f-gorrund-hand-sculpt-handoff-gate.md`
 
+**FROZEN** (freeze order `reviews/chatgpt-rac-rm-ot-05f-handoff-author-ruling-freeze-order.md`): Q1 approved, waist wording corrected in the brief. Gorrund: **EXTERNAL SCULPT REQUIRED — AWAITING ASSET**. `figures/region_map.png` is an editing-jurisdiction guide only; the brief text governs anatomy.
+
 Nothing in this folder is an accepted Gorrund body. The start mesh is the *unorganized* accepted skeleton route; the failed 05C–05E candidates appear only as labelled "must not" evidence.
 
 ## 1. External asset required

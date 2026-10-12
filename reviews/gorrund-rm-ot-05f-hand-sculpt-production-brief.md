@@ -1,7 +1,8 @@
 # Gorrund hand-sculpt base mesh — production brief (RM-OT-05F)
 
 **Authority:** `reviews/chatgpt-rac-rm-ot-05f-gorrund-hand-sculpt-handoff-stage-c-order.md` (author decision after RM-OT-05E).
-**Status:** handoff brief for an external sculptor or a direct mesh-edit workflow. Nothing in this brief is canon. It does not change, extend or replace `specs/gorrund/GORRUND_V1.md`; where this brief and canon differ, canon governs and the difference is listed in §3 for the author.
+**Status:** **FROZEN** for external / direct sculpt production (`reviews/chatgpt-rac-rm-ot-05f-handoff-author-ruling-freeze-order.md`): Q1 approved and the waist wording corrected (§3, §4A, §5, §8). Family intents and validator thresholds may change only if a genuine conflict with locked canon is shown. Gorrund: **EXTERNAL SCULPT REQUIRED — AWAITING ASSET**.
+**Purpose:** handoff brief for an external sculptor or a direct mesh-edit workflow. Nothing in this brief is canon. It does not change, extend or replace `specs/gorrund/GORRUND_V1.md`; where this brief and canon differ, canon governs and the difference is listed in §3 for the author.
 **Package:** `reviews/rac-rmot05f-handoff/` (start mesh, guide meshes, joints, stations, region masks, figures, evidence index).
 **Validation:** `tools/rac/w1/rmot05f_drivers/` (re-entry validator and blind-gate runner; §9–§10).
 
@@ -71,12 +72,12 @@ These may not be traded for readability.
 
 ## 3. Canon guardrails for the hard-form families
 
-The six families below come from 05E §10 and order 05F §4. Canon (`specs/gorrund/GORRUND_V1.md`, Part 2) bounds several of them. The sculpt must satisfy **both**. The reading in the right-hand column is how this brief reconciles them. Items marked **Q** need an author confirmation (also listed in the 05F gate).
+The six families below come from 05E §10 and order 05F §4. Canon (`specs/gorrund/GORRUND_V1.md`, Part 2) bounds several of them. The sculpt must satisfy **both**. The reading in the right-hand column is how this brief reconciles them. **Q1 is approved by the author** (freeze order §2); it is an interpretation of existing canon, not new canon.
 
 | Family wording (05E / 05F) | Canon clause (GORRUND_V1 Part 2) | Sculpt reading |
 |---|---|---|
-| A: "planar / faceted slab", "defined lateral edges" | Thoracic cross-section: "**Anatomically shaped, never circular, rectangular or boxy**"; thoracic depth "never a cylindrical barrel chest" | **Q1.** Planar *zones* and legible *plane breaks* on an anatomically shaped section. The section is not a rectangle or box: corners stay radiused and vary along the height, and the flats are broad anatomical planes (sternal plate, lateral thoracic wall), not machined faces. 05E P1–P3 used a box section, which this clause excludes. They failed anyway and are not references. |
-| A: "no waist hollow" | Waist "varies within valid anatomy; narrower isn't human or bodybuilder, broader isn't obese"; GO-P6 "waist definition allowed" | The reference sculpt carries no human waist hollow (a valid point in the canon range). Do not encode a waist "rule". Composition variation still varies the waist. |
+| A: "planar / faceted slab", "defined lateral edges" | Thoracic cross-section: "**Anatomically shaped, never circular, rectangular or boxy**"; thoracic depth "never a cylindrical barrel chest" | **Q1 — APPROVED.** *Planar anatomical zones and plane breaks are allowed and desired, but they must exist on an anatomically shaped, radiused thoracic cross-section. "Planar" describes surface organization, not a rectangular body section.* Allowed: broad planar anatomical zones; strong but radiused plane breaks; a legible sternal / anterior plate; legible lateral thoracic planes; an anatomically organized hard-form section. Not allowed: rectangular, boxy, mechanically slab-sided, or circular / cylindrical. Corners stay radiused and vary along the height; the flats are broad anatomical planes (sternal plate, lateral thoracic wall), not machined faces. 05E P1–P3 used a box section, which this clause excludes. They failed anyway and are not references. |
+| A: "no waist hollow" (corrected, freeze order §3) | Waist "varies within valid anatomy; narrower isn't human or bodybuilder, broader isn't obese"; GO-P6 "waist definition allowed" | *The **reference sculpt** must not rely on a human-style pinched waist or waist hollow as the Gorrund readability cue. Existing canon-valid waist variation remains available through the established Frame / composition system.* This is **not** a race-wide biological rule: it does not prohibit waist hollowing in Gorrund, and nothing in the Frame / composition system is changed to enforce a waist shape. |
 | A: "crisp lower structural border" | Abdomen: "no 'ogre belly'"; "thoracic skeletal depth stays separate from abdominal soft-tissue projection" | The border is the costal / sternal structure (skeletal), not a belly overhang. No abdominal protrusion as the read. |
 | B: "hard transverse sacral border", "continuous sacral → hamstring path" | GO-P1: sacrum broad and robust, "no exaggerated lumbar arch"; spine: "without permanent forward lean, exaggerated lumbar arch or hunch" | Straight or inclined posterior line, no lumbar hollow, no hump. The paraspinal columns are broad and low, not a ridge. |
 | C: "structural hip plate", "trochanteric shelf", "defined step" | GO-P2b: "no lateral outrigging"; GO-P3: iliac crest "bounded by lower-trunk breadth (the pelvis does not project laterally as an independent hip structure)"; GO-P6: "no abrupt step in breadth or depth" thorax → lower trunk → pelvis | The step is at the **pelvis → thigh** junction, never at trunk → pelvis. The shelf is a plane change over the trochanter. It must not widen the hip outline into a lateral projection (guidance: keep the hip outline within about 1 cm of the start mesh laterally; this is not a canon number). |
@@ -90,7 +91,7 @@ The six families below come from 05E §10 and order 05F §4. Canon (`specs/gorru
 
 ## 4. The six hard-form families
 
-`figures/region_map.png` shows where each family sits on the start mesh. Regions are approximate and come from rig weights; the text governs. Light-grey bands (mid-thigh, mid-upper-arm) belong to no family: carry the neighbouring forms through them smoothly.
+`figures/region_map.png` shows where each family sits on the start mesh. It is an **editing-jurisdiction guide only**: regions are approximate and come from rig weights, and this text governs the anatomy. Light-grey bands (mid-thigh, mid-upper-arm) belong to no family: carry the neighbouring forms through them smoothly.
 
 **Inward budget.** "Floor budget" is how far the start mesh sits above the true skeletal floor, i.e. the most the sculpt can cut inward there. It is given as p10 / median in cm, at reference / low composition (`figures/floor_margin.png`).
 - Limb forms (D, E) have about 1.5 cm of inward room. They must be built mainly by **re-shaping and outward planes**, not by carving.
@@ -102,16 +103,16 @@ The six families below come from 05E §10 and order 05F §4. Canon (`specs/gorru
 - a broad, flat **sternal–abdominal plate** from the sternum to above the pubis;
 - **lateral thoracic planes**, meeting the anterior plate at a legible, radiused edge;
 - a **crisp lower structural border** at the costal margin;
-- depth carried as **rib-cage structure** that stays constant down to the pelvis, with no waist hollow;
+- depth carried as **rib-cage structure** continuing down to the pelvis; the reference sculpt does **not rely on a human-style pinched waist or waist hollow** as its read (a reference-direction goal, not a race-wide rule: canon-valid waist variation stays with Frame / composition);
 - the human pectoral shelf, nipple relief and navel relief must not be the defining torso read (remove or subordinate them).
 
 **Views:**
-- front: near-parallel flank lines from axilla to iliac crest, with the plate visible as one plane;
+- front: flank lines from axilla to iliac crest without a human pinched-waist read, with the plate visible as one plane;
 - profile: a deep, straight anterior line with no belly curve;
-- silhouette: a deep slab, not a rectangle.
+- silhouette: a deep, radiused, anatomically shaped trunk; not a rectangle, box, mechanically slab-sided section or cylinder.
 
 **Must not:**
-- a rectangular or boxy section (canon);
+- a rectangular, boxy or mechanically slab-sided section, or a circular / cylindrical one (canon; Q1);
 - a round barrel;
 - a soft belly;
 - "fused thorax-pelvis slab" achieved by fat (05E P1–P3, run B: "could be heavy humans").
@@ -214,7 +215,7 @@ All targets are relational and visual. Canon gives no numbers for these forms (e
 | Front ¾ | Plane break between the anterior and lateral trunk (A); planar lateral thigh (C); squarish shank and forearm sections (D / E) | `evidence/05e/e_GO_Q_grey.jpg` |
 | Profile | Straight anterior trunk line (A); one posterior line from scapula to mid-thigh with no buttock or lumbar hollow (B); anterior tibial plane plus tendon column (D); no hunch, no bent-knee read | `evidence/05e/e_GO_P_grey.jpg`, `evidence/05d/d_GR_P_grey.jpg` (Grask contrast: what Gorrund must *not* resemble) |
 | Rear ¾ | Paraspinal columns, interscapular plane and sacral plate continuing into the hamstring origin (B) | `evidence/05e/e_GO_RQ_grey.jpg`, `evidence/05e/c_229_back_R.jpg` |
-| Silhouette, front and profile | Deep slab trunk (not a rectangle), jointed legs that taper to the ankle, no human waist / buttock / calf rhythm | `evidence/05e/e_GO_{F,P}_sil.jpg` |
+| Silhouette, front and profile | Deep, radiused trunk (not a rectangle, box or cylinder), jointed legs that taper to the ankle, and no human pinched-waist / buttock / calf rhythm as the read (waist variation itself remains canon-valid through Frame / composition) | `evidence/05e/e_GO_{F,P}_sil.jpg` |
 
 ## 6. Persistence: low composition, Narrow, Broad
 
@@ -246,7 +247,7 @@ Before delivering, confirm each line.
 - [ ] No re-pose, no re-scale, no re-centre; feet still flat on z = 0; stature unchanged (230.90 cm).
 - [ ] Head / neck, hands / digits, toes / forefoot untouched (≤ 0.5 cm).
 - [ ] Nothing inside `GO_true_floor_r6.obj`. The limbs were shaped mainly outward or by redistribution.
-- [ ] **A:** sternal plate, lateral planes, costal border, no waist hollow; section radiused, not boxy.
+- [ ] **A:** sternal plate, lateral planes, costal border; the read does not rely on a human pinched waist / waist hollow (reference direction, not a race rule); section radiused and anatomically shaped: not rectangular, boxy, mechanically slab-sided or cylindrical.
 - [ ] **B:** paraspinal columns, interscapular plane, sacral plate into hamstring; straight posterior line; no hump, no buttock.
 - [ ] **C:** hip plate, trochanteric shelf, planar lateral thigh; no lateral outrigging; no trunk → pelvis step.
 - [ ] **D:** patellar plate and condyle blocks flush (not armor); squarish shank with tibial plane and tendon column; ankle narrower than calf; not a pillar.
