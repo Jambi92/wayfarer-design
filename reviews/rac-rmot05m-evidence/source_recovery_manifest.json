@@ -1,0 +1,87 @@
+{
+ "search_date": "2026-10-12",
+ "method": "read-only directory listing via the desktop link (no files moved or changed); 3D-file extensions .glb .gltf .fbx .obj .blend .ply .stl .usd(z) and names containing gorr / rodin / hyper; archives opened read-only by name list",
+ "locations_searched": [
+  "E:\\Wayfarer-Rodin (recursive)",
+  "C:\\Users\\Tyler\\Wayfarer-Rodin (recursive, incl. Jobs\\ records)",
+  "E:\\UnrealProjects (Wayfarer, Wayfarer 5.8, Wayfarer-Design, ImportPacks recursive, GameAnimationSample/EpicVaultCache top)",
+  "E:\\UnrealProjects\\Wayfarer 5.8\\RaceBodies (out, candidates, rodin_analysis, sculpt)",
+  "C:\\Users\\Tyler\\Downloads",
+  "C:\\Users\\Tyler\\Desktop",
+  "C:\\Users\\Tyler\\OneDrive\\Desktop",
+  "C:\\Users\\Tyler\\OneDrive\\Documents\\Unreal Projects",
+  "C:\\Users\\Tyler\\Documents (access granted for this search; incl. Codex outputs recursive)",
+  "C:\\Users\\Tyler\\3D Objects (access granted for this search)",
+  "E:\\Tools"
+ ],
+ "rodin_hyper3d_assets_found": [
+  {
+   "path": "E:\\Wayfarer-Rodin\\Source-Masters\\Vael-Male\\Vael-Male.glb",
+   "size": 34212220,
+   "race": "Vael",
+   "verdict": "not Gorrund; previously screened unusable (relief of a 2D turnaround sheet)"
+  },
+  {
+   "path": "E:\\Wayfarer-Rodin\\Source-Masters\\Vael-Female\\Vael-Female.glb",
+   "size": 38135076,
+   "race": "Vael",
+   "verdict": "not Gorrund; female; relief of a sheet"
+  },
+  {
+   "path": "C:\\Users\\Tyler\\Documents\\Codex\\2026-10-02\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Saurin_Supplied_OBJ_Converted.glb",
+   "size": 37568052,
+   "race": "Saurin",
+   "verdict": "not Gorrund (Saurin Rodin reference library)"
+  }
+ ],
+ "rodin_job_records": "Jobs\\ holds Vael-Male and Vael-Female only; Source-Images\\ is empty; no Gorrund job, manifest or source image exists",
+ "gorrund_named_candidates": [
+  {
+   "path": "E:\\UnrealProjects\\Wayfarer 5.8\\RaceBodies\\out\\Gorrund_Masc.blend",
+   "size": 2397899,
+   "sha256": "c11795f6200d61cd2f41ed0c67b04833c502f4467bc31525cdc6a9e5cbe02e5d",
+   "vertices": 19158,
+   "faces": 18486,
+   "rigged": true,
+   "materials": 0,
+   "male": true,
+   "provenance": "wf_build_races.py MPFB parametric human base (same 19158-vertex topology as the Marchfolk MF-M-R donor), not Rodin / Hyper3D",
+   "verdict": "REJECT as source: parametric human donor (05M \u00a73), helper proxies (hair / skirt) baked in, not a Rodin body"
+  },
+  {
+   "path": "E:\\UnrealProjects\\Wayfarer 5.8\\RaceBodies\\out\\Gorrund_Masc.fbx",
+   "size": 947884,
+   "sha256": "9a6429ab9d6cff7713cc40df09a017319e86e78c2fcd72686143e15f693029f0",
+   "verdict": "export of the same MPFB body; REJECT"
+  },
+  {
+   "path": "E:\\UnrealProjects\\Wayfarer 5.8\\RaceBodies\\out\\GorrundSculpt_Masc.blend",
+   "size": 2528104,
+   "sha256": "b2a369f535e91c4fcb2ff977aafd55507288ae2700f494f4f7a97d42a18109c3",
+   "vertices": 19158,
+   "faces": 18486,
+   "rigged": true,
+   "provenance": "same MPFB base after the early wf_sculpt pass",
+   "verdict": "REJECT (as above)"
+  },
+  {
+   "path": "E:\\UnrealProjects\\Wayfarer 5.8\\RaceBodies\\out\\GorrundSculpt_Masc.fbx",
+   "size": 947900,
+   "sha256": "81540eb1abaface552f56809536cc5f2c3f8cde5a338bc85288fd9390239674a",
+   "verdict": "REJECT"
+  }
+ ],
+ "also_checked_not_relevant": [
+  "C:\\Users\\Tyler\\Downloads\\5f7c6275-...tmp (401 MB): partial Blender 5.0.1 zip download",
+  "Wayfarer_Creature_Concept_Review_Pack.zip (Documents\\Codex): creature concepts, no race bodies",
+  "ImportPacks: Paragon animation FBX and PolyHaven props only"
+ ],
+ "generation_access": {
+  "pipeline": "C:\\Users\\Tyler\\Wayfarer-Rodin\\Scripts\\wayfarer-rodin.ps1 (Hyper3D Rodin Gen-2.5-High, image input)",
+  "api_key": "RODIN_API_KEY Windows user env var on Tyler's PC (not readable or usable from this session)",
+  "session_can_run_powershell": false,
+  "paid_submission_rule": "each -Submit needs Tyler's explicit approval immediately beforehand (Wayfarer-Rodin CLAUDE.md)",
+  "source_image": "none exists for Gorrund",
+  "status": "BLOCKED"
+ }
+}
