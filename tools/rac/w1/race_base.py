@@ -350,10 +350,17 @@ def _cline(Vsk, L):
     cy = np.array(cy); ok = ~np.isnan(cy); cy = _tsmooth(np.interp(zs, zs[ok], cy[ok])[:, None], 4.0)[:, 0]
     return np.interp(Vsk[:, 2], zs, cy)
 
-def skeleton_guard(Vn, V0, Vsk, L, J, info, region="trunk"):
+def skeleton_guard(Vn, V0, Vsk, L, J, info, region="trunk", mode="lean"):
     """the organized surface never cuts inside the accepted skeleton surface (-LEAN, Vsk, same frame) where the composition-infimum bony
     envelope / skeletal proxy is read: the trunk, pelvis and proximal thigh (ALPC stations S2...S7). Outward normals of the skeleton
     surface; floor = min(original tissue . n, 0), so a state that was already inside (none at reference) is not pushed out further."""
+    if mode == "true":                           # RM-OT-05D: Vsk is the TRUE skeletal floor (true_envelope.floor): whole body, no restoration
+        import true_envelope as TE
+        n = TE.outward_normals(Vsk, L["F"], L["keep"]); s1 = np.einsum('ij,ij->i', Vn - Vsk, n)
+        ext = np.clip(L["w_head"] + L["w_neck_01"] + L["w_hand_l"] + L["w_hand_r"] + L["w_fingers_l"] + L["w_fingers_r"], 0, 1)   # not organized; thin parts (ear) fold an inward offset
+        deficit = np.maximum(-s1, 0.0) * L["keep"] * (ext < 0.3); Vn = Vn + deficit[:, None] * n
+        info["guard_mode"] = "true-floor"; info["guard_clamped_vertices"] = int((deficit > 1e-3).sum()); info["guard_max_cm"] = float(deficit.max())
+        return Vn
     n = _onormals(Vsk, L)
     hip, sst, rz, rr, u, ph, wt, thw = _trunk_frame(Vsk, L, J)
     armw = np.maximum.reduce([L["w_" + k] for k in ARMK]); legw = np.maximum.reduce([L["w_" + k] for k in ("calf_l", "calf_r", "foot_l", "foot_r")])
@@ -404,7 +411,21 @@ def organize(V, L, J, spec, skel=None):
     if spec.get("trunk"): D += trunk_base(V + D, L, J, spec["trunk"], info, spec.get("hold_r"))
     info["max_disp_cm"] = float(np.linalg.norm(D, axis=1).max())
     Vn = V + D
-    if skel is not None and spec.get("guard", True): Vn = skeleton_guard(Vn, V, skel, L, J, info)
+    if skel is not None and spec.get("guard", True): Vn = skeleton_guard(Vn, V, skel, L, J, info, mode=spec.get("floor", "lean"))
+    if spec.get("keep_volume"):                  # RM-OT-05D: the organization moves soft tissue, it does not change the composition amount
+        import true_envelope as TE              # the volume lost by removing donor relief is returned as an even layer over the organized trunk / limbs
+        keep = L["keep"].astype(bool); ext = np.clip(L["w_head"] + L["w_neck_01"] + L["w_hand_l"] + L["w_hand_r"] + L["w_fingers_l"] + L["w_fingers_r"]
+                                                    + L["w_foot_l"] + L["w_foot_r"] + L["w_ball_l"] + L["w_ball_r"], 0, 1)
+        armw = np.maximum.reduce([L["w_" + a] for a in ARMK])
+        m = _smooth(((ext < 0.3) & keep).astype(float)[:, None], L["F"], 4)[:, 0] * _armfade(L, 14, 0.03) * np.clip(1 - armw / 0.3, 0, 1)
+        v0 = TE.signed_volume(V, L["F"], keep)
+        for _ in range(3):
+            v1 = TE.signed_volume(Vn, L["F"], keep); n = TE.outward_normals(Vn, L["F"], keep)
+            Fk = L["F"][keep[L["F"]].all(1)]; fa = 0.5 * np.linalg.norm(np.cross(Vn[Fk[:, 1]] - Vn[Fk[:, 0]], Vn[Fk[:, 2]] - Vn[Fk[:, 0]]), axis=1)
+            va = np.zeros(len(Vn)); [np.add.at(va, Fk[:, k], fa / 3) for k in range(3)]
+            dv = abs(v0) - abs(v1); A = float((va * m).sum())
+            Vn = Vn + (dv / max(A, 1e-6)) * m[:, None] * n
+        info["volume_restored_layer_cm"] = float(dv / max(A, 1e-6)); info["volume_ratio_after"] = float(abs(TE.signed_volume(Vn, L["F"], keep)) / abs(v0))
     return Vn, info
 
 apply_base = organize

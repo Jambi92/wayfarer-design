@@ -1,0 +1,248 @@
+{
+ "protocol": "RM-OT-05D \u00a78 revised blind read, run 1 (Grask E1 / E2, Gorrund E1 / E2): 16 bodies = 8 human-family controls + 8 candidate bodies (reference + low), body only, height-normalized, front + profile, grey + silhouette, 3 independent uninformed scorers (never shown the key). Classes A ordinary human-family / B unusual-extreme human-family / C distinct humanoid race-species anatomy; scorers told the set may contain ordinary humans and fictional humanoid races, not which or how many.",
+ "key": {
+  "SK-low": "D01",
+  "MF-nar": "D02",
+  "GR-E2-low": "D03",
+  "GR-E2-ref": "D04",
+  "GR-E1-low": "D05",
+  "GO-E2-ref": "D06",
+  "MF-low": "D07",
+  "GR-E1-ref": "D08",
+  "GO-E2-low": "D09",
+  "SK-ref": "D10",
+  "SK-nar": "D11",
+  "SK-brd": "D12",
+  "MF-ref": "D13",
+  "GO-E1-low": "D14",
+  "MF-brd": "D15",
+  "GO-E1-ref": "D16"
+ },
+ "scorers": {
+  "scorer_1": {
+   "order": "grey, silhouette",
+   "class": {
+    "D01": "A",
+    "D02": "A",
+    "D03": "A (lean B)",
+    "D04": "A (lean B)",
+    "D05": "A",
+    "D06": "C",
+    "D07": "A",
+    "D08": "A",
+    "D09": "C",
+    "D10": "A",
+    "D11": "A",
+    "D12": "A",
+    "D13": "A",
+    "D14": "C",
+    "D15": "A (could be B)",
+    "D16": "C"
+   },
+   "groups": {
+    "boxy columnar (C)": [
+     "D06",
+     "D09",
+     "D14",
+     "D16"
+    ],
+    "ordinary": [
+     "D01",
+     "D02",
+     "D05",
+     "D07",
+     "D08",
+     "D10",
+     "D11",
+     "D12",
+     "D13"
+    ],
+    "edge of human range": [
+     "D03",
+     "D04",
+     "D15"
+    ]
+   },
+   "races_distinguished": "one non-human race (D06, D09, D14, D16); no second race",
+   "C_driver": "anatomical organization: deep boxy trunk, flat back, no waist, thick columnar thighs, thick-to-thin leg transition; D09 partly reads as fat"
+  },
+  "scorer_2": {
+   "order": "silhouette, grey",
+   "class": {
+    "D01": "A",
+    "D02": "A",
+    "D03": "B (maybe C, low confidence)",
+    "D04": "B (maybe C, low confidence)",
+    "D05": "B",
+    "D06": "C",
+    "D07": "A",
+    "D08": "B",
+    "D09": "C",
+    "D10": "A",
+    "D11": "A",
+    "D12": "A",
+    "D13": "A",
+    "D14": "C",
+    "D15": "A/B",
+    "D16": "C"
+   },
+   "groups": {
+    "ordinary": [
+     "D01",
+     "D02",
+     "D07",
+     "D13"
+    ],
+    "athletic": [
+     "D10",
+     "D11",
+     "D12",
+     "D15"
+    ],
+    "lean long-limbed": [
+     "D03",
+     "D04",
+     "D05",
+     "D08"
+    ],
+    "boxy columnar": [
+     "D06",
+     "D09",
+     "D14",
+     "D16"
+    ]
+   },
+   "races_distinguished": "possibly two: boxy group (firm) and lean group D03 / D04 (+ D05, D08) (weaker; would call B)",
+   "C_driver": "boxy group: anatomical organization (rectangular waistless trunk flowing into tube legs, high crotch arch, small ankles), not fat / muscle; lean group would be thinness + limb length"
+  },
+  "scorer_3": {
+   "order": "grey, silhouette",
+   "class": {
+    "D01": "A",
+    "D02": "A",
+    "D03": "A/B",
+    "D04": "A",
+    "D05": "A",
+    "D06": "B",
+    "D07": "A",
+    "D08": "A",
+    "D09": "B",
+    "D10": "A",
+    "D11": "A",
+    "D12": "A",
+    "D13": "A",
+    "D14": "B",
+    "D15": "A",
+    "D16": "B"
+   },
+   "groups": {
+    "slim / lean ordinary": [
+     "D01",
+     "D02",
+     "D03",
+     "D04",
+     "D05",
+     "D08",
+     "D13"
+    ],
+    "average / athletic": [
+     "D07",
+     "D10",
+     "D11",
+     "D12",
+     "D15"
+    ],
+    "heavy / boxy": [
+     "D06",
+     "D09",
+     "D14",
+     "D16"
+    ]
+   },
+   "races_distinguished": "only one possible non-human cluster (D06, D09, D14, D16)",
+   "C_driver": "no C given; boxy group B from organization (boxy deep trunk, columnar thighs, narrow high crotch gap) - \"either an extreme heavy human variation or a separate body plan\""
+  }
+ },
+ "decoded_per_body": {
+  "SK-low": {
+   "scorer_1": "A",
+   "scorer_2": "A",
+   "scorer_3": "A"
+  },
+  "MF-nar": {
+   "scorer_1": "A",
+   "scorer_2": "A",
+   "scorer_3": "A"
+  },
+  "GR-E2-low": {
+   "scorer_1": "A (lean B)",
+   "scorer_2": "B (maybe C, low confidence)",
+   "scorer_3": "A/B"
+  },
+  "GR-E2-ref": {
+   "scorer_1": "A (lean B)",
+   "scorer_2": "B (maybe C, low confidence)",
+   "scorer_3": "A"
+  },
+  "GR-E1-low": {
+   "scorer_1": "A",
+   "scorer_2": "B",
+   "scorer_3": "A"
+  },
+  "GO-E2-ref": {
+   "scorer_1": "C",
+   "scorer_2": "C",
+   "scorer_3": "B"
+  },
+  "MF-low": {
+   "scorer_1": "A",
+   "scorer_2": "A",
+   "scorer_3": "A"
+  },
+  "GR-E1-ref": {
+   "scorer_1": "A",
+   "scorer_2": "B",
+   "scorer_3": "A"
+  },
+  "GO-E2-low": {
+   "scorer_1": "C",
+   "scorer_2": "C",
+   "scorer_3": "B"
+  },
+  "SK-ref": {
+   "scorer_1": "A",
+   "scorer_2": "A",
+   "scorer_3": "A"
+  },
+  "SK-nar": {
+   "scorer_1": "A",
+   "scorer_2": "A",
+   "scorer_3": "A"
+  },
+  "SK-brd": {
+   "scorer_1": "A",
+   "scorer_2": "A",
+   "scorer_3": "A"
+  },
+  "MF-ref": {
+   "scorer_1": "A",
+   "scorer_2": "A",
+   "scorer_3": "A"
+  },
+  "GO-E1-low": {
+   "scorer_1": "C",
+   "scorer_2": "C",
+   "scorer_3": "B"
+  },
+  "MF-brd": {
+   "scorer_1": "A (could be B)",
+   "scorer_2": "A/B",
+   "scorer_3": "A"
+  },
+  "GO-E1-ref": {
+   "scorer_1": "C",
+   "scorer_2": "C",
+   "scorer_3": "B"
+  }
+ }
+}

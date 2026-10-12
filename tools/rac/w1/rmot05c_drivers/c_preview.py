@@ -19,7 +19,11 @@ def envelope(body_prefix, spec, out_id, comp=None, st='r6'):
     f, sc = SE.simil(Dn, R); tissue = R['V'].astype(float) - f(Dn['V'])
     J = json.loads(str(L['joints'])); Jf = {k: [f(a).tolist(), f(b).tolist()] for k, (a, b) in J.items()}
     V0 = f(L['V'].astype(float)) + tissue
-    V, info = RB.organize(V0, L, Jf, spec, skel=f(L['V'].astype(float)))
+    if spec.get('floor') == 'true':
+        import true_envelope as TE
+        skel = f(TE.floor(L['V'].astype(float), L, J)[0])
+    else: skel = f(L['V'].astype(float))
+    V, info = RB.organize(V0, L, Jf, spec, skel=skel)
     keep = L['keep'].astype(bool); V[:, 2] -= V[keep, 2].min()
     Bo = dict(B); Bo['V'] = V.astype(np.float32); np.savez_compressed('%s/%s_%s.npz' % (PREV, out_id, st), **Bo)
     info['stature'] = float(V[keep, 2].max())

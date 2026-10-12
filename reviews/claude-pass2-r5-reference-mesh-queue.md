@@ -285,3 +285,5 @@ The retained Gorrund W1i/W1j reference is **AUTHOR ACCEPTED as the W1 ARM** (`re
 - Limiting canon guards: plantigrade humanoid body plan, locked skeleton / proportions, and the MPFB minimum body acting as the bony guard at the pelvis and shoulder.
 - Finding: the 05B race_surface guard used inward normals.
 - RM-OT-05 stays OPEN; nothing promoted; D4 still blocked.
+
+- **RM-OT-05D returned (2026-10-11):** `reviews/claude-rac-rm-ot-05d-true-skeletal-envelope-race-anatomy-gate.md`. Grask PASS (E3, pending author canon ruling); Gorrund CONSTRAIN; stopped before Stage C. RM-OT-05 OPEN; nothing promoted; D4 blocked.

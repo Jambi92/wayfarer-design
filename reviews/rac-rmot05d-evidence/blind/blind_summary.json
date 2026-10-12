@@ -1,0 +1,514 @@
+{
+ "rule": "a body counts as C for a scorer when the scorer chose C (including \"C (low confidence)\"); \"B/C\" and \"B (possibly C)\" count as not C. Acceptance (order \u00a78): >= 2 / 3 C for both reference and low composition, stable cluster separate from controls, attributed to organization, no control collapse.",
+ "runs": {
+  "run1": {
+   "GO-E1-low": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "B"
+    }
+   },
+   "GO-E1-ref": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "B"
+    }
+   },
+   "GO-E2-low": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "B"
+    }
+   },
+   "GO-E2-ref": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "B"
+    }
+   },
+   "GR-E1-low": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "B",
+     "scorer_3": "A"
+    }
+   },
+   "GR-E1-ref": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "B",
+     "scorer_3": "A"
+    }
+   },
+   "GR-E2-low": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A (lean B)",
+     "scorer_2": "B (maybe C, low confidence)",
+     "scorer_3": "A/B"
+    }
+   },
+   "GR-E2-ref": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A (lean B)",
+     "scorer_2": "B (maybe C, low confidence)",
+     "scorer_3": "A"
+    }
+   },
+   "MF-brd": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A (could be B)",
+     "scorer_2": "A/B",
+     "scorer_3": "A"
+    }
+   },
+   "MF-low": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "MF-nar": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "MF-ref": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-brd": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-low": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-nar": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-ref": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   }
+  },
+  "run2": {
+   "GO-E1-low": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A (heavy end)",
+     "scorer_2": "A/B",
+     "scorer_3": "B"
+    }
+   },
+   "GO-E1-ref": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A (B at most)",
+     "scorer_3": "A"
+    }
+   },
+   "GO-E2-low": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "B",
+     "scorer_2": "B",
+     "scorer_3": "B"
+    }
+   },
+   "GO-E2-ref": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "B",
+     "scorer_2": "B",
+     "scorer_3": "B (borderline A)"
+    }
+   },
+   "GR-E1-low": {
+    "C_count": 3,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "C"
+    }
+   },
+   "GR-E1-ref": {
+    "C_count": 1,
+    "classes": {
+     "scorer_1": "A/B",
+     "scorer_2": "B (possibly C)",
+     "scorer_3": "C (low confidence)"
+    }
+   },
+   "GR-E2-low": {
+    "C_count": 3,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "C"
+    }
+   },
+   "GR-E2-ref": {
+    "C_count": 3,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "C"
+    }
+   },
+   "GR-E3-low": {
+    "C_count": 3,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "C"
+    }
+   },
+   "GR-E3-ref": {
+    "C_count": 3,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "C"
+    }
+   },
+   "MF-brd": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "MF-low": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A/B",
+     "scorer_2": "A/B",
+     "scorer_3": "A"
+    }
+   },
+   "MF-nar": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "MF-ref": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-brd": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-low": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-nar": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A/B (borderline C)",
+     "scorer_2": "B (leaning C)",
+     "scorer_3": "A/B"
+    }
+   },
+   "SK-ref": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   }
+  },
+  "run3": {
+   "GO-E1-low": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "B",
+     "scorer_2": "C (low, could be B)",
+     "scorer_3": "C"
+    }
+   },
+   "GO-E1-ref": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "B",
+     "scorer_2": "C (low, could be B)",
+     "scorer_3": "C"
+    }
+   },
+   "GO-E2-low": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "B",
+     "scorer_2": "C (low, could be B)",
+     "scorer_3": "C"
+    }
+   },
+   "GO-E2-ref": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "B",
+     "scorer_2": "C (low, could be B)",
+     "scorer_3": "C"
+    }
+   },
+   "GR-E1-low": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "B",
+     "scorer_2": "C (low, could be B)",
+     "scorer_3": "C (weak, could be B)"
+    }
+   },
+   "GR-E1-ref": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "B",
+     "scorer_2": "C (low)",
+     "scorer_3": "C (weak, could be B)"
+    }
+   },
+   "GR-E2-low": {
+    "C_count": 3,
+    "classes": {
+     "scorer_1": "C (low confidence)",
+     "scorer_2": "C (low)",
+     "scorer_3": "C (weak, could be B)"
+    }
+   },
+   "GR-E2-ref": {
+    "C_count": 2,
+    "classes": {
+     "scorer_1": "B/C",
+     "scorer_2": "C (low)",
+     "scorer_3": "C"
+    }
+   },
+   "GR-E3-low": {
+    "C_count": 3,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "C"
+    }
+   },
+   "GR-E3-ref": {
+    "C_count": 3,
+    "classes": {
+     "scorer_1": "C",
+     "scorer_2": "C",
+     "scorer_3": "C"
+    }
+   },
+   "MF-brd": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "MF-low": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A (borderline B)",
+     "scorer_3": "B"
+    }
+   },
+   "MF-nar": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "MF-ref": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-brd": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-low": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-nar": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   },
+   "SK-ref": {
+    "C_count": 0,
+    "classes": {
+     "scorer_1": "A",
+     "scorer_2": "A",
+     "scorer_3": "A"
+    }
+   }
+  }
+ },
+ "candidate_table": {
+  "GR-E1": {
+   "run1": {
+    "ref": 0,
+    "low": 0,
+    "meets_2of3": false
+   },
+   "run2": {
+    "ref": 1,
+    "low": 3,
+    "meets_2of3": false
+   },
+   "run3": {
+    "ref": 2,
+    "low": 2,
+    "meets_2of3": true
+   }
+  },
+  "GR-E2": {
+   "run1": {
+    "ref": 0,
+    "low": 0,
+    "meets_2of3": false
+   },
+   "run2": {
+    "ref": 3,
+    "low": 3,
+    "meets_2of3": true
+   },
+   "run3": {
+    "ref": 2,
+    "low": 3,
+    "meets_2of3": true
+   }
+  },
+  "GR-E3": {
+   "run2": {
+    "ref": 3,
+    "low": 3,
+    "meets_2of3": true
+   },
+   "run3": {
+    "ref": 3,
+    "low": 3,
+    "meets_2of3": true
+   }
+  },
+  "GO-E1": {
+   "run1": {
+    "ref": 2,
+    "low": 2,
+    "meets_2of3": true
+   },
+   "run2": {
+    "ref": 0,
+    "low": 0,
+    "meets_2of3": false
+   },
+   "run3": {
+    "ref": 2,
+    "low": 2,
+    "meets_2of3": true
+   }
+  },
+  "GO-E2": {
+   "run1": {
+    "ref": 2,
+    "low": 2,
+    "meets_2of3": true
+   },
+   "run2": {
+    "ref": 0,
+    "low": 0,
+    "meets_2of3": false
+   },
+   "run3": {
+    "ref": 2,
+    "low": 2,
+    "meets_2of3": true
+   }
+  }
+ },
+ "controls_C_reads": {
+  "run1": {},
+  "run2": {},
+  "run3": {}
+ }
+}

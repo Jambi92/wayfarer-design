@@ -119,7 +119,11 @@ def make(lean_b, donor_ref, donor_lean, out, tag=None, smooth=None, sculpt=None,
         if rb:          # RM-OT-05C race base-surface organization of this composition state's composed surface (race_base.py); -LEAN untouched
             import race_base as _RB
             Jl = json.loads(str(L["joints"])); Jf = {k: [f(a).tolist(), f(b).tolist()] for k, (a, b) in Jl.items()}
-            V, _ = _RB.organize(V, L, Jf, rb, skel=f(Vs))
+            if rb.get("floor") == "true":    # RM-OT-05D: guard against the TRUE skeletal floor, not the -LEAN soft-tissue surface
+                import true_envelope as _TE
+                skel = f(_TE.floor(Vs, L, json.loads(str(L["joints"])))[0])
+            else: skel = f(Vs)
+            V, _ = _RB.organize(V, L, Jf, rb, skel=skel)
         # re-ground (feet on u = 0) after adding plantar tissue
         keep = L["keep"]; z0 = V[keep, 2].min(); V[:, 2] -= z0
         J = json.loads(str(L["joints"])); J = {k: [(f(a) - [0, 0, z0]).tolist(), (f(b) - [0, 0, z0]).tolist()] for k, (a, b) in J.items()}
