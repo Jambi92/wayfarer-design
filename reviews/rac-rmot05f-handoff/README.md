@@ -5,6 +5,8 @@ Gate: `reviews/claude-rac-rm-ot-05f-gorrund-hand-sculpt-handoff-gate.md`
 
 **FROZEN** (freeze order `reviews/chatgpt-rac-rm-ot-05f-handoff-author-ruling-freeze-order.md`): Q1 approved, waist wording corrected in the brief. Gorrund: **EXTERNAL SCULPT REQUIRED — AWAITING ASSET**. `figures/region_map.png` is an editing-jurisdiction guide only; the brief text governs anatomy.
 
+**Blender production companion (RM-OT-05G):** `blender/README.md` (setup, controlled exporter, preview, views, preflight, checklists). It supersedes the brief §1 exporter note for Blender 4.2 / 5.0.
+
 Nothing in this folder is an accepted Gorrund body. The start mesh is the *unorganized* accepted skeleton route; the failed 05C–05E candidates appear only as labelled "must not" evidence.
 
 ## 1. External asset required

@@ -2,6 +2,7 @@
 
 **Authority:** `reviews/chatgpt-rac-rm-ot-05f-gorrund-hand-sculpt-handoff-stage-c-order.md` (author decision after RM-OT-05E).
 **Status:** **FROZEN** for external / direct sculpt production (`reviews/chatgpt-rac-rm-ot-05f-handoff-author-ruling-freeze-order.md`): Q1 approved and the waist wording corrected (§3, §4A, §5, §8). Family intents and validator thresholds may change only if a genuine conflict with locked canon is shown. Gorrund: **EXTERNAL SCULPT REQUIRED — AWAITING ASSET**.
+**Blender route (RM-OT-05G, navigation pointer only):** use `rac-rmot05f-handoff/blender/README.md`. Its controlled exporter replaces the §1 "Exporter notes" for Blender 4.2 / 5.0, which have no Keep Vert Order option.
 **Purpose:** handoff brief for an external sculptor or a direct mesh-edit workflow. Nothing in this brief is canon. It does not change, extend or replace `specs/gorrund/GORRUND_V1.md`; where this brief and canon differ, canon governs and the difference is listed in §3 for the author.
 **Package:** `reviews/rac-rmot05f-handoff/` (start mesh, guide meshes, joints, stations, region masks, figures, evidence index).
 **Validation:** `tools/rac/w1/rmot05f_drivers/` (re-entry validator and blind-gate runner; §9–§10).

@@ -293,3 +293,5 @@ The retained Gorrund W1i/W1j reference is **AUTHOR ACCEPTED as the W1 ARM** (`re
 - **RM-OT-05F returned (2026-10-11):** `reviews/claude-rac-rm-ot-05f-gorrund-hand-sculpt-handoff-gate.md`. Handoff ready (brief, package, validator, blind runner); waiting for the external Gorrund sculpt and the author's Q1 ruling. Stage C not started. RM-OT-05 OPEN; nothing promoted; D4 blocked.
 
 - **RM-OT-05F handoff frozen (2026-10-11):** `reviews/claude-rac-rm-ot-05f-handoff-author-ruling-closure.md`. Q1 approved, waist wording corrected, package frozen. Gorrund: EXTERNAL SCULPT REQUIRED — AWAITING ASSET. Stage C blocked. RM-OT-05 OPEN; D4 blocked.
+
+- **RM-OT-05G Blender handoff prepared (2026-10-11):** `reviews/claude-rac-rm-ot-05g-blender-sculpt-production-handoff-report.md`; companion `reviews/rac-rmot05f-handoff/blender/`. Waiting for the sculptor's `GO_sculpt_S1_r6.obj`. Stage C blocked. RM-OT-05 OPEN.
