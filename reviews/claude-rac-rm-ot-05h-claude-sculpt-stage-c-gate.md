@@ -26,10 +26,10 @@ No acceptance threshold, guard, scorer prompt, tally rule or canon rule was chan
 
 ## 1. Release / hash verification
 
-- **Release:** `gorrund-sculpt-release-8b76d2eae245`, zip SHA-256 `287884f0…191bcd` (`reviews/rac-rmot05g-release/`).
+- **Release zip:** `gorrund-sculpt-release-8b76d2eae245.zip` (the copy delivered in package v111) hashes to `287884f0da90df18cc9bd51e2291b8c602d88df0517fcfb8556513ce2f191bcd`, which matches `reviews/rac-rmot05g-release/`. Unpacked fresh, all 81 manifest files match `RELEASE_MANIFEST.json`.
 - **Scripts:** the five Blender scripts match `blender/scripts/SHA256SUMS.txt` (`sha256sum -c` OK).
-- **Data and frozen files:** the template, true floor, `regions.json`, `joints_r6.json`, the brief, the scripts and every non-image file match `RELEASE_MANIFEST.json`.
-- **Deviation:** 31 documentation images (figure PNGs and the evidence/tooling JPGs and PNGs) do not match the manifest in either the working copy or the PC copy. Their sizes differ, which suggests they were re-encoded in transit. They are illustrations only; no tool reads them. The zip itself was not on the PC to re-hash.
+- **Frozen files:** the template, true floor, `regions.json`, `joints_r6.json` and the brief all match.
+- **Working copy on the PC:** every tool, data and template file matches. 31 documentation images (figure PNGs and the evidence/tooling JPGs and PNGs) differ in bytes and size from the zip, so they were re-encoded at some point after extraction. No tool reads them, so they have no effect on the sculpt or on validation. The zip itself is intact.
 
 ## 2. Desktop verification (checklist §0, fixture ID DT)
 
