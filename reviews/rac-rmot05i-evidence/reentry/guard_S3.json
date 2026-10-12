@@ -1,0 +1,1187 @@
+{
+ "GO5FS3": {
+  "baseline_05C": "GO5DE1",
+  "race_base_floor": "true",
+  "stature_cm": 230.89727783203125,
+  "stature_05C_cm": 230.89727783203125,
+  "stature_pass": true,
+  "ground": {
+   "min_u_cm": 0.0,
+   "foot_min_u_cm": {
+    "l": 0.0,
+    "r": 0.0
+   },
+   "pass": true
+  },
+  "skeleton_unchanged": {
+   "max_joint_delta_cm": 0.0,
+   "max_LEAN_vertex_delta_cm": 0.0,
+   "bone_scales_equal": true,
+   "pass": true
+  },
+  "outward_normal_test": {
+   "body": {
+    "chest_front(+y)": [
+     -0.0,
+     0.997,
+     0.071,
+     true
+    ],
+    "back(-y)": [
+     -0.0,
+     -1.0,
+     -0.007,
+     true
+    ],
+    "crown(+z)": [
+     -0.0,
+     0.04,
+     0.999,
+     true
+    ],
+    "sole_l(-z)": [
+     0.062,
+     -0.061,
+     -0.996,
+     true
+    ],
+    "lateral_thigh_l(+x)": [
+     0.998,
+     0.06,
+     0.035,
+     true
+    ],
+    "signed_volume": -195544.5012243334
+   },
+   "lean": {
+    "chest_front(+y)": [
+     -0.044,
+     0.994,
+     0.102,
+     true
+    ],
+    "back(-y)": [
+     -0.0,
+     -0.999,
+     0.037,
+     true
+    ],
+    "crown(+z)": [
+     -0.0,
+     0.04,
+     0.999,
+     true
+    ],
+    "sole_l(-z)": [
+     0.062,
+     -0.061,
+     -0.996,
+     true
+    ],
+    "lateral_thigh_l(+x)": [
+     0.966,
+     0.143,
+     0.213,
+     true
+    ],
+    "signed_volume": -151414.64271766014
+   },
+   "pass": true
+  },
+  "true_floor": {
+   "organized_region": {
+    "min_signed_cm": -2.663921199741459e-06,
+    "n_inside_0p2cm": 0
+   },
+   "head_neck_hands_not_organized": {
+    "n_floor_test_inside_0p2cm": 79,
+    "max_change_vs_route_cm": 0.7828888406031442,
+    "note": "not organized (left as the route); the 0.4 cm inward offset folds on thin parts (ear, fingers), so the floor test is not meaningful there"
+   },
+   "pass": true
+  },
+  "plantigrade": {
+   "body": {
+    "l": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.4602400064468384
+    },
+    "r": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.4602400064468384
+    }
+   },
+   "baseline_E1": {
+    "l": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.46023982763290405
+    },
+    "r": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.46023982763290405
+    }
+   },
+   "pass": true
+  },
+  "hand_foot_topology": {
+   "faces_identical_to_baseline": true,
+   "n_vertices_equal": true,
+   "max_hand_digit_change_vs_route_cm": 2.416288386797305e-05,
+   "pass": true
+  },
+  "proxy_floor_dependency": "posterior hip-level depth (S6 depth; gluteal over ischium) and S2 lateral (latissimus / serratus cover) remain skeleton proxies (true_envelope.DEPENDENCIES); 05E cues there (posterior plane, pelvis-thigh transition, trunk corners) are bounded by the proxy floor, not by bone",
+  "self_intersection": {
+   "piercing_edges": 71,
+   "route_without_05D": 67,
+   "pass": true
+  },
+  "arm_clearance": {
+   "l": {
+    "min_arm_trunk_gap_cm": 0.6030281034375583,
+    "verts_inside_trunk_section": 0
+   },
+   "r": {
+    "min_arm_trunk_gap_cm": 0.6028571219333476,
+    "verts_inside_trunk_section": 0
+   },
+   "pass": true
+  },
+  "posture": {
+   "r6_joints_equal_05C": true,
+   "pass": true
+  },
+  "volume_l": -195.5445012243334,
+  "volume_route_l": -195.54452219999172,
+  "volume_ratio_vs_route": 0.9999998927320588,
+  "skin_pelvic_AP_cm": 29.893065452575684,
+  "skin_stations": {
+   "S2": [
+    47.40977446732099,
+    39.80424163636326
+   ],
+   "S3": [
+    47.415779853108596,
+    39.092932215206304
+   ],
+   "S4": [
+    45.63079032795253,
+    31.8567898517801
+   ],
+   "S5": [
+    45.63079032795253,
+    31.8567898517801
+   ],
+   "S6": [
+    48.3377799987793,
+    29.99313920950494
+   ],
+   "S7": [
+    26.719938199922716,
+    26.434898326161527
+   ]
+  },
+  "skeletal_stations": {
+   "levels_from": "GO5FS3-LEAN (skeleton surface)",
+   "levels": {
+    "S2b": 8,
+    "S2d": 5,
+    "S4": 4
+   },
+   "protected_unorganized_route": {
+    "stations": {
+     "S2": [
+      40.78293031948454,
+      35.1788894650098
+     ],
+     "S3": [
+      37.42306713281542,
+      32.31931456691274
+     ],
+     "S4": [
+      34.22184005955194,
+      28.70751865104584
+     ],
+     "S5": [
+      41.7386137901585,
+      27.460633026812232
+     ],
+     "S6": [
+      49.444013595581055,
+      30.149932813592137
+     ],
+     "S7": [
+      21.348791021217288,
+      22.96291249291211
+     ]
+    },
+    "ratios": {
+     "bitroch_over_crest": 1.1846108221073552,
+     "pelvis_over_thorax_breadth": 1.0234334184225446,
+     "pelvic_depth_over_thorax_depth": 0.8570461794588585,
+     "S4_over_S2_b": 0.8391216568173385,
+     "S3_over_S2_d": 0.9187133266119357
+    }
+   },
+   "organized": {
+    "stations": {
+     "S2": [
+      39.251755024705645,
+      35.1788894650098
+     ],
+     "S3": [
+      37.42306713281542,
+      32.31931456691274
+     ],
+     "S4": [
+      34.22184005955194,
+      28.70751865104584
+     ],
+     "S5": [
+      43.52322646965022,
+      27.460633026812232
+     ],
+     "S6": [
+      46.96696662902832,
+      27.201739044691912
+     ],
+     "S7": [
+      21.348791021217288,
+      22.96291249291211
+     ]
+    },
+    "ratios": {
+     "bitroch_over_crest": 1.0791241927291282,
+     "pelvis_over_thorax_breadth": 1.1088224320735733,
+     "pelvic_depth_over_thorax_depth": 0.77324041373585,
+     "S4_over_S2_b": 0.8718550301257153,
+     "S3_over_S2_d": 0.9187133266119357
+    },
+    "argmin": {
+     "S2": [
+      "GO5FS3-C000050",
+      "GO5FS3-LEAN"
+     ],
+     "S3": [
+      "GO5FS3-LEAN",
+      "GO5FS3-LEAN"
+     ],
+     "S4": [
+      "GO5FS3-LEAN",
+      "GO5FS3-LEAN"
+     ],
+     "S5": [
+      "GO5FS3-C050000",
+      "GO5FS3-LEAN"
+     ],
+     "S6": [
+      "GO5FS3-C025000",
+      "GO5FS3-C025000"
+     ],
+     "S7": [
+      "GO5FS3-LEAN",
+      "GO5FS3-LEAN"
+     ]
+    }
+   },
+   "true_floor": {
+    "stations": {
+     "S2": [
+      41.89647163940505,
+      32.42414127711356
+     ],
+     "S3": [
+      34.05418467892495,
+      28.40505515342347
+     ],
+     "S4": [
+      30.93162148978821,
+      24.7965280750895
+     ],
+     "S5": [
+      40.898892111278535,
+      23.782620691276513
+     ],
+     "S6": [
+      46.55891418457031,
+      25.479319189219666
+     ],
+     "S7": [
+      11.391938976271078,
+      10.82688432754836
+     ]
+    },
+    "ratios": {
+     "bitroch_over_crest": 1.1383905964467662,
+     "pelvis_over_thorax_breadth": 0.976189414308859,
+     "pelvic_depth_over_thorax_depth": 0.7858132300701555,
+     "S4_over_S2_b": 0.7382870270320323,
+     "S3_over_S2_d": 0.876046489887245
+    }
+   },
+   "legacy_own_skin_levels": {
+    "bitroch_over_crest": 1.0791241485578504,
+    "pelvis_over_thorax_breadth": 1.2709969932593215,
+    "pelvic_depth_over_thorax_depth": 0.7779653786404291
+   }
+  },
+  "composition_ordering": {
+   "per_station_same_sign_as_baseline": {
+    "S2": [
+     1.0,
+     1.0
+    ],
+    "S5": [
+     1.0,
+     1.0
+    ],
+    "S6": [
+     1.0,
+     1.0
+    ]
+   },
+   "pass": true
+  },
+  "frame_ordering": {
+   "per_station_same_as_baseline": {
+    "S2": true,
+    "S5": true,
+    "S6": true
+   },
+   "pass": true
+  }
+ },
+ "GO5FS3-LOW": {
+  "baseline_05C": "GO5DE1-LOW",
+  "race_base_floor": "true",
+  "stature_cm": 230.7519989013672,
+  "stature_05C_cm": 230.7519989013672,
+  "stature_pass": true,
+  "ground": {
+   "min_u_cm": 0.0,
+   "foot_min_u_cm": {
+    "l": 0.0,
+    "r": 0.0
+   },
+   "pass": true
+  },
+  "skeleton_unchanged": {
+   "max_joint_delta_cm": 0.0,
+   "max_LEAN_vertex_delta_cm": 0.0,
+   "bone_scales_equal": true,
+   "pass": true
+  },
+  "outward_normal_test": {
+   "body": {
+    "chest_front(+y)": [
+     -0.0,
+     0.993,
+     0.121,
+     true
+    ],
+    "back(-y)": [
+     -0.0,
+     -0.999,
+     0.048,
+     true
+    ],
+    "crown(+z)": [
+     -0.0,
+     0.04,
+     0.999,
+     true
+    ],
+    "sole_l(-z)": [
+     0.062,
+     -0.061,
+     -0.996,
+     true
+    ],
+    "lateral_thigh_l(+x)": [
+     0.985,
+     -0.172,
+     0.001,
+     true
+    ],
+    "signed_volume": -209011.58112372094
+   },
+   "lean": {
+    "chest_front(+y)": [
+     -0.044,
+     0.994,
+     0.102,
+     true
+    ],
+    "back(-y)": [
+     -0.0,
+     -0.999,
+     0.037,
+     true
+    ],
+    "crown(+z)": [
+     -0.0,
+     0.04,
+     0.999,
+     true
+    ],
+    "sole_l(-z)": [
+     0.062,
+     -0.061,
+     -0.996,
+     true
+    ],
+    "lateral_thigh_l(+x)": [
+     0.966,
+     0.143,
+     0.213,
+     true
+    ],
+    "signed_volume": -151414.64271766014
+   },
+   "pass": true
+  },
+  "true_floor": {
+   "organized_region": {
+    "min_signed_cm": -2.4197171675788276e-06,
+    "n_inside_0p2cm": 0
+   },
+   "head_neck_hands_not_organized": {
+    "n_floor_test_inside_0p2cm": 79,
+    "max_change_vs_route_cm": 0.7823762351144907,
+    "note": "not organized (left as the route); the 0.4 cm inward offset folds on thin parts (ear, fingers), so the floor test is not meaningful there"
+   },
+   "pass": true
+  },
+  "plantigrade": {
+   "body": {
+    "l": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.46002617478370667
+    },
+    "r": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.46002617478370667
+    }
+   },
+   "baseline_E1": {
+    "l": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.4600260257720947
+    },
+    "r": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.4600260257720947
+    }
+   },
+   "pass": true
+  },
+  "hand_foot_topology": {
+   "faces_identical_to_baseline": true,
+   "n_vertices_equal": true,
+   "max_hand_digit_change_vs_route_cm": 2.5398152381228556e-05,
+   "pass": true
+  },
+  "proxy_floor_dependency": "posterior hip-level depth (S6 depth; gluteal over ischium) and S2 lateral (latissimus / serratus cover) remain skeleton proxies (true_envelope.DEPENDENCIES); 05E cues there (posterior plane, pelvis-thigh transition, trunk corners) are bounded by the proxy floor, not by bone",
+  "self_intersection": {
+   "piercing_edges": 74,
+   "route_without_05D": 78,
+   "pass": true
+  },
+  "arm_clearance": {
+   "l": {
+    "min_arm_trunk_gap_cm": 0.7717709969973175,
+    "verts_inside_trunk_section": 0
+   },
+   "r": {
+    "min_arm_trunk_gap_cm": 0.7715553180327835,
+    "verts_inside_trunk_section": 0
+   },
+   "pass": true
+  },
+  "posture": {
+   "r6_joints_equal_05C": true,
+   "pass": true
+  },
+  "volume_l": -209.01158112372093,
+  "volume_route_l": -209.01160689260834,
+  "volume_ratio_vs_route": 0.9999998767107349,
+  "skin_pelvic_AP_cm": 34.62107276916504,
+  "skin_stations": {
+   "S2": [
+    52.181910273852004,
+    44.8068684633195
+   ],
+   "S3": [
+    49.78311002761015,
+    44.40244196524084
+   ],
+   "S4": [
+    47.455915721641176,
+    36.86047938886139
+   ],
+   "S5": [
+    47.455915721641176,
+    36.86047938886139
+   ],
+   "S6": [
+    51.099796295166016,
+    34.64532276863055
+   ],
+   "S7": [
+    27.294746569782838,
+    27.613022009404894
+   ]
+  }
+ },
+ "GO5FS3N": {
+  "baseline_05C": "GO5DE1N",
+  "race_base_floor": "true",
+  "stature_cm": 230.89730834960938,
+  "stature_05C_cm": 230.8972930908203,
+  "stature_pass": true,
+  "ground": {
+   "min_u_cm": 0.0,
+   "foot_min_u_cm": {
+    "l": 4.235164736271502e-22,
+    "r": 0.0
+   },
+   "pass": true
+  },
+  "skeleton_unchanged": {
+   "max_joint_delta_cm": 2.842170943040401e-14,
+   "max_LEAN_vertex_delta_cm": 0.0,
+   "bone_scales_equal": true,
+   "pass": true
+  },
+  "outward_normal_test": {
+   "body": {
+    "chest_front(+y)": [
+     -0.0,
+     0.997,
+     0.071,
+     true
+    ],
+    "back(-y)": [
+     -0.0,
+     -1.0,
+     -0.007,
+     true
+    ],
+    "crown(+z)": [
+     -0.0,
+     0.04,
+     0.999,
+     true
+    ],
+    "sole_l(-z)": [
+     0.062,
+     -0.061,
+     -0.996,
+     true
+    ],
+    "lateral_thigh_l(+x)": [
+     0.998,
+     0.058,
+     0.035,
+     true
+    ],
+    "signed_volume": -188729.24444812106
+   },
+   "lean": {
+    "chest_front(+y)": [
+     -0.049,
+     0.994,
+     0.102,
+     true
+    ],
+    "back(-y)": [
+     -0.0,
+     -0.999,
+     0.036,
+     true
+    ],
+    "crown(+z)": [
+     -0.0,
+     0.04,
+     0.999,
+     true
+    ],
+    "sole_l(-z)": [
+     0.062,
+     -0.061,
+     -0.996,
+     true
+    ],
+    "lateral_thigh_l(+x)": [
+     0.966,
+     0.144,
+     0.215,
+     true
+    ],
+    "signed_volume": -145390.38769542458
+   },
+   "pass": true
+  },
+  "true_floor": {
+   "organized_region": {
+    "min_signed_cm": 1.6099054295226622e-06,
+    "n_inside_0p2cm": 0
+   },
+   "head_neck_hands_not_organized": {
+    "n_floor_test_inside_0p2cm": 79,
+    "max_change_vs_route_cm": 0.7828887811547869,
+    "note": "not organized (left as the route); the 0.4 cm inward offset folds on thin parts (ear, fingers), so the floor test is not meaningful there"
+   },
+   "pass": true
+  },
+  "plantigrade": {
+   "body": {
+    "l": {
+     "heel_min_u_cm": 4.235164736271502e-22,
+     "ball_min_u_cm": 0.4602392315864563
+    },
+    "r": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.4602392315864563
+    }
+   },
+   "baseline_E1": {
+    "l": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.46023908257484436
+    },
+    "r": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.46023908257484436
+    }
+   },
+   "pass": true
+  },
+  "hand_foot_topology": {
+   "faces_identical_to_baseline": true,
+   "n_vertices_equal": true,
+   "max_hand_digit_change_vs_route_cm": 2.5139376724325757e-05,
+   "pass": true
+  },
+  "proxy_floor_dependency": "posterior hip-level depth (S6 depth; gluteal over ischium) and S2 lateral (latissimus / serratus cover) remain skeleton proxies (true_envelope.DEPENDENCIES); 05E cues there (posterior plane, pelvis-thigh transition, trunk corners) are bounded by the proxy floor, not by bone",
+  "self_intersection": {
+   "piercing_edges": 60,
+   "route_without_05D": 57,
+   "pass": true
+  },
+  "arm_clearance": {
+   "l": {
+    "min_arm_trunk_gap_cm": 0.8377516267566505,
+    "verts_inside_trunk_section": 0
+   },
+   "r": {
+    "min_arm_trunk_gap_cm": 0.8375193367533543,
+    "verts_inside_trunk_section": 0
+   },
+   "pass": true
+  },
+  "posture": {
+   "r6_joints_equal_05C": true,
+   "pass": true
+  },
+  "volume_l": -188.72924444812105,
+  "volume_route_l": -188.72926520427797,
+  "volume_ratio_vs_route": 0.9999998900215242,
+  "skin_pelvic_AP_cm": 29.838590621948242,
+  "skin_stations": {
+   "S2": [
+    45.66390918030434,
+    39.80844114200504
+   ],
+   "S3": [
+    44.795509471095556,
+    39.10500506846063
+   ],
+   "S4": [
+    44.60423729139555,
+    31.858484897758977
+   ],
+   "S5": [
+    44.60423729139555,
+    31.858484897758977
+   ],
+   "S6": [
+    47.054222106933594,
+    29.91195062443803
+   ],
+   "S7": [
+    26.303374378075336,
+    26.027926088372507
+   ]
+  },
+  "skeletal_stations": {
+   "levels_from": "GO5FS3N-LEAN (skeleton surface)",
+   "levels": {
+    "S2b": 8,
+    "S2d": 5,
+    "S4": 4
+   },
+   "protected_unorganized_route": {
+    "stations": {
+     "S2": [
+      37.933851366340576,
+      35.17950415016829
+     ],
+     "S3": [
+      34.774040211206724,
+      32.31891120476888
+     ],
+     "S4": [
+      32.48578168019752,
+      28.705101946150485
+     ],
+     "S5": [
+      40.73354133129701,
+      27.451931394598287
+     ],
+     "S6": [
+      48.48385238647461,
+      30.06102456731628
+     ],
+     "S7": [
+      20.926625912086614,
+      22.548840908233807
+     ]
+    },
+    "ratios": {
+     "bitroch_over_crest": 1.190268530598462,
+     "pelvis_over_thorax_breadth": 1.0738045271996994,
+     "pelvic_depth_over_thorax_depth": 0.8545039304419098,
+     "S4_over_S2_b": 0.8563797376246053,
+     "S3_over_S2_d": 0.918685808270958
+    }
+   },
+   "organized": {
+    "stations": {
+     "S2": [
+      36.37003583970982,
+      35.17950415016829
+     ],
+     "S3": [
+      34.774040211206724,
+      32.31891120476888
+     ],
+     "S4": [
+      32.48578168019752,
+      28.705101946150485
+     ],
+     "S5": [
+      42.49166197683557,
+      27.451931394598287
+     ],
+     "S6": [
+      46.019914627075195,
+      27.1398522786336
+     ],
+     "S7": [
+      20.926625912086614,
+      22.548840908233807
+     ]
+    },
+    "ratios": {
+     "bitroch_over_crest": 1.083033999756542,
+     "pelvis_over_thorax_breadth": 1.1683150977388366,
+     "pelvic_depth_over_thorax_depth": 0.7714677319721054,
+     "S4_over_S2_b": 0.8932018055568874,
+     "S3_over_S2_d": 0.918685808270958
+    },
+    "argmin": {
+     "S2": [
+      "GO5FS3N-C000050",
+      "GO5FS3N-LEAN"
+     ],
+     "S3": [
+      "GO5FS3N-LEAN",
+      "GO5FS3N-LEAN"
+     ],
+     "S4": [
+      "GO5FS3N-LEAN",
+      "GO5FS3N-LEAN"
+     ],
+     "S5": [
+      "GO5FS3N-C050000",
+      "GO5FS3N-LEAN"
+     ],
+     "S6": [
+      "GO5FS3N-C025000",
+      "GO5FS3N-C025000"
+     ],
+     "S7": [
+      "GO5FS3N-LEAN",
+      "GO5FS3N-LEAN"
+     ]
+    }
+   },
+   "true_floor": {
+    "stations": {
+     "S2": [
+      38.92462920488235,
+      32.4937541216826
+     ],
+     "S3": [
+      31.39077543991201,
+      28.429390585210466
+     ],
+     "S4": [
+      29.230389613801535,
+      24.81298983605324
+     ],
+     "S5": [
+      39.85388832247327,
+      23.795695153115716
+     ],
+     "S6": [
+      45.54408073425293,
+      25.45479487404382
+     ],
+     "S7": [
+      11.13824081636897,
+      10.583386181767569
+     ]
+    },
+    "ratios": {
+     "bitroch_over_crest": 1.1427763425675836,
+     "pelvis_over_thorax_breadth": 1.0238732940190567,
+     "pelvic_depth_over_thorax_depth": 0.7833750073543584,
+     "S4_over_S2_b": 0.7509484408944643,
+     "S3_over_S2_d": 0.8749186221680664
+    }
+   },
+   "legacy_own_skin_levels": {
+    "bitroch_over_crest": 1.0830340148832571,
+    "pelvis_over_thorax_breadth": 1.307799161775626,
+    "pelvic_depth_over_thorax_depth": 0.7764356369839062
+   }
+  }
+ },
+ "GO5FS3B": {
+  "baseline_05C": "GO5DE1B",
+  "race_base_floor": "true",
+  "stature_cm": 230.8972930908203,
+  "stature_05C_cm": 230.89727783203125,
+  "stature_pass": true,
+  "ground": {
+   "min_u_cm": 0.0,
+   "foot_min_u_cm": {
+    "l": 0.0,
+    "r": 0.0
+   },
+   "pass": true
+  },
+  "skeleton_unchanged": {
+   "max_joint_delta_cm": 8.526512829121202e-14,
+   "max_LEAN_vertex_delta_cm": 0.0,
+   "bone_scales_equal": true,
+   "pass": true
+  },
+  "outward_normal_test": {
+   "body": {
+    "chest_front(+y)": [
+     -0.0,
+     0.997,
+     0.071,
+     true
+    ],
+    "back(-y)": [
+     -0.0,
+     -1.0,
+     -0.007,
+     true
+    ],
+    "crown(+z)": [
+     -0.0,
+     0.04,
+     0.999,
+     true
+    ],
+    "sole_l(-z)": [
+     0.062,
+     -0.061,
+     -0.996,
+     true
+    ],
+    "lateral_thigh_l(+x)": [
+     0.997,
+     0.064,
+     0.034,
+     true
+    ],
+    "signed_volume": -202152.02297202498
+   },
+   "lean": {
+    "chest_front(+y)": [
+     -0.044,
+     0.994,
+     0.102,
+     true
+    ],
+    "back(-y)": [
+     -0.0,
+     -0.999,
+     0.037,
+     true
+    ],
+    "crown(+z)": [
+     -0.0,
+     0.04,
+     0.999,
+     true
+    ],
+    "sole_l(-z)": [
+     0.062,
+     -0.061,
+     -0.996,
+     true
+    ],
+    "lateral_thigh_l(+x)": [
+     0.966,
+     0.142,
+     0.214,
+     true
+    ],
+    "signed_volume": -156839.62979912595
+   },
+   "pass": true
+  },
+  "true_floor": {
+   "organized_region": {
+    "min_signed_cm": 1.4901988498738916e-06,
+    "n_inside_0p2cm": 0
+   },
+   "head_neck_hands_not_organized": {
+    "n_floor_test_inside_0p2cm": 79,
+    "max_change_vs_route_cm": 0.7828885678154389,
+    "note": "not organized (left as the route); the 0.4 cm inward offset folds on thin parts (ear, fingers), so the floor test is not meaningful there"
+   },
+   "pass": true
+  },
+  "plantigrade": {
+   "body": {
+    "l": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.4602424204349518
+    },
+    "r": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.4602424204349518
+    }
+   },
+   "baseline_E1": {
+    "l": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.46024227142333984
+    },
+    "r": {
+     "heel_min_u_cm": 0.0,
+     "ball_min_u_cm": 0.46024227142333984
+    }
+   },
+   "pass": true
+  },
+  "hand_foot_topology": {
+   "faces_identical_to_baseline": true,
+   "n_vertices_equal": true,
+   "max_hand_digit_change_vs_route_cm": 2.458964109308681e-05,
+   "pass": true
+  },
+  "proxy_floor_dependency": "posterior hip-level depth (S6 depth; gluteal over ischium) and S2 lateral (latissimus / serratus cover) remain skeleton proxies (true_envelope.DEPENDENCIES); 05E cues there (posterior plane, pelvis-thigh transition, trunk corners) are bounded by the proxy floor, not by bone",
+  "self_intersection": {
+   "piercing_edges": 53,
+   "route_without_05D": 53,
+   "pass": true
+  },
+  "arm_clearance": {
+   "l": {
+    "min_arm_trunk_gap_cm": 0.8685335937000632,
+    "verts_inside_trunk_section": 0
+   },
+   "r": {
+    "min_arm_trunk_gap_cm": 0.8684091288330366,
+    "verts_inside_trunk_section": 0
+   },
+   "pass": true
+  },
+  "posture": {
+   "r6_joints_equal_05C": true,
+   "pass": true
+  },
+  "volume_l": -202.15202297202498,
+  "volume_route_l": -202.15204564809275,
+  "volume_ratio_vs_route": 0.9999998878266717,
+  "skin_pelvic_AP_cm": 30.077186584472656,
+  "skin_stations": {
+   "S2": [
+    48.93342291361978,
+    39.82221496798046
+   ],
+   "S3": [
+    48.075561088452595,
+    39.11078081394807
+   ],
+   "S4": [
+    47.68324132779017,
+    31.900759310385716
+   ],
+   "S5": [
+    47.68324132779017,
+    31.900759310385716
+   ],
+   "S6": [
+    51.23656463623047,
+    30.247089927685977
+   ],
+   "S7": [
+    27.809522090012777,
+    27.503243946405185
+   ]
+  },
+  "skeletal_stations": {
+   "levels_from": "GO5FS3B-LEAN (skeleton surface)",
+   "levels": {
+    "S2b": 8,
+    "S2d": 5,
+    "S4": 4
+   },
+   "protected_unorganized_route": {
+    "stations": {
+     "S2": [
+      40.89653141520324,
+      35.17884059555703
+     ],
+     "S3": [
+      38.0222825585177,
+      32.32022040029123
+     ],
+     "S4": [
+      35.74371948045628,
+      28.713548606694317
+     ],
+     "S5": [
+      43.8089148506984,
+      27.482360162716223
+     ],
+     "S6": [
+      51.84330749511719,
+      30.372118780796633
+     ],
+     "S7": [
+      22.404208389260376,
+      23.998882289583726
+     ]
+    },
+    "ratios": {
+     "bitroch_over_crest": 1.1833962943798118,
+     "pelvis_over_thorax_breadth": 1.0712134583230812,
+     "pelvic_depth_over_thorax_depth": 0.8633632679933327,
+     "S4_over_S2_b": 0.8740036928209659,
+     "S3_over_S2_d": 0.9187403522438191
+    }
+   },
+   "organized": {
+    "stations": {
+     "S2": [
+      39.37540770259169,
+      35.17884059555703
+     ],
+     "S3": [
+      38.0222825585177,
+      32.32022040029123
+     ],
+     "S4": [
+      35.74371948045628,
+      28.713548606694317
+     ],
+     "S5": [
+      45.55295428189439,
+      27.482360162716223
+     ],
+     "S6": [
+      49.38307189941406,
+      27.408460727813104
+     ],
+     "S7": [
+      22.404208389260376,
+      23.998882289583726
+     ]
+    },
+    "ratios": {
+     "bitroch_over_crest": 1.0840805536742544,
+     "pelvis_over_thorax_breadth": 1.1568884473771708,
+     "pelvic_depth_over_thorax_depth": 0.779117795350956,
+     "S4_over_S2_b": 0.9077676033333778,
+     "S3_over_S2_d": 0.9187403522438191
+    },
+    "argmin": {
+     "S2": [
+      "GO5FS3B-C000050",
+      "GO5FS3B-LEAN"
+     ],
+     "S3": [
+      "GO5FS3B-LEAN",
+      "GO5FS3B-LEAN"
+     ],
+     "S4": [
+      "GO5FS3B-LEAN",
+      "GO5FS3B-LEAN"
+     ],
+     "S5": [
+      "GO5FS3B-C050000",
+      "GO5FS3B-LEAN"
+     ],
+     "S6": [
+      "GO5FS3B-C025000",
+      "GO5FS3B-C025000"
+     ],
+     "S7": [
+      "GO5FS3B-LEAN",
+      "GO5FS3B-LEAN"
+     ]
+    }
+   },
+   "true_floor": {
+    "stations": {
+     "S2": [
+      41.95305575184927,
+      32.41790995654244
+     ],
+     "S3": [
+      34.6668938700653,
+      28.397713176379234
+     ],
+     "S4": [
+      32.442352996613394,
+      24.791162934065053
+     ],
+     "S5": [
+      43.08842693435761,
+      23.76668881374347
+     ],
+     "S6": [
+      48.98250389099121,
+      25.541908305659128
+     ],
+     "S7": [
+      12.012077097906328,
+      11.41839729880176
+     ]
+    },
+    "ratios": {
+     "bitroch_over_crest": 1.136790256131022,
+     "pelvis_over_thorax_breadth": 1.0270628959478902,
+     "pelvic_depth_over_thorax_depth": 0.7878949734853087,
+     "S4_over_S2_b": 0.7733013106007982,
+     "S3_over_S2_d": 0.875988403152688
+    }
+   },
+   "legacy_own_skin_levels": {
+    "bitroch_over_crest": 1.0840805351902005,
+    "pelvis_over_thorax_breadth": 1.2741668725961517,
+    "pelvic_depth_over_thorax_depth": 0.7838034209059845
+   }
+  }
+ }
+}
