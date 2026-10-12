@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw
 sys.path.insert(0, '/home/claude/wayfarer-design/tools/rac/w1/rmot05_drivers')
 import ot05r_package as PK
 S = PK.S; PK.R = S + '/rmot05k/rend'; os.makedirs(PK.R, exist_ok=True)
-CTRL = [('MF-ref', S + '/w1f/final/MF-M-R'), ('SK-ref', S + '/w1f/final/SK'), ('SK-brd', S + '/w2b/fr/SKMBroad'), ('GR-E3', S + '/w2c/b/GR5DE3/GR5DE3')]
+CTRL = [] if os.environ.get('NOCTRL') else [('MF-ref', S + '/w1f/final/MF-M-R'), ('SK-ref', S + '/w1f/final/SK'), ('SK-brd', S + '/w2b/fr/SKMBroad'), ('GR-E3', S + '/w2c/b/GR5DE3/GR5DE3')]
 out = sys.argv[1]; items = CTRL + [tuple(a.split('=', 1)) for a in sys.argv[2:]]
 views = os.environ.get('VIEWS', 'F,Q,P,RQ').split(','); sil = os.environ.get('SIL') == '1'; th = 420
 rows = []
