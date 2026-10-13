@@ -1,0 +1,184 @@
+{
+ "V1": {
+  "pass_": true,
+  "protected_coord_sha256": "28d2b7aed535275fe9a176b977fc0199f79c5a19af7c5a88f99062c59edfaa34",
+  "plan_sha256": "28d2b7aed535275fe9a176b977fc0199f79c5a19af7c5a88f99062c59edfaa34",
+  "index_correspondence": true,
+  "kept_vertices_bit_identical": true,
+  "protected_faces": 140081
+ },
+ "V2": {
+  "pass_": true,
+  "boundary_edges": 320,
+  "source_boundary_edges": 320,
+  "boundary_identical_to_source": true,
+  "nonmanifold_edges": 0,
+  "inconsistent_orientation_edges_at_patch": 0,
+  "degenerate_new_faces": 0
+ },
+ "V3": {
+  "pass_": false,
+  "new_face_intersections": 21,
+  "new_pairs": [
+   [
+    130856,
+    141233
+   ],
+   [
+    130857,
+    141233
+   ],
+   [
+    130951,
+    141136
+   ],
+   [
+    130952,
+    141232
+   ],
+   [
+    130952,
+    141233
+   ],
+   [
+    130953,
+    141232
+   ],
+   [
+    131036,
+    141232
+   ],
+   [
+    140127,
+    141059
+   ],
+   [
+    140128,
+    141058
+   ],
+   [
+    140128,
+    141059
+   ],
+   [
+    140837,
+    140946
+   ],
+   [
+    140837,
+    141195
+   ],
+   [
+    140837,
+    141196
+   ],
+   [
+    140840,
+    141195
+   ],
+   [
+    140840,
+    141196
+   ],
+   [
+    140914,
+    141230
+   ],
+   [
+    141042,
+    141045
+   ],
+   [
+    141130,
+    141134
+   ],
+   [
+    141130,
+    141135
+   ],
+   [
+    141130,
+    141136
+   ]
+  ],
+  "faces_tested_box": 2273,
+  "preexisting_source_pairs_in_box": 0,
+  "preexisting_examples": []
+ },
+ "V4": {
+  "pass_": false,
+  "min_angle_deg": 1.87,
+  "p5_min_angle": 14.6,
+  "faces_below_10deg": 35,
+  "edge_cm": [
+   0.089,
+   3.846
+  ],
+  "edges_out_of_range": 50,
+  "removed_source_faces_min_angle_p5": 11.94
+ },
+ "V5": {
+  "pass_": false,
+  "stitch_edges": 109,
+  "stitch_dihedral_p50_p95_max": [
+   11.62,
+   156.74,
+   179.77
+  ],
+  "frac_le_35": 0.7523,
+  "reference_source_skin_dihedral_p50_p95_max": [
+   5.34,
+   32.43,
+   111.89
+  ],
+  "fill_internal_dihedral_p50_p95_max": [
+   5.27,
+   62.2,
+   178.87
+  ]
+ },
+ "V6": {
+  "pass_": false,
+  "core_reconstructed_faces": 770,
+  "ledge_faces_in_core": 18,
+  "max_radial_step_per_0p25cm_bin": {
+   "source": {
+    "-60": 0.282,
+    "-20": 1.669,
+    "20": 3.156,
+    "60": 2.552
+   },
+   "result": {
+    "-60": 0.156,
+    "-20": 0.077,
+    "20": 0.296,
+    "60": 0.25
+   }
+  },
+  "note": "step = largest change of the outermost radius between neighbouring 0.25 cm bins for s in (-2, 9); source shows the band edges"
+ },
+ "supplementary_posthoc": {
+  "note": "post-hoc breakdown to locate failures; does not change the pre-registered verdict",
+  "V5_skin_seams": {
+   "edges": 78,
+   "frac_le_35": 0.8333,
+   "max": 178.7
+  },
+  "V5_band_end_junctions_within_3deg": {
+   "edges": 31,
+   "frac_le_35": 0.5484,
+   "max": 179.8
+  },
+  "V4_faces_below_10deg": {
+   "at_band_ends": 8,
+   "elsewhere": 27
+  },
+  "V6_context": {
+   "source_skin_above_band_frac_abs_n_d_gt_0p55": 0.452,
+   "source_faces": 73,
+   "fill_top_zone_frac_abs_n_d_gt_0p55": 0.078,
+   "fill_core_below_top_zone_ledge_faces": 0
+  }
+ },
+ "verdict_automated": "FAIL"
+}

@@ -1,0 +1,86 @@
+{
+ "tag": "B3",
+ "method": "B: constrained Delaunay in the (theta,s) layout + Hermite/Coons inferred field + harmonic residual",
+ "input": "reviews/rac-rmot05q-evidence/source/F1_working.obj",
+ "input_sha256": "17591025c24fd080e7fd45e3dc88dccc4707a0bee9efcb3fd70ef5ab6da453b0",
+ "output": "/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/work/rep/GO-05Q-B3.obj",
+ "output_sha256": "2b02904e2474adac2162be8a651a479eaec13902d7fe849043f084ca36f5e5b5",
+ "params": {
+  "h": 1.0,
+  "ramp_cm": 3.0,
+  "slope_band_cm": 2.5,
+  "smooth_cm": 2.0,
+  "triangle_min_angle": 30.0,
+  "relax_iters": 60,
+  "relax_zone_cm": 4.0
+ },
+ "relaxed_vertices": 114,
+ "loop_vertices": 109,
+ "low_first": true,
+ "chains": {
+  "low": 42,
+  "right": 13,
+  "up": 47,
+  "left": 11
+ },
+ "layout_end_runs_straightened": [
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73,
+  74
+ ],
+ "harmonic_residual_cm": {
+  "boundary_abs_max": 4.08,
+  "boundary_abs_mean": 0.491,
+  "interior_abs_max": 2.617
+ },
+ "slopes_dr_ds": {
+  "lower": [
+   -0.11,
+   0.059,
+   0.476
+  ],
+  "upper": [
+   0.075,
+   0.59,
+   1.305
+  ]
+ },
+ "faces": {
+  "protected": 140081,
+  "removed": 879,
+  "new": 773,
+  "reconstructed_label2": 550,
+  "seam_label3": 223
+ },
+ "vertices": {
+  "kept": 70248,
+  "new": 333,
+  "deleted": 386
+ },
+ "output_layout": "vertices: kept source vertices in original order (vertex_map.npy -> F1_working index), then new; faces: P in original order, then new"
+}

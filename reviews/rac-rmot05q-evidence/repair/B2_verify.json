@@ -1,0 +1,103 @@
+{
+ "V1": {
+  "pass_": true,
+  "protected_coord_sha256": "28d2b7aed535275fe9a176b977fc0199f79c5a19af7c5a88f99062c59edfaa34",
+  "plan_sha256": "28d2b7aed535275fe9a176b977fc0199f79c5a19af7c5a88f99062c59edfaa34",
+  "index_correspondence": true,
+  "kept_vertices_bit_identical": true,
+  "protected_faces": 140081
+ },
+ "V2": {
+  "pass_": true,
+  "boundary_edges": 320,
+  "source_boundary_edges": 320,
+  "boundary_identical_to_source": true,
+  "nonmanifold_edges": 0,
+  "inconsistent_orientation_edges_at_patch": 0,
+  "degenerate_new_faces": 0
+ },
+ "V3": {
+  "pass_": true,
+  "new_face_intersections": 0,
+  "new_pairs": [],
+  "faces_tested_box": 1821,
+  "preexisting_source_pairs_in_box": 0,
+  "preexisting_examples": []
+ },
+ "V4": {
+  "pass_": false,
+  "min_angle_deg": 0.98,
+  "p5_min_angle": 18.11,
+  "faces_below_10deg": 10,
+  "edge_cm": [
+   0.097,
+   2.646
+  ],
+  "edges_out_of_range": 22,
+  "removed_source_faces_min_angle_p5": 11.94
+ },
+ "V5": {
+  "pass_": false,
+  "stitch_edges": 109,
+  "stitch_dihedral_p50_p95_max": [
+   11.26,
+   88.02,
+   177.72
+  ],
+  "frac_le_35": 0.844,
+  "reference_source_skin_dihedral_p50_p95_max": [
+   5.4,
+   34.28,
+   111.89
+  ],
+  "fill_internal_dihedral_p50_p95_max": [
+   5.24,
+   28.43,
+   148.45
+  ]
+ },
+ "V6": {
+  "pass_": false,
+  "core_reconstructed_faces": 544,
+  "ledge_faces_in_core": 50,
+  "max_radial_step_per_0p25cm_bin": {
+   "source": {
+    "-60": 0.282,
+    "-20": 1.669,
+    "20": 3.156,
+    "60": 2.552
+   },
+   "result": {
+    "-60": 0.145,
+    "-20": 0.162,
+    "20": 0.336,
+    "60": 0.239
+   }
+  },
+  "note": "step = largest change of the outermost radius between neighbouring 0.25 cm bins for s in (-2, 9); source shows the band edges"
+ },
+ "supplementary_posthoc": {
+  "note": "post-hoc breakdown to locate failures; does not change the pre-registered verdict",
+  "V5_skin_seams": {
+   "edges": 78,
+   "frac_le_35": 0.9872,
+   "max": 43.7
+  },
+  "V5_band_end_junctions_within_3deg": {
+   "edges": 31,
+   "frac_le_35": 0.4839,
+   "max": 177.7
+  },
+  "V4_faces_below_10deg": {
+   "at_band_ends": 9,
+   "elsewhere": 1
+  },
+  "V6_context": {
+   "source_skin_above_band_frac_abs_n_d_gt_0p55": 0.452,
+   "source_faces": 73,
+   "fill_top_zone_frac_abs_n_d_gt_0p55": 0.283,
+   "fill_core_below_top_zone_ledge_faces": 1
+  }
+ },
+ "verdict_automated": "INCONCLUSIVE"
+}
