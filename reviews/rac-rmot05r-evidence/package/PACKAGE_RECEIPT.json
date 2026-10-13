@@ -1,0 +1,82 @@
+{
+ "isolated_dir": "/tmp/clean_extract_xz7mprta",
+ "checked_at": "2026-10-12T21:11:15-0700",
+ "volumes": [
+  {
+   "file": "racebodies_v122.z01",
+   "bytes": 25165824,
+   "sha256": "3ae8fd14b78c7f5657bd7fd73d49dc87ae625469c9d4f7ad6d0f4c3e243b9e30"
+  },
+  {
+   "file": "racebodies_v122.z02",
+   "bytes": 25165824,
+   "sha256": "176c65990ba1f85ea3182e888a11d1102a3508a1fdd9e4b2b9942732f3816ba6"
+  },
+  {
+   "file": "racebodies_v122.z03",
+   "bytes": 25165824,
+   "sha256": "7ad30a3aa49baa468f85d1c995ec20150ddaa70ff3b2e7bb8391bf1f5f3e1128"
+  },
+  {
+   "file": "racebodies_v122.zip",
+   "bytes": 17016430,
+   "sha256": "b096cb8880e12b3a8e9429db9814dc88ac0099e43bd6ffb481a7f4ab221aeb99"
+  }
+ ],
+ "joined_zip": {
+  "bytes": 92513898,
+  "sha256": "9ab39615b008eb7b77a88ecc9a2b1902a291a31ab0efdf7918d4fdd0b6bdbb0e"
+ },
+ "zip_integrity_test": "No errors detected in compressed data of /tmp/clean_extract_xz7mprta/racebodies_v122_joined.zip.",
+ "manifest": {
+  "entries": 140,
+  "all_present": true,
+  "all_hashes_equal": true,
+  "unlisted_files": [],
+  "listed_but_missing": []
+ },
+ "decoded_meshes": {
+  "count": 11,
+  "all_equal": true
+ },
+ "relative_links": {
+  "checked": 19,
+  "unresolved": []
+ },
+ "replay_inputs_exist": {
+  "reviews/rac-rmot05q-evidence/source/F1_working.obj.gz": true,
+  "reviews/rac-rmot05q-evidence/repair/GO-05Q-B2.obj.gz": true,
+  "reviews/rac-rmot05q-evidence/plan/patch_selection.json": true,
+  "reviews/rac-rmot05q-evidence/plan/patch_face_sets.npz": true,
+  "reviews/rac-rmot05q-evidence/repair/GO-05Q-B2_vertex_map.npy": true,
+  "reviews/rac-rmot05q-evidence/repair/GO-05Q-B2_face_labels.npy": true,
+  "reviews/rac-rmot05r-evidence/plan/junction_sets.npz": true,
+  "reviews/rac-rmot05r-evidence/plan/junction_selection.json": true,
+  "reviews/rac-rmot05r-evidence/repair/R3/GO-05R-R3_maps.npz": true,
+  "reviews/rac-rmot05r-evidence/repair/R3/GO-05R-R3_face_labels.npy": true,
+  "tools/rac/w1/rmot05r_drivers/r_verify.py": true,
+  "tools/rac/w1/rmot05r_drivers/r_repair.py": true,
+  "tools/rac/w1/rmot05r_drivers/r_select.py": true,
+  "reviews/rac-rmot05q-evidence/source/F1_face_indices.npz": true,
+  "tools/rac/w1/rmot05q_drivers/q_extract.py": true
+ },
+ "replay_from_package": {
+  "returncode": 0,
+  "stdout": "/tmp/clean_extract_xz7mprta/replay_out/F1_working.obj: OK\n/tmp/clean_extract_xz7mprta/replay_out/B2.obj: OK\n/tmp/clean_extract_xz7mprta/replay_out/GO-05R-R3.obj: OK\nreplayed R3 verification identical to packaged result: True | verdict FAIL",
+  "stderr": "",
+  "limitations": "renders (bpy) and the base.glb extraction check are not part of the scripted replay; base.glb is external"
+ },
+ "pass": true,
+ "release": {
+  "name": "racebodies_v122",
+  "form": "one ZIP archive split into 4 volumes (Info-ZIP -s 24m); rejoin with zip -s 0, or open the .zip with 7-Zip with all volumes in one folder",
+  "package_manifest": "racebodies_v122/PACKAGE_MANIFEST.sha256 (140 entries; every payload file except itself)",
+  "build_command": "python3 tools/rac/w1/rmot05r_drivers/r_package.py build --name racebodies_v122 --out DIR",
+  "verify_command": "python3 tools/rac/w1/rmot05r_drivers/r_package.py verify --name racebodies_v122 --out DIR --receipt RECEIPT.json",
+  "delivered": [
+   "chat attachments: racebodies_v122.zip, .z01, .z02, .z03",
+   "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/sheets/racebodies_v122/ (4 files; sizes confirmed on device: 17,016,430 / 25,165,824 x3 bytes)"
+  ],
+  "note": "the release contains the 05R gate report as of result commit c0d06e6; this receipt and the report addendum were committed after the build, so they are not inside the release"
+ }
+}

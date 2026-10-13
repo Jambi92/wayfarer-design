@@ -130,3 +130,40 @@ The repository evidence manifests (`SHA256SUMS.txt` in each evidence folder) are
 Stopped for author visual review. There is no second garment region, full-ring or axillary separation, RD5, LOW, blind study, scaffold, canon reconciliation or production transfer. The next body route needs a separate author order.
 
 Gorrund is UNACCEPTED, Grask E3 FROZEN, RM-OT-05 OPEN and Stage C BLOCKED. The beastfolk identity and the body / plantigrade guardrails are preserved.
+
+---
+
+## Package receipt (committed after the build; `reviews/rac-rmot05r-evidence/package/PACKAGE_RECEIPT.json`)
+
+**Release:** `racebodies_v122`. It is **one ZIP archive split into four volumes**, because each delivery channel accepts files of 30 MB or less:
+
+| Volume | Bytes | SHA-256 |
+|---|---|---|
+| `racebodies_v122.zip` | 17,016,430 | `b096cb8880e12b3a8e9429db9814dc88ac0099e43bd6ffb481a7f4ab221aeb99` |
+| `racebodies_v122.z01` | 25,165,824 | `3ae8fd14b78c7f5657bd7fd73d49dc87ae625469c9d4f7ad6d0f4c3e243b9e30` |
+| `racebodies_v122.z02` | 25,165,824 | `176c65990ba1f85ea3182e888a11d1102a3508a1fdd9e4b2b9942732f3816ba6` |
+| `racebodies_v122.z03` | 25,165,824 | `7ad30a3aa49baa468f85d1c995ec20150ddaa70ff3b2e7bb8391bf1f5f3e1128` |
+| Rejoined archive (`zip -s 0`) | 92,513,898 | `9ab39615b008eb7b77a88ecc9a2b1902a291a31ab0efdf7918d4fdd0b6bdbb0e` |
+
+**Contents.**
+- **Own manifest:** `PACKAGE_MANIFEST.sha256`, 140 entries covering every payload file except itself. Sizes are in `PACKAGE_FILES.tsv`.
+- **Decoded meshes:** `DECODED_HASHES.txt` gives compressed and decoded SHA-256 for all 11 `.obj.gz`.
+- **Images:** all evidence files are the original bytes; PNG stays PNG, with no conversions and no omissions.
+- **Repository manifests:** the repository evidence manifests (`SHA256SUMS.txt`) are included verbatim and labelled as such in the README.
+- **Not included:** `base.glb` stays external. Its verified location and hash are in the README; extraction re-verification is a separate prerequisite.
+
+**Clean-extraction verification** (`r_package.py verify`, in an isolated empty directory):
+- The volumes rejoined, and `unzip -t` reported no errors.
+- 140 of 140 manifest entries are present with equal hashes; no files are unlisted or missing.
+- All 11 decoded mesh hashes are equal.
+- 19 of 19 relative markdown links resolve.
+- All 15 replay inputs exist.
+- `replay_package.sh` decoded F1_working, B2 and R3 (hashes OK) and re-ran the R3 verification from the package. The result is **identical** to the packaged one (verdict FAIL).
+- **Limitations:** the renders (bpy) and the base.glb extraction check are not in the scripted replay.
+- **Result: PASS.**
+
+**Delivered to:**
+- the chat, as the four attached files;
+- `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\sheets\racebodies_v122\`, where the four files are on the device with the sizes above.
+
+The release carries this report as of result commit c0d06e6. This receipt section was added after the build.
