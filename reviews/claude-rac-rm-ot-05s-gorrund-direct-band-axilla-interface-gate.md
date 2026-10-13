@@ -165,3 +165,47 @@ Stopped for author visual review. There is no full ring, arm–trunk separation,
 A local pass says nothing about the belt / pelvis, bracers / shins, whole-body suitability or species acceptance. Any further body work needs a new author order.
 
 Gorrund is UNACCEPTED, Grask E3 FROZEN, RM-OT-05 OPEN and Stage C BLOCKED. The beastfolk identity, the body / plantigrade guardrails and the later 13,380-vertex rig-contract validation are preserved.
+
+---
+
+## Package receipt (committed after the build; `reviews/rac-rmot05s-evidence/package/PACKAGE_RECEIPT.json`)
+
+**Release:** `racebodies_v123`. It is **one ZIP split into 7 volumes**, each 25 MB or less:
+
+| Volume | Bytes | SHA-256 |
+|---|---|---|
+| `racebodies_v123.zip` | 12,494,414 | `a0d053b5fa5e12ad4efbaecf41eddf1821bb59f9095b87221908c36ed5db9759` |
+| `racebodies_v123.z01` | 25,165,824 | `b4617bd4b1ec7477bd19c27f0f43ec2e9b19a16d88ad4f1e9fb43d825e0c8ae3` |
+| `racebodies_v123.z02` | 25,165,824 | `a5c3eea4c3ebff97a1860537c0b5e1c254cc3695de7331ee3dbbc7a38061c37c` |
+| `racebodies_v123.z03` | 25,165,824 | `218ae7bb42b6567ab8155c27622251cad25f7c1b1a188099d8765139f307b402` |
+| `racebodies_v123.z04` | 25,165,824 | `b18989191eb67ee8cc78f8b16aa336dc7fd5eb50d8dd981b26fce12485152e60` |
+| `racebodies_v123.z05` | 25,165,824 | `84e366c97ecedfafad26b523350941eb6ba57e29ff16437bd3cce25f81b95835` |
+| `racebodies_v123.z06` | 25,165,824 | `ba5b6008df157ee994e120c3a09c9cc13f23b6f667f0e7b2d44ef0b90e2c8ba9` |
+| Rejoined archive | 163,489,354 | `98c5ead0d4480a96b84c49854f530aa2d53aa313a6f90a58c90108b461981c15` |
+
+**Contents.**
+- **Own manifest:** `PACKAGE_MANIFEST.sha256`, 211 entries. The repository evidence manifests are included verbatim and labelled as such.
+- **Payload:**
+  - the 05Q / 05R / 05S orders, plans and reports;
+  - the F1 working mesh, the B2 baseline, R1–R3, S1–S3 and the S checkpoints;
+  - all maps, labels and checks;
+  - the original PNG images;
+  - the direct-edit handoff (`.blend`, brief and verification setup);
+  - the tools.
+- **Not included:** `base.glb` stays external; its location and hash are in the README.
+
+**Clean-extraction verification**, in an isolated empty directory:
+- `unzip -t` reported no errors.
+- 211 of 211 entries are present with equal hashes; nothing is unlisted or missing.
+- All 17 decoded mesh hashes are equal.
+- 22 of 22 relative links resolve.
+- All replay and handoff inputs exist.
+- `replay_package.sh` reproduced the S3 verification **identically** (verdict UNRESOLVED). The handoff rematch self-test recovered all 139,807 protected faces.
+- **Limitations:** renders, the `.blend` rebuild and the base.glb extraction check are not in the scripted replay.
+- **Result: PASS.**
+
+**Delivered to:**
+- the chat, as the 7 attached files;
+- `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\sheets\racebodies_v123\`, where all 7 files are on the device with the sizes above.
+
+This receipt was added after the build. The release carries the report as of 4182cc5.

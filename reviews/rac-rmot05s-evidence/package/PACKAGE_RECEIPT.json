@@ -1,0 +1,109 @@
+{
+ "isolated_dir": "/tmp/clean_extract_rq4s_x0m",
+ "checked_at": "2026-10-13T05:46:47-0700",
+ "volumes": [
+  {
+   "file": "racebodies_v123.z01",
+   "bytes": 25165824,
+   "sha256": "b4617bd4b1ec7477bd19c27f0f43ec2e9b19a16d88ad4f1e9fb43d825e0c8ae3"
+  },
+  {
+   "file": "racebodies_v123.z02",
+   "bytes": 25165824,
+   "sha256": "a5c3eea4c3ebff97a1860537c0b5e1c254cc3695de7331ee3dbbc7a38061c37c"
+  },
+  {
+   "file": "racebodies_v123.z03",
+   "bytes": 25165824,
+   "sha256": "218ae7bb42b6567ab8155c27622251cad25f7c1b1a188099d8765139f307b402"
+  },
+  {
+   "file": "racebodies_v123.z04",
+   "bytes": 25165824,
+   "sha256": "b18989191eb67ee8cc78f8b16aa336dc7fd5eb50d8dd981b26fce12485152e60"
+  },
+  {
+   "file": "racebodies_v123.z05",
+   "bytes": 25165824,
+   "sha256": "84e366c97ecedfafad26b523350941eb6ba57e29ff16437bd3cce25f81b95835"
+  },
+  {
+   "file": "racebodies_v123.z06",
+   "bytes": 25165824,
+   "sha256": "ba5b6008df157ee994e120c3a09c9cc13f23b6f667f0e7b2d44ef0b90e2c8ba9"
+  },
+  {
+   "file": "racebodies_v123.zip",
+   "bytes": 12494414,
+   "sha256": "a0d053b5fa5e12ad4efbaecf41eddf1821bb59f9095b87221908c36ed5db9759"
+  }
+ ],
+ "joined_zip": {
+  "bytes": 163489354,
+  "sha256": "98c5ead0d4480a96b84c49854f530aa2d53aa313a6f90a58c90108b461981c15"
+ },
+ "zip_integrity_test": "No errors detected in compressed data of /tmp/clean_extract_rq4s_x0m/racebodies_v123_joined.zip.",
+ "manifest": {
+  "entries": 211,
+  "all_present": true,
+  "all_hashes_equal": true,
+  "unlisted_files": [],
+  "listed_but_missing": []
+ },
+ "decoded_meshes": {
+  "count": 17,
+  "all_equal": true
+ },
+ "relative_links": {
+  "checked": 22,
+  "unresolved": []
+ },
+ "replay_inputs_exist": {
+  "reviews/rac-rmot05s-evidence/repair/S3/GO-05S-S3.obj.gz": true,
+  "reviews/rac-rmot05s-evidence/repair/S3/GO-05S-S3_maps.npz": true,
+  "reviews/rac-rmot05s-evidence/repair/S3/GO-05S-S3_face_labels.npy": true,
+  "reviews/rac-rmot05s-evidence/plan/interface_sets.npz": true,
+  "reviews/rac-rmot05s-evidence/plan/design_posterior.npz": true,
+  "reviews/rac-rmot05s-evidence/plan/design_anterior.npz": true,
+  "reviews/rac-rmot05s-evidence/handoff/GO-05S_interface_handoff.blend": true,
+  "reviews/rac-rmot05s-evidence/handoff/HANDOFF.md": true,
+  "tools/rac/w1/rmot05s_drivers/s_verify.py": true,
+  "tools/rac/w1/rmot05s_drivers/s_rematch.py": true,
+  "tools/rac/w1/rmot05s_drivers/s_repair.py": true,
+  "tools/rac/w1/rmot05s_drivers/s_handoff_blend.py": true,
+  "reviews/rac-rmot05q-evidence/source/F1_working.obj.gz": true,
+  "reviews/rac-rmot05q-evidence/repair/GO-05Q-B2.obj.gz": true,
+  "reviews/rac-rmot05q-evidence/plan/patch_selection.json": true,
+  "reviews/rac-rmot05q-evidence/plan/patch_face_sets.npz": true,
+  "reviews/rac-rmot05q-evidence/repair/GO-05Q-B2_vertex_map.npy": true,
+  "reviews/rac-rmot05q-evidence/repair/GO-05Q-B2_face_labels.npy": true,
+  "reviews/rac-rmot05r-evidence/plan/junction_sets.npz": true,
+  "reviews/rac-rmot05r-evidence/plan/junction_selection.json": true,
+  "reviews/rac-rmot05r-evidence/repair/R3/GO-05R-R3_maps.npz": true,
+  "reviews/rac-rmot05r-evidence/repair/R3/GO-05R-R3_face_labels.npy": true,
+  "tools/rac/w1/rmot05r_drivers/r_verify.py": true,
+  "tools/rac/w1/rmot05r_drivers/r_repair.py": true,
+  "tools/rac/w1/rmot05r_drivers/r_select.py": true,
+  "reviews/rac-rmot05q-evidence/source/F1_face_indices.npz": true,
+  "tools/rac/w1/rmot05q_drivers/q_extract.py": true
+ },
+ "replay_from_package": {
+  "returncode": 0,
+  "stdout": "/tmp/clean_extract_rq4s_x0m/replay_out/F1_working.obj: OK\n/tmp/clean_extract_rq4s_x0m/replay_out/B2.obj: OK\n/tmp/clean_extract_rq4s_x0m/replay_out/GO-05S-S3.obj: OK\nreplayed S3 verification identical to packaged result: True | verdict UNRESOLVED\nhandoff rematch self-test: {'protected_faces_expected': 139807, 'protected_faces_found_exact': 139807, 'protected_faces_missing_or_moved': 0, 'edited_faces': 1387}",
+  "stderr": "",
+  "limitations": "renders and the .blend rebuild (bpy) and the base.glb extraction check are not part of the scripted replay; base.glb is external"
+ },
+ "pass": true,
+ "release": {
+  "name": "racebodies_v123",
+  "form": "one ZIP archive split into 7 volumes (Info-ZIP -s 24m)",
+  "package_manifest": "racebodies_v123/PACKAGE_MANIFEST.sha256 (211 entries)",
+  "build_command": "python3 tools/rac/w1/rmot05s_drivers/s_package.py build --name racebodies_v123 --out DIR",
+  "verify_command": "python3 tools/rac/w1/rmot05s_drivers/s_package.py verify --name racebodies_v123 --out DIR --receipt R.json",
+  "delivered": [
+   "chat attachments: racebodies_v123.zip, .z01-.z06",
+   "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/sheets/racebodies_v123/ (7 files; sizes confirmed on device: 12,494,414 + 6 x 25,165,824 bytes)"
+  ],
+  "note": "the release contains the 05S gate report as of result commit 4182cc5; this receipt was committed after the build"
+ }
+}
