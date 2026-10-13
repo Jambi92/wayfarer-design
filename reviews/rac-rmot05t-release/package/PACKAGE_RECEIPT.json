@@ -1,0 +1,51 @@
+{
+ "isolated_dir": "/tmp/clean_extract_05T_5dw8dm_p",
+ "checked_at": "2026-10-13T08:02:52-0700",
+ "volumes": [
+  {
+   "file": "gorrund_05T_sculpt_handoff.zip",
+   "bytes": 26982065,
+   "sha256": "8bb33bf0a106cfd54b75a7085c443f8e03e19e4e71f69ce80535482495e37d9e"
+  }
+ ],
+ "zip_crc_test": "No errors detected in compressed data of /tmp/clean_extract_05T_5dw8dm_p/gorrund_05T_sculpt_handoff.zip.",
+ "manifest": {
+  "entries": 69,
+  "all_present": true,
+  "all_hashes_equal": true,
+  "unlisted_files": [],
+  "listed_but_missing": []
+ },
+ "decoded_meshes": {
+  "count": 3,
+  "all_equal": true
+ },
+ "relative_links": {
+  "checked": 6,
+  "unresolved": []
+ },
+ "check_return_unchanged_fixture": {
+  "returncode": 0,
+  "accepted": true,
+  "verdict_line": [
+   "s_verify verdict: UNRESOLVED"
+  ],
+  "tail": "checks/fixture/F1_working.obj: OK\nchecks/fixture/GO-05S-S3.obj: OK\n00:00.256  blend            | Read blend: \"/tmp/clean_extract_05T_5dw8dm_p/x/gorrund_05T_sculpt_handoff/scene/fixture_test.blend\"\nInfo: Read library: '/tmp/clean_extract_05T_5dw8dm_p/x/gorrund_05T_sculpt_handoff/scene/GO-05T_references.blend', '//GO-05T_references.blend', parent '<direct>'\n{\"out\": \"checks/fixture/return\", \"vertices\": 70751, \"faces\": 141194, \"identity_transform\": true, \"triangulated_ngons\": 0, \"new_vertices\": 0}\nreintegration: ACCEPTED_FOR_VERIFICATION\ns_verify verdict: UNRESOLVED\n  V1_outside_anatomy True\n  V2_boundary_manifold True\n  V3_intersections True\n  V4_triangle_quality False\n  V5_seam_continuity True\n  V6_historical_05Q False\n  V6c_1_garment_ledge_removed False\n  V6c_2_taper_termination False\n  V6c_3_no_folds True\nchecks/fixture/compare_posterior_shaded.png (2240, 1180)\nchecks/fixture/compare_posterior_wire.png (2240, 1180)\nchecks/fixture/compare_anterior_shaded.png (2240, 1180)\nchecks/fixture/compare_anterior_wire.png (2240, 1180)\nchecks/fixture/compare_arm_views.png (2880, 1020)\nhashes: checks/fixture/RETURN_HASHES.sha256\n",
+  "stderr_tail": "",
+  "scores_identical_to_S3": true
+ },
+ "limitations": "headless bpy 5.0.1 module only; Blender desktop UI (brushes, mask display, face-set isolation) not exercised -> START_HERE Step 0 PENDING",
+ "pass": true,
+ "release": {
+  "name": "gorrund_05T_sculpt_handoff",
+  "form": "single ZIP (26,982,065 bytes)",
+  "package_manifest": "gorrund_05T_sculpt_handoff/PACKAGE_MANIFEST.sha256 (69 entries)",
+  "build_command": "python3 tools/rac/w1/rmot05t_drivers/t_package.py build --out DIR --volume_mb 29",
+  "verify_command": "python3 tools/rac/w1/rmot05t_drivers/t_package.py verify --out DIR --receipt R.json",
+  "delivered": [
+   "chat attachment: gorrund_05T_sculpt_handoff.zip",
+   "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/sheets/gorrund_05T_sculpt_handoff/gorrund_05T_sculpt_handoff.zip (size confirmed on device: 26,982,065 bytes)"
+  ],
+  "note": "an earlier verify attempt aborted on a full container disk (unzip write error) and was rerun after freeing scratch space; the release contains the closure report as committed in this receipt commit minus this receipt section"
+ }
+}

@@ -125,7 +125,7 @@ The original validators and all previous scores are unchanged. The P1 / P2 check
 - **Step 3:** return the edited `.blend`, the `return.npz` / `.obj`, the reintegration / verify JSON and hashes, the before / after renders and `EDIT_LOG.md`.
 
 Also in the release:
-- **[BRIEF.md](rac-rmot05t-release/BRIEF.md):** the task, unchanged from 05S §3–4.
+- **`BRIEF.md`:** the task, unchanged from 05S §3–4.
 - **`views/`:**
   - posterior defect shaded;
   - posterior and anterior overlays with red focus / purple editable / amber frozen-boundary faces;
@@ -148,3 +148,32 @@ Also in the release:
 The compact release `gorrund_05T_sculpt_handoff` is built by `t_package.py`. It has its own manifest and a clean-extraction check that includes running `check_return.sh` from the extracted release. Its hashes and delivery location are recorded in the package receipt, appended after the build.
 
 **Next direct action:** a person opens `START_HERE.md`, completes Step 0, then sculpts the posterior fold-edge strip and returns the files listed in Step 3. When that asset arrives, it is verified under the preserved gates and returned for author review. There is no automatic expansion or promotion.
+
+---
+
+## Package receipt (appended after the build; `reviews/rac-rmot05t-release/package/PACKAGE_RECEIPT.json`)
+
+**Release:** `gorrund_05T_sculpt_handoff.zip`, a **single ZIP**.
+
+| Property | Value |
+|---|---|
+| Size | 26,982,065 bytes |
+| SHA-256 | `8bb33bf0a106cfd54b75a7085c443f8e03e19e4e71f69ce80535482495e37d9e` |
+| Own manifest | `PACKAGE_MANIFEST.sha256`, 69 entries |
+
+**Clean extraction**, in an isolated empty directory:
+- `unzip -t` reported no errors.
+- 69 of 69 entries are present with equal hashes; nothing is unlisted or missing.
+- All 3 decoded meshes are equal.
+- 6 of 6 relative links resolve.
+- The release's own `check_return.sh`, run on an unchanged copy of the packaged scene, gave **ACCEPTED**, with `s_verify` scores **identical to S3**. The renders were produced.
+- **Limitation:** desktop UI behaviour is not exercised; Step 0 is PENDING.
+- **Result: PASS.**
+
+The first verify attempt aborted because the container disk was full (unzip write error). It was rerun after the scratch space was freed.
+
+**Delivered to:**
+- the chat, as the attached file;
+- `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\sheets\gorrund_05T_sculpt_handoff\gorrund_05T_sculpt_handoff.zip`, where the size is confirmed on the device.
+
+**→ STOP AWAITING DIRECT-SCULPT RETURN.**
