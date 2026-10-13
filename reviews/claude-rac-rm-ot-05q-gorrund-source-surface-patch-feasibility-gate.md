@@ -185,3 +185,23 @@ Stopped at the author visual gate. No RD5, no second patch, no blind gate, no LO
 - All meshes are committed gz-compressed: the source copies are about 1.8–2.1 MB each, the result and each attempt about 2.0 MB.
 - `base.glb` itself (43 MB) is not committed. It is verified at the three locations in §2.
 - The package `racebodies_v121` (on E:) carries the evidence and the result OBJ.
+
+---
+
+## Addendum (05R, October 12, 2026): author ruling and correction note. Append-only; the scores above are unchanged.
+
+**Author ruling (05R order §1).** B2 is **NOT accepted**. The visible cut ends and crinkles, and the V4/V5 failures, are substantive defects:
+- a minimum new-triangle angle of 0.98°;
+- 22 edges outside the declared range;
+- seam dihedral up to 177.72°;
+- only 84.4 % of seam edges meeting the criterion overall.
+
+They are not marginal, and the passing preservation and manifold checks do not make the skin credible. The 05Q plan, attempts, numbers, post-hoc breakdown and automated INCONCLUSIVE verdict stay above as provenance.
+
+**Correction to the clothing summary.** The opening sentences of "Result in one paragraph" overreach. Findings are per item or region, with the confidence given in the §3 table:
+- Free-hanging flaps and braids (class a), fused surface garments (class c) and ambiguous areas (class d) are different cases.
+- What was demonstrated is limited: within the inspected sections, no skin surface was found under the **selected** class-c garment (the +X armband). The other class-c entries rest on the listed sections, at the listed confidence.
+- The claim does not extend to uninspected or ambiguous regions.
+- Connected geometry alone is not proof that no underlying surface exists.
+
+**Package integrity.** The v121 package's `SHA256SUMS.txt` was the repository evidence manifest, but the package itself held JPEG conversions and omitted the source and attempt meshes. No complete package integrity pass was therefore established for v121. 05R issues a package with its own verified manifest.
