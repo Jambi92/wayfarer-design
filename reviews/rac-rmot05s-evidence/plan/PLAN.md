@@ -66,7 +66,7 @@ All fold-edge, trunk and ambiguous faces inside I are rebuilt as **INFERRED** su
 - 3 faces of the 05R extension lie outside I and stay protected.
 
 By group and reason:
-- posterior: 30 arm-skin seam faces (the C1 tangent anchor zone), 67 garment, 31 fold edge (the curled lip that caused the 05R intersections);
+- posterior: 30 arm-skin seam faces (skin between anchor A and the ledge; wording corrected after the plan commit, no content change), 67 garment, 31 fold edge (the curled lip that caused the 05R intersections);
 - anterior: 22 arm-skin seam, 106 garment, 18 fused-ambiguous.
 
 The index lists, with classes, are in `interface_sets.npz` (`src_post`, `class_post`, `src_ant`, `class_ant`).

@@ -22,7 +22,7 @@ fig, ax = plt.subplots(rows, cols, figsize=(3.3 * cols, 4.6 * rows), squeeze=Fal
 for k, th in enumerate(a.thetas):
     A = ax[k // cols][k % cols]
     for j, (lab_, V, F, col) in enumerate(ms):
-        for i, sg in enumerate(segs(V, F, th)): A.plot(sg[:, 0], sg[:, 1], color=col, lw=2.6 - 0.8 * j, label=lab_ if i == 0 else None)
+        for i, sg in enumerate(segs(V, F, th)): A.plot(sg[:, 0], sg[:, 1], color=col, lw=max(1.0, 2.8 - 0.6 * j), label=lab_ if i == 0 else None)
     A.set_title('theta %g' % th, fontsize=9); A.set_aspect('equal'); A.grid(alpha=.3); A.set_xlim(a.xlim[0], a.xlim[1]); A.set_ylim(a.ylim[0], a.ylim[1]); A.legend(fontsize=6, loc='lower right'); A.set_xlabel('r cm'); A.set_ylabel('s cm')
 for k in range(n, rows * cols): ax[k // cols][k % cols].axis('off')
 fig.suptitle(a.title, fontsize=10); plt.tight_layout(); plt.savefig(a.out, dpi=75)
