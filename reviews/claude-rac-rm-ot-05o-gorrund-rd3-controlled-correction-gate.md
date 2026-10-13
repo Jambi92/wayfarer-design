@@ -225,3 +225,12 @@ The knee angle is unchanged by construction (rigid). The fitted value moved from
 RD0, RD1, RD2, the 05N LOW, the 05N scorer outputs and all earlier lineages are unchanged.
 
 I stopped at the RM-OT-05O author gate. No acceptance, Stage C, RD4, canon promotion or further redesign.
+
+---
+
+## Follow-up correction (added by RM-OT-05P, 2026-10-12; measurements and scores above unchanged)
+
+- **REF/LOW preservation is NOT PASSED for 05N/05O.** The iliac crest / ASIS (measured p95 0.67 cm, max 0.78 cm) and the sacral platform (p95 0.25 cm, max 0.35 cm) moved. "PASS with one design flaw" in §6 and in the gate table must not be read as acceptance. The LOW is rebuilt from the repaired REF with real protection in `reviews/claude-rac-rm-ot-05p-gorrund-anatomical-repair-gate.md`.
+- **05O's stance instruction was not sagittal-only.** The coronal alignment (knee 3.1–4.5 cm lateral of the hip–ankle line) was left unresolved here. It is addressed in 05P stage A.
+- **Kept as corrected:** the 05N "20° knee flexion" diagnosis was wrong. The 05N leg was nearly straight but inclined backward from the hip, and should not be called a bent knee.
+- **Author check:** the author independently verified the 50 v119 manifest files. The sculpt and scoring results in this report are Claude's reported execution; the author did not rerun them.
