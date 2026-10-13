@@ -1,22 +1,28 @@
-import numpy as np,trimesh,sys,json
+# RM-OT-05R half-plane sections through the 05Q arm axis at given theta, overlaying several meshes (identical frame).
+# Usage: python3 r_profiles.py --out OUT.png --frame patch_selection.json --meshes "label=mesh.obj:colour" ... --thetas -110 -104 ...
+import argparse, json, numpy as np, trimesh
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
-W='/tmp/claude-0/-home-claude-wayfarer-design/19af7d50-3b61-5fda-9fe0-7a30770fb334/scratchpad/work'
-O=np.array([30.5,-1.3,160.4]); d=np.array([-0.29408,-0.05401,0.95425]); d/=np.linalg.norm(d); e1=np.cross([0,1,0],d); e1/=np.linalg.norm(e1); e2=np.cross(d,e1)
-def segs(V,F,th):
-    nrm=-np.sin(np.radians(th))*e1+np.cos(np.radians(th))*e2; dv=np.cos(np.radians(th))*e1+np.sin(np.radians(th))*e2
-    sd=(V-O)@nrm; T=F[(np.abs(V[F]-O).max((1,2))<22)]; sv=sd[T]; cr=(sv.min(1)<0)&(sv.max(1)>0); out=[]
+ap = argparse.ArgumentParser(); ap.add_argument('--out'); ap.add_argument('--frame'); ap.add_argument('--meshes', nargs='+'); ap.add_argument('--thetas', nargs='+', type=float)
+ap.add_argument('--title', default=''); a = ap.parse_args()
+J = json.load(open(a.frame)); O = np.array(J['frame']['origin']); d = np.array(J['frame']['axis']); d /= np.linalg.norm(d); e1 = np.cross([0, 1, 0], d); e1 /= np.linalg.norm(e1); e2 = np.cross(d, e1)
+def segs(V, F, th):
+    nrm = -np.sin(np.radians(th)) * e1 + np.cos(np.radians(th)) * e2; dv = np.cos(np.radians(th)) * e1 + np.sin(np.radians(th)) * e2
+    sd = (V - O) @ nrm; T = F[(np.abs(V[F] - O).max((1, 2)) < 22)]; sv = sd[T]; cr = (sv.min(1) < 0) & (sv.max(1) > 0); out = []
     for f in T[cr]:
-        p=[]
-        for i,j in ((0,1),(1,2),(2,0)):
-            if (sd[f[i]]<0)!=(sd[f[j]]<0): t=sd[f[i]]/(sd[f[i]]-sd[f[j]]); p.append(V[f[i]]+t*(V[f[j]]-V[f[i]]))
-        c=np.array(p)-O; out.append(np.c_[c@dv, c@d])
-    return [o for o in out if (o[:,0]>0).all() and (o[:,0]<14).all() and (np.abs(o[:,1])<10).all()]
-src=trimesh.load(W+'/F1_working.obj',process=False); b2=trimesh.load(W+'/B2.obj',process=False)
-ths=[float(t) for t in sys.argv[2:]]
-fig,ax=plt.subplots(2,len(ths)//2,figsize=(3.2*len(ths)//2,9),squeeze=False)
-for k,th in enumerate(ths):
-    a=ax[k//(len(ths)//2)][k%(len(ths)//2)]
-    for m,c,lw in ((src,'0.6',2.5),(b2,'b',0.9)):
-        for sg in segs(m.vertices,m.faces,th): a.plot(sg[:,0],sg[:,1],color=c,lw=lw)
-    a.set_title('theta %g (grey src, blue B2)'%th,fontsize=8); a.set_aspect('equal'); a.grid(alpha=.3); a.set_xlim(4,14); a.set_ylim(-6,10)
-plt.tight_layout(); plt.savefig(sys.argv[1],dpi=75)
+        p = []
+        for i, j in ((0, 1), (1, 2), (2, 0)):
+            if (sd[f[i]] < 0) != (sd[f[j]] < 0): t = sd[f[i]] / (sd[f[i]] - sd[f[j]]); p.append(V[f[i]] + t * (V[f[j]] - V[f[i]]))
+        c = np.array(p) - O; out.append(np.c_[c @ dv, c @ d])
+    return [o for o in out if (o[:, 0] > 0).all() and (o[:, 0] < 14).all() and (np.abs(o[:, 1]) < 10).all()]
+ms = []
+for spec in a.meshes:
+    lab_, rest = spec.split('=', 1); path, col = rest.rsplit(':', 1); m = trimesh.load(path, process=False); ms.append((lab_, np.asarray(m.vertices), np.asarray(m.faces), col))
+n = len(a.thetas); cols = min(n, 6); rows = (n + cols - 1) // cols
+fig, ax = plt.subplots(rows, cols, figsize=(3.3 * cols, 4.6 * rows), squeeze=False)
+for k, th in enumerate(a.thetas):
+    A = ax[k // cols][k % cols]
+    for j, (lab_, V, F, col) in enumerate(ms):
+        for i, sg in enumerate(segs(V, F, th)): A.plot(sg[:, 0], sg[:, 1], color=col, lw=2.6 - 0.8 * j, label=lab_ if i == 0 else None)
+    A.set_title('theta %g' % th, fontsize=9); A.set_aspect('equal'); A.grid(alpha=.3); A.set_xlim(4, 14); A.set_ylim(-6, 10); A.legend(fontsize=6, loc='lower right'); A.set_xlabel('r cm'); A.set_ylabel('s cm')
+for k in range(n, rows * cols): ax[k // cols][k % cols].axis('off')
+fig.suptitle(a.title, fontsize=10); plt.tight_layout(); plt.savefig(a.out, dpi=75)

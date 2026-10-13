@@ -1,0 +1,63 @@
+{
+ "tag": "R2",
+ "flip_winding": "normal",
+ "orient": "boundary",
+ "flip_guard": "global",
+ "baseline": "B2.obj",
+ "baseline_sha256": "0ed458b72e6481377aa829d70f8f7896381634e9fc7cca09bc325a91b420962a",
+ "params": {
+  "h": 0.8,
+  "flip_rounds": 2,
+  "triangle": "pq30Y"
+ },
+ "C1": {
+  "faces": [
+   140820,
+   140812
+  ],
+  "min_angle_before": [
+   9.975,
+   27.096
+  ],
+  "min_angle_after": [
+   16.835,
+   15.105
+  ]
+ },
+ "lawson_flips_per_round": {
+  "0": 100,
+  "1": 84
+ },
+ "output": "GO-05R-R2.obj",
+ "output_sha256": "f33a039c7b224d36fce8b4c401eb08af98bc5781add7afac7c7a8cd8cd2ffd75",
+ "protected_faces_first": 140004,
+ "faces": {
+  "total": 141162,
+  "b2_retained_new": 595,
+  "junction_new": 563
+ },
+ "junctions": {
+  "posterior": {
+   "J_faces": 134,
+   "boundary_vertices": 40,
+   "new_vertices": 106,
+   "new_faces": 250,
+   "deleted_old_interior_vertices": 48,
+   "garment_side_boundary_vertices": 18,
+   "j_area3_cm2": 43.8,
+   "tutte_orientation_flipped": false
+  },
+  "anterior": {
+   "J_faces": 121,
+   "boundary_vertices": 39,
+   "new_vertices": 138,
+   "new_faces": 313,
+   "deleted_old_interior_vertices": 42,
+   "garment_side_boundary_vertices": 13,
+   "j_area3_cm2": 56.49,
+   "tutte_orientation_flipped": false
+  }
+ },
+ "layout": "faces: P05R (05Q order) | retained B2 new faces (B2 order, C1 applied) | junction faces; maps.npz: src_vertex (F1_working index or -1), b2_vertex (B2 index or -1)",
+ "note_paths": "baseline = GO-05Q-B2.obj decoded from reviews/rac-rmot05q-evidence/repair/GO-05Q-B2.obj.gz; output = this folder (gz)"
+}
