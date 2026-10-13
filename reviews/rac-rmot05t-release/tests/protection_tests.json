@@ -1,0 +1,420 @@
+{
+ "M_mask_and_isolation": {
+  "pass_": true,
+  "mask_zero_exactly_on_EDIT": true,
+  "mask_one_on_all_other_vertices": 70401,
+  "face_sets_match_interface": true,
+  "editmode_hidden_faces_equal_non_interface": true,
+  "note": "numeric attribute check only; brush / UI behaviour NOT tested (no interactive Blender)"
+ },
+ "T0_unchanged_fixture": {
+  "export_rc": 0,
+  "export": "{\"out\": \"reviews/rac-rmot05t-release/tests/T0_return\", \"vertices\": 70751, \"faces\": 141194, \"identity_transform\": true, \"triangulated_ngons\": 0, \"new_vertices\": 0}",
+  "reintegrate": {
+   "return_npz": "reviews/rac-rmot05t-release/tests/T0_return.npz",
+   "identity_transform": true,
+   "triangulated_ngons": 0,
+   "exported_vertices": 70751,
+   "exported_faces": 141194,
+   "P1_protected_vertices": {
+    "expected": 70401,
+    "verified_unchanged": 70401,
+    "missing_or_moved": 0,
+    "of_which_moved": 0,
+    "examples": [],
+    "duplicates_of_exact_identity": 0,
+    "frozen_boundary_expected": 101,
+    "frozen_boundary_missing_or_moved": 0,
+    "b2_or_new_nonsource_missing": 0
+   },
+   "P2_protected_faces": {
+    "expected": 140397,
+    "present": 140397,
+    "missing": 0,
+    "examples": []
+   },
+   "edit_vertices": {
+    "expected": 350,
+    "unchanged": 350,
+    "moved_or_replaced": 0,
+    "new_vertices": 0
+   },
+   "export_vertices_identity": {
+    "verified_unchanged": 70751,
+    "unverified_new_or_moved": 0,
+    "with_attribute_zero": 0,
+    "with_nonzero_but_unverified_id": 0,
+    "note": "Blender may interpolate rac_s3_vid1 onto vertices created by topology operations; such ids are never trusted without bit-exact float32 position agreement"
+   },
+   "verdict": "ACCEPTED_FOR_VERIFICATION",
+   "interface_faces": {
+    "kept_verbatim": 797,
+    "edited_or_new": 0
+   },
+   "result_obj_sha256": "1d50383376dc5dd2e249778c7b7d8330f4ec16daa21303656a146c0b4d81ac4c",
+   "result_faces": 141194,
+   "first_faces_are_P05S": 139807
+  },
+  "s_verify": {
+   "V1_outside_anatomy": true,
+   "V2_boundary_manifold": true,
+   "V3_intersections": true,
+   "V4_triangle_quality": false,
+   "V5_seam_continuity": true,
+   "V6_historical_05Q": false,
+   "V6c_1_garment_ledge_removed": false,
+   "V6c_2_taper_termination": false,
+   "V6c_3_no_folds": true,
+   "verdict_automated": "UNRESOLVED"
+  },
+  "V1_protected_coord_sha256": "4468dd862307b8393dfcc8dab58d5cab6033558a87ba523b220e379b7df57c55",
+  "result_bit_identical_to_S3_obj": true,
+  "s_verify_identical_to_S3": true,
+  "expected": "ACCEPTED_FOR_VERIFICATION",
+  "as_expected": true
+ },
+ "T1_allowed_interface_displacement": {
+  "edit": {
+   "moved": [
+    70402,
+    70403,
+    70430,
+    70433,
+    70434,
+    70436,
+    70437,
+    70472,
+    70488,
+    70490,
+    70491,
+    70492,
+    70493,
+    70494,
+    70495,
+    70496,
+    70497,
+    70498,
+    70499,
+    70500
+   ],
+   "by_cm": 0.05
+  },
+  "export_rc": 0,
+  "export": "{\"out\": \"reviews/rac-rmot05t-release/tests/T1_return\", \"vertices\": 70751, \"faces\": 141194, \"identity_transform\": true, \"triangulated_ngons\": 0, \"new_vertices\": 0}",
+  "reintegrate": {
+   "return_npz": "reviews/rac-rmot05t-release/tests/T1_return.npz",
+   "identity_transform": true,
+   "triangulated_ngons": 0,
+   "exported_vertices": 70751,
+   "exported_faces": 141194,
+   "P1_protected_vertices": {
+    "expected": 70401,
+    "verified_unchanged": 70401,
+    "missing_or_moved": 0,
+    "of_which_moved": 0,
+    "examples": [],
+    "duplicates_of_exact_identity": 0,
+    "frozen_boundary_expected": 101,
+    "frozen_boundary_missing_or_moved": 0,
+    "b2_or_new_nonsource_missing": 0
+   },
+   "P2_protected_faces": {
+    "expected": 140397,
+    "present": 140397,
+    "missing": 0,
+    "examples": []
+   },
+   "edit_vertices": {
+    "expected": 350,
+    "unchanged": 330,
+    "moved_or_replaced": 20,
+    "new_vertices": 0
+   },
+   "export_vertices_identity": {
+    "verified_unchanged": 70731,
+    "unverified_new_or_moved": 20,
+    "with_attribute_zero": 0,
+    "with_nonzero_but_unverified_id": 20,
+    "note": "Blender may interpolate rac_s3_vid1 onto vertices created by topology operations; such ids are never trusted without bit-exact float32 position agreement"
+   },
+   "verdict": "ACCEPTED_FOR_VERIFICATION",
+   "interface_faces": {
+    "kept_verbatim": 717,
+    "edited_or_new": 80
+   },
+   "result_obj_sha256": "d4013e83e093d5c30c599c0ee09e80595d551e2970089cb61207b35b753e8d55",
+   "result_faces": 141194,
+   "first_faces_are_P05S": 139807
+  },
+  "s_verify": {
+   "V1_outside_anatomy": true,
+   "V2_boundary_manifold": true,
+   "V3_intersections": true,
+   "V4_triangle_quality": false,
+   "V5_seam_continuity": true,
+   "V6_historical_05Q": false,
+   "V6c_1_garment_ledge_removed": false,
+   "V6c_2_taper_termination": false,
+   "V6c_3_no_folds": true,
+   "verdict_automated": "UNRESOLVED"
+  },
+  "V1_protected_coord_sha256": "4468dd862307b8393dfcc8dab58d5cab6033558a87ba523b220e379b7df57c55",
+  "expected": "ACCEPTED_FOR_VERIFICATION",
+  "as_expected": true
+ },
+ "T2_protected_source_vertex_moved": {
+  "edit": {
+   "moved_vertex": 56527,
+   "source_vertex": 56527,
+   "by_cm": 0.001
+  },
+  "export_rc": 0,
+  "export": "{\"out\": \"reviews/rac-rmot05t-release/tests/T2_return\", \"vertices\": 70751, \"faces\": 141194, \"identity_transform\": true, \"triangulated_ngons\": 0, \"new_vertices\": 0}",
+  "reintegrate": {
+   "return_npz": "reviews/rac-rmot05t-release/tests/T2_return.npz",
+   "identity_transform": true,
+   "triangulated_ngons": 0,
+   "exported_vertices": 70751,
+   "exported_faces": 141194,
+   "P1_protected_vertices": {
+    "expected": 70401,
+    "verified_unchanged": 70400,
+    "missing_or_moved": 1,
+    "of_which_moved": 1,
+    "examples": [
+     56527
+    ],
+    "duplicates_of_exact_identity": 0,
+    "frozen_boundary_expected": 101,
+    "frozen_boundary_missing_or_moved": 0,
+    "b2_or_new_nonsource_missing": 0
+   },
+   "P2_protected_faces": {
+    "expected": 140397,
+    "present": 140391,
+    "missing": 6,
+    "examples": [
+     20366,
+     20367,
+     20377,
+     20378,
+     20448,
+     20449
+    ]
+   },
+   "edit_vertices": {
+    "expected": 350,
+    "unchanged": 350,
+    "moved_or_replaced": 0,
+    "new_vertices": 0
+   },
+   "export_vertices_identity": {
+    "verified_unchanged": 70750,
+    "unverified_new_or_moved": 1,
+    "with_attribute_zero": 0,
+    "with_nonzero_but_unverified_id": 1,
+    "note": "Blender may interpolate rac_s3_vid1 onto vertices created by topology operations; such ids are never trusted without bit-exact float32 position agreement"
+   },
+   "verdict": "REJECTED"
+  },
+  "expected": "REJECTED",
+  "as_expected": true
+ },
+ "T3_frozen_boundary_nonsource_vertex_moved": {
+  "edit": {
+   "moved_vertex": 70128,
+   "is_source_vertex": false,
+   "by_cm": 0.001
+  },
+  "export_rc": 0,
+  "export": "{\"out\": \"reviews/rac-rmot05t-release/tests/T3_return\", \"vertices\": 70751, \"faces\": 141194, \"identity_transform\": true, \"triangulated_ngons\": 0, \"new_vertices\": 0}",
+  "reintegrate": {
+   "return_npz": "reviews/rac-rmot05t-release/tests/T3_return.npz",
+   "identity_transform": true,
+   "triangulated_ngons": 0,
+   "exported_vertices": 70751,
+   "exported_faces": 141194,
+   "P1_protected_vertices": {
+    "expected": 70401,
+    "verified_unchanged": 70400,
+    "missing_or_moved": 1,
+    "of_which_moved": 1,
+    "examples": [
+     70128
+    ],
+    "duplicates_of_exact_identity": 0,
+    "frozen_boundary_expected": 101,
+    "frozen_boundary_missing_or_moved": 1,
+    "b2_or_new_nonsource_missing": 1
+   },
+   "P2_protected_faces": {
+    "expected": 140397,
+    "present": 140393,
+    "missing": 4,
+    "examples": [
+     139848,
+     139883,
+     139885,
+     139903
+    ]
+   },
+   "edit_vertices": {
+    "expected": 350,
+    "unchanged": 350,
+    "moved_or_replaced": 0,
+    "new_vertices": 0
+   },
+   "export_vertices_identity": {
+    "verified_unchanged": 70750,
+    "unverified_new_or_moved": 1,
+    "with_attribute_zero": 0,
+    "with_nonzero_but_unverified_id": 1,
+    "note": "Blender may interpolate rac_s3_vid1 onto vertices created by topology operations; such ids are never trusted without bit-exact float32 position agreement"
+   },
+   "verdict": "REJECTED"
+  },
+  "expected": "REJECTED",
+  "as_expected": true
+ },
+ "T3b_frozen_boundary_source_vertex_moved": {
+  "edit": {
+   "moved_vertex": 57083,
+   "is_source_vertex": true,
+   "by_cm": 0.001
+  },
+  "export_rc": 0,
+  "export": "{\"out\": \"reviews/rac-rmot05t-release/tests/T3b_return\", \"vertices\": 70751, \"faces\": 141194, \"identity_transform\": true, \"triangulated_ngons\": 0, \"new_vertices\": 0}",
+  "reintegrate": {
+   "return_npz": "reviews/rac-rmot05t-release/tests/T3b_return.npz",
+   "identity_transform": true,
+   "triangulated_ngons": 0,
+   "exported_vertices": 70751,
+   "exported_faces": 141194,
+   "P1_protected_vertices": {
+    "expected": 70401,
+    "verified_unchanged": 70400,
+    "missing_or_moved": 1,
+    "of_which_moved": 1,
+    "examples": [
+     57083
+    ],
+    "duplicates_of_exact_identity": 0,
+    "frozen_boundary_expected": 101,
+    "frozen_boundary_missing_or_moved": 1,
+    "b2_or_new_nonsource_missing": 0
+   },
+   "P2_protected_faces": {
+    "expected": 140397,
+    "present": 140390,
+    "missing": 7,
+    "examples": [
+     131034,
+     131035,
+     131036,
+     131037,
+     131038,
+     131076,
+     131077
+    ]
+   },
+   "edit_vertices": {
+    "expected": 350,
+    "unchanged": 350,
+    "moved_or_replaced": 0,
+    "new_vertices": 0
+   },
+   "export_vertices_identity": {
+    "verified_unchanged": 70750,
+    "unverified_new_or_moved": 1,
+    "with_attribute_zero": 0,
+    "with_nonzero_but_unverified_id": 1,
+    "note": "Blender may interpolate rac_s3_vid1 onto vertices created by topology operations; such ids are never trusted without bit-exact float32 position agreement"
+   },
+   "verdict": "REJECTED"
+  },
+  "expected": "REJECTED",
+  "as_expected": true
+ },
+ "T4_local_topology_change_inside_interface": {
+  "edit": {
+   "subdivided_edges": 30,
+   "new_vertices": 30,
+   "id_values_on_new_vertices": {
+    "zero": 0,
+    "nonzero": 30
+   }
+  },
+  "export_rc": 0,
+  "export": "{\"out\": \"reviews/rac-rmot05t-release/tests/T4_return\", \"vertices\": 70781, \"faces\": 141254, \"identity_transform\": true, \"triangulated_ngons\": 0, \"new_vertices\": 0}",
+  "reintegrate": {
+   "return_npz": "reviews/rac-rmot05t-release/tests/T4_return.npz",
+   "identity_transform": true,
+   "triangulated_ngons": 0,
+   "exported_vertices": 70781,
+   "exported_faces": 141254,
+   "P1_protected_vertices": {
+    "expected": 70401,
+    "verified_unchanged": 70401,
+    "missing_or_moved": 0,
+    "of_which_moved": 0,
+    "examples": [],
+    "duplicates_of_exact_identity": 0,
+    "frozen_boundary_expected": 101,
+    "frozen_boundary_missing_or_moved": 0,
+    "b2_or_new_nonsource_missing": 0
+   },
+   "P2_protected_faces": {
+    "expected": 140397,
+    "present": 140397,
+    "missing": 0,
+    "examples": []
+   },
+   "edit_vertices": {
+    "expected": 350,
+    "unchanged": 350,
+    "moved_or_replaced": 0,
+    "new_vertices": 0
+   },
+   "export_vertices_identity": {
+    "verified_unchanged": 70751,
+    "unverified_new_or_moved": 30,
+    "with_attribute_zero": 0,
+    "with_nonzero_but_unverified_id": 30,
+    "note": "Blender may interpolate rac_s3_vid1 onto vertices created by topology operations; such ids are never trusted without bit-exact float32 position agreement"
+   },
+   "verdict": "ACCEPTED_FOR_VERIFICATION",
+   "interface_faces": {
+    "kept_verbatim": 757,
+    "edited_or_new": 100
+   },
+   "result_obj_sha256": "1b7f7bf0ce1bba9d1f65e4276239804e388ea068fd15eb6ec77586651d435b4b",
+   "result_faces": 141254,
+   "first_faces_are_P05S": 139807
+  },
+  "s_verify": {
+   "V1_outside_anatomy": true,
+   "V2_boundary_manifold": true,
+   "V3_intersections": true,
+   "V4_triangle_quality": false,
+   "V5_seam_continuity": true,
+   "V6_historical_05Q": false,
+   "V6c_1_garment_ledge_removed": false,
+   "V6c_2_taper_termination": false,
+   "V6c_3_no_folds": true,
+   "verdict_automated": "UNRESOLVED"
+  },
+  "V1_protected_coord_sha256": "4468dd862307b8393dfcc8dab58d5cab6033558a87ba523b220e379b7df57c55",
+  "expected": "ACCEPTED_FOR_VERIFICATION",
+  "as_expected": true
+ },
+ "T5_builtin_exporter_exact_rematch": {
+  "rematch": {
+   "protected_faces_expected": 139807,
+   "protected_faces_found_exact": 0,
+   "protected_faces_missing_or_moved": 139807,
+   "edited_faces": 141194
+  },
+  "note": "Blender OBJ exporter prints 6 decimals (and converts axes by default): exact identity is lost -> the 05S HANDOFF.md export instruction would reject every return. Superseded by t_export_blend.py."
+ },
+ "all_as_expected": true
+}

@@ -1,0 +1,109 @@
+{
+ "blend": "reviews/rac-rmot05s-evidence/handoff/GO-05S_interface_handoff.blend",
+ "checks": {
+  "units": {
+   "pass_": true,
+   "system": "METRIC",
+   "scale_length": 0.01,
+   "length_unit": "METERS",
+   "note": "1 Blender unit = 1 cm"
+  },
+  "objects_present": {
+   "pass_": true,
+   "objects": [
+    "B2_reference",
+    "F1_source_reference",
+    "GO-05S-S3_working"
+   ]
+  },
+  "identity_transform_B2_reference": {
+   "pass_": true,
+   "parent": null
+  },
+  "identity_transform_F1_source_reference": {
+   "pass_": true,
+   "parent": null
+  },
+  "identity_transform_GO-05S-S3_working": {
+   "pass_": true,
+   "parent": null
+  },
+  "working_vertex_count": {
+   "pass_": true,
+   "blend": 70751,
+   "obj": 70751
+  },
+  "working_all_triangles": {
+   "pass_": true
+  },
+  "working_coords_equal_float32_of_obj": {
+   "pass_": true,
+   "max_abs_diff_vs_float64": 7.6293359256851545e-06,
+   "note": "Blender stores float32; the float64 OBJ cannot survive a Blender round trip bit-exactly (see export audit)"
+  },
+  "working_faces_equal_obj": {
+   "pass_": true,
+   "faces": 141194
+  },
+  "rac_label_equal": {
+   "pass_": true,
+   "counts": {
+    "0": 139807,
+    "2": 417,
+    "3": 173,
+    "4": 421,
+    "5": 376
+   }
+  },
+  "edit_groups_equal_interface_interior": {
+   "pass_": true,
+   "edit": 350,
+   "expected": 350
+  },
+  "frozen_group_equal_interface_boundary_ring": {
+   "pass_": true,
+   "frozen": 101
+  },
+  "edit_frozen_disjoint": {
+   "pass_": true,
+   "overlap": 0
+  },
+  "edit_posterior_anterior_disjoint": {
+   "pass_": true
+  },
+  "focus_inside_edit_posterior": {
+   "pass_": true,
+   "focus": 57
+  },
+  "outside_vertices_neither_edit_nor_frozen": {
+   "pass_": true,
+   "outside_vertices": 70300,
+   "note": "protected by mask / hide, not by vertex groups (groups are selection aids)"
+  },
+  "reference_F1_source_reference_equal_float32": {
+   "pass_": true,
+   "library": null,
+   "data_is_editable": true,
+   "object_is_editable": true,
+   "hide_select": true,
+   "lock_location": [
+    false,
+    false,
+    false
+   ]
+  },
+  "reference_B2_reference_equal_float32": {
+   "pass_": true,
+   "library": null,
+   "data_is_editable": true,
+   "object_is_editable": true,
+   "hide_select": true,
+   "lock_location": [
+    false,
+    false,
+    false
+   ]
+  }
+ },
+ "all_pass": true
+}

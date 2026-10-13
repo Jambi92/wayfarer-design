@@ -1,0 +1,48 @@
+{
+ "return_npz": "reviews/rac-rmot05t-release/tests/T3b_return.npz",
+ "identity_transform": true,
+ "triangulated_ngons": 0,
+ "exported_vertices": 70751,
+ "exported_faces": 141194,
+ "P1_protected_vertices": {
+  "expected": 70401,
+  "verified_unchanged": 70400,
+  "missing_or_moved": 1,
+  "of_which_moved": 1,
+  "examples": [
+   57083
+  ],
+  "duplicates_of_exact_identity": 0,
+  "frozen_boundary_expected": 101,
+  "frozen_boundary_missing_or_moved": 1,
+  "b2_or_new_nonsource_missing": 0
+ },
+ "P2_protected_faces": {
+  "expected": 140397,
+  "present": 140390,
+  "missing": 7,
+  "examples": [
+   131034,
+   131035,
+   131036,
+   131037,
+   131038,
+   131076,
+   131077
+  ]
+ },
+ "edit_vertices": {
+  "expected": 350,
+  "unchanged": 350,
+  "moved_or_replaced": 0,
+  "new_vertices": 0
+ },
+ "export_vertices_identity": {
+  "verified_unchanged": 70750,
+  "unverified_new_or_moved": 1,
+  "with_attribute_zero": 0,
+  "with_nonzero_but_unverified_id": 1,
+  "note": "Blender may interpolate rac_s3_vid1 onto vertices created by topology operations; such ids are never trusted without bit-exact float32 position agreement"
+ },
+ "verdict": "REJECTED"
+}
