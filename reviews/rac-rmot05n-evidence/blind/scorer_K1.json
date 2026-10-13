@@ -1,0 +1,195 @@
+{
+ "bodies": {
+  "K01": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Typical adult proportions, average build, normal chest/abdomen profile, straight legs",
+   "basis": "n/a",
+   "axial_cues": [
+    "normal lumbar curve",
+    "modest gluteal projection"
+   ],
+   "limb_cues": [
+    "normal knee/ankle transitions"
+   ],
+   "posture_read": false
+  },
+  "K02": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Average slim-normal build, ordinary segment ratios",
+   "basis": "n/a",
+   "axial_cues": [
+    "normal trunk depth"
+   ],
+   "limb_cues": [
+    "ordinary limb taper"
+   ],
+   "posture_read": false
+  },
+  "K03": {
+   "class": "A",
+   "confidence": "medium",
+   "drivers": "Slightly softer abdomen and deeper trunk in profile, otherwise ordinary",
+   "basis": "n/a",
+   "axial_cues": [
+    "slight belly protrusion",
+    "deeper trunk"
+   ],
+   "limb_cues": [],
+   "posture_read": false
+  },
+  "K04": {
+   "class": "C",
+   "confidence": "medium",
+   "drivers": "Profile shows a deep keel-like ribcage bulging both front and back with abrupt narrowing to a pinched waist; very thin long limbs with knobby knee bulges; narrow pelvis; shape not matching normal thin-human chest-waist transition",
+   "basis": "organization",
+   "axial_cues": [
+    "barrel/keel chest bulging front and back in profile",
+    "sharp chest-to-waist pinch",
+    "narrow pelvis"
+   ],
+   "limb_cues": [
+    "long thin arms",
+    "prominent knob-like knees",
+    "thin shins"
+   ],
+   "posture_read": false
+  },
+  "K05": {
+   "class": "C",
+   "confidence": "medium",
+   "drivers": "Same pattern as K04: deep rounded thorax in profile, slender limbs, pronounced knee/shin contour, narrow hips",
+   "basis": "organization",
+   "axial_cues": [
+    "deep rounded thorax",
+    "pinched waist",
+    "narrow pelvis"
+   ],
+   "limb_cues": [
+    "slender long arms",
+    "bulging knee/upper shin contour in profile"
+   ],
+   "posture_read": false
+  },
+  "K06": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Ordinary average build and proportions",
+   "basis": "n/a",
+   "axial_cues": [],
+   "limb_cues": [],
+   "posture_read": false
+  },
+  "K07": {
+   "class": "C",
+   "confidence": "high",
+   "drivers": "Massive trunk with very wide shoulders, huge bulbous forearms and hands hanging at knee level, enormous thighs, thick lumpy calves, very large broad feet; profile shows knees bent and leg zigzag; segment relations (limb mass vs trunk, foot size) beyond human range",
+   "basis": "organization",
+   "axial_cues": [
+    "very broad, deep trunk",
+    "wide heavy pelvis",
+    "forward-set mass"
+   ],
+   "limb_cues": [
+    "oversized forearms/fists",
+    "massive thighs",
+    "bent knees",
+    "broad splayed feet",
+    "irregular bulging joint transitions"
+   ],
+   "posture_read": true
+  },
+  "K08": {
+   "class": "A",
+   "confidence": "medium",
+   "drivers": "Somewhat broader trunk and soft belly/buttocks in profile, still ordinary human proportions",
+   "basis": "n/a",
+   "axial_cues": [
+    "deeper trunk",
+    "gluteal projection"
+   ],
+   "limb_cues": [],
+   "posture_read": false
+  },
+  "K09": {
+   "class": "C",
+   "confidence": "high",
+   "drivers": "Same body plan as K07, even more extreme: gorilla-like arm mass, enormous thighs, crouched bent-knee profile with forward lean, huge feet",
+   "basis": "organization",
+   "axial_cues": [
+    "very broad deep trunk",
+    "forward-leaning torso",
+    "wide pelvis"
+   ],
+   "limb_cues": [
+    "huge forearms/hands",
+    "massive thighs",
+    "strongly bent knees",
+    "large splayed feet"
+   ],
+   "posture_read": true
+  },
+  "K10": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Ordinary slim-average build",
+   "basis": "n/a",
+   "axial_cues": [],
+   "limb_cues": [],
+   "posture_read": false
+  },
+  "K11": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Ordinary average build, slightly broader shoulders",
+   "basis": "n/a",
+   "axial_cues": [],
+   "limb_cues": [],
+   "posture_read": false
+  },
+  "K12": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Ordinary average build",
+   "basis": "n/a",
+   "axial_cues": [],
+   "limb_cues": [],
+   "posture_read": false
+  }
+ },
+ "groups": [
+  {
+   "label": "ordinary human builds",
+   "codes": [
+    "K01",
+    "K02",
+    "K03",
+    "K06",
+    "K08",
+    "K10",
+    "K11",
+    "K12"
+   ],
+   "stable": true
+  },
+  {
+   "label": "slender keel-chested, pinched-waist, knobby-kneed humanoid",
+   "codes": [
+    "K04",
+    "K05"
+   ],
+   "stable": false
+  },
+  {
+   "label": "massive troll/ogre-like, huge limbs and feet, bent-knee stance",
+   "codes": [
+    "K07",
+    "K09"
+   ],
+   "stable": true
+  }
+ ],
+ "nonhuman_groups_distinguishable": true,
+ "distinguishing_features": "K07/K09 are defined by enormous mass in arms, thighs and feet, irregular bulging joints and a crouched bent-knee profile. K04/K05 are slender with near-human limb lengths but a deep rounded or keeled thorax that bulges front and back in profile, a sharp waist pinch, narrow pelvis and knobby knees. They are opposite in bulk and differ in trunk organization. The K04/K05 call is less certain because they could be read as very thin humans with an odd chest profile."
+}

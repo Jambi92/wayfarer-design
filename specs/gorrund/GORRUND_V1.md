@@ -6,7 +6,7 @@ This is the Gorrund specification, a distinct large humanoid population. It's de
 
 ## 1–5. Core identity, anti-definition and the large-race triangle
 
-> **Gorrund are a distinct large humanoid population defined by massive load-bearing skeletal architecture, high absolute structural scale, broad/deep body organization, substantial joints and strong axial-to-limb integration. Their identity comes from skeletal construction, not from mandatory muscularity, obesity, ugliness or exaggerated monster anatomy.**
+> **Gorrund are a distinct large beastfolk population (leonine head, tail; author ruling RM-OT-05N) defined by massive load-bearing skeletal architecture, high absolute structural scale, broad/deep body organization, substantial joints and strong axial-to-limb integration. Their identity comes from skeletal construction, not from mandatory muscularity, obesity, ugliness or exaggerated monster anatomy. The leonine head and tail are species-identity channels; they do not replace the body architecture.**
 
 Gorrund aren't enlarged humans, bigger Skarn, thick Grask, muscular trolls, fat giants, mandatory bodybuilders or obese characters, hunched ogres or primitive monsters, and they aren't slow, stupid or violent because they're large.
 
@@ -69,6 +69,7 @@ Lower limbs visibly support the structure: large absolute femoral and lower-leg 
 | Hands | Large in absolute terms, structurally substantial and fully capable of fine manipulation, never mandatory fists, paws, claws or shovel hands (Part 2) |
 | Feet | Large in absolute terms, credible and plantigrade (Part 2) |
 | Plantigrade | Locked: **Gorrund are upright plantigrade humanoid bipeds for first-pass design**, with no digitigrade legs, hooves or ape-like feet without separate justification |
+| Tail | Present (beastfolk ruling, RM-OT-05N): integrated with the sacral load path as a species-identity channel; it does not replace the body architecture and is not a balance organ for an upright plantigrade biped; numeric length, taper and tuft morphology **OPEN** |
 | Digit count | No unusual count invented; expectation is **five digits per hand and foot unless a compelling biological reason emerges**, not locked until the Part 2 audit |
 
 > **Substantial joint structural presence appropriate to large load-bearing bones, without exaggerating the joints into monstrous anatomy.**
@@ -85,7 +86,7 @@ Gorrund don't require high current muscularity, and a low-muscle Gorrund stays s
 
 > **Gorrund body identity must remain recognizable even if the head is visually neutralized.**
 
-It never relies on tusks, a giant jaw, tiny eyes, a huge nose or a monster face (detail in Part 3). No skin color is required (not green, gray, brown, pale or fantasy-ogre coloration), and Gorrund aren't assumed bald, hairy, bearded or sparse-haired. Biology never encodes Gorrund as primitive, violent, brutish, tribal, nomadic, cannibalistic, uneducated, unintelligent, mercenaries or laborers.
+It never relies on tusks, a giant jaw, tiny eyes, a huge nose or a monster face (detail in Part 3); the beastfolk leonine head and tail add species identity but the body read must still stand when they are neutralized (RM-OT-05N). No skin color is required (not green, gray, brown, pale or fantasy-ogre coloration), and Gorrund aren't assumed bald, hairy, bearded or sparse-haired. Biology never encodes Gorrund as primitive, violent, brutish, tribal, nomadic, cannibalistic, uneducated, unintelligent, mercenaries or laborers.
 
 > **Gorrund body size, cranial appearance, posture and movement must not be used to imply intelligence.** No "dumb ogre" coding.
 
@@ -320,7 +321,7 @@ It reads as coordinated anatomy, never a human face widened and enlarged. The fa
 | Head scale | Suited to the very large body, avoiding the tiny-head giant, the oversized fantasy-ogre head and a uniformly scaled human head; head-to-height ratio **OPEN** |
 | Cranial vault | Suits an intelligent population, never a small braincase, receding primitive skull or extreme sloping forehead to imply brutishness |
 | Cranial breadth | Tendency: **Gorrund trend toward greater cranial breadth relative to cranial height than Marchfolk human reference anatomy (wording corrected by the craniofacial and ear clarification)**; narrower-headed Gorrund stay valid, and breadth isn't one fixed setting |
-| Cranial depth | Meaningful front-to-back depth contributing to three-dimensional identity, never equated with prognathism, a huge nose or a muzzle |
+| Cranial depth | Meaningful front-to-back depth contributing to three-dimensional identity, never equated with prognathism or a huge nose; under the beastfolk ruling (RM-OT-05N) the head is leonine and carries a muzzle, whose numeric morphology is **OPEN** |
 | Facial breadth | Trends substantial, but **broad-faced is not synonymous with Gorrund**; a narrower valid face stays recognizable through depth, orbital and zygomatic architecture, midface, mandible and cranial integration |
 | Facial depth | A major multiregional dimension (brow and orbit, zygomatics, midface, maxilla, nasal root, mandible, soft tissue), never one Face Depth slider |
 
@@ -330,9 +331,9 @@ Forehead height, breadth, curvature and hairline vary, with no required low or s
 
 > **Gorrund possess substantial zygomatic structural integration contributing to facial breadth and depth without requiring sharply protruding cheekbones.**
 
-Cheekbone lateral and forward projection and vertical position vary, and prominent cheekbones aren't mandatory. The midface has substantial depth and integration across orbits, zygomatics, maxilla, nasal root and upper dental region, never reduced to "big nose"; moderate forward projection may be valid without a muzzle, snout or ape-like prognathism, and the prognathism distribution is **OPEN** (limited or moderate variation may exist, extreme isn't required).
+Cheekbone lateral and forward projection and vertical position vary, and prominent cheekbones aren't mandatory. The midface has substantial depth and integration across orbits, zygomatics, maxilla, nasal root and upper dental region, never reduced to "big nose"; forward projection is expressed as a leonine muzzle (RM-OT-05N; numeric morphology **OPEN**), never ape-like prognathism, and the prognathism distribution is **OPEN** (limited or moderate variation may exist, extreme isn't required).
 
-**Projection comparator (RAC Phase 2, October 5, 2026; AD-R42):** "moderate" forward projection is moderate **relative to the Marchfolk adult range**. The maximum-valid projection case for measurement (RM-CF-04) is **GOR-FACE-05** (greater facial depth: never a muzzle, ape-like face or extreme prognathism). Facial depth and Transverse Structural Continuity stay separate from projection. The distribution's numbers stay OPEN.
+**Projection comparator (RAC Phase 2, October 5, 2026; AD-R42):** "moderate" forward projection is moderate **relative to the Marchfolk adult range**. The maximum-valid projection case for measurement (RM-CF-04) is **GOR-FACE-05** (greater facial depth: leonine muzzle permitted under RM-OT-05N, never an ape-like face or extreme prognathism). Facial depth and Transverse Structural Continuity stay separate from projection. The distribution's numbers stay OPEN.
 
 ## 22–39. Nose, mouth, teeth, jaw and face shape
 
@@ -406,7 +407,7 @@ Required coverage (grouping and naming may change): cranial breadth and depth, f
 | GOR-FACE-02 | Narrower face: stays Gorrund, never human, Grask or Aelari |
 | GOR-FACE-03 | Broader face: plausible, never caricature |
 | GOR-FACE-04 | Lower facial depth: still reads Gorrund |
-| GOR-FACE-05 | Greater facial depth: never a muzzle, ape-like face or extreme prognathism |
+| GOR-FACE-05 | Greater facial depth: leonine muzzle permitted (RM-OT-05N, numeric OPEN), never an ape-like face or extreme prognathism |
 | GOR-FACE-06 | Lower brow presence: proves a heavy brow is unnecessary |
 | GOR-FACE-07 | Greater brow presence: without permanent aggression |
 | GOR-FACE-08 | Narrower jaw: proves a broad square jaw is unnecessary |
@@ -437,7 +438,7 @@ Required coverage (grouping and naming may change): cranial breadth and depth, f
 
 Sex-related facial anatomy is **OPEN**, never assuming human dimorphism transfers, and future differences stay within one Gorrund foundation. Detailed aging is Part 4; Gorrund visibly age, never ageless, permanently old, early-wrinkling or with giant facial growth over time, and lifecycle is **OPEN**. Morph implementation, bone-based controls, blendshapes, ear deformation, hair and beard attachment, skin materials and LOD strategy stay **OPEN**.
 
-First-pass approved: a positive broad and deep craniofacial identity; meaningful but variable cranial breadth and depth; multiregional facial depth; heavy brow and tiny eyes not required; orbital size distinct from visible eye opening; zygomatics contributing to breadth and depth without mandatory protruding cheekbones; meaningful midface depth without a muzzle; extreme prognathism not required; nose size not an identifier; a substantial mandible without required extreme breadth or projection; underbite not racial; tusks not required, with limited tusk-like canine variation OPEN; Gorrund can be attractive or soft-featured; ears are broad, substantial auricles with strong attachment and rounded-to-angular termination, neither elven nor short Grask ears; broad scalp-hair variation, baldness valid but not required, facial hair not required, body hair OPEN (baseline since authored, RAC Phase 2 / AD-R23; distributions OPEN); facial controls provisional; relationship-aware facial validity mandatory; and head-body ratios, sex-related facial anatomy and technical face architecture OPEN. **Gorrund v1.0 Part 3 is complete**, and v1.0 as a whole isn't.
+First-pass approved: a positive broad and deep craniofacial identity; meaningful but variable cranial breadth and depth; multiregional facial depth; heavy brow and tiny eyes not required; orbital size distinct from visible eye opening; zygomatics contributing to breadth and depth without mandatory protruding cheekbones; meaningful midface depth (leonine muzzle under RM-OT-05N); extreme prognathism not required; nose size not an identifier; a substantial mandible without required extreme breadth or projection; underbite not racial; tusks not required, with limited tusk-like canine variation OPEN; Gorrund can be attractive or soft-featured; ears are broad, substantial auricles with strong attachment and rounded-to-angular termination, neither elven nor short Grask ears; broad scalp-hair variation, baldness valid but not required, facial hair not required, body hair OPEN (baseline since authored, RAC Phase 2 / AD-R23; distributions OPEN); facial controls provisional; relationship-aware facial validity mandatory; and head-body ratios, sex-related facial anatomy and technical face architecture OPEN. **Gorrund v1.0 Part 3 is complete**, and v1.0 as a whole isn't.
 
 # Part 3 clarification Craniofacial and ear identity
 

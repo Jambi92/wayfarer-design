@@ -1,0 +1,214 @@
+{
+ "bodies": {
+  "L01": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Average proportions, mild lower-belly protrusion in profile, ordinary limb taper",
+   "basis": "n/a",
+   "axial_cues": [
+    "slight belly in profile",
+    "normal lumbar curve"
+   ],
+   "limb_cues": [
+    "ordinary knee/elbow transitions"
+   ],
+   "posture_read": false
+  },
+  "L02": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Slim-average build, straight upright profile, normal segment ratios",
+   "basis": "n/a",
+   "axial_cues": [
+    "flat abdomen",
+    "normal chest-to-pelvis ratio"
+   ],
+   "limb_cues": [
+    "normal limb taper"
+   ],
+   "posture_read": false
+  },
+  "L03": {
+   "class": "C",
+   "confidence": "medium",
+   "drivers": "Narrow, tube-like trunk with deep chest/upper-back bulge in profile and pinched waist; long thin arms with prominent elbows; legs with forward-projecting knee and sinuous calf line; overall S-curved profile unlike the ordinary bodies",
+   "basis": "organization",
+   "axial_cues": [
+    "deep keel-like chest/upper back in profile",
+    "narrow rib cage in front view",
+    "pinched waist",
+    "S-curved spine profile"
+   ],
+   "limb_cues": [
+    "long thin arms",
+    "knobby elbows",
+    "knee projecting forward in profile",
+    "slender shins"
+   ],
+   "posture_read": false
+  },
+  "L04": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Average slim body, mild belly, normal proportions",
+   "basis": "n/a",
+   "axial_cues": [
+    "mild belly"
+   ],
+   "limb_cues": [
+    "normal joints"
+   ],
+   "posture_read": false
+  },
+  "L05": {
+   "class": "C",
+   "confidence": "high",
+   "drivers": "Extremely broad trapezoidal trunk with no waist, huge forearms and hands, short heavy bowed legs with zig-zag knee line, oversized splayed feet, short lower body relative to trunk",
+   "basis": "organization",
+   "axial_cues": [
+    "very wide barrel trunk",
+    "no waist taper",
+    "massive shoulders/traps",
+    "wide heavy pelvis"
+   ],
+   "limb_cues": [
+    "massive forearms",
+    "large hands",
+    "short bowed legs",
+    "bent/zig-zag knee profile",
+    "huge broad feet"
+   ],
+   "posture_read": true
+  },
+  "L06": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Average slender build, ordinary proportions",
+   "basis": "n/a",
+   "axial_cues": [
+    "mild belly"
+   ],
+   "limb_cues": [
+    "normal limb taper"
+   ],
+   "posture_read": false
+  },
+  "L07": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Average build with slightly fuller hips/thighs, normal profile",
+   "basis": "n/a",
+   "axial_cues": [
+    "moderate hip width"
+   ],
+   "limb_cues": [
+    "fuller thighs"
+   ],
+   "posture_read": false
+  },
+  "L08": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Ordinary build with visible belly protrusion in profile; within normal range",
+   "basis": "n/a",
+   "axial_cues": [
+    "rounded belly",
+    "slight back curve"
+   ],
+   "limb_cues": [],
+   "posture_read": false
+  },
+  "L09": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Average proportions, normal profile",
+   "basis": "n/a",
+   "axial_cues": [],
+   "limb_cues": [],
+   "posture_read": false
+  },
+  "L10": {
+   "class": "C",
+   "confidence": "high",
+   "drivers": "Same structure as L05: huge wide trunk, massive arms separated by gaps, short heavy bowed legs, bent knees, very large feet",
+   "basis": "organization",
+   "axial_cues": [
+    "very wide barrel trunk",
+    "no waist",
+    "massive shoulder girdle",
+    "broad pelvis"
+   ],
+   "limb_cues": [
+    "massive forearms",
+    "large hands",
+    "short bowed legs",
+    "bent knee profile",
+    "huge feet"
+   ],
+   "posture_read": true
+  },
+  "L11": {
+   "class": "C",
+   "confidence": "medium",
+   "drivers": "Same pattern as L03: narrow trunk with deep chest/upper-back bulge in profile, pinched waist, long thin arms, sinuous leg line with forward knee",
+   "basis": "organization",
+   "axial_cues": [
+    "deep chest/upper back in profile",
+    "narrow rib cage",
+    "pinched waist"
+   ],
+   "limb_cues": [
+    "long thin arms",
+    "prominent elbows",
+    "forward knee in profile",
+    "slender shins"
+   ],
+   "posture_read": false
+  },
+  "L12": {
+   "class": "A",
+   "confidence": "high",
+   "drivers": "Average build, ordinary proportions, mild belly",
+   "basis": "n/a",
+   "axial_cues": [
+    "mild belly"
+   ],
+   "limb_cues": [],
+   "posture_read": false
+  }
+ },
+ "groups": [
+  {
+   "label": "ordinary human builds",
+   "codes": [
+    "L01",
+    "L02",
+    "L04",
+    "L06",
+    "L07",
+    "L08",
+    "L09",
+    "L12"
+   ],
+   "stable": true
+  },
+  {
+   "label": "massive broad-trunk, short bowed-leg race (orc/dwarf-like)",
+   "codes": [
+    "L05",
+    "L10"
+   ],
+   "stable": true
+  },
+  {
+   "label": "slender deep-chested, pinched-waist, long-limbed type",
+   "codes": [
+    "L03",
+    "L11"
+   ],
+   "stable": false
+  }
+ ],
+ "nonhuman_groups_distinguishable": true,
+ "distinguishing_features": "L05/L10 are defined by enormous trunk width, massive forearms/hands, short bowed bent-kneed legs and huge feet; L03/L11 are slender with a narrow rib cage, deep keel-like chest/upper-back profile, pinched waist, long thin arms and sinuous legs. L03/L11 could alternatively be read as extreme-thin humans (class B), hence medium confidence and unstable group."
+}
