@@ -1,0 +1,102 @@
+[
+ {
+  "id": 1,
+  "item": "belt + loincloth (waist band z 112-140)",
+  "class_": "c",
+  "confidence": "medium",
+  "faces": 14053,
+  "area_cm2": 5521.7,
+  "evidence": "S_belt z118/z126/z132: one outer contour (belt, buckle discs, fringe) and no inner pelvis/abdomen loop",
+  "known_errors": "box includes lower abdomen skin above the belt and flank skin"
+ },
+ {
+  "id": 2,
+  "item": "loincloth flaps (z 72-112)",
+  "class_": "a/b",
+  "confidence": "medium",
+  "faces": 19116,
+  "area_cm2": 10674.4,
+  "evidence": "S_belt z100: separate thigh loops lie inside the open skirt contour; sag_x0 / sag_x10: flaps are thin sheets hanging free of the thighs below z ~105, fused to the belt above",
+  "known_errors": "box includes the thighs, crotch and buttocks (body); crotch/pelvis under the belt is absent (class c above z ~105)"
+ },
+ {
+  "id": 3,
+  "item": "forearm bracers (both arms)",
+  "class_": "c",
+  "confidence": "high",
+  "faces": 6034,
+  "area_cm2": 2842.3,
+  "evidence": "S_bracer z112-136: single closed forearm loop, no inner forearm loop; sag/cor: strap relief is the outer surface",
+  "known_errors": "box includes wrist/hand top and elbow; -X forearm is cut open by the 05N slab seam (zm124 open)"
+ },
+ {
+  "id": 4,
+  "item": "+X upper-arm armband (exposed arc, VERIFIED face set G)",
+  "class_": "c",
+  "confidence": "high",
+  "faces": 672,
+  "area_cm2": 279.8,
+  "evidence": "S_armband long_* and perp: band is a single outward step (lip / undercut) with no skin surface beneath; medial arc runs into the fused arm/trunk axillary contact (perp s>=0 open loops)",
+  "known_errors": "G contains enclosed islands at the sector ends; some band-top faces at the sector ends are labelled seam band S (both are removed)"
+ },
+ {
+  "id": 5,
+  "item": "-X upper-arm armband",
+  "class_": "d",
+  "confidence": "low",
+  "faces": 3152,
+  "area_cm2": 1501.0,
+  "evidence": "not sectioned in detail: the -X arm is open at the F1/F2 seam (05N contact slab), so separability cannot be read",
+  "known_errors": "box includes deltoid / axilla skin"
+ },
+ {
+  "id": 6,
+  "item": "shin + ankle wraps (both legs)",
+  "class_": "c",
+  "confidence": "high",
+  "faces": 16615,
+  "area_cm2": 7873.6,
+  "evidence": "S_shin z24-z46 / zm32: single closed loop per leg, no inner shin loop; sag/cor: wrap folds are the outer surface",
+  "known_errors": "box includes knee bottom and foot top"
+ },
+ {
+  "id": 7,
+  "item": "necklace + pendant teeth",
+  "class_": "d",
+  "confidence": "medium",
+  "faces": 3280,
+  "area_cm2": 1308.3,
+  "evidence": "sag0_front / sag8_front: pendant relief fused onto the chest/neck profile; a single surface, no skin beneath; relief is shallow so a local fill is plausible but unproven",
+  "known_errors": "box includes chest, throat and the front braids"
+ },
+ {
+  "id": 8,
+  "item": "front braids",
+  "class_": "a",
+  "confidence": "medium",
+  "faces": 5513,
+  "area_cm2": 2195.7,
+  "evidence": "S_neck_mane z170 (earlier sweep) and z165: braids are separate small loops in front of the chest below their attachment; chest contour continuous behind them",
+  "known_errors": "box includes pectoral skin; attachment at the head is fused"
+ },
+ {
+  "id": 9,
+  "item": "back braid",
+  "class_": "a",
+  "confidence": "medium",
+  "faces": 1803,
+  "area_cm2": 691.5,
+  "evidence": "S_neck_mane z150 / z165: back braid is a separate loop behind the back below its attachment; back contour continuous",
+  "known_errors": "box includes back skin at the spine"
+ },
+ {
+  "id": 10,
+  "item": "mane over neck / upper back",
+  "class_": "c",
+  "confidence": "medium",
+  "faces": 13565,
+  "area_cm2": 5112.5,
+  "evidence": "S_neck_mane z185 / z195 / sag0_back: the outer contour is the mane; no neck / trapezius surface inside it",
+  "known_errors": "box includes the back of the skull (head is out of scope)"
+ }
+]
