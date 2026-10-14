@@ -1,0 +1,175 @@
+{
+ "tool": "RM-OT-05U6 aggregate",
+ "author_visual_review": "PENDING",
+ "note": "ACCEPTED_FOR_VERIFICATION_U2 is protection only. A U6 PASS is a technical result for the bounded posterior upper-notch task only; never author acceptance.",
+ "mandatory": {
+  "protection_U2_reintegration": {
+   "status": "PASS",
+   "verdict": "ACCEPTED_FOR_VERIFICATION_U2",
+   "errors": []
+  },
+  "outside_365_unmoved": {
+   "status": "PASS",
+   "moved": 0
+  },
+  "frozen_ring_unmoved": {
+   "status": "PASS",
+   "moved": 0
+  },
+  "topology_unchanged": {
+   "status": "PASS",
+   "missing_faces": 0,
+   "extra_faces": 0,
+   "duplicate_faces": 0,
+   "face_count_matches": true
+  },
+  "V1_U2": {
+   "status": "PASS"
+  },
+  "s_verify_no_FAIL_verdict": {
+   "status": "PASS",
+   "verdict": "UNRESOLVED"
+  },
+  "V2_boundary_manifold": {
+   "status": "PASS"
+  },
+  "V3_intersections": {
+   "status": "PASS"
+  },
+  "V5_seam_continuity": {
+   "status": "PASS"
+  },
+  "V6c_3_no_folds": {
+   "status": "PASS"
+  },
+  "crease_depth_A": {
+   "status": "PASS",
+   "depth_cm": 0.895050778787277,
+   "threshold_cm": 0.6712880840904568,
+   "error": null
+  },
+  "crease_depth_B": {
+   "status": "PASS",
+   "depth_cm": 0.36579835454628945,
+   "threshold_cm": 0.27434876590971574,
+   "error": null
+  },
+  "R1_target_roughness": {
+   "status": "FAIL",
+   "limit_deg": 36.3,
+   "target_vertices": 16,
+   "max_now": 47.95,
+   "max_baseline": 47.95,
+   "over_limit": [
+    {
+     "s3_vertex": 61303,
+     "roughness": 47.95
+    },
+    {
+     "s3_vertex": 61581,
+     "roughness": 47.85
+    },
+    {
+     "s3_vertex": 61580,
+     "roughness": 40.95
+    },
+    {
+     "s3_vertex": 62065,
+     "roughness": 36.57
+    }
+   ]
+  },
+  "R1_baseline_exception_identity": {
+   "status": "PASS",
+   "vertices": [
+    70735,
+    70592,
+    70408
+   ],
+   "moved": [],
+   "roughness_now": {
+    "70735": 43.85,
+    "70592": 36.77,
+    "70408": 37.49
+   }
+  },
+  "locus_outside_target_unchanged": {
+   "status": "PASS",
+   "editable_outside_target": 349,
+   "moved": [],
+   "moved_count": 0
+  },
+  "R2_local_cap_quality": {
+   "status": "FAIL",
+   "cap_faces": 35,
+   "min_angle_limit_deg": 10.0,
+   "min_angle_now": 6.24,
+   "min_angle_baseline": 6.24,
+   "face_130139": {
+    "baseline": 6.24,
+    "now": 6.24
+   },
+   "degenerate": [],
+   "inverted": [],
+   "below_min_angle": [
+    {
+     "s3_face": 130139,
+     "min_angle": 6.24,
+     "baseline": 6.24
+    }
+   ],
+   "edges_checked": 60,
+   "edge_band_cm": [
+    0.25,
+    2.5
+   ],
+   "new_out_of_band_edges": [],
+   "baseline_out_of_band_edges_reported": [],
+   "changed_cap_faces": []
+  }
+ },
+ "u6_technical_gates": "NOT MET",
+ "failed_or_missing": [
+  "R1_target_roughness",
+  "R2_local_cap_quality"
+ ],
+ "changed_target_vertices": [],
+ "historical_diagnostics": {
+  "roughness_365_wide": {
+   "limit_deg": 36.3,
+   "max_now": 47.95,
+   "over_limit": [
+    61303,
+    61580,
+    61581,
+    62065,
+    70408,
+    70592,
+    70735
+   ],
+   "note": "diagnostic only (R1)"
+  },
+  "retired_05U5_per_face_relative_sliver": {
+   "faces_worse_than_own_baseline": [],
+   "note": "retired for U6 (R2); reported only"
+  }
+ },
+ "geometry_gates_reported": {
+  "V1_outside_anatomy": true,
+  "V2_boundary_manifold": true,
+  "V3_intersections": true,
+  "V4_triangle_quality": false,
+  "V5_seam_continuity": true,
+  "V6_historical_05Q": false,
+  "V6c_1_garment_ledge_removed": false,
+  "V6c_2_taper_termination": false,
+  "V6c_3_no_folds": true
+ },
+ "global_unresolved_disclosed_not_waived": {
+  "V4_triangle_quality": false,
+  "V6_historical_05Q": false,
+  "V6c_1_garment_ledge_removed": false,
+  "V6c_2_taper_termination": false
+ },
+ "s_verify_verdict": "UNRESOLVED"
+}

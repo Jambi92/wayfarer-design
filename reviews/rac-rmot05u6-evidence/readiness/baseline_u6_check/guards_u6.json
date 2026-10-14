@@ -1,0 +1,100 @@
+{
+ "tool": "RM-OT-05U6 local guards",
+ "errors": [],
+ "R1_target_roughness": {
+  "limit_deg": 36.3,
+  "target_vertices": 16,
+  "max_now": 47.95,
+  "max_baseline": 47.95,
+  "over_limit": [
+   {
+    "s3_vertex": 61303,
+    "roughness": 47.95
+   },
+   {
+    "s3_vertex": 61581,
+    "roughness": 47.85
+   },
+   {
+    "s3_vertex": 61580,
+    "roughness": 40.95
+   },
+   {
+    "s3_vertex": 62065,
+    "roughness": 36.57
+   }
+  ],
+  "pass_": false
+ },
+ "R1_baseline_exception_identity": {
+  "vertices": [
+   70735,
+   70592,
+   70408
+  ],
+  "moved": [],
+  "roughness_now": {
+   "70735": 43.85,
+   "70592": 36.77,
+   "70408": 37.49
+  },
+  "pass_": true
+ },
+ "locus_outside_target_unchanged": {
+  "editable_outside_target": 349,
+  "moved": [],
+  "moved_count": 0,
+  "pass_": true
+ },
+ "changed_target_vertices": [],
+ "R2_local_cap_quality": {
+  "cap_faces": 35,
+  "min_angle_limit_deg": 10.0,
+  "min_angle_now": 6.24,
+  "min_angle_baseline": 6.24,
+  "face_130139": {
+   "baseline": 6.24,
+   "now": 6.24
+  },
+  "degenerate": [],
+  "inverted": [],
+  "below_min_angle": [
+   {
+    "s3_face": 130139,
+    "min_angle": 6.24,
+    "baseline": 6.24
+   }
+  ],
+  "edges_checked": 60,
+  "edge_band_cm": [
+   0.25,
+   2.5
+  ],
+  "new_out_of_band_edges": [],
+  "baseline_out_of_band_edges_reported": [],
+  "changed_cap_faces": [],
+  "pass_": false
+ },
+ "historical_diagnostics": {
+  "roughness_365_wide": {
+   "limit_deg": 36.3,
+   "max_now": 47.95,
+   "over_limit": [
+    61303,
+    61580,
+    61581,
+    62065,
+    70408,
+    70592,
+    70735
+   ],
+   "note": "diagnostic only (R1)"
+  },
+  "retired_05U5_per_face_relative_sliver": {
+   "faces_worse_than_own_baseline": [],
+   "note": "retired for U6 (R2); reported only"
+  }
+ },
+ "finite": true,
+ "pass_all_local": false
+}

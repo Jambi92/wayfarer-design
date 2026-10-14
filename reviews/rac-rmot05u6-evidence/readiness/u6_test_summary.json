@@ -1,0 +1,190 @@
+{
+ "tests": [
+  {
+   "test": "T1_unchanged_baseline_full_check",
+   "expected": "NOT MET on exactly R1 target roughness (4 in-target offenders) and R2 (face 130139 6.24 < 10); all other U6 gates PASS",
+   "as_expected": true,
+   "failed": [
+    "R1_target_roughness",
+    "R2_local_cap_quality"
+   ],
+   "target_over": [
+    {
+     "s3_vertex": 61303,
+     "roughness": 47.95
+    },
+    {
+     "s3_vertex": 61581,
+     "roughness": 47.85
+    },
+    {
+     "s3_vertex": 61580,
+     "roughness": 40.95
+    },
+    {
+     "s3_vertex": 62065,
+     "roughness": 36.57
+    }
+   ]
+  },
+  {
+   "test": "T2_move_baseline_exception_70735",
+   "expected": "R1 exception identity FAIL, aggregate nonzero",
+   "as_expected": true,
+   "moved": [
+    70735
+   ],
+   "aggregate_exit": 3
+  },
+  {
+   "test": "T2_move_baseline_exception_70592",
+   "expected": "R1 exception identity FAIL, aggregate nonzero",
+   "as_expected": true,
+   "moved": [
+    70592
+   ],
+   "aggregate_exit": 3
+  },
+  {
+   "test": "T2_move_baseline_exception_70408",
+   "expected": "R1 exception identity FAIL, aggregate nonzero",
+   "as_expected": true,
+   "moved": [
+    70408
+   ],
+   "aggregate_exit": 3
+  },
+  {
+   "test": "T3_in_target_offender_still_fails",
+   "expected": "R1 target roughness FAIL (61303, 61581 > 36.3) although the file was edited",
+   "as_expected": true,
+   "over": [
+    {
+     "s3_vertex": 61303,
+     "roughness": 47.95
+    },
+    {
+     "s3_vertex": 61581,
+     "roughness": 47.85
+    },
+    {
+     "s3_vertex": 61580,
+     "roughness": 40.95
+    },
+    {
+     "s3_vertex": 62065,
+     "roughness": 36.57
+    }
+   ]
+  },
+  {
+   "test": "T4_cap_face_below_10_fails",
+   "expected": "R2 FAIL listing 130139 at baseline (T1) and at least one newly created sub-10 face",
+   "as_expected": true,
+   "below": [
+    {
+     "s3_face": 130135,
+     "min_angle": 7.38,
+     "baseline": 48.94
+    },
+    {
+     "s3_face": 130137,
+     "min_angle": 9.98,
+     "baseline": 31.97
+    },
+    {
+     "s3_face": 130139,
+     "min_angle": 6.24,
+     "baseline": 6.24
+    }
+   ]
+  },
+  {
+   "test": "T5_safe_face_loses_angle_not_failed_for_that",
+   "expected": "at least one cap face loses min angle but stays >= 10; R2 below-10 list is still only 130139 (no failure for the loss); the retired 05U5 rule would have flagged it",
+   "as_expected": true,
+   "safe_faces_losing_angle": [
+    {
+     "s3_face": 130134,
+     "baseline": 34.03,
+     "now": 33.51
+    },
+    {
+     "s3_face": 130136,
+     "baseline": 33.46,
+     "now": 32.94
+    }
+   ],
+   "R2_below_min": [
+    {
+     "s3_face": 130139,
+     "min_angle": 6.24,
+     "baseline": 6.24
+    }
+   ]
+  },
+  {
+   "test": "T6_editable_outside_target_moved",
+   "expected": "locus FAIL",
+   "as_expected": true,
+   "vertex": 70401
+  },
+  {
+   "test": "T7_inverted_cap_face",
+   "expected": "R2 FAIL (inverted)",
+   "as_expected": true,
+   "inverted": [
+    129905,
+    129906,
+    129908,
+    130135
+   ]
+  },
+  {
+   "test": "T8_new_out_of_band_edge",
+   "expected": "R2 FAIL (new edge > 2.5 cm)",
+   "as_expected": true,
+   "edges": [
+    {
+     "edge": [
+      61219,
+      61562
+     ],
+     "length_cm": 3.8493,
+     "baseline_out_of_band": false
+    },
+    {
+     "edge": [
+      61355,
+      61562
+     ],
+     "length_cm": 2.973,
+     "baseline_out_of_band": false
+    },
+    {
+     "edge": [
+      61405,
+      61562
+     ],
+     "length_cm": 3.5399,
+     "baseline_out_of_band": false
+    }
+   ]
+  },
+  {
+   "test": "T9_tampered_sets_refused",
+   "expected": "guards refuse (nonzero), aggregate MISSING / FAILED_MEASUREMENT, nonzero",
+   "as_expected": true,
+   "errors": [
+    "frozen u6 sets missing or hash mismatch (pinned 34646b31c0f6bc2a0bb8260cacc567f60d5bc8a2b030e3df7eac3d480d6640bf)"
+   ]
+  },
+  {
+   "test": "T10_non_finite_target",
+   "expected": "R1 and R2 FAIL, nonzero",
+   "as_expected": true
+  }
+ ],
+ "passed": 12,
+ "total": 12
+}
