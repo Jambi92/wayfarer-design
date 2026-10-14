@@ -1,0 +1,527 @@
+{
+ "tool": "RM-OT-05U8A aggregate",
+ "author_visual_review": "PENDING",
+ "note": "A U8A PASS is technical safety for the controlled crease-anchor release only; the visual result decides; never author acceptance.",
+ "mandatory": {
+  "protection_U8A_vs_u8cp1": {
+   "status": "PASS",
+   "verdict": "ACCEPTED_FOR_VERIFICATION_U8A",
+   "errors": []
+  },
+  "topology_unchanged": {
+   "status": "PASS"
+  },
+  "outside_anchors_bit_exact_to_u8cp1": {
+   "status": "PASS",
+   "value": 0
+  },
+  "u8a_frozen_ring_unmoved": {
+   "status": "PASS",
+   "value": []
+  },
+  "u8_cp1_edits_unmoved": {
+   "status": "PASS",
+   "value": []
+  },
+  "u6_edited_unmoved_except_61581": {
+   "status": "PASS",
+   "value": []
+  },
+  "u7_edited_unmoved": {
+   "status": "PASS",
+   "value": []
+  },
+  "u6_target_outside_anchors_unmoved": {
+   "status": "PASS",
+   "value": []
+  },
+  "V1_U8A_prefix_and_correspondence": {
+   "status": "PASS"
+  },
+  "s_verify_no_FAIL_verdict": {
+   "status": "PASS",
+   "verdict": "UNRESOLVED"
+  },
+  "V2_boundary_manifold": {
+   "status": "PASS"
+  },
+  "V3_intersections": {
+   "status": "PASS"
+  },
+  "V5_seam_continuity": {
+   "status": "PASS"
+  },
+  "V6c_3_no_folds": {
+   "status": "PASS"
+  },
+  "crease_depth_A": {
+   "status": "PASS",
+   "depth_cm": 0.7787638197535405,
+   "threshold_cm": 0.6712880840904568,
+   "error": null
+  },
+  "crease_depth_B": {
+   "status": "PASS",
+   "depth_cm": 0.3503452362691344,
+   "threshold_cm": 0.27434876590971574,
+   "error": null
+  },
+  "u8a_local_quality": {
+   "status": "PASS",
+   "u8a_faces": 13,
+   "min_angle_now": 13.41,
+   "min_angle_cp2": 13.41,
+   "degenerate": [],
+   "inverted": [],
+   "below_10deg": [],
+   "edges_checked": 26,
+   "out_of_band_edges": []
+  },
+  "anchor_steps_within_limits": {
+   "status": "PASS",
+   "displacement_cm": {
+    "61580": 0.0,
+    "61581": 0.0
+   },
+   "limits_cm": {
+    "61580": 0.04,
+    "61581": 0.06
+   }
+  },
+  "u8_no_regression_local_quality": {
+   "status": "PASS",
+   "min_angle_now": 16.16
+  },
+  "u7_no_regression_local_quality": {
+   "status": "PASS",
+   "min_angle_now": 12.68
+  },
+  "u6_no_regression_R1_target_roughness": {
+   "status": "PASS",
+   "max_now": 32.41,
+   "over_limit": []
+  },
+  "u6_no_regression_R1_baseline_exception_identity": {
+   "status": "PASS",
+   "moved": []
+  },
+  "u6_no_regression_locus_outside_target_unchanged": {
+   "status": "PASS",
+   "moved": []
+  },
+  "u6_no_regression_R2_local_cap_quality": {
+   "status": "PASS",
+   "min_angle_now": 13.41,
+   "below_min_angle": []
+  }
+ },
+ "u8a_safety_gates": "PASS",
+ "failed_or_missing": [],
+ "target_moved": [],
+ "facet_diagnostic": {
+  "note": "DIAGNOSTIC ONLY - no pass threshold; dihedral between adjacent faces on every edge touching a U8A face",
+  "cp2": {
+   "named_edges": {
+    "61562-61580": [
+     32.28
+    ],
+    "61219-61405": [
+     30.51
+    ],
+    "face_130139_adjacent_dihedrals": [
+     {
+      "edge": [
+       61219,
+       61581
+      ],
+      "dihedral": 34.16
+     },
+     {
+      "edge": [
+       61219,
+       61405
+      ],
+      "dihedral": 30.51
+     },
+     {
+      "edge": [
+       61405,
+       61581
+      ],
+      "dihedral": 22.11
+     }
+    ]
+   },
+   "incident_edges": {
+    "61581": [
+     {
+      "edge": [
+       61219,
+       61581
+      ],
+      "dihedral": 34.16
+     },
+     {
+      "edge": [
+       61581,
+       61652
+      ],
+      "dihedral": 26.2
+     },
+     {
+      "edge": [
+       61581,
+       61727
+      ],
+      "dihedral": 24.89
+     },
+     {
+      "edge": [
+       61368,
+       61581
+      ],
+      "dihedral": 22.7
+     },
+     {
+      "edge": [
+       61405,
+       61581
+      ],
+      "dihedral": 22.11
+     },
+     {
+      "edge": [
+       61581,
+       62052
+      ],
+      "dihedral": 16.31
+     },
+     {
+      "edge": [
+       61562,
+       61581
+      ],
+      "dihedral": 8.15
+     }
+    ],
+    "61580": [
+     {
+      "edge": [
+       61562,
+       61580
+      ],
+      "dihedral": 32.28
+     },
+     {
+      "edge": [
+       61522,
+       61580
+      ],
+      "dihedral": 23.11
+     },
+     {
+      "edge": [
+       61580,
+       61771
+      ],
+      "dihedral": 18.65
+     },
+     {
+      "edge": [
+       61580,
+       61750
+      ],
+      "dihedral": 14.75
+     },
+     {
+      "edge": [
+       61580,
+       62086
+      ],
+      "dihedral": 9.53
+     },
+     {
+      "edge": [
+       61355,
+       61580
+      ],
+      "dihedral": 2.01
+     }
+    ]
+   },
+   "edges": 26,
+   "max": 34.16,
+   "p95": 31.83,
+   "mean": 15.62,
+   "per_seed_max": {
+    "61580": 32.28,
+    "61581": 34.16
+   },
+   "top_edges": [
+    {
+     "edge": [
+      61219,
+      61581
+     ],
+     "dihedral": 34.16
+    },
+    {
+     "edge": [
+      61562,
+      61580
+     ],
+     "dihedral": 32.28
+    },
+    {
+     "edge": [
+      61219,
+      61405
+     ],
+     "dihedral": 30.51
+    },
+    {
+     "edge": [
+      61581,
+      61652
+     ],
+     "dihedral": 26.2
+    },
+    {
+     "edge": [
+      61581,
+      61727
+     ],
+     "dihedral": 24.89
+    },
+    {
+     "edge": [
+      61562,
+      61727
+     ],
+     "dihedral": 24.81
+    },
+    {
+     "edge": [
+      61522,
+      61580
+     ],
+     "dihedral": 23.11
+    },
+    {
+     "edge": [
+      61368,
+      61581
+     ],
+     "dihedral": 22.7
+    }
+   ]
+  },
+  "now": {
+   "named_edges": {
+    "61562-61580": [
+     32.28
+    ],
+    "61219-61405": [
+     30.51
+    ],
+    "face_130139_adjacent_dihedrals": [
+     {
+      "edge": [
+       61219,
+       61581
+      ],
+      "dihedral": 34.16
+     },
+     {
+      "edge": [
+       61219,
+       61405
+      ],
+      "dihedral": 30.51
+     },
+     {
+      "edge": [
+       61405,
+       61581
+      ],
+      "dihedral": 22.11
+     }
+    ]
+   },
+   "incident_edges": {
+    "61581": [
+     {
+      "edge": [
+       61219,
+       61581
+      ],
+      "dihedral": 34.16
+     },
+     {
+      "edge": [
+       61581,
+       61652
+      ],
+      "dihedral": 26.2
+     },
+     {
+      "edge": [
+       61581,
+       61727
+      ],
+      "dihedral": 24.89
+     },
+     {
+      "edge": [
+       61368,
+       61581
+      ],
+      "dihedral": 22.7
+     },
+     {
+      "edge": [
+       61405,
+       61581
+      ],
+      "dihedral": 22.11
+     },
+     {
+      "edge": [
+       61581,
+       62052
+      ],
+      "dihedral": 16.31
+     },
+     {
+      "edge": [
+       61562,
+       61581
+      ],
+      "dihedral": 8.15
+     }
+    ],
+    "61580": [
+     {
+      "edge": [
+       61562,
+       61580
+      ],
+      "dihedral": 32.28
+     },
+     {
+      "edge": [
+       61522,
+       61580
+      ],
+      "dihedral": 23.11
+     },
+     {
+      "edge": [
+       61580,
+       61771
+      ],
+      "dihedral": 18.65
+     },
+     {
+      "edge": [
+       61580,
+       61750
+      ],
+      "dihedral": 14.75
+     },
+     {
+      "edge": [
+       61580,
+       62086
+      ],
+      "dihedral": 9.53
+     },
+     {
+      "edge": [
+       61355,
+       61580
+      ],
+      "dihedral": 2.01
+     }
+    ]
+   },
+   "edges": 26,
+   "max": 34.16,
+   "p95": 31.83,
+   "mean": 15.62,
+   "per_seed_max": {
+    "61580": 32.28,
+    "61581": 34.16
+   },
+   "top_edges": [
+    {
+     "edge": [
+      61219,
+      61581
+     ],
+     "dihedral": 34.16
+    },
+    {
+     "edge": [
+      61562,
+      61580
+     ],
+     "dihedral": 32.28
+    },
+    {
+     "edge": [
+      61219,
+      61405
+     ],
+     "dihedral": 30.51
+    },
+    {
+     "edge": [
+      61581,
+      61652
+     ],
+     "dihedral": 26.2
+    },
+    {
+     "edge": [
+      61581,
+      61727
+     ],
+     "dihedral": 24.89
+    },
+    {
+     "edge": [
+      61562,
+      61727
+     ],
+     "dihedral": 24.81
+    },
+    {
+     "edge": [
+      61522,
+      61580
+     ],
+     "dihedral": 23.11
+    },
+    {
+     "edge": [
+      61368,
+      61581
+     ],
+     "dihedral": 22.7
+    }
+   ]
+  }
+ },
+ "face_130139_min_angle": {
+  "cp1": 14.87,
+  "now": 14.87
+ },
+ "global_unresolved_disclosed_not_waived": {
+  "V4_triangle_quality": false,
+  "V6_historical_05Q": false,
+  "V6c_1_garment_ledge_removed": false,
+  "V6c_2_taper_termination": false
+ },
+ "s_verify_verdict": "UNRESOLVED"
+}
