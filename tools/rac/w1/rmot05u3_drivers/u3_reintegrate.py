@@ -73,6 +73,7 @@ def main():
     R = np.load(a.ret); Vr = R['V'].astype(np.float32); Fr = np.asarray(R['F'], np.int64); ids = R['s3_vid1'].astype(np.int64) - 1
     rep['export'] = dict(vertices=int(len(Vr)), faces=int(len(Fr)), identity_transform=bool(R['identity_transform']), triangulated_ngons=int(R['triangulated_ngons']))
     if not bool(R['identity_transform']): errs.append('object transform is not identity')
+    if not np.isfinite(Vr).all(): errs.append('non-finite vertex coordinates in the return (%d vertices)' % int((~np.isfinite(Vr).all(1)).sum()))   # RM-OT-05U4 addition
     valid = (ids >= 0) & (ids < nV); u, c = np.unique(ids[valid], return_counts=True)
     idrep = dict(invalid_or_zero_ids=int((~valid).sum()), duplicate_ids=int((c > 1).sum()), missing_ids=int(nV - len(u)), vertex_count_matches=len(Vr) == nV)
     rep['identity'] = idrep

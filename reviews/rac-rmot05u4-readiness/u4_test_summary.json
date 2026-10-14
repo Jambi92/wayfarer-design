@@ -1,0 +1,198 @@
+{
+ "note": "Disposable validator fixtures on copies of the 05U baseline arrays; NOT a sculpt, NOT a candidate, NOT a substitute for real desktop fixtures.",
+ "reference": "reviews/rac-rmot05u4-readiness/crease_reference_v1.json",
+ "reference_sha256": "c1efefde5b50316b1ff4b2edaeae3fe702dc94b9722f52ba8da7f6d490772d51",
+ "tests": [
+  {
+   "test": "T1_unchanged_baseline",
+   "expected": "protection PASS, crease A/B PASS at frozen sections with baseline depths, roughness FAIL (expected baseline failure), exit nonzero",
+   "as_expected": true,
+   "exit_code": 3,
+   "numerical_stop_conditions": "NOT MET",
+   "failed_or_missing": [
+    "roughness_guard_b"
+   ],
+   "depth_A": 0.8950507787872758,
+   "depth_B": 0.3657983545462877
+  },
+  {
+   "test": "T2_move_61581_along_axis_+0.02",
+   "expected": "fixed planes, anchors, chords and thresholds invariant (depth may change)",
+   "as_expected": true,
+   "fixed_s0": {
+    "A": 9.035685055459137,
+    "B": 10.462839123694403
+   },
+   "measured_depth": {
+    "A": 0.9060170846567976,
+    "B": 0.3657983545462877
+   },
+   "endpoint_deviation_cm": {
+    "A": [
+     0.0,
+     0.0
+    ],
+    "B": [
+     0.0,
+     0.0
+    ]
+   },
+   "historical_u3_moving_plane_s0": {
+    "section_A_61581": 9.0557,
+    "section_B_61580": 10.4628
+   }
+  },
+  {
+   "test": "T2_move_61580_along_axis_+0.02",
+   "expected": "fixed planes, anchors, chords and thresholds invariant (depth may change)",
+   "as_expected": true,
+   "fixed_s0": {
+    "A": 9.035685055459137,
+    "B": 10.462839123694403
+   },
+   "measured_depth": {
+    "A": 0.8950507787872758,
+    "B": 0.3657983545462877
+   },
+   "endpoint_deviation_cm": {
+    "A": [
+     0.0,
+     0.0
+    ],
+    "B": [
+     0.0,
+     0.0
+    ]
+   },
+   "historical_u3_moving_plane_s0": {
+    "section_A_61581": 9.0357,
+    "section_B_61580": 10.4828
+   }
+  },
+  {
+   "test": "T3_flattening_crosses_fixed_75pct_A",
+   "expected": "protection PASS (allowed region only), crease A FAIL at the same fixed section, nonzero exit",
+   "as_expected": true,
+   "exit_code": 3,
+   "crease_A": {
+    "status": "FAIL",
+    "depth_cm": 0.45627315757178133,
+    "threshold_cm": 0.6712880840904568,
+    "error": null
+   },
+   "crease_B": {
+    "status": "PASS",
+    "depth_cm": 0.3657983545462877,
+    "threshold_cm": 0.27434876590971574,
+    "error": null
+   },
+   "s0_A_used": 9.035685055459137
+  },
+  {
+   "test": "T4a_missing_reference",
+   "expected": "FAILED_MEASUREMENT, nonzero",
+   "as_expected": true,
+   "errors": [
+    "reference artifact missing"
+   ]
+  },
+  {
+   "test": "T4b_altered_reference_hash",
+   "expected": "FAILED_MEASUREMENT (hash mismatch), nonzero",
+   "as_expected": true,
+   "errors": [
+    "reference artifact hash mismatch (got d435fed2845335c8029320582697edbfb49145c55b63b410bf6ce91b162e5a08)"
+   ]
+  },
+  {
+   "test": "T4c_non_finite_geometry_in_run",
+   "expected": "FAILED_MEASUREMENT for A, protection REJECTED (non-finite), aggregate NOT MET, nonzero",
+   "as_expected": true,
+   "section_A": {
+    "section_id": "A",
+    "anchor_s3_vertex": 61581,
+    "s0_cm": 9.035685055459137,
+    "threshold_cm": 0.6712880840904568,
+    "baseline_depth_cm": 0.8950507787872758,
+    "fingerprint": "cd345af3ef9a2460a309c1f35f3b82825134a264b6daaeeafaa09ef8c718db54",
+    "status": "FAILED_MEASUREMENT",
+    "error": "non-finite geometry in walked face 130146"
+   },
+   "aggregate": "NOT MET",
+   "protection": "REJECTED"
+  },
+  {
+   "test": "T4d1_frozen_entry_vertex_moved_0.01",
+   "expected": "measurement FAILED (chord endpoint moved), protection REJECTED, aggregate NOT MET",
+   "as_expected": true,
+   "section_A": {
+    "status": "FAILED_MEASUREMENT",
+    "error": "chord endpoints moved (0.00182, 0 cm)"
+   }
+  },
+  {
+   "test": "T4d2_frozen_exit_edge_moved_across_plane",
+   "expected": "measurement FAILED (unexpected exit / no crossing); no substitute section",
+   "as_expected": true,
+   "section_A": {
+    "status": "FAILED_MEASUREMENT",
+    "error": "run exits through [62713, 62890], frozen exit is [62052, 62713]"
+   }
+  },
+  {
+   "test": "T4e_gross_push_of_run_vertices_informative",
+   "expected": "depth alone may still pass at the fixed section; the aggregate must NOT pass (other mandatory guards)",
+   "as_expected": true,
+   "crease_A": "PASS",
+   "crease_A_depth": 1.582537078552959,
+   "failed_or_missing": [
+    "s_verify_no_FAIL_verdict",
+    "roughness_guard_b",
+    "sliver_guard_e"
+   ]
+  },
+  {
+   "test": "T5a_section_B_omitted",
+   "expected": "crease_depth_B MISSING, nonzero",
+   "as_expected": true,
+   "crease_B": {
+    "status": "MISSING",
+    "error": "measurement lacks section B"
+   }
+  },
+  {
+   "test": "T5b_sections_swapped",
+   "expected": "identity / fingerprint mismatch FAIL for both, nonzero",
+   "as_expected": true,
+   "A": {
+    "status": "FAIL",
+    "error": "section identity / reference fingerprint mismatch"
+   },
+   "B": {
+    "status": "FAIL",
+    "error": "section identity / reference fingerprint mismatch"
+   }
+  },
+  {
+   "test": "T5c_sections_truncated",
+   "expected": "both MISSING, nonzero",
+   "as_expected": true
+  },
+  {
+   "test": "T5d_threshold_tampered_in_result",
+   "expected": "FAIL (does not match frozen reference), nonzero",
+   "as_expected": true
+  },
+  {
+   "test": "T4b2_measurement_made_with_altered_reference",
+   "expected": "aggregate (checked against the pinned frozen reference) FAIL by fingerprint, nonzero",
+   "as_expected": true,
+   "crease_A": {
+    "status": "FAIL",
+    "error": "section identity / reference fingerprint mismatch"
+   },
+   "note": "--ref_sha is a test hook; check_return_u2.sh never passes it"
+  }
+ ],
+ "all_as_expected": true
+}

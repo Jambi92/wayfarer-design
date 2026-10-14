@@ -1,3 +1,6 @@
+# HISTORICAL (RM-OT-05U3). Limitation found in RM-OT-05U4: s0 and the section component are derived from the mesh being measured,
+# so applied to an edited return the planes / chords move with the editable anchors (moving-plane limitation). The fixed-reference
+# replacement is tools/rac/w1/rmot05u4_drivers/u4_crease_ref.py; this file is kept unchanged otherwise as evidence.
 # RM-OT-05U3 (READ-ONLY): reproducible crease-depth baselines on the UNCHANGED 05U RETURN for the proposed 05U2 region.
 # Definition (all lengths in cm, Blender/world units, 1 unit = 1 cm):
 #   frame      : the 05Q arm frame (origin O, axis d, e1 = normalize(Y x d), e2 = d x e1) from patch_selection.json;

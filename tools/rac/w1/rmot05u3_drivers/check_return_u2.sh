@@ -5,6 +5,8 @@
 # exact protection outside the 365 / 832, legacy V1 diagnostic), 3 s_verify in U2 mode (V1-U2 + unchanged V2-V6c),
 # 4 identical-camera before (05U RETURN) / after renders with U2 labels (label 6 = edited source surface, cyan).
 # The default 05T/05U path (tools/rac/w1/rmot05t_drivers/check_return.sh) is unchanged and remains the active rule.
+# SUPERSEDED by tools/rac/w1/rmot05u4_drivers/check_return_u2.sh (RM-OT-05U4): this historical version re-derives the crease
+# section planes from the RETURNED mesh (moving-plane limitation) and does not fail the command on a failed depth check.
 set -euo pipefail
 BLEND="$1"; OUT="$2"; mkdir -p "$OUT"
 Q=reviews/rac-rmot05q-evidence; S=reviews/rac-rmot05s-evidence; U=reviews/rac-rmot05u-evidence/checks/return; PR=reviews/rac-rmot05u2-proposal

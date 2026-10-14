@@ -182,3 +182,13 @@ V2–V6c: identical code, thresholds and verdict rules.
 | **Not included** | Gorrund acceptance; Stage C; the V6c-1, V4-taper or V6c-2 repairs; any change to the default 05T/05U rule for other work |
 
 **→ STOP. VERIFICATION READINESS REVIEW / BOUNDARY AWAITING AUTHOR APPROVAL.** No production handoff change and no sculpt until Tyler approves.
+
+---
+
+## 05U4 note (October 13, 2026)
+
+The §4 crease check in this addendum has a **moving-plane limitation**. Its planes and chords were re-derived from the mesh being measured, so editing either anchor (61581 / 61580) moved them.
+
+It is superseded by the frozen reference `reviews/rac-rmot05u4-readiness/crease_reference_v1.json` and the corrected `tools/rac/w1/rmot05u4_drivers/check_return_u2.sh`, which adds an aggregate exit status. See `reviews/claude-rac-rm-ot-05u4-fixed-crease-reference-readiness.md`.
+
+The baseline depths and limits recorded here (A 0.8951 / 0.6713 cm; B 0.3658 / 0.2743 cm) reproduce exactly under the frozen definition. The outputs here are kept as historical evidence.
