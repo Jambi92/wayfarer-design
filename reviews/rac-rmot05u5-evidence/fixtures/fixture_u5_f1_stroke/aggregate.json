@@ -1,0 +1,131 @@
+{
+ "tool": "RM-OT-05U4 aggregate",
+ "author_visual_review": "PENDING",
+ "desktop_fixtures": "PENDING (required after boundary approval, before production strokes)",
+ "note": "ACCEPTED_FOR_VERIFICATION_U2 is protection only; it is not satisfaction of the stop conditions and not author acceptance.",
+ "mandatory": {
+  "protection_U2_reintegration": {
+   "status": "PASS",
+   "verdict": "ACCEPTED_FOR_VERIFICATION_U2",
+   "errors": []
+  },
+  "V1_U2": {
+   "status": "PASS"
+  },
+  "s_verify_no_FAIL_verdict": {
+   "status": "PASS",
+   "verdict": "UNRESOLVED"
+  },
+  "crease_depth_A": {
+   "status": "PASS",
+   "depth_cm": 0.895050778787277,
+   "threshold_cm": 0.6712880840904568,
+   "error": null
+  },
+  "crease_depth_B": {
+   "status": "PASS",
+   "depth_cm": 0.34097375631758453,
+   "threshold_cm": 0.27434876590971574,
+   "error": null
+  },
+  "roughness_guard_b": {
+   "status": "FAIL",
+   "limit_deg": 36.3,
+   "vertices": 365,
+   "max_now": 48.9,
+   "max_baseline": 47.9,
+   "over_limit_now": 8
+  },
+  "sliver_guard_e": {
+   "status": "FAIL",
+   "faces": 35,
+   "min_angle_baseline": 6.24,
+   "min_angle_now": 6.24,
+   "worse_or_below_5": [
+    {
+     "s3_face": 129905,
+     "baseline": 19.8,
+     "now": 19.32
+    },
+    {
+     "s3_face": 129906,
+     "baseline": 51.25,
+     "now": 50.49
+    },
+    {
+     "s3_face": 129908,
+     "baseline": 40.37,
+     "now": 40.27
+    },
+    {
+     "s3_face": 130130,
+     "baseline": 28.07,
+     "now": 27.95
+    },
+    {
+     "s3_face": 130131,
+     "baseline": 16.25,
+     "now": 16.21
+    },
+    {
+     "s3_face": 130132,
+     "baseline": 33.42,
+     "now": 32.92
+    },
+    {
+     "s3_face": 130134,
+     "baseline": 34.03,
+     "now": 33.57
+    },
+    {
+     "s3_face": 130135,
+     "baseline": 48.94,
+     "now": 46.82
+    },
+    {
+     "s3_face": 130137,
+     "baseline": 31.97,
+     "now": 30.91
+    },
+    {
+     "s3_face": 130349,
+     "baseline": 45.72,
+     "now": 45.53
+    },
+    {
+     "s3_face": 130351,
+     "baseline": 34.51,
+     "now": 34.09
+    },
+    {
+     "s3_face": 130353,
+     "baseline": 33.6,
+     "now": 33.16
+    }
+   ]
+  }
+ },
+ "numerical_stop_conditions": "NOT MET",
+ "failed_or_missing": [
+  "roughness_guard_b",
+  "sliver_guard_e"
+ ],
+ "geometry_gates_reported": {
+  "V1_outside_anatomy": true,
+  "V2_boundary_manifold": true,
+  "V3_intersections": true,
+  "V4_triangle_quality": false,
+  "V5_seam_continuity": true,
+  "V6_historical_05Q": false,
+  "V6c_1_garment_ledge_removed": false,
+  "V6c_2_taper_termination": false,
+  "V6c_3_no_folds": true
+ },
+ "geometry_gates_unresolved_disclosed_not_waived": {
+  "V4_triangle_quality": false,
+  "V6c_1_garment_ledge_removed": false,
+  "V6c_2_taper_termination": false,
+  "V6_historical_05Q": false
+ },
+ "s_verify_verdict": "UNRESOLVED"
+}
