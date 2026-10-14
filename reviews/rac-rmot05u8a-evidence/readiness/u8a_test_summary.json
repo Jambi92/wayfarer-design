@@ -1,0 +1,72 @@
+{
+ "tests": [
+  {
+   "test": "T0_unchanged_u8cp1_full_check",
+   "expected": "all U8A safety gates PASS, exit 0",
+   "as_expected": true
+  },
+  {
+   "test": "T1_move_vertex_other_than_anchors_61562",
+   "expected": "protection REJECTED (U8 cp1 edit reported moved), aggregate nonzero",
+   "as_expected": true
+  },
+  {
+   "test": "T2_topology_change",
+   "expected": "protection REJECTED, aggregate nonzero",
+   "as_expected": true
+  },
+  {
+   "test": "T3_sub10_affected_face",
+   "expected": "protection ACCEPTED (anchor), U8A local quality FAIL (face 130139 below 10 deg), aggregate nonzero",
+   "as_expected": true
+  },
+  {
+   "test": "T4_legal_tiny_61581_move",
+   "expected": "protection ACCEPTED; crease A depth updates (differs from cp1) at the SAME frozen section; all gates PASS",
+   "as_expected": true,
+   "depth_A": [
+    0.7787638197535405,
+    0.7581053070679841
+   ],
+   "depth_B": [
+    0.3503452362691344,
+    0.3503452362691344
+   ],
+   "exit_code": 0,
+   "failed": []
+  },
+  {
+   "test": "T5_legal_tiny_61580_move",
+   "expected": "protection ACCEPTED; crease B re-measured at the SAME frozen section (section path / depth recomputed from the moved mesh); all gates PASS",
+   "as_expected": true,
+   "run_faces_B": [
+    9,
+    7
+   ],
+   "depth_A": [
+    0.7787638197535405,
+    0.7787638197535405
+   ],
+   "depth_B": [
+    0.3503452362691344,
+    0.3503452362691344
+   ],
+   "exit_code": 0,
+   "failed": []
+  },
+  {
+   "test": "T6_move_pushes_crease_A_below_threshold",
+   "expected": "protection ACCEPTED (anchor), crease A FAIL at the frozen threshold, aggregate nonzero",
+   "as_expected": true,
+   "depth_A": 0.6202181381146055,
+   "threshold": 0.6712880840904568,
+   "failed": [
+    "crease_depth_A",
+    "anchor_steps_within_limits",
+    "u6_no_regression_R1_target_roughness"
+   ]
+  }
+ ],
+ "passed": 7,
+ "total": 7
+}
