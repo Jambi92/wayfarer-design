@@ -32,15 +32,44 @@ No position was tried offline before it was entered.
 - Crease A and B are unchanged (0.8951 / 0.3658).
 - The three exceptions are bit-exact, and nothing outside the target moved.
 
-## Checkpoint 2: planned, not executed (desktop editing blocked)
+## First attempt at checkpoint 2 (05U6): blocked
 
-The plan, from `diagnostics/cp1_remaining_offenders.txt`:
-- lift 61559 by 0.30 along its normal, to (28.915, −12.359, 167.679);
-- lift 61581 by 0.10, to (28.860, −12.883, 168.652); crease A margin is 0.22 cm;
-- lift 61750 by 0.10, to (29.031, −13.434, 169.968), aimed at 61580's outlier face 130133 without moving the crease-B anchor.
+The first Blender action of checkpoint 2 was denied by the session's automatic safety check ("Security Weaken"). No desktop action followed, and Blender stayed on the saved checkpoint 1.
 
-The first Blender action of checkpoint 2 (entering Edit Mode and selecting 61559) was **denied by the session's automatic safety check** ("Security Weaken"). Tyler had approved the checkpoint 1 edits in chat after an earlier denial. Following the rule not to work around a denial, no further desktop action was attempted.
+## Checkpoint 2 (05U6A, resumed from cp1 sha `6262620e…`): `GO-05U6_cp2.blend` (sha `6cdc401c16693e13db5755b49c7a52b4240750c8adb657eff36e693f21b0ee79`)
 
-Blender was left in Object Mode on the saved `GO-05U6_cp1.blend`, with nothing unsaved.
+Under order `reviews/chatgpt-rac-rm-ot-05u6a-resume-remaining-desktop-checkpoints-order.md`, desktop control was permitted.
 
-**Budget:** 1 of 3 U6 checkpoints used; 2 remain unspent. The 05U5 budget is preserved as completed evidence and was not reset.
+Before typing, the local surface was inspected in Edit Mode: 61559 sits in a visible recess at the crease edge. The documented plan was executed as written; current normals at cp1 equal the planned ones.
+
+| S3 vertex | cp1 position (cm) | Typed (cm) | Moved |
+|---|---|---|---|
+| 61559 | (28.7675, −12.1007, 167.7268) | (28.915, −12.359, 167.679) = +0.30 along its normal | 0.3012 cm |
+| 61581 | (28.7970, −12.8169, 168.6922) | (28.860, −12.883, 168.652) = +0.10 | 0.0998 cm |
+| 61750 | (28.9971, −13.3585, 170.0225) | (29.031, −13.434, 169.968) = +0.10 | 0.0991 cm |
+
+**Verification:** every U6 gate passes except R1 target roughness, on **61581 only (45.44°)**.
+- 61559: 54.23 → 16.64.
+- 61580: 40.95 → 26.38, through the indirect 61750 move; 61580 itself was not moved.
+- Crease A: 0.8951 → 0.7890 (margin 0.118). Crease B: 0.3658, unchanged.
+- R2: minimum cap angle 13.63; face 130139 at 14.87.
+- Visually safe and materially closer: no new dent, lip or spike.
+
+The remaining outlier is face 130354 (61581, 61652, 62052), where 62052 is on the frozen ring. Its neighbour 61652 was a 0.22 cm dent (`diagnostics/cp2_remaining_offender.txt`).
+
+## Checkpoint 3 (final; one small correction inside the target): `GO-05U6_cp3.blend` (sha `22345d4d270b84753d3cdf32086d66846644448105aba1db710faaa083746029`)
+
+| S3 vertex | cp2 position (cm) | Typed (cm) | Moved |
+|---|---|---|---|
+| 61652 | (28.8853, −12.5128, 168.3566) | (28.929, −12.608, 168.298) = +0.12 along its normal (0.37, −0.79, −0.49) | 0.1201 cm |
+
+The crease anchors 61581 and 61580 were deliberately not moved in this checkpoint.
+
+**Verification: every U6 mandatory gate PASSES; the aggregate exits 0.**
+- Target roughness max 35.29 (61562); 61581 at 32.07.
+- Crease A 0.7890 and B 0.3658, both PASS.
+- R2 PASS.
+
+**Budget:** cp1, cp2 and cp3 are all spent. No further checkpoint is possible.
+
+Blender was left in Object Mode on the saved `GO-05U6_cp3.blend`.
