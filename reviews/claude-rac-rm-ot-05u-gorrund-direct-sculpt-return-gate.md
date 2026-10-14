@@ -80,7 +80,7 @@ All checks were performed in the UI on disposable fixtures. Details are in `EDIT
 | V1 outside anatomy | pass | **pass** | |
 | V2 boundary / manifold | pass | **pass** | |
 | V3 intersections | pass | **pass** | |
-| V4 triangle quality | fail | fail | **Unchanged.** Minimum angle 11.9° and the 8 out-of-range edges are all in the untouched posterior taper (θ −122…−132°). Sculpting does not change edge lengths there |
+| V4 triangle quality | fail | fail | **The failure and the eight bad-edge measurements are unchanged.** Minimum angle 11.9° and the 8 out-of-range edges are all in the untouched posterior taper (θ −122…−132°). The full V4 JSON is not identical: the angle percentiles improved slightly (p1/p5/p50 16.23/22.52/39.37 → 16.83/22.95/40.64), and the outlier face indices are renumbered because the result faces are reordered |
 | V5 seam continuity | pass, 97.8 % ≤ 35° | **pass, 96.4 %** | Two new stitch outliers at the top end of the strip (θ −88.4° s 8.0: 63.7°; θ −85.7° s 7.9: 59.1°), where the smoothed interior meets the unsmoothable protected ring |
 | V6c-1 ledge removed, worst direction change per 0.5 cm | −96°: 36.9; −90°: 95.1 | **−96°: 15.2; −90°: 74.4** | Better, but −90° still exceeds 35°. That is the axillary fold crease line itself; the other columns are unchanged |
 | V6c-2 taper termination | fail | fail | **Unchanged.** Anterior non-monotone at θ 118–122°; anterior deliberately untouched |
@@ -123,7 +123,7 @@ A technical pass is not visual acceptance, and V6c-1 and V5 are reported as they
 |---|---|
 | Size | 29,260,601 bytes |
 | SHA-256 | `aed5711fa00d193eccae9391f40de790d6e617333caa8add76554e81358a3159` |
-| Own manifest | `PACKAGE_MANIFEST.sha256`, 26 entries |
+| Own manifest | `PACKAGE_MANIFEST.sha256`, **27** entries (corrected from 26; see the 05U1 correction note) |
 
 **Contents:**
 - `scene/GO-05T_sculpt_RETURN.blend` (sha `9593d201…57a5`) with `GO-05T_references.blend`;
@@ -139,7 +139,7 @@ A technical pass is not visual acceptance, and V6c-1 and V5 are reported as they
 
 **Clean extraction**, in an empty directory:
 - `unzip -t` reported no errors.
-- 26 of 26 manifest entries are present with equal hashes; nothing is unlisted.
+- **27 of 27** manifest entries are present with equal hashes (corrected from 26/26); nothing is unlisted.
 - `check_return.sh` was re-run on the extracted `GO-05T_sculpt_RETURN.blend`:
   - **ACCEPTED**, with the same `s_verify` result;
   - `result.obj` (`6046f013…`) and `result_verify.json` (`e96e214a…`) are bit-identical;
@@ -153,3 +153,28 @@ A technical pass is not visual acceptance, and V6c-1 and V5 are reported as they
 The working scene, the RETURN blend and the Step 0 fixtures remain in `…\gorrund_05U_direct_sculpt\scene\`. The fixtures and the `.blend1` backups there are disposable.
 
 **→ STOP FOR TYLER / AUTHOR VISUAL REVIEW.**
+
+---
+
+## Correction note (RM-OT-05U1, October 13, 2026)
+
+**Receipt count.** The appended package receipt said "26 entries" and "26 of 26". The manifest `PACKAGE_MANIFEST.sha256` has **27** lines, and the clean-extraction check (`sha256sum -c`) verified all 27. The count was miswritten from a file count that excluded one entry. These figures are corrected above.
+
+**Nothing in the release changed.** The release bytes, the ZIP SHA-256 `aed5711f…3159`, the packaged `REPORT.md` and the packaged manifest are all as verified. `REPORT.md` predates the receipt appended in the repository, so it does not contain the receipt.
+
+**V4 wording.** The V4 row now says what is actually unchanged: the failure and the eight bad-edge measurements. The verifier and thresholds were not changed.
+
+**Evidence basis.**
+- **From the committed 05U run:** Blender/desktop, export, intersection (V3) and full `s_verify`.
+- **Reproduced in the independent 05U1 audit** (Tyler/ChatGPT):
+  - ZIP and manifest integrity, with blob equality;
+  - `RETURN_HASHES`;
+  - unchanged topology and identity order;
+  - 101 moved editable vertices with no protected movement;
+  - the V1 hash and source correspondence;
+  - 320 boundary edges, 0 non-manifold edges.
+
+  The audit did not rerun Blender or the full intersection verifier.
+- **For this correction:** no new desktop test and no new verification run was performed.
+
+**State:** Gorrund **AUTHOR VISUAL REVIEW REQUIRED / UNACCEPTED**. Grask E3 FROZEN; RM-OT-05 OPEN; Stage C BLOCKED; canon promotion NOT PERFORMED; D4 / UE5 / production rigging / creator NOT STARTED. Reconstructed skin INFERRED.
