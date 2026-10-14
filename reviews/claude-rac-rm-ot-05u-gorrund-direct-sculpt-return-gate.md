@@ -158,7 +158,7 @@ The working scene, the RETURN blend and the Step 0 fixtures remain in `…\gorru
 
 ## Correction note (RM-OT-05U1, October 13, 2026)
 
-**Receipt count.** The appended package receipt said "26 entries" and "26 of 26". The manifest `PACKAGE_MANIFEST.sha256` has **27** lines, and the clean-extraction check (`sha256sum -c`) verified all 27. The count was miswritten from a file count that excluded one entry. These figures are corrected above.
+**Receipt count.** The appended package receipt said "26 entries" and "26 of 26". The manifest `PACKAGE_MANIFEST.sha256` has **27** lines, and the clean-extraction check (`sha256sum -c`) verified all 27. The receipt simply miswrote the count; the build log itself showed 27. These figures are corrected above.
 
 **Nothing in the release changed.** The release bytes, the ZIP SHA-256 `aed5711f…3159`, the packaged `REPORT.md` and the packaged manifest are all as verified. `REPORT.md` predates the receipt appended in the repository, so it does not contain the receipt.
 
