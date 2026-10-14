@@ -1,0 +1,74 @@
+{
+ "tests": [
+  {
+   "test": "T0_unchanged_cp3_full_check",
+   "expected": "all U7 safety gates PASS, exit 0",
+   "as_expected": true
+  },
+  {
+   "test": "T1_move_vertex_just_outside_U7_target",
+   "expected": "protection REJECTED (moved outside target), aggregate nonzero",
+   "as_expected": true,
+   "vertex": 59889,
+   "errors": [
+    "vertex outside the U7 target changed relative to cp3"
+   ]
+  },
+  {
+   "test": "T2_move_U7_frozen_ring_vertex",
+   "expected": "protection REJECTED, aggregate nonzero",
+   "as_expected": true,
+   "vertex": 61735,
+   "errors": [
+    "vertex outside the U7 target changed relative to cp3"
+   ]
+  },
+  {
+   "test": "T2b_move_held_seed_61522",
+   "expected": "protection REJECTED (61522 is frozen)",
+   "as_expected": true
+  },
+  {
+   "test": "T3_move_U6_cp3_vertex_61581",
+   "expected": "protection REJECTED, aggregate nonzero",
+   "as_expected": true,
+   "errors": [
+    "vertex outside the U7 target changed relative to cp3"
+   ]
+  },
+  {
+   "test": "T4_sub10_U7_face",
+   "expected": "protection ACCEPTED (target vertex), U7 local quality FAIL (face below 10 deg), aggregate nonzero",
+   "as_expected": true,
+   "below": [
+    {
+     "s3_face": 129670,
+     "min_angle": 7.64,
+     "cp3": 21.03
+    },
+    {
+     "s3_face": 129671,
+     "min_angle": 3.69,
+     "cp3": 33.72
+    }
+   ]
+  },
+  {
+   "test": "T5_topology_change",
+   "expected": "protection REJECTED (face set differs), aggregate nonzero",
+   "as_expected": true,
+   "errors": [
+    "face set differs from S3 (topology change)"
+   ]
+  },
+  {
+   "test": "T6_legal_small_target_move_full_check",
+   "expected": "protection ACCEPTED, all U7 safety gates PASS, exit 0",
+   "as_expected": true,
+   "exit_code": 0,
+   "failed": []
+  }
+ ],
+ "passed": 8,
+ "total": 8
+}

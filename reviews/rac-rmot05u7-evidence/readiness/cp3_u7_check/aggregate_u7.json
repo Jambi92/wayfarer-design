@@ -1,0 +1,244 @@
+{
+ "tool": "RM-OT-05U7 aggregate",
+ "author_visual_review": "PENDING",
+ "note": "A U7 PASS is technical safety for the bounded upper-crease task only; the visual result decides, and it is never author acceptance.",
+ "mandatory": {
+  "protection_U7_vs_cp3": {
+   "status": "PASS",
+   "verdict": "ACCEPTED_FOR_VERIFICATION_U7",
+   "errors": []
+  },
+  "topology_unchanged": {
+   "status": "PASS"
+  },
+  "outside_target_bit_exact_to_cp3": {
+   "status": "PASS",
+   "moved": 0
+  },
+  "u7_frozen_ring_unmoved": {
+   "status": "PASS",
+   "moved": []
+  },
+  "u6a_lower_repair_unchanged": {
+   "status": "PASS",
+   "moved": []
+  },
+  "V1_U7_prefix_and_correspondence": {
+   "status": "PASS"
+  },
+  "s_verify_no_FAIL_verdict": {
+   "status": "PASS",
+   "verdict": "UNRESOLVED"
+  },
+  "V2_boundary_manifold": {
+   "status": "PASS"
+  },
+  "V3_intersections": {
+   "status": "PASS"
+  },
+  "V5_seam_continuity": {
+   "status": "PASS"
+  },
+  "V6c_3_no_folds": {
+   "status": "PASS"
+  },
+  "crease_depth_A": {
+   "status": "PASS",
+   "depth_cm": 0.7889600162355682,
+   "threshold_cm": 0.6712880840904568,
+   "error": null
+  },
+  "crease_depth_B": {
+   "status": "PASS",
+   "depth_cm": 0.36579835454628945,
+   "threshold_cm": 0.27434876590971574,
+   "error": null
+  },
+  "u7_local_quality": {
+   "status": "PASS",
+   "u7_faces": 22,
+   "min_angle_now": 12.68,
+   "min_angle_cp3": 12.68,
+   "degenerate": [],
+   "inverted": [],
+   "below_10deg": [],
+   "edges_checked": 40,
+   "out_of_band_edges": []
+  },
+  "u6_no_regression_R1_target_roughness": {
+   "status": "PASS",
+   "max_now": 35.29,
+   "over_limit": []
+  },
+  "u6_no_regression_R1_baseline_exception_identity": {
+   "status": "PASS",
+   "moved": []
+  },
+  "u6_no_regression_locus_outside_target_unchanged": {
+   "status": "PASS",
+   "moved": []
+  },
+  "u6_no_regression_R2_local_cap_quality": {
+   "status": "PASS",
+   "min_angle_now": 13.63,
+   "below_min_angle": []
+  }
+ },
+ "u7_safety_gates": "PASS",
+ "failed_or_missing": [],
+ "target_moved": [],
+ "facet_diagnostic": {
+  "note": "DIAGNOSTIC ONLY - no pass threshold; dihedral between adjacent faces on every edge touching a U7 face",
+  "cp3": {
+   "edges": 40,
+   "max": 35.64,
+   "p95": 30.42,
+   "mean": 10.25,
+   "per_seed_max": {
+    "61522": 13.39,
+    "61771": 35.64,
+    "62027": 27.88,
+    "61586": 35.64,
+    "61183": 11.49,
+    "62063": 31.44
+   },
+   "top_edges": [
+    {
+     "edge": [
+      61586,
+      61771
+     ],
+     "dihedral": 35.64
+    },
+    {
+     "edge": [
+      61940,
+      62063
+     ],
+     "dihedral": 31.44
+    },
+    {
+     "edge": [
+      61586,
+      61735
+     ],
+     "dihedral": 30.37
+    },
+    {
+     "edge": [
+      62027,
+      62063
+     ],
+     "dihedral": 27.88
+    },
+    {
+     "edge": [
+      61580,
+      61771
+     ],
+     "dihedral": 27.07
+    },
+    {
+     "edge": [
+      61586,
+      62027
+     ],
+     "dihedral": 26.11
+    },
+    {
+     "edge": [
+      61771,
+      62027
+     ],
+     "dihedral": 22.99
+    },
+    {
+     "edge": [
+      61580,
+      62086
+     ],
+     "dihedral": 15.68
+    }
+   ]
+  },
+  "now": {
+   "edges": 40,
+   "max": 35.64,
+   "p95": 30.42,
+   "mean": 10.25,
+   "per_seed_max": {
+    "61522": 13.39,
+    "61771": 35.64,
+    "62027": 27.88,
+    "61586": 35.64,
+    "61183": 11.49,
+    "62063": 31.44
+   },
+   "top_edges": [
+    {
+     "edge": [
+      61586,
+      61771
+     ],
+     "dihedral": 35.64
+    },
+    {
+     "edge": [
+      61940,
+      62063
+     ],
+     "dihedral": 31.44
+    },
+    {
+     "edge": [
+      61586,
+      61735
+     ],
+     "dihedral": 30.37
+    },
+    {
+     "edge": [
+      62027,
+      62063
+     ],
+     "dihedral": 27.88
+    },
+    {
+     "edge": [
+      61580,
+      61771
+     ],
+     "dihedral": 27.07
+    },
+    {
+     "edge": [
+      61586,
+      62027
+     ],
+     "dihedral": 26.11
+    },
+    {
+     "edge": [
+      61771,
+      62027
+     ],
+     "dihedral": 22.99
+    },
+    {
+     "edge": [
+      61580,
+      62086
+     ],
+     "dihedral": 15.68
+    }
+   ]
+  }
+ },
+ "global_unresolved_disclosed_not_waived": {
+  "V4_triangle_quality": false,
+  "V6_historical_05Q": false,
+  "V6c_1_garment_ledge_removed": false,
+  "V6c_2_taper_termination": false
+ },
+ "s_verify_verdict": "UNRESOLVED"
+}
