@@ -1,0 +1,355 @@
+{
+ "V1_outside_anatomy": {
+  "pass_": true,
+  "protected_coord_sha256": "25ffe5ac83d60e81b1026baf91bf3dbc07d7dc7136a8495f77f5581920328ffd",
+  "plan_sha256": "25ffe5ac83d60e81b1026baf91bf3dbc07d7dc7136a8495f77f5581920328ffd",
+  "protected_faces": 139772,
+  "index_correspondence": true,
+  "kept_source_vertices_bit_identical": true,
+  "source_vertices_on_patch_boundary_moved": 12,
+  "mode": "U2 opt-in",
+  "protected_faces_file": "reviews/rac-rmot05u2-proposal/P05U2_preview.npz:P05U2_src_ordered",
+  "exempt_source_vertices_authorized": 15,
+  "exempt_source_vertices_moved_f1": [
+   61467,
+   61507,
+   61666,
+   61669,
+   61687,
+   61688,
+   61762,
+   61839,
+   61862,
+   62190,
+   62194,
+   62216
+  ]
+ },
+ "V2_boundary_manifold": {
+  "pass_": true,
+  "boundary_edges": 320,
+  "source_boundary_edges": 320,
+  "boundary_identical_to_source_by_correspondence": true,
+  "nonmanifold_edges": 0,
+  "inconsistent_orientation_at_patch": 0,
+  "degenerate_new_faces": 0
+ },
+ "V3_intersections": {
+  "pass_": true,
+  "new_face_intersections": 0,
+  "pairs": [],
+  "faces_tested": 2980,
+  "preexisting_source_pairs_in_box": 0
+ },
+ "V4_triangle_quality": {
+  "pass_": false,
+  "new_faces": 1422,
+  "min_angle": 11.19,
+  "angle_percentiles_p1_p5_p50": [
+   16.79,
+   22.91,
+   40.54
+  ],
+  "faces_below_10deg": 0,
+  "faces_below_5deg": 0,
+  "edge_cm_min_max": [
+   0.209,
+   2.417
+  ],
+  "edges_out_of_range": 8,
+  "outliers": [
+   {
+    "face": 140415,
+    "label": 4,
+    "theta": -130.8,
+    "s": 0.69,
+    "min_angle": 23.12,
+    "edges": [
+     0.635,
+     0.249,
+     0.591
+    ]
+   },
+   {
+    "face": 140533,
+    "label": 4,
+    "theta": -123.6,
+    "s": 1.57,
+    "min_angle": 22.91,
+    "edges": [
+     0.237,
+     0.57,
+     0.441
+    ]
+   },
+   {
+    "face": 140549,
+    "label": 4,
+    "theta": -122.8,
+    "s": 1.03,
+    "min_angle": 20.04,
+    "edges": [
+     0.234,
+     0.537,
+     0.361
+    ]
+   },
+   {
+    "face": 140560,
+    "label": 4,
+    "theta": -124.9,
+    "s": 0.7,
+    "min_angle": 22.88,
+    "edges": [
+     0.209,
+     0.536,
+     0.497
+    ]
+   },
+   {
+    "face": 140561,
+    "label": 4,
+    "theta": -132.0,
+    "s": 0.58,
+    "min_angle": 31.2,
+    "edges": [
+     0.471,
+     0.454,
+     0.249
+    ]
+   },
+   {
+    "face": 140575,
+    "label": 4,
+    "theta": -124.3,
+    "s": 1.53,
+    "min_angle": 19.22,
+    "edges": [
+     0.237,
+     0.666,
+     0.719
+    ]
+   },
+   {
+    "face": 140584,
+    "label": 4,
+    "theta": -124.4,
+    "s": 0.84,
+    "min_angle": 18.32,
+    "edges": [
+     0.209,
+     0.606,
+     0.66
+    ]
+   },
+   {
+    "face": 140695,
+    "label": 4,
+    "theta": -122.9,
+    "s": 0.89,
+    "min_angle": 22.6,
+    "edges": [
+     0.58,
+     0.234,
+     0.606
+    ]
+   }
+  ]
+ },
+ "V5_seam_continuity": {
+  "pass_": true,
+  "stitch_edges": 142,
+  "frac_le_35": 0.9789,
+  "dihedral_percentiles_p50_p90_p95_p99_max": [
+   7.46,
+   20.18,
+   25.89,
+   44.13,
+   48.21
+  ],
+  "histogram_deg": {
+   "edges": [
+    0,
+    10,
+    20,
+    35,
+    45,
+    60,
+    90,
+    180
+   ],
+   "counts": [
+    92,
+    35,
+    12,
+    1,
+    2,
+    0,
+    0
+   ]
+  },
+  "reference_source_skin_p50_p95_max": [
+   5.26,
+   24.87,
+   89.86
+  ],
+  "outliers": [
+   {
+    "theta": 121.0,
+    "s": 1.84,
+    "dihedral": 48.2
+   },
+   {
+    "theta": -130.7,
+    "s": 0.98,
+    "dihedral": 45.4
+   },
+   {
+    "theta": -135.5,
+    "s": 0.81,
+    "dihedral": 42.3
+   }
+  ]
+ },
+ "V6_historical_05Q": {
+  "pass_": false,
+  "ledge_faces_in_core": 50,
+  "steps_at_05Q_angles": {
+   "-60": 0.094,
+   "-20": 0.162,
+   "20": 0.336,
+   "60": 0.097
+  },
+  "note": "retained as a historical diagnostic (author ruling); can flag legitimate deltoid slope"
+ },
+ "V6c_1_garment_ledge_removed": {
+  "pass_": false,
+  "max_direction_change_deg_per_0p5cm": {
+   "-112": {
+    "result": 32.2,
+    "source": 125.6
+   },
+   "-104": {
+    "result": 32.2,
+    "source": 121.1
+   },
+   "-96": {
+    "result": 15.2,
+    "source": 104.9
+   },
+   "-90": {
+    "result": 74.5,
+    "source": 83.1
+   },
+   "84": {
+    "result": 14.9,
+    "source": 85.3
+   },
+   "90": {
+    "result": 9.5,
+    "source": 83.7
+   },
+   "96": {
+    "result": 16.8,
+    "source": 94.1
+   },
+   "102": {
+    "result": 18.1,
+    "source": 95.2
+   }
+  }
+ },
+ "V6c_2_taper_termination": {
+  "pass_": false,
+  "zones": {
+   "posterior": {
+    "theta_from_untouched_end": [
+     -136.0,
+     -134.0,
+     -132.0,
+     -130.0,
+     -128.0,
+     -126.0,
+     -124.0,
+     -122.0,
+     -120.0,
+     -118.0,
+     -116.0
+    ],
+    "ledge_step_cm": [
+     5.025,
+     4.982,
+     4.968,
+     4.916,
+     4.813,
+     4.701,
+     4.494,
+     4.343,
+     4.178,
+     4.075,
+     3.952
+    ],
+    "undercut": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "monotone": true
+   },
+   "anterior": {
+    "theta_from_untouched_end": [
+     122.0,
+     120.0,
+     118.0,
+     116.0,
+     114.0,
+     112.0,
+     110.0,
+     108.0,
+     106.0,
+     104.0
+    ],
+    "ledge_step_cm": [
+     1.356,
+     1.47,
+     1.469,
+     1.168,
+     1.063,
+     0.94,
+     0.76,
+     0.599,
+     0.482,
+     0.421
+    ],
+    "undercut": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ],
+    "monotone": false
+   }
+  }
+ },
+ "V6c_3_no_folds": {
+  "pass_": true,
+  "dihedral_gt_120": 0,
+  "dihedral_gt_90": 0,
+  "locations_gt_90": []
+ },
+ "verdict_automated": "UNRESOLVED"
+}
