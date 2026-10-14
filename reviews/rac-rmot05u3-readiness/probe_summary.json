@@ -1,0 +1,485 @@
+{
+ "note": "Disposable validator probes on copies of the 05U baseline arrays; NOT anatomical repairs, NOT production, NOT a substitute for real desktop fixtures.",
+ "baseline_sha256": "0989caf45cba8ddf0f44bdfba962671430c613bb752ac543d99d9b4b16420265",
+ "probes": [
+  {
+   "probe": "U0_unchanged_baseline",
+   "edit": "unchanged 05U baseline",
+   "expected": "ACCEPT",
+   "verdict": "ACCEPTED_FOR_VERIFICATION_U2",
+   "errors": [],
+   "as_expected": true,
+   "legacy_V1_diagnostic": {
+    "original_V1_hash_matches": true,
+    "source_vertices_changed": [],
+    "P05S_faces_affected": [],
+    "all_changed_source_within_authorized_15": true,
+    "all_affected_faces_within_authorized_35": true
+   },
+   "editable_changes": {
+    "moved": 0,
+    "of_which_05U2_added_source": 0,
+    "of_which_05U_interface": 0
+   },
+   "s_verify_U2": {
+    "V1_outside_anatomy": true,
+    "V2_boundary_manifold": true,
+    "V3_intersections": true,
+    "V4_triangle_quality": false,
+    "V5_seam_continuity": true,
+    "V6_historical_05Q": false,
+    "V6c_1_garment_ledge_removed": false,
+    "V6c_2_taper_termination": false,
+    "V6c_3_no_folds": true,
+    "verdict_automated": "UNRESOLVED"
+   },
+   "V1_U2_detail": {
+    "protected_coord_sha256": "25ffe5ac83d60e81b1026baf91bf3dbc07d7dc7136a8495f77f5581920328ffd",
+    "plan_sha256": "25ffe5ac83d60e81b1026baf91bf3dbc07d7dc7136a8495f77f5581920328ffd",
+    "protected_faces": 139772,
+    "index_correspondence": true,
+    "kept_source_vertices_bit_identical": true,
+    "source_vertices_on_patch_boundary_moved": 0,
+    "mode": "U2 opt-in",
+    "protected_faces_file": "reviews/rac-rmot05u2-proposal/P05U2_preview.npz:P05U2_src_ordered",
+    "exempt_source_vertices_authorized": 15,
+    "exempt_source_vertices_moved_f1": []
+   },
+   "V4_new_faces": 1422,
+   "V5": {
+    "stitch_edges": 142,
+    "frac_le_35": 0.9789
+   }
+  },
+  {
+   "probe": "U1_allowed_added_source_61581",
+   "edit": "authorized added source vertex 61581 +0.02 cm z",
+   "expected": "ACCEPT",
+   "verdict": "ACCEPTED_FOR_VERIFICATION_U2",
+   "errors": [],
+   "as_expected": true,
+   "legacy_V1_diagnostic": {
+    "original_V1_hash_matches": false,
+    "source_vertices_changed": [
+     61581
+    ],
+    "P05S_faces_affected": [
+     130137,
+     130138,
+     130139,
+     130140,
+     130141,
+     130353,
+     130354
+    ],
+    "all_changed_source_within_authorized_15": true,
+    "all_affected_faces_within_authorized_35": true
+   },
+   "editable_changes": {
+    "moved": 1,
+    "of_which_05U2_added_source": 1,
+    "of_which_05U_interface": 0
+   },
+   "s_verify_U2": {
+    "V1_outside_anatomy": true,
+    "V2_boundary_manifold": true,
+    "V3_intersections": true,
+    "V4_triangle_quality": false,
+    "V5_seam_continuity": true,
+    "V6_historical_05Q": false,
+    "V6c_1_garment_ledge_removed": false,
+    "V6c_2_taper_termination": false,
+    "V6c_3_no_folds": true,
+    "verdict_automated": "UNRESOLVED"
+   },
+   "V1_U2_detail": {
+    "protected_coord_sha256": "25ffe5ac83d60e81b1026baf91bf3dbc07d7dc7136a8495f77f5581920328ffd",
+    "plan_sha256": "25ffe5ac83d60e81b1026baf91bf3dbc07d7dc7136a8495f77f5581920328ffd",
+    "protected_faces": 139772,
+    "index_correspondence": true,
+    "kept_source_vertices_bit_identical": true,
+    "source_vertices_on_patch_boundary_moved": 1,
+    "mode": "U2 opt-in",
+    "protected_faces_file": "reviews/rac-rmot05u2-proposal/P05U2_preview.npz:P05U2_src_ordered",
+    "exempt_source_vertices_authorized": 15,
+    "exempt_source_vertices_moved_f1": [
+     61688
+    ]
+   },
+   "V4_new_faces": 1422,
+   "V5": {
+    "stitch_edges": 142,
+    "frac_le_35": 0.9789
+   }
+  },
+  {
+   "probe": "U1b_allowed_05U_interface_70402",
+   "edit": "existing editable interface vertex 70402 +0.02 cm z",
+   "expected": "ACCEPT",
+   "verdict": "ACCEPTED_FOR_VERIFICATION_U2",
+   "errors": [],
+   "as_expected": true,
+   "legacy_V1_diagnostic": {
+    "original_V1_hash_matches": true,
+    "source_vertices_changed": [],
+    "P05S_faces_affected": [],
+    "all_changed_source_within_authorized_15": true,
+    "all_affected_faces_within_authorized_35": true
+   },
+   "editable_changes": {
+    "moved": 1,
+    "of_which_05U2_added_source": 0,
+    "of_which_05U_interface": 1
+   },
+   "s_verify_U2": {
+    "V1_outside_anatomy": true,
+    "V2_boundary_manifold": true,
+    "V3_intersections": true,
+    "V4_triangle_quality": false,
+    "V5_seam_continuity": true,
+    "V6_historical_05Q": false,
+    "V6c_1_garment_ledge_removed": false,
+    "V6c_2_taper_termination": false,
+    "V6c_3_no_folds": true,
+    "verdict_automated": "UNRESOLVED"
+   },
+   "V1_U2_detail": {
+    "protected_coord_sha256": "25ffe5ac83d60e81b1026baf91bf3dbc07d7dc7136a8495f77f5581920328ffd",
+    "plan_sha256": "25ffe5ac83d60e81b1026baf91bf3dbc07d7dc7136a8495f77f5581920328ffd",
+    "protected_faces": 139772,
+    "index_correspondence": true,
+    "kept_source_vertices_bit_identical": true,
+    "source_vertices_on_patch_boundary_moved": 0,
+    "mode": "U2 opt-in",
+    "protected_faces_file": "reviews/rac-rmot05u2-proposal/P05U2_preview.npz:P05U2_src_ordered",
+    "exempt_source_vertices_authorized": 15,
+    "exempt_source_vertices_moved_f1": []
+   },
+   "V4_new_faces": 1422,
+   "V5": {
+    "stitch_edges": 142,
+    "frac_le_35": 0.9789
+   }
+  },
+  {
+   "probe": "U2_just_outside_protected_61586",
+   "edit": "protected source vertex 61586 just outside the proposed boundary",
+   "expected": "REJECT",
+   "verdict": "REJECTED",
+   "errors": [
+    "vertex outside the approved 365 changed"
+   ],
+   "as_expected": true,
+   "detail": {
+    "identity": {
+     "invalid_or_zero_ids": 0,
+     "duplicate_ids": 0,
+     "missing_ids": 0,
+     "vertex_count_matches": true
+    },
+    "topology": {
+     "missing_faces": 0,
+     "missing_examples": [],
+     "missing_protected": 0,
+     "extra_faces": 0,
+     "of_which_reversed": 0,
+     "duplicate_faces": 0,
+     "face_count_matches": true
+    },
+    "P1_U2_vertices_outside_365": {
+     "expected": 70386,
+     "unchanged_bit_exact": 70385,
+     "moved": 1,
+     "moved_examples": [
+      {
+       "s3_index0": 61586,
+       "category": "protected"
+      }
+     ],
+     "frozen_ring_expected": 106,
+     "frozen_ring_moved": 0
+    }
+   }
+  },
+  {
+   "probe": "U3_new_frozen_ring_61771",
+   "edit": "new frozen-ring vertex 61771",
+   "expected": "REJECT",
+   "verdict": "REJECTED",
+   "errors": [
+    "vertex outside the approved 365 changed"
+   ],
+   "as_expected": true,
+   "detail": {
+    "identity": {
+     "invalid_or_zero_ids": 0,
+     "duplicate_ids": 0,
+     "missing_ids": 0,
+     "vertex_count_matches": true
+    },
+    "topology": {
+     "missing_faces": 0,
+     "missing_examples": [],
+     "missing_protected": 0,
+     "extra_faces": 0,
+     "of_which_reversed": 0,
+     "duplicate_faces": 0,
+     "face_count_matches": true
+    },
+    "P1_U2_vertices_outside_365": {
+     "expected": 70386,
+     "unchanged_bit_exact": 70385,
+     "moved": 1,
+     "moved_examples": [
+      {
+       "s3_index0": 61771,
+       "category": "new_frozen_ring"
+      }
+     ],
+     "frozen_ring_expected": 106,
+     "frozen_ring_moved": 1
+    }
+   }
+  },
+  {
+   "probe": "U4_retained_old_ring_70139",
+   "edit": "retained old frozen-ring vertex 70139",
+   "expected": "REJECT",
+   "verdict": "REJECTED",
+   "errors": [
+    "vertex outside the approved 365 changed"
+   ],
+   "as_expected": true,
+   "detail": {
+    "identity": {
+     "invalid_or_zero_ids": 0,
+     "duplicate_ids": 0,
+     "missing_ids": 0,
+     "vertex_count_matches": true
+    },
+    "topology": {
+     "missing_faces": 0,
+     "missing_examples": [],
+     "missing_protected": 0,
+     "extra_faces": 0,
+     "of_which_reversed": 0,
+     "duplicate_faces": 0,
+     "face_count_matches": true
+    },
+    "P1_U2_vertices_outside_365": {
+     "expected": 70386,
+     "unchanged_bit_exact": 70385,
+     "moved": 1,
+     "moved_examples": [
+      {
+       "s3_index0": 70139,
+       "category": "retained_frozen_ring"
+      }
+     ],
+     "frozen_ring_expected": 106,
+     "frozen_ring_moved": 1
+    }
+   }
+  },
+  {
+   "probe": "U5a_missing_protected_face",
+   "edit": "protected S3 face 100000 removed",
+   "expected": "REJECT",
+   "verdict": "REJECTED",
+   "errors": [
+    "face set differs from S3 (missing / reversed / extra / duplicate faces)"
+   ],
+   "as_expected": true,
+   "detail": {
+    "identity": {
+     "invalid_or_zero_ids": 0,
+     "duplicate_ids": 0,
+     "missing_ids": 0,
+     "vertex_count_matches": true
+    },
+    "topology": {
+     "missing_faces": 1,
+     "missing_examples": [
+      100000
+     ],
+     "missing_protected": 1,
+     "extra_faces": 0,
+     "of_which_reversed": 0,
+     "duplicate_faces": 0,
+     "face_count_matches": false
+    },
+    "P1_U2_vertices_outside_365": {
+     "expected": 70386,
+     "unchanged_bit_exact": 70386,
+     "moved": 0,
+     "moved_examples": [],
+     "frozen_ring_expected": 106,
+     "frozen_ring_moved": 0
+    }
+   }
+  },
+  {
+   "probe": "U5b_reversed_protected_face",
+   "edit": "protected S3 face 100000 winding reversed",
+   "expected": "REJECT",
+   "verdict": "REJECTED",
+   "errors": [
+    "face set differs from S3 (missing / reversed / extra / duplicate faces)"
+   ],
+   "as_expected": true,
+   "detail": {
+    "identity": {
+     "invalid_or_zero_ids": 0,
+     "duplicate_ids": 0,
+     "missing_ids": 0,
+     "vertex_count_matches": true
+    },
+    "topology": {
+     "missing_faces": 1,
+     "missing_examples": [
+      100000
+     ],
+     "missing_protected": 1,
+     "extra_faces": 1,
+     "of_which_reversed": 1,
+     "duplicate_faces": 0,
+     "face_count_matches": true
+    },
+    "P1_U2_vertices_outside_365": {
+     "expected": 70386,
+     "unchanged_bit_exact": 70386,
+     "moved": 0,
+     "moved_examples": [],
+     "frozen_ring_expected": 106,
+     "frozen_ring_moved": 0
+    }
+   }
+  },
+  {
+   "probe": "U6a_spoof_swap_ids",
+   "edit": "ids of protected 61586 and editable 61581 swapped, positions untouched",
+   "expected": "REJECT",
+   "verdict": "REJECTED",
+   "errors": [
+    "face set differs from S3 (missing / reversed / extra / duplicate faces)",
+    "vertex outside the approved 365 changed"
+   ],
+   "as_expected": true,
+   "detail": {
+    "identity": {
+     "invalid_or_zero_ids": 0,
+     "duplicate_ids": 0,
+     "missing_ids": 0,
+     "vertex_count_matches": true
+    },
+    "topology": {
+     "missing_faces": 14,
+     "missing_examples": [
+      129666,
+      129667,
+      129668,
+      129899,
+      129900,
+      129901,
+      129902,
+      130137,
+      130138,
+      130139
+     ],
+     "missing_protected": 7,
+     "extra_faces": 14,
+     "of_which_reversed": 0,
+     "duplicate_faces": 0,
+     "face_count_matches": true
+    },
+    "P1_U2_vertices_outside_365": {
+     "expected": 70386,
+     "unchanged_bit_exact": 70385,
+     "moved": 1,
+     "moved_examples": [
+      {
+       "s3_index0": 61586,
+       "category": "protected"
+      }
+     ],
+     "frozen_ring_expected": 106,
+     "frozen_ring_moved": 0
+    }
+   }
+  },
+  {
+   "probe": "U6b_spoof_duplicate_id",
+   "edit": "editable vertex claims the id of protected 61586",
+   "expected": "REJECT",
+   "verdict": "REJECTED",
+   "errors": [
+    "identity attribute is not a one-to-one cover of the S3 vertices (topology change or spoof)"
+   ],
+   "as_expected": true,
+   "detail": {
+    "identity": {
+     "invalid_or_zero_ids": 0,
+     "duplicate_ids": 1,
+     "missing_ids": 1,
+     "vertex_count_matches": true
+    }
+   }
+  },
+  {
+   "probe": "U7a_altered_added_face_list",
+   "edit": "one extra face appended to added_faces",
+   "expected": "REJECT",
+   "verdict": "REJECTED",
+   "errors": [
+    "proposal/precondition check failed: added_faces_list",
+    "proposal/precondition check failed: added_faces_count",
+    "proposal/precondition check failed: derived_ring",
+    "proposal/precondition check failed: derived_editable_faces",
+    "proposal/precondition check failed: P05U2_list",
+    "proposal/precondition check failed: P05U2_coord_on_S3"
+   ],
+   "as_expected": true
+  },
+  {
+   "probe": "U7b_altered_region_json_hash",
+   "edit": "faces_sha256 in proposal_region.json altered",
+   "expected": "REJECT",
+   "verdict": "REJECTED",
+   "errors": [
+    "proposal/precondition check failed: added_faces_list"
+   ],
+   "as_expected": true
+  },
+  {
+   "probe": "U7c_altered_P05U2_preview",
+   "edit": "first position dropped from P05U2 preview",
+   "expected": "REJECT",
+   "verdict": "REJECTED",
+   "errors": [
+    "proposal/precondition check failed: P05U2_list"
+   ],
+   "as_expected": true
+  }
+ ],
+ "U0_equality": {
+  "coordinates_identical_to_committed_05U_result_float64": true,
+  "topology_identical_to_S3": true,
+  "correspondence_src_vertex_identical_to_S3": true,
+  "expected_metadata_differences": "face order (P05U2 prefix) and labels: 35 added faces carry label 6 instead of 0; geometry identical"
+ },
+ "historical_default_path": {
+  "U0_unchanged_baseline": {
+   "active_05T_default_verdict": "ACCEPTED_FOR_VERIFICATION",
+   "P1_moved": 0,
+   "result_obj_sha256": "6046f0135cb250c1ac9f2209c2f2cdbb6fd101ec17b7ab06fd8bdc4ffeb20ab4"
+  },
+  "U1_allowed_added_source_61581": {
+   "active_05T_default_verdict": "REJECTED",
+   "P1_moved": 1,
+   "result_obj_sha256": null
+  },
+  "note": "Active (default) 05T/05U protection rule is unchanged: it accepts the unchanged 05U baseline and still REJECTS the U1 edit of 61581, which only the opt-in U2 path allows.",
+  "U0_default_result_equals_committed_05U": true
+ },
+ "all_as_expected": true
+}

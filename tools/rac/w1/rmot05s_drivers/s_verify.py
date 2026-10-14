@@ -7,10 +7,15 @@ import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 ap = argparse.ArgumentParser(); ap.add_argument('--src'); ap.add_argument('--q05'); ap.add_argument('--plan'); ap.add_argument('--res'); ap.add_argument('--maps'); ap.add_argument('--labels')
 ap.add_argument('--nprot', type=int, default=139807); ap.add_argument('--prot_sha', default='4468dd862307b8393dfcc8dab58d5cab6033558a87ba523b220e379b7df57c55'); ap.add_argument('--prot_faces', default='P05S')
 ap.add_argument('--r05plan', default='reviews/rac-rmot05r-evidence/plan')
+# RM-OT-05U3 additive opt-in (defaults unchanged): --prot_faces_file NPZ:KEY loads an explicit protected F1 face list (e.g. P05U2);
+# --src_exempt NPY lists F1 source vertices an approved boundary authorizes to move; they keep their correspondence, are excluded
+# only from the bit-identity requirement, and every moved exempt vertex is enumerated.
+ap.add_argument('--prot_faces_file', default=None); ap.add_argument('--src_exempt', default=None)
 ap.add_argument('--out'); a = ap.parse_args()
 s0 = trimesh.load(a.src, process=False); V = np.asarray(s0.vertices); F = np.asarray(s0.faces)
 r0 = trimesh.load(a.res, process=False); Vr = np.asarray(r0.vertices); Fr = np.asarray(r0.faces)
 Q = json.load(open(os.path.join(a.q05, 'plan/patch_selection.json'))); P = (np.load(os.path.join(a.plan, 'interface_sets.npz'))['P05S_src_ordered'] if a.prot_faces == 'P05S' else np.load(os.path.join(a.r05plan, 'junction_sets.npz'))['P05R_src_ordered'] if a.prot_faces == 'P05R' else np.load(os.path.join(a.q05, 'plan/patch_face_sets.npz'))['P'])
+if a.prot_faces_file: _pf, _pk = a.prot_faces_file.rsplit(':', 1); P = np.load(_pf)[_pk]
 nP = a.nprot; assert len(P) == nP
 mp = np.load(a.maps); smap = mp['src_vertex'] if 'src_vertex' in mp.files else mp['arr_0']; lab = np.load(a.labels)
 O = np.array(Q['frame']['origin']); d = np.array(Q['frame']['axis']); d /= np.linalg.norm(d); e1 = np.cross([0, 1, 0], d); e1 /= np.linalg.norm(e1); e2 = np.cross(d, e1)
@@ -21,9 +26,13 @@ out = {}
 # V1 outside anatomy
 h = hashlib.sha256(np.ascontiguousarray(Vr[Fr[:nP]]).astype(np.float64).tobytes()).hexdigest()
 idx_ok = bool((smap[Fr[:nP]] == F[P]).all()); ks = smap >= 0; coord_ok = bool((Vr[ks] == V[smap[ks]]).all())
+if a.src_exempt:
+    _ex = np.isin(smap, np.load(a.src_exempt)) & ks; coord_ok = bool((Vr[ks & ~_ex] == V[smap[ks & ~_ex]]).all())
+    _mv = np.where(_ex & np.any(Vr != V[np.maximum(smap, 0)], axis=1))[0]
 newF = np.arange(nP, len(Fr)); newsrc = np.unique(Fr[newF]); moved_src = int(((smap[newsrc] >= 0) & ~(np.abs(Vr[newsrc] - V[np.maximum(smap[newsrc], 0)]).max(1) == 0)).sum())
 out['V1_outside_anatomy'] = dict(pass_=bool(h == a.prot_sha and idx_ok and coord_ok), protected_coord_sha256=h, plan_sha256=a.prot_sha, protected_faces=nP, index_correspondence=idx_ok,
                                  kept_source_vertices_bit_identical=coord_ok, source_vertices_on_patch_boundary_moved=moved_src)
+if a.src_exempt: out['V1_outside_anatomy'].update(mode='U2 opt-in', protected_faces_file=a.prot_faces_file, exempt_source_vertices_authorized=int(len(np.load(a.src_exempt))), exempt_source_vertices_moved_f1=[int(smap[i]) for i in _mv])
 # V2 boundary / manifold / orientation
 def einfo(FF):
     he = np.r_[FF[:, [0, 1]], FF[:, [1, 2]], FF[:, [2, 0]]]; u, inv, cnt = np.unique(np.sort(he, 1), axis=0, return_inverse=True, return_counts=True); return he, u, inv.ravel(), cnt

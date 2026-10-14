@@ -142,7 +142,7 @@ The red patch is a small cap on the top of the posterior strip, along the crease
 **Stop condition.** Stop as soon as all of these hold:
 1. the notch facets no longer read at yaw 0, 20 and pitch −45;
 2. no vertex in the extended region exceeds the source p95 roughness (36.3°);
-3. crease depth across the cap stays at least 75 % of its pre-edit value. Depth is measured on the two sections through 61581 (s ≈ 9.0) and 61580 (s ≈ 10.5), as the deepest point's distance from the chord between the section's ring vertices.
+3. crease depth across the cap stays at least 75 % of its pre-edit value. Depth is measured on the two sections through 61581 (s ≈ 9.0) and 61580 (s ≈ 10.5), as the deepest point's distance from the chord between the section's ring vertices. *(05U3: the exact definition and the measured baselines are in `reviews/claude-rac-rm-ot-05u3-verification-readiness.md` §4: section A 0.895 cm (limit 0.671 cm); section B 0.366 cm (limit 0.274 cm).)*
 
 At most three passes. If (3) would be violated, or the result reads flatter or more softened, stop, undo to the last good state and report it. Do not widen the region.
 
@@ -155,7 +155,7 @@ At most three passes. If (3) would be violated, or the result reads flatter or m
 | Protection set | **P05U2**: P05S minus the 35 faces = **139,772 faces** in P05S order. F1 face-index sha `02b608bc…9184`; precommitted coordinate sha on S3 / 05U `25ffe5ac83d60e81b1026baf91bf3dbc07d7dc7136a8495f77f5581920328ffd`. The removed F1 faces are listed in `P05U2_preview.json` |
 | Reintegration | An **opt-in, versioned** edit-set argument for `t_reintegrate.py` that loads the approved lists (EDIT 365, RING 106, editable faces 832) and checks them against the hashes above. Default behaviour, and 05U results, unchanged |
 | P1 / P2 | P1 = every vertex outside the 365 unchanged, bit-exact, **including the 106-vertex new ring**. P2 = every face outside the 832 present and unchanged |
-| V1 | A new gate, **V1-U2**, runs with `--prot_faces P05U2 --nprot 139772 --prot_sha 25ffe5ac…` and checks source-vertex bit-identity on every source vertex outside the 15 approved ones. The original V1 (P05S) is **still reported**, as information: it must fail on exactly the 35 approved faces and 15 vertices and nowhere else, and that is shown |
+| V1 | **Corrected by 05U3.** A new gate, **V1-U2**, runs through the opt-in path `--prot_faces_file …/P05U2_preview.npz:P05U2_src_ordered --nprot 139772 --prot_sha 25ffe5ac… --src_exempt <the 15 authorized F1 vertices>`, which 05U3 added; the `--prot_faces P05U2` command written here at 05U2 was not executable. V1-U2 requires the P05U2 coordinate hash, index correspondence and bit-identity of every source vertex outside the 15. The 15 keep their F1 correspondence. The original V1 (P05S) is **still reported**, with a correspondence-aware legacy diagnostic. The lists are a **maximum authorized region, not a quota**: some or all of the 15 / 35 may stay untouched. Every source vertex that actually changes, and every P05S face it affects, is enumerated, and all of them must lie inside the authorized lists. The original verdict and the U2 verdict are reported separately. *(Historical 05U2 wording, superseded: "it must fail on exactly the 35 approved faces and 15 vertices and nowhere else".)* |
 | Labels | Added faces become label 6 ("edited source surface, 05U2", INFERRED). Existing labels are unchanged |
 
 **Unchanged geometry-quality criteria.** V2–V6c keep the same code, thresholds and verdict rules. No validator is weakened and no threshold is moved.
@@ -170,7 +170,7 @@ At most three passes. If (3) would be violated, or the result reads flatter or m
 2. **Production:**
    - exact preservation of everything outside the 832 faces / 365 vertices;
    - supported reintegration ACCEPTED;
-   - V1-U2 pass, plus the original V1 reported with its expected, localised failure;
+   - V1-U2 pass, plus the original V1 reported separately with the legacy diagnostic: actual changed source vertices and affected faces enumerated, all inside the authorized lists (no quota; corrected by 05U3);
    - V2–V6c all reported;
    - identical-camera before/after views (05U RETURN against the 05U2 result), using the 05U posterior, arm and zoom cameras above;
    - a new package with its own manifest and clean-extraction hash check.
@@ -195,3 +195,17 @@ Tyler, please **approve**, **revise** or **decline**:
 Approval would authorize only this stated revision. It would not accept Gorrund or open Stage C.
 
 **→ STOP. PROPOSAL AWAITING AUTHOR APPROVAL. No geometry or protection-set change until approved.**
+
+---
+
+## 05U3 correction note (October 13, 2026)
+
+These sections were updated by RM-OT-05U3; the original wording of each is kept in place or quoted.
+
+- **§4 stop condition:** now points to the exact crease-depth definition and the measured baselines.
+- **§5 V1 row:**
+  - the U2 command is now the executable opt-in path that 05U3 added;
+  - the "must fail on exactly the 35 / 15" expectation is replaced by "maximum region, not a quota; all actual changes inside it".
+- **§5 tests:** worded to match the V1 row.
+
+The proposed lists, the hashes and the scope are **unchanged**.

@@ -1,0 +1,72 @@
+{
+ "definition": "# RM-OT-05U3 (READ-ONLY): reproducible crease-depth baselines on the UNCHANGED 05U RETURN for the proposed 05U2 region.\n# Definition (all lengths in cm, Blender/world units, 1 unit = 1 cm):\n#   frame      : the 05Q arm frame (origin O, axis d, e1 = normalize(Y x d), e2 = d x e1) from patch_selection.json;\n#   plane      : P(s0) = { x : (x - O).d = s0 }, perpendicular to the arm axis, with s0 = (v - O).d for the named S3 vertex;\n#   section    : exact mesh/plane intersection (edge interpolation) of every face crossing P(s0); segments are chained into\n#                polylines; the polyline that passes through the region faces nearest the named vertex is used;\n#   region     : the proposed 05U2 editable faces (797 interface + 35 added = 832); the in-region run is the contiguous part of\n#                that polyline lying on region faces; it must enter and leave the region exactly once (2 endpoints), otherwise\n#                the section is reported AMBIGUOUS and not used (a closed section loop is first rotated to start on a\n#                non-region face, so a run cannot be split at the loop's start index);\n#   endpoints  : the two points where the run crosses a region/non-region edge; both vertices of such an edge are frozen\n#                (proposed frozen ring), so the chord is fixed geometry during any approved sculpt;\n#   depth      : for every run point p, signed distance from the chord line within the plane, positive toward the arm axis\n#                point O + s0 d (i.e. into the groove); crease depth = the maximum positive value; deepest point reported;\n#   limit      : 75 % of the baseline depth (the 05U2 stop condition).\n",
+ "baseline": "05U RETURN (unchanged), return.npz sha 0989caf4...",
+ "results": [
+  {
+   "name": "section_A_61581",
+   "s3_vertex0": 61581,
+   "s0_cm": 9.0357,
+   "closed_section_loop": true,
+   "plane": "(x - O).d = s0 (perpendicular to the 05Q arm axis)",
+   "section_polyline_points": 372,
+   "region_runs": 1,
+   "status": "OK",
+   "endpoints": [
+    [
+     29.87121,
+     -12.9505,
+     169.01566
+    ],
+    [
+     27.84237,
+     -15.15214,
+     168.2658
+    ]
+   ],
+   "chord_cm": 3.0864,
+   "run_points": 8,
+   "depth_cm": 0.8951,
+   "deepest_point": [
+    28.79697,
+    -12.81693,
+    168.69216
+   ],
+   "limit_75pct_cm": 0.6713,
+   "min_signed_depth_cm": -0.0,
+   "sign": "positive = toward the arm-axis point O + s0 d (into the groove)"
+  },
+  {
+   "name": "section_B_61580",
+   "s3_vertex0": 61580,
+   "s0_cm": 10.4628,
+   "closed_section_loop": true,
+   "plane": "(x - O).d = s0 (perpendicular to the 05Q arm axis)",
+   "section_polyline_points": 379,
+   "region_runs": 1,
+   "status": "OK",
+   "endpoints": [
+    [
+     30.59945,
+     -13.78625,
+     170.68836
+    ],
+    [
+     28.6375,
+     -13.86225,
+     170.07943
+    ]
+   ],
+   "chord_cm": 2.0557,
+   "run_points": 7,
+   "depth_cm": 0.3658,
+   "deepest_point": [
+    29.36985,
+    -13.46814,
+    170.32743
+   ],
+   "limit_75pct_cm": 0.2743,
+   "min_signed_depth_cm": 0.0,
+   "sign": "positive = toward the arm-axis point O + s0 d (into the groove)"
+  }
+ ]
+}
