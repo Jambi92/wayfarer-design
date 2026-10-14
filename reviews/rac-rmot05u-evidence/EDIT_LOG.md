@@ -34,6 +34,29 @@
 - **Version.** Files saved by Blender 5.2.2 read correctly in the container's bpy 5.0.1, with the warning "File written by newer Blender binary". The identity attribute survived the save: all 70,751 vertices were verified by `rac_s3_vid1` plus bit-exact position.
 - **Backups.** Blender 5.2.2 writes `.blend1` backups next to saved files (a desktop preference). They are not part of the return.
 
-## Production sculpt
+## Production sculpt (only after Step 0 passed)
 
-(Recorded below as it is performed.)
+**Scene setup:**
+1. Opened `scene/GO-05T_sculpt_handoff.blend` (sha `c7e591fe…60cc`).
+2. **File → Save As** `GO-05T_sculpt_RETURN.blend` in the same folder, before any edit. `GO-05T_references.blend` stays beside it, and the handoff file was not modified.
+3. Entered Sculpt Mode and revealed the full mesh (Alt+H in Sculpt Mode) so the surrounding anatomy was visible for judgement. This changes hide flags only; the mask still protected everything outside the interface. Mask overlay 0.75; face-set overlay lowered to 0.2 so the shading reads.
+4. View → Viewpoint → Front (this looks at Gorrund's back from −Y), then Shift+B zoom-border onto the posterior interface.
+
+**Tool:** the **Smooth** brush (Blender 5.2.2 essentials asset), with ordinary interactive strokes from mouse-down, mouse moves and mouse-up. Nothing else was used: no Draw, Clay, Dyntopo, remesh, Grab, topology change or modifier, and no script or coordinate operation.
+
+| Pass | Brush settings | Stroke | Purpose |
+|---|---|---|---|
+| 1 | Smooth, 100 px, strength 0.7 | Down the centre of the crinkled strip, top to bottom | First test of the strip |
+| 2 | Smooth, 200 px, strength 0.7 | Down the medial (trunk-side) edge of the strip | Remove the saw-tooth facets along the fold edge |
+| 3 | Smooth, 200 px, strength 0.7 | Down the lateral (arm-side) edge, curving at the lower end | Blend the strip into the arm side |
+| 4 | Smooth, 200 px, strength 0.7 | Zig-zag across the upper third | Remove the notches in the upper strip |
+| 5 | Smooth, 140 px, strength 0.4 | Short local stroke at the top-medial corner | Light touch on the remaining top notches |
+
+Checkpoints were saved after passes 3, 4 and 5 and checked with `check_return.sh`; all were ACCEPTED. **Pass 5 changed almost nothing.** The notches still visible at the top of the strip lie on **protected** vertices (source and frozen-ring vertices at θ −84…−90°, s 8–10 cm, outside the editable set; listed in the report). They cannot be sculpted under the order, so I stopped.
+
+**Anterior:** not touched; no stroke was made there. **No Dyntopo, remesh or local topology edit** was needed or used.
+
+**Result:**
+- 101 of the 350 editable vertices moved. No vertices were added; topology is unchanged (141,194 faces).
+- Protected vertices: 70,401 / 70,401 bit-identical, including all 101 frozen-boundary vertices.
+- Object, transforms, units, `rac_s3_vid1`, `rac_src_vid1`, `rac_label`, mask and face sets are all retained. There are no modifiers, and the linked references are unchanged.
