@@ -1,0 +1,60 @@
+{
+ "tests": [
+  {
+   "test": "T0_unchanged_u7cp2_full_check",
+   "expected": "all U8 safety gates PASS, exit 0",
+   "as_expected": true
+  },
+  {
+   "test": "T1_move_crease_B_anchor_61580",
+   "expected": "protection REJECTED; 61580 reported moved; aggregate nonzero",
+   "as_expected": true,
+   "errors": [
+    "vertex outside the U8 target changed relative to U7 cp2"
+   ]
+  },
+  {
+   "test": "T2_move_U8_frozen_ring_vertex",
+   "expected": "protection REJECTED, aggregate nonzero",
+   "as_expected": true,
+   "vertex": 61994,
+   "errors": [
+    "vertex outside the U8 target changed relative to U7 cp2"
+   ]
+  },
+  {
+   "test": "T3_move_U7_cp2_vertex_61771_outside_U8",
+   "expected": "protection REJECTED (U7-edited vertex reported), aggregate nonzero",
+   "as_expected": true
+  },
+  {
+   "test": "T4_topology_change",
+   "expected": "protection REJECTED (face set differs), aggregate nonzero",
+   "as_expected": true,
+   "errors": [
+    "face set differs from S3 (topology change)"
+   ]
+  },
+  {
+   "test": "T5_sub10_U8_face",
+   "expected": "protection ACCEPTED (target vertex), U8 local quality FAIL (face 129896 below 10 deg), aggregate nonzero",
+   "as_expected": true,
+   "below": [
+    {
+     "s3_face": 129896,
+     "min_angle": 4.9,
+     "cp2": 45.1
+    }
+   ]
+  },
+  {
+   "test": "T6_legal_small_target_move_full_check",
+   "expected": "protection ACCEPTED, all U8 safety gates PASS, exit 0",
+   "as_expected": true,
+   "exit_code": 0,
+   "failed": []
+  }
+ ],
+ "passed": 7,
+ "total": 7
+}
