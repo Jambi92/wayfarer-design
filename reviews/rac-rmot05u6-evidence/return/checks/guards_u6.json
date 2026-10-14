@@ -1,0 +1,123 @@
+{
+ "tool": "RM-OT-05U6 local guards",
+ "errors": [],
+ "R1_target_roughness": {
+  "limit_deg": 36.3,
+  "target_vertices": 16,
+  "max_now": 54.23,
+  "max_baseline": 47.95,
+  "over_limit": [
+   {
+    "s3_vertex": 61559,
+    "roughness": 54.23
+   },
+   {
+    "s3_vertex": 61581,
+    "roughness": 42.43
+   },
+   {
+    "s3_vertex": 61580,
+    "roughness": 40.95
+   }
+  ],
+  "pass_": false
+ },
+ "R1_baseline_exception_identity": {
+  "vertices": [
+   70735,
+   70592,
+   70408
+  ],
+  "moved": [],
+  "roughness_now": {
+   "70735": 43.85,
+   "70592": 36.77,
+   "70408": 37.49
+  },
+  "pass_": true
+ },
+ "locus_outside_target_unchanged": {
+  "editable_outside_target": 349,
+  "moved": [],
+  "moved_count": 0,
+  "pass_": true
+ },
+ "changed_target_vertices": [
+  61303,
+  61405,
+  62065
+ ],
+ "R2_local_cap_quality": {
+  "cap_faces": 35,
+  "min_angle_limit_deg": 10.0,
+  "min_angle_now": 13.61,
+  "min_angle_baseline": 6.24,
+  "face_130139": {
+   "baseline": 6.24,
+   "now": 13.61
+  },
+  "degenerate": [],
+  "inverted": [],
+  "below_min_angle": [],
+  "edges_checked": 60,
+  "edge_band_cm": [
+   0.25,
+   2.5
+  ],
+  "new_out_of_band_edges": [],
+  "baseline_out_of_band_edges_reported": [],
+  "changed_cap_faces": [
+   129907,
+   130138,
+   130139,
+   130142,
+   130143,
+   130144,
+   130356,
+   130539
+  ],
+  "pass_": true
+ },
+ "historical_diagnostics": {
+  "roughness_365_wide": {
+   "limit_deg": 36.3,
+   "max_now": 54.23,
+   "over_limit": [
+    61559,
+    61580,
+    61581,
+    70408,
+    70592,
+    70735
+   ],
+   "note": "diagnostic only (R1)"
+  },
+  "retired_05U5_per_face_relative_sliver": {
+   "faces_worse_than_own_baseline": [
+    {
+     "s3_face": 129907,
+     "baseline": 24.22,
+     "now": 15.3
+    },
+    {
+     "s3_face": 130138,
+     "baseline": 50.96,
+     "now": 43.81
+    },
+    {
+     "s3_face": 130144,
+     "baseline": 43.64,
+     "now": 40.82
+    },
+    {
+     "s3_face": 130356,
+     "baseline": 37.04,
+     "now": 36.77
+    }
+   ],
+   "note": "retired for U6 (R2); reported only"
+  }
+ },
+ "finite": true,
+ "pass_all_local": false
+}
