@@ -1,7 +1,7 @@
 # RM-OT-05X (order §1, §3): READ-ONLY intake and geometry inspection of the new Gorrund GLB. Never writes the GLB.
 # Reports: hash/size, glTF container facts, node transforms, axis convention, bounds, material, vertex welding (split seams vs real
 # disconnection), connected components, boundary / non-manifold / orientation, Euler characteristic, degenerate and sliver faces,
-# self-intersection (pymeshlab, whole mesh), and rig-less approximate levels (skull vertex, ears, sole contact, heel, crotch, tail).
+# self-intersection (pymeshlab, whole mesh), per-component bounds and generic levels. Region-specific levels are measured in the report.
 # All lengths in raw source units x100 ("raw cm"): NOT a stature measurement. Axes reported as glTF (Y up, +Z front) and as the
 # review frame used by the renders (X right, Y back, Z up).
 # Usage: python3 x_inspect.py Gorrund.glb OUT.json
@@ -26,8 +26,7 @@ chi = int(n - len(ue) + len(F))
 R['topology'] = dict(exported_vertices=int(len(Pos)), welded_positions=int(n), split_vertices_from_seams=int(len(Pos) - n), triangles=int(len(F)),
                      connected_components_after_welding=int(nc), boundary_edges=int((cnt == 1).sum()), nonmanifold_edges=int((cnt > 2).sum()),
                      inconsistent_orientation_edges=int((dc > 1).sum()), euler_characteristic=chi, genus_if_single_closed=int((2 - chi) // 2),
-                     note='seam splits are UV/normal duplicates at identical positions; after welding the surface is ONE closed orientable manifold. '
-                          'Genus 2 = two small handles, located at the axillae (closed section loops ~3-10 raw cm perimeter at raw z 128.5-129.5, x +-23).')
+                     note='seam splits are UV/normal duplicates at identical positions (welded before counting). Locations of handles are NOT computed here; see the report.')
 a = V[F[:, 1]] - V[F[:, 0]]; bb = V[F[:, 2]] - V[F[:, 1]]; c = V[F[:, 0]] - V[F[:, 2]]
 def ang(u, v): return np.degrees(np.arccos(np.clip((u * v).sum(1) / np.linalg.norm(u, axis=1) / np.linalg.norm(v, axis=1), -1, 1)))
 mn = np.stack([ang(a, -c), ang(bb, -a), ang(c, -bb)], 1).min(1); L = np.linalg.norm(np.stack([a, bb, c]), axis=2)
@@ -40,12 +39,14 @@ try:
     R['self_intersection'] = dict(faces=int(ms.current_mesh().face_selection_array().sum()), scope='whole welded mesh, triangle-triangle (pymeshlab), all 1,000,000 faces')
 except Exception as e: R['self_intersection'] = dict(error=str(e))
 X, Y, Z = V.T; mid = np.abs(X) < 3; lat = np.abs(X) > 5
+comp_info = []
+for k in np.argsort(-np.bincount(lab[F[:, 0]]))[:12]:
+    fm = lab[F[:, 0]] == k; vv = V[np.unique(F[fm])]
+    comp_info.append(dict(faces=int(fm.sum()), min=vv.min(0).round(1).tolist(), max=vv.max(0).round(1).tolist()))
+R['components_review_frame_raw_cm'] = comp_info
 R['levels_raw_cm_approx'] = dict(
-    frame='review frame: X right, Y back (figure faces -Y = glTF +Z), Z up; ground = lowest vertex (raw y 0)',
-    top_vertex=V[np.argmax(Z)].round(1).tolist(), top_is='ear (lateral)' if abs(V[np.argmax(Z), 0]) > 5 else 'midline',
-    skull_vertex_midline=V[mid][np.argmax(Z[mid])].round(1).tolist(), ear_top=V[lat][np.argmax(Z[lat])].round(1).tolist(),
-    neck_min_section_z=162.0, crotch_shorts_surface_z=81.0, fingertips_z=71.5, tail_root_z=[99.0, 109.7], tail_lowest_z=round(float(Z[Y > 25].min()), 1),
-    tail_min_gap_to_body_hanging_part=19.1, sole_contact_vertices_z_lt_0_3=int((Z < 0.3).sum()),
-    heel_height_above_lowest_point=[1.74, 1.76], foot_length=[35.0, 34.6],
-    note='rig-less surface estimates only; no joint centres or skeleton are claimed')
+    frame='review frame: X right, Y back (figure faces -Y = glTF +Z), Z up; ground = lowest vertex (raw y 0); whole file, all components together',
+    top_vertex=V[np.argmax(Z)].round(1).tolist(), midline_top_abs_x_lt_3=V[mid][np.argmax(Z[mid])].round(1).tolist() if mid.any() else None,
+    vertices_within_0_3_of_ground=int((Z < 0.3).sum()),
+    note='generic only; region-specific levels (skull vertex, heel, tail, crotch) are measured per figure in the report, rig-less and approximate')
 json.dump(R, open(out, 'w'), indent=1); print(json.dumps({k: R[k] for k in ('sha256', 'topology', 'self_intersection')}, indent=1))

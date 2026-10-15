@@ -68,7 +68,7 @@
   "inconsistent_orientation_edges": 0,
   "euler_characteristic": -2,
   "genus_if_single_closed": 2,
-  "note": "seam splits are UV/normal duplicates at identical positions; after welding the surface is ONE closed orientable manifold. Genus 2 = two small handles, located at the axillae (closed section loops ~3-10 raw cm perimeter at raw z 128.5-129.5, x +-23)."
+  "note": "seam splits are UV/normal duplicates at identical positions (welded before counting). Locations of handles are NOT computed here; see the report."
  },
  "quality": {
   "edge_raw_cm": {
@@ -88,42 +88,34 @@
   "faces": 0,
   "scope": "whole welded mesh, triangle-triangle (pymeshlab), all 1,000,000 faces"
  },
+ "components_review_frame_raw_cm": [
+  {
+   "faces": 1000000,
+   "min": [
+    -43.1,
+    -67.6,
+    0.0
+   ],
+   "max": [
+    43.1,
+    67.5,
+    189.9
+   ]
+  }
+ ],
  "levels_raw_cm_approx": {
-  "frame": "review frame: X right, Y back (figure faces -Y = glTF +Z), Z up; ground = lowest vertex (raw y 0)",
+  "frame": "review frame: X right, Y back (figure faces -Y = glTF +Z), Z up; ground = lowest vertex (raw y 0); whole file, all components together",
   "top_vertex": [
    13.8,
    -50.0,
    189.9
   ],
-  "top_is": "ear (lateral)",
-  "skull_vertex_midline": [
+  "midline_top_abs_x_lt_3": [
    -1.8,
    -49.0,
    189.0
   ],
-  "ear_top": [
-   13.8,
-   -50.0,
-   189.9
-  ],
-  "neck_min_section_z": 162.0,
-  "crotch_shorts_surface_z": 81.0,
-  "fingertips_z": 71.5,
-  "tail_root_z": [
-   99.0,
-   109.7
-  ],
-  "tail_lowest_z": 48.7,
-  "tail_min_gap_to_body_hanging_part": 19.1,
-  "sole_contact_vertices_z_lt_0_3": 307,
-  "heel_height_above_lowest_point": [
-   1.74,
-   1.76
-  ],
-  "foot_length": [
-   35.0,
-   34.6
-  ],
-  "note": "rig-less surface estimates only; no joint centres or skeleton are claimed"
+  "vertices_within_0_3_of_ground": 307,
+  "note": "generic only; region-specific levels (skull vertex, heel, tail, crotch) are measured per figure in the report, rig-less and approximate"
  }
 }
