@@ -44,3 +44,11 @@ Run `z_single_body_gate.py` on the new GLB before anything else (05Z §7):
 Only after that gate passes does the whole-source anatomy review start. The **first question** for that review is whether the body reads as Gorrund from its deep ribcage and robust pelvis and joints, rather than as a large, heavy human.
 
 **State:** STOP AT THE PAID-SUBMIT GATE.
+
+## Approval record
+
+**2026-10-15, 12:32 PT.** Tyler, in chat: "I approve the Gorrund-Neutral Rodin submission."
+
+That approval covers this exact image (`49b72dfc…`) and this AssetName (`Gorrund-Neutral`) only.
+
+**Claude did not run the submission.** This session has no shell on the PC, and `RODIN_API_KEY` exists only in Tyler's Windows user environment. Terminal apps cannot be typed into through remote computer control. The dry run and the `-Submit` are therefore run by Tyler in PowerShell.
