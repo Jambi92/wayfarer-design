@@ -78,3 +78,12 @@ The plan values were tuned on scratch copies before this plan was frozen. No pro
 The v1 prototype of step E produced a neck that read thin against the massive girdle: an INFERRED cone with radius 10 → 12.5 cm. GORRUND_V1 calls for a broad neck base and a thorax-carried girdle. In v2 the INFERRED neck cone is 11 → 15 cm (k 6).
 
 No other value changed. Earlier production steps (A to D) are unaffected.
+
+## 7. Plan amendment v3 (after visual review of checkpoint E)
+
+Two fairing steps were added after E. Steps A to E are unchanged.
+
+| Step | Group | Region | Field | Reason |
+|---|---|---|---|---|
+| C3 | C | Knee box, z 49–74 | Blur 2, offset 0.7 | The source knee band between the C and D rebuilds read as a cuff / lip |
+| E2 | E | Upper-back box, x ±30, y −36…0, z 160–192 | Blur 2.5 | The shrunk-mane trapezius surface was wrinkled |

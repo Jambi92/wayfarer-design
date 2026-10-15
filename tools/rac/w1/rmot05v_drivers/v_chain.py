@@ -66,6 +66,15 @@ PLAN = [
      {"op": "union", "k": 3.0, "sdf": {"type": "union", "items": [{"type": "capsule", "a": [-17.5, 10, 229], "b": [-10, 9, 221], "r": 4.5},
                                                                 {"type": "capsule", "a": [16.5, 10, 229], "b": [9, 9, 221], "r": 4.5}]}, "note": "INFERRED broad ear attachments"},
      {"op": "union", "k": 1.0, "mesh": {"file": w + "/E_ears.obj", "blur_cm": 0.3}, "note": "source -X pinna + its bilateral counterpart"}]}}),
+ ("C3", "C", lambda w: {"name": "C3_knee_transition_fairing", "group_code": 3, "vid_base": 3400000,
+   "region": {"type": "box", "lo": [-42, -32, 49], "hi": [42, 30, 74]}, "box": [[-46, -36, 45], [46, 34, 78]], "res": 0.6, "t": 3.0, "h": 1.0,
+   "seam_g_max": 1.0, "seam_cm": 2.0, "debris_max_faces": 2000,
+   "field": {"blur_cm": 2.0, "offset_regions": [{"region": {"type": "box", "lo": [-60, -60, 54], "hi": [60, 60, 70]}, "extra_cm": 0.7, "t": 5.0}]},
+   "note": "plan v3: the source knee band left between the C (z <= 57) and D (z >= 66) rebuilds read as a cuff / lip; faired to its neighbours"}),
+ ("E2", "E", lambda w: {"name": "E2_upper_back_fairing", "group_code": 5, "vid_base": 5100000,
+   "region": {"type": "box", "lo": [-30, -36, 160], "hi": [30, 0, 192]}, "box": [[-34, -40, 156], [34, 4, 196]], "res": 0.6, "t": 3.0, "h": 1.0,
+   "seam_g_max": 1.0, "seam_cm": 2.0, "debris_max_faces": 2000, "field": {"blur_cm": 2.5},
+   "note": "plan v3: the shrunk-mane upper back / trapezius surface from E is wrinkled; faired (no offset)"}),
 ]
 
 def run(cmd, log):
