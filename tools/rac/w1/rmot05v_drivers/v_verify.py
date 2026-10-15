@@ -96,9 +96,15 @@ def main():
                                        mirrored_inherited_source_faces_below_floor_documented=int((ang[stepF & exempt] < a.floor).sum()),
                                        pass_=bool(stepF.any() and (ang[chk] >= a.floor).all()))
     res['L1_inferred_labels'] = dict(step_faces_unlabelled=int((stepF & (gn == 0)).sum()), pass_=bool(not (stepF & (gn == 0)).any()))
+    if st.get('protect_check'):   # P4: the accepted U6-U8 posterior-axilla repair stays bit-exact to U8 cp1
+        pc = st['protect_check']; R8 = np.load(pc['u8_return']); L8 = np.load(pc['labels']); uv = np.unique(R8['F'][L8 > 0])
+        pos = {int(v): k for k, v in enumerate(inn)}
+        miss = [int(v) for v in uv if int(R8['s3_vid1'][v]) not in pos]
+        mov = [int(v) for v in uv if int(R8['s3_vid1'][v]) in pos and not np.array_equal(Vn[pos[int(R8['s3_vid1'][v])]], R8['V'][v])]
+        res['P4_U6U8_repair_bit_exact'] = dict(vertices=int(len(uv)), missing=len(miss), moved=len(mov), pass_=bool(not miss and not mov))
     res['summary'] = dict(prev_vertices=int(len(Vp)), prev_faces=int(len(Fp)), new_vertices_total=int(len(Vn)), new_faces_total=int(len(Fn)),
                           bbox_min=np.round(Vn.min(0).astype(float), 3).tolist(), bbox_max=np.round(Vn.max(0).astype(float), 3).tolist())
-    gates = [k for k in res if k[:2] in ('P1', 'P2', 'P3', 'T1', 'T2', 'Q1', 'L1')]
+    gates = [k for k in res if k[:2] in ('P1', 'P2', 'P3', 'P4', 'T1', 'T2', 'Q1', 'L1')]
     res['verdict'] = 'PASS' if all(res[k]['pass_'] for k in gates) else 'NOT MET'
     res['failed'] = [k for k in gates if not res[k]['pass_']]
     json.dump(res, open(a.out, 'w'), indent=1); print(json.dumps({k: res[k] for k in ('verdict', 'failed')}))

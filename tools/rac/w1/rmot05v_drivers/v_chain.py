@@ -89,6 +89,9 @@ if __name__ == '__main__':
         np.savez_compressed(s0, V=R['V'], F=R['F'].astype(np.int64), vid=R['s3_vid1'].astype(np.int64), fgrp=np.zeros(len(R['F']), np.int8))
     if not os.path.exists(os.path.join(w, 'tail_placed.obj')):
         subprocess.run([sys.executable, os.path.join(HERE, 'v_tail.py'), '--glb', a.glb, '--params', a.params, '--x0', str(X0), '--out', os.path.join(w, 'tail_placed.obj')], check=True)
+    if not os.path.exists(os.path.join(w, 'U678_protect.npy')):
+        R = np.load(a.u8); L = np.load(os.path.join(os.path.dirname(a.u8), 'result_s3order_face_labels.npy'))
+        np.save(os.path.join(w, 'U678_protect.npy'), R['V'][np.unique(R['F'][L > 0])].astype(np.float64))
     prev = s0; started = a.__dict__['from'] is None; summary = []
     for i, (name, grp, tmpl) in enumerate(PLAN):
         out = os.path.join(w, 'S%02d_%s.npz' % (i + 1, name))
@@ -104,6 +107,10 @@ if __name__ == '__main__':
             st = json.load(open(sp)); st['vid_base'] = 3200000 if name == 'C2p' else 3300000
         else: st = tmpl(w)
         if sets: st['sets'] = sets
+        # frozen U6-U8 posterior-axilla repair (order §2): every step's region excludes it with a 1.5 cm margin, and the verifier
+        # checks its vertices bit-exact against U8 cp1 (gate P4)
+        st['region'] = {"type": "sub", "items": [st['region'], {"type": "pointset", "file": os.path.join(w, 'U678_protect.npy'), "r": 1.5}]}
+        st['protect_check'] = dict(u8_return=a.u8, labels=os.path.join(os.path.dirname(a.u8), 'result_s3order_face_labels.npy'))
         sp = os.path.join(w, 'step_%s.json' % name); json.dump(st, open(sp, 'w'), indent=1)
         rc = run([sys.executable, os.path.join(HERE, 'v_rebuild.py'), '--state', prev, '--step', sp, '--out', out, '--log', out.replace('.npz', '_log.json')], out.replace('.npz', '_stdout.txt'))
         if rc != 0: print(json.dumps(dict(step=name, rebuild_exit=rc))); sys.exit(2)
