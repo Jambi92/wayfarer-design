@@ -197,6 +197,23 @@ def rebuild(S, step, log):
             log.setdefault('selfint_repair_rounds', []).append(int(si.sum()))
         if log.get('selfint_repair_rounds'):
             Vall, Fall, fixed, movable = fix_slivers(Vall, Fall, movable, fixed, floor=step.get('angle_floor', 12.0), log=log, project=clampP)
+        # persistent folds: excise the intersecting new faces (+3 rings of new faces) and refill each hole with a relaxed disk
+        for rr in range(3):
+            si = selfint(Vall, Fall) & ~fixed
+            if not si.any(): break
+            cut = si.copy()
+            for _ in range(3):
+                vv = np.zeros(len(Vall), bool); vv[np.unique(Fall[cut])] = True; cut = vv[Fall].any(1) & ~fixed
+            Fk = Fall[~cut]; fx = fixed[~cut]; loops_cut = [lp for lp in boundary_loops(Fk) if any(v in set(np.unique(Fall[cut]).tolist()) for v in lp)]
+            addF = []
+            for lp in loops_cut:
+                r = cap_fill(Vall, lp)
+                if r is None: continue
+                nvx, tri = r; Vall = np.concatenate([Vall, nvx]); movable = np.r_[movable, np.ones(len(nvx), bool)]; addF.append(tri)
+            Fall = np.vstack([Fk] + addF); fixed = np.r_[fx, np.zeros(sum(len(x) for x in addF), bool)]
+            Vall = relax(Vall, Fall, movable & np.isin(np.arange(len(Vall)), np.unique(np.vstack(addF)) if addF else []), clampP, n=6, lam=0.5)
+            Vall, Fall, fixed, movable = fix_slivers(Vall, Fall, movable, fixed, floor=step.get('angle_floor', 12.0), log=log, project=clampP)
+            log.setdefault('fold_excise_rounds', []).append(dict(si=int(si.sum()), cut=int(cut.sum()), holes=len(loops_cut)))
     except ImportError:
         pass
     # close tiny holes made only of new vertices (bow-tie leftovers of the extracted patch)
