@@ -5,6 +5,10 @@
 - **Evidence:** `reviews/rac-rmot05x-r1-source-review/`.
 - **Earlier candidate:** `reviews/claude-rac-rm-ot-05x-new-male-gorrund-source-review.md`.
 
+> **Superseded by RM-OT-05Y (2026-10-15).** `reviews/chatgpt-rac-rm-ot-05y-revised-male-source-review-order.md` arrived after this review was written. Its §2 single-body gate fails, because the file holds three figures. Its outcome is **REVISE GENERATION INPUT** (`reviews/claude-rac-rm-ot-05y-revised-male-source-review.md`).
+> - The suggestion below to adopt fig2 is **withdrawn**: 05Y §2 forbids extracting the most attractive figure.
+> - The per-figure observations remain as non-gate context only.
+
 ## Recommendation
 
 **Still REVISE AT SOURCE, but the direction is improving.**
