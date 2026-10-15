@@ -106,3 +106,19 @@ Candidate 01 read "massive / load-bearing" as bodybuilder muscle. It also added 
 - clothing, briefs, underwear, underwear line, brief line, swimsuit line, tan line, belt, straps, jewelry;
 - paws, claws, digitigrade legs, oversized feet, long arms;
 - cartoon.
+
+## 5. Prompt v3 (after candidate 02 was ruled REGENERATE IMAGE on 2026-10-15)
+
+Use v2 (§4) with three additions. Details are in `image_gate/candidate_02/IMAGE_GATE_candidate_02.md`.
+
+**1. Build — append:**
+
+> natural sloping shoulders without rounded shoulder caps, visible collarbones, a clearly visible neck of moderate length between head and shoulders, plain smooth upper arms, plain smooth thighs and calves with no bulging muscle shapes — the size comes from big bones and a deep, wide rib cage, not from muscle.
+
+**2. Head — append:**
+
+> face turned in the same direction as the chest, not toward the side.
+
+**3. Negative prompt — add:**
+
+> rounded shoulder caps, big deltoids, trapezius hump, no neck, thick neck, bulging thighs, teardrop quad, bulging calves, strongman, powerlifter, wrestler.
