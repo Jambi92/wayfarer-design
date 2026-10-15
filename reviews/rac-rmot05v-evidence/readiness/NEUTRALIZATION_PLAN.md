@@ -72,3 +72,9 @@ They are recorded as provenance, not as discovered anatomy.
 ## 5. Prototypes (disclosed)
 
 The plan values were tuned on scratch copies before this plan was frozen. No prototype output is a candidate. The production chain regenerates everything from U8 cp1 with the frozen code.
+
+## 6. Plan amendment v2 (step E only, before the production E step)
+
+The v1 prototype of step E produced a neck that read thin against the massive girdle: an INFERRED cone with radius 10 → 12.5 cm. GORRUND_V1 calls for a broad neck base and a thorax-carried girdle. In v2 the INFERRED neck cone is 11 → 15 cm (k 6).
+
+No other value changed. Earlier production steps (A to D) are unaffected.
