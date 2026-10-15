@@ -1,0 +1,57 @@
+{
+ "tests": [
+  {
+   "test": "T0_real_step_result",
+   "expected": "PASS, exit 0",
+   "as_expected": true
+  },
+  {
+   "test": "T1_move_one_outside_source_vertex_1e-3cm",
+   "expected": "P3 FAIL, exit 3",
+   "as_expected": true
+  },
+  {
+   "test": "T2_delete_50_far_outside_faces",
+   "expected": "P1 FAIL (and new open boundary), exit 3",
+   "as_expected": true
+  },
+  {
+   "test": "T3_delete_one_inferred_face",
+   "expected": "T1 FAIL (new open boundary), exit 3",
+   "as_expected": true
+  },
+  {
+   "test": "T4_push_inferred_vertex_4cm_through_the_surface",
+   "expected": "T2 and/or Q1 FAIL, exit 3",
+   "as_expected": true,
+   "failed": [
+    "Q1_step_face_quality"
+   ]
+  },
+  {
+   "test": "T5_collapse_an_inferred_face_to_a_sliver",
+   "expected": "Q1 FAIL, exit 3",
+   "as_expected": true,
+   "failed": [
+    "Q1_step_face_quality"
+   ]
+  },
+  {
+   "test": "T6_inferred_faces_unlabelled",
+   "expected": "L1 FAIL, exit 3",
+   "as_expected": true
+  },
+  {
+   "test": "T7_inferred_vertex_far_outside_region",
+   "expected": "P2 FAIL, exit 3",
+   "as_expected": true,
+   "failed": [
+    "P2_new_vertices_inside_region",
+    "T2_self_intersection",
+    "Q1_step_face_quality"
+   ]
+  }
+ ],
+ "passed": 8,
+ "total": 8
+}
