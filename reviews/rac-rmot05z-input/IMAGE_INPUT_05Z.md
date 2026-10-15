@@ -71,3 +71,38 @@ Save it as `E:\Wayfarer-Rodin\Source-Images\Wayfarer Gorrund Neutral Character R
 Alternatively, attach it in chat.
 
 Claude then runs the pre-generation image gate (`IMAGE_GATE_05Z.md`) and returns **PASS** or **REGENERATE IMAGE**. **A PASS does not authorize any paid submission** (05Z §5–§6).
+
+## 4. Prompt v2 (after candidate 01 was ruled REGENERATE IMAGE on 2026-10-15; use this version)
+
+Candidate 01 read "massive / load-bearing" as bodybuilder muscle. It also added a chin tuft, a brief-line crease and a profile-turned head. The v2 prompt keeps the §2 format and avoids those trigger words. See `image_gate/candidate_01/IMAGE_GATE_candidate_01.md`.
+
+> Full-body anatomical reference render of a single adult male of a fictional leonine beastfolk race — the only figure in the image. Front three-quarter view (about 30 degrees off front), whole figure from head to both feet with margin. Plain mid-grey studio background, soft even light, no floor shadow, no other views, no text. Unpainted matte grey clay-sculpture surface, realistic natural anatomy.
+>
+> **Head:** an intelligent, calm lion-like head with a muzzle, broad rounded ears and short smooth fur. Clean chin, no tuft, no beard, no mane. The head faces the same direction as the body, level, looking straight ahead.
+>
+> **Tail:** a long lion-like tail that emerges from the centre of the lower back (the sacrum). It hangs relaxed behind the body and slightly to one side, clear of the legs, without touching the ground.
+>
+> **Pose:** standing straight and relaxed, knees straight but not locked, both feet flat with the heels down, feet parallel at hip width, arms hanging loosely slightly away from the body, hands open and relaxed.
+>
+> **Build:** about 7 ft 6 in tall and big-boned:
+> - a broad and very deep rib cage;
+> - wide shoulders sitting on the rib cage;
+> - a deep, solid pelvis;
+> - thick wrists and ankles;
+> - large knees and elbows.
+>
+> His physique is that of an **untrained, average, soft adult who does not exercise**. Smooth skin with **no visible muscle separation anywhere**, a natural soft belly line (not fat), and ordinary arms and legs.
+>
+> **Hands and feet:** large five-fingered humanoid hands with ordinary nails. Large flat plantigrade humanoid feet, each with exactly five ordinary toes with toenails.
+>
+> **Groin:** unclothed neutral anatomical reference. A smooth, featureless, non-explicit groin that blends continuously into the thighs, like an unpainted mannequin, with no edge, seam or line across the hips.
+
+**Negative prompt:**
+- multiple views, character sheet, turnaround, multiple figures, inset, text, cropped feet;
+- bodybuilder, muscular, ripped, athletic, fitness model, superhero, defined muscles, abs, six-pack, pecs, big trapezius, veins, vascular, V-taper;
+- obese, fat belly;
+- ogre, brute, hunched, bent knees, aggressive pose, head turned sideways, profile head;
+- mane, long hair, beard, goatee, chin tuft;
+- clothing, briefs, underwear, underwear line, brief line, swimsuit line, tan line, belt, straps, jewelry;
+- paws, claws, digitigrade legs, oversized feet, long arms;
+- cartoon.
