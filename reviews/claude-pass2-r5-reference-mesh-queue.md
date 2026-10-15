@@ -338,3 +338,4 @@ The retained Gorrund W1i/W1j reference is **AUTHOR ACCEPTED as the W1 ARM** (`re
 - **RM-OT-05Z2 (2026-10-15):** prompt v4 (composition: lower muscle and soft-tissue bulk, not chubby, frame kept; tail clears buttocks at the sacral centre) and candidate-04 gate with candidate-03 comparison recorded in IMAGE_INPUT_05Z.md §6. STOP AT CANDIDATE-04 IMAGE GATE
 - **RM-OT-05Z2 candidate 04 (2026-10-15):** REGENERATE IMAGE: more muscular than candidate 03. Focused correction: image-to-image edit of candidate 03 reducing only muscle volume. STOP AT IMAGE GATE
 - **RM-OT-05Z2 candidate 05 (2026-10-15):** REGENERATE IMAGE: edit of candidate 03 too weak (shoulders and upper arms unchanged, knee/quadriceps definition slightly up); repeat at higher strength. STOP AT IMAGE GATE
+- **RM-OT-05Z2 candidate 06 (2026-10-15):** PASS (stronger edit of candidate 03: lower limb muscle, flatter abdomen, frame kept). Job prep for Gorrund-Neutral-B; STOP AT PAID-SUBMIT GATE
