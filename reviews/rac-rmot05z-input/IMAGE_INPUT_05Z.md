@@ -188,3 +188,86 @@ If the Rodin website is used, record:
 - the tier or model;
 - the quality, detail and smoothing settings;
 - any other material setting visible before submission.
+
+## 7. Prompt v5: counter-bias calibration (candidate 07): use this one (RM-OT-05Z3, 2026-10-15)
+
+**Why v5.** Rodin inflated the anatomy twice:
+- candidate 03 became `Gorrund-Neutral.glb` (`aaeee37b…`), muscle plus fat;
+- candidate 06 became `Gorrund-Neutral-B.glb` (`895d8854…`), lean heroic muscle.
+
+**What v5 does.** The image deliberately **undershoots** muscle, as compensation for the generator's input. This is not new canon. The image may look slightly too slender for the final Gorrund, and that is intended. Visual cues that the generator reads as muscle are also removed: matte clay, broad diffuse low-contrast light, no grooves, no veins.
+
+**One calibration only.** Only **one** paid generation is allowed from a passing candidate 07. If that GLB still fails Q1/Q2 for heroic musculature, the outcome is **RODIN GORRUND ARM ROUTE RETIRED — HEROIC BODY PRIOR PERSISTS** (05Z3 §2, §8).
+
+**How to make it.** Use either a fresh generation with the full prompt below, or an image-to-image edit of candidate 06 using the same text. Either way, the result must be **one** full-body front three-quarter figure, not a sheet.
+
+### Prompt
+
+> Full-body neutral anatomical source render of one adult male leonine beastfolk, the only figure in the image. Front three-quarter view (about 30 degrees off front), whole figure from head to both feet with margin, plain mid-grey studio background, no floor shadow, no other views, no text.
+>
+> **Surface and light:** smooth matte unpainted clay-mannequin surface below the neck, with no skin or fur micro-detail on the body. Soft, broad, diffuse lighting with very low contrast. No rim light, no specular highlights, no muscle-shading grooves, no sharp shadow lines between muscle groups, no veins.
+>
+> **Head:** a calm, intelligent lion-like head with a muzzle, broad rounded ears and short smooth fur. No mane, no beard, no chin tuft. The face is turned the same way as the chest, level, looking ahead. A clearly visible moderate neck.
+>
+> **Frame:** the skeleton is very large — broad and visibly deep rib cage, robust pelvis, large knees, ankles, elbows and wrists. Large hands and feet suited to that skeleton.
+>
+> **Soft tissue (deliberately modest and untrained):**
+> - narrow, smooth upper arms and narrow plain forearms;
+> - slim, plain thighs with no sweep above the knee;
+> - slim, almost straight-sided calves;
+> - very low shoulder muscle volume, with naturally sloping shoulders;
+> - a flat chest with minimal pectoral projection and no centre line;
+> - small, flat natural buttocks and a flat back of the thighs;
+> - a flat to gently soft abdomen, with no belly and no love handles.
+>
+> The body looks large because of the rib cage, pelvis and joints, not because of muscle or fat.
+>
+> **Hands and feet:** five-fingered humanoid hands with ordinary nails. Large flat plantigrade humanoid feet, each with exactly five ordinary toes and toenails.
+>
+> **Pose:** neutral upright stance, knees straight but not locked, both heels down, feet parallel at hip width, arms hanging loosely slightly away from the body, hands open.
+>
+> **Tail:** a long lion-like tail from the exact centre of the sacrum. It clears the buttocks immediately, then hangs relaxed behind, without touching the ground.
+>
+> **Groin:** a smooth, featureless, non-explicit groin that blends continuously into the thighs, like an unpainted mannequin, with no edge or line across the hips.
+
+### Negative prompt
+
+- **Format:** multiple views, turnaround, reference sheet, character sheet, multiple figures, text, cropped feet.
+- **Muscle:** bodybuilder, muscular, athletic, strongman, powerlifter, wrestler, superhero, fitness model, pec definition, chest separation, deltoid caps, trapezius hump, big arms, biceps, triceps definition, forearm definition, veins, vascularity, abs, serratus, quad sweep, teardrop quad, bulging calves, muscle grooves.
+- **Fat and bulk:** large glutes, projected buttocks, love handles, belly, chubby, obese.
+- **Lighting:** dramatic lighting, rim lighting, high-contrast anatomy.
+- **Tail:** tail touching buttock, off-centre tail root.
+- **Feet and hands:** paws, claws, digitigrade feet.
+- **Hair:** mane, beard, chin tuft.
+- **Clothing:** clothing, briefs, underwear line.
+
+### Candidate-07 calibration gate (05Z3 §6)
+
+This is a **calibration gate**, not a final-anatomy gate.
+
+Run G1 and G3–G8 from `IMAGE_GATE_05Z.md` as usual. G2 is replaced by a direct comparison with **candidate 06** (`83042148…`), and all of the following must hold:
+
+- **C6-1.** The upper-arm silhouette is clearly narrower.
+- **C6-2.** The forearm silhouette is clearly narrower.
+- **C6-3.** The thigh silhouette is clearly narrower.
+- **C6-4.** The calf silhouette is clearly less convex.
+- **C6-5.** Pectoral projection is clearly lower.
+- **C6-6.** The shoulder cap is clearly lower.
+- **C6-7.** The abdomen is not chubby.
+- **C6-8.** The frame cues are still present: rib cage, pelvis, joints.
+
+Also check the style: matte, low contrast, no grooves, no veins, one figure.
+
+Being under-muscled compared with the final canon is **not** a reason to reject the image if the frame remains.
+
+**Result:** **PASS FOR COUNTER-BIAS CALIBRATION**, or **REGENERATE IMAGE** with one focused correction.
+
+### After a PASS (05Z3 §7)
+
+1. Prepare the job for AssetName **`Gorrund-Neutral-C`**.
+2. **STOP** for Tyler's explicit approval, given immediately beforehand, naming:
+   - the image;
+   - `Gorrund-Neutral-C`;
+   - the tier and settings.
+3. Before submitting on the website, fill in `image_gate/RODIN_SETTINGS_RECORD_05Z3.md`.
+4. Choose the smoothest, least anatomy-emphasizing option that is still usable for production. Write **NOT AVAILABLE** for any setting that does not exist; never guess.

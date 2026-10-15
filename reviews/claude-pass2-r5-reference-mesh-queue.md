@@ -340,3 +340,4 @@ The retained Gorrund W1i/W1j reference is **AUTHOR ACCEPTED as the W1 ARM** (`re
 - **RM-OT-05Z2 candidate 05 (2026-10-15):** REGENERATE IMAGE: edit of candidate 03 too weak (shoulders and upper arms unchanged, knee/quadriceps definition slightly up); repeat at higher strength. STOP AT IMAGE GATE
 - **RM-OT-05Z2 candidate 06 (2026-10-15):** PASS (stronger edit of candidate 03: lower limb muscle, flatter abdomen, frame kept). Job prep for Gorrund-Neutral-B; STOP AT PAID-SUBMIT GATE
 - **RM-OT-05Z2 Gorrund-Neutral-B GLB (2026-10-15):** single-body PASS; Q1 NO / Q2 NO (lean heavy muscle replaced A's muscle+fat; tail/gluteals/heels unchanged). REVISE AT SOURCE; options: settings, clay-style input, or order-level re-scope. STOP
+- **RM-OT-05Z3 (2026-10-15):** counter-bias prompt v5 + calibration gate (C6-1…C6-8 vs candidate 06) + Rodin settings record; one paid calibration only, then retire Rodin route if Q1/Q2 fail. STOP AT CANDIDATE-07 IMAGE GATE
