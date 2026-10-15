@@ -1,0 +1,129 @@
+{
+ "file": "work.glb",
+ "bytes": 30470312,
+ "sha256": "1c23b92b7d2faa88ce629d6ccb6d795502d4b704c52af2fcf10b2b34bdd83170",
+ "gltf": {
+  "version": "2.0",
+  "generator": "Khronos glTF Blender I/O v4.3.47",
+  "scenes": 1,
+  "nodes": [
+   {
+    "mesh": 0,
+    "name": "model"
+   }
+  ],
+  "meshes": 1,
+  "primitives": [
+   {
+    "attributes": [
+     "POSITION",
+     "NORMAL",
+     "TEXCOORD_0"
+    ],
+    "mode": 4
+   }
+  ],
+  "materials": [
+   {
+    "doubleSided": true,
+    "name": "model",
+    "pbrMetallicRoughness": {
+     "baseColorFactor": [
+      0.5,
+      0.5,
+      0.5,
+      1
+     ],
+     "metallicFactor": 0.05000000074505806,
+     "roughnessFactor": 0.4000000059604645
+    }
+   }
+  ],
+  "textures": 0,
+  "images": 0,
+  "skins": 0,
+  "animations": 0,
+  "node_transform": "none (identity: no matrix / translation / rotation / scale on the only node)"
+ },
+ "position_bounds_gltf": {
+  "min": [
+   -0.43088001012802124,
+   0.0,
+   -0.6747699975967407
+  ],
+  "max": [
+   0.4313099980354309,
+   1.8990000486373901,
+   0.6756299734115601
+  ]
+ },
+ "topology": {
+  "exported_vertices": 577159,
+  "welded_positions": 499998,
+  "split_vertices_from_seams": 77161,
+  "triangles": 1000000,
+  "connected_components_after_welding": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "inconsistent_orientation_edges": 0,
+  "euler_characteristic": -2,
+  "genus_if_single_closed": 2,
+  "note": "seam splits are UV/normal duplicates at identical positions; after welding the surface is ONE closed orientable manifold. Genus 2 = two small handles, located at the axillae (closed section loops ~3-10 raw cm perimeter at raw z 128.5-129.5, x +-23)."
+ },
+ "quality": {
+  "edge_raw_cm": {
+   "median": 0.293,
+   "p99": 0.741,
+   "max": 1.696
+  },
+  "min_angle_deg": {
+   "median": 34.5,
+   "below_10": 20985,
+   "below_1": 106,
+   "min": 0.08
+  },
+  "zero_area_faces": 0
+ },
+ "self_intersection": {
+  "faces": 0,
+  "scope": "whole welded mesh, triangle-triangle (pymeshlab), all 1,000,000 faces"
+ },
+ "levels_raw_cm_approx": {
+  "frame": "review frame: X right, Y back (figure faces -Y = glTF +Z), Z up; ground = lowest vertex (raw y 0)",
+  "top_vertex": [
+   13.8,
+   -50.0,
+   189.9
+  ],
+  "top_is": "ear (lateral)",
+  "skull_vertex_midline": [
+   -1.8,
+   -49.0,
+   189.0
+  ],
+  "ear_top": [
+   13.8,
+   -50.0,
+   189.9
+  ],
+  "neck_min_section_z": 162.0,
+  "crotch_shorts_surface_z": 81.0,
+  "fingertips_z": 71.5,
+  "tail_root_z": [
+   99.0,
+   109.7
+  ],
+  "tail_lowest_z": 48.7,
+  "tail_min_gap_to_body_hanging_part": 19.1,
+  "sole_contact_vertices_z_lt_0_3": 307,
+  "heel_height_above_lowest_point": [
+   1.74,
+   1.76
+  ],
+  "foot_length": [
+   35.0,
+   34.6
+  ],
+  "note": "rig-less surface estimates only; no joint centres or skeleton are claimed"
+ }
+}
