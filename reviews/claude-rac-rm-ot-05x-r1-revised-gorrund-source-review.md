@@ -35,7 +35,7 @@ Nothing was edited. Gorrund **UNACCEPTED**; Grask E3 **FROZEN**; RM-OT-05 **OPEN
 | File / size / SHA-256 | `base_1.glb` / **31,543,564 bytes** / **`b0214fcfcf157da9b8e457a110fcb78ea5ae88ec14f8a53aea159efabb5d5973`** |
 | Container | glTF 2.0, Blender glTF I/O v4.3.47 export. One node `model` (identity transform), one mesh, one primitive (POSITION, NORMAL, TEXCOORD_0), one grey material. No textures, rig or animation. |
 | Provenance | **Unknown.** No job record in the PC Rodin pipeline. |
-| Master | Read-only in the session; copy placed at `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Male-05X-R1\base_1.glb`. Kept separate from `Gorrund.glb` (05X), `base.glb`, U8 and N1. The working-copy hash is unchanged after review. |
+| Master | Read-only in the session; copy placed at `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Male-05X-R1\` (stored as `base_1.glb.part000` + `.part001` with `REJOIN.txt`, because the file is over the 30 MB transfer limit; the rejoined file must hash to `b0214fcf…`). Kept separate from `Gorrund.glb` (05X), `base.glb`, U8 and N1. The working-copy hash is unchanged after review. |
 
 ## 2. What the file contains (`views/00_*`, `geometry/inspection.json`, `geometry/figures_split.json`)
 

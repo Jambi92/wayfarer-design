@@ -26,7 +26,7 @@ Gorrund **UNACCEPTED**; Grask E3 **FROZEN**; RM-OT-05 **OPEN**; Stage C **BLOCKE
 | Distinct from | the old `base.glb` (`78ecfa87…`) and the 05X `Gorrund.glb` (`1c23b92b…`). |
 | Container | glTF 2.0 with matching declared length. One node `model` with no transform or extension; one mesh; one triangle primitive (POSITION, NORMAL, TEXCOORD_0); one material. No textures, images, skins or animations. 610,698 exported vertices, 3,000,000 indices (1,000,000 triangles). Exporter: Khronos glTF Blender I/O v4.3.47. |
 | POSITION bounds | X −0.947674..0.949007; Y 0..1.288981; Z −0.292843..0.290285. Matches the order. |
-| Master | Immutable copy at `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Male-05X-R1\base_1.glb`. This is a revision-specific folder; no older master was overwritten. The review used a separate working copy, whose hash was unchanged afterwards. |
+| Master | Immutable copy at `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Male-05X-R1\` (stored as `base_1.glb.part000` + `.part001` with `REJOIN.txt`, because the file is over the 30 MB transfer limit; the rejoined file must hash to `b0214fcf…`). This is a revision-specific folder; no older master was overwritten. The review used a separate working copy, whose hash was unchanged afterwards. |
 | Designation | Male, as Tyler designates it. Nothing is added to canon. |
 
 ## 2. Single-body gate (§2)

@@ -2,7 +2,7 @@
 
 **Report:** `reviews/claude-rac-rm-ot-05x-r1-revised-gorrund-source-review.md`. Recommendation: **REVISE AT SOURCE** (the direction is improving).
 
-**Source file:** `base_1.glb`, SHA-256 `b0214fcfcf157da9b8e457a110fcb78ea5ae88ec14f8a53aea159efabb5d5973`, 31,543,564 bytes. The master is stored at `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Male-05X-R1\base_1.glb`.
+**Source file:** `base_1.glb`, SHA-256 `b0214fcfcf157da9b8e457a110fcb78ea5ae88ec14f8a53aea159efabb5d5973`, 31,543,564 bytes. The master is stored at `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Male-05X-R1\` (stored as `base_1.glb.part000` + `.part001` with `REJOIN.txt`, because the file is over the 30 MB transfer limit; the rejoined file must hash to `b0214fcf…`).
 
 ## views/
 
