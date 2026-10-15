@@ -1,0 +1,73 @@
+# Gorrund single-image regeneration input (RM-OT-05Z §2–§4)
+
+This narrows `reviews/rac-rmot05w-source-brief/SUBMISSION_PACKAGE.md` §1 using the 05Y lesson: **one image, one figure, no turnaround sheet**.
+
+Every 05W requirement still applies: `SOURCE_BRIEF.md`, `NEGATIVE_CHECKLIST.md` and `REVIEW_SPEC.md`. Nothing in them is weakened.
+
+Where this file and the 05W §1 prompt differ, **this file wins** for the next image. The differences:
+- no briefs is preferred;
+- if a garment is unavoidable, it is a fallback proxy;
+- the tail roots at the sacral midline;
+- the male designation is stated.
+
+## 1. Image format (05Z §2)
+
+The image must have:
+- **one** adult male Gorrund, as the **only** figure in the image;
+- a **front three-quarter** view, about 30° off front;
+- the full body in frame with margin, **both feet fully visible**;
+- a plain **mid-grey background** and soft, even light, with no floor shadow;
+- **no** panels, alternate views, inset head, turnaround, labels or text.
+
+It should be a PNG of at least 1024 px on the long side.
+
+**Never** submit a front / side / back sheet as one ordinary image. That is exactly what produced the three-body `base_1.glb` (05Y).
+
+## 2. Prompt (paste into the image generator)
+
+> Full-body anatomical concept render of a single adult male of a fictional leonine beastfolk race called the Gorrund — the only figure in the image. Front three-quarter view (about 30 degrees off front), whole figure visible from head to both feet with margin, plain mid-grey studio background, soft even lighting, no floor shadow, no other views, no inset head, no text. Unpainted matte grey clay-sculpture surface, realistic natural anatomy.
+>
+> Head: an intelligent, calm lion-like head with a muzzle, broad rounded ears and short smooth fur only. No mane, no chin tuft; the neck, shoulders and upper back are fully visible. Neutral expression, mouth closed.
+>
+> Tail: a long lion-like tail that grows from the body at the base of the spine (sacral midline, exactly centred). It stands clear of the buttocks for its first few centimetres, then hangs naturally behind and slightly to one side, without touching the ground.
+>
+> Pose: standing straight and relaxed, head level, knees straight but not locked, natural spine. Both feet flat with the heels on the ground, parallel at hip width, toes pointing forward. Arms hanging relaxed slightly away from the body, palms facing the thighs, fingers relaxed and separated.
+>
+> Body, about 7 ft 6 in tall: massive load-bearing skeletal architecture, not muscle:
+> - a very broad **and very deep** rib cage with rounded anatomical sides;
+> - a broad, low neck root blending into a wide shoulder girdle that sits on the rib cage;
+> - a deep, robust pelvis continuing the torso, with no pinched waist and no wide hip flare;
+> - large integrated knees, ankles, elbows and wrists;
+> - arms in proportion, fingertips at the upper to mid thigh;
+> - large capable five-fingered humanoid hands with ordinary nails;
+> - large but proportionate flat plantigrade humanoid feet, each with exactly five ordinary toes with toenails.
+>
+> Composition: ordinary, healthy, average adult muscle and fat. Smooth, natural soft tissue with no muscle definition lines: no six-pack, no striations, no visible veins, no bulging trapezius, no V-taper, no belly. Not skinny.
+>
+> Unclothed neutral anatomical reference: smooth, featureless, non-explicit neutral groin like an unpainted mannequin statue. No clothing of any kind, no straps, no jewellery, no equipment.
+
+**Negative prompt / avoid:**
+- multiple views, character sheet, turnaround, front side back, reference sheet, multiple figures, inset, text, labels, cropped feet;
+- bodybuilder, six-pack abs, muscle definition, striations, veins, bulging muscles, huge trapezius, V-taper, fat, belly, obese;
+- ogre, troll, orc, brute, hunchback, crouching, bent knees, bow legs, aggressive pose, snarling;
+- mane, long hair, braids, beard, chin tuft;
+- clothing, briefs, underwear, shorts, loincloth, belt, armor, bracers, wraps, necklace, jewelry, weapons;
+- tail from clothing, off-centre tail;
+- paws, claws, talons, digitigrade legs, hooves, oversized feet, giant hands, long arms;
+- cartoon, toy.
+
+### Fallback only if the generator refuses an unclothed figure (05Z §3)
+
+Replace the last paragraph of the prompt with:
+
+> Wearing only a minimal smooth seamless low-rise neutral grey modesty covering, sitting below the hip bones; thin, tight, with no waistband, no seams, no folds, no straps, no thickness; the hip bones, lower abdomen and buttock shape remain fully visible.
+
+Even in the fallback, the tail must still emerge from the body at the sacral midline, **above** the covering.
+
+## 3. Saving the image (no credits)
+
+Save it as `E:\Wayfarer-Rodin\Source-Images\Wayfarer Gorrund Neutral Character Reference Sheet.png`. That is the same folder as `C:\Users\Tyler\Wayfarer-Rodin\Source-Images`.
+
+Alternatively, attach it in chat.
+
+Claude then runs the pre-generation image gate (`IMAGE_GATE_05Z.md`) and returns **PASS** or **REGENERATE IMAGE**. **A PASS does not authorize any paid submission** (05Z §5–§6).
