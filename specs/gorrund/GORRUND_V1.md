@@ -818,3 +818,5 @@ The retained W1i/W1j Gorrund point is **AUTHOR ACCEPTED as the W1 Anatomical Ref
 - All minimal guards pass. The deep pelvis (skeletal pelvic depth ÷ thoracic depth) is unchanged; skin pelvic AP is within 0.4 cm of 05B.
 - Blind read (3 uninformed scorers): a stable, separable group, 18 / 18 placements, surviving low composition, but read as **"heavy / stocky human"**. 0 non-human reads on the delivered bodies; 1 / 3 before the skeleton guard restored the MPFB-skeleton buttock.
 - B is recommended for author review only. Acceptance standard not met. Candidates GO5C* are PENDING AUTHOR / NOT ACCEPTED. RM-OT-05 remains OPEN. No Gorrund canon relation was changed.
+
+**RM-OT-05W status (October 14, 2026; `reviews/chatgpt-rac-rm-ot-05w-gorrund-source-sculpt-reset-order.md`):** asset-direction reset, not a canon reset. The U-series / GO-ARM-N1 lineage is retired from advancement and kept as historical evidence; a new purpose-built neutral source sculpt is required (`reviews/claude-rac-rm-ot-05w-gorrund-source-sculpt-reset-readiness.md`). No Gorrund relation, number or distribution was changed. RM-OT-05 remains OPEN.
