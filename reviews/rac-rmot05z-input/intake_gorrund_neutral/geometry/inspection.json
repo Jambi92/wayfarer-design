@@ -1,0 +1,121 @@
+{
+ "file": "work.glb",
+ "bytes": 29777356,
+ "sha256": "aaeee37b9d6fa7ca68d9ff87b161d9c2cc2cb6778fe5df9dee2a7f6db52865b5",
+ "gltf": {
+  "version": "2.0",
+  "generator": "Khronos glTF Blender I/O v4.3.47",
+  "scenes": 1,
+  "nodes": [
+   {
+    "mesh": 0,
+    "name": "model"
+   }
+  ],
+  "meshes": 1,
+  "primitives": [
+   {
+    "attributes": [
+     "POSITION",
+     "NORMAL",
+     "TEXCOORD_0"
+    ],
+    "mode": 4
+   }
+  ],
+  "materials": [
+   {
+    "doubleSided": true,
+    "name": "model",
+    "pbrMetallicRoughness": {
+     "baseColorFactor": [
+      0.5,
+      0.5,
+      0.5,
+      1
+     ],
+     "metallicFactor": 0.05000000074505806,
+     "roughnessFactor": 0.4000000059604645
+    }
+   }
+  ],
+  "textures": 0,
+  "images": 0,
+  "skins": 0,
+  "animations": 0,
+  "node_transform": "none (identity: no matrix / translation / rotation / scale on the only node)"
+ },
+ "position_bounds_gltf": {
+  "min": [
+   -0.5196599960327148,
+   0.0,
+   -0.36814001202583313
+  ],
+  "max": [
+   0.5204300284385681,
+   1.8971699476242065,
+   0.372079998254776
+  ]
+ },
+ "topology": {
+  "exported_vertices": 555504,
+  "welded_positions": 499994,
+  "split_vertices_from_seams": 55510,
+  "triangles": 1000000,
+  "connected_components_after_welding": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "inconsistent_orientation_edges": 0,
+  "euler_characteristic": -6,
+  "genus_if_single_closed": 4,
+  "note": "seam splits are UV/normal duplicates at identical positions (welded before counting). Locations of handles are NOT computed here; see the report."
+ },
+ "quality": {
+  "edge_raw_cm": {
+   "median": 0.308,
+   "p99": 0.738,
+   "max": 1.595
+  },
+  "min_angle_deg": {
+   "median": 35.2,
+   "below_10": 18514,
+   "below_1": 77,
+   "min": 0.127
+  },
+  "zero_area_faces": 0
+ },
+ "self_intersection": {
+  "faces": 0,
+  "scope": "whole welded mesh, triangle-triangle (pymeshlab), all 1,000,000 faces"
+ },
+ "components_review_frame_raw_cm": [
+  {
+   "faces": 1000000,
+   "min": [
+    -52.0,
+    -37.2,
+    0.0
+   ],
+   "max": [
+    52.0,
+    36.8,
+    189.7
+   ]
+  }
+ ],
+ "levels_raw_cm_approx": {
+  "frame": "review frame: X right, Y back (figure faces -Y = glTF +Z), Z up; ground = lowest vertex (raw y 0); whole file, all components together",
+  "top_vertex": [
+   -4.2,
+   -18.9,
+   189.7
+  ],
+  "midline_top_abs_x_lt_3": [
+   -3.0,
+   -19.2,
+   189.5
+  ],
+  "vertices_within_0_3_of_ground": 1379,
+  "note": "generic only; region-specific levels (skull vertex, heel, tail, crotch) are measured per figure in the report, rig-less and approximate"
+ }
+}

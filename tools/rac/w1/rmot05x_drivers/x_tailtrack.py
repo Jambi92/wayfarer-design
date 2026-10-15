@@ -3,11 +3,11 @@
 # the tail centreline is followed while the section loop stays tube-like. Faces within (loop radius x 1.35) of the tracked
 # centreline, plus faces above the neck minimum, are deleted; only the largest piece is kept. Where tracking stops (the tail merges
 # with the body surface) is REPORTED as the tail contact/root zone. Faces deleted only; never a repair; source untouched.
-# Usage: python3 x_tailtrack.py FIG.npz OUT.npz SEED_Z_FRAC SEED_MIN_Y_CM [STEP_CM=1.0]
+# Usage: python3 x_tailtrack.py FIG.npz OUT.npz SEED_Z_FRAC SEED_MIN_Y_CM [STEP_CM=1.0] [SEED_MAX_PERIMETER_CM=30]
 import sys, json, numpy as np, trimesh, scipy.sparse as sp
 from scipy.sparse.csgraph import connected_components
 from scipy.spatial import cKDTree
-fi, fo, sf, smy = sys.argv[1], sys.argv[2], float(sys.argv[3]), float(sys.argv[4]); STEP = float(sys.argv[5]) if len(sys.argv) > 5 else 1.0
+fi, fo, sf, smy = sys.argv[1], sys.argv[2], float(sys.argv[3]), float(sys.argv[4]); STEP = float(sys.argv[5]) if len(sys.argv) > 5 else 1.0; PMAX = float(sys.argv[6]) if len(sys.argv) > 6 else 30.0
 d = np.load(fi); P = d['V'].astype(np.float64); F = d['F']; V = np.stack([P[:, 0], -P[:, 2], P[:, 1]], 1) * 100; H = V[:, 2].max()
 m = trimesh.Trimesh(V, F, process=False)
 def loops(o, nrm):
@@ -17,7 +17,7 @@ def loops(o, nrm):
     for e in s.discrete:
         c = e.mean(0); out.append((np.linalg.norm(np.diff(e, axis=0), axis=1).sum(), c, np.linalg.norm(e - c, axis=1).max()))
     return out
-z0 = sf * H; L = [t for t in loops([0, 0, z0], [0, 0, 1]) if t[0] < 30 and t[1][1] > smy]
+z0 = sf * H; L = [t for t in loops([0, 0, z0], [0, 0, 1]) if t[0] < PMAX and t[1][1] > smy]
 assert L, 'no seed loop'; per0, c0, r0 = max(L, key=lambda t: t[1][1])
 def track(c, dirv, per_ref):
     pts = []; misses = 0
