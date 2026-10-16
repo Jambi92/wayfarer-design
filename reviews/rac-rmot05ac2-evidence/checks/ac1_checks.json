@@ -1,0 +1,105 @@
+{
+ "before": {
+  "file": "GO-05AB1_macro_corrected_clean.glb",
+  "bytes": 29818224,
+  "sha256": "03693479be311e72fd608728e6d978ee24169f7fefd679bbc872990061b35e0b",
+  "nodes": 1,
+  "meshes": 1,
+  "primitives": 1,
+  "node_names": [
+   "GO-05AB1_macro_corrected_clean"
+  ]
+ },
+ "after": {
+  "file": "GO-05AC_AC1.glb",
+  "bytes": 29818228,
+  "sha256": "886053f023293848daf998dd778adb7130645bc54c4f46c6cc073d085d6fd929",
+  "nodes": 1,
+  "meshes": 1,
+  "primitives": 1,
+  "node_names": [
+   "GO-05AB1_macro_corrected_clean"
+  ]
+ },
+ "glb_vertices": {
+  "before": 556785,
+  "after": 556779
+ },
+ "faces": {
+  "before": 1000000,
+  "after": 1000000
+ },
+ "single_body": {
+  "before": true,
+  "after": true
+ },
+ "note": "glTF splits vertices at normal seams; sculpting changes normals, so raw GLB vertex counts differ. All checks use welded positions matched by face corner.",
+ "topology_identical": false,
+ "topo_before": {
+  "welded_vertices": 499996,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0
+ },
+ "topo_after": {
+  "welded_vertices": 501669,
+  "components": 1778,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 169
+ },
+ "mask_vertices": 556391,
+ "mask_mapping": "length mismatch",
+ "displacement": {
+  "all": {
+   "n": 499996,
+   "moved_gt_0_01mm": 59966,
+   "max_mm": 14.616,
+   "p99_mm": 3.91,
+   "mean_mm": 0.2018
+  }
+ },
+ "moved_vertices": 59966,
+ "moved_region_bbox_cm_zup": {
+  "min": [
+   -28.8,
+   -61.2,
+   117.0
+  ],
+  "max": [
+   37.9,
+   -20.2,
+   169.9
+  ]
+ },
+ "moved_height_band_cm_from_floor": [
+  117.0,
+  169.9
+ ],
+ "height_cm": {
+  "before": 204.5225,
+  "after": 204.5225
+ },
+ "bbox_extent_cm": {
+  "before": [
+   84.744,
+   136.339,
+   204.522
+  ],
+  "after": [
+   84.744,
+   136.339,
+   204.522
+  ]
+ },
+ "max_displacement_mm": 14.616,
+ "faces_touched": 123095,
+ "flipped_faces": 436,
+ "rotated_over_60deg": 750,
+ "degenerate_faces": {
+  "before": 0,
+  "after": 209
+ },
+ "self_intersecting_faces": {
+  "error": "ModuleNotFoundError(\"No module named 'pymeshlab'\")"
+ }
+}
