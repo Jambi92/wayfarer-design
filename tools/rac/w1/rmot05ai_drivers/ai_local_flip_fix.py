@@ -10,7 +10,8 @@
 import sys, os, json, hashlib, numpy as np
 import bpy, bmesh
 blend, exp, od = sys.argv[1:4]; os.makedirs(od, exist_ok=True)
-FACES = [643992, 686657, 907533, 441095, 448814, 468838, 919029]
+FACES = [int(x) for x in os.environ['AI_FACES'].split(',')] if os.environ.get('AI_FACES') else [643992, 686657, 907533, 441095, 448814, 468838, 919029]
+OUTNAME = os.environ.get('AI_OUTNAME', 'GO-05AI_local_quality_baseline')
 h = hashlib.sha256(open(blend, 'rb').read()).hexdigest(); assert h == exp, ('05AF hash mismatch', h)
 bpy.ops.wm.open_mainfile(filepath=blend)
 o = [x for x in bpy.data.objects if x.type == 'MESH'][0]; me = o.data
@@ -89,12 +90,12 @@ bm.to_mesh(me); bm.free(); me.update()
 W = np.array(o.matrix_world); Vw = V1 @ W[:3, :3].T + W[:3, 3]
 me.calc_loop_triangles(); T = np.empty(len(me.loop_triangles) * 3, np.int64); me.loop_triangles.foreach_get('vertices', T)
 np.savez(os.path.join(od, 'after_VF.npz'), V=Vw, F=T.reshape(-1, 3)); np.save(os.path.join(od, 'hood_vertices.npy'), np.array(sorted(hood)))
-out = os.path.join(od, 'GO-05AI_local_quality_baseline.blend'); bpy.ops.wm.save_as_mainfile(filepath=out, compress=True)
-bpy.ops.export_scene.gltf(filepath=os.path.join(od, 'GO-05AI_local_quality_baseline.glb'), export_format='GLB')
+out = os.path.join(od, OUTNAME + '.blend'); bpy.ops.wm.save_as_mainfile(filepath=out, compress=True)
+bpy.ops.export_scene.gltf(filepath=os.path.join(od, OUTNAME + '.glb'), export_format='GLB')
 R = dict(base_sha256=h, neighbourhood_vertices=len(hood), edge_rotations=len(rot), rotations=rot,
          faces_removed=sorted([list(f) for f in before_faces - after_faces]), faces_added=sorted([list(f) for f in after_faces - before_faces]),
          vertices_moved={str(k): round(v * 1000, 4) for k, v in sorted(moved.items())}, max_vertex_move_mm=round(float(dv.max()) * 1000, 4), blend_sha256=hashlib.sha256(open(out, 'rb').read()).hexdigest(),
-         glb_sha256=hashlib.sha256(open(os.path.join(od, 'GO-05AI_local_quality_baseline.glb'), 'rb').read()).hexdigest())
+         glb_sha256=hashlib.sha256(open(os.path.join(od, OUTNAME + '.glb'), 'rb').read()).hexdigest())
 json.dump(R, open(os.path.join(od, 'ai_prep_report.json'), 'w'), indent=1)
 print(json.dumps({k: v for k, v in R.items() if k not in ('rotations', 'faces_removed', 'faces_added')}, indent=1))
 for fi in FACES: pass
