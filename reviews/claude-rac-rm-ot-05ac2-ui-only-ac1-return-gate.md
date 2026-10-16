@@ -86,7 +86,7 @@ No console, scripting workspace, shell or scripted strokes were used. The Window
 | **Seam integrity** | **FAIL: 1,480 positions that coincided in the baseline were pulled apart (798 by more than 1 mm, max 8.7 mm).** These are duplicate (unwelded) vertices on existing seams; Smooth moves each copy separately. Cracks follow the lower-pec line, the navel/linea alba, the axillae and the flank/hip lines (red in `views/ac1_baseline_vs_ac1_torso.jpg`). |
 | Flipped faces | **FAIL: 316 new, 294 of them on the opened seams** |
 | Degenerate faces | **FAIL: 310 new (baseline 0), 216 on the opened seams** |
-| Self-intersections | not run: pymeshlab could not be installed this session. Not needed for the verdict. |
+| Self-intersections | **FAIL: 0 in the baseline → 3,024 after, all new** (`checks/ac1_self_intersections.json`; pymeshlab, faces welded by position, so opened seam edges count too) |
 
 `topology_identical: false`, `components: 1778` and `nonmanifold_edges: 169` in `ac1_checks.json` come from welding by position *after* the seams opened. They are symptoms of the same seam opening, not a separate topology change.
 
