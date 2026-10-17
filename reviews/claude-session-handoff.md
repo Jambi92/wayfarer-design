@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-17 (during RM-OT-05AQ).
+Updated: 2026-10-17 (after RM-OT-05AQ).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,15 +21,14 @@ Updated: 2026-10-17 (during RM-OT-05AQ).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## In progress: RM-OT-05AQ (AC3 broad feather + restrained deflate)
-- Driver tools to be committed under `tools/rac/w1/rmot05aq_drivers/` (postmask.py, aqmetrics.py, hip landmark).
-- Broad posterior mask built (diffusion feather k=250); protected sets min 1.0.
-- Sim: deflate 8 mm along normals x (1-mask) then Smooth 150 → profile depth −4.2/−6.2 mm, pelvis width 0, thigh radius −2.0/−1.7 %, 3 predicted flips (need repair).
-- Open issue: skeletal hip landmark. No armature in the blend. Weight-blend-ring centroid sits at the glute fold (z≈77 cm), not the joint, and moves 0.6–0.8 mm.
-  Rig hip pivots exist only in `reviews/rac-rmot05ab-evidence/joints_C.json` (05AB frame, H 189.79).
-- Remaining steps: landmark → predictor+repair (≤50 nbhds) → calibrate UI Inflate-negative on scratch copy → AQ1 in UI → gates → visuals → freeze GO-05AQ_AC3 or STOP.
+## Last order: RM-OT-05AQ — DEFLATE ROUTE NOT CREDIBLE / STOP (gate committed 2026-10-17)
+- AQ1r (UI deflate + Smooth) is numerically clean, but the hard tail-junction border leaves a jagged plateau and the lateral feather leaves crease marks. Active state = GO-05AO_AC2.
+- Next: wait for ChatGPT's ruling (likely tail-junction outer-ring continuity authority + a wider lateral feather). Tools: `tools/rac/w1/rmot05aq_drivers/`.
+- Cloud work dir `/home/claude/aq` (mask_v4.npy, aqsim.py flags2 predictor, ramp.py) — gone if the container is reclaimed; rebuild from the repo tools.
 
 ## Calibrations (Blender UI)
 - Mesh Filter Smooth: each mouse-move event = 1 Laplacian iteration with mask.
 - Surface Smooth one 200 px drag ≈ replica f=0.78.
+- Mesh Filter Inflate: strength 0.020 with a −100 px drag = −7.92 mm x (1-mask), non-cumulative. Type numbers into Blender fields with single key presses (the type action doesn't land). Real Smooth runs ~1.16x the model.
+- Duplicate-position seam vertices (tail root) behave as open boundaries under Smooth: keep a 30 mm mask ramp around them.
 - Computer-use access expires after 30 min idle; re-grant blender.exe + textinputhost.exe.

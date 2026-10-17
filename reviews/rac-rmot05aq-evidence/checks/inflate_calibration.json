@@ -1,0 +1,8 @@
+{
+ "tool": "Blender 5.2.2 Sculpt Mode > Mesh Filter, Filter Type Inflate, Deform Axis XYZ, Orientation Local",
+ "file": "GO-05AQ_calib_scratch.blend (copy of GO-05AQ_AQ1_prep)",
+ "drag_A": {"strength": 1.0, "drag_px": -100, "events": 10, "fit_mm_per_unit_fade": -395.98, "corr": -0.999999, "note": "leftward drag deflates; far too strong; undone"},
+ "drag_B": {"strength": 0.02, "drag_px": -100, "events": 10, "fit_mm_per_unit_fade": -7.919, "corr": -0.999993, "residual_rms_mm": 0.008, "max_move_mm": 7.883},
+ "model": "displacement = original vertex normal x c x (1 - mask), c = -3.96 mm x strength per px of leftward drag (non-cumulative: uses original coordinates)",
+ "masked_vertices_moved_mm": 0.0
+}
