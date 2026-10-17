@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-17 (after RM-OT-05AQ).
+Updated: 2026-10-17 (after RM-OT-05AR).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,14 +21,16 @@ Updated: 2026-10-17 (after RM-OT-05AQ).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RM-OT-05AQ — DEFLATE ROUTE NOT CREDIBLE / STOP (gate committed 2026-10-17)
-- AQ1r (UI deflate + Smooth) is numerically clean, but the hard tail-junction border leaves a jagged plateau and the lateral feather leaves crease marks. Active state = GO-05AO_AC2.
-- Next: wait for ChatGPT's ruling (likely tail-junction outer-ring continuity authority + a wider lateral feather). Tools: `tools/rac/w1/rmot05aq_drivers/`.
-- Cloud work dir `/home/claude/aq` (mask_v4.npy, aqsim.py flags2 predictor, ramp.py) — gone if the container is reclaimed; rebuild from the repo tools.
+## Last order: RM-OT-05AR — CONTINUITY CORRECTION NOT CREDIBLE / STOP (gate committed 2026-10-17)
+- AR1r is numerically clean (tail core 0, ring 2.07 mm) and the tail plateau is fixed, but ~150 Smooth events fold the lateral hip/front thigh transition band (up to 59° dihedral). Active state = GO-05AO_AC2.
+- Proven pieces to reuse: `tools/rac/w1/rmot05ar_drivers/` (armask.py field + Lipschitz feather, tailramp.py distance ramp from root core, pinned duplicate seams). Model says ~25 Smooth events clears SI with far smaller kinks.
+- Next: wait for ChatGPT's ruling. Cloud work dirs /home/claude/aq and /home/claude/ar are lost if the container is reclaimed; rebuild from repo tools.
 
 ## Calibrations (Blender UI)
 - Mesh Filter Smooth: each mouse-move event = 1 Laplacian iteration with mask.
 - Surface Smooth one 200 px drag ≈ replica f=0.78.
 - Mesh Filter Inflate: strength 0.020 with a −100 px drag = −7.92 mm x (1-mask), non-cumulative. Type numbers into Blender fields with single key presses (the type action doesn't land). Real Smooth runs ~1.16x the model.
 - Duplicate-position seam vertices (tail root) behave as open boundaries under Smooth: keep a 30 mm mask ramp around them.
+- Split duplicate-position seam vertices must carry IDENTICAL mask values (pin to 1.0), or Blender opens the seam.
+- Blender is a portable install: it can only be resolved for computer use while running. Launch it from the Explorer window on E:\Tools\Blender (click tier) if closed; computer_open_application starts a NEW instance even when one is running, so avoid it.
 - Computer-use access expires after 30 min idle; re-grant blender.exe + textinputhost.exe.
