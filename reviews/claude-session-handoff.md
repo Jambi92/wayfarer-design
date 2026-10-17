@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-17 (after RM-OT-05AT).
+Updated: 2026-10-17 (after RM-OT-05AU).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,10 +21,15 @@ Updated: 2026-10-17 (after RM-OT-05AT).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RM-OT-05AT — AC3 PASS / READY FOR FINAL Q1-Q2 + TYLER VISUAL REVIEW (2026-10-17)
-- FROZEN: `GO-05AT_AC3.blend` sha d462f36c08a3b528aff5b4408539f7dfe704b513585da6f2923136c60b7ea618; `.glb` 8ae6ccedffa5098ceb1fad18583edb18d2243060faf942bec933e79899c9fc0d (PC folder ...\Gorrund-Neutral-C\05AT\). This is now the active composition (AC1 torso + AC2 limbs + AC3 posterior).
-- Next: Tyler's visual review / ChatGPT's Q1-Q2 order. Pre-review sheet: reviews/rac-rmot05at-evidence/views/Q1Q2_prereview_GO-05AT_AC3.jpg.
-- Key technique: log-map masks through the Smooth event count, M = 1 + ln(1 - 0.95 w)/N; a linear ramp near 1.0 acts as a hard edge under long smoothing. Tools: tools/rac/w1/rmot05at_drivers/.
+## Last order: RM-OT-05AU — DEFERRED-ITEM AUDIT COMPLETE / AUTHOR REVIEW REQUIRED (2026-10-17)
+- Tyler ACCEPTED the 05AT body composition (457c202): BODY COMPOSITION AUTHOR ACCEPTED / FROZEN; overall mesh NOT YET FINAL.
+- Frozen active source: `GO-05AT_AC3.blend` sha d462f36c08a3b528aff5b4408539f7dfe704b513585da6f2923136c60b7ea618; `.glb` 8ae6ccedffa5098ceb1fad18583edb18d2243060faf942bec933e79899c9fc0d (PC ...\Gorrund-Neutral-C\05AT\).
+- 05AU audit (reviews/claude-rac-rm-ot-05au-gorrund-deferred-item-audit.md): KEEP head share (HH 13.96 % vs W1 11.58 %), KEEP tail root;
+  LOCAL heel/foot + foot-size correction recommended (feet 19.1-19.5 % length / 10.6-11.0 % width of H vs W1 15.1 / 5.5 %; heel lift L 0.88, R 1.4-1.6 cm;
+  suggested target 16.5-17.5 % / 7-8 % H, pivot at ankle/heel, feet below ~25 cm only); genus 3 = two finger loops + left-axilla tunnel -> topology repair at retopology.
+- Next: Tyler/ChatGPT review of 05AU recommendations; expect a bounded feet/heel order. Nothing authored in 05AU; Blender closed.
+- W1 reference: GO_r6.npz uses `keep` mask (helper geometry below sole); sole z = 0, vertex stature 230.897 cm. Tools: tools/rac/w1/rmot05au_drivers/ (cloud bpy at /home/claude/bpyenv for renders).
+- Key technique (05AT): log-map masks through the Smooth event count, M = 1 + ln(1 - 0.95 w)/N. Tools: tools/rac/w1/rmot05at_drivers/.
 
 ## Calibrations (Blender UI)
 - Mesh Filter Smooth: each mouse-move event = 1 Laplacian iteration with mask.
