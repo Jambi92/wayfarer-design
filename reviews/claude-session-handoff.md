@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-17 (after RM-OT-05AR).
+Updated: 2026-10-17 (after RM-OT-05AS).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,10 +21,10 @@ Updated: 2026-10-17 (after RM-OT-05AR).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RM-OT-05AR — CONTINUITY CORRECTION NOT CREDIBLE / STOP (gate committed 2026-10-17)
-- AR1r is numerically clean (tail core 0, ring 2.07 mm) and the tail plateau is fixed, but ~150 Smooth events fold the lateral hip/front thigh transition band (up to 59° dihedral). Active state = GO-05AO_AC2.
-- Proven pieces to reuse: `tools/rac/w1/rmot05ar_drivers/` (armask.py field + Lipschitz feather, tailramp.py distance ramp from root core, pinned duplicate seams). Model says ~25 Smooth events clears SI with far smaller kinks.
-- Next: wait for ChatGPT's ruling. Cloud work dirs /home/claude/aq and /home/claude/ar are lost if the container is reclaimed; rebuild from repo tools.
+## Last order: RM-OT-05AS — FINAL CLEANUP NOT CREDIBLE / STOP, pre-authoring (gate committed 2026-10-17)
+- Short cleanup (8–30 Smooth events) with the 80 mm C1 feather passes every technical/dihedral gate, but the predicted posterior stays heroic (the softening came from ~150-event Laplacian shrink, which also causes folds). Nothing authored; active state = GO-05AO_AC2.
+- Tools: `tools/rac/w1/rmot05as_drivers/` (asmask.py, dihed.py strict dihedral gate, table.py cleanup table, refine_as.py) and the 05AR tail core/ring tools.
+- Next: wait for ChatGPT's ruling (two-mask route / stronger deflate / accept AO2 posterior).
 
 ## Calibrations (Blender UI)
 - Mesh Filter Smooth: each mouse-move event = 1 Laplacian iteration with mask.
