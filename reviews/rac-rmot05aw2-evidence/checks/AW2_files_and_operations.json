@@ -1,0 +1,72 @@
+{
+ "pc_dir": "E:\\UnrealProjects\\Wayfarer 5.8\\RaceBodies\\source\\Gorrund-Neutral-C\\05AW2\\",
+ "source": {
+  "file": "05AW1\\GO-05AW1_T.blend",
+  "sha256": "63aa8e74ad77390a1146900b5ebbb49576562ee98bf243b047c90d70cae37f1b",
+  "revalidation": "AW2_T_revalidation_gate.json (SI 0, boundary 0, non-manifold 0, 1 component, genus 3, 0 seams opened, 0 degenerates, 0 flips)"
+ },
+ "files": [
+  {
+   "file": "GO-05AW2_base.blend",
+   "sha256": "20153daec6e31524914ebe4b026cfc5c0f79558a56e9de5f0fc4192bb2865bda",
+   "role": "GO-05AW2_base: T frozen + vertex group AW2_subd (8 168 vertices); 0.000 mm geometry change",
+   "made_by": "cloud script (group only)"
+  },
+  {
+   "file": "GO-05AW2_subdiv_base.blend",
+   "sha256": "827d9c9ceefc4dbaf463d094605c2376266fefbcd2db637add8c1e72a5a8bd37",
+   "role": "GO-05AW2_subdiv_base / checkpoint AW2-S: 2-cut local subdivision",
+   "made_by": "Blender UI: Edit Mode, select group AW2_subd, Edge > Subdivide, Number of Cuts 2, Smoothness 0, Create N-Gons off, Quad Corner Inner Vert"
+  },
+  {
+   "file": "GO-05AW2_A_mask.blend",
+   "sha256": "3f92ec95\u2026",
+   "role": "subdiv_base + Stage A sculpt mask (0.000 mm change)",
+   "made_by": "cloud script (mask only)"
+  },
+  {
+   "file": "GO-05AW2_A.blend",
+   "sha256": "9e0490520fc752d3382092421d9f92163ceaa1d5d7dfc5f5b8bfba548c7e88d6",
+   "role": "checkpoint AW2-A: surface restoration",
+   "made_by": "Blender UI: Sculpt Mode Mesh Filter Smooth (~57 it) then Surface Smooth (Shape Preservation 0.0, Per Vertex Displacement 0.6, ~70 it)"
+  },
+  {
+   "file": "GO-05AW2_B_mask.blend",
+   "sha256": "ebff5b98\u2026",
+   "role": "A + Stage B sculpt mask",
+   "made_by": "cloud script (mask only)"
+  },
+  {
+   "file": "GO-05AW2_B.blend",
+   "sha256": "b3705d7fac991e4f9e006f7009c2591c8d79a57c2a2202a7c2aa1fc9c60587b4",
+   "role": "checkpoint AW2-B: feline nail morphology",
+   "made_by": "Blender UI: Mesh Filter Inflate, strength 0.002, one 212 px drag (1.680 mm peak)"
+  },
+  {
+   "file": "GO-05AW2_C_mask.blend",
+   "sha256": "34db6dc7\u2026",
+   "role": "B + cleanup mask (1.5 mm geodesic around 4 fold faces)",
+   "made_by": "cloud script (mask only)"
+  },
+  {
+   "file": "GO-05AW2_C.blend",
+   "sha256": "e07ac7c633b7781fc624628239ea9f75a6ba1bbd6200f0388711ae6803c95b97",
+   "role": "checkpoint AW2-C: local fold cleanup",
+   "made_by": "Blender UI: Mesh Filter Smooth, ~20 iterations"
+  },
+  {
+   "file": "GO-05AW2_nails_final.blend",
+   "sha256": "75734a39b922f656ecc767b65c0263fa85cfde0e2e35600831b4f9830b1b9206",
+   "role": "FROZEN nail final (geometry = C; mask attribute removed; single mesh object)"
+  },
+  {
+   "file": "GO-05AW2_nails_final.glb",
+   "sha256": "2c7c560cf2f7d84f191309806cdbc17b5e8ea0431f9f3264a3cbc399172d1a09",
+   "role": "GLB export of the nail final (27.8 MB)"
+  }
+ ],
+ "working_files_not_deliverables": [
+  "GO-05AW2_Aw.blend (Stage A working save)"
+ ],
+ "read_back": "every UI checkpoint was read back to the cloud and gated; AW2-S read-back identical to the simulated subdivision (faces equal, vertex max difference 0.0)"
+}
