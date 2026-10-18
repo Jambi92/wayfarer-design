@@ -1,0 +1,41 @@
+{
+ "pc_dir": "E:\\UnrealProjects\\Wayfarer 5.8\\RaceBodies\\source\\Gorrund-Neutral-C\\05AW4\\",
+ "source": {
+  "file": "05AW3\\GO-05AW3_C.blend",
+  "sha256": "1d68c9f5e496ce0076318a96220667040b5a4b467dc380d8c49a8e354823cc78"
+ },
+ "files": [
+  {
+   "file": "GO-05AW4_prep.blend",
+   "sha256": "06f97a188ab9b940e43791704d89a3647407aa0be379052ad643cd3ed158c1b5",
+   "role": "source + plate-edge bevel mask + groups AW4_LP / AW4_RP (0.000 mm)",
+   "made_by": "cloud script (mask/groups only)"
+  },
+  {
+   "file": "GO-05AW4_A.blend",
+   "sha256": "3826c564c5003dc4163d6220f96faf2f1e56c3318f29969c12b75112ea5cddd1",
+   "role": "AW4-A plate-edge bevel",
+   "made_by": "Blender UI: Mesh Filter Smooth, strength 1, one long drag (~33 Laplacian iterations; simulated-safe 25-80) on a band 1.4 mm inside to 0.8 mm outside each plate outline, distal 12 % of each plate excluded"
+  },
+  {
+   "file": "GO-05AW4_B.blend",
+   "sha256": "63cf0924553af0cee506e8c2fde11cc2bf856eb5ea561ffed10f0c1d449a8d32",
+   "role": "AW4-B lesser-toe projection",
+   "made_by": "Blender UI: two Plain Axes empties at origin, two Hook modifiers (No Falloff) on AW4_LP / AW4_RP; typed empty locations L (0.00003975, -0.00034774, 0), R (-0.00018126, -0.00029941, 0) m = 0.35 mm along each foot axis; per-nail weights scale it to +0.16-0.30 mm; both applied, empties deleted; read-back vs model max 0.00007 mm"
+  },
+  {
+   "file": "GO-05AW4_nails_final.blend",
+   "sha256": "5a4e45d40158e7dc92f6f8ba13d67ada2403e3e3dcda9048382323ee43a22d5e",
+   "role": "FROZEN nail final = AW4-B geometry (0.0 difference), .sculpt_mask attribute removed, single mesh object, no modifiers",
+   "made_by": "cloud freeze.py (attribute removal only)"
+  },
+  {
+   "file": "GO-05AW4_nails_final.glb",
+   "sha256": "e6b325039993b48de1daf1b82da7054c9f466131daf41c2dcc14a0709adb6fc8",
+   "role": "GLB of the nail final (27.9 MB)",
+   "made_by": "cloud glbexp.py (same exporter as earlier passes)"
+  }
+ ],
+ "cleanup_checkpoint": "not used (optional; the soft crease above R3 remains)",
+ "pc_readback": "both final files staged back from the PC; hashes identical"
+}
