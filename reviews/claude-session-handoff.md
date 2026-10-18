@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-18 (D4 COMPLETE; no contract beyond D4).
+Updated: 2026-10-18 (RP0 PASS; RP1 Gorrund pilot HOLD).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,7 +21,13 @@ Updated: 2026-10-18 (D4 COMPLETE; no contract beyond D4).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RAC D4 race-spec stature writeback (2026-10-18) — COMPLETE
+## Last order: RAC RP0 source inventory + production-mesh contract (2026-10-18) — PASS
+- Program reviews/chatgpt-rac-retopology-rigprep-master-plan.md; order 54439cb. Report reviews/claude-rac-rp0-source-inventory-contract.md; evidence reviews/rac-rp0-evidence/; contract specs/RAC_PRODUCTION_MESH_CONTRACT.md; RP1 plan reviews/chatgpt-rac-rp1-gorrund-production-retopo-pilot-HOLD.md (HOLD).
+- Sources: MPFB family rebuilds via tools/rac/w1/build_variant.py <reviews/reference-assets/builds/X_build.json> {} outdir X (bpy env); Gorrund PC ...\Gorrund-Neutral-C\05AW4\GO-05AW4_nails_final.blend; Saurin PC RaceBodies\out saurin_w2_final_base.npz + _surface_delta.npz via rebuild_w2_final.py (needs libigl).
+- RP1 release needs: tolerance acceptance (contract §16), method M-A/M-B. RP1 authoring = Blender UI on Tyler's PC; output RaceBodies\production\Gorrund\RP1\.
+- Open for later: Grask E3 asymmetry ruling (RP2), Sagekin c2 central reference, manifest metadata refresh, MPFB-family base topology confirmation (RP3).
+
+## Previous: RAC D4 race-spec stature writeback (2026-10-18) — COMPLETE
 - Order b1b001d. Gate reviews/claude-rac-d4-race-spec-stature-writeback-gate.md; evidence reviews/rac-d4-evidence/; tool tools/rac/w1/stagec_drivers/d4_writeback.py.
 - One "Accepted stature envelope (RAC D4 writeback)" paragraph per race spec (13), 6 headings relabelled, no other lines changed.
 - NEXT: nothing has an executable contract (retopology/rig prep, creator, UE5, posture, equipment, environment, collision, camera). Wait for a new author decision/order.
