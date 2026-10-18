@@ -75,6 +75,8 @@ This is a first-pass biological envelope, subject to:
 
 Saurin are not defined by exceptional height. Individuals may overlap Marchfolk, Sagekin, Fenn, Aelari, Vael and Halvren stature ranges.
 
+**Accepted stature envelope (RAC D4 writeback, October 18, 2026; `reviews/claude-rac-rm-ot-05-world-scale-author-gate.md` §1; reference assets `reviews/reference-assets/manifest.json`; D4 order `reviews/chatgpt-rac-d4-race-spec-stature-writeback-execute-order.md`):** **accepted W2 / RM-OT-05 envelope 168–208 cm, tail excluded (W2I D1 regional route; canonical W2 reference W2I6)**; reference 188 cm (W2 reference 187.88). The first-pass / provisional / preliminary stature labels in this spec are historical; they now read as this accepted envelope. Stature is DIR inside the envelope, never uniform scaling; no interval midpoint is an average; **frequency / distribution OPEN**. No sex shift and no sex-specific bound (§263). The W2I6 blocks later in this spec are unchanged. No bound, reference or distribution is changed by this writeback.
+
 ## 5. Scale-independent identity
 
 At Marchfolk-matched height and neutral gray material, a Saurin must remain clearly non-human through:

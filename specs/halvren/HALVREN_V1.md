@@ -89,6 +89,8 @@ Mixed ancestry can produce substantial variation, but the final anatomy function
 
 This is a **provisional first-pass range**, revised by the consistency resolution into the **Halvren central population envelope**, not an absolute biological wall (ancestry-dependent tails are allowed). It overlaps strongly with both families without covering every source extreme.
 
+**Accepted stature envelope (RAC D4 writeback, October 18, 2026; `reviews/claude-rac-rm-ot-05-world-scale-author-gate.md` §1; reference assets `reviews/reference-assets/manifest.json`; D4 order `reviews/chatgpt-rac-d4-race-spec-stature-writeback-execute-order.md`):** **accepted W2 / RM-OT-05 envelope central population envelope 152–213 cm (W2G; outer bound > 147 / < 229 cm, H-5)**; reference 178 cm (HVC1 177.73, diagnostic anchor). The first-pass / provisional / preliminary stature labels in this spec are historical; they now read as this accepted envelope. Stature is DIR inside the envelope, never uniform scaling; no interval midpoint is an average; **frequency / distribution OPEN**. **Preserved qualifier:** ancestry-conditional outer reach 147.2 cm (Marchfolk-supported, bound-limited), 228.8 cm (Skarn-supported) and 221.0 cm (Aelari-supported, source ceiling) per W3A1 (§10–14 below); tails are minority outcomes (H-6) and their conditional frequency is a named dependency. The W3A1 block below is unchanged; this line only retires the stale "provisional" label. No bound, reference or distribution is changed by this writeback.
+
 | Source population | Range | Reference |
 | --- | --- | --- |
 | Marchfolk | 147–203 cm | About 173 cm |

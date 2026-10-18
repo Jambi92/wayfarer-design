@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-18 (Stage C CLOSED; D4 entry order ready).
+Updated: 2026-10-18 (D4 COMPLETE; no contract beyond D4).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,7 +21,12 @@ Updated: 2026-10-18 (Stage C CLOSED; D4 entry order ready).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RAC Stage C final closure / writeback (2026-10-18) — STAGE C CLOSED
+## Last order: RAC D4 race-spec stature writeback (2026-10-18) — COMPLETE
+- Order b1b001d. Gate reviews/claude-rac-d4-race-spec-stature-writeback-gate.md; evidence reviews/rac-d4-evidence/; tool tools/rac/w1/stagec_drivers/d4_writeback.py.
+- One "Accepted stature envelope (RAC D4 writeback)" paragraph per race spec (13), 6 headings relabelled, no other lines changed.
+- NEXT: nothing has an executable contract (retopology/rig prep, creator, UE5, posture, equipment, environment, collision, camera). Wait for a new author decision/order.
+
+## Previous: RAC Stage C final closure / writeback (2026-10-18) — STAGE C CLOSED
 - Ruling 2619942, order 3e1a3cd. Closure reviews/claude-rac-stage-c-final-closure.md. Grask E3 ACCEPT, Gorrund ACCEPT (reference only), Combined ACCEPT.
 - Canon edits: specs/grask/GRASK_V1.md (GR-G1 governing route clause; Durrim non-convergence in Torso depth + Thoracic depth rows; Stage C status block), specs/gorrund/GORRUND_V1.md (closure + Stage C status block).
 - NEXT: D4 race-spec stature writeback — entry order reviews/chatgpt-rac-d4-race-spec-stature-writeback-entry-order.md READY, not run; wait for release. Text-only across 13 race specs; register = reviews/claude-rac-rm-ot-05-world-scale-author-gate.md §1; draft = reviews/claude-rac-rm-ot-05-visual-readability-closure-gate.md §6.

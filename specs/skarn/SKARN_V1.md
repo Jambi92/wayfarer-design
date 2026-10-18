@@ -6,13 +6,15 @@ This is the Skarn specification at v1.5, first-pass complete: v1.0 covers racial
 
 Skarn are biologically human: a naturally larger, heavier, more powerfully built population than Marchfolk. They are not scaled-up Marchfolk and not automatically muscular. Their identity comes from underlying anatomy, so a lean, elderly, narrow-framed or high-body-fat Skarn still reads as Skarn.
 
-## 2. Height (provisional)
+## 2. Height (accepted W2 / RM-OT-05 envelope; first-pass label: provisional)
 
 | Minimum | Reference | Maximum |
 | --- | --- | --- |
 | 183 cm (6'0") | 208 cm (about 6'10") | 229 cm (7'6") |
 
 The overlap with tall Marchfolk (up to 203 cm) is intentional: a short Skarn must still be anatomically distinct from a Marchfolk of the same height. Biological anatomy sets no separate height limits. These values await visual and technical validation.
+
+**Accepted stature envelope (RAC D4 writeback, October 18, 2026; `reviews/claude-rac-rm-ot-05-world-scale-author-gate.md` §1; reference assets `reviews/reference-assets/manifest.json`; D4 order `reviews/chatgpt-rac-d4-race-spec-stature-writeback-execute-order.md`):** **accepted W2 / RM-OT-05 envelope 183–229 cm (W2B / W2B1 / W2C1; both configurations)**; reference 208 cm (SK 208.01; central face C1R). The first-pass / provisional / preliminary stature labels in this spec are historical; they now read as this accepted envelope. Stature is DIR inside the envelope, never uniform scaling; no interval midpoint is an average; **frequency / distribution OPEN**. Configuration 2 at 229 cm = macro 1.0 + native extension. No bound, reference or distribution is changed by this writeback.
 
 ## 3. Skeletal foundation
 

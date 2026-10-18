@@ -10,13 +10,15 @@ Vael are Dark Elves sharing deeper ancestry with Fenn and Aelari, with their own
 
 The provisional ancestral themes stay: a more gracile skeleton than humans, non-human limb and torso relationships, less joint mass, distinct hands and fingers, elven craniofacial foundations, non-human ears, and non-human shoulder, ribcage and pelvis relationships. Universal elven anatomy isn't final until the Vael first pass and the Elf Comparative Review.
 
-## 3. Height (provisional)
+## 3. Height (accepted W2 / RM-OT-05 envelope; first-pass label: provisional)
 
 | Minimum | Reference | Maximum |
 | --- | --- | --- |
 | 157 cm (about 5'2") | 178 cm (about 5'10") | 203 cm (about 6'8") |
 
 Height never defines Vael, and minimum, reference and maximum-height Vael share one population identity.
+
+**Accepted stature envelope (RAC D4 writeback, October 18, 2026; `reviews/claude-rac-rm-ot-05-world-scale-author-gate.md` §1; reference assets `reviews/reference-assets/manifest.json`; D4 order `reviews/chatgpt-rac-d4-race-spec-stature-writeback-execute-order.md`):** **accepted W2 / RM-OT-05 envelope 157–203 cm (W2F)**; reference 178 cm (VAL4 178.00). The first-pass / provisional / preliminary stature labels in this spec are historical; they now read as this accepted envelope. Stature is DIR inside the envelope, never uniform scaling; no interval midpoint is an average; **frequency / distribution OPEN**. No bound, reference or distribution is changed by this writeback.
 
 ## 4. Three elven branches (provisional)
 

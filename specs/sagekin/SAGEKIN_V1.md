@@ -65,13 +65,15 @@ This is design only, built on the foundational direction above and the universal
 
 Sagekin are a geographically distinct human population, never defined by scholarship, intelligence, weakness, frailty, occupation or personality. Their differences from Marchfolk are subtler than Skarn's, and heavy overlap is intentional.
 
-## 2. Height (provisional)
+## 2. Height (accepted W2 / RM-OT-05 envelope; first-pass label: provisional)
 
 | Minimum | Reference | Maximum |
 | --- | --- | --- |
 | 152 cm (5'0") | 178 cm (5'10") | 208 cm (about 6'10") |
 
 Height overlaps heavily with Marchfolk and is never the main racial marker. These values await visual and technical validation.
+
+**Accepted stature envelope (RAC D4 writeback, October 18, 2026; `reviews/claude-rac-rm-ot-05-world-scale-author-gate.md` §1; reference assets `reviews/reference-assets/manifest.json`; D4 order `reviews/chatgpt-rac-d4-race-spec-stature-writeback-execute-order.md`):** **accepted W2 / RM-OT-05 envelope 152–208 cm (W2E; both configurations)**; reference 178 cm (SG 177.99). The first-pass / provisional / preliminary stature labels in this spec are historical; they now read as this accepted envelope. Stature is DIR inside the envelope, never uniform scaling; no interval midpoint is an average; **frequency / distribution OPEN**. Configuration-2 bounds are SGF152-NAT / SGF208 (author-accepted, RM-OT-05A §2; see the configuration-2 acceptance block). No bound, reference or distribution is changed by this writeback.
 
 ## 3. Proportional tendencies (population, not mandatory)
 

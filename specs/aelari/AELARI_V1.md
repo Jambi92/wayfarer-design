@@ -20,13 +20,15 @@ Fenn and Aelari may share ancestral themes:
 
 These are provisional themes, not final universal elf anatomy. Shared elven anatomy isn't finalized until Vael have a biological design pass.
 
-## 3. Height (provisional)
+## 3. Height (accepted W2 / RM-OT-05 envelope; first-pass label: provisional)
 
 | Minimum | Reference | Maximum |
 | --- | --- | --- |
 | 168 cm (about 5'6") | 190 cm (about 6'3") | 221 cm (about 7'3") |
 
 Height supports Aelari identity but doesn't create it. A minimum-height Aelari is still anatomically Aelari.
+
+**Accepted stature envelope (RAC D4 writeback, October 18, 2026; `reviews/claude-rac-rm-ot-05-world-scale-author-gate.md` §1; reference assets `reviews/reference-assets/manifest.json`; D4 order `reviews/chatgpt-rac-d4-race-spec-stature-writeback-execute-order.md`):** **accepted W2 / RM-OT-05 envelope 168–221 cm (W2F)**; reference 190 cm (AEL1 190.01). The first-pass / provisional / preliminary stature labels in this spec are historical; they now read as this accepted envelope. Stature is DIR inside the envelope, never uniform scaling; no interval midpoint is an average; **frequency / distribution OPEN**. 168 cm is realized on the native route (R2). No bound, reference or distribution is changed by this writeback.
 
 ## 4. Overall proportional identity
 

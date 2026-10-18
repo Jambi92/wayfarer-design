@@ -22,6 +22,8 @@ As the Human Reference Population, Marchfolk are the grounded reference for judg
 
 This is the approved first-pass playable envelope. It isn't produced by uniformly scaling the whole character, and height should come from anatomically appropriate proportional relationships. There's no hard sex-specific height restriction from the selected sex-related anatomy or starting frame: population distributions may differ where appropriate, individual overlap stays broad, and a player character can sit anywhere in the supported range.
 
+**Accepted stature envelope (RAC D4 writeback, October 18, 2026; `reviews/claude-rac-rm-ot-05-world-scale-author-gate.md` §1; reference assets `reviews/reference-assets/manifest.json`; D4 order `reviews/chatgpt-rac-d4-race-spec-stature-writeback-execute-order.md`):** **accepted W2 / RM-OT-05 envelope 147–203 cm (W2A; both configurations, bounds identical)**; reference 173 cm (MF-M-R 173.14 / MF-F-R 172.99). The first-pass / provisional / preliminary stature labels in this spec are historical; they now read as this accepted envelope. Stature is DIR inside the envelope, never uniform scaling; no interval midpoint is an average; **frequency / distribution OPEN**. No bound, reference or distribution is changed by this writeback.
+
 ## 6–8. Frame and physical composition
 
 The skeletal frames are Narrow, Balanced and Broad. Frame describes skeletal structure (shoulder breadth, ribcage dimensions, pelvic breadth, joint scale, skeletal visual mass) and isn't muscularity, body fat, fitness or personality. **Athletic isn't a skeletal frame:** under the universal amendment it belongs to physical composition presets (Lean, Athletic, Muscular, Heavy, Custom), and the layers aren't merged. Muscularity, body-fat amount and distribution, regional muscle and overall physique vary independently of frame, for example Narrow and muscular, Narrow and heavy, Balanced and lean, Balanced and muscular, Broad and lean, or Broad with high body fat.
@@ -57,7 +59,7 @@ Quick and detailed body controls (both within Advanced Mode's Customize step) us
 
 There are three skeletal-frame starting categories plus independent physical-composition presets: the frame presets are Narrow, Balanced and Broad, and Athletic is a physical-composition preset (corrected per the consistency resolution). Frame presets are editable starting points, not permanent biological categories.
 
-## 3. Height (preliminary)
+## 3. Height (preliminary; accepted W2 / RM-OT-05 envelope per D4, §4–5)
 
 | Minimum | Reference height | Maximum |
 | --- | --- | --- |

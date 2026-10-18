@@ -54,6 +54,8 @@ For first-pass testing, use a provisional adult stature envelope of approximatel
 - **Reference:** ~91 cm / 3'0"
 - **Maximum:** ~107 cm / 3'6"
 
+**Accepted stature envelope (RAC D4 writeback, October 18, 2026; `reviews/claude-rac-rm-ot-05-world-scale-author-gate.md` §1; reference assets `reviews/reference-assets/manifest.json`; D4 order `reviews/chatgpt-rac-d4-race-spec-stature-writeback-execute-order.md`):** **accepted W2 / RM-OT-05 envelope 76–107 cm (W2H)**; reference 91 cm (CGJ7 90.99). The first-pass / provisional / preliminary stature labels in this spec are historical; they now read as this accepted envelope. Stature is DIR inside the envelope, never uniform scaling; no interval midpoint is an average; **frequency / distribution OPEN**. The 76 cm realization is **CG76H-NAT** (adult head 11.04 cm, author-accepted RM-OT-05A §2; head ≥ 11.0 cm fix preserved). No bound, reference or distribution is changed by this writeback.
+
 These values are provisional pending:
 - Cogling body validation;
 - the Short-Race Comparative Anatomy Review — authored after Cogling completion; acceptance tracked in `specs/STATUS.md`;
