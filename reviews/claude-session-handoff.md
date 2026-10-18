@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-17 (after RM-OT-05AX).
+Updated: 2026-10-18 (after RM-OT-05AW1).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -14,14 +14,23 @@ Updated: 2026-10-17 (after RM-OT-05AX).
 
 ## PC paths
 - Blender: `E:\Tools\Blender\blender-5.2.2-windows-x64\blender.exe`
-- Gorrund work: `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Neutral-C\05AW\` (latest; earlier passes in sibling 05AO/05AT/05AV folders)
+- Gorrund work: `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Neutral-C\05AW1\` (latest; earlier passes in sibling 05AO/05AT/05AV/05AW folders)
 
 ## Frozen state
 - Latest pass: 05AW nails = GO-05AW_nails_final (see below); before that 05AV feet = GO-05AV_feet_final; 05AT AC3 = GO-05AT_AC3. Previous: 05AO AC2 — `GO-05AO_AC2.blend` sha `ba129999cfe71c1ab7afc2f11c1b911bd1e85fc06f301e1bad9a483fcba4f6f3`,
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RM-OT-05AX — RM-OT-05 GORRUND FINAL CLOSURE PASS (2026-10-17)
+## Last order: RM-OT-05AW1 — 05AW1 TOENAIL REWORK FAILED / AUTHOR REVIEW REQUIRED (2026-10-18)
+- Context: Tyler rejected 05AW nails (f507bf0); 05AX closure SUPERSEDED; RM-OT-05 OPEN; Stage C BLOCKED. Active frozen source = GO-05AV_feet_final (45a04787...).
+- Gate: reviews/claude-rac-rm-ot-05aw1-gorrund-toenail-rework-gate.md. PC folder ...\Gorrund-Neutral-C\05AW1\: prep (949d49ea), T (63aa8e74, topology repaired), A (0207bc72, cracks removed, 2 inverted faces), B (d877e426, bump-like sheaths, 3 inverted faces + 81 verts <=0.37 mm outside support).
+- Finding: 1.3 mm toe-tip mesh spacing cannot hold a nail outline under the order's local-only ops. Options sent to author: local subdivision of nail supports (2 cuts, sim clean), defer nails to retopology/texture, or AW1-A interim.
+- NEXT: wait for ChatGPT/Tyler ruling. 05AX1 HOLD order (b61691f) must NOT run unless a 05AW1-type PASS exists.
+- Cloud work dir /home/claude/aw1 (ephemeral): aw1lib (AW1_TOPO env = topology npz), stageA4 (masked Smooth + HC), stageB2/B3, aw1gate (topology-aware gate), readvf. Tools copied to tools/rac/w1/rmot05aw1_drivers/.
+- New calibrations: Mesh Filter events coalesce; Smooth ~1 iteration per slow (0.25 s) move at large drag distance; Surface Smooth ~1.6 HC iterations per SHORT separate drag (down, 2 moves, up); Inflate strength 0.005 + 152 px = 3.007 mm (non-cumulative, exact). Surface Smooth formula = HC (alpha = Shape Preservation on ORIGINAL, beta = Per Vertex Displacement), matches aw1lib.hc_smooth.
+- Topology ops via vertex groups: select group in Data tab (Select button), Edit Mode M > By Distance (set 0.00001 with key presses), X > Dissolve Vertices. Read-back matched cloud bpy simulation exactly.
+
+## Previous: RM-OT-05AX — RM-OT-05 GORRUND FINAL CLOSURE PASS (2026-10-17) [SUPERSEDED by f507bf0]
 - Read-only closure review: reviews/claude-rac-rm-ot-05ax-gorrund-final-closure-review.md. Gorrund neutral reference sculpt = GO-05AW_nails_final (AUTHOR-APPROVED / FROZEN). RM-OT-05 CLOSED; Stage C Gorrund blocker CLEARED; Grask E3 may advance per Stage C plan.
 - Only open courtesy item: Tyler's visual confirmation of the 05AW toenail look (inherited sunken/split plates; a full rebuild belongs to retopology).
 - Downstream debt: 2 hand finger loops + L axilla tunnel (genus 3), perineal duplicate seam, tail-root slivers, optional nail rebuild -> retopology/rig prep.

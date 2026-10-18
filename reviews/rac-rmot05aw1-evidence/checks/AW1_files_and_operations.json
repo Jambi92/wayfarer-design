@@ -1,0 +1,45 @@
+{
+ "files": {
+  "GO-05AV_feet_final.blend (source, verified)": "45a04787c4760e95b9a9bef52837a516788670f1f1bade92c380ffcea74ab9a6",
+  "GO-05AW1_prep.blend": "949d49eacb882a80c7d89771582b34d1b9c86bce7d7622c46957397e27203183",
+  "GO-05AW1_T.blend": "63aa8e74ad77390a1146900b5ebbb49576562ee98bf243b047c90d70cae37f1b",
+  "GO-05AW1_A_mask.blend": "2abbfa2bd68487db7ddbe3b55d357b2fea777a892ba17168f067a8e4ea5b553b",
+  "GO-05AW1_A.blend": "0207bc72959a24294f996c18a151dddc200901783e47b3b06f658e35713c5415",
+  "GO-05AW1_B_mask.blend": "b3c721337f9a61b319cf5394195d56d3016a330489f20fd47aa2ec6d087a55b6",
+  "GO-05AW1_B.blend": "d877e426feda46b214b752388fa153601acd0cd70993a8c704f4f38f1fa0bac4"
+ },
+ "topology_step": {
+  "merge_by_distance": {
+   "group": "AW1_weld",
+   "distance_m": 1e-05,
+   "removed": 6074
+  },
+  "dissolve_vertices": {
+   "group": "AW1_v3",
+   "selected_in_sim": 443
+  },
+  "readback_vs_cloud_sim": "identical (F equal, V max diff 0.0)",
+  "verts_before_after": [
+   542522,
+   536005
+  ]
+ },
+ "stageA_ui": {
+  "mask": ".sculpt_mask = 1 - geodesic ellipse weight (written by cloud script, no geometry change)",
+  "smooth_filter_equiv_iterations": 40,
+  "surface_smooth": {
+   "shape_preservation": 0.0,
+   "per_vertex_displacement": 0.6,
+   "equiv_iterations_approx": 88
+  },
+  "note": "iteration counts fitted from read-backs; mesh-filter events coalesce, so ~1.6 iterations per short drag"
+ },
+ "stageB_ui": {
+  "filter": "Inflate",
+  "strength": 0.005,
+  "drag_px": 152,
+  "measured_inflate_mm": 3.007,
+  "predicted_mm": 3.0,
+  "max_diff_vs_prediction_mm": 0.075
+ }
+}
