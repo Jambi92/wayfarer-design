@@ -1,6 +1,6 @@
 # RAC Stage C renderer: one body (npz V cm (x, f fwd, u up) + F [+ keep]) -> orthographic Workbench views at ONE common scale
 # (px per cm fixed, frame 280 cm, ground at the same image row), grey shaded + flat silhouette. Optional uniform comparison scale
-# (Gorrund only, ruling D2(c): temporary comparison copy, never saved as a body). Usage: python3 stc_render.py IN.npz OUTPREFIX [target_stature_cm]
+# (D2(c) Gorrund comparison copy, or a C4.1 diagnostic normalization; in memory, never saved as a body). Usage: python3 stc_render.py IN.npz OUTPREFIX [target_stature_cm]
 import sys, numpy as np, bpy, mathutils
 inp, out = sys.argv[-3], sys.argv[-2]
 try: tgt = float(sys.argv[-1])

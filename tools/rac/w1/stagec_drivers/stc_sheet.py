@@ -12,6 +12,8 @@ def crop(im):
 rows = []
 for v in views:
     tiles = [(crop(Image.open('%s_%s.png' % (p, v)).convert('RGBA')), lab) for p, lab in items]
+    if v.endswith('s'):                                     # flat silhouettes: light fill so they read on the dark sheet
+        tiles = [(Image.merge('RGBA', (*[Image.new('L', t.size, 225)] * 3, t.split()[3])), lab) for t, lab in tiles]
     W = sum(t.width for t, _ in tiles); H = tiles[0][0].height
     row = Image.new('RGBA', (W, H + 50), (58, 58, 58, 255)); d = ImageDraw.Draw(row); x = 0
     for t, lab in tiles:

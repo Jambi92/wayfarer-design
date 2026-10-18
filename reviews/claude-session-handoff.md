@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-18 (after Stage C C0–C4 returned for author review).
+Updated: 2026-10-18 (after Stage C C4.1 Grask resolution).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,7 +21,13 @@ Updated: 2026-10-18 (after Stage C C0–C4 returned for author review).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RAC Stage C C0–C4 (2026-10-18) — AUTHOR REVIEW REQUIRED
+## Last order: RAC Stage C C4.1 Grask resolution (2026-10-18) — AUTHOR RULING REQUIRED
+- Order fd23b89. Report reviews/claude-rac-stage-c-c4-1-grask-resolution.md; evidence reviews/rac-stagec-c4-1-evidence/; tool tools/rac/w1/stagec_drivers/c41_gr_g1.py.
+- GR-G1 canonical (W1/W2 skeletal_proxy over the skeletal_stations unorganized route, W1h skin-level CIB) PASS ref/N/B = 05B values; Stage C organized failure = S2 level shift (diagnostic).
+- Durrim: ARCHITECTURALLY DISTINCT DESPITE DEPTH OVERLAP. Front-only blind read: Grask picked as differently built (medium confidence).
+- Recommended: Grask E3 ACCEPT, Gorrund ACCEPT (reference only), Combined ACCEPT. NEXT: wait for the ruling; no D4/UE5/rigging/creator/sculpt.
+
+## Previous: RAC Stage C C0–C4 (2026-10-18) — AUTHOR REVIEW REQUIRED
 - Order 5aa5501 (rulings 95e7bc3: D1a Gorrund reference-only, D2c native 204.5 cm with in-memory scaled comparison copies, D3a Grask E3 from frozen GR.E3). Gate reviews/claude-rac-stage-c-gate.md; evidence reviews/rac-stagec-evidence/; protocol specs/RAC_STAGE_C_PROTOCOL.md; tools tools/rac/w1/stagec_drivers/.
 - Status: Grask E3 Stage C CONSTRAIN; Gorrund Stage C ACCEPT (reference state only); Combined CONSTRAIN.
 - Open author items: GR-G1 protected reading (ruling 2 scope); Durrim directional thoracic-depth row vs accepted E3 keel; E3 absolute-cm organisation across stature; Narrow not shown at elbow/knee; Grask front-view read; Gorrund 204.5 cm below canon min.
