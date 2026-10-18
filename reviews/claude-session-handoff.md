@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-18 (after RM-OT-05AW3).
+Updated: 2026-10-18 (after RM-OT-05AX4 / Gorrund closed).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -14,14 +14,20 @@ Updated: 2026-10-18 (after RM-OT-05AW3).
 
 ## PC paths
 - Blender: `E:\Tools\Blender\blender-5.2.2-windows-x64\blender.exe`
-- Gorrund work: `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Neutral-C\05AW3\` (latest; 05AW2/05AW1 siblings; earlier passes in sibling 05AO/05AT/05AV/05AW folders)
+- Gorrund work: `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Neutral-C\05AW4\` (latest final; 05AW3/05AW2/05AW1 siblings; earlier passes in sibling 05AO/05AT/05AV/05AW folders)
 
 ## Frozen state
 - Latest pass: 05AW nails = GO-05AW_nails_final (see below); before that 05AV feet = GO-05AV_feet_final; 05AT AC3 = GO-05AT_AC3. Previous: 05AO AC2 — `GO-05AO_AC2.blend` sha `ba129999cfe71c1ab7afc2f11c1b911bd1e85fc06f301e1bad9a483fcba4f6f3`,
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RM-OT-05AW3 — 05AW3 FINAL NAIL FINISH FAILED / AUTHOR REVIEW REQUIRED (2026-10-18)
+## Last orders: RM-OT-05AW4 PASS + RM-OT-05AX4 CLOSURE PASS (2026-10-18) — GORRUND CLOSED
+- Chain order 38dfda0 (AW4 -> AX4 -> Stage C release). AW4 gate reviews/claude-rac-rm-ot-05aw4-gorrund-final-microfinish-gate.md; AX4 review reviews/claude-rac-rm-ot-05ax4-gorrund-final-closure-review.md.
+- FROZEN Gorrund neutral reference: GO-05AW4_nails_final.blend 5a4e45d40158e7dc92f6f8ba13d67ada2403e3e3dcda9048382323ee43a22d5e / .glb e6b325039993b48de1daf1b82da7054c9f466131daf41c2dcc14a0709adb6fc8 (PC ...\Gorrund-Neutral-C\05AW4\). RM-OT-05 CLOSED; Stage C Gorrund blocker CLEARED.
+- AW4 technique: plate-edge bevel = Mesh Filter Smooth (one long drag ~33 it) on band 1.4 mm in / 0.8 mm out of outline (tools rmot05aw4_drivers/bevel.py); lesser projection via 2 Hooks AW4_LP/RP, empties 0.35 mm along foot axes (projB.py); freeze.py strips .sculpt_mask (geometry identical); glbexp.py for GLB.
+- NEXT: Stage C release order reviews/chatgpt-rac-stage-c-release-after-05ax4-HOLD.md (3a48492) - determine existing Stage C contract; execute if complete, else write entry order; then commit reviews/claude-rac-autonomous-continuation-aw4-status.md.
+
+## Previous: RM-OT-05AW3 — 05AW3 FINAL NAIL FINISH FAILED / AUTHOR REVIEW REQUIRED (2026-10-18)
 - Run under autonomous continuation order fd3e67f (AW3 -> AX3 -> Stage C). Chain stopped at AW3 FAIL; status note reviews/claude-rac-autonomous-continuation-status.md.
 - PC ...\05AW3\: A f89aa8f2 (side-wall Inflate 0.385 mm), B 5c3dcbe0 (4 Hooks, groups AW3_LP/LD/RP/RD, empties at origin, typed loc LP (0.00020445,-0.00178835,0), RP (-0.00093219,-0.00153981,0), LD/RD z -0.0012; No Falloff), C 1d68c9f5e496ce0076318a96220667040b5a4b467dc380d8c49a8e354823cc78 (candidate; still has mask + AW3 groups).
 - Not met: side-wall groove read (plate step wall; skin raise doesn't help -> suggest plate-edge bevel), lesser-toe projection 1.25-1.42 mm (<1.5).
