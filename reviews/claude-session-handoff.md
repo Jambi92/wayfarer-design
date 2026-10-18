@@ -25,7 +25,8 @@ Updated: 2026-10-18 (after RM-OT-05AX4 / Gorrund closed).
 - Chain order 38dfda0 (AW4 -> AX4 -> Stage C release). AW4 gate reviews/claude-rac-rm-ot-05aw4-gorrund-final-microfinish-gate.md; AX4 review reviews/claude-rac-rm-ot-05ax4-gorrund-final-closure-review.md.
 - FROZEN Gorrund neutral reference: GO-05AW4_nails_final.blend 5a4e45d40158e7dc92f6f8ba13d67ada2403e3e3dcda9048382323ee43a22d5e / .glb e6b325039993b48de1daf1b82da7054c9f466131daf41c2dcc14a0709adb6fc8 (PC ...\Gorrund-Neutral-C\05AW4\). RM-OT-05 CLOSED; Stage C Gorrund blocker CLEARED.
 - AW4 technique: plate-edge bevel = Mesh Filter Smooth (one long drag ~33 it) on band 1.4 mm in / 0.8 mm out of outline (tools rmot05aw4_drivers/bevel.py); lesser projection via 2 Hooks AW4_LP/RP, empties 0.35 mm along foot axes (projB.py); freeze.py strips .sculpt_mask (geometry identical); glbexp.py for GLB.
-- NEXT: Stage C release order reviews/chatgpt-rac-stage-c-release-after-05ax4-HOLD.md (3a48492) - determine existing Stage C contract; execute if complete, else write entry order; then commit reviews/claude-rac-autonomous-continuation-aw4-status.md.
+- Stage C release done: STAGE C RELEASED / ENTRY PLAN READY (reviews/claude-rac-stage-c-entry-resolution.md; entry order reviews/chatgpt-rac-stage-c-entry-order.md HOLD; chain note reviews/claude-rac-autonomous-continuation-aw4-status.md).
+- NEXT: wait for Tyler/ChatGPT answers to D1 (Gorrund variant method), D2 (204.5 cm sculpt vs 208.3-253 cm stature series / GOREF 230.9), D3 (Grask E3 body source: procedural GR.E3 spec in reviews/rac-rmot05d-evidence/candidates.json, no mesh hash). Then execute the entry order C0-C4.
 
 ## Previous: RM-OT-05AW3 — 05AW3 FINAL NAIL FINISH FAILED / AUTHOR REVIEW REQUIRED (2026-10-18)
 - Run under autonomous continuation order fd3e67f (AW3 -> AX3 -> Stage C). Chain stopped at AW3 FAIL; status note reviews/claude-rac-autonomous-continuation-status.md.
