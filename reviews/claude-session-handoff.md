@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-18 (after RM-OT-05AX4 / Gorrund closed).
+Updated: 2026-10-18 (after Stage C C0–C4 returned for author review).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,7 +21,14 @@ Updated: 2026-10-18 (after RM-OT-05AX4 / Gorrund closed).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last orders: RM-OT-05AW4 PASS + RM-OT-05AX4 CLOSURE PASS (2026-10-18) — GORRUND CLOSED
+## Last order: RAC Stage C C0–C4 (2026-10-18) — AUTHOR REVIEW REQUIRED
+- Order 5aa5501 (rulings 95e7bc3: D1a Gorrund reference-only, D2c native 204.5 cm with in-memory scaled comparison copies, D3a Grask E3 from frozen GR.E3). Gate reviews/claude-rac-stage-c-gate.md; evidence reviews/rac-stagec-evidence/; protocol specs/RAC_STAGE_C_PROTOCOL.md; tools tools/rac/w1/stagec_drivers/.
+- Status: Grask E3 Stage C CONSTRAIN; Gorrund Stage C ACCEPT (reference state only); Combined CONSTRAIN.
+- Open author items: GR-G1 protected reading (ruling 2 scope); Durrim directional thoracic-depth row vs accepted E3 keel; E3 absolute-cm organisation across stature; Narrow not shown at elbow/knee; Grask front-view read; Gorrund 204.5 cm below canon min.
+- Cloud setup: bpy venv /home/claude/bpyenv (wrapper /home/claude/stc/bin/python3), MPFB 2.0.17 at /home/claude/mpfb2_2017 symlinked into the Blender extensions dir, W1 scratch root symlinked to /home/claude/stc/S; PYTHONPATH=tools/rac/w1 for jbw/s7_station.
+- NEXT: wait for the ChatGPT/Tyler ruling. Do not start D4/UE5/rigging/creator/Grask sculpt/Gorrund variants.
+
+## Previous: RM-OT-05AW4 PASS + RM-OT-05AX4 CLOSURE PASS (2026-10-18) — GORRUND CLOSED
 - Chain order 38dfda0 (AW4 -> AX4 -> Stage C release). AW4 gate reviews/claude-rac-rm-ot-05aw4-gorrund-final-microfinish-gate.md; AX4 review reviews/claude-rac-rm-ot-05ax4-gorrund-final-closure-review.md.
 - FROZEN Gorrund neutral reference: GO-05AW4_nails_final.blend 5a4e45d40158e7dc92f6f8ba13d67ada2403e3e3dcda9048382323ee43a22d5e / .glb e6b325039993b48de1daf1b82da7054c9f466131daf41c2dcc14a0709adb6fc8 (PC ...\Gorrund-Neutral-C\05AW4\). RM-OT-05 CLOSED; Stage C Gorrund blocker CLEARED.
 - AW4 technique: plate-edge bevel = Mesh Filter Smooth (one long drag ~33 it) on band 1.4 mm in / 0.8 mm out of outline (tools rmot05aw4_drivers/bevel.py); lesser projection via 2 Hooks AW4_LP/RP, empties 0.35 mm along foot axes (projB.py); freeze.py strips .sculpt_mask (geometry identical); glbexp.py for GLB.
