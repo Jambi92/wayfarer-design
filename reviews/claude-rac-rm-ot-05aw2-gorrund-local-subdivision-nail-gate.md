@@ -166,7 +166,7 @@ Gate: SI 0, nothing outside the support; the same 4 local folds as in A.
 | Stature | unchanged (204.52 cm) |
 | Lowest moved vertex | 2.62 mm above the floor; no ground intersection |
 | Toe-to-toe contact | none new (SI 0) |
-| Foot length vs 05AV | L −0.009 mm, R +0.10 mm (limit 3 mm) |
+| Foot length vs 05AV | L −0.09 mm, R +1.0 mm (limit 3 mm). *Corrected 2026-10-18: the gate reports length in cm; the first version of this table misread 0.1 cm as 0.1 mm.* |
 | Footprint width | 0.0 / 0.0 (limit 1 mm) |
 | Heel lift / heel | 0.0 / 0.0 (limit 0.1 cm) |
 | Toe-tip extent | L −0.08 mm, R +1.29 mm |

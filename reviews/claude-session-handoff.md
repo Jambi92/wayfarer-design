@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-18 (after RM-OT-05AW2).
+Updated: 2026-10-18 (after RM-OT-05AW3).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -14,14 +14,23 @@ Updated: 2026-10-18 (after RM-OT-05AW2).
 
 ## PC paths
 - Blender: `E:\Tools\Blender\blender-5.2.2-windows-x64\blender.exe`
-- Gorrund work: `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Neutral-C\05AW2\` (latest; 05AW1 sibling; earlier passes in sibling 05AO/05AT/05AV/05AW folders)
+- Gorrund work: `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Neutral-C\05AW3\` (latest; 05AW2/05AW1 siblings; earlier passes in sibling 05AO/05AT/05AV/05AW folders)
 
 ## Frozen state
 - Latest pass: 05AW nails = GO-05AW_nails_final (see below); before that 05AV feet = GO-05AV_feet_final; 05AT AC3 = GO-05AT_AC3. Previous: 05AO AC2 — `GO-05AO_AC2.blend` sha `ba129999cfe71c1ab7afc2f11c1b911bd1e85fc06f301e1bad9a483fcba4f6f3`,
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RM-OT-05AW2 — 05AW2 HIGH-RES TOENAIL REBUILD FAILED / AUTHOR REVIEW REQUIRED (2026-10-18)
+## Last order: RM-OT-05AW3 — 05AW3 FINAL NAIL FINISH FAILED / AUTHOR REVIEW REQUIRED (2026-10-18)
+- Run under autonomous continuation order fd3e67f (AW3 -> AX3 -> Stage C). Chain stopped at AW3 FAIL; status note reviews/claude-rac-autonomous-continuation-status.md.
+- PC ...\05AW3\: A f89aa8f2 (side-wall Inflate 0.385 mm), B 5c3dcbe0 (4 Hooks, groups AW3_LP/LD/RP/RD, empties at origin, typed loc LP (0.00020445,-0.00178835,0), RP (-0.00093219,-0.00153981,0), LD/RD z -0.0012; No Falloff), C 1d68c9f5e496ce0076318a96220667040b5a4b467dc380d8c49a8e354823cc78 (candidate; still has mask + AW3 groups).
+- Not met: side-wall groove read (plate step wall; skin raise doesn't help -> suggest plate-edge bevel), lesser-toe projection 1.25-1.42 mm (<1.5).
+- NEXT: author ruling. If accepted: freeze C as GO-05AW3_nails_final (strip mask/groups, GLB via glbexp), then run 05AX3 HOLD (692ea50), then Stage C release (f659146) per continuation rules.
+- Hook technique in UI: Add Modifier (menu opens at Deform; Hook in submenu), set Vertex Group (type filter) then Object, Falloff Type -> No Falloff; apply via header dropdown -> Apply. Empties: shift+A > Empty > Plain Axes, duplicate shift+D + Esc.
+- Fit: Surface Smooth 5 short drags = ~10 HC it; Smooth big drag + 14 jiggles = ~37 Laplacian it (higher than the 05AW2 calibration; region-dependent).
+- Tools: tools/rac/w1/rmot05aw3_drivers/ (fields, design, stageC, shelf). Cloud work dir /home/claude/aw1/aw3.
+
+## Previous: RM-OT-05AW2 — 05AW2 HIGH-RES TOENAIL REBUILD FAILED / AUTHOR REVIEW REQUIRED (2026-10-18)
 - Gate: reviews/claude-rac-rm-ot-05aw2-gorrund-local-subdivision-nail-gate.md. PC ...\Gorrund-Neutral-C\05AW2\: base 20153dae (T + group AW2_subd), subdiv_base 827d9c9c (2 cuts, ngons off, +62 712 verts, 598 717 V / 1 124 538 F), A 9e049052, B b3705d7f, C e07ac7c6, candidate nails_final.blend 75734a39b922f656ecc767b65c0263fa85cfde0e2e35600831b4f9830b1b9206 / .glb 2c7c560cf2f7d84f191309806cdbc17b5e8ea0431f9f3264a3cbc399172d1a09.
 - Technical gate fully clean (local-surface fold metric 0; 'inverted vs source' 8 = crevice reference artefacts). Visual: pointed shield nails readable from front; NOT met: projection/curl past toe tip, side walls read as grooves in 3/4. All 4 checkpoints used.
 - NEXT: author ruling. If Tyler accepts the candidate as is -> PASS, then run 05AX2 HOLD (d78a928) on GO-05AW2_nails_final, then Stage C HOLD (703dbb6). Otherwise expect an order for one projection/curl checkpoint (masked Grab/Inflate along toe axis, soften side-wall groove).
