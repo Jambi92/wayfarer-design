@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-17 (after RM-OT-05AV).
+Updated: 2026-10-17 (after RM-OT-05AW).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -14,14 +14,20 @@ Updated: 2026-10-17 (after RM-OT-05AV).
 
 ## PC paths
 - Blender: `E:\Tools\Blender\blender-5.2.2-windows-x64\blender.exe`
-- Gorrund work: `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Neutral-C\05AV\` (latest; earlier passes in sibling 05AO/05AT folders)
+- Gorrund work: `E:\UnrealProjects\Wayfarer 5.8\RaceBodies\source\Gorrund-Neutral-C\05AW\` (latest; earlier passes in sibling 05AO/05AT/05AV folders)
 
 ## Frozen state
-- Latest pass: 05AV feet = GO-05AV_feet_final (see below); before that 05AT AC3 = GO-05AT_AC3. Previous: 05AO AC2 — `GO-05AO_AC2.blend` sha `ba129999cfe71c1ab7afc2f11c1b911bd1e85fc06f301e1bad9a483fcba4f6f3`,
+- Latest pass: 05AW nails = GO-05AW_nails_final (see below); before that 05AV feet = GO-05AV_feet_final; 05AT AC3 = GO-05AT_AC3. Previous: 05AO AC2 — `GO-05AO_AC2.blend` sha `ba129999cfe71c1ab7afc2f11c1b911bd1e85fc06f301e1bad9a483fcba4f6f3`,
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RM-OT-05AV — FOOT/HEEL CORRECTION PASS / READY FOR FINAL GORRUND CLOSURE REVIEW (2026-10-17)
+## Last order: RM-OT-05AW — TOENAIL REFINEMENT PASS / READY FOR FINAL GORRUND CLOSURE REVIEW (2026-10-17)
+- Active frozen source: `GO-05AW_nails_final.blend` sha bb815843b432042c31eef5424ec55379f8c4bfdf084b5074fed9ab647608784a; `.glb` 082de3c9b51576a89ac3a3a943e49b76637a7ddd8399f7b3bb15caf2ac55dae1 (PC ...\Gorrund-Neutral-C\05AW\) = 05AV + nails.
+- Tyler accepted 05AV feet (d8d119f) with toenail exception; 05AW: 8 Hook nail transforms (taper .32, curl 14 deg, +4 mm distal, +3 mm outward). Caveat: inherited sunken/split nail plates; Tyler to confirm look.
+- NEXT: RM-OT-05AX final closure review (reviews/chatgpt-rac-rm-ot-05ax-gorrund-final-closure-review-HOLD.md) is now unblocked: read-only review, no geometry authoring.
+- Tips: Explorer at E:\Tools\Blender\blender-5.2.2-windows-x64 to launch Blender (blender.exe row). computer_open_application('Blender') spawns a SECOND empty instance - close it. Blender search dropdowns accept typed filters (vertex group 'AW_L1'). Tools: tools/rac/w1/rmot05aw_drivers/.
+
+## Previous: RM-OT-05AV — FOOT/HEEL CORRECTION (2026-10-17)
 - Active frozen source now: `GO-05AV_feet_final.blend` sha 45a04787c4760e95b9a9bef52837a516788670f1f1bade92c380ffcea74ab9a6; `.glb` b595f11e2cb4d6f69cdc38954fc9f422dadda9e8e46cee8aed57869face92b4b (PC ...\Gorrund-Neutral-C\05AV\). = AC3 + feet only.
 - Feet 34.8 cm / 15.3 cm (17.0 / 7.5 % H), heel lift 0.35 cm L / 0.32 cm R. Head share + tail root approved/frozen (05AU ruling 5cc8df6). Connectivity handles (2 hand loops, L axilla) carried to retopology.
 - UI technique that worked: Hook modifier + prepared vertex-group weights (falloff off = exact weighted local transform); add Empty, type loc/rot in Object tab, add Hook (vertex group first, then object; no reset needed), type empty scale/location, Apply in modifier menu. Type numbers with single key presses (ctrl+a, digits, 'period', 'minus').
