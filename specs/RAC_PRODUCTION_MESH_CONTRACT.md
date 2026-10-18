@@ -4,7 +4,7 @@
 
 **Scope.** Production / technical rules only. **Nothing here is biology canon.**
 - Race anatomy stays governed by the race specs, `decisions/REFERENCE_ANATOMY_V1.md` and the accepted gates.
-- Every number marked **PROPOSED PRODUCTION TOLERANCE** needs Tyler / ChatGPT acceptance before it is used to pass geometry (§16).
+- The production tolerances in §16 were accepted for RP1 on October 18, 2026. Any later change needs Tyler / ChatGPT acceptance.
 - **Not set here:** a final game vertex budget, final LOD counts, final UV / material policy, the final skeleton hierarchy and skin weights. Each needs its own later contract with UE5 / performance evidence.
 
 ## 1. Source immutability
@@ -102,7 +102,7 @@ The body production mesh must have:
 
 ## 7. Joint / deformation zones
 
-Each zone needs the listed **minimum supporting loops**: edge loops around the limb axis, perpendicular to it, centred on the landmark. The loop counts are **PROPOSED PRODUCTION TOLERANCES** (T-5).
+Each zone needs the listed **minimum supporting loops**: edge loops around the limb axis, perpendicular to it, centred on the landmark. The loop counts are production quality targets (T-5, accepted as RP1 quality targets).
 
 | Zone | Minimum loops | Notes |
 |---|---|---|
@@ -221,20 +221,36 @@ Gate document: `reviews/claude-rac-rp<n>-*-gate.md`.
 2. A production mesh that is clean but changes accepted anatomy beyond the accepted tolerances **fails**, regardless of topology quality.
 3. Production work never reopens race biology. A true anatomy contradiction found during production is **stopped and returned** to the author.
 
-## 16. PROPOSED PRODUCTION TOLERANCES
+## 16. PRODUCTION TOLERANCES (ACCEPTED for RP1, October 18, 2026)
 
-All require acceptance before RP1 geometry is gated. None is biology canon.
+**Accepted by:** Tyler / ChatGPT, `reviews/tyler-chatgpt-rac-rp1-gorrund-release-decisions.md` (c9d50b8). Written back by `reviews/chatgpt-rac-rp1-gorrund-manual-retopo-execute-order.md` (f8aa243).
 
-| ID | Tolerance (proposed) | Why |
+These are **production standards, not biology canon**. The values RP0 proposed are kept below as history.
+
+| ID | Accepted tolerance | RP0 proposal (history) |
 |---|---|---|
-| **T-1** Surface deviation, body (both directions) | median ≤ 0.5 mm; p95 ≤ 1.5 mm; max ≤ 4 mm | 1.5 mm is about 0.07 % of a 200 cm stature, below the resolution the frozen validators use: their MARGINAL / reversal bands are 1 %, which is ≥ 2 mm on any dimension of 20 cm or more |
-| **T-2** Surface deviation, identity zones (head / face / ears / display, hands, feet incl. nails, tail root) | median ≤ 0.3 mm; p95 ≤ 1.0 mm; max ≤ 2.5 mm | These carry the accepted visual identity. Gorrund nail projection steps were 0.15–0.3 mm, so finer **micro**-detail (nail plate edges, scale relief, pores) may be carried by a later normal / displacement map instead, **only** if the zone is listed per race and the author sheet shows no read change |
-| **T-3** Stature and bbox | Stature within ±1 mm; bbox each axis within ±2 mm | Stature is canon-critical (D4 envelopes) |
-| **T-4** Face shape | Quad angles 45°–135°; aspect ≤ 4:1 (except digit and tail tips) | Standard deformation-quality bounds |
-| **T-5** Loops and density | §7 loop minimums; §8 density ceilings | Allows the creator morph ranges and clean joint bending; replaceable once RP6 diagnostic deformation exists |
-| **T-6** Landmark drift (production vs source) | ≤ 2 mm for joint centres; ≤ 1 mm for MPFB rig-derived landmarks (carried exactly) | Below joint-centre fit noise; protects limb-segment lengths and the W2C ratios |
-| **T-7** Silhouette IoU vs source, body-only, front / profile / rear at 3 px/cm | ≥ 0.995 | Stage C's smallest accepted-distinct pair differed at about 0.10 IoU; 0.005 is 20× smaller |
+| **T-1** Surface deviation, body, both directions | median ≤ 0.5 mm; p95 ≤ 1.5 mm; **max ≤ 3.0 mm** | max ≤ 4 mm |
+| **T-2** Surface deviation, identity zones (head / muzzle, ears, hands, feet / toes / nails, tail root) | median ≤ 0.3 mm; **p95 ≤ 0.8 mm; max ≤ 1.5 mm** | p95 ≤ 1.0, max ≤ 2.5 mm |
+| **T-3** Stature and bbox | stature ±1.0 mm; bbox ±2.0 mm per axis | same |
+| **T-4** Face shape | quad angles 45°–135°; aspect ≤ 4:1 (except digit and tail tips): **accepted as RP1 quality target** | same |
+| **T-5** Loops and density | §7 loop minimums; §8 density ceilings: **accepted as RP1 quality target** | same |
+| **T-6** Landmark drift, production vs source | **target ≤ 1.0 mm; none above 1.5 mm; every value above 1.0 mm reported individually** | ≤ 2 mm (joint centres) |
+| **T-7** Silhouette IoU vs source, body-only, front / profile / rear, identical camera and scale | ≥ 0.995 | same |
+| **Gorrund nail projection** | ±0.15 mm from the frozen source measurement | proposed ±0.15 mm |
 
-**Flagged for acceptance before RP1 geometry:** T-1, T-2 (including the per-race micro-detail exemption list), T-3, T-6, T-7. T-4 / T-5 are quality targets and may be accepted with RP1.
+**Micro-detail exemption** (accepted). Only fine skin creases and nail-plate micro-edge detail that changes none of projection, taper, curl or silhouette. Every exemption is listed and shown.
+
+**Visual veto** (accepted). A numeric pass does not override a visible identity change. For Gorrund, all of these must stay visually unchanged:
+- head / muzzle;
+- tail origin and taper;
+- hand / foot read;
+- nail read;
+- body composition;
+- accepted proportions;
+- plantigrade foot read.
+
+**RP1 method** (accepted). **M-B, fully manual retopology in the Blender UI.**
+- QuadriFlow and automatic remesh are not used as the production topology generator.
+- Production topology is manual polygon construction, with snapping / projection onto the derived welded working copy.
 
 **Not proposed here:** a game vertex budget. RP1 reports the resulting count, and a budget waits for UE5 / performance evidence.
