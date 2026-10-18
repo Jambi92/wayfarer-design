@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-17 (after RM-OT-05AW).
+Updated: 2026-10-17 (after RM-OT-05AX).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,7 +21,13 @@ Updated: 2026-10-17 (after RM-OT-05AW).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RM-OT-05AW — TOENAIL REFINEMENT PASS / READY FOR FINAL GORRUND CLOSURE REVIEW (2026-10-17)
+## Last order: RM-OT-05AX — RM-OT-05 GORRUND FINAL CLOSURE PASS (2026-10-17)
+- Read-only closure review: reviews/claude-rac-rm-ot-05ax-gorrund-final-closure-review.md. Gorrund neutral reference sculpt = GO-05AW_nails_final (AUTHOR-APPROVED / FROZEN). RM-OT-05 CLOSED; Stage C Gorrund blocker CLEARED; Grask E3 may advance per Stage C plan.
+- Only open courtesy item: Tyler's visual confirmation of the 05AW toenail look (inherited sunken/split plates; a full rebuild belongs to retopology).
+- Downstream debt: 2 hand finger loops + L axilla tunnel (genus 3), perineal duplicate seam, tail-root slivers, optional nail rebuild -> retopology/rig prep.
+- NEXT: wait for ChatGPT's next order (likely Stage C / Grask).
+
+## Previous: RM-OT-05AW — TOENAIL REFINEMENT (2026-10-17)
 - Active frozen source: `GO-05AW_nails_final.blend` sha bb815843b432042c31eef5424ec55379f8c4bfdf084b5074fed9ab647608784a; `.glb` 082de3c9b51576a89ac3a3a943e49b76637a7ddd8399f7b3bb15caf2ac55dae1 (PC ...\Gorrund-Neutral-C\05AW\) = 05AV + nails.
 - Tyler accepted 05AV feet (d8d119f) with toenail exception; 05AW: 8 Hook nail transforms (taper .32, curl 14 deg, +4 mm distal, +3 mm outward). Caveat: inherited sunken/split nail plates; Tyler to confirm look.
 - NEXT: RM-OT-05AX final closure review (reviews/chatgpt-rac-rm-ot-05ax-gorrund-final-closure-review-HOLD.md) is now unblocked: read-only review, no geometry authoring.
