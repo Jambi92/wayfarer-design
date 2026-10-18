@@ -36,7 +36,7 @@ This is a **FIRST-PASS BIOLOGICAL RANGE — SUBJECT TO CROSS-RACE VALIDATION**. 
 | --- | --- |
 | Torso contribution | Trends toward a lower contribution to standing height than Marchfolk and Skarn, producing the long-limbed silhouette, while staying functional, organically proportioned and open to broad composition; never a tiny torso on giant limbs |
 | Thorax | Moderate skeletal breadth, meaningful thoracic depth, a relatively elongated but not oversized ribcage and strong spine-shoulder integration; not a barrel, extremely narrow, flat or giant muscular chest, with breadth and depth independently variable |
-| Torso depth | Enough thoracic depth to be credible at Grask stature, without converging on Durrim-like proportional depth or Skarn-like human power architecture (comparative distributions need validation) |
+| Torso depth | Enough thoracic depth to be credible at Grask stature, without converging on Durrim-like compact structural-power architecture or Skarn-like human power architecture (comparative distributions need validation; Durrim non-convergence is judged on whole organization, not one depth scalar — see Thoracic depth, Part 2) |
 | Abdomen and waist | Broad variation in waist breadth, abdominal volume, taper and soft tissue; neither a narrow "monster waist" nor a large belly is required |
 | Shoulders | A race-specific relationship: moderate absolute-to-substantial breadth, long upper-limb integration, structure supporting extended reach and scapular and clavicular relationships distinct from humans, never simply widened human shoulders (exact morphology to develop) |
 | Shoulder breadth vs stature | Can be large in absolute terms while looking less broad relative to height than Skarn; never classified "small" just because the silhouette is rangier |
@@ -201,7 +201,7 @@ Compared with Marchfolk and Skarn reference anatomy, Grask trend toward lower to
 | --- | --- |
 | Ribcage | Functional at large body size, with independent skeletal breadth, depth, vertical length, lower-rib relationship and taper; never a human ribcage stretched vertically |
 | Thoracic breadth | May be substantial in absolute terms at reference height, but generally reads less broad relative to stature than Skarn, surviving composition neutralization |
-| Thoracic depth | Meaningful: never paper-thin for a rangy look, and never approaching Durrim proportional depth |
+| Thoracic depth | Meaningful: never paper-thin for a rangy look. **Durrim contrast (Stage C final ruling, October 18, 2026):** Grask must not converge on Durrim-like compact structural-power architecture. The original "never approaching Durrim proportional depth" wording is no longer a single-scalar ceiling. Thoracic depth ÷ stature may overlap or exceed Durrim's value only while the whole organization stays distinct: breadth-to-depth relationship, torso share, limb contribution, girdle and joint structure, and silhouette / body organization. The scalar row is REPORT / diagnostic |
 | Shoulders | Evaluated as absolute skeletal breadth, breadth relative to torso, breadth relative to stature and relationship to arm origin, never one Shoulder Width concept |
 | Scapulae and clavicles | Support long functional arms while preserving upright posture, large movement ranges and arms that don't look dislocated, visibly distinct from widened human clavicles; no ape-like shoulder invented to justify reach (exact morphology for later prototyping) |
 | Waist and abdomen | Broad variation in skeletal waist relationship, abdominal soft tissue, muscle and fat distribution; no required extremely narrow waist, V-shaped torso or gaunt abdomen |
@@ -209,7 +209,7 @@ Compared with Marchfolk and Skarn reference anatomy, Grask trend toward lower to
 | Pelvic breadth | Supports Narrow, Balanced and Broad frames, with external hip width kept distinct from skeletal pelvic breadth, gluteal muscle and fat distribution |
 
 **Shoulder-girdle architecture (RAC W1d, author-accepted October 5, 2026; `reviews/chatgpt-rac-w1d-author-decisions-continuation-order.md` §3):** relational architecture only. Grask girdle distinctness is carried by organization, not width (L41, L206).
-- **Breadth mechanism (GR-G1; AD-G1):** girdle breadth follows the Grask thorax (moderate breadth): shoulder breadth ÷ thoracic breadth is not raised above the Marchfolk (MF) relationship as the means of obtaining shoulder breadth. The girdle is not a human girdle with lengthened clavicles (L38, L41, L42, L203, L206).
+- **Breadth mechanism (GR-G1; AD-G1):** girdle breadth follows the Grask thorax (moderate breadth): shoulder breadth ÷ thoracic breadth is not raised above the Marchfolk (MF) relationship as the means of obtaining shoulder breadth. The girdle is not a human girdle with lengthened clavicles (L38, L41, L42, L203, L206). **Governing validation (Stage C final ruling, October 18, 2026):** GR-G1 is read on the accepted W1/W2 skeletal-proxy / landmark route (glenohumeral and acromial landmarks over the composition-infimum thoracic breadth). Organized-surface readings shifted by a race base surface's skin-level station search (E3) are diagnostic only, unless a future canon method explicitly supersedes the W1/W2 route. The relation and its comparator are unchanged, and no numeric threshold is added.
 - **Scapular organization (GR-G2; AD-G2):** the positive non-human relationship — the scapular blade is vertically extended along the relatively elongated ribcage (superior-to-inferior extent relative to its own breadth greater than in MF), close-seated on the thoracic wall with strong spine–scapula coupling (no winging), giving long attachment levers for the long upper limb (L38, L41, L202, L206). No laterally rotated "reach" glenoid and no elevated girdle (L43–44, L206).
 - **Arm origin (GR-G3; AD-G3):** the glenohumeral origin lets the long hanging arm clear the thoracic wall at the measurement stance without added abduction and without a visible step at the shoulder; clearance never comes from an overhanging acromial shelf or girdle widening (L205, L206).
 - **Clavicle (GR-G4; AD-G3):** clavicle length and orientation follow from GR-G1/GR-G3, not an independent widener: long, slender relative to its length but absolutely substantial, with the sternoclavicular end integrated into an upright neck base (L31, L43, L206; RA L126).
@@ -768,3 +768,14 @@ Grask v1.0 (Parts 1–5 and all four clarification patches) was audited against 
 - All minimal guards pass. GR-P2b / GR-P6 are unchanged from 05B. The 229 cm GR-P2b marginal non-pass is pre-existing.
 - Blind read (3 uninformed scorers): still **"thin / lanky human"**, 0 non-human reads. Only C keeps its read at low composition.
 - C is recommended for author review only. Acceptance standard not met. Candidates GR5C* are PENDING AUTHOR / NOT ACCEPTED. RM-OT-05 remains OPEN. No Grask canon relation was changed.
+
+**RAC Stage C status (final author ruling October 18, 2026; `reviews/tyler-chatgpt-rac-stage-c-final-author-ruling.md`; closure `reviews/claude-rac-stage-c-final-closure.md`):** **Grask E3 Stage C — ACCEPT; Stage C CLOSED.**
+- The frozen RM-OT-05D E3 direction (`GR.E3`, `reviews/rac-rmot05d-evidence/candidates.json`; reference mesh geometry `a452bf6e…`) is the accepted Grask reference-anatomy direction. Grask W2 stays CLOSED as constraint / provenance.
+- GR-G1 and the Durrim contrast are clarified in place above (no new thresholds).
+- Carried implementation constraints:
+  1. The E3 scapular-mass / keel / flank organization scales relationship-aware across stature, not as literal absolute-centimetre writes at every height.
+  2. Narrow-frame joint breadth is carried by the skeleton / frame system, not hidden by tendon-cord surface treatment.
+  3. The chest / abdomen shading band is a surface / normal / retopology issue, not morphology.
+  4. The moderate front-view identity must survive later topology, rigging, creator, clothing and animation work: preserve girdle slope, long-arm and long-shin contribution, visible joint structure and pelvis organization; never collapse into a stretched-human or Aelari-like front read.
+- Multi-view species identity governs. No geometry is reopened, and D4 / UE5 / production rigging / creator implementation are not authorized by this status.
+

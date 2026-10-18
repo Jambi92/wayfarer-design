@@ -820,3 +820,10 @@ The retained W1i/W1j Gorrund point is **AUTHOR ACCEPTED as the W1 Anatomical Ref
 - B is recommended for author review only. Acceptance standard not met. Candidates GO5C* are PENDING AUTHOR / NOT ACCEPTED. RM-OT-05 remains OPEN. No Gorrund canon relation was changed.
 
 **RM-OT-05W status (October 14, 2026; `reviews/chatgpt-rac-rm-ot-05w-gorrund-source-sculpt-reset-order.md`):** asset-direction reset, not a canon reset. The U-series / GO-ARM-N1 lineage is retired from advancement and kept as historical evidence; a new purpose-built neutral source sculpt is required (`reviews/claude-rac-rm-ot-05w-gorrund-source-sculpt-reset-readiness.md`). No Gorrund relation, number or distribution was changed. RM-OT-05 remains OPEN.
+
+**RM-OT-05 closure and RAC Stage C status (October 18, 2026; `reviews/claude-rac-rm-ot-05ax4-gorrund-final-closure-review.md`, `reviews/tyler-chatgpt-rac-stage-c-final-author-ruling.md`, closure `reviews/claude-rac-stage-c-final-closure.md`):** the neutral reference sculpt **`GO-05AW4_nails_final`** (blend `5a4e45d4…2d5e`, glb `e6b32503…6fc8`) is AUTHOR-APPROVED / FROZEN, and RM-OT-05 is CLOSED. **Gorrund Stage C — ACCEPT, REFERENCE STATE ONLY; Stage C CLOSED.**
+- Frame, composition, stature-family and the other variant-dependent guarantees are DEFERRED TO CREATOR (Stage C D1(a)).
+- The sculpt stands 204.5225 cm natively. Stage C D2(c) keeps it at native height (uniform scaling only for matched-height comparison, never as stature construction). The stature bookkeeping above is unchanged: roughly 208 / 229 (230.9 ARM) / 251.
+- Topology debt is carried to retopology / rig prep: hand contact loops, the left-axilla micro-tunnel, perineal seam handling and slivers.
+- No Gorrund relation or number is changed by this status.
+

@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-18 (after Stage C C4.1 Grask resolution).
+Updated: 2026-10-18 (Stage C CLOSED; D4 entry order ready).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,7 +21,13 @@ Updated: 2026-10-18 (after Stage C C4.1 Grask resolution).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RAC Stage C C4.1 Grask resolution (2026-10-18) — AUTHOR RULING REQUIRED
+## Last order: RAC Stage C final closure / writeback (2026-10-18) — STAGE C CLOSED
+- Ruling 2619942, order 3e1a3cd. Closure reviews/claude-rac-stage-c-final-closure.md. Grask E3 ACCEPT, Gorrund ACCEPT (reference only), Combined ACCEPT.
+- Canon edits: specs/grask/GRASK_V1.md (GR-G1 governing route clause; Durrim non-convergence in Torso depth + Thoracic depth rows; Stage C status block), specs/gorrund/GORRUND_V1.md (closure + Stage C status block).
+- NEXT: D4 race-spec stature writeback — entry order reviews/chatgpt-rac-d4-race-spec-stature-writeback-entry-order.md READY, not run; wait for release. Text-only across 13 race specs; register = reviews/claude-rac-rm-ot-05-world-scale-author-gate.md §1; draft = reviews/claude-rac-rm-ot-05-visual-readability-closure-gate.md §6.
+- Nothing after D4 has a contract (retopology/rig prep, creator, UE5).
+
+## Previous: RAC Stage C C4.1 Grask resolution (2026-10-18) — AUTHOR RULING REQUIRED
 - Order fd23b89. Report reviews/claude-rac-stage-c-c4-1-grask-resolution.md; evidence reviews/rac-stagec-c4-1-evidence/; tool tools/rac/w1/stagec_drivers/c41_gr_g1.py.
 - GR-G1 canonical (W1/W2 skeletal_proxy over the skeletal_stations unorganized route, W1h skin-level CIB) PASS ref/N/B = 05B values; Stage C organized failure = S2 level shift (diagnostic).
 - Durrim: ARCHITECTURALLY DISTINCT DESPITE DEPTH OVERLAP. Front-only blind read: Grask picked as differently built (medium confidence).
