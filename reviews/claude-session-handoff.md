@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-18 (RP1 Gorrund manual retopo IN PROGRESS — RP1-A done, RP1-B in progress).
+Updated: 2026-10-18 (RP1 Gorrund manual retopo GATED — FAIL; STOPPED awaiting Tyler/ChatGPT decision).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,7 +21,11 @@ Updated: 2026-10-18 (RP1 Gorrund manual retopo IN PROGRESS — RP1-A done, RP1-B
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## CURRENT order: RAC RP1 Gorrund manual production retopo (2026-10-18) — IN PROGRESS (RP1-B)
+## CURRENT order: RAC RP1 Gorrund manual production retopo (2026-10-18) — GATED: FAIL, STOPPED
+- RESULT: gate reviews/claude-rac-rp1-gorrund-production-retopo-pilot-gate.md, evidence reviews/rac-rp1-evidence/rp1d/. Candidate E:\...\production\Gorrund\RP1\GO_U_REF_RP1_production_v001.blend (ce35992a…; objects GO_U_REF_RP1_cage 1,810 v + 13-mod stack, GO_U_REF_RP1_prod applied 462,850 v, GO_U_REF_RP1_weldsrc). Cage+stack also in _retopo_v004.blend (212e7508…).
+- Fails are all contact/concave zones (fingers/thumb webs, axillae, perineum/pouch, ear cups, under jaw, toe clefts): 193k self-intersecting pairs, hands 14–19 % over T-2 max. Fix path = separating cage loops per contact pair (or separate hand sub-cages), then re-run: rp1_prod_export.py → rp1_gate.py → rp1_selfx.py → rp1_landmarks_len.py (all in tools/rac/rp/; cloud scratch /home/claude/stc/rp1/).
+- Do NOT start RP2 / rigging / creator / UE5 until Tyler/ChatGPT decide.
+
 - Order reviews/chatgpt-rac-rp1-gorrund-manual-retopo-execute-order.md (f8aa243); authority reviews/tyler-chatgpt-rac-rp1-gorrund-release-decisions.md (c9d50b8); contract §16 ACCEPTED (5f93e98).
 - Method M-B fully manual retopo in the Blender UI (no QuadriFlow/auto-remesh generator). Tolerances T-1 med/p95/max 0.5/1.5/3.0 mm; T-2 identity zones 0.3/0.8/1.5 mm; T-3 stature ±1.0 mm, bbox ±2.0 mm/axis; T-6 landmarks ≤1.0 (none >1.5); T-7 IoU ≥0.995; nails ±0.15 mm. Micro-detail exemption only skin creases + nail micro-edges (list + show). Visual veto absolute.
 - Source (read-only, verify sha at entry/exit): ...\Gorrund-Neutral-C\05AW4\GO-05AW4_nails_final.blend 5a4e45d4...2d5e.
