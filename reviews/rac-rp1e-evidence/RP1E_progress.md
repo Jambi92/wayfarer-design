@@ -72,3 +72,13 @@ Remaining hand folds: R middle/ring fused tips (repair zone), thumb crotches, fi
   - Both hands: 0.
   - The rest are in the L and R axillae (z 137–150) plus 2 at the R foot (z ≈ 2).
 - Next: axillae (UI moves from the zonefit design), R foot, then perineum, head, feet.
+- 2026-10-19: Axillae (L and R) authored in the UI.
+  - Moved 136 cage vertices (69 L, 67 R) to the `cage_e30` axilla re-layout (zonefit design). The indices are identical in both cages; `axilla_ui_moves_e30.json` lists them.
+  - UI method:
+    1. Box-select the axilla region in a calibrated Front ortho view and use Hide Unselected. The calibration uses the 3D-cursor positions plus Center View to Cursor. The visible set is confirmed exactly by the N-panel median.
+    2. Click each vertex in a calibrated Right, Top or Front view, ordered greedily by screen clearance (≥14 px, or checked in the N panel when below that), and type its coordinates (`movegen.py`).
+    3. Save after each batch of about 16, stage it, and check with `chk.py`: every changed vertex must equal its design target and nothing else may move.
+  - Result: all 136 vertices on target. Max deviation from the design cage is 0.05 mm, from 0.1 mm typing precision.
+  - Cage: 1894 V, 1892 quads, 0 boundary, 0 non-manifold, genus 0.
+  - Coarse-cage self-intersections: 34 → 2. The 2 left are at the R foot (z ≈ 2, toe region), deferred to the feet/toe work.
+- Next: feet/toes (also fixes the 2 R-foot pairs), perineum, head (jaw / ear cups), then the progressive projection gates.
