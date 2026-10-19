@@ -25,6 +25,14 @@ cur,curc=inp,incol
 for k,(lo,hi) in enumerate(cl):
     V=np.load(cur)['V']; c=0.5*(V[lo]+V[hi]); back=heel-c; back[2]=0; back/=np.linalg.norm(back); side=np.array([-back[1],back[0],0.0])
     a,b=lo,hi; mids=[]
+    Fc=[[int(x) for x in f if x>=0] for f in np.load(cur)['F']]
+    from collections import defaultdict
+    nbd=defaultdict(set)
+    for f in Fc:
+        for i in range(len(f)): nbd[f[i]].add(f[(i+1)%len(f)]); nbd[f[(i+1)%len(f)]].add(f[i])
+    if hi not in nbd[lo]:
+        ms=[v for v in nbd[lo]&nbd[hi] if v>=int(os.environ.get('MINNEW','0')) and min(V[lo,2],V[hi,2])<V[v,2]<max(V[lo,2],V[hi,2])]
+        mids=ms[:1]; fracs=[]
     for f in fracs:
         p=V[lo]+f*(V[hi]-V[lo]); tmp='/tmp/claude-0/mc_%d_%g.npz'%(k,f)
         subprocess.run(['python3','slotN.py',cur,curc,tmp,str(a),str(b),','.join(map(str,p.tolist()))],capture_output=True)

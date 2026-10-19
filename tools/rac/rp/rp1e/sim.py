@@ -38,6 +38,7 @@ BASEMODE = MODE
 for k in range(1, lev + 1):
     MODE = os.environ.get('FINALMODE', BASEMODE) if k == lev else BASEMODE
     m = cage.modifiers.new('sub%d' % k, 'SUBSURF'); m.levels = 1; m.render_levels = 1
+    if os.environ.get('SUBLIM') == '0': m.use_limit_surface = False
     NOP = [int(x) for x in os.environ.get('FINALN', '').split(',') if x] if k == lev else []
     if 'P' in MODE:
         for c in cols:
