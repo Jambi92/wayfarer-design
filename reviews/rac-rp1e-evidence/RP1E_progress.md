@@ -189,3 +189,12 @@ Head over-limit at L3 before: 12.2 % (L ear 19.1 %, R ear 16.9 %), head self-x 1
 - L4 (full stack): the pouch/groin deviation clusters are gone (general over-3 mm list no longer has them; pelvis-box over 1.5 mm 4.0 %).
 - Self-x mechanism found: pure subdivision of the cage has 0 self-x at every level; all L4 self-x come from the projection stack. The final-level `Project ±2 cm` step makes most of them (pleats: faces 3–10 rings apart folded onto each other). Final level Nearest-only: perineum 2086 → 104, axillae 11794 → 7521, hands 572 → 115, head 168 → 106 — at the cost of more deviation (general over 3 mm 0.66 → 1.29 %, ears over 1.5 mm ≈ 5 %). The stack mode per colour is still to be chosen.
 - Axilla source (z-slices `axz2.png`): below z ≈ 141 the arm hangs free beside the trunk (contact gap); from z 142 to 154 arm and trunk are one cross-section with a **front crease** (V notch, tip ≈ (−19.5, −38), ≈ 4 cm deep, a hook at z 150–152) and a **back crease** (notch at x −19.5, y ≈ −24…−31, 1–7 cm deep at z 142, shallower above). The cage arm rings (10 verts, tilted, medial part at z ≈ 138) cross both creases with no vertices in them.
+
+### Axillae (designed annulus sub-cages, `axrings.py` + `axdesign.py`, cage `cage_X2`)
+- Region per side: the faces touching arm rings 3–8 plus two face rings outward on the trunk side (126 faces, all quads); inner boundary = arm ring 2 (10 verts, z ≈ 135–138, kept), outer boundary = 34-vertex trunk/shoulder loop (kept).
+- Designed rings (18 verts each, same angular columns about the arm-root axis; columns spaced by arc length on J):
+  - A3, A4 — arm surface between ring 2 and the arm lip (⅓, ⅔, projected onto the arm colour);
+  - JA — arm-side lip; J — the junction ring = apex line (z ≈ 141.5, three designed points) + front crease tips (z 142.5–153, `axcrease.py` z-slice spikes) + shoulder top (7 designed points, z 155–161) + back crease tips (R: detected, z 142.5–151.5; L: the back crease is a shallow step, 6 designed points); JT — trunk-side lip (lips at least 1.2 cm from J);
+  - T1 — between JT and the outer loop.
+- Transitions ring 2 (10) → A3 (18) and T1 (18) → outer (34) by angle/arc-length cells (fans + triangles: 34 (R) / 72 (L) triangles). Ownership: A3–J arm colour, JT/T1 trunk.
+- Result: 0 coarse self-x, closed, oriented. L4 self-x in the axillae (final level Nearest-only): R 5418 → 639, L 2103 → 203; full stack with final Project: axillae 11794 → 2242; p2s max 61 → 10 mm (the result no longer folds across the slit).
