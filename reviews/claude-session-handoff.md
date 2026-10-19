@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-18 (RP1 Gorrund manual retopo GATED — FAIL; STOPPED awaiting Tyler/ChatGPT decision).
+Updated: 2026-10-19 (RP1E Gorrund contact-zone recovery IN PROGRESS — UI authoring; hands + axillae done).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,7 +21,55 @@ Updated: 2026-10-18 (RP1 Gorrund manual retopo GATED — FAIL; STOPPED awaiting 
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## CURRENT order: RAC RP1 Gorrund manual production retopo (2026-10-18) — GATED: FAIL, STOPPED
+## CURRENT order: RAC RP1E Gorrund contact-zone recovery (2026-10-19) — IN PROGRESS
+- Order: reviews/chatgpt-rac-rp1e-gorrund-contact-zone-recovery-order.md (Tyler-authorized).
+  - Method: M-B, manual, no auto-remesh.
+  - Tolerances unchanged and two-way.
+  - Do not relax the contract. No RP2.
+  - The source GO-05AW4_nails_final.blend (5a4e45d4…22d5e) is read-only.
+- Deliverables:
+  - gate doc reviews/claude-rac-rp1e-gorrund-contact-zone-recovery-gate.md;
+  - evidence reviews/rac-rp1e-evidence/;
+  - final line "RP1E GORRUND PRODUCTION RETOPO PASS / READY FOR FAMILY-PILOT AUTHOR REVIEW" or "RP1E MANUAL CONTACT-ZONE RECOVERY FAILED / AUTHOR DECISION REQUIRED";
+  - STATUS paragraph, queue line, handoff update, push. Then STOP.
+- Progress log: reviews/rac-rp1e-evidence/RP1E_progress.md (method, numbers, UI build log). Commits ec55a37 (R hand), 97d6077 (L hand), d6b3d36 (axillae).
+- PC working file: E:\UnrealProjects\Wayfarer 5.8\RaceBodies\production\Gorrund\RP1\GO_U_REF_RP1E_retopo_v005.blend.
+  - Open in Blender 5.2.2, Edit Mode on cage object "Cylinder" (identity matrix; Local coords in m).
+  - The weld source is also in the file.
+- Current cage: 1894 V / 1892 quads, closed, 0 non-manifold, genus 0, consistent normals.
+  - The L and R hands are separate sub-cages: palm rings P1–P4 plus 5 digit tubes each.
+  - Both axillae are re-laid out to the cage_e30 design.
+  - Coarse-cage self-intersections: 2, both at the R foot (toe region, z ≈ 2 cm).
+- Remaining:
+  1. Feet and toes (also fixes the 2 R-foot pairs).
+  2. Perineum.
+  3. Head: jaw line and ear cups.
+  4. Hand residual webs and thumb crotches.
+  5. Colour vertex groups col1..col5 and the Shrinkwrap stack. The stack per level is Subsurf → Nearest per colour → 2 × [Smooth → Nearest]; the final level is Project ± 2 cm + Nearest.
+  6. Progressive gates at L1–L4 with sim.py, selfx and dev, on the cloud copy of the UI cage.
+  7. Save production v002 (never overwrite).
+  8. Full gate: T-1/T-2/T-3/T-6/T-7, nails, self-intersections 0, visual sheets.
+  9. Gate doc and verdict line; STATUS, queue and handoff; push; close Blender.
+- Cloud scratch: /home/claude/stc/rp1e/ (ephemeral; tools are copied to tools/rac/rp/rp1e/).
+  - Design cage with the axilla layout: cage_e30.npz. The UI cage vertex indices equal e30 except in the L hand.
+  - Check scripts:
+    - `blendcage.py -- file.blend out.npz` reads the cage from the staged .blend (run with /home/claude/stc/bin/python3).
+    - `selfx.py -- cage.npz out.json` counts self-intersecting face pairs (bpy BVH).
+    - `chk.py cur.npz` diffs against the baseline.
+- UI vertex-move method (proven: 136/136 axilla verts exact):
+  1. alt+H.
+  2. Front ortho. In N-panel View tab → 3D Cursor, type the region centre.
+  3. View → Align View → Center View to Cursor: hover View(128,34) → Align View (160,201) → slide right (300,201) → (313,252).
+  4. Scroll zoom about the centre (≈ ×1.2 per notch; 7 notches from Home ≈ 22.1 px/cm). Calibrate by moving the cursor 10 cm and reading its pixel.
+  5. Box-drag the region (hidebox2.py picks a box with clear margins), then shift+H.
+  6. Check the N-panel Median against the predicted visible-set median.
+  7. Switch to the Right, Top or Front view; the centre is kept. View(128,34) → Viewpoint(152,176) → Top(290,193) / Front(288,218) / Right(288,244).
+  8. `movegen.py hide.json moves.json cx,cy,ah,av,s hax,vax,hs OUT minsep base.npz` orders clicks by clearance. Then `mk.py OUT a b` prints the batch: per vertex, click, double-click X (1110,92), ctrl+a, keys, Tab, keys, Tab, keys, Return.
+  9. Batches of about 16 vertices, ctrl+s, stage, chk.py.
+  10. If clearance is under 14 px, click and read the N panel before typing.
+- Other UI notes: type digits as key presses (the `type` action is ignored). The Item tab is (1188,70) and the View tab (1188,118). X-ray is on. Delete menu "Only Faces" is about 3 lines below "Faces". Select Non-Manifold remembers its last options (redo-panel checkboxes Boundaries (104,673) and Multiple Faces (104,685)).
+
+## Previous: RAC RP1 Gorrund manual production retopo (2026-10-18) — GATED: FAIL
 - RESULT: gate reviews/claude-rac-rp1-gorrund-production-retopo-pilot-gate.md, evidence reviews/rac-rp1-evidence/rp1d/. Candidate E:\...\production\Gorrund\RP1\GO_U_REF_RP1_production_v001.blend (ce35992a…; objects GO_U_REF_RP1_cage 1,810 v + 13-mod stack, GO_U_REF_RP1_prod applied 462,850 v, GO_U_REF_RP1_weldsrc). Cage+stack also in _retopo_v004.blend (212e7508…).
 - Fails are all contact/concave zones (fingers/thumb webs, axillae, perineum/pouch, ear cups, under jaw, toe clefts): 193k self-intersecting pairs, hands 14–19 % over T-2 max. Fix path = separating cage loops per contact pair (or separate hand sub-cages), then re-run: rp1_prod_export.py → rp1_gate.py → rp1_selfx.py → rp1_landmarks_len.py (all in tools/rac/rp/; cloud scratch /home/claude/stc/rp1/).
 - Do NOT start RP2 / rigging / creator / UE5 until Tyler/ChatGPT decide.
