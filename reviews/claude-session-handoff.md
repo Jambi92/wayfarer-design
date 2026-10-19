@@ -43,7 +43,7 @@ Updated: 2026-10-19 session 6 (RP1E Class-A recovery order 4e2b1a9 → STOPPED: 
   - Both feet are the g5b sub-cage (shin ring A → S1–S5 → K → 4 toe tubes each; the 5th toe is fused in the source).
   - Coarse-cage self-intersections: 0.
 - SESSION 6 STATE (read this first):
-  - PC authoritative cage: `GO_U_REF_RP1E_retopo_v011.blend` (sha 5792e5d9…1857) = design v011 (3475 V / 3605 F), verified (`import_v011/`). v009/v010 unchanged. Blender left OPEN on v011 at session end only if noted below.
+  - PC authoritative cage: `GO_U_REF_RP1E_retopo_v011.blend` (sha 5792e5d9…1857) = design v011 (3475 V / 3605 F), verified (`import_v011/`). v009/v010 unchanged. Blender closed at session end (v011 saved); the extra Explorer tab I opened was closed, the original Downloads tab left alone.
   - Cloud: design `designs/design_v011.npz` + `_col.npy` (J ring ownership changed: trunk 1) + `fsm_v011.txt`; exact build `tools/rac/rp/rp1e/build_c3.sh`; gate run V12c in `gate_v011/`.
   - Report `reviews/claude-rac-rp1e-class-a-recovery-gate.md`: remaining A = open pockets (R hand web 3/4, L toe cleft 3, thumb webs, philtrum, L axilla z153 crevice, R axilla tips, R toe clefts) + source micro-cavities (hand-web tunnels, L axilla void, 1 mm nostrils, natal nub). Cause: L1 limit-surface retraction of pocket tips. Author decision asked: fill/keep micro-cavities; authorise sub-cage rebuild (pocket-ring topology) or stack change.
   - New tools: fitcage.py (local limit-surface LSQ fit), ccmat.py (CC + limit matrices = Blender), slitfit.py, limitsolve.py, devopen.py (openness of over-limit points), writeobj.py (OBJ Y-up metres; reproduces previous shas).
