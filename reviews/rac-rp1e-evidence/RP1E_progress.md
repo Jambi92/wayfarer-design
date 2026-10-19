@@ -82,3 +82,23 @@ Remaining hand folds: R middle/ring fused tips (repair zone), thumb crotches, fi
   - Cage: 1894 V, 1892 quads, 0 boundary, 0 non-manifold, genus 0.
   - Coarse-cage self-intersections: 34 → 2. The 2 left are at the R foot (z ≈ 2, toe region), deferred to the feet/toe work.
 - Next: feet/toes (also fixes the 2 R-foot pairs), perineum, head (jaw / ear cups), then the progressive projection gates.
+
+## Feet design (cloud, 2026-10-19 session 2) — design frozen as `g5b`, UI authoring next
+- Source toes: segmentation by a radial sweep about the ankle centroid (`footseg.py`) finds **4 free toe digits per foot**.
+  The fifth toe is fused into the lateral forefoot in the frozen source (no separate digit; 05AW already noted no separate fifth-toe nail plate). The cage follows the source; it does not add a fifth toe.
+  - Measured toe-to-toe gaps: min 0.8–3.6 mm. The source feet have 0 self-intersections.
+- Topology per foot (`footdesign.py` → `buildfoot.py`):
+  - The existing 14-vertex lower-shin ring A (z ≈ 14; L 266…475 step 15, R 56…265) is kept. Everything below it is replaced.
+  - A is followed by 5 sections S1–S5. Each is a plane through a dorsal profile point and a heel/sole profile point at the same arc fraction, so the leg tube bends forward into the foot and the back half of each ring sweeps round the heel onto the sole. Vertices are placed by angular transport from A to the cap.
+  - Cap ring K has 7 dorsal and 7 plantar vertices on toe-column boundaries, in a radial frame about the ankle centroid, with webs at the measured toe roots. It is filled with 6 cap quads.
+  - Toe tubes: hallux and toe 4 use 2 quads (6-vertex rings); toes 2 and 3 use 1 quad (4-vertex rings). The rings are parallel, fitted to source sections, with width factor 0.95 and thickness 0.85 of the measured half-extents, plus a tip ring.
+  - A small cloud untangle (`separate.py`, ≤1.2 cm) leaves 0 coarse-cage self-intersections.
+- Projection stack, simulated (`sim.py`): Subdivision → Nearest per colour → 2 × [Smooth → Nearest] at every level, **including the last** (final Project ± made the feet worse: 556 vs 154 at L3).
+  - Feet colours: forefoot/sole 3; hallux and toe 3 → 5; toes 2 and 4 → 4.
+  - Hand colours 3/4/5 must therefore become separate foot groups (6/7/8) in the UI, or the final level must be Nearest-only for everyone.
+- Results, feet only (old RP1 / first design f3 / current g5b):
+  - Coarse-cage self-intersections: 2 / 0 / 0.
+  - L2 self-intersections: — / 944 / 5.
+  - L3: — / 9 746 / 61.
+  - L4: 358 (L 14, R 344). All are in the narrow plantar web clefts (hallux/2nd mainly, R).
+  - L4 deviation, foot zones: median 0.02 mm, p95 0.17–0.20 mm, over-max share 0.8–1.0 % (RP1: 45–55 %). The maxima (9–13 mm) are nail spikes and deep inter-toe cleft walls.
