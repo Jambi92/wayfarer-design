@@ -43,9 +43,14 @@ Updated: 2026-10-19 (RP1E Gorrund contact-zone recovery IN PROGRESS — UI autho
   - Coarse-cage self-intersections: 0.
 - Remaining:
   1. (done) Feet and toes — see RP1E_progress.md "Feet authored in the UI".
-  2. Perineum.
-  3. Head: jaw line and ear cups.
-  4. Hand residual webs and thumb crotches.
+  2. (re-scoped 2026-10-19 after the full-body sim, see RP1E_progress.md "Full-body diagnosis after the feet") — the cage misses four cavities/features; each needs explicit topology, designed in the cloud and authored in the UI:
+     a. EARS (head identity zone, T-2 max 1.5 mm): the cage has no ear at all (just the head side). Each pinna (helix rim, concha cup ≈ 2.4 cm deep opening forward/laterally, inner ridges; x ±6…20, y −42…−58, z 190–205) needs a sub-cage "bag": base loop round the ear root → outer wall rings → helix rim → inner wall → concha floor cap.
+     b. JAW / chin–chest contact (z 173–182, front): ≈ 7 mm deviation; jaw-line loop separating jaw underside from neck/chest.
+     c. POUCH (x −9…12, y −22…−55, z 98–115): thin belly flap at z ≈ 99–100 over a pocket; median 12.6 mm deviation; needs a pocket invagination under the flap. (The perineum proper is clean: 0 self-intersections through L2.)
+     d. AXILLA front slits (both sides): 1–2 mm pocket, top crease z 141 (back) → 154 (front); needs the arm/trunk junction loop on the crease + explicit slit walls; automatic relayouts failed (see log).
+     e. Smaller: lower muzzle front (≈ 4 mm), nostrils (≈ 3 mm).
+  3. (merged into 2.)
+  4. Hand residual webs and thumb crotches. Also regenerate the hand digit segmentation (segH_R/L, col_full) — lost with the old scratch space; current sims use provisional hand colour 3.
   5. Colour vertex groups col1..col5 and the Shrinkwrap stack. The stack per level is Subsurf → Nearest per colour → 2 × [Smooth → Nearest]; the final level is Project ± 2 cm + Nearest. Feet need their own groups (6/7/8: rest 3, toes 1+3 → 5, toes 2+4 → 4 per col_foot2) whose final level is Nearest + Smooth only (no Project).
   6. Progressive gates at L1–L4 with sim.py, selfx and dev, on the cloud copy of the UI cage.
   7. Save production v002 (never overwrite).
