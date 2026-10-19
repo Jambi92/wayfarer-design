@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-18 (RP0 PASS; RP1 Gorrund pilot HOLD).
+Updated: 2026-10-18 (RP1 Gorrund manual retopo IN PROGRESS — RP1-A done, RP1-B in progress).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -21,7 +21,19 @@ Updated: 2026-10-18 (RP0 PASS; RP1 Gorrund pilot HOLD).
   GLB `1f60fb33fa0c75c9d0f9aa0c1315143005473fd5c72ada67ad922782240de434` (commit f7fc142).
 - 05AP (10dc9a5): Smooth-only AC3 not credible; nothing authored.
 
-## Last order: RAC RP0 source inventory + production-mesh contract (2026-10-18) — PASS
+## CURRENT order: RAC RP1 Gorrund manual production retopo (2026-10-18) — IN PROGRESS (RP1-B)
+- Order reviews/chatgpt-rac-rp1-gorrund-manual-retopo-execute-order.md (f8aa243); authority reviews/tyler-chatgpt-rac-rp1-gorrund-release-decisions.md (c9d50b8); contract §16 ACCEPTED (5f93e98).
+- Method M-B fully manual retopo in the Blender UI (no QuadriFlow/auto-remesh generator). Tolerances T-1 med/p95/max 0.5/1.5/3.0 mm; T-2 identity zones 0.3/0.8/1.5 mm; T-3 stature ±1.0 mm, bbox ±2.0 mm/axis; T-6 landmarks ≤1.0 (none >1.5); T-7 IoU ≥0.995; nails ±0.15 mm. Micro-detail exemption only skin creases + nail micro-edges (list + show). Visual veto absolute.
+- Source (read-only, verify sha at entry/exit): ...\Gorrund-Neutral-C\05AW4\GO-05AW4_nails_final.blend 5a4e45d4...2d5e.
+- Must repair: L/R hand contact handles (D-1/D-2), left-axilla micro-tunnel (D-3), split-position/perineal seam, tail-root slivers, nail-support density step. Target 1 comp / 0 boundary / 0 nonmanifold / genus 0.
+- Checkpoints: RP1-A DONE (bcb2adc; evidence reviews/rac-rp1-evidence/rp1a/, plan RP1A_layout_plan.md). RP1-B trunk/girdle/pelvis/major limbs IN PROGRESS. RP1-C head/hands/feet/tail/identity zones. RP1-D close+cleanup+evidence+gate doc reviews/claude-rac-rp1-gorrund-production-retopo-pilot-gate.md, final line "RP1 Gorrund production-mesh pilot — PASS / CONSTRAIN / FAIL". Then STOP (no RP2/rig/creator/UE5).
+- PC output dir E:\UnrealProjects\Wayfarer 5.8\RaceBodies\production\Gorrund\RP1\ : GO_U_REF_RP1_weldsrc_v001.blend (1d7adbe1..., welded 562,265 v, genus 3); GO_U_REF_RP1_retopo_v001.blend = weldsrc + cage object "Cylinder" (trunk ring 24, legs 14 via F-C-B crotch gusset, arms 10 bridged into 2x3 shoulder holes; transforms applied; Shrinkwrap Nearest Surface Point -> weldsrc). Save new checkpoints as _v002, _v003 ... never overwrite accepted ones.
+- Cage placement (Blender m): L leg 14v r0.08 d0.86 loc(0.2148,-0.452,0.5172) rot X2.05 Y-4.65; R leg loc(-0.1856,-0.3891,0.5166) rot X5.68 Y5.19; trunk 24v r0.17 d0.76 loc(0.02,-0.465,1.32), bottom ring deleted; L arm 10v r0.06 d0.387 loc(0.3054,-0.4206,1.3431) rot X-14.39 Y-20.56; R arm d0.412 loc(-0.2925,-0.3715,1.321) rot X-9.85 Y16.21. Loop cuts legs 15, trunk 12, arms 12.
+- Remaining: RP1-B joint/support loops (hip, knee, shoulder, elbow, girdle) + save v002; RP1-C neck 24->16 + head (muzzle, orbits, lips, ears rim loops), hands (palm 16, five 6v digits separated), feet (toes, nail inset loops), tail (8-edge hole at emergence 2.3,9.8,104.4 cm; 13 chain stations), axilla; RP1-D Subsurf L3 + Shrinkwrap, cleanup, export, cloud gates (rp1_landmarks.py measure, two-way deviation by zone, IoU, stature/bbox, nails), sheets, gate doc, STATUS/queue/handoff, push; re-verify source sha; close Blender.
+- Blender UI notes (4K display, frame 1456x819): `type` is ignored in viewport/search — press keys one by one ("period","minus",digits); `type` works in file-browser fields. ctrl+number in object mode here triggered Select by Type (NOT subsurf) — add modifiers via Add Modifier button (1336,210). View pie = "grave" (Front -66,-42 / Back +64,-42 / Left -82,-2 / Right +82,-2 / Top 0,-64 / Bottom 0,+64 from cursor). X-ray button (1131,35). Outliner weldsrc eye (1438,71). Properties tabs Object (1208,298), Modifiers (1208,314). Add Cylinder redo fields: Vertices (142,580), Radius 592, Depth 604, Cap Fill 617, Loc X/Y/Z 653/664/675, Rot X/Y 686/698 (double-click, ctrl+a, keys, Return). Loop cut: ctrl+r hovering a VERTICAL edge, click, right-click, then Number of Cuts (142,611). Bridge: F3 + keys "bridge" + Return. alt+click loop select; shift+alt add; B box; X delete menu opens at cursor. Apply all transforms ctrl+A > All Transforms (848,431).
+- Transfer: device_commit_files limit 30 MB/file and HTTP 400 on stagedPath — SendUserFile first, then commit by fileUuid.
+
+## Previous: RAC RP0 source inventory + production-mesh contract (2026-10-18) — PASS
 - Program reviews/chatgpt-rac-retopology-rigprep-master-plan.md; order 54439cb. Report reviews/claude-rac-rp0-source-inventory-contract.md; evidence reviews/rac-rp0-evidence/; contract specs/RAC_PRODUCTION_MESH_CONTRACT.md; RP1 plan reviews/chatgpt-rac-rp1-gorrund-production-retopo-pilot-HOLD.md (HOLD).
 - Sources: MPFB family rebuilds via tools/rac/w1/build_variant.py <reviews/reference-assets/builds/X_build.json> {} outdir X (bpy env); Gorrund PC ...\Gorrund-Neutral-C\05AW4\GO-05AW4_nails_final.blend; Saurin PC RaceBodies\out saurin_w2_final_base.npz + _surface_delta.npz via rebuild_w2_final.py (needs libigl).
 - RP1 release needs: tolerance acceptance (contract §16), method M-A/M-B. RP1 authoring = Blender UI on Tyler's PC; output RaceBodies\production\Gorrund\RP1\.
