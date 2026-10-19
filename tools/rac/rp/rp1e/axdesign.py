@@ -4,12 +4,12 @@ import numpy as np, sys, json, collections, os
 from scipy.spatial import cKDTree
 from holeloop import hole_loops
 side,cg,colf,hj,rj,out=sys.argv[1:7]; N=int(sys.argv[7]) if len(sys.argv)>7 else 18
-S=np.load('/home/claude/stc/rp1/weld.npz')['V']; scol=np.load('col_r1.npy'); arm=5 if side=='R' else 4
+S=np.load('/home/claude/stc/rp1/weld.npz')['V']; scol=np.load(os.environ.get('SRCCOL','col_r1.npy')); arm=int(os.environ['ARMCOL']) if 'ARMCOL' in os.environ else (5 if side=='R' else 4)
 kdA=cKDTree(S[scol==arm]); SA=S[scol==arm]; kdT=cKDTree(S[scol==1]); ST=S[scol==1]
 z=np.load(cg); V=z['V'].astype(float).tolist(); F=[list(map(int,f[f>=0])) for f in z['F']]; cc=np.load(colf).tolist()
 hole=json.load(open(hj))['reg']; ring2=json.load(open(rj))[2]
 L=hole_loops(F,hole); inner=[l for l in L if set(l)==set(ring2)][0]; outer=[l for l in L if set(l)!=set(ring2)][0]
-Jd=np.load('axJ_%s.npz'%side); J,JA,JT=Jd['J'],Jd['JA'],Jd['JT']
+Jd=np.load(os.environ.get('RINGNPZ','axJ_%s.npz'%side)); J,JA,JT=Jd['J'],Jd['JA'],Jd['JT']
 Vn=np.array(V)
 c2=Vn[inner].mean(0); cJ=J.mean(0); a=cJ-c2; a/=np.linalg.norm(a)
 u=np.cross(a,[0,1.0,0]); u/=np.linalg.norm(u); v=np.cross(a,u)
@@ -39,7 +39,16 @@ r2=np.array([at_angle(R2,t) for t in th]); ro=np.array([at_angle(Vn[outer],t) fo
 f3=float(os.environ.get('F3','0.34')); f4=float(os.environ.get('F4','0.67')); ft=float(os.environ.get('FT','0.5'))
 A3=r2+f3*(rings['JA']-r2); A4=r2+f4*(rings['JA']-r2); T1=rings['JT']+ft*(ro-rings['JT'])
 if os.environ.get('PROJ','1')=='1':
-    A3=SA[kdA.query(A3)[1]]; A4=SA[kdA.query(A4)[1]]; T1=S[cKDTree(S).query(T1)[1]]
+    A3=SA[kdA.query(A3)[1]]; A4=SA[kdA.query(A4)[1]]
+    if os.environ.get('TPROJ','1')=='1': T1=S[cKDTree(S).query(T1)[1]]
+if os.environ.get('T1CLEFT'):
+    # natal-cleft override: bottom columns of T1 placed on the cleft (tip at x=xc, walls beside)
+    zc,yt,yw,xc=[float(t) for t in os.environ['T1CLEFT'].split(',')]
+    Jr=rings['J']
+    for k in range(N):
+        if Jr[k][2]<105.6:
+            dx=Jr[k][0]-xc; y=yt if abs(dx)<0.6 else yw+0.0*dx
+            T1[k]=S[cKDTree(S).query([Jr[k][0],y,zc])[1]]
 order=[('A3',A3,arm),('A4',A4,arm),('JA',rings['JA'],arm),('J',rings['J'],int(os.environ.get('JCOL',arm))),('JT',rings['JT'],1),('T1',T1,1)]
 F=[f for i,f in enumerate(F) if i not in set(hole)]
 ids={}

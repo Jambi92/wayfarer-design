@@ -198,3 +198,10 @@ Head over-limit at L3 before: 12.2 % (L ear 19.1 %, R ear 16.9 %), head self-x 1
   - T1 — between JT and the outer loop.
 - Transitions ring 2 (10) → A3 (18) and T1 (18) → outer (34) by angle/arc-length cells (fans + triangles: 34 (R) / 72 (L) triangles). Ownership: A3–J arm colour, JT/T1 trunk.
 - Result: 0 coarse self-x, closed, oriented. L4 self-x in the axillae (final level Nearest-only): R 5418 → 639, L 2103 → 203; full stack with final Project: axillae 11794 → 2242; p2s max 61 → 10 mm (the result no longer folds across the slit).
+
+### Tail root + natal cleft (designed annulus, `tailrings.py` + `axdesign.py`, cage `cage_Y5`)
+- Source: the tail hangs free below z ≈ 104.75 (its underside separate from the buttocks); from z 104.8 to 117 it joins the back with two narrow lateral creases (tips x ≈ −2 / 6.5, y ≈ −23.5…−26); the creases converge at a concave kink (2.5, −27.3, 117.1). Below the tail the natal cleft is a V notch at x = 2 whose tip runs from (−29, z 104.5) to (−36, z 100).
+- Tail colour 16 added (source: the trunk component on the tail side of the junction ring; cage: tail-tube verts by nearest source colour).
+- Annulus from the tail ring at y −11.5 (8 verts) to a 30-vertex body loop (crotch-patch back row, buttocks, back ring z 123); rings A3, A4 (tail), JA (tail lip), J (junction: crease tips z 105–116, kink top, bottom at the tail/cleft meeting point (2, −27.6, 104.8)), JT (body lip), T1 (bottom columns placed on the cleft: tip (2, −30, 103.4), walls y −28).
+- The first version folded at L1 because the old back ring (z 117.4) lies inside the body below the junction top; the hole was grown up to the z 123 ring.
+- Result: 0 coarse self-x; tail-root self-x 0 at L1–L4; back-pelvis cluster over 3 mm 1395 pts (max 24 mm) → 37 pts (max 7 mm, cleft top).
