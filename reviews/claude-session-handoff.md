@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-19 (RP1E Gorrund contact-zone recovery IN PROGRESS — UI authoring; hands + axillae + feet done).
+Updated: 2026-10-19 session 4 (RP1E IN PROGRESS — cavity sub-cages designed in the cloud under ruling 3816926; not yet imported into the PC file).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -42,7 +42,17 @@ Updated: 2026-10-19 (RP1E Gorrund contact-zone recovery IN PROGRESS — UI autho
   - Both axillae are re-laid out to the cage_e30 design.
   - Both feet are the g5b sub-cage (shin ring A → S1–S5 → K → 4 toe tubes each; the 5th toe is fused in the source).
   - Coarse-cage self-intersections: 0.
-- Remaining:
+- SESSION 4 STATE (cloud designs, nothing imported into the PC file yet; v006 unchanged):
+  - Design chain (all in /home/claude/stc/rp1e, copies in reviews/rac-rp1e-evidence/designs/, tools in tools/rac/rp/rp1e/):
+    cage_g5b (= UI v006) → ears `eardesign4.py` (cage_EL → cage_ELR) → jaw rings `jawrings2.py jspec1.json` (cage_JS1) →
+    thigh rings `ringfit.py th3.json` + `slidering.py` (cage_TH3 → cage_TH4) → pelvis-front/crotch `crotch4.py pdesign7.json` (cage_P9) →
+    axillae `axrings.py` + `axdesign.py` R then L (cage_X1 → cage_X2, holes axholeR2/axholeL2 mapped with mapids.py) →
+    tail root/natal cleft `tailrings.py` + `axdesign.py` T (cage_Y5, hole tailhole2.json, T1CLEFT=103.4,-30.0,-28.0,2.0 JOFF=0.34).
+    Each step removes/renumbers verts; the *_ear*/_crotch/_ax*.json files hold rings, holes and 'removed' lists.
+  - Ownership colours: source col_r2.npy (recolour.py + tailcol.py: trunk 1, head 2, L/R arm 4/5, L/R hand 3/12, flap 9, L/R leg 10/11, L/R foot 6-8/13-15, tail 16); cage colours from cagerecol.py / design scripts / tailrecol.py; targets tg_r2m5 (`targets.py col_r2.npy tg_r2m5 5.0 0.7`).
+  - Sim: `bsim6.sh TAG CAGE COL tg_r2m5 4 PN <FINALN> 0 2` with FNSMR=0 and FINALN = all colours except 2 → final level Project only on the head. L4 now: self-x 1551 (axilla 842, feet R 289, head 168 (ear horn roots, ear canal mouth), hand R 105, perineum 132); general over 3 mm 0.38 %, head over 1.5 mm 1.24 %.
+  - Next: fix the A-class residuals (ear horn folds, hands digit ownership — regenerate hand digit segmentation, feet webs), muzzle/nostrils, then classify L4 self-x A/B with gaps, write the checkpoint or continue; then UI import of the designs (provenance contract) into v007.
+- Remaining (pre-session-4 list):
   1. (done) Feet and toes — see RP1E_progress.md "Feet authored in the UI".
   2. (re-scoped 2026-10-19 after the full-body sim, see RP1E_progress.md "Full-body diagnosis after the feet") — the cage misses four cavities/features; each needs explicit topology, designed in the cloud and authored in the UI:
      a. EARS (head identity zone, T-2 max 1.5 mm): the cage has no ear at all (just the head side). Each pinna (helix rim, concha cup ≈ 2.4 cm deep opening forward/laterally, inner ridges; x ±6…20, y −42…−58, z 190–205) needs a sub-cage "bag": base loop round the ear root → outer wall rings → helix rim → inner wall → concha floor cap.
