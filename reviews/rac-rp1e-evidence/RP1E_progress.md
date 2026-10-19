@@ -151,3 +151,31 @@ trunk 1; limbs + head/neck (> 183.4) 2; hands 3; feet 6/7/8 (= col_foot2 3/4/5 +
   - `hpatch.py` harmonic radial patch: 148, the source patch not being a disk.
   - The coarse head cage has no clean loop around the ear; the ears need hand-designed sub-cages with their own base ring and transition strip.
 - Interim decision memo for the author: `reviews/claude-rac-rp1e-interim-status-and-decision-memo.md`.
+
+## Custom cavity rebuild under ruling 3816926 (cloud design, 2026-10-19 session 4)
+Baseline = UI cage v006 (`cage_g5b`), provisional colours `cage_b4_col`, targets `tg_b4`, sim `bsim3.sh … 3` (L1–L3).
+Head over-limit at L3 before: 12.2 % (L ear 19.1 %, R ear 16.9 %), head self-x 1393.
+
+### Ears (designed sub-cages, `eardesign4.py`)
+- Source study (`earslice.py`, `sl2.py`): the pinna is a lateral blade from x ≈ 15 to 19.9 (L; R mirrored about x = 2.0, tip −15.5), crescent cross-sections in x-slices, cup facing −y; the concha continues into a blind canal along +y (closed y-slice loops from y −47 to −43.3, centre ≈ (12.5, y, 198)).
+- Design per ear:
+  - hole = the coarse ear lump + 1 face ring (+ faces of 2 named cage verts on the L/R back head) → 26-vertex (L) / 24-vertex (R) base loop of existing cage verts;
+  - transition ring T (lerp ½ base→first crescent, 2 smoothing passes);
+  - 7 crescent rings = source x-slice loops at x = 15.6…19.6 (R 15.6…19.25 mirrored), resampled to the base count, cyclically aligned;
+  - tip cap zipped from the horn (farthest point);
+  - canal: the T–R0 faces over the canal mouth are removed (L ring indices 1–6, R 10–14); T on the mouth's inner edge at y −48; 5 canal rings = source y-slice loops at y −47 … −43.9; zip cap.
+- Result `cage_ELR` (both ears): 0 coarse self-x, closed, consistently oriented.
+  - L3 self-x: L ear 424 → 0, R ear 552 → 0.
+  - L ear over 1.5 mm 19.1 % → 1.8 % (max 37.9 → 5.5 mm); R ear 16.9 % → 2.1 % (max 34.9 → 8.5).
+  - head over 12.2 % → 4.6 %.
+
+### Jaw / chin–neck corners (`jawrings2.py`, spec `jspec1.json`)
+- The over-limit "jaw pocket" is two re-entrant corners where the narrow lower-jaw tongue (x −7…10, y −45…−62) meets the neck front (y ≈ −46), z 174–181; the cage rings there were wide ellipses enclosing the tongue and the air beside it.
+- Rings z 172/175/178/181 (24 verts each, topology unchanged) re-placed on the source z-outlines (z 172, 175.3, 178, 181) with anchors at the tongue tip corners, tongue sides and the two neck corners.
+- Result `cage_JS1`: 0 coarse self-x; L3 head self-x 417 → **0**; corner over-limit 37 % → 1.8–2.8 % (max 20 → 2.4 mm); head over 4.6 % → 2.0 %, head max 8.5 mm (R ear), p95 0.98.
+- Rejected variants: full-ring loop cut at the throat (J1/J2, +2000 self-x in the cage lobe at the neck sides), vertex moves into the hook (M1–M3), arc-length rings without anchors (JR1–JR6, columns twist, 248–434 self-x).
+
+### Pouch (in progress)
+- Source study (y/x/z slices, renders): the inner thighs nearly meet below the crotch (min gap 0.6 cm at z 94–98); the crotch roof is the underside of the belly flap (z ≈ 99–100, y −55…−44); on both sides the groin creases are slits ≈ 0.3–0.9 cm wide running up/outward 3–5 cm from the gap's top corners (tips x −4.7 / 6.3, z 102–103) — the pockets under the flap. The cage bridges all of it with one coarse saddle (centre verts 626/471/473 at z 100).
+- Thigh rings z 89/94 fitted to the source outlines (`ringfit.py`): no change in the crotch deviation (it is the roof and the slits, not the thighs).
+- General-zone clusters over 3 mm at L3 (`clusters.py`): pouch front 2859 pts (max 33.8), perineum back ridge 1676 (29.1), R axilla 1217 (29.1), L axilla 569 (18.7), R back axilla 183, L arm 123, small others.
