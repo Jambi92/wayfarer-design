@@ -205,3 +205,19 @@ Head over-limit at L3 before: 12.2 % (L ear 19.1 %, R ear 16.9 %), head self-x 1
 - Annulus from the tail ring at y −11.5 (8 verts) to a 30-vertex body loop (crotch-patch back row, buttocks, back ring z 123); rings A3, A4 (tail), JA (tail lip), J (junction: crease tips z 105–116, kink top, bottom at the tail/cleft meeting point (2, −27.6, 104.8)), JT (body lip), T1 (bottom columns placed on the cleft: tip (2, −30, 103.4), walls y −28).
 - The first version folded at L1 because the old back ring (z 117.4) lies inside the body below the junction top; the hole was grown up to the z 123 ring.
 - Result: 0 coarse self-x; tail-root self-x 0 at L1–L4; back-pelvis cluster over 3 mm 1395 pts (max 24 mm) → 37 pts (max 7 mm, cleft top).
+
+### UI import v007 (ruling 3816926 §3) — DONE
+- Whole designed cage (cage_Y5 with the 1664 v006 vertices snapped to their v006 coordinates) frozen as `design_v007` (2708 V / 2755 F) and imported in the Blender UI (File > Import > Wavefront, Apply Rotation, replace Cylinder, rename) into `GO_U_REF_RP1E_retopo_v007.blend` (sha 349c7504…7d41). v005/v006 untouched.
+- Verification: index-identical vertex order and faces, max deviation 0.00025 mm, closed, manifold, Euler 2, 1 component, consistent orientation, 0 coarse self-x. Record: `import_v007/PROVENANCE.md`.
+- Found: one degenerate triangle in the design (L axilla verts 2596/2597 coincide) → class A; fixed in design v008a.
+
+### Progressive gate on the UI cage v007 (stack PN, FINALN = all but head, FNSMR 0, SMR 2) — `gate_v007/`
+| level | self-x | axilla | perineum | head | hands L/R | feet L/R |
+|---|---|---|---|---|---|---|
+| L1 | 6 | 2 | 4 | 0 | 0/0 | 0/0 |
+| L2 | 49 | 38 | 4 | 0 | 0/0 | 0/7 |
+| L3 | 299 | 185 | 24 | 15 | 8/9 | 0/58 |
+| L4 | 1563 | 848 | 139 | 169 | 11/99 | 5/292 |
+- L4 deviation (s2p median/p95/max mm, over-limit %): general 0.022/0.26/20.3, 0.38 %; head 0.028/0.45/10.6, 1.24 %; hand L 2.78 %, hand R 1.29 %; feet 1.07/0.93 %; tail root 0.00 %.
+- L4 clusters (`classify.py`, `gate_v007/cls_V7PN.json`): contact-type (opposed normals, dot < −0.7, source gap ≤ 1.5 mm): R axilla front apex 369 / R apex 187 / L apex 163 / R back 45, R foot web 254, R hand bridge 92 — candidates for class B (to be measured per §6). Fold-type (dot > 0 or no source gap) = class A: ear horn roots L 70+12 / R 86, perineum crush lines 96+18, R axilla back crease (gap 12 mm) 30, flap lip 17+5, small 1–6-pair clusters.
+- Not yet at the §6 checkpoint: class-A items remain. Next: repair them in design v008 (cloud), re-import.
