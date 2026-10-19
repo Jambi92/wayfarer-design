@@ -1,27 +1,32 @@
 import numpy as np, sys
-w=np.load('/home/claude/stc/rp1/weld.npz'); V=w['V'].astype(float); F=w['F'].astype(np.int64)
-s=sys.argv[1]; sg=-1 if s=='R' else 1
-fn=np.cross(V[F[:,1]]-V[F[:,0]],V[F[:,2]]-V[F[:,0]]); fn/=np.linalg.norm(fn,axis=1,keepdims=True)+1e-12
-fc=V[F].mean(1)
-reg=(fc[:,0]*sg>10)&(fc[:,0]*sg<34)&(fc[:,2]>120)&(fc[:,2]<172)&(fc[:,1]>-55)&(fc[:,1]<-5)
-idx=np.where(reg)[0]; Fr=F[idx]
-import collections
-ed=collections.defaultdict(list)
-for k,f in zip(idx,Fr):
-    for a,b in ((f[0],f[1]),(f[1],f[2]),(f[2],f[0])): ed[(min(a,b),max(a,b))].append(k)
-cv=[]
-for (a,b),fs in ed.items():
-    if len(fs)!=2: continue
-    f1,f2=fs; n1,n2=fn[f1],fn[f2]; ang=np.degrees(np.arccos(np.clip(n1@n2,-1,1)))
-    if ang<35: continue
-    # concave if the other face's centroid is on the positive side of face1 plane
-    conc=(fc[f2]-fc[f1])@n1>0
-    if conc: cv.append((a,b,ang))
-cv=np.array(cv); print(s,'concave sharp edges',len(cv))
-P=(V[cv[:,0].astype(int)]+V[cv[:,1].astype(int)])/2
-np.save('crease_%s.npy'%s,np.c_[P,cv[:,2]]); np.save('creasev_%s.npy'%s,np.unique(cv[:,:2].astype(int)))
-import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
-fig,ax=plt.subplots(1,3,figsize=(21,7))
-for a,(i,j) in zip(ax,((0,2),(1,2),(0,1))):
-    a.scatter(P[:,i],P[:,j],s=3,c=cv[:,2],cmap='viridis'); a.set_aspect('equal'); a.grid(alpha=.3)
-plt.savefig('crease_%s.png'%s,dpi=55,bbox_inches='tight')
+from earsl import slice_loops
+from scipy.spatial import cKDTree
+def front_curve(z, xr=(-14,16), ymax=-44):
+    best=None
+    for P,c in slice_loops(2,z):
+        m=(P[:,0]>xr[0])&(P[:,0]<xr[1])&(P[:,1]<ymax)
+        if m.sum()>(best[0] if best else 0): best=(m.sum(),P,m)
+    return best[1],best[2]
+def spikes(z, W=1.0, prom=0.8):
+    P,m=front_curve(z); n=len(P); out=[]
+    idx=np.where(m)[0]
+    # local maxima of y along the closed curve (backward = +y), restricted to front window
+    y=P[:,1]
+    for i in idx:
+        win=[(i+k)%n for k in range(-40,41)]
+        if y[i]<y[win].max(): continue
+        # walk both directions until walls are W apart: left branch / right branch
+        a=[(i-k)%n for k in range(1,400)]; b=[(i+k)%n for k in range(1,400)]
+        A=P[a][:,:2]; Bc=P[b][:,:2]; T=cKDTree(Bc)
+        d,j=T.query(A)
+        ka=np.argmax(d>W) if (d>W).any() else None
+        if ka is None or ka<2: continue
+        mouthA=P[a[ka]]; mouthB=P[b[j[ka]]]
+        depth=P[i,1]-0.5*(mouthA[1]+mouthB[1])
+        if depth<prom: continue
+        out.append(dict(tip=P[i],mA=mouthA,mB=mouthB,depth=float(depth),width=float(np.median(d[:ka]))))
+    return out
+if __name__=='__main__':
+    for z in np.arange(float(sys.argv[1]),float(sys.argv[2]),float(sys.argv[3])):
+        S=spikes(z)
+        print('z %.1f'%z,' | '.join('tip %s mA %s mB %s d %.1f w %.2f'%(s['tip'][:2].round(1),s['mA'][:2].round(1),s['mB'][:2].round(1),s['depth'],s['width']) for s in S))
