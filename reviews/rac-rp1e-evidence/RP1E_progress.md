@@ -49,3 +49,14 @@ Remaining hand folds: R middle/ring fused tips (repair zone), thumb crotches, fi
 4. Feet: toe segmentation and clefts.
 5. Hands: residual webs and crotch.
 6. UI build.
+
+## UI build log (Blender UI on the author PC, working file `GO_U_REF_RP1E_retopo_v005.blend`)
+- 2026-10-19: R hand sub-cage authored in the UI (manual vertex typing, no scripts in Blender):
+  - Wrist W0 → P1–P4 palm rings (10 verts each), P4 grid-fill cap (4 quads).
+  - Index (6 rings), middle (8), ring (8), pinky (6) tubes extruded from the cap quads; thumb (5 rings) extruded from the palmar radial P2–P3 quad.
+  - Each ring checked against the design median in the N panel.
+  - One defect found and fixed: the index cap face survived its extrusion (non-manifold) and the index tip was open; the cap face was deleted and the tip filled.
+- Cloud check of the saved file (`blendcage.py`): 1858 verts, 1856 quads, 0 boundary, 0 non-manifold, 1 component, genus 0, no duplicate faces.
+- R hand UI vertices vs design cage e21: max 0.08 mm, mean 0.04 mm (176 verts).
+- UI method: per-ring Hide Unselected in Top ortho; vertices clicked at known screen positions and typed in the N panel (`tubes_ui.py`, `pb.py`).
+- Next: L hand (same method), then axillae, perineum, head, feet.
