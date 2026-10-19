@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-19 session 4 (RP1E IN PROGRESS — cavity sub-cages designed in the cloud under ruling 3816926; not yet imported into the PC file).
+Updated: 2026-10-19 session 5 (RP1E IN PROGRESS — cavity cage imported (v009.blend, verified); checkpoint residual report written; A-class residuals remain, mainly hand/foot web clefts).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -42,7 +42,15 @@ Updated: 2026-10-19 session 4 (RP1E IN PROGRESS — cavity sub-cages designed in
   - Both axillae are re-laid out to the cage_e30 design.
   - Both feet are the g5b sub-cage (shin ring A → S1–S5 → K → 4 toe tubes each; the 5th toe is fused in the source).
   - Coarse-cage self-intersections: 0.
-- SESSION 4 STATE (cloud designs, nothing imported into the PC file yet; v006 unchanged):
+- SESSION 5 STATE (read this first):
+  - PC: `GO_U_REF_RP1E_retopo_v009.blend` = design v009 (3013 V / 3113 F) imported via File > Import > Wavefront, verified index-identical (0.00025 mm). v007.blend = design v007. v008.blend = stale OBJ copy (superseded, keep). Blender window left open with v009 (the one window used this session).
+  - UI recipe (works): File(22,19) > hover Import(50,174) > slide (170,176) > Wavefront (170,209); click file row; Import button (546,607); mouse over viewport, ctrl+a > Rotation (536,499); outliner row 1 (1250,58) / row 3 (1250,70); Delete key over viewport; F2 rename with single key presses (type action does not work in popups; works in the file browser name field); ctrl+shift+s, double-click name (340,606), ctrl+a, type name, Return, click Save As (546,606). device_commit may keep a stale copy if the file name is reused: always use a new OBJ name and re-stage to check the sha.
+  - Cloud current design: v010c (`reviews/rac-rp1e-evidence/designs/design_v010c.npz`, rings `design_v010_rings.json`, smoothing group `fsm_v3.txt`) — not yet imported.
+  - Sim: `runv.sh TAG CAGE COL PN 1,3,...,16` with env `FINALSM=3 FSMF=0.5 FSMV=<fsm file>` (regional final smoothing), base `bsim6.sh` (FNSMR 0, SMR 2). Analysis: classify.py (now with amp), devclass.py (deviation clusters with gap/openness), regstat.py TAG box.
+  - Checkpoint report: `reviews/claude-rac-rp1e-custom-cavity-checkpoint.md` (v010c: L4 self-x 992, B candidates 786, A ≈206; T-1 0.07 %, T-2 head 0.49 %).
+  - NEXT: (1) hand + foot inter-digit web floors as explicit creases (lip/floor/lip) per cleft — the main A block (exposed bridged webs, up to 14 mm); (2) L axilla z153 sub-pocket + pinch/void (ruling candidate); (3) nostril slits, R axilla tips, natal-cleft top, groin end R, philtrum; (4) micro-folds; (5) import each new design (new OBJ name), re-run gate; then STOP line per ruling §6/§9.
+  - Scratch bundle: `reviews/rac-rp1e-evidence/scratch/rp1e_s5.tgz` (all cloud scripts + latest npz) — untar into /home/claude/stc/rp1e (needs /home/claude/stc/rp1/weld.npz, zones.npz, venv /home/claude/stc/bin/python3 with bpy).
+- SESSION 4 STATE (historical):
   - Design chain (all in /home/claude/stc/rp1e, copies in reviews/rac-rp1e-evidence/designs/, tools in tools/rac/rp/rp1e/):
     cage_g5b (= UI v006) → ears `eardesign4.py` (cage_EL → cage_ELR) → jaw rings `jawrings2.py jspec1.json` (cage_JS1) →
     thigh rings `ringfit.py th3.json` + `slidering.py` (cage_TH3 → cage_TH4) → pelvis-front/crotch `crotch4.py pdesign7.json` (cage_P9) →
