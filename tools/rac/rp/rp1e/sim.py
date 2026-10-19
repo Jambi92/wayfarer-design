@@ -50,10 +50,27 @@ for k in range(1, lev + 1):
     for r in range(nsm):
         sm = cage.modifiers.new('sm%d_%d' % (k, r), 'SMOOTH'); sm.factor = float(os.environ.get('SMF', '0.5')); sm.iterations = int(os.environ.get('SMI', '2'))
         for c in cols: sw('r%d_%d_%d' % (k, r, c), c, 'N')
+    if k == lev and os.environ.get('FINALPOST'):
+        # extra post steps at the final level, e.g. 'PN' = short Project then Nearest, limit FPLIM (m)
+        lim0 = lim; lim = float(os.environ.get('FPLIM', '0.003'))
+        for step in os.environ['FINALPOST']:
+            for c in cols:
+                if step == 'P' and c in [int(x) for x in os.environ.get('FPSKIP', '').split(',') if x]: continue
+                sw('post%s_%d' % (step, c), c, step)
+        lim = lim0
     if k == lev and os.environ.get('FINALN') and nsm == 0:
         # colours listed in FINALN get Smooth+Nearest x2 at the final level (feet), others just the P/N above
         for r in range(int(os.environ.get('FNSMR', '2'))):
             sm = cage.modifiers.new('fsm%d' % r, 'SMOOTH'); sm.factor = 0.5; sm.iterations = 2
             g = cage.vertex_groups.new(name='fsm%d' % r); g.add([int(i) for i in np.where(np.isin(col, NOP))[0]], 1.0, 'REPLACE'); sm.vertex_group = g.name
             for c in NOP: sw('fr%d_%d' % (r, c), c, 'N')
+    if k == lev and os.environ.get('FINALSM'):
+        # last step: plain Smooth (no re-projection), optional colour list FSMCOL
+        fc = [int(x) for x in os.environ.get('FSMCOL', '').split(',') if x]
+        sm = cage.modifiers.new('finalsm', 'SMOOTH'); sm.factor = float(os.environ.get('FSMF', '0.5')); sm.iterations = int(os.environ['FINALSM'])
+        if fc:
+            g = cage.vertex_groups.new(name='finalsm'); g.add([int(i) for i in np.where(np.isin(col, fc))[0]], 1.0, 'REPLACE'); sm.vertex_group = g.name
+        if os.environ.get('FSMV'):
+            ids = [int(t) for t in open(os.environ['FSMV']).read().split()]
+            g = cage.vertex_groups.new(name='finalsmv'); g.add(ids, 1.0, 'REPLACE'); sm.vertex_group = g.name
     export(k)
