@@ -136,3 +136,18 @@ trunk 1; limbs + head/neck (> 183.4) 2; hands 3; feet 6/7/8 (= col_foot2 3/4/5 +
   - The folds are single-colour sheets folding (L2: arm–arm 126, trunk–trunk 112, arm–trunk 24) from cage faces with mixed vertex colours that straddle the crease (e.g. R faces 495, 509, 484; L 715 [2,1,2,1]).
   - Automatic relayouts (`axfit.py` min-cut, `axfit2.py` junction ring on the crease, `axfit3.py` crease path + flood colours) all made it worse (coarse 2–7, L2 401–583). The arm root is a nest of tilted 10-vertex rings (rings 9–11 near-vertical loops about the arm root, ring 11 ≈ the crease U at 1–4.6 cm, ring 12 = shoulder junction). Junction-on-crease needs explicit pocket topology, not just moves.
 - Conclusion: four cavities — mouth slit, pouch, both axilla slits, and the jaw/chest contact — need explicit pocket topology in the cage (an inward-extruded invagination following each cavity, with the colour boundary at its mouth/crease) before the progressive gates can pass. The perineum itself is clean (0 self-intersections through L2), but the pouch deviation is large.
+
+## Ear / pocket prototypes (cloud, 2026-10-19 session 3)
+- The head's over-limit points (> 1.5 mm, L3) split as: L ear 1631, R ear 2014, jaw underside ≈ 1850, lower muzzle front ≈ 210, nostril ≈ 110.
+- Source ear (`srcview.py`, `earsec.py`): a detailed pinna. The helix is a ≈ 1 cm thick blade rising to z 204.5 and folding forward (y −48…−54). Below it are the antihelix ridges and a concha pocket ≈ 4 cm deep, axis (−0.29, 0.94, 0.17) for L, hidden under the helix. The coarse head cage has no ear at all.
+- `earpocket.py` (inset of 2 cage faces + 3 section rings + cap), L ear, `INS=0.3 SINK=0.3`, faces 1162+1013:
+  - 0 coarse self-intersections;
+  - L-ear over-limit share 19.1 % → 9.6 % (p95 23 → 8.6 mm);
+  - the concha itself is now covered (y −48…−42: 1581 → 137 points over);
+  - the rest is the uncovered helix blade (y −48…−54, median 10–21 mm).
+- Generic generators failed:
+  - `pocket.py` auto region: jaw pockets +35/+46 and R ear +11 coarse self-intersections, the regions being badly placed;
+  - `eardesign.py` radial mug: 30, because the hole boundary is not star-shaped about the concha axis;
+  - `hpatch.py` harmonic radial patch: 148, the source patch not being a disk.
+  - The coarse head cage has no clean loop around the ear; the ears need hand-designed sub-cages with their own base ring and transition strip.
+- Interim decision memo for the author: `reviews/claude-rac-rp1e-interim-status-and-decision-memo.md`.
