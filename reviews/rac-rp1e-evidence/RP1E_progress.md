@@ -102,3 +102,19 @@ Remaining hand folds: R middle/ring fused tips (repair zone), thumb crotches, fi
   - L3: — / 9 746 / 61.
   - L4: 358 (L 14, R 344). All are in the narrow plantar web clefts (hallux/2nd mainly, R).
   - L4 deviation, foot zones: median 0.02 mm, p95 0.17–0.20 mm, over-max share 0.8–1.0 % (RP1: 45–55 %). The maxima (9–13 mm) are nail spikes and deep inter-toe cleft walls.
+
+## Feet authored in the UI (2026-10-19 session 3) — `GO_U_REF_RP1E_retopo_v006.blend`
+- Working file v006 (copy of v005; v005 unchanged). All shape changes made in the Blender UI by vertex click + N-panel typing.
+- Order: delete faces below ring A (both feet) → extrude S1…S5, K ring by ring (alt+H, Non-Manifold select, median check, E/Esc, G Z −0.03, Hide Unselected, place each vertex; `uigen2.py` Top/Front planner) → toe tubes.
+- Cap: the design's 6 cap quads are all consumed by the toes, so K gets no faces. Instead 3 split edges per foot (d2–p2, d3–p3, d4–p4, made with F on 2 verts) cut K into the 4 toe base loops.
+- Toe tubes (`toes_ui.py` planner, Front ortho, sx = 598.25 + 10.6·x, sy = 427.5 − 10.6·z in cm):
+  - Round 1: t1 + t3 of both feet (base loops click-selected; the implicitly selected d2–d3/p2–p3 bridge edges were deselected in edge mode before E).
+  - Round 2: t2 + t4 (Non-Manifold select). Here the bridge edges d3–d4/p3–p4 were implicitly selected and got extruded with the loops, giving a 3-ring strip per side (12 stray faces).
+    Fix: Non-Manifold (multiple faces) select → face mode → Delete Faces removed the strips but also the t2/t4 side walls (12 faces, all corners selected); the 4 resulting ladder holes were refilled one at a time with Grid Fill (Span 1; offset 0 for the L walls, 3 for R t2, 0 for R t4), each checked against the design.
+  - Every ring checked after saving with `cktoes.py` (all new verts on target); low-clearance clicks (< 10 px) verified in the N panel before typing; tips closed with F (6-vertex tips as 2 quads, as designed).
+  - Normals: Recalculate Outside over the whole mesh.
+- Result (cloud check of the saved file, `cmpg5b.py`): 2096 V, 2094 quads, 0 boundary, 0 non-manifold, Euler 2, consistent orientation, positive volume.
+  - Identical topology to the frozen design cage `cage_g5b` (every face matches); max vertex deviation 0.081 mm (typing precision).
+  - Coarse-cage self-intersections (`selfx_npz.py`): **0** (was 2 at the R foot in v005).
+- v006 sha256 after the feet: 46fc46ce8f850d5a69576f5e7b1362f3bc9d522a7a3e5bc513ad302ace15f79c.
+- Next: perineum, head (jaw line / ear cups), hand residual webs and thumb crotches; then colour groups (feet as 6/7/8) + stack, progressive gates.

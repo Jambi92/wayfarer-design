@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-19 (RP1E Gorrund contact-zone recovery IN PROGRESS — UI authoring; hands + axillae done).
+Updated: 2026-10-19 (RP1E Gorrund contact-zone recovery IN PROGRESS — UI authoring; hands + axillae + feet done).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -33,19 +33,20 @@ Updated: 2026-10-19 (RP1E Gorrund contact-zone recovery IN PROGRESS — UI autho
   - final line "RP1E GORRUND PRODUCTION RETOPO PASS / READY FOR FAMILY-PILOT AUTHOR REVIEW" or "RP1E MANUAL CONTACT-ZONE RECOVERY FAILED / AUTHOR DECISION REQUIRED";
   - STATUS paragraph, queue line, handoff update, push. Then STOP.
 - Progress log: reviews/rac-rp1e-evidence/RP1E_progress.md (method, numbers, UI build log). Commits ec55a37 (R hand), 97d6077 (L hand), d6b3d36 (axillae).
-- PC working file: E:\UnrealProjects\Wayfarer 5.8\RaceBodies\production\Gorrund\RP1\GO_U_REF_RP1E_retopo_v005.blend.
+- PC working file: E:\UnrealProjects\Wayfarer 5.8\RaceBodies\production\Gorrund\RP1\GO_U_REF_RP1E_retopo_v006.blend (v005 kept unchanged = pre-feet state).
   - Open in Blender 5.2.2, Edit Mode on cage object "Cylinder" (identity matrix; Local coords in m).
   - The weld source is also in the file.
-- Current cage: 1894 V / 1892 quads, closed, 0 non-manifold, genus 0, consistent normals.
+- Current cage (v006, sha 46fc46ce…5f79c): 2096 V / 2094 quads, closed, 0 non-manifold, genus 0, consistent normals. Identical topology to the frozen foot design cage_g5b (max 0.081 mm). Evidence: reviews/rac-rp1e-evidence/cage_ui_v006_feet.npz.
   - The L and R hands are separate sub-cages: palm rings P1–P4 plus 5 digit tubes each.
   - Both axillae are re-laid out to the cage_e30 design.
-  - Coarse-cage self-intersections: 2, both at the R foot (toe region, z ≈ 2 cm).
+  - Both feet are the g5b sub-cage (shin ring A → S1–S5 → K → 4 toe tubes each; the 5th toe is fused in the source).
+  - Coarse-cage self-intersections: 0.
 - Remaining:
-  1. Feet and toes (also fixes the 2 R-foot pairs).
+  1. (done) Feet and toes — see RP1E_progress.md "Feet authored in the UI".
   2. Perineum.
   3. Head: jaw line and ear cups.
   4. Hand residual webs and thumb crotches.
-  5. Colour vertex groups col1..col5 and the Shrinkwrap stack. The stack per level is Subsurf → Nearest per colour → 2 × [Smooth → Nearest]; the final level is Project ± 2 cm + Nearest.
+  5. Colour vertex groups col1..col5 and the Shrinkwrap stack. The stack per level is Subsurf → Nearest per colour → 2 × [Smooth → Nearest]; the final level is Project ± 2 cm + Nearest. Feet need their own groups (6/7/8: rest 3, toes 1+3 → 5, toes 2+4 → 4 per col_foot2) whose final level is Nearest + Smooth only (no Project).
   6. Progressive gates at L1–L4 with sim.py, selfx and dev, on the cloud copy of the UI cage.
   7. Save production v002 (never overwrite).
   8. Full gate: T-1/T-2/T-3/T-6/T-7, nails, self-intersections 0, visual sheets.
@@ -56,6 +57,7 @@ Updated: 2026-10-19 (RP1E Gorrund contact-zone recovery IN PROGRESS — UI autho
     - `blendcage.py -- file.blend out.npz` reads the cage from the staged .blend (run with /home/claude/stc/bin/python3).
     - `selfx.py -- cage.npz out.json` counts self-intersecting face pairs (bpy BVH).
     - `chk.py cur.npz` diffs against the baseline.
+- Toe-tube UI notes (feet): Front ortho calibration sx = 598.25 + 10.6·x, sy = 427.5 − 10.6·z (cm) after Top calib + View > Viewpoint > Front; Right view sx = 598.25 + 10.6·(y + 44). When extruding several loops that share K-ring corners, edges between selected corners get implicitly selected and extruded — deselect them in edge mode first (shift-click toggles). Grid Fill works on one closed loop at a time; check Span/Offset against the design.
 - UI vertex-move method (proven: 136/136 axilla verts exact):
   1. alt+H.
   2. Front ortho. In N-panel View tab → 3D Cursor, type the region centre.
