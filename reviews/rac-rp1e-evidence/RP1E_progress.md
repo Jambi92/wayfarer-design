@@ -60,3 +60,15 @@ Remaining hand folds: R middle/ring fused tips (repair zone), thumb crotches, fi
 - R hand UI vertices vs design cage e21: max 0.08 mm, mean 0.04 mm (176 verts).
 - UI method: per-ring Hide Unselected in Top ortho; vertices clicked at known screen positions and typed in the N panel (`tubes_ui.py`, `pb.py`).
 - Next: L hand (same method), then axillae, perineum, head, feet.
+- 2026-10-19: L hand sub-cage authored in the UI with the same method:
+  - Wrist W0 → P1–P4 palm rings, P4 grid-fill cap.
+  - Index (7 rings), middle (7), ring (7), pinky (6) and thumb (5) tubes.
+  - Every ring median matched the design in the N panel.
+  - Same first-tube defect as R (surviving index cap face, open tip). Fixed the same way.
+  - Normals recalculated outside.
+- Cloud check of the saved file: 1894 verts, 1892 quads, 0 boundary, 0 non-manifold, 1 component, genus 0. Edge orientation is consistent and the volume is positive.
+- L hand UI vertices vs design: max 0.09 mm, mean 0.04 mm (168 verts).
+- Coarse-cage self-intersections (`selfx.py`, BVH face pairs with no shared vertex): 34.
+  - Both hands: 0.
+  - The rest are in the L and R axillae (z 137–150) plus 2 at the R foot (z ≈ 2).
+- Next: axillae (UI moves from the zonefit design), R foot, then perineum, head, feet.
