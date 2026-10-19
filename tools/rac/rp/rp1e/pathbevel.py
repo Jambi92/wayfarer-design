@@ -47,8 +47,22 @@ for i in range(1,n):
     # side A: left of prv->p and of p->nxt. face with p->nxt is left of the forward edge; walk around p (towards prv)
     kA=edge_face(p,nxt); sideA=fan_side(p,kA,prv)
     kB=edge_face(nxt,p); sideB=fan_side_rev(p,kB,prv)
-    V.append(S['A'][i-1]); cc.append(cc[p]); a=len(V)-1
-    V.append(S['B'][i-1]); cc.append(cc[p]); b=len(V)-1
+    pa,pb=S['A'][i-1],S['B'][i-1]
+    if pa=='auto' or pb=='auto':
+        from scipy.spatial import cKDTree
+        global _S,_kd
+        try: _kd
+        except NameError:
+            _S=np.load('/home/claude/stc/rp1/weld.npz')['V'].astype(float); _kd=cKDTree(_S)
+        P0=np.array(V[p]); off=float(S.get('lipoff',0.6))
+        def lip(side):
+            c=np.mean([np.mean([V[x] for x in F[k]],axis=0) for k in side],axis=0); d=c-P0; d/=np.linalg.norm(d)+1e-9
+            q=P0+off*d
+            return (_S[_kd.query(q)[1]] if S.get('lipsnap',True) else q).tolist()
+        if pa=='auto': pa=lip(sideA)
+        if pb=='auto': pb=lip(sideB)
+    V.append(pa); cc.append(cc[p]); a=len(V)-1
+    V.append(pb); cc.append(cc[p]); b=len(V)-1
     A[p]=a; B[p]=b
     for k in sideA: repl[(k,p)]=a
     for k in sideB: repl[(k,p)]=b
