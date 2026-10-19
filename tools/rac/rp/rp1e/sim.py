@@ -38,13 +38,22 @@ BASEMODE = MODE
 for k in range(1, lev + 1):
     MODE = os.environ.get('FINALMODE', BASEMODE) if k == lev else BASEMODE
     m = cage.modifiers.new('sub%d' % k, 'SUBSURF'); m.levels = 1; m.render_levels = 1
+    NOP = [int(x) for x in os.environ.get('FINALN', '').split(',') if x] if k == lev else []
     if 'P' in MODE:
-        for c in cols: sw('p%d_%d' % (k, c), c, 'P')
+        for c in cols:
+            if c not in NOP: sw('p%d_%d' % (k, c), c, 'P')
     if 'T' in MODE:
         for c in cols: sw('t%d_%d' % (k, c), c, 'T')
     if 'N' in MODE:
         for c in cols: sw('n%d_%d' % (k, c), c, 'N')
-    for r in range(int(os.environ.get('SMR', '0')) if not (k == lev and 'FINALMODE' in os.environ) else int(os.environ.get('FSMR', '0'))):
+    nsm = int(os.environ.get('SMR', '0')) if not (k == lev and 'FINALMODE' in os.environ) else int(os.environ.get('FSMR', '0'))
+    for r in range(nsm):
         sm = cage.modifiers.new('sm%d_%d' % (k, r), 'SMOOTH'); sm.factor = float(os.environ.get('SMF', '0.5')); sm.iterations = int(os.environ.get('SMI', '2'))
         for c in cols: sw('r%d_%d_%d' % (k, r, c), c, 'N')
+    if k == lev and os.environ.get('FINALN') and nsm == 0:
+        # colours listed in FINALN get Smooth+Nearest x2 at the final level (feet), others just the P/N above
+        for r in range(int(os.environ.get('FNSMR', '2'))):
+            sm = cage.modifiers.new('fsm%d' % r, 'SMOOTH'); sm.factor = 0.5; sm.iterations = 2
+            g = cage.vertex_groups.new(name='fsm%d' % r); g.add([int(i) for i in np.where(np.isin(col, NOP))[0]], 1.0, 'REPLACE'); sm.vertex_group = g.name
+            for c in NOP: sw('fr%d_%d' % (r, c), c, 'N')
     export(k)

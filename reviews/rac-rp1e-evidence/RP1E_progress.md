@@ -118,3 +118,21 @@ Remaining hand folds: R middle/ring fused tips (repair zone), thumb crotches, fi
   - Coarse-cage self-intersections (`selfx_npz.py`): **0** (was 2 at the R foot in v005).
 - v006 sha256 after the feet: 46fc46ce8f850d5a69576f5e7b1362f3bc9d522a7a3e5bc513ad302ace15f79c.
 - Next: perineum, head (jaw line / ear cups), hand residual webs and thumb crotches; then colour groups (feet as 6/7/8) + stack, progressive gates.
+
+## Full-body diagnosis after the feet (cloud sim of the v006 cage, 2026-10-19 session 3)
+Provisional colours (hand digits not separated — the hand segmentation files were lost with the old scratch space; hands = colour 3 for now):
+trunk 1; limbs + head/neck (> 183.4) 2; hands 3; feet 6/7/8 (= col_foot2 3/4/5 + 3, so the feet keep Nearest + Smooth at the final level while the body gets Project ± + Nearest). Targets `targets.py … 2.5 0.7`. Sim `sim.py` now has `FINALN=6,7,8` (per-colour final mode).
+- Coarse cage: 0 self-intersections.
+- Self-intersections by zone (L1 / L2 / L3): axillae 42 / 262 / 2278; head 28 / 130 / 1393; perineum 0 / 0 / 27; hands (provisional colours) – / – / 273; R toes 0 / 7 / 61.
+- T-1/T-2 at L3 (source→result median / p95 / max mm, share over max): general 0.065 / 0.89 / 33.8, 2.0 %; head 0.097 / 13.9 / 37.9, **12.2 %**; hands 0.6–1.6 %; feet 1.9 %; tail root 0 %.
+- Where the large source→result deviations are (clusters, Blender frame; y < 0 is front):
+  - **Mouth slit** at the muzzle sides (x ±6…20, y −43…−53, z 193–205): median 15–17 mm, p95 35 mm (≈ 3100 source points). The cage does not enter the mouth.
+  - **Pouch** (x −9…12, y −22…−55, z 98–115): median 12.6 mm, p95 30 mm (≈ 3250 points). Mid-sagittal sections show a thin belly flap at z ≈ 99–100 overhanging a pocket; the cage bridges under the flap.
+  - **Axilla front slits** (R x ≈ −19, L x ≈ 24; y −38…−44; z 142–155): median 10–12 mm. The slit is a 1–2 mm pocket that opens backwards into the armpit cavity and is sealed at the front; its top crease rises from z ≈ 141 (back) to ≈ 154 (front).
+  - **Under the jaw / chin–chest** (x −7…11, y −44…−56, z 173–182): median 7–8 mm.
+  - Lower muzzle front (z ≈ 182, y ≈ −62) ≈ 4 mm; nostril region (z ≈ 192, y ≈ −57) ≈ 3 mm.
+- Axilla analysis:
+  - Within the slit both walls carried the trunk colour (weight-based colours), so both cage sheets projected onto the same target. Wall-orientation ownership (`axcol2.py`) fixes most of it, but alone does not reduce the folds.
+  - The folds are single-colour sheets folding (L2: arm–arm 126, trunk–trunk 112, arm–trunk 24) from cage faces with mixed vertex colours that straddle the crease (e.g. R faces 495, 509, 484; L 715 [2,1,2,1]).
+  - Automatic relayouts (`axfit.py` min-cut, `axfit2.py` junction ring on the crease, `axfit3.py` crease path + flood colours) all made it worse (coarse 2–7, L2 401–583). The arm root is a nest of tilted 10-vertex rings (rings 9–11 near-vertical loops about the arm root, ring 11 ≈ the crease U at 1–4.6 cm, ring 12 = shoulder junction). Junction-on-crease needs explicit pocket topology, not just moves.
+- Conclusion: four cavities — mouth slit, pouch, both axilla slits, and the jaw/chest contact — need explicit pocket topology in the cage (an inward-extruded invagination following each cavity, with the colour boundary at its mouth/crease) before the progressive gates can pass. The perineum itself is clean (0 self-intersections through L2), but the pouch deviation is large.
