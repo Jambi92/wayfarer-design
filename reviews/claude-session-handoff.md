@@ -32,6 +32,7 @@ Updated: 2026-10-19 (RP1E Gorrund contact-zone recovery IN PROGRESS — UI autho
   - evidence reviews/rac-rp1e-evidence/;
   - final line "RP1E GORRUND PRODUCTION RETOPO PASS / READY FOR FAMILY-PILOT AUTHOR REVIEW" or "RP1E MANUAL CONTACT-ZONE RECOVERY FAILED / AUTHOR DECISION REQUIRED";
   - STATUS paragraph, queue line, handoff update, push. Then STOP.
+- RULING 3816926 (reviews/chatgpt-rac-rp1e-transcription-and-contact-scope-ruling.md): cloud-designed sub-cages may be brought in by Blender UI File > Import + UI join/merge (provenance: freeze design file, counts, hash; after import verify <= 0.10 mm vs design, only boundary stitching differs, 0 coarse self-x, closed, manifold, normals, genus 0). No tolerance relief. Order: ears -> jaw -> pouch -> axilla slits -> muzzle/nostrils; then regenerate colours, full L1-L4 progressive gate, classify residual L4 self-x (true defect vs source micro-contact); if only micro-contact remains STOP with reviews/claude-rac-rp1e-custom-cavity-checkpoint.md 'RP1E CUSTOM CAVITIES COMPLETE / MICRO-CONTACT AUTHOR RULING REQUIRED'.
 - Progress log: reviews/rac-rp1e-evidence/RP1E_progress.md (method, numbers, UI build log). Commits ec55a37 (R hand), 97d6077 (L hand), d6b3d36 (axillae).
 - PC working file: E:\UnrealProjects\Wayfarer 5.8\RaceBodies\production\Gorrund\RP1\GO_U_REF_RP1E_retopo_v006.blend (v005 kept unchanged = pre-feet state).
   - Open in Blender 5.2.2, Edit Mode on cage object "Cylinder" (identity matrix; Local coords in m).
