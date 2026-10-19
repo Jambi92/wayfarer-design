@@ -6,6 +6,8 @@ import sys, numpy as np, bpy, bmesh
 a = sys.argv[sys.argv.index('--') + 1:]; path, name, lev, out = a[0], a[1], int(a[2]), a[3]
 bpy.ops.wm.open_mainfile(filepath=path)
 o = bpy.data.objects[name]
+bpy.context.view_layer.objects.active = o
+if o.mode != 'OBJECT': bpy.ops.object.mode_set(mode='OBJECT')   # checkpoint may be saved in edit mode; evaluate the real mesh with all modifiers
 def arr(me):
     V = np.array([v.co[:] for v in me.vertices], np.float64)
     V = (np.asarray(o.matrix_world) @ np.c_[V, np.ones(len(V))].T).T[:, :3]

@@ -32,3 +32,40 @@
 **Not triggered.** Nothing so far shows that the manual plan cannot meet the gates without changing anatomy. The gaps close by adding manual cage coverage. Work continues under §7: RP1-B coverage at the shoulder / back / groin, then RP1-C.
 
 The real risk for T-2 is unchanged from RP1-A §5: ear rims, lips / nostrils / eyelids, between-digit crevices and nail-plate edges. These need feature-following loops.
+
+---
+
+## Update — closed cage v003, measured at Catmull-Clark level 3 + Shrinkwrap (diagnostic)
+
+**What changed, step by step:**
+
+| Step | Change |
+|---|---|
+| v002b | Trunk rings re-shaped by hand from source torso sections: pelvis to shoulder girdle. Covers the shoulder caps and upper back. Trunk >3 mm share: **26.6 % → 14.6 %** |
+| v003 | Hands built: palm ring → knuckle ring with a 4-face cap; four finger tubes extruded along source finger centrelines; thumb extruded from the anterior-medial wrist face along the thenar. **Hand fingers are separate tubes by construction (D-1 / D-2 handles not reproduced).** |
+| v003 | Feet built as a foot block: ankle ring → foot ring scaled and rotated to the source foot axis (L 3°, R −30°) → sole grid fill |
+
+**Topology result (cage):** 1,774 vertices / 1,772 faces, all quads. **Closed:** 0 boundary edges, 0 non-manifold edges. χ = 2, **genus 0**.
+
+**Deviation, source → checkpoint** (`v003c_dev.json`):
+
+| Region | Result |
+|---|---|
+| General zone | median 0.074 mm; 13.4 % of vertices above 3 mm |
+| Tail root | max 1.77 mm, all within 3 mm |
+| Hands | median 0.6 / 1.2 mm; about 45 % above the T-2 max |
+| Feet | median 1.4 / 2.8 mm; about 50 % above the T-2 max |
+| Head | 34.5 % above the T-2 max |
+
+**Open coverage, from the heat map:**
+- spine groove;
+- elbow backs;
+- groin;
+- toes and nail plates;
+- heel backs;
+- ear tips;
+- nose / mouth / eyes;
+- tail tuft;
+- palm / thenar detail.
+
+All of these need added feature loops. **Not a gate.**
