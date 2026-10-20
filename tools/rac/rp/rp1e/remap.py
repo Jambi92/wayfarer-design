@@ -12,6 +12,28 @@ import igl
 inp,out=sys.argv[1],sys.argv[2]; c=np.array(eval(sys.argv[3])); r=float(sys.argv[4])
 z=np.load(inp); V=z['V'].astype(float).copy(); Q=z['Q'].astype(np.int64); Tp=z['F'].astype(np.int64)
 w=np.load('/home/claude/stc/rp1/weld_a.npz'); S=w['V'].astype(float); SF=w['F'].astype(np.int64)
+if len(sys.argv)>5:
+    ex=np.load(sys.argv[5]); keep=np.ones(len(SF),bool); keep[ex]=False; SF=SF[keep]
+    import os
+    if os.environ.get('LID'):
+        # cap each hole left by the excluded (D) faces with a fan lid -> the production crosses the throat as one closed surface
+        de_={}
+        for f in SF:
+            for i_ in range(3): de_[(f[i_],f[(i_+1)%3])]=1
+        hb=[(u,v) for (u,v) in de_ if (v,u) not in de_]; nx_={}
+        for u,v in hb: nx_.setdefault(u,[]).append(v)
+        used_=set(); lids=[]
+        for e0 in hb:
+            if e0 in used_: continue
+            Lp=[e0[0]]; e=e0
+            while e not in used_:
+                used_.add(e); Lp.append(e[1]); cand=[v for v in nx_[e[1]] if (e[1],v) not in used_]
+                if not cand: break
+                e=(e[1],cand[0])
+            Lp=Lp[:-1]
+            cidx=len(S); S=np.vstack([S,S[Lp].mean(0)]); lids.append(len(Lp))
+            SF=np.vstack([SF,np.array([[Lp[(k+1)%len(Lp)],Lp[k],cidx] for k in range(len(Lp))])])
+        print('lids',lids); np.savez_compressed(sys.argv[2].replace('.npz','_src.npz'),V=S,F=SF)
 c=c*np.array([1,-1,1])   # centre given in Blender frame -> analysis frame
 nq=len(Q); QC=V[Q].mean(1)
 # ---- product patch: faces within r (connected comp of the seed), holes filled
@@ -129,7 +151,14 @@ for v in pv:
     if v in bset: continue
     u=UVp[pmap[v]]; t=fnd(u[0],u[1])
     if t<0:
-        miss+=1; newV[v]=Pos[kUV.query(u)[1]]; continue
+        miss+=1
+        # deterministic fallback: closest point of the nearest source-param triangles (clamped barycentric)
+        best=None
+        for tt in np.where(np.isin(RFi,kUV.query(u,k=6)[1]).any(1))[0]:
+            A_,B_,C_=UVs[RFi[tt]]; M_=np.c_[B_-A_,C_-A_]; l_=np.linalg.lstsq(M_,u-A_,rcond=None)[0]; bc=np.clip(np.r_[1-l_.sum(),l_],0,None); bc/=bc.sum()
+            d_=np.linalg.norm(bc@np.array([A_,B_,C_])-u)
+            if best is None or d_<best[0]: best=(d_,tt,bc)
+        a_,b_,c_=RFi[best[1]]; newV[v]=best[2][0]*Pos[a_]+best[2][1]*Pos[b_]+best[2][2]*Pos[c_]; continue
     a_,b_,c_=RFi[t]; T=np.array([UVs[a_],UVs[b_],UVs[c_]]); M=np.c_[T[1]-T[0],T[2]-T[0]]; l12=np.linalg.solve(M,u-T[0]); bc=np.r_[1-l12.sum(),l12]
     newV[v]=bc[0]*Pos[a_]+bc[1]*Pos[b_]+bc[2]*Pos[c_]
 np.savez_compressed(out,V=newV,F=Tp,Q=Q)

@@ -1,0 +1,78 @@
+== philtrum
+   src 257616 [  2.07 -61.94 181.66] 1.76 head_muzzle_ears
+   src 259481 [  2.02 -62.01 181.72] 1.59 head_muzzle_ears
+NO PASS
+== lip1
+r=0.6 patch faces 14 verts 25 boundary 20 source region faces 63 cut 25 unlocated 0 max move mm 2.79 | fix history [0] moved verts 0 | region pairs 0 | src->prod max 1.39 p95 0.72 over 0 | prod->src max 0.00 over 0  DEVPASS
+ACCEPT r=0.6 -> /tmp/claude-0/h2.npz
+== lip2
+   src 272865 [  0.99 -63.5  184.12] 1.67 head_muzzle_ears
+   src 275108 [-1.5000e-01 -6.3480e+01  1.8485e+02] 1.65 head_muzzle_ears
+NO PASS
+== lip3
+r=0.8 patch faces 601 verts 665 boundary 126 source region faces 125 cut 29 unlocated 0 max move mm 1.55 | fix history [133, 14, 2, 0] moved verts 246 | region pairs 0 | src->prod max 1.67 p95 0.85 over 1 | prod->src max 0.36 over 0  DEVFAIL
+   src 272865 [  0.99 -63.5  184.12] 1.67 head_muzzle_ears
+NO PASS
+== nose4
+r=0.5 patch faces 288 verts 329 boundary 80 source region faces 35 cut 13 unlocated 2 max move mm 3.23 | fix history [66, 27, 3, 0] moved verts 189 | region pairs 0 | src->prod max 1.31 p95 0.62 over 0 | prod->src max 0.61 over 0  DEVPASS
+ACCEPT r=0.5 -> /tmp/claude-0/h5.npz
+== earL1
+   src 446387 [ 12.89 -49.65 198.61] 1.69 head_muzzle_ears
+r=0.9 patch faces 30 verts 43 boundary 24 source region faces 126 cut 18 unlocated 0 max move mm 1.49 | fix history [0] moved verts 0 | region pairs 0 | src->prod max 1.47 p95 0.85 over 0 | prod->src max 0.92 over 0  DEVPASS
+ACCEPT r=0.9 -> /tmp/claude-0/h6.npz
+== earL2
+   src 444792 [ 13.62 -50.54 200.96] 2.21 head_muzzle_ears
+   src 445216 [ 13.53 -50.75 200.79] 1.82 head_muzzle_ears
+NO PASS
+== earR1
+   src 190274 [ -8.78 -49.58 198.85] 1.78 head_muzzle_ears
+   src 190275 [ -8.76 -49.78 198.72] 1.60 head_muzzle_ears
+NO PASS
+== earR2
+   src 173333 [ -8.95 -48.06 197.43] 1.64 head_muzzle_ears
+r=0.8 patch faces 16 verts 27 boundary 20 source region faces 72 cut 16 unlocated 0 max move mm 1.90 | fix history [0] moved verts 0 | region pairs 0 | src->prod max 1.29 p95 1.11 over 0 | prod->src max 0.00 over 0  DEVPASS
+ACCEPT r=0.8 -> /tmp/claude-0/h9.npz
+== eyeR
+   prod 4765 [ -5.17 -57.36 193.57] 1.72
+r=1.2 remap failed: AssertionError: no enclosed source region
+NO PASS
+== L1
+r=0.5 patch faces 250 verts 286 boundary 70 source region faces 341 cut 47 unlocated 0 max move mm 1.09 | fix history [0] moved verts 0 | region pairs 0 | src->prod max 1.01 p95 0.09 over 0 | prod->src max 0.12 over 0  DEVPASS
+ACCEPT r=0.5 -> /tmp/claude-0/h11.npz
+== L2
+r=0.5 patch faces 359 verts 404 boundary 88 source region faces 418 cut 50 unlocated 0 max move mm 0.91 | fix history [0] moved verts 0 | region pairs 0 | src->prod max 0.57 p95 0.05 over 0 | prod->src max 0.07 over 0  DEVPASS
+ACCEPT r=0.5 -> /tmp/claude-0/h12.npz
+== L3
+r=0.5 patch faces 449 verts 497 boundary 94 source region faces 434 cut 46 unlocated 0 max move mm 0.87 | fix history [0] moved verts 0 | region pairs 0 | src->prod max 0.61 p95 0.05 over 0 | prod->src max 0.09 over 0  DEVPASS
+ACCEPT r=0.5 -> /tmp/claude-0/h13.npz
+== L4
+r=0.5 patch faces 3829 verts 3968 boundary 276 source region faces 570 cut 54 unlocated 0 max move mm 2.33 | fix history [45, 2, 0] moved verts 203 | region pairs 0 | src->prod max 0.20 p95 0.01 over 0 | prod->src max 0.02 over 0  DEVPASS
+ACCEPT r=0.5 -> /tmp/claude-0/h14.npz
+== Lft5
+   src 355304 [ 28.7  -56.67   4.02] 1.51 foot_L_toes_nails
+r=0.8 patch faces 673 verts 739 boundary 130 source region faces 104 cut 26 unlocated 0 max move mm 2.16 | fix history [86, 4, 0] moved verts 307 | region pairs 0 | src->prod max 0.60 p95 0.41 over 0 | prod->src max 0.46 over 0  DEVPASS
+ACCEPT r=0.8 -> /tmp/claude-0/h15.npz
+== R1
+r=0.5 patch faces 357 verts 400 boundary 84 source region faces 239 cut 47 unlocated 0 max move mm 0.78 | fix history [0] moved verts 0 | region pairs 0 | src->prod max 0.67 p95 0.05 over 0 | prod->src max 0.05 over 0  DEVPASS
+ACCEPT r=0.5 -> /tmp/claude-0/h16.npz
+== R2
+r=0.5 patch faces 270 verts 307 boundary 72 source region faces 301 cut 45 unlocated 0 max move mm 0.75 | fix history [0] moved verts 0 | region pairs 0 | src->prod max 0.73 p95 0.04 over 0 | prod->src max 0.06 over 0  DEVPASS
+ACCEPT r=0.5 -> /tmp/claude-0/h17.npz
+== R3
+r=0.5 patch faces 2798 verts 2919 boundary 240 source region faces 358 cut 48 unlocated 0 max move mm 1.71 | fix history [67, 0] moved verts 159 | region pairs 0 | src->prod max 0.31 p95 0.02 over 0 | prod->src max 0.04 over 0  DEVPASS
+ACCEPT r=0.5 -> /tmp/claude-0/h18.npz
+== R4
+r=0.5 patch faces 3910 verts 4055 boundary 288 source region faces 420 cut 54 unlocated 0 max move mm 1.14 | fix history [130, 9, 0] moved verts 410 | region pairs 0 | src->prod max 0.31 p95 0.01 over 0 | prod->src max 0.02 over 0  DEVPASS
+ACCEPT r=0.5 -> /tmp/claude-0/h19.npz
+== Rft1
+r=0.5 remap failed: AssertionError: no enclosed source region
+r=0.8 patch faces 604 verts 670 boundary 130 source region faces 144 cut 38 unlocated 0 max move mm 2.94 | fix history [77, 2, 0] moved verts 148 | region pairs 0 | src->prod max 1.49 p95 1.05 over 0 | prod->src max 1.48 over 0  DEVPASS
+ACCEPT r=0.8 -> /tmp/claude-0/h20.npz
+== Rft2
+   src 253341 [-25.8  -47.14   0.55] 1.63 foot_R_toes_nails
+r=0.8 patch faces 16 verts 26 boundary 18 source region faces 107 cut 29 unlocated 0 max move mm 2.10 | fix history [0] moved verts 0 | region pairs 0 | src->prod max 0.96 p95 0.80 over 0 | prod->src max 0.79 over 0  DEVPASS
+ACCEPT r=0.8 -> /tmp/claude-0/h21.npz
+== Rft3
+r=0.5 patch faces 72 verts 96 boundary 46 source region faces 44 cut 18 unlocated 0 max move mm 1.23 | fix history [0] moved verts 0 | region pairs 0 | src->prod max 1.47 p95 0.84 over 0 | prod->src max 0.68 over 0  DEVPASS
+ACCEPT r=0.5 -> /tmp/claude-0/h22.npz
+LAST /tmp/claude-0/h22.npz

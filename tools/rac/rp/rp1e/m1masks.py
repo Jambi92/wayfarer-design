@@ -3,7 +3,7 @@ import sys, os, json, numpy as np
 from scipy.spatial import cKDTree
 out=sys.argv[1]; os.makedirs(out,exist_ok=True)
 w=np.load('/home/claude/stc/rp1/weld.npz'); S=w['V'].astype(float); SF=w['F'].astype(np.int64); C=S[SF].mean(1)
-cr=np.array(json.load(open("/tmp/claude-0/pants_r1.json"))["crease"])
+cr=np.array(json.load(open("/tmp/claude-0/pants_b1.json"))["crease"])
 YM=-40.85
 zone=(C[:,0]>-35.6)&(C[:,0]<-29.5)&(C[:,1]>-43.0)&(C[:,1]<-38.6)&(C[:,2]>90.3)&(C[:,2]<96.0)
 # tip curve x_tip(z): left boundary of the bar in the mid-plane; outside the crease z-range the bar boundary continues (use bar section extent)
