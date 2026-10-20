@@ -253,3 +253,8 @@ Chain: design_v007 → v008a (degenerate tri fixed: L axilla verts 2596/2597 res
 - Gate V12c: L1/L2/L3/L4 self-x 14/82/513/1109 (axilla 553 → 162, L pinch 117 → 16, R front slit contacts removed; toe-web contacts up). L4 over-limit: general 0.09 % (max 16.1 = hidden pinch void), head 0.48 %, hand L 2.78 → 1.74 %, hand R 1.31 %, foot L 1.07 → 0.85 %, foot R 0.93 → 0.42 %.
 - Diagnosis: Subdivision limit surface at L1 retracts pocket tips ~half the cage-edge depth; Nearest then snaps to the mouth. Trials not kept (`exp_v012/`): crotch splits/lifts, overshoot, exact L1-limit solve, nostril creases/pockets, third toe-cleft crease, limit surface off.
 - **Report:** `reviews/claude-rac-rp1e-class-a-recovery-gate.md` — RP1E CLASS-A RECOVERY BLOCKED / AUTHOR DECISION REQUIRED (source micro-cavities + sub-cage rebuild authorisation).
+
+### Non-local sub-cage rebuild order (a2f5ee5) — session 7
+- New generator `tools/rac/rp/rp1e/toegen.py` (+ `cleftfloor.py`): removes everything distal to a clean attachment ring, then builds attach → M → M1 → O (outer loop of the digit bases) → 12-vertex digit tubes. Adjacent digits share a 5-vertex crotch path on the traced cleft floor (z-slices; fan-search floor refinement); two wall support rings at 0.35 / 0.9 cm from the floor (min 0.15 cm into the toe); free rings from slices; 4-vertex tip cap. Alternating toe colours as in the source.
+- R1 L foot (attach ring K'' 1508–1521): coarse self-x 0; sim V13c: foot L L4 self-x 316 → **0**, deviation max 11.4 → 2.1 mm, over 0.85 → 0.03 %.
+- R foot (same generator, frame rotated 36.9° about z): V13e foot R self-x 431 → **13**, max 5.5 → 2.0 mm, over 0.42 → 0.06 %. Total L4 self-x 1109 → 375 (design `exp_v013/design_v012a_feet.npz`, cloud only).
