@@ -36,14 +36,15 @@ def cent(seg, p, R, comp):
         k = lab == best[1]; mid, L = mid[k], L[k]
     if len(L) < 8: return None, None
     return (mid * L[:, None]).sum(0) / L.sum(), float(L.sum())
-S, SF = load(sys.argv[1]); C, CF = load(sys.argv[2]); LM = json.load(open(sys.argv[3]))
-keys = sys.argv[5].split(',') if len(sys.argv) > 5 else None
-items = [(k, v) for k, v in LM.items() if isinstance(v, dict) and 'plane_point' in v]
-items += [('tail_%02d' % st['station'], st) for st in LM.get('tail_chain', {}).get('stations', [])]
-R = {}
-for k, v in items:
-    if keys and k not in keys: continue
-    p, n, r = np.array(v['plane_point']), np.array(v['plane_normal']), v['radius_cm']
-    a, la = cent(segs(S, SF, p, n), p, r, True); b, lb = cent(segs(C, CF, p, n), p, r, True)
-    R[k] = None if a is None or b is None else dict(drift_mm=round(float(np.linalg.norm(a - b) * 10), 3), src_len_cm=round(la, 2), cand_len_cm=round(lb, 2))
-json.dump(R, open(sys.argv[4], 'w'), indent=1); print(json.dumps({k: (v['drift_mm'] if v else None) for k, v in R.items()}))
+if __name__ == '__main__':
+    S, SF = load(sys.argv[1]); C, CF = load(sys.argv[2]); LM = json.load(open(sys.argv[3]))
+    keys = sys.argv[5].split(',') if len(sys.argv) > 5 else None
+    items = [(k, v) for k, v in LM.items() if isinstance(v, dict) and 'plane_point' in v]
+    items += [('tail_%02d' % st['station'], st) for st in LM.get('tail_chain', {}).get('stations', [])]
+    R = {}
+    for k, v in items:
+        if keys and k not in keys: continue
+        p, n, r = np.array(v['plane_point']), np.array(v['plane_normal']), v['radius_cm']
+        a, la = cent(segs(S, SF, p, n), p, r, True); b, lb = cent(segs(C, CF, p, n), p, r, True)
+        R[k] = None if a is None or b is None else dict(drift_mm=round(float(np.linalg.norm(a - b) * 10), 3), src_len_cm=round(la, 2), cand_len_cm=round(lb, 2))
+    json.dump(R, open(sys.argv[4], 'w'), indent=1); print(json.dumps({k: (v['drift_mm'] if v else None) for k, v in R.items()}))

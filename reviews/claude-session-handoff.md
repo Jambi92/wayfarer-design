@@ -42,7 +42,12 @@ Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN 
   - Both axillae are re-laid out to the cage_e30 design.
   - Both feet are the g5b sub-cage (shin ring A → S1–S5 → K → 4 toe tubes each; the 5th toe is fused in the source).
   - Coarse-cage self-intersections: 0.
-- SESSION 10 START STATE (read this first):
+- SESSION 11 START STATE (read this first):
+  - Ruling `chatgpt-rac-rp1e-v014-manifold-contact-topology-ruling.md` answered: `reviews/claude-rac-rp1e-v014-manifold-contact-gate.md` = RP1E MANIFOLD-CONTACT TOPOLOGY FAILED / AUTHOR DECISION REQUIRED (stopped at the M1 hand-handle gate). Wait for the author ruling (§6).
+  - PC authoritative cage still `GO_U_REF_RP1E_retopo_v013.blend`; no v014. Blender not opened this session.
+  - Best M1 cage: /tmp/claude-0/m1_04.npz (cloud scratch; spec exp_v017_manifold/m1jv_04_false.json on cur=v013, targets tgx_m1 from `tgstrip.py tgx_m1/t "[-33.2,-40.5,93.2]" 3.0 22,23,0,-1,0 23,22,0,1,0`).
+  - New tools: junction.py, tgstrip.py, remap.py (final-resolution disk remap onto source), sepfix.py, pairclus.py, rp1_landmarks_t6.py (ruled T-6).
+- SESSION 10 START STATE:
   - Ruling `chatgpt-rac-rp1e-v014-local-stack-and-contract-ruling.md` answered: `reviews/claude-rac-rp1e-v014-local-stack-recovery-gate.md` = RP1E LOCAL PROJECTION-STACK RECOVERY FAILED / AUTHOR DECISION REQUIRED (pilot tables §2, decisions §7). Wait for the author ruling.
   - PC authoritative cage still `GO_U_REF_RP1E_retopo_v013.blend` (no v014). Blender closed.
   - New tools: own.py (per-sheet targets into tgx_<tag>/), sim.py REGCOLS/REGV (local order), pilot_eval.py, dmask.py/dtarget.py (exterior-visibility D masks), nailcheck.py (+ reviews/rac-rp1e-evidence/nail_tooling/), rp1_landmarks_comp.py (hip component rule), hgenus.py (box genus).

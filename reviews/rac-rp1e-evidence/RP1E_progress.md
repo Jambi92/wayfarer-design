@@ -285,3 +285,9 @@ Chain: design_v007 → v008a (degenerate tri fixed: L axilla verts 2596/2597 res
 - Nails: tooling regenerated from GO-05AW4 AW3 groups + fitted axes (8 source tips reproduced ≤0.003 mm); v013 nails −0.12…−0.71 mm (7 fail).
 - D masks: exterior-visibility mask (`dmask.py`) strongly beam-width dependent; not applied. Source genus 3 handles localised (R hand B–C through-slit, L hand tunnel, L axilla void).
 - Report `reviews/claude-rac-rp1e-v014-local-stack-recovery-gate.md`.
+
+### v014 manifold-contact ruling — session 10: M1 gate → MANIFOLD-CONTACT TOPOLOGY FAILED
+- M1 R hand B–C handle built as a genus-1 manifold junction (`junction.py`: C last ring joined to a disk on B's side): coarse self-x 0, L1 regional 0 (M1C, slit-facing-wall-stripped targets via `tgstrip.py`), internal sheets gone (amp 8.1 → ~1.1 mm, p2s 10.4 → 1.7 mm); L4 regional self-x 487–965 (slit-tip taper where the junction seam sits 3–7 mm off the source slit tip, junction top seam).
+- §10 final-resolution remap (`remap.py`, MVC disk-to-disk onto the source) and a collision separation pass (`sepfix.py`) did not clear them (patch/source topology mismatch around the through-slit).
+- Stopped at the M1 gate; M2–M6, nails repair and D masks not started. T-6 with exact clipping + hip rule on v013 passes (max 1.122 mm; tail_00 1.122, tail_05 1.119 reported).
+- Report `reviews/claude-rac-rp1e-v014-manifold-contact-gate.md`.
