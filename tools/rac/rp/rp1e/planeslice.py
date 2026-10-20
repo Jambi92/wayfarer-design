@@ -33,8 +33,8 @@ def axis_rings(seed,t0,h,maxn=12,minr=0.25,rad=6.0,smooth=0.5,maxjump=1.5):
         P=min(L,key=lambda P:np.linalg.norm(P.mean(0)-c)); cen=P.mean(0)
         if np.linalg.norm(cen-c)>maxjump: break
         r=np.sqrt(np.mean(np.sum((P-cen)**2,axis=1)))
-        out.append((cen,t.copy(),P,r))
         if r<minr: break
+        out.append((cen,t.copy(),P,r))
         if len(out)>1:
             nt=out[-1][0]-out[-2][0]; nt/=np.linalg.norm(nt)+1e-12; t=(1-smooth)*t+smooth*nt; t/=np.linalg.norm(t)
         c=cen+t*h

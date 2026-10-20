@@ -259,3 +259,14 @@ Chain: design_v007 → v008a (degenerate tri fixed: L axilla verts 2596/2597 res
 - R1 L foot (attach ring K'' 1508–1521): coarse self-x 0; sim V13c: foot L L4 self-x 316 → **0**, deviation max 11.4 → 2.1 mm, over 0.85 → 0.03 %.
 - R foot (same generator, frame rotated 36.9° about z): V13e foot R self-x 431 → **13**, max 5.5 → 2.0 mm, over 0.42 → 0.06 %. Total L4 self-x 1109 → 375 (design `exp_v013/design_v012a_feet.npz`, cloud only).
 - Hands (in progress): `diggen.py` generalises the toe generator (oblique cleft planes spanned by adjacent finger axes and the web direction; free rings marched along the curled finger axis with oblique slices; per-digit frames for top/bottom/outer-side points). L hand trials V14a–d (attach palm ring P1, thumb kept): best V14d — index/middle web pocket 8.5 → 1.8 mm, little/ring palmar web still 8.9 mm, web-contact pairs 2359; not adopted yet.
+
+### Non-local sub-cage rebuild — session 7 (cont.): design v012 → `GO_U_REF_RP1E_retopo_v012.blend`
+- Hands rebuilt with `diggen.py` (L spec `hand_L_c_used.json`, R `hand_R_c_used.json`; finger colours 17–24, targets tg_r3m5): R web 3/4 pocket cleared; hand L over 1.74 → 0.94 %.
+- L axilla z153 crevice: pocket tube (`pockgen.py`, `pocket_Lax153.json`) 12.7 → 2.0 mm.
+- Muzzle (`chain.py exp_v014/chain_face.json` from `design_pC_axilla.npz`): nostril pockets L/R (8-ring tubes, rims; ring orientation now by signed area), philtrum slit band, full-width mouth-line slit band (8 cols) → nostrils and mouth corners cleared, head over 0.38 → 0.13 %, max 7.7 → 2.9 mm.
+- L thumb web: slit band (6 cols, facev patch) → 6.8 mm cleared, hand L over 0.63 %.
+- R thumb web is a thin fin, not a slit: fin-band trial cleared the deviation but folded at L1 (hand R self-x 506 → 6600) — not kept.
+- fitcage on chin/ear: no gain, 1 coarse self-x — rejected.
+- v012: 5043 V / 5170 F, 0 coarse self-x; OBJ 4d35546d…; UI import verified 0.00025 mm, faces identical; blend sha 25e9b53c…7f9c.
+- Gate G12 L1/L2/L3/L4 self-x 23/121/926/1104; L4 over: general 0.07 % (16.1 deferred void), head 0.13 % (2.9), hand L 0.63 % (9.8 deferred tunnel), hand R 1.17 % (8.4 fused zone), feet 0.03/0.06 %.
+- Checkpoint report `reviews/claude-rac-rp1e-nonlocal-subcage-rebuild-gate.md` (no §11 line yet; remaining list §4).

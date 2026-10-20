@@ -15,7 +15,7 @@ from orient import orient_patch, check
 inp,specp,out=sys.argv[1:4]
 S=json.load(open(specp))
 z=np.load(inp); V=z['V'].astype(float); F=[[int(x) for x in f if x>=0] for f in z['F']]; col=np.load(inp.replace('.npz','_col.npy'))
-SRC=np.load('/home/claude/stc/rp1/weld.npz')['V'].astype(float); scol=np.load('/home/claude/stc/rp1e/col_r2.npy')
+SRC=np.load('/home/claude/stc/rp1/weld.npz')['V'].astype(float); scol=np.load(S.get('srccolfile','/home/claude/stc/rp1e/col_r2.npy'))
 ROT=np.eye(3)
 if S.get('rotz'):
     a_=np.radians(S['rotz']); ROT=np.array([[np.cos(a_),-np.sin(a_),0],[np.sin(a_),np.cos(a_),0],[0,0,1]])
@@ -105,7 +105,7 @@ def wall_at(pth,lv,dist,side,d0,c=None):
         L=sl_loops(SL,lv); segs=[(l[k][ij],l[(k+1)%len(l)][ij]) for l in L for k in range(len(l))]
     segs=[sg for sg in segs if np.linalg.norm(sg[0]-q)<3]
     l=_ray(segs,q,n)
-    off=max(0.9*l,float(S.get('wallmin',0.15))) if l<3 else 0.3
+    off=min(max(0.9*l,float(S.get('wallmin',0.15))),float(S.get('wallmax',9.0))) if l<3 else min(0.3,float(S.get('wallmax',9.0)))
     return T3(q+n*off,lv)
 SUP=S['sup']
 nd=len(S['digits'])
@@ -165,6 +165,10 @@ for di,dg in enumerate(S['digits']):
     # free rings: axis march (oblique planes) from the digit seed; 12 arc-length samples starting at the local top
     from planeslice import axis_rings
     AR=axis_rings(dg['seed'],dg.get('t0',list(D)),dg.get('h',0.8),maxn=dg.get('maxn',12),rad=dg.get('rad',7.0),maxjump=dg.get('maxjump',2.0),minr=dg.get('minr',0.5))
+    if 'ext' in dg and AR:
+        ex=dg['ext']; c_last=AR[-1][0]
+        AR2=axis_rings(c_last+np.array(ex['t'])/np.linalg.norm(ex['t'])*ex.get('h',0.6),ex['t'],ex.get('h',0.6),maxn=ex.get('maxn',8),rad=7.0,maxjump=2.0,minr=ex.get('minr',0.5),smooth=ex.get('smooth',0.2))
+        AR=list(AR)+list(AR2)
     up=UP.copy(); dig_tan=[]
     for (cen,t,P,r) in AR[dg.get('skip',0):]:
         up=up-(up@t)*t; up/=np.linalg.norm(up); rt=np.cross(t,up)
@@ -177,6 +181,13 @@ for di,dg in enumerate(S['digits']):
             k=int(np.clip(np.searchsorted(s_,u),1,len(s_)-1)); al=(u-s_[k-1])/max(s_[k]-s_[k-1],1e-12); pts.append(Q[k-1]+(Q[k]-Q[k-1])*al)
         rings.append([add(p,dg['col']) for p in pts]); dig_tan.append(t)
     tans.append(dig_tan[-1] if dig_tan else D)
+    if S.get('monofix',0)>0 and len(dig_tan)>1:
+        nfree=len(dig_tan); fr=rings[-nfree:]
+        for k in range(1,nfree):
+            t=dig_tan[k-1]; mm=S['monofix']*dg.get('h',0.8)
+            for j in range(12):
+                a=np.array(NV[fr[k-1][j]]); q=np.array(NV[fr[k][j]]); d=(q-a)@t
+                if d<mm: NV[fr[k][j]]=list(q+t*(mm-d))
     dig_rings.append(rings)
 # ---------- outer loop O (union boundary of the ring0s) and M ring ----------
 O=[]
@@ -217,6 +228,8 @@ def smooth_ring(R,it,lam):
         P=np.array([NV[v] for v in R]); Q=0.5*(np.roll(P,1,0)+np.roll(P,-1,0)); P=P+lam*(Q-P)
         for v,p in zip(R,P): NV[v]=list(p)
 smooth_ring(M,S.get('msmooth',[6,0.5])[0],S.get('msmooth',[6,0.5])[1]); smooth_ring(M1,S.get('m1smooth',[2,0.3])[0],S.get('m1smooth',[2,0.3])[1])
+if S.get('mresnap'):
+    for v in M+M1: NV[v]=list(snap_near(np.array(NV[v]),S.get('mresnap')))
 # ---------- faces ----------
 G=list(F); Fn=[]
 nO=len(O)
