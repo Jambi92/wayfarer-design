@@ -3,7 +3,7 @@ cage.npz: V (Blender cm), F (quads, -1 padded); colours.npy: per cage vertex col
 Stack = [SW nearest per colour] + LEVELS x [Subsurf 1, SW project(+-, limit) per colour, SW nearest per colour].
 Exports evaluated mesh after each level (analysis frame cm) -> OUT_L<k>.npz with V,F (tris),Q (quads).
 Usage: blender-python sim.py -- cage.npz colours.npy TPREFIX LEVELS OUT [limit_m]"""
-import sys, numpy as np, bpy
+import sys, os, numpy as np, bpy
 a = sys.argv[sys.argv.index('--') + 1:]
 cg, colp, tp, lev, out = a[0], a[1], a[2], int(a[3]), a[4]; lim = float(a[5]) if len(a) > 5 else 0.02
 bpy.ops.wm.read_factory_settings(use_empty=True); sc = bpy.context.scene
@@ -11,6 +11,15 @@ def mk(name, V, F):
     me = bpy.data.meshes.new(name); me.from_pydata((V / 100.0).tolist(), [], [list(f[f >= 0]) for f in F]); me.update()
     o = bpy.data.objects.new(name, me); sc.collection.objects.link(o); return o
 z = np.load(cg); cage = mk('cage', z['V'], z['F']); col = np.load(colp)
+if os.environ.get('CREASE'):
+    import json as _j
+    CR = _j.load(open(os.environ['CREASE']))   # {"edges":[[a,b],...],"w":1.0}
+    me_ = cage.data; at = me_.attributes.get('crease_edge') or me_.attributes.new('crease_edge', 'FLOAT', 'EDGE')
+    key = {tuple(sorted(e.vertices[:])): e.index for e in me_.edges}; nset = 0
+    for a_, b_ in CR['edges']:
+        k_ = key.get(tuple(sorted((a_, b_))))
+        if k_ is not None: at.data[k_].value = CR.get('w', 1.0); nset += 1
+    print('CREASE edges set', nset)
 cols = sorted(set(col.tolist())); tg = {}
 for c in cols:
     t = np.load('%s_c%d.npz' % (tp, c)); tg[c] = mk('tgt%d' % c, t['V'], t['F'])

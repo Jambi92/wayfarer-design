@@ -42,7 +42,12 @@ Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN 
   - Both axillae are re-laid out to the cage_e30 design.
   - Both feet are the g5b sub-cage (shin ring A → S1–S5 → K → 4 toe tubes each; the 5th toe is fused in the source).
   - Coarse-cage self-intersections: 0.
-- SESSION 11 START STATE (read this first):
+- SESSION 12 START STATE (read this first):
+  - Active order: `reviews/chatgpt-rac-rp1e-v014-m1-slit-band-and-manifold-closure-order.md` (913d0e4). NOT yet answered (no gate report written; the order forbids checkpoint reports). Continue M1 (attempt B + §8 per-wall fallback), then M2–M6, D masks, nails, v014 promotion, final gate, then write `reviews/claude-rac-rp1e-v014-manifold-closure-gate.md`.
+  - M1 state: see RP1E_progress.md "M1 slit-band order — session 11". Best cage `reviews/rac-rp1e-evidence/exp_v018_m1slit/design_M1slit_r1_cage.npz` (+_col, _meta crease ids) built by `pants.py cur.npz exp_v018_m1slit/pants_r1.json` on cur = v013; sim with `CREASE=exp_v018_m1slit/crease_r1.json TPRE=tgx_m1p/t bash runc.sh TAG cage.npz fsm_cur.txt 0` (tgx_m1p from `python3 m1masks.py <outdir>`).
+  - Per-wall remap: `python3 m1wall.py sim_TAG_L4.npz cage_meta.json OUT.npz 1.0`; region checks with regcheck.py / pairclus.py.
+  - PC authoritative cage still `GO_U_REF_RP1E_retopo_v013.blend`. Blender not opened this session.
+- SESSION 11 START STATE:
   - Ruling `chatgpt-rac-rp1e-v014-manifold-contact-topology-ruling.md` answered: `reviews/claude-rac-rp1e-v014-manifold-contact-gate.md` = RP1E MANIFOLD-CONTACT TOPOLOGY FAILED / AUTHOR DECISION REQUIRED (stopped at the M1 hand-handle gate). Wait for the author ruling (§6).
   - PC authoritative cage still `GO_U_REF_RP1E_retopo_v013.blend`; no v014. Blender not opened this session.
   - Best M1 cage: reviews/rac-rp1e-evidence/exp_v017_manifold/design_M1D04_cage.npz (+_col.npy; spec exp_v017_manifold/m1jv_04_false.json on cur=v013, targets tgx_m1 from `tgstrip.py tgx_m1/t "[-33.2,-40.5,93.2]" 3.0 22,23,0,-1,0 23,22,0,1,0`).
