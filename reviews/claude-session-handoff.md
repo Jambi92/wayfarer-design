@@ -42,7 +42,12 @@ Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN 
   - Both axillae are re-laid out to the cage_e30 design.
   - Both feet are the g5b sub-cage (shin ring A → S1–S5 → K → 4 toe tubes each; the 5th toe is fused in the source).
   - Coarse-cage self-intersections: 0.
-- SESSION 8 START STATE (read this first):
+- SESSION 9 START STATE (read this first):
+  - Order `chatgpt-rac-rp1e-v013-class-a-closure-order.md` answered: `reviews/claude-rac-rp1e-v013-class-a-closure-gate.md` = RP1E NON-LOCAL SUB-CAGE REBUILD BLOCKED / AUTHOR DECISION REQUIRED. Wait for the author ruling (projection-stack / source / contract / T-6 definition / nail tooling, §5 of the report).
+  - PC authoritative cage: `GO_U_REF_RP1E_retopo_v013.blend` (sha 230c7b3a…d778) = `designs/design_v013.npz` (5476 V / 5669 F), verified 0.00025 mm. v009–v012 unchanged. Blender closed.
+  - Cloud: /home/claude/stc/rp1e cur.npz = v013 (if lost: untar scratch/rp1e_s7.tgz, then copy designs/design_v013.npz + _col.npy to cur.npz/cur_col.npy and fsm_v013.txt to fsm_cur.txt). Graded refinement: `python3 refine.py IN.npz '{"centre":[..],"R":r}' OUT.npz` (spec file); batches with rfl.py.
+  - Missing in the cloud: AW4 nail-plate masks + foot frames for rp1_gate.py nails (gate_nonail.py skips them).
+- SESSION 8 START STATE:
   - Order a2f5ee5 still open. PC authoritative cage: `GO_U_REF_RP1E_retopo_v012.blend` (sha 25e9b53c…7f9c) = design `designs/design_v012.npz` (5043 V / 5170 F), verified 0.00025 mm. v009–v011 unchanged. Blender closed.
   - Checkpoint report `reviews/claude-rac-rp1e-nonlocal-subcage-rebuild-gate.md` — no §11 line yet. Its §4 is the to-do list (R thumb fin with graded refinement first; philtrum bottom, upper lip, chin lobe, ear rims; lip-line contact; L pinch folds; R axilla tips; R groin ridge; natal nub classification; hand L / toe shape misses). Then v013 → UI import → full gate → §11 line.
   - Restore cloud state: untar `reviews/rac-rp1e-evidence/scratch/rp1e_s7.tgz` into /home/claude/stc/rp1e (needs /home/claude/stc/rp1/weld.npz, weld_a.npz, zones.npz, venv /home/claude/stc/bin/python3). cur.npz there = v012. Sim: `bash runc.sh TAG CAGE.npz fsm_cur.txt 0` (CAGE needs _col.npy and _remap.npy from cur; ~1.5 min); `python3 zcl.py TAG ZONE lim n`; `bash adopt.sh NEW.npz NEW_remap.npy` to make a candidate current.

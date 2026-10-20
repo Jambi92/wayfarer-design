@@ -270,3 +270,11 @@ Chain: design_v007 → v008a (degenerate tri fixed: L axilla verts 2596/2597 res
 - v012: 5043 V / 5170 F, 0 coarse self-x; OBJ 4d35546d…; UI import verified 0.00025 mm, faces identical; blend sha 25e9b53c…7f9c.
 - Gate G12 L1/L2/L3/L4 self-x 23/121/926/1104; L4 over: general 0.07 % (16.1 deferred void), head 0.13 % (2.9), hand L 0.63 % (9.8 deferred tunnel), hand R 1.17 % (8.4 fused zone), feet 0.03/0.06 %.
 - Checkpoint report `reviews/claude-rac-rp1e-nonlocal-subcage-rebuild-gate.md` (no §11 line yet; remaining list §4).
+
+### v013 Class-A closure order — session 8: design v013 → `GO_U_REF_RP1E_retopo_v013.blend` → BLOCKED
+- New tools: `refine.py` (local Catmull-Clark graded support refinement, nested), `extend.py` (digit tube extension from source sections), `rfl.py` (refinement batches), `srcgap.py`, `sxdiff.py`, `t6diag.py`, `gate_nonail.py` (rp1_gate without the nail block).
+- Kept: R thumb-web 2-level support (4.9 → 2.4 mm), R fused digit C extended into the fused block (exposed gap 8.4 → 3.65 mm), refinements at chin, L thumb tip/wrist, L toe 4, R toes, L axilla 149.6, L ear, R groin ridge, R hand radial, R axilla B tip, natal (1 level).
+- Rejected (two attempts each): fin band on support (L1 fold), philtrum slot band / refinement, upper-lip, ear-rim, L axilla knob, R axilla A tip, natal 2-level, L palm, R ulnar web, fused-edge refinements — all reduce deviation but multiply opposed-sheet contacts or fold at L1.
+- v013: 5476 V / 5669 F, 0 coarse self-x; OBJ 181a3227…; UI import verified 0.00025 mm; blend sha 230c7b3a…d778.
+- Gate G13: L1/L2/L3/L4 self-x 30/137/961/1492; L4 over: general 0.05 % (15.5 D void), head 0.05 % (2.57), hand L 0.49 % (9.8 D tunnel), hand R 0.24 % (3.65), feet 0.01/0.04 %. T-3 and T-7 pass; T-6 hip_R 6.98 mm (section includes the R hand; hip part 0.01 mm); nails not measurable in the cloud (AW4 plate masks missing). Source genus 3 vs contract genus 0.
+- Report `reviews/claude-rac-rp1e-v013-class-a-closure-gate.md` — RP1E NON-LOCAL SUB-CAGE REBUILD BLOCKED / AUTHOR DECISION REQUIRED.
