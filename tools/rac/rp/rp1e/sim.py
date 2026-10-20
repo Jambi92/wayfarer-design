@@ -35,6 +35,10 @@ def export(k):
     np.savez_compressed('%s_L%d.npz' % (out, k), V=V, F=T, Q=Q); oe.to_mesh_clear(); print('LEVEL', k, len(V))
 export(0)
 BASEMODE = MODE
+REGCOLS = [int(x) for x in os.environ.get('REGCOLS', '').split(',') if x]
+REGV = [int(t) for t in open(os.environ['REGV']).read().split()] if os.environ.get('REGV') else []
+if REGV:
+    gnr = cage.vertex_groups.new(name='noreg'); gnr.add([i for i in range(len(z['V'])) if i not in set(REGV)], 1.0, 'REPLACE')
 for k in range(1, lev + 1):
     MODE = os.environ.get('FINALMODE', BASEMODE) if k == lev else BASEMODE
     m = cage.modifiers.new('sub%d' % k, 'SUBSURF'); m.levels = 1; m.render_levels = 1
@@ -42,7 +46,7 @@ for k in range(1, lev + 1):
     NOP = [int(x) for x in os.environ.get('FINALN', '').split(',') if x] if k == lev else []
     if 'P' in MODE:
         for c in cols:
-            if c not in NOP: sw('p%d_%d' % (k, c), c, 'P')
+            if c not in NOP and c not in REGCOLS: sw('p%d_%d' % (k, c), c, 'P')
     if 'T' in MODE:
         for c in cols: sw('t%d_%d' % (k, c), c, 'T')
     if 'N' in MODE:
@@ -50,6 +54,7 @@ for k in range(1, lev + 1):
     nsm = int(os.environ.get('SMR', '0')) if not (k == lev and 'FINALMODE' in os.environ) else int(os.environ.get('FSMR', '0'))
     for r in range(nsm):
         sm = cage.modifiers.new('sm%d_%d' % (k, r), 'SMOOTH'); sm.factor = float(os.environ.get('SMF', '0.5')); sm.iterations = int(os.environ.get('SMI', '2'))
+        if REGV: sm.vertex_group = 'noreg'
         for c in cols: sw('r%d_%d_%d' % (k, r, c), c, 'N')
     if k == lev and os.environ.get('FINALPOST'):
         # extra post steps at the final level, e.g. 'PN' = short Project then Nearest, limit FPLIM (m)
@@ -73,5 +78,6 @@ for k in range(1, lev + 1):
             g = cage.vertex_groups.new(name='finalsm'); g.add([int(i) for i in np.where(np.isin(col, fc))[0]], 1.0, 'REPLACE'); sm.vertex_group = g.name
         if os.environ.get('FSMV'):
             ids = [int(t) for t in open(os.environ['FSMV']).read().split()]
+            if REGV: ids = [i for i in ids if i not in set(REGV)]
             g = cage.vertex_groups.new(name='finalsmv'); g.add(ids, 1.0, 'REPLACE'); sm.vertex_group = g.name
     export(k)

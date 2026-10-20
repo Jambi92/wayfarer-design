@@ -278,3 +278,10 @@ Chain: design_v007 → v008a (degenerate tri fixed: L axilla verts 2596/2597 res
 - v013: 5476 V / 5669 F, 0 coarse self-x; OBJ 181a3227…; UI import verified 0.00025 mm; blend sha 230c7b3a…d778.
 - Gate G13: L1/L2/L3/L4 self-x 30/137/961/1492; L4 over: general 0.05 % (15.5 D void), head 0.05 % (2.57), hand L 0.49 % (9.8 D tunnel), hand R 0.24 % (3.65), feet 0.01/0.04 %. T-3 and T-7 pass; T-6 hip_R 6.98 mm (section includes the R hand; hip part 0.01 mm); nails not measurable in the cloud (AW4 plate masks missing). Source genus 3 vs contract genus 0.
 - Report `reviews/claude-rac-rp1e-v013-class-a-closure-gate.md` — RP1E NON-LOCAL SUB-CAGE REBUILD BLOCKED / AUTHOR DECISION REQUIRED.
+
+### v014 local-stack ruling — session 9: pilots → LOCAL PROJECTION-STACK RECOVERY FAILED
+- P1 per-sheet ownership (`own.py`) + P2 local order (`sim.py` REGCOLS/REGV) on three pilots (`exp_v016_pilots/`): L axilla knob 4.39 → 1.95 mm but 150+ region pairs (pinch-mouth zero-gap contact); R thumb fin 2.41 → 0.21 mm but 794–1005 pairs (stitch fold / membrane taper); L ear rim worse (normal-sign split fails on the curl). No variant reached regional self-x 0; no v014 promoted.
+- T-6: component-filtered hip_R 0.086 mm (`rp1_landmarks_comp.py`); tails existing method 1.11/1.27/1.51 (tail_12 fails), exact-clip diagnostic max 1.12.
+- Nails: tooling regenerated from GO-05AW4 AW3 groups + fitted axes (8 source tips reproduced ≤0.003 mm); v013 nails −0.12…−0.71 mm (7 fail).
+- D masks: exterior-visibility mask (`dmask.py`) strongly beam-width dependent; not applied. Source genus 3 handles localised (R hand B–C through-slit, L hand tunnel, L axilla void).
+- Report `reviews/claude-rac-rp1e-v014-local-stack-recovery-gate.md`.

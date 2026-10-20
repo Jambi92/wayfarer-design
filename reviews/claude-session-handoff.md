@@ -42,7 +42,12 @@ Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN 
   - Both axillae are re-laid out to the cage_e30 design.
   - Both feet are the g5b sub-cage (shin ring A → S1–S5 → K → 4 toe tubes each; the 5th toe is fused in the source).
   - Coarse-cage self-intersections: 0.
-- SESSION 9 START STATE (read this first):
+- SESSION 10 START STATE (read this first):
+  - Ruling `chatgpt-rac-rp1e-v014-local-stack-and-contract-ruling.md` answered: `reviews/claude-rac-rp1e-v014-local-stack-recovery-gate.md` = RP1E LOCAL PROJECTION-STACK RECOVERY FAILED / AUTHOR DECISION REQUIRED (pilot tables §2, decisions §7). Wait for the author ruling.
+  - PC authoritative cage still `GO_U_REF_RP1E_retopo_v013.blend` (no v014). Blender closed.
+  - New tools: own.py (per-sheet targets into tgx_<tag>/), sim.py REGCOLS/REGV (local order), pilot_eval.py, dmask.py/dtarget.py (exterior-visibility D masks), nailcheck.py (+ reviews/rac-rp1e-evidence/nail_tooling/), rp1_landmarks_comp.py (hip component rule), hgenus.py (box genus).
+  - runc.sh honours TPRE and XFN (extra FINALN colours). AW4 source VF cached at /home/claude/stc/rp1/AW4_VF.npz (regenerate from GO-05AW4_nails_final.blend if lost).
+- SESSION 9 START STATE:
   - Order `chatgpt-rac-rp1e-v013-class-a-closure-order.md` answered: `reviews/claude-rac-rp1e-v013-class-a-closure-gate.md` = RP1E NON-LOCAL SUB-CAGE REBUILD BLOCKED / AUTHOR DECISION REQUIRED. Wait for the author ruling (projection-stack / source / contract / T-6 definition / nail tooling, §5 of the report).
   - PC authoritative cage: `GO_U_REF_RP1E_retopo_v013.blend` (sha 230c7b3a…d778) = `designs/design_v013.npz` (5476 V / 5669 F), verified 0.00025 mm. v009–v012 unchanged. Blender closed.
   - Cloud: /home/claude/stc/rp1e cur.npz = v013 (if lost: untar scratch/rp1e_s7.tgz, then copy designs/design_v013.npz + _col.npy to cur.npz/cur_col.npy and fsm_v013.txt to fsm_cur.txt). Graded refinement: `python3 refine.py IN.npz '{"centre":[..],"R":r}' OUT.npz` (spec file); batches with rfl.py.
