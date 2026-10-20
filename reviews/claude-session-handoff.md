@@ -3,7 +3,14 @@
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-20 session 12)
+## LATEST (2026-10-20 session 13)
+- RP1F order (`chatgpt-rac-rp1f-gorrund-v015-localized-aesthetic-refinement-order.md`) executed: `reviews/claude-rac-rp1f-gorrund-v015-localized-refinement-gate.md` — **RP1F GORRUND LOCALIZED REFINEMENT COMPLETE / READY FOR AUTHOR VISUAL REVIEW**.
+- PC: `GO_U_REF_RP1F_refine_v015.blend` (cage "Cylinder" = design_v014, `RP1F_production_v015`). v014.blend unchanged and still the frozen baseline.
+- Evidence: `reviews/rac-rp1f-evidence/gorrund_v015/` (renders, diagnostic, masks, claw dimensions, tools; production npz in design/).
+- Tyler chose "build proper claw geometry" for the hand claws; the R thumb claw is the weakest and may need a second pass or a hand sculpt.
+- Waiting for Tyler's visual review.
+
+## Previous (2026-10-20 session 12)
 - Order 647fa4e executed to its substantive gate: `reviews/claude-rac-rp1e-v014-resume-execution-gate.md` — **RP1E EXTERIOR PRODUCTION MESH PASS / D-MASK AUTHOR REVIEW REQUIRED**.
 - Authoritative PC file now `GO_U_REF_RP1E_retopo_v014.blend` (objects: cage "Cylinder" = design_v014, `RP1E_production_v014` = final production mesh 1 427 072 quads, weldsrc). v013 and older unchanged.
 - Cloud freeze: `reviews/rac-rp1e-evidence/designs/design_v014*.npz` (production mesh = `design_v014_production_L4.npz`), D masks + gate + visuals in `reviews/rac-rp1e-evidence/v014_final/`.
