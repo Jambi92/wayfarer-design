@@ -1,7 +1,7 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-19 session 6 (RP1E Class-A recovery order 4e2b1a9 → STOPPED: reviews/claude-rac-rp1e-class-a-recovery-gate.md = 'RP1E CLASS-A RECOVERY BLOCKED / AUTHOR DECISION REQUIRED'; PC cage v011.blend verified). Wait for the next ChatGPT order.
+Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
@@ -42,7 +42,12 @@ Updated: 2026-10-19 session 6 (RP1E Class-A recovery order 4e2b1a9 → STOPPED: 
   - Both axillae are re-laid out to the cage_e30 design.
   - Both feet are the g5b sub-cage (shin ring A → S1–S5 → K → 4 toe tubes each; the 5th toe is fused in the source).
   - Coarse-cage self-intersections: 0.
-- SESSION 6 STATE (read this first):
+- SESSION 7 STATE (read this first):
+  - Order: reviews/chatgpt-rac-rp1e-nonlocal-subcage-rebuild-order.md (R1 L foot cleft 3 → R2 R hand webs → R3 thumb/hand clefts → R4 muzzle/nose → R5 L axilla z153 → R6 rest). Return reviews/claude-rac-rp1e-nonlocal-subcage-rebuild-gate.md with one of the §11 lines.
+  - DONE (cloud): both feet rebuilt with `toegen.py` (spec toes_L3.json on design_v011; toes_R_tg8.json (rotz 36.9, mcol 13) on the L result). Result design `reviews/rac-rp1e-evidence/exp_v013/design_v012a_feet.npz` (+_col, remap_v011_to_v012a.npy): foot L self-x 0, foot R 13, devs ≤ 2.1 mm, total L4 self-x 375 (sim V13e). Coarse 0 self-x, closed, genus 0. NOTE vertex ids ≥1508 are renumbered: remap ring jsons (design_v010_rings.json) and fsm lists with the remap arrays (mkfsm.sh).
+  - IN PROGRESS: hands with `diggen.py` (toegen + oblique cleft planes from adjacent finger axes, axis-marched free rings `planeslice.axis_rings`, per-digit frames). Spec hand_L.json (attach palm ring P1 1332–1341, thumb kept). Best so far V14d: hand L deviation over 1.97 % (v011 1.74 %), web contacts 2359 pairs — not yet better than v011; R hand not started. Muzzle, axilla z153, R6 not started.
+  - Sim note: runv.sh TAG CAGE COL PN 1,3,...,16 with FINALSM=3 FSMF=0.5 FSMV=<fsm>; ~5 min per run. zcl.py TAG ZONE lists over-limit clusters; sxcat.py labels coarse self-x pairs by generator part.
+- SESSION 6 STATE:
   - PC authoritative cage: `GO_U_REF_RP1E_retopo_v011.blend` (sha 5792e5d9…1857) = design v011 (3475 V / 3605 F), verified (`import_v011/`). v009/v010 unchanged. Blender closed at session end (v011 saved); the extra Explorer tab I opened was closed, the original Downloads tab left alone.
   - Cloud: design `designs/design_v011.npz` + `_col.npy` (J ring ownership changed: trunk 1) + `fsm_v011.txt`; exact build `tools/rac/rp/rp1e/build_c3.sh`; gate run V12c in `gate_v011/`.
   - Report `reviews/claude-rac-rp1e-class-a-recovery-gate.md`: remaining A = open pockets (R hand web 3/4, L toe cleft 3, thumb webs, philtrum, L axilla z153 crevice, R axilla tips, R toe clefts) + source micro-cavities (hand-web tunnels, L axilla void, 1 mm nostrils, natal nub). Cause: L1 limit-surface retraction of pocket tips. Author decision asked: fill/keep micro-cavities; authorise sub-cage rebuild (pocket-ring topology) or stack change.

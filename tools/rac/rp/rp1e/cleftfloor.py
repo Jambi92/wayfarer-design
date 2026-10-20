@@ -4,6 +4,8 @@ import sys, numpy as np
 sys.path.insert(0,'/home/claude/stc/rp1e')
 from earsl import slice_loops
 from matplotlib.path import Path
+OPENREC=False
+FANREACH=0.6
 def ray(segs,o,d,maxd=3.0):
     best=maxd
     for A,B in segs:
@@ -12,9 +14,9 @@ def ray(segs,o,d,maxd=3.0):
         w=A-o; t=(w[0]*(-e[1])+w[1]*e[0])/den; s=(d[0]*w[1]-d[1]*w[0])/den
         if 0<t<best and 0<=s<=1: best=t
     return best
-def trace(level,start,direc,axis=2,step=0.04,wmin=0.03,maxsteps=600,ij=(0,1)):
+def trace(level,start,direc,axis=2,step=0.04,wmin=0.03,maxsteps=600,ij=(0,1),loops2d=None):
     i,j=ij
-    L=[P[:,[i,j]] for P,c in slice_loops(axis,level+1.3e-4) if c]
+    L=loops2d if loops2d is not None else [P[:,[i,j]] for P,c in slice_loops(axis,level+1.3e-4) if c]
     L=[l for l in L if np.min(np.linalg.norm(l-np.array(start),axis=1))<6]
     segs=[(l[k],l[(k+1)%len(l)]) for l in L for k in range(len(l))]
     mat=lambda p: sum(Path(l).contains_point(p) for l in L)%2==1
@@ -23,6 +25,7 @@ def trace(level,start,direc,axis=2,step=0.04,wmin=0.03,maxsteps=600,ij=(0,1)):
     for k in range(maxsteps):
         n=np.array([-d[1],d[0]]); l=ray(segs,p,n); r=ray(segs,p,-n)
         if l>=3.0 or r>=3.0:   # still outside (open air on a side): just step
+            if OPENREC: path.append((p.copy(),2*min(l,r)))
             q=p+d*step
         else:
             if l+r<wmin: break
@@ -39,7 +42,7 @@ def trace(level,start,direc,axis=2,step=0.04,wmin=0.03,maxsteps=600,ij=(0,1)):
         for c0 in [path[k][0] for k in range(max(0,len(path)-12),len(path),3)]:
           for a in np.radians(np.arange(-80,81,10)):
             R=np.array([[np.cos(a),-np.sin(a)],[np.sin(a),np.cos(a)]]); dd=R@d0; q=c0.copy()
-            for _ in range(120):
+            for _ in range(int(FANREACH/0.02)):
                 q2=q+dd*0.02
                 if mat(q2): break
                 q=q2
