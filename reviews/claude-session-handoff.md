@@ -3,6 +3,12 @@
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
+## LATEST (2026-10-20 session 12)
+- Order 647fa4e executed to its substantive gate: `reviews/claude-rac-rp1e-v014-resume-execution-gate.md` — **RP1E EXTERIOR PRODUCTION MESH PASS / D-MASK AUTHOR REVIEW REQUIRED**.
+- Authoritative PC file now `GO_U_REF_RP1E_retopo_v014.blend` (objects: cage "Cylinder" = design_v014, `RP1E_production_v014` = final production mesh 1 427 072 quads, weldsrc). v013 and older unchanged.
+- Cloud freeze: `reviews/rac-rp1e-evidence/designs/design_v014*.npz` (production mesh = `design_v014_production_L4.npz`), D masks + gate + visuals in `reviews/rac-rp1e-evidence/v014_final/`.
+- Waiting for the author ruling on the D-mask throat placement. Do nothing further until a new order.
+
 ## Roles and loop
 - ChatGPT writes orders: `reviews/chatgpt-rac-rm-ot-05XX-*.md`. Tyler authorized them as if from him.
 - Claude executes, gates, commits `reviews/claude-rac-rm-ot-05XX-*-gate.md` + `reviews/rac-rmot05XX-evidence/`,

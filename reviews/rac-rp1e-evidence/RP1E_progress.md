@@ -298,3 +298,12 @@ Chain: design_v007 → v008a (degenerate tri fixed: L axilla verts 2596/2597 res
 - Results (region 3 cm): L1 regional self-x 0 for all variants; L4 regional self-x 843 (v013) → 158 (PA_1) → 34 (PA_2, cap fixed, narrower mask zone) → 22 (PA_q1, oblique leg support ring 0.35) → 10 (PA_q1c1.0, Blender edge crease w=1 on the crease chain, `CREASE` option in sim.py) / 42 (PA_r1, traced crease). Hand T-2 in the region 2.4–2.8 mm (web over the sub-mm wedge near the tip).
 - §8 per-wall final-resolution remap (`m1wall.py` + `remaplib.py`): split along the crease + mid-plane extensions, B/C patches remapped with the opposite wall mask excluded: region deviation 2.56 → 1.52 mm, but 542 pairs at the crease (walls 0.2–0.8 mm apart near the tip cross with ~0.4 mm faces).
 - Next idea: place the shared crease where the gap ≈ 0.6 mm (slightly mouth-ward of the true tip) so the sub-mm wedge is a single surface within tolerance, then re-run attempt B + per-wall remap; fix unlocated remap vertices (14–15) via boundary-arc matching.
+
+### Resume-execution order (647fa4e) — session 12: v014 → EXTERIOR PRODUCTION MESH PASS / D-MASK AUTHOR REVIEW REQUIRED
+- M1 PASS: pants slit band with crease at the ~0.7 mm gap (PB_1, L1 regional 0, L4 19) + per-wall side-restricted final-res reprojection (`crfix.py`) → regional 0, hand T-2 1.19 mm, slit open.
+- M2–M6 closed at final resolution (vertex-only, bounded, rim-welded): `remap.py` disk remaps (D exclusion, `LID` lids at the void throats), `fixall.py` local collision-free relax, `fit2.py`/`fit3.py` local fits; ~45 local steps (`v014_final/`). 36 247 / 1 427 072 vertices overridden (max 13.1 mm at the L axilla slot entry).
+- Nails: toe remaps + `nailsnap.py` free-edge support → 8/8 at 0.000 mm.
+- D masks (`v014_final/D_masks/`): tunnel 229 F / 3.41 cm² (envelope-neck throat loops), void 144 F / 3.00 cm² (closed-section throats), total 0.017 % of source area.
+- Gate: 1 component, 0 boundary / non-manifold, genus 1, 0 degenerates, 100 % quads, 0 global self-x; envelope T-1/T-2 all within (general max 2.909, head prod→src 1.496); raw src→prod general 6.71 / hand_L 9.81 (D only); T-3 unchanged; T-6 max 1.122 (tail_00/05 reported); T-7 ≥0.99786; nails 8/8.
+- Imported in the Blender UI → `GO_U_REF_RP1E_retopo_v014.blend` (cage "Cylinder" + `RP1E_production_v014`, from OBJ + 2 PLY parts joined, merged at 1e-6 m); verified identical (≤0.00024 mm). v013 untouched.
+- Report `reviews/claude-rac-rp1e-v014-resume-execution-gate.md`.
