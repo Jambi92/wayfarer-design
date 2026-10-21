@@ -37,3 +37,13 @@ The deeper intersection audit found additional defects in the candidate and also
 A separate articulated hand test rig now exercises relaxed, fist, precision-pinch and handle-grip configurations. Initial trials exposed skin-weighting and thumb-opposition problems. Those trials are failures to be corrected, not production acceptance. Smooth connected-surface weights are replacing the initial weighting setup.
 
 Current decision: HOLD. No global geometry, grip, rigging or production PASS, and no anatomical freeze. Detailed model evidence remains local in accordance with the earlier automatic approval restriction. An independent audit package will identify the unresolved checks explicitly.
+
+## Quality-pass outcome: HOLD for independent audit
+
+The quality pass is not complete or accepted. Local repairs improved the static mesh, but remaining intersection flags and the diagnostic rig's deformation/contact failures still block acceptance. The source control and actual Blender triangulation were cross-checked; fixed-diagonal triangle results are not interchangeable with the established quad-BVH gate.
+
+The production component contract requires fused claws. The separate objects are visual-preview assets, and the fused-conversion preflight was not accepted. No production-ready fused character or passing hand rig is claimed.
+
+A local, hand-only failure-analysis bundle has been prepared for Claude, with geometry crops, diagnostic bones/weights, checks and labelled failure sheets. It has not been transmitted. Raw model-data export still requires the explicit permission requested after the earlier automatic approval rejection. The repository receives this plain-language summary only.
+
+Frozen sources, prior approved versions, Turnfall and Unreal remain untouched. No freeze or family propagation. The next audit must resolve the protected right-hand feature, component ownership, joint placement/weights and grip/contact gates before acceptance.
