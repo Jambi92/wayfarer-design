@@ -83,3 +83,13 @@ The dense diagnostic mesh still develops skin folds during bending, so it has no
 A new palm cage, four separately spaced finger roots, and the index finger's proximal and middle joint loops have been constructed manually and saved locally. This is an early construction checkpoint: the other digits, thumb, fingertip/claw shaping, surface fitting, body integration and deformation tests remain unfinished. The new cage is not a production-ready hand and has no visual or functional PASS.
 
 Windows desktop Blender control is working. Only this isolated working copy is being edited. Frozen production files, Unreal and Turnfall remain untouched. This update contains prose only; no additional model geometry or rejected preview images are published.
+
+## Visible hand sculpt cleanup completed — 2026-10-21
+
+Tyler requested completion of the visible sculpt. Both hands now have smoother finger surfaces, cleaned claw-base transitions and material rims, and a rounded right-thumb claw root. The rough surface left by the diagnostic right interdigit separation was repaired locally. The substantial five-digit hand architecture and approved enlarged claw direction remain; the working model has not been uniformly scaled to the bible's nominal stature.
+
+The finished sculpt review candidate passes the local static hand-region check with zero flagged triangles, zero verified non-adjacent crossings, zero near-zero-area triangles and finite coordinates. Its diagnostic body remains one connected closed surface, with no boundary or non-manifold edges, no unused vertices and Euler characteristic 2. All 950,673 reference vertices outside the complete hand mask are present at exactly their reference coordinates. The protected v015 source SHA256 is unchanged. Native height is unchanged from the input diagnostic candidate (204.51981985 cm); the bible's separately documented 204.5225 cm frozen-reference measurement and nominal race stature are not revised.
+
+This completes the **visible sculpt cleanup only**. The saved local deliverable is `Gorrund_Hand_Sculpt_Complete_Review.blend`, accompanied by compact hand, thumb and full-model previews and a check report. This dense triangle surface is a sculpt review candidate, not the contract's manually built production quad mesh. The manual cage remains an unfinished separate construction; grip, pinch, clench, deformation acceptance, production freeze and family propagation remain **HOLD**. The local static result is not a global geometry or animation PASS, and no independent Claude acceptance is claimed.
+
+Frozen production files, Unreal and Turnfall remain untouched. This repository update publishes prose only; no new geometry bundle or preview images are uploaded.
