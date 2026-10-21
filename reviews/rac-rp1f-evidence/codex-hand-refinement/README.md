@@ -75,3 +75,11 @@ A distal tissue connection between two right-hand fingers is also present in the
 The repaired static hand region again has zero flagged triangles and zero verified crossings. The final local intersection correction was below one micron. Ten separate keratin surface regions are identified for rigid support. All 950,673 source vertices outside the complete source-hand mask remain at exactly their source coordinates, and the protected v015 file hash is unchanged.
 
 Status remains **diagnostic work in progress**. Grip, pinch, clench, visual acceptance and manual production retopology are still being checked; no production or deformation PASS is declared. This update publishes only a progress summary. No new raw model bundle, rejected pose images, Unreal changes, family propagation or Turnfall changes are included.
+
+## Manual hand rebuild started — 2026-10-21
+
+The dense diagnostic mesh still develops skin folds during bending, so it has not passed deformation inspection. Further contact fitting alone will not resolve that. Work has moved to the contract's manual Blender UI retopology method, using a separate hand reference at native model scale and the race bible as constraints.
+
+A new palm cage, four separately spaced finger roots, and the index finger's proximal and middle joint loops have been constructed manually and saved locally. This is an early construction checkpoint: the other digits, thumb, fingertip/claw shaping, surface fitting, body integration and deformation tests remain unfinished. The new cage is not a production-ready hand and has no visual or functional PASS.
+
+Windows desktop Blender control is working. Only this isolated working copy is being edited. Frozen production files, Unreal and Turnfall remain untouched. This update contains prose only; no additional model geometry or rejected preview images are published.
