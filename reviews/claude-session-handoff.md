@@ -9,6 +9,8 @@ Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN 
 - Evidence: `reviews/rac-rp1f-evidence/gorrund_v015/` (renders, diagnostic, masks, claw dimensions, tools; production npz in design/).
 - Tyler chose "build proper claw geometry" for the hand claws; the R thumb claw is the weakest and may need a second pass or a hand sculpt.
 - Waiting for Tyler's visual review.
+- v015b (thumb-claw second pass) built in the cloud: `reviews/rac-rp1f-evidence/gorrund_v015b/`. PLY parts are on E: (RP1 folder). The Blender UI import to `GO_U_REF_RP1F_refine_v015b.blend` is PENDING: Tyler asked that his computer not be used while he works (writing music); he will message when he is done for the night.
+- New standing preference (Tyler, 2026-10-20): do Blender work in the cloud; use his screen only when he says so. A full production `.blend` (~55 MB compressed) is over the 30 MB file-link limit, so the final UI import still needs his screen or his own clicks.
 
 ## Previous (2026-10-20 session 12)
 - Order 647fa4e executed to its substantive gate: `reviews/claude-rac-rp1e-v014-resume-execution-gate.md` — **RP1E EXTERIOR PRODUCTION MESH PASS / D-MASK AUTHOR REVIEW REQUIRED**.
