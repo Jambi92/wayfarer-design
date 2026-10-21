@@ -65,3 +65,13 @@ A separate fused diagnostic hand checkpoint now passes its local static intersec
 The checkpoint freezes its audited triangle tessellation to prevent curved-polygon retessellation from changing the surface during testing. It is a diagnostic target, **not the contract's manual quad production retopology**. No production freeze or global geometry PASS is declared. Unrelated source-control flags are not silently waived.
 
 Hand rig repairs are continuing: source-fitted joint trials, continuous skin weights, rigid claw support, anatomically placed grip fixtures and finger-pad clearance. Relaxed, fist, precision-pinch and handle-grip trials are being inspected and corrected locally; they are not accepted deformation evidence yet. No rejected pose images or new raw geometry are uploaded at this checkpoint. Turnfall, Unreal and frozen production assets remain untouched.
+
+## Functional hand repair checkpoint — 2026-10-21
+
+Further pose inspection traced the stretched skin to inconsistent finger ownership in the diagnostic weights. The correction now follows connected finger surfaces and keeps each claw with its own fingertip, rather than assigning nearby skin across adjacent digits.
+
+A distal tissue connection between two right-hand fingers is also present in the source control. The separate diagnostic candidate now opens that connection locally to permit independent articulation, consistent with the specification's fine-manipulation requirement. This is an explicit candidate change to the earlier preserved slit region; it does **not** inherit the v015 feature acceptance automatically. The protected source remains unchanged. The revised candidate has one closed manifold body and genus 0 after removing a tiny disconnected cut fragment; this topology change must be assessed during review rather than hidden behind the old genus-1 gate.
+
+The repaired static hand region again has zero flagged triangles and zero verified crossings. The final local intersection correction was below one micron. Ten separate keratin surface regions are identified for rigid support. All 950,673 source vertices outside the complete source-hand mask remain at exactly their source coordinates, and the protected v015 file hash is unchanged.
+
+Status remains **diagnostic work in progress**. Grip, pinch, clench, visual acceptance and manual production retopology are still being checked; no production or deformation PASS is declared. This update publishes only a progress summary. No new raw model bundle, rejected pose images, Unreal changes, family propagation or Turnfall changes are included.
