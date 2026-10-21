@@ -2,32 +2,30 @@
 
 Date: October 20, 2026 (America/Phoenix).
 
-Status: **IN PROGRESS — VISUAL CANDIDATE, NOT A PRODUCTION FREEZE.**
+Status: **ATTACHMENT REFINEMENT AVAILABLE LOCALLY FOR VISUAL REVIEW. NOT A PRODUCTION FREEZE.**
 
-## Author direction and scope
+## Author direction
 
-Tyler rejected the A/B/C mockups because the human hand/nail-bed anatomy remained too apparent and the claws were undersized relative to the digits. He approved the direction of separate finger and thumb studies, requested that direction on the full model, and then authorized refinement of the fingertip transitions and thumb attachments. Overall claw size is retained during this refinement.
+Tyler rejected the initial A/B/C directions because the human nail-bed anatomy remained too apparent and the claws were undersized relative to the fingers. He approved the direction of separate finger and thumb studies, requested that direction on the full model, and then authorized cleanup of the fingertip transitions and thumb attachments while keeping the overall claw size.
 
-Reference: `specs/gorrund/GORRUND_V1.md`, particularly Part 2 hand structure/dexterity constraints and the accepted stature writeback. The older ordinary-nail wording is not silently rewritten: Tyler's current claw direction governs this visual experiment. Native model scale is preserved; the 204.5225 cm source realization is not rescaled to the nominal race reference or used to revise the stature envelope.
+Reference: the Gorrund race specification, particularly its hand structure, articulation, dexterity and scale constraints. The older ordinary-nail wording is not silently rewritten; Tyler's current claw direction governs this visual experiment. The source model is not rescaled and the accepted stature envelope is not revised.
 
-## Completed checkpoint
+## Latest progress
 
-- Separate Blender finger/thumb anatomy studies and same-scale comparison renders.
-- Full-model visual candidate with ten separate keratin claw objects and locally reshaped distal housings.
-- Source v015 SHA-256: `dfba363e534359193c63dc1700eb54d80f2ee34dbfa3a3cad06b5f87943e5e75`; verified unchanged after building the candidate.
-- Saved candidate reopened successfully: 1,427,072 body vertices and 1,427,072 body quads; finite coordinates; zero quads below the checked near-zero-area threshold of 1e-14 square metres; ten claw objects.
-- Recorded zero body vertices changed outside the explicit digit masks. This checks spatial isolation, not anatomical correctness or mesh quality.
+- Completed separate finger/thumb anatomy studies and the initial ten-digit full-model visual candidate.
+- Saved a new local review copy with smoother distal housing transitions and deeper root integration.
+- Refined thumb attachment angles while retaining the approved claw-size direction.
+- Generated relaxed views, thumb closeups and a controlled distal-flexion study.
+- Checked local edit isolation, finite coordinates and basic face-area integrity. The protected production source remains unchanged.
 
-## Current assessment and work
+The limited flexion screen is not a complete gripping pose or a production rig test. Some creasing/pinching remains visible, especially in the right-hand and bent-digit views. No deformation PASS is declared.
 
-Tyler likes the overall direction and full-body read. Codex identified visible transition bands/creases, some pointed-cap appearance at attachments, and thumb placement that needs refinement. The next pass smooths those local transitions and deepens the root integration without changing the approved overall claw size.
+## Still pending
 
-Relaxed and controlled flexion visual studies will be used to inspect attachment behaviour. A procedural pose study does not establish production rigging, grip/contact validity, or collision-free animation.
+Author visual review; further local crease cleanup as needed; global self-intersection clearance; production rig/deformation acceptance; whole-hand grip/contact and collision validation. Separate keratin objects have not been accepted as a watertight production union.
 
-## Outstanding gates
+v014, v015, v015b and the frozen source remain protected. No Unreal changes. Turnfall remains outside the task and untouched.
 
-No claim of global self-intersection clearance, deformation/rig acceptance, T-6/T-7 acceptance, watertight union of the separate keratin objects, or production readiness. v014, v015, v015b and the frozen source remain protected. No Unreal changes. Turnfall is outside this work and untouched.
+## Evidence location
 
-## Local review deliverables
-
-Current files are in this Codex chat's `outputs` directory: `Gorrund_finger_thumb_anatomy_study.blend`, `Gorrund_fullscale_claw_visual_candidate.blend`, the comparison renders, and the saved-file check reports. Large Blender binaries are not included in this progress commit. Reproducible refinement scripts and compact review evidence will accompany the next checkpoint.
+Blender review copies, images, refinement scripts and detailed check reports remain in this Codex chat's local outputs/workspace. Automated approval review rejected exporting raw model coordinates and detailed derived geometry metadata to GitHub. This checkpoint therefore publishes only the plain-language progress summary; it does not upload those payloads or claim that they were published.
