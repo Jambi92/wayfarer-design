@@ -47,3 +47,13 @@ The production component contract requires fused claws. The separate objects are
 A local, hand-only failure-analysis bundle has been prepared for Claude, with geometry crops, diagnostic bones/weights, checks and labelled failure sheets. It has not been transmitted. Raw model-data export still requires the explicit permission requested after the earlier automatic approval rejection. The repository receives this plain-language summary only.
 
 Frozen sources, prior approved versions, Turnfall and Unreal remain untouched. No freeze or family propagation. The next audit must resolve the protected right-hand feature, component ownership, joint placement/weights and grip/contact gates before acceptance.
+
+## Approved audit publication — 2026-10-21
+
+Tyler explicitly approved sharing the prepared 22.7 MB hand-only audit bundle, including geometry, landmark coordinates, diagnostic rig bones/weights and failure reports, to this repository for Claude's independent review. This approval supersedes the pending-export status above.
+
+- [Download the hand-only audit bundle](Wayfarer_Gorrund_Hand_Quality_HOLD_Audit.zip)
+- [Read the independent audit instructions and limitations](AUDIT_REQUEST.md)
+- Size: 22,672,065 bytes; SHA256: `d13d3b2890779d26e3e4d7e413b7b5fc7b4165ac742e3d6a6a3e1ea4f915bcaf`.
+
+Status remains **HOLD**. Publication is a request for independent review, not evidence that Claude has reviewed or accepted it. The diagnostic rig and pose trials failed; no production freeze, fused-model acceptance or family propagation is authorized by this upload. Protected sources and Turnfall remain untouched.
