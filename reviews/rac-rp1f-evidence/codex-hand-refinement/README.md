@@ -29,3 +29,11 @@ v014, v015, v015b and the frozen source remain protected. No Unreal changes. Tur
 ## Evidence location
 
 Blender review copies, images, refinement scripts and detailed check reports remain in this Codex chat's local outputs/workspace. Automated approval review rejected exporting raw model coordinates and detailed derived geometry metadata to GitHub. This checkpoint therefore publishes only the plain-language progress summary; it does not upload those payloads or claim that they were published.
+
+## Hand-quality audit in progress
+
+The deeper intersection audit found additional defects in the candidate and also flagged portions of the protected source under the same method. Local hand repair is proceeding without changing the frozen production files or unrelated anatomy. Several distal patches have been rebuilt geometrically while preserving their topology and outer boundaries; the right-hand feature regions are treated separately.
+
+A separate articulated hand test rig now exercises relaxed, fist, precision-pinch and handle-grip configurations. Initial trials exposed skin-weighting and thumb-opposition problems. Those trials are failures to be corrected, not production acceptance. Smooth connected-surface weights are replacing the initial weighting setup.
+
+Current decision: HOLD. No global geometry, grip, rigging or production PASS, and no anatomical freeze. Detailed model evidence remains local in accordance with the earlier automatic approval restriction. An independent audit package will identify the unresolved checks explicitly.
