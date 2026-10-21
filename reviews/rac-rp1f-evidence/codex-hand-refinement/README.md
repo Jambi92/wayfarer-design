@@ -57,3 +57,11 @@ Tyler explicitly approved sharing the prepared 22.7 MB hand-only audit bundle, i
 - Size: 22,672,065 bytes; SHA256: `d13d3b2890779d26e3e4d7e413b7b5fc7b4165ac742e3d6a6a3e1ea4f915bcaf`.
 
 Status remains **HOLD**. Publication is a request for independent review, not evidence that Claude has reviewed or accepted it. The diagnostic rig and pose trials failed; no production freeze, fused-model acceptance or family propagation is authorized by this upload. Protected sources and Turnfall remain untouched.
+
+## Repair progress — 2026-10-21
+
+A separate fused diagnostic hand checkpoint now passes its local static intersection check: zero flagged triangles and zero verified crossings in the tested hand region. The full diagnostic body has one connected component, zero boundary edges, zero non-manifold edges/vertices, no unreferenced vertices, and the source's genus 1 under the triangle topology check. All 999,229 source vertices outside the connected source hand mask remain present at exactly their source coordinates. The protected v015 source SHA256 remains unchanged.
+
+The checkpoint freezes its audited triangle tessellation to prevent curved-polygon retessellation from changing the surface during testing. It is a diagnostic target, **not the contract's manual quad production retopology**. No production freeze or global geometry PASS is declared. Unrelated source-control flags are not silently waived.
+
+Hand rig repairs are continuing: source-fitted joint trials, continuous skin weights, rigid claw support, anatomically placed grip fixtures and finger-pad clearance. Relaxed, fist, precision-pinch and handle-grip trials are being inspected and corrected locally; they are not accepted deformation evidence yet. No rejected pose images or new raw geometry are uploaded at this checkpoint. Turnfall, Unreal and frozen production assets remain untouched.
