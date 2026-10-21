@@ -3,7 +3,13 @@
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-20 session 13)
+## LATEST (2026-10-20 session 14) — HAND-CLAW PROPORTION, HANDED TO CHATGPT
+- Tyler rejected the v015/v015b hand-claw size: "that retractable nail look really silly with such a big finger. the two don't really match at all in proportion."
+- 3 render-only mockups (A bigger sheathed claw, B thick hooked claw, C claw-shaped nail) were sent to Tyler; **no pick yet**.
+- Full status, parameters, tools and step-by-step plan toward v016: `reviews/rac-rp1f-evidence/claw_mockups_v016/README.md`.
+- Tyler asked to give ChatGPT a trial on completing it. v014/v015 stay frozen; v015b .blend was never made.
+
+## Previous (2026-10-20 session 13)
 - RP1F order (`chatgpt-rac-rp1f-gorrund-v015-localized-aesthetic-refinement-order.md`) executed: `reviews/claude-rac-rp1f-gorrund-v015-localized-refinement-gate.md` — **RP1F GORRUND LOCALIZED REFINEMENT COMPLETE / READY FOR AUTHOR VISUAL REVIEW**.
 - PC: `GO_U_REF_RP1F_refine_v015.blend` (cage "Cylinder" = design_v014, `RP1F_production_v015`). v014.blend unchanged and still the frozen baseline.
 - Evidence: `reviews/rac-rp1f-evidence/gorrund_v015/` (renders, diagnostic, masks, claw dimensions, tools; production npz in design/).
