@@ -3,7 +3,12 @@
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-20 session 14) — HAND-CLAW PROPORTION, HANDED TO CHATGPT
+## LATEST (2026-10-22) — HAND MESH + GRIP ORDER: HOLD
+- Report: `reviews/claude-rac-gorrund-hand-mesh-grip-closure.md`. Mesh done (PC `work/claude109/Gorrund_hand_production109.blend`, ba668cce…); grip partial.
+- Open: thumb deformation (thenar corrective / helper bone / CMC placement), L handle index+thumb, contact-limited finger ranges; owner review of method, genus 1→0 cut, R crater exclusion, T-4 claw regression, contact tolerances.
+- Tools in `reviews/rac-rp1f-evidence/claude-hand-mesh-grip/tools/`; cloud working state is ephemeral (reports zip on the PC).
+
+## Previous (2026-10-20 session 14) — HAND-CLAW PROPORTION, HANDED TO CHATGPT
 - Tyler rejected the v015/v015b hand-claw size: "that retractable nail look really silly with such a big finger. the two don't really match at all in proportion."
 - 3 render-only mockups (A bigger sheathed claw, B thick hooked claw, C claw-shaped nail) were sent to Tyler; **no pick yet**.
 - Full status, parameters, tools and step-by-step plan toward v016: `reviews/rac-rp1f-evidence/claw_mockups_v016/README.md`.
