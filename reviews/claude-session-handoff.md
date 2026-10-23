@@ -3,7 +3,11 @@
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-23) — HAND MESH + GRIP ORDER: PASS, READY FOR OWNER REVIEW
+## LATEST (2026-10-23) — RP1 GORRUND FINAL OWNER ACCEPTED / FROZEN; RP2 GRASK STARTED
+- Freeze report `reviews/claude-rac-rp1-gorrund-final-owner-freeze.md`; canonical `E:/…/production/Gorrund/RP1/GO_U_REF_RP1_FINAL.blend` (+ .json) = byte copy of rev110 (133edfde…). RP1 CLOSED — no more Gorrund work.
+- Next: RP2 Grask order `reviews/chatgpt-rac-rp2-grask-production-pilot-execute-order.md` (autonomous; Tyler sees only a technical PASS). Candidates go to `E:/…/production/Grask/RP2/`, evidence `reviews/rac-rp2-evidence/`.
+
+## Previous (2026-10-23) — HAND MESH + GRIP ORDER: PASS, READY FOR OWNER REVIEW
 - Report rewritten: `reviews/claude-rac-gorrund-hand-mesh-grip-closure.md`. rev 110 mesh (thumb tips grafted from index tip) + all 16 movement/grip tests pass on Blender-verified frames.
 - PC `work/claude110/`: production110.blend, grip_tests110_L_DIAG / R_DIAG.blend, reports zip, SHA256SUMS + hashes_pc (match).
 - Tools + final task configs: `reviews/rac-rp1f-evidence/claude-hand-mesh-grip/tools/`, `tasks110/`. Cloud working dir `/tmp/claude-0/hand` (may not survive).

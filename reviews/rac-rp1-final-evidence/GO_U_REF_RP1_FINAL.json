@@ -1,0 +1,128 @@
+{
+ "file": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Gorrund/RP1/GO_U_REF_RP1_FINAL.blend",
+ "status": "RAC RP1 GORRUND FAMILY PILOT \u2014 FINAL OWNER ACCEPTED / FROZEN",
+ "date": "2026-10-23",
+ "file_sha256": "133edfde40532244332ac17ea6ad887713d5e700392c36365ef6c31ca20609e8",
+ "file_sha256_pc_certutil": "133edfde40532244332ac17ea6ad887713d5e700392c36365ef6c31ca20609e8",
+ "creation": "byte-for-byte copy of the accepted rev110 file (Windows copy /b on Tyler's PC); not opened or re-saved; no geometry, rig or metadata change",
+ "object": "GO_hand_production110",
+ "objects_in_file": [
+  "GO_hand_production110"
+ ],
+ "object_note": "object keeps its accepted rev110 name; canonical naming is carried by the file name",
+ "geometry_sha256": "e98cdc60a1c49da72c422c323bfff27b80c16c69f4629f8077d6f4a0b8c773f1",
+ "geometry_hash_definition": "sha256(float32 vertex co array in file order || int32 polygon vertex index array in file order)",
+ "vertices": 1443272,
+ "faces": 1443270,
+ "quads_pct": 100.0,
+ "topology": {
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "directed_edge_duplicates": 0,
+  "euler": 2,
+  "genus": 0.0,
+  "unused_vertices": 0,
+  "coincident_vertex_pairs_lt_1e6cm": 0,
+  "degenerate_quads_area_lt_1e8cm2": 0,
+  "min_edge_mm": 0.001657180640036803,
+  "T4_angles_45_135_pct": 88.00979719664373,
+  "T4_aspect_le4_pct": 95.44361068961456
+ },
+ "self_intersections": {
+  "design_geometry_float64": 0,
+  "stored_file_float32": 6,
+  "note": "the 6 face pairs are float32 storage-rounding tangencies: in the accepted float64 design geometry they are separated by 0.000013-0.00024 mm; vertex rounding in the file is <= 0.00012 mm. The frozen v015 file shows 33 pairs of the same class. Not a geometry change; recorded, not waived."
+ },
+ "stature_cm": 204.51982,
+ "bbox_cm": [
+  84.40883,
+  134.1764,
+  204.51982
+ ],
+ "matrix_world_identity": true,
+ "match_vs_accepted_rev110": {
+  "vertex_order_identical": true,
+  "faces_identical_up_to_frame_winding": true,
+  "max_vertex_diff_mm": 0.0001190445377829974
+ },
+ "T2_hands_vs_rev107_outside_accepted_exclusions": {
+  "excluded_ref_vertices": 34856,
+  "moved_prod_vertices": 27597,
+  "hand_L": {
+   "prod_to_ref": {
+    "median": 6.47307199871286e-05,
+    "p95": 0.007649719519916129,
+    "max": 0.43931646582320133
+   },
+   "ref_to_prod": {
+    "median": 0.002217358855344432,
+    "p95": 0.015736008330631532,
+    "max": 0.6140311406566195
+   }
+  },
+  "hand_R": {
+   "prod_to_ref": {
+    "median": 4.7925982676222105e-05,
+    "p95": 0.008497476564659837,
+    "max": 1.209060565800986
+   },
+   "ref_to_prod": {
+    "median": 0.002655902093435196,
+    "p95": 0.04379360083394637,
+    "max": 1.1102527305207999
+   }
+  }
+ },
+ "accepted_exclusions": [
+  "both thumb tips distal of the graft cut (owner-directed)",
+  "R thumb-base source crater, 1.3 cm sphere at (-25.66,-47.84,97.76) cm"
+ ],
+ "parent": {
+  "file": "work/claude110/Gorrund_hand_production110.blend",
+  "sha256": "133edfde40532244332ac17ea6ad887713d5e700392c36365ef6c31ca20609e8",
+  "report": "reviews/claude-rac-gorrund-hand-mesh-grip-closure.md @ 003477885a6f906c17e3afca1d336120463ebe43"
+ },
+ "derivation_chain": [
+  {
+   "step": "v014",
+   "file": "GO_U_REF_RP1E_retopo_v014.blend",
+   "sha256": "18df4197d08786788b8750b5828f80a0f466671499512f228abdee4867aa850b"
+  },
+  {
+   "step": "v015",
+   "file": "GO_U_REF_RP1F_refine_v015.blend",
+   "sha256": "dfba363e534359193c63dc1700eb54d80f2ee34dbfa3a3cad06b5f87943e5e75"
+  },
+  {
+   "step": "rev107 refit",
+   "reference": "outputs/Gorrund_Rounded_Fingertips_Review.blend",
+   "sha256": "cdc9e3a9bb74619aee6e4edf4f531cf32be5d211797ac0b3e74c06b05bbe9179",
+   "note": "v015 topology refitted to the accepted rev107 hands (rev109)"
+  },
+  {
+   "step": "rev110",
+   "file": "work/claude110/Gorrund_hand_production110.blend",
+   "sha256": "133edfde40532244332ac17ea6ad887713d5e700392c36365ef6c31ca20609e8",
+   "note": "thumb-tip graft"
+  }
+ ],
+ "protected_rehash_2026_10_23": {
+  "v015": "dfba363e534359193c63dc1700eb54d80f2ee34dbfa3a3cad06b5f87943e5e75 (unchanged)",
+  "rev107": "cdc9e3a9bb74619aee6e4edf4f531cf32be5d211797ac0b3e74c06b05bbe9179 (unchanged)",
+  "v014": "18df4197d08786788b8750b5828f80a0f466671499512f228abdee4867aa850b"
+ },
+ "owner_acceptance": {
+  "by": "Tyler",
+  "via": "reviews/chatgpt-rac-rp1-gorrund-final-owner-freeze-order.md (commit 6aed2e6)",
+  "date": "2026-10-23"
+ },
+ "non_canonical": [
+  "rev110 diagnostic rig, human-ratio joints, weights, actions and corrective shape keys (L/R DIAG files) \u2014 deformation evidence only"
+ ],
+ "watch_items": [
+  "T-4 claw-tip fans (88.0 / 95.4 %) for future LOD/topology quality",
+  "final rig needs anatomy-derived joints and soft-tissue correctives",
+  "no UE5 / rigging / creator authorization follows"
+ ]
+}
