@@ -1,0 +1,126 @@
+{
+ "file": "GR_U_REF_RP2_production_v002.blend",
+ "object": "GR_U_REF_RP2_production_v002",
+ "status": "RP2 GRASK IDENTITY-CORRECTED PRODUCTION BUILD PASS / READY FOR AUTHOR REVIEW (not promoted; v001 preserved unchanged)",
+ "date": "2026-10-23",
+ "order": "reviews/chatgpt-rac-rp2-grask-identity-correction-and-completion-order.md",
+ "report": "reviews/claude-rac-rp2-grask-identity-correction-final-gate.md",
+ "file_sha256": "9622a062da2a756bb14e1dc630f6f4e5311ce19fbf598ea276b96674feae23ee",
+ "geometry_sha256": "0b938028d4aa1f7796e706ed8940f217610f11a0ae70b05bc4a0862044ce15dc",
+ "geometry_hash_definition": "SHA-256 of float32 vertex co array followed by int32 loop vertex_index array, file order",
+ "parent": {
+  "file": "GR_U_REF_RP2_production_v001.blend",
+  "sha256": "81f579f91b43667143840dbc5e6e41ce7c35c5e326c4669c8e14a896ac219c0a",
+  "note": "same topology (vertex/face order identical); v001 untouched"
+ },
+ "source": {
+  "file": "reviews/reference-assets/r6/GR5DE3_r6.npz",
+  "sha256": "d859eb189ef11881cae2f92ac77414ee630a899d4c1dcf95c0ac78e5a558d778",
+  "rehash": "unchanged"
+ },
+ "frame": "Blender metres, (x, -f, u)/100; world identity; outward normals (volume +111.60 L)",
+ "topology": {
+  "vertices": 214146,
+  "faces": 214144,
+  "quads_pct": 100.0,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "genus": 0,
+  "self_intersections": 0,
+  "self_intersection_check": "0 pairs: float64 design data and float32 stored file, both quad diagonals",
+  "T4_angles_45_135_pct": 97.87759638374179,
+  "T4_aspect_le4_pct": 95.49041766288106
+ },
+ "edit_masks": "GR_U_REF_RP2_production_v002_edit_masks.npz (per-vertex booleans + displacement from v001 in mm)",
+ "landmarks": "GR_U_REF_RP2_production_v002_landmarks.json (finger and toe-tip joints moved by the identity correction; others unchanged)",
+ "mpfb_mapping": "mesh attributes mpfb_hm08_vertex / rp2_base_vertex / rp2_base_quad, and GR_U_REF_RP2_production_v002_mpfb_mapping.npz (unchanged from v001)",
+ "gates": {
+  "T1_unchanged_region_vs_H": {
+   "prod_to_ref": {
+    "median": 0.20286115971657512,
+    "p95": 0.8065867492225257,
+    "max": 1.8337079370582003,
+    "n": 18047
+   },
+   "ref_to_prod": {
+    "median": 0.31719702728153176,
+    "p95": 1.1116177350451182,
+    "max": 2.026446606806989,
+    "n": 1951
+   }
+  },
+  "T3_stature_delta_mm_vs_E3": -0.7225311498245901,
+  "T7": {
+   "front": {
+    "iou_full_vs_E3": 0.9574186644471858,
+    "iou_full_vs_v001": 0.9567190382669761,
+    "iou_unchanged_vs_E3": 0.998394541440899,
+    "iou_unchanged_vs_v001": 1.0,
+    "silhouette_area_change_pct_vs_v001": 2.5582577356107628
+   },
+   "profile": {
+    "iou_full_vs_E3": 0.953947528981086,
+    "iou_full_vs_v001": 0.9534144791513908,
+    "iou_unchanged_vs_E3": 0.9983552631578947,
+    "iou_unchanged_vs_v001": 1.0,
+    "silhouette_area_change_pct_vs_v001": 3.6644411599816524
+   },
+   "rear": {
+    "iou_full_vs_E3": 0.9574186644471858,
+    "iou_full_vs_v001": 0.9567190382669761,
+    "iou_unchanged_vs_E3": 0.998394541440899,
+    "iou_unchanged_vs_v001": 1.0,
+    "silhouette_area_change_pct_vs_v001": 2.5582577356107628
+   }
+  },
+  "edited_region_deltas_vs_v001_mm": {
+   "head_face_ears_neck": {
+    "vertices": 71853,
+    "moved_gt_0p1mm": 71849,
+    "max": 55.28836689688259,
+    "mean": 13.19684347513456,
+    "p95": 41.457309977910974,
+    "surface_distance_to_E3_p95": 16.02557907410557,
+    "surface_distance_to_E3_max": 46.951768291759926
+   },
+   "hands": {
+    "vertices": 51043,
+    "moved_gt_0p1mm": 51043,
+    "max": 31.82327180095623,
+    "mean": 14.599880824389901,
+    "p95": 27.179894878739564,
+    "surface_distance_to_E3_p95": 22.439043025882818,
+    "surface_distance_to_E3_max": 31.283002987999335
+   },
+   "feet": {
+    "vertices": 34059,
+    "moved_gt_0p1mm": 34055,
+    "max": 36.81868959867211,
+    "mean": 16.520294302754895,
+    "p95": 30.398849665071356,
+    "surface_distance_to_E3_p95": 25.639255851250294,
+    "surface_distance_to_E3_max": 35.88978999000199
+   },
+   "front_body_carriers (girdle, joints, limb breadth, trunk, keel)": {
+    "vertices": 36996,
+    "moved_gt_0p1mm": 36996,
+    "max": 15.640501593379113,
+    "mean": 3.8910291505926735,
+    "p95": 9.799863243703864,
+    "surface_distance_to_E3_p95": 8.570188335094734,
+    "surface_distance_to_E3_max": 14.578767524572312
+   },
+   "unchanged (<0.5 mm from v001)": {
+    "vertices": 21076,
+    "moved_gt_0p1mm": 6664,
+    "max": 0.4999482170771769,
+    "mean": 0.10188637033224306,
+    "p95": 0.4434449618233732,
+    "surface_distance_to_E3_p95": 1.2339452958941046,
+    "surface_distance_to_E3_max": 15.279474328197217
+   }
+  }
+ },
+ "not_authorized": "No canon freeze, no next race, no final rig, no creator, no UE5."
+}
