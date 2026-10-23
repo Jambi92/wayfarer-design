@@ -32,8 +32,8 @@ for tilt in np.radians(np.arange(-56, 57, 7)):
     surf = np.array(h[0])
     for off in np.arange(0.0, 0.06, 0.001):
         c = surf + ventral * (r + off); m = sd_all(c).min()
-        if m >= 0.0015: break
+        if m >= 0.0004: break
     cand = dict(c=(c * 100).tolist(), ax=ax.tolist(), r=r * 100, hl=hl * 100, along_cm=float(along * 100), tilt_deg=float(np.degrees(tilt)), gap_mm=float(m * 1000), palm_offset_mm=float(off * 1000))
-    if m >= 0.0015 and (best is None or off < best['palm_offset_mm'] / 1000): best = cand
+    if m >= 0.0004 and (best is None or off < best['palm_offset_mm'] / 1000): best = cand
 own = RD['own']; c_ = np.array(best['c']) / 100; ax = np.array(best['ax']); sdv = sd_all(c_); i_ = int(np.argmin(sdv)); best['closest_owner'] = int(own[i_]); best['closest_pt'] = (P[i_] * 100).tolist()
 print(json.dumps(best)); json.dump(best, open(outf, 'w'), indent=1)

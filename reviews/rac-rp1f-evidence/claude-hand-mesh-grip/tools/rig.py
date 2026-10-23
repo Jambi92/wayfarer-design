@@ -33,6 +33,12 @@ for side, sg in (('L', 1), ('R', -1)):
     vid = np.unique(Qc); mp = -np.ones(len(V), int); mp[vid] = np.arange(len(vid)); Vh = V[vid]; Qh = mp[Qc]
     # keratin per crop vertex
     sd, ti, _ = igl.point_mesh_squared_distance(Vh, R, F); ker = (mat[ti] == 1) & (np.sqrt(sd) < 0.05)
+    if os.environ.get('KER_OVR'):
+        ko = np.load(os.environ['KER_OVR']); gl = {int(g): i for i, g in enumerate(vid)}
+        for g in ko['clear_%s' % side]: 
+            if int(g) in gl: ker[gl[int(g)]] = False
+        for g in ko['set_%s' % side]:
+            if int(g) in gl: ker[gl[int(g)]] = True
     Eh = edges_q(Qh); Gh = graph(Vh, Eh)
     # --- joints per digit
     joints = {}; regions = {}
@@ -93,13 +99,23 @@ for side in 'LR':
         def jplane(p, d1, d2):
             nrm = d1 / np.linalg.norm(d1) + d2 / np.linalg.norm(d2); return nrm / np.linalg.norm(nrm)
         n1 = jplane(j['j1'], j['j1'] - j['base'], j['j2'] - j['j1']); n2 = jplane(j['j2'], j['j2'] - j['j1'], j['tip'] - j['j2'])
-        hw1 = 0.55 if 'thumb' not in k else 0.6; hw2 = 0.45
+        hw1 = 0.55 if 'thumb' not in k else float(os.environ.get('THW1', 0.6)); hw2 = 0.45 if 'thumb' not in k else float(os.environ.get('THW2', 0.45))
         s1 = (P - j['j1']) @ n1; s2 = (P - j['j2']) @ n2
+        if 'thumb' in k and os.environ.get('THUMB_W') == 'poly':
+            # thumb: the chain bends ~80 deg at the MCP, so infinite joint planes would cut through the thenar; use the
+            # arc-length coordinate of the nearest point on the bone polyline instead
+            L0 = np.linalg.norm(j['j1'] - j['base']); L1 = np.linalg.norm(j['j2'] - j['j1'])
+            sp_ = np.zeros(len(P)); bestd = np.full(len(P), np.inf); off = 0.0
+            for (a_, b_) in segs:
+                d_ = b_ - a_; ll = np.linalg.norm(d_); t = np.clip(((P - a_) @ d_) / (ll * ll), 0, 1)
+                dist_ = np.linalg.norm(P - (a_ + t[:, None] * d_), axis=1); upd = dist_ < bestd
+                bestd[upd] = dist_[upd]; sp_[upd] = off + t[upd] * ll; off += ll
+            s1 = sp_ - L0; s2 = sp_ - (L0 + L1)
         b1 = smooth((s1 + hw1) / (2 * hw1)); b2 = smooth((s2 + hw2) / (2 * hw2))
         w0 = 1 - b1; w1 = b1 * (1 - b2); w2 = b1 * b2
         # base joint: blend with the hand near the digit root (finger side)
         n0 = (j['j1'] - j['base']); n0 /= np.linalg.norm(n0); s0 = (P - j['base']) @ n0
-        hb = 0.9 if 'thumb' not in k else 1.3
+        hb = 0.9 if 'thumb' not in k else float(os.environ.get('HB_T', 1.3))
         bb = smooth((s0 + hb) / (2 * hb))
         W['hand'][m] += (1 - bb); W[names[0]][m] += w0 * bb; W[names[1]][m] += w1 * bb; W[names[2]][m] += w2 * bb
     # palm vertices near digit roots: small share of the proximal phalanx, decaying geodesically
@@ -130,6 +146,13 @@ for side in 'LR':
         W[nm][fi] = np.clip(lu.solve(-(Lfc @ W[nm][ci])), 0, 1)
     tot = sum(W.values())
     for nm in W: W[nm] = W[nm] / tot
+    # confine each digit's influence on the palm: smooth falloff with the geodesic distance from the digit's own surface
+    for i, k in enumerate(digs[side]):
+        dk = geod(Gh, np.where(own == i)[0], limit=6.0); dk = np.where(np.isfinite(dk), dk, 6.0)
+        d0, wfall = (float(os.environ.get('TD0', 3.0)), float(os.environ.get('TW', 2.0))) if 'thumb' in k else (1.2, 0.8)
+        fall = 1 - smooth((dk - d0) / wfall)
+        for b in (k + '_0', k + '_1', k + '_2'):
+            red = W[b] * (1 - fall); W[b] = W[b] * fall; W['hand'] = W['hand'] + red
     print(side, 'harmonic transition vertices', len(fi))
     # claws: rigid with the distal phalanx
     for i, k in enumerate(digs[side]):
@@ -169,7 +192,13 @@ for side in 'LR':
         for bi, (a_, b_) in enumerate([(j['base'], j['j1']), (j['j1'], j['j2']), (j['j2'], j['tip'])]):
             eb = arm.edit_bones.new('%s_%d' % (k, bi)); eb.head = a_; eb.tail = b_; eb.parent = prev; eb.use_connect = (bi > 0)
             yv = (b_ - a_) / np.linalg.norm(b_ - a_)
-            if 'thumb' in k:
+            if 'thumb' in k and bi > 0 and os.environ.get('THUMB_AXIS') == 'claw':
+                # thumb MCP / IP: flexion axis across the thumb's own width (perpendicular to the bone and to the claw's
+                # dorsal side), signed so +X flexes toward the pad (palmar side)
+                dd = dors / np.linalg.norm(dors); ref = np.cross(yv, dd)
+                # sign: rotating the tip about +X must move it away from the dorsal (claw) side
+                if np.cross(ref, yv) @ dd > 0: ref = -ref
+            elif 'thumb' in k:
                 # thumb: local X = flexion across the palm (axis ~ palm normal); thumb_0 local Z = palmar abduction
                 ref = ventral_hand * (-1.0 if side == 'L' else 1.0)   # mirrored so +X folds the thumb toward the fingers on both hands
             else:

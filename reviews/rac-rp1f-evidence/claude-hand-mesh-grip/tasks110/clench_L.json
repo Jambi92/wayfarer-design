@@ -1,0 +1,171 @@
+{
+ "phases": [
+  {
+   "targets": {
+    "A_Lthumb": {
+     "A_Lthumb_0": [
+      -40,
+      0,
+      0
+     ],
+     "A_Lthumb_2": [
+      -10,
+      0,
+      0
+     ]
+    }
+   },
+   "order": [
+    "A_Lthumb"
+   ]
+  },
+  {
+   "targets": {
+    "A_L17": {
+     "A_L17_0": [
+      60,
+      0,
+      0
+     ],
+     "A_L17_1": [
+      65,
+      0,
+      0
+     ],
+     "A_L17_2": [
+      45,
+      0,
+      0
+     ]
+    },
+    "A_L18": {
+     "A_L18_0": [
+      60,
+      0,
+      0
+     ],
+     "A_L18_1": [
+      65,
+      0,
+      0
+     ],
+     "A_L18_2": [
+      45,
+      0,
+      0
+     ]
+    },
+    "A_L19": {
+     "A_L19_0": [
+      60,
+      0,
+      0
+     ],
+     "A_L19_1": [
+      65,
+      0,
+      0
+     ],
+     "A_L19_2": [
+      45,
+      0,
+      0
+     ]
+    },
+    "A_L20": {
+     "A_L20_0": [
+      60,
+      0,
+      0
+     ],
+     "A_L20_1": [
+      65,
+      0,
+      0
+     ],
+     "A_L20_2": [
+      45,
+      0,
+      0
+     ]
+    }
+   },
+   "order": [
+    "A_L17",
+    "A_L18",
+    "A_L19",
+    "A_L20"
+   ],
+   "stop_targets": {
+    "A_L17": [
+     "palm"
+    ],
+    "A_L18": [
+     "palm"
+    ],
+    "A_L19": [
+     "palm",
+     "A_Lthumb"
+    ],
+    "A_L20": [
+     "A_Lthumb"
+    ]
+   },
+   "stop_mm": {
+    "A_L20": 4.0
+   }
+  },
+  {
+   "targets": {
+    "A_Lthumb": {
+     "A_Lthumb_0": [
+      0,
+      0,
+      45
+     ]
+    }
+   },
+   "order": [
+    "A_Lthumb"
+   ],
+   "stop_targets": {}
+  },
+  {
+   "targets": {
+    "A_Lthumb": {
+     "A_Lthumb_0": [
+      75,
+      0,
+      0
+     ],
+     "A_Lthumb_1": [
+      35,
+      0,
+      0
+     ],
+     "A_Lthumb_2": [
+      45,
+      0,
+      0
+     ]
+    }
+   },
+   "order": [
+    "A_Lthumb"
+   ]
+  }
+ ],
+ "step": 0.05,
+ "stop_targets": {
+  "A_Lthumb": [
+   "A_L20",
+   "A_L19"
+  ]
+ },
+ "stop_contact_mm": 1.0,
+ "correctives": true,
+ "corr_rounds": 6,
+ "crease_iters": 20,
+ "crease_grow": 6,
+ "corr_max_mm": 10.0
+}

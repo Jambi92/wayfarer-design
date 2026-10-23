@@ -8,6 +8,7 @@
 import numpy as np, scipy.sparse as sp, scipy.sparse.linalg as sla
 from matplotlib.tri import Triangulation, TrapezoidMapTriFinder
 import igl
+AUTH_ITERS = 50
 
 def loops_of(F):
     E = np.vstack([F[:, [i, (i + 1) % F.shape[1]]] for i in range(F.shape[1])])
@@ -62,10 +63,10 @@ class Domain:
         s.tri = Triangulation(U[:, 0], U[:, 1], F); s.fd = TrapezoidMapTriFinder(s.tri)
         A = U[F[:, 1]] - U[F[:, 0]]; B = U[F[:, 2]] - U[F[:, 0]]
         s.M = np.stack([A, B], 2)  # 2x2 per tri (columns)
-        s.Minv = np.linalg.inv(s.M)
+        s.Minv = np.linalg.pinv(s.M)
         s.E3 = np.stack([X[F[:, 1]] - X[F[:, 0]], X[F[:, 2]] - X[F[:, 0]]], 2)  # 3x2
         s.J = s.E3 @ s.Minv  # 3x2 Jacobian (domain->3D)
-        JtJ = np.transpose(s.J, (0, 2, 1)) @ s.J; s.Jp = np.linalg.inv(JtJ) @ np.transpose(s.J, (0, 2, 1))  # 2x3
+        JtJ = np.transpose(s.J, (0, 2, 1)) @ s.J; s.Jp = np.linalg.pinv(JtJ) @ np.transpose(s.J, (0, 2, 1))  # 2x3
     def locate(s, P):
         t = s.fd(P[:, 0], P[:, 1]); bad = t < 0
         for f in (0.999999, 0.9999, 0.999, 0.995, 0.99, 0.98, 0.95):  # rim points between chord and arc: pull inward
@@ -103,7 +104,7 @@ def orient2(P, Q):
     cr = lambda p, q, r: (q[:, 0] - p[:, 0]) * (r[:, 1] - p[:, 1]) - (q[:, 1] - p[:, 1]) * (r[:, 0] - p[:, 0])
     return np.minimum.reduce([cr(a, b, c), cr(b, c, d), cr(c, d, a), cr(d, a, b)])
 
-def drape(Pq, Q, bnd_loop, bnd_points, X, F, rloop, pins=(), iters=300, lam=0.5, log=None, mix=0.3, stretch_iters=4, shape=0.0, pin_rate=0.003, hard_pins=()):
+def drape(Pq, Q, bnd_loop, bnd_points, X, F, rloop, pins=(), iters=300, lam=0.5, log=None, mix=0.3, stretch_iters=4, shape=0.0, pin_rate=0.003, hard_pins=(), init='uniform'):
     """Pq: quad patch vertex positions (local), Q: local quads, bnd_fixed3d: dict local vid -> 3D point on rev107 patch (fixed),
     X,F: rev107 patch (local), rloop: rev107 boundary loop (local ids). pins: [(local vid, 3D target)] interior pins.
     Returns new positions (local) and the domain params."""
@@ -149,8 +150,37 @@ def drape(Pq, Q, bnd_loop, bnd_points, X, F, rloop, pins=(), iters=300, lam=0.5,
     E = np.vstack([Q[:, [i, (i + 1) % 4]] for i in range(4)]); E = np.unique(np.sort(E, 1), axis=0)
     Aj = sp.coo_matrix((np.ones(2 * len(E)), (np.r_[E[:, 0], E[:, 1]], np.r_[E[:, 1], E[:, 0]])), shape=(n, n)).tocsr()
     deg = np.asarray(Aj.sum(1)).ravel(); inn = np.where(~fixed)[0]
-    L = sp.diags(deg) - Aj; A = L[inn][:, inn].tocsc(); rhs = -L[inn][:, ids] @ P2[ids]
+    L = sp.diags(deg) - Aj
+    if init == 'mvc':
+        TQ = np.vstack([Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]); I_ = []; J_ = []; W_ = []
+        for a_, b_, c_ in ((0, 1, 2), (1, 2, 0), (2, 0, 1)):
+            i_, j_, k_ = TQ[:, a_], TQ[:, b_], TQ[:, c_]; eij = Pq[j_] - Pq[i_]; eik = Pq[k_] - Pq[i_]
+            lij = np.linalg.norm(eij, axis=1); lik = np.linalg.norm(eik, axis=1)
+            al = np.arccos(np.clip((eij * eik).sum(1) / (lij * lik + 1e-30), -1, 1)); th_ = np.tan(al / 2)
+            I_ += [i_, i_]; J_ += [j_, k_]; W_ += [th_ / (lij + 1e-30), th_ / (lik + 1e-30)]
+        Wm = sp.coo_matrix((np.concatenate(W_), (np.concatenate(I_), np.concatenate(J_))), shape=(n, n)).tocsr()
+        L = (sp.diags(np.asarray(Wm.sum(1)).ravel()) - Wm).tocsr()
+    A = L[inn][:, inn].tocsc(); rhs = -L[inn][:, ids] @ P2[ids]
     so = sla.splu(A); P2[inn] = np.c_[so.solve(rhs[:, 0]), so.solve(rhs[:, 1])]
+    if init == 'authalic':
+        # Yoshizawa-style reweighted Tutte: equalise the lifted (target-surface) area per quad with global solves
+        Ed = np.r_[E, E[:, ::-1]]; wd = np.ones(len(Ed)); sig = np.ones(n)
+        vq_ = [[] for _ in range(n)]
+        for qi_, q_ in enumerate(Q):
+            for v_ in q_: vq_[v_].append(qi_)
+        mfq = max(len(l_) for l_ in vq_); vqi_ = np.zeros((n, mfq), int); vqm_ = np.zeros((n, mfq), bool)
+        for i_, l_ in enumerate(vq_): vqi_[i_, :len(l_)] = l_; vqm_[i_, :len(l_)] = True
+        for ait in range(AUTH_ITERS):
+            Pc = P2.copy(); rr = np.linalg.norm(Pc, axis=1); Pc[rr > 0.9995] *= (0.9995 / rr[rr > 0.9995])[:, None]
+            tq_ = D.locate(Pc); X3_ = D.lift(Pc, tq_)
+            ar = 0.5 * (np.linalg.norm(np.cross(X3_[Q[:, 1]] - X3_[Q[:, 0]], X3_[Q[:, 3]] - X3_[Q[:, 0]]), axis=1) + np.linalg.norm(np.cross(X3_[Q[:, 1]] - X3_[Q[:, 2]], X3_[Q[:, 3]] - X3_[Q[:, 2]]), axis=1))
+            av = (ar[vqi_] * vqm_).sum(1) / vqm_.sum(1); av = av / np.median(av)
+            sv = np.clip(av, 0.05, 20) ** -0.5; sig = sig * sv; sig /= np.median(sig)
+            Wm = sp.coo_matrix((wd / sig[Ed[:, 1]], (Ed[:, 0], Ed[:, 1])), shape=(n, n)).tocsr()
+            L2 = (sp.diags(np.asarray(Wm.sum(1)).ravel()) - Wm).tocsr()
+            A2 = L2[inn][:, inn].tocsc(); rhs2 = -L2[inn][:, ids] @ P2[ids]; so2 = sla.splu(A2)
+            P2[inn] = np.c_[so2.solve(rhs2[:, 0]), so2.solve(rhs2[:, 1])]
+            if log and (ait % 5 == 0 or ait == AUTH_ITERS - 1): log('authalic it %d area p5/p50/p95 %.3g/%.3g/%.3g' % (ait, *np.percentile(ar, [5, 50, 95])))
     o0 = orient2(P2, Q); sgn = np.sign(np.median(o0))
     nb = [[] for _ in range(n)]
     for a, b in E: nb[a].append(b); nb[b].append(a)

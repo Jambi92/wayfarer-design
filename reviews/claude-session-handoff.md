@@ -3,7 +3,14 @@
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-22) — HAND MESH + GRIP ORDER: HOLD
+## LATEST (2026-10-23) — HAND MESH + GRIP ORDER: PASS, READY FOR OWNER REVIEW
+- Report rewritten: `reviews/claude-rac-gorrund-hand-mesh-grip-closure.md`. rev 110 mesh (thumb tips grafted from index tip) + all 16 movement/grip tests pass on Blender-verified frames.
+- PC `work/claude110/`: production110.blend, grip_tests110_L_DIAG / R_DIAG.blend, reports zip, SHA256SUMS + hashes_pc (match).
+- Tools + final task configs: `reviews/rac-rp1f-evidence/claude-hand-mesh-grip/tools/`, `tasks110/`. Cloud working dir `/tmp/claude-0/hand` (may not survive).
+- Tyler's standing rule (2026-10-22): if anything fails the audit, keep fixing until it passes; only report results.
+- Waiting for owner review; do nothing further until a new order.
+
+## Previous (2026-10-22) — HAND MESH + GRIP ORDER: HOLD
 - Report: `reviews/claude-rac-gorrund-hand-mesh-grip-closure.md`. Mesh done (PC `work/claude109/Gorrund_hand_production109.blend`, ba668cce…); grip partial.
 - Open: thumb deformation (thenar corrective / helper bone / CMC placement), L handle index+thumb, contact-limited finger ranges; owner review of method, genus 1→0 cut, R crater exclusion, T-4 claw regression, contact tolerances.
 - Tools in `reviews/rac-rp1f-evidence/claude-hand-mesh-grip/tools/`; cloud working state is ephemeral (reports zip on the PC).
