@@ -1,0 +1,280 @@
+{
+ "file": "GR_U_REF_RP2_production_v003.blend",
+ "object": "GR_U_REF_RP2_production_v003",
+ "status": "RP2 GRASK GROUNDED-TROLL IDENTITY BUILD PASS / READY FOR AUTHOR REVIEW (not promoted; v001 and v002 preserved)",
+ "date": "2026-10-23",
+ "order": "reviews/chatgpt-rac-rp2-grask-v003-grounded-troll-correction-order.md",
+ "report": "reviews/claude-rac-rp2-grask-v003-grounded-troll-final-gate.md",
+ "file_sha256": "46697d1b140da23e141d4d85e4ba584ab5edb58f2c2ffacc05cb8caf25d55b52",
+ "geometry_sha256": "7f154d5941bbedb37d6fbca155142b93a0dbec3a33ceff4f7de9a64d6406bdd2",
+ "geometry_hash_definition": "SHA-256 of float32 vertex co array followed by int32 loop vertex_index array, file order",
+ "bounds": {
+  "v001": {
+   "file": "GR_U_REF_RP2_production_v001.blend",
+   "sha256": "81f579f91b43667143840dbc5e6e41ce7c35c5e326c4669c8e14a896ac219c0a",
+   "role": "too-human lower bound"
+  },
+  "v002": {
+   "file": "GR_U_REF_RP2_production_v002.blend",
+   "sha256": "9622a062da2a756bb14e1dc630f6f4e5311ce19fbf598ea276b96674feae23ee",
+   "role": "too-alien upper bound (rejected)"
+  }
+ },
+ "source": {
+  "file": "reviews/reference-assets/r6/GR5DE3_r6.npz",
+  "sha256": "d859eb189ef11881cae2f92ac77414ee630a899d4c1dcf95c0ac78e5a558d778",
+  "rehash": "unchanged"
+ },
+ "frame": "Blender metres, (x, -f, u)/100; world identity; outward normals (volume +111.30 L); ground contact z = 0",
+ "topology": {
+  "vertices": 214146,
+  "faces": 214144,
+  "quads_pct": 100.0,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "genus": 0,
+  "self_intersections": 0,
+  "self_intersection_check": "0 pairs: float64 design data and float32 stored file, both quad diagonals",
+  "T4_angles_45_135_pct": 98.22549312612074,
+  "T4_aspect_le4_pct": 95.60062387925882,
+  "note": "same vertex/face order as v001 and v002"
+ },
+ "edit_masks": "GR_U_REF_RP2_production_v003_edit_masks.npz (head_face, ears, neck_girdle, torso, hands, feet, joint_structure_limbs + displacement from v001/v002 in mm)",
+ "landmarks": "GR_U_REF_RP2_production_v003_landmarks.json",
+ "mpfb_mapping": "mesh attributes + GR_U_REF_RP2_production_v003_mpfb_mapping.npz (unchanged)",
+ "gates": {
+  "T1_unchanged_region_vs_H": {
+   "prod_to_ref": {
+    "median": 0.21161834194684953,
+    "p95": 0.7948448222790363,
+    "max": 1.8598757423995729,
+    "n": 18122
+   },
+   "ref_to_prod": {
+    "median": 0.3221653671625419,
+    "p95": 1.1379114470948137,
+    "max": 2.027638087952623,
+    "n": 1985
+   }
+  },
+  "T3_stature_delta_mm_vs_E3": -0.3985582093287121,
+  "T7": {
+   "front": {
+    "iou_full_vs_E3": 0.9711648153707595,
+    "iou_full_vs_v001": 0.9703840605842048,
+    "iou_unchanged_vs_E3": 0.99789283564118,
+    "iou_unchanged_vs_v001": 0.9997990151743543,
+    "silhouette_area_change_pct_vs_v001": 1.9699046621590401
+   },
+   "profile": {
+    "iou_full_vs_E3": 0.9672463195336429,
+    "iou_full_vs_v001": 0.9664836252102503,
+    "iou_unchanged_vs_E3": 0.9985908050026422,
+    "iou_unchanged_vs_v001": 1.0,
+    "silhouette_area_change_pct_vs_v001": 2.5916110289995413
+   },
+   "rear": {
+    "iou_full_vs_E3": 0.9711356608927981,
+    "iou_full_vs_v001": 0.9703548997806293,
+    "iou_unchanged_vs_E3": 0.99789283564118,
+    "iou_unchanged_vs_v001": 0.9997990151743543,
+    "silhouette_area_change_pct_vs_v001": 1.972985044742557
+   }
+  },
+  "deltas_vs_v001_v002": {
+   "head_face": {
+    "vs_v001": {
+     "vertices": 55194,
+     "moved_gt_0p5mm": 55025,
+     "mean_mm": 8.230808056841795,
+     "max_mm": 32.98778076433179
+    },
+    "vs_v002": {
+     "vertices": 55194,
+     "moved_gt_0p5mm": 51101,
+     "mean_mm": 5.856405533641272,
+     "max_mm": 22.552975483864056
+    },
+    "retained_fraction_of_v002_change": 0.5778217776066866,
+    "closer_to": "v002"
+   },
+   "ears": {
+    "vs_v001": {
+     "vertices": 9890,
+     "moved_gt_0p5mm": 9890,
+     "mean_mm": 4.659506402510596,
+     "max_mm": 13.956322550269473
+    },
+    "vs_v002": {
+     "vertices": 9890,
+     "moved_gt_0p5mm": 9207,
+     "mean_mm": 2.0796518795609753,
+     "max_mm": 11.08846748354901
+    },
+    "retained_fraction_of_v002_change": 0.687970848901866,
+    "closer_to": "v002"
+   },
+   "neck_girdle": {
+    "vs_v001": {
+     "vertices": 10125,
+     "moved_gt_0p5mm": 8877,
+     "mean_mm": 8.735103923507337,
+     "max_mm": 31.692785395893843
+    },
+    "vs_v002": {
+     "vertices": 10125,
+     "moved_gt_0p5mm": 7115,
+     "mean_mm": 5.8067357603971095,
+     "max_mm": 22.185068124214645
+    },
+    "retained_fraction_of_v002_change": 0.5977386137922065,
+    "closer_to": "v002"
+   },
+   "torso": {
+    "vs_v001": {
+     "vertices": 17956,
+     "moved_gt_0p5mm": 11861,
+     "mean_mm": 2.1569602110420134,
+     "max_mm": 8.91194466955635
+    },
+    "vs_v002": {
+     "vertices": 17956,
+     "moved_gt_0p5mm": 11651,
+     "mean_mm": 1.787576022908776,
+     "max_mm": 5.8094945779935365
+    },
+    "retained_fraction_of_v002_change": 0.5541196224112047,
+    "closer_to": "v002"
+   },
+   "hands": {
+    "vs_v001": {
+     "vertices": 51043,
+     "moved_gt_0p5mm": 51043,
+     "mean_mm": 8.822111775495577,
+     "max_mm": 17.438140496241076
+    },
+    "vs_v002": {
+     "vertices": 51043,
+     "moved_gt_0p5mm": 50893,
+     "mean_mm": 5.825185575155923,
+     "max_mm": 14.505788942724877
+    },
+    "retained_fraction_of_v002_change": 0.5823631617078269,
+    "closer_to": "v002"
+   },
+   "feet": {
+    "vs_v001": {
+     "vertices": 34059,
+     "moved_gt_0p5mm": 33765,
+     "mean_mm": 8.357318341902747,
+     "max_mm": 23.05842442269864
+    },
+    "vs_v002": {
+     "vertices": 34059,
+     "moved_gt_0p5mm": 31897,
+     "mean_mm": 8.692175607496749,
+     "max_mm": 18.337605820052154
+    },
+    "retained_fraction_of_v002_change": 0.4870248730044496,
+    "closer_to": "v001"
+   },
+   "joint_structure_limbs": {
+    "vs_v001": {
+     "vertices": 35879,
+     "moved_gt_0p5mm": 22038,
+     "mean_mm": 1.536846775876163,
+     "max_mm": 10.023355856605567
+    },
+    "vs_v002": {
+     "vertices": 35879,
+     "moved_gt_0p5mm": 14891,
+     "mean_mm": 0.6752429037822935,
+     "max_mm": 5.055430244986322
+    },
+    "retained_fraction_of_v002_change": 0.6989415118619361,
+    "closer_to": "v002"
+   },
+   "T3": {
+    "v003": {
+     "stature_cm": 217.94886793394994,
+     "bbox_min": [
+      -34.74724984515634,
+      -17.055747973332764,
+      8.478219210114601e-05
+     ],
+     "bbox_max": [
+      34.74724960706923,
+      29.044634189920522,
+      217.94895271614203
+     ]
+    },
+    "v001": {
+     "stature_cm": 217.94576917593028,
+     "bbox_min": [
+      -34.46685445369595,
+      -16.835500334792645,
+      0.03537870917961765
+     ],
+     "bbox_max": [
+      34.46685445369595,
+      27.763612370683656,
+      217.9811478851099
+     ]
+    },
+    "v002": {
+     "stature_cm": 217.91647063990035,
+     "bbox_min": [
+      -34.818884830603125,
+      -17.066042575998225,
+      0.06317952845464403
+     ],
+     "bbox_max": [
+      34.818884493773865,
+      30.85060163720795,
+      217.979650168355
+     ]
+    },
+    "stature_delta_mm_vs_v001": 0.030987580196608633,
+    "stature_delta_mm_vs_v002": 0.323972940495878,
+    "bbox_delta_mm_vs_v001": [
+     -2.8039539146038805,
+     -2.202476385401191,
+     -0.352939269875165,
+     2.8039515337327714,
+     12.810218192368659,
+     -0.321951689678599
+    ],
+    "bbox_delta_mm_vs_v002": [
+     0.7163498544678504,
+     0.10294602665460673,
+     -0.6309474626254288,
+     -0.7163488670463636,
+     -18.059674472874292,
+     -0.3069745221296216
+    ]
+   },
+   "silhouette": {
+    "front": {
+     "iou_vs_v001": 0.9703840605842048,
+     "iou_vs_v002": 0.9832728467523933,
+     "area_change_pct_vs_v001": 1.9699046621590401,
+     "area_change_pct_vs_v002": -0.5736769387877695
+    },
+    "profile": {
+     "iou_vs_v001": 0.9664836252102503,
+     "iou_vs_v002": 0.9806920516836335,
+     "area_change_pct_vs_v001": 2.5916110289995413,
+     "area_change_pct_vs_v002": -1.034906588003933
+    },
+    "rear": {
+     "iou_vs_v001": 0.9703548997806293,
+     "iou_vs_v002": 0.9832730965679979,
+     "area_change_pct_vs_v001": 1.972985044742557,
+     "area_change_pct_vs_v002": -0.5706733946056346
+    }
+   }
+  }
+ },
+ "not_authorized": "No canon freeze, no next race, no rig promotion, no creator, no UE5."
+}
