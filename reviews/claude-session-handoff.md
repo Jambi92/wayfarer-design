@@ -1,9 +1,14 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
+Updated: 2026-10-23 (RP2 technical pass). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-23) — RP1 GORRUND FINAL OWNER ACCEPTED / FROZEN; RP2 GRASK STARTED
+## LATEST (2026-10-23) — RP2 GRASK PRODUCTION PILOT TECHNICAL PASS / READY FOR OWNER VISUAL REVIEW
+- Gate `reviews/claude-rac-rp2-grask-production-pilot-gate.md`; asymmetry `reviews/claude-rac-rp2-grask-asymmetry-adjudication.md`; evidence + full tool chain `reviews/rac-rp2-evidence/` (`tools/run_all.sh` then hybrid.py LP=12 167 173 → rimlock.py 0.3 → f32safe.py → export_blend.py).
+- Candidate on PC: `E:/…/production/Grask/RP2/GR_U_REF_RP2_production_v001.blend` (81f579f9…), sidecar/landmarks/mapping alongside. Cloud working dir `/tmp/claude-0/rp2` (ephemeral).
+- Waiting for owner visual review; do nothing further on RP2 until a new order. No RP3 / rig / creator / UE5.
+
+## Previous (2026-10-23) — RP1 GORRUND FINAL OWNER ACCEPTED / FROZEN; RP2 GRASK STARTED
 - Freeze report `reviews/claude-rac-rp1-gorrund-final-owner-freeze.md`; canonical `E:/…/production/Gorrund/RP1/GO_U_REF_RP1_FINAL.blend` (+ .json) = byte copy of rev110 (133edfde…). RP1 CLOSED — no more Gorrund work.
 - Next: RP2 Grask order `reviews/chatgpt-rac-rp2-grask-production-pilot-execute-order.md` (autonomous; Tyler sees only a technical PASS). Candidates go to `E:/…/production/Grask/RP2/`, evidence `reviews/rac-rp2-evidence/`.
 

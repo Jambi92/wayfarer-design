@@ -1,0 +1,71 @@
+{
+ "file": "GR_U_REF_RP2_production_v001.blend",
+ "object": "GR_U_REF_RP2_production_v001",
+ "status": "RP2 GRASK PRODUCTION PILOT TECHNICAL PASS / READY FOR OWNER VISUAL REVIEW (not promoted; owner visual review pending)",
+ "date": "2026-10-23",
+ "order": "reviews/chatgpt-rac-rp2-grask-production-pilot-execute-order.md",
+ "gate_report": "reviews/claude-rac-rp2-grask-production-pilot-gate.md",
+ "asymmetry_report": "reviews/claude-rac-rp2-grask-asymmetry-adjudication.md",
+ "file_sha256": "81f579f91b43667143840dbc5e6e41ce7c35c5e326c4669c8e14a896ac219c0a",
+ "geometry_sha256": "5806a659ad88ee1082dd792ff5eddbebd0694fed8dc08f1f9bf7e982f0c295d8",
+ "geometry_hash_definition": "SHA-256 of float32 vertex co array followed by int32 loop vertex_index array, file order",
+ "source": {
+  "file": "reviews/reference-assets/r6/GR5DE3_r6.npz",
+  "sha256": "d859eb189ef11881cae2f92ac77414ee630a899d4c1dcf95c0ac78e5a558d778",
+  "role": "Stage C accepted E3 reference (~218 cm)",
+  "rehash_before_after": "unchanged"
+ },
+ "adjudicated_target": "H = S* (bilateral average of E3) below z 167 cm, E3 above z 173 cm, smoothstep between (Class B symmetrized; Class C shoulder/neck/head base kept)",
+ "frame": "Blender metres, (x, -f, u)/100 of the RAC analysis frame; world matrix identity; normals outward (signed volume +107.98 L)",
+ "topology": {
+  "vertices": 214146,
+  "faces": 214144,
+  "quads_pct": 100.0,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "genus": 0,
+  "self_intersections": 0,
+  "self_intersection_check": "0 pairs on float64 design data and on the float32 stored file, both quad diagonals"
+ },
+ "base": "MPFB hm08 shared topology (13 380 body verts) + Grask RP2 branch (crotch slot, axilla seam patches) -> 2 Catmull-Clark-style levels (x16 quads)",
+ "mpfb_mapping": {
+  "mesh_attributes": [
+   "mpfb_hm08_vertex (POINT int, hm08 19158-index of the base vertex, -1 for subdivision / patch vertices)",
+   "rp2_base_vertex (POINT int)",
+   "rp2_base_quad (FACE int, parent quad of the 13 384-quad Grask branch base)"
+  ],
+  "file": "GR_U_REF_RP2_production_v001_mpfb_mapping.npz",
+  "base_vertices": 13386,
+  "base_vertices_exact_hm08": 13185,
+  "branch_vertices_moved_or_added": 201
+ },
+ "landmarks": "GR_U_REF_RP2_production_v001_landmarks.json (source rig joints, carried unchanged)",
+ "gates": {
+  "T1_body": {
+   "prod_to_ref": {
+    "median": 0.07423598898881464,
+    "p95": 0.4934851104302676,
+    "max": 1.8369743105373502,
+    "n": 420371
+   },
+   "ref_to_prod": {
+    "median": 0.08413643766572622,
+    "p95": 0.6075809415462705,
+    "max": 2.2874902032405315,
+    "n": 39321
+   }
+  },
+  "T3": {
+   "stature_delta_mm": -0.42954578952532074,
+   "bbox_delta_mm": 0.6115379423567546
+  },
+  "T6_max_surface_relation_change_mm": 0.8538811403033808,
+  "T7_iou_vs_E3": {
+   "front": 0.9959173023498534,
+   "profile": 0.9955077282302479,
+   "rear": 0.9959173023498534
+  }
+ },
+ "not_authorized": "No RP3, no final rig, no creator, no UE5, no clothing."
+}
