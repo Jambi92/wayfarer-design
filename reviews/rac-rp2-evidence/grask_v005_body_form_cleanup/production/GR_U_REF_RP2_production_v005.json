@@ -1,0 +1,149 @@
+{
+ "file": "GR_U_REF_RP2_production_v005.blend",
+ "object": "GR_U_REF_RP2_production_v005",
+ "status": "RP2 GRASK V005 BODY-FORM CLEANUP PASS / READY FOR AUTHOR REVIEW (not promoted; v001-v004 preserved)",
+ "date": "2026-10-23",
+ "order": "reviews/chatgpt-rac-rp2-grask-v005-body-form-cleanup-order.md",
+ "report": "reviews/claude-rac-rp2-grask-v005-body-form-cleanup-final-gate.md",
+ "file_sha256": "958af4fd35740cdd35ad8fa5b08e25fd67edf753b9f3b0ac24bdd43eebfb9a52",
+ "geometry_sha256": "bb8b43fda82add0b4f4db033e4a42965fe9442265c7a075fddc4191af37077cb",
+ "geometry_hash_definition": "SHA-256 of float32 vertex co array followed by int32 loop vertex_index array, file order",
+ "parent": {
+  "v004": "cd8f1cdb9eaf8f3b815a104bc71ddfd0807e4ea45a3c578ccedb282fb763b2f3"
+ },
+ "preserved": {
+  "v001": "81f579f91b43667143840dbc5e6e41ce7c35c5e326c4669c8e14a896ac219c0a",
+  "v002": "9622a062da2a756bb14e1dc630f6f4e5311ce19fbf598ea276b96674feae23ee",
+  "v003": "46697d1b140da23e141d4d85e4ba584ab5edb58f2c2ffacc05cb8caf25d55b52",
+  "v004": "cd8f1cdb9eaf8f3b815a104bc71ddfd0807e4ea45a3c578ccedb282fb763b2f3"
+ },
+ "frame": "Blender metres, (x, -f, u)/100; world identity; outward normals (volume +123.66 L); ground contact z = 0",
+ "topology": {
+  "vertices": 214146,
+  "faces": 214144,
+  "quads_pct": 100.0,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "nonmanifold_vertices": 0,
+  "genus": 0,
+  "degenerates": 0,
+  "duplicates": 0,
+  "self_intersections": 0,
+  "self_intersection_check": "0 pairs: float64 design data and float32 stored file, both quad diagonals",
+  "T4_angles_45_135_pct": 97.25091527196653,
+  "T4_aspect_le4_pct": 94.91977361028093,
+  "note": "same vertex/face order as v001-v004"
+ },
+ "edit_masks": "GR_U_REF_RP2_production_v005_edit_masks.npz (thighs, back, chest, upper_arms, forearms, abdomen, pelvis_glutes, head_neck, calves, hands, feet + displacement from v004 in mm)",
+ "landmarks": "GR_U_REF_RP2_production_v005_landmarks.json (joints unchanged from v004)",
+ "mpfb_mapping": "mesh attributes + GR_U_REF_RP2_production_v005_mpfb_mapping.npz (unchanged)",
+ "parameters": "evidence tools/params_v005.json",
+ "gates": {
+  "T1_unchanged_pass": true,
+  "stature_delta_mm_vs_v004": -0.0009022300156402707,
+  "stature_cm": 217.947,
+  "deformation": {
+   "poses": 54,
+   "clean": 31,
+   "local flexion-crease contact": 23,
+   "return_to_rest_mm": 0.0,
+   "weight_smoothing_iterations": 60
+  },
+  "delta_vs_v004": {
+   "thighs": {
+    "vertices": 10512,
+    "moved_gt_0p5mm": 10512,
+    "mean_mm": 7.388544613414031,
+    "max_mm": 26.6295816072938
+   },
+   "back": {
+    "vertices": 10132,
+    "moved_gt_0p5mm": 9662,
+    "mean_mm": 3.713931802869996,
+    "max_mm": 13.985046399210821
+   },
+   "chest": {
+    "vertices": 10565,
+    "moved_gt_0p5mm": 9806,
+    "mean_mm": 5.218901881228213,
+    "max_mm": 18.438519928054397
+   },
+   "upper_arms": {
+    "vertices": 9518,
+    "moved_gt_0p5mm": 9443,
+    "mean_mm": 2.4424034975203264,
+    "max_mm": 13.014415967609189
+   },
+   "forearms": {
+    "vertices": 7905,
+    "moved_gt_0p5mm": 7905,
+    "mean_mm": 4.487387450815986,
+    "max_mm": 11.130520110498306
+   },
+   "abdomen": {
+    "vertices": 3206,
+    "moved_gt_0p5mm": 3206,
+    "mean_mm": 16.490964964314212,
+    "max_mm": 27.503185205580895
+   },
+   "pelvis_glutes": {
+    "vertices": 714,
+    "moved_gt_0p5mm": 714,
+    "mean_mm": 7.329742554382914,
+    "max_mm": 12.0219847244739
+   },
+   "head_neck": {
+    "vertices": 68762,
+    "moved_gt_0p5mm": 68660,
+    "mean_mm": 7.4873166124441015,
+    "max_mm": 11.969934797234767
+   },
+   "calves": {
+    "vertices": 7448,
+    "moved_gt_0p5mm": 7418,
+    "mean_mm": 3.2141098792320983,
+    "max_mm": 7.074087150704488
+   },
+   "hands": {
+    "vertices": 51043,
+    "moved_gt_0p5mm": 1727,
+    "mean_mm": 0.04425356629173117,
+    "max_mm": 1.4542504737051494
+   },
+   "feet": {
+    "vertices": 34059,
+    "moved_gt_0p5mm": 2698,
+    "mean_mm": 0.13961916270104424,
+    "max_mm": 4.285026912155205
+   },
+   "outside_all_masks": {
+    "vertices": 282,
+    "moved_gt_0p5mm": 259,
+    "max_mm": 1.6122499613244723
+   },
+   "all": {
+    "moved_gt_0p5mm": 132010,
+    "mean_mm": 3.8914551749461297,
+    "max_mm": 27.503185205580895
+   },
+   "stature_cm": {
+    "v004": 217.94720179299352,
+    "v005": 217.94711156999196,
+    "delta_mm": -0.0009022300156402707
+   },
+   "bbox_delta_mm": {
+    "min": [
+     0.04304889667480438,
+     -0.4659303370387491,
+     1.2855514500004217e-05
+    ],
+    "max": [
+     -0.043003923489308704,
+     0.00021344023995339967,
+     -0.0008893745012983345
+    ]
+   }
+  }
+ }
+}
