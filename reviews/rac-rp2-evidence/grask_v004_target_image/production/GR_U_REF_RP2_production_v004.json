@@ -1,0 +1,81 @@
+{
+ "file": "GR_U_REF_RP2_production_v004.blend",
+ "object": "GR_U_REF_RP2_production_v004",
+ "status": "RP2 GRASK TARGET-IMAGE GROUNDED-TROLL BUILD PASS / READY FOR AUTHOR REVIEW (not promoted; v001, v002, v003 preserved)",
+ "date": "2026-10-23",
+ "order": "reviews/chatgpt-rac-rp2-grask-v004-target-image-grounded-troll-build-order.md",
+ "report": "reviews/claude-rac-rp2-grask-v004-target-image-grounded-troll-final-gate.md",
+ "file_sha256": "cd8f1cdb9eaf8f3b815a104bc71ddfd0807e4ea45a3c578ccedb282fb763b2f3",
+ "geometry_sha256": "de46b5d810596882aa30fe2369b3ea9099e80e0f00e10c394a94b1c06b4c9cd5",
+ "geometry_hash_definition": "SHA-256 of float32 vertex co array followed by int32 loop vertex_index array, file order",
+ "preserved": {
+  "v001": "81f579f91b43667143840dbc5e6e41ce7c35c5e326c4669c8e14a896ac219c0a",
+  "v002": "9622a062da2a756bb14e1dc630f6f4e5311ce19fbf598ea276b96674feae23ee",
+  "v003": "46697d1b140da23e141d4d85e4ba584ab5edb58f2c2ffacc05cb8caf25d55b52"
+ },
+ "visual_authority": "Tyler's attached target turnaround image (front / profile / three-quarter); ratio study in evidence ratios.md",
+ "source": {
+  "file": "reviews/reference-assets/r6/GR5DE3_r6.npz",
+  "sha256": "d859eb189ef11881cae2f92ac77414ee630a899d4c1dcf95c0ac78e5a558d778"
+ },
+ "frame": "Blender metres, (x, -f, u)/100; world identity; outward normals (volume +131.90 L); ground contact z = 0",
+ "topology": {
+  "vertices": 214146,
+  "faces": 214144,
+  "quads_pct": 100.0,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "nonmanifold_vertices": 0,
+  "genus": 0,
+  "degenerates": 0,
+  "duplicates": 0,
+  "self_intersections": 0,
+  "self_intersection_check": "0 pairs: float64 design data and float32 stored file, both quad diagonals",
+  "T4_angles_45_135_pct": 97.41715854751942,
+  "T4_aspect_le4_pct": 95.38441422594143,
+  "note": "same vertex/face order as v001-v003"
+ },
+ "edit_masks": "GR_U_REF_RP2_production_v004_edit_masks.npz (region masks + displacement from v001/v002/v003 in mm)",
+ "landmarks": "GR_U_REF_RP2_production_v004_landmarks.json",
+ "mpfb_mapping": "mesh attributes + GR_U_REF_RP2_production_v004_mpfb_mapping.npz (unchanged)",
+ "parameters": "evidence tools/params_v004.json",
+ "gates": {
+  "T1_unchanged_pass": true,
+  "T3_stature_delta_mm_vs_E3": -0.42,
+  "stature_cm": 217.95,
+  "deformation": {
+   "poses": 54,
+   "clean": 32,
+   "local flexion-crease contact": 22,
+   "return_to_rest_mm": 0.0,
+   "weight_smoothing_iterations": 60
+  },
+  "silhouette_vs_v003": {
+   "front": {
+    "iou_vs_v001": 0.8197650184963268,
+    "iou_vs_v002": 0.8254929559277385,
+    "area_change_pct_vs_v001": 15.175504797695874,
+    "area_change_pct_vs_v002": 12.30251697002463,
+    "iou_vs_v003": 0.8288019509157889,
+    "area_change_pct_vs_v003": 12.950487871189923
+   },
+   "profile": {
+    "iou_vs_v001": 0.881519390424201,
+    "iou_vs_v002": 0.9040066966810706,
+    "area_change_pct_vs_v001": 10.797105142449416,
+    "area_change_pct_vs_v002": 6.880530973451328,
+    "iou_vs_v003": 0.9012782962105216,
+    "area_change_pct_vs_v003": 7.998211580019375
+   },
+   "rear": {
+    "iou_vs_v001": 0.8197650184963268,
+    "iou_vs_v002": 0.8254929559277385,
+    "area_change_pct_vs_v001": 15.175504797695874,
+    "area_change_pct_vs_v002": 12.30251697002463,
+    "iou_vs_v003": 0.828827893944897,
+    "area_change_pct_vs_v003": 12.947075882068631
+   }
+  }
+ }
+}

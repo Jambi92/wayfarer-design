@@ -3,7 +3,12 @@
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 Updated: 2026-10-23 (RP2 v003 grounded-troll build pass). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-23) — RP2 GRASK v003 GROUNDED-TROLL IDENTITY BUILD PASS / READY FOR AUTHOR REVIEW
+## LATEST (2026-10-23) — RP2 GRASK v004 TARGET-IMAGE GROUNDED-TROLL BUILD PASS / READY FOR AUTHOR REVIEW
+- Order `reviews/chatgpt-rac-rp2-grask-v004-target-image-grounded-troll-build-order.md` (v003 rejected as too human/narrow; Tyler's target image is the visual authority); report `reviews/claude-rac-rp2-grask-v004-target-image-grounded-troll-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_v004_target_image/` (rebuild: `tools/ident_full.sh params_v004.json TAG` then `ground.py` then `f32safe.py`; deform suite now 54 poses, run with weight smoothing 60).
+- PC: `E:/…/production/Grask/RP2/GR_U_REF_RP2_production_v004.blend` (cd8f1cdb…); v001, v002, v003 kept. Cloud dir `/tmp/claude-0/rp2` (ephemeral).
+- STOP: waiting for author review; no canon freeze / next race / rig / creator / UE5.
+
+## Previous (2026-10-23) — RP2 GRASK v003 GROUNDED-TROLL IDENTITY BUILD PASS / READY FOR AUTHOR REVIEW — later REJECTED as too narrow/human
 - Order `reviews/chatgpt-rac-rp2-grask-v003-grounded-troll-correction-order.md` (v002 rejected as alien); report `reviews/claude-rac-rp2-grask-v003-grounded-troll-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_v003_grounded_troll/` (rebuild: `tools/ident_full.sh params_v003.json TAG` then `ground.py` then `f32safe.py`).
 - PC: `E:/…/production/Grask/RP2/GR_U_REF_RP2_production_v003.blend` (46697d1b…); v001 and v002 kept. Cloud dir `/tmp/claude-0/rp2` (ephemeral).
 - STOP: waiting for author review; no canon freeze / next race / rig / creator / UE5.
