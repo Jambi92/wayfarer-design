@@ -1,9 +1,15 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-23 (RP2 Grask 3D anatomical source v002 refinement). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
+Updated: 2026-10-23 (RP2 Grask 3D anatomical source v003 extremity refinement). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-23) — RP2 GRASK 3D ANATOMICAL SOURCE V002 REFINEMENT PASS / READY FOR AUTHOR REVIEW
+## LATEST (2026-10-23) — RP2 GRASK 3D ANATOMICAL SOURCE V003 EXTREMITY REFINEMENT PASS / READY FOR AUTHOR FREEZE REVIEW
+- Order `reviews/chatgpt-rac-rp2-grask-3d-source-v003-extremity-refinement-order.md` (b00ac6b). Report `reviews/claude-rac-rp2-grask-3d-source-v003-extremity-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_3d_source_v003_extremity/`.
+- PC: `E:/…/production/Grask/RP2/SOURCE_3D/GR_U_REF_RP2_SOURCE_3D_v003.blend` (aad25f89…); v001/v002 kept.
+- Rebuild (cloud `/tmp/claude-0/src3d`, ephemeral): v002 npz → `devalence3.py` (region) → `subdiv_region.py` → `linfix.sh` → `ext_clean.py {l1 .4,k1 1,k2 0,lp1 8}` → `microfix.py .45` → `sculpt_digits.py production/sculpt_params_v003.json` → `ext_clean.py {l1 .12,k1 .8,lp1 4}` → `microfix.py` → `defold.py 12 0.5` → `eye_open.py production/eye_params_v003.json` → right-sole ground fix → `export_v3.py`.
+- STOP: awaiting Tyler freeze review of v003. Production retopology only after approval.
+
+## Previous (2026-10-23) — RP2 GRASK 3D ANATOMICAL SOURCE V002 REFINEMENT PASS / READY FOR AUTHOR REVIEW — later refined into v003
 - Order `reviews/chatgpt-rac-rp2-grask-3d-source-v002-refinement-order.md` (63d7dde). Report `reviews/claude-rac-rp2-grask-3d-source-v002-refinement-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_3d_source_v002_refinement/`.
 - PC: `E:/…/production/Grask/RP2/SOURCE_3D/GR_U_REF_RP2_SOURCE_3D_v002.blend` (0651765f…), `.glb`, `.json`, `_refinement_masks.npz`; v001 kept (2315d5c1…).
 - Rebuild (cloud `/tmp/claude-0/src3d`, ephemeral): v001 npz → `tools/ear_transplant.py IN OUT 4` → `tools/refine_loop.sh IN OUT production/refine_params_v002.json` → `export_v2.py`. Evidence: `render_v2.sh MESH TAG` + `sheets_v2.py`.
