@@ -1,0 +1,188 @@
+{
+ "file": "GR_U_REF_RP2_SOURCE_3D_v002.blend",
+ "object": "GR_U_REF_RP2_SOURCE_3D_v002",
+ "status": "RP2 GRASK 3D ANATOMICAL SOURCE V002 REFINEMENT PASS / READY FOR AUTHOR REVIEW (anatomical source only; not a production cage; v001 and RP2 v001-v006 preserved)",
+ "date": "2026-10-23",
+ "order": "reviews/chatgpt-rac-rp2-grask-3d-source-v002-refinement-order.md",
+ "report": "reviews/claude-rac-rp2-grask-3d-source-v002-refinement-final-gate.md",
+ "file_sha256": "0651765f1edbaa70b843e21d702ef8255257fc8644c747b04557d0567119755a",
+ "glb_copy_sha256": "4940665952ab427c67b221b696363aebbe77243495ec6f0dad170a75b65592ca",
+ "geometry_sha256": "01f09fc0e3deaea0bcc9f6ed6ace0b49b800f80e990675de76da4674e290c2ea",
+ "scale": {
+  "source": "GR_U_REF_RP2_SOURCE_3D_v001 (2315d5c1...cf86, geometry 2bd77126...)",
+  "final_uniform_rescale": 1.001353,
+  "result_height_cm": 218.00000667572021
+ },
+ "parameters": {
+  "keep": "/tmp/claude-0/src3d/v2/keep.npy",
+  "sym": 1,
+  "sym_lam": 25.0,
+  "sym_maxd": 2.5,
+  "glute": {
+   "zc": 112.5,
+   "xc": 8.5,
+   "sx": 5.0,
+   "sz_lo": 4.5,
+   "sz_hi": 7.5,
+   "A": 4.3,
+   "cleft": 0.6
+  },
+  "lam": [
+   0.4,
+   6.0,
+   30.0
+  ],
+  "gain": {
+   "body": [
+    0.3,
+    0.8,
+    1.0
+   ],
+   "torso": [
+    0.2,
+    0.6,
+    1.0
+   ],
+   "pelvis": [
+    0.2,
+    0.45,
+    1.0
+   ],
+   "foot": [
+    0.2,
+    0.25,
+    1.0
+   ],
+   "toe": [
+    0.6,
+    1.0,
+    1.0
+   ],
+   "hand": [
+    0.15,
+    0.5,
+    1.0
+   ],
+   "finger": [
+    0.3,
+    0.85,
+    1.0
+   ],
+   "face": [
+    0.5,
+    0.9,
+    1.0
+   ],
+   "ear": [
+    0.6,
+    1.0,
+    1.0
+   ]
+  },
+  "finger_inflate": 0.12,
+  "toe_f": 14.0,
+  "sym_skip_ear": 1,
+  "cheek_fair": 12.0,
+  "ck": [
+   7.6,
+   2.2,
+   197.0
+  ],
+  "fair_spots": [],
+  "mirror_spots": [
+   [
+    7.5,
+    7.5,
+    208.0,
+    1.8,
+    3.0,
+    4.0,
+    1
+   ]
+  ],
+  "toe_z": 5.5
+ },
+ "mask_stats": {
+  "symmetry_move_mm": {
+   "nonzero": 24524,
+   "max": 4.459989168712673
+  },
+  "mirror_spot0_move_mm": {
+   "nonzero": 2471,
+   "max": 6.955413141047603
+  },
+  "glute_move_mm": {
+   "nonzero": 10016,
+   "max": 42.57223906586874
+  },
+  "neutral_v2_move_mm": {
+   "nonzero": 134698,
+   "max": 9.28042219510966
+  },
+  "cheek_fair_weight": {
+   "nonzero": 6561,
+   "max": 0.9690440802535104
+  },
+  "finger_inflate_mm": {
+   "nonzero": 12290,
+   "max": 1.1999929451666373
+  },
+  "ear_transplant_mask": {
+   "nonzero": 837,
+   "max": 1.0
+  },
+  "ear_seam_fair_weight": {
+   "nonzero": 545,
+   "max": 1.0
+  },
+  "contact_protection": {
+   "nonzero": 1717,
+   "max": 1.0
+  }
+ },
+ "topology": {
+  "vertices": 134753,
+  "triangles": 269502,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "watertight": true,
+  "euler": 2,
+  "genus": 0,
+  "volume_L_blender_frame": 130.59481291355095,
+  "outward_in_blender_frame": true,
+  "degenerate_faces": 0,
+  "coincident_vertices": 0,
+  "duplicate_faces": 0,
+  "self_intersection_pairs": 0,
+  "edge_cm": {
+   "median": 0.5038511540461472,
+   "min": 0.015052187693006041,
+   "max": 2.6472640365641738
+  },
+  "bbox_cm": [
+   [
+    -36.77971065044403,
+    -20.355457067489624,
+    0.0
+   ],
+   [
+    34.74550545215607,
+    27.215605974197388,
+    218.00000667572021
+   ]
+  ],
+  "height_cm": 218.00000667572021
+ },
+ "steps": [
+  "ear transplant: left ear replaced by mirrored copy of the complete right ear (helix, antihelix, concha, lobe), zippered on the scalp, seam faired",
+  "bilateral averaging of head/torso/pelvis major masses (smoothed mirror displacement; hands, legs, feet, ears excluded)",
+  "local temple mirror spot (left temple generator bulge)",
+  "glute mass + gluteal fold (posterior, cleft preserved)",
+  "three-band mass-preserving neutral cleanup (fine 0.4, medium 6, large 30 cm2) with per-region gains",
+  "cheek hollow fair (generator crease under the zygoma)",
+  "finger mass +1.2 mm radial",
+  "uniform rescale to 218.000 cm",
+  "contact protection grown until 0 self-intersections"
+ ]
+}
