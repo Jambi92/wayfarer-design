@@ -1,14 +1,20 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-24 (RP2 Grask 3D anatomical source v005 extremity naturalization). Earlier same day: v004 extremity reconstruction. Previously 2026-10-23 (v003 extremity refinement). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
+Updated: 2026-10-24 (RP2 Grask anatomical source v005 FINAL-AUTHOR ACCEPTED / FROZEN). Earlier same day: v004 extremity reconstruction. Previously 2026-10-23 (v003 extremity refinement). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-24) — RP2 GRASK 3D ANATOMICAL SOURCE V005 EXTREMITY NATURALIZATION PASS / READY FOR AUTHOR FREEZE REVIEW
+## LATEST (2026-10-24) — RP2 GRASK 3D ANATOMICAL SOURCE V005 — FINAL-AUTHOR ACCEPTED / FROZEN
+- Authority: `reviews/chatgpt-rac-rp2-grask-3d-source-v005-final-author-acceptance-freeze-order.md` (33e4aaf). Tyler accepted v005; no further anatomical-source passes (no v006 polish).
+- Canonical parent for all future Grask RP2 mesh work: `E:/…/production/Grask/RP2/SOURCE_3D/GR_U_REF_RP2_SOURCE_3D_v005.blend` (7bba8d2d…ab14), GLB 81f872e7…c548, geometry 2697929d…d7bc. v005 wins over downstream meshes on accepted anatomy.
+- v001–v004 kept unchanged as history only.
+- STOP: no retopology / RP2 v007+ / rig / skinning / creator morphs / UE5 / next race until a separate explicit downstream order (which must use v005 as source parent).
+
+## Previous (2026-10-24) — RP2 GRASK 3D ANATOMICAL SOURCE V005 EXTREMITY NATURALIZATION PASS / READY FOR AUTHOR FREEZE REVIEW — then FINAL-AUTHOR ACCEPTED / FROZEN
 - Order `reviews/chatgpt-rac-rp2-grask-3d-source-v005-extremity-naturalization-order.md` (6c7691d). Report `reviews/claude-rac-rp2-grask-3d-source-v005-extremity-naturalization-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_3d_source_v005_extremity_naturalization/`.
 - PC: `E:/…/production/Grask/RP2/SOURCE_3D/GR_U_REF_RP2_SOURCE_3D_v005.blend` (7bba8d2d…, zstd), `.glb` (81f872e7…), `.json`, `_naturalization_masks.npz`; v001–v004 kept.
 - Rebuild (cloud `/tmp/claude-0/src3d/v5`, ephemeral): same pipeline as v004 with `nat` parameter blocks in `hand_model.py`/`foot_model.py` (architecture params identical); right frame tilt 2.0° in `hand_frame.py`; stitch base = v004 (`assemble.sh`), `finalize5.py` (freeze vs v004), `export_v5.py`. Look-dev: `hand_quick.py` + `hq_render.sh`; cross-sections `xsec.py`.
 - Lesson: smooth-union (smin) at every phalanx junction inflates by ~k/4 and reads as bead collars; keep junction k small and express joints with broad low planes + creases.
-- STOP: awaiting Tyler freeze review of v005.
+- (Accepted and frozen by 33e4aaf.)
 
 ## Previous (2026-10-24) — RP2 GRASK 3D ANATOMICAL SOURCE V004 EXTREMITY RECONSTRUCTION PASS / READY FOR AUTHOR FREEZE REVIEW — later naturalized into v005 (architecture accepted)
 - Order `reviews/chatgpt-rac-rp2-grask-3d-source-v004-extremity-reconstruction-order.md` (7fa3b44). Report `reviews/claude-rac-rp2-grask-3d-source-v004-extremity-reconstruction-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_3d_source_v004_extremity_reconstruction/`.
