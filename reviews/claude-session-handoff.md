@@ -1,13 +1,20 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-24 (RP2 Grask 3D anatomical source v004 extremity reconstruction). Previously 2026-10-23 (v003 extremity refinement). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
+Updated: 2026-10-24 (RP2 Grask 3D anatomical source v005 extremity naturalization). Earlier same day: v004 extremity reconstruction. Previously 2026-10-23 (v003 extremity refinement). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-24) — RP2 GRASK 3D ANATOMICAL SOURCE V004 EXTREMITY RECONSTRUCTION PASS / READY FOR AUTHOR FREEZE REVIEW
+## LATEST (2026-10-24) — RP2 GRASK 3D ANATOMICAL SOURCE V005 EXTREMITY NATURALIZATION PASS / READY FOR AUTHOR FREEZE REVIEW
+- Order `reviews/chatgpt-rac-rp2-grask-3d-source-v005-extremity-naturalization-order.md` (6c7691d). Report `reviews/claude-rac-rp2-grask-3d-source-v005-extremity-naturalization-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_3d_source_v005_extremity_naturalization/`.
+- PC: `E:/…/production/Grask/RP2/SOURCE_3D/GR_U_REF_RP2_SOURCE_3D_v005.blend` (7bba8d2d…, zstd), `.glb` (81f872e7…), `.json`, `_naturalization_masks.npz`; v001–v004 kept.
+- Rebuild (cloud `/tmp/claude-0/src3d/v5`, ephemeral): same pipeline as v004 with `nat` parameter blocks in `hand_model.py`/`foot_model.py` (architecture params identical); right frame tilt 2.0° in `hand_frame.py`; stitch base = v004 (`assemble.sh`), `finalize5.py` (freeze vs v004), `export_v5.py`. Look-dev: `hand_quick.py` + `hq_render.sh`; cross-sections `xsec.py`.
+- Lesson: smooth-union (smin) at every phalanx junction inflates by ~k/4 and reads as bead collars; keep junction k small and express joints with broad low planes + creases.
+- STOP: awaiting Tyler freeze review of v005.
+
+## Previous (2026-10-24) — RP2 GRASK 3D ANATOMICAL SOURCE V004 EXTREMITY RECONSTRUCTION PASS / READY FOR AUTHOR FREEZE REVIEW — later naturalized into v005 (architecture accepted)
 - Order `reviews/chatgpt-rac-rp2-grask-3d-source-v004-extremity-reconstruction-order.md` (7fa3b44). Report `reviews/claude-rac-rp2-grask-3d-source-v004-extremity-reconstruction-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_3d_source_v004_extremity_reconstruction/`.
 - PC: `E:/…/production/Grask/RP2/SOURCE_3D/GR_U_REF_RP2_SOURCE_3D_v004.blend` (ed83bf92…, zstd-compressed to fit 30 MB transfer limit), `.glb` (696f756f…), `.json`, `_reconstruction_masks.npz`; v001–v003 kept.
 - Rebuild (cloud `/tmp/claude-0/src3d/v4`, ephemeral; use system python3 for builds (pymeshlab), `/home/claude/stc/bin/python3` for bpy/renders/SI): `build_hand.py L|R 0.05 350000` → `AC=0.4 FK=2.0 build_foot.py L|R 0.05 190000` → `assemble.sh` → `finalize4.py` (right-forefoot ground + tech + freeze stats) → `sxq.py` → `export_v4.py`. Evidence: `render_v4.sh MESH TAG`, `pose_diag.py` (fist: TS=-1 TD=[0.85,-0.27,-0.47] TF=[30,40]), `sheets_v4.py`, `wire.py`.
-- STOP: awaiting Tyler freeze review of v004. Production retopology only after approval.
+- (v004 architecture accepted; not frozen — naturalized into v005.)
 
 ## Previous (2026-10-23) — RP2 GRASK 3D ANATOMICAL SOURCE V003 EXTREMITY REFINEMENT PASS / READY FOR AUTHOR FREEZE REVIEW — later superseded by v004 reconstruction
 - Order `reviews/chatgpt-rac-rp2-grask-3d-source-v003-extremity-refinement-order.md` (b00ac6b). Report `reviews/claude-rac-rp2-grask-3d-source-v003-extremity-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_3d_source_v003_extremity/`.
