@@ -1,0 +1,163 @@
+{
+ "file": "GR_U_REF_RP2_production_v006.blend",
+ "object": "GR_U_REF_RP2_production_v006",
+ "status": "RP2 GRASK V006 MASS-HIERARCHY CORRECTION PASS / READY FOR AUTHOR REVIEW (not promoted; v001-v005 preserved)",
+ "date": "2026-10-23",
+ "order": "reviews/chatgpt-rac-rp2-grask-v006-mass-hierarchy-correction-order.md",
+ "report": "reviews/claude-rac-rp2-grask-v006-mass-hierarchy-final-gate.md",
+ "file_sha256": "9f4275cc4e3477ab9f0b2786c9ece37b54098392591b3805bceaf4aec9e34f13",
+ "geometry_sha256": "df4fc55b19f239a19c1cd06f8838aa82fb47955a9fbe700cee066ce2bf77bc88",
+ "geometry_hash_definition": "SHA-256 of float32 vertex co array followed by int32 loop vertex_index array, file order",
+ "parent": {
+  "v005": "958af4fd35740cdd35ad8fa5b08e25fd67edf753b9f3b0ac24bdd43eebfb9a52"
+ },
+ "preserved": {
+  "v001": "81f579f91b43667143840dbc5e6e41ce7c35c5e326c4669c8e14a896ac219c0a",
+  "v002": "9622a062da2a756bb14e1dc630f6f4e5311ce19fbf598ea276b96674feae23ee",
+  "v003": "46697d1b140da23e141d4d85e4ba584ab5edb58f2c2ffacc05cb8caf25d55b52",
+  "v004": "cd8f1cdb9eaf8f3b815a104bc71ddfd0807e4ea45a3c578ccedb282fb763b2f3",
+  "v005": "958af4fd35740cdd35ad8fa5b08e25fd67edf753b9f3b0ac24bdd43eebfb9a52"
+ },
+ "frame": "Blender metres, (x, -f, u)/100; world identity; outward normals (volume +129.77 L); ground contact z = 0",
+ "topology": {
+  "vertices": 214146,
+  "faces": 214144,
+  "quads_pct": 100.0,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "nonmanifold_vertices": 0,
+  "genus": 0,
+  "degenerates": 0,
+  "duplicates": 0,
+  "self_intersections": 0,
+  "self_intersection_check": "0 pairs: float64 design data and float32 stored file, both quad diagonals",
+  "T4_angles_45_135_pct": 97.17760011954573,
+  "T4_aspect_le4_pct": 95.0818141063957,
+  "note": "same vertex/face order as v001-v005"
+ },
+ "edit_masks": "GR_U_REF_RP2_production_v006_edit_masks.npz (head, neck_traps, shoulders, torso, pelvis, upper_arms, forearms, hands, thighs, calves, feet by dominant weight; deformation_support_axilla; displacement from v005 in mm)",
+ "landmarks": "GR_U_REF_RP2_production_v006_landmarks.json",
+ "mpfb_mapping": "mesh attributes + GR_U_REF_RP2_production_v006_mpfb_mapping.npz (unchanged)",
+ "silhouette_study": "evidence silhouette/ (overlays + width/depth tables, v005 and v006 vs target)",
+ "parameters": "evidence tools/params_v006.json",
+ "gates": {
+  "T1_unchanged_pass": true,
+  "stature_cm": 217.947,
+  "stature_delta_mm_vs_v005": -0.005720798606603239,
+  "deformation": {
+   "poses": 54,
+   "clean": 35,
+   "local flexion-crease contact": 19,
+   "return_to_rest_mm": 0.0,
+   "weight_smoothing_iterations": 60,
+   "shoulder_flex60_depth_mm": {
+    "v004": 2.0,
+    "v005": 4.72,
+    "v006": 1.84
+   }
+  },
+  "delta_vs_v005": {
+   "head": {
+    "vertices": 65253,
+    "moved_gt_0p5mm": 65220,
+    "mean_mm": 10.259410063121875,
+    "max_mm": 21.56056831547765
+   },
+   "neck_traps": {
+    "vertices": 8359,
+    "moved_gt_0p5mm": 8299,
+    "mean_mm": 8.050133775959848,
+    "max_mm": 17.93698063086029
+   },
+   "shoulders": {
+    "vertices": 291,
+    "moved_gt_0p5mm": 291,
+    "mean_mm": 7.019461852307709,
+    "max_mm": 8.505105931899667
+   },
+   "torso": {
+    "vertices": 15604,
+    "moved_gt_0p5mm": 14942,
+    "mean_mm": 4.735369585209041,
+    "max_mm": 10.861503627552276
+   },
+   "pelvis": {
+    "vertices": 3685,
+    "moved_gt_0p5mm": 3602,
+    "mean_mm": 3.060930283393528,
+    "max_mm": 7.773015618190345
+   },
+   "upper_arms": {
+    "vertices": 9826,
+    "moved_gt_0p5mm": 9807,
+    "mean_mm": 7.064319206178723,
+    "max_mm": 12.483121511262421
+   },
+   "forearms": {
+    "vertices": 7909,
+    "moved_gt_0p5mm": 7909,
+    "mean_mm": 6.98952826756341,
+    "max_mm": 7.835635370264424
+   },
+   "hands": {
+    "vertices": 51059,
+    "moved_gt_0p5mm": 51059,
+    "mean_mm": 5.935835729324678,
+    "max_mm": 7.121992645940722
+   },
+   "thighs": {
+    "vertices": 10653,
+    "moved_gt_0p5mm": 10547,
+    "mean_mm": 6.561319137842528,
+    "max_mm": 22.762621692843773
+   },
+   "calves": {
+    "vertices": 7448,
+    "moved_gt_0p5mm": 7448,
+    "mean_mm": 5.179737856594685,
+    "max_mm": 10.626759066614271
+   },
+   "feet": {
+    "vertices": 34059,
+    "moved_gt_0p5mm": 33400,
+    "mean_mm": 5.183713305422789,
+    "max_mm": 13.647760759187817
+   },
+   "deformation_support_axilla (overlaps torso / upper_arms)": {
+    "vertices": 2639,
+    "moved_gt_0p5mm": 2618,
+    "mean_mm": 4.57782713709877,
+    "max_mm": 8.132729266077327
+   },
+   "outside_all_masks": {
+    "vertices": 0,
+    "moved_gt_0p5mm": 0,
+    "mean_mm": 0.0,
+    "max_mm": 0.0
+   },
+   "all": {
+    "moved_gt_0p5mm": 212524,
+    "mean_mm": 7.1762338753723025,
+    "max_mm": 22.762621692843773
+   },
+   "stature_cm": {
+    "v005": 217.94711156999196,
+    "v006": 217.9465394901313,
+    "delta_mm": -0.005720798606603239
+   },
+   "bbox_delta_mm": {
+    "min": [
+     -6.676331271871305,
+     0.1976566782741962,
+     -4.473612671133942e-05
+    ],
+    "max": [
+     6.676220738039831,
+     8.231523161043661,
+     -0.005765534733370714
+    ]
+   }
+  }
+ }
+}
