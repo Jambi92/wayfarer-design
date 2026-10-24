@@ -1,9 +1,15 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-23 (RP2 v003 grounded-troll build pass). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
+Updated: 2026-10-23 (RP2 Grask 3D anatomical source rebase). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-23) — RP2 GRASK V006 MASS-HIERARCHY CORRECTION PASS / READY FOR AUTHOR REVIEW
+## LATEST (2026-10-23) — RP2 GRASK 3D ANATOMICAL SOURCE REBASE COMPLETE / READY FOR AUTHOR REVIEW
+- Order `reviews/chatgpt-rac-rp2-grask-3d-source-rebase-order.md` (224e33b: stop morphing v006; build a clean anatomical source from the generated 3D figure). Report `reviews/claude-rac-rp2-grask-3d-source-rebase-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_3d_source_rebase/`.
+- PC: `E:/…/production/Grask/RP2/SOURCE_3D/GR_U_REF_RP2_SOURCE_3D_v001.blend` (2315d5c1…), `.glb`, `.json`, `_reconstruction_masks.npz`. Input `C:/Users/Tyler/Downloads/base.glb` (363b4566…). Repo proxy `GRASK_front_reference_proxy_v001.glb.gz` is corrupt (not needed).
+- Pipeline (cloud `/tmp/claude-0/src3d`, ephemeral): extract → scale 218 → symplane align → donor pelvis fitdonor/finefit/stitch (z 87–135) → seam fair → head yaw → neutralize (neut_loop until 0 self-ix) → finalize (thigh mound) → scalp_clean → rescale → export_source / readback.
+- STOP: awaiting Tyler visual approval of the source. Production retopology (v007+) only after approval.
+
+## Previous (2026-10-23) — RP2 GRASK V006 MASS-HIERARCHY CORRECTION PASS / READY FOR AUTHOR REVIEW — later superseded by 3D source rebase
 - Order `reviews/chatgpt-rac-rp2-grask-v006-mass-hierarchy-correction-order.md` (v005 too smooth / under-massed); report `reviews/claude-rac-rp2-grask-v006-mass-hierarchy-final-gate.md`; evidence + tools `reviews/rac-rp2-evidence/grask_v006_mass_hierarchy/` (rebuild: `tools/v6build.sh params_v006.json TAG`; silhouette study `silhouette/v6sil.py`; deform suite 54 poses, weight smoothing 60). Note: thin limbs need `profile_extra` (un-low-passed) — the macro low-pass absorbs most radial limb deltas.
 - PC: `E:/…/production/Grask/RP2/GR_U_REF_RP2_production_v006.blend` (9f4275cc…); v001–v005 kept. Cloud dir `/tmp/claude-0/rp2` (ephemeral).
 - STOP: waiting for author review; no canon freeze / next race / rig / creator / UE5.

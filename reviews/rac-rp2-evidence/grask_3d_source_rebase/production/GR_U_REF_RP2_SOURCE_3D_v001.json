@@ -1,0 +1,164 @@
+{
+ "file": "GR_U_REF_RP2_SOURCE_3D_v001.blend",
+ "object": "GR_U_REF_RP2_SOURCE_3D_v001",
+ "status": "RP2 GRASK 3D ANATOMICAL SOURCE REBASE COMPLETE / READY FOR AUTHOR REVIEW (anatomical source only; not a production cage; v001-v006 preserved)",
+ "date": "2026-10-23",
+ "order": "reviews/chatgpt-rac-rp2-grask-3d-source-rebase-order.md",
+ "report": "reviews/claude-rac-rp2-grask-3d-source-rebase-final-gate.md",
+ "file_sha256": "2315d5c10b166a2af0345c7a69ab6202d4e70d2c492722c0a27041c2a4e3cf86",
+ "glb_copy_sha256": "8db2970f61a980702d02dfb205324432639dd3c57dc81b9f19b1ca279777a94d",
+ "geometry_sha256": "2bd7712615a8984df1fc424eb9ba08776a3c9925e797ba4ef1a8601c2bf5ecb9",
+ "provenance": {
+  "uploaded_glb": {
+   "path": "C:/Users/Tyler/Downloads/base.glb",
+   "sha256": "363b45662531f11ff4c41c9d0731e4d45053f22c6b92a03042c65ea7c9e93ce9",
+   "content": "1 mesh, 3 connected figures, 499982 welded V / 1,000,000 tris, untextured (base colour only), y-up"
+  },
+  "extracted_figure": {
+   "selection": "connected component with the most negative x (left/front-derived figure)",
+   "welded_vertices": 157442,
+   "split_vertices": 196873,
+   "triangles": 314892,
+   "note": "identical counts to ChatGPT dense extraction GRASK_front_reference_extracted_v3.glb (196,873 V / 314,892 tris, sha256 03aed1aa...)"
+  },
+  "repo_proxy": {
+   "path": "assets/rac/rp2/grask/reference/GRASK_front_reference_proxy_v001.glb.gz",
+   "sha256_in_repo": "c313a08f3bb9cb5bd9440d33bc40c08649c3552abeccc5fd8de1c5607d1f2bcf",
+   "readme_sha256": "b22eea7ee8d7a1aab05e8723a52c2881e8c019d62948de707fb8104cc03b77f1",
+   "state": "corrupt in repo (gzip CRC error, hash mismatch); not needed - dense figure extracted directly from the uploaded GLB"
+  },
+  "turnaround": {
+   "path": "C:/Users/Tyler/Downloads/Troll Character Turnaround Sheet.png",
+   "sha256": "3e061b0c7732877105fdd6c95ac0331d8feb118f131eb36c8fcbbd8a5b01f4ef",
+   "note": "pixel-identical to the v004-v006 target image"
+  }
+ },
+ "scale": {
+  "source_height_m": 1.8982475996017456,
+  "initial_uniform_scale": 1.1484276342334723,
+  "final_uniform_scale_after_cleanup": 0.998445961528044,
+  "result_height_cm": 218.00000667572021,
+  "bbox_source_m": [
+   [
+    -0.7867742776870728,
+    0.0,
+    -0.19808512926101685
+   ],
+   [
+    -0.1563732624053955,
+    1.8982475996017456,
+    0.24300208687782288
+   ]
+  ],
+  "bbox_final_cm": [
+   [
+    -37.10418343544006,
+    -20.49710899591446,
+    0.0
+   ],
+   [
+    34.95855927467346,
+    27.29136049747467,
+    218.00000667572021
+   ]
+  ],
+  "scalp_clean_rescale": 1.000195884229481
+ },
+ "alignment": {
+  "global_yaw_correction_deg": 8.250135548246057,
+  "global_roll_correction_deg": 0.3944013496815272,
+  "symmetry_residual_cm": 0.8795276605550482,
+  "head_yaw_correction": {
+   "head_yaw_correction_deg": 1.3594052072948086,
+   "estimates_before": [
+    [
+     -1.345211071987956,
+     0.1591447661854934,
+     0.8164705535649076
+    ],
+    [
+     -1.651915405491299,
+     0.0054575900701253404,
+     0.24103897871932406
+    ],
+    [
+     -1.2121639633455152,
+     0.42063661739112623,
+     1.7395938656284011
+    ],
+    [
+     -1.3735993426016613,
+     0.471448120460325,
+     1.9215792139143018
+    ]
+   ],
+   "estimates_after": [
+    [
+     0.12888500255143176,
+     0.4012649189596401,
+     1.5643949576584268
+    ],
+    [
+     -0.2917785062122974,
+     0.009460318128824148,
+     0.13632406705478295
+    ],
+    [
+     0.1461489783776332,
+     0.41899124694152445,
+     1.6148995316059973
+    ],
+    [
+     -0.01389622616825939,
+     0.47126318306455944,
+     1.8020812633006642
+    ]
+   ]
+  }
+ },
+ "reconstruction": {
+  "loincloth": "removed: trunk/leg band z 87-135 cm replaced by the v006 Grask production pelvis (neutral MPFB anatomy) coarse-fitted per height and fine-fitted to cloth-free source skin, zippered to the source at 3 loops, seam faired; upper-anterior-thigh mound of the donor flattened",
+  "ties_flaps": "removed with the band (front flap tip ~z 92, back flap, side ties and knots; genus 3 -> 0)",
+  "musculature": "band-pass attenuation (fine scale lam 0.4 cm2, medium lam 6 cm2): body fine x0.3 medium x0.3; face fine x0.6; ears, feet kept; hands fine x0.35 medium x0.9; mass-preserving (low-frequency component untouched); contact regions protected automatically",
+  "masks": "GR_U_REF_RP2_SOURCE_3D_v001_reconstruction_masks.npz",
+  "scalp_ears": "cranium/behind-ear generator pits removed (fine band-pass x0.85 on scalp, x0.4 on ears; face front untouched; max move 5.9 mm), then uniform rescale x1.000196 back to 218.000 cm",
+  "masks_added": [
+   "scalp_ear_noise_clean_weight",
+   "scalp_clean_move_mm"
+  ]
+ },
+ "topology": {
+  "vertices": 134608,
+  "triangles": 269212,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "watertight": true,
+  "euler": 2,
+  "genus": 0,
+  "volume_L_blender_frame": 131.61804484765008,
+  "outward_in_blender_frame": true,
+  "degenerate_faces": 0,
+  "coincident_vertices": 0,
+  "duplicate_faces": 0,
+  "self_intersection_pairs": 0,
+  "edge_cm": {
+   "median": 0.5146640776266501,
+   "min": 0.017465389337966902,
+   "max": 2.64039718459881
+  },
+  "bbox_cm": [
+   [
+    -37.10418343544006,
+    -20.49710899591446,
+    0.0
+   ],
+   [
+    34.95855927467346,
+    27.29136049747467,
+    218.00000667572021
+   ]
+  ],
+  "height_cm": 218.00000667572021
+ }
+}
