@@ -1,6 +1,14 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
+
+## LATEST AUTHOR ORDER (2026-10-25) — Grask thumb-web images / audit closure
+
+- Read `reviews/chatgpt-rac-rp2-grask-thumb-web-visual-review-and-audit-closure-order.md` before continuing Grask RP2. This supersedes the v002 self-reported readiness as the current action: v002 remains constrained, not accepted or frozen.
+- Tyler says the model looks good but questions the thumb-index dent shown in a SOURCE right-hand image. Display isolated matched source/v002 close-ups first. No source-anatomy correction without explicit approval of an illustrated proposal.
+- Close the named short-edge quad concern, demonstrate both ankle/right-elbow loops, and replace occluded/missing evidence views. Distinguish the two aspect measures. Only submit a revised production mesh after all required technical audits and evidence checks pass; keep failing iterations internal and report genuine blockers honestly.
+- Keep frozen v005 unchanged and Turnfall separate. No freeze or downstream work.
+
 Updated: 2026-10-25 (RP2 Grask retopo v002 optimization COMPLETE / READY FOR AUTHOR REVIEW). Earlier: 2026-10-24 (RP2 Grask production retopology v001 COMPLETE / READY FOR AUTHOR REVIEW). Earlier same day: anatomical source v005 FINAL-AUTHOR ACCEPTED / FROZEN. Earlier same day: v004 extremity reconstruction. Previously 2026-10-23 (v003 extremity refinement). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
 ## LATEST (2026-10-25) — RP2 GRASK RETOPO V002 OPTIMIZATION — COMPLETE / READY FOR AUTHOR REVIEW

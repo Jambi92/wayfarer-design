@@ -1,5 +1,9 @@
 # Character Design Status
 
+## Grask RP2 current author review — 2026-10-25
+
+Retopo v002 is **CONSTRAINED / NOT FROZEN** pending the thumb-web visual review and focused audit closure in `reviews/chatgpt-rac-rp2-grask-thumb-web-visual-review-and-audit-closure-order.md`. Display matched isolated source/v002 hand images; preserve frozen v005 unless Tyler explicitly approves an illustrated anatomy correction. Close the named quad-metric, loop-demonstration and missing/occluded-image issues. Subsequent production turn-ins must pass all required technical audits and evidence-completeness checks before being labelled ready; author acceptance remains separate. No downstream work. Turnfall is outside this scope.
+
 ## First-pass complete
 1. Marchfolk
 2. Skarn
