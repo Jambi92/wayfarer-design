@@ -1,9 +1,16 @@
 # Claude session handoff — Wayfarer RM-OT-05 (Gorrund)
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
-Updated: 2026-10-24 (RP2 Grask anatomical source v005 FINAL-AUTHOR ACCEPTED / FROZEN). Earlier same day: v004 extremity reconstruction. Previously 2026-10-23 (v003 extremity refinement). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
+Updated: 2026-10-24 (RP2 Grask production retopology v001 COMPLETE / READY FOR AUTHOR REVIEW). Earlier same day: anatomical source v005 FINAL-AUTHOR ACCEPTED / FROZEN. Earlier same day: v004 extremity reconstruction. Previously 2026-10-23 (v003 extremity refinement). Earlier: 2026-10-19 session 7 (RP1E non-local sub-cage rebuild order a2f5ee5 IN PROGRESS — feet rebuilt in cloud (toegen.py), hands generator diggen.py in progress; nothing new imported yet; v011.blend still authoritative).
 
-## LATEST (2026-10-24) — RP2 GRASK 3D ANATOMICAL SOURCE V005 — FINAL-AUTHOR ACCEPTED / FROZEN
+## LATEST (2026-10-24) — RP2 GRASK PRODUCTION RETOPOLOGY V001 — COMPLETE / READY FOR AUTHOR REVIEW
+- Order `reviews/chatgpt-rac-rp2-grask-production-retopology-kickoff-order.md` (61ff0e7). Gate `reviews/claude-rac-rp2-grask-retopo-v001-gate.md` (30/30 PASS); evidence `reviews/rac-rp2-evidence/grask_retopo_v001/`; tools + README `tools/rac/rp/grask_retopo_v001/`.
+- PC: `E:/…/production/Grask/RP2/GR_U_REF_RP2_retopo_v001.blend` (82c10a64…ded0, geometry 5ebc7813…6dec), `.json` sidecar, `_landmarks.json`. Source v005 unchanged (hashes re-verified after). Earlier RP2 production v001–v006 untouched.
+- Result: 628,738 V / 628,736 quads, 0 tris, watertight single body, 0 self-intersections / folds; T-1/T-2/T-3/T-6/T-7 pass (worst: foot 1.07 mm, landmark 0.80 mm, profile IoU 0.99657); loops 69/69; 422 tagged loops; seam proposal only.
+- Rebuild (cloud `/tmp/claude-0/rt`, ephemeral): `run21.sh` (build_cage → pipe2.sh → sxfinal/foldfix) then the gate suite listed in the tools README. Key lessons: fan hinge must sit outside the skin (arm/torso gap) or rings converge into slivers; adjacent digit ports must share cleft edges (gap strips fold into webs); the toe web line must come from the most proximal interdigital slot point (a cap plane inside the slot bridges it); crease capture must be part-aware (never pull a digit's vertices onto its neighbour's wall); surface-fit landmarks must use area samples / ray or section constructions (vertex argmax drifts by cm); the old "mouth" inset had been on the chin — lips are at z≈194.6.
+- STOP: awaiting Tyler / ChatGPT author review. No rig / skin / morphs / UVs / LODs / UE5 / other races.
+
+## Previous (2026-10-24) — RP2 GRASK 3D ANATOMICAL SOURCE V005 — FINAL-AUTHOR ACCEPTED / FROZEN
 - Authority: `reviews/chatgpt-rac-rp2-grask-3d-source-v005-final-author-acceptance-freeze-order.md` (33e4aaf). Tyler accepted v005; no further anatomical-source passes (no v006 polish).
 - Canonical parent for all future Grask RP2 mesh work: `E:/…/production/Grask/RP2/SOURCE_3D/GR_U_REF_RP2_SOURCE_3D_v005.blend` (7bba8d2d…ab14), GLB 81f872e7…c548, geometry 2697929d…d7bc. v005 wins over downstream meshes on accepted anatomy.
 - v001–v004 kept unchanged as history only.
