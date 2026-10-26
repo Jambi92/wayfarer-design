@@ -1,5 +1,31 @@
 # Character Design Status
 
+## Grask RP2 — 2026-10-25 — landmark adjudication v002 + diagnostic rig v001 executed; awaiting ChatGPT review
+
+**Order:** `reviews/chatgpt-rac-rp2-grask-rig-landmark-adjudication-and-diagnostic-rig-order.md` (bf7d664).
+
+**Delivered:**
+- gate `reviews/claude-rac-rp2-grask-rig-landmark-adjudication-diagnostic-gate.md`;
+- evidence `reviews/rac-rp2-evidence/grask_rig_diagnostic_v001/`;
+- tools `tools/rac/rp/grask_rigprep_v001/` (`run_diagstage.sh`).
+
+**Landmarks:** `GR_U_REF_RP2_rigprep_landmarks_v002.json` implements AD-R1…R12 and passes 27/27 order checks. The frozen v003 landmark package is unchanged.
+
+**Diagnostic rig:** derived file `E:/…/Grask/RP2/DIAG/GR_U_REF_RP2_rigdiag_v001.blend` (59ca4fda…).
+- Rest-body geometry hash = frozen v003 (f9c4a7ac).
+- Bone-heat diagnostic weights plus one logged midline cleanup.
+- Blender deformation = numpy LBS (0.0006 mm); rest-return T-1 0.0002 mm; T-6 bone lengths exact.
+
+**D1–D10:**
+- 20 / 43 poses pass. Small and moderate poses are clean.
+- Failures are confined to crease zones at 60–140°: LBS / diagnostic-weight collapse (DQS restores the zone volume), plus contact anatomy and test setup.
+- No topology problem indicated.
+- No bounded landmark revision used.
+
+**Parents unchanged** (hashes before and after).
+
+**Not production rig / weights.** No facial, morph, UV, LOD or UE5 work.
+
 ## Grask RP2 — 2026-10-25 — retopology frozen; rigprep readiness proposal awaiting ChatGPT review
 
 **Order:** `reviews/chatgpt-rac-rp2-grask-rigprep-readiness-and-landmark-review-order.md` (c6db89c).

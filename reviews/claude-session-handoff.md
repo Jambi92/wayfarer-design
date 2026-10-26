@@ -2,7 +2,25 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-25, late night) — RP2 GRASK RIGPREP READINESS PROPOSAL v001 — awaiting ChatGPT review
+## LATEST (2026-10-25, night 2) — RP2 GRASK LANDMARK ADJUDICATION v002 + DIAGNOSTIC RIG v001 — awaiting ChatGPT review
+
+**What was done**
+- Order bf7d664 executed. Gate: `reviews/claude-rac-rp2-grask-rig-landmark-adjudication-diagnostic-gate.md`.
+- Workspace `/tmp/claude-0/rt/rd`; pipeline `tools/rac/rp/grask_rigprep_v001/run_diagstage.sh`.
+- v002 landmarks (27/27 checks) and the derived rig `E:/…/RP2/DIAG/GR_U_REF_RP2_rigdiag_v001.blend` (59ca4fda…).
+- D1–D10: 20/43 pass. Failures are LBS / weights crease collapse; DQS restores the zone volume. No topology problem.
+
+**Decisions open for ChatGPT**
+- topology conclusion;
+- hip pivot (the inguinal-axis alternative is better at 90° but beyond the AD-R1 5 mm cap);
+- whether forearm–upper-arm contact counts as contact anatomy;
+- shoulder elevation with girdle participation;
+- next stage: skinning strategy / correctives / nails plus the facial-oral stage;
+- knee AP/ML interpretation.
+
+**Next:** STOP for ChatGPT review.
+
+## Previous (2026-10-25, late night) — RP2 GRASK RIGPREP READINESS PROPOSAL v001 — awaiting ChatGPT review
 
 **What was done**
 - Order c6db89c executed. Gate: `reviews/claude-rac-rp2-grask-rigprep-readiness-gate.md`.
