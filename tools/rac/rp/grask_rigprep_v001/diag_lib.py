@@ -20,7 +20,10 @@ class Rig:
             b = self.B[n]; Rl = self.rest[n].copy()
             if pivots and n in pivots: Rl[:3, 3] = pivots[n]
             basis = np.eye(4)
-            for ax, d in pose.get(n, []): basis[:3, :3] = basis[:3, :3] @ rotm(ax, d)
+            for ax, d in pose.get(n, []):
+                if ax == 'T': basis[:3, 3] += np.asarray(d, float)             # local translation (helper bones only; Blender pose location)
+                elif ax == 'S': basis[:3, :3] = basis[:3, :3] @ np.diag(np.asarray(d, float))   # local scale (helper bones only; Blender pose scale)
+                else: basis[:3, :3] = basis[:3, :3] @ rotm(ax, d)
             if b['parent']:
                 Rp = self.rest[b['parent']].copy()
                 if pivots and b['parent'] in pivots: Rp[:3, 3] = pivots[b['parent']]
@@ -141,6 +144,21 @@ def build_poses(rig):
     an, sn = ch('neck', FWD, ('X',)); ah, sh = ch('head', FWD, ('X',))
     P['D10_flex30'] = {'neck': [(an, sn * 15)], 'head': [(ah, sh * 15)]}; P['D10_ext30'] = {'neck': [(an, -sn * 15)], 'head': [(ah, -sh * 15)]}
     P['D10_rot_p45'] = {'neck': [('Y', 25)], 'head': [('Y', 20)]}; P['D10_rot_m45'] = {'neck': [('Y', -25)], 'head': [('Y', -20)]}
+    if os.environ.get('HELPER'):                                        # elbow helper-volume study (order 8e5021d): helper follows the forearm, counter-rotates
+        H = json.load(open(os.environ['HELPER']))                         # back toward the bisector and translates, both scaled by a smooth flexion activation
+        for k_, pz in list(P.items()):
+            if k_.startswith('_') or not isinstance(pz, dict): continue
+            for sd, hc in H['sides'].items():
+                fr = pz.get('forearm_' + sd)
+                if not fr: continue
+                th = float(sum(abs(d) for _, d in fr))
+                t = min(max((th - hc['act_start']) / (hc['act_full'] - hc['act_start']), 0.0), 1.0); beta = t * t * (3 - 2 * t)
+                if beta == 0.0: continue
+                ent = [(ax, -hc['counter_fraction'] * beta * d) for ax, d in fr]
+                if any(hc.get('translate_local_m', [0, 0, 0])): ent.append(('T', [beta * v for v in hc['translate_local_m']]))
+                if any(hc.get('scale_gain_local', [0, 0, 0])): ent.append(('S', [1.0 + beta * g_ for g_ in hc['scale_gain_local']]))
+                pz = dict(pz); pz['elbow_helper_' + sd] = ent; P[k_] = pz
+
     return P
 def bl_to_dir_from_bl(v):                                                          # Blender vector -> analysis direction (for ch(), which converts back)
     v = np.asarray(v, float); return np.array([v[0], -v[1], v[2]])

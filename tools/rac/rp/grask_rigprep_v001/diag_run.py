@@ -199,5 +199,5 @@ for nm, pose in P.items():
     print('%-18s int %4d (nc %d, crease %d / %.1fmm, contact %d) folds+%d out %d flips %d vol %+.2f%% zone %s strain p95 %.1f%% loop %s' % (nm, r['intersections']['total'], r['intersections']['non_contact'], r['intersections']['crease'], r['intersections']['crease_depth_mm'],
           r['intersections']['contact'], r['folds']['new'], r['folds']['outside'], r['flips']['total'], r['volume']['total_pct'], None if r['volume']['zone_pct'] is None else '%+.1f%%' % r['volume']['zone_pct'], r['strain']['zone_p95_pct'],
           None if r['loop_spacing_min_ratio'] is None else '%.2f' % r['loop_spacing_min_ratio']), flush=True)
-json.dump(dict(poses={k: {b: [[ax, float(d)] for ax, d in rr] for b, rr in P[k].items()} for k in R}, results=R,
+json.dump(dict(poses={k: {b: [[ax, float(d) if np.isscalar(d) else [float(x) for x in d]] for ax, d in rr] for b, rr in P[k].items()} for k in R}, results=R,
                nail_vertices={f: len(ix) for f, ix in NAIL.items()}, rest_folds=FOLD0), open(O + '/diag_results%s.json' % os.environ.get('TAG', ''), 'w'), indent=1, default=float)

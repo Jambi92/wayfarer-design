@@ -2,7 +2,22 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-26) — RP2 GRASK NAIL CRITERION v2 + ELBOW POSE-SPACE CORRECTIVE — awaiting ChatGPT review
+## LATEST (2026-10-26) — RP2 GRASK ELBOW HELPER-VOLUME STUDY (Stage A failed §7; Stage B not run) — awaiting ChatGPT review
+
+**What was done**
+- Order 8e5021d executed. Gate: `reviews/claude-rac-rp2-grask-elbow-helper-volume-shoulder-isolation-gate.md`.
+- Workspace `/tmp/claude-0/rt/r5`; tools `helper_rig.py`, `run_helper.sh`, `helper_judge.py`, `stageA_sheets.py`.
+- Comparison baseline C2 / C2rx comes from `/tmp/claude-0/rt/r4`.
+
+**Results**
+- Helper = forearm-child scale bulge (H1); H2 = helper + C2-style corrective re-solved on it; H3 = crease-core-tapered refinement.
+- H2 wins at 60–120° but fails at 130°: volume-loss reduction 26 / 28 % (target 50 %), crease 8.2 mm.
+
+**Open decisions:** D-1 … D-4 in the gate.
+
+**Next:** STOP for ChatGPT review.
+
+## Previous (2026-10-26) — RP2 GRASK NAIL CRITERION v2 + ELBOW POSE-SPACE CORRECTIVE — awaiting ChatGPT review
 
 Status: retopology frozen; elbow corrective diagnostic review pending; production deformation not accepted.
 

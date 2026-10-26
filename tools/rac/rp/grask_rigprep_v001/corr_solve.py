@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); sys.path.insert(
 from diag_lib import Rig, build_poses, src_to_bl, bl_to_src
 from common import PARTS
 a_ = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]; O, TAG, S, CFGF = a_[:4]; CFG = json.load(open(CFGF)); os.makedirs(O, exist_ok=True)
-RD = '/tmp/claude-0/rt/rd'; rig = Rig(RD + '/rig/rig_v001.json', RD + '/rig/weights_v001c.npz')
+RD = '/tmp/claude-0/rt/rd'; rig = Rig(os.environ.get('RIGJSON', RD + '/rig/rig_v001.json'), os.environ.get('WEIGHTS', RD + '/rig/weights_v001c.npz'))   # helper study: RIGJSON/WEIGHTS/HELPER env
 os.environ['ELBOW_SET'] = '1'; os.environ['ELBOW_SET_R'] = '1'; os.environ['ELBOW_ARC'] = '1'; P = build_poses(rig)
 Z = np.load('/tmp/claude-0/rt/frz/v003_frz.npz'); V0 = Z['V'].astype(float); Q = np.asarray(Z['Q']); FP = Z['FP']; nV = len(V0)
 LOOPS = json.load(open('/tmp/claude-0/rt/r4/loops.json'))
@@ -65,7 +65,7 @@ gb = c2(np.where(np.isfinite(_dist), _dist, 1e9) / CFG.get('boundary_guard_cm', 
 ua_ = e - bl_to_src(np.array(rig.B['upperarm_' + S]['head'])[None])[0]; ua_ /= np.linalg.norm(ua_)
 fa_ = bl_to_src(np.array(rig.B['forearm_' + S]['tail'])[None])[0] - e; fa_ /= np.linalg.norm(fa_); AX = (ua_ + fa_) / np.linalg.norm(ua_ + fa_)
 ANT = np.array([0, 1.0, 0]); ANT -= (ANT @ AX) * AX; ANT /= np.linalg.norm(ANT)          # flexor (inner) side
-FSIDE = rig.W[:, rig.names.index('forearm_' + S)] > 0.5                                  # forearm-side flesh (W0 forearm share > 0.5)
+FSIDE = (rig.W[:, rig.names.index('forearm_' + S)] + (rig.W[:, rig.names.index('elbow_helper_' + S)] if 'elbow_helper_' + S in rig.names else 0)) > 0.5                                  # forearm-side flesh (W0 forearm share > 0.5)
 # ---- rest Laplacian
 deg = np.array([len(x) for x in nb]); NB0 = np.array([x[0] for x in nb]); Mn = np.zeros((nV, 3))
 for a, b in E: Mn[a] += V0[b]; Mn[b] += V0[a]
@@ -105,7 +105,7 @@ for ang in CFG['anchors'][1:]:
     pname = 'D2_%s_flex%d' % (S, ang)
     # key pose = ELBOW FLEXION ONLY (the abd45 shoulder setup of the test poses is removed), so the key carries no shoulder-pose correction;
     # the rest-space delta is then valid for any shoulder pose (it is applied before skinning)
-    KP = {b: r for b, r in P[pname].items() if b.startswith('forearm_')} if CFG.get('key_pose', 'elbow_only') == 'elbow_only' else P[pname]
+    KP = {b: r for b, r in P[pname].items() if b.startswith(('forearm_', 'elbow_helper_'))} if CFG.get('key_pose', 'elbow_only') == 'elbow_only' else P[pname]
     Vb, Lin, M = rig.skin(src_to_bl(V0), KP); X0 = bl_to_src(Vb)                    # LBS posed (source frame)
     Ls = np.einsum('ij,njk,kl->nil', Fl, Lin, Fl)                                    # per-vertex linear part in the source frame (cm units cancel)
     Rv = np.array([polar(Ls[v]) for v in sv]); rot_delta = np.einsum('nij,nj->ni', Rv, delta0[sv])

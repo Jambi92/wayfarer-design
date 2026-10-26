@@ -1,5 +1,24 @@
 # Character Design Status
 
+## Grask RP2 — 2026-10-26 — retopology frozen; elbow helper-volume study did not pass; production deformation not accepted
+
+**Order:** `reviews/chatgpt-rac-rp2-grask-elbow-helper-volume-and-shoulder-isolation-order.md` (8e5021d).
+
+**Delivered:**
+- gate `reviews/claude-rac-rp2-grask-elbow-helper-volume-shoulder-isolation-gate.md`;
+- evidence `reviews/rac-rp2-evidence/grask_rig_diagnostic_v005/`.
+
+**Stage A (elbow helper):** no candidate (H1–H3) meets §7.
+- 130° volume-loss reduction: 26 % (left) / 28 % (right), against the 50 % target.
+- At 130°: deeper crease and an orientation regression.
+- H2 is clearly better than C2 at 60–120° on both sides.
+
+**Stage B (shoulder):** not executed.
+
+**Rig:** no v005 blend built.
+
+**Parents unchanged.** Not production deformation.
+
 ## Grask RP2 — 2026-10-26 — retopology frozen; elbow corrective diagnostic review pending; production deformation not accepted
 
 **Order:** `reviews/chatgpt-rac-rp2-grask-nail-criterion-elbow-corrective-recovery-order.md` (6c38d75).
