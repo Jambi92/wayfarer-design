@@ -17,7 +17,9 @@ def crit(name, r):
     else: out.append(('zone volume within ±%.0f%%' % VOLTOL.get(t, 5.0), abs(zv) <= VOLTOL.get(t, 5.0), '%+.1f%%' % zv))
     if r['loop_spacing_min_ratio'] is not None: out.append(('joint-loop spacing >= 50% of rest', r['loop_spacing_min_ratio'] >= 0.5, '%.2f' % r['loop_spacing_min_ratio']))
     if i['crease']: out.append(('crease contact depth <= 2 mm', i['crease_depth_mm'] <= 2.0, '%.1f mm' % i['crease_depth_mm']))
-    if 'nail_rigidity_mm' in r and r['nail_rigidity_mm']: m = max(r['nail_rigidity_mm'].values()); out.append(('nail rigidity <= 0.3 mm', m <= 0.3, '%.2f mm' % m))
+    if r.get('nail_plate_v2_mm'):                                       # runs from order 6c38d75 on: Nail Plate Rigidity v2 gates; cap v1 is report-only
+        m = max(r['nail_plate_v2_mm'].values()); out.append(('Nail Plate Rigidity v2 <= 0.3 mm', m <= 0.3, '%.3f mm' % m))
+    elif 'nail_rigidity_mm' in r and r['nail_rigidity_mm']: m = max(r['nail_rigidity_mm'].values()); out.append(('nail rigidity <= 0.3 mm', m <= 0.3, '%.2f mm' % m))   # historical runs
     out.append(('rest-return T-1 (<= 3.0 mm body)', r['rest_return_T1_mm'] <= 3.0, '%.4f mm' % r['rest_return_T1_mm']))
     return out
 def cause(name, r, c):

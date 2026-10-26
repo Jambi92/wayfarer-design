@@ -2,7 +2,25 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-26) — RP2 GRASK NAIL BINDING + LEFT-ELBOW WEIGHT ISOLATION — awaiting ChatGPT review
+## LATEST (2026-10-26) — RP2 GRASK NAIL CRITERION v2 + ELBOW POSE-SPACE CORRECTIVE — awaiting ChatGPT review
+
+Status: retopology frozen; elbow corrective diagnostic review pending; production deformation not accepted.
+
+**What was done**
+- Order 6c38d75 executed. Gate: `reviews/claude-rac-rp2-grask-nail-criterion-elbow-corrective-gate.md`.
+- Workspace `/tmp/claude-0/rt/r4`; `run_v004.sh` reproduces the cycle; `make_v004.sh` builds the blend.
+- Built `E:/…/RP2/DIAG/GR_U_REF_RP2_rigdiag_v004.blend` (859b1e86…).
+
+**Results**
+- Nail Plate Rigidity v2 gates.
+- Corrective C2 (left) and C2rx (right) selected.
+- Full suite 20/43, no regressions.
+
+**Open decisions:** C-1 … C-5 and K-1 in the gate.
+
+**Next:** STOP for ChatGPT review.
+
+## Previous (2026-10-26) — RP2 GRASK NAIL BINDING + LEFT-ELBOW WEIGHT ISOLATION — awaiting ChatGPT review
 
 Status: retopology frozen; nail/elbow diagnostic review pending; production deformation not accepted.
 

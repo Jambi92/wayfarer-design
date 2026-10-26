@@ -1,0 +1,3287 @@
+{
+ "tag": "C3",
+ "side": "l",
+ "config": {
+  "anchors": [
+   45,
+   90,
+   110,
+   130
+  ],
+  "R_core": 14.0,
+  "R_out": 18.0,
+  "guard_cm": 1.0,
+  "w_anchor": 50.0,
+  "w_collision": 5.0,
+  "w_loop": 50.0,
+  "w_edge": 20.0,
+  "local_cm": 1.0,
+  "depth_cm": 1.5,
+  "gap_cm": 0.03,
+  "loop_floor": 0.55,
+  "edge_floor": 0.0,
+  "iters": 70,
+  "rest_detail": 0.0,
+  "w_core_anchor": 0.001,
+  "dm_iters": 15,
+  "plane_contact": true,
+  "contact_max_sep_cm": 10.0,
+  "plane_min_rest_cm": 6.0,
+  "plane_keys": [
+   110,
+   130
+  ],
+  "w_plane": 200.0,
+  "contact_mode": "sdf",
+  "tang_cm": 0.4,
+  "fair": true,
+  "w_fair": 40.0,
+  "repair_passes": 30,
+  "volume_restore": 0.25
+ },
+ "method": "# corr_solve.py OUTDIR TAG SIDE CONFIG.json : pose-space elbow corrective (order 6c38d75 \u00a75-\u00a79). Diagnostic only; never edits the rest mesh.\n# For each keyed flexion angle (CONFIG anchors[1:]) the target posed shape of the elbow support region is solved in posed space and converted to a\n# REST-SPACE delta (exact inverse of the per-vertex LBS linear part), i.e. a pose-driven shape key applied before the armature:\n#   LBS(V0 + D_k) = LBS(V0) + Lin_v D_k  ->  D_k = Lin_v^-1 (X*_k - LBS(V0)).\n# Target X*_k (projective-dynamics style, sparse least squares re-solved each outer iteration):\n#   * detail term   : uniform Laplacian of X equals the LBS posed Laplacian (smooth harmonic correction field), optionally blended (CONFIG.rest_detail,\n#                     scaled by tau) with the REST Laplacian rotated by the per-vertex skinning rotation (polar part of Lin), which un-crumples LBS;\n#   * anchor term   : (1 - tau) * w_anchor * |X - LBS|  (tau = 1 in the core, C2 smootherstep taper to 0 at the support boundary; outside = fixed);\n#   * collision term: support vertices found behind a non-local posed face (rest separation > CONFIG.local_cm) within depth CONFIG.depth_cm are\n#                     projected to that face plane + gap (both sides of a contact are processed, each moves its own vertices);\n#   * loop floor    : tagged elbow loop pairs (the retained metric's nearest-vertex pairs) kept >= CONFIG.loop_floor x rest distance;\n#   * edge floor    : every support edge kept >= CONFIG.edge_floor x rest length (prevents collapsed quads).\n# Final delta is multiplied by a C2 guard that is 1 inside R_out - guard_cm and exactly 0 at R_out (exact zero at the boundary).\n",
+ "support": {
+  "vertices": 11534,
+  "core": 9036,
+  "band": 2498,
+  "dropped_islands": [],
+  "parts": [
+   "arm_l"
+  ]
+ },
+ "keys": {
+  "90": {
+   "pose": "D2_l_flex90",
+   "key_pose_bones": [
+    "forearm_l"
+   ],
+   "iterations": [
+    {
+     "it": 0,
+     "intersecting_pairs": 103,
+     "pushed_vertices": 435,
+     "col_rest_dist_pct": [
+      4.2,
+      5.6,
+      7.0
+     ],
+     "max_pen_cm": 0.9273,
+     "loop_floor_active": 15,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 1,
+     "intersecting_pairs": 106,
+     "pushed_vertices": 451,
+     "col_rest_dist_pct": [
+      4.2,
+      5.5,
+      6.8
+     ],
+     "max_pen_cm": 0.6255,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 1
+    },
+    {
+     "it": 2,
+     "intersecting_pairs": 63,
+     "pushed_vertices": 339,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.7
+     ],
+     "max_pen_cm": 0.2843,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 3,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 160,
+     "col_rest_dist_pct": [
+      4.0,
+      5.5,
+      6.7
+     ],
+     "max_pen_cm": 0.0074,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 4,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 145,
+     "col_rest_dist_pct": [
+      4.0,
+      5.5,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 5,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 137,
+     "col_rest_dist_pct": [
+      4.0,
+      5.5,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 6,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 126,
+     "col_rest_dist_pct": [
+      4.0,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 7,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 120,
+     "col_rest_dist_pct": [
+      4.0,
+      5.5,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 8,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 117,
+     "col_rest_dist_pct": [
+      4.0,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 9,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 117,
+     "col_rest_dist_pct": [
+      4.0,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 10,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 118,
+     "col_rest_dist_pct": [
+      4.0,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 11,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 122,
+     "col_rest_dist_pct": [
+      4.0,
+      5.4,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 12,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 127,
+     "col_rest_dist_pct": [
+      4.0,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 13,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 125,
+     "col_rest_dist_pct": [
+      4.0,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 14,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 121,
+     "col_rest_dist_pct": [
+      4.0,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 15,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 124,
+     "col_rest_dist_pct": [
+      4.0,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 16,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 124,
+     "col_rest_dist_pct": [
+      4.0,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 17,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 122,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 18,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 123,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 19,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 122,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 20,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 118,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 21,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 118,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 22,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 117,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 23,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 119,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 24,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 121,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 25,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 121,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 26,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 122,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 27,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 120,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 28,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 120,
+     "col_rest_dist_pct": [
+      4.1,
+      5.5,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 29,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 121,
+     "col_rest_dist_pct": [
+      4.1,
+      5.5,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 30,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 122,
+     "col_rest_dist_pct": [
+      4.1,
+      5.5,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 31,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 122,
+     "col_rest_dist_pct": [
+      4.1,
+      5.5,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 32,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 126,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 33,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 126,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 34,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 127,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 35,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 126,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 36,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 127,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 37,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 128,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 38,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 130,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 39,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 130,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 40,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 132,
+     "col_rest_dist_pct": [
+      4.1,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 41,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 130,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 42,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 132,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 43,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 131,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 44,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 132,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 45,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 132,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 46,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 131,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 47,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 128,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 48,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 130,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 49,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 129,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 50,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 130,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 51,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 130,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 52,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 129,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 53,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 129,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 54,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 130,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 55,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 130,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 56,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 133,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 57,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 135,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.4
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 58,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 135,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.4
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 59,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 137,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 60,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 134,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 61,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 134,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 62,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 134,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.5
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 63,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 132,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.4
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 64,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 133,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.4
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 65,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 133,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.4
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 66,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 134,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.4
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 67,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 133,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.4
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 68,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 133,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.4
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": 69,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 134,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      6.4
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0
+    },
+    {
+     "it": "volume",
+     "loss_cm3": 27.32,
+     "bump_vertices": 1914,
+     "max_bump_cm": 0.067,
+     "after_loss_cm3": 20.46
+    },
+    {
+     "it": "repair",
+     "local_inversions_per_pass": [
+      0
+     ]
+    }
+   ],
+   "max_posed_delta_cm": 0.6317613089951176,
+   "max_rest_delta_cm": 0.7844139117309891,
+   "rest_delta_sha256": "541828015222590b20537c2b64c73fdaa06bbe13af59ad40399b4c44432dae0c",
+   "nonzero_vertices": 9779
+  },
+  "110": {
+   "pose": "D2_l_flex110",
+   "key_pose_bones": [
+    "forearm_l"
+   ],
+   "iterations": [
+    {
+     "it": 0,
+     "intersecting_pairs": 24,
+     "pushed_vertices": 621,
+     "col_rest_dist_pct": [
+      4.2,
+      8.0,
+      10.5
+     ],
+     "max_pen_cm": 1.4999,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 1054,
+     "local_inversions": 0
+    },
+    {
+     "it": 1,
+     "intersecting_pairs": 106,
+     "pushed_vertices": 549,
+     "col_rest_dist_pct": [
+      4.1,
+      5.5,
+      9.2
+     ],
+     "max_pen_cm": 1.1358,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 761,
+     "local_inversions": 2
+    },
+    {
+     "it": 2,
+     "intersecting_pairs": 134,
+     "pushed_vertices": 476,
+     "col_rest_dist_pct": [
+      4.1,
+      5.3,
+      8.8
+     ],
+     "max_pen_cm": 1.4337,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 689,
+     "local_inversions": 2
+    },
+    {
+     "it": 3,
+     "intersecting_pairs": 115,
+     "pushed_vertices": 372,
+     "col_rest_dist_pct": [
+      4.1,
+      5.2,
+      9.2
+     ],
+     "max_pen_cm": 1.4973,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 665,
+     "local_inversions": 2
+    },
+    {
+     "it": 4,
+     "intersecting_pairs": 72,
+     "pushed_vertices": 297,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.4
+     ],
+     "max_pen_cm": 1.4579,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 611,
+     "local_inversions": 3
+    },
+    {
+     "it": 5,
+     "intersecting_pairs": 26,
+     "pushed_vertices": 246,
+     "col_rest_dist_pct": [
+      4.1,
+      5.5,
+      9.7
+     ],
+     "max_pen_cm": 1.4964,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 610,
+     "local_inversions": 2
+    },
+    {
+     "it": 6,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 230,
+     "col_rest_dist_pct": [
+      4.1,
+      5.5,
+      9.7
+     ],
+     "max_pen_cm": 1.3281,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 612,
+     "local_inversions": 1
+    },
+    {
+     "it": 7,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 213,
+     "col_rest_dist_pct": [
+      4.1,
+      5.5,
+      9.8
+     ],
+     "max_pen_cm": 1.1563,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 611,
+     "local_inversions": 1
+    },
+    {
+     "it": 8,
+     "intersecting_pairs": 6,
+     "pushed_vertices": 204,
+     "col_rest_dist_pct": [
+      4.1,
+      5.5,
+      9.8
+     ],
+     "max_pen_cm": 1.4471,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 612,
+     "local_inversions": 1
+    },
+    {
+     "it": 9,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 203,
+     "col_rest_dist_pct": [
+      4.1,
+      5.5,
+      9.8
+     ],
+     "max_pen_cm": 0.8284,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 612,
+     "local_inversions": 0
+    },
+    {
+     "it": 10,
+     "intersecting_pairs": 17,
+     "pushed_vertices": 203,
+     "col_rest_dist_pct": [
+      4.2,
+      5.5,
+      9.8
+     ],
+     "max_pen_cm": 1.1131,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 610,
+     "local_inversions": 1
+    },
+    {
+     "it": 11,
+     "intersecting_pairs": 25,
+     "pushed_vertices": 213,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.8
+     ],
+     "max_pen_cm": 0.9481,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 609,
+     "local_inversions": 0
+    },
+    {
+     "it": 12,
+     "intersecting_pairs": 32,
+     "pushed_vertices": 216,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.8
+     ],
+     "max_pen_cm": 0.8164,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 608,
+     "local_inversions": 1
+    },
+    {
+     "it": 13,
+     "intersecting_pairs": 40,
+     "pushed_vertices": 217,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.8
+     ],
+     "max_pen_cm": 0.3414,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 606,
+     "local_inversions": 3
+    },
+    {
+     "it": 14,
+     "intersecting_pairs": 41,
+     "pushed_vertices": 210,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.8
+     ],
+     "max_pen_cm": 0.6102,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 605,
+     "local_inversions": 0
+    },
+    {
+     "it": 15,
+     "intersecting_pairs": 53,
+     "pushed_vertices": 218,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.8
+     ],
+     "max_pen_cm": 1.1031,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 605,
+     "local_inversions": 1
+    },
+    {
+     "it": 16,
+     "intersecting_pairs": 57,
+     "pushed_vertices": 215,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.8
+     ],
+     "max_pen_cm": 0.9111,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 604,
+     "local_inversions": 1
+    },
+    {
+     "it": 17,
+     "intersecting_pairs": 53,
+     "pushed_vertices": 216,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.8
+     ],
+     "max_pen_cm": 0.9179,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 604,
+     "local_inversions": 1
+    },
+    {
+     "it": 18,
+     "intersecting_pairs": 52,
+     "pushed_vertices": 221,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.7
+     ],
+     "max_pen_cm": 0.6758,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 601,
+     "local_inversions": 0
+    },
+    {
+     "it": 19,
+     "intersecting_pairs": 51,
+     "pushed_vertices": 227,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.7
+     ],
+     "max_pen_cm": 1.2256,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 603,
+     "local_inversions": 0
+    },
+    {
+     "it": 20,
+     "intersecting_pairs": 51,
+     "pushed_vertices": 232,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.6
+     ],
+     "max_pen_cm": 1.1642,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 603,
+     "local_inversions": 0
+    },
+    {
+     "it": 21,
+     "intersecting_pairs": 56,
+     "pushed_vertices": 227,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.7
+     ],
+     "max_pen_cm": 0.9642,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 603,
+     "local_inversions": 0
+    },
+    {
+     "it": 22,
+     "intersecting_pairs": 57,
+     "pushed_vertices": 231,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.5
+     ],
+     "max_pen_cm": 0.7395,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 605,
+     "local_inversions": 0
+    },
+    {
+     "it": 23,
+     "intersecting_pairs": 80,
+     "pushed_vertices": 235,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.4
+     ],
+     "max_pen_cm": 0.5899,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 604,
+     "local_inversions": 0
+    },
+    {
+     "it": 24,
+     "intersecting_pairs": 74,
+     "pushed_vertices": 239,
+     "col_rest_dist_pct": [
+      4.2,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.4787,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 602,
+     "local_inversions": 2
+    },
+    {
+     "it": 25,
+     "intersecting_pairs": 64,
+     "pushed_vertices": 235,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.4
+     ],
+     "max_pen_cm": 0.3692,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 603,
+     "local_inversions": 1
+    },
+    {
+     "it": 26,
+     "intersecting_pairs": 65,
+     "pushed_vertices": 229,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.5
+     ],
+     "max_pen_cm": 0.3828,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 603,
+     "local_inversions": 1
+    },
+    {
+     "it": 27,
+     "intersecting_pairs": 60,
+     "pushed_vertices": 226,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.5
+     ],
+     "max_pen_cm": 0.3827,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 602,
+     "local_inversions": 3
+    },
+    {
+     "it": 28,
+     "intersecting_pairs": 59,
+     "pushed_vertices": 227,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.5
+     ],
+     "max_pen_cm": 0.369,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 602,
+     "local_inversions": 1
+    },
+    {
+     "it": 29,
+     "intersecting_pairs": 60,
+     "pushed_vertices": 229,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.4291,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 603,
+     "local_inversions": 2
+    },
+    {
+     "it": 30,
+     "intersecting_pairs": 65,
+     "pushed_vertices": 226,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.3364,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 601,
+     "local_inversions": 4
+    },
+    {
+     "it": 31,
+     "intersecting_pairs": 67,
+     "pushed_vertices": 223,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.3144,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 601,
+     "local_inversions": 2
+    },
+    {
+     "it": 32,
+     "intersecting_pairs": 67,
+     "pushed_vertices": 224,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.2768,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 602,
+     "local_inversions": 1
+    },
+    {
+     "it": 33,
+     "intersecting_pairs": 63,
+     "pushed_vertices": 221,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.2829,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 602,
+     "local_inversions": 1
+    },
+    {
+     "it": 34,
+     "intersecting_pairs": 64,
+     "pushed_vertices": 217,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.2893,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 600,
+     "local_inversions": 0
+    },
+    {
+     "it": 35,
+     "intersecting_pairs": 63,
+     "pushed_vertices": 217,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.2971,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 600,
+     "local_inversions": 0
+    },
+    {
+     "it": 36,
+     "intersecting_pairs": 64,
+     "pushed_vertices": 220,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.3037,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 600,
+     "local_inversions": 0
+    },
+    {
+     "it": 37,
+     "intersecting_pairs": 65,
+     "pushed_vertices": 219,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.3095,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 601,
+     "local_inversions": 0
+    },
+    {
+     "it": 38,
+     "intersecting_pairs": 61,
+     "pushed_vertices": 222,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.3146,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 600,
+     "local_inversions": 0
+    },
+    {
+     "it": 39,
+     "intersecting_pairs": 62,
+     "pushed_vertices": 219,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.2
+     ],
+     "max_pen_cm": 0.3187,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 599,
+     "local_inversions": 1
+    },
+    {
+     "it": 40,
+     "intersecting_pairs": 61,
+     "pushed_vertices": 216,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.3115,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 598,
+     "local_inversions": 0
+    },
+    {
+     "it": 41,
+     "intersecting_pairs": 59,
+     "pushed_vertices": 215,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.2933,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 598,
+     "local_inversions": 0
+    },
+    {
+     "it": 42,
+     "intersecting_pairs": 57,
+     "pushed_vertices": 209,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.2883,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 598,
+     "local_inversions": 0
+    },
+    {
+     "it": 43,
+     "intersecting_pairs": 57,
+     "pushed_vertices": 205,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.2834,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 598,
+     "local_inversions": 0
+    },
+    {
+     "it": 44,
+     "intersecting_pairs": 52,
+     "pushed_vertices": 202,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.2734,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 598,
+     "local_inversions": 1
+    },
+    {
+     "it": 45,
+     "intersecting_pairs": 49,
+     "pushed_vertices": 208,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.2237,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 598,
+     "local_inversions": 1
+    },
+    {
+     "it": 46,
+     "intersecting_pairs": 48,
+     "pushed_vertices": 202,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.1451,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 597,
+     "local_inversions": 0
+    },
+    {
+     "it": 47,
+     "intersecting_pairs": 49,
+     "pushed_vertices": 204,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.0832,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 597,
+     "local_inversions": 0
+    },
+    {
+     "it": 48,
+     "intersecting_pairs": 46,
+     "pushed_vertices": 207,
+     "col_rest_dist_pct": [
+      4.4,
+      5.4,
+      9.3
+     ],
+     "max_pen_cm": 0.2438,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 597,
+     "local_inversions": 0
+    },
+    {
+     "it": 49,
+     "intersecting_pairs": 48,
+     "pushed_vertices": 208,
+     "col_rest_dist_pct": [
+      4.4,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.1238,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 598,
+     "local_inversions": 2
+    },
+    {
+     "it": 50,
+     "intersecting_pairs": 45,
+     "pushed_vertices": 203,
+     "col_rest_dist_pct": [
+      4.3,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0437,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 597,
+     "local_inversions": 0
+    },
+    {
+     "it": 51,
+     "intersecting_pairs": 42,
+     "pushed_vertices": 201,
+     "col_rest_dist_pct": [
+      4.3,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0429,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 597,
+     "local_inversions": 1
+    },
+    {
+     "it": 52,
+     "intersecting_pairs": 41,
+     "pushed_vertices": 204,
+     "col_rest_dist_pct": [
+      4.3,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.1176,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 597,
+     "local_inversions": 0
+    },
+    {
+     "it": 53,
+     "intersecting_pairs": 41,
+     "pushed_vertices": 204,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0413,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 597,
+     "local_inversions": 0
+    },
+    {
+     "it": 54,
+     "intersecting_pairs": 38,
+     "pushed_vertices": 202,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.3591,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 597,
+     "local_inversions": 0
+    },
+    {
+     "it": 55,
+     "intersecting_pairs": 38,
+     "pushed_vertices": 203,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0398,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 597,
+     "local_inversions": 0
+    },
+    {
+     "it": 56,
+     "intersecting_pairs": 35,
+     "pushed_vertices": 204,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.1069,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 596,
+     "local_inversions": 0
+    },
+    {
+     "it": 57,
+     "intersecting_pairs": 35,
+     "pushed_vertices": 200,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0383,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 595,
+     "local_inversions": 0
+    },
+    {
+     "it": 58,
+     "intersecting_pairs": 38,
+     "pushed_vertices": 201,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0378,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 594,
+     "local_inversions": 0
+    },
+    {
+     "it": 59,
+     "intersecting_pairs": 39,
+     "pushed_vertices": 202,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0368,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 593,
+     "local_inversions": 0
+    },
+    {
+     "it": 60,
+     "intersecting_pairs": 39,
+     "pushed_vertices": 202,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0385,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 592,
+     "local_inversions": 0
+    },
+    {
+     "it": 61,
+     "intersecting_pairs": 40,
+     "pushed_vertices": 197,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.4
+     ],
+     "max_pen_cm": 0.0407,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 591,
+     "local_inversions": 0
+    },
+    {
+     "it": 62,
+     "intersecting_pairs": 39,
+     "pushed_vertices": 198,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0502,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 590,
+     "local_inversions": 0
+    },
+    {
+     "it": 63,
+     "intersecting_pairs": 39,
+     "pushed_vertices": 194,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.4
+     ],
+     "max_pen_cm": 0.0414,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 592,
+     "local_inversions": 0
+    },
+    {
+     "it": 64,
+     "intersecting_pairs": 36,
+     "pushed_vertices": 193,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0438,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 592,
+     "local_inversions": 0
+    },
+    {
+     "it": 65,
+     "intersecting_pairs": 36,
+     "pushed_vertices": 193,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.3
+     ],
+     "max_pen_cm": 0.0463,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 592,
+     "local_inversions": 0
+    },
+    {
+     "it": 66,
+     "intersecting_pairs": 36,
+     "pushed_vertices": 192,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.2
+     ],
+     "max_pen_cm": 0.0488,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 591,
+     "local_inversions": 0
+    },
+    {
+     "it": 67,
+     "intersecting_pairs": 35,
+     "pushed_vertices": 191,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.2
+     ],
+     "max_pen_cm": 0.0514,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 590,
+     "local_inversions": 0
+    },
+    {
+     "it": 68,
+     "intersecting_pairs": 35,
+     "pushed_vertices": 193,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.2
+     ],
+     "max_pen_cm": 0.054,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 591,
+     "local_inversions": 0
+    },
+    {
+     "it": 69,
+     "intersecting_pairs": 33,
+     "pushed_vertices": 193,
+     "col_rest_dist_pct": [
+      4.2,
+      5.3,
+      9.2
+     ],
+     "max_pen_cm": 0.0567,
+     "loop_floor_active": 9,
+     "edge_floor_active": 0,
+     "plane_violations": 590,
+     "local_inversions": 0
+    },
+    {
+     "it": "volume",
+     "loss_cm3": 119.48,
+     "bump_vertices": 1912,
+     "max_bump_cm": 0.312,
+     "after_loss_cm3": 89.54
+    },
+    {
+     "it": "repair",
+     "local_inversions_per_pass": [
+      11,
+      5,
+      1,
+      0
+     ]
+    }
+   ],
+   "max_posed_delta_cm": 2.6686629764420307,
+   "max_rest_delta_cm": 2.8763815006319335,
+   "rest_delta_sha256": "fb421bd82258fb7f0a8d4bff6ac2ab959d3e2798ed30f8c9db8b542b1d257c23",
+   "nonzero_vertices": 10238
+  },
+  "130": {
+   "pose": "D2_l_flex130",
+   "key_pose_bones": [
+    "forearm_l"
+   ],
+   "iterations": [
+    {
+     "it": 0,
+     "intersecting_pairs": 21,
+     "pushed_vertices": 520,
+     "col_rest_dist_pct": [
+      4.2,
+      13.8,
+      15.7
+     ],
+     "max_pen_cm": 1.4997,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 2592,
+     "local_inversions": 0
+    },
+    {
+     "it": 1,
+     "intersecting_pairs": 134,
+     "pushed_vertices": 814,
+     "col_rest_dist_pct": [
+      4.2,
+      5.8,
+      14.5
+     ],
+     "max_pen_cm": 1.398,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 2100,
+     "local_inversions": 5
+    },
+    {
+     "it": 2,
+     "intersecting_pairs": 210,
+     "pushed_vertices": 753,
+     "col_rest_dist_pct": [
+      4.2,
+      5.5,
+      14.1
+     ],
+     "max_pen_cm": 1.4379,
+     "loop_floor_active": 8,
+     "edge_floor_active": 0,
+     "plane_violations": 1913,
+     "local_inversions": 3
+    },
+    {
+     "it": 3,
+     "intersecting_pairs": 190,
+     "pushed_vertices": 657,
+     "col_rest_dist_pct": [
+      4.2,
+      5.5,
+      14.3
+     ],
+     "max_pen_cm": 1.0812,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1910,
+     "local_inversions": 6
+    },
+    {
+     "it": 4,
+     "intersecting_pairs": 127,
+     "pushed_vertices": 573,
+     "col_rest_dist_pct": [
+      4.1,
+      5.6,
+      14.6
+     ],
+     "max_pen_cm": 0.5455,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1892,
+     "local_inversions": 3
+    },
+    {
+     "it": 5,
+     "intersecting_pairs": 85,
+     "pushed_vertices": 504,
+     "col_rest_dist_pct": [
+      4.2,
+      5.8,
+      14.8
+     ],
+     "max_pen_cm": 0.3274,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1893,
+     "local_inversions": 2
+    },
+    {
+     "it": 6,
+     "intersecting_pairs": 60,
+     "pushed_vertices": 464,
+     "col_rest_dist_pct": [
+      4.2,
+      5.9,
+      14.9
+     ],
+     "max_pen_cm": 0.3267,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1899,
+     "local_inversions": 1
+    },
+    {
+     "it": 7,
+     "intersecting_pairs": 68,
+     "pushed_vertices": 447,
+     "col_rest_dist_pct": [
+      4.2,
+      6.0,
+      14.9
+     ],
+     "max_pen_cm": 0.185,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1901,
+     "local_inversions": 2
+    },
+    {
+     "it": 8,
+     "intersecting_pairs": 52,
+     "pushed_vertices": 424,
+     "col_rest_dist_pct": [
+      4.2,
+      6.0,
+      14.9
+     ],
+     "max_pen_cm": 0.0972,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1906,
+     "local_inversions": 2
+    },
+    {
+     "it": 9,
+     "intersecting_pairs": 48,
+     "pushed_vertices": 418,
+     "col_rest_dist_pct": [
+      4.2,
+      6.0,
+      14.9
+     ],
+     "max_pen_cm": 0.4292,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1903,
+     "local_inversions": 3
+    },
+    {
+     "it": 10,
+     "intersecting_pairs": 42,
+     "pushed_vertices": 414,
+     "col_rest_dist_pct": [
+      4.2,
+      6.0,
+      14.9
+     ],
+     "max_pen_cm": 0.24,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1900,
+     "local_inversions": 4
+    },
+    {
+     "it": 11,
+     "intersecting_pairs": 41,
+     "pushed_vertices": 408,
+     "col_rest_dist_pct": [
+      4.2,
+      6.0,
+      15.0
+     ],
+     "max_pen_cm": 0.1359,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1902,
+     "local_inversions": 6
+    },
+    {
+     "it": 12,
+     "intersecting_pairs": 45,
+     "pushed_vertices": 392,
+     "col_rest_dist_pct": [
+      4.3,
+      6.1,
+      15.0
+     ],
+     "max_pen_cm": 0.0744,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1902,
+     "local_inversions": 5
+    },
+    {
+     "it": 13,
+     "intersecting_pairs": 47,
+     "pushed_vertices": 388,
+     "col_rest_dist_pct": [
+      4.3,
+      6.1,
+      15.0
+     ],
+     "max_pen_cm": 0.077,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1902,
+     "local_inversions": 4
+    },
+    {
+     "it": 14,
+     "intersecting_pairs": 46,
+     "pushed_vertices": 389,
+     "col_rest_dist_pct": [
+      4.2,
+      6.0,
+      15.0
+     ],
+     "max_pen_cm": 0.0681,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1901,
+     "local_inversions": 5
+    },
+    {
+     "it": 15,
+     "intersecting_pairs": 49,
+     "pushed_vertices": 387,
+     "col_rest_dist_pct": [
+      4.2,
+      6.0,
+      15.0
+     ],
+     "max_pen_cm": 0.067,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1901,
+     "local_inversions": 5
+    },
+    {
+     "it": 16,
+     "intersecting_pairs": 44,
+     "pushed_vertices": 388,
+     "col_rest_dist_pct": [
+      4.3,
+      6.0,
+      15.0
+     ],
+     "max_pen_cm": 0.0659,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1903,
+     "local_inversions": 5
+    },
+    {
+     "it": 17,
+     "intersecting_pairs": 45,
+     "pushed_vertices": 392,
+     "col_rest_dist_pct": [
+      4.3,
+      6.0,
+      15.0
+     ],
+     "max_pen_cm": 0.0648,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1902,
+     "local_inversions": 6
+    },
+    {
+     "it": 18,
+     "intersecting_pairs": 42,
+     "pushed_vertices": 392,
+     "col_rest_dist_pct": [
+      4.3,
+      6.0,
+      15.0
+     ],
+     "max_pen_cm": 0.0681,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1904,
+     "local_inversions": 4
+    },
+    {
+     "it": 19,
+     "intersecting_pairs": 40,
+     "pushed_vertices": 396,
+     "col_rest_dist_pct": [
+      4.3,
+      6.0,
+      15.0
+     ],
+     "max_pen_cm": 0.0977,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1903,
+     "local_inversions": 2
+    },
+    {
+     "it": 20,
+     "intersecting_pairs": 40,
+     "pushed_vertices": 399,
+     "col_rest_dist_pct": [
+      4.3,
+      6.0,
+      15.0
+     ],
+     "max_pen_cm": 0.0664,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1904,
+     "local_inversions": 0
+    },
+    {
+     "it": 21,
+     "intersecting_pairs": 40,
+     "pushed_vertices": 399,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.0607,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1901,
+     "local_inversions": 0
+    },
+    {
+     "it": 22,
+     "intersecting_pairs": 42,
+     "pushed_vertices": 398,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.0597,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1899,
+     "local_inversions": 0
+    },
+    {
+     "it": 23,
+     "intersecting_pairs": 37,
+     "pushed_vertices": 397,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.0588,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1897,
+     "local_inversions": 0
+    },
+    {
+     "it": 24,
+     "intersecting_pairs": 39,
+     "pushed_vertices": 394,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.0578,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1899,
+     "local_inversions": 0
+    },
+    {
+     "it": 25,
+     "intersecting_pairs": 36,
+     "pushed_vertices": 396,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.0634,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1899,
+     "local_inversions": 0
+    },
+    {
+     "it": 26,
+     "intersecting_pairs": 33,
+     "pushed_vertices": 397,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.0694,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1897,
+     "local_inversions": 0
+    },
+    {
+     "it": 27,
+     "intersecting_pairs": 30,
+     "pushed_vertices": 396,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.2497,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1897,
+     "local_inversions": 1
+    },
+    {
+     "it": 28,
+     "intersecting_pairs": 33,
+     "pushed_vertices": 395,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.167,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1897,
+     "local_inversions": 1
+    },
+    {
+     "it": 29,
+     "intersecting_pairs": 34,
+     "pushed_vertices": 395,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1641,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1898,
+     "local_inversions": 0
+    },
+    {
+     "it": 30,
+     "intersecting_pairs": 32,
+     "pushed_vertices": 391,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1607,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1900,
+     "local_inversions": 1
+    },
+    {
+     "it": 31,
+     "intersecting_pairs": 28,
+     "pushed_vertices": 391,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1563,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1899,
+     "local_inversions": 0
+    },
+    {
+     "it": 32,
+     "intersecting_pairs": 27,
+     "pushed_vertices": 391,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1516,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1898,
+     "local_inversions": 0
+    },
+    {
+     "it": 33,
+     "intersecting_pairs": 26,
+     "pushed_vertices": 392,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1472,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1899,
+     "local_inversions": 0
+    },
+    {
+     "it": 34,
+     "intersecting_pairs": 26,
+     "pushed_vertices": 393,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1432,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1894,
+     "local_inversions": 0
+    },
+    {
+     "it": 35,
+     "intersecting_pairs": 25,
+     "pushed_vertices": 393,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1394,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1893,
+     "local_inversions": 0
+    },
+    {
+     "it": 36,
+     "intersecting_pairs": 26,
+     "pushed_vertices": 391,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1359,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1893,
+     "local_inversions": 0
+    },
+    {
+     "it": 37,
+     "intersecting_pairs": 24,
+     "pushed_vertices": 392,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1325,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1893,
+     "local_inversions": 0
+    },
+    {
+     "it": 38,
+     "intersecting_pairs": 25,
+     "pushed_vertices": 392,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1293,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1895,
+     "local_inversions": 0
+    },
+    {
+     "it": 39,
+     "intersecting_pairs": 19,
+     "pushed_vertices": 389,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1261,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 0
+    },
+    {
+     "it": 40,
+     "intersecting_pairs": 17,
+     "pushed_vertices": 387,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1225,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 0
+    },
+    {
+     "it": 41,
+     "intersecting_pairs": 11,
+     "pushed_vertices": 385,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1188,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1894,
+     "local_inversions": 1
+    },
+    {
+     "it": 42,
+     "intersecting_pairs": 11,
+     "pushed_vertices": 390,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1076,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 0
+    },
+    {
+     "it": 43,
+     "intersecting_pairs": 6,
+     "pushed_vertices": 387,
+     "col_rest_dist_pct": [
+      4.3,
+      5.9,
+      15.0
+     ],
+     "max_pen_cm": 0.1109,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 1
+    },
+    {
+     "it": 44,
+     "intersecting_pairs": 6,
+     "pushed_vertices": 391,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1196,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 1
+    },
+    {
+     "it": 45,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 387,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1272,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 0
+    },
+    {
+     "it": 46,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 388,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1281,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1895,
+     "local_inversions": 0
+    },
+    {
+     "it": 47,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 388,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1354,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1895,
+     "local_inversions": 0
+    },
+    {
+     "it": 48,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 386,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1428,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 0
+    },
+    {
+     "it": 49,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 385,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1501,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1898,
+     "local_inversions": 0
+    },
+    {
+     "it": 50,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 384,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1569,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1897,
+     "local_inversions": 0
+    },
+    {
+     "it": 51,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 381,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1548,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1897,
+     "local_inversions": 0
+    },
+    {
+     "it": 52,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 382,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1606,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 0
+    },
+    {
+     "it": 53,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 380,
+     "col_rest_dist_pct": [
+      4.3,
+      5.7,
+      15.0
+     ],
+     "max_pen_cm": 0.4201,
+     "loop_floor_active": 11,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 0
+    },
+    {
+     "it": 54,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 376,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1722,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1894,
+     "local_inversions": 0
+    },
+    {
+     "it": 55,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 377,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1745,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1895,
+     "local_inversions": 0
+    },
+    {
+     "it": 56,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 374,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1775,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1895,
+     "local_inversions": 0
+    },
+    {
+     "it": 57,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 374,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.0557,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1895,
+     "local_inversions": 0
+    },
+    {
+     "it": 58,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 377,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.1453,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1895,
+     "local_inversions": 0
+    },
+    {
+     "it": 59,
+     "intersecting_pairs": 6,
+     "pushed_vertices": 375,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.0549,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 0
+    },
+    {
+     "it": 60,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 375,
+     "col_rest_dist_pct": [
+      4.3,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.0903,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1897,
+     "local_inversions": 0
+    },
+    {
+     "it": 61,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 379,
+     "col_rest_dist_pct": [
+      4.2,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.0544,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1897,
+     "local_inversions": 0
+    },
+    {
+     "it": 62,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 378,
+     "col_rest_dist_pct": [
+      4.2,
+      5.8,
+      15.0
+     ],
+     "max_pen_cm": 0.0561,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1896,
+     "local_inversions": 0
+    },
+    {
+     "it": 63,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 375,
+     "col_rest_dist_pct": [
+      4.2,
+      5.7,
+      15.0
+     ],
+     "max_pen_cm": 0.0573,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1895,
+     "local_inversions": 0
+    },
+    {
+     "it": 64,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 375,
+     "col_rest_dist_pct": [
+      4.2,
+      5.7,
+      15.0
+     ],
+     "max_pen_cm": 0.0584,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1893,
+     "local_inversions": 0
+    },
+    {
+     "it": 65,
+     "intersecting_pairs": 10,
+     "pushed_vertices": 378,
+     "col_rest_dist_pct": [
+      4.2,
+      5.7,
+      15.0
+     ],
+     "max_pen_cm": 0.0599,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1894,
+     "local_inversions": 0
+    },
+    {
+     "it": 66,
+     "intersecting_pairs": 11,
+     "pushed_vertices": 381,
+     "col_rest_dist_pct": [
+      4.3,
+      5.7,
+      15.0
+     ],
+     "max_pen_cm": 0.357,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1893,
+     "local_inversions": 0
+    },
+    {
+     "it": 67,
+     "intersecting_pairs": 12,
+     "pushed_vertices": 381,
+     "col_rest_dist_pct": [
+      4.3,
+      5.7,
+      15.0
+     ],
+     "max_pen_cm": 0.7788,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1893,
+     "local_inversions": 1
+    },
+    {
+     "it": 68,
+     "intersecting_pairs": 11,
+     "pushed_vertices": 384,
+     "col_rest_dist_pct": [
+      4.2,
+      5.7,
+      15.0
+     ],
+     "max_pen_cm": 0.6046,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1893,
+     "local_inversions": 0
+    },
+    {
+     "it": 69,
+     "intersecting_pairs": 13,
+     "pushed_vertices": 390,
+     "col_rest_dist_pct": [
+      4.2,
+      5.7,
+      15.0
+     ],
+     "max_pen_cm": 0.7743,
+     "loop_floor_active": 10,
+     "edge_floor_active": 0,
+     "plane_violations": 1893,
+     "local_inversions": 0
+    },
+    {
+     "it": "volume",
+     "loss_cm3": 320.33,
+     "bump_vertices": 1900,
+     "max_bump_cm": 0.837,
+     "after_loss_cm3": 236.8
+    },
+    {
+     "it": "repair",
+     "local_inversions_per_pass": [
+      10,
+      7,
+      4,
+      2,
+      0
+     ]
+    }
+   ],
+   "max_posed_delta_cm": 2.878790568347802,
+   "max_rest_delta_cm": 3.2259643803723166,
+   "rest_delta_sha256": "3d138c1615335f69faee8ce5688e722a48e657723e6f67e56f6da46248cb9810",
+   "nonzero_vertices": 10610
+  }
+ },
+ "support_ids_sha256": "26fcb4abb888ed772d97c1a9929793e327ed1454b1570489e8f2f70bcc59fe4c"
+}

@@ -1,0 +1,106 @@
+{
+ "expressions": [
+  {
+   "shape_key": "RAC_DIAG_elbow_l_flex90",
+   "expression": "smoothstep(45, 90, abs(degrees(r))) - smoothstep(90, 110, abs(degrees(r)))",
+   "simple_expression": true,
+   "variable": "forearm_l local ROT_X (swing-twist)"
+  },
+  {
+   "shape_key": "RAC_DIAG_elbow_r_flex90",
+   "expression": "smoothstep(45, 90, abs(degrees(r))) - smoothstep(90, 110, abs(degrees(r)))",
+   "simple_expression": true,
+   "variable": "forearm_r local ROT_X (swing-twist)"
+  },
+  {
+   "shape_key": "RAC_DIAG_elbow_l_flex110",
+   "expression": "smoothstep(90, 110, abs(degrees(r))) - smoothstep(110, 130, abs(degrees(r)))",
+   "simple_expression": true,
+   "variable": "forearm_l local ROT_X (swing-twist)"
+  },
+  {
+   "shape_key": "RAC_DIAG_elbow_r_flex110",
+   "expression": "smoothstep(90, 110, abs(degrees(r))) - smoothstep(110, 130, abs(degrees(r)))",
+   "simple_expression": true,
+   "variable": "forearm_r local ROT_X (swing-twist)"
+  },
+  {
+   "shape_key": "RAC_DIAG_elbow_l_flex130",
+   "expression": "smoothstep(110, 130, abs(degrees(r)))",
+   "simple_expression": true,
+   "variable": "forearm_l local ROT_X (swing-twist)"
+  },
+  {
+   "shape_key": "RAC_DIAG_elbow_r_flex130",
+   "expression": "smoothstep(110, 130, abs(degrees(r)))",
+   "simple_expression": true,
+   "variable": "forearm_r local ROT_X (swing-twist)"
+  }
+ ],
+ "tested_activation_left": {
+  "D2_l_flex90": {
+   "flexion_deg": 90.0,
+   "weights": {
+    "90": 1.0,
+    "110": 0.0,
+    "130": 0.0
+   }
+  },
+  "D2_l_flex130": {
+   "flexion_deg": 130.0,
+   "weights": {
+    "90": 0.0,
+    "110": 0.0,
+    "130": 1.0
+   }
+  },
+  "D2_l_flex45": {
+   "flexion_deg": 45.0,
+   "weights": {
+    "90": 0.0,
+    "110": 0.0,
+    "130": 0.0
+   }
+  },
+  "D2_l_base_abd45": {
+   "flexion_deg": 0.0,
+   "weights": {
+    "90": 0.0,
+    "110": 0.0,
+    "130": 0.0
+   }
+  },
+  "D2_l_flex60": {
+   "flexion_deg": 60.0,
+   "weights": {
+    "90": 0.259259,
+    "110": 0.0,
+    "130": 0.0
+   }
+  },
+  "D2_l_flex75": {
+   "flexion_deg": 75.0,
+   "weights": {
+    "90": 0.740741,
+    "110": 0.0,
+    "130": 0.0
+   }
+  },
+  "D2_l_flex110": {
+   "flexion_deg": 110.0,
+   "weights": {
+    "90": 0.0,
+    "110": 1.0,
+    "130": 0.0
+   }
+  },
+  "D2_l_flex120": {
+   "flexion_deg": 120.0,
+   "weights": {
+    "90": 0.0,
+    "110": 0.5,
+    "130": 0.5
+   }
+  }
+ }
+}

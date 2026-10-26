@@ -67,7 +67,7 @@ def build_poses(rig):
     FIT = json.load(open('/tmp/claude-0/rt/rpr/fit_v005.json'))
     Mh = np.array(FIT['wrist_l']['hand_frame']); u_d, v_rad, w_dor = Mh[:, 0], Mh[:, 1], Mh[:, 2]     # construction hand frame (analysis)
     dor = lambda j: np.array(FIT['cx_' + j]['dorsal'])
-    ax, sg_ = ch('forearm_l', FWD, ('X',)); P['D2_l_flex90'] = {'forearm_l': [(ax, sg_ * 90)]}; P['D2_l_flex130'] = {'forearm_l': [(ax, sg_ * 130)]}
+    ax, sg_ = ch('forearm_l', FWD, ('X',)); ax_el, sg_el = ax, sg_; P['D2_l_flex90'] = {'forearm_l': [(ax, sg_ * 90)]}; P['D2_l_flex130'] = {'forearm_l': [(ax, sg_ * 130)]}
     if os.environ.get('ELBOW_SET'): P['D2_l_flex45'] = {'forearm_l': [(ax, sg_ * 45)]}   # elbow isolation set only (order b303b9e §4); not part of the 43-pose suite
     ax, sg_ = ch('hand_l', -w_dor, ('X', 'Z')); P['D3_l_flex60'] = {'hand_l': [(ax, sg_ * 60)]}; P['D3_l_ext60'] = {'hand_l': [(ax, -sg_ * 60)]}
     ax2 = 'Z' if ax == 'X' else 'X'; a2, s2 = ch('hand_l', v_rad, (ax2,)); P['D3_l_radial20'] = {'hand_l': [(a2, s2 * 20)]}; P['D3_l_ulnar20'] = {'hand_l': [(a2, -s2 * 20)]}
@@ -117,6 +117,13 @@ def build_poses(rig):
     base = P['D1_l_abd45']['upperarm_l']
     for k in [k for k in P if k.startswith(('D2_', 'D3_', 'D4_', 'D5_'))]: P[k] = dict(P[k], upperarm_l=base)
     P['D2_l_base_abd45'] = {'upperarm_l': base}
+    if os.environ.get('ELBOW_SET_R'):                                   # right-elbow propagation set (order 6c38d75 §11): same arc from the right abd45 setup
+        axr, sgr = ch('forearm_r', FWD, ('X',)); br = P['D1_r_abd45']['upperarm_r']
+        P['D2_r_base_abd45'] = {'upperarm_r': br}
+        for dg in (45, 60, 75, 90, 110, 120, 130): P['D2_r_flex%d' % dg] = {'forearm_r': [(axr, sgr * dg)], 'upperarm_r': br}
+    if os.environ.get('ELBOW_ARC'):                                     # supplemental intermediate angles (driver continuity), not part of the 43-pose suite
+        for dg in (60, 75, 110, 120):
+            P['D2_l_flex%d' % dg] = {'forearm_l': [(ax_el, sg_el * dg)], 'upperarm_l': base}
     # D6 test setup: the hanging arm sits against the lateral thigh, so hip tests start with that side's arm at 45 deg abduction
     for s in 'lr':
         for k in [k for k in P if k.startswith('D6_%s_' % s)]: P[k] = dict(P[k], **{'upperarm_' + s: P['D1_%s_abd45' % s]['upperarm_' + s]})

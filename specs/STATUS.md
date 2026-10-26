@@ -1,5 +1,30 @@
 # Character Design Status
 
+## Grask RP2 — 2026-10-26 — retopology frozen; elbow corrective diagnostic review pending; production deformation not accepted
+
+**Order:** `reviews/chatgpt-rac-rp2-grask-nail-criterion-elbow-corrective-recovery-order.md` (6c38d75).
+
+**Delivered:**
+- gate `reviews/claude-rac-rp2-grask-nail-criterion-elbow-corrective-gate.md`;
+- evidence `reviews/rac-rp2-evidence/grask_rig_diagnostic_v004/`.
+
+**Status:** RP2 GRASK ELBOW CORRECTIVE RECOVERY PASS / NEXT DEFORMATION FAILURES READY FOR TRIAGE.
+
+**Nail:** Nail Plate Rigidity v2 now gates; Nail Cap Historical v1 is report-only.
+
+**Elbow:** pose-space corrective C2 (driven shape keys at 90 / 110 / 130°; W0 unchanged) selected for the left; right counterpart C2rx.
+- 90°: 0 intersections, 0 orientation faces, loop 0.60.
+- 130°: non-contact 173 → 0, crease depth 5.3 → 3.2 mm, loop 0.20 → 0.60.
+- Full suite: 20/43 → 20/43 with no regressions; all 41 inactive poses are bit-identical.
+
+**Open:** closed-volume loss, DQS 130° crease depth, 21 cm right support.
+
+**Rig `rigdiag_v004.blend`** (859b1e86…): v002 landmarks + W0 + corrective shape keys; Basis = frozen v003.
+
+**Knee:** the bounded v003 knee is not promoted.
+
+**Parents unchanged.** Not production deformation.
+
 ## Grask RP2 — 2026-10-26 — retopology frozen; nail/elbow diagnostic review pending; production deformation not accepted
 
 **Order:** `reviews/chatgpt-rac-rp2-grask-baseline-nail-binding-and-elbow-weight-isolation-order.md` (b303b9e).

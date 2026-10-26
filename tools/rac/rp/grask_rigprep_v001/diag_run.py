@@ -59,15 +59,42 @@ for f in ('index', 'middle', 'ring', 'pinky', 'thumb'):
     cand = (al > 0.35 * np.linalg.norm(t - d)) & (al < np.linalg.norm(t - d) + 0.5) & (rn < 1.6)
     rmed = np.median(rn[cand]) if cand.any() else 1.0
     NAIL[f] = np.nonzero(cand & ((rad @ dor) > 0.6 * rmed))[0]           # dorsal cap of the distal phalanx (nail plate + fold)
+# Nail Plate Rigidity v2 (order 6c38d75 §1 N-1 / §12): GATING mask = the connected groove-bounded nail plate (WN plate selection, left hand),
+# stopping at the proximal / lateral nail groove. The distal-cap set above stays as 'Nail Cap Historical v1' (report-only; includes periungual fold skin).
+_PL = json.load(open(os.environ.get('NAIL_PLATE_LOG', '/home/claude/wayfarer-design/reviews/rac-rp2-evidence/grask_rig_diagnostic_v003/weights/weights_WN_log.json')))['digits']
+NAILP = {f: np.array(_PL[f + '_l']['vertex_ids']) for f in ('index', 'middle', 'ring', 'pinky', 'thumb')}
 def kabsch_res(A, B):
     a0, b0 = A.mean(0), B.mean(0); H = (A - a0).T @ (B - b0); U, S, Vt = np.linalg.svd(H); D = np.diag([1, 1, np.sign(np.linalg.det(Vt.T @ U.T))]); Rm = Vt.T @ D @ U.T
     return float(np.linalg.norm((A - a0) @ Rm.T + b0 - B, axis=1).max())
+# ---- optional elbow pose-space corrective (order 6c38d75 §5/§7): CORR=npz with anchors (deg, first = zero anchor) and rest-space keys K{angle}_{side}
+CORR = np.load(os.environ['CORR']) if os.environ.get('CORR') else None
+def _ss(a, b, x): t = min(max((x - a) / (b - a), 0.0), 1.0); return t * t * (3 - 2 * t)
+def corr_weights(theta, anchors):
+    # smooth (C1) partition over the keyed angles: 0 below anchors[0]; key k rises over [a_{k-1}, a_k] and falls over [a_k, a_{k+1}]; last key holds
+    w = []
+    for k in range(1, len(anchors)):
+        up = _ss(anchors[k - 1], anchors[k], theta); dn = _ss(anchors[k], anchors[k + 1], theta) if k + 1 < len(anchors) else 0.0; w.append(up - dn)
+    return w
+def corr_act(pose):
+    if CORR is None: return dict(delta_cm=None)
+    anchors = [float(x) for x in CORR['anchors']]; D = np.zeros_like(V0); info = {}
+    for sd in ('l', 'r'):
+        theta = float(sum(abs(d) for _, d in pose.get('forearm_' + sd, [])))
+        ws = corr_weights(theta, anchors); info[sd] = dict(flexion_deg=theta, weights={str(int(a)): round(w, 6) for a, w in zip(anchors[1:], ws)})
+        for a, w in zip(anchors[1:], ws):
+            key = 'K%d_%s' % (int(a), sd)
+            if w != 0.0 and key in CORR.files: D += w * CORR[key]
+    return dict(delta_cm=D if np.any(D) else None, info=info, max_delta_cm=float(np.linalg.norm(D, axis=1).max()))
 def measure(name, pose):
     tid = name.split('_')[0]; s = name.split('_')[1] if name.split('_')[1] in ('l', 'r') else 'l'
     joints, Rz, contacts, lpre = TEST[tid]; joints = [j.format(s=s) for j in joints]
     piv = None
     if PIV and name in PIV.get('poses', [name]): piv = {b: np.array(p) for b, p in PIV['pivots'].items()}
-    Vb, Lin, M = rig.skin(Vb0, pose, piv); V = bl_to_src(Vb)
+    CA = corr_act(pose)
+    if CA['delta_cm'] is not None:                                          # pose-space corrective: rest-space delta applied BEFORE skinning (= driven shape key)
+        Vb, Lin, M = rig.skin(src_to_bl(V0 + CA['delta_cm']), pose, piv); V = bl_to_src(Vb)
+    else:
+        Vb, Lin, M = rig.skin(Vb0, pose, piv); V = bl_to_src(Vb)
     if os.environ.get('VSRC'):                                                    # externally evaluated deformation (Blender preserve-volume / DQS)
         V = np.load('%s/%s.npz' % (os.environ['VSRC'], name))['V'].astype(float)
     jr = np.array([J(j) for j in joints])
@@ -144,6 +171,8 @@ def measure(name, pose):
     out['loop_spacing_min_ratio'] = min(ls.values()) if ls else None; out['loop_spacing_worst'] = min(ls, key=ls.get) if ls else None
     if tid in ('D4', 'D5'):
         out['nail_rigidity_mm'] = {f: kabsch_res(V0[ix], V[ix]) * 10 for f, ix in NAIL.items() if len(ix) >= 4 and (tid == 'D5') == (f == 'thumb')}
+        out['nail_cap_historical_v1_mm'] = dict(out['nail_rigidity_mm'])          # same numbers, explicit historical label (periungual skin included)
+        out['nail_plate_v2_mm'] = {f: kabsch_res(V0[ix], V[ix]) * 10 for f, ix in NAILP.items() if len(ix) >= 4 and (tid == 'D5') == (f == 'thumb')}
     if tid == 'D5':
         tip = lambda k, VV: VV[np.argmin(np.linalg.norm(V0 - J(k), axis=1))]
         tgt = 'index_tip_l' if 'pinch' in name else 'pinky_mcp_l'
@@ -160,6 +189,7 @@ def measure(name, pose):
           'D6': ['shin_' + s, 'foot_' + s], 'D7': ['foot_' + s], 'D8': ['hallux_p1_' + s], 'D9': ['neck', 'head'], 'D10': ['head', 'eye_l']}[tid]
     out['world_endpoints_cm'] = {b: np.round(bl_to_src(M[b][:3, 3][None])[0], 3).tolist() for b in EP}
     out['weights_sha256'] = WSHA
+    if CORR is not None: out['corrective'] = dict(file=os.path.basename(os.environ['CORR']), activation=CA.get('info'), max_delta_cm=CA.get('max_delta_cm', 0.0))
     return out
 R = {}
 for nm, pose in P.items():
