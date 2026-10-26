@@ -2,6 +2,25 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-26) — RP2 GRASK VC3 INTERFACE CLEANUP + SHOULDER SW — awaiting ChatGPT review
+
+**What was done**
+- Order 28dd8d3 executed. Gate: `reviews/claude-rac-rp2-grask-vc3-interface-cleanup-shoulder-weight-volume-gate.md`.
+- Workspaces:
+  - E2: `/tmp/claude-0/rt/r8` (cand/F1-F2, corr/, diag/, sheets/);
+  - S2: `/tmp/claude-0/rt/r9` (cand/, t1/, t2/, sw1/, sw2/, sw3/, sw3full/, diag/, sheets/).
+- Tools:
+  - E2: `vc3_fair.py`, `e2_texture.py`, `e2_sheets.py`;
+  - S2: `sw_dqs.py` (numpy LBS/DQS blend → VSRC), `sw_maps.py`, `sw_strain.py`;
+  - `shoulder_s2.py`, `shoulder_judge.py` and `shoulder_sheets.py` extended.
+
+**Results**
+- E2: no pass (texture remains; new local inversions). Elbow experimentation is CLOSED per order §11.
+- S2: SW3 best. It fails only left flex90 (7.9 mm, 6 nc, 2 inv). Full suite shows no regression outside D1.
+- Parents identical.
+
+**Next:** STOP for ChatGPT review (gate §6).
+
 ## LATEST (2026-10-26) — RP2 GRASK 130° VC ELBOW + SHOULDER ISOLATION — awaiting ChatGPT review
 
 **What was done**

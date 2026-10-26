@@ -1,5 +1,25 @@
 # Character Design Status
 
+## Grask RP2 — 2026-10-26 — retopology frozen; elbow experimentation closed (130° carried forward); shoulder SW3 best direction (left flex90 residual); production deformation not accepted
+
+**Order:** `reviews/chatgpt-rac-rp2-grask-vc3-interface-cleanup-and-shoulder-weight-volume-order.md` (28dd8d3).
+
+**Delivered:**
+- gate `reviews/claude-rac-rp2-grask-vc3-interface-cleanup-shoulder-weight-volume-gate.md`;
+- evidence `reviews/rac-rp2-evidence/grask_rig_diagnostic_v007/`.
+
+**Track E2 (VC3 cleanup):** no candidate selected.
+- VC3F1 and VC3F2 keep the physical volume (−171 / −182 cm³ vs C2 −498 / −694) and girth (≤ base + 0.30 cm).
+- The rumpled texture remains visible, and both add local inversions.
+- Elbow experimentation is closed; 130° is a production contact-corrective item.
+
+**Track S2 (shoulder):** SW3 = girdle-only weight diffusion + 0.5 LBS/DQS preserve-volume blend + S1 abduction rule.
+- Meets every target except left flex90 (crease 7.9 mm, 6 nc, 2 inversions).
+- Recovers > 100 % of S2's excess zone loss; max strain ≤ 135 %.
+- Still WEIGHTING-DOMINANT; no topology issue.
+
+**Parents unchanged.** Not production deformation.
+
 ## Grask RP2 — 2026-10-26 — retopology frozen; 130° elbow unresolved (VC3 numeric pass, visual fail); shoulder WEIGHTING-DOMINANT; production deformation not accepted
 
 **Order:** `reviews/chatgpt-rac-rp2-grask-elbow-vc-contact-and-shoulder-isolation-order.md` (69f2660).

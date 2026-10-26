@@ -20,6 +20,10 @@ COLS = {'non-contact intersection': (0.9, 0.05, 0.05), 'crease intersection': (1
         'orientation disagreement': (0.95, 0.2, 0.75), 'local fold/inversion': (0.0, 0.75, 0.85), 'compressed loop (< 50 %)': (0.1, 0.25, 0.95), 'girdle weight boundary': (0.05, 0.45, 0.15)}
 LMC = {'SC': (1.0, 0.9, 0.0), 'acromion': (1.0, 0.5, 0.0), 'scap. inferior': (0.0, 0.85, 0.9), 'scap. medial': (0.1, 0.2, 0.9), 'GH': (0.9, 0.0, 0.0)}
 CFGS = {'W0': (RD + '/rig/weights_v001c.npz', None), 'S1': (RD + '/rig/weights_v001c.npz', W + '/s1/pose_S1.json'), 'S2w': (W + '/s2/weights_S2.npz', None), 'S2': (W + '/s2/weights_S2.npz', W + '/s1/pose_S1.json')}
+if len(sys.argv) > 2:                                                  # optional: SHEETS.json {"cfgs": {label: [weights, pose_json|null]}, "main": [...], "overview": [...], "title": str, "prefix": str}
+    SJ = json.load(open(sys.argv[2])); CFGS = {k: tuple(v) for k, v in SJ['cfgs'].items()}; MAIN = SJ['main']; OVR = SJ['overview']; TITLE = SJ['title']; PFX = SJ.get('prefix', 'S')
+else:
+    MAIN = ['W0', 'S1', 'S2']; OVR = ['W0', 'S1', 'S2w', 'S2']; TITLE = 'W0 / S1 (girdle mechanics) / S2 (S1 + bounded girdle weight diffusion)'; PFX = 'S'
 RIGS = {}; POSES = {}
 for k, (wf, pj) in CFGS.items():
     RIGS[k] = Rig(RD + '/rig/rig_v001.json', wf)
@@ -72,12 +76,12 @@ for s in 'lr':
     gh0 = np.array(LMJ['glenohumeral_' + s]['position_source_frame_cm'])
     for pz in ('abd90', 'flex90'):
         p = 'D1_%s_%s' % (s, pz); rows = []
-        for t in ('W0', 'S1', 'S2'):
+        for t in MAIN:
             gh = landmarks('W0', s, POSES['W0'][p])['GH']; vs, vw = vspec(s, gh, False)
             near = lambda V, gh=gh: np.linalg.norm(V[Q].mean(1) - gh, axis=1) < 48
             Vr, Qr, Cr, V, ids = scene(t, s, p, near); render(Vr, Qr, Cr, 's_%s_%s' % (p, t), vs, '0'); render(Vr, Qr, Cr, 'sw_%s_%s' % (p, t), vw, '1'); rows.append((t, res(t, p)))
-        cell = 250; S = Image.new('RGB', (6 * cell + 360, 118 + 3 * (cell + 6)), (255, 255, 255)); dr = ImageDraw.Draw(S)
-        dr.text((10, 8), '%s shoulder %s (LBS) — W0 / S1 (girdle mechanics) / S2 (S1 + bounded girdle weight diffusion); identical cameras, same world humerus' % ('Left' if s == 'l' else 'Right', pz), fill=(0, 0, 0), font=f(15, True))
+        cell = 250; S = Image.new('RGB', (6 * cell + 360, 118 + len(MAIN) * (cell + 6)), (255, 255, 255)); dr = ImageDraw.Draw(S)
+        dr.text((10, 8), '%s shoulder %s — %s; identical cameras, same world humerus' % ('Left' if s == 'l' else 'Right', pz, TITLE), fill=(0, 0, 0), font=f(15, True))
         dr.text((10, 30), 'columns: front / rear / 3-4 front / 3-4 rear / anterior axillary-fold close-up (from below-front) | same close-up, wireframe', fill=(60, 60, 60), font=f(12))
         legend(dr, 52, list(COLS)[:4], COLS); legend(dr, 72, list(COLS)[4:], COLS); legend(dr, 92, list(LMC), LMC)
         for i, (t, r) in enumerate(rows):
@@ -88,28 +92,28 @@ for s in 'lr':
                  'folds +%d (outside %d)' % (r['folds']['new'], r['folds']['outside']), 'loop %.2f' % r['loop_spacing_min_ratio'], 'p95 strain %.0f %% (max %.0f %%)' % (r['strain']['zone_p95_pct'], r['strain']['zone_max_pct']),
                  'zone proxy %+.1f %%' % r['volume']['zone_pct'], 'T-1 %.4f mm' % r['rest_return_T1_mm']]
             for k, l in enumerate(L): dr.text((6 * cell + 10, y + 6 + 20 * k), l, fill=(150, 20, 20) if k == 0 else (0, 0, 0), font=f(12, k == 0))
-        S.save(SH + '/S_%s_%s.jpg' % (pz, s), quality=85); print('sheet', s, pz, flush=True)
+        S.save(SH + '/' + PFX + '_%s_%s.jpg' % (pz, s), quality=85); print('sheet', s, pz, flush=True)
 # overview: every D1 pose, 3/4 front
 PZ = ('abd45', 'abd90', 'flex90', 'ext30', 'abd90_girdle', 'flex90_girdle')
 for s in 'lr':
-    cell = 230; S = Image.new('RGB', (len(PZ) * cell + 20, 60 + 4 * (cell + 40)), (255, 255, 255)); dr = ImageDraw.Draw(S)
-    dr.text((10, 8), '%s shoulder, all D1 poses — rows W0 / S1 (mechanics) / S2w (S2 weights, W0 mechanics) / S2 (both), 3-4 front camera centred on the W0 GH' % ('Left' if s == 'l' else 'Right'), fill=(0, 0, 0), font=f(14, True))
+    cell = 230; S = Image.new('RGB', (len(PZ) * cell + 20, 60 + len(OVR) * (cell + 40)), (255, 255, 255)); dr = ImageDraw.Draw(S)
+    dr.text((10, 8), '%s shoulder, all D1 poses — rows %s, 3-4 front camera centred on the W0 GH' % ('Left' if s == 'l' else 'Right', ' / '.join(OVR)), fill=(0, 0, 0), font=f(14, True))
     for j, pz in enumerate(PZ):
         p = 'D1_%s_%s' % (s, pz); gh = landmarks('W0', s, POSES['W0'][p])['GH']; vs, _ = vspec(s, gh, False); vs = vs.split(';')[2]
-        for i, t in enumerate(('W0', 'S1', 'S2w', 'S2')):
+        for i, t in enumerate(OVR):
             near = lambda V, gh=gh: np.linalg.norm(V[Q].mean(1) - gh, axis=1) < 48
             Vr, Qr, Cr, V, ids = scene(t, s, p, near); render(Vr, Qr, Cr, 'so_%s_%s' % (p, t), vs, '0', 360); r = res(t, p); it = r['intersections']
             y = 36 + i * (cell + 40); S.paste(Image.open('%s/so_%s_%s_tqf.png' % (OV, p, t)).convert('RGB').resize((cell, cell), Image.LANCZOS), (10 + j * cell, y + 34))
             dr.text((12 + j * cell, y), '%s %s' % (t, pz), fill=(150, 20, 20), font=f(11, True))
             dr.text((12 + j * cell, y + 15), 'nc %d cr %d (%.1f) or %d loop %.2f' % (it['non_contact'], it['crease'], it['crease_depth_mm'], r['flips']['total'], r['loop_spacing_min_ratio']), fill=(0, 0, 0), font=f(10))
-    S.save(SH + '/S_overview_%s.jpg' % s, quality=85); print('overview', s, flush=True)
+    S.save(SH + '/' + PFX + '_overview_%s.jpg' % s, quality=85); print('overview', s, flush=True)
 # sections through GH: flex90 sagittal (normal = x), abd90 frontal (normal = f)
-fig, axs = plt.subplots(2, 2, figsize=(16, 15)); CC = {'W0': 'k', 'S1': 'tab:blue', 'S2': 'tab:green'}
+fig, axs = plt.subplots(2, 2, figsize=(16, 15)); CC = dict(zip(MAIN, ['k', 'tab:blue', 'tab:green', 'tab:orange', 'tab:red', 'tab:purple']))
 for i, (pz, nrm, e1, e2, lab) in enumerate((('flex90', np.array([1.0, 0, 0]), np.array([0, 1.0, 0]), np.array([0, 0, 1.0]), 'sagittal (x = GH): +x forward, +y up'),
                                             ('abd90', np.array([0, 1.0, 0]), np.array([1.0, 0, 0]), np.array([0, 0, 1.0]), 'frontal (f = GH): +x left, +y up'))):
     for j, s in enumerate('lr'):
         ax = axs[i, j]; p = 'D1_%s_%s' % (s, pz)
-        for t in ('W0', 'S1', 'S2'):
+        for t in MAIN:
             V = np.load('%s/diag/posed/%s_s_%s.npz' % (W, p, t))['V'].astype(float); ids = np.load('%s/diag/ids/%s_s_%s.npz' % (W, p, t)); pen = set(ids['pairs'][ids['pair_class'] < 2].ravel().tolist()) if len(ids['pairs']) else set()
             c = landmarks('W0', s, POSES['W0'][p])['GH']; dd = (V - c) @ nrm; fc = np.nonzero(np.linalg.norm(V[Q].mean(1) - c, axis=1) < 30)[0]; first = True
             for fi in fc:
@@ -123,4 +127,4 @@ for i, (pz, nrm, e1, e2, lab) in enumerate((('flex90', np.array([1.0, 0, 0]), np
                 if abs((pos - c) @ nrm) < 6: ax.plot((pos - c) @ e1, (pos - c) @ e2, 'o', color=LMC[nm], mec=CC[t], ms=7)
         ax.set_aspect('equal'); ax.set_xlim(-25, 25); ax.set_ylim(-28, 18); ax.legend(loc='upper right', fontsize=9)
         ax.set_title('%s %s section through the W0 GH — %s\nthick = faces in a non-contact / crease intersection pair; dots = landmarks within 6 cm of the plane' % (p, 'left' if s == 'l' else 'right', lab), fontsize=10)
-plt.tight_layout(); plt.savefig(SH + '/S_sections.jpg', dpi=70); plt.close(); print('sections')
+plt.tight_layout(); plt.savefig(SH + '/' + PFX + '_sections.jpg', dpi=70); plt.close(); print('sections')

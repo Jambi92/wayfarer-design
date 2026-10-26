@@ -3,9 +3,10 @@
 import sys, os, json, glob, numpy as np
 W = sys.argv[1]
 src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'judge.py')).read(); ns = {}; exec(src[src.index('VOLTOL'):src.index('def cause')], ns); crit = ns['crit']
-K = json.load(open(W + '/s1/kinematics_S1.json'))['kinematics']
+K = json.load(open('/tmp/claude-0/rt/r7/s1/kinematics_S1.json'))['kinematics']
 PZ = ('abd45', 'abd90', 'flex90', 'ext30', 'abd90_girdle', 'flex90_girdle')
-R = {t: json.load(open('%s/diag/diag_results_s_%s.json' % (W, t)))['results'] for t in ('W0', 'S1', 'S2w', 'S2')}
+TAGS = sys.argv[2].split(',') if len(sys.argv) > 2 else ['W0', 'S1', 'S2w', 'S2']; OUTP = sys.argv[3] if len(sys.argv) > 3 else 'trackS'
+R = {t: json.load(open('%s/diag/diag_results_s_%s.json' % (W, t)))['results'] for t in TAGS}
 PR = {}
 for fp in sorted(glob.glob(W + '/diag/diag_results_probe_*.json')): PR[os.path.basename(fp)[len('diag_results_probe_'):-5]] = json.load(open(fp))['results']
 def row(r, p):
@@ -15,7 +16,7 @@ def row(r, p):
                 smax=round(r['strain']['zone_max_pct'], 1), zone=round(r['volume']['zone_pct'], 2), T1=r['rest_return_T1_mm'], fails=[c[0] for c in crit(p, r) if not c[1]])
 OUT = {}; MD = ['cells: non-contact / crease (depth mm) / axillary contact pairs (depth mm) / orientation / local inv / folds outside / loop / p95 (max) strain % / zone proxy % [failing retained criteria]', '']
 for s in 'lr':
-    MD += ['### %s side' % ('left' if s == 'l' else 'right'), '', '| pose | W0 | S1 (mechanics) | S2w (weights only, W0 mechanics) | S2 (S1 + weights) |' + ''.join(' probe %s |' % k for k in PR), '|---|---|---|---|---|' + '---|' * len(PR)]
+    MD += ['### %s side' % ('left' if s == 'l' else 'right'), '', '| pose | ' + ' | '.join(TAGS) + ' |' + ''.join(' probe %s |' % k for k in PR), '|---|' + '---|' * len(TAGS) + '---|' * len(PR)]
     for pz in PZ:
         p = 'D1_%s_%s' % (s, pz); cells = []; OUT[p] = {}
         for t, RR in list(R.items()) + list(PR.items()):
@@ -29,5 +30,5 @@ for s in 'lr':
         MD.append('| %s | %.1f | %.1f | %.1f | %.1f | %.1f -> %.1f | %.2f | %s | %.2f / %.2f | %.4f |' % (pz, b['humeral_elevation_deg'], b['scapulothoracic_share_deg'], b['clavicle_rotation_deg'], b['scapula_rotation_deg'], a['glenohumeral_motion_deg'], b['glenohumeral_motion_deg'],
                                                                              b['GH_disp_cm'], b['scapula_inferior_disp_cm'], a['GH_acromion_dist_cm'], b['GH_acromion_dist_cm'], b['humeral_dir_err_deg']))
     MD.append('')
-json.dump(dict(tables=OUT, kinematics=K), open(W + '/diag/trackS_judgement.json', 'w'), indent=1, default=float)
-open(W + '/diag/trackS_tables.md', 'w').write('\n'.join(MD) + '\n'); print('\n'.join(MD))
+json.dump(dict(tables=OUT, kinematics=K), open(W + '/diag/%s_judgement.json' % OUTP, 'w'), indent=1, default=float)
+open(W + '/diag/%s_tables.md' % OUTP, 'w').write('\n'.join(MD) + '\n'); print('\n'.join(MD))
