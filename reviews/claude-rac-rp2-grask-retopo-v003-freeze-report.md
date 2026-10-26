@@ -21,7 +21,7 @@
 | 12 | Provenance | All PC hashes are unchanged. v001: blend `82c10a64…ded0`, sidecar `ed579e0b…1711`, landmarks `a22c3959…26d1`. v002: blend `49ae8a6e…f55e`, sidecar `2dbd7221…684a`, landmarks `48887566…968c`. Chain: v005 → v001 (9be2e94) → v002 (7835e22) → v003 (6b6b83f) → frozen |
 | 13 | Frozen artifact path | `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Grask/RP2/GR_U_REF_RP2_retopo_v003.blend` |
 | 14 | Freeze read-back | File SHA-256 `03bfe7d9…7ce0` and geometry hash `f9c4a7ac…702f`: **identical to accepted**. Positions are bit-identical (0.0 cm) to the audited read-back |
-| 15 | Git commit | recorded in `specs/STATUS.md` and below, after commit |
+| 15 | Git commit | `59aacfe` (freeze commit) |
 
 **Read-back checks** (`readback.json`):
 - one object `GR_U_REF_RP2_retopo_v003` of type MESH, location 0 / rotation 0 / scale 1, no parent;

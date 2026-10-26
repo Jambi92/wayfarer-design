@@ -4,7 +4,7 @@
 
 **Status:** `GR_U_REF_RP2_retopo_v003` is **AUTHOR ACCEPTED / FROZEN** under `reviews/chatgpt-rac-rp2-grask-retopo-v003-final-author-acceptance-freeze-order.md` (2b29098). Acceptance followed author review of the complete v003 audit-closure evidence.
 - Blend: `E:/…/Grask/RP2/GR_U_REF_RP2_retopo_v003.blend`, SHA-256 `03bfe7d924ff5b8b61a4c10095af5d16ca29d41667d7f61d0abeca14e1f07ce0`, geometry `f9c4a7ac98e86d98017376b9d67c85428503d2d6385258471d99bc766bfe702f`.
-- Freeze read-back: identical. The freeze record `GR_U_REF_RP2_retopo_v003_FREEZE.json` sits next to the blend.
+- Freeze commit `59aacfe`. Freeze read-back: identical. The freeze record `GR_U_REF_RP2_retopo_v003_FREEZE.json` sits next to the blend.
 
 **Report:** `reviews/claude-rac-rp2-grask-retopo-v003-freeze-report.md`. **Evidence:** `reviews/rac-rp2-evidence/grask_retopo_v003_freeze/`.
 
