@@ -1,0 +1,223 @@
+{
+ "file": "MF_F_REF_RP3_retopo_v002.blend",
+ "sha256": "9f228ad1de115189a2d09da6c2555d84697d1e8a3124ccc3337a713cceb0d5dd",
+ "geometry_hash": "846aacb39ff8bdf632982042823e8c9b494379aebbcaeecfb77f4d873679ee45",
+ "geometry_hash_method": "sha256(float32 vertex co (m, production frame) + int32 loop vertex_index)",
+ "face_topology_hash": "80fa188ee82cd8834ccd1e37ac5b470cdad27510b6105bfc4ed9fe80aaffa331",
+ "face_topology_hash_method": "sha256(int32 loop vertex_index)",
+ "verts": 57434,
+ "quads": 57432,
+ "status": "PRODUCTION CANDIDATE (RP3 Marchfolk) - not accepted",
+ "role": "recommended Marchfolk production candidate (common family topology)",
+ "source": {
+  "id": "MF-F-R",
+  "r6_npz": "reviews/reference-assets/r6/MF-F-R_r6.npz",
+  "r6_sha256": "c254fb4bc47225d90fcf7950514240cd74baace0ee3b48cd4d78fa38d9381761",
+  "r6_geometry_hash": "f609f8cd8719584b2824a9ba97d9d6eb6718ffd79742bdb1b4ee7b3ecd906289",
+  "build_record": "MF-F-R_build.json",
+  "build_sha256": "252907fda37c791dd3f5d5b547dc28886a8feeb14c7b1a79719667d49089de6d",
+  "regenerated_geometry_hash": "f609f8cd8719584b2824a9ba97d9d6eb6718ffd79742bdb1b4ee7b3ecd906289",
+  "regeneration_geometry_identical": true,
+  "generator": "MPFB 2.0.17 / Blender 5.2.2 (bpy), tools/rac/w1/arm_lib.py build -> ground -> pose_r6 -> ground"
+ },
+ "operations": [
+  "regenerate MPFB source from the build record (geometry identical to the committed R-6)",
+  "remove MPFB helper geometry (joint cubes, eye / tongue / teeth / tights / skirt / hair helpers): keep the hm08 body faces",
+  "translate to the production origin (pelvis bone head projected to the ground) and convert to Blender frame (m, Z up, faces -Y, subject left +X)",
+  "one level of LINEAR (non-smoothing) quad subdivision: every new vertex is an edge midpoint or face centre of the hm08 surface",
+  "insert 98 closed edge rings around thighs and calves (midpoint splits of existing quad strips) to meet the leg density ceiling",
+  "UVs, MPFB targets and weights carry over through the recorded linear map (NAME_hm08_map.npz)"
+ ],
+ "frame": {
+  "analysis": "cm, x subject left, f forward, u up (R-6)",
+  "blender": "m, Z up, faces -Y, subject left +X, origin = pelvis root projected to ground",
+  "origin_translation_cm": [
+   -0.0,
+   -2.5055741891264915,
+   -0.0
+  ]
+ },
+ "landmarks": "landmarks/MF-F-R_landmarks.json",
+ "topology": {
+  "quads_pct": 100.0,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "nonmanifold_vertices": 0,
+  "degenerate_faces": 0,
+  "coincident_vertex_pairs": 0,
+  "winding_consistent": true,
+  "normals_outward": true,
+  "self_intersection_face_pairs": 122,
+  "self_intersection_zones": {
+   "arm": 98,
+   "foot": 12,
+   "trunk": 12
+  },
+  "poles": {
+   "valence_3": 164,
+   "valence_5plus": 156,
+   "by_zone": {
+    "arm": 2,
+    "face": 62,
+    "foot": 92,
+    "hand": 120,
+    "head": 10,
+    "leg": 4,
+    "trunk": 30
+   }
+  },
+  "T4_angle_violations": 1368,
+  "T4_aspect_violations": 2338,
+  "density_pct_of_stature": {
+   "face": 0.135,
+   "ears": 0.104,
+   "hand": 0.127,
+   "foot": 0.187,
+   "trunk": 0.511,
+   "arm": 0.443,
+   "leg": 0.501,
+   "neck": 0.295,
+   "head": 0.227
+  },
+  "density_pass": true,
+  "s7_failing_firm": [
+   "ankle_l",
+   "ankle_r",
+   "index_mcp_l",
+   "index_mcp_r",
+   "ring_mcp_l",
+   "ring_mcp_r",
+   "shoulder_l",
+   "thumb_mcp_l",
+   "toe1_j1_l",
+   "toe1_j1_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe3_j1_l",
+   "toe3_j1_r",
+   "toe3_j3_l",
+   "toe3_j3_r",
+   "toe4_j2_l",
+   "toe4_j2_r",
+   "toe5_j1_l",
+   "toe5_j1_r"
+  ],
+  "s7_failing_strict": [
+   "ankle_l",
+   "ankle_r",
+   "index_mcp_l",
+   "index_mcp_r",
+   "middle_mcp_l",
+   "middle_mcp_r",
+   "pinky_mcp_l",
+   "pinky_mcp_r",
+   "ring_mcp_l",
+   "ring_mcp_r",
+   "shoulder_l",
+   "thumb_mcp_l",
+   "toe1_j1_l",
+   "toe1_j1_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe3_j1_l",
+   "toe3_j1_r",
+   "toe3_j3_l",
+   "toe3_j3_r",
+   "toe4_j1_l",
+   "toe4_j1_r",
+   "toe4_j2_l",
+   "toe4_j2_r",
+   "toe5_j1_l",
+   "toe5_j1_r"
+  ],
+  "mouth_rings": 35,
+  "orbit_rings": [
+   43,
+   43
+  ]
+ },
+ "anatomy": {
+  "stature_diff_mm": -1e-05,
+  "bbox_diff_mm": [
+   1e-05,
+   0.0,
+   0.0,
+   -1e-05,
+   0.0,
+   -1e-05
+  ],
+  "prod_to_source": {
+   "body": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1964,
+    "max_mm": 2.1855
+   },
+   "head": {
+    "median_mm": 0.0,
+    "p95_mm": 0.101,
+    "max_mm": 0.9473
+   },
+   "ears": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1432,
+    "max_mm": 0.4468
+   },
+   "hands": {
+    "median_mm": 0.0,
+    "p95_mm": 0.105,
+    "max_mm": 0.7678
+   },
+   "feet": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1859,
+    "max_mm": 1.0921
+   }
+  },
+  "source_to_prod": {
+   "body": {
+    "median_mm": 0.0,
+    "p95_mm": 0.0,
+    "max_mm": 0.0001
+   },
+   "head": {
+    "median_mm": 0.0,
+    "p95_mm": 0.0,
+    "max_mm": 0.0001
+   },
+   "ears": {
+    "median_mm": 0.0,
+    "p95_mm": 0.0,
+    "max_mm": 0.0001
+   },
+   "hands": {
+    "median_mm": 0.0,
+    "p95_mm": 0.0,
+    "max_mm": 0.0
+   },
+   "feet": {
+    "median_mm": 0.0,
+    "p95_mm": 0.0,
+    "max_mm": 0.0
+   }
+  },
+  "silhouette_iou": {
+   "front": 0.997996,
+   "rear": 0.997996,
+   "profile_left": 0.997553,
+   "profile_right": 0.997636,
+   "q3_front_left": 0.998063,
+   "q3_front_right": 0.998208
+  },
+  "T1_T2_pass": true,
+  "T3_pass": true,
+  "T7_pass": true
+ },
+ "deformation": "deformation/deform_MF-F-R_v002.json",
+ "gate": "reviews/claude-rac-rp3-marchfolk-production-baseline-gate.md",
+ "common_topology_map": {
+  "file": "MF_F_REF_RP3_retopo_v002_hm08_map.npz",
+  "sha256": "28d4e46e59f2a321943d81a7db86df0212e359169679d3c5cf1fddf007a25f19",
+  "note": "production vertex i = sum_j M[i, j] * hm08 body vertex j; identical M for both configurations"
+ }
+}

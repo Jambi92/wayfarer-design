@@ -1,5 +1,26 @@
 # Character Design Status
 
+## RAC RP3 Marchfolk — 2026-10-26 — production baseline gate returned (FAMILY BASE NEEDS CORRECTION, bounded); Grask RP2 formally closed; awaiting ChatGPT review
+
+**Order:** `reviews/chatgpt-rac-rp2-closure-and-rp3-marchfolk-baseline-order.md` (d18ff2a).
+
+**Grask RP2:** closure record `reviews/claude-rac-rp2-grask-final-closure.md`. Accepted / frozen v003 (`03bfe7d9…`) is unchanged; carry-forward items are listed there.
+
+**Marchfolk RP3:**
+- **Gate:** `reviews/claude-rac-rp3-marchfolk-production-baseline-gate.md`.
+- **Evidence:** `reviews/rac-rp3-evidence/marchfolk_baseline_v001/`.
+- **Tools:** `tools/rac/rp/marchfolk_rp3_v001/`.
+- **Files:** `E:/…/production/Marchfolk/RP3/` (v001 native and v002 candidate blends, sidecars, maps, landmarks, manifest; PC read-back identical).
+- **Source regeneration:** both configurations are geometry-identical. Source hashes are unchanged before and after.
+- **Native hm08 fails:** §8 density in 6 zones and §7 at 32 / 30 of 69 stations.
+- **v002** = linear subdivision + 98 leg rings. It is mapped from hm08 and has identical topology in both configurations (face hash `80fa188e…`).
+  - Passes: §6 integrity, §8 density (all zones), anatomy T-1 / T-2 / T-3 / T-7, and face readiness (mouth 35 rings, orbit 43 + 43 rings).
+  - §7: 50 / 49 of 69 stations firm. The residual failures are hm08 junction poles at the palm MCPs, thumb / pinky MCP, ankle crease and toe roots.
+- **Diagnostic deformation:** no topology-class failure. The remaining failures are weights (LBS collapse at elbow, knee, hip and shoulder flex) and contact / test setup; there is one joint-placement candidate (configuration 1 knee centre, 1.9 cm medial).
+- **Recommendation:** v002 is the family core, with a one-time hand / foot junction pole correction before acceptance and propagation.
+
+**Not started:** Skarn or other races, propagation, rig or weight finalization, UE5.
+
 ## Grask RP2 — 2026-10-26 — retopology frozen; elbow closed (130° carried forward); SW3 shoulder direction accepted; left-flex90 cleanup did not pass (carried forward); production deformation not accepted
 
 **Order:** `reviews/chatgpt-rac-rp2-grask-final-left-flex90-cleanup-order.md` (bd11ab0).

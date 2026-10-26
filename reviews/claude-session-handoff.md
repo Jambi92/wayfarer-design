@@ -2,6 +2,34 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-26) — RP3 MARCHFOLK PRODUCTION BASELINE GATE + RP2 CLOSURE — awaiting ChatGPT review
+
+**What was done**
+- Order d18ff2a executed.
+  - Part A: closure `reviews/claude-rac-rp2-grask-final-closure.md`.
+  - Part B: gate `reviews/claude-rac-rp3-marchfolk-production-baseline-gate.md`.
+- Workspace `/tmp/claude-0/rt/m3`:
+  - `src/` (regenerated blends, native npz);
+  - `cand/` (s1, v002, leg rings);
+  - `audit/`, `lm/`, `anat/`, `def/`, `ov/`, `sheets/`.
+- MPFB 2.0.17 is cloned into the container's Blender extensions (symlink).
+- Tools `tools/rac/rp/marchfolk_rp3_v001/`:
+  - `regen.py`, `native_export.py`, `audit.py`, `face_rings.py`;
+  - `subdiv.py`, `leg_rings.py`;
+  - `landmarks.py`, `joint_centring.py`, `anatomy.py`;
+  - `make_prod.py`, `mf_deform.py`, `mf_sheets.py`, `sidecars.py`.
+- Run the sheet script with system `python3`; stc python lacks rtree.
+- PC: `E:/…/production/Marchfolk/RP3/` (read-back identical).
+
+**Results**
+- Native hm08 fails §7 / §8.
+- v002 (linear subdivision + 98 leg rings, linear map M) has the same topology in both configurations. It passes density, anatomy and face readiness.
+- §7 residual failures: hand / foot junction poles.
+- Deformation: no topology failure; weights + contact; configuration 1 knee joint-placement flag.
+- Recommendation: FAMILY BASE NEEDS CORRECTION (bounded hand / foot pole relocation in the family core).
+
+**Next:** STOP for ChatGPT review. Do not start Skarn or other races, propagation, rig or UE5.
+
 ## LATEST (2026-10-26) — RP2 GRASK FINAL LEFT-FLEX90 CLEANUP — awaiting ChatGPT review
 
 **What was done**
