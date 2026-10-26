@@ -2,7 +2,23 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-25, night) — RP2 GRASK RETOPO V003 — AUTHOR ACCEPTED / FROZEN; RP2 retopology CLOSED
+## LATEST (2026-10-25, late night) — RP2 GRASK RIGPREP READINESS PROPOSAL v001 — awaiting ChatGPT review
+
+**What was done**
+- Order c6db89c executed. Gate: `reviews/claude-rac-rp2-grask-rigprep-readiness-gate.md`.
+- Proposal JSON, tables and sheets: `reviews/rac-rp2-evidence/grask_rigprep_readiness_v001/`.
+- Tools: `tools/rac/rp/grask_rigprep_v001/` (`run_rigprep.sh`; workspace `/tmp/claude-0/rt/rpr`).
+- Parents unchanged; before and after hashes are in `hashes/`.
+
+**Method**
+- Internal centres = coordinate median of surface definitions A/B and the frozen value C; uncertainty = the largest distance to any alternative.
+- Construction joints are carried exactly and surface-validated.
+- v003 re-run shows stability: Δ ≤ 0.003 cm for section methods, ≤ 0.45 cm for sphere and skin fits.
+- The frame convention, left-handed analysis frame vs right-handed Blender frames, and the flexion signs are in the JSON.
+
+**Next:** STOP for ChatGPT review and the author decisions AD-R1…R12. No rig or diagnostic armature until a later execution order.
+
+## Previous (2026-10-25, night) — RP2 GRASK RETOPO V003 — AUTHOR ACCEPTED / FROZEN; RP2 retopology CLOSED
 
 **What was done**
 - Order 2b29098 has been executed.

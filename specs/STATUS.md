@@ -1,5 +1,24 @@
 # Character Design Status
 
+## Grask RP2 — 2026-10-25 — retopology frozen; rigprep readiness proposal awaiting ChatGPT review
+
+**Order:** `reviews/chatgpt-rac-rp2-grask-rigprep-readiness-and-landmark-review-order.md` (c6db89c).
+
+**Delivered:**
+- gate `reviews/claude-rac-rp2-grask-rigprep-readiness-gate.md`;
+- separate proposal `GR_U_REF_RP2_rigprep_landmarks_v001.json` plus tables, raw fits, 24 identical-camera sheets and before/after parent hashes, all in `reviews/rac-rp2-evidence/grask_rigprep_readiness_v001/`;
+- tools in `tools/rac/rp/grask_rigprep_v001/`.
+
+**Parents:** v003 (03bfe7d9 / f9c4a7ac), v005, v001, v002 and the frozen landmarks / freeze record are unchanged; hashes match before and after.
+
+**Findings:**
+- Hand, foot, wrist and eye construction joints are usable (surface-validated).
+- Internal centres are provisional: hip, knee, ankle, GH, elbow, SC, pelvis root, spine and head pivot have uncertainty 1.3–9.3 cm. The source has no condylar, malleolar or trochanteric relief, and the arm and torso merge above the armpit.
+- Missing: scapular medial border, jaw / oral anatomy (closed mouth) and eyeballs.
+- 12 author decisions (AD-R1…R12) are listed in the gate.
+
+**Not passed and not rig-ready.** No armature, weights, posing, morphs, UVs, LODs, UE5 work or other race.
+
 ## Grask RP2 retopology — 2026-10-25 — RETOPO v003 — AUTHOR ACCEPTED / FROZEN
 
 **Status:** `GR_U_REF_RP2_retopo_v003` is **AUTHOR ACCEPTED / FROZEN** under `reviews/chatgpt-rac-rp2-grask-retopo-v003-final-author-acceptance-freeze-order.md` (2b29098). Acceptance followed author review of the complete v003 audit-closure evidence.
