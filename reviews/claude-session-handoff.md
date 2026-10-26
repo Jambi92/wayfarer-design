@@ -2,7 +2,22 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-25, later) — RP2 GRASK RETOPO V003 AUDIT CLOSURE — technical audits pass; author visual review pending
+## LATEST (2026-10-25, night) — RP2 GRASK RETOPO V003 — AUTHOR ACCEPTED / FROZEN; RP2 retopology CLOSED
+
+**What was done**
+- Order 2b29098 has been executed.
+- The accepted blend (03bfe7d9…, geometry f9c4a7ac…) was frozen in place, byte-identical.
+- Freeze record: `E:/…/RP2/GR_U_REF_RP2_retopo_v003_FREEZE.json` (6ed226bb…).
+- Report: `reviews/claude-rac-rp2-grask-retopo-v003-freeze-report.md`.
+- The read-back audit passed and was identical to the accepted hashes. v005, v001 and v002 are unchanged.
+
+**Rules carried forward**
+- The thumb-web hollow is accepted source anatomy; do not touch it.
+- The ring–pinky web quad exception (edge ratio 8.07) is accepted; do not move it.
+
+**Next:** STOP for ChatGPT review. That review will determine the next Grask production stage; there is no further retopology iteration.
+
+## Previous (2026-10-25, later) — RP2 GRASK RETOPO V003 AUDIT CLOSURE — technical audits pass; author visual review pending
 
 **Where things stand**
 - Order 4d4f6e0 has been executed.

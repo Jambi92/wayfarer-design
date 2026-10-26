@@ -1,0 +1,195 @@
+{
+ "name": "GR_U_REF_RP2_retopo_v003_FREEZE",
+ "status": "RETOPO v003 \u2014 AUTHOR ACCEPTED / FROZEN",
+ "date": "2026-10-25",
+ "authority": "reviews/chatgpt-rac-rp2-grask-retopo-v003-final-author-acceptance-freeze-order.md (2b29098), issued after author review of the complete v003 audit-closure evidence",
+ "frozen_artifact": {
+  "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Grask/RP2/GR_U_REF_RP2_retopo_v003.blend",
+  "accepted_sha256": "03bfe7d924ff5b8b61a4c10095af5d16ca29d41667d7f61d0abeca14e1f07ce0",
+  "accepted_geometry_hash": "f9c4a7ac98e86d98017376b9d67c85428503d2d6385258471d99bc766bfe702f",
+  "readback_sha256": "03bfe7d924ff5b8b61a4c10095af5d16ca29d41667d7f61d0abeca14e1f07ce0",
+  "readback_geometry_hash": "f9c4a7ac98e86d98017376b9d67c85428503d2d6385258471d99bc766bfe702f",
+  "identical": true,
+  "freeze_method": "freeze by record: the accepted file is left byte-identical in place (no re-save, which would change its hash); this manifest and the repo records carry the FROZEN state. The blend embedded custom property rac_status still reads the pre-acceptance candidate text and is historical; the authoritative state is this record."
+ },
+ "package": {
+  "sidecar": {
+   "file": "GR_U_REF_RP2_retopo_v003.json",
+   "sha256": "808cf772dd01f13e6358fcd8bacd5f7229be66edb832025a745a64b10ba8ed5b"
+  },
+  "landmarks": {
+   "file": "GR_U_REF_RP2_retopo_v003_landmarks.json",
+   "sha256": "aafbe617260dfa67632f7fe9abe495fcbf5cacd39584ab31ae8a1ead6ec8ff09"
+  },
+  "evidence": "reviews/rac-rp2-evidence/grask_retopo_v003_audit_closure/",
+  "gate": "reviews/claude-rac-rp2-grask-retopo-v003-audit-closure-gate.md"
+ },
+ "source": {
+  "file": "SOURCE_3D/GR_U_REF_RP2_SOURCE_3D_v005.blend",
+  "sha256": "7bba8d2d5f081c077351b2e79e7e5fcce91b4f376cd6b2cfc76f1c2eb052ab14",
+  "geometry_hash": "2697929d90c9ed708997a594502a4d5edeaebb8f4ae39deefcc0802dc7c1d7bc",
+  "unchanged": true,
+  "source_anatomy_changed": false
+ },
+ "provenance": {
+  "v001": {
+   "blend": "82c10a64517860d5fcf835e753cfbdb7f762ab20d23b9bf68a660eb04776ded0",
+   "sidecar": "ed579e0b77647f15a7c8a274b6fb51e8e482444be5c6143f512d6fdbc3231711",
+   "landmarks": "a22c3959e544e215d315f3de95288e9b7261272876a907e79e9e8b783ff226d1"
+  },
+  "v002": {
+   "blend": "49ae8a6e2f2c66e94182a49f6e95103a72730a29120cc541fde74abc5355f55e",
+   "sidecar": "2dbd722163c028467f46813946aa84777c03092ec8ab664717bc074479d7684a",
+   "landmarks": "48887566ce04e8ff9970076aaeb207ba31aec9d8d41f2a17465bd3dfa88a968c"
+  },
+  "chain": "v005 source -> retopo v001 (9be2e94) -> v002 (7835e22) -> v003 (6b6b83f) -> FROZEN"
+ },
+ "freeze_readback": {
+  "objects": [
+   [
+    "GR_U_REF_RP2_retopo_v003",
+    "MESH"
+   ]
+  ],
+  "armatures": 0,
+  "materials": 0,
+  "mesh": {
+   "name": "GR_U_REF_RP2_retopo_v003",
+   "verts": 170466,
+   "polys": 170464,
+   "loops_per_poly": [
+    4
+   ],
+   "uv_layers": 0,
+   "shape_keys": 0,
+   "modifiers": [],
+   "vertex_groups": 449,
+   "attributes": [
+    "identity_loop",
+    "position",
+    "rac_part",
+    "rac_zone",
+    "seam_proposal",
+    "sharp_face"
+   ],
+   "identity_loop_edges": 36176,
+   "seam_proposal_edges": 3208,
+   "marked_seams": 0,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "parent": null,
+   "custom_props": {
+    "rac_status": "RP2 Grask production retopology v003 - audit-closure candidate (not accepted, not frozen; author visual approval pending)",
+    "rac_source": "GR_U_REF_RP2_SOURCE_3D_v005.blend sha256 7bba8d2d5f081c077351b2e79e7e5fcce91b4f376cd6b2cfc76f1c2eb052ab14 / geometry 2697929d90c9ed708997a594502a4d5edeaebb8f4ae39deefcc0802dc7c1d7bc",
+    "rac_frame": "Blender m, Z up, faces -Y, subject left +X = (x,-f,u)/100 of the RAC analysis frame; PRODUCTION ORIGIN = pelvis_root projected to the ground (rigid translation [-0.1118, 5.7227, 0.0] cm analysis / [-0",
+    "rac_origin_translation_analysis_cm": "[-0.11179767867288516, 5.722717396009755, 0.0]",
+    "rac_origin_translation_blender_m": "[-0.0011179767867288517, -0.05722717396009755, 0.0]",
+    "rac_parent": "GR_U_REF_RP2_retopo_v002 (7835e22); same architecture, x2 density; cage29 = v002 cage + ankle fan 10 rings, elbow 6 rings, one more palm MCP ring",
+    "rac_order": "reviews/chatgpt-rac-rp2-grask-thumb-web-visual-review-and-audit-closure-order.md (4d4f6e0)",
+    "rac_uv": "none - seam_proposal edge attribute only",
+    "rac_lod": "none - identity loops tagged (LOOP_* vertex groups, identity_loop edge attribute)"
+   }
+  },
+  "topology": {
+   "verts": 170466,
+   "faces": 170464,
+   "quads": 170464,
+   "tris": 0,
+   "ngons": 0,
+   "boundary_edges": 0,
+   "nonmanifold_edges": 0,
+   "winding_inconsistent_edges": 0,
+   "components": 1,
+   "duplicate_faces": 0,
+   "coincident_verts": 0,
+   "degenerate_faces(area<1e-4cm2)": 0,
+   "normals_outward": true
+  },
+  "techx": {
+   "nonmanifold_vertices": 0,
+   "euler_characteristic": 2,
+   "genus": 0,
+   "components": 1,
+   "aspect_opposite_sum": {
+    "definition": "max(sum of opposite edges ratio, inverse)",
+    "max": 7.06992307374646,
+    "over_4": 1693,
+    "over_8": 0
+   },
+   "aspect_edge": {
+    "definition": "longest edge / shortest edge",
+    "max": 8.071158540154705,
+    "over_4": 2179,
+    "over_6": 279,
+    "over_8": 1,
+    "over_10": 0
+   },
+   "angle_min": 20.11168495545074,
+   "angle_max": 159.95948107299358,
+   "hard_angle": 0
+  },
+  "self_intersection_pairs": 0,
+  "folded_edges_gt120": 0,
+  "flipped_faces": 0,
+  "origin_translation_analysis_cm": [
+   -0.11179767867288516,
+   5.722717396009755,
+   0.0
+  ],
+  "pelvis_root_after_cm": [
+   0.0,
+   0.0,
+   123.92800669308066
+  ],
+  "stature_cm": 217.99127490894534
+ },
+ "validation_summary": {
+  "T1_body_max_mm": 1.798497893241848,
+  "T2_max_mm": 1.283142966168709,
+  "T6_measured": {
+   "n": 30,
+   "max_mm": 0.84,
+   "median_mm": 0.038000000000000006,
+   "note": "surface-fit and prior-seed+surface-fit landmarks re-measured independently on the mesh; these are the T-6 evidence"
+  },
+  "T7": {
+   "front": 0.9961590571274482,
+   "rear": 0.9962116727832366,
+   "profile_left": 0.995518374663878,
+   "profile_right": 0.995518374663878,
+   "q3_front_left": 0.9966385643416736,
+   "q3_front_right": 0.9966711233594369,
+   "q3_rear_left": 0.9966302864938609,
+   "q3_rear_right": 0.9966927362186048
+  },
+  "loop_audit": "69/69"
+ },
+ "accepted_conditions": [
+  "thumb-index first-dorsal-web hollow = accepted frozen v005 anatomy; not to be flattened / filled / smoothed",
+  "isolated narrow-web quad (left ring-pinky web floor, edge ratio 8.07) accepted as documented; not to be moved further"
+ ],
+ "not_done": [
+  "rig",
+  "skin",
+  "corrective deformation",
+  "creator morphs",
+  "UVs",
+  "materials",
+  "LODs",
+  "UE5",
+  "other races"
+ ]
+}

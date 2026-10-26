@@ -1,32 +1,20 @@
 # Character Design Status
 
-## Grask RP2 current author review — 2026-10-25
+## Grask RP2 retopology — 2026-10-25 — RETOPO v003 — AUTHOR ACCEPTED / FROZEN
 
-Retopo v002 is **CONSTRAINED / NOT FROZEN** and stays as provenance. The order is `reviews/chatgpt-rac-rp2-grask-thumb-web-visual-review-and-audit-closure-order.md` (4d4f6e0).
+**Status:** `GR_U_REF_RP2_retopo_v003` is **AUTHOR ACCEPTED / FROZEN** under `reviews/chatgpt-rac-rp2-grask-retopo-v003-final-author-acceptance-freeze-order.md` (2b29098). Acceptance followed author review of the complete v003 audit-closure evidence.
+- Blend: `E:/…/Grask/RP2/GR_U_REF_RP2_retopo_v003.blend`, SHA-256 `03bfe7d924ff5b8b61a4c10095af5d16ca29d41667d7f61d0abeca14e1f07ce0`, geometry `f9c4a7ac98e86d98017376b9d67c85428503d2d6385258471d99bc766bfe702f`.
+- Freeze read-back: identical. The freeze record `GR_U_REF_RP2_retopo_v003_FREEZE.json` sits next to the blend.
 
-**Thumb-web images** (displayed first): `reviews/rac-rp2-evidence/grask_retopo_v003_audit_closure/thumb_web/` TW1–TW6.
-- The questioned thumb–index hollow is frozen v005 anatomy, the first dorsal web space.
-- v002 added faint shading rumples at the saddle (uneven quad spacing). v003 removes them by relaxing the quads along the source surface.
-- v005 is unchanged.
+**Report:** `reviews/claude-rac-rp2-grask-retopo-v003-freeze-report.md`. **Evidence:** `reviews/rac-rp2-evidence/grask_retopo_v003_freeze/`.
 
-**New production version `GR_U_REF_RP2_retopo_v003`** (`E:/…/Grask/RP2/`, blend `03bfe7d9…7ce0`, sidecar `808cf772…`, landmarks `aafbe617…`).
-- Gate: `reviews/claude-rac-rp2-grask-retopo-v003-audit-closure-gate.md`. Tools: `tools/rac/rp/grask_retopo_v003/`.
-- 170,464 quads (×2, −72.9 % vs v001). The cage adds ankle fan 10 rings, elbow 6 rings and one palm MCP ring.
-- Every gate was run on the exported blend; every required technical gate and evidence check passes:
-  - 0 hard-limit quads;
-  - aspect statistics reported separately: opposite-sum max 7.07, longest/shortest edge max 8.07 (one bounded web-floor exception, none >10; v002 had 11.86);
-  - 69/69 joints, with ring evidence for both ankles, the right elbow and the left toe-5 MTP;
-  - T-1 max 1.80 mm (posterior axillary fold) and T-2 max 1.28 mm;
-  - T-6: 30 independently measured landmarks, max 0.84 mm (44 copied construction coordinates are not counted as evidence);
-  - T-7 ≥ 0.9955;
-  - genus 0, 0 self-intersections / folds / flips;
-  - production origin consistent; v005, v001 and v002 hashes unchanged.
+**Frozen state:**
+- 170,464 quads, genus 0, 0 self-intersections / folds / flips.
+- The thumb-index hollow is accepted v005 anatomy.
+- One documented narrow-web quad exception is accepted.
+- v005 is unchanged; v001 and v002 are preserved as provenance.
 
-**Pending author decisions:**
-1. Whether to soften the source hollow (needs an approved illustrated proposal).
-2. Visual acceptance of v003.
-
-No freeze or downstream work. Turnfall is outside this scope.
+**Grask RP2 retopology is CLOSED.** No rig, skin, morphs, UVs, materials, LODs, UE5 work or other race until a separate order. Turnfall is outside this scope.
 
 ## First-pass complete
 1. Marchfolk
