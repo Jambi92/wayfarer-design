@@ -16,6 +16,9 @@ if 'M_data' in cz.files:
 else: W = W0
 V = cz['V'].astype(float); Q = cz['Q']; nV = len(V)
 Vw = np.c_[V[:, 0], -V[:, 1], V[:, 2]] / 100.0; RMi = np.linalg.inv(RM); Va = (np.c_[Vw, np.ones(nV)] @ RMi.T)[:, :3]      # armature space
+if os.environ.get('KNEE_OFF_CM'):   # v003 §12 diagnostic: move the calf_l pivot (knee centre) by an analysis-frame cm offset; children follow
+    _o = np.array([float(x) for x in os.environ['KNEE_OFF_CM'].split(',')]); _ob = np.array([_o[0], -_o[1], _o[2]]) / 100.0
+    POSE['calf_l'] = POSE['calf_l'].copy(); POSE['calf_l'][:3, 3] += RMi[:3, :3] @ _ob
 order = []
 def visit(b):
     if b in order: return
@@ -61,6 +64,7 @@ POSES['hip_flex90_l'] = dict([R_('thigh_l', FWD, 90)]); POSES['knee_90_l'] = dic
 POSES['ankle_dorsi20_l'] = dict([R_('foot_l', UP, 20)])
 POSES['trunk_twist30'] = {b: [('Y', 10.0)] for b in ('spine_01', 'spine_02', 'spine_03')}
 POSES['neck_flex30'] = dict([R_('neck_01', FWD, 15), R_('head', FWD, 15)]); POSES['neck_rot45'] = {'neck_01': [('Y', 22.5)], 'head': [('Y', 22.5)]}
+if os.environ.get('ONLY_POSES'): POSES = {k: v for k, v in POSES.items() if k in os.environ['ONLY_POSES'].split(',')}
 ZONE = {'shoulder': ('upperarm_l', 14), 'elbow': ('lowerarm_l', 9), 'wrist': ('hand_l', 6), 'fist': ('hand_l', 10), 'thumb': ('thumb_01_l', 6), 'hip': ('thigh_l', 16),
         'knee': ('calf_l', 10), 'ankle': ('foot_l', 8), 'trunk': ('spine_02', 22), 'neck': ('neck_01', 10)}
 P0 = fk({}); Sk0 = {b: P0[b] @ np.linalg.inv(POSE[b]) for b in bones}
