@@ -2,6 +2,28 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-26) — RP2 GRASK 130° VC ELBOW + SHOULDER ISOLATION — awaiting ChatGPT review
+
+**What was done**
+- Order 69f2660 executed. Gate: `reviews/claude-rac-rp2-grask-elbow-vc-contact-and-shoulder-isolation-gate.md`.
+- Workspaces:
+  - Track E: `/tmp/claude-0/rt/r6` (cand/, trial/, corr/, diag/, sheets/);
+  - Track S: `/tmp/claude-0/rt/r7` (s1/, s2/, probe/, diag/, sheets/).
+- Baselines come from r4 (W0 / C2 / C2rx) and r5 (H2).
+- Tools:
+  - Track E: `vc_judge.py`, `vc_sheets.py`, `elbow_overlap_volume.py` (needs pip libigl), `elbow_girth.py`, `elbow_ripple.py`;
+  - Track S: `shoulder_s1.py`, `shoulder_s2.py`, `shoulder_judge.py`, `shoulder_sheets.py`, `full_regress.py`.
+- Evaluator changes:
+  - `corr_solve.py`: volume options;
+  - `diag_lib.py`: `POSE_JSON=` override.
+
+**Results**
+- Track E: VC3 passes all numeric §10 checks but fails the visual criterion (contact-interface fold texture), so 130° is unresolved. W0's closed volume double-counts the interpenetration overlap.
+- Track S: WEIGHTING-DOMINANT; mechanics secondary (abduction).
+- Parents identical.
+
+**Next:** STOP for ChatGPT review. Decisions are listed in gate §7.
+
 ## LATEST (2026-10-26) — RP2 GRASK ELBOW HELPER-VOLUME STUDY (Stage A failed §7; Stage B not run) — awaiting ChatGPT review
 
 **What was done**

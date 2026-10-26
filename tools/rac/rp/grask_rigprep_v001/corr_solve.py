@@ -147,7 +147,15 @@ for ang in CFG['anchors'][1:]:
     pw = bl_to_src(Mp['hand_' + S][:3, 3][None])[0]; ra = (psh - pe) / np.linalg.norm(psh - pe); rb = (pw - pe) / np.linalg.norm(pw - pe)
     PN_ = (ra - rb) / np.linalg.norm(ra - rb); PC = pe                                # + side = upper-arm side
     q_ = V0[sv] - e; s_ax = q_ @ AX; rad_ = q_ - np.outer(s_ax, AX); cth_ = (rad_ @ ANT) / np.maximum(np.linalg.norm(rad_, axis=1), 1e-9)
-    PLM = (d[sv] >= CFG.get('plane_min_rest_cm', 6.0)) & (cth_ > CFG.get('plane_inner_cos', 0.2)); PHOLD = np.full((n, 3), np.nan); FAIRV = set()
+    PLM = (d[sv] >= CFG.get('plane_min_rest_cm', 6.0)) & (cth_ > CFG.get('plane_inner_cos', 0.2)); PHOLD = np.full((n, 3), np.nan)
+    def cvol(Y):
+        T_ = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; return float(np.einsum('ij,ij->i', Y[T_[:, 0]], np.cross(Y[T_[:, 1]], Y[T_[:, 2]])).sum() / 6)
+    VTARGET = cvol(X0) - CFG.get('vol_allowed_loss_by_key', {}).get(str(ang), CFG.get('vol_allowed_loss_cm3', 0.0)); VOFF = np.zeros((n, 3))   # VC3: optional per-key allowance
+    _r0, _r1 = CFG.get('vol_r_min', 4.0), CFG.get('vol_r_max', 14.0)
+    VOLB = c2((d[sv] - _r0) / 1.5) * (1 - c2((d[sv] - (_r1 - 2.0)) / 2.0)) * tau[sv]; FAIRV = set()   # smooth distribution over both segments
+    if CFG.get('vol_inner_exclude_rmax', 0) > 0:                       # VC2: keep the redistribution out of the inner crease sector near the pivot
+        _near = 1 - c2((d[sv] - (CFG['vol_inner_exclude_rmax'] - 4.0)) / 4.0); _inner = c2((cth_ - CFG.get('vol_inner_cos0', 0.0)) / 0.5)
+        VOLB = VOLB * (1 - _near * _inner)
     X = Xb.copy(); wA = (1 - tau[sv]) * CFG['w_anchor'] + CFG.get('w_core_anchor', 1e-3); hist = []; HOLD = np.full((n, 3), np.nan)
     for it in range(CFG['iters']):
         R_ = [Lmat]; B_ = [bL]; W_ = [np.ones(n)]
@@ -242,10 +250,54 @@ for ang in CFG['anchors'][1:]:
                 k_ = np.nonzero(low)[0]; t_ = dv[k_] / np.maximum(L_[k_], 1e-9)[:, None] * (CFG['edge_floor'] * SE0[k_])[:, None]
                 r = np.arange(len(k_)); R_.append(sp.csr_matrix((np.r_[np.ones(len(k_)), -np.ones(len(k_))], (np.r_[r, r], np.r_[idx[SE[k_, 0]], idx[SE[k_, 1]]])), shape=(len(k_), n)))
                 B_.append(t_); W_.append(np.full(len(k_), CFG['w_edge'])); ne_ = int(len(k_))
+        # volume-conserving redistribution (CONFIG.volume_conserve, order 69f2660 Track E): the closed-mesh volume lost against the LBS shape of this
+        # key is fed back as a smooth outward offset distributed over the upper-arm AND forearm soft tissue of the support (rest distance
+        # vol_r_min..vol_r_max, all around the limb), excluding the contact-held / contact-pushed vertices and their 2-ring and the crease core;
+        # the offset accumulates (relaxation vol_relax) and enters the same least-squares solve as soft targets, so contact, loop floor and
+        # inversion fairing are enforced together with it (unlike the rejected post-hoc C3 bulge).
+        nvol = 0.0
+        if CFG.get('volume_conserve') and ang in CFG.get('volume_keys', [ang]):
+            Vcur = cvol(X); deficit = VTARGET - Vcur
+            excl = np.zeros(nV, bool); held_ = np.isfinite(PHOLD[:, 0]) | np.isfinite(HOLD[:, 0]); excl[sv[held_]] = True
+            for _ in range(2): excl[E[excl[E[:, 0]], 1]] = True; excl[E[excl[E[:, 1]], 0]] = True
+            bv = VOLB.copy(); bv[excl[sv]] = 0.0
+            fv_ = np.cross(X[Q[:, 2]] - X[Q[:, 0]], X[Q[:, 3]] - X[Q[:, 1]]) * 0.5; av = np.zeros((nV, 3))
+            for kk in range(4): np.add.at(av, Q[:, kk], fv_ / 4)
+            an = np.linalg.norm(av[sv], axis=1); nvv = av[sv] / np.maximum(an, 1e-12)[:, None]
+            _vsi = CFG.get('vol_smooth_iters', 0)
+            if _vsi:                                                    # VC3: smooth band (soft exclusion edges), smoothed normals, smoothed offset field
+                def _sm(F_, k_=_vsi):
+                    for _ in range(k_):
+                        M_ = np.zeros_like(F_); np.add.at(M_, E[:, 0], F_[E[:, 1]]); np.add.at(M_, E[:, 1], F_[E[:, 0]]); F_ = 0.5 * F_ + 0.5 * M_ / deg.reshape((-1,) + (1,) * (F_.ndim - 1))
+                    return F_
+                if CFG.get('vol_smooth_field', True):
+                    ef = np.zeros(nV); ef[excl] = 1.0; ef = _sm(ef); bv = VOLB * (1 - np.clip(2.0 * ef[sv], 0, 1)); bv[held_] = 0.0
+                nf = np.zeros((nV, 3)); nf[sv] = nvv; nf = _sm(nf); nvv = nf[sv] / np.maximum(np.linalg.norm(nf[sv], axis=1), 1e-12)[:, None]
+            if CFG.get('vol_mode') == 'smooth':                          # VC3: low-frequency field -- smooth exclusion ramp by REST geodesic distance from the
+                hs_ = sv[held_]                                          # contact-held set, offset direction = normals of the smooth delta-mush base Xb
+                if len(hs_):
+                    gd_ = dijkstra(_G, directed=False, indices=hs_, limit=CFG.get('vol_excl_cm1', 4.0) + 0.5, min_only=True)
+                    gd_ = np.where(np.isfinite(gd_), gd_, 1e9)
+                else: gd_ = np.full(nV, 1e9)
+                e0_, e1_ = CFG.get('vol_excl_cm0', 1.0), CFG.get('vol_excl_cm1', 4.0); bv = VOLB * c2((gd_[sv] - e0_) / (e1_ - e0_))
+                fb_ = np.cross(Xb[Q[:, 2]] - Xb[Q[:, 0]], Xb[Q[:, 3]] - Xb[Q[:, 1]]) * 0.5; ab_ = np.zeros((nV, 3))
+                for kk in range(4): np.add.at(ab_, Q[:, kk], fb_ / 4)
+                for _ in range(CFG.get('vol_normal_iters', 10)):
+                    M_ = np.zeros_like(ab_); np.add.at(M_, E[:, 0], ab_[E[:, 1]]); np.add.at(M_, E[:, 1], ab_[E[:, 0]]); ab_ = 0.5 * ab_ + 0.5 * M_ / deg[:, None]
+                nvv = ab_[sv] / np.maximum(np.linalg.norm(ab_[sv], axis=1), 1e-12)[:, None]
+            gain = (bv * an).sum()
+            if deficit > 0 and gain > 1e-9:
+                lam = CFG.get('vol_relax', 0.5) * deficit / gain; VOFF[:] += (lam * bv)[:, None] * nvv
+                if _vsi and CFG.get('vol_smooth_field', True):
+                    vf = np.zeros((nV, 3)); vf[sv] = VOFF; VOFF[:] = _sm(vf)[sv]; VOFF[held_] = 0.0
+            ii = np.nonzero(np.linalg.norm(VOFF, axis=1) > 1e-9)[0]
+            if len(ii):
+                R_.append(sp.csr_matrix((np.ones(len(ii)), (np.arange(len(ii)), ii)), shape=(len(ii), n))); B_.append((Xb[sv] + VOFF)[ii]); W_.append(np.full(len(ii), CFG.get('w_vol', 10.0)))
+            nvol = float(deficit)
         A = sp.vstack(R_).tocsr(); Bm = np.vstack(B_); Wt = np.concatenate(W_)
         AtW = A.T.multiply(Wt[None, :]).tocsr(); Xs = spl.factorized((AtW @ A).tocsc())
         rhs = AtW @ Bm; Xn = np.c_[Xs(rhs[:, 0]), Xs(rhs[:, 1]), Xs(rhs[:, 2])]
-        X = X.copy(); X[sv] = Xn; hist.append(dict(it=it, intersecting_pairs=int(ncol), pushed_vertices=int(hit.sum()), col_rest_dist_pct=[round(float(x), 1) for x in np.percentile(d[sv][hit], [5, 50, 95])] if hit.any() else [], max_pen_cm=round(float(maxpen), 4), loop_floor_active=nl, edge_floor_active=ne_, plane_violations=npl, local_inversions=nfair))
+        X = X.copy(); X[sv] = Xn; hist.append(dict(it=it, intersecting_pairs=int(ncol), pushed_vertices=int(hit.sum()), col_rest_dist_pct=[round(float(x), 1) for x in np.percentile(d[sv][hit], [5, 50, 95])] if hit.any() else [], max_pen_cm=round(float(maxpen), 4), loop_floor_active=nl, edge_floor_active=ne_, plane_violations=npl, local_inversions=nfair, volume_deficit_cm3=round(nvol, 1)))
     # volume restoration (CONFIG.volume_restore = fraction of the corrective-induced closed-volume loss to give back): a smooth outward bump on the
     # medial / lateral sides of the elbow (not the inner contact patch, not the olecranon contour), scaled by the linearised closed-volume change
     if CFG.get('volume_restore', 0) > 0:

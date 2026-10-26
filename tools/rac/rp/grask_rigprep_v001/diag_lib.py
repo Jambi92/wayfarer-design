@@ -158,7 +158,9 @@ def build_poses(rig):
                 if any(hc.get('translate_local_m', [0, 0, 0])): ent.append(('T', [beta * v for v in hc['translate_local_m']]))
                 if any(hc.get('scale_gain_local', [0, 0, 0])): ent.append(('S', [1.0 + beta * g_ for g_ in hc['scale_gain_local']]))
                 pz = dict(pz); pz['elbow_helper_' + sd] = ent; P[k_] = pz
-
+    if os.environ.get('POSE_JSON'):                                     # Track S (order 69f2660): diagnostic shoulder-girdle mechanics, same pose names,
+        for k_, pz in json.load(open(os.environ['POSE_JSON'])).items():  # complete per-pose bone entries replace the D1 definitions (nothing else changes)
+            P[k_] = {b: [(a, d) for a, d in L] for b, L in pz.items()}
     return P
 def bl_to_dir_from_bl(v):                                                          # Blender vector -> analysis direction (for ch(), which converts back)
     v = np.asarray(v, float); return np.array([v[0], -v[1], v[2]])

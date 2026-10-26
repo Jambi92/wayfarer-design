@@ -1,0 +1,4624 @@
+{
+ "tag": "VC3rW",
+ "side": "r",
+ "config": {
+  "anchors": [
+   45,
+   90,
+   110,
+   120,
+   130
+  ],
+  "R_core": 17.0,
+  "R_out": 21.0,
+  "guard_cm": 1.0,
+  "w_anchor": 50.0,
+  "w_collision": 5.0,
+  "w_loop": 50.0,
+  "w_edge": 20.0,
+  "local_cm": 1.0,
+  "depth_cm": 1.5,
+  "gap_cm": 0.03,
+  "loop_floor": 0.6,
+  "edge_floor": 0.0,
+  "iters": 70,
+  "rest_detail": 0.0,
+  "w_core_anchor": 0.001,
+  "dm_iters": 15,
+  "plane_contact": true,
+  "contact_max_sep_cm": 10.0,
+  "plane_min_rest_cm": 6.0,
+  "plane_keys": [
+   110,
+   120,
+   130
+  ],
+  "w_plane": 200.0,
+  "contact_mode": "sdf",
+  "tang_cm": 0.4,
+  "fair": true,
+  "w_fair": 40.0,
+  "repair_passes": 30,
+  "volume_conserve": true,
+  "volume_keys": [
+   120,
+   130
+  ],
+  "vol_r_min": 4.0,
+  "vol_r_max": 16.0,
+  "w_vol": 2.0,
+  "vol_relax": 0.5,
+  "vol_allowed_loss_cm3": 0.0,
+  "vol_inner_exclude_rmax": 10.0,
+  "vol_inner_cos0": -0.4,
+  "vol_mode": "smooth",
+  "vol_excl_cm0": 1.0,
+  "vol_excl_cm1": 4.0,
+  "vol_normal_iters": 10
+ },
+ "method": "# corr_solve.py OUTDIR TAG SIDE CONFIG.json : pose-space elbow corrective (order 6c38d75 \u00a75-\u00a79). Diagnostic only; never edits the rest mesh.\n# For each keyed flexion angle (CONFIG anchors[1:]) the target posed shape of the elbow support region is solved in posed space and converted to a\n# REST-SPACE delta (exact inverse of the per-vertex LBS linear part), i.e. a pose-driven shape key applied before the armature:\n#   LBS(V0 + D_k) = LBS(V0) + Lin_v D_k  ->  D_k = Lin_v^-1 (X*_k - LBS(V0)).\n# Target X*_k (projective-dynamics style, sparse least squares re-solved each outer iteration):\n#   * detail term   : uniform Laplacian of X equals the LBS posed Laplacian (smooth harmonic correction field), optionally blended (CONFIG.rest_detail,\n#                     scaled by tau) with the REST Laplacian rotated by the per-vertex skinning rotation (polar part of Lin), which un-crumples LBS;\n#   * anchor term   : (1 - tau) * w_anchor * |X - LBS|  (tau = 1 in the core, C2 smootherstep taper to 0 at the support boundary; outside = fixed);\n#   * collision term: support vertices found behind a non-local posed face (rest separation > CONFIG.local_cm) within depth CONFIG.depth_cm are\n#                     projected to that face plane + gap (both sides of a contact are processed, each moves its own vertices);\n#   * loop floor    : tagged elbow loop pairs (the retained metric's nearest-vertex pairs) kept >= CONFIG.loop_floor x rest distance;\n#   * edge floor    : every support edge kept >= CONFIG.edge_floor x rest length (prevents collapsed quads).\n# Final delta is multiplied by a C2 guard that is 1 inside R_out - guard_cm and exactly 0 at R_out (exact zero at the boundary).\n",
+ "support": {
+  "vertices": 11779,
+  "core": 9937,
+  "band": 1842,
+  "dropped_islands": [],
+  "parts": [
+   "arm_r"
+  ]
+ },
+ "keys": {
+  "90": {
+   "pose": "D2_r_flex90",
+   "key_pose_bones": [
+    "forearm_r"
+   ],
+   "iterations": [
+    {
+     "it": 0,
+     "intersecting_pairs": 102,
+     "pushed_vertices": 522,
+     "col_rest_dist_pct": [
+      4.6,
+      5.6,
+      7.2
+     ],
+     "max_pen_cm": 0.9824,
+     "loop_floor_active": 25,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 1,
+     "intersecting_pairs": 128,
+     "pushed_vertices": 563,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      7.0
+     ],
+     "max_pen_cm": 0.7302,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 2,
+     "intersecting_pairs": 82,
+     "pushed_vertices": 399,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      6.6
+     ],
+     "max_pen_cm": 0.3481,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 3,
+     "intersecting_pairs": 21,
+     "pushed_vertices": 175,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      7.0
+     ],
+     "max_pen_cm": 0.075,
+     "loop_floor_active": 15,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 4,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 145,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.1
+     ],
+     "max_pen_cm": 0.0306,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 5,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 131,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.1
+     ],
+     "max_pen_cm": 0.0081,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 6,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 130,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.1
+     ],
+     "max_pen_cm": 0.0038,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 7,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 129,
+     "col_rest_dist_pct": [
+      4.5,
+      5.4,
+      7.1
+     ],
+     "max_pen_cm": 0.0006,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 8,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 124,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.1
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 9,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 126,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 10,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 126,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 11,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 129,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 12,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 132,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 13,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 132,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 14,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 134,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 15,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 135,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 16,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 134,
+     "col_rest_dist_pct": [
+      4.5,
+      5.4,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 17,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 138,
+     "col_rest_dist_pct": [
+      4.5,
+      5.4,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 18,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 138,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 19,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 138,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 20,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 139,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 21,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 139,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 22,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 137,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 23,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 138,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 24,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 139,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 25,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 138,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 26,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 140,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 27,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 136,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 28,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 134,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 29,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 138,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 30,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 135,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 31,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 136,
+     "col_rest_dist_pct": [
+      4.5,
+      5.3,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 32,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 135,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      7.0
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 33,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 137,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 34,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 138,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 35,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 139,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 36,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 141,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 37,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 143,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 38,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 145,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 39,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 149,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 40,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 149,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 41,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 149,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 42,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 150,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 43,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 154,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 44,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 155,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 45,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 157,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 46,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 157,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 47,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 158,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 12,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 48,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 158,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 49,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 158,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.9
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 50,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 156,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 51,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 155,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 52,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 155,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 53,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 156,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 54,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 154,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.8
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 55,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 157,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 56,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 153,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.8
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 57,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 154,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.8
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 58,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 155,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 59,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 154,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.8
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 60,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 153,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.8
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 61,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 153,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 62,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 153,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 63,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 152,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.7
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 64,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 150,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 65,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 152,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 66,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 150,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 67,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 150,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 68,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 149,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 69,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 149,
+     "col_rest_dist_pct": [
+      4.5,
+      5.1,
+      6.6
+     ],
+     "max_pen_cm": 0.0,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 0,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": "repair",
+     "local_inversions_per_pass": [
+      0
+     ]
+    }
+   ],
+   "max_posed_delta_cm": 0.6585803421090032,
+   "max_rest_delta_cm": 0.8134105777400608,
+   "rest_delta_sha256": "bf5707f395b0f8156d6dc7720c6140267f2fa912984fdcb767170074e727129e",
+   "nonzero_vertices": 10633
+  },
+  "110": {
+   "pose": "D2_r_flex110",
+   "key_pose_bones": [
+    "forearm_r"
+   ],
+   "iterations": [
+    {
+     "it": 0,
+     "intersecting_pairs": 18,
+     "pushed_vertices": 852,
+     "col_rest_dist_pct": [
+      4.8,
+      9.4,
+      11.9
+     ],
+     "max_pen_cm": 1.4991,
+     "loop_floor_active": 23,
+     "edge_floor_active": 0,
+     "plane_violations": 1359,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 1,
+     "intersecting_pairs": 111,
+     "pushed_vertices": 629,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      10.7
+     ],
+     "max_pen_cm": 1.1397,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 1020,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 2,
+     "intersecting_pairs": 142,
+     "pushed_vertices": 596,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.4
+     ],
+     "max_pen_cm": 0.8972,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 920,
+     "local_inversions": 2,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 3,
+     "intersecting_pairs": 159,
+     "pushed_vertices": 504,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      10.4
+     ],
+     "max_pen_cm": 0.566,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 885,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 4,
+     "intersecting_pairs": 105,
+     "pushed_vertices": 374,
+     "col_rest_dist_pct": [
+      4.5,
+      5.4,
+      10.9
+     ],
+     "max_pen_cm": 0.1766,
+     "loop_floor_active": 15,
+     "edge_floor_active": 0,
+     "plane_violations": 810,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 5,
+     "intersecting_pairs": 36,
+     "pushed_vertices": 297,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.0
+     ],
+     "max_pen_cm": 0.1219,
+     "loop_floor_active": 15,
+     "edge_floor_active": 0,
+     "plane_violations": 808,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 6,
+     "intersecting_pairs": 24,
+     "pushed_vertices": 268,
+     "col_rest_dist_pct": [
+      4.5,
+      5.5,
+      11.1
+     ],
+     "max_pen_cm": 0.1124,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 7,
+     "intersecting_pairs": 19,
+     "pushed_vertices": 262,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.1
+     ],
+     "max_pen_cm": 0.1119,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 809,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 8,
+     "intersecting_pairs": 16,
+     "pushed_vertices": 255,
+     "col_rest_dist_pct": [
+      4.6,
+      5.6,
+      11.1
+     ],
+     "max_pen_cm": 0.1069,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 9,
+     "intersecting_pairs": 10,
+     "pushed_vertices": 245,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.3
+     ],
+     "max_pen_cm": 0.1035,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 806,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 10,
+     "intersecting_pairs": 12,
+     "pushed_vertices": 251,
+     "col_rest_dist_pct": [
+      4.5,
+      5.5,
+      11.2
+     ],
+     "max_pen_cm": 0.1007,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 806,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 11,
+     "intersecting_pairs": 12,
+     "pushed_vertices": 240,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.3
+     ],
+     "max_pen_cm": 0.0981,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 808,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 12,
+     "intersecting_pairs": 12,
+     "pushed_vertices": 238,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.3
+     ],
+     "max_pen_cm": 0.0956,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 810,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 13,
+     "intersecting_pairs": 12,
+     "pushed_vertices": 232,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.3
+     ],
+     "max_pen_cm": 0.0931,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 811,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 14,
+     "intersecting_pairs": 10,
+     "pushed_vertices": 228,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.3
+     ],
+     "max_pen_cm": 0.0908,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 811,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 15,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 231,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.2
+     ],
+     "max_pen_cm": 0.0885,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 812,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 16,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 230,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.2
+     ],
+     "max_pen_cm": 0.0863,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 813,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 17,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 231,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.2
+     ],
+     "max_pen_cm": 0.0841,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 814,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 18,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 232,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.2
+     ],
+     "max_pen_cm": 0.082,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 814,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 19,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 230,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.0
+     ],
+     "max_pen_cm": 0.1168,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 815,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 20,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 228,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.0
+     ],
+     "max_pen_cm": 0.078,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 814,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 21,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 224,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      11.1
+     ],
+     "max_pen_cm": 0.0761,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 817,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 22,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 227,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      11.0
+     ],
+     "max_pen_cm": 0.0743,
+     "loop_floor_active": 13,
+     "edge_floor_active": 0,
+     "plane_violations": 815,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 23,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 234,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      10.9
+     ],
+     "max_pen_cm": 0.0725,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 814,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 24,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 231,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      11.0
+     ],
+     "max_pen_cm": 0.0707,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 814,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 25,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 230,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      11.0
+     ],
+     "max_pen_cm": 0.069,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 813,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 26,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 230,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      11.0
+     ],
+     "max_pen_cm": 0.0673,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 814,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 27,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 231,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      11.0
+     ],
+     "max_pen_cm": 0.0657,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 812,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 28,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 232,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      11.0
+     ],
+     "max_pen_cm": 0.0641,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 812,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 29,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 235,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.9
+     ],
+     "max_pen_cm": 0.0625,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 813,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 30,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 233,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      11.0
+     ],
+     "max_pen_cm": 0.061,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 813,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 31,
+     "intersecting_pairs": 6,
+     "pushed_vertices": 228,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      11.0
+     ],
+     "max_pen_cm": 0.0595,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 814,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 32,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 226,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      11.0
+     ],
+     "max_pen_cm": 0.0581,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 814,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 33,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 225,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      11.0
+     ],
+     "max_pen_cm": 0.0566,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 813,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 34,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 226,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      11.0
+     ],
+     "max_pen_cm": 0.0552,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 812,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 35,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 226,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      11.0
+     ],
+     "max_pen_cm": 0.0539,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 812,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 36,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 228,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      11.0
+     ],
+     "max_pen_cm": 0.0525,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 811,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 37,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 227,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      11.0
+     ],
+     "max_pen_cm": 0.0512,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 809,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 38,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 224,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      11.0
+     ],
+     "max_pen_cm": 0.0499,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 810,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 39,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 222,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      11.0
+     ],
+     "max_pen_cm": 0.0487,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 810,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 40,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 225,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      11.0
+     ],
+     "max_pen_cm": 0.0475,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 811,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 41,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 223,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      10.9
+     ],
+     "max_pen_cm": 0.0463,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 810,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 42,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 222,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.9
+     ],
+     "max_pen_cm": 0.0451,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 809,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 43,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 223,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.9
+     ],
+     "max_pen_cm": 0.0439,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 810,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 44,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 222,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.9
+     ],
+     "max_pen_cm": 0.0428,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 811,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 45,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 219,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.9
+     ],
+     "max_pen_cm": 0.0417,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 810,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 46,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 217,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.9
+     ],
+     "max_pen_cm": 0.0406,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 809,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 47,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 216,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.9
+     ],
+     "max_pen_cm": 0.0395,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 809,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 48,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 217,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.8
+     ],
+     "max_pen_cm": 0.0385,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 49,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 219,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.8
+     ],
+     "max_pen_cm": 0.0374,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 2,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 50,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 218,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.8
+     ],
+     "max_pen_cm": 0.0712,
+     "loop_floor_active": 14,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 3,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 51,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 209,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.8
+     ],
+     "max_pen_cm": 0.0846,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 805,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 52,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 203,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.7
+     ],
+     "max_pen_cm": 0.0954,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 805,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 53,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 204,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.7
+     ],
+     "max_pen_cm": 0.073,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 54,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 203,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.7
+     ],
+     "max_pen_cm": 0.0762,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 55,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 206,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.7
+     ],
+     "max_pen_cm": 0.0722,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 56,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 206,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.7
+     ],
+     "max_pen_cm": 0.0678,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 806,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 57,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 204,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.7
+     ],
+     "max_pen_cm": 0.0628,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 806,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 58,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 201,
+     "col_rest_dist_pct": [
+      4.6,
+      5.3,
+      10.7
+     ],
+     "max_pen_cm": 0.0582,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 59,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 200,
+     "col_rest_dist_pct": [
+      4.6,
+      5.2,
+      10.7
+     ],
+     "max_pen_cm": 0.0536,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 60,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 200,
+     "col_rest_dist_pct": [
+      4.6,
+      5.2,
+      10.7
+     ],
+     "max_pen_cm": 0.0491,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 61,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 198,
+     "col_rest_dist_pct": [
+      4.6,
+      5.2,
+      10.7
+     ],
+     "max_pen_cm": 0.0449,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 62,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 199,
+     "col_rest_dist_pct": [
+      4.6,
+      5.2,
+      10.7
+     ],
+     "max_pen_cm": 0.0407,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 63,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 199,
+     "col_rest_dist_pct": [
+      4.6,
+      5.2,
+      10.7
+     ],
+     "max_pen_cm": 0.0368,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 807,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 64,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 200,
+     "col_rest_dist_pct": [
+      4.6,
+      5.2,
+      10.7
+     ],
+     "max_pen_cm": 0.0334,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 804,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 65,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 199,
+     "col_rest_dist_pct": [
+      4.6,
+      5.2,
+      10.5
+     ],
+     "max_pen_cm": 0.0299,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 805,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 66,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 198,
+     "col_rest_dist_pct": [
+      4.6,
+      5.2,
+      10.5
+     ],
+     "max_pen_cm": 0.0266,
+     "loop_floor_active": 15,
+     "edge_floor_active": 0,
+     "plane_violations": 805,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 67,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 198,
+     "col_rest_dist_pct": [
+      4.6,
+      5.2,
+      10.5
+     ],
+     "max_pen_cm": 0.0234,
+     "loop_floor_active": 15,
+     "edge_floor_active": 0,
+     "plane_violations": 805,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 68,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 198,
+     "col_rest_dist_pct": [
+      4.6,
+      5.2,
+      10.5
+     ],
+     "max_pen_cm": 0.0211,
+     "loop_floor_active": 15,
+     "edge_floor_active": 0,
+     "plane_violations": 805,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 69,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 200,
+     "col_rest_dist_pct": [
+      4.5,
+      5.2,
+      10.5
+     ],
+     "max_pen_cm": 0.0203,
+     "loop_floor_active": 15,
+     "edge_floor_active": 0,
+     "plane_violations": 804,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": "repair",
+     "local_inversions_per_pass": [
+      0
+     ]
+    }
+   ],
+   "max_posed_delta_cm": 1.7951345371396,
+   "max_rest_delta_cm": 2.1330316865834513,
+   "rest_delta_sha256": "3ff47325f6ae890993cf019d6fe7517338db7c28641f7a20c30935cae8a4f56e",
+   "nonzero_vertices": 10987
+  },
+  "120": {
+   "pose": "D2_r_flex120",
+   "key_pose_bones": [
+    "forearm_r"
+   ],
+   "iterations": [
+    {
+     "it": 0,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 605,
+     "col_rest_dist_pct": [
+      5.0,
+      12.9,
+      14.9
+     ],
+     "max_pen_cm": 1.4997,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2190,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 31.2
+    },
+    {
+     "it": 1,
+     "intersecting_pairs": 110,
+     "pushed_vertices": 810,
+     "col_rest_dist_pct": [
+      4.7,
+      6.0,
+      13.3
+     ],
+     "max_pen_cm": 1.2043,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1624,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 243.0
+    },
+    {
+     "it": 2,
+     "intersecting_pairs": 165,
+     "pushed_vertices": 717,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      13.0
+     ],
+     "max_pen_cm": 1.0007,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 1417,
+     "local_inversions": 2,
+     "volume_deficit_cm3": 125.0
+    },
+    {
+     "it": 3,
+     "intersecting_pairs": 133,
+     "pushed_vertices": 614,
+     "col_rest_dist_pct": [
+      4.6,
+      5.4,
+      13.1
+     ],
+     "max_pen_cm": 0.7848,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 1373,
+     "local_inversions": 7,
+     "volume_deficit_cm3": 66.1
+    },
+    {
+     "it": 4,
+     "intersecting_pairs": 157,
+     "pushed_vertices": 518,
+     "col_rest_dist_pct": [
+      4.5,
+      5.5,
+      13.4
+     ],
+     "max_pen_cm": 0.6248,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 1332,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 35.2
+    },
+    {
+     "it": 5,
+     "intersecting_pairs": 112,
+     "pushed_vertices": 441,
+     "col_rest_dist_pct": [
+      4.6,
+      5.7,
+      13.4
+     ],
+     "max_pen_cm": 0.4424,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 1333,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 18.6
+    },
+    {
+     "it": 6,
+     "intersecting_pairs": 74,
+     "pushed_vertices": 398,
+     "col_rest_dist_pct": [
+      4.6,
+      6.0,
+      13.6
+     ],
+     "max_pen_cm": 0.3034,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 1335,
+     "local_inversions": 3,
+     "volume_deficit_cm3": 9.8
+    },
+    {
+     "it": 7,
+     "intersecting_pairs": 45,
+     "pushed_vertices": 383,
+     "col_rest_dist_pct": [
+      4.6,
+      6.1,
+      13.6
+     ],
+     "max_pen_cm": 0.2096,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 1334,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 5.2
+    },
+    {
+     "it": 8,
+     "intersecting_pairs": 24,
+     "pushed_vertices": 364,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      13.7
+     ],
+     "max_pen_cm": 0.1279,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 1336,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 2.7
+    },
+    {
+     "it": 9,
+     "intersecting_pairs": 20,
+     "pushed_vertices": 354,
+     "col_rest_dist_pct": [
+      4.5,
+      6.4,
+      13.7
+     ],
+     "max_pen_cm": 0.1124,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1338,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 1.4
+    },
+    {
+     "it": 10,
+     "intersecting_pairs": 18,
+     "pushed_vertices": 345,
+     "col_rest_dist_pct": [
+      4.6,
+      6.5,
+      13.7
+     ],
+     "max_pen_cm": 0.1099,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1338,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 0.7
+    },
+    {
+     "it": 11,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 339,
+     "col_rest_dist_pct": [
+      4.6,
+      6.8,
+      13.7
+     ],
+     "max_pen_cm": 0.1075,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1334,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.4
+    },
+    {
+     "it": 12,
+     "intersecting_pairs": 11,
+     "pushed_vertices": 329,
+     "col_rest_dist_pct": [
+      4.6,
+      7.0,
+      13.7
+     ],
+     "max_pen_cm": 0.1052,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1334,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.2
+    },
+    {
+     "it": 13,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 326,
+     "col_rest_dist_pct": [
+      4.6,
+      7.1,
+      13.7
+     ],
+     "max_pen_cm": 0.107,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1334,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.1
+    },
+    {
+     "it": 14,
+     "intersecting_pairs": 7,
+     "pushed_vertices": 327,
+     "col_rest_dist_pct": [
+      4.6,
+      7.0,
+      13.7
+     ],
+     "max_pen_cm": 0.1007,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1338,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.1
+    },
+    {
+     "it": 15,
+     "intersecting_pairs": 6,
+     "pushed_vertices": 324,
+     "col_rest_dist_pct": [
+      4.6,
+      6.8,
+      13.7
+     ],
+     "max_pen_cm": 0.1119,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1339,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 16,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 323,
+     "col_rest_dist_pct": [
+      4.6,
+      6.8,
+      13.7
+     ],
+     "max_pen_cm": 0.0963,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1340,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 17,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 318,
+     "col_rest_dist_pct": [
+      4.6,
+      7.1,
+      13.7
+     ],
+     "max_pen_cm": 0.0942,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1343,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 18,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 319,
+     "col_rest_dist_pct": [
+      4.6,
+      7.0,
+      13.7
+     ],
+     "max_pen_cm": 0.0922,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1344,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 19,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 318,
+     "col_rest_dist_pct": [
+      4.6,
+      7.1,
+      13.7
+     ],
+     "max_pen_cm": 0.0902,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1347,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 20,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 316,
+     "col_rest_dist_pct": [
+      4.6,
+      7.1,
+      13.7
+     ],
+     "max_pen_cm": 0.0882,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1347,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 21,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 319,
+     "col_rest_dist_pct": [
+      4.6,
+      7.0,
+      13.7
+     ],
+     "max_pen_cm": 0.0862,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1346,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 22,
+     "intersecting_pairs": 4,
+     "pushed_vertices": 321,
+     "col_rest_dist_pct": [
+      4.6,
+      6.8,
+      13.7
+     ],
+     "max_pen_cm": 0.0843,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1343,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 23,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 319,
+     "col_rest_dist_pct": [
+      4.6,
+      7.0,
+      13.7
+     ],
+     "max_pen_cm": 0.0824,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1342,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 24,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 320,
+     "col_rest_dist_pct": [
+      4.6,
+      6.6,
+      13.7
+     ],
+     "max_pen_cm": 0.0806,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1343,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 25,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 320,
+     "col_rest_dist_pct": [
+      4.6,
+      6.6,
+      13.7
+     ],
+     "max_pen_cm": 0.0788,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1341,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 26,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 320,
+     "col_rest_dist_pct": [
+      4.6,
+      6.5,
+      13.7
+     ],
+     "max_pen_cm": 0.077,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1339,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 27,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 319,
+     "col_rest_dist_pct": [
+      4.6,
+      6.4,
+      13.7
+     ],
+     "max_pen_cm": 0.0753,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1337,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 28,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 321,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.0736,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1339,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 29,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 319,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.0719,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1341,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 30,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 322,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.0702,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1341,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 31,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 323,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.0686,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1341,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 32,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 317,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.067,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1341,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 33,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 319,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.0655,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1339,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 34,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 317,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.0639,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1339,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 35,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 316,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.0624,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1339,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 36,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 315,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.0609,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1338,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 37,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 313,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.0595,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 1338,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 38,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 313,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.058,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 1335,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 39,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 312,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      13.7
+     ],
+     "max_pen_cm": 0.0566,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 1338,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 40,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 312,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      13.5
+     ],
+     "max_pen_cm": 0.0552,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1337,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 41,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 315,
+     "col_rest_dist_pct": [
+      4.6,
+      6.1,
+      13.5
+     ],
+     "max_pen_cm": 0.0539,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1337,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 42,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 318,
+     "col_rest_dist_pct": [
+      4.6,
+      6.1,
+      13.5
+     ],
+     "max_pen_cm": 0.0525,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1337,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 43,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 320,
+     "col_rest_dist_pct": [
+      4.6,
+      6.1,
+      13.5
+     ],
+     "max_pen_cm": 0.0512,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1336,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 44,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 325,
+     "col_rest_dist_pct": [
+      4.6,
+      5.9,
+      13.5
+     ],
+     "max_pen_cm": 0.0862,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 1336,
+     "local_inversions": 2,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 45,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 322,
+     "col_rest_dist_pct": [
+      4.6,
+      6.0,
+      13.5
+     ],
+     "max_pen_cm": 0.0962,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 1336,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 46,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 322,
+     "col_rest_dist_pct": [
+      4.6,
+      6.0,
+      13.5
+     ],
+     "max_pen_cm": 0.1047,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 1336,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 47,
+     "intersecting_pairs": 6,
+     "pushed_vertices": 323,
+     "col_rest_dist_pct": [
+      4.6,
+      5.9,
+      13.5
+     ],
+     "max_pen_cm": 0.094,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1336,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 48,
+     "intersecting_pairs": 6,
+     "pushed_vertices": 325,
+     "col_rest_dist_pct": [
+      4.6,
+      5.9,
+      13.4
+     ],
+     "max_pen_cm": 0.0853,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1336,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 49,
+     "intersecting_pairs": 6,
+     "pushed_vertices": 324,
+     "col_rest_dist_pct": [
+      4.6,
+      5.9,
+      13.4
+     ],
+     "max_pen_cm": 0.0754,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1337,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 50,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 322,
+     "col_rest_dist_pct": [
+      4.6,
+      5.9,
+      13.4
+     ],
+     "max_pen_cm": 0.084,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1336,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 51,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 322,
+     "col_rest_dist_pct": [
+      4.6,
+      5.9,
+      13.4
+     ],
+     "max_pen_cm": 0.0518,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1337,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 52,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 317,
+     "col_rest_dist_pct": [
+      4.6,
+      5.9,
+      13.4
+     ],
+     "max_pen_cm": 0.0403,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1339,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 53,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 319,
+     "col_rest_dist_pct": [
+      4.6,
+      5.8,
+      13.4
+     ],
+     "max_pen_cm": 0.0422,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1340,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 54,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 318,
+     "col_rest_dist_pct": [
+      4.6,
+      5.7,
+      13.4
+     ],
+     "max_pen_cm": 0.0381,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1341,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 55,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 318,
+     "col_rest_dist_pct": [
+      4.6,
+      5.7,
+      13.4
+     ],
+     "max_pen_cm": 0.037,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1342,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 56,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 311,
+     "col_rest_dist_pct": [
+      4.6,
+      5.7,
+      13.4
+     ],
+     "max_pen_cm": 0.036,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1342,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 57,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 308,
+     "col_rest_dist_pct": [
+      4.6,
+      5.8,
+      13.4
+     ],
+     "max_pen_cm": 0.0349,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1342,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 58,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 306,
+     "col_rest_dist_pct": [
+      4.6,
+      5.8,
+      13.4
+     ],
+     "max_pen_cm": 0.0339,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1342,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 59,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 304,
+     "col_rest_dist_pct": [
+      4.6,
+      5.8,
+      13.4
+     ],
+     "max_pen_cm": 0.0329,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 1343,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 60,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 304,
+     "col_rest_dist_pct": [
+      4.6,
+      5.8,
+      13.4
+     ],
+     "max_pen_cm": 0.0321,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1344,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 61,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 305,
+     "col_rest_dist_pct": [
+      4.6,
+      5.8,
+      13.4
+     ],
+     "max_pen_cm": 0.0316,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 1344,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 62,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 306,
+     "col_rest_dist_pct": [
+      4.6,
+      5.8,
+      13.4
+     ],
+     "max_pen_cm": 0.031,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1344,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 63,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 308,
+     "col_rest_dist_pct": [
+      4.6,
+      5.8,
+      13.4
+     ],
+     "max_pen_cm": 0.0305,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1344,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 64,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 308,
+     "col_rest_dist_pct": [
+      4.6,
+      5.7,
+      13.4
+     ],
+     "max_pen_cm": 0.0299,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1344,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 65,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 306,
+     "col_rest_dist_pct": [
+      4.6,
+      5.7,
+      13.4
+     ],
+     "max_pen_cm": 0.0294,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1344,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 66,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 305,
+     "col_rest_dist_pct": [
+      4.6,
+      5.7,
+      13.3
+     ],
+     "max_pen_cm": 0.0289,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1344,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 67,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 304,
+     "col_rest_dist_pct": [
+      4.6,
+      5.7,
+      13.4
+     ],
+     "max_pen_cm": 0.0284,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1344,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 68,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 306,
+     "col_rest_dist_pct": [
+      4.6,
+      5.7,
+      13.3
+     ],
+     "max_pen_cm": 0.0279,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1345,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 69,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 302,
+     "col_rest_dist_pct": [
+      4.6,
+      5.7,
+      13.4
+     ],
+     "max_pen_cm": 0.0274,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 1346,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": "repair",
+     "local_inversions_per_pass": [
+      0
+     ]
+    }
+   ],
+   "max_posed_delta_cm": 2.3534919021447593,
+   "max_rest_delta_cm": 2.6612140465528165,
+   "rest_delta_sha256": "183e33b92b5fa87ef351262dc74e46445f04849bc2a932b7a8165b5b33f5ad2d",
+   "nonzero_vertices": 11245
+  },
+  "130": {
+   "pose": "D2_r_flex130",
+   "key_pose_bones": [
+    "forearm_r"
+   ],
+   "iterations": [
+    {
+     "it": 0,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 466,
+     "col_rest_dist_pct": [
+      5.1,
+      16.8,
+      19.2
+     ],
+     "max_pen_cm": 1.4999,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 3064,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 33.5
+    },
+    {
+     "it": 1,
+     "intersecting_pairs": 122,
+     "pushed_vertices": 889,
+     "col_rest_dist_pct": [
+      4.7,
+      6.0,
+      17.1
+     ],
+     "max_pen_cm": 0.9131,
+     "loop_floor_active": 16,
+     "edge_floor_active": 0,
+     "plane_violations": 2435,
+     "local_inversions": 2,
+     "volume_deficit_cm3": 461.4
+    },
+    {
+     "it": 2,
+     "intersecting_pairs": 210,
+     "pushed_vertices": 817,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      15.7
+     ],
+     "max_pen_cm": 1.1938,
+     "loop_floor_active": 17,
+     "edge_floor_active": 0,
+     "plane_violations": 2210,
+     "local_inversions": 3,
+     "volume_deficit_cm3": 226.6
+    },
+    {
+     "it": 3,
+     "intersecting_pairs": 185,
+     "pushed_vertices": 719,
+     "col_rest_dist_pct": [
+      4.6,
+      5.5,
+      16.1
+     ],
+     "max_pen_cm": 1.1563,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 2192,
+     "local_inversions": 3,
+     "volume_deficit_cm3": 116.5
+    },
+    {
+     "it": 4,
+     "intersecting_pairs": 81,
+     "pushed_vertices": 564,
+     "col_rest_dist_pct": [
+      4.6,
+      5.9,
+      16.8
+     ],
+     "max_pen_cm": 1.4172,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 2178,
+     "local_inversions": 5,
+     "volume_deficit_cm3": 60.6
+    },
+    {
+     "it": 5,
+     "intersecting_pairs": 49,
+     "pushed_vertices": 500,
+     "col_rest_dist_pct": [
+      4.6,
+      6.1,
+      16.8
+     ],
+     "max_pen_cm": 0.1752,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 2171,
+     "local_inversions": 5,
+     "volume_deficit_cm3": 31.3
+    },
+    {
+     "it": 6,
+     "intersecting_pairs": 47,
+     "pushed_vertices": 483,
+     "col_rest_dist_pct": [
+      4.6,
+      6.1,
+      16.8
+     ],
+     "max_pen_cm": 0.1557,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 2171,
+     "local_inversions": 3,
+     "volume_deficit_cm3": 16.2
+    },
+    {
+     "it": 7,
+     "intersecting_pairs": 40,
+     "pushed_vertices": 458,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.1745,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 2176,
+     "local_inversions": 2,
+     "volume_deficit_cm3": 8.4
+    },
+    {
+     "it": 8,
+     "intersecting_pairs": 37,
+     "pushed_vertices": 448,
+     "col_rest_dist_pct": [
+      4.6,
+      6.4,
+      17.2
+     ],
+     "max_pen_cm": 0.1538,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 2171,
+     "local_inversions": 2,
+     "volume_deficit_cm3": 4.4
+    },
+    {
+     "it": 9,
+     "intersecting_pairs": 36,
+     "pushed_vertices": 435,
+     "col_rest_dist_pct": [
+      4.6,
+      6.7,
+      17.2
+     ],
+     "max_pen_cm": 0.1517,
+     "loop_floor_active": 18,
+     "edge_floor_active": 0,
+     "plane_violations": 2172,
+     "local_inversions": 2,
+     "volume_deficit_cm3": 2.3
+    },
+    {
+     "it": 10,
+     "intersecting_pairs": 25,
+     "pushed_vertices": 437,
+     "col_rest_dist_pct": [
+      4.6,
+      6.5,
+      17.2
+     ],
+     "max_pen_cm": 0.1469,
+     "loop_floor_active": 19,
+     "edge_floor_active": 0,
+     "plane_violations": 2168,
+     "local_inversions": 3,
+     "volume_deficit_cm3": 1.2
+    },
+    {
+     "it": 11,
+     "intersecting_pairs": 21,
+     "pushed_vertices": 437,
+     "col_rest_dist_pct": [
+      4.6,
+      6.5,
+      17.2
+     ],
+     "max_pen_cm": 0.1447,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2167,
+     "local_inversions": 2,
+     "volume_deficit_cm3": 0.6
+    },
+    {
+     "it": 12,
+     "intersecting_pairs": 26,
+     "pushed_vertices": 431,
+     "col_rest_dist_pct": [
+      4.6,
+      6.7,
+      17.2
+     ],
+     "max_pen_cm": 0.1427,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2165,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 0.3
+    },
+    {
+     "it": 13,
+     "intersecting_pairs": 20,
+     "pushed_vertices": 422,
+     "col_rest_dist_pct": [
+      4.6,
+      7.0,
+      17.2
+     ],
+     "max_pen_cm": 0.1406,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2167,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.2
+    },
+    {
+     "it": 14,
+     "intersecting_pairs": 19,
+     "pushed_vertices": 427,
+     "col_rest_dist_pct": [
+      4.6,
+      6.7,
+      17.2
+     ],
+     "max_pen_cm": 0.1386,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2171,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.1
+    },
+    {
+     "it": 15,
+     "intersecting_pairs": 16,
+     "pushed_vertices": 428,
+     "col_rest_dist_pct": [
+      4.6,
+      6.7,
+      17.2
+     ],
+     "max_pen_cm": 0.1602,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2173,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 16,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 433,
+     "col_rest_dist_pct": [
+      4.6,
+      6.5,
+      17.2
+     ],
+     "max_pen_cm": 0.1372,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2171,
+     "local_inversions": 0,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 17,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 436,
+     "col_rest_dist_pct": [
+      4.6,
+      6.4,
+      17.2
+     ],
+     "max_pen_cm": 0.1328,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2169,
+     "local_inversions": 1,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 18,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 441,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      17.2
+     ],
+     "max_pen_cm": 0.1309,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2170,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 19,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 439,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      17.2
+     ],
+     "max_pen_cm": 0.129,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2171,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 20,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 444,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.1272,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2173,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 21,
+     "intersecting_pairs": 13,
+     "pushed_vertices": 440,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.1254,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2174,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 22,
+     "intersecting_pairs": 13,
+     "pushed_vertices": 440,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.1237,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2175,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 23,
+     "intersecting_pairs": 13,
+     "pushed_vertices": 441,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.1219,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2173,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 24,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 444,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.1202,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2173,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 25,
+     "intersecting_pairs": 14,
+     "pushed_vertices": 446,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.802,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2174,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 26,
+     "intersecting_pairs": 13,
+     "pushed_vertices": 441,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.6735,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2175,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 27,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 444,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.4701,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2175,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 28,
+     "intersecting_pairs": 9,
+     "pushed_vertices": 444,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.3908,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2174,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 29,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 441,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.1122,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2173,
+     "local_inversions": 2,
+     "volume_deficit_cm3": 0.0
+    },
+    {
+     "it": 30,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 437,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.1106,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2173,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 31,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 434,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.7649,
+     "loop_floor_active": 20,
+     "edge_floor_active": 0,
+     "plane_violations": 2171,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 32,
+     "intersecting_pairs": 8,
+     "pushed_vertices": 432,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.3873,
+     "loop_floor_active": 22,
+     "edge_floor_active": 0,
+     "plane_violations": 2172,
+     "local_inversions": 2,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 33,
+     "intersecting_pairs": 6,
+     "pushed_vertices": 433,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.1062,
+     "loop_floor_active": 22,
+     "edge_floor_active": 0,
+     "plane_violations": 2171,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 34,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 432,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.1048,
+     "loop_floor_active": 22,
+     "edge_floor_active": 0,
+     "plane_violations": 2172,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 35,
+     "intersecting_pairs": 5,
+     "pushed_vertices": 431,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.1033,
+     "loop_floor_active": 22,
+     "edge_floor_active": 0,
+     "plane_violations": 2173,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 36,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 430,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      17.2
+     ],
+     "max_pen_cm": 0.102,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2176,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 37,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 423,
+     "col_rest_dist_pct": [
+      4.6,
+      6.4,
+      17.2
+     ],
+     "max_pen_cm": 0.1006,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2176,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 38,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 427,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      17.2
+     ],
+     "max_pen_cm": 0.0993,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2175,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 39,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 425,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      17.2
+     ],
+     "max_pen_cm": 0.0979,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2177,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 40,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 428,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      17.2
+     ],
+     "max_pen_cm": 0.0966,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2178,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 41,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 427,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      17.2
+     ],
+     "max_pen_cm": 0.0954,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2178,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 42,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 427,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.0941,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2177,
+     "local_inversions": 2,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 43,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 428,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.0929,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2179,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 44,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 429,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.0916,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2182,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 45,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 431,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.0904,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2182,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 46,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 432,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.0893,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2182,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 47,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 434,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.0881,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2182,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 48,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 433,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.087,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2181,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 49,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 431,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.2
+     ],
+     "max_pen_cm": 0.0859,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2178,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.1
+    },
+    {
+     "it": 50,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 424,
+     "col_rest_dist_pct": [
+      4.6,
+      6.3,
+      17.2
+     ],
+     "max_pen_cm": 0.0848,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2179,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 51,
+     "intersecting_pairs": 2,
+     "pushed_vertices": 424,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0837,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2178,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 52,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 426,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0826,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2178,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 53,
+     "intersecting_pairs": 1,
+     "pushed_vertices": 427,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0815,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2179,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 54,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 427,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0805,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2180,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 55,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 430,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.0
+     ],
+     "max_pen_cm": 0.0947,
+     "loop_floor_active": 21,
+     "edge_floor_active": 0,
+     "plane_violations": 2180,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 56,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 431,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.0
+     ],
+     "max_pen_cm": 0.0785,
+     "loop_floor_active": 22,
+     "edge_floor_active": 0,
+     "plane_violations": 2182,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 57,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 432,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.0
+     ],
+     "max_pen_cm": 0.1018,
+     "loop_floor_active": 22,
+     "edge_floor_active": 0,
+     "plane_violations": 2182,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 58,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 431,
+     "col_rest_dist_pct": [
+      4.6,
+      6.1,
+      17.0
+     ],
+     "max_pen_cm": 0.0973,
+     "loop_floor_active": 22,
+     "edge_floor_active": 0,
+     "plane_violations": 2181,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 59,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 429,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.0
+     ],
+     "max_pen_cm": 0.0983,
+     "loop_floor_active": 23,
+     "edge_floor_active": 0,
+     "plane_violations": 2180,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 60,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 427,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0946,
+     "loop_floor_active": 24,
+     "edge_floor_active": 0,
+     "plane_violations": 2179,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 61,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 424,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0915,
+     "loop_floor_active": 24,
+     "edge_floor_active": 0,
+     "plane_violations": 2177,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 62,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 423,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0877,
+     "loop_floor_active": 24,
+     "edge_floor_active": 0,
+     "plane_violations": 2176,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 63,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 417,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0838,
+     "loop_floor_active": 24,
+     "edge_floor_active": 0,
+     "plane_violations": 2176,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 64,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 419,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0798,
+     "loop_floor_active": 24,
+     "edge_floor_active": 0,
+     "plane_violations": 2176,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 65,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 418,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0759,
+     "loop_floor_active": 24,
+     "edge_floor_active": 0,
+     "plane_violations": 2177,
+     "local_inversions": 1,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 66,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 419,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.072,
+     "loop_floor_active": 24,
+     "edge_floor_active": 0,
+     "plane_violations": 2177,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 67,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 419,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0684,
+     "loop_floor_active": 25,
+     "edge_floor_active": 0,
+     "plane_violations": 2177,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 68,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 423,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0676,
+     "loop_floor_active": 25,
+     "edge_floor_active": 0,
+     "plane_violations": 2175,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": 69,
+     "intersecting_pairs": 0,
+     "pushed_vertices": 423,
+     "col_rest_dist_pct": [
+      4.6,
+      6.2,
+      17.1
+     ],
+     "max_pen_cm": 0.0668,
+     "loop_floor_active": 25,
+     "edge_floor_active": 0,
+     "plane_violations": 2173,
+     "local_inversions": 0,
+     "volume_deficit_cm3": -0.0
+    },
+    {
+     "it": "repair",
+     "local_inversions_per_pass": [
+      0
+     ]
+    }
+   ],
+   "max_posed_delta_cm": 3.1234742180155606,
+   "max_rest_delta_cm": 3.218362747191809,
+   "rest_delta_sha256": "fb998689878effd3020aa2f5dab14e6128bb8446b803d6715ea7cc630fdadd92",
+   "nonzero_vertices": 11314
+  }
+ },
+ "support_ids_sha256": "d27197b4205604cd557df920464a0744332dc5f4b63f8d7cb1288b5240732cc6"
+}
