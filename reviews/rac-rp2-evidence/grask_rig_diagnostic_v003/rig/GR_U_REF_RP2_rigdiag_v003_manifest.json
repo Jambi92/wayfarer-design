@@ -1,0 +1,36 @@
+{
+ "file": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Grask/RP2/DIAG/GR_U_REF_RP2_rigdiag_v003.blend",
+ "file_sha256": "4ab743fe0750982da4d9ba6757aa18f784208569b4e4a05b06eae976f0b6b2db",
+ "pc_copy_sha256_after_restage": "4ab743fe0750982da4d9ba6757aa18f784208569b4e4a05b06eae976f0b6b2db",
+ "status": "DIAGNOSTIC DERIVED COPY - never a frozen or production rig",
+ "derived_from": {
+  "blend": "GR_U_REF_RP2_retopo_v003.blend",
+  "sha256": "03bfe7d924ff5b8b61a4c10095af5d16ca29d41667d7f61d0abeca14e1f07ce0",
+  "opened_read_only": true,
+  "written_with": "save_as to the new path only"
+ },
+ "readback_body_geometry_hash": "f9c4a7ac98e86d98017376b9d67c85428503d2d6385258471d99bc766bfe702f",
+ "readback_equals_frozen_v003": true,
+ "body_object": "GR_U_REF_RP2_rigdiag_v003_body",
+ "vertices": 170466,
+ "faces": 170464,
+ "landmark_version": "GR_U_REF_RP2_rigprep_landmarks_v002.json (v002 hip / GH / all pivots; the same set used by rigdiag_v001 and every comparison in this cycle)",
+ "skeleton": "86 bones, 83 deforming; bone names, deform order and every matrix_local identical to rig_v001.json (max |diff| 0.0)",
+ "weight_version": "W0 = weights_v001c.npz (bone heat + midline cleanup), sha256 of npz 74cbfb957cfaeb3e1d19c368ff6ea4e720bff57d1609e03a95674291e8796b2f; read back from the blend bit-identical",
+ "why_W0": "WN not adopted (no change to any retained criterion; the nail plate is already rigid under W0), WNcap rejected (binds fold skin, moves strain outward), E1/E2 not selected (no geometric-integrity improvement across 90/130)",
+ "custom_properties": {
+  "rac_rigdiag_version": "v003",
+  "rac_landmark_version": "GR_U_REF_RP2_rigprep_landmarks_v002 (v002 hip/GH/pivots retained baseline)",
+  "rac_weight_version": "W0 = weights_v001c.npz (bone heat + midline cleanup), sha256 74cbfb957cfaeb3e1d19c368ff6ea4e720bff57d1609e03a95674291e8796b2f",
+  "rac_cycle": "order b303b9e nail binding + left-elbow weight isolation: WN (plate) not adopted, WNcap rejected, E1/E2 not selected; baseline W0 retained",
+  "rac_status_line": "retopology frozen; nail/elbow diagnostic review pending; production deformation not accepted"
+ },
+ "transient_evaluation_copies": {
+  "note": "el_W0/E1/E2.blend: derived copies (rig_build WEIGHTS_NPZ) used only for the Blender DQS evaluation of identical arrays; read-back geometry f9c4a7ac... for each and weights bit-identical to the npz; kept in the cloud workspace only, not delivered",
+  "sha256": {
+   "W0": "b8bcd6c2524632f42277b3b59e5b153a450982625f195f18cdd536a567795495",
+   "E1": "112ecb1437d7f447edf8865b1c01672241fdad1e544d3a16c42e9f7c3edc7658",
+   "E2": "59e6d30b7ca4b81adeda8109d23fc640b1bf3c6c7f0d7275c617e44d06146bc6"
+  }
+ }
+}

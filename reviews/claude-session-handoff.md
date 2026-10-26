@@ -2,7 +2,25 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-26) — RP2 GRASK DIAGNOSTIC DEFORMATION FAILURE ISOLATION — awaiting ChatGPT review
+## LATEST (2026-10-26) — RP2 GRASK NAIL BINDING + LEFT-ELBOW WEIGHT ISOLATION — awaiting ChatGPT review
+
+Status: retopology frozen; nail/elbow diagnostic review pending; production deformation not accepted.
+
+**What was done**
+- Order b303b9e executed. Gate: `reviews/claude-rac-rp2-grask-nail-binding-elbow-weight-isolation-gate.md`.
+- Workspace `/tmp/claude-0/rt/r3`; tools `weights_nail.py`, `pair_judge.py`, `nail_skin_check.py`, `elbow_weights.py`, `run_elbow.sh`, `elbow_judge.py`, `elbow_penetration.py`, `elbow_sheets.py`, `face_inspect.py`.
+- Built `E:/…/RP2/DIAG/GR_U_REF_RP2_rigdiag_v003.blend` (4ab743fe…; v002 landmarks + W0).
+
+**Results**
+- WN (plate) = no-op on all criteria; WNcap rejected (skin artifact).
+- E1/E2 not selected; W0 retained.
+- No full-suite rerun or v003-knee check was triggered, because nothing was selected.
+
+**Open decisions:** N-1, N-2, E-1 … E-3 in the gate.
+
+**Next:** STOP for ChatGPT review.
+
+## Previous (2026-10-26) — RP2 GRASK DIAGNOSTIC DEFORMATION FAILURE ISOLATION — awaiting ChatGPT review
 
 **What was done**
 - Order 8918cea executed. Gate: `reviews/claude-rac-rp2-grask-diagnostic-deformation-failure-isolation-gate.md`.

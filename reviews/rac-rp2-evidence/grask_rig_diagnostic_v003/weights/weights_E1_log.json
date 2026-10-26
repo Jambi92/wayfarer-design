@@ -1,0 +1,65 @@
+{
+ "tag": "E1",
+ "mode": "uniform",
+ "parent": "weights_v001c.npz",
+ "parent_sha256": "2189375bcdc06801f3433bab605cd4b989a0112ca94838e4f146b73c2eb8df2e",
+ "method": "# elbow_weights.py RIG.json PARENT.npz OUTDIR TAG MODE : LEFT-ELBOW-ONLY diagnostic weight candidate (order b303b9e \u00a74).\n# Support region: arm_l vertices within R_OUT of the left elbow pivot (connected elbow / upper-arm / forearm sleeve).\n#   alpha = 1 inside R_CORE, smoothstep taper 1 -> 0 across the boundary band R_CORE..R_OUT, 0 outside (no hard cutoff).\n# Target rows Wt: only the upperarm_l / forearm_l pair is re-split; the pair's total share P = W[upperarm] + W[forearm] of every vertex is\n#   kept, every other bone's weight is untouched (so row sums and non-negativity are preserved exactly):\n#   forearm = P * smoothstep(0.5 + 0.5 * s / h(theta)),  upperarm = P - forearm,   s = signed distance along the elbow bisector axis.\n#   MODE uniform : h = 4.5 cm all round (regularises the bone-heat split, whose inner/outer spread is 0.17..0.53 at one axial slab).\n#   MODE crease  : h = 6.0 cm on the flexor (anterior, inner-crease) side, 3.0 cm on the extensor (olecranon) side, cosine-interpolated\n#                  around the axis (spreads inner-crease compression over more loops, keeps the outer contour on the forearm).\n# Final W = W_parent + alpha * (Wt - W_parent); every vertex outside the support is copied bit-identical from the parent.\n# Writes weights_TAG.npz, weights_TAG_log.json (region, band, per-bone deltas, boundary-continuity checks), weights_TAG_maps.npz.\n",
+ "elbow_pivot_src_cm": [
+  26.42849706431589,
+  -8.225917457629038,
+  142.77199506759644
+ ],
+ "bisector_axis": [
+  0.13638263870406278,
+  0.15381446717808017,
+  -0.9786423685631235
+ ],
+ "flexor_direction": [
+  -0.02123026847430429,
+  0.988099746830614,
+  0.15234226601237644
+ ],
+ "support": {
+  "part": "arm_l",
+  "core_radius_cm": 9.0,
+  "outer_radius_cm": 13.0,
+  "vertices": 8209,
+  "core_vertices": 4425,
+  "band_vertices": 3784,
+  "connected_components": 1,
+  "dropped_islands": [
+   {
+    "vertices": 5,
+    "ids": [
+     11723,
+     44664,
+     133905,
+     144558,
+     44662
+    ]
+   }
+  ]
+ },
+ "half_width_cm": {
+  "min": 4.5,
+  "max": 4.5
+ },
+ "changed_vertices": 4269,
+ "max_abs_delta": {
+  "upperarm_l": 0.11437076330184937,
+  "forearm_l": 0.11437076702713966,
+  "other_bones": 0.0
+ },
+ "row_sum_max_abs_change": 2.9802322387695312e-08,
+ "negative": 0,
+ "non_support_rows_bit_identical": true,
+ "boundary": {
+  "max_edge_delta_change_core": 0.07421934604644775,
+  "max_edge_delta_change_band": 0.02107417583465576,
+  "max_edge_delta_change_on_support_boundary_edges": 0.0,
+  "support_boundary_edges": 366,
+  "max_abs_delta_in_outer_1cm_of_band": 0.0,
+  "max_edge_delta_change_anywhere": 0.07421934604644775
+ },
+ "weights_sha256": "c5306f3f39ff1d36492dbfd5a800aaaa54879f81b93f4300dd48a4499de3ef18"
+}

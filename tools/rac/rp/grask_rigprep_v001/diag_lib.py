@@ -68,6 +68,7 @@ def build_poses(rig):
     Mh = np.array(FIT['wrist_l']['hand_frame']); u_d, v_rad, w_dor = Mh[:, 0], Mh[:, 1], Mh[:, 2]     # construction hand frame (analysis)
     dor = lambda j: np.array(FIT['cx_' + j]['dorsal'])
     ax, sg_ = ch('forearm_l', FWD, ('X',)); P['D2_l_flex90'] = {'forearm_l': [(ax, sg_ * 90)]}; P['D2_l_flex130'] = {'forearm_l': [(ax, sg_ * 130)]}
+    if os.environ.get('ELBOW_SET'): P['D2_l_flex45'] = {'forearm_l': [(ax, sg_ * 45)]}   # elbow isolation set only (order b303b9e §4); not part of the 43-pose suite
     ax, sg_ = ch('hand_l', -w_dor, ('X', 'Z')); P['D3_l_flex60'] = {'hand_l': [(ax, sg_ * 60)]}; P['D3_l_ext60'] = {'hand_l': [(ax, -sg_ * 60)]}
     ax2 = 'Z' if ax == 'X' else 'X'; a2, s2 = ch('hand_l', v_rad, (ax2,)); P['D3_l_radial20'] = {'hand_l': [(a2, s2 * 20)]}; P['D3_l_ulnar20'] = {'hand_l': [(a2, -s2 * 20)]}
     fist = {}

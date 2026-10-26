@@ -1,5 +1,25 @@
 # Character Design Status
 
+## Grask RP2 — 2026-10-26 — retopology frozen; nail/elbow diagnostic review pending; production deformation not accepted
+
+**Order:** `reviews/chatgpt-rac-rp2-grask-baseline-nail-binding-and-elbow-weight-isolation-order.md` (b303b9e).
+
+**Delivered:**
+- gate `reviews/claude-rac-rp2-grask-nail-binding-elbow-weight-isolation-gate.md`;
+- evidence `reviews/rac-rp2-evidence/grask_rig_diagnostic_v003/`.
+
+**Baseline:** W0 retained.
+
+**Nail:**
+- WN (groove-bounded plate binding, bit-identical to W0 elsewhere) gives 20/43 → 20/43 with no criterion change. The plate is already rigid under W0.
+- WNcap (documented cap) passes the nail criterion only by binding fold skin; it is rejected for a demonstrated surrounding-skin artifact.
+
+**Left elbow:** two continuous tapered candidates (E1, E2); neither selected; sentinels unchanged.
+
+**Rig `rigdiag_v003.blend`** (4ab743fe…): v002 landmarks + W0; rest geometry = frozen v003.
+
+**Parents unchanged.** Not production deformation.
+
 ## Grask RP2 — 2026-10-26 — retopology frozen; diagnostic deformation follow-up awaiting review
 
 **Order:** `reviews/chatgpt-rac-rp2-grask-diagnostic-deformation-failure-isolation-order.md` (8918cea).
