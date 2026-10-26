@@ -1,0 +1,56 @@
+{
+ "rigid": {
+  "pose": "root rotated 30 deg about Z (whole body, rigid)",
+  "max_vertex_motion_cm": 112.84157896640227,
+  "intersections": 0,
+  "orientation_failures": 0,
+  "local_inversions": 0,
+  "new_folds": 0,
+  "max_edge_strain_pct": 9.92761428619815e-11,
+  "total_volume_change_pct": -3.3306690738754696e-14,
+  "zones": {
+   "D1 shoulder": {
+    "faces": 2403,
+    "cone_volume_rest_cm3": 1797.035001258682,
+    "rigid_change_pct": 6.661338147750939e-14,
+    "reference_shift_sensitivity_pct": {
+     "+x 1 cm": -7.822385718154312,
+     "+f 1 cm": 2.2245421366009266,
+     "+u 1 cm": -4.378380424860506
+    }
+   },
+   "D2 elbow": {
+    "faces": 4429,
+    "cone_volume_rest_cm3": 643.9667523532094,
+    "rigid_change_pct": -2.220446049250313e-14,
+    "reference_shift_sensitivity_pct": {
+     "+x 1 cm": 0.013746067066877643,
+     "+f 1 cm": 0.7166873717615818,
+     "+u 1 cm": -0.09554282066642772
+    }
+   },
+   "D6 hip": {
+    "faces": 2469,
+    "cone_volume_rest_cm3": 4328.292192093856,
+    "rigid_change_pct": -4.440892098500626e-14,
+    "reference_shift_sensitivity_pct": {
+     "+x 1 cm": -3.567687030583977,
+     "+f 1 cm": 0.3950784180684064,
+     "+u 1 cm": -0.07773276817230057
+    }
+   },
+   "D7 knee": {
+    "faces": 2855,
+    "cone_volume_rest_cm3": 1707.056712561666,
+    "rigid_change_pct": -4.440892098500626e-14,
+    "reference_shift_sensitivity_pct": {
+     "+x 1 cm": 0.11978612774077302,
+     "+f 1 cm": -0.557524616472227,
+     "+u 1 cm": 0.3614390300906267
+    }
+   }
+  }
+ },
+ "estimator": "zone volume = signed open-patch CONE-VOLUME PROXY: sum over the zone faces (split into triangles) of the tetrahedron from the posed joint centre to each triangle (divergence form without a cap). The patch boundary is not closed, so the number depends on the reference point (see reference_shift_sensitivity_pct) and is not anatomical tissue volume; under rigid motion with the reference carried along it is exactly invariant.",
+ "total_volume_estimator": "closed-mesh divergence-theorem volume of the whole body (reference independent)."
+}

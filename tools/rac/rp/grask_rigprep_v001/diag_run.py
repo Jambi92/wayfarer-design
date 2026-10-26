@@ -21,7 +21,8 @@ LOOPS = {k: np.array(v) for k, v in LOOPS.items()}
 Z = np.load('/tmp/claude-0/rt/frz/v003_frz.npz'); V0 = Z['V'].astype(float); Q = np.asarray(Z['Q']); FP = Z['FP']
 co = np.empty(len(body.data.vertices) * 3); body.data.vertices.foreach_get('co', co); Vb0 = co.reshape(-1, 3)
 assert np.abs(bl_to_src(Vb0) - V0).max() < 1e-4, 'mesh order mismatch'
-rig = Rig(RJ, WN); P = build_poses(rig); LM = json.load(open(LMF))['joints']
+rig = Rig(RJ, WN); P = build_poses(rig)
+import hashlib; WSHA = hashlib.sha256(np.ascontiguousarray(rig.W.astype(np.float32)).tobytes()).hexdigest(); LM = json.load(open(LMF))['joints']
 PN = [PARTS[i] for i in FP]; PG = np.array([('axial' if p == 'axial' else 'ear' if p.startswith('ear') else 'arm' if p.startswith('arm') else 'hand' if p.startswith('hand')
                                              else 'leg' if p.startswith('leg') else 'foot' if p.startswith('foot') else 'digit') for p in PN])
 SIDE = np.array([p[-1] if p[-2:] in ('_l', '_r') else 'c' for p in PN])
@@ -33,7 +34,8 @@ def volume(V):
     T = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; a_, b_, c_ = V[T[:, 0]], V[T[:, 1]], V[T[:, 2]]; return float(np.einsum('ij,ij->i', a_, np.cross(b_, c_)).sum() / 6)
 def cone_vol(V, faces, c):
     T = np.r_[Q[faces][:, [0, 1, 2]], Q[faces][:, [0, 2, 3]]]; a_, b_, c_ = V[T[:, 0]] - c, V[T[:, 1]] - c, V[T[:, 2]] - c; return float(np.einsum('ij,ij->i', a_, np.cross(b_, c_)).sum() / 6)
-N0 = fnorm(V0); FOLD0 = int(((N0[EFs[:, 0]] * N0[EFs[:, 1]]).sum(1) < -0.5).sum()); VOL0 = volume(V0); C0 = V0[Q].mean(1)
+N0 = fnorm(V0); _NS0 = np.zeros_like(N0); np.add.at(_NS0, EFs[:, 0], N0[EFs[:, 1]]); np.add.at(_NS0, EFs[:, 1], N0[EFs[:, 0]]); INV0 = (N0 * _NS0).sum(1) < 0
+FOLD0 = int(((N0[EFs[:, 0]] * N0[EFs[:, 1]]).sum(1) < -0.5).sum()); VOL0 = volume(V0); C0 = V0[Q].mean(1)
 L0 = np.linalg.norm(V0[ue[:, 0]] - V0[ue[:, 1]], axis=1)
 J = lambda k: np.array(LM[k]['position_source_frame_cm'])
 TEST = {   # tested pivot joints (landmark ids), crease radius cm, declared contact part-group pairs, loops prefixes
@@ -106,6 +108,17 @@ def measure(name, pose):
     out['folds'] = dict(new=int(fold.sum() - FOLD0), in_crease=int(inz(fe).sum()) if len(fe) else 0, outside=int((~inz(fe)).sum()) if len(fe) else 0)
     Lf = Lin[Q].mean(1); Fl = np.diag([1.0, -1.0, 1.0]); ne = np.einsum('ij,fjk,kl,fl->fi', Fl, Lf, Fl, N0); ne /= np.maximum(np.linalg.norm(ne, axis=1), 1e-12)[:, None]
     flip = (N * ne).sum(1) < 0; out['flips'] = dict(total=int(flip.sum()), in_crease=int(inz(np.nonzero(flip)[0]).sum()) if flip.any() else 0)
+    # orientation failure above = face normal opposed to the SKINNED reference normal (rest normal carried by the blended bone transform).
+    # Geometric local-inversion check: the face normal opposes the summed normals of its 4 edge neighbours (a demonstrated local fold-over).
+    NS = np.zeros_like(N); np.add.at(NS, EFs[:, 0], N[EFs[:, 1]]); np.add.at(NS, EFs[:, 1], N[EFs[:, 0]]); inv = ((N * NS).sum(1) < 0) & ~INV0
+    out['inversions'] = dict(total=int(inv.sum()), in_crease=int(inz(np.nonzero(inv)[0]).sum()) if inv.any() else 0, orientation_failures_that_are_local_inversions=int((inv & flip).sum()))
+    def reps(mask, k=4):
+        idx = np.nonzero(mask)[0][:k]; out_ = []
+        for i in idx:
+            f0, f1 = pr[i]; n = N[f1]; d = float(-((V[Q[f0]] - V[Q[f1]].mean(0)) @ n).min() * 10)
+            out_.append(dict(faces=[int(f0), int(f1)], parts=[PN[f0], PN[f1]], at=np.round(0.5 * (C[f0] + C[f1]), 2).tolist(), depth_mm=round(max(d, 0.0), 2)))
+        return out_
+    out['intersections']['representative_pairs'] = {c: reps(cls == c) for c in ('non-contact', 'crease', 'contact')} if len(pr) else {}
     # ---------- volume, strain, zone
     ZG = {'D1': ('arm', 'axial'), 'D2': ('arm',), 'D3': ('arm', 'hand'), 'D4': ('hand', 'digit'), 'D5': ('hand', 'digit'), 'D6': ('leg', 'axial'), 'D7': ('leg',),
           'D8': ('leg', 'foot', 'digit'), 'D9': ('axial',), 'D10': ('axial',)}[tid]
@@ -116,7 +129,7 @@ def measure(name, pose):
     out['volume'] = dict(total_pct=100 * (volume(V) / VOL0 - 1), zone_pct=100 * (zone_v1 / zone_v0 - 1) if abs(zone_v0) > 1e-9 else None)
     out['strain'] = dict(zone_p95_pct=float(np.percentile(st[ze], 95) * 100) if ze.any() else 0.0, zone_max_pct=float(st[ze].max() * 100) if ze.any() else 0.0, global_max_pct=float(st.max() * 100))
     # ---------- loop spacing (consecutive loops of the zone; fixed nearest-vertex pairs from the rest pose)
-    ls = {}
+    ls = {}; COMP = []
     for pre in lpre:
         pre = pre.format(s=s); ks = sorted([k for k in LOOPS if k.startswith(pre)], key=lambda k: (k.rsplit('_', 1)[0], float(k.rsplit('_', 1)[1]) if k.rsplit('_', 1)[1].replace('.', '').isdigit() else 0))
         for k1, k2 in zip(ks[:-1], ks[1:]):
@@ -125,7 +138,9 @@ def measure(name, pose):
             if not len(a1) or not len(a2): continue
             dd = np.linalg.norm(V0[a1][:, None] - V0[a2][None], axis=2); j2 = a2[dd.argmin(1)]; r0 = dd.min(1); r1 = np.linalg.norm(V[a1] - V[j2], axis=1)
             ok = r0 > 1e-4
-            if ok.any(): ls['%s|%s' % (k1, k2)] = float((r1[ok] / r0[ok]).min())
+            if ok.any():
+                ls['%s|%s' % (k1, k2)] = float((r1[ok] / r0[ok]).min()); rr = np.where(ok, r1 / np.maximum(r0, 1e-9), 9)
+                COMP.extend(a1[rr < 0.5].tolist())
     out['loop_spacing_min_ratio'] = min(ls.values()) if ls else None; out['loop_spacing_worst'] = min(ls, key=ls.get) if ls else None
     if tid in ('D4', 'D5'):
         out['nail_rigidity_mm'] = {f: kabsch_res(V0[ix], V[ix]) * 10 for f, ix in NAIL.items() if len(ix) >= 4 and (tid == 'D5') == (f == 'thumb')}
@@ -137,6 +152,14 @@ def measure(name, pose):
     # rest return (numpy LBS with the zero pose; Blender check in rig_check.py)
     Vr, _, _ = rig.skin(Vb0, {}); out['rest_return_T1_mm'] = float(np.linalg.norm(bl_to_src(Vr) - V0, axis=1).max() * 10)
     np.savez_compressed('%s/posed/%s%s.npz' % (O, name, os.environ.get('TAG', '')), V=V.astype(np.float32), Q=Q)
+    os.makedirs(O + '/ids', exist_ok=True)
+    codes = np.array([{'non-contact': 0, 'crease': 1, 'contact': 2}[c] for c in cls], np.int8) if len(pr) else np.zeros(0, np.int8)
+    np.savez_compressed('%s/ids/%s%s.npz' % (O, name, os.environ.get('TAG', '')), pairs=pr.astype(np.int32), pair_class=codes, fold_faces=EFs[fold].astype(np.int32),
+                        orientation_fail_faces=np.nonzero(flip)[0].astype(np.int32), inversion_faces=np.nonzero(inv)[0].astype(np.int32), compressed_loop_vertices=np.unique(np.array(COMP, np.int32)))
+    EP = {'D1': ['forearm_' + s, 'hand_' + s], 'D2': ['hand_' + s], 'D3': ['middle_p1_' + s], 'D4': ['index_p3_' + s, 'middle_p3_' + s], 'D5': ['thumb_p2_' + s, 'index_p3_' + s],
+          'D6': ['shin_' + s, 'foot_' + s], 'D7': ['foot_' + s], 'D8': ['hallux_p1_' + s], 'D9': ['neck', 'head'], 'D10': ['head', 'eye_l']}[tid]
+    out['world_endpoints_cm'] = {b: np.round(bl_to_src(M[b][:3, 3][None])[0], 3).tolist() for b in EP}
+    out['weights_sha256'] = WSHA
     return out
 R = {}
 for nm, pose in P.items():

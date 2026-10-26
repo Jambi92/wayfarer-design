@@ -2,7 +2,30 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-25, night 2) — RP2 GRASK LANDMARK ADJUDICATION v002 + DIAGNOSTIC RIG v001 — awaiting ChatGPT review
+## LATEST (2026-10-26) — RP2 GRASK DIAGNOSTIC DEFORMATION FAILURE ISOLATION — awaiting ChatGPT review
+
+**What was done**
+- Order 8918cea executed. Gate: `reviews/claude-rac-rp2-grask-diagnostic-deformation-failure-isolation-gate.md`.
+- Workspace `/tmp/claude-0/rt/r2`; tools `run_iso.sh`, `weights_dev.py`, `lm_v003.py`, `iso_judge.py`, `iso_sheets.py`, `metric_check.py`.
+- Built v003 bounded knees and `rigdiag_v002` (E:/…/DIAG, 9e2d078a…).
+
+**Results**
+
+| Suite | Baseline W0 | W2 |
+|---|---|---|
+| Full suite (43 poses) | 20 | 12 |
+
+- Nail binding helps.
+- Region-boundary weight seams caused the W2 regressions.
+- The topology contribution is not excluded.
+
+**Open decisions:** D-1 … D-7 in the gate.
+
+**Next:** STOP for ChatGPT review.
+
+**Disk note:** old loose scratch files (> 2 days) in `/tmp/claude-0` were deleted to free space.
+
+## Previous (2026-10-25, night 2) — RP2 GRASK LANDMARK ADJUDICATION v002 + DIAGNOSTIC RIG v001 — awaiting ChatGPT review
 
 **What was done**
 - Order bf7d664 executed. Gate: `reviews/claude-rac-rp2-grask-rig-landmark-adjudication-diagnostic-gate.md`.

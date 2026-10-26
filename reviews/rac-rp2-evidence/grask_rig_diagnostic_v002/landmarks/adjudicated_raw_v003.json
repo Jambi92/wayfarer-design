@@ -1,0 +1,4822 @@
+{
+ "R": {
+  "root": {
+   "id": "root",
+   "side": "c",
+   "provenance_class": "rig control (production origin)",
+   "suitability": "diagnostic rig; final carry-forward subject to rig contract",
+   "p": [
+    0.11179767867288516,
+    -5.722717396009755,
+    -0.0
+   ],
+   "construction_rule": "world/root-motion bone at the production origin on the ground plane (0,0,0 production)",
+   "limitation": "not an anatomical point",
+   "inside_v005": false,
+   "depth_v005_cm": 10.872674024037275,
+   "inside_v003": false,
+   "depth_v003_cm": 10.880160445001748
+  },
+  "pelvis": {
+   "id": "pelvis",
+   "side": "c",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    0.12074946528862966,
+    -2.4203800993448574,
+    123.928
+   ],
+   "construction_rule": "v001 internal pelvis proposal moved toward the torso-section centroid at its height, capped at 5 mm",
+   "limitation": "internal; no pelvic bony anatomy in the source",
+   "inside_v005": true,
+   "depth_v005_cm": 11.802292321591352,
+   "inside_v003": true,
+   "depth_v003_cm": 11.800053103771587,
+   "adjustment_cm": 0.5,
+   "adjustment_reason": "section-centroid fitting (centroid 0.76 cm away; capped)"
+  },
+  "hip_l": {
+   "id": "hip_l",
+   "side": "l",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    12.137201571955872,
+    -2.3900677988985612,
+    118.9420114905001
+   ],
+   "construction_rule": "v001 consensus hip moved toward the proximal-thigh load axis (soft-tissue thigh centreline), capped at 5 mm",
+   "limitation": "femoral head internal; no trochanteric relief",
+   "inside_v005": true,
+   "depth_v005_cm": 7.0036021456152895,
+   "inside_v003": true,
+   "depth_v003_cm": 7.003141385604756,
+   "adjustment_cm": 0.5,
+   "adjustment_reason": "thigh load axis 5.35 cm from the consensus; moved 0.5 cm toward it"
+  },
+  "knee_l": {
+   "id": "knee_l",
+   "side": "l",
+   "provenance_class": "manual-author-rig (bounded experimental candidate, pending review)",
+   "suitability": "diagnostic rig",
+   "p": [
+    13.946245341176565,
+    -5.185607661524745,
+    71.1661
+   ],
+   "construction_rule": "v001 consensus [13.658, 1.005, 71.166] moved toward the horizontal leg-section centroid at the consensus level, total displacement capped at 5.0 mm (AD-R2 as clarified by order 8918cea)",
+   "limitation": "section-centre requirement only partly met: 0.28 cm residual to the section centroid (the two requirements conflict); internal centre accuracy not established",
+   "inside_v005": true,
+   "depth_v005_cm": 5.8365367641004084,
+   "inside_v003": true,
+   "depth_v003_cm": 5.838910425327975,
+   "adjustment_cm": 0.4999999999999999,
+   "adjustment_reason": "bounded toward the section centroid (unrestricted distance 0.78 cm)",
+   "v002_unrestricted_comparison": {
+    "p_source": [
+     14.043265317361607,
+     -5.443182641236978,
+     71.1661
+    ],
+    "p_production": [
+     13.931467638688721,
+     0.2795347547727767,
+     71.1661
+    ],
+    "status": "comparison only \u2014 not approved (exceeded the AD-R2 5 mm total-displacement cap)"
+   }
+  },
+  "ankle_l": {
+   "id": "ankle_l",
+   "side": "l",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    15.639609440738418,
+    -4.389731133835452,
+    13.5
+   ],
+   "construction_rule": "v001 consensus / anterior-crease level; AP/ML = distal-shin horizontal section centroid",
+   "limitation": "no malleolar relief; diagnostic engineering axis (mediolateral), not a biological axis",
+   "inside_v005": true,
+   "depth_v005_cm": 4.30541885100466,
+   "inside_v003": true,
+   "depth_v003_cm": 4.304430116848616,
+   "adjustment_cm": 1.1013688662050103,
+   "adjustment_reason": "section centre vs v001 xy"
+  },
+  "hip_r": {
+   "id": "hip_r",
+   "side": "r",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    -11.927076330144212,
+    -2.474684861773859,
+    119.08981272881765
+   ],
+   "construction_rule": "v001 consensus hip moved toward the proximal-thigh load axis (soft-tissue thigh centreline), capped at 5 mm",
+   "limitation": "femoral head internal; no trochanteric relief",
+   "inside_v005": true,
+   "depth_v005_cm": 6.9526417810396515,
+   "inside_v003": true,
+   "depth_v003_cm": 6.952639869417445,
+   "adjustment_cm": 0.5,
+   "adjustment_reason": "thigh load axis 5.02 cm from the consensus; moved 0.5 cm toward it"
+  },
+  "knee_r": {
+   "id": "knee_r",
+   "side": "r",
+   "provenance_class": "manual-author-rig (bounded experimental candidate, pending review)",
+   "suitability": "diagnostic rig",
+   "p": [
+    -13.33007025315484,
+    -4.881728815653536,
+    71.1974
+   ],
+   "construction_rule": "v001 consensus [-13.159, 1.253, 71.197] moved toward the horizontal leg-section centroid at the consensus level, total displacement capped at 5.0 mm (AD-R2 as clarified by order 8918cea)",
+   "limitation": "section-centre requirement only partly met: 0.08 cm residual to the section centroid (the two requirements conflict); internal centre accuracy not established",
+   "inside_v005": true,
+   "depth_v005_cm": 5.933415399616638,
+   "inside_v003": true,
+   "depth_v003_cm": 5.933052288956896,
+   "adjustment_cm": 0.5000000000000001,
+   "adjustment_reason": "bounded toward the section centroid (unrestricted distance 0.58 cm)",
+   "v002_unrestricted_comparison": {
+    "p_source": [
+     -13.376775350523735,
+     -4.949873686851868,
+     71.1974
+    ],
+    "p_production": [
+     -13.48857302919662,
+     0.772843709157887,
+     71.1974
+    ],
+    "status": "comparison only \u2014 not approved (exceeded the AD-R2 5 mm total-displacement cap)"
+   }
+  },
+  "ankle_r": {
+   "id": "ankle_r",
+   "side": "r",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    -15.496633714420906,
+    -5.8453453664232775,
+    13.75
+   ],
+   "construction_rule": "v001 consensus / anterior-crease level; AP/ML = distal-shin horizontal section centroid",
+   "limitation": "no malleolar relief; diagnostic engineering axis (mediolateral), not a biological axis",
+   "inside_v005": true,
+   "depth_v005_cm": 4.292597371277306,
+   "inside_v003": true,
+   "depth_v003_cm": 4.290122475235917,
+   "adjustment_cm": 0.9892646616966133,
+   "adjustment_reason": "section centre vs v001 xy"
+  },
+  "glenohumeral_l": {
+   "id": "glenohumeral_l",
+   "side": "l",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    21.16103726498263,
+    -10.426842869321428,
+    175.7184
+   ],
+   "construction_rule": "acromion anchor; free upper-arm shaft centreline (18 sections, z 145.8-154.1) extrapolated superiorly; point 4.0 cm inferior to the acromion on that line",
+   "limitation": "humeral head internal; extrapolation over 21.6 cm from a short free-arm base (half-fit spread 0.99 cm)",
+   "inside_v005": true,
+   "depth_v005_cm": 3.6367136206635857,
+   "inside_v003": true,
+   "depth_v003_cm": 3.6339756570119564,
+   "acromion_to_gh_cm": 4.886445267765601,
+   "acromion_vertical_drop_cm": 4.0,
+   "gh_rule": {
+    "n_sections": 18,
+    "section_z": [
+     145.75051669405514,
+     154.13441889063526
+    ],
+    "axis_point": [
+     25.06093911342333,
+     -8.585772851190988,
+     149.95940144589267
+    ],
+    "axis_dir": [
+     -0.14932130049017797,
+     -0.07049176622499631,
+     0.9862728122149583
+    ],
+    "axis_rms_cm": 0.05489370249120064,
+    "armpit_contact_z": 154.50808248153243,
+    "candidates": [
+     {
+      "offset_cm": 3.5,
+      "p": [
+       21.085337469428687,
+       -10.462579313311345,
+       176.2184
+      ],
+      "inside": true,
+      "depth_cm": 3.467686942905958
+     },
+     {
+      "offset_cm": 4.0,
+      "p": [
+       21.16103726498263,
+       -10.426842869321428,
+       175.7184
+      ],
+      "inside": true,
+      "depth_cm": 3.6367136206635857
+     },
+     {
+      "offset_cm": 4.5,
+      "p": [
+       21.23673706053658,
+       -10.39110642533151,
+       175.2184
+      ],
+      "inside": true,
+      "depth_cm": 3.7920653196998897
+     }
+    ],
+    "half_fit_spread_cm": 0.9903493854764901,
+    "rule_satisfied": true
+   }
+  },
+  "elbow_l": {
+   "id": "elbow_l",
+   "side": "l",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    26.42846453978108,
+    -8.225923308114918,
+    142.772
+   ],
+   "construction_rule": "v001 cubital/waist target level; moved toward the reference-stance hinge (midpoint of the upper-arm and forearm axes at that level), capped at 5 mm",
+   "limitation": "no epicondylar relief",
+   "inside_v005": true,
+   "depth_v005_cm": 3.313248835575646,
+   "inside_v003": true,
+   "depth_v003_cm": 3.3136453102909704,
+   "adjustment_cm": 0.2836284726635109,
+   "adjustment_reason": "hinge point 0.28 cm from target",
+   "flex_axis": [
+    0.9887881791278598,
+    -0.011696528636500543,
+    0.14886614133128803
+   ]
+  },
+  "glenohumeral_r": {
+   "id": "glenohumeral_r",
+   "side": "r",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    -22.635357120056383,
+    -7.002779603532033,
+    174.0354
+   ],
+   "construction_rule": "acromion anchor; free upper-arm shaft centreline (16 sections, z 146.0-153.4) extrapolated superiorly; point 4.0 cm inferior to the acromion on that line",
+   "limitation": "humeral head internal; extrapolation over 20.7 cm from a short free-arm base (half-fit spread 0.86 cm)",
+   "inside_v005": true,
+   "depth_v005_cm": 4.729379723675189,
+   "inside_v003": true,
+   "depth_v003_cm": 4.72612111672589,
+   "acromion_to_gh_cm": 5.206867034222625,
+   "acromion_vertical_drop_cm": 4.0,
+   "gh_rule": {
+    "n_sections": 16,
+    "section_z": [
+     145.95372480463257,
+     153.38056625624301
+    ],
+    "axis_point": [
+     -25.804805297905194,
+     -8.196874425195752,
+     149.67349332609197
+    ],
+    "axis_dir": [
+     0.12885918666555413,
+     0.048547910830828746,
+     0.990473831237279
+    ],
+    "axis_rms_cm": 0.04392983176176263,
+    "armpit_contact_z": 153.84379332660976,
+    "candidates": [
+     {
+      "offset_cm": 3.5,
+      "p": [
+       -22.5703078564607,
+       -6.978272186324359,
+       174.5354
+      ],
+      "inside": true,
+      "depth_cm": 4.593541421099438
+     },
+     {
+      "offset_cm": 4.0,
+      "p": [
+       -22.635357120056383,
+       -7.002779603532033,
+       174.0354
+      ],
+      "inside": true,
+      "depth_cm": 4.729379723675189
+     },
+     {
+      "offset_cm": 4.5,
+      "p": [
+       -22.700406383652062,
+       -7.027287020739706,
+       173.5354
+      ],
+      "inside": true,
+      "depth_cm": 4.8391364084453174
+     }
+    ],
+    "half_fit_spread_cm": 0.8550798211626316,
+    "rule_satisfied": true
+   }
+  },
+  "elbow_r": {
+   "id": "elbow_r",
+   "side": "r",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    -26.832731093228794,
+    -8.6501350452569,
+    142.9873
+   ],
+   "construction_rule": "v001 cubital/waist target level; moved toward the reference-stance hinge (midpoint of the upper-arm and forearm axes at that level), capped at 5 mm",
+   "limitation": "no epicondylar relief",
+   "inside_v005": true,
+   "depth_v005_cm": 3.689576775089645,
+   "inside_v003": true,
+   "depth_v003_cm": 3.6888722220240444,
+   "adjustment_cm": 0.13505760006120165,
+   "adjustment_reason": "hinge point 0.14 cm from target",
+   "flex_axis": [
+    0.9903116635036741,
+    0.0458232073748849,
+    -0.13108410580411423
+   ]
+  },
+  "sternoclavicular_l": {
+   "id": "sternoclavicular_l",
+   "side": "l",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    3.693583365497399,
+    2.627447156694159,
+    178.26815127498725
+   ],
+   "construction_rule": "jugular-notch / clavicular anterior surface summit moved 3.00 cm straight posterior (\u2212f, local AP)",
+   "limitation": "manual rigging landmark, not a measured joint",
+   "inside_v005": true,
+   "depth_v005_cm": 2.5826759820189173,
+   "inside_v003": true,
+   "depth_v003_cm": 2.582523288870536,
+   "surface_anchor": [
+    3.693583365497399,
+    5.627447156694159,
+    178.26815127498725
+   ],
+   "inward_direction": [
+    -0.0,
+    -1.0,
+    -0.0
+   ],
+   "inward_cm": 3.0,
+   "through_thickness_cm": 22.437729522295125
+  },
+  "sternoclavicular_r": {
+   "id": "sternoclavicular_r",
+   "side": "r",
+   "provenance_class": "manual-author-rig",
+   "suitability": "diagnostic rig",
+   "p": [
+    -2.3146358979490564,
+    2.622888604354195,
+    178.3659346032337
+   ],
+   "construction_rule": "jugular-notch / clavicular anterior surface summit moved 3.00 cm straight posterior (\u2212f, local AP)",
+   "limitation": "manual rigging landmark, not a measured joint",
+   "inside_v005": true,
+   "depth_v005_cm": 2.6414449183124304,
+   "inside_v003": true,
+   "depth_v003_cm": 2.6429439853441297,
+   "surface_anchor": [
+    -2.3146358979490564,
+    5.622888604354195,
+    178.3659346032337
+   ],
+   "inward_direction": [
+    -0.0,
+    -1.0,
+    -0.0
+   ],
+   "inward_cm": 3.0,
+   "through_thickness_cm": 21.865598567012427
+  },
+  "spine_01": {
+   "id": "spine_01",
+   "side": "c",
+   "provenance_class": "frozen package marker (MPFB/E3-seeded fitted estimate), carried unchanged",
+   "suitability": "diagnostic rig (reference position)",
+   "p": [
+    0.1326,
+    -8.4859,
+    133.8816
+   ],
+   "construction_rule": "frozen v003 record, unchanged (AD-R6)",
+   "limitation": "MPFB/E3-derived placement; not independently anatomical",
+   "inside_v005": true,
+   "depth_v005_cm": 5.62090099548191,
+   "inside_v003": true,
+   "depth_v003_cm": 5.620483372214158
+  },
+  "spine_02": {
+   "id": "spine_02",
+   "side": "c",
+   "provenance_class": "frozen package marker (MPFB/E3-seeded fitted estimate), carried unchanged",
+   "suitability": "diagnostic rig (reference position)",
+   "p": [
+    -0.1057,
+    -6.5197,
+    142.4234
+   ],
+   "construction_rule": "frozen v003 record, unchanged (AD-R6)",
+   "limitation": "MPFB/E3-derived placement; not independently anatomical",
+   "inside_v005": true,
+   "depth_v005_cm": 6.5295141300516395,
+   "inside_v003": true,
+   "depth_v003_cm": 6.545735841916727
+  },
+  "spine_03": {
+   "id": "spine_03",
+   "side": "c",
+   "provenance_class": "frozen package marker (MPFB/E3-seeded fitted estimate), carried unchanged",
+   "suitability": "diagnostic rig (reference position)",
+   "p": [
+    -0.3558,
+    -7.0518,
+    150.0432
+   ],
+   "construction_rule": "frozen v003 record, unchanged (AD-R6)",
+   "limitation": "MPFB/E3-derived placement; not independently anatomical",
+   "inside_v005": true,
+   "depth_v005_cm": 6.863790125589051,
+   "inside_v003": true,
+   "depth_v003_cm": 6.866405196624009
+  },
+  "neck_base": {
+   "id": "neck_base",
+   "side": "c",
+   "provenance_class": "frozen package marker (MPFB/E3-seeded fitted estimate), carried unchanged",
+   "suitability": "diagnostic rig (reference position)",
+   "p": [
+    0.4192,
+    -4.3503,
+    189.1433
+   ],
+   "construction_rule": "frozen v003 record, unchanged (AD-R6)",
+   "limitation": "MPFB/E3-derived placement; not independently anatomical",
+   "inside_v005": true,
+   "depth_v005_cm": 4.789200657977696,
+   "inside_v003": true,
+   "depth_v003_cm": 4.812192708889043
+  },
+  "thoracic_01": {
+   "id": "thoracic_01",
+   "side": "c",
+   "provenance_class": "manual-author-rig (rig-prep control)",
+   "suitability": "diagnostic rig",
+   "p": [
+    -0.2322535791024767,
+    -4.648740565613525,
+    159.818225
+   ],
+   "construction_rule": "25% of the spine_03->neck_base vertical interval; AP/ML = torso horizontal-section centroid, section clipped to |x| <= 19.98 cm (trunk half-width at z 152, below the armpit) so the arm/deltoid masses do not bias it",
+   "limitation": "rig-prep control, not a declared vertebra",
+   "inside_v005": true,
+   "depth_v005_cm": 12.31156448330548,
+   "inside_v003": true,
+   "depth_v003_cm": 12.320569905657047,
+   "clip_half_width_cm": 19.97789078611051,
+   "clipped_area_cm2": 1041.9634861527259
+  },
+  "thoracic_02": {
+   "id": "thoracic_02",
+   "side": "c",
+   "provenance_class": "manual-author-rig (rig-prep control)",
+   "suitability": "diagnostic rig",
+   "p": [
+    -0.04651068936788682,
+    -5.440853323127784,
+    169.59325
+   ],
+   "construction_rule": "50% of the spine_03->neck_base vertical interval; AP/ML = torso horizontal-section centroid, section clipped to |x| <= 19.98 cm (trunk half-width at z 152, below the armpit) so the arm/deltoid masses do not bias it",
+   "limitation": "rig-prep control, not a declared vertebra",
+   "inside_v005": true,
+   "depth_v005_cm": 12.621986661291373,
+   "inside_v003": true,
+   "depth_v003_cm": 12.628546728537152,
+   "clip_half_width_cm": 19.97789078611051,
+   "clipped_area_cm2": 1100.197216867367
+  },
+  "thoracic_03": {
+   "id": "thoracic_03",
+   "side": "c",
+   "provenance_class": "manual-author-rig (rig-prep control)",
+   "suitability": "diagnostic rig",
+   "p": [
+    -0.11671186393947958,
+    -6.341200782749741,
+    179.368275
+   ],
+   "construction_rule": "75% of the spine_03->neck_base vertical interval; AP/ML = torso horizontal-section centroid, section clipped to |x| <= 19.98 cm (trunk half-width at z 152, below the armpit) so the arm/deltoid masses do not bias it",
+   "limitation": "rig-prep control, not a declared vertebra",
+   "inside_v005": true,
+   "depth_v005_cm": 7.948587150625169,
+   "inside_v003": true,
+   "depth_v003_cm": 7.955971385383812,
+   "clip_half_width_cm": 19.97789078611051,
+   "clipped_area_cm2": 765.8528368752056
+  },
+  "head_pivot": {
+   "id": "head_pivot",
+   "side": "c",
+   "provenance_class": "fitted joint-centre estimate (v001 consensus)",
+   "suitability": "diagnostic rig",
+   "p": [
+    0.0338,
+    2.7669,
+    200.1776
+   ],
+   "construction_rule": "v001 consensus (unchanged)",
+   "limitation": "internal; no skull anatomy",
+   "inside_v005": true,
+   "depth_v005_cm": 7.367817187384074,
+   "inside_v003": true,
+   "depth_v003_cm": 7.368661074397241
+  },
+  "crown": {
+   "id": "crown",
+   "side": "c",
+   "provenance_class": "frozen surface marker",
+   "suitability": "diagnostic rig + final carry-forward",
+   "p": [
+    -0.051,
+    1.484,
+    217.9665
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "surface marker",
+   "inside_v005": true,
+   "depth_v005_cm": 0.0203745483743273,
+   "inside_v003": true,
+   "depth_v003_cm": 0.021505660128959415
+  },
+  "chin": {
+   "id": "chin",
+   "side": "c",
+   "provenance_class": "frozen surface marker",
+   "suitability": "diagnostic rig + final carry-forward",
+   "p": [
+    0.1313,
+    11.975,
+    189.6293
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "surface marker",
+   "inside_v005": true,
+   "depth_v005_cm": 0.026699320742693152,
+   "inside_v003": true,
+   "depth_v003_cm": 0.010952886176487523
+  },
+  "eye_l": {
+   "id": "eye_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig \u2014 NON-DEFORMING eye aim/reference only",
+   "p": [
+    3.65,
+    10.4,
+    203.85
+   ],
+   "construction_rule": "v003 eyeball-volume centre; sphere check 0.1-0.15 cm",
+   "limitation": "no eyeball geometry; body mesh never weighted to it",
+   "inside_v005": true,
+   "depth_v005_cm": 1.1693186707768977,
+   "inside_v003": true,
+   "depth_v003_cm": 1.17845482308223
+  },
+  "jaw_hinge_l": {
+   "id": "jaw_hinge_l",
+   "side": "l",
+   "provenance_class": "deferred facial placeholder (rule-based; corrects the frozen \"construction coordinate (copied)\" label)",
+   "suitability": "DEFERRED \u2014 REQUIRES FACIAL/ORAL COMPONENT STAGE (not in the diagnostic rig)",
+   "p": [
+    6.0059,
+    2.7802,
+    198.24
+   ],
+   "construction_rule": "estimated TMJ: 2.2 cm anterior, 2 cm below, 1.5 cm medial of ear root (no jaw in source)",
+   "limitation": "closed sculpted mouth; no mandible / oral cavity",
+   "inside_v005": true,
+   "depth_v005_cm": 1.2764340433195596,
+   "inside_v003": true,
+   "depth_v003_cm": 1.2766052678402688,
+   "frozen_label": "construction coordinate (copied)"
+  },
+  "mouth_corner_l": {
+   "id": "mouth_corner_l",
+   "side": "l",
+   "provenance_class": "frozen surface marker",
+   "suitability": "reference marker (not a rig joint)",
+   "p": [
+    2.745,
+    13.3891,
+    194.53
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "surface marker",
+   "inside_v005": true,
+   "depth_v005_cm": 0.00886047541416174,
+   "inside_v003": true,
+   "depth_v003_cm": 0.012758187735295027
+  },
+  "ear_root_l": {
+   "id": "ear_root_l",
+   "side": "l",
+   "provenance_class": "frozen surface marker",
+   "suitability": "reference marker (not a rig joint)",
+   "p": [
+    7.5059,
+    0.5802,
+    200.24
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "surface marker",
+   "inside_v005": true,
+   "depth_v005_cm": 0.47431287685196183,
+   "inside_v003": true,
+   "depth_v003_cm": 0.5067460570691922
+  },
+  "ear_tip_l": {
+   "id": "ear_tip_l",
+   "side": "l",
+   "provenance_class": "frozen surface marker",
+   "suitability": "reference marker (not a rig joint)",
+   "p": [
+    11.4299,
+    -1.3855,
+    206.7398
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "surface marker",
+   "inside_v005": true,
+   "depth_v005_cm": 0.030662941561528455,
+   "inside_v003": true,
+   "depth_v003_cm": 0.02028922936312557
+  },
+  "eye_r": {
+   "id": "eye_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig \u2014 NON-DEFORMING eye aim/reference only",
+   "p": [
+    -3.65,
+    10.4,
+    203.85
+   ],
+   "construction_rule": "v003 eyeball-volume centre; sphere check 0.1-0.15 cm",
+   "limitation": "no eyeball geometry; body mesh never weighted to it",
+   "inside_v005": true,
+   "depth_v005_cm": 1.3316621942127955,
+   "inside_v003": true,
+   "depth_v003_cm": 1.33500608921233
+  },
+  "jaw_hinge_r": {
+   "id": "jaw_hinge_r",
+   "side": "r",
+   "provenance_class": "deferred facial placeholder (rule-based; corrects the frozen \"construction coordinate (copied)\" label)",
+   "suitability": "DEFERRED \u2014 REQUIRES FACIAL/ORAL COMPONENT STAGE (not in the diagnostic rig)",
+   "p": [
+    -5.9587,
+    2.6927,
+    198.3173
+   ],
+   "construction_rule": "estimated TMJ: 2.2 cm anterior, 2 cm below, 1.5 cm medial of ear root (no jaw in source)",
+   "limitation": "closed sculpted mouth; no mandible / oral cavity",
+   "inside_v005": true,
+   "depth_v005_cm": 1.1807894195927375,
+   "inside_v003": true,
+   "depth_v003_cm": 1.1792648217886843,
+   "frozen_label": "construction coordinate (copied)"
+  },
+  "mouth_corner_r": {
+   "id": "mouth_corner_r",
+   "side": "r",
+   "provenance_class": "frozen surface marker",
+   "suitability": "reference marker (not a rig joint)",
+   "p": [
+    -2.77,
+    13.4526,
+    194.53
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "surface marker",
+   "inside_v005": true,
+   "depth_v005_cm": 0.01122083303345279,
+   "inside_v003": true,
+   "depth_v003_cm": 0.007657850855991335
+  },
+  "ear_root_r": {
+   "id": "ear_root_r",
+   "side": "r",
+   "provenance_class": "frozen surface marker",
+   "suitability": "reference marker (not a rig joint)",
+   "p": [
+    -7.4587,
+    0.4927,
+    200.3173
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "surface marker",
+   "inside_v005": true,
+   "depth_v005_cm": 0.2704316146701871,
+   "inside_v003": true,
+   "depth_v003_cm": 0.28209277768563157
+  },
+  "ear_tip_r": {
+   "id": "ear_tip_r",
+   "side": "r",
+   "provenance_class": "frozen surface marker",
+   "suitability": "reference marker (not a rig joint)",
+   "p": [
+    -11.4329,
+    -1.396,
+    206.7311
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "surface marker",
+   "inside_v005": true,
+   "depth_v005_cm": 0.03183145464189791,
+   "inside_v003": true,
+   "depth_v003_cm": 0.020828509164669603
+  },
+  "acromion_l": {
+   "id": "acromion_l",
+   "side": "l",
+   "provenance_class": "frozen surface marker",
+   "suitability": "diagnostic rig anchor + final carry-forward",
+   "p": [
+    23.948,
+    -10.0949,
+    179.7184
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "lateral position derived from the frozen E3 GH seed ray",
+   "inside_v005": true,
+   "depth_v005_cm": 0.0031641967816721413,
+   "inside_v003": false,
+   "depth_v003_cm": 9.186079260344163e-06
+  },
+  "scapular_inferior_proxy_l": {
+   "id": "scapular_inferior_proxy_l",
+   "side": "l",
+   "provenance_class": "frozen surface proxy",
+   "suitability": "diagnostic rig anchor",
+   "p": [
+    10.9778,
+    -20.2383,
+    166.5157
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "surface proxy only",
+   "inside_v005": true,
+   "depth_v005_cm": 0.032043113267491305,
+   "inside_v003": true,
+   "depth_v003_cm": 0.023635414363513758
+  },
+  "scapula_medial_proxy_l": {
+   "id": "scapula_medial_proxy_l",
+   "side": "l",
+   "provenance_class": "manual-author-rig-proxy",
+   "suitability": "diagnostic rig only (girdle mechanics); not canon bony anatomy",
+   "p": [
+    10.7766,
+    -18.811029357007648,
+    174.43732
+   ],
+   "construction_rule": "level = inferior proxy + 60% toward the acromion (z 174.44); x = 45% from the posterior midline toward the acromion x (10.78); projected onto the posterior source surface (ray +f)",
+   "limitation": "no measurable scapular border in the source (GR-G2 constrained)",
+   "inside_v005": false,
+   "depth_v005_cm": 7.105427357601002e-15,
+   "inside_v003": false,
+   "depth_v003_cm": 0.001480818932871152,
+   "target": [
+    10.7766,
+    NaN,
+    174.43732
+   ]
+  },
+  "acromion_r": {
+   "id": "acromion_r",
+   "side": "r",
+   "provenance_class": "frozen surface marker",
+   "suitability": "diagnostic rig anchor + final carry-forward",
+   "p": [
+    -24.6543,
+    -9.6552,
+    178.0354
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "lateral position derived from the frozen E3 GH seed ray",
+   "inside_v005": true,
+   "depth_v005_cm": 0.0015877323901526228,
+   "inside_v003": false,
+   "depth_v003_cm": 3.069577296658849e-05
+  },
+  "scapular_inferior_proxy_r": {
+   "id": "scapular_inferior_proxy_r",
+   "side": "r",
+   "provenance_class": "frozen surface proxy",
+   "suitability": "diagnostic rig anchor",
+   "p": [
+    -10.7589,
+    -19.9759,
+    166.3302
+   ],
+   "construction_rule": "frozen v003 surface record",
+   "limitation": "surface proxy only",
+   "inside_v005": true,
+   "depth_v005_cm": 0.04228286083186068,
+   "inside_v003": true,
+   "depth_v003_cm": 0.021752341354171575
+  },
+  "scapula_medial_proxy_r": {
+   "id": "scapula_medial_proxy_r",
+   "side": "r",
+   "provenance_class": "manual-author-rig-proxy",
+   "suitability": "diagnostic rig only (girdle mechanics); not canon bony anatomy",
+   "p": [
+    -11.094435,
+    -18.6890694885776,
+    173.35332
+   ],
+   "construction_rule": "level = inferior proxy + 60% toward the acromion (z 173.35); x = 45% from the posterior midline toward the acromion x (-11.09); projected onto the posterior source surface (ray +f)",
+   "limitation": "no measurable scapular border in the source (GR-G2 constrained)",
+   "inside_v005": false,
+   "depth_v005_cm": 7.105427357601002e-15,
+   "inside_v003": true,
+   "depth_v003_cm": 0.0018496110138800335,
+   "target": [
+    -11.094435,
+    NaN,
+    173.35332
+   ]
+  },
+  "wrist_l": {
+   "id": "wrist_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    30.9,
+    1.2,
+    105.0
+   ],
+   "construction_rule": "v005 hand-construction frame origin",
+   "limitation": "ML/AP placement validated by the forearm/hand section; longitudinal placement is construction-defined (the forearm waist lies 7.0 cm proximal)",
+   "inside_v005": true,
+   "depth_v005_cm": 2.8235144081628927,
+   "inside_v003": true,
+   "depth_v003_cm": 2.822999663882427,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.30759656268712254,
+      0.9503336771756866,
+      -0.047436870141326734
+     ],
+     [
+      0.11181786227329805,
+      -0.0856108876396535,
+      -0.9900341113285847
+     ],
+     [
+      -0.9449238701079029,
+      0.2992268001755335,
+      -0.1325978949946587
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.30759656268712254,
+      -0.9503336771756866,
+      -0.047436870141326734
+     ],
+     [
+      0.11181786227329805,
+      0.0856108876396535,
+      -0.9900341113285847
+     ],
+     [
+      -0.9449238701079029,
+      -0.2992268001755335,
+      -0.1325978949946587
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 wrist flexion: hand moves palmar"
+   }
+  },
+  "index_mcp_l": {
+   "id": "index_mcp_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    31.1999,
+    6.9783,
+    90.2007
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.52 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.524183860182928,
+   "inside_v003": true,
+   "depth_v003_cm": 1.52280971386749,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.31759966584166494,
+      0.936178875333112,
+      -0.1506637502430248
+     ],
+     [
+      -0.21681393326694623,
+      -0.08298361850484333,
+      -0.9726795142292033
+     ],
+     [
+      -0.9231046368633293,
+      0.34158868898116695,
+      0.17662105469492767
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.31759966584166494,
+      -0.936178875333112,
+      -0.1506637502430248
+     ],
+     [
+      -0.21681393326694623,
+      0.08298361850484333,
+      -0.9726795142292033
+     ],
+     [
+      -0.9231046368633293,
+      -0.34158868898116695,
+      0.17662105469492767
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "index_pip_l": {
+   "id": "index_pip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    29.8643,
+    7.4894,
+    84.209
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.03 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.0805302725985981,
+   "inside_v003": true,
+   "depth_v003_cm": 1.093675239650047,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.31759966584166494,
+      0.936178875333112,
+      -0.15066375024302478
+     ],
+     [
+      -0.5995335106431288,
+      0.07515744306633715,
+      -0.796812982052662
+     ],
+     [
+      -0.7346359791578333,
+      0.3433955039480862,
+      0.5851405865217791
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.31759966584166494,
+      -0.936178875333112,
+      -0.15066375024302478
+     ],
+     [
+      -0.5995335106431288,
+      -0.07515744306633715,
+      -0.796812982052662
+     ],
+     [
+      -0.7346359791578333,
+      -0.3433955039480862,
+      0.5851405865217791
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "index_dip_l": {
+   "id": "index_dip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    27.5891,
+    7.2042,
+    81.1851
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.01 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.9609112260661511,
+   "inside_v003": true,
+   "depth_v003_cm": 0.9667013659572559,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.31759966584166494,
+      0.936178875333112,
+      -0.15066375024302475
+     ],
+     [
+      -0.7594493317898534,
+      0.15599983706062265,
+      -0.63158591124328
+     ],
+     [
+      -0.5677738675751184,
+      0.3150129588081877,
+      0.7605259174293163
+     ]
+    ],
+    "blender_det": 1.0,
+    "analysis_columns_XYZ": [
+     [
+      0.31759966584166494,
+      -0.936178875333112,
+      -0.15066375024302475
+     ],
+     [
+      -0.7594493317898534,
+      -0.15599983706062265,
+      -0.63158591124328
+     ],
+     [
+      -0.5677738675751184,
+      -0.3150129588081877,
+      0.7605259174293163
+     ]
+    ],
+    "analysis_det": -1.0,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "index_tip_l": {
+   "id": "index_tip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    25.25,
+    6.7237,
+    79.2398
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.48 cm deep; surface tip 0.48 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.48212912794408386,
+   "inside_v003": true,
+   "depth_v003_cm": 0.46474864474019384,
+   "v001_frame": null
+  },
+  "middle_mcp_l": {
+   "id": "middle_mcp_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    32.4086,
+    4.1008,
+    89.5884
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.78 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.7777908871650703,
+   "inside_v003": true,
+   "depth_v003_cm": 1.7780949653407592,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3095012050200897,
+      0.9486948207470643,
+      -0.06470812297391983
+     ],
+     [
+      -0.22316913289196788,
+      0.006320551378419899,
+      -0.9747592465601544
+     ],
+     [
+      -0.9243400576710714,
+      0.31613001710999905,
+      0.2136756187932356
+     ]
+    ],
+    "blender_det": 1.0,
+    "analysis_columns_XYZ": [
+     [
+      0.3095012050200897,
+      -0.9486948207470643,
+      -0.06470812297391983
+     ],
+     [
+      -0.22316913289196788,
+      -0.006320551378419899,
+      -0.9747592465601544
+     ],
+     [
+      -0.9243400576710714,
+      -0.31613001710999905,
+      0.2136756187932356
+     ]
+    ],
+    "analysis_det": -1.0,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "middle_pip_l": {
+   "id": "middle_pip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    30.9234,
+    4.0587,
+    83.1014
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.06 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.108196593236729,
+   "inside_v003": true,
+   "depth_v003_cm": 1.123884582534311,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3095012050200897,
+      0.9486948207470643,
+      -0.06470812297391983
+     ],
+     [
+      -0.6554401672605252,
+      0.16353876661463587,
+      -0.7373284606982552
+     ],
+     [
+      -0.688917405232737,
+      0.27061635002685847,
+      0.6724281373243789
+     ]
+    ],
+    "blender_det": 1.0,
+    "analysis_columns_XYZ": [
+     [
+      0.3095012050200897,
+      -0.9486948207470643,
+      -0.06470812297391983
+     ],
+     [
+      -0.6554401672605252,
+      -0.16353876661463587,
+      -0.7373284606982552
+     ],
+     [
+      -0.688917405232737,
+      -0.27061635002685847,
+      0.6724281373243789
+     ]
+    ],
+    "analysis_det": -1.0,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "middle_dip_l": {
+   "id": "middle_dip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    28.1116,
+    3.3572,
+    79.9383
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.01 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.9883252002768309,
+   "inside_v003": true,
+   "depth_v003_cm": 0.9954162959644884,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.30950120502008965,
+      0.9486948207470643,
+      -0.06470812297391981
+     ],
+     [
+      -0.8199408987216076,
+      0.23179552730989655,
+      -0.5234192928453532
+     ],
+     [
+      -0.48156611871550414,
+      0.21505573837222408,
+      0.8496146789565624
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.30950120502008965,
+      -0.9486948207470643,
+      -0.06470812297391981
+     ],
+     [
+      -0.8199408987216076,
+      -0.23179552730989655,
+      -0.5234192928453532
+     ],
+     [
+      -0.48156611871550414,
+      -0.21505573837222408,
+      0.8496146789565624
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "middle_tip_l": {
+   "id": "middle_tip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    25.4058,
+    2.5922,
+    78.211
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.49 cm deep; surface tip 0.50 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.49276680295652087,
+   "inside_v003": true,
+   "depth_v003_cm": 0.4735117814471017,
+   "v001_frame": null
+  },
+  "ring_mcp_l": {
+   "id": "ring_mcp_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    33.1772,
+    0.942,
+    89.9576
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.75 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.7530154090201728,
+   "inside_v003": true,
+   "depth_v003_cm": 1.7373164985246725,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.29904725314637437,
+      0.9539906257375369,
+      0.021739972182849652
+     ],
+     [
+      -0.26283148743054613,
+      0.10424826901122561,
+      -0.9591933629999793
+     ],
+     [
+      -0.9173278310400569,
+      0.2811301912158599,
+      0.28191393365046563
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.29904725314637437,
+      -0.9539906257375369,
+      0.021739972182849652
+     ],
+     [
+      -0.26283148743054613,
+      -0.10424826901122561,
+      -0.9591933629999793
+     ],
+     [
+      -0.9173278310400569,
+      -0.2811301912158599,
+      0.28191393365046563
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "ring_pip_l": {
+   "id": "ring_pip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    31.5003,
+    0.2769,
+    83.838
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.08 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.0261907480175527,
+   "inside_v003": true,
+   "depth_v003_cm": 1.0412402012495565,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.29904725314637437,
+      0.953990625737537,
+      0.02173997218284959
+     ],
+     [
+      -0.7308603916042631,
+      0.24363173976341435,
+      -0.6375630661855464
+     ],
+     [
+      -0.613525735702808,
+      0.1747725990673445,
+      0.7700913648688537
+     ]
+    ],
+    "blender_det": 1.0000000000000007,
+    "analysis_columns_XYZ": [
+     [
+      0.29904725314637437,
+      -0.953990625737537,
+      0.02173997218284959
+     ],
+     [
+      -0.7308603916042631,
+      -0.24363173976341435,
+      -0.6375630661855464
+     ],
+     [
+      -0.613525735702808,
+      -0.1747725990673445,
+      0.7700913648688537
+     ]
+    ],
+    "analysis_det": -1.0000000000000007,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "ring_dip_l": {
+   "id": "ring_dip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    28.5257,
+    -0.7147,
+    81.2431
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.01 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.9354458451474967,
+   "inside_v003": true,
+   "depth_v003_cm": 0.9437654494189124,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.29904725314637437,
+      0.953990625737537,
+      0.021739972182849593
+     ],
+     [
+      -0.8846794167558222,
+      0.2857152569412088,
+      -0.3683871896790081
+     ],
+     [
+      -0.35764936733368724,
+      0.09093227125680858,
+      0.9294182331382851
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.29904725314637437,
+      -0.953990625737537,
+      0.021739972182849593
+     ],
+     [
+      -0.8846794167558222,
+      -0.2857152569412088,
+      -0.3683871896790081
+     ],
+     [
+      -0.35764936733368724,
+      -0.09093227125680858,
+      0.9294182331382851
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "ring_tip_l": {
+   "id": "ring_tip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    25.7036,
+    -1.6261,
+    80.0679
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.47 cm deep; surface tip 0.48 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.47347368092409114,
+   "inside_v003": true,
+   "depth_v003_cm": 0.4602736794121519,
+   "v001_frame": null
+  },
+  "pinky_mcp_l": {
+   "id": "pinky_mcp_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    33.636,
+    -2.2202,
+    90.9582
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.46 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.4619474393190897,
+   "inside_v003": true,
+   "depth_v003_cm": 1.4582933056799565,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.28350651171981395,
+      0.9507621478582912,
+      0.1252014217664957
+     ],
+     [
+      -0.29922409962459734,
+      0.21174421576890437,
+      -0.9303920277454342
+     ],
+     [
+      -0.9110921995145783,
+      0.22630891561823324,
+      0.34452181163953516
+     ]
+    ],
+    "blender_det": 1.0,
+    "analysis_columns_XYZ": [
+     [
+      0.28350651171981395,
+      -0.9507621478582912,
+      0.1252014217664957
+     ],
+     [
+      -0.29922409962459734,
+      -0.21174421576890437,
+      -0.9303920277454342
+     ],
+     [
+      -0.9110921995145783,
+      -0.22630891561823324,
+      0.34452181163953516
+     ]
+    ],
+    "analysis_det": -1.0,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "pinky_pip_l": {
+   "id": "pinky_pip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    32.0726,
+    -3.3265,
+    86.0969
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.10 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.8770149426100216,
+   "inside_v003": true,
+   "depth_v003_cm": 0.8834478073267764,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.283506511719814,
+      0.9507621478582913,
+      0.12520142176649568
+     ],
+     [
+      -0.7967161759533161,
+      0.30618639990879004,
+      -0.5210501160975008
+     ],
+     [
+      -0.5337297001168173,
+      0.047971102872285856,
+      0.8442934208570082
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.283506511719814,
+      -0.9507621478582913,
+      0.12520142176649568
+     ],
+     [
+      -0.7967161759533161,
+      -0.30618639990879004,
+      -0.5210501160975008
+     ],
+     [
+      -0.5337297001168173,
+      -0.047971102872285856,
+      0.8442934208570082
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "pinky_dip_l": {
+   "id": "pinky_dip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    29.4872,
+    -4.3201,
+    84.4061
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.01 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.8067427956851103,
+   "inside_v003": true,
+   "depth_v003_cm": 0.81117462467309,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.2835065117198139,
+      0.9507621478582912,
+      0.12520142176649565
+     ],
+     [
+      -0.9312146199352187,
+      0.30412818405916275,
+      -0.2008615923460295
+     ],
+     [
+      -0.22904888000461715,
+      -0.05964382500112618,
+      0.9715859327449455
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.2835065117198139,
+      -0.9507621478582912,
+      0.12520142176649565
+     ],
+     [
+      -0.9312146199352187,
+      -0.30412818405916275,
+      -0.2008615923460295
+     ],
+     [
+      -0.22904888000461715,
+      0.05964382500112618,
+      0.9715859327449455
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "pinky_tip_l": {
+   "id": "pinky_tip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    26.9776,
+    -5.1397,
+    83.8648
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.42 cm deep; surface tip 0.42 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.41578686528462366,
+   "inside_v003": true,
+   "depth_v003_cm": 0.3955762639520015,
+   "v001_frame": null
+  },
+  "thumb_cmc_l": {
+   "id": "thumb_cmc_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    28.82,
+    4.4139,
+    101.7098
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 2.15 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 2.1519339839821265,
+   "inside_v003": true,
+   "depth_v003_cm": 2.145345377726879,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.8308174567433461,
+      0.33935474861688913,
+      -0.4411130333165031
+     ],
+     [
+      -0.3937171399229706,
+      -0.20181045647736406,
+      -0.8968050810445234
+     ],
+     [
+      -0.39335628544793133,
+      0.9187550784880409,
+      -0.0340578691500171
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.8308174567433461,
+      -0.33935474861688913,
+      -0.4411130333165031
+     ],
+     [
+      -0.3937171399229706,
+      0.20181045647736406,
+      -0.8968050810445234
+     ],
+     [
+      -0.39335628544793133,
+      -0.9187550784880409,
+      -0.0340578691500171
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "thumb_mcp_l": {
+   "id": "thumb_mcp_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    26.1349,
+    5.7903,
+    95.5936
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.65 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.6480491447540278,
+   "inside_v003": true,
+   "depth_v003_cm": 1.6479867638224779,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.8308174567433461,
+      0.3393547486168892,
+      -0.441113033316503
+     ],
+     [
+      -0.5045088641895025,
+      0.12459294687645107,
+      -0.8543695942289028
+     ],
+     [
+      -0.23497480614894967,
+      0.9323706088137967,
+      0.27472147403407277
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.8308174567433461,
+      -0.3393547486168892,
+      -0.441113033316503
+     ],
+     [
+      -0.5045088641895025,
+      -0.12459294687645107,
+      -0.8543695942289028
+     ],
+     [
+      -0.23497480614894967,
+      -0.9323706088137967,
+      0.27472147403407277
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "thumb_ip_l": {
+   "id": "thumb_ip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    23.6376,
+    5.1735,
+    91.3644
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.03 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.1096395787976034,
+   "inside_v003": true,
+   "depth_v003_cm": 1.1115558616341483,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.8308174567433461,
+      0.33935474861688925,
+      -0.4411130333165029
+     ],
+     [
+      -0.5564557386767361,
+      0.520707771881557,
+      -0.6474723370120707
+     ],
+     [
+      0.009968172563030203,
+      0.7833911991421096,
+      0.6214490040561989
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.8308174567433461,
+      -0.33935474861688925,
+      -0.4411130333165029
+     ],
+     [
+      -0.5564557386767361,
+      -0.520707771881557,
+      -0.6474723370120707
+     ],
+     [
+      0.009968172563030203,
+      -0.7833911991421096,
+      0.6214490040561989
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "thumb_tip_l": {
+   "id": "thumb_tip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    21.434,
+    3.1115,
+    88.8004
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.50 cm deep; surface tip 0.50 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.49597421425240734,
+   "inside_v003": true,
+   "depth_v003_cm": 0.46300395125667937,
+   "v001_frame": null
+  },
+  "hallux_mtp_l": {
+   "id": "hallux_mtp_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    13.6,
+    16.0,
+    2.3
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 2.09 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 2.094780077596128,
+   "inside_v003": true,
+   "depth_v003_cm": 2.0787399626549172,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9998476951563913,
+      -0.01745240643728351,
+      -5.745637470170117e-20
+     ],
+     [
+      -0.01740989325235717,
+      -0.9974121164231597,
+      0.0697564737441253
+     ],
+     [
+      -0.0012174183314141707,
+      -0.06974584949530101,
+      -0.9975640502598243
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9998476951563913,
+      0.01745240643728351,
+      -5.745637470170117e-20
+     ],
+     [
+      -0.01740989325235717,
+      0.9974121164231597,
+      0.0697564737441253
+     ],
+     [
+      -0.0012174183314141707,
+      0.06974584949530101,
+      -0.9975640502598243
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "hallux_ip_l": {
+   "id": "hallux_ip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    13.5147,
+    20.8873,
+    2.6418
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.00 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.6771721209005344,
+   "inside_v003": true,
+   "depth_v003_cm": 1.671238916375858,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9998476951563913,
+      -0.01745240643728351,
+      1.9212610863708443e-19
+     ],
+     [
+      -0.01744177490283016,
+      -0.9992386149554826,
+      -0.03489949670250099
+     ],
+     [
+      0.0006090802009086832,
+      0.03489418134011369,
+      -0.9993908270190959
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9998476951563913,
+      0.01745240643728351,
+      1.9212610863708443e-19
+     ],
+     [
+      -0.01744177490283016,
+      0.9992386149554826,
+      -0.03489949670250099
+     ],
+     [
+      0.0006090802009086832,
+      -0.03489418134011369,
+      -0.9993908270190959
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "hallux_tip_l": {
+   "id": "hallux_tip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    13.4397,
+    25.184,
+    2.4917
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.95 cm deep; surface tip 0.95 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.9498178454449796,
+   "inside_v003": true,
+   "depth_v003_cm": 0.933944973010944,
+   "v001_frame": null
+  },
+  "toe2_mtp_l": {
+   "id": "toe2_mtp_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    17.75,
+    15.6,
+    1.85
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.54 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.5371427466480958,
+   "inside_v003": true,
+   "depth_v003_cm": 1.529982703905149,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9993908270190958,
+      0.034899496702500976,
+      -1.3323478132429125e-18
+     ],
+     [
+      0.03436929492884695,
+      -0.984207834737688,
+      0.17364817766693036
+     ],
+     [
+      0.006060234003882338,
+      -0.1735423958889124,
+      -0.9848077530122081
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9993908270190958,
+      -0.034899496702500976,
+      -1.3323478132429125e-18
+     ],
+     [
+      0.03436929492884695,
+      0.984207834737688,
+      0.17364817766693036
+     ],
+     [
+      0.006060234003882338,
+      0.1735423958889124,
+      -0.9848077530122081
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe2_pip_l": {
+   "id": "toe2_pip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    17.9081,
+    20.1274,
+    2.6488
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.03 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.1026607473041967,
+   "inside_v003": true,
+   "depth_v003_cm": 1.0971757727807672,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9993908270190958,
+      0.034899496702500976,
+      -4.6191384791625495e-20
+     ],
+     [
+      0.03279479952048231,
+      -0.9391201854309705,
+      -0.34202014332566866
+     ],
+     [
+      -0.011936330864183085,
+      0.34181179389542965,
+      -0.9396926207859085
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9993908270190958,
+      -0.034899496702500976,
+      -4.6191384791625495e-20
+     ],
+     [
+      0.03279479952048231,
+      0.9391201854309705,
+      -0.34202014332566866
+     ],
+     [
+      -0.011936330864183085,
+      -0.34181179389542965,
+      -0.9396926207859085
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe2_dip_l": {
+   "id": "toe2_dip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    17.9934,
+    22.5691,
+    1.7595
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.00 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.9070322434471707,
+   "inside_v003": true,
+   "depth_v003_cm": 0.9082906709468688,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9993908270190959,
+      0.034899496702500976,
+      6.447657071087679e-21
+     ],
+     [
+      0.034708313607970075,
+      -0.9939160595006974,
+      -0.10452846326765336
+     ],
+     [
+      -0.003647990759126963,
+      0.10446478735209527,
+      -0.9945218953682736
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.9993908270190959,
+      -0.034899496702500976,
+      6.447657071087679e-21
+     ],
+     [
+      0.034708313607970075,
+      0.9939160595006974,
+      -0.10452846326765336
+     ],
+     [
+      -0.003647990759126963,
+      -0.10446478735209527,
+      -0.9945218953682736
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe2_tip_l": {
+   "id": "toe2_tip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    18.0663,
+    24.6563,
+    1.54
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.56 cm deep; surface tip 0.56 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.5588754438441089,
+   "inside_v003": true,
+   "depth_v003_cm": 0.5395849970138085,
+   "v001_frame": null
+  },
+  "toe3_mtp_l": {
+   "id": "toe3_mtp_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    20.8,
+    14.6,
+    1.72
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.47 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.4668239947846895,
+   "inside_v003": true,
+   "depth_v003_cm": 1.4622790061106916,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9975640502598243,
+      0.06975647374412532,
+      -3.5192498706456626e-19
+     ],
+     [
+      0.06869671616600714,
+      -0.9824088108221349,
+      0.17364817766693036
+     ],
+     [
+      0.012113084546138436,
+      -0.17322517943366061,
+      -0.9848077530122081
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9975640502598243,
+      -0.06975647374412532,
+      -3.5192498706456626e-19
+     ],
+     [
+      0.06869671616600714,
+      0.9824088108221349,
+      0.17364817766693036
+     ],
+     [
+      0.012113084546138436,
+      0.17322517943366061,
+      -0.9848077530122081
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe3_pip_l": {
+   "id": "toe3_pip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    21.0748,
+    18.5296,
+    2.4146
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.04 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.040505710841555,
+   "inside_v003": true,
+   "depth_v003_cm": 1.0331487394929402,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9975640502598243,
+      0.0697564737441253,
+      -1.7946882669752782e-19
+     ],
+     [
+      0.064677076207065,
+      -0.9249252812971603,
+      -0.37460659341591207
+     ],
+     [
+      -0.026131234997993292,
+      0.3736940705820125,
+      -0.9271838545667875
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9975640502598243,
+      -0.0697564737441253,
+      -1.7946882669752782e-19
+     ],
+     [
+      0.064677076207065,
+      0.9249252812971603,
+      -0.37460659341591207
+     ],
+     [
+      -0.026131234997993292,
+      -0.3736940705820125,
+      -0.9271838545667875
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe3_dip_l": {
+   "id": "toe3_dip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    21.2235,
+    20.657,
+    1.553
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.01 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.841896042028421,
+   "inside_v003": true,
+   "depth_v003_cm": 0.8461313848508443,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9975640502598243,
+      0.06975647374412532,
+      -2.4806839196256262e-18
+     ],
+     [
+      0.06907760853681702,
+      -0.9878558254968149,
+      -0.1391731009600654
+     ],
+     [
+      -0.009708224763009306,
+      0.1388340822809423,
+      -0.9902680687415704
+     ]
+    ],
+    "blender_det": 1.0,
+    "analysis_columns_XYZ": [
+     [
+      0.9975640502598243,
+      -0.06975647374412532,
+      -2.4806839196256262e-18
+     ],
+     [
+      0.06907760853681702,
+      0.9878558254968149,
+      -0.1391731009600654
+     ],
+     [
+      -0.009708224763009306,
+      -0.1388340822809423,
+      -0.9902680687415704
+     ]
+    ],
+    "analysis_det": -1.0,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe3_tip_l": {
+   "id": "toe3_tip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    21.3548,
+    22.5339,
+    1.2886
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.53 cm deep; surface tip 0.53 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.5285045353914788,
+   "inside_v003": true,
+   "depth_v003_cm": 0.5109771895850752,
+   "v001_frame": null
+  },
+  "toe4_mtp_l": {
+   "id": "toe4_mtp_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    23.55,
+    13.2,
+    1.62
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.53 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.5333644070945383,
+   "inside_v003": true,
+   "depth_v003_cm": 1.5312814236072365,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9925461516413221,
+      0.12186934340514749,
+      -6.0714596661390826e-18
+     ],
+     [
+      0.12036892955724912,
+      -0.9803262614787074,
+      0.1564344650402309
+     ],
+     [
+      0.01906456554038843,
+      -0.15526842625975013,
+      -0.9876883405951379
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9925461516413221,
+      -0.12186934340514749,
+      -6.0714596661390826e-18
+     ],
+     [
+      0.12036892955724912,
+      0.9803262614787074,
+      0.1564344650402309
+     ],
+     [
+      0.01906456554038843,
+      0.15526842625975013,
+      -0.9876883405951379
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe4_pip_l": {
+   "id": "toe4_pip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    23.9713,
+    16.6311,
+    2.1675
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.09 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.9905429496348299,
+   "inside_v003": true,
+   "depth_v003_cm": 0.9870205281566454,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9925461516413221,
+      0.12186934340514748,
+      -5.128675259349231e-18
+     ],
+     [
+      0.11045113492912875,
+      -0.8995523062257897,
+      -0.4226182617406995
+     ],
+     [
+      -0.051504210069363815,
+      0.4194681293040763,
+      -0.9063077870366499
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9925461516413221,
+      -0.12186934340514748,
+      -5.128675259349231e-18
+     ],
+     [
+      0.11045113492912875,
+      0.8995523062257897,
+      -0.4226182617406995
+     ],
+     [
+      -0.051504210069363815,
+      -0.4194681293040763,
+      -0.9063077870366499
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe4_dip_l": {
+   "id": "toe4_dip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    24.1922,
+    18.4302,
+    1.3223
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.02 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.7794132515065327,
+   "inside_v003": true,
+   "depth_v003_cm": 0.7829012443322959,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.992546151641322,
+      0.12186934340514749,
+      -8.854974390720434e-19
+     ],
+     [
+      0.11963026031541107,
+      -0.9743102832774889,
+      -0.1908089953765449
+     ],
+     [
+      -0.023253766982335347,
+      0.18938673405953643,
+      -0.981627183447664
+     ]
+    ],
+    "blender_det": 0.9999999999999999,
+    "analysis_columns_XYZ": [
+     [
+      0.992546151641322,
+      -0.12186934340514749,
+      -8.854974390720434e-19
+     ],
+     [
+      0.11963026031541107,
+      0.9743102832774889,
+      -0.1908089953765449
+     ],
+     [
+      -0.023253766982335347,
+      -0.18938673405953643,
+      -0.981627183447664
+     ]
+    ],
+    "analysis_det": -0.9999999999999999,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe4_tip_l": {
+   "id": "toe4_tip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    24.3956,
+    20.0866,
+    0.9979
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.50 cm deep; surface tip 0.50 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.49912433040715487,
+   "inside_v003": true,
+   "depth_v003_cm": 0.48292157852358925,
+   "v001_frame": null
+  },
+  "toe5_mtp_l": {
+   "id": "toe5_mtp_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    26.0,
+    11.6,
+    1.55
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.00 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.0003830431592966,
+   "inside_v003": true,
+   "depth_v003_cm": 0.9866565224232042,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9816271834476641,
+      0.1908089953765448,
+      2.39375290758858e-18
+     ],
+     [
+      0.18895205535005025,
+      -0.9720740551769455,
+      0.13917310096006547
+     ],
+     [
+      0.02655547957762854,
+      -0.13661609910710645,
+      -0.9902680687415706
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.9816271834476641,
+      -0.1908089953765448,
+      2.39375290758858e-18
+     ],
+     [
+      0.18895205535005025,
+      0.9720740551769455,
+      0.13917310096006547
+     ],
+     [
+      0.02655547957762854,
+      0.13661609910710645,
+      -0.9902680687415706
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe5_pip_l": {
+   "id": "toe5_pip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    26.548,
+    14.419,
+    1.9536
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.16 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.1550882248552716,
+   "inside_v003": true,
+   "depth_v003_cm": 1.146356173945748,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9816271834476641,
+      0.19080899537654483,
+      2.531631217543517e-18
+     ],
+     [
+      0.16847434316355034,
+      -0.8667253587100031,
+      -0.46947156278589086
+     ],
+     [
+      -0.08957939725303232,
+      0.46084604788628725,
+      -0.882947592858927
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.9816271834476641,
+      -0.19080899537654483,
+      2.531631217543517e-18
+     ],
+     [
+      0.16847434316355034,
+      0.8667253587100031,
+      -0.46947156278589086
+     ],
+     [
+      -0.08957939725303232,
+      -0.46084604788628725,
+      -0.882947592858927
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe5_dip_l": {
+   "id": "toe5_dip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    26.8344,
+    15.8924,
+    1.1555
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.04 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.7134044640545902,
+   "inside_v003": true,
+   "depth_v003_cm": 0.7132624107935437,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9816271834476641,
+      0.1908089953765448,
+      1.6888135671638826e-18
+     ],
+     [
+      0.18514115274887777,
+      -0.9524686608956119,
+      -0.2419218955996678
+     ],
+     [
+      -0.04616087385896197,
+      0.23747710899182176,
+      -0.9702957262759966
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9816271834476641,
+      -0.1908089953765448,
+      1.6888135671638826e-18
+     ],
+     [
+      0.18514115274887777,
+      0.9524686608956119,
+      -0.2419218955996678
+     ],
+     [
+      -0.04616087385896197,
+      -0.23747710899182176,
+      -0.9702957262759966
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe5_tip_l": {
+   "id": "toe5_tip_l",
+   "side": "l",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    27.1028,
+    17.2735,
+    0.8047
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.41 cm deep; surface tip 0.47 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.4126662189066438,
+   "inside_v003": true,
+   "depth_v003_cm": 0.402883037091649,
+   "v001_frame": null
+  },
+  "wrist_r": {
+   "id": "wrist_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -31.2,
+    1.0,
+    105.0
+   ],
+   "construction_rule": "v005 hand-construction frame origin",
+   "limitation": "ML/AP placement validated by the forearm/hand section; longitudinal placement is construction-defined (the forearm waist lies 7.0 cm proximal)",
+   "inside_v005": true,
+   "depth_v005_cm": 2.823451570411796,
+   "inside_v003": true,
+   "depth_v003_cm": 2.8230494913429807,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.38808926656535414,
+      -0.921280459326912,
+      0.025080598859665727
+     ],
+     [
+      -0.12185044192726159,
+      -0.07826611748631589,
+      -0.9894578741188275
+     ],
+     [
+      0.9135311658498011,
+      0.3809418986092396,
+      -0.14263267124011694
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.38808926656535414,
+      0.921280459326912,
+      0.025080598859665727
+     ],
+     [
+      -0.12185044192726159,
+      0.07826611748631589,
+      -0.9894578741188275
+     ],
+     [
+      0.9135311658498011,
+      -0.3809418986092396,
+      -0.14263267124011694
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 wrist flexion: hand moves palmar"
+   }
+  },
+  "index_mcp_r": {
+   "id": "index_mcp_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -31.2725,
+    6.5344,
+    90.105
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.52 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.5240997887453456,
+   "inside_v003": true,
+   "depth_v003_cm": 1.5226883676595853,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.39870011239980013,
+      -0.9080525515887838,
+      0.12836971576460648
+     ],
+     [
+      0.2056257525101554,
+      -0.04789698670872447,
+      -0.977457890944084
+     ],
+     [
+      0.8937316545121468,
+      0.4161086903890898,
+      0.16762245525483022
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.39870011239980013,
+      0.9080525515887838,
+      0.12836971576460648
+     ],
+     [
+      0.2056257525101554,
+      0.04789698670872447,
+      -0.977457890944084
+     ],
+     [
+      0.8937316545121468,
+      -0.4161086903890898,
+      0.16762245525483022
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "index_pip_r": {
+   "id": "index_pip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -30.0059,
+    6.8294,
+    84.0838
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.03 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.0803597798441626,
+   "inside_v003": true,
+   "depth_v003_cm": 1.0941361307942457,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3987001123998001,
+      -0.9080525515887838,
+      0.12836971576460648
+     ],
+     [
+      0.576601372432103,
+      0.13936051730529456,
+      -0.8050524849510223
+     ],
+     [
+      0.7131402931273777,
+      0.394992670526302,
+      0.579147401400281
+     ]
+    ],
+    "blender_det": 1.0,
+    "analysis_columns_XYZ": [
+     [
+      0.3987001123998001,
+      0.9080525515887838,
+      0.12836971576460648
+     ],
+     [
+      0.576601372432103,
+      -0.13936051730529456,
+      -0.8050524849510223
+     ],
+     [
+      0.7131402931273777,
+      -0.394992670526302,
+      0.579147401400281
+     ]
+    ],
+    "analysis_det": -1.0,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "index_dip_r": {
+   "id": "index_dip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -27.8177,
+    6.3006,
+    81.0286
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.01 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.9598430871629098,
+   "inside_v003": true,
+   "depth_v003_cm": 0.9671732652823496,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3987001123998001,
+      -0.9080525515887838,
+      0.12836971576460648
+     ],
+     [
+      0.7319980989776216,
+      0.2307782899546373,
+      -0.6410305483974703
+     ],
+     [
+      0.5524644816325616,
+      0.34954533960376644,
+      0.756704071679116
+     ]
+    ],
+    "blender_det": 1.0,
+    "analysis_columns_XYZ": [
+     [
+      0.3987001123998001,
+      0.9080525515887838,
+      0.12836971576460648
+     ],
+     [
+      0.7319980989776216,
+      -0.2307782899546373,
+      -0.6410305483974703
+     ],
+     [
+      0.5524644816325616,
+      -0.34954533960376644,
+      0.756704071679116
+     ]
+    ],
+    "analysis_det": -1.0,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "index_tip_r": {
+   "id": "index_tip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -25.5631,
+    5.5898,
+    79.0543
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.48 cm deep; surface tip 0.48 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.4819148532661258,
+   "inside_v003": true,
+   "depth_v003_cm": 0.46965212738345946,
+   "v001_frame": null
+  },
+  "middle_mcp_r": {
+   "id": "middle_mcp_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -32.7323,
+    3.7607,
+    89.5651
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.78 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.777667599860454,
+   "inside_v003": true,
+   "depth_v003_cm": 1.7779260866292228,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3901567421273809,
+      -0.9197742117579952,
+      0.04234519993467111
+     ],
+     [
+      0.20432616257077155,
+      0.04164600598551519,
+      -0.978016579345441
+     ],
+     [
+      0.8977909199037666,
+      0.39023199454992574,
+      0.2041824051379934
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.3901567421273809,
+      0.9197742117579952,
+      0.04234519993467111
+     ],
+     [
+      0.20432616257077155,
+      -0.04164600598551519,
+      -0.978016579345441
+     ],
+     [
+      0.8977909199037666,
+      -0.39023199454992574,
+      0.2041824051379934
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "middle_pip_r": {
+   "id": "middle_pip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -31.3726,
+    3.4836,
+    83.0564
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.06 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.1090987046976502,
+   "inside_v003": true,
+   "depth_v003_cm": 1.1239990077982194,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3901567421273808,
+      -0.9197742117579951,
+      0.04234519993467111
+     ],
+     [
+      0.6258471073959605,
+      0.23118249642457775,
+      -0.7448960004665144
+     ],
+     [
+      0.6753466626382764,
+      0.3171278176569487,
+      0.665835439528029
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.3901567421273808,
+      0.9197742117579951,
+      0.04234519993467111
+     ],
+     [
+      0.6258471073959605,
+      -0.23118249642457775,
+      -0.7448960004665144
+     ],
+     [
+      0.6753466626382764,
+      -0.3171278176569487,
+      0.665835439528029
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "middle_dip_r": {
+   "id": "middle_dip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -28.6877,
+    2.4918,
+    79.8608
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.01 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.9867024231964099,
+   "inside_v003": true,
+   "depth_v003_cm": 0.995799744024537,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3901567421273808,
+      -0.9197742117579951,
+      0.04234519993467113
+     ],
+     [
+      0.7877536202029817,
+      0.30963915169932077,
+      -0.532510872745357
+     ],
+     [
+      0.47667803644561313,
+      0.241120291804493,
+      0.8453632677437973
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.3901567421273808,
+      0.9197742117579951,
+      0.04234519993467113
+     ],
+     [
+      0.7877536202029817,
+      -0.30963915169932077,
+      -0.532510872745357
+     ],
+     [
+      0.47667803644561313,
+      -0.241120291804493,
+      0.8453632677437973
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "middle_tip_r": {
+   "id": "middle_tip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -26.0881,
+    1.47,
+    78.1035
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.49 cm deep; surface tip 0.50 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.49243242784235475,
+   "inside_v003": true,
+   "depth_v003_cm": 0.47931501771256607,
+   "v001_frame": null
+  },
+  "ring_mcp_r": {
+   "id": "ring_mcp_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -33.76,
+    0.6857,
+    90.0042
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.75 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.752893045970149,
+   "inside_v003": true,
+   "depth_v003_cm": 1.7350539667832519,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3786440434642902,
+      -0.9244958348008745,
+      -0.044001588435497924
+     ],
+     [
+      0.235790578038844,
+      0.14232679363012884,
+      -0.9613250683941799
+     ],
+     [
+      0.895003626616742,
+      0.35362485100852425,
+      0.2718785999156214
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.3786440434642902,
+      0.9244958348008745,
+      -0.044001588435497924
+     ],
+     [
+      0.235790578038844,
+      -0.14232679363012884,
+      -0.9613250683941799
+     ],
+     [
+      0.895003626616742,
+      -0.35362485100852425,
+      0.2718785999156214
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "ring_pip_r": {
+   "id": "ring_pip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -32.2556,
+    -0.2224,
+    83.871
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.08 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.026225477890686,
+   "inside_v003": true,
+   "depth_v003_cm": 1.0399239411310963,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3786440434642901,
+      -0.9244958348008745,
+      -0.044001588435497854
+     ],
+     [
+      0.6959589250333377,
+      0.31573876667553125,
+      -0.6449420174594424
+     ],
+     [
+      0.6101392160937157,
+      0.2135801551035316,
+      0.762963730678266
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.3786440434642901,
+      0.9244958348008745,
+      -0.044001588435497854
+     ],
+     [
+      0.6959589250333377,
+      -0.31573876667553125,
+      -0.6449420174594424
+     ],
+     [
+      0.6101392160937157,
+      -0.2135801551035316,
+      0.762963730678266
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "ring_dip_r": {
+   "id": "ring_dip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -29.4231,
+    -1.5074,
+    81.2461
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.01 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.9358463682991858,
+   "inside_v003": true,
+   "depth_v003_cm": 0.9436893635456812,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3786440434642901,
+      -0.9244958348008745,
+      -0.04400158843549789
+     ],
+     [
+      0.8504396574342926,
+      0.3662853090819875,
+      -0.3776075494660509
+     ],
+     [
+      0.365213742090924,
+      0.10555815357681789,
+      0.9249196715398571
+     ]
+    ],
+    "blender_det": 1.0,
+    "analysis_columns_XYZ": [
+     [
+      0.3786440434642901,
+      0.9244958348008745,
+      -0.04400158843549789
+     ],
+     [
+      0.8504396574342926,
+      -0.3662853090819875,
+      -0.3776075494660509
+     ],
+     [
+      0.365213742090924,
+      -0.10555815357681789,
+      0.9249196715398571
+     ]
+    ],
+    "analysis_det": -1.0,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "ring_tip_r": {
+   "id": "ring_tip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -26.7102,
+    -2.6759,
+    80.0415
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.47 cm deep; surface tip 0.48 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.4736643193125482,
+   "inside_v003": true,
+   "depth_v003_cm": 0.4363638574163131,
+   "v001_frame": null
+  },
+  "pinky_mcp_r": {
+   "id": "pinky_mcp_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -34.468,
+    -2.4087,
+    91.0696
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.46 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.4619294285125557,
+   "inside_v003": true,
+   "depth_v003_cm": 1.4579739779104213,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3610342113858032,
+      -0.9208749077183559,
+      -0.14711798851174132
+     ],
+     [
+      0.2634211305414955,
+      0.25203915096949736,
+      -0.9311742985944229
+     ],
+     [
+      0.8945745392046835,
+      0.2974317916990123,
+      0.3335726653870845
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.3610342113858032,
+      0.9208749077183559,
+      -0.14711798851174132
+     ],
+     [
+      0.2634211305414955,
+      -0.25203915096949736,
+      -0.9311742985944229
+     ],
+     [
+      0.8945745392046835,
+      -0.2974317916990123,
+      0.3335726653870845
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "pinky_pip_r": {
+   "id": "pinky_pip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -33.0916,
+    -3.7256,
+    86.2042
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.10 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.8768926611193498,
+   "inside_v003": true,
+   "depth_v003_cm": 0.8848373041986818,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.3610342113858031,
+      -0.9208749077183559,
+      -0.14711798851174138
+     ],
+     [
+      0.758333764189465,
+      0.38172685698003966,
+      -0.5284075214740773
+     ],
+     [
+      0.5427561149349388,
+      0.07920865479762904,
+      0.8361469898922569
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.3610342113858031,
+      0.9208749077183559,
+      -0.14711798851174138
+     ],
+     [
+      0.758333764189465,
+      -0.38172685698003966,
+      -0.5284075214740773
+     ],
+     [
+      0.5427561149349388,
+      -0.07920865479762904,
+      0.8361469898922569
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "pinky_dip_r": {
+   "id": "pinky_dip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -30.6308,
+    -4.9643,
+    84.4895
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.01 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.8078471360530287,
+   "inside_v003": true,
+   "depth_v003_cm": 0.8113622697669008,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.361034211385803,
+      -0.9208749077183559,
+      -0.14711798851174135
+     ],
+     [
+      0.8982341665225722,
+      0.3857968661264595,
+      -0.2105615353726857
+     ],
+     [
+      0.2506584933740156,
+      -0.056126485919859886,
+      0.9664471725230286
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.361034211385803,
+      0.9208749077183559,
+      -0.14711798851174135
+     ],
+     [
+      0.8982341665225722,
+      -0.3857968661264595,
+      -0.2105615353726857
+     ],
+     [
+      0.2506584933740156,
+      0.056126485919859886,
+      0.9664471725230286
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "pinky_tip_r": {
+   "id": "pinky_tip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -28.2101,
+    -6.004,
+    83.922
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.42 cm deep; surface tip 0.42 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.4154931462102372,
+   "inside_v003": true,
+   "depth_v003_cm": 0.39724637030260523,
+   "v001_frame": null
+  },
+  "thumb_cmc_r": {
+   "id": "thumb_cmc_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -28.9136,
+    3.9692,
+    101.6181
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 2.15 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 2.15184473949241,
+   "inside_v003": true,
+   "depth_v003_cm": 2.1456715332173677,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.8644318709037377,
+      -0.274554988183627,
+      0.42116160678455994
+     ],
+     [
+      0.39332277562944734,
+      -0.15244787988456998,
+      -0.9066735013718263
+     ],
+     [
+      0.31313692649863456,
+      0.9494099232587515,
+      -0.023792076008632826
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.8644318709037377,
+      0.274554988183627,
+      0.42116160678455994
+     ],
+     [
+      0.39332277562944734,
+      0.15244787988456998,
+      -0.9066735013718263
+     ],
+     [
+      0.31313692649863456,
+      -0.9494099232587515,
+      -0.023792076008632826
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "thumb_mcp_r": {
+   "id": "thumb_mcp_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -26.2311,
+    5.0089,
+    95.4346
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.65 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.6478222780847485,
+   "inside_v003": true,
+   "depth_v003_cm": 1.6475461111091267,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.8644318709037376,
+      -0.274554988183627,
+      0.42116160678455994
+     ],
+     [
+      0.4767016463276456,
+      0.18146317024578337,
+      -0.8601317679477152
+     ],
+     [
+      0.15972814703231286,
+      0.9442937447149793,
+      0.28774336263028827
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.8644318709037376,
+      0.274554988183627,
+      0.42116160678455994
+     ],
+     [
+      0.4767016463276456,
+      -0.18146317024578337,
+      -0.8601317679477152
+     ],
+     [
+      0.15972814703231286,
+      -0.9442937447149793,
+      0.28774336263028827
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "thumb_ip_r": {
+   "id": "thumb_ip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -23.8714,
+    4.1107,
+    91.177
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.03 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.1106190019288174,
+   "inside_v003": true,
+   "depth_v003_cm": 1.1117112428262288,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.8644318709037376,
+      -0.27455498818362706,
+      0.42116160678456
+     ],
+     [
+      0.4984768125693484,
+      0.5770491488159399,
+      -0.6469429242069983
+     ],
+     [
+      -0.06540953979785041,
+      0.7691773776667432,
+      0.6356789706991618
+     ]
+    ],
+    "blender_det": 1.0,
+    "analysis_columns_XYZ": [
+     [
+      0.8644318709037376,
+      0.27455498818362706,
+      0.42116160678456
+     ],
+     [
+      0.4984768125693484,
+      -0.5770491488159399,
+      -0.6469429242069983
+     ],
+     [
+      -0.06540953979785041,
+      -0.7691773776667432,
+      0.6356789706991618
+     ]
+    ],
+    "analysis_det": -1.0,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "thumb_tip_r": {
+   "id": "thumb_tip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -21.8975,
+    1.8255,
+    88.6151
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.50 cm deep; surface tip 0.50 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.4957681213837895,
+   "inside_v003": true,
+   "depth_v003_cm": 0.4771949753555826,
+   "v001_frame": null
+  },
+  "hallux_mtp_r": {
+   "id": "hallux_mtp_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -13.6,
+    16.0,
+    2.3
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 2.04 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 2.0397717710570094,
+   "inside_v003": true,
+   "depth_v003_cm": 2.0285903119737174,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9998476951563913,
+      0.01745240643728351,
+      5.745637470170117e-20
+     ],
+     [
+      0.01740989325235717,
+      -0.9974121164231597,
+      0.0697564737441253
+     ],
+     [
+      0.0012174183314141707,
+      -0.06974584949530101,
+      -0.9975640502598243
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9998476951563913,
+      -0.01745240643728351,
+      5.745637470170117e-20
+     ],
+     [
+      0.01740989325235717,
+      0.9974121164231597,
+      0.0697564737441253
+     ],
+     [
+      0.0012174183314141707,
+      0.06974584949530101,
+      -0.9975640502598243
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "hallux_ip_r": {
+   "id": "hallux_ip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -13.5147,
+    20.8873,
+    2.6418
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.05 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.677143915375948,
+   "inside_v003": true,
+   "depth_v003_cm": 1.6715717069093132,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9998476951563913,
+      0.01745240643728351,
+      -1.9212610863708443e-19
+     ],
+     [
+      0.01744177490283016,
+      -0.9992386149554826,
+      -0.03489949670250099
+     ],
+     [
+      -0.0006090802009086832,
+      0.03489418134011369,
+      -0.9993908270190959
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9998476951563913,
+      -0.01745240643728351,
+      -1.9212610863708443e-19
+     ],
+     [
+      0.01744177490283016,
+      0.9992386149554826,
+      -0.03489949670250099
+     ],
+     [
+      -0.0006090802009086832,
+      -0.03489418134011369,
+      -0.9993908270190959
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "hallux_tip_r": {
+   "id": "hallux_tip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -13.4397,
+    25.184,
+    2.4917
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.95 cm deep; surface tip 0.95 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.948012002608476,
+   "inside_v003": true,
+   "depth_v003_cm": 0.9262821978982719,
+   "v001_frame": null
+  },
+  "toe2_mtp_r": {
+   "id": "toe2_mtp_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -17.75,
+    15.6,
+    1.85
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.50 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.504307854722241,
+   "inside_v003": true,
+   "depth_v003_cm": 1.4892088669442631,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9993908270190958,
+      -0.034899496702500976,
+      1.3323478132429125e-18
+     ],
+     [
+      -0.03436929492884695,
+      -0.984207834737688,
+      0.17364817766693036
+     ],
+     [
+      -0.006060234003882338,
+      -0.1735423958889124,
+      -0.9848077530122081
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9993908270190958,
+      0.034899496702500976,
+      1.3323478132429125e-18
+     ],
+     [
+      -0.03436929492884695,
+      0.984207834737688,
+      0.17364817766693036
+     ],
+     [
+      -0.006060234003882338,
+      0.1735423958889124,
+      -0.9848077530122081
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe2_pip_r": {
+   "id": "toe2_pip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -17.9081,
+    20.1274,
+    2.6488
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.08 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.0950040382239266,
+   "inside_v003": true,
+   "depth_v003_cm": 1.0888056164398667,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9993908270190958,
+      -0.034899496702500976,
+      4.6191384791625495e-20
+     ],
+     [
+      -0.03279479952048231,
+      -0.9391201854309705,
+      -0.34202014332566866
+     ],
+     [
+      0.011936330864183085,
+      0.34181179389542965,
+      -0.9396926207859085
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9993908270190958,
+      0.034899496702500976,
+      4.6191384791625495e-20
+     ],
+     [
+      -0.03279479952048231,
+      0.9391201854309705,
+      -0.34202014332566866
+     ],
+     [
+      0.011936330864183085,
+      -0.34181179389542965,
+      -0.9396926207859085
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe2_dip_r": {
+   "id": "toe2_dip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -17.9934,
+    22.5691,
+    1.7595
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.06 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.8694514742451082,
+   "inside_v003": true,
+   "depth_v003_cm": 0.8697205245069708,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9993908270190959,
+      -0.034899496702500976,
+      -6.447657071087679e-21
+     ],
+     [
+      -0.034708313607970075,
+      -0.9939160595006974,
+      -0.10452846326765336
+     ],
+     [
+      0.003647990759126963,
+      0.10446478735209527,
+      -0.9945218953682736
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.9993908270190959,
+      0.034899496702500976,
+      -6.447657071087679e-21
+     ],
+     [
+      -0.034708313607970075,
+      0.9939160595006974,
+      -0.10452846326765336
+     ],
+     [
+      0.003647990759126963,
+      -0.10446478735209527,
+      -0.9945218953682736
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe2_tip_r": {
+   "id": "toe2_tip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -18.0663,
+    24.6563,
+    1.54
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.55 cm deep; surface tip 0.57 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.5522789586355944,
+   "inside_v003": true,
+   "depth_v003_cm": 0.5342918084296797,
+   "v001_frame": null
+  },
+  "toe3_mtp_r": {
+   "id": "toe3_mtp_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -20.8,
+    14.6,
+    1.72
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.44 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.4433305375498338,
+   "inside_v003": true,
+   "depth_v003_cm": 1.4387250907067888,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9975640502598243,
+      -0.06975647374412532,
+      3.5192498706456626e-19
+     ],
+     [
+      -0.06869671616600714,
+      -0.9824088108221349,
+      0.17364817766693036
+     ],
+     [
+      -0.012113084546138436,
+      -0.17322517943366061,
+      -0.9848077530122081
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9975640502598243,
+      0.06975647374412532,
+      3.5192498706456626e-19
+     ],
+     [
+      -0.06869671616600714,
+      0.9824088108221349,
+      0.17364817766693036
+     ],
+     [
+      -0.012113084546138436,
+      0.17322517943366061,
+      -0.9848077530122081
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe3_pip_r": {
+   "id": "toe3_pip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -21.0748,
+    18.5296,
+    2.4146
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.10 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 1.023904033122466,
+   "inside_v003": true,
+   "depth_v003_cm": 1.017105293625497,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9975640502598243,
+      -0.0697564737441253,
+      1.7946882669752782e-19
+     ],
+     [
+      -0.064677076207065,
+      -0.9249252812971603,
+      -0.37460659341591207
+     ],
+     [
+      0.026131234997993292,
+      0.3736940705820125,
+      -0.9271838545667875
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9975640502598243,
+      0.0697564737441253,
+      1.7946882669752782e-19
+     ],
+     [
+      -0.064677076207065,
+      0.9249252812971603,
+      -0.37460659341591207
+     ],
+     [
+      0.026131234997993292,
+      -0.3736940705820125,
+      -0.9271838545667875
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe3_dip_r": {
+   "id": "toe3_dip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -21.2235,
+    20.657,
+    1.553
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.07 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.7976600768657583,
+   "inside_v003": true,
+   "depth_v003_cm": 0.8004625536833972,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9975640502598243,
+      -0.06975647374412532,
+      2.4806839196256262e-18
+     ],
+     [
+      -0.06907760853681702,
+      -0.9878558254968149,
+      -0.1391731009600654
+     ],
+     [
+      0.009708224763009306,
+      0.1388340822809423,
+      -0.9902680687415704
+     ]
+    ],
+    "blender_det": 1.0,
+    "analysis_columns_XYZ": [
+     [
+      0.9975640502598243,
+      0.06975647374412532,
+      2.4806839196256262e-18
+     ],
+     [
+      -0.06907760853681702,
+      0.9878558254968149,
+      -0.1391731009600654
+     ],
+     [
+      0.009708224763009306,
+      -0.1388340822809423,
+      -0.9902680687415704
+     ]
+    ],
+    "analysis_det": -1.0,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe3_tip_r": {
+   "id": "toe3_tip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -21.3548,
+    22.5339,
+    1.2886
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.52 cm deep; surface tip 0.54 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.5217699378522781,
+   "inside_v003": true,
+   "depth_v003_cm": 0.5029839954050451,
+   "v001_frame": null
+  },
+  "toe4_mtp_r": {
+   "id": "toe4_mtp_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -23.55,
+    13.2,
+    1.62
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.42 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.42274425724412,
+   "inside_v003": true,
+   "depth_v003_cm": 1.4201934761662975,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9925461516413221,
+      -0.12186934340514749,
+      6.0714596661390826e-18
+     ],
+     [
+      -0.12036892955724912,
+      -0.9803262614787074,
+      0.1564344650402309
+     ],
+     [
+      -0.01906456554038843,
+      -0.15526842625975013,
+      -0.9876883405951379
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9925461516413221,
+      0.12186934340514749,
+      6.0714596661390826e-18
+     ],
+     [
+      -0.12036892955724912,
+      0.9803262614787074,
+      0.1564344650402309
+     ],
+     [
+      -0.01906456554038843,
+      0.15526842625975013,
+      -0.9876883405951379
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe4_pip_r": {
+   "id": "toe4_pip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -23.9713,
+    16.6311,
+    2.1675
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.14 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.9661289254380566,
+   "inside_v003": true,
+   "depth_v003_cm": 0.9598224362328087,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9925461516413221,
+      -0.12186934340514748,
+      5.128675259349231e-18
+     ],
+     [
+      -0.11045113492912875,
+      -0.8995523062257897,
+      -0.4226182617406995
+     ],
+     [
+      0.051504210069363815,
+      0.4194681293040763,
+      -0.9063077870366499
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9925461516413221,
+      0.12186934340514748,
+      5.128675259349231e-18
+     ],
+     [
+      -0.11045113492912875,
+      0.8995523062257897,
+      -0.4226182617406995
+     ],
+     [
+      0.051504210069363815,
+      -0.4194681293040763,
+      -0.9063077870366499
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe4_dip_r": {
+   "id": "toe4_dip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -24.1922,
+    18.4302,
+    1.3223
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.07 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.728249191451801,
+   "inside_v003": true,
+   "depth_v003_cm": 0.7305116747430783,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.992546151641322,
+      -0.12186934340514749,
+      8.854974390720434e-19
+     ],
+     [
+      -0.11963026031541107,
+      -0.9743102832774889,
+      -0.1908089953765449
+     ],
+     [
+      0.023253766982335347,
+      0.18938673405953643,
+      -0.981627183447664
+     ]
+    ],
+    "blender_det": 0.9999999999999999,
+    "analysis_columns_XYZ": [
+     [
+      0.992546151641322,
+      0.12186934340514749,
+      8.854974390720434e-19
+     ],
+     [
+      -0.11963026031541107,
+      0.9743102832774889,
+      -0.1908089953765449
+     ],
+     [
+      0.023253766982335347,
+      -0.18938673405953643,
+      -0.981627183447664
+     ]
+    ],
+    "analysis_det": -0.9999999999999999,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe4_tip_r": {
+   "id": "toe4_tip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -24.3956,
+    20.0866,
+    0.9979
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.49 cm deep; surface tip 0.52 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.49278102425570436,
+   "inside_v003": true,
+   "depth_v003_cm": 0.47350143118226157,
+   "v001_frame": null
+  },
+  "toe5_mtp_r": {
+   "id": "toe5_mtp_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -26.0,
+    11.6,
+    1.55
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.14 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.1360179783719127,
+   "inside_v003": true,
+   "depth_v003_cm": 1.1366802365183781,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9816271834476641,
+      -0.1908089953765448,
+      -2.39375290758858e-18
+     ],
+     [
+      -0.18895205535005025,
+      -0.9720740551769455,
+      0.13917310096006547
+     ],
+     [
+      -0.02655547957762854,
+      -0.13661609910710645,
+      -0.9902680687415706
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.9816271834476641,
+      0.1908089953765448,
+      -2.39375290758858e-18
+     ],
+     [
+      -0.18895205535005025,
+      0.9720740551769455,
+      0.13917310096006547
+     ],
+     [
+      -0.02655547957762854,
+      0.13661609910710645,
+      -0.9902680687415706
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe5_pip_r": {
+   "id": "toe5_pip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -26.548,
+    14.419,
+    1.9536
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "inside the palm/forefoot mass; 1.15 cm deep",
+   "inside_v005": true,
+   "depth_v005_cm": 1.1478857925203403,
+   "inside_v003": true,
+   "depth_v003_cm": 1.1389079837485852,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9816271834476641,
+      -0.19080899537654483,
+      -2.531631217543517e-18
+     ],
+     [
+      -0.16847434316355034,
+      -0.8667253587100031,
+      -0.46947156278589086
+     ],
+     [
+      0.08957939725303232,
+      0.46084604788628725,
+      -0.882947592858927
+     ]
+    ],
+    "blender_det": 1.0000000000000004,
+    "analysis_columns_XYZ": [
+     [
+      0.9816271834476641,
+      0.19080899537654483,
+      -2.531631217543517e-18
+     ],
+     [
+      -0.16847434316355034,
+      0.8667253587100031,
+      -0.46947156278589086
+     ],
+     [
+      0.08957939725303232,
+      -0.46084604788628725,
+      -0.882947592858927
+     ]
+    ],
+    "analysis_det": -1.0000000000000004,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe5_dip_r": {
+   "id": "toe5_dip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -26.8344,
+    15.8924,
+    1.1555
+   ],
+   "construction_rule": "exact v005 extremity-construction joint",
+   "limitation": "digit-section centroid offset 0.04 cm",
+   "inside_v005": true,
+   "depth_v005_cm": 0.6776152443684128,
+   "inside_v003": true,
+   "depth_v003_cm": 0.6772030585987743,
+   "v001_frame": {
+    "blender_columns_XYZ": [
+     [
+      0.9816271834476641,
+      -0.1908089953765448,
+      -1.6888135671638826e-18
+     ],
+     [
+      -0.18514115274887777,
+      -0.9524686608956119,
+      -0.2419218955996678
+     ],
+     [
+      0.04616087385896197,
+      0.23747710899182176,
+      -0.9702957262759966
+     ]
+    ],
+    "blender_det": 1.0000000000000002,
+    "analysis_columns_XYZ": [
+     [
+      0.9816271834476641,
+      0.1908089953765448,
+      -1.6888135671638826e-18
+     ],
+     [
+      -0.18514115274887777,
+      0.9524686608956119,
+      -0.2419218955996678
+     ],
+     [
+      0.04616087385896197,
+      -0.23747710899182176,
+      -0.9702957262759966
+     ]
+    ],
+    "analysis_det": -1.0000000000000002,
+    "convention": "X = flexion axis (oriented toward subject-left, +X Blender, on both sides), Y = longitudinal toward the child, Z = X x Y; right-handed in Blender",
+    "flexion": "positive rotation about local +X (right-hand rule, Blender frame) \u2014 digit flexion: child moves palmar/plantar"
+   }
+  },
+  "toe5_tip_r": {
+   "id": "toe5_tip_r",
+   "side": "r",
+   "provenance_class": "copied construction coordinate (surface-validated)",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -27.1028,
+    17.2735,
+    0.8047
+   ],
+   "construction_rule": "v005 construction distal-phalanx end",
+   "limitation": "inside the palm/forefoot mass; 0.46 cm deep; surface tip 0.49 cm beyond",
+   "inside_v005": true,
+   "depth_v005_cm": 0.46391342055832335,
+   "inside_v003": true,
+   "depth_v003_cm": 0.444195978455016,
+   "v001_frame": null
+  },
+  "ball_l": {
+   "id": "ball_l",
+   "side": "l",
+   "provenance_class": "derived from copied construction coordinates",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    19.8,
+    13.8,
+    1.925
+   ],
+   "construction_rule": "midpoint of the hallux and fifth MTP construction joints (MTP line)",
+   "limitation": "construction-defined",
+   "inside_v005": true,
+   "depth_v005_cm": 1.54405677215756,
+   "inside_v003": true,
+   "depth_v003_cm": 1.5427650399227757,
+   "v001_frame": null
+  },
+  "ball_r": {
+   "id": "ball_r",
+   "side": "r",
+   "provenance_class": "derived from copied construction coordinates",
+   "suitability": "diagnostic rig + final carry-forward candidate",
+   "p": [
+    -19.8,
+    13.8,
+    1.925
+   ],
+   "construction_rule": "midpoint of the hallux and fifth MTP construction joints (MTP line)",
+   "limitation": "construction-defined",
+   "inside_v005": true,
+   "depth_v005_cm": 1.6404644303154987,
+   "inside_v003": true,
+   "depth_v003_cm": 1.6377231648601014,
+   "v001_frame": null
+  }
+ },
+ "LOG": [
+  "AD-R7: root at production origin; pelvis = v001 proposal + 0.50 cm toward section centroid",
+  "AD-R1/R2 l: hip +0.50 cm toward thigh axis; knee z 71.17, ankle z 13.50 on section centres",
+  "AD-R1/R2 r: hip +0.50 cm toward thigh axis; knee z 71.20, ankle z 13.75 on section centres",
+  "AD-R3/R4 l: GH 4.0 cm below acromion (inside=True depth 3.64, half-fit spread 0.99); elbow +0.28 cm",
+  "AD-R3/R4 r: GH 4.0 cm below acromion (inside=True depth 4.73, half-fit spread 0.86); elbow +0.14 cm",
+  "v003 (order 8918cea): knees re-placed with the AD-R2 5 mm cap applied to the full displacement from the v001 consensus"
+ ],
+ "GH": {
+  "l": {
+   "n_sections": 18,
+   "section_z": [
+    145.75051669405514,
+    154.13441889063526
+   ],
+   "axis_point": [
+    25.06093911342333,
+    -8.585772851190988,
+    149.95940144589267
+   ],
+   "axis_dir": [
+    -0.14932130049017797,
+    -0.07049176622499631,
+    0.9862728122149583
+   ],
+   "axis_rms_cm": 0.05489370249120064,
+   "armpit_contact_z": 154.50808248153243,
+   "candidates": [
+    {
+     "offset_cm": 3.5,
+     "p": [
+      21.085337469428687,
+      -10.462579313311345,
+      176.2184
+     ],
+     "inside": true,
+     "depth_cm": 3.467686942905958
+    },
+    {
+     "offset_cm": 4.0,
+     "p": [
+      21.16103726498263,
+      -10.426842869321428,
+      175.7184
+     ],
+     "inside": true,
+     "depth_cm": 3.6367136206635857
+    },
+    {
+     "offset_cm": 4.5,
+     "p": [
+      21.23673706053658,
+      -10.39110642533151,
+      175.2184
+     ],
+     "inside": true,
+     "depth_cm": 3.7920653196998897
+    }
+   ],
+   "half_fit_spread_cm": 0.9903493854764901,
+   "rule_satisfied": true
+  },
+  "r": {
+   "n_sections": 16,
+   "section_z": [
+    145.95372480463257,
+    153.38056625624301
+   ],
+   "axis_point": [
+    -25.804805297905194,
+    -8.196874425195752,
+    149.67349332609197
+   ],
+   "axis_dir": [
+    0.12885918666555413,
+    0.048547910830828746,
+    0.990473831237279
+   ],
+   "axis_rms_cm": 0.04392983176176263,
+   "armpit_contact_z": 153.84379332660976,
+   "candidates": [
+    {
+     "offset_cm": 3.5,
+     "p": [
+      -22.5703078564607,
+      -6.978272186324359,
+      174.5354
+     ],
+     "inside": true,
+     "depth_cm": 4.593541421099438
+    },
+    {
+     "offset_cm": 4.0,
+     "p": [
+      -22.635357120056383,
+      -7.002779603532033,
+      174.0354
+     ],
+     "inside": true,
+     "depth_cm": 4.729379723675189
+    },
+    {
+     "offset_cm": 4.5,
+     "p": [
+      -22.700406383652062,
+      -7.027287020739706,
+      173.5354
+     ],
+     "inside": true,
+     "depth_cm": 4.8391364084453174
+    }
+   ],
+   "half_fit_spread_cm": 0.8550798211626316,
+   "rule_satisfied": true
+  }
+ }
+}

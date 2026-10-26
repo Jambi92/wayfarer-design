@@ -1,5 +1,32 @@
 # Character Design Status
 
+## Grask RP2 — 2026-10-26 — retopology frozen; diagnostic deformation follow-up awaiting review
+
+**Order:** `reviews/chatgpt-rac-rp2-grask-diagnostic-deformation-failure-isolation-order.md` (8918cea).
+
+**Delivered:**
+- gate `reviews/claude-rac-rp2-grask-diagnostic-deformation-failure-isolation-gate.md`;
+- evidence `reviews/rac-rp2-evidence/grask_rig_diagnostic_v002/`.
+
+**Landmarks v003:** bounded knees, 5 mm total; residual to the section centre 2.75 / 0.83 mm.
+
+**Rig `rigdiag_v002.blend`** (9e2d078a…): rest geometry = frozen v003; weights W2.
+
+**Weights:** two candidates; neither beats the baseline.
+
+| Suite | Baseline W0 | W2 |
+|---|---|---|
+| Full suite (43 poses) | 20 | 12 (20 regressions) |
+
+- Nail binding is the only supported change.
+
+**Other findings:**
+- Pivot comparisons and DQS were run; none passes.
+- Of 2,343 orientation failures, only 53 are geometric local inversions.
+- The topology contribution is **not excluded**; loop compression persists at `knee_71|73`, `elbow_21|22`, `shoulder_fan_2-4` and `mcp_palm_4-6`.
+
+**Parents unchanged.** Not production deformation.
+
 ## Grask RP2 — 2026-10-25 — landmark adjudication v002 + diagnostic rig v001 executed; awaiting ChatGPT review
 
 **Order:** `reviews/chatgpt-rac-rp2-grask-rig-landmark-adjudication-and-diagnostic-rig-order.md` (bf7d664).

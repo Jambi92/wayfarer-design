@@ -1,15 +1,16 @@
 # rig_build.py (bpy module) -- python3(bpy) rig_build.py -- V003.blend LANDMARKS.json OUT.blend OUT_rig.json OUT_weights.npz
 # Derived DIAGNOSTIC rig only. Opens the frozen v003 file read-only, never saves it: the result is written with save_as to a NEW path.
 # Armature from the adjudicated landmark package (production frame, Blender metres); diagnostic automatic (bone-heat) weights.
-import bpy, sys, json, time, numpy as np, mathutils
+import bpy, sys, os, json, time, numpy as np, mathutils
 a = sys.argv[sys.argv.index('--') + 1:]
 SRC, LMF, OUT, OUTJ, OUTW = a[:5]
 L = json.load(open(LMF))['joints']; B = lambda k: mathutils.Vector(L[k]['position_blender_m'])
 bpy.ops.wm.open_mainfile(filepath=SRC)
 body = [o for o in bpy.data.objects if o.type == 'MESH'][0]
-body.name = 'GR_U_REF_RP2_rigdiag_v001_body'; body.data.name = 'GR_U_REF_RP2_rigdiag_v001_body'
-body['rac_status'] = 'DIAGNOSTIC DERIVED COPY of GR_U_REF_RP2_retopo_v003 (frozen parent untouched). Not production. Diagnostic weights only.'
-arm_d = bpy.data.armatures.new('GR_U_REF_RP2_rigdiag_v001_armature'); arm = bpy.data.objects.new('GR_U_REF_RP2_rigdiag_v001_rig', arm_d)
+RV = os.environ.get('RIG_VERSION', 'v001') if 'os' in dir() else 'v001'
+body.name = 'GR_U_REF_RP2_rigdiag_%s_body' % RV; body.data.name = body.name
+body['rac_status'] = 'DIAGNOSTIC DERIVED COPY (%s) of GR_U_REF_RP2_retopo_v003 (frozen parent untouched). Not production. Diagnostic weights only.' % RV
+arm_d = bpy.data.armatures.new('GR_U_REF_RP2_rigdiag_%s_armature' % RV); arm = bpy.data.objects.new('GR_U_REF_RP2_rigdiag_%s_rig' % RV, arm_d)
 bpy.context.scene.collection.objects.link(arm); bpy.context.view_layer.objects.active = arm; arm.select_set(True)
 bpy.ops.object.mode_set(mode='EDIT'); eb = arm_d.edit_bones
 BONES = []   # (name, head_key, tail_key or vector, parent, deform, frame_key)
@@ -48,7 +49,17 @@ bpy.ops.object.mode_set(mode='OBJECT')
 bpy.ops.object.select_all(action='DESELECT'); body.select_set(True); arm.select_set(True); bpy.context.view_layer.objects.active = arm
 for vg in list(body.vertex_groups):
     if vg.name.startswith('LOOP_'): continue
-t0 = time.time(); bpy.ops.object.parent_set(type='ARMATURE_AUTO'); t1 = time.time()
+t0 = time.time()
+import os
+if os.environ.get('WEIGHTS_NPZ'):                                   # v002+: assign a logged diagnostic weight array instead of bone heat
+    bpy.ops.object.parent_set(type='ARMATURE_NAME'); zw = np.load(os.environ['WEIGHTS_NPZ']); Wn = zw['W']; wn = [str(n) for n in zw['names']]
+    for j, n in enumerate(wn):
+        vg = body.vertex_groups.get(n) or body.vertex_groups.new(name=n); w = Wn[:, j]; nz = np.nonzero(w > 0)[0]
+        for v in nz: vg.add([int(v)], float(w[v]), 'REPLACE')
+    body['rac_diag_weights'] = 'assigned from %s' % os.path.basename(os.environ['WEIGHTS_NPZ'])
+else:
+    bpy.ops.object.parent_set(type='ARMATURE_AUTO')
+t1 = time.time()
 deform = [b.name for b in arm_d.bones if b.use_deform]
 idx = {vg.name: vg.index for vg in body.vertex_groups}
 nV = len(body.data.vertices); W = np.zeros((nV, len(deform)), np.float32); col = {n: i for i, n in enumerate(deform)}
