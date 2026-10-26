@@ -1,5 +1,20 @@
 # Character Design Status
 
+## Grask RP2 — 2026-10-26 — retopology frozen; elbow closed (130° carried forward); SW3 shoulder direction accepted; left-flex90 cleanup did not pass (carried forward); production deformation not accepted
+
+**Order:** `reviews/chatgpt-rac-rp2-grask-final-left-flex90-cleanup-order.md` (bd11ab0).
+
+**Delivered:**
+- gate `reviews/claude-rac-rp2-grask-final-left-flex90-cleanup-gate.md`;
+- evidence `reviews/rac-rp2-evidence/grask_rig_diagnostic_v008/`.
+
+**Left flex90 cleanup:** one small left-flex90 pose-space corrective on top of SW3. Its activation is exactly 0 on every other pose.
+- **LF2** reaches 0 non-contact pairs, a 1.3 mm crease, loop 0.525 and zone −31.7 %, and reads smoothly.
+- It still has 2 local inversions (SW3's own), 4 folds outside and orientation 111. Not selected.
+- Shoulder experimentation is closed for RP2. Left flex90 is a named production-rig corrective item.
+
+**Parents unchanged.** No regression (other poses bit-identical). Not production deformation.
+
 ## Grask RP2 — 2026-10-26 — retopology frozen; elbow experimentation closed (130° carried forward); shoulder SW3 best direction (left flex90 residual); production deformation not accepted
 
 **Order:** `reviews/chatgpt-rac-rp2-grask-vc3-interface-cleanup-and-shoulder-weight-volume-order.md` (28dd8d3).

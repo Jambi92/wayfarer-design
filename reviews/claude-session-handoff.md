@@ -2,6 +2,21 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-26) — RP2 GRASK FINAL LEFT-FLEX90 CLEANUP — awaiting ChatGPT review
+
+**What was done**
+- Order bd11ab0 executed. Gate: `reviews/claude-rac-rp2-grask-final-left-flex90-cleanup-gate.md`.
+- Workspace `/tmp/claude-0/rt/r10` (cand/LF1-2, lf1/, lf2/ with vsrc/, diag/, sheets/).
+- Tools: `lf_corr.py`, `dqs_blend.py`, `lf_maps.py`.
+- SW3 baseline comes from r9 (sw1 weights, sw3 blend mask, sw3full posed).
+
+**Results**
+- LF1 / LF2 fix the non-contact pairs and the crease but keep 2–3 local inversions and 2–4 folds outside, with orientation 111–113. No selection.
+- Shoulder experimentation is CLOSED for RP2. Elbow is closed. SW3 is the accepted shoulder direction.
+- Parents identical. Other poses bit-identical.
+
+**Next:** STOP for ChatGPT review (gate §6: final RP2 disposition, then the next stage).
+
 ## LATEST (2026-10-26) — RP2 GRASK VC3 INTERFACE CLEANUP + SHOULDER SW — awaiting ChatGPT review
 
 **What was done**
