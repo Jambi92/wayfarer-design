@@ -1,0 +1,426 @@
+{
+ "name": "GR_U_REF_RP2_retopo_v003",
+ "race": "Grask",
+ "cfg": "U",
+ "state": "REF",
+ "phase": "RP2",
+ "step": "retopo",
+ "version": "v003",
+ "date": "2026-10-25",
+ "status": "RETOPO v003 AUDIT-CLOSURE CANDIDATE - technical audits pass; author visual approval pending (not accepted; not frozen)",
+ "author": "Claude (Opus 5.5) under Tyler / ChatGPT order reviews/chatgpt-rac-rp2-grask-thumb-web-visual-review-and-audit-closure-order.md (4d4f6e0)",
+ "source": {
+  "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Grask/RP2/SOURCE_3D/GR_U_REF_RP2_SOURCE_3D_v005.blend",
+  "sha256_before_pc": "7bba8d2d5f081c077351b2e79e7e5fcce91b4f376cd6b2cfc76f1c2eb052ab14",
+  "geometry_hash_before_pc": "2697929d90c9ed708997a594502a4d5edeaebb8f4ae39deefcc0802dc7c1d7bc",
+  "sha256_before_cloud": "7bba8d2d5f081c077351b2e79e7e5fcce91b4f376cd6b2cfc76f1c2eb052ab14",
+  "geometry_hash_before_cloud": "2697929d90c9ed708997a594502a4d5edeaebb8f4ae39deefcc0802dc7c1d7bc",
+  "sha256_after_pc": "7bba8d2d5f081c077351b2e79e7e5fcce91b4f376cd6b2cfc76f1c2eb052ab14",
+  "geometry_hash_after_pc": "2697929d90c9ed708997a594502a4d5edeaebb8f4ae39deefcc0802dc7c1d7bc",
+  "sha256_after_cloud": "7bba8d2d5f081c077351b2e79e7e5fcce91b4f376cd6b2cfc76f1c2eb052ab14",
+  "geometry_hash_after_cloud": "2697929d90c9ed708997a594502a4d5edeaebb8f4ae39deefcc0802dc7c1d7bc",
+  "unchanged": true,
+  "object": "GR_U_REF_RP2_SOURCE_3D_v005",
+  "verts": 590764,
+  "tris": 1181524
+ },
+ "parent": {
+  "file": "GR_U_REF_RP2_retopo_v002.blend",
+  "sha256": "49ae8a6e2f2c66e94182a49f6e95103a72730a29120cc541fde74abc5355f55e",
+  "relation": "same architecture and x2 density; v001 and v002 preserved unchanged as provenance (PC hashes re-verified)"
+ },
+ "blend": {
+  "file": "GR_U_REF_RP2_retopo_v003.blend",
+  "sha256": "03bfe7d924ff5b8b61a4c10095af5d16ca29d41667d7f61d0abeca14e1f07ce0",
+  "geometry_hash": "f9c4a7ac98e86d98017376b9d67c85428503d2d6385258471d99bc766bfe702f",
+  "geometry_hash_method": "sha256(float32 vertex co bytes + int32 loop vertex_index bytes)",
+  "object": "GR_U_REF_RP2_retopo_v003"
+ },
+ "frame": {
+  "blender": "m, Z up, faces -Y, subject left +X = (x,-f,u)/100 of the RAC analysis frame",
+  "origin": "pelvis_root landmark projected to the ground plane (production mesh contract)",
+  "origin_translation_analysis_cm": [
+   -0.11179767867288516,
+   5.722717396009755,
+   0.0
+  ],
+  "origin_translation_blender_m": [
+   -0.0011179767867288517,
+   -0.05722717396009755,
+   0.0
+  ],
+  "pelvis_root_after_cm": [
+   0.0,
+   0.0,
+   123.92800669308066
+  ],
+  "bbox_production_cm": [
+   [
+    -36.05342192080885,
+    -14.621503969628048,
+    0.0014123164296009976
+   ],
+   [
+    34.995703732172075,
+    31.855667947534243,
+    217.9926880922486
+   ]
+  ],
+  "bbox_blender_m": [
+   [
+    -0.36053421920808854,
+    -0.31855667947534244,
+    1.4123164296009977e-05
+   ],
+   [
+    0.34995703732172073,
+    0.14621503969628047,
+    2.179926880922486
+   ]
+  ],
+  "interlandmark_max_abs_change_mm": 2.8421709430404007e-13,
+  "comparison_frame": "all shape validation is done in the common v005 frame (translation undone)"
+ },
+ "density": {
+  "selected": "x2 Catmull-Clark of authored cage29 = v002 cage27 + ankle fan 10 rings (was 7), elbow 6 rings (was 4), one more palm MCP-row ring (14.18)",
+  "cage_quads": 10654,
+  "verts": 170466,
+  "quads": 170464,
+  "triangle_equivalent": 340928,
+  "v001_quads": 628736,
+  "reduction_vs_v001_pct": 72.9,
+  "by_zone": {
+   "head_face": {
+    "faces": 13493,
+    "edge_mean_mm": 3.871574800394812,
+    "edge_median_mm": 3.8704787693348432,
+    "edge_p99_mm": 6.944511153006225,
+    "edge_max_mm": 10.809060644151929,
+    "ceiling_mm": 5.449781872723634,
+    "density_pass": true
+   },
+   "ears": {
+    "faces": 4096,
+    "edge_mean_mm": 2.490202911704521,
+    "edge_median_mm": 2.149793432843954,
+    "edge_p99_mm": 6.307352600486507,
+    "edge_max_mm": 9.246969910332137,
+    "ceiling_mm": 5.449781872723634,
+    "density_pass": true
+   },
+   "hands": {
+    "faces": 35392,
+    "edge_mean_mm": 2.407680743447371,
+    "edge_median_mm": 2.1352004379512115,
+    "edge_p99_mm": 6.360271027257668,
+    "edge_max_mm": 9.030884134236985,
+    "ceiling_mm": 6.53973824726836,
+    "density_pass": true
+   },
+   "feet": {
+    "faces": 22464,
+    "edge_mean_mm": 2.70915610106162,
+    "edge_median_mm": 2.3780935304374173,
+    "edge_p99_mm": 6.595510565684933,
+    "edge_max_mm": 11.268539939622444,
+    "ceiling_mm": 6.53973824726836,
+    "density_pass": true
+   },
+   "trunk_limbs": {
+    "faces": 95019,
+    "edge_mean_mm": 5.021073540800817,
+    "edge_median_mm": 4.6066912616918305,
+    "edge_p99_mm": 12.031070492594724,
+    "edge_max_mm": 26.704567488793383,
+    "ceiling_mm": 13.07947649453672,
+    "density_pass": true
+   }
+  },
+  "ceiling_rule": "contract ceilings applied as maximum MEAN edge length per zone"
+ },
+ "topology": {
+  "verts": 170466,
+  "faces": 170464,
+  "quads": 170464,
+  "tris": 0,
+  "ngons": 0,
+  "quad_pct": 100.0,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "winding_inconsistent_edges": 0,
+  "components": 1,
+  "unused_verts": 0,
+  "duplicate_faces": 0,
+  "repeated_vertex_faces": 0,
+  "coincident_verts": 0,
+  "degenerate_faces(area<1e-4cm2)": 0,
+  "normals_outward": true,
+  "poles": 166,
+  "valence_hist": {
+   "3": 104,
+   "4": 170300,
+   "5": 28,
+   "6": 34
+  }
+ },
+ "quad_quality": {
+  "techx": {
+   "nonmanifold_vertices": 0,
+   "euler_characteristic": 2,
+   "genus": 0,
+   "components": 1,
+   "aspect_opposite_sum": {
+    "definition": "max(sum of opposite edges ratio, inverse)",
+    "max": 7.06992307374646,
+    "over_4": 1693,
+    "over_8": 0
+   },
+   "aspect_edge": {
+    "definition": "longest edge / shortest edge",
+    "max": 8.071158540154705,
+    "over_4": 2179,
+    "over_6": 279,
+    "over_8": 1,
+    "over_10": 0
+   },
+   "angle_min": 20.11168495545074,
+   "angle_max": 159.95948107299358,
+   "hard_angle": 0
+  },
+  "hard_limit_quads": 0,
+  "hard_limit_definition": "angle <20 or >160 deg, or aspect >8",
+  "angle_in_45_135_pct_all": 94.50382485451473,
+  "aspect_le4_pct_all": 99.00682842125023,
+  "by_zone": {
+   "head_face": {
+    "angle_in_45_135_pct": 95.90898984658712,
+    "angle_min": 20.11168495545074,
+    "angle_max": 159.820930698281,
+    "aspect_le4_pct": 99.99258874972207,
+    "aspect_max": 4.266193679880369
+   },
+   "ears": {
+    "angle_in_45_135_pct": 84.1552734375,
+    "angle_min": 21.3601657691747,
+    "angle_max": 159.58205250554022,
+    "aspect_le4_pct": 99.8046875,
+    "aspect_max": 5.04557037478522
+   },
+   "hands": {
+    "angle_in_45_135_pct": 98.8500226039783,
+    "angle_min": 20.199800266017693,
+    "angle_max": 159.9368409209686,
+    "aspect_le4_pct": 99.42924954792043,
+    "aspect_max": 5.9074777590960075
+   },
+   "feet": {
+    "angle_in_45_135_pct": 98.94497863247864,
+    "angle_min": 20.94503405859537,
+    "angle_max": 159.91538303722496,
+    "aspect_le4_pct": 99.99554843304843,
+    "aspect_max": 4.18092226053391
+   },
+   "trunk_limbs": {
+    "angle_in_45_135_pct": 92.08158368326335,
+    "angle_min": 20.247858597515066,
+    "angle_max": 159.95948107299358,
+    "aspect_le4_pct": 98.4413643587072,
+    "aspect_max": 7.06992307374646
+   }
+  }
+ },
+ "stature_cm": 217.99127490894534,
+ "T3": {
+  "stature_diff_mm": -0.08725091054657241,
+  "bbox_maxdiff_mm": 0.11236410419403597
+ },
+ "deviation_mm": {
+  "head_face": {
+   "src_to_prod": {
+    "median": 0.06075844862014945,
+    "p95": 0.26219803083439064,
+    "max": 0.718718336658653
+   },
+   "prod_to_src": {
+    "median": 0.00010640825898262249,
+    "p95": 0.1259005050615307,
+    "max": 0.6079150500656854
+   }
+  },
+  "ears": {
+   "src_to_prod": {
+    "median": 0.08764194133092126,
+    "p95": 0.3124419906148565,
+    "max": 0.7917372758174337
+   },
+   "prod_to_src": {
+    "median": 9.416388637217886e-05,
+    "p95": 0.18344631563058364,
+    "max": 0.5766048769543721
+   }
+  },
+  "hand_l": {
+   "src_to_prod": {
+    "median": 0.02724366360623562,
+    "p95": 0.16051367865019975,
+    "max": 1.1935094672273545
+   },
+   "prod_to_src": {
+    "median": 0.00023204126993090223,
+    "p95": 0.09471816040918456,
+    "max": 1.0615661454004084
+   }
+  },
+  "hand_r": {
+   "src_to_prod": {
+    "median": 0.0274298028502305,
+    "p95": 0.1572122011424359,
+    "max": 1.0201565900308875
+   },
+   "prod_to_src": {
+    "median": 8.669133624378869e-05,
+    "p95": 0.09313347041005447,
+    "max": 1.2529673567051245
+   }
+  },
+  "foot_l": {
+   "src_to_prod": {
+    "median": 0.03450816029400995,
+    "p95": 0.1630041162088253,
+    "max": 1.0676426309171947
+   },
+   "prod_to_src": {
+    "median": 0.0007225780998814555,
+    "p95": 0.11430083937865805,
+    "max": 0.576079004378892
+   }
+  },
+  "foot_r": {
+   "src_to_prod": {
+    "median": 0.03453514904812524,
+    "p95": 0.15876149153532013,
+    "max": 1.283142966168709
+   },
+   "prod_to_src": {
+    "median": 0.0005077392627702441,
+    "p95": 0.11089710194724893,
+    "max": 0.5602438373957762
+   }
+  },
+  "body_general": {
+   "src_to_prod": {
+    "median": 0.03163009767504447,
+    "p95": 0.16676447838313202,
+    "max": 1.798497893241848
+   },
+   "prod_to_src": {
+    "median": 9.744956398842733e-05,
+    "p95": 0.09447325062735434,
+    "max": 1.2529673567051245
+   }
+  }
+ },
+ "silhouette_iou": {
+  "front": 0.9961590571274482,
+  "rear": 0.9962116727832366,
+  "profile_left": 0.995518374663878,
+  "profile_right": 0.995518374663878,
+  "q3_front_left": 0.9966385643416736,
+  "q3_front_right": 0.9966711233594369,
+  "q3_rear_left": 0.9966302864938609,
+  "q3_rear_right": 0.9966927362186048
+ },
+ "landmarks": {
+  "measured": {
+   "n": 30,
+   "max_mm": 0.84,
+   "median_mm": 0.038000000000000006,
+   "note": "surface-fit and prior-seed+surface-fit landmarks re-measured independently on the mesh; these are the T-6 evidence"
+  },
+  "construction_copied": {
+   "n": 44,
+   "note": "exact v005 construction coordinates (hand/foot joints, eye params) carried as data; drift is 0 by construction and is NOT evidence that the surface was preserved"
+  },
+  "file": "GR_U_REF_RP2_retopo_v003_landmarks.json",
+  "n": 74,
+  "max_drift_mm": 0.84,
+  "over_1mm": [],
+  "sampling": "dense ~1.2 mm area samples on v005 and v002 (v002 method)"
+ },
+ "loop_audit": {
+  "all_pass": true,
+  "joints": 69
+ },
+ "identity_audit": {
+  "max_abs_station_diff_mm": 2.375
+ },
+ "symmetry": {
+  "left (x>0)": {
+   "src_to_prod": [
+    0.03134938701302034,
+    0.16745349379509744,
+    1.798497893241848
+   ],
+   "prod_to_src": [
+    9.876864439647967e-05,
+    0.09260154645492111,
+    1.0615661454004084
+   ]
+  },
+  "right (x<0)": {
+   "src_to_prod": [
+    0.03191474817909282,
+    0.16608823065649456,
+    1.283142966168709
+   ],
+   "prod_to_src": [
+    9.629392482786423e-05,
+    0.09621902656041542,
+    1.2529673567051245
+   ]
+  },
+  "asymmetry_mirror_distance_mm": {
+   "source": [
+    2.4336101125115,
+    9.475816882610998,
+    41.35920556742146
+   ],
+   "production": [
+    2.4354867989671556,
+    9.491162562002376,
+    41.35540973099015
+   ],
+   "diff_p95_mm": 0.14275051688822457,
+   "diff_max_mm": 1.0551133435465845,
+   "note": "mirrored source vertices measured against the source and against the production surface; matching statistics = source asymmetry preserved (no symmetrisation)"
+  }
+ },
+ "self_intersections": 0,
+ "folded_faces_gt120deg": 0,
+ "flipped_faces": 0,
+ "landmark_package_sha256": "aafbe617260dfa67632f7fe9abe495fcbf5cacd39584ab31ae8a1ead6ec8ff09",
+ "audited_on": "the exported blend read back (v003_rb), production translation undone",
+ "tools": {
+  "blender": "5.2.2 LTS (bpy)",
+  "python": "3.13.16",
+  "numpy": "2.5.3",
+  "libigl": "?",
+  "trimesh": "5.1.1",
+  "scipy": "1.18.1",
+  "scripts": "tools/rac/rp/grask_retopo_v003/"
+ },
+ "uv": "none (seam PROPOSAL only, edge attribute seam_proposal)",
+ "lod": "none (identity/deformation loops tagged: vertex groups LOOP_*, edge attribute identity_loop)",
+ "not_done": [
+  "freeze",
+  "rig",
+  "skin weights",
+  "creator morphs",
+  "UVs/materials",
+  "LODs",
+  "UE5",
+  "other races"
+ ],
+ "gate": "reviews/claude-rac-rp2-grask-retopo-v003-audit-closure-gate.md",
+ "evidence": "reviews/rac-rp2-evidence/grask_retopo_v003_audit_closure/"
+}

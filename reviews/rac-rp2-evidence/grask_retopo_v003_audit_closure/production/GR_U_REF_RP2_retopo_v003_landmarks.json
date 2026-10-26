@@ -1,0 +1,2164 @@
+{
+ "meta": {
+  "file": "GR_U_REF_RP2_retopo_v003_landmarks.json",
+  "frames": "production_cm: analysis axes (x=subject left, f=forward, u=up) with the production origin (pelvis_root projected to the ground) at 0; blender_m: production frame in metres, (x,-f,u)/100, Z up, faces -Y; source_frame_cm: the same landmark in the frozen v005 frame (comparison frame)",
+  "origin_translation_cm": [
+   -0.11179767867288516,
+   5.722717396009755,
+   0.0
+  ],
+  "methods": "prior-seed+surface-fit = old Grask E3 joint used only as a diagnostic seed, moved by the section-centroid difference between E3 and this mesh; surface-fit = feature measured on this mesh; manual = exact v004/v005 construction point (hand/foot parametric model, v003 eye params) or estimate (jaw hinge)",
+  "drift_note": "drift measured in the common v005 frame",
+  "note": "landmarks re-measured on the production mesh with the same methods as on v005; drift = production vs v005 measurement",
+  "n": 74,
+  "sampling": "surface-fit features measured on dense area samples (sub-triangle centroids, ~1.2 mm) on v005 and v003 alike",
+  "evidence_split": "30 landmarks (methods surface-fit / prior-seed+surface-fit) are independently re-measured on the v003 surface and are the T-6 evidence (max drift 0.84 mm). 44 landmarks (method manual) are exact v005 construction coordinates (hand/foot parametric joints, eye params) carried as data: their drift is 0 by construction and is NOT evidence that the surface was preserved."
+ },
+ "landmarks": {
+  "spine_01": {
+   "production_cm": [
+    0.0208,
+    -2.7632,
+    133.8816
+   ],
+   "blender_m": [
+    0.000208,
+    0.027632,
+    1.338816
+   ],
+   "source_frame_cm": [
+    0.1326,
+    -8.4859,
+    133.8816
+   ],
+   "method": "prior-seed+surface-fit",
+   "v005_source_cm": [
+    0.1329,
+    -8.4866,
+    133.8816
+   ],
+   "drift_mm": 0.008,
+   "prior_seed_E3_cm": [
+    0.0,
+    -3.17,
+    133.882
+   ],
+   "departure_from_E3_seed_cm": 5.317,
+   "evidence": "independently measured on v003"
+  },
+  "spine_02": {
+   "production_cm": [
+    -0.2175,
+    -0.797,
+    142.4234
+   ],
+   "blender_m": [
+    -0.002175,
+    0.00797,
+    1.424234
+   ],
+   "source_frame_cm": [
+    -0.1057,
+    -6.5197,
+    142.4234
+   ],
+   "method": "prior-seed+surface-fit",
+   "v005_source_cm": [
+    -0.1061,
+    -6.5209,
+    142.4234
+   ],
+   "drift_mm": 0.013,
+   "prior_seed_E3_cm": [
+    0.0,
+    -2.068,
+    142.423
+   ],
+   "departure_from_E3_seed_cm": 4.453,
+   "evidence": "independently measured on v003"
+  },
+  "spine_03": {
+   "production_cm": [
+    -0.4676,
+    -1.3291,
+    150.0432
+   ],
+   "blender_m": [
+    -0.004676,
+    0.013291,
+    1.500432
+   ],
+   "source_frame_cm": [
+    -0.3558,
+    -7.0518,
+    150.0432
+   ],
+   "method": "prior-seed+surface-fit",
+   "v005_source_cm": [
+    -0.3559,
+    -7.0522,
+    150.0432
+   ],
+   "drift_mm": 0.004,
+   "prior_seed_E3_cm": [
+    0.0,
+    -3.241,
+    150.043
+   ],
+   "departure_from_E3_seed_cm": 3.827,
+   "evidence": "independently measured on v003"
+  },
+  "pelvis_root": {
+   "production_cm": [
+    -0.0,
+    0.0,
+    123.928
+   ],
+   "blender_m": [
+    -0.0,
+    -0.0,
+    1.23928
+   ],
+   "source_frame_cm": [
+    0.1118,
+    -5.7227,
+    123.928
+   ],
+   "method": "prior-seed+surface-fit",
+   "v005_source_cm": [
+    0.1117,
+    -5.7215,
+    123.928
+   ],
+   "drift_mm": 0.012,
+   "prior_seed_E3_cm": [
+    0.0,
+    0.464,
+    123.928
+   ],
+   "departure_from_E3_seed_cm": 6.188,
+   "evidence": "independently measured on v003"
+  },
+  "neck_base": {
+   "production_cm": [
+    0.3074,
+    1.3724,
+    189.1433
+   ],
+   "blender_m": [
+    0.003074,
+    -0.013724,
+    1.891433
+   ],
+   "source_frame_cm": [
+    0.4192,
+    -4.3503,
+    189.1433
+   ],
+   "method": "prior-seed+surface-fit",
+   "v005_source_cm": [
+    0.4201,
+    -4.3513,
+    189.1433
+   ],
+   "drift_mm": 0.014,
+   "prior_seed_E3_cm": [
+    0.0,
+    1.246,
+    189.143
+   ],
+   "departure_from_E3_seed_cm": 5.612,
+   "evidence": "independently measured on v003"
+  },
+  "head_pivot": {
+   "production_cm": [
+    -0.0818,
+    7.2136,
+    200.1052
+   ],
+   "blender_m": [
+    -0.000818,
+    -0.072136,
+    2.001052
+   ],
+   "source_frame_cm": [
+    0.03,
+    1.4908,
+    200.1052
+   ],
+   "method": "prior-seed+surface-fit",
+   "note": "atlanto-occipital pivot",
+   "v005_source_cm": [
+    0.0304,
+    1.4966,
+    200.1052
+   ],
+   "drift_mm": 0.057,
+   "prior_seed_E3_cm": [
+    0.0,
+    4.708,
+    200.105
+   ],
+   "departure_from_E3_seed_cm": 3.217,
+   "evidence": "independently measured on v003"
+  },
+  "crown": {
+   "production_cm": [
+    -0.1628,
+    7.2067,
+    217.9665
+   ],
+   "blender_m": [
+    -0.001628,
+    -0.072067,
+    2.179665
+   ],
+   "source_frame_cm": [
+    -0.051,
+    1.484,
+    217.9665
+   ],
+   "method": "surface-fit",
+   "note": "area-weighted centroid of the top 0.5 mm of the cranium",
+   "v005_source_cm": [
+    -0.0448,
+    1.4555,
+    217.9703
+   ],
+   "drift_mm": 0.294,
+   "evidence": "independently measured on v003"
+  },
+  "hip_l": {
+   "production_cm": [
+    12.8379,
+    -1.9636,
+    122.3047
+   ],
+   "blender_m": [
+    0.128379,
+    0.019636,
+    1.223047
+   ],
+   "source_frame_cm": [
+    12.9497,
+    -7.6863,
+    122.3047
+   ],
+   "method": "prior-seed+surface-fit",
+   "axis_analysis": [
+    0.0,
+    0.07087,
+    -0.99749
+   ],
+   "axis_blender": [
+    0.0,
+    -0.07087,
+    -0.99749
+   ],
+   "note": "femoral-head proxy: seed + thigh-section centroid shift 14-22 cm distal",
+   "v005_source_cm": [
+    12.9515,
+    -7.6822,
+    122.305
+   ],
+   "drift_mm": 0.045,
+   "prior_seed_E3_cm": [
+    11.784,
+    -0.705,
+    122.801
+   ],
+   "departure_from_E3_seed_cm": 7.096,
+   "evidence": "independently measured on v003"
+  },
+  "knee_l": {
+   "production_cm": [
+    13.2345,
+    1.8576,
+    71.1661
+   ],
+   "blender_m": [
+    0.132345,
+    -0.018576,
+    0.711661
+   ],
+   "source_frame_cm": [
+    13.3463,
+    -3.8651,
+    71.1661
+   ],
+   "method": "prior-seed+surface-fit",
+   "axis_analysis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "axis_blender": [
+    1.0,
+    -0.0,
+    0.0
+   ],
+   "note": "axis = flexion (mediolateral)",
+   "v005_source_cm": [
+    13.3465,
+    -3.8643,
+    71.1662
+   ],
+   "drift_mm": 0.009,
+   "prior_seed_E3_cm": [
+    11.784,
+    2.93,
+    71.649
+   ],
+   "departure_from_E3_seed_cm": 6.989,
+   "evidence": "independently measured on v003"
+  },
+  "ankle_l": {
+   "production_cm": [
+    14.8669,
+    1.5416,
+    9.2316
+   ],
+   "blender_m": [
+    0.148669,
+    -0.015416,
+    0.092316
+   ],
+   "source_frame_cm": [
+    14.9787,
+    -4.1811,
+    9.2316
+   ],
+   "method": "prior-seed+surface-fit",
+   "axis_analysis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "axis_blender": [
+    1.0,
+    -0.0,
+    0.0
+   ],
+   "note": "seed + distal shin-section shift",
+   "v005_source_cm": [
+    14.9785,
+    -4.1786,
+    9.2315
+   ],
+   "drift_mm": 0.025,
+   "prior_seed_E3_cm": [
+    11.784,
+    0.366,
+    9.045
+   ],
+   "departure_from_E3_seed_cm": 5.56,
+   "evidence": "independently measured on v003"
+  },
+  "sternoclavicular_l": {
+   "production_cm": [
+    3.0213,
+    1.463,
+    180.6914
+   ],
+   "blender_m": [
+    0.030213,
+    -0.01463,
+    1.806914
+   ],
+   "source_frame_cm": [
+    3.1331,
+    -4.2597,
+    180.6914
+   ],
+   "method": "prior-seed+surface-fit",
+   "v005_source_cm": [
+    3.1298,
+    -4.2593,
+    180.6914
+   ],
+   "drift_mm": 0.033,
+   "prior_seed_E3_cm": [
+    2.615,
+    3.25,
+    180.691
+   ],
+   "departure_from_E3_seed_cm": 7.528,
+   "evidence": "independently measured on v003"
+  },
+  "glenohumeral_l": {
+   "production_cm": [
+    21.3362,
+    -4.3722,
+    177.5055
+   ],
+   "blender_m": [
+    0.213362,
+    0.043722,
+    1.775055
+   ],
+   "source_frame_cm": [
+    21.448,
+    -10.0949,
+    177.5055
+   ],
+   "method": "prior-seed+surface-fit",
+   "axis_analysis": [
+    0.13917,
+    0.0,
+    -0.99027
+   ],
+   "axis_blender": [
+    0.13917,
+    -0.0,
+    -0.99027
+   ],
+   "note": "seed + upper-arm section shift 26-30 cm distal (arm free of torso below z~152)",
+   "v005_source_cm": [
+    21.4478,
+    -10.0948,
+    177.5055
+   ],
+   "drift_mm": 0.003,
+   "prior_seed_E3_cm": [
+    20.655,
+    1.894,
+    177.394
+   ],
+   "departure_from_E3_seed_cm": 12.016,
+   "evidence": "independently measured on v003"
+  },
+  "acromion_l": {
+   "production_cm": [
+    23.8362,
+    -4.3722,
+    179.7184
+   ],
+   "blender_m": [
+    0.238362,
+    0.043722,
+    1.797184
+   ],
+   "source_frame_cm": [
+    23.948,
+    -10.0949,
+    179.7184
+   ],
+   "method": "surface-fit",
+   "note": "shoulder-cap surface point vertically above the glenohumeral centre, 2.5 cm lateral (ray construction)",
+   "v005_source_cm": [
+    23.9478,
+    -10.0948,
+    179.7253
+   ],
+   "drift_mm": 0.07,
+   "evidence": "independently measured on v003"
+  },
+  "elbow_l": {
+   "production_cm": [
+    25.4624,
+    -4.4282,
+    147.495
+   ],
+   "blender_m": [
+    0.254624,
+    0.044282,
+    1.47495
+   ],
+   "source_frame_cm": [
+    25.5742,
+    -10.1509,
+    147.495
+   ],
+   "method": "prior-seed+surface-fit",
+   "axis_analysis": [
+    0.99027,
+    0.0,
+    0.13917
+   ],
+   "axis_blender": [
+    0.99027,
+    -0.0,
+    0.13917
+   ],
+   "note": "axis ~ mediolateral flexion",
+   "v005_source_cm": [
+    25.5737,
+    -10.151,
+    147.4949
+   ],
+   "drift_mm": 0.005,
+   "prior_seed_E3_cm": [
+    24.871,
+    1.894,
+    147.396
+   ],
+   "departure_from_E3_seed_cm": 12.066,
+   "evidence": "independently measured on v003"
+  },
+  "wrist_l": {
+   "production_cm": [
+    30.7882,
+    6.9227,
+    105.0
+   ],
+   "blender_m": [
+    0.307882,
+    -0.069227,
+    1.05
+   ],
+   "source_frame_cm": [
+    30.9,
+    1.2,
+    105.0
+   ],
+   "method": "manual",
+   "axis_analysis": [
+    0.11182,
+    0.08561,
+    -0.99003
+   ],
+   "axis_blender": [
+    0.11182,
+    -0.08561,
+    -0.99003
+   ],
+   "note": "hand-frame origin of the v004/v005 extremity construction",
+   "v005_source_cm": [
+    30.9,
+    1.2,
+    105.0
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "index_mcp_l": {
+   "production_cm": [
+    31.0881,
+    12.701,
+    90.2007
+   ],
+   "blender_m": [
+    0.310881,
+    -0.12701,
+    0.902007
+   ],
+   "source_frame_cm": [
+    31.1999,
+    6.9783,
+    90.2007
+   ],
+   "method": "manual",
+   "note": "exact v005 construction joint",
+   "v005_source_cm": [
+    31.1999,
+    6.9783,
+    90.2007
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "index_tip_l": {
+   "production_cm": [
+    25.1382,
+    12.4464,
+    79.2398
+   ],
+   "blender_m": [
+    0.251382,
+    -0.124464,
+    0.792398
+   ],
+   "source_frame_cm": [
+    25.25,
+    6.7237,
+    79.2398
+   ],
+   "method": "manual",
+   "note": "exact v005 construction distal-phalanx end",
+   "v005_source_cm": [
+    25.25,
+    6.7237,
+    79.2398
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "middle_mcp_l": {
+   "production_cm": [
+    32.2968,
+    9.8235,
+    89.5884
+   ],
+   "blender_m": [
+    0.322968,
+    -0.098235,
+    0.895884
+   ],
+   "source_frame_cm": [
+    32.4086,
+    4.1008,
+    89.5884
+   ],
+   "method": "manual",
+   "note": "exact v005 construction joint",
+   "v005_source_cm": [
+    32.4086,
+    4.1008,
+    89.5884
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "middle_tip_l": {
+   "production_cm": [
+    25.294,
+    8.3149,
+    78.211
+   ],
+   "blender_m": [
+    0.25294,
+    -0.083149,
+    0.78211
+   ],
+   "source_frame_cm": [
+    25.4058,
+    2.5922,
+    78.211
+   ],
+   "method": "manual",
+   "note": "exact v005 construction distal-phalanx end",
+   "v005_source_cm": [
+    25.4058,
+    2.5922,
+    78.211
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "ring_mcp_l": {
+   "production_cm": [
+    33.0654,
+    6.6647,
+    89.9576
+   ],
+   "blender_m": [
+    0.330654,
+    -0.066647,
+    0.899576
+   ],
+   "source_frame_cm": [
+    33.1772,
+    0.942,
+    89.9576
+   ],
+   "method": "manual",
+   "note": "exact v005 construction joint",
+   "v005_source_cm": [
+    33.1772,
+    0.942,
+    89.9576
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "ring_tip_l": {
+   "production_cm": [
+    25.5918,
+    4.0966,
+    80.0679
+   ],
+   "blender_m": [
+    0.255918,
+    -0.040966,
+    0.800679
+   ],
+   "source_frame_cm": [
+    25.7036,
+    -1.6261,
+    80.0679
+   ],
+   "method": "manual",
+   "note": "exact v005 construction distal-phalanx end",
+   "v005_source_cm": [
+    25.7036,
+    -1.6261,
+    80.0679
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "pinky_mcp_l": {
+   "production_cm": [
+    33.5242,
+    3.5025,
+    90.9582
+   ],
+   "blender_m": [
+    0.335242,
+    -0.035025,
+    0.909582
+   ],
+   "source_frame_cm": [
+    33.636,
+    -2.2202,
+    90.9582
+   ],
+   "method": "manual",
+   "note": "exact v005 construction joint",
+   "v005_source_cm": [
+    33.636,
+    -2.2202,
+    90.9582
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "pinky_tip_l": {
+   "production_cm": [
+    26.8658,
+    0.583,
+    83.8648
+   ],
+   "blender_m": [
+    0.268658,
+    -0.00583,
+    0.838648
+   ],
+   "source_frame_cm": [
+    26.9776,
+    -5.1397,
+    83.8648
+   ],
+   "method": "manual",
+   "note": "exact v005 construction distal-phalanx end",
+   "v005_source_cm": [
+    26.9776,
+    -5.1397,
+    83.8648
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "thumb_cmc_l": {
+   "production_cm": [
+    28.7082,
+    10.1366,
+    101.7098
+   ],
+   "blender_m": [
+    0.287082,
+    -0.101366,
+    1.017098
+   ],
+   "source_frame_cm": [
+    28.82,
+    4.4139,
+    101.7098
+   ],
+   "method": "manual",
+   "note": "exact v005 construction joint",
+   "v005_source_cm": [
+    28.82,
+    4.4139,
+    101.7098
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "scapular_inferior_proxy_l": {
+   "production_cm": [
+    10.866,
+    -14.5156,
+    166.5157
+   ],
+   "blender_m": [
+    0.10866,
+    0.145156,
+    1.665157
+   ],
+   "source_frame_cm": [
+    10.9778,
+    -20.2383,
+    166.5157
+   ],
+   "method": "surface-fit",
+   "note": "posterior summit of the back 12 cm below the glenohumeral centre, medial of it (area-weighted top 1 mm)",
+   "v005_source_cm": [
+    10.9771,
+    -20.2486,
+    166.5339
+   ],
+   "drift_mm": 0.209,
+   "evidence": "independently measured on v003"
+  },
+  "hallux_mtp_l": {
+   "production_cm": [
+    13.4882,
+    21.7227,
+    2.3
+   ],
+   "blender_m": [
+    0.134882,
+    -0.217227,
+    0.023
+   ],
+   "source_frame_cm": [
+    13.6,
+    16.0,
+    2.3
+   ],
+   "method": "manual",
+   "note": "exact v004/v005 construction joint",
+   "v005_source_cm": [
+    13.6,
+    16.0,
+    2.3
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "hallux_tip_l": {
+   "production_cm": [
+    13.3279,
+    30.9068,
+    2.4917
+   ],
+   "blender_m": [
+    0.133279,
+    -0.309068,
+    0.024917
+   ],
+   "source_frame_cm": [
+    13.4397,
+    25.184,
+    2.4917
+   ],
+   "method": "manual",
+   "note": "exact construction distal end",
+   "v005_source_cm": [
+    13.4397,
+    25.184,
+    2.4917
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe2_mtp_l": {
+   "production_cm": [
+    17.6382,
+    21.3227,
+    1.85
+   ],
+   "blender_m": [
+    0.176382,
+    -0.213227,
+    0.0185
+   ],
+   "source_frame_cm": [
+    17.75,
+    15.6,
+    1.85
+   ],
+   "method": "manual",
+   "note": "exact v004/v005 construction joint",
+   "v005_source_cm": [
+    17.75,
+    15.6,
+    1.85
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe2_tip_l": {
+   "production_cm": [
+    17.9545,
+    30.379,
+    1.54
+   ],
+   "blender_m": [
+    0.179545,
+    -0.30379,
+    0.0154
+   ],
+   "source_frame_cm": [
+    18.0663,
+    24.6563,
+    1.54
+   ],
+   "method": "manual",
+   "note": "exact construction distal end",
+   "v005_source_cm": [
+    18.0663,
+    24.6563,
+    1.54
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe3_mtp_l": {
+   "production_cm": [
+    20.6882,
+    20.3227,
+    1.72
+   ],
+   "blender_m": [
+    0.206882,
+    -0.203227,
+    0.0172
+   ],
+   "source_frame_cm": [
+    20.8,
+    14.6,
+    1.72
+   ],
+   "method": "manual",
+   "note": "exact v004/v005 construction joint",
+   "v005_source_cm": [
+    20.8,
+    14.6,
+    1.72
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe3_tip_l": {
+   "production_cm": [
+    21.243,
+    28.2566,
+    1.2886
+   ],
+   "blender_m": [
+    0.21243,
+    -0.282566,
+    0.012886
+   ],
+   "source_frame_cm": [
+    21.3548,
+    22.5339,
+    1.2886
+   ],
+   "method": "manual",
+   "note": "exact construction distal end",
+   "v005_source_cm": [
+    21.3548,
+    22.5339,
+    1.2886
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe4_mtp_l": {
+   "production_cm": [
+    23.4382,
+    18.9227,
+    1.62
+   ],
+   "blender_m": [
+    0.234382,
+    -0.189227,
+    0.0162
+   ],
+   "source_frame_cm": [
+    23.55,
+    13.2,
+    1.62
+   ],
+   "method": "manual",
+   "note": "exact v004/v005 construction joint",
+   "v005_source_cm": [
+    23.55,
+    13.2,
+    1.62
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe4_tip_l": {
+   "production_cm": [
+    24.2838,
+    25.8093,
+    0.9979
+   ],
+   "blender_m": [
+    0.242838,
+    -0.258093,
+    0.009979
+   ],
+   "source_frame_cm": [
+    24.3956,
+    20.0866,
+    0.9979
+   ],
+   "method": "manual",
+   "note": "exact construction distal end",
+   "v005_source_cm": [
+    24.3956,
+    20.0866,
+    0.9979
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe5_mtp_l": {
+   "production_cm": [
+    25.8882,
+    17.3227,
+    1.55
+   ],
+   "blender_m": [
+    0.258882,
+    -0.173227,
+    0.0155
+   ],
+   "source_frame_cm": [
+    26.0,
+    11.6,
+    1.55
+   ],
+   "method": "manual",
+   "note": "exact v004/v005 construction joint",
+   "v005_source_cm": [
+    26.0,
+    11.6,
+    1.55
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe5_tip_l": {
+   "production_cm": [
+    26.991,
+    22.9962,
+    0.8047
+   ],
+   "blender_m": [
+    0.26991,
+    -0.229962,
+    0.008047
+   ],
+   "source_frame_cm": [
+    27.1028,
+    17.2735,
+    0.8047
+   ],
+   "method": "manual",
+   "note": "exact construction distal end",
+   "v005_source_cm": [
+    27.1028,
+    17.2735,
+    0.8047
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "eye_l": {
+   "production_cm": [
+    3.5382,
+    16.1227,
+    203.85
+   ],
+   "blender_m": [
+    0.035382,
+    -0.161227,
+    2.0385
+   ],
+   "source_frame_cm": [
+    3.65,
+    10.4,
+    203.85
+   ],
+   "method": "manual",
+   "note": "v003 eyeball-volume centre (eye_params_v003.json)",
+   "v005_source_cm": [
+    3.65,
+    10.4,
+    203.85
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "hip_r": {
+   "production_cm": [
+    -12.7296,
+    -1.8405,
+    122.3135
+   ],
+   "blender_m": [
+    -0.127296,
+    0.018405,
+    1.223135
+   ],
+   "source_frame_cm": [
+    -12.6178,
+    -7.5632,
+    122.3135
+   ],
+   "method": "prior-seed+surface-fit",
+   "axis_analysis": [
+    -0.0,
+    0.07087,
+    -0.99749
+   ],
+   "axis_blender": [
+    -0.0,
+    -0.07087,
+    -0.99749
+   ],
+   "note": "femoral-head proxy: seed + thigh-section centroid shift 14-22 cm distal",
+   "v005_source_cm": [
+    -12.6192,
+    -7.5591,
+    122.3138
+   ],
+   "drift_mm": 0.044,
+   "prior_seed_E3_cm": [
+    -11.784,
+    -0.705,
+    122.801
+   ],
+   "departure_from_E3_seed_cm": 6.926,
+   "evidence": "independently measured on v003"
+  },
+  "knee_r": {
+   "production_cm": [
+    -12.7454,
+    2.2981,
+    71.1974
+   ],
+   "blender_m": [
+    -0.127454,
+    -0.022981,
+    0.711974
+   ],
+   "source_frame_cm": [
+    -12.6336,
+    -3.4246,
+    71.1974
+   ],
+   "method": "prior-seed+surface-fit",
+   "axis_analysis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "axis_blender": [
+    1.0,
+    -0.0,
+    0.0
+   ],
+   "note": "axis = flexion (mediolateral)",
+   "v005_source_cm": [
+    -12.6336,
+    -3.4236,
+    71.1975
+   ],
+   "drift_mm": 0.01,
+   "prior_seed_E3_cm": [
+    -11.784,
+    2.93,
+    71.649
+   ],
+   "departure_from_E3_seed_cm": 6.427,
+   "evidence": "independently measured on v003"
+  },
+  "ankle_r": {
+   "production_cm": [
+    -14.9441,
+    0.1572,
+    9.2883
+   ],
+   "blender_m": [
+    -0.149441,
+    -0.001572,
+    0.092883
+   ],
+   "source_frame_cm": [
+    -14.8323,
+    -5.5656,
+    9.2883
+   ],
+   "method": "prior-seed+surface-fit",
+   "axis_analysis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "axis_blender": [
+    1.0,
+    -0.0,
+    0.0
+   ],
+   "note": "seed + distal shin-section shift",
+   "v005_source_cm": [
+    -14.8323,
+    -5.5622,
+    9.2881
+   ],
+   "drift_mm": 0.034,
+   "prior_seed_E3_cm": [
+    -11.784,
+    0.366,
+    9.045
+   ],
+   "departure_from_E3_seed_cm": 6.673,
+   "evidence": "independently measured on v003"
+  },
+  "sternoclavicular_r": {
+   "production_cm": [
+    -2.2085,
+    1.463,
+    180.6914
+   ],
+   "blender_m": [
+    -0.022085,
+    -0.01463,
+    1.806914
+   ],
+   "source_frame_cm": [
+    -2.0967,
+    -4.2597,
+    180.6914
+   ],
+   "method": "prior-seed+surface-fit",
+   "v005_source_cm": [
+    -2.1,
+    -4.2593,
+    180.6914
+   ],
+   "drift_mm": 0.033,
+   "prior_seed_E3_cm": [
+    -2.615,
+    3.25,
+    180.691
+   ],
+   "departure_from_E3_seed_cm": 7.528,
+   "evidence": "independently measured on v003"
+  },
+  "glenohumeral_r": {
+   "production_cm": [
+    -22.2661,
+    -3.9325,
+    177.6048
+   ],
+   "blender_m": [
+    -0.222661,
+    0.039325,
+    1.776048
+   ],
+   "source_frame_cm": [
+    -22.1543,
+    -9.6552,
+    177.6048
+   ],
+   "method": "prior-seed+surface-fit",
+   "axis_analysis": [
+    -0.13917,
+    0.0,
+    -0.99027
+   ],
+   "axis_blender": [
+    -0.13917,
+    -0.0,
+    -0.99027
+   ],
+   "note": "seed + upper-arm section shift 26-30 cm distal (arm free of torso below z~152)",
+   "v005_source_cm": [
+    -22.1536,
+    -9.655,
+    177.6047
+   ],
+   "drift_mm": 0.008,
+   "prior_seed_E3_cm": [
+    -20.655,
+    1.894,
+    177.394
+   ],
+   "departure_from_E3_seed_cm": 11.648,
+   "evidence": "independently measured on v003"
+  },
+  "acromion_r": {
+   "production_cm": [
+    -24.7661,
+    -3.9325,
+    178.0354
+   ],
+   "blender_m": [
+    -0.247661,
+    0.039325,
+    1.780354
+   ],
+   "source_frame_cm": [
+    -24.6543,
+    -9.6552,
+    178.0354
+   ],
+   "method": "surface-fit",
+   "note": "shoulder-cap surface point vertically above the glenohumeral centre, 2.5 cm lateral (ray construction)",
+   "v005_source_cm": [
+    -24.6536,
+    -9.655,
+    178.0395
+   ],
+   "drift_mm": 0.042,
+   "evidence": "independently measured on v003"
+  },
+  "elbow_r": {
+   "production_cm": [
+    -26.3321,
+    -4.2428,
+    147.5858
+   ],
+   "blender_m": [
+    -0.263321,
+    0.042428,
+    1.475858
+   ],
+   "source_frame_cm": [
+    -26.2203,
+    -9.9656,
+    147.5858
+   ],
+   "method": "prior-seed+surface-fit",
+   "axis_analysis": [
+    0.99027,
+    0.0,
+    -0.13917
+   ],
+   "axis_blender": [
+    0.99027,
+    -0.0,
+    -0.13917
+   ],
+   "note": "axis ~ mediolateral flexion",
+   "v005_source_cm": [
+    -26.2198,
+    -9.9654,
+    147.5857
+   ],
+   "drift_mm": 0.005,
+   "prior_seed_E3_cm": [
+    -24.871,
+    1.894,
+    147.396
+   ],
+   "departure_from_E3_seed_cm": 11.938,
+   "evidence": "independently measured on v003"
+  },
+  "wrist_r": {
+   "production_cm": [
+    -31.3118,
+    6.7227,
+    105.0
+   ],
+   "blender_m": [
+    -0.313118,
+    -0.067227,
+    1.05
+   ],
+   "source_frame_cm": [
+    -31.2,
+    1.0,
+    105.0
+   ],
+   "method": "manual",
+   "axis_analysis": [
+    -0.12185,
+    0.07827,
+    -0.98946
+   ],
+   "axis_blender": [
+    -0.12185,
+    -0.07827,
+    -0.98946
+   ],
+   "note": "hand-frame origin of the v004/v005 extremity construction",
+   "v005_source_cm": [
+    -31.2,
+    1.0,
+    105.0
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "index_mcp_r": {
+   "production_cm": [
+    -31.3843,
+    12.2571,
+    90.105
+   ],
+   "blender_m": [
+    -0.313843,
+    -0.122571,
+    0.90105
+   ],
+   "source_frame_cm": [
+    -31.2725,
+    6.5344,
+    90.105
+   ],
+   "method": "manual",
+   "note": "exact v005 construction joint",
+   "v005_source_cm": [
+    -31.2725,
+    6.5344,
+    90.105
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "index_tip_r": {
+   "production_cm": [
+    -25.6749,
+    11.3125,
+    79.0543
+   ],
+   "blender_m": [
+    -0.256749,
+    -0.113125,
+    0.790543
+   ],
+   "source_frame_cm": [
+    -25.5631,
+    5.5898,
+    79.0543
+   ],
+   "method": "manual",
+   "note": "exact v005 construction distal-phalanx end",
+   "v005_source_cm": [
+    -25.5631,
+    5.5898,
+    79.0543
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "middle_mcp_r": {
+   "production_cm": [
+    -32.8441,
+    9.4834,
+    89.5651
+   ],
+   "blender_m": [
+    -0.328441,
+    -0.094834,
+    0.895651
+   ],
+   "source_frame_cm": [
+    -32.7323,
+    3.7607,
+    89.5651
+   ],
+   "method": "manual",
+   "note": "exact v005 construction joint",
+   "v005_source_cm": [
+    -32.7323,
+    3.7607,
+    89.5651
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "middle_tip_r": {
+   "production_cm": [
+    -26.1999,
+    7.1927,
+    78.1035
+   ],
+   "blender_m": [
+    -0.261999,
+    -0.071927,
+    0.781035
+   ],
+   "source_frame_cm": [
+    -26.0881,
+    1.47,
+    78.1035
+   ],
+   "method": "manual",
+   "note": "exact v005 construction distal-phalanx end",
+   "v005_source_cm": [
+    -26.0881,
+    1.47,
+    78.1035
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "ring_mcp_r": {
+   "production_cm": [
+    -33.8718,
+    6.4084,
+    90.0042
+   ],
+   "blender_m": [
+    -0.338718,
+    -0.064084,
+    0.900042
+   ],
+   "source_frame_cm": [
+    -33.76,
+    0.6857,
+    90.0042
+   ],
+   "method": "manual",
+   "note": "exact v005 construction joint",
+   "v005_source_cm": [
+    -33.76,
+    0.6857,
+    90.0042
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "ring_tip_r": {
+   "production_cm": [
+    -26.822,
+    3.0468,
+    80.0415
+   ],
+   "blender_m": [
+    -0.26822,
+    -0.030468,
+    0.800415
+   ],
+   "source_frame_cm": [
+    -26.7102,
+    -2.6759,
+    80.0415
+   ],
+   "method": "manual",
+   "note": "exact v005 construction distal-phalanx end",
+   "v005_source_cm": [
+    -26.7102,
+    -2.6759,
+    80.0415
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "pinky_mcp_r": {
+   "production_cm": [
+    -34.5798,
+    3.3141,
+    91.0696
+   ],
+   "blender_m": [
+    -0.345798,
+    -0.033141,
+    0.910696
+   ],
+   "source_frame_cm": [
+    -34.468,
+    -2.4087,
+    91.0696
+   ],
+   "method": "manual",
+   "note": "exact v005 construction joint",
+   "v005_source_cm": [
+    -34.468,
+    -2.4087,
+    91.0696
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "pinky_tip_r": {
+   "production_cm": [
+    -28.3219,
+    -0.2813,
+    83.922
+   ],
+   "blender_m": [
+    -0.283219,
+    0.002813,
+    0.83922
+   ],
+   "source_frame_cm": [
+    -28.2101,
+    -6.004,
+    83.922
+   ],
+   "method": "manual",
+   "note": "exact v005 construction distal-phalanx end",
+   "v005_source_cm": [
+    -28.2101,
+    -6.004,
+    83.922
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "thumb_cmc_r": {
+   "production_cm": [
+    -29.0254,
+    9.6919,
+    101.6181
+   ],
+   "blender_m": [
+    -0.290254,
+    -0.096919,
+    1.016181
+   ],
+   "source_frame_cm": [
+    -28.9136,
+    3.9692,
+    101.6181
+   ],
+   "method": "manual",
+   "note": "exact v005 construction joint",
+   "v005_source_cm": [
+    -28.9136,
+    3.9692,
+    101.6181
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "scapular_inferior_proxy_r": {
+   "production_cm": [
+    -10.8707,
+    -14.2532,
+    166.3302
+   ],
+   "blender_m": [
+    -0.108707,
+    0.142532,
+    1.663302
+   ],
+   "source_frame_cm": [
+    -10.7589,
+    -19.9759,
+    166.3302
+   ],
+   "method": "surface-fit",
+   "note": "posterior summit of the back 12 cm below the glenohumeral centre, medial of it (area-weighted top 1 mm)",
+   "v005_source_cm": [
+    -10.7732,
+    -19.9878,
+    166.3399
+   ],
+   "drift_mm": 0.209,
+   "evidence": "independently measured on v003"
+  },
+  "hallux_mtp_r": {
+   "production_cm": [
+    -13.7118,
+    21.7227,
+    2.3
+   ],
+   "blender_m": [
+    -0.137118,
+    -0.217227,
+    0.023
+   ],
+   "source_frame_cm": [
+    -13.6,
+    16.0,
+    2.3
+   ],
+   "method": "manual",
+   "note": "exact v004/v005 construction joint",
+   "v005_source_cm": [
+    -13.6,
+    16.0,
+    2.3
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "hallux_tip_r": {
+   "production_cm": [
+    -13.5515,
+    30.9068,
+    2.4917
+   ],
+   "blender_m": [
+    -0.135515,
+    -0.309068,
+    0.024917
+   ],
+   "source_frame_cm": [
+    -13.4397,
+    25.184,
+    2.4917
+   ],
+   "method": "manual",
+   "note": "exact construction distal end",
+   "v005_source_cm": [
+    -13.4397,
+    25.184,
+    2.4917
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe2_mtp_r": {
+   "production_cm": [
+    -17.8618,
+    21.3227,
+    1.85
+   ],
+   "blender_m": [
+    -0.178618,
+    -0.213227,
+    0.0185
+   ],
+   "source_frame_cm": [
+    -17.75,
+    15.6,
+    1.85
+   ],
+   "method": "manual",
+   "note": "exact v004/v005 construction joint",
+   "v005_source_cm": [
+    -17.75,
+    15.6,
+    1.85
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe2_tip_r": {
+   "production_cm": [
+    -18.1781,
+    30.379,
+    1.54
+   ],
+   "blender_m": [
+    -0.181781,
+    -0.30379,
+    0.0154
+   ],
+   "source_frame_cm": [
+    -18.0663,
+    24.6563,
+    1.54
+   ],
+   "method": "manual",
+   "note": "exact construction distal end",
+   "v005_source_cm": [
+    -18.0663,
+    24.6563,
+    1.54
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe3_mtp_r": {
+   "production_cm": [
+    -20.9118,
+    20.3227,
+    1.72
+   ],
+   "blender_m": [
+    -0.209118,
+    -0.203227,
+    0.0172
+   ],
+   "source_frame_cm": [
+    -20.8,
+    14.6,
+    1.72
+   ],
+   "method": "manual",
+   "note": "exact v004/v005 construction joint",
+   "v005_source_cm": [
+    -20.8,
+    14.6,
+    1.72
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe3_tip_r": {
+   "production_cm": [
+    -21.4666,
+    28.2566,
+    1.2886
+   ],
+   "blender_m": [
+    -0.214666,
+    -0.282566,
+    0.012886
+   ],
+   "source_frame_cm": [
+    -21.3548,
+    22.5339,
+    1.2886
+   ],
+   "method": "manual",
+   "note": "exact construction distal end",
+   "v005_source_cm": [
+    -21.3548,
+    22.5339,
+    1.2886
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe4_mtp_r": {
+   "production_cm": [
+    -23.6618,
+    18.9227,
+    1.62
+   ],
+   "blender_m": [
+    -0.236618,
+    -0.189227,
+    0.0162
+   ],
+   "source_frame_cm": [
+    -23.55,
+    13.2,
+    1.62
+   ],
+   "method": "manual",
+   "note": "exact v004/v005 construction joint",
+   "v005_source_cm": [
+    -23.55,
+    13.2,
+    1.62
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe4_tip_r": {
+   "production_cm": [
+    -24.5074,
+    25.8093,
+    0.9979
+   ],
+   "blender_m": [
+    -0.245074,
+    -0.258093,
+    0.009979
+   ],
+   "source_frame_cm": [
+    -24.3956,
+    20.0866,
+    0.9979
+   ],
+   "method": "manual",
+   "note": "exact construction distal end",
+   "v005_source_cm": [
+    -24.3956,
+    20.0866,
+    0.9979
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe5_mtp_r": {
+   "production_cm": [
+    -26.1118,
+    17.3227,
+    1.55
+   ],
+   "blender_m": [
+    -0.261118,
+    -0.173227,
+    0.0155
+   ],
+   "source_frame_cm": [
+    -26.0,
+    11.6,
+    1.55
+   ],
+   "method": "manual",
+   "note": "exact v004/v005 construction joint",
+   "v005_source_cm": [
+    -26.0,
+    11.6,
+    1.55
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "toe5_tip_r": {
+   "production_cm": [
+    -27.2146,
+    22.9962,
+    0.8047
+   ],
+   "blender_m": [
+    -0.272146,
+    -0.229962,
+    0.008047
+   ],
+   "source_frame_cm": [
+    -27.1028,
+    17.2735,
+    0.8047
+   ],
+   "method": "manual",
+   "note": "exact construction distal end",
+   "v005_source_cm": [
+    -27.1028,
+    17.2735,
+    0.8047
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "eye_r": {
+   "production_cm": [
+    -3.7618,
+    16.1227,
+    203.85
+   ],
+   "blender_m": [
+    -0.037618,
+    -0.161227,
+    2.0385
+   ],
+   "source_frame_cm": [
+    -3.65,
+    10.4,
+    203.85
+   ],
+   "method": "manual",
+   "note": "v003 eyeball-volume centre (eye_params_v003.json)",
+   "v005_source_cm": [
+    -3.65,
+    10.4,
+    203.85
+   ],
+   "drift_mm": 0.0,
+   "evidence": "construction coordinate (copied)"
+  },
+  "chin": {
+   "production_cm": [
+    0.0195,
+    17.6977,
+    189.6293
+   ],
+   "blender_m": [
+    0.000195,
+    -0.176977,
+    1.896293
+   ],
+   "source_frame_cm": [
+    0.1313,
+    11.975,
+    189.6293
+   ],
+   "method": "surface-fit",
+   "note": "midline chin point minimising z-0.6f (area-weighted top 0.5 mm)",
+   "v005_source_cm": [
+    0.1261,
+    11.9525,
+    189.6044
+   ],
+   "drift_mm": 0.339,
+   "evidence": "independently measured on v003"
+  },
+  "ear_tip_l": {
+   "production_cm": [
+    11.3181,
+    4.3373,
+    206.7398
+   ],
+   "blender_m": [
+    0.113181,
+    -0.043373,
+    2.067398
+   ],
+   "source_frame_cm": [
+    11.4299,
+    -1.3855,
+    206.7398
+   ],
+   "method": "surface-fit",
+   "note": "max lateral+up ear point (area-weighted top 0.5 mm)",
+   "v005_source_cm": [
+    11.4488,
+    -1.4119,
+    206.7234
+   ],
+   "drift_mm": 0.364,
+   "evidence": "independently measured on v003"
+  },
+  "ear_root_l": {
+   "production_cm": [
+    7.3941,
+    6.3029,
+    200.24
+   ],
+   "blender_m": [
+    0.073941,
+    -0.063029,
+    2.0024
+   ],
+   "source_frame_cm": [
+    7.5059,
+    0.5802,
+    200.24
+   ],
+   "method": "surface-fit",
+   "note": "area-weighted centroid of the cranial attachment band",
+   "v005_source_cm": [
+    7.5062,
+    0.5801,
+    200.2538
+   ],
+   "drift_mm": 0.139,
+   "evidence": "independently measured on v003"
+  },
+  "jaw_hinge_l": {
+   "production_cm": [
+    5.8941,
+    8.5029,
+    198.24
+   ],
+   "blender_m": [
+    0.058941,
+    -0.085029,
+    1.9824
+   ],
+   "source_frame_cm": [
+    6.0059,
+    2.7802,
+    198.24
+   ],
+   "method": "manual",
+   "note": "estimated TMJ: 2.2 cm anterior, 2 cm below, 1.5 cm medial of ear root (no jaw in source)",
+   "v005_source_cm": [
+    6.0062,
+    2.7801,
+    198.2538
+   ],
+   "drift_mm": 0.139,
+   "evidence": "construction coordinate (copied)"
+  },
+  "mouth_corner_l": {
+   "production_cm": [
+    2.6332,
+    19.1118,
+    194.53
+   ],
+   "blender_m": [
+    0.026332,
+    -0.191118,
+    1.9453
+   ],
+   "source_frame_cm": [
+    2.745,
+    13.3891,
+    194.53
+   ],
+   "method": "surface-fit",
+   "note": "stomion-height section: frontal contour 1.0 cm behind the midline lip front (stomion z = lip-seam local minimum of the midline ray profile, 193.6-195.4 cm)",
+   "v005_source_cm": [
+    2.695,
+    13.4495,
+    194.56
+   ],
+   "drift_mm": 0.84,
+   "evidence": "independently measured on v003"
+  },
+  "ear_tip_r": {
+   "production_cm": [
+    -11.5447,
+    4.3268,
+    206.7311
+   ],
+   "blender_m": [
+    -0.115447,
+    -0.043268,
+    2.067311
+   ],
+   "source_frame_cm": [
+    -11.4329,
+    -1.396,
+    206.7311
+   ],
+   "method": "surface-fit",
+   "note": "max lateral+up ear point (area-weighted top 0.5 mm)",
+   "v005_source_cm": [
+    -11.4503,
+    -1.414,
+    206.7188
+   ],
+   "drift_mm": 0.279,
+   "evidence": "independently measured on v003"
+  },
+  "ear_root_r": {
+   "production_cm": [
+    -7.5705,
+    6.2154,
+    200.3173
+   ],
+   "blender_m": [
+    -0.075705,
+    -0.062154,
+    2.003173
+   ],
+   "source_frame_cm": [
+    -7.4587,
+    0.4927,
+    200.3173
+   ],
+   "method": "surface-fit",
+   "note": "area-weighted centroid of the cranial attachment band",
+   "v005_source_cm": [
+    -7.4565,
+    0.4902,
+    200.3235
+   ],
+   "drift_mm": 0.071,
+   "evidence": "independently measured on v003"
+  },
+  "jaw_hinge_r": {
+   "production_cm": [
+    -6.0705,
+    8.4154,
+    198.3173
+   ],
+   "blender_m": [
+    -0.060705,
+    -0.084154,
+    1.983173
+   ],
+   "source_frame_cm": [
+    -5.9587,
+    2.6927,
+    198.3173
+   ],
+   "method": "manual",
+   "note": "estimated TMJ: 2.2 cm anterior, 2 cm below, 1.5 cm medial of ear root (no jaw in source)",
+   "v005_source_cm": [
+    -5.9565,
+    2.6902,
+    198.3235
+   ],
+   "drift_mm": 0.071,
+   "evidence": "construction coordinate (copied)"
+  },
+  "mouth_corner_r": {
+   "production_cm": [
+    -2.8818,
+    19.1753,
+    194.53
+   ],
+   "blender_m": [
+    -0.028818,
+    -0.191753,
+    1.9453
+   ],
+   "source_frame_cm": [
+    -2.77,
+    13.4526,
+    194.53
+   ],
+   "method": "surface-fit",
+   "note": "stomion-height section: frontal contour 1.0 cm behind the midline lip front (stomion z = lip-seam local minimum of the midline ray profile, 193.6-195.4 cm)",
+   "v005_source_cm": [
+    -2.84,
+    13.4315,
+    194.56
+   ],
+   "drift_mm": 0.79,
+   "evidence": "independently measured on v003"
+  }
+ }
+}

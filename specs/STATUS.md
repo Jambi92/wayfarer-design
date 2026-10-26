@@ -2,7 +2,31 @@
 
 ## Grask RP2 current author review — 2026-10-25
 
-Retopo v002 is **CONSTRAINED / NOT FROZEN** pending the thumb-web visual review and focused audit closure in `reviews/chatgpt-rac-rp2-grask-thumb-web-visual-review-and-audit-closure-order.md`. Display matched isolated source/v002 hand images; preserve frozen v005 unless Tyler explicitly approves an illustrated anatomy correction. Close the named quad-metric, loop-demonstration and missing/occluded-image issues. Subsequent production turn-ins must pass all required technical audits and evidence-completeness checks before being labelled ready; author acceptance remains separate. No downstream work. Turnfall is outside this scope.
+Retopo v002 is **CONSTRAINED / NOT FROZEN** and stays as provenance. The order is `reviews/chatgpt-rac-rp2-grask-thumb-web-visual-review-and-audit-closure-order.md` (4d4f6e0).
+
+**Thumb-web images** (displayed first): `reviews/rac-rp2-evidence/grask_retopo_v003_audit_closure/thumb_web/` TW1–TW6.
+- The questioned thumb–index hollow is frozen v005 anatomy, the first dorsal web space.
+- v002 added faint shading rumples at the saddle (uneven quad spacing). v003 removes them by relaxing the quads along the source surface.
+- v005 is unchanged.
+
+**New production version `GR_U_REF_RP2_retopo_v003`** (`E:/…/Grask/RP2/`, blend `03bfe7d9…7ce0`, sidecar `808cf772…`, landmarks `aafbe617…`).
+- Gate: `reviews/claude-rac-rp2-grask-retopo-v003-audit-closure-gate.md`. Tools: `tools/rac/rp/grask_retopo_v003/`.
+- 170,464 quads (×2, −72.9 % vs v001). The cage adds ankle fan 10 rings, elbow 6 rings and one palm MCP ring.
+- Every gate was run on the exported blend; every required technical gate and evidence check passes:
+  - 0 hard-limit quads;
+  - aspect statistics reported separately: opposite-sum max 7.07, longest/shortest edge max 8.07 (one bounded web-floor exception, none >10; v002 had 11.86);
+  - 69/69 joints, with ring evidence for both ankles, the right elbow and the left toe-5 MTP;
+  - T-1 max 1.80 mm (posterior axillary fold) and T-2 max 1.28 mm;
+  - T-6: 30 independently measured landmarks, max 0.84 mm (44 copied construction coordinates are not counted as evidence);
+  - T-7 ≥ 0.9955;
+  - genus 0, 0 self-intersections / folds / flips;
+  - production origin consistent; v005, v001 and v002 hashes unchanged.
+
+**Pending author decisions:**
+1. Whether to soften the source hollow (needs an approved illustrated proposal).
+2. Visual acceptance of v003.
+
+No freeze or downstream work. Turnfall is outside this scope.
 
 ## First-pass complete
 1. Marchfolk

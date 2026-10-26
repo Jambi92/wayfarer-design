@@ -2,6 +2,27 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-25, later) — RP2 GRASK RETOPO V003 AUDIT CLOSURE — technical audits pass; author visual review pending
+
+**Where things stand**
+- Order 4d4f6e0 has been executed.
+- Thumb-web images are in `reviews/rac-rp2-evidence/grask_retopo_v003_audit_closure/thumb_web/`. The hollow is source anatomy; v002 had saddle rumples; v003 removes them; v005 is unchanged.
+- v003 is on the PC as `E:/…/RP2/GR_U_REF_RP2_retopo_v003.blend` (03bfe7d9…), with `.json` and `_landmarks.json`. Gate: `reviews/claude-rac-rp2-grask-retopo-v003-audit-closure-gate.md`.
+- **Open author decisions:**
+  1. Whether to soften the source hollow (illustrate first).
+  2. Visual acceptance of v003.
+
+**How to rebuild** (cloud `/tmp/claude-0/rt`, ephemeral)
+- Run `tools/rac/rp/grask_retopo_v003/run_v003.sh`.
+- `finalaudit.sh` audits the exported blend through `rbnpz.py`.
+- `sheets3.py` is strict: it fails on any missing panel.
+
+**Lessons**
+- Edge-ratio repair at narrow web slots needs fold and self-intersection guards (a crop BVH check inside `optfix.py`).
+- `foldfix` / `revsx` applied after optfix can undo crease capture. Prefer the guards over cleaning up afterwards.
+- Oblique fan rings can pass the closed-ring count while the path count behind the ankle stays low, so verify both counts.
+- Render close-ups of webs to catch shading rumples that the deviation numbers do not show.
+
 ## LATEST AUTHOR ORDER (2026-10-25) — Grask thumb-web images / audit closure
 
 - Read `reviews/chatgpt-rac-rp2-grask-thumb-web-visual-review-and-audit-closure-order.md` before continuing Grask RP2. This supersedes the v002 self-reported readiness as the current action: v002 remains constrained, not accepted or frozen.
