@@ -1,5 +1,30 @@
 # Character Design Status
 
+## MARCHFOLK RP3 v003 — AUTHOR ACCEPTED / FROZEN — MPFB FAMILY BASE (2026-10-26)
+
+- **Freeze record:** `E:/…/production/Marchfolk/RP3/MF_RP3_v003_FREEZE.json` (`4af62f81…`; copy in `reviews/rac-rp3-evidence/marchfolk_v003_freeze/`).
+- **Report:** `reviews/claude-rac-rp3-marchfolk-v003-family-base-freeze-report.md`.
+- **Accepted files:** `MF_M_REF_RP3_retopo_v003.blend` (`5b793eda…`) and `MF_F_REF_RP3_retopo_v003.blend` (`a5d8adfe…`), face hash `68f7b6a9…`, 57,674 V / 57,672 Q. Read-back is exact.
+- **Validator:** D1 + D3 accepted; 69/69 firm in both configurations.
+- **Accepted note:** configuration-1 sole +0.41 mm.
+
+## RAC RP3 Skarn — 2026-10-26 — family propagation gate returned: SKARN FAMILY PROPAGATION NEEDS RACE-SPECIFIC BRANCH (recommendation: family-base margin correction instead); awaiting ChatGPT review
+
+**Order:** `reviews/chatgpt-rac-rp3-marchfolk-freeze-and-skarn-propagation-order.md` (85b7c1c).
+**Gate:** `reviews/claude-rac-rp3-skarn-family-propagation-gate.md`.
+**Evidence:** `reviews/rac-rp3-evidence/skarn_family_propagation_v001/`.
+**Draft standard:** `specs/RAC_MPFB_FAMILY_PROPAGATION_STANDARD_v1.md`.
+
+- **Sources:** SK208-C1R and SKF208 regenerate geometry-identical.
+- **Candidates:** `E:/…/production/Skarn/RP3/SK_{M,F}_REF_RP3_retopo_v001.blend` use the frozen topology and map unchanged.
+- **Passing:** C1R face identity, density, face readiness, transfer paths; no topology-class deformation failure.
+- **Open:**
+  - configuration-1 T-2 feet 1.70 mm (2 posterior-heel quad-centre rows);
+  - §7 firm failures 14 / 6 under frozen D1 + D3, and 6 / 2 under proposed D4 stature scaling (hip band, toe-2 / toe-3 roots).
+- **Decisions requested:** D4; family-base margin v003.1, or accept the exceptions.
+
+**Not started:** Sagekin or other races, batch propagation, rig, morphs, UV, LOD, UE5.
+
 ## RAC RP3 Marchfolk — 2026-10-26 — v004 final order returned: FAMILY BASE PASS WITH DOCUMENTED TOE-IP EXCEPTION — READY FOR AUTHOR DECISION (v003 freeze candidate; no v004)
 
 **Order:** `reviews/chatgpt-rac-rp3-marchfolk-v004-final-toe-reroute-order.md` (2d34a0c).

@@ -1,0 +1,3432 @@
+{
+ "validator": "RAC \u00a77 validator v2 (D1 + D3 accepted, order 85b7c1c; D4 station scaling proposed)",
+ "station_scale": 1.2010605816389253,
+ "reference_stature_cm": 173.143,
+ "stature_cm": 207.95523228670842,
+ "anatomical_ring_radius_cm": {
+  "thumb_mcp": 3.6031817449167756
+ },
+ "summary": {
+  "legacy_firm_fail": [
+   "hip_l",
+   "hip_r",
+   "shoulder_l",
+   "shoulder_r",
+   "thumb_mcp_l",
+   "toe1_j2_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe3_j1_l",
+   "toe3_j1_r",
+   "toe3_j3_l",
+   "toe3_j3_r"
+  ],
+  "D1_firm_fail": [
+   "hip_l",
+   "hip_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe3_j1_l",
+   "toe3_j1_r",
+   "toe3_j3_l",
+   "toe3_j3_r"
+  ],
+  "D1_D3_firm_fail": [
+   "hip_l",
+   "hip_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe3_j1_l",
+   "toe3_j1_r"
+  ],
+  "D1_strict_fail": [
+   "ankle_l",
+   "ankle_r",
+   "hip_l",
+   "hip_r",
+   "middle_mcp_l",
+   "middle_mcp_r",
+   "ring_mcp_l",
+   "ring_mcp_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe2_j3_l",
+   "toe2_j3_r",
+   "toe3_j1_l",
+   "toe3_j1_r",
+   "toe3_j3_l",
+   "toe3_j3_r",
+   "toe4_j3_l",
+   "toe4_j3_r"
+  ],
+  "D1_D3_strict_fail": [
+   "ankle_l",
+   "ankle_r",
+   "hip_l",
+   "hip_r",
+   "middle_mcp_l",
+   "middle_mcp_r",
+   "ring_mcp_l",
+   "ring_mcp_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe3_j1_l",
+   "toe3_j1_r"
+  ],
+  "D1_fallback_passes": {
+   "shoulder_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+   "shoulder_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe1_j2_r": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "D1_D3_non_plain": {
+   "shoulder_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+   "hip_l": "FAIL_LOOPS",
+   "toe2_j1_l": "FAIL_LOOPS",
+   "toe3_j1_l": "FAIL_CREASE_POLE",
+   "toe3_j3_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+   "shoulder_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "hip_r": "FAIL_LOOPS",
+   "toe1_j2_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe2_j1_r": "FAIL_LOOPS",
+   "toe3_j1_r": "FAIL_CREASE_POLE",
+   "toe3_j3_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+  }
+ },
+ "stations": {
+  "neck": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 11
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 11
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 17
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 13,
+   "closed_rings_anatomical": 13,
+   "loops_legacy": 13,
+   "loops_v2": 13,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4064,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "shoulder_l": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 12
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 10
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 7,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 1.027,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "elbow_l": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.8747,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "wrist_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 6
+    }
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": null,
+   "closed_rings": 10,
+   "closed_rings_anatomical": 10,
+   "loops_legacy": 10,
+   "loops_v2": 10,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.5859,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 8
+    }
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 5,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.323,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 11
+    }
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2311,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 9
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 9
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 9
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 9,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1922,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 8
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    9500,
+    9539
+   ],
+   "within2_own_digit": [
+    9500
+   ],
+   "within2_adjacent_digit": [
+    9539
+   ],
+   "local_loop_cm": 0.4037,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 5,
+   "closed_rings": 7,
+   "closed_rings_anatomical": 7,
+   "loops_legacy": 7,
+   "loops_v2": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2622,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 8
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 7
+    }
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1781,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 4
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    9538
+   ],
+   "within2_own_digit": [
+    9538
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3456,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 2
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "loops": 10
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 7
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1961,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 12
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 7
+    }
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1852,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "loops": 6
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 6
+    }
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 6,
+   "closed_rings": 3,
+   "closed_rings_anatomical": 3,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2334,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 22
+    }
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 7,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1898,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 14
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 9
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 9
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 8
+    }
+   ],
+   "band_loops_legacy": 8,
+   "band_loops_defined": 8,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1796,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "thumb_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 2
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": null,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 3,
+   "loops_legacy": 2,
+   "loops_v2": 3,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.5083,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_CLOSED_RING",
+   "status_D1_D3": "PASS_FALLBACK_CLOSED_RING"
+  },
+  "thumb_ip_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 8
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 6
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 22
+    }
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 6,
+   "closed_rings": 10,
+   "closed_rings_anatomical": 10,
+   "loops_legacy": 10,
+   "loops_v2": 10,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2922,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "hip_l": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 14
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "loops": 12
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 1.4189,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": false,
+   "strict_D1_D3": false,
+   "status_D1": "FAIL_LOOPS",
+   "status_D1_D3": "FAIL_LOOPS"
+  },
+  "knee_l": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 1
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 3
+    }
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 3,
+   "closed_rings": 14,
+   "closed_rings_anatomical": 14,
+   "loops_legacy": 14,
+   "loops_v2": 14,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.9638,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ankle_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 18
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 2
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 2
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": null,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    12838
+   ],
+   "within2_own_digit": [
+    12838
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.7972,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe1_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 2
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 2
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 3
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4637,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe1_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 2
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 4
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3166,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 1
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 19
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 1
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 14
+    }
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 1,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 1,
+   "loops_v2": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3518,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": false,
+   "strict_D1_D3": false,
+   "status_D1": "FAIL_LOOPS",
+   "status_D1_D3": "FAIL_LOOPS"
+  },
+  "toe2_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 18
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 20
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2963,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "no_path": true
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    12497,
+    12498
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    12497,
+    12498
+   ],
+   "local_loop_cm": 0.2216,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 10
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [
+    12596,
+    13154
+   ],
+   "crease_poles_own_digit": [
+    12596,
+    13154
+   ],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    12596,
+    13154
+   ],
+   "within2_own_digit": [
+    12596,
+    13154
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3112,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": false,
+   "strict_D1_D3": false,
+   "status_D1": "FAIL_CREASE_POLE",
+   "status_D1_D3": "FAIL_CREASE_POLE"
+  },
+  "toe3_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 22
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2561,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 1
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 4
+    }
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 4,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [
+    12629
+   ],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [
+    12629
+   ],
+   "within2_poles": [
+    12629
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    12629
+   ],
+   "local_loop_cm": 0.2031,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "FAIL_CREASE_POLE",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+  },
+  "toe4_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 2
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "merged": true
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2914,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 9
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 4,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2318,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 14
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 4
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    13189
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    13189
+   ],
+   "local_loop_cm": 0.2055,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "merged": true
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3163,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 6
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 13
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 6
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 7,
+   "closed_rings_anatomical": 7,
+   "loops_legacy": 7,
+   "loops_v2": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2206,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 10
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 6
+    }
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 6,
+   "closed_rings": 12,
+   "closed_rings_anatomical": 12,
+   "loops_legacy": 12,
+   "loops_v2": 12,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2037,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "shoulder_r": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 12
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 10
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 7,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 1.027,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "elbow_r": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.8747,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "wrist_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 10
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 1
+    }
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": null,
+   "closed_rings": 10,
+   "closed_rings_anatomical": 10,
+   "loops_legacy": 10,
+   "loops_v2": 10,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.5855,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 8
+    }
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 5,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.323,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 11
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2311,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 9
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 9
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 9
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 9,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1922,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 6
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    2832,
+    2871
+   ],
+   "within2_own_digit": [
+    2832
+   ],
+   "within2_adjacent_digit": [
+    2871
+   ],
+   "local_loop_cm": 0.4037,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 5,
+   "closed_rings": 7,
+   "closed_rings_anatomical": 7,
+   "loops_legacy": 7,
+   "loops_v2": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2622,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 8
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 7
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1781,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 4
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    2870
+   ],
+   "within2_own_digit": [
+    2870
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3457,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 2
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "loops": 10
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 7
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1961,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 10
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 7
+    }
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1852,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "loops": 1
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 6
+    }
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 6,
+   "closed_rings": 3,
+   "closed_rings_anatomical": 3,
+   "loops_legacy": 3,
+   "loops_v2": 6,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2338,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 6
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 22
+    }
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 7,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1898,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 9
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 9
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 8
+    }
+   ],
+   "band_loops_legacy": 8,
+   "band_loops_defined": 8,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1796,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "thumb_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 4
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": null,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 3,
+   "loops_legacy": 4,
+   "loops_v2": 3,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.5083,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "thumb_ip_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 8
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 6
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "merged": true
+    }
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 6,
+   "closed_rings": 10,
+   "closed_rings_anatomical": 10,
+   "loops_legacy": 10,
+   "loops_v2": 10,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2928,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "hip_r": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 14
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "loops": 14
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 1.419,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": false,
+   "strict_D1_D3": false,
+   "status_D1": "FAIL_LOOPS",
+   "status_D1_D3": "FAIL_LOOPS"
+  },
+  "knee_r": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 2
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 2
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 3,
+   "closed_rings": 14,
+   "closed_rings_anatomical": 14,
+   "loops_legacy": 14,
+   "loops_v2": 14,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.9638,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ankle_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "loops": 2
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 18
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "loops": 9
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "loops": 3
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": null,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    6241
+   ],
+   "within2_own_digit": [
+    6241
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.7972,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe1_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 2
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 2
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4637,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe1_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 1
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 1,
+   "loops_v2": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3166,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "toe2_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 1
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 2
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 14
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 1
+    }
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 1,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 1,
+   "loops_v2": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3518,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": false,
+   "strict_D1_D3": false,
+   "status_D1": "FAIL_LOOPS",
+   "status_D1_D3": "FAIL_LOOPS"
+  },
+  "toe2_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 15
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 20
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2963,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 6
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "no_path": true
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    5900,
+    5901
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    5900,
+    5901
+   ],
+   "local_loop_cm": 0.2216,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 10
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 3
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [
+    5999,
+    6558
+   ],
+   "crease_poles_own_digit": [
+    5999,
+    6558
+   ],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    5999,
+    6558
+   ],
+   "within2_own_digit": [
+    5999,
+    6558
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3115,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": false,
+   "strict_D1_D3": false,
+   "status_D1": "FAIL_CREASE_POLE",
+   "status_D1_D3": "FAIL_CREASE_POLE"
+  },
+  "toe3_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 22
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 3
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2561,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 1
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 4,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [
+    6032
+   ],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [
+    6032
+   ],
+   "within2_poles": [
+    6032
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    6032
+   ],
+   "local_loop_cm": 0.2031,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "FAIL_CREASE_POLE",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+  },
+  "toe4_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 2
+    }
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2911,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 11
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 9
+    }
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2318,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 5
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 4,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    6593
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    6593
+   ],
+   "local_loop_cm": 0.2058,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 3
+    }
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3168,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "loops": 0
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 6
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "loops": 13
+    }
+   ],
+   "band_loops_legacy": 0,
+   "band_loops_defined": 4,
+   "closed_rings": 7,
+   "closed_rings_anatomical": 7,
+   "loops_legacy": 7,
+   "loops_v2": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2206,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "loops": 10
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "loops": 6
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "no_path": true
+    }
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 6,
+   "closed_rings": 12,
+   "closed_rings_anatomical": 12,
+   "loops_legacy": 12,
+   "loops_v2": 12,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2038,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  }
+ }
+}

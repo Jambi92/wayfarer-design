@@ -27,11 +27,13 @@ ok = all(R[d]['body'][k] <= T1[k] for d in ('deviation_prod_to_source', 'deviati
      all(R[d][z_][k] <= T2[k] for d in ('deviation_prod_to_source', 'deviation_source_to_prod') for z_ in ZN for k in T2)
 R['T1_T2_pass'] = bool(ok); R['T3_pass'] = bool(abs(R['stature_diff_mm']) <= 1.0 and max(abs(x) for x in R['bbox_diff_mm']) <= 2.0)
 px = 3.0
+# canvas: the RP1-RP3 Marchfolk canvas (x +-60, z -5..185 cm) unless the source is larger (Skarn 208 cm etc.): then it grows to fit
+ZT = max(185.0, float(np.ceil(SV[keep][:, 2].max() + 5))); XO = max(60.0, float(np.ceil(np.abs(SV[keep][:, :2]).max() + 10)))
 def sil(V, F, yaw, ss=4):
     """silhouette mask at 3 px / cm, rasterised at ss x ss supersampling and box-filtered (coverage >= 0.5): removes 1-px polygon-edge quantisation
     between different triangulations of the same surface"""
     an = np.radians(yaw); Rm = np.array([[np.cos(an), -np.sin(an), 0], [np.sin(an), np.cos(an), 0], [0, 0, 1]]); P = V @ Rm.T; q = px * ss
-    u = (P[:, 0] + 60) * q; v = (185 - P[:, 2]) * q; W_, H_ = int(120 * px), int(190 * px)
+    u = (P[:, 0] + XO) * q; v = (ZT - P[:, 2]) * q; W_, H_ = int(2 * XO * px), int((ZT + 5) * px)
     im = Image.new('L', (W_ * ss, H_ * ss), 0); dr = ImageDraw.Draw(im)
     for t in F: dr.polygon([(u[t[0]], v[t[0]]), (u[t[1]], v[t[1]]), (u[t[2]], v[t[2]])], fill=255)
     a_ = np.array(im, float).reshape(H_, ss, W_, ss).mean((1, 3)); return a_ >= 127.5

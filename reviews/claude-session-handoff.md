@@ -2,6 +2,25 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-26) — MARCHFOLK v003 FROZEN + SKARN FAMILY PROPAGATION — awaiting ChatGPT review
+
+**What was done**
+- Order 85b7c1c executed.
+  - **Part A:** freeze-by-record (`MF_RP3_v003_FREEZE.json`), read-back via `tools/rac/rp/marchfolk_rp3_v001/freeze_check.py`.
+  - **Part B:** Skarn propagation.
+- **Workspace** `/tmp/claude-0/rt/sk`: `src/` (regen, native), `cand/*_fam.npz`, `audit/`, `lm/`, `anat/`, `val/` (frozen D1 + D3 and `_D4`), `def/`, `sheets/`. Run with `run_eval.sh`.
+- **New tools** in `tools/rac/rp/mpfb_family/`: `propagate.py`, `family_sheets.py`, `family_manifest.py`.
+- **Tool changes:**
+  - `validator_v2.py`: `--scale-ref` (D4);
+  - `anatomy.py`: canvas grows for tall sources (Marchfolk unchanged);
+  - `make_prod.py`: status label argument.
+
+**Results**
+- Skarn topology identical; C1R identity preserved.
+- Open: configuration-1 heel T-2 1.70 mm; validator residuals (hip / toe roots).
+
+**Next:** STOP for ChatGPT review (D4, family margin v003.1 or exceptions).
+
 ## LATEST (2026-10-26) — RP3 MARCHFOLK v004 FINAL ORDER — awaiting ChatGPT review
 
 **What was done**

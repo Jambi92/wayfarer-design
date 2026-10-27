@@ -10,7 +10,7 @@ bpy.ops.wm.read_factory_settings(use_empty=True)
 me = bpy.data.meshes.new(NAME); me.from_pydata(Vb.tolist(), [], Q.tolist()); me.update()
 uv = me.uv_layers.new(name='UVMap'); uv.data.foreach_set('uv', UV.reshape(-1, 2).astype(np.float32).ravel())
 ob = bpy.data.objects.new(NAME, me); bpy.context.scene.collection.objects.link(ob)
-ob['RAC_status'] = 'PRODUCTION CANDIDATE (RP3 Marchfolk) - not accepted'; ob['RAC_frame'] = 'm, Z up, faces -Y, subject left +X, origin pelvis root on ground'
+ob['RAC_status'] = a[4] if len(a) > 4 else 'PRODUCTION CANDIDATE (RP3 Marchfolk) - not accepted'; ob['RAC_frame'] = 'm, Z up, faces -Y, subject left +X, origin pelvis root on ground'
 for p in me.polygons: p.use_smooth = True
 p = os.path.join(O, NAME + '.blend'); bpy.ops.wm.save_as_mainfile(filepath=p, compress=True)
 co = np.empty(len(me.vertices) * 3, np.float32); me.vertices.foreach_get('co', co); li = np.empty(len(me.loops), np.int32); me.loops.foreach_get('vertex_index', li)

@@ -16,6 +16,14 @@ cz = np.load(sys.argv[1]); OUT = sys.argv[2]; V = cz['V'].astype(float); Q = np.
 H = {k: np.array(v) for k, v in meta['heads'].items()}; T_ = {k: np.array(v) for k, v in meta['tails'].items()}; JC = {k: np.array(v) for k, v in meta['joint_cubes'].items()}
 loops = closed_loops(Q, nV); au = Auditor(V, Q); S = stations(meta); JR = {j[0]: j for j in ring_stations(meta)}
 ANAT_RING_R = {'thumb_mcp': 3.0}
+# D4 (PROPOSED, MPFB Family Propagation Standard v1): station geometry (band half-width W, probe radius R, pole radius Rp, ring radius / window,
+# anatomical fallback radius) is defined on the family reference body (Marchfolk configuration 1, stature REF_STATURE) and scaled by
+# s = race stature / REF_STATURE, so a frozen topology is audited with the same anatomical band on every family member. --scale-ref 0 = off.
+REF_STATURE = float(sys.argv[sys.argv.index('--scale-ref') + 1]) if '--scale-ref' in sys.argv else 0.0
+STATURE = float(V[:, 2].max() - V[:, 2].min()); SCALE = STATURE / REF_STATURE if REF_STATURE > 0 else 1.0
+if SCALE != 1.0:
+    S = [(nm, c, d, Wd * SCALE, Rr * SCALE, need, (Rp * SCALE if Rp is not None else None)) for nm, c, d, Wd, Rr, need, Rp in S]
+    JR = {k: (j[0], j[1], j[2], j[3] * SCALE, j[4] * SCALE) for k, j in JR.items()}; ANAT_RING_R = {k: v * SCALE for k, v in ANAT_RING_R.items()}
 # digit axes
 def chain_fingers(s):
     out = {}
@@ -85,5 +93,5 @@ summ = dict(legacy_firm_fail=sorted(k for k, v in R.items() if not v['firm_legac
             D1_strict_fail=sorted(k for k, v in R.items() if not v['strict_D1']), D1_D3_strict_fail=sorted(k for k, v in R.items() if not v['strict_D1_D3']),
             D1_fallback_passes={k: v['status_D1'] for k, v in R.items() if v['status_D1'].startswith('PASS_FALLBACK')},
             D1_D3_non_plain={k: v['status_D1_D3'] for k, v in R.items() if v['status_D1_D3'] != 'PASS'})
-json.dump(dict(validator='RAC §7 validator v2 (D1 authorised by order 2d34a0c; D3 proposed)', anatomical_ring_radius_cm=ANAT_RING_R, summary=summ, stations=R), open(OUT, 'w'), indent=1)
+json.dump(dict(validator='RAC §7 validator v2 (D1 + D3 accepted, order 85b7c1c; D4 station scaling proposed)', station_scale=SCALE, reference_stature_cm=REF_STATURE, stature_cm=STATURE, anatomical_ring_radius_cm=ANAT_RING_R, summary=summ, stations=R), open(OUT, 'w'), indent=1)
 print(json.dumps(summ, indent=1))

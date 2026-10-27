@@ -1,0 +1,164 @@
+{
+ "file": "SK_F_REF_RP3_retopo_v001.blend",
+ "sha256": "d8084ac7475ac54f54b5304f49f9ac3fb439f5ba13c20aed572cd518a2f3e52b",
+ "geometry_hash": "3c418ae6d07ccdc5baacf79ac6043e24b6d35b1502c9a31662d3d9cdff88e170",
+ "face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262",
+ "verts": 57674,
+ "quads": 57672,
+ "status": "PRODUCTION CANDIDATE (Skarn, MPFB family propagation from frozen Marchfolk v003) - not accepted",
+ "source": {
+  "id": "SKF208",
+  "r6": "reviews/reference-assets/r6/SKF208_r6.npz",
+  "r6_sha256": "0245683ec889d36e4d284ad0fe4ae533a3c7ab8ce17c28e46cda92a99769ab4f",
+  "build": "reviews/reference-assets/builds/SKF208_build.json",
+  "build_sha256": "ddf77a849902c1843b825396a4f21272ea66d4d80e1bd78acdecab609d4c377a",
+  "r6_geometry_hash": "e24f7385a70ea30a8a1c531cf26ba7d13a871e63eeeb4517e7386911bad1f036",
+  "regenerated_geometry_hash": "e24f7385a70ea30a8a1c531cf26ba7d13a871e63eeeb4517e7386911bad1f036",
+  "regeneration_identical": true
+ },
+ "propagation": {
+  "step": "MPFB Family Propagation Standard v1 -- hm08 -> frozen family base",
+  "frozen_base": "MF_M_REF_RP3_retopo_v003.blend",
+  "frozen_base_sha256": "5b793eda8d4513a31fa018ef095d2eff25821618b297014a243ec472f6e17276",
+  "frozen_map": "MF_M_REF_RP3_retopo_v003_hm08_map.npz",
+  "frozen_map_sha256": "bc3b7c548293a2a653e89c13e37c7088b5f12fdb42968fdb6bd9147cfd248a17",
+  "race_native": "SKF208_native.npz",
+  "race_native_sha256": "e322c7327ddf43577b2c16bcfa2b02f4ae3b1d9189ec1fb8766c10bc2ff9405e",
+  "checks": {
+   "hm08_faces_equal": true,
+   "src_index_equal": true,
+   "frozen_blend_faces_equal_map": true,
+   "frozen_face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262"
+  },
+  "verts": 57674,
+  "quads": 57672
+ },
+ "operations": [
+  "regenerate accepted source (MPFB 2.0.17 / Blender 5.2.2), geometry identity proven",
+  "export hm08 body (helpers removed)",
+  "apply the FROZEN hm08 -> family-base map (no topology change, no per-race fitting)",
+  "production frame / origin (pelvis root projected to ground)"
+ ],
+ "mapping": {
+  "hm08_map": "SK_F_REF_RP3_retopo_v001_hm08_map.npz",
+  "hm08_map_sha256": "bc3b7c548293a2a653e89c13e37c7088b5f12fdb42968fdb6bd9147cfd248a17",
+  "arrays_identical_to_frozen": true
+ },
+ "frame": {
+  "analysis": "cm, x subject left, f forward, u up (R-6)",
+  "blender": "m, Z up, faces -Y, subject left +X, origin = pelvis root projected to ground",
+  "origin_translation_cm": [
+   -0.0,
+   -2.6450254023075104,
+   -0.0
+  ]
+ },
+ "landmarks": "SK_F_REF_RP3_v001_landmarks.json",
+ "topology": {
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "degenerate_faces": 0,
+  "normals_outward": true,
+  "self_intersection_face_pairs": 94,
+  "T4_angle": 870,
+  "T4_aspect": 1549,
+  "density": {
+   "face": 0.129,
+   "ears": 0.098,
+   "hand": 0.133,
+   "foot": 0.2,
+   "trunk": 0.524,
+   "arm": 0.446,
+   "leg": 0.528,
+   "neck": 0.292,
+   "head": 0.217
+  },
+  "validator_D1_D3_firm_fail": [
+   "thumb_mcp_l",
+   "thumb_mcp_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe4_j1_l",
+   "toe4_j1_r"
+  ],
+  "validator_D1_D3_D4_firm_fail": [
+   "toe2_j1_l",
+   "toe2_j1_r"
+  ],
+  "mouth_rings": 35,
+  "orbit_rings": [
+   43,
+   43
+  ]
+ },
+ "anatomy": {
+  "T1_T2_pass": true,
+  "T3_pass": true,
+  "T7_pass": true,
+  "stature_diff_mm": 2e-05,
+  "prod_to_source": {
+   "body": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1882,
+    "max_mm": 2.0245
+   },
+   "head": {
+    "median_mm": 0.0,
+    "p95_mm": 0.0871,
+    "max_mm": 1.0301
+   },
+   "ears": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1137,
+    "max_mm": 0.5081
+   },
+   "hands": {
+    "median_mm": 0.0,
+    "p95_mm": 0.088,
+    "max_mm": 0.9854
+   },
+   "feet": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1038,
+    "max_mm": 0.8653
+   }
+  },
+  "source_to_prod": {
+   "body": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1831,
+    "max_mm": 0.9752
+   },
+   "head": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1567,
+    "max_mm": 0.8456
+   },
+   "ears": {
+    "median_mm": 0.0,
+    "p95_mm": 0.2428,
+    "max_mm": 0.7776
+   },
+   "hands": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1723,
+    "max_mm": 0.9752
+   },
+   "feet": {
+    "median_mm": 0.0,
+    "p95_mm": 0.3216,
+    "max_mm": 0.8865
+   }
+  },
+  "silhouette_iou": {
+   "front": 0.998042,
+   "rear": 0.998042,
+   "profile_left": 0.998257,
+   "profile_right": 0.99823,
+   "q3_front_left": 0.998404,
+   "q3_front_right": 0.998404
+  }
+ },
+ "gate": "reviews/claude-rac-rp3-skarn-family-propagation-gate.md"
+}

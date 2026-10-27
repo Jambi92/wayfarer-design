@@ -1,0 +1,196 @@
+{
+ "record": "MARCHFOLK RP3 v003 \u2014 AUTHOR ACCEPTED / FROZEN \u2014 MPFB FAMILY BASE",
+ "date": "2026-10-26",
+ "authority": "reviews/chatgpt-rac-rp3-marchfolk-freeze-and-skarn-propagation-order.md (85b7c1c), author acceptance of Claude return 2296648",
+ "freeze_method": "freeze-by-record: accepted .blend files preserved byte-identical (not re-saved); this record is authoritative for status",
+ "files": {
+  "MF_M_REF_RP3_retopo_v003.blend": {
+   "sha256": "5b793eda8d4513a31fa018ef095d2eff25821618b297014a243ec472f6e17276",
+   "geometry_hash": "64ecbff04faf3615e45ee452bc117fc6a49195d9611edb2f1abce64c2f3041da",
+   "face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262",
+   "verts": 57674,
+   "quads": 57672,
+   "sidecar": "MF_M_REF_RP3_retopo_v003.json",
+   "sidecar_sha256": "13879a8aa09839edc8825292629a79d9c138026a9f83948b41562c2f4bce25a8",
+   "landmarks": "MF_M_REF_RP3_v003_landmarks.json",
+   "landmarks_sha256": "8132d507132b9e40b9fabe13b9445aa005c89003400674e7634e23a3c7ab82fb",
+   "note": "sidecar gate_state field predates acceptance; this freeze record supersedes it"
+  },
+  "MF_F_REF_RP3_retopo_v003.blend": {
+   "sha256": "a5d8adfe979e0c6314ddc825062f6f953a24a1288f79c987dff5232ef45dc188",
+   "geometry_hash": "ebf5829d9e6d98192a1fb2771b48feb8983027b22f8c0875bfe1d9c14b6599d4",
+   "face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262",
+   "verts": 57674,
+   "quads": 57672,
+   "sidecar": "MF_F_REF_RP3_retopo_v003.json",
+   "sidecar_sha256": "6a53e72184e0f3b9ef6fede81395525818d06520e40bcff0ad1e62c9b28f1f4d",
+   "landmarks": "MF_F_REF_RP3_v003_landmarks.json",
+   "landmarks_sha256": "953b2359a4c94b0cec30ac50be716c1c5512de42c28ec53a1060b51e972d47c7",
+   "note": "sidecar gate_state field predates acceptance; this freeze record supersedes it"
+  }
+ },
+ "maps": {
+  "hm08_to_v003": {
+   "files": [
+    "MF_M_REF_RP3_retopo_v003_hm08_map.npz",
+    "MF_F_REF_RP3_retopo_v003_hm08_map.npz"
+   ],
+   "sha256": "bc3b7c548293a2a653e89c13e37c7088b5f12fdb42968fdb6bd9147cfd248a17"
+  },
+  "v002_to_v003": {
+   "file": "MF_REF_RP3_v002_to_v003_map.npz",
+   "sha256": "0829d1dc596299bb36a2737ae113400fa88e027fd126a8effb216b6f2b3ae475"
+  }
+ },
+ "sources": {
+  "MF-M-R": {
+   "r6_sha256": "2caaf056fff559c8c2c8b92dd5e2bc751be0c3efd9a98d0f8d4a7052f65be4d7",
+   "build_sha256": "c5be9ca0805f8ac298181cb0da42070bc4a4843fc0aa15129d4d8ba5f686c9ee"
+  },
+  "MF-F-R": {
+   "r6_sha256": "c254fb4bc47225d90fcf7950514240cd74baace0ee3b48cd4d78fa38d9381761",
+   "build_sha256": "252907fda37c791dd3f5d5b547dc28886a8feeb14c7b1a79719667d49089de6d"
+  }
+ },
+ "shared_topology": {
+  "verts": 57674,
+  "quads": 57672,
+  "quads_pct": 100.0,
+  "face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262",
+  "identical_face_list": true,
+  "identical_hm08_map": true
+ },
+ "decisions": {
+  "D1": "undefined band sides excluded; anatomical closed-ring / defined-side fallback, reported explicitly (thumb_mcp_l c1 + c2 PASS_FALLBACK_CLOSED_RING; c2 shoulder_l / r PASS_FALLBACK_DEFINED_SIDES)",
+  "D3": "digit stations count only poles on the same digit (nearest digit axis); toe3_j3 l/r (c1, c2) and toe4_j2 l/r (c2) are validator-attribution false positives",
+  "sole_note": "configuration-1 lowest sole point +0.41 mm (within T-3) accepted; no re-pin"
+ },
+ "freezes": [
+  "common vertex / face topology",
+  "hm08 -> family-base mapping architecture",
+  "D1 validator fallback",
+  "D3 digit pole ownership",
+  "production frame / origin convention",
+  "source weight-transfer method",
+  "UV-transfer method",
+  "MPFB target / morph-transfer method",
+  "base deformation-loop organization",
+  "base creator-density architecture",
+  "base face / orbit / mouth topology"
+ ],
+ "not_frozen": [
+  "final production skeleton",
+  "production skin weights",
+  "race-specific ear branches",
+  "compact-race density branches",
+  "race-specific anatomy",
+  "final UV layout / materials",
+  "creator morph implementation",
+  "LOD policy"
+ ],
+ "readback": {
+  "M": {
+   "components": 1,
+   "boundary_edges": 0,
+   "nonmanifold_edges": 0,
+   "nonmanifold_vertices": 0,
+   "degenerate_faces": 0,
+   "normals_outward": true,
+   "quads_pct": 100.0,
+   "uv_layers": [
+    "UVMap"
+   ],
+   "max_abs_diff_vs_candidate_m": 5.959994497928278e-08,
+   "faces_equal_candidate": true
+  },
+  "F": {
+   "components": 1,
+   "boundary_edges": 0,
+   "nonmanifold_edges": 0,
+   "nonmanifold_vertices": 0,
+   "degenerate_faces": 0,
+   "normals_outward": true,
+   "quads_pct": 100.0,
+   "uv_layers": [
+    "UVMap"
+   ],
+   "max_abs_diff_vs_candidate_m": 5.9594309487209784e-08,
+   "faces_equal_candidate": true
+  }
+ },
+ "validator_D1_D3": {
+  "M": {
+   "firm_fail": [],
+   "firm_pass": 69,
+   "strict_only_notes": [
+    "middle_mcp_l",
+    "middle_mcp_r",
+    "ring_mcp_l",
+    "ring_mcp_r"
+   ],
+   "fallback": {
+    "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+    "toe3_j3_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+    "toe3_j3_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+   }
+  },
+  "F": {
+   "firm_fail": [],
+   "firm_pass": 69,
+   "strict_only_notes": [
+    "ring_mcp_l",
+    "ring_mcp_r"
+   ],
+   "fallback": {
+    "shoulder_l": "PASS_FALLBACK_DEFINED_SIDES",
+    "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+    "toe3_j3_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+    "toe4_j2_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+    "shoulder_r": "PASS_FALLBACK_DEFINED_SIDES",
+    "toe3_j3_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+    "toe4_j2_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+   }
+  }
+ },
+ "anatomy": {
+  "M": {
+   "T1_T2": true,
+   "T3": true,
+   "T7": true,
+   "stature_diff_mm": -0.41461
+  },
+  "F": {
+   "T1_T2": true,
+   "T3": true,
+   "T7": true,
+   "stature_diff_mm": -1e-05
+  }
+ },
+ "density_pass": {
+  "M": true,
+  "F": true
+ },
+ "face": {
+  "M": {
+   "mouth_rings": 35,
+   "orbit_rings": [
+    43,
+    43
+   ],
+   "mouth_corner_poles": 0
+  },
+  "F": {
+   "mouth_rings": 35,
+   "orbit_rings": [
+    43,
+    43
+   ],
+   "mouth_corner_poles": 0
+  }
+ },
+ "evidence": [
+  "reviews/rac-rp3-evidence/marchfolk_family_core_v003/",
+  "reviews/rac-rp3-evidence/marchfolk_v004_final_family_core/",
+  "reviews/rac-rp3-evidence/marchfolk_v003_freeze/"
+ ]
+}
