@@ -15,8 +15,12 @@ for C in 'MF':
         _, c, d, Wd, Rr, need, Rp = S[k]; d = unit(np.asarray(d)); c = np.asarray(c)
         pp = unit(np.cross(d, [0, 1.0, 0] if abs(d[1]) < 0.9 else [1.0, 0, 0])); qq = unit(np.cross(d, pp)); sides = []
         for side, nm in ((pp, '+p'), (-pp, '-p'), (qq, '+q'), (-qq, '-q')):
+            def degenerate(p0):
+                cand = au.kd.query_ball_point(p0 + side * Rr * 0.5, Rr * 0.9)
+                return bool(len(cand) == 0 or not (au.VN[np.array(cand)] @ side > 0.3).any())
+            dga, dgb = degenerate(c - d * Wd), degenerate(c + d * Wd)
             a = au.surf(c - d * Wd, side, Rr); b = au.surf(c + d * Wd, side, Rr); dist = float(np.linalg.norm(V[a] - V[b])); ax = float((V[b] - V[a]) @ d)
-            ent = dict(side=nm, endpoint_dist_cm=round(dist, 3), axial_separation_cm=round(ax, 3), nominal_band_cm=2 * Wd, merged=bool(dist < 0.7 * 2 * Wd))
+            ent = dict(side=nm, ray_exit_undefined_a=dga, ray_exit_undefined_b=dgb, endpoint_dist_cm=round(dist, 3), axial_separation_cm=round(ax, 3), nominal_band_cm=2 * Wd, merged=bool(dist < 0.7 * 2 * Wd))
             if not ent['merged']:
                 _, pred = dijkstra(au.G, indices=a, return_predecessors=True, limit=4 * Wd + 3 * Rr)
                 if pred[b] >= 0:
@@ -33,4 +37,4 @@ for C in 'MF':
                                         closed_rings_station_radius=ring_std, closed_rings_radius_3cm=ring_anat)
 json.dump(OUT, open(sys.argv[2], 'w'), indent=1)
 for C, v in OUT.items():
-    for k, e in v.items(): print(C, k, 'firm' if e['firm'] else 'FIRM-FAIL', e['loops_by_side'], 'rings', e['closed_rings_station_radius'], '->', e['closed_rings_radius_3cm'], [(s['side'], s['axial_separation_cm'], s.get('axial_edges')) for s in e['sides']])
+    for k, e in v.items(): print(C, k, 'firm' if e['firm'] else 'FIRM-FAIL', e['loops_by_side'], 'rings', e['closed_rings_station_radius'], '->', e['closed_rings_radius_3cm'], [(s['side'], s['axial_separation_cm'], s.get('axial_edges'), 'UNDEF' if s['ray_exit_undefined_a'] or s['ray_exit_undefined_b'] else '') for s in e['sides']])

@@ -31,6 +31,11 @@ for nm, la, lb in RINGS:
 nV = M.shape[0]; print('after rings', nV, len(Q), flush=True)
 # ------------------------------------------------------------------ state
 moved = {}
+Mb = M.copy(); UVb = UV.copy(); S2 = '--surf2' in sys.argv
+TRI2 = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; OFF = len(surf.T); nQ_ = len(Q)
+VF_ = [[] for _ in range(M.shape[0])]
+for fi_, q_ in enumerate(Q):
+    for v_ in q_: VF_[int(v_)].append(fi_)
 if RESUME:
     rz = np.load(RESUME); assert np.array_equal(rz['Q'], Q), 'resume topology mismatch'
     M = sp.csr_matrix((rz['M_data'], rz['M_indices'], rz['M_indptr']), shape=tuple(rz['M_shape'])); UV = rz['UV'].astype(float)
@@ -49,29 +54,50 @@ def rows_matrix(mv):
     Ml = M.tolil(copy=True)
     for v, (t, bc) in mv.items():
         row = {}
-        for j, w in zip(surf.T[t], bc):
-            if w > 1e-12: row[int(j)] = row.get(int(j), 0.0) + float(w)
+        if t < OFF:
+            for j, w in zip(surf.T[t], bc):
+                if w > 1e-12: row[int(j)] = row.get(int(j), 0.0) + float(w)
+        else:                                                    # barycentric on the v002(+rings) base surface: rows of the 3 base corners
+            for u, w in zip(TRI2[t - OFF], bc):
+                for j, ww in zip(Mb.indices[Mb.indptr[u]:Mb.indptr[u + 1]], Mb.data[Mb.indptr[u]:Mb.indptr[u + 1]]):
+                    if w * ww > 1e-12: row[int(j)] = row.get(int(j), 0.0) + float(w * ww)
         Ml.rows[v] = sorted(row); Ml.data[v] = [row[j] for j in sorted(row)]
     return Ml.tocsr()
 def positions(Xa, mv):
     """configuration positions: unmoved rows from M, moved rows barycentric"""
     out = {}
     for C in 'MF':
-        Vc = M @ B[C]['Vh']
+        Vc = M @ B[C]['Vh']; Vb_ = Mb @ B[C]['Vh']
         if mv:
-            ids = np.array(sorted(mv), int); T = surf.T[[mv[v][0] for v in ids]]; bc = np.array([mv[v][1] for v in ids])
-            Vc[ids] = (B[C]['Vh'][T] * bc[:, :, None]).sum(1)
+            ids = np.array(sorted(mv), int); tt = np.array([mv[v][0] for v in ids]); bc = np.array([mv[v][1] for v in ids]); a_ = tt < OFF
+            if a_.any(): Vc[ids[a_]] = (B[C]['Vh'][surf.T[tt[a_]]] * bc[a_][:, :, None]).sum(1)
+            if (~a_).any(): Vc[ids[~a_]] = (Vb_[TRI2[tt[~a_] - OFF]] * bc[~a_][:, :, None]).sum(1)
         out[C] = Vc
     return out
 surf.local_tris(Qh, len(Ah))
 def support(v, mv):
     if v in mv: return surf.T[mv[v][0]].tolist()
     return M.indices[M.indptr[v]:M.indptr[v + 1]].tolist()
+XbA = None
 def project(Xa, mv, ids):
+    global XbA
     ids = np.asarray(sorted(set(int(i) for i in ids)), int)
     if not len(ids): return
-    P, tri, bc = surf.project_local(Xa[ids], vc[ids], [support(int(v), mv) for v in ids])
-    for i, v in enumerate(ids): mv[int(v)] = (int(tri[i]), bc[i]); Xa[v] = P[i]
+    if not S2:
+        P, tri, bc = surf.project_local(Xa[ids], vc[ids], [support(int(v), mv) for v in ids])
+        for i, v in enumerate(ids): mv[int(v)] = (int(tri[i]), bc[i]); Xa[v] = P[i]
+        return
+    if XbA is None: XbA = Mb @ Ah
+    for v in ids:                                              # base-surface projection: faces within 3 rings of the vertex (topological)
+        fs = set(VF_[int(v)])
+        for _ in range(3):
+            vs = set(Q[list(fs)].ravel().tolist()); fs = set()
+            for u in vs: fs.update(VF_[u])
+        fs = np.array(sorted(fs), int); cand = np.r_[fs, fs + nQ_]; T = TRI2[cand]
+        ok_ = (vc[T] == vc[v]).all(1)
+        if ok_.any(): cand = cand[ok_]; T = T[ok_]
+        q, bc = closest_on_tris(np.repeat(Xa[v:v + 1], len(T), 0), XbA[T[:, 0]], XbA[T[:, 1]], XbA[T[:, 2]]); j = np.argmin(np.linalg.norm(q - Xa[v], axis=1))
+        mv[int(v)] = (int(cand[j]) + OFF, bc[j]); Xa[v] = q[j]
 def hops(src, K):
     d = {src: 0}; fr = [src]
     for h in range(1, K + 1):
@@ -276,11 +302,13 @@ for rnd in range(T4R if 'T' in PHASES else 0):
     print('T-4 round', rnd, 'clusters', ncl, 'accepted', acc, 'rejected', rej, t4count(Vc), '%.0fs' % (time.time() - t0), flush=True); LOG['t4'].append(dict(round=rnd, clusters=int(ncl), accepted=acc, rejected=rej, t4=t4count(Vc)))
 # ------------------------------------------------------------------ save
 M3 = rows_matrix(moved); Vc = positions(X, moved); RF = audit(Vc)
-UV3 = UV.copy(); Tq = surf.tq; Tk = surf.tk
+UV3 = UVb.copy(); Tq = surf.tq; Tk = surf.tk
 for f, q in enumerate(Q):
     for k, v in enumerate(q):
         if int(v) in moved:
-            t, bc = moved[int(v)]; corners = [0, 1, 2] if Tk[t] == 0 else [0, 2, 3]; UV3[f, k] = (B['UVh'][Tq[t]][corners] * bc[:, None]).sum(0)
+            t, bc = moved[int(v)]
+            if t < OFF: corners = [0, 1, 2] if Tk[t] == 0 else [0, 2, 3]; UV3[f, k] = (B['UVh'][Tq[t]][corners] * bc[:, None]).sum(0)
+            else: f2 = (t - OFF) % nQ_; corners = [0, 1, 2] if (t - OFF) < nQ_ else [0, 2, 3]; UV3[f, k] = (UVb[f2][corners] * bc[:, None]).sum(0)
 res = {C: dict(firm_fail=sorted(k for k, r in RF[C].items() if not r['firm']), strict_fail=sorted(k for k, r in RF[C].items() if not r['strict'])) for C in 'MF'}
 print(json.dumps(res)); print('T-4 after', t4count(Vc), 'face', face_rings(Vc), '%.0fs' % (time.time() - t0))
 mv = np.array(sorted(moved), int)
