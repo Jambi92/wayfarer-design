@@ -1,0 +1,11 @@
+# Stage 1 timber weathering and damp pool shores
+
+The separate v019 development level softens the three scaffold areas with small timber bevels, more irregular grain, muted weathering, end-grain treatment on the new decorative meshes and less uniform roughness. The physical stairs, platforms and guardrails retain the verified v018 layout.
+
+The three pools now blend into localized darker, damp ground. Depth fading softens the water's contact with the existing basin floor, and small animated surface normals give work-lamp reflections a restrained ripple. Basin geometry and water footprints are unchanged; this is a material/detail pass. Water remains cosmetic, with no swimming, buoyancy or fluid simulation.
+
+Saved ground, headroom, recovery access and branch barriers pass across all ten routes. All physical blocking geometry and Landscape height samples match v018 exactly. Sixteen fresh walking legs pass across four scaffold/study routes for the smallest and largest height envelopes, out and return. The prior v018 full 80-leg walk/sprint result applies to the independently verified identical physical layout; no new full sprint run is claimed. Native material connections, depth fading, decorative collision settings, retained lighting and a clean map check are verified. The separate real-time editor sample is diagnostic, not shipping or populated-world performance acceptance.
+
+Ten final native views pass as an incremental surface/detail milestone. Larger rock transitions, rubble, joints and fastenings, physical shoreline refinement and broader water/reflection and lighting work remain for later art passes. The floor retains derivatives of [Poly Haven Rock Face](https://polyhaven.com/a/rock_face), processed by Dario Barresi with photography by Greg Zaal and supplied under [CC0](https://polyhaven.com/license). No purchases, downloads or installations were needed.
+
+The original project and all earlier checkpoints verify unchanged. The compressed development backup and every archived payload hash verify. Images, geometry, textures, source bibles, local paths and raw diagnostics remain local. Established geography, archaeological interpretation and character work remain preserved. Deposits stay unclassified, with no new crafting or story-material identity.
