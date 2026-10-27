@@ -63,10 +63,14 @@ def positions(Xa, mv):
             Vc[ids] = (B[C]['Vh'][T] * bc[:, :, None]).sum(1)
         out[C] = Vc
     return out
+surf.local_tris(Qh, len(Ah))
+def support(v, mv):
+    if v in mv: return surf.T[mv[v][0]].tolist()
+    return M.indices[M.indptr[v]:M.indptr[v + 1]].tolist()
 def project(Xa, mv, ids):
     ids = np.asarray(sorted(set(int(i) for i in ids)), int)
     if not len(ids): return
-    P, tri, bc = surf.project(Xa[ids], vc[ids])
+    P, tri, bc = surf.project_local(Xa[ids], vc[ids], [support(int(v), mv) for v in ids])
     for i, v in enumerate(ids): mv[int(v)] = (int(tri[i]), bc[i]); Xa[v] = P[i]
 def hops(src, K):
     d = {src: 0}; fr = [src]
@@ -120,6 +124,7 @@ def local_state(Vc, ids):
 ENV_CM = float(sys.argv[sys.argv.index('--env-mm') + 1]) / 10 if '--env-mm' in sys.argv else 0.08
 def envelope_ok(Vold, Vnew, ids):
     a = local_state(Vold, ids); b = local_state(Vnew, ids)
+    if '--verbose' in sys.argv: print('        envelope', {C: (round(a[C][0] * 10, 3), a[C][1], round(b[C][0] * 10, 3), b[C][1]) for C in 'MF'}, flush=True)
     return all(b[C][0] <= max(ENV_CM, a[C][0] + 1e-6) and b[C][1] <= a[C][1] for C in 'MF')
 cen = {C: {s[0]: (np.asarray(s[1], float), max(s[4], 2 * s[3]) + 1.0) for s in S[C]} for C in 'MF'}
 def audit(Vc, names=None):
@@ -175,7 +180,7 @@ def try_move(target, plan):
             return variant
     return False
 # ------------------------------------------------------------------ P: pole relocation
-TGT = 2.3; done_keys = set(); VERB = '--verbose' in sys.argv
+TGT = 2.3; done_keys = set(); VERB = '--verbose' in sys.argv; PROX_IP = '--prox-ip' in sys.argv
 for phase in (('firm', 'strict') if 'P' in PHASES else ()):
     for it in range(6):
         bad = sorted({nm for C in 'MF' for nm, r in CUR[C].items() if (not r['firm'] if phase == 'firm' else not r['strict']) and (r['crease'] or r['within2'])})
@@ -192,7 +197,9 @@ for phase in (('firm', 'strict') if 'P' in PHASES else ()):
                     r = CUR[C][n_]
                     for p, t in zip(r['pole_ids'], r['pole_t']):
                         if pin[p] or abs(t) > (2.0 if phase == 'strict' else 0.5): continue
-                        sg = np.sign(t) if abs(t) > 0.05 else -1.0; dv = (sg * TGT - t) * r['h'] * r['d']
+                        sg = np.sign(t) if abs(t) > 0.05 else -1.0
+                        if PROX_IP and (('_j2_' in n_ or '_j3_' in n_) or '_ip' in n_): sg = -1.0   # digit IP joints: slide toward the digit root, never into the tip
+                        dv = (sg * TGT - t) * r['h'] * r['d']
                         if p not in plan or np.linalg.norm(dv) > np.linalg.norm(plan[p][0]): plan[p] = (dv, r['h'])
             # mirror completion
             for p in list(plan):

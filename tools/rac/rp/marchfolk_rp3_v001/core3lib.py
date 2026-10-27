@@ -54,6 +54,28 @@ class Surface:
     """the configuration-average hm08 surface A, triangulated as the R-6 source; projection restricted to a UV chart"""
     def __init__(s, A, Qh, chart):
         s.A = A; s.T, s.tq, s.tk = hm08_tris(Qh); s.chart_t = chart[s.tq]; s.cen = A[s.T].mean(1); s.kd = cKDTree(s.cen)
+    def local_tris(s, Qh, nh):
+        """hm08 vertex -> triangles of the quads within 2 quad-rings (topological neighbourhood; prevents projection onto a touching neighbour digit)"""
+        vq = [[] for _ in range(nh)]
+        for f, q in enumerate(Qh):
+            for v in q: vq[v].append(f)
+        s.vq = vq; s.Qh = Qh
+        # precomputed 3-quad-ring triangle neighbourhood of every hm08 vertex (sparse quad-vertex incidence powers)
+        nq = len(Qh); I = sp.csr_matrix((np.ones(4 * nq), (np.repeat(np.arange(nq), 4), Qh.ravel())), shape=(nq, nh))
+        Vv = (I.T @ I).tocsr(); Vv.data[:] = 1; R = Vv
+        for _ in range(2): R = (R @ Vv).tocsr(); R.data[:] = 1
+        F = (R @ I.T).tocsr()                                            # hm08 vertex -> quads within 3 rings
+        s.nbq = [F.indices[F.indptr[v]:F.indptr[v + 1]] for v in range(nh)]
+    def tris_near(s, verts, rings=3):
+        fs = np.unique(np.concatenate([s.nbq[v] for v in verts])); nq = len(s.Qh); return np.r_[fs, fs + nq]
+    def project_local(s, P, charts, supports):
+        out = np.zeros_like(P); tri = np.zeros(len(P), int); bcs = np.zeros((len(P), 3))
+        for i in range(len(P)):
+            cand = s.tris_near(supports[i], 3); c2 = cand[s.chart_t[cand] == charts[i]]
+            if len(c2): cand = c2
+            T = s.T[cand]; q, bc = closest_on_tris(np.repeat(P[i:i + 1], len(cand), 0), s.A[T[:, 0]], s.A[T[:, 1]], s.A[T[:, 2]])
+            j = np.argmin(np.linalg.norm(q - P[i], axis=1)); out[i] = q[j]; tri[i] = cand[j]; bcs[i] = bc[j]
+        return out, tri, bcs
     def project(s, P, charts, k=24):
         _, idx = s.kd.query(P, k=k); out = np.zeros_like(P); tri = np.zeros(len(P), int); bcs = np.zeros((len(P), 3))
         for i in range(len(P)):
