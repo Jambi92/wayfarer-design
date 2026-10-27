@@ -2,7 +2,7 @@
 import sys, os, json, numpy as np, scipy.sparse as sp
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core3lib import *
-B = load(); z = np.load(sys.argv[1]); M3 = sp.csr_matrix((z['M_data'], z['M_indices'], z['M_indptr']), shape=tuple(z['M_shape'])); Q = B['Q2']; nV = M3.shape[0]
+B = load(); z = np.load(sys.argv[1]); M3 = sp.csr_matrix((z['M_data'], z['M_indices'], z['M_indptr']), shape=tuple(z['M_shape'])); Q = z['Q'] if 'Q' in z.files else B['Q2']; nV = M3.shape[0]
 loops = closed_loops(Q, nV); pin = z['pin']
 for C in 'MF':
     R = full_s7(M3 @ B[C]['Vh'], Q, B[C]['meta'], loops)

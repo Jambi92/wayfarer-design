@@ -12,14 +12,15 @@
 import sys, os, json, time, numpy as np, scipy.sparse as sp
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from core3lib import *
-OUT = sys.argv[1]; t0 = time.time()
+OUT = sys.argv[1]; t0 = time.time(); RESUME = sys.argv[sys.argv.index('--resume') + 1] if '--resume' in sys.argv else None
+PHASES = sys.argv[sys.argv.index('--phases') + 1].split(',') if '--phases' in sys.argv else ['P', 'T']; T4R = int(sys.argv[sys.argv.index('--t4rounds') + 1]) if '--t4rounds' in sys.argv else 5
 B = load(); bs = np.load(W + '/v3_base.npz'); chart = bs['chart']
 Qh = B['Qh']; Ah = B['A']; surf = Surface(Ah, Qh, chart)
 Q = B['Q2'].copy(); UV = B['UV2'].copy(); M = B['M2'].copy(); vc = bs['vc'].copy(); seam = bs['seam'].copy()
 LOG = dict(rings=[], poles=[], t4=[])
 # ------------------------------------------------------------------ R: root-loop insertions (loop ids of the v002 topology, left side; mirrored)
 loops0 = closed_loops(Q, M.shape[0]); X0 = M @ Ah; mir0 = mirror_map(X0, 0.3)
-RINGS = [('pinky_mcp_hypothenar_root', 412, 1006), ('toe1_mtp_root', 491, 1113), ('toe4_toe5_mtp_root', 520, 1147)]
+RINGS = [('pinky_mcp_hypothenar_root', 412, 1006), ('toe1_mtp_root', 491, 1113), ('toe2_mtp_root', 497, 1120), ('toe3_mtp_root', 508, 1132), ('toe4_toe5_mtp_root', 520, 1147)]
 for nm, la, lb in RINGS:
     for side, (A_, B_) in (('l', (loops0[la], loops0[lb])), ('r', (mir0[loops0[la]], mir0[loops0[lb]]))):
         if (A_ < 0).any() or (B_ < 0).any(): print('mirror fail', nm); continue
@@ -29,7 +30,12 @@ for nm, la, lb in RINGS:
         LOG['rings'].append(dict(name=nm + '_' + side, strip_quads=len(A_), verts_added=len(ext)))
 nV = M.shape[0]; print('after rings', nV, len(Q), flush=True)
 # ------------------------------------------------------------------ state
-X = M @ Ah; moved = {}; Adj = adjacency(Q, nV); deg = np.asarray(Adj.sum(1)).ravel(); _, val = topo(Q, nV); isp = val != 4
+moved = {}
+if RESUME:
+    rz = np.load(RESUME); assert np.array_equal(rz['Q'], Q), 'resume topology mismatch'
+    M = sp.csr_matrix((rz['M_data'], rz['M_indices'], rz['M_indptr']), shape=tuple(rz['M_shape'])); UV = rz['UV'].astype(float)
+    moved = {int(v): (int(t), b) for v, t, b in zip(rz['moved'], rz['tri'], rz['bary'])}; LOG = json.loads(str(rz['log'])); LOG.setdefault('resumed', []).append(RESUME); print('resumed', RESUME, len(moved), flush=True)
+X = M @ Ah; Adj = adjacency(Q, nV); deg = np.asarray(Adj.sum(1)).ravel(); _, val = topo(Q, nV); isp = val != 4
 loops = closed_loops(Q, nV); S = {C: stations(B[C]['meta']) for C in 'MF'}; JR = {C: ring_stations(B[C]['meta']) for C in 'MF'}; mir = mirror_map(X, 0.3)
 pin = seam.copy()
 for C in 'MF':
@@ -82,7 +88,7 @@ def relax(Xa, mv, region, fixed, it=4, lam=0.35, para=0.0):
             for k in range(4): pr = Xa[q[:, (k - 1) % 4]] + Xa[q[:, (k + 1) % 4]] - Xa[q[:, (k + 2) % 4]]; np.add.at(acc, q[:, k], pr); np.add.at(cnt, q[:, k], 1)
             tgt = (1 - para) * L + para * acc[region] / np.maximum(cnt[region], 1)[:, None]
         dX = lam * (tgt - Xa[region]); dX -= (dX * N[region]).sum(1, keepdims=True) * N[region]; Xa[region] += dX; project(Xa, mv, region)
-cen = {C: {s[0]: np.asarray(s[1], float) for s in S[C]} for C in 'MF'}
+cen = {C: {s[0]: (np.asarray(s[1], float), max(s[4], 2 * s[3]) + 1.0) for s in S[C]} for C in 'MF'}
 def audit(Vc, names=None):
     R = {}
     for C in 'MF':
@@ -90,11 +96,12 @@ def audit(Vc, names=None):
         R[C] = full_s7(Vc[C], Q, B[C]['meta'], loops, Ss, Js)
     return R
 def key(r): return (max(0, r['required'] - r['loops_s7']), r['crease'], r['within2'])
-def near_stations(ids, rad=5.0):
+def near_stations(ids, rad=None):
+    """every station whose band reach (max(R, 2W) + 1 cm) touches a changed vertex"""
     P = X[np.asarray(list(ids), int)]; kd = cKDTree(P); out = set()
     for C in 'MF':
-        for nm, c in cen[C].items():
-            if kd.query(c)[0] < rad: out.add(nm)
+        for nm, (c, reach) in cen[C].items():
+            if kd.query(c)[0] < reach: out.add(nm)
     return out
 CUR = audit(positions(X, moved))
 def score_all(R): return {C: (sum(not r['firm'] for r in R[C].values()), sum(not r['strict'] for r in R[C].values())) for C in 'MF'}
@@ -125,14 +132,17 @@ def try_move(target, plan):
                 a, b = key(CUR[C][nm]), key(Rt[C][nm])
                 if b[0] > a[0] or (CUR[C][nm]['firm'] and not Rt[C][nm]['firm']) or b[1] > a[1] or (b[2] > a[2] and nm not in target): ok = False
                 if nm in target: gain += (a[1] - b[1]) * 10 + (a[2] - b[2])
+        if VERB:
+            worse = [(C, nm, key(CUR[C][nm]), key(Rt[C][nm])) for C in 'MF' for nm in names if key(Rt[C][nm]) != key(CUR[C][nm])]
+            print('      variant', variant, 'ok', ok, 'gain', gain, worse[:12], flush=True)
         if ok and gain > 0:
             X = Xt; moved = mvt
             for C in 'MF': CUR[C].update(Rt[C])
             return variant
     return False
 # ------------------------------------------------------------------ P: pole relocation
-TGT = 2.3; done_keys = set()
-for phase in ('firm', 'strict'):
+TGT = 2.3; done_keys = set(); VERB = '--verbose' in sys.argv
+for phase in (('firm', 'strict') if 'P' in PHASES else ()):
     for it in range(6):
         bad = sorted({nm for C in 'MF' for nm, r in CUR[C].items() if (not r['firm'] if phase == 'firm' else not r['strict']) and (r['crease'] or r['within2'])})
         print(phase, it, score_all(CUR), 'targets', len(bad), '%.0fs' % (time.time() - t0), flush=True)
@@ -140,6 +150,7 @@ for phase in ('firm', 'strict'):
         prog = False
         for nm in bad:
             if nm.endswith('_r') and nm[:-1] + 'l' in bad: continue           # handled with its mirror
+            if nm.startswith('toe') and '_j1_' in nm: continue                 # MTP fan: handled by the grouped forefoot move below
             names = [nm] + ([nm[:-1] + 'r'] if nm.endswith('_l') else [])
             plan = {}
             for C in 'MF':
@@ -158,6 +169,23 @@ for phase in ('firm', 'strict'):
             done_keys.add(kk); res = try_move(names, [(p, dv, h) for p, (dv, h) in plan.items()])
             LOG['poles'].append(dict(phase=phase, station=names, poles=sorted(int(p) for p in plan), accepted=bool(res), variant=list(res) if res else None)); prog |= bool(res)
             print('   ', names, len(plan), 'accepted' if res else 'rejected', res, flush=True)
+        # grouped forefoot (MTP fan) move: junction poles shared by adjacent toe roots slid PROXIMALLY past every toe-root crease they touch
+        toe_bad = [nm for nm in bad if nm.startswith('toe') and '_j1_' in nm]
+        if toe_bad:
+            plan = {}
+            for C in 'MF':
+                for nm in [n for n in CUR[C] if n.startswith('toe') and '_j1_' in n]:
+                    r = CUR[C][nm]
+                    for p, t in zip(r['pole_ids'], r['pole_t']):
+                        if pin[p]: continue
+                        need = (t + TGT) * r['h']
+                        if need > 0 and (p not in plan or need > plan[p][2]): plan[p] = (-r['d'] * need, r['h'], need)
+            kk = ('forefoot', phase, tuple(sorted(plan)))
+            if plan and kk not in done_keys:
+                done_keys.add(kk); tg = sorted({n for C in 'MF' for n in CUR[C] if n.startswith('toe') and '_j1_' in n})
+                res = try_move(tg, [(p, dv, h) for p, (dv, h, _) in plan.items()])
+                LOG['poles'].append(dict(phase=phase, station='forefoot_mtp_group', poles=sorted(int(p) for p in plan), accepted=bool(res), variant=list(res) if res else None)); prog |= bool(res)
+                print('    forefoot group', len(plan), 'accepted' if res else 'rejected', res, flush=True)
         if not prog: break
 # ------------------------------------------------------------------ T: T-4 relaxation (chunked by region, accepted only without station / face-ring regression)
 FACE0 = None
@@ -172,7 +200,7 @@ Vc = positions(X, moved); FACE0 = face_rings(Vc)
 def t4count(Vc): return {C: int((lambda a: (a[2] | a[3]).sum())(quality(Vc[C], Q))) for C in 'MF'}
 print('T-4 before', t4count(Vc), 'face', FACE0, flush=True)
 from scipy.sparse.csgraph import connected_components as cc_
-for rnd in range(4):
+for rnd in range(T4R if 'T' in PHASES else 0):
     Vc = positions(X, moved); bad = np.zeros(len(Q), bool)
     for C in 'MF': a = quality(Vc[C], Q); bad |= a[2] | a[3]
     bv = np.unique(Q[bad].ravel()); bv = bv[~pin[bv]]
@@ -188,7 +216,7 @@ for rnd in range(4):
         Vt = positions(Xt, mvt); ri = np.unique(np.nonzero(np.isin(Q, list(reg)))[0])
         q0 = sum(int((quality(Vc[C], Q[ri])[2] | quality(Vc[C], Q[ri])[3]).sum()) for C in 'MF'); q1 = sum(int((quality(Vt[C], Q[ri])[2] | quality(Vt[C], Q[ri])[3]).sum()) for C in 'MF')
         if q1 >= q0: rej += 1; continue
-        names = near_stations(np.array(list(reg)), 4.0)
+        names = near_stations(np.array(list(reg)))
         ok = True
         if names:
             Rt = audit(Vt, names)
