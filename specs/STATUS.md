@@ -1,5 +1,24 @@
 # Character Design Status
 
+## RAC RP3 Marchfolk — 2026-10-26 — v003 shared family core returned: FAMILY BASE FAIL / NEEDS AUTHOR DECISION (D1 / D2); not frozen
+
+**Order:** `reviews/chatgpt-rac-rp3-marchfolk-family-core-v003-order.md` (103c832).
+
+- **Gate:** `reviews/claude-rac-rp3-marchfolk-family-core-v003-gate.md`.
+- **Evidence:** `reviews/rac-rp3-evidence/marchfolk_family_core_v003/`.
+- **Files:** `E:/…/production/Marchfolk/RP3/MF_{M,F}_REF_RP3_retopo_v003.blend` (`5b793eda…` / `a5d8adfe…`), with sidecars, maps, landmarks and manifest. PC read-back is identical; v001 and v002 are untouched.
+- **v003** = v002 + 10 mirrored root rings (pinky / hypothenar, toe 1–5 MTP roots) + surface-constrained junction-pole relocation + T-4 relaxation, with envelope and contact repair.
+- **Shared topology:** identical for both configurations, 57,674 V / 57,672 Q, face hash `68f7b6a9…`.
+- **§7 firm failures:** 19 → 3 (configuration 1) and 20 → 7 (configuration 2).
+- **T-4 (angle/aspect quad-quality violations):** 6.6 → 4.0 % and 6.3 → 3.9 %.
+- **Density, anatomy, face readiness:** density and T-1 / T-2 / T-3 / T-7 pass for both configurations. Face rings and contact are unchanged. No topology-class deformation change.
+- **Configuration-1 knee centre:** mechanically acceptable.
+- **Decisions needed:**
+  - **D1:** thumb MCP and configuration-2 shoulders. The band method is undefined on the failing sides; the thumb passes the closed-ring test at thumb radius.
+  - **D2:** toe3 j3 / toe4 j2 crease poles, which sit in toe near-contact.
+
+**Not started:** freeze, Skarn, Sagekin or other races, propagation, rig, morphs, UV, LOD, UE5.
+
 ## RAC RP3 Marchfolk — 2026-10-26 — production baseline gate returned (FAMILY BASE NEEDS CORRECTION, bounded); Grask RP2 formally closed; awaiting ChatGPT review
 
 **Order:** `reviews/chatgpt-rac-rp2-closure-and-rp3-marchfolk-baseline-order.md` (d18ff2a).

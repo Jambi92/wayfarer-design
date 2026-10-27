@@ -2,6 +2,30 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-26) — RP3 MARCHFOLK v003 FAMILY CORE — awaiting ChatGPT review
+
+**What was done**
+- Order 103c832 executed. Gate: `reviews/claude-rac-rp3-marchfolk-family-core-v003-gate.md` (FAMILY BASE FAIL / NEEDS AUTHOR DECISION).
+- Workspace `/tmp/claude-0/rt/m3`:
+  - `v3/core_final.npz` (= `core_l`);
+  - `cand/MF-{M,F}-R_v003.npz`;
+  - `audit/`, `anat/`, `def/`, `knee/`, `sheets3/`, `ov3/`.
+- Build lineage: `v003_build.py` (core_e) → `repair.py` (stc python, bpy) → resume P + T (core_g) → `revert_region.py shoulder_l,shoulder_r 18` (core_l).
+- Tools in `tools/rac/rp/marchfolk_rp3_v001/`:
+  - `core3lib.py`, `v003_build.py`, `repair.py`, `revert_region.py`;
+  - `residuals.py`, `v3_report.py`, `mf3_sheets.py`, `sidecars3.py`;
+  - `make_v3cand.py`, `ring_search.py`;
+  - `mf_deform.py` (`KNEE_OFF_CM`, `ONLY_POSES`).
+- Run the evaluation sequentially (`run_v3eval.sh`); parallel runs hit the memory limit.
+
+**Results**
+- Firm failures: configuration 1 = thumb_mcp_l, toe3_j3_l/r; configuration 2 = shoulder_l/r, thumb_mcp_l, toe3_j3_l/r, toe4_j2_l/r.
+- Thumb and configuration-2 shoulders: band ray undefined (tie order). Toe IP poles: moving them creates contact.
+
+**Known tool caveat:** the band method's `surf()` breaks ties by candidate order when no candidate passes the normal test. Appending vertices can change undefined-side counts.
+
+**Next:** STOP for ChatGPT review (decisions D1 / D2).
+
 ## LATEST (2026-10-26) — RP3 MARCHFOLK PRODUCTION BASELINE GATE + RP2 CLOSURE — awaiting ChatGPT review
 
 **What was done**

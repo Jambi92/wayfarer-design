@@ -1,0 +1,256 @@
+{
+ "file": "MF_M_REF_RP3_retopo_v003.blend",
+ "sha256": "5b793eda8d4513a31fa018ef095d2eff25821618b297014a243ec472f6e17276",
+ "geometry_hash": "64ecbff04faf3615e45ee452bc117fc6a49195d9611edb2f1abce64c2f3041da",
+ "face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262",
+ "verts": 57674,
+ "quads": 57672,
+ "status": "PRODUCTION CANDIDATE (RP3 Marchfolk v003 shared family core) - not frozen",
+ "source": {
+  "id": "MF-M-R",
+  "r6_sha256": "2caaf056fff559c8c2c8b92dd5e2bc751be0c3efd9a98d0f8d4a7052f65be4d7",
+  "build_sha256": "c5be9ca0805f8ac298181cb0da42070bc4a4843fc0aa15129d4d8ba5f686c9ee",
+  "r6_geometry_hash": "9d9d0b4cb75732690773cbe72b7ab083bfb295d8716cebfb21c46c7640fe149c"
+ },
+ "parent_v002": {
+  "file": "MF_M_REF_RP3_retopo_v002.blend",
+  "sha256": "c02f77bf84f61b3fd409aeceea9c67c4cbe99813ef3e9344abaa08bd5fe31e87",
+  "geometry_hash": "c176d80cd0a0775b4bbdd75777fe025310ec7521a5fb7f96d3b69caa8d57d706",
+  "face_topology_hash": "80fa188ee82cd8834ccd1e37ac5b470cdad27510b6105bfc4ed9fe80aaffa331"
+ },
+ "operations": [
+  "v002 topology and vertex order kept; 10 closed root rings inserted (pinky_mcp_hypothenar_root_l, pinky_mcp_hypothenar_root_r, toe1_mtp_root_l, toe1_mtp_root_r, toe2_mtp_root_l, toe2_mtp_root_r, toe3_mtp_root_l, toe3_mtp_root_r, toe4_toe5_mtp_root_l, toe4_toe5_mtp_root_r), new vertices appended (57434 -> 57674)",
+  "junction-pole relocation (palm MCP roots, pinky / hypothenar, ankle crease, MTP fan, toe IP) by surface-constrained slide on the configuration-average hm08 source surface",
+  "T-4 outlier relaxation (tangential Laplacian + parallelogram completion) in face / hands / feet, accepted only without station, envelope or contact regression",
+  "envelope / contact repair: relocated vertices restored where a source vertex left the surface by > 0.8 mm or a new hand / foot self-intersection appeared",
+  "shoulder-region T-4 relaxation restored (band-ray tie-order sensitivity); no other region change"
+ ],
+ "changed_zones": {
+  "arm": {
+   "changed_vertices": 277,
+   "added_vertices": 0,
+   "changed_faces": 366,
+   "relocation_max_mm": 2.535,
+   "t4_v002": 135,
+   "t4_v003": 88,
+   "reason": "T-4 relaxation (neighbourhood of hand / foot / face patches) or untouched"
+  },
+  "ears": {
+   "changed_vertices": 184,
+   "added_vertices": 0,
+   "changed_faces": 236,
+   "relocation_max_mm": 0.89,
+   "t4_v002": 24,
+   "t4_v003": 12,
+   "reason": "T-4 relaxation only"
+  },
+  "face": {
+   "changed_vertices": 3969,
+   "added_vertices": 0,
+   "changed_faces": 5026,
+   "relocation_max_mm": 2.26,
+   "t4_v002": 1514,
+   "t4_v003": 996,
+   "reason": "T-4 relaxation only (rings preserved)"
+  },
+  "foot": {
+   "changed_vertices": 4347,
+   "added_vertices": 184,
+   "changed_faces": 5670,
+   "relocation_max_mm": 15.891,
+   "t4_v002": 1119,
+   "t4_v003": 797,
+   "reason": "ankle crease and MTP / toe-IP pole relocation, toe root rings, T-4 relaxation"
+  },
+  "hand": {
+   "changed_vertices": 3428,
+   "added_vertices": 56,
+   "changed_faces": 4504,
+   "relocation_max_mm": 6.543,
+   "t4_v002": 730,
+   "t4_v003": 230,
+   "reason": "MCP / thenar / hypothenar junction-pole relocation, pinky root ring, T-4 relaxation"
+  },
+  "head": {
+   "changed_vertices": 382,
+   "added_vertices": 0,
+   "changed_faces": 524,
+   "relocation_max_mm": 0.847,
+   "t4_v002": 72,
+   "t4_v003": 10,
+   "reason": "T-4 relaxation only"
+  },
+  "leg": {
+   "changed_vertices": 432,
+   "added_vertices": 0,
+   "changed_faces": 642,
+   "relocation_max_mm": 4.617,
+   "t4_v002": 54,
+   "t4_v003": 33,
+   "reason": "T-4 relaxation (neighbourhood of hand / foot / face patches) or untouched"
+  },
+  "neck": {
+   "changed_vertices": 0,
+   "added_vertices": 0,
+   "changed_faces": 0,
+   "relocation_max_mm": 0.0,
+   "t4_v002": 0,
+   "t4_v003": 0,
+   "reason": "T-4 relaxation (neighbourhood of hand / foot / face patches) or untouched"
+  },
+  "trunk": {
+   "changed_vertices": 535,
+   "added_vertices": 0,
+   "changed_faces": 705,
+   "relocation_max_mm": 2.611,
+   "t4_v002": 149,
+   "t4_v003": 156,
+   "reason": "T-4 relaxation (neighbourhood of hand / foot / face patches) or untouched"
+  }
+ },
+ "mapping": {
+  "hm08_map": "MF_M_REF_RP3_retopo_v003_hm08_map.npz",
+  "hm08_map_sha256": "bc3b7c548293a2a653e89c13e37c7088b5f12fdb42968fdb6bd9147cfd248a17",
+  "v002_to_v003_map": "MF_REF_RP3_v002_to_v003_map.npz",
+  "v002_to_v003_map_sha256": "0829d1dc596299bb36a2737ae113400fa88e027fd126a8effb216b6f2b3ae475",
+  "note": "every v003 vertex = fixed linear combination of hm08 vertices (relocated vertices: 3 barycentric weights on one source triangle); weights / UVs / MPFB targets transfer through the same map"
+ },
+ "topology": {
+  "quads_pct": 100.0,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "degenerate_faces": 0,
+  "winding_consistent": true,
+  "normals_outward": true,
+  "self_intersection_face_pairs": 60,
+  "poles": {
+   "valence_3": 164,
+   "valence_5plus": 156,
+   "by_zone": {
+    "arm": 2,
+    "face": 66,
+    "foot": 92,
+    "hand": 120,
+    "head": 6,
+    "leg": 4,
+    "trunk": 30
+   }
+  },
+  "T4_angle": 935,
+  "T4_aspect": 1563,
+  "T4_union": 2322,
+  "density": {
+   "face": 0.137,
+   "ears": 0.103,
+   "hand": 0.139,
+   "foot": 0.196,
+   "trunk": 0.509,
+   "arm": 0.483,
+   "leg": 0.514,
+   "neck": 0.325,
+   "head": 0.239
+  },
+  "s7_failing_firm": [
+   "thumb_mcp_l",
+   "toe3_j3_l",
+   "toe3_j3_r"
+  ],
+  "s7_failing_strict": [
+   "middle_mcp_l",
+   "middle_mcp_r",
+   "ring_mcp_l",
+   "ring_mcp_r",
+   "thumb_mcp_l",
+   "toe3_j3_l",
+   "toe3_j3_r",
+   "toe4_j3_l",
+   "toe4_j3_r"
+  ],
+  "mouth_rings": 35,
+  "orbit_rings": [
+   43,
+   43
+  ]
+ },
+ "anatomy": {
+  "T1_T2_pass": true,
+  "T3_pass": true,
+  "T7_pass": true,
+  "stature_diff_mm": -0.41461,
+  "prod_to_source": {
+   "body": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1945,
+    "max_mm": 1.7632
+   },
+   "head": {
+    "median_mm": 0.0,
+    "p95_mm": 0.0895,
+    "max_mm": 0.8814
+   },
+   "ears": {
+    "median_mm": 0.0,
+    "p95_mm": 0.0957,
+    "max_mm": 0.4653
+   },
+   "hands": {
+    "median_mm": 0.0,
+    "p95_mm": 0.0749,
+    "max_mm": 0.8204
+   },
+   "feet": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1063,
+    "max_mm": 1.4488
+   }
+  },
+  "source_to_prod": {
+   "body": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1538,
+    "max_mm": 0.7838
+   },
+   "head": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1313,
+    "max_mm": 0.7519
+   },
+   "ears": {
+    "median_mm": 0.0,
+    "p95_mm": 0.2082,
+    "max_mm": 0.7273
+   },
+   "hands": {
+    "median_mm": 0.0,
+    "p95_mm": 0.1516,
+    "max_mm": 0.7645
+   },
+   "feet": {
+    "median_mm": 0.0,
+    "p95_mm": 0.3248,
+    "max_mm": 0.7838
+   }
+  },
+  "silhouette_iou": {
+   "front": 0.997765,
+   "rear": 0.997765,
+   "profile_left": 0.997334,
+   "profile_right": 0.997295,
+   "q3_front_left": 0.998113,
+   "q3_front_right": 0.998068
+  }
+ },
+ "frame": {
+  "analysis": "cm, x subject left, f forward, u up (R-6)",
+  "blender": "m, Z up, faces -Y, subject left +X, origin = pelvis root projected to ground",
+  "origin_translation_cm": [
+   -0.0,
+   -0.3167869057506323,
+   -0.0
+  ]
+ },
+ "landmarks": "MF_M_REF_RP3_v003_landmarks.json",
+ "gate": "reviews/claude-rac-rp3-marchfolk-family-core-v003-gate.md",
+ "gate_state": "FAMILY BASE FAIL / NEEDS AUTHOR DECISION"
+}

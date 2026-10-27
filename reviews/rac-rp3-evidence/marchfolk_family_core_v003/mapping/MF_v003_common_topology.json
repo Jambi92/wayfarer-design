@@ -1,0 +1,31 @@
+{
+ "v003_faces_identical": true,
+ "v003_uv_identical": true,
+ "v003_hm08_map_identical": true,
+ "verts_M": 57674,
+ "verts_F": 57674,
+ "quads": 57672,
+ "face_topology_hash": {
+  "MF_M_REF_RP3_retopo_v003": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262",
+  "MF_F_REF_RP3_retopo_v003": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262"
+ },
+ "v002_vertex_order_kept": true,
+ "v002_vertices": 57434,
+ "appended_ring_vertices": 240,
+ "map_files": {
+  "hm08_to_v003": [
+   "MF_M_REF_RP3_retopo_v003_hm08_map.npz",
+   "MF_F_REF_RP3_retopo_v003_hm08_map.npz"
+  ],
+  "v002_to_v003": "MF_REF_RP3_v002_to_v003_map.npz"
+ },
+ "hm08_to_v003_sha256": {
+  "M": "bc3b7c548293a2a653e89c13e37c7088b5f12fdb42968fdb6bd9147cfd248a17",
+  "F": "bc3b7c548293a2a653e89c13e37c7088b5f12fdb42968fdb6bd9147cfd248a17"
+ },
+ "v002_to_v003_sha256": "0829d1dc596299bb36a2737ae113400fa88e027fd126a8effb216b6f2b3ae475",
+ "weight_transfer": "W_v003 = M3 @ W_hm08 (source MPFB game_engine weights), renormalised",
+ "uv_transfer": "per-corner UV: unchanged corners keep v002 corner UVs; relocated vertices take the barycentric UV of their source triangle (same UV chart)",
+ "morph_transfer": "any MPFB target D (hm08 vertex offsets) maps as M3 @ D; both configurations are M3 @ (their hm08 R-6 vertices)",
+ "hm08_map_files_content_identical": true
+}
