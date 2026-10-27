@@ -1,0 +1,398 @@
+{
+ "record": "ACTIVE MPFB FAMILY BASE v005 \u2014 AUTHOR ACCEPTED / FROZEN (Marchfolk + Skarn realizations)",
+ "date": "2026-10-27",
+ "authority": "reviews/chatgpt-rac-rp3-mpfb-family-base-v005-final-freeze-order.md (78a109f), author acceptance of Claude return a4ad723",
+ "freeze_method": "freeze-by-record: all four production .blend files preserved byte-identical (not re-saved); this record is authoritative over older candidate sidecar / embedded status strings",
+ "status": {
+  "v003": "historical accepted MPFB Family Base v1 (frozen, MF_RP3_v003_FREEZE.json 4af62f81ff4ba55e0396f70397e1e4945739353bc7247bc2ded00b6c12d35ba9)",
+  "v004": "margin-hardening provenance (candidate files and evidence preserved unchanged)",
+  "v005": "ACTIVE MPFB Family Base v2 / final margin-hardened base"
+ },
+ "topology": {
+  "verts": 57842,
+  "quads": 57840,
+  "quads_pct": 100.0,
+  "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+  "identical_in_all_realizations": true,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold": 0,
+  "degenerate_faces": 0
+ },
+ "maps": {
+  "hm08_to_v005": {
+   "file": "MPFB_FAMILY_BASE_v005_hm08_map.npz",
+   "sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "identical_for_every_race": true
+  },
+  "v003_to_v005": {
+   "file": "MPFB_FAMILY_v003_to_v005_map.npz",
+   "sha256": "928bec17267b81156ec1c569fd1a991cf4c78347df216425bb943647445874db"
+  },
+  "v004_to_v005": {
+   "file": "MPFB_FAMILY_v004_to_v005_map.npz",
+   "sha256": "cdb401a169a604d941aa4c511e2971717f8901534ae821447dc11de1d7e36ee3"
+  },
+  "core": {
+   "file": "MPFB_FAMILY_BASE_v005_core.npz",
+   "sha256": "b24fbae36fcd670046e51a31a12234758a3599070e44a3385102a4c50c0bb8aa"
+  },
+  "transfer_proof": {
+   "file": "MPFB_FAMILY_v005_transfer_proof.json",
+   "sha256": "732f926e3530332012fb839ea4a00ac334964914c354ab1ba2d39a3df630037b"
+  }
+ },
+ "family_manifest": {
+  "file": "MPFB_FAMILY_BASE_v005.json",
+  "sha256": "49a2730a8248e472d2daafa1ea0ae351185d6a02c2c96387b8e31c16d92d3f54"
+ },
+ "validator": {
+  "rules": [
+   "D1 undefined band-side fallback (85b7c1c)",
+   "D3 same-digit pole ownership (85b7c1c)",
+   "D4 stature-normalised station geometry, reference 173.143 cm (a18371c, accepted 33a2dfe)",
+   "D5 interdigital endpoint validity (accepted 33a2dfe)"
+  ],
+  "authoritative": "D1 + D3 + D4 + D5",
+  "implementation": "tools/rac/rp/marchfolk_rp3_v001/val2lib.py, CLI validator_v2.py --scale-ref 173.143 --d5",
+  "implementation_sha256": "1676ad398f91dc207c67557905095b70aee44530ded225b2a4393b0b8c50f4cf",
+  "result": {
+   "MF-M-R": "69/69 firm",
+   "MF-F-R": "69/69 firm",
+   "SK208-C1R": "69/69 firm",
+   "SKF208": "69/69 firm"
+  }
+ },
+ "standard": {
+  "file": "specs/RAC_MPFB_FAMILY_PROPAGATION_STANDARD_v1.md",
+  "status": "AUTHOR-ACCEPTED TECHNICAL STANDARD v1"
+ },
+ "accepted_exceptions": [
+  {
+   "id": "MPFB-CF-1",
+   "configuration": "MF-F-R (Marchfolk configuration 2)",
+   "item": "toe extension 30 deg: 3 topology-attributable flipped faces in the toe-2 MTP crease",
+   "klass": "PRODUCTION-RIG / TOE-WEIGHTING CARRY-FORWARD ITEM"
+  },
+  {
+   "id": "MPFB-CF-2",
+   "configuration": "SKF208 (Skarn configuration 2)",
+   "item": "toe extension 30 deg: 2 topology-attributable flipped faces in the toe-2 MTP crease",
+   "klass": "PRODUCTION-RIG / TOE-WEIGHTING CARRY-FORWARD ITEM"
+  },
+  {
+   "id": "MF-NOTE-1",
+   "configuration": "MF-M-R",
+   "item": "configuration-1 lowest sole point +0.41 mm (accepted at v003 freeze)",
+   "klass": "accepted note"
+  }
+ ],
+ "carry_forward_register": "specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md",
+ "provenance_chain": [
+  {
+   "step": "hm08",
+   "what": "MPFB 2.0.17 hm08 body (13,380 V / 13,378 Q), helpers removed"
+  },
+  {
+   "step": "v002",
+   "what": "linear subdivision + 98 leg rings",
+   "hm08_map_sha256": "28d4e46e59f2a321943d81a7db86df0212e359169679d3c5cf1fddf007a25f19"
+  },
+  {
+   "step": "v003",
+   "what": "root rings, pole relocation, T-4, contact repair; frozen Family Base v1",
+   "hm08_map_sha256": "bc3b7c548293a2a653e89c13e37c7088b5f12fdb42968fdb6bd9147cfd248a17",
+   "face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262"
+  },
+  {
+   "step": "v004",
+   "what": "heel barycentric rows, hip ring, toe-2 / toe-3 root rings, toe-3 pole slides (margin hardening)",
+   "hm08_map_sha256": "19a835501b67d0f3a566729bd373128373d7c533eb2d5a7862ed1a28cf041cb7",
+   "face_topology_hash": "2bd4c8b315044a01d577dc33000ece5db71f0f2d4a7b2ec0a8770d8f4fc4dd3f"
+  },
+  {
+   "step": "v005",
+   "what": "v004 without the toe-2 closed ring + toe-2 dorsal racetrack (final)",
+   "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0"
+  }
+ ],
+ "freezes": [
+  "common vertex / face topology (57,842 / 57,840)",
+  "hm08 -> v005 family mapping architecture",
+  "D1 / D3 / D4 / D5 validator semantics",
+  "production frame / origin",
+  "weight / UV / MPFB-target transfer paths through the map"
+ ],
+ "files": {
+  "MF_M_REF_RP3_retopo_v005.blend": {
+   "race": "Marchfolk",
+   "configuration": "MF-M-R",
+   "sha256": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+   "geometry_hash": "79c986ebbc866d2a5c0ff40e1c45c20e14d6209237108f6739b3ccc12bf40e5f",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+   "verts": 57842,
+   "quads": 57840,
+   "sidecar": "MF_M_REF_RP3_retopo_v005.json",
+   "sidecar_sha256": "6a65f368384daa7c7d8bf9a06a8492cc9c4abd79a799a53288bcf67a17f0583e",
+   "hm08_map": "MF_M_REF_RP3_retopo_v005_hm08_map.npz",
+   "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "landmarks": "MF_M_REF_RP3_v005_landmarks.json",
+   "landmarks_sha256": "8132d507132b9e40b9fabe13b9445aa005c89003400674e7634e23a3c7ab82fb",
+   "pc_path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Marchfolk/RP3/MF_M_REF_RP3_retopo_v005.blend",
+   "readback": {
+    "sha256": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+    "sha256_matches_manifest": true,
+    "geometry_hash": "79c986ebbc866d2a5c0ff40e1c45c20e14d6209237108f6739b3ccc12bf40e5f",
+    "geometry_hash_matches_manifest": true,
+    "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+    "face_topology_matches_family": true,
+    "verts": 57842,
+    "quads": 57840,
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "normals_outward": true,
+    "blend_equals_candidate_max_m": 5.959994497928278e-08,
+    "faces_equal_candidate": true,
+    "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+    "hm08_map_matches_manifest": true,
+    "map_arrays_equal_candidate": true,
+    "candidate_equals_map_times_source": 0.0,
+    "validator_D1_D3_D4_D5": {
+     "firm": 69,
+     "stations": 69,
+     "fail": []
+    },
+    "anatomy": {
+     "T1_T2": true,
+     "T3": true,
+     "T7": true
+    },
+    "density_all_pass": true,
+    "face": {
+     "mouth": 35,
+     "orbits": [
+      43,
+      43
+     ],
+     "corner_poles": 0,
+     "near_mouth_poles": 0
+    },
+    "sidecar_sha256": null
+   },
+   "source": {
+    "r6": "reviews/reference-assets/r6/MF-M-R_r6.npz",
+    "r6_sha256": "2caaf056fff559c8c2c8b92dd5e2bc751be0c3efd9a98d0f8d4a7052f65be4d7",
+    "build": "reviews/reference-assets/builds/MF-M-R_build.json",
+    "build_sha256": "c5be9ca0805f8ac298181cb0da42070bc4a4843fc0aa15129d4d8ba5f686c9ee"
+   },
+   "note": "sidecar / embedded RAC_status say CANDIDATE - NOT FROZEN (written before acceptance); the file was NOT re-saved; this record supersedes those strings"
+  },
+  "MF_F_REF_RP3_retopo_v005.blend": {
+   "race": "Marchfolk",
+   "configuration": "MF-F-R",
+   "sha256": "f2f2f9dc4bb15ef2ba48f64d1198297f29605a10fee347aac94e12e89e4db75d",
+   "geometry_hash": "6fba379a77e5987fcb46053767c75ef3db013a79be860f169931644ccdc4fc50",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+   "verts": 57842,
+   "quads": 57840,
+   "sidecar": "MF_F_REF_RP3_retopo_v005.json",
+   "sidecar_sha256": "c4a88876773b5fb4b9000f10582fbf0556fd2a012e178c612bd6773b77f2a2b1",
+   "hm08_map": "MF_F_REF_RP3_retopo_v005_hm08_map.npz",
+   "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "landmarks": "MF_F_REF_RP3_v005_landmarks.json",
+   "landmarks_sha256": "953b2359a4c94b0cec30ac50be716c1c5512de42c28ec53a1060b51e972d47c7",
+   "pc_path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Marchfolk/RP3/MF_F_REF_RP3_retopo_v005.blend",
+   "readback": {
+    "sha256": "f2f2f9dc4bb15ef2ba48f64d1198297f29605a10fee347aac94e12e89e4db75d",
+    "sha256_matches_manifest": true,
+    "geometry_hash": "6fba379a77e5987fcb46053767c75ef3db013a79be860f169931644ccdc4fc50",
+    "geometry_hash_matches_manifest": true,
+    "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+    "face_topology_matches_family": true,
+    "verts": 57842,
+    "quads": 57840,
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "normals_outward": true,
+    "blend_equals_candidate_max_m": 5.9594309487209784e-08,
+    "faces_equal_candidate": true,
+    "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+    "hm08_map_matches_manifest": true,
+    "map_arrays_equal_candidate": true,
+    "candidate_equals_map_times_source": 0.0,
+    "validator_D1_D3_D4_D5": {
+     "firm": 69,
+     "stations": 69,
+     "fail": []
+    },
+    "anatomy": {
+     "T1_T2": true,
+     "T3": true,
+     "T7": true
+    },
+    "density_all_pass": true,
+    "face": {
+     "mouth": 35,
+     "orbits": [
+      43,
+      43
+     ],
+     "corner_poles": 0,
+     "near_mouth_poles": 0
+    },
+    "sidecar_sha256": null
+   },
+   "source": {
+    "r6": "reviews/reference-assets/r6/MF-F-R_r6.npz",
+    "r6_sha256": "c254fb4bc47225d90fcf7950514240cd74baace0ee3b48cd4d78fa38d9381761",
+    "build": "reviews/reference-assets/builds/MF-F-R_build.json",
+    "build_sha256": "252907fda37c791dd3f5d5b547dc28886a8feeb14c7b1a79719667d49089de6d"
+   },
+   "note": "sidecar / embedded RAC_status say CANDIDATE - NOT FROZEN (written before acceptance); the file was NOT re-saved; this record supersedes those strings"
+  },
+  "SK_M_REF_RP3_retopo_v003.blend": {
+   "race": "Skarn",
+   "configuration": "SK208-C1R",
+   "sha256": "76229b35c9139c898cff8d4c466032e7b9706f95cd7a03b2f0fb50eec8f320ff",
+   "geometry_hash": "024dd059cb46405e52b80b549e92c7ff1fdeb2296d41213bb3870396165716b8",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+   "verts": 57842,
+   "quads": 57840,
+   "sidecar": "SK_M_REF_RP3_retopo_v003.json",
+   "sidecar_sha256": "eae2d0064e0c83304b5499aa5b071fa926680e909d633e507d4104e38c1fbd7e",
+   "hm08_map": "SK_M_REF_RP3_retopo_v003_hm08_map.npz",
+   "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "landmarks": "SK_M_REF_RP3_v003_landmarks.json",
+   "landmarks_sha256": "9cd265605edbc3bed7f298dd9aea938a16ca3ee955f49a63165fe3677c826733",
+   "pc_path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Skarn/RP3/SK_M_REF_RP3_retopo_v003.blend",
+   "readback": {
+    "sha256": "76229b35c9139c898cff8d4c466032e7b9706f95cd7a03b2f0fb50eec8f320ff",
+    "sha256_matches_manifest": true,
+    "geometry_hash": "024dd059cb46405e52b80b549e92c7ff1fdeb2296d41213bb3870396165716b8",
+    "geometry_hash_matches_manifest": true,
+    "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+    "face_topology_matches_family": true,
+    "verts": 57842,
+    "quads": 57840,
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "normals_outward": true,
+    "blend_equals_candidate_max_m": 1.043081283569336e-07,
+    "faces_equal_candidate": true,
+    "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+    "hm08_map_matches_manifest": true,
+    "map_arrays_equal_candidate": true,
+    "candidate_equals_map_times_source": 0.0,
+    "validator_D1_D3_D4_D5": {
+     "firm": 69,
+     "stations": 69,
+     "fail": []
+    },
+    "anatomy": {
+     "T1_T2": true,
+     "T3": true,
+     "T7": true
+    },
+    "density_all_pass": true,
+    "face": {
+     "mouth": 29,
+     "orbits": [
+      43,
+      43
+     ],
+     "corner_poles": 0,
+     "near_mouth_poles": 0
+    },
+    "sidecar_sha256": null
+   },
+   "source": {
+    "r6": "reviews/rac-w3d-evidence/geometry/SK208-C1R_r6.npz",
+    "r6_sha256": "fd8a43d2e6dc6e63f21306755baedd70cfef9151ff2b4fd442ad1a78ed4448d0",
+    "build": "reviews/rac-w3d-evidence/builds/SK208-C1R_build.json",
+    "build_sha256": "c1c54d286b23e1b3e2f7ad30ba36462fc0b2aaf560364f40fe0f34a4675f5231"
+   },
+   "note": "sidecar / embedded RAC_status say CANDIDATE - NOT FROZEN (written before acceptance); the file was NOT re-saved; this record supersedes those strings"
+  },
+  "SK_F_REF_RP3_retopo_v003.blend": {
+   "race": "Skarn",
+   "configuration": "SKF208",
+   "sha256": "4ff0ce6fcb0f68b08b0c92eee32d53a81a79abd7db415c166d968938c518e5e2",
+   "geometry_hash": "5f73895e9ca6e4ea25d9249f46d65c20e94c3b0e29980606180043cf50c55937",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+   "verts": 57842,
+   "quads": 57840,
+   "sidecar": "SK_F_REF_RP3_retopo_v003.json",
+   "sidecar_sha256": "7bd145b7bea4753081228268868e9aa87a094acc7e11e3de5e2c477bc8a259b1",
+   "hm08_map": "SK_F_REF_RP3_retopo_v003_hm08_map.npz",
+   "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "landmarks": "SK_F_REF_RP3_v003_landmarks.json",
+   "landmarks_sha256": "6663de053df3affb82af2b8edc74c00c203b1dd6c1c33e2a74b99c218a80cb3f",
+   "pc_path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Skarn/RP3/SK_F_REF_RP3_retopo_v003.blend",
+   "readback": {
+    "sha256": "4ff0ce6fcb0f68b08b0c92eee32d53a81a79abd7db415c166d968938c518e5e2",
+    "sha256_matches_manifest": true,
+    "geometry_hash": "5f73895e9ca6e4ea25d9249f46d65c20e94c3b0e29980606180043cf50c55937",
+    "geometry_hash_matches_manifest": true,
+    "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+    "face_topology_matches_family": true,
+    "verts": 57842,
+    "quads": 57840,
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "normals_outward": true,
+    "blend_equals_candidate_max_m": 1.1920928955078125e-07,
+    "faces_equal_candidate": true,
+    "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+    "hm08_map_matches_manifest": true,
+    "map_arrays_equal_candidate": true,
+    "candidate_equals_map_times_source": 0.0,
+    "validator_D1_D3_D4_D5": {
+     "firm": 69,
+     "stations": 69,
+     "fail": []
+    },
+    "anatomy": {
+     "T1_T2": true,
+     "T3": true,
+     "T7": true
+    },
+    "density_all_pass": true,
+    "face": {
+     "mouth": 35,
+     "orbits": [
+      43,
+      43
+     ],
+     "corner_poles": 0,
+     "near_mouth_poles": 0
+    },
+    "sidecar_sha256": null
+   },
+   "source": {
+    "r6": "reviews/reference-assets/r6/SKF208_r6.npz",
+    "r6_sha256": "0245683ec889d36e4d284ad0fe4ae533a3c7ab8ce17c28e46cda92a99769ab4f",
+    "build": "reviews/reference-assets/builds/SKF208_build.json",
+    "build_sha256": "ddf77a849902c1843b825396a4f21272ea66d4d80e1bd78acdecab609d4c377a"
+   },
+   "note": "sidecar / embedded RAC_status say CANDIDATE - NOT FROZEN (written before acceptance); the file was NOT re-saved; this record supersedes those strings"
+  }
+ },
+ "gates": "reviews/claude-rac-rp3-mpfb-family-base-final-toe2-web-gate.md; reviews/claude-rac-rp3-marchfolk-v005-active-family-base-freeze-report.md; reviews/claude-rac-rp3-skarn-family-freeze-report.md"
+}

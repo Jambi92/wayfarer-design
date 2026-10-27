@@ -1,5 +1,25 @@
 # Character Design Status
 
+## MARCHFOLK RP3 v005 — AUTHOR ACCEPTED / FROZEN — ACTIVE MPFB FAMILY BASE (2026-10-27)
+
+- **Freeze record:** `MPFB_FAMILY_BASE_v005_FREEZE.json` (E: Marchfolk/RP3 + Skarn/RP3; copy in `reviews/rac-rp3-evidence/mpfb_family_base_v005_freeze/`).
+- **Report:** `reviews/claude-rac-rp3-marchfolk-v005-active-family-base-freeze-report.md`.
+- **Files:** `MF_M_REF_RP3_retopo_v005.blend` (`e560386c…`) and `MF_F_REF_RP3_retopo_v005.blend` (`f2f2f9dc…`). Face hash `ec768ae2…`, 57,842 V / 57,840 Q, hm08 map `e690fbaf…`. PC read-back is exact.
+- **Validator:** D1 + D3 + D4 + D5 authoritative; 69 / 69.
+- **History:** v003 = historical Family Base v1; v004 = provenance; v005 = active Family Base v2.
+- **Carry-forward:** MPFB-CF-1 (MF-F toe extension, 3 faces) in `specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md`.
+
+## SKARN RP3 — AUTHOR ACCEPTED / FROZEN — MPFB FAMILY PROPAGATION PASS (2026-10-27)
+
+- **Report:** `reviews/claude-rac-rp3-skarn-family-freeze-report.md`.
+- **Files:** `SK_M_REF_RP3_retopo_v003.blend` (`76229b35…`, SK208-C1R) and `SK_F_REF_RP3_retopo_v003.blend` (`4ff0ce6f…`, SKF208), on the active v005 topology.
+- **Gates:** C1R identity preserved; 69 / 69.
+- **Carry-forward:** MPFB-CF-2 (SK-F toe extension, 2 faces).
+
+**MPFB Family Propagation Standard v1:** AUTHOR-ACCEPTED TECHNICAL STANDARD v1 (`specs/RAC_MPFB_FAMILY_PROPAGATION_STANDARD_v1.md`).
+
+**Next:** recommended Sagekin, pending an author choice of the configuration-2 central reference. Awaiting ChatGPT review; no race started.
+
 ## RAC RP3 MPFB Family Base final toe-2 web correction — 2026-10-27 — gate returned: FAMILY BASE PASS WITH DOCUMENTED TOE2 EXCEPTION — AUTHOR DECISION; NOT FROZEN; awaiting ChatGPT review
 
 - **Gate:** `reviews/claude-rac-rp3-mpfb-family-base-final-toe2-web-gate.md` (order 33a2dfe). Evidence: `reviews/rac-rp3-evidence/mpfb_family_base_final_toe2/`.

@@ -1,23 +1,34 @@
-# RAC — MPFB Family Propagation Standard v1 (DRAFT)
+# RAC — MPFB Family Propagation Standard v1
 
-**Status:** DRAFT — **ready for promotion pending one author decision.** It is not yet promoted to AUTHOR-ACCEPTED TECHNICAL STANDARD v1.
-- Written from the first reuse validation (Skarn, order 85b7c1c); revised by orders a18371c and 33a2dfe.
-- **D4 and D5 are accepted** (order 33a2dfe §2). The authoritative validator is D1 + D3 + D4 + D5 (§6).
-- The final family-base candidate v005 is 69 / 69 firm on all four configurations. Promotion (order 33a2dfe §18) needs every gate to pass. One deformation item is open: 3 (MF-F) / 2 (SK-F) toe-extension flips in the new toe-2 support. The gate returned FAMILY BASE PASS WITH DOCUMENTED TOE2 EXCEPTION — AUTHOR DECISION (`reviews/claude-rac-rp3-mpfb-family-base-final-toe2-web-gate.md`).
+**Status: AUTHOR-ACCEPTED TECHNICAL STANDARD v1** (order 78a109f, 2026-10-27).
+- Written from the first reuse validation (Skarn, 85b7c1c); revised by a18371c and 33a2dfe; promoted by 78a109f.
+- Validator: **D1 + D3 + D4 + D5**, all accepted and authoritative (§6).
+- Active family base: **MPFB Family Base v005**, frozen by `MPFB_FAMILY_BASE_v005_FREEZE.json`.
+
+> **The technical propagation process is standardized. Race anatomy, identity, cultural appearance, and race-specific branches remain explicit author-review gates and are never auto-approved merely because the technical pipeline passes.**
 
 **Family base**
 
 | | Role | Record | Face topology hash | Verts / quads | hm08 map |
 |---|---|---|---|---|---|
-| Frozen v003 (MPFB Family Base v1) | **active** (historical v1) | `MF_RP3_v003_FREEZE.json` (`4af62f81…`) | `68f7b6a9…` | 57,674 / 57,672 | `bc3b7c54…` |
+| v003 (Family Base v1) | historical, frozen | `MF_RP3_v003_FREEZE.json` (`4af62f81…`) | `68f7b6a9…` | 57,674 / 57,672 | `bc3b7c54…` |
 | v004 (margin hardening) | provenance only | `MPFB_FAMILY_BASE_v004.json` | `2bd4c8b3…` | 57,854 / 57,852 | `19a83550…` |
-| **v005 (final successor)** | **candidate, NOT frozen** | `MPFB_FAMILY_BASE_v005.json` | `ec768ae2…` | 57,842 / 57,840 | `e690fbaf…` |
+| **v005 (Family Base v2, final)** | **ACTIVE, frozen** | `MPFB_FAMILY_BASE_v005_FREEZE.json` | `ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0` | 57,842 / 57,840 | `e690fbafb53adc27…` |
 
-v005 becomes the active base only when the author freezes it. **Technical process is standardised; race anatomy and identity remain explicit author gates.**
+The active base is used by every new MPFB-family race:
+- **map:** `MPFB_FAMILY_BASE_v005_hm08_map.npz` (full hash in the freeze record);
+- **base file:** `MF_M_REF_RP3_retopo_v005.blend` (UVs / face list).
 
-**Scope:** the **technical** pipeline only.
-- The anatomy and identity judgement for each race stays an explicit human / author gate. It is never automated away.
-- Not standardised here: race anatomy judgements, face identity judgements, ear branches, compact-race branches and biological creator ranges.
+Frozen realizations on it:
+- Marchfolk `MF_{M,F}_REF_RP3_retopo_v005`;
+- Skarn `SK_{M,F}_REF_RP3_retopo_v003`.
+
+**Scope:** the **technical** pipeline only. Not standardised here:
+- race anatomy judgements;
+- face identity judgements;
+- cultural appearance;
+- ear branches and compact-race branches;
+- biological creator ranges.
 
 ## 1. Source regeneration identity
 
@@ -45,9 +56,9 @@ stc/python3 tools/rac/rp/marchfolk_rp3_v001/regen.py BUILD.json R6.npz src/
 - No per-race relaxation or fitting.
 - A race-specific branch needs an explicit author order.
 
-**Map invariants (proven for v004):**
+**Map invariants (proven for v004 and v005):**
 - every row is convex: row sum 1, no negative weight, at most 4 hm08 weights;
-- weights, UVs and MPFB targets transfer through M by linearity (`MPFB_FAMILY_v004_transfer_proof.json`).
+- weights, UVs and MPFB targets transfer through M by linearity (`MPFB_FAMILY_v005_transfer_proof.json`).
 
 ## 3. Helper removal
 
@@ -66,7 +77,7 @@ m, Z up, faces −Y, subject left +X. The origin is the MPFB `pelvis` head proje
 
 ## 6. Joint validator v2
 
-Implementation: `tools/rac/rp/marchfolk_rp3_v001/val2lib.py`, with CLI `validator_v2.py CAND OUT [--scale-ref 173.143]`. Its verdicts were regression-checked as identical to the v003 / Skarn outputs.
+Implementation: `tools/rac/rp/marchfolk_rp3_v001/val2lib.py`, with CLI `validator_v2.py CAND OUT --scale-ref 173.143 --d5` (authoritative). Its verdicts were regression-checked as identical to the v003 / Skarn outputs.
 
 **Method.** The base is the RP2 band method (loops crossed on four sides of a band, plus poles within 2 local loops) together with closed encircling rings: loops = max(rings, band).
 - **firm** = loops ≥ minimum and no crease pole.
@@ -78,15 +89,15 @@ Implementation: `tools/rac/rp/marchfolk_rp3_v001/val2lib.py`, with CLI `validato
 |---|---|---|
 | **D1** | accepted, 85b7c1c | A band side whose ray exit is undefined is excluded (no probe candidate passes the facing test, normal · side ≤ 0.3). If no side is defined, the station uses closed rings at an anatomical radius (thumb MCP 3.0 cm). Statuses `PASS_FALLBACK_DEFINED_SIDES` and `PASS_FALLBACK_CLOSED_RING` are reported separately. |
 | **D3** | accepted, 85b7c1c | For digit stations, a pole counts only if its nearest digit axis is the audited digit (`…+SCOPED_ADJACENT_DIGIT_POLE`). |
-| **D4** | **accepted, a18371c** | station_scale = race stature / 173.143 (Marchfolk configuration 1). It scales band width W, probe radius R, pole radius Rp, ring radius / axial window and the anatomical fallback radius. **Authoritative.** |
-| **D5** | **accepted, 33a2dfe** | For digit stations only: a band side is undefined when the endpoint selected at either band end lies farther from its probe line than W (no vertex of the digit's own cross-section answers the probe; the selection fell across an inter-digital web). The side is excluded exactly as D1 excludes one and never lowers a topology verdict. The status records it (`…+D5_INTERDIGITAL_UNDEFINED`); every station lists its `valid_sides` and `D5_undefined_sides`. **Authoritative with D4.** |
+| **D4** | **accepted (a18371c; permanent 33a2dfe / 78a109f)** | station_scale = race stature / 173.143 (Marchfolk configuration 1). It scales band width W, probe radius R, pole radius Rp, ring radius / axial window and the anatomical fallback radius. **Authoritative.** |
+| **D5** | **accepted (33a2dfe; permanent 78a109f)** | For digit stations only: a band side is undefined when the endpoint selected at either band end lies farther from its probe line than W (no vertex of the digit's own cross-section answers the probe; the selection fell across an inter-digital web). The side is excluded exactly as D1 excludes one and never lowers a topology verdict. The status records it (`…+D5_INTERDIGITAL_UNDEFINED`); every station lists its `valid_sides` and `D5_undefined_sides`. **Authoritative with D4.** |
 
 **Reporting.**
 - Report legacy, D1 + D3, D1 + D3 + D4 and D1 + D3 + D4 + D5 verdicts. **D1 + D3 + D4 + D5 is authoritative.**
 - Every station also reports its margin (loops − minimum); every band side reports its endpoint offsets.
 - `tools/rac/rp/mpfb_family/margin_table.py` writes the family margin table.
 
-**Never modify geometry to satisfy an undefined measurement.**
+**Never modify geometry to satisfy an undefined measurement.** Legacy fixed-cm station verdicts are reference only and are never authoritative on differently sized races.
 
 **Measurement note (a18371c).** In the left-handed analysis frame the probe's facing test uses vertex normals that point *inward* numerically.
 - A side's endpoint therefore usually lies on the surface facing **away** from the named side direction: "+q" samples the −q surface of a thin digit.
@@ -141,23 +152,62 @@ Poses:
 
 **Classify** every failure as topology, weights, joint placement or contact / setup. Pair, fold and flip counts scale with face count (×4.3 from hm08).
 
-**For a family-base change**, trace flipped faces to their parent-base faces (`MPFB_v004_flip_parentage.json` method). A flip whose parent face also flipped is the same defect on more faces; one whose parent did not flip is topology-attributable.
+**For a family-base change**, trace flipped faces to their parent-base faces, then apply the fold test (`MPFB_v005_flip_parentage.json` method).
+- A flip whose parent face also flipped is the same defect on more faces.
+- A flip whose parent quad already folds in the posed parent geometry is a parent fold: LBS rig class.
+- Only the remainder is topology-attributable.
 
-## 11. Visual evidence set
+**For a propagation (no topology change)**, compare against the native hm08 and the reference realization; record rig-class items in the carry-forward register (§14).
 
-- `family_sheets.py` (propagation);
-- `v4_sheets.py` (family-base change): topology overview, changed-patch close-ups, before / after maps, overlay, density, T-4, deformation, identity, validator and margin table, change diagram.
+## 11. Race-specific identity gate
 
-Cameras are identical across configurations.
+- Every race with an accepted identity source (for example Skarn C1R) proves that the family realization lies on that source and has not regressed toward the pre-identity / generic face (`face_identity.py`).
+- Also run any further identity comparison the race's canon requires.
+- **This gate and the race anatomy review are author decisions.** A technical PASS never auto-approves them.
+- A true race anatomy feature that needs different topology is returned as NEEDS RACE-SPECIFIC BRANCH. It is never patched inside the family base.
 
-## 12. Manifest / gate template
+## 12. Visual evidence package
 
-- `family_manifest.py` (propagation) or `family_manifest_v4.py` (family-base successor) writes:
+- **Propagation:** `family_sheets.py`. Body (clay / wire), face, joint close-ups, overlay, density, validator table, deformation.
+- **Family-base change:** `v4_sheets.py` / `v5_sheets.py`. Topology overview, changed-patch close-ups, before / after, pole / valence, T-4 and aspect heat, source deviation, deformation, identity, validator / margin table, change diagram.
+- Cameras are identical across configurations.
+- No gate returns without its sheets.
+
+## 13. Manifest / freeze template
+
+- **Writers:** `family_manifest.py` (propagation) or `family_manifest_v4.py` / `family_manifest_v5.py` (family-base successor). They write:
   - per-file sidecars;
-  - the manifest: parent base and map hashes, source hashes, production hashes, topology identity, row classes.
-- **Propagation gate decision:** PASS — ready for author freeze / NEEDS RACE-SPECIFIC BRANCH / FAIL, with the race identity gate answered explicitly.
+  - the manifest: active base and map hashes, source and regeneration hashes, production hashes, topology identity, row classes.
+- **Propagation gate decision:** PASS — READY FOR AUTHOR FREEZE / NEEDS RACE-SPECIFIC BRANCH / FAIL, with the race identity gate answered explicitly.
+- **Freeze by record.** Files are never re-saved to change status. The freeze record (template: `MPFB_FAMILY_BASE_v005_FREEZE.json`) carries:
+  - full file / geometry / face / map / sidecar / landmark hashes;
+  - read-back results (`freeze_check.py`, `freeze_v5_verify.py`);
+  - validator rules and results;
+  - accepted exceptions;
+  - the provenance chain.
+- The record is authoritative over sidecar / embedded status strings.
 
-## Family-base margins (D1 + D3 + D4 + D5, final candidate v005)
+## 14. Carry-forward issue recording
+
+- Items accepted at a freeze that belong to a later stage (rigging, weighting, correctives, articulation) go into `specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md`, each with:
+  - an ID and the configuration;
+  - a measured description and the owning stage;
+  - the evidence path.
+- A carry-forward item is never topology-blocking and never reopens a frozen base.
+- Earlier race registers (for example Grask RP2) are referenced, not merged.
+
+## 15. Stop rules
+
+- **Stop on:**
+  - any source-identity mismatch;
+  - a frozen-file / map hash mismatch;
+  - a topology-identity failure;
+  - a new rest contact defect;
+  - anatomy failure.
+- **Stop** for author review after every gate. Do not start the next race, rigging, creator morphs, final UV / materials, LODs or UE5 without an explicit order.
+- **Never** change the active family topology inside a race propagation.
+
+## Active family-base margins (D1 + D3 + D4 + D5, frozen v005)
 
 Table: `reviews/rac-rp3-evidence/mpfb_family_base_final_toe2/audit/MPFB_FAMILY_v005_margin_table.{json,csv}`. Firm 69 / 69 on MF-M, MF-F, SK-C1R and SK-F.
 
@@ -175,7 +225,7 @@ Table: `reviews/rac-rp3-evidence/mpfb_family_base_final_toe2/audit/MPFB_FAMILY_v
 
 **Toe 2:** dorsal racetrack (no closed ring). Its patch has aspect ≤ 4.7 and no quad with aspect > 10.
 
-**Open deformation item:** toe extension 30°, female configurations only. 3 (MF-F) / 2 (SK-F) newly flipped faces are not explained by a fold of their parent quad.
+**Accepted exception (carry-forward MPFB-CF-1 / -2):** toe extension 30°, female configurations only. 3 (MF-F) / 2 (SK-F) topology-attributable flipped faces in the toe-2 MTP crease. Class: production-rig / toe-weighting.
 
 ## Propagation checklist (per new MPFB-family race)
 
@@ -189,5 +239,7 @@ Table: `reviews/rac-rp3-evidence/mpfb_family_base_final_toe2/audit/MPFB_FAMILY_v
 8. Anatomy T-1 / T-2 / T-3 / T-7; contact against the family parent; race identity gate (§8).
 9. Face readiness (§9).
 10. Deformation sanity, classified (§10).
-11. Visual evidence set (§11); manifest and sidecars (§12).
-12. Author gates: race anatomy and identity (never automated).
+11. Race identity gate (§11).
+12. Visual evidence package (§12); manifest and sidecars (§13).
+13. Carry-forward items recorded (§14).
+14. STOP for author review (§15). Race anatomy and identity approval are never automated.

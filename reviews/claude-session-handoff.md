@@ -2,6 +2,22 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-27) — MPFB FAMILY BASE v005 FROZEN + SKARN FROZEN + STANDARD v1 ACCEPTED — awaiting ChatGPT review
+
+**What was done**
+- Order 78a109f executed. Freeze by record; no file was re-saved.
+- **Freeze record:** `MPFB_FAMILY_BASE_v005_FREEZE.json` (E: Marchfolk/RP3 + Skarn/RP3, evidence `reviews/rac-rp3-evidence/mpfb_family_base_v005_freeze/`).
+- **Reports:** `reviews/claude-rac-rp3-marchfolk-v005-active-family-base-freeze-report.md`, `reviews/claude-rac-rp3-skarn-family-freeze-report.md`.
+- **Read-back:** `tools/rac/rp/mpfb_family/freeze_v5_verify.py WORK PCDIR OUT` (PC copies staged to `/mnt/user-data/uploads/RaceBodies/production`). All checks pass.
+- **Standard:** promoted to AUTHOR-ACCEPTED TECHNICAL STANDARD v1 (15 sections).
+- **Carry-forward register:** `specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md` (MPFB-CF-1 / -2).
+
+**Active family base for propagation**
+- `MF_M_REF_RP3_retopo_v005.blend` + `MPFB_FAMILY_BASE_v005_hm08_map.npz` (`e690fbaf…`).
+- Workspace `/tmp/claude-0/rt/v5` (cand / val / def).
+
+**Next:** STOP for ChatGPT review. The recommended next race is Sagekin. Its configuration-2 central reference is not accepted yet (only SGF152 / 178 / 208 diagnostics), so the author must choose it.
+
 ## LATEST (2026-10-27) — MPFB FAMILY BASE FINAL TOE-2 WEB CORRECTION — awaiting ChatGPT review
 
 **What was done**
