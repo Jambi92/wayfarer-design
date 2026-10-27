@@ -1,0 +1,279 @@
+{
+ "record": "SAGEKIN RP3 \u2014 AUTHOR ACCEPTED / FROZEN \u2014 MPFB FAMILY PROPAGATION PASS",
+ "date": "2026-10-27",
+ "authority": "reviews/chatgpt-rac-rp3-sagekin-d6-acceptance-and-freeze-order.md (d921903), author review of Claude return 8ed659d",
+ "freeze_method": "freeze-by-record: both production .blend files preserved byte-identical (not re-saved); this record is authoritative over the candidate sidecar / embedded RAC_status strings (\"CANDIDATE - NOT FROZEN\")",
+ "family_base": {
+  "record": "MPFB_FAMILY_BASE_v005_FREEZE.json",
+  "record_sha256": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+  "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+  "verts": 57842,
+  "quads": 57840,
+  "hm08_map": {
+   "file": "MF_M_REF_RP3_retopo_v005_hm08_map.npz",
+   "sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "identical_for_every_race": true
+  }
+ },
+ "references": {
+  "SG": {
+   "role": "Sagekin configuration-1 central reference (accepted W1c)",
+   "r6": "reviews/reference-assets/r6/SG_r6.npz",
+   "r6_sha256": "fe45866ffad7d771aacfeea72cddad8aedc2f205dfb25178bd26aa3cf144adf3",
+   "build_sha256": "e39eff0da68ec79226e7100c7750e694c91de7427b0feac363079693bd008ead",
+   "stature_cm": 177.9891
+  },
+  "SGF178": {
+   "role": "Sagekin configuration-2 central reference \u2014 AUTHOR ACCEPTED (d921903 \u00a71)",
+   "r6": "reviews/reference-assets/r6/SGF178_r6.npz",
+   "r6_sha256": "52ff5e04331561a4b6f19cb88d8987b6b8e240199e7eec76246cc86202f059e1",
+   "build_sha256": "7f50254337ab0d26a2eada3d9e860edcb7c2f113893b67dff0cb0dd038019620",
+   "geometry_hash": "7755a8f00de921dd8651a899c96e1050ff65b481a0ebf08025b0c82875359a25",
+   "stature_cm": 178.0013,
+   "rebuild": "regen + full height re-solve, max |dV| 0"
+  },
+  "SGF152_NAT": {
+   "role": "accepted configuration-2 minimum bound",
+   "r6_sha256": "9f096ff65f5be688d1bc9625b1d441d7d78954494cbf57191db24115c7e6c885"
+  },
+  "SGF208": {
+   "role": "accepted configuration-2 maximum bound",
+   "r6_sha256": "adb02cc63f3a4a55d74c28a0262c363f4b2238428b34f44b07e3f61e5f169fec"
+  }
+ },
+ "validator": {
+  "rules": [
+   "D1 undefined band-side fallback (85b7c1c)",
+   "D3 same-digit pole ownership (85b7c1c)",
+   "D4 stature-normalised station geometry, reference 173.143 cm (a18371c / 33a2dfe)",
+   "D5 interdigital endpoint validity (33a2dfe)",
+   "D6 non-digit foreign-segment endpoint ownership (proposed c6c7940, accepted d921903)"
+  ],
+  "authoritative": "D1 + D3 + D4 + D5 + D6",
+  "implementation": "tools/rac/rp/marchfolk_rp3_v001/val2lib.py (evaluate d5=True, d6=(M @ native W, bones)); CLI validator_v2.py CAND OUT --scale-ref 173.143 --d5 --d6-native NATIVE.npz",
+  "D6_regression": {
+   "evidence": "D6_regression/D6_regression_summary.json",
+   "pass_": true,
+   "firm": {
+    "MF-M-R": 69,
+    "MF-F-R": 69,
+    "SK208-C1R": 69,
+    "SKF208": 69,
+    "SG": 69,
+    "SGF178": 69
+   },
+   "lowered": {
+    "MF-M-R": [],
+    "MF-F-R": [],
+    "SK208-C1R": [],
+    "SKF208": [],
+    "SG": [],
+    "SGF178": []
+   },
+   "false_positives": {
+    "MF-M-R": 0,
+    "MF-F-R": 0,
+    "SK208-C1R": 0,
+    "SKF208": 0,
+    "SG": 0,
+    "SGF178": 0
+   }
+  }
+ },
+ "files": {
+  "SG_M_REF_RP3_retopo_v001.blend": {
+   "race": "Sagekin",
+   "configuration": "SG",
+   "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Sagekin/RP3/SG_M_REF_RP3_retopo_v001.blend",
+   "sha256": "bb156e9c4bc4719bb918e85f4622210002cfaeb1ede3639d081391a83dbaf1b0",
+   "geometry_hash": "56a73d8f1563bef8987be3e2e52cb786f87e9d487f39e7e17da847b137bb581b",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+   "verts": 57842,
+   "quads": 57840,
+   "sidecar": "SG_M_REF_RP3_retopo_v001.json",
+   "sidecar_sha256": "7f3a6a0a4a6ee6d180828a19e7770392585641cdbce6a075dc5942517cec8a95",
+   "landmarks_sha256": "621291250566f687344a09d9108252adeb49fd34e0dc0c31746f2d154230f70b",
+   "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "source": {
+    "r6_sha256": "fe45866ffad7d771aacfeea72cddad8aedc2f205dfb25178bd26aa3cf144adf3",
+    "r6_sha256_unchanged": true,
+    "build_sha256": "e39eff0da68ec79226e7100c7750e694c91de7427b0feac363079693bd008ead",
+    "build_sha256_unchanged": true,
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0
+   },
+   "validator": {
+    "rules": "D1 + D3 + D4 + D5 + D6 (authoritative, d921903)",
+    "firm": 69,
+    "stations": 69,
+    "fails": [],
+    "margin_zero": [
+     "thumb_mcp_l",
+     "thumb_mcp_r",
+     "toe1_j1_l",
+     "toe1_j1_r",
+     "toe2_j1_l",
+     "toe2_j1_r",
+     "toe4_j1_l",
+     "toe4_j1_r"
+    ],
+    "D6_undefined": {
+     "elbow_l": [
+      "-p"
+     ],
+     "hip_l": [
+      "+p"
+     ],
+     "elbow_r": [
+      "+p"
+     ],
+     "hip_r": [
+      "-p"
+     ]
+    }
+   },
+   "gates": {
+    "T1_T2": true,
+    "T3": true,
+    "T7": true,
+    "iou_min": 0.997577,
+    "body_dev_mm": {
+     "median_mm": 0.0,
+     "p95_mm": 0.196,
+     "max_mm": 1.7878
+    },
+    "density_all_pass": true,
+    "density_zones": 9,
+    "face": {
+     "mouth_rings": 32,
+     "orbit_rings": [
+      43,
+      43
+     ],
+     "poles_at_mouth_corners": 0,
+     "poles_within_2cm_of_mouth": 0,
+     "mouth_pass": true,
+     "orbit_pass": true
+    },
+    "contact_new": 0,
+    "identity_holds_all_zones": true
+   },
+   "readback": {
+    "max_abs_diff_vs_candidate_m": 5.9594767565229745e-08,
+    "normals_outward": true,
+    "all_pass": true
+   },
+   "embedded_status_superseded": "PRODUCTION CANDIDATE (RP3 Sagekin configuration 1, MPFB Family Base v005) - CANDIDATE - NOT FROZEN"
+  },
+  "SG_F_REF_RP3_retopo_v001.blend": {
+   "race": "Sagekin",
+   "configuration": "SGF178",
+   "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Sagekin/RP3/SG_F_REF_RP3_retopo_v001.blend",
+   "sha256": "0ef62ffc34aa7b89c8f3f8236e306634b929e5b4dd174830be8a1cad62295137",
+   "geometry_hash": "9dcc50002e09a2ba079313e0d940a418850a7a2a7236a2c90ca2608a806f2642",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+   "verts": 57842,
+   "quads": 57840,
+   "sidecar": "SG_F_REF_RP3_retopo_v001.json",
+   "sidecar_sha256": "8c6045be8765db7b709cc4825120f114aafbcd0b485fc0b1f0a38ae7a5ac6611",
+   "landmarks_sha256": "1ce71765b2bdf2e32d336a98b59bb855c3734eec2b77be3ea74bac75a8a0cccd",
+   "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "source": {
+    "r6_sha256": "52ff5e04331561a4b6f19cb88d8987b6b8e240199e7eec76246cc86202f059e1",
+    "r6_sha256_unchanged": true,
+    "build_sha256": "7f50254337ab0d26a2eada3d9e860edcb7c2f113893b67dff0cb0dd038019620",
+    "build_sha256_unchanged": true,
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0
+   },
+   "validator": {
+    "rules": "D1 + D3 + D4 + D5 + D6 (authoritative, d921903)",
+    "firm": 69,
+    "stations": 69,
+    "fails": [],
+    "margin_zero": [
+     "toe1_j1_l",
+     "toe1_j1_r",
+     "toe4_j1_l",
+     "toe4_j1_r"
+    ],
+    "D6_undefined": {
+     "elbow_l": [
+      "-p"
+     ],
+     "hip_l": [
+      "+p"
+     ],
+     "elbow_r": [
+      "+p"
+     ],
+     "hip_r": [
+      "-p"
+     ]
+    }
+   },
+   "gates": {
+    "T1_T2": true,
+    "T3": true,
+    "T7": true,
+    "iou_min": 0.997635,
+    "body_dev_mm": {
+     "median_mm": 0.0,
+     "p95_mm": 0.1654,
+     "max_mm": 2.0193
+    },
+    "density_all_pass": true,
+    "density_zones": 9,
+    "face": {
+     "mouth_rings": 34,
+     "orbit_rings": [
+      43,
+      43
+     ],
+     "poles_at_mouth_corners": 0,
+     "poles_within_2cm_of_mouth": 0,
+     "mouth_pass": true,
+     "orbit_pass": true
+    },
+    "contact_new": 0,
+    "identity_holds_all_zones": true
+   },
+   "readback": {
+    "max_abs_diff_vs_candidate_m": 5.9603705970801e-08,
+    "normals_outward": true,
+    "all_pass": true
+   },
+   "embedded_status_superseded": "PRODUCTION CANDIDATE (RP3 Sagekin configuration 2, MPFB Family Base v005) - CANDIDATE - NOT FROZEN"
+  }
+ },
+ "carry_forward": {
+  "register": "specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md",
+  "new_ids": [],
+  "note": "Sagekin toe-extension behaviour reproduces the accepted family class (SGF178 58 vs MF-F v005 60 flips; SG 71 vs MF-M 70); covered by MPFB-CF-1 / CF-2 class, no new ID"
+ },
+ "deformation": {
+  "evidence": "reviews/rac-rp3-evidence/sagekin_rp3_v001/SAGEKIN_RP3_deformation_comparison.json",
+  "worst_flip_excess_vs_marchfolk_v005": {
+   "SG": 2,
+   "SGF178": 0
+  },
+  "new_topology_class_failure": false
+ },
+ "readback": {
+  "file": "SAGEKIN_RP3_freeze_readback.json",
+  "all_pass": true,
+  "manifest_sha256": "43600219540af805a6114643e2e1afb2bd02380250dcbf1f560d1ec9302a9b1c"
+ },
+ "gates": "reviews/claude-rac-rp3-sagekin-config2-reference-and-propagation-gate.md; reviews/claude-rac-rp3-sagekin-family-freeze-report.md",
+ "provenance": [
+  "SG (W1c) / SGF178 (RM-OT-05A construction base, accepted d921903) R-6 sources regenerated identically",
+  "native hm08 export (helpers removed)",
+  "propagate.py onto MF_M_REF_RP3_retopo_v005.blend + family hm08 map (no topology change)",
+  "make_prod.py production frame (m, Z up, faces -Y, origin pelvis root on ground)",
+  "E: copies read back byte-identical"
+ ],
+ "freezes": [
+  "Sagekin configuration-1 / configuration-2 central realizations on the active v005 family topology",
+  "SGF178 as the accepted configuration-2 central reference"
+ ]
+}

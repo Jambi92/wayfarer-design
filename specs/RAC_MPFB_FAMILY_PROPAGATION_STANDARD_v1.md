@@ -1,8 +1,8 @@
 # RAC — MPFB Family Propagation Standard v1
 
 **Status: AUTHOR-ACCEPTED TECHNICAL STANDARD v1** (order 78a109f, 2026-10-27).
-- Written from the first reuse validation (Skarn, 85b7c1c); revised by a18371c and 33a2dfe; promoted by 78a109f.
-- Validator: **D1 + D3 + D4 + D5**, all accepted and authoritative (§6).
+- Written from the first reuse validation (Skarn, 85b7c1c); revised by a18371c and 33a2dfe; promoted by 78a109f; D6 added by d921903.
+- Validator: **D1 + D3 + D4 + D5 + D6**, all accepted and authoritative (§6).
 - Active family base: **MPFB Family Base v005**, frozen by `MPFB_FAMILY_BASE_v005_FREEZE.json`.
 
 > **The technical propagation process is standardized. Race anatomy, identity, cultural appearance, and race-specific branches remain explicit author-review gates and are never auto-approved merely because the technical pipeline passes.**
@@ -21,7 +21,8 @@ The active base is used by every new MPFB-family race:
 
 Frozen realizations on it:
 - Marchfolk `MF_{M,F}_REF_RP3_retopo_v005`;
-- Skarn `SK_{M,F}_REF_RP3_retopo_v003`.
+- Skarn `SK_{M,F}_REF_RP3_retopo_v003`;
+- Sagekin `SG_{M,F}_REF_RP3_retopo_v001` (SG / SGF178; `SAGEKIN_RP3_FREEZE.json`, d921903).
 
 **Scope:** the **technical** pipeline only. Not standardised here:
 - race anatomy judgements;
@@ -83,7 +84,7 @@ Implementation: `tools/rac/rp/marchfolk_rp3_v001/val2lib.py`, with CLI `validato
 - **firm** = loops ≥ minimum and no crease pole.
 - **strict** = additionally no pole within 2 loops.
 
-**Hierarchy:** ordinary band → D1 → D3 → D4 → D5. Authoritative CLI: `validator_v2.py CAND OUT --scale-ref 173.143 --d5`.
+**Hierarchy:** ordinary band → D1 → D3 → D4 → D5 → D6. Authoritative CLI: `validator_v2.py CAND OUT --scale-ref 173.143 --d5 --d6-native src/<ID>_native.npz`.
 
 | Rule | Status | Effect |
 |---|---|---|
@@ -91,9 +92,30 @@ Implementation: `tools/rac/rp/marchfolk_rp3_v001/val2lib.py`, with CLI `validato
 | **D3** | accepted, 85b7c1c | For digit stations, a pole counts only if its nearest digit axis is the audited digit (`…+SCOPED_ADJACENT_DIGIT_POLE`). |
 | **D4** | **accepted (a18371c; permanent 33a2dfe / 78a109f)** | station_scale = race stature / 173.143 (Marchfolk configuration 1). It scales band width W, probe radius R, pole radius Rp, ring radius / axial window and the anatomical fallback radius. **Authoritative.** |
 | **D5** | **accepted (33a2dfe; permanent 78a109f)** | For digit stations only: a band side is undefined when the endpoint selected at either band end lies farther from its probe line than W (no vertex of the digit's own cross-section answers the probe; the selection fell across an inter-digital web). The side is excluded exactly as D1 excludes one and never lowers a topology verdict. The status records it (`…+D5_INTERDIGITAL_UNDEFINED`); every station lists its `valid_sides` and `D5_undefined_sides`. **Authoritative with D4.** |
+| **D6** | **accepted (proposed c6c7940; accepted d921903)** | For **non-digit** stations only (neck, shoulder, elbow, wrist, hip, knee, ankle): a band side is undefined when the endpoint selected at either band end is on a **foreign body segment**, i.e. its dominant skin bone is not one of the station's own bones (table below). The side is excluded exactly as D1 excludes one; if every side is excluded the station falls back to closed rings (D1). It never lowers a topology verdict. Each side reports `endpoint_dominant_bone` / `endpoint_dominant_weight`; the station lists `D6_undefined_sides`, and a fallback status records `…+D6_FOREIGN_SEGMENT_UNDEFINED`. **Authoritative with D4 + D5.** |
+
+**D6 purpose.** In the R-6 stance some probe balls reach a neighbouring body part and count *its* loops: the hip lateral side (+p left / −p right) lands on the hanging forearm or hand, and the elbow medial side lands on the trunk (`spine_02`). This held on all six validated realizations (MF-M, MF-F, SK-C1R, SK-F, SG, SGF178) and passed unnoticed until the longer Sagekin forearm dropped that forearm count to 4 (SG hip 4 / 5). D6 corrects measurement ownership; it does not weaken the topology standard.
+
+**D6 ownership method.** Skin weights are the race's native hm08 source deform weights carried through the family map (W_family = M @ W_hm08; the same linear transfer as §2). The dominant bone of an endpoint vertex is its largest weight. Implementation: `val2lib.D6_OWN`, `evaluate(..., d6=(W_family, bone_names))`.
+
+| Station | Own bones (side s) |
+|---|---|
+| neck | neck_01, head, spine_03 |
+| shoulder | clavicle_s, upperarm_s, spine_03, spine_02 |
+| elbow | upperarm_s, lowerarm_s |
+| wrist | lowerarm_s, hand_s |
+| hip | pelvis, spine_01, thigh_s |
+| knee | thigh_s, calf_s |
+| ankle | calf_s, foot_s, ball_s |
+
+Digit stations are not subject to D6; D3 (pole ownership) and D5 (interdigital endpoints) cover them.
+
+**D6 regression requirement.** Any change to D6 (or to its bone table) must be re-run on every validated family realization with `tools/rac/rp/sagekin_rp3_v001/d6_regression.py`, which compares D1 + D3 + D4 + D5 with D1 + D3 + D4 + D5 + D6 and audits every non-digit band side (endpoint bones and weights, the side path's body zones). Required: no verdict or loop count lowered; no false positive (an excluded side whose path lies in the station's own body region). Baseline (d921903, `reviews/rac-rp3-evidence/sagekin_rp3_freeze/D6_regression/`): 7 joints × 6 realizations audited; exclusions only at hip (forearm / hand) and elbow (trunk); 0 false positives; 69 / 69 on all six.
+
+**Never modify geometry or topology to satisfy a band side that D6 proves belongs to another segment.**
 
 **Reporting.**
-- Report legacy, D1 + D3, D1 + D3 + D4 and D1 + D3 + D4 + D5 verdicts. **D1 + D3 + D4 + D5 is authoritative.**
+- Report legacy, D1 + D3, D1 + D3 + D4, D1 + D3 + D4 + D5 and D1 + D3 + D4 + D5 + D6 verdicts. **D1 + D3 + D4 + D5 + D6 is authoritative.** Earlier validator outputs remain historical evidence only.
 - Every station also reports its margin (loops − minimum); every band side reports its endpoint offsets.
 - `tools/rac/rp/mpfb_family/margin_table.py` writes the family margin table.
 
@@ -102,7 +124,7 @@ Implementation: `tools/rac/rp/marchfolk_rp3_v001/val2lib.py`, with CLI `validato
 **Measurement note (a18371c).** In the left-handed analysis frame the probe's facing test uses vertex normals that point *inward* numerically.
 - A side's endpoint therefore usually lies on the surface facing **away** from the named side direction: "+q" samples the −q surface of a thin digit.
 - On thick segments it can land on another body part.
-- This holds for every gate since RP2 and changes no verdict. Read D1 / D5 in that light.
+- This holds for every gate since RP2 and changes no verdict. Read D1 / D5 / D6 in that light.
 
 ## 7. Density audit
 
@@ -207,9 +229,11 @@ Poses:
 - **Stop** for author review after every gate. Do not start the next race, rigging, creator morphs, final UV / materials, LODs or UE5 without an explicit order.
 - **Never** change the active family topology inside a race propagation.
 
-## Active family-base margins (D1 + D3 + D4 + D5, frozen v005)
+## Active family-base margins (frozen v005)
 
-Table: `reviews/rac-rp3-evidence/mpfb_family_base_final_toe2/audit/MPFB_FAMILY_v005_margin_table.{json,csv}`. Firm 69 / 69 on MF-M, MF-F, SK-C1R and SK-F.
+Table (D1 + D3 + D4 + D5): `reviews/rac-rp3-evidence/mpfb_family_base_final_toe2/audit/MPFB_FAMILY_v005_margin_table.{json,csv}`. Firm 69 / 69 on MF-M, MF-F, SK-C1R and SK-F.
+
+Table (D1 + D3 + D4 + D5 + D6, authoritative since d921903, six realizations incl. Sagekin SG / SGF178): `reviews/rac-rp3-evidence/sagekin_rp3_freeze/MPFB_family_margin_table_D1-D6.csv`, sheet `sheets/MPFB_family_margin_D1-D6.jpg`. Firm 69 / 69 on all six. D6 excludes sides only at hip and elbow, and changes loop counts only at the hip: SG 4 → 6, SGF178 12 → 15, SK-F 12 → 18 (MF-M, MF-F, SK-C1R unchanged); every other margin is unchanged.
 
 **At margin 0 in all four:** `toe1_j1_l/r` (2 / 2). **At margin 0 somewhere:**
 
@@ -220,6 +244,7 @@ Table: `reviews/rac-rp3-evidence/mpfb_family_base_final_toe2/audit/MPFB_FAMILY_v
 | `toe2_j2_l/r` | MF-M |
 | `toe4_j1_l/r` | MF-M, MF-F, SK-C1R |
 | `hip_l/r` | SK-C1R (5 / 5) |
+| `thumb_mcp`, `toe2_j1`, `toe4_j1` | also SG (Sagekin c1); SGF178 at 0 only on `toe1_j1` / `toe4_j1` |
 
 **Heel:** foot T-2 max MF-M 0.92, MF-F 0.83, SK-C1R 1.19, SK-F 0.87 mm (retained from v004).
 
@@ -234,7 +259,7 @@ Table: `reviews/rac-rp3-evidence/mpfb_family_base_final_toe2/audit/MPFB_FAMILY_v
 3. Realise V = M @ race hm08 with the active map; no topology change, no fitting (§2).
 4. Write the production file in the production frame (§4); read it back exactly (`freeze_check.py`, §5).
 5. Topology identity and integrity (§5).
-6. Validator D1 + D3 + D4 + D5, 69 / 69 firm; family margin table (§6).
+6. Validator D1 + D3 + D4 + D5 + D6, 69 / 69 firm; family margin table (§6).
 7. Density, 9 zones (§7).
 8. Anatomy T-1 / T-2 / T-3 / T-7; contact against the family parent; race identity gate (§8).
 9. Face readiness (§9).

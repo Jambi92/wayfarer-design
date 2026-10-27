@@ -1,7 +1,7 @@
 # val2lib.py : RAC §7 joint validator v2 as a library (MPFB Family Propagation Standard v1, §6). Same maths as the v003 / Skarn validator_v2.py
 # (byte-identical station verdicts, regression-checked); validator_v2.py is now a thin CLI over evaluate().
-# Validator hierarchy (order a18371c §2): ordinary band method -> D1 undefined-side fallback -> D3 same-digit pole ownership -> D4 stature-normalised
-# station geometry.
+# Validator hierarchy (order a18371c §2, d921903 §4): ordinary band method -> D1 undefined-side fallback -> D3 same-digit pole ownership -> D4 stature-normalised
+# station geometry -> D5 interdigital endpoint validity -> D6 non-digit foreign-segment ownership. AUTHORITATIVE = D1 + D3 + D4 + D5 + D6.
 #  D1 (accepted, 85b7c1c): a band side whose ray exit is UNDEFINED (no candidate vertex in the probe ball faces the side, normal . side <= 0.3) is
 #     excluded from the band minimum (status PASS_FALLBACK_DEFINED_SIDES when this changes the verdict). If NO side is defined, the station uses the
 #     closed-ring test at an anatomical radius (thumb MCP 3.0 cm; other stations keep their ring radius) -> PASS_FALLBACK_CLOSED_RING.
@@ -12,10 +12,11 @@
 #     end lies farther from its probe line than the band half-width W, i.e. no surface vertex of the digit's own cross-section answers the probe (the
 #     selection fell through to a vertex across an inter-digital web / cleft). The side is then excluded exactly as in D1. Every side always reports
 #     its two endpoint offsets (endpoint_offset_cm) as diagnostics.
-#  D6 (PROPOSED by order c6c7940, NOT authoritative; d6=(W, bone_names) enables it, default off): non-digit stations only -- a band side is undefined
+#  D6 (ACCEPTED d921903 -- proposed c6c7940; d6=(W, bone_names); AUTHORITATIVE with D4 + D5): non-digit stations only -- a band side is undefined
 #     when the endpoint selected at either band end lies on a FOREIGN body segment, i.e. its dominant skin bone (largest deform weight, carried through
 #     the family map) is not one of the station's own bones (the two segments meeting at the joint plus the adjacent trunk segment). Example: the hip
-#     +p (lateral) probe ball reaches the forearm hanging beside the hip in the R-6 stance and counts forearm loops. Excluded exactly as D1 / D5.
+#     +p (lateral) probe ball reaches the forearm hanging beside the hip in the R-6 stance and counts forearm loops. Excluded exactly as D1 / D5
+#     (if every side becomes undefined the station falls back to closed rings, as D1). Never modify geometry to satisfy a foreign-segment side.
 import numpy as np
 from core3lib import *
 REF_STATURE_CM = 173.143
@@ -66,13 +67,16 @@ def evaluate(V, Q, meta, ref_stature=0.0, names=None, loops=None, au=None, d5=Fa
             if d5 and ent['defined'] and digit_of(nm) is not None and max(offs) > Wd: ent['defined'] = False; ent['D5_undefined'] = True
             if d6 is not None and digit_of(nm) is None:
                 key6 = nm.split('_')[0]; own6 = {b.format(s=nm[-1]) for b in D6_OWN[key6]}; dom = [str(d6[1][int(np.argmax(d6[0][e_]))]) for e_ in (a, b)]; ent['endpoint_dominant_bone'] = dom
+                ent['endpoint_dominant_weight'] = [round(float(d6[0][e_].max()), 3) for e_ in (a, b)]; ent['endpoints'] = [int(a), int(b)]
                 if ent['defined'] and any(x not in own6 for x in dom): ent['defined'] = False; ent['D6_undefined'] = True
             if np.linalg.norm(V[a] - V[b]) < 0.7 * 2 * Wd: ent['merged'] = True; sides.append(ent); continue
             _, pred = dijkstra(au.G, indices=a, return_predecessors=True, limit=4 * Wd + 3 * Rr)
             if pred[b] < 0: ent['no_path'] = True; sides.append(ent); continue
             path = [b]
             while path[-1] != a: path.append(int(pred[path[-1]]))
-            e = np.diff(V[path], axis=0); ent['loops'] = int((np.abs(e @ d) > 0.5 * np.linalg.norm(e, axis=1)).sum()); sides.append(ent)
+            e = np.diff(V[path], axis=0); ent['loops'] = int((np.abs(e @ d) > 0.5 * np.linalg.norm(e, axis=1)).sum())
+            if d6 is not None: ent['path'] = [int(x) for x in path]
+            sides.append(ent)
         counted = [x['loops'] for x in sides if 'loops' in x]; counted_def = [x['loops'] for x in sides if 'loops' in x and x['defined']]
         band_legacy = min(counted) if counted else 0; band_def = min(counted_def) if counted_def else None
         rn = ring_name(nm); rings_std = len(encircling(V, loops, *JR[rn][1:5])) if rn in JR else 0
@@ -108,5 +112,5 @@ def evaluate(V, Q, meta, ref_stature=0.0, names=None, loops=None, au=None, d5=Fa
                 D1_fallback_passes={k: v['status_D1'] for k, v in R.items() if v['status_D1'].startswith('PASS_FALLBACK')},
                 D1_D3_non_plain={k: v['status_D1_D3'] for k, v in R.items() if v['status_D1_D3'] != 'PASS'},
                 margin_zero=sorted(k for k, v in R.items() if v['margin'] == 0), firm_pass_count=int(sum(v['firm_D1_D3'] for v in R.values())), stations=len(R))
-    return dict(validator='RAC §7 validator v2 (D1 + D3 accepted 85b7c1c; D4 stature-normalised station geometry accepted a18371c; D5 interdigital endpoint validity accepted 33a2dfe; D6 foreign-segment endpoint PROPOSED c6c7940, off unless requested)', D5_applied=bool(d5), D6_applied=d6 is not None, station_scale=SCALE, reference_stature_cm=ref_stature,
+    return dict(validator='RAC §7 validator v2 (D1 + D3 accepted 85b7c1c; D4 stature-normalised station geometry accepted a18371c; D5 interdigital endpoint validity accepted 33a2dfe; D6 foreign-segment endpoint accepted d921903)', D5_applied=bool(d5), D6_applied=d6 is not None, station_scale=SCALE, reference_stature_cm=ref_stature,
                 stature_cm=STATURE, anatomical_ring_radius_cm=ANAT_RING_R, summary=summ, stations=R)

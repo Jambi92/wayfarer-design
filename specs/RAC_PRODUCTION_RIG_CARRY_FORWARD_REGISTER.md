@@ -19,6 +19,16 @@ Context: male configurations (MF-M, SK-C1R) have 0. Accepted by order 78a109f §
 - **Hip-flex 90° groin crease.** LBS collapse; flips are concentrated in faces that already flipped on the parent.
 - **Knee 140°, fist and shoulder flex 90°.** Inherited source-rig behaviour, identical across v003 / v004 / v005.
 
+## Sagekin RP3 (frozen `SAGEKIN_RP3_FREEZE.json`, order d921903)
+
+**No new ID.** Sagekin reproduces the family behaviour already registered above; it is recorded here only so the rig stage knows it applies.
+- **SGF178 (configuration 2): MPFB-CF-1 class.** Toe extension 30°: 58 flips, a strict subset of MF-F v005's 60, including the same CF-1 toe-2 MTP crease faces (57776–57798). Toe flexion: 42, all shared with MF-F.
+- **SG (configuration 1): known rig-class region.** Toe extension 30°: 71 flips (MF-M v005 70). 69 are shared with MF-M. The other 2 (faces 54413, 56501) are on unchanged v003-class rows, within 0.6 cm of flips in SG's own native hm08, and adjacent to MF-M flips: the single-ball-bone LBS crease, not topology.
+- **Other poses:** at or below Marchfolk v005 (worst +2 flips).
+- **Evidence:**
+  - `reviews/rac-rp3-evidence/sagekin_rp3_freeze/SAGEKIN_toe_flip_overlap_vs_marchfolk_v005.json`;
+  - `reviews/rac-rp3-evidence/sagekin_rp3_v001/SAGEKIN_RP3_deformation_comparison.json`.
+
 ## Grask RP2 (frozen v003)
 
 Kept separately. See `reviews/claude-rac-rp2-grask-final-closure.md` §2:

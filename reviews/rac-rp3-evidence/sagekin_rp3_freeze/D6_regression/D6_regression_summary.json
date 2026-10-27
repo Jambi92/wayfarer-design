@@ -1,0 +1,726 @@
+{
+ "order": "d921903 \u00a75",
+ "rule": "D6 non-digit foreign-segment ownership (val2lib.D6_OWN)",
+ "own_bones": {
+  "neck": [
+   "neck_01",
+   "head",
+   "spine_03"
+  ],
+  "shoulder": [
+   "clavicle_{s}",
+   "upperarm_{s}",
+   "spine_03",
+   "spine_02"
+  ],
+  "elbow": [
+   "upperarm_{s}",
+   "lowerarm_{s}"
+  ],
+  "wrist": [
+   "lowerarm_{s}",
+   "hand_{s}"
+  ],
+  "hip": [
+   "pelvis",
+   "spine_01",
+   "thigh_{s}"
+  ],
+  "knee": [
+   "thigh_{s}",
+   "calf_{s}"
+  ],
+  "ankle": [
+   "calf_{s}",
+   "foot_{s}",
+   "ball_{s}"
+  ]
+ },
+ "own_zones": {
+  "neck": [
+   "face",
+   "head",
+   "neck",
+   "trunk"
+  ],
+  "shoulder": [
+   "arm",
+   "neck",
+   "trunk"
+  ],
+  "elbow": [
+   "arm"
+  ],
+  "wrist": [
+   "arm",
+   "hand"
+  ],
+  "hip": [
+   "leg",
+   "trunk"
+  ],
+  "knee": [
+   "leg"
+  ],
+  "ankle": [
+   "foot",
+   "leg"
+  ]
+ },
+ "configurations": {
+  "MF-M-R": {
+   "firm_D1_D3_D4_D5": 69,
+   "firm_D1_D3_D4_D5_D6": 69,
+   "fails_D6": [],
+   "lowered": [],
+   "changed": [],
+   "d6_excluded": [
+    [
+     "elbow_l",
+     "-p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_l",
+     "+p",
+     [
+      "lowerarm_l",
+      "lowerarm_l"
+     ],
+     [
+      "arm"
+     ]
+    ],
+    [
+     "elbow_r",
+     "+p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_r",
+     "-p",
+     [
+      "lowerarm_r",
+      "lowerarm_r"
+     ],
+     [
+      "arm"
+     ]
+    ]
+   ],
+   "false_positives": [],
+   "residual_foreign_kept": [],
+   "by_joint": {
+    "neck": {
+     "sides_audited": 4,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "shoulder": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "elbow": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "wrist": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "hip": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "knee": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "ankle": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    }
+   }
+  },
+  "MF-F-R": {
+   "firm_D1_D3_D4_D5": 69,
+   "firm_D1_D3_D4_D5_D6": 69,
+   "fails_D6": [],
+   "lowered": [],
+   "changed": [],
+   "d6_excluded": [
+    [
+     "elbow_l",
+     "-p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_l",
+     "+p",
+     [
+      "lowerarm_l",
+      "hand_l"
+     ],
+     [
+      "arm",
+      "hand"
+     ]
+    ],
+    [
+     "elbow_r",
+     "+p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_r",
+     "-p",
+     [
+      "lowerarm_r",
+      "hand_r"
+     ],
+     [
+      "arm",
+      "hand"
+     ]
+    ]
+   ],
+   "false_positives": [],
+   "residual_foreign_kept": [],
+   "by_joint": {
+    "neck": {
+     "sides_audited": 4,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "shoulder": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "elbow": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "wrist": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "hip": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "knee": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "ankle": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    }
+   }
+  },
+  "SK208-C1R": {
+   "firm_D1_D3_D4_D5": 69,
+   "firm_D1_D3_D4_D5_D6": 69,
+   "fails_D6": [],
+   "lowered": [],
+   "changed": [],
+   "d6_excluded": [
+    [
+     "elbow_l",
+     "-p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_l",
+     "+p",
+     [
+      "lowerarm_l",
+      "hand_l"
+     ],
+     [
+      "arm",
+      "hand"
+     ]
+    ],
+    [
+     "elbow_r",
+     "+p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_r",
+     "-p",
+     [
+      "lowerarm_r",
+      "hand_r"
+     ],
+     [
+      "arm",
+      "hand"
+     ]
+    ]
+   ],
+   "false_positives": [],
+   "residual_foreign_kept": [],
+   "by_joint": {
+    "neck": {
+     "sides_audited": 4,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "shoulder": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "elbow": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "wrist": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "hip": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "knee": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "ankle": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    }
+   }
+  },
+  "SKF208": {
+   "firm_D1_D3_D4_D5": 69,
+   "firm_D1_D3_D4_D5_D6": 69,
+   "fails_D6": [],
+   "lowered": [],
+   "changed": [
+    {
+     "station": "hip_l",
+     "loops": [
+      12,
+      18
+     ],
+     "firm": [
+      true,
+      true
+     ],
+     "status": [
+      "PASS_FALLBACK_DEFINED_SIDES",
+      "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED"
+     ]
+    },
+    {
+     "station": "hip_r",
+     "loops": [
+      12,
+      18
+     ],
+     "firm": [
+      true,
+      true
+     ],
+     "status": [
+      "PASS",
+      "PASS"
+     ]
+    }
+   ],
+   "d6_excluded": [
+    [
+     "elbow_l",
+     "-p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_l",
+     "+p",
+     [
+      "lowerarm_l",
+      "hand_l"
+     ],
+     [
+      "arm",
+      "hand"
+     ]
+    ],
+    [
+     "elbow_r",
+     "+p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_r",
+     "-p",
+     [
+      "lowerarm_r",
+      "hand_r"
+     ],
+     [
+      "arm",
+      "hand"
+     ]
+    ]
+   ],
+   "false_positives": [],
+   "residual_foreign_kept": [],
+   "by_joint": {
+    "neck": {
+     "sides_audited": 4,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "shoulder": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "elbow": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "wrist": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "hip": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "knee": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "ankle": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    }
+   }
+  },
+  "SG": {
+   "firm_D1_D3_D4_D5": 67,
+   "firm_D1_D3_D4_D5_D6": 69,
+   "fails_D6": [],
+   "lowered": [],
+   "changed": [
+    {
+     "station": "hip_l",
+     "loops": [
+      4,
+      6
+     ],
+     "firm": [
+      false,
+      true
+     ],
+     "status": [
+      "FAIL_LOOPS",
+      "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED"
+     ]
+    },
+    {
+     "station": "hip_r",
+     "loops": [
+      4,
+      6
+     ],
+     "firm": [
+      false,
+      true
+     ],
+     "status": [
+      "FAIL_LOOPS",
+      "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED"
+     ]
+    }
+   ],
+   "d6_excluded": [
+    [
+     "elbow_l",
+     "-p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_l",
+     "+p",
+     [
+      "lowerarm_l",
+      "lowerarm_l"
+     ],
+     [
+      "arm"
+     ]
+    ],
+    [
+     "elbow_r",
+     "+p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_r",
+     "-p",
+     [
+      "lowerarm_r",
+      "lowerarm_r"
+     ],
+     [
+      "arm"
+     ]
+    ]
+   ],
+   "false_positives": [],
+   "residual_foreign_kept": [],
+   "by_joint": {
+    "neck": {
+     "sides_audited": 4,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "shoulder": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "elbow": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "wrist": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "hip": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "knee": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "ankle": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    }
+   }
+  },
+  "SGF178": {
+   "firm_D1_D3_D4_D5": 69,
+   "firm_D1_D3_D4_D5_D6": 69,
+   "fails_D6": [],
+   "lowered": [],
+   "changed": [
+    {
+     "station": "hip_l",
+     "loops": [
+      12,
+      15
+     ],
+     "firm": [
+      true,
+      true
+     ],
+     "status": [
+      "PASS",
+      "PASS"
+     ]
+    },
+    {
+     "station": "hip_r",
+     "loops": [
+      12,
+      15
+     ],
+     "firm": [
+      true,
+      true
+     ],
+     "status": [
+      "PASS",
+      "PASS"
+     ]
+    }
+   ],
+   "d6_excluded": [
+    [
+     "elbow_l",
+     "-p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_l",
+     "+p",
+     [
+      "lowerarm_l",
+      "hand_l"
+     ],
+     [
+      "arm",
+      "hand"
+     ]
+    ],
+    [
+     "elbow_r",
+     "+p",
+     [
+      "spine_02",
+      "spine_02"
+     ],
+     [
+      "trunk"
+     ]
+    ],
+    [
+     "hip_r",
+     "-p",
+     [
+      "lowerarm_r",
+      "hand_r"
+     ],
+     [
+      "arm",
+      "hand"
+     ]
+    ]
+   ],
+   "false_positives": [],
+   "residual_foreign_kept": [],
+   "by_joint": {
+    "neck": {
+     "sides_audited": 4,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "shoulder": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "elbow": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "wrist": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "hip": {
+     "sides_audited": 8,
+     "d6_excluded": 2,
+     "false_positive": 0
+    },
+    "knee": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    },
+    "ankle": {
+     "sides_audited": 8,
+     "d6_excluded": 0,
+     "false_positive": 0
+    }
+   }
+  }
+ },
+ "regression_pass": true
+}

@@ -1,21 +1,14 @@
 # Character Design Status
 
-## SAGEKIN RP3 — CONFIG-2 CENTRAL REFERENCE PASS; FAMILY PROPAGATION NEEDS AUTHOR DECISION (validator rule D6) — NOT FROZEN (2026-10-27)
+## SAGEKIN RP3 — AUTHOR ACCEPTED / FROZEN — MPFB FAMILY PROPAGATION PASS (2026-10-27)
 
-- **Gate:** `reviews/claude-rac-rp3-sagekin-config2-reference-and-propagation-gate.md` (order c6c7940). Evidence: `reviews/rac-rp3-evidence/sagekin_rp3_v001/`.
-- **Part A:** SG CONFIG-2 CENTRAL REFERENCE PASS — READY FOR PROPAGATION.
-  - `SGF178` (178.00 cm): the canonical configuration-2 construction base of SGF152-NAT / SGF208.
-  - Rebuild-identical: regen and full height re-solve both give max |dV| 0.
-  - Coherent inside the 152–208 envelope.
-  - Not yet entered in the reference-asset manifest as accepted.
-- **Part B:** both configurations propagated onto active v005 unchanged (face `ec768ae2…`, map `e690fbaf…`, V = M @ hm08 exactly).
-  - `E:/…/Sagekin/RP3/SG_M_REF_RP3_retopo_v001.blend` (`bb156e9c…`) and `SG_F_REF_RP3_retopo_v001.blend` (`0ef62ffc…`), CANDIDATE — NOT FROZEN.
-  - Anatomy, identity, face, density, contact and deformation all pass.
-- **Blocker:** authoritative D1 + D3 + D4 + D5 gives SG **67 / 69**; SGF178 is 69 / 69.
-  - `hip_l` / `hip_r` (4 / 5): the hip +p band side samples the forearm hanging beside the hip, in all six family realizations.
-  - Proposed D6 (foreign-segment endpoint) → 69 / 69 everywhere, lowering nothing.
-  - No race-specific branch needed if D6 is accepted.
-- **Next:** STOP for ChatGPT review (D6 ruling; SGF178 acceptance; Sagekin freeze).
+- **Freeze record:** `SAGEKIN_RP3_FREEZE.json` (`85147a24…`; E: `Sagekin/RP3/`; copy in `reviews/rac-rp3-evidence/sagekin_rp3_freeze/`).
+- **Report:** `reviews/claude-rac-rp3-sagekin-family-freeze-report.md` (order d921903). Parent gate: `reviews/claude-rac-rp3-sagekin-config2-reference-and-propagation-gate.md`.
+- **Files:** `SG_M_REF_RP3_retopo_v001.blend` (`bb156e9c…`, SG c1) and `SG_F_REF_RP3_retopo_v001.blend` (`0ef62ffc…`, SGF178 c2), on active v005 (face `ec768ae2…`). PC read-back is exact; frozen by record, not re-saved.
+- **References:** SG = c1 central; **SGF178 = c2 central (AUTHOR ACCEPTED)**; SGF152-NAT / SGF208 = c2 bounds.
+- **Validator:** **D1 + D3 + D4 + D5 + D6** authoritative (D6 foreign-segment ownership accepted d921903). 69 / 69 on MF-M, MF-F, SK-C1R, SK-F, SG and SGF178; no verdict lowered.
+- **Carry-forward:** no new ID (Sagekin reproduces the MPFB-CF-1 class / known rig regions).
+- **Next:** recommended Fenn (likely the first true race-specific branch: ears, elven skeleton, one configuration built). Awaiting ChatGPT review; not started.
 
 ## MARCHFOLK RP3 v005 — AUTHOR ACCEPTED / FROZEN — ACTIVE MPFB FAMILY BASE (2026-10-27)
 

@@ -2,7 +2,27 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-27) — SAGEKIN CONFIG-2 REFERENCE + FAMILY PROPAGATION — awaiting ChatGPT review
+## LATEST (2026-10-27) — SAGEKIN FROZEN + D6 ACCEPTED + SGF178 ACCEPTED — awaiting ChatGPT review
+
+**What was done**
+- Order d921903 executed. Report: `reviews/claude-rac-rp3-sagekin-family-freeze-report.md`.
+- **Freeze record:** `SAGEKIN_RP3_FREEZE.json` (E: `Sagekin/RP3/`, evidence `reviews/rac-rp3-evidence/sagekin_rp3_freeze/`).
+- **Read-back:** `tools/rac/rp/sagekin_rp3_v001/freeze_sg_verify.py WORK PCDIR OUT` (PC copies staged to `/mnt/user-data/uploads/RaceBodies/production/Sagekin/RP3`). ALL CHECKS PASS.
+- **D6 accepted:** authoritative validator `validator_v2.py CAND OUT --scale-ref 173.143 --d5 --d6-native src/<ID>_native.npz`.
+  - Regression: `d6_regression.py OUTDIR CID=CAND=NATIVE=LOOPS ...`.
+  - 6 realizations, 0 false positives, 69 / 69 everywhere.
+- **SGF178 accepted:** in `reviews/reference-assets/manifest.json` and `specs/sagekin/SAGEKIN_V1.md`.
+- **Standard v1:** updated with D6. **Register:** Sagekin section (no new ID).
+- **Workspace:** still `/tmp/claude-0/rt/sg` (`d6final/`, `freeze/`).
+
+**Frozen MPFB-family realizations on v005:** Marchfolk v005, Skarn v003, Sagekin v001.
+
+**Next:** STOP for ChatGPT review. Fenn is recommended next.
+- Source `FNL4`, 181.16 cm, one configuration built.
+- Likely ear-density / identity branch.
+- Hidden-ear validation gate (`FENN_V1` §13).
+
+## (previous) 2026-10-27 — SAGEKIN CONFIG-2 REFERENCE + FAMILY PROPAGATION
 
 **What was done**
 - Order c6c7940 executed. Gate: `reviews/claude-rac-rp3-sagekin-config2-reference-and-propagation-gate.md`.
