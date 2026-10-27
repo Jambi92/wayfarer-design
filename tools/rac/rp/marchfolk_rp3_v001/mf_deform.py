@@ -62,10 +62,11 @@ fist.update(dict([R_('thumb_02_l', -LEFT, 30), R_('thumb_03_l', -LEFT, 40)])); P
 POSES['thumb_opposition_l'] = dict([R_('thumb_01_l', -LEFT + FWD, 35), R_('thumb_02_l', -LEFT, 25), R_('thumb_03_l', -LEFT, 25)])
 POSES['hip_flex90_l'] = dict([R_('thigh_l', FWD, 90)]); POSES['knee_90_l'] = dict([R_('calf_l', -FWD, 90)]); POSES['knee_140_l'] = dict([R_('calf_l', -FWD, 140)])
 POSES['ankle_dorsi20_l'] = dict([R_('foot_l', UP, 20)])
+POSES['toe_flex30_l'] = dict([R_('ball_l', -UP, 30)]); POSES['toe_ext30_l'] = dict([R_('ball_l', UP, 30)])   # v004 order §12 toe flexion / extension (MPFB rig: one ball bone for all toes)
 POSES['trunk_twist30'] = {b: [('Y', 10.0)] for b in ('spine_01', 'spine_02', 'spine_03')}
 POSES['neck_flex30'] = dict([R_('neck_01', FWD, 15), R_('head', FWD, 15)]); POSES['neck_rot45'] = {'neck_01': [('Y', 22.5)], 'head': [('Y', 22.5)]}
 if os.environ.get('ONLY_POSES'): POSES = {k: v for k, v in POSES.items() if k in os.environ['ONLY_POSES'].split(',')}
-ZONE = {'shoulder': ('upperarm_l', 14), 'elbow': ('lowerarm_l', 9), 'wrist': ('hand_l', 6), 'fist': ('hand_l', 10), 'thumb': ('thumb_01_l', 6), 'hip': ('thigh_l', 16),
+ZONE = {'toe': ('ball_l', 6), 'shoulder': ('upperarm_l', 14), 'elbow': ('lowerarm_l', 9), 'wrist': ('hand_l', 6), 'fist': ('hand_l', 10), 'thumb': ('thumb_01_l', 6), 'hip': ('thigh_l', 16),
         'knee': ('calf_l', 10), 'ankle': ('foot_l', 8), 'trunk': ('spine_02', 22), 'neck': ('neck_01', 10)}
 P0 = fk({}); Sk0 = {b: P0[b] @ np.linalg.inv(POSE[b]) for b in bones}
 bi = {b: i for i, b in enumerate(bones)}

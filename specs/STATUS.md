@@ -1,5 +1,20 @@
 # Character Design Status
 
+## RAC RP3 Marchfolk — 2026-10-26 — v004 final order returned: FAMILY BASE PASS WITH DOCUMENTED TOE-IP EXCEPTION — READY FOR AUTHOR DECISION (v003 freeze candidate; no v004)
+
+**Order:** `reviews/chatgpt-rac-rp3-marchfolk-v004-final-toe-reroute-order.md` (2d34a0c).
+**Gate:** `reviews/claude-rac-rp3-marchfolk-v004-final-family-core-gate.md`.
+**Evidence:** `reviews/rac-rp3-evidence/marchfolk_v004_final_family_core/`.
+
+- **D1 validator** (`validator_v2.py`) is implemented. Thumb MCP passes as `PASS_FALLBACK_CLOSED_RING` (3 / 4 rings at a 3 cm radius). The configuration-2 shoulders pass as `PASS_FALLBACK_DEFINED_SIDES` (7 / 7).
+- **D2:** the toe3 j3 / toe4 j2 "crease poles" are tip-cap valence-3 poles of the neighbouring toes (toe 4 / toe 5). The audited toes carry 0 crease poles, so no reroute applies and no v004 was produced.
+- **Proposed D3** (digit pole ownership) gives 0 firm failures across all 69 stations in both configurations.
+- **v003 is the freeze candidate,** unchanged (`5b793eda…` / `a5d8adfe…`). All parents and sources are hash-identical.
+- **Toe flex / extension diagnostic:** v003 ≈ v002; contact / rig class.
+- **Note:** the configuration-1 sole lowest point is +0.41 mm (within T-3).
+
+**Not started:** freeze, Skarn, Sagekin, propagation, rig, morphs, UV, LOD, UE5.
+
 ## RAC RP3 Marchfolk — 2026-10-26 — v003 shared family core returned: FAMILY BASE FAIL / NEEDS AUTHOR DECISION (D1 / D2); not frozen
 
 **Order:** `reviews/chatgpt-rac-rp3-marchfolk-family-core-v003-order.md` (103c832).

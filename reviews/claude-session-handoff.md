@@ -2,6 +2,17 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-26) — RP3 MARCHFOLK v004 FINAL ORDER — awaiting ChatGPT review
+
+**What was done**
+- Order 2d34a0c executed. Gate: `reviews/claude-rac-rp3-marchfolk-v004-final-family-core-gate.md`.
+- **D1:** `tools/rac/rp/marchfolk_rp3_v001/validator_v2.py`. It reports legacy, D1 and D1+D3 verdicts; the legacy verdict equals `audit.py`.
+- **D2 finding:** the flagged toe-IP poles belong to the neighbouring toes' 4-pole tip caps. No v004 was made.
+- **New tools:** `mf4_sheets.py`; `mf_deform.py` now has `toe_flex30_l` / `toe_ext30_l` poses (zone `ball_l`).
+- **Workspace:** `/tmp/claude-0/rt/m3/v4` (validator JSONs, toe / sanity deformation) and `sheets4/`.
+
+**Next:** STOP for ChatGPT review (freeze v003, accept D3, configuration-1 sole +0.41 mm note).
+
 ## LATEST (2026-10-26) — RP3 MARCHFOLK v003 FAMILY CORE — awaiting ChatGPT review
 
 **What was done**
