@@ -1,0 +1,136 @@
+{
+ "id": "FNF181",
+ "family_pairs": 166,
+ "native_pairs": 78,
+ "family_base_same_class_pairs": 122,
+ "face_count_ratio": 4.324,
+ "classes": {
+  "source": 158,
+  "family": 0,
+  "new": 8
+ },
+ "by_zone": {
+  "arm": {
+   "source": 94
+  },
+  "trunk": {
+   "source": 16
+  },
+  "foot": {
+   "source": 48,
+   "new": 8
+  }
+ },
+ "new_pairs": [
+  {
+   "faces": [
+    23668,
+    25447
+   ],
+   "zone": "foot",
+   "centroid_cm": [
+    -10.69,
+    18.33,
+    1.55
+   ]
+  },
+  {
+   "faces": [
+    23668,
+    25449
+   ],
+   "zone": "foot",
+   "centroid_cm": [
+    -10.69,
+    18.39,
+    1.49
+   ]
+  },
+  {
+   "faces": [
+    25442,
+    25447
+   ],
+   "zone": "foot",
+   "centroid_cm": [
+    -10.69,
+    18.26,
+    1.77
+   ]
+  },
+  {
+   "faces": [
+    25442,
+    25449
+   ],
+   "zone": "foot",
+   "centroid_cm": [
+    -10.69,
+    18.31,
+    1.71
+   ]
+  },
+  {
+   "faces": [
+    52752,
+    54547
+   ],
+   "zone": "foot",
+   "centroid_cm": [
+    10.69,
+    18.39,
+    1.49
+   ]
+  },
+  {
+   "faces": [
+    52752,
+    54548
+   ],
+   "zone": "foot",
+   "centroid_cm": [
+    10.69,
+    18.33,
+    1.55
+   ]
+  },
+  {
+   "faces": [
+    54542,
+    54547
+   ],
+   "zone": "foot",
+   "centroid_cm": [
+    10.69,
+    18.31,
+    1.71
+   ]
+  },
+  {
+   "faces": [
+    54542,
+    54548
+   ],
+   "zone": "foot",
+   "centroid_cm": [
+    10.69,
+    18.26,
+    1.77
+   ]
+  }
+ ],
+ "new_hand_foot_groin_defects": 8,
+ "pass": false,
+ "new_pairs_reclassified": {
+  "klass": "SOURCE contact (documented): toe-2 / toe-3 cleft of the FNF181 native hm08",
+  "evidence": "all 8 pair faces are unchanged v003-class rows (row_class 0) lying ON the native surface (max 0.0 mm); they sit on native quads 5511 / 5592 / 5990-5992, and the native triangles of quads 5592 and 5992 intersect each other (bpy BVH, non-vertex-sharing triangles) with opposite-facing normals (dot -0.34 ... -0.93). audit.py did not report it on the native because those quads share a vertex (adjacent-quad pairs are skipped); the 4.3x finer family tessellation makes the same fold non-adjacent.",
+  "cause": "Fenn narrow long foot (foot-scale-horiz-decr 0.4) presses toes 2 / 3 together in the source; MF-F v005 (wider foot) has no contact there",
+  "propagation_attributable": false
+ },
+ "classes_after_reclassification": {
+  "source": 166,
+  "family": 0,
+  "new": 0
+ },
+ "pass_after_reclassification": true
+}

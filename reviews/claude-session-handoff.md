@@ -2,7 +2,25 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-27) — SAGEKIN FROZEN + D6 ACCEPTED + SGF178 ACCEPTED — awaiting ChatGPT review
+## LATEST (2026-10-27) — FENN BODY + HIDDEN-EAR GATE — awaiting ChatGPT review
+
+**What was done**
+- Order 57dc328 executed. Gate: `reviews/claude-rac-rp3-fenn-body-and-ear-branch-gate.md`.
+- **Result:** FENN BODY NEEDS RACE-SPECIFIC BRANCH. The branch is craniofacial source authoring; hidden-ear facial identity is not met beyond the orbit. Part C was not started; nothing frozen.
+- **Workspace** `/tmp/claude-0/rt/fn`:
+  - `src/`, `cand/`, `audit/`, `anat/`, `val/`, `def/`, `prod/`, `readback/`, `sheets/`, `ov/` (ear-hidden npz);
+  - `partA/`: `build/` (FNF181), `build2/` (second re-solve), `cmp/` (MFM / MFF / SGM / SGF 181 comparators), `ref/` (MF-M-R + FNL4 rest for the eye reference), `lean/` + `skp/` (skeletal proxy);
+  - run with `run_fneval.sh`.
+- **Tools** (`tools/rac/rp/fenn_rp3_v001/`): `fenn_partA.py`, `fenn_hidden_ear.py`, `fn_extra_sheets.py`, `fn_manifest.py WORK EVIDIR`, `run_fneval.sh`.
+- **Measurement note:** `run_candidate.py` needs the common MF-M-R rest as the eye reference (`partA/ref/MF-M-R_rest.npz`). With the body's own rest the eye diameter degenerates.
+- **FNF181 candidate:** `reviews/reference-assets/r6/FNF181_r6.npz` + `builds/FNF181_build.json` / `_meas.json`; manifest role CANDIDATE.
+- **E:** `Fenn/RP3/` holds the body-family diagnostics + manifest + FNF181 sidecar (read-back sha equal).
+
+**Ear basis for the later Part C:** W1e `tools/rac/w1/ear_families_v2.py` FN-elven (procedural evidence geometry; `attach_ears.py` composite).
+
+**Next:** STOP for ChatGPT review: Fenn craniofacial source decision, FNF181 acceptance, then the ear branch.
+
+## (previous) 2026-10-27 — SAGEKIN FROZEN + D6 ACCEPTED + SGF178 ACCEPTED
 
 **What was done**
 - Order d921903 executed. Report: `reviews/claude-rac-rp3-sagekin-family-freeze-report.md`.

@@ -1,0 +1,83 @@
+{
+ "record": "FENN RP3 body-family propagation manifest v001 (DIAGNOSTIC body candidates; family human ear, not final Fenn ear)",
+ "order": "reviews/chatgpt-rac-rp3-fenn-body-and-ear-branch-order.md (57dc328)",
+ "status": "BODY-FAMILY DIAGNOSTIC CANDIDATES - NOT FROZEN",
+ "active_family_base": {
+  "record": "MPFB_FAMILY_BASE_v005_FREEZE.json",
+  "record_sha256": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+  "base_blend_sha256": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+  "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+  "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0"
+ },
+ "validator": "D1 + D3 + D4 + D5 + D6 (authoritative)",
+ "configurations": {
+  "FNL4": {
+   "production": "FN_M_REF_RP3_bodyfam_v001.blend",
+   "sha256": "cbcc4d0099b753b150569b5838204d6e2fad6ca6945e3c0ed3bf59723aa63c78",
+   "geometry_hash": "fe4ff74697629f323a3de891e56d461fd395c270823ad8eb1a0ee046d1c2a193",
+   "sidecar_sha256": "2ae02d7150c76c9e40616b2468ad9d8cce1b654ca577d83c9bb4434ad8f8a976",
+   "source": {
+    "id": "FNL4",
+    "r6": "reviews/reference-assets/r6/FNL4_r6.npz",
+    "r6_sha256": "9c37d16a231fa8865c5d0434d52a61604c9ea389cfc4aa83ea59a6f9f605e9f1",
+    "build_sha256": "45d6da0ffed86bb56f0299ae7dbddfece82f42a5253c83912409c29889ec739f",
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0
+   },
+   "validator": {
+    "rules": "D1 + D3 + D4 + D5 + D6",
+    "firm": 69,
+    "fails": [],
+    "margin_zero": [
+     "thumb_mcp_l",
+     "thumb_mcp_r",
+     "toe1_j1_l",
+     "toe1_j1_r",
+     "toe2_j2_l",
+     "toe2_j2_r",
+     "toe3_j1_l",
+     "toe3_j1_r"
+    ]
+   }
+  },
+  "FNF181": {
+   "production": "FN_F_REF_RP3_bodyfam_v001.blend",
+   "sha256": "e30215fc9f129efdaa1038f83cfab9ca4484a0bbea9bd6fd00b1b04e76fc968b",
+   "geometry_hash": "b44f13c8a41fb087597bb089930ebc1795f1049f481b7771c5c373055993c6f1",
+   "sidecar_sha256": "c18a810cc68e538ecb770696a7370e5411b020342d7271a212af73f314849c2b",
+   "source": {
+    "id": "FNF181",
+    "r6": "reviews/reference-assets/r6/FNF181_r6.npz",
+    "r6_sha256": "05c41aa0f7212f97524ed9c02be304df7ce7fa4970230c19401e128b88048b6e",
+    "build_sha256": "80948a51dfacb7098a29e72e8db0b105879def94689197f03c71c9e52f75acf8",
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0
+   },
+   "validator": {
+    "rules": "D1 + D3 + D4 + D5 + D6",
+    "firm": 69,
+    "fails": [],
+    "margin_zero": [
+     "toe1_j1_l",
+     "toe1_j1_r"
+    ]
+   }
+  }
+ },
+ "topology_identity_proof": {
+  "FNL4": {
+   "face_hash_equal": true,
+   "faces_equal": true,
+   "uv_equal": true,
+   "map_equal": true,
+   "V_eq_M_hm08": 0.0
+  },
+  "FNF181": {
+   "face_hash_equal": true,
+   "faces_equal": true,
+   "uv_equal": true,
+   "map_equal": true,
+   "V_eq_M_hm08": 0.0
+  }
+ }
+}

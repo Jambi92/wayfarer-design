@@ -1,0 +1,397 @@
+{
+ "note": "ears excluded (hm08 w_ears > 0.05) from every metric",
+ "configs": {
+  "c1": {
+   "bodies": {
+    "FN": "FNL4",
+    "MF": "MFM181",
+    "SG": "SGM181"
+   },
+   "HH_cm": 22.95,
+   "body": {
+    "trunk": {
+     "FN_vs_MF_rms_mm": 19.35,
+     "FN_vs_SG_rms_mm": 10.6,
+     "SG_vs_MF_rms_mm_human_baseline": 8.92,
+     "ratio_FNMF_over_human": 2.17,
+     "ratio_FNSG_over_human": 1.19
+    },
+    "arm": {
+     "FN_vs_MF_rms_mm": 11.09,
+     "FN_vs_SG_rms_mm": 8.69,
+     "SG_vs_MF_rms_mm_human_baseline": 4.37,
+     "ratio_FNMF_over_human": 2.54,
+     "ratio_FNSG_over_human": 1.99
+    },
+    "hand": {
+     "FN_vs_MF_rms_mm": 26.59,
+     "FN_vs_SG_rms_mm": 15.86,
+     "SG_vs_MF_rms_mm_human_baseline": 11.08,
+     "ratio_FNMF_over_human": 2.4,
+     "ratio_FNSG_over_human": 1.43
+    },
+    "leg": {
+     "FN_vs_MF_rms_mm": 26.76,
+     "FN_vs_SG_rms_mm": 20.53,
+     "SG_vs_MF_rms_mm_human_baseline": 7.67,
+     "ratio_FNMF_over_human": 3.49,
+     "ratio_FNSG_over_human": 2.68
+    },
+    "foot": {
+     "FN_vs_MF_rms_mm": 8.41,
+     "FN_vs_SG_rms_mm": 9.41,
+     "SG_vs_MF_rms_mm_human_baseline": 1.32,
+     "ratio_FNMF_over_human": 6.35,
+     "ratio_FNSG_over_human": 7.11
+    },
+    "neck": {
+     "FN_vs_MF_rms_mm": 4.9,
+     "FN_vs_SG_rms_mm": 3.29,
+     "SG_vs_MF_rms_mm_human_baseline": 1.7,
+     "ratio_FNMF_over_human": 2.87,
+     "ratio_FNSG_over_human": 1.93
+    }
+   },
+   "face": {
+    "cranium_vault": {
+     "verts": 253,
+     "FN_vs_MF_rms_mm": 0.14,
+     "FN_vs_SG_rms_mm": 0.13,
+     "SG_vs_MF_rms_mm_human_baseline": 0.03,
+     "ratio_FNMF_over_human": 5.51,
+     "FN_vs_MF_pct_HH": 0.06,
+     "departure_material": false
+    },
+    "forehead": {
+     "verts": 116,
+     "FN_vs_MF_rms_mm": 0.26,
+     "FN_vs_SG_rms_mm": 0.26,
+     "SG_vs_MF_rms_mm_human_baseline": 0.01,
+     "ratio_FNMF_over_human": 19.59,
+     "FN_vs_MF_pct_HH": 0.11,
+     "departure_material": false
+    },
+    "orbit_eye_region": {
+     "verts": 1096,
+     "FN_vs_MF_rms_mm": 1.17,
+     "FN_vs_SG_rms_mm": 1.17,
+     "SG_vs_MF_rms_mm_human_baseline": 0.01,
+     "ratio_FNMF_over_human": 133.87,
+     "FN_vs_MF_pct_HH": 0.51,
+     "departure_material": true
+    },
+    "nose": {
+     "verts": 348,
+     "FN_vs_MF_rms_mm": 0.39,
+     "FN_vs_SG_rms_mm": 0.39,
+     "SG_vs_MF_rms_mm_human_baseline": 0.01,
+     "ratio_FNMF_over_human": 33.21,
+     "FN_vs_MF_pct_HH": 0.17,
+     "departure_material": false
+    },
+    "cheeks_midface": {
+     "verts": 170,
+     "FN_vs_MF_rms_mm": 0.31,
+     "FN_vs_SG_rms_mm": 0.31,
+     "SG_vs_MF_rms_mm_human_baseline": 0.02,
+     "ratio_FNMF_over_human": 18.17,
+     "FN_vs_MF_pct_HH": 0.13,
+     "departure_material": false
+    },
+    "mouth": {
+     "verts": 419,
+     "FN_vs_MF_rms_mm": 0.03,
+     "FN_vs_SG_rms_mm": 0.02,
+     "SG_vs_MF_rms_mm_human_baseline": 0.01,
+     "ratio_FNMF_over_human": 2.22,
+     "FN_vs_MF_pct_HH": 0.01,
+     "departure_material": false
+    },
+    "jaw_chin": {
+     "verts": 526,
+     "FN_vs_MF_rms_mm": 0.08,
+     "FN_vs_SG_rms_mm": 0.08,
+     "SG_vs_MF_rms_mm_human_baseline": 0.02,
+     "ratio_FNMF_over_human": 4.26,
+     "FN_vs_MF_pct_HH": 0.03,
+     "departure_material": false
+    }
+   },
+   "canon_descriptors": {
+    "cranial_height_over_face": {
+     "FN": 0.938,
+     "MF": 0.9386,
+     "SG": 0.9383,
+     "FN_vs_MF_pct": -0.06,
+     "FN_vs_SG_pct": -0.03,
+     "human_baseline_SG_vs_MF_pct": 0.03,
+     "canon_direction": 1,
+     "direction_holds": false,
+     "exceeds_human_baseline": false
+    },
+    "skull_breadth_over_HH": {
+     "FN": 0.6467,
+     "MF": 0.6467,
+     "SG": 0.6467,
+     "FN_vs_MF_pct": 0.0,
+     "FN_vs_SG_pct": 0.0,
+     "human_baseline_SG_vs_MF_pct": 0.0,
+     "canon_direction": -1,
+     "direction_holds": false,
+     "exceeds_human_baseline": false
+    },
+    "lower_face_width_over_bizygomatic": {
+     "FN": 0.9354,
+     "MF": 0.9353,
+     "SG": 0.9354,
+     "FN_vs_MF_pct": 0.01,
+     "FN_vs_SG_pct": 0.0,
+     "human_baseline_SG_vs_MF_pct": 0.0,
+     "canon_direction": -1,
+     "direction_holds": false,
+     "exceeds_human_baseline": false
+    },
+    "jaw_width_over_bizygomatic": {
+     "FN": 0.7922,
+     "MF": 0.7769,
+     "SG": 0.7769,
+     "FN_vs_MF_pct": 1.98,
+     "FN_vs_SG_pct": 1.97,
+     "human_baseline_SG_vs_MF_pct": 0.01,
+     "canon_direction": -1,
+     "direction_holds": false,
+     "exceeds_human_baseline": true
+    },
+    "cheekbone_height_over_HH": {
+     "FN": -0.0429,
+     "MF": -0.0428,
+     "SG": -0.0429,
+     "FN_vs_MF_pct": 0.05,
+     "FN_vs_SG_pct": 0.03,
+     "human_baseline_SG_vs_MF_pct": 0.03,
+     "canon_direction": 1,
+     "direction_holds": true,
+     "exceeds_human_baseline": false
+    },
+    "forehead_profile_mean_turn_rad": {
+     "FN": 0.1141,
+     "MF": 0.114,
+     "SG": 0.114,
+     "FN_vs_MF_pct": 0.08,
+     "FN_vs_SG_pct": 0.04,
+     "human_baseline_SG_vs_MF_pct": 0.04,
+     "canon_direction": -1,
+     "direction_holds": false,
+     "exceeds_human_baseline": false
+    },
+    "head_height_over_stature": {
+     "FN": 0.1268,
+     "MF": 0.1283,
+     "SG": 0.1275,
+     "FN_vs_MF_pct": -1.18,
+     "FN_vs_SG_pct": -0.58,
+     "human_baseline_SG_vs_MF_pct": 0.6,
+     "canon_direction": 0,
+     "direction_holds": null,
+     "exceeds_human_baseline": false
+    }
+   }
+  },
+  "c2": {
+   "bodies": {
+    "FN": "FNF181",
+    "MF": "MFF181",
+    "SG": "SGF181"
+   },
+   "HH_cm": 22.12,
+   "body": {
+    "trunk": {
+     "FN_vs_MF_rms_mm": 18.17,
+     "FN_vs_SG_rms_mm": 9.48,
+     "SG_vs_MF_rms_mm_human_baseline": 8.87,
+     "ratio_FNMF_over_human": 2.05,
+     "ratio_FNSG_over_human": 1.07
+    },
+    "arm": {
+     "FN_vs_MF_rms_mm": 11.1,
+     "FN_vs_SG_rms_mm": 9.08,
+     "SG_vs_MF_rms_mm_human_baseline": 4.35,
+     "ratio_FNMF_over_human": 2.55,
+     "ratio_FNSG_over_human": 2.09
+    },
+    "hand": {
+     "FN_vs_MF_rms_mm": 26.86,
+     "FN_vs_SG_rms_mm": 16.32,
+     "SG_vs_MF_rms_mm_human_baseline": 10.95,
+     "ratio_FNMF_over_human": 2.45,
+     "ratio_FNSG_over_human": 1.49
+    },
+    "leg": {
+     "FN_vs_MF_rms_mm": 26.14,
+     "FN_vs_SG_rms_mm": 19.99,
+     "SG_vs_MF_rms_mm_human_baseline": 7.62,
+     "ratio_FNMF_over_human": 3.43,
+     "ratio_FNSG_over_human": 2.62
+    },
+    "foot": {
+     "FN_vs_MF_rms_mm": 8.42,
+     "FN_vs_SG_rms_mm": 9.37,
+     "SG_vs_MF_rms_mm_human_baseline": 1.29,
+     "ratio_FNMF_over_human": 6.51,
+     "ratio_FNSG_over_human": 7.24
+    },
+    "neck": {
+     "FN_vs_MF_rms_mm": 3.52,
+     "FN_vs_SG_rms_mm": 1.93,
+     "SG_vs_MF_rms_mm_human_baseline": 1.7,
+     "ratio_FNMF_over_human": 2.08,
+     "ratio_FNSG_over_human": 1.14
+    }
+   },
+   "face": {
+    "cranium_vault": {
+     "verts": 238,
+     "FN_vs_MF_rms_mm": 0.13,
+     "FN_vs_SG_rms_mm": 0.13,
+     "SG_vs_MF_rms_mm_human_baseline": 0.03,
+     "ratio_FNMF_over_human": 5.2,
+     "FN_vs_MF_pct_HH": 0.06,
+     "departure_material": false
+    },
+    "forehead": {
+     "verts": 130,
+     "FN_vs_MF_rms_mm": 0.6,
+     "FN_vs_SG_rms_mm": 0.6,
+     "SG_vs_MF_rms_mm_human_baseline": 0.02,
+     "ratio_FNMF_over_human": 36.39,
+     "FN_vs_MF_pct_HH": 0.27,
+     "departure_material": false
+    },
+    "orbit_eye_region": {
+     "verts": 1047,
+     "FN_vs_MF_rms_mm": 1.17,
+     "FN_vs_SG_rms_mm": 1.17,
+     "SG_vs_MF_rms_mm_human_baseline": 0.01,
+     "ratio_FNMF_over_human": 88.85,
+     "FN_vs_MF_pct_HH": 0.53,
+     "departure_material": true
+    },
+    "nose": {
+     "verts": 393,
+     "FN_vs_MF_rms_mm": 0.44,
+     "FN_vs_SG_rms_mm": 0.44,
+     "SG_vs_MF_rms_mm_human_baseline": 0.01,
+     "ratio_FNMF_over_human": 44.42,
+     "FN_vs_MF_pct_HH": 0.2,
+     "departure_material": false
+    },
+    "cheeks_midface": {
+     "verts": 190,
+     "FN_vs_MF_rms_mm": 0.41,
+     "FN_vs_SG_rms_mm": 0.41,
+     "SG_vs_MF_rms_mm_human_baseline": 0.02,
+     "ratio_FNMF_over_human": 20.84,
+     "FN_vs_MF_pct_HH": 0.19,
+     "departure_material": false
+    },
+    "mouth": {
+     "verts": 489,
+     "FN_vs_MF_rms_mm": 0.04,
+     "FN_vs_SG_rms_mm": 0.03,
+     "SG_vs_MF_rms_mm_human_baseline": 0.01,
+     "ratio_FNMF_over_human": 2.63,
+     "FN_vs_MF_pct_HH": 0.02,
+     "departure_material": false
+    },
+    "jaw_chin": {
+     "verts": 434,
+     "FN_vs_MF_rms_mm": 0.11,
+     "FN_vs_SG_rms_mm": 0.1,
+     "SG_vs_MF_rms_mm_human_baseline": 0.03,
+     "ratio_FNMF_over_human": 4.3,
+     "FN_vs_MF_pct_HH": 0.05,
+     "departure_material": false
+    }
+   },
+   "canon_descriptors": {
+    "cranial_height_over_face": {
+     "FN": 1.022,
+     "MF": 1.0214,
+     "SG": 1.0217,
+     "FN_vs_MF_pct": 0.05,
+     "FN_vs_SG_pct": 0.03,
+     "human_baseline_SG_vs_MF_pct": 0.03,
+     "canon_direction": 1,
+     "direction_holds": true,
+     "exceeds_human_baseline": false
+    },
+    "skull_breadth_over_HH": {
+     "FN": 0.6701,
+     "MF": 0.6698,
+     "SG": 0.6699,
+     "FN_vs_MF_pct": 0.04,
+     "FN_vs_SG_pct": 0.02,
+     "human_baseline_SG_vs_MF_pct": 0.02,
+     "canon_direction": -1,
+     "direction_holds": false,
+     "exceeds_human_baseline": false
+    },
+    "lower_face_width_over_bizygomatic": {
+     "FN": 0.9253,
+     "MF": 0.9254,
+     "SG": 0.9254,
+     "FN_vs_MF_pct": -0.01,
+     "FN_vs_SG_pct": -0.0,
+     "human_baseline_SG_vs_MF_pct": 0.0,
+     "canon_direction": -1,
+     "direction_holds": true,
+     "exceeds_human_baseline": false
+    },
+    "jaw_width_over_bizygomatic": {
+     "FN": 0.7739,
+     "MF": 0.7744,
+     "SG": 0.7744,
+     "FN_vs_MF_pct": -0.07,
+     "FN_vs_SG_pct": -0.06,
+     "human_baseline_SG_vs_MF_pct": 0.0,
+     "canon_direction": -1,
+     "direction_holds": true,
+     "exceeds_human_baseline": false
+    },
+    "cheekbone_height_over_HH": {
+     "FN": -0.0515,
+     "MF": -0.0514,
+     "SG": -0.0514,
+     "FN_vs_MF_pct": 0.13,
+     "FN_vs_SG_pct": 0.07,
+     "human_baseline_SG_vs_MF_pct": 0.06,
+     "canon_direction": 1,
+     "direction_holds": true,
+     "exceeds_human_baseline": false
+    },
+    "forehead_profile_mean_turn_rad": {
+     "FN": 0.1029,
+     "MF": 0.103,
+     "SG": 0.1029,
+     "FN_vs_MF_pct": -0.12,
+     "FN_vs_SG_pct": -0.06,
+     "human_baseline_SG_vs_MF_pct": 0.06,
+     "canon_direction": -1,
+     "direction_holds": true,
+     "exceeds_human_baseline": false
+    },
+    "head_height_over_stature": {
+     "FN": 0.1222,
+     "MF": 0.1238,
+     "SG": 0.123,
+     "FN_vs_MF_pct": -1.26,
+     "FN_vs_SG_pct": -0.67,
+     "human_baseline_SG_vs_MF_pct": 0.6,
+     "canon_direction": 0,
+     "direction_holds": null,
+     "exceeds_human_baseline": true
+    }
+   }
+  }
+ }
+}

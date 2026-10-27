@@ -1,0 +1,5078 @@
+{
+ "validator": "RAC \u00a77 validator v2 (D1 + D3 accepted 85b7c1c; D4 stature-normalised station geometry accepted a18371c; D5 interdigital endpoint validity accepted 33a2dfe; D6 foreign-segment endpoint accepted d921903)",
+ "D5_applied": true,
+ "D6_applied": false,
+ "station_scale": 1.0460573511969267,
+ "reference_stature_cm": 173.143,
+ "stature_cm": 181.11750795828948,
+ "anatomical_ring_radius_cm": {
+  "thumb_mcp": 3.1381720535907798
+ },
+ "summary": {
+  "legacy_firm_fail": [
+   "hip_l",
+   "hip_r",
+   "pinky_mcp_l",
+   "pinky_mcp_r",
+   "thumb_mcp_l",
+   "toe3_j3_l",
+   "toe3_j3_r"
+  ],
+  "D1_firm_fail": [
+   "hip_l",
+   "hip_r",
+   "toe3_j3_l",
+   "toe3_j3_r"
+  ],
+  "D1_D3_firm_fail": [
+   "hip_l",
+   "hip_r"
+  ],
+  "D1_strict_fail": [
+   "hip_l",
+   "hip_r",
+   "index_mcp_l",
+   "index_mcp_r",
+   "middle_mcp_l",
+   "middle_mcp_r",
+   "pinky_mcp_l",
+   "pinky_mcp_r",
+   "ring_mcp_l",
+   "ring_mcp_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe2_j3_l",
+   "toe2_j3_r",
+   "toe3_j3_l",
+   "toe3_j3_r",
+   "toe4_j3_l",
+   "toe4_j3_r"
+  ],
+  "D1_D3_strict_fail": [
+   "hip_l",
+   "hip_r",
+   "index_mcp_l",
+   "index_mcp_r",
+   "middle_mcp_l",
+   "middle_mcp_r",
+   "pinky_mcp_l",
+   "pinky_mcp_r",
+   "ring_mcp_l",
+   "ring_mcp_r",
+   "toe2_j1_l",
+   "toe2_j1_r"
+  ],
+  "D1_fallback_passes": {
+   "pinky_mcp_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+   "pinky_mcp_r": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "D1_D3_non_plain": {
+   "pinky_mcp_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+   "hip_l": "FAIL_LOOPS",
+   "toe3_j3_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+   "pinky_mcp_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "hip_r": "FAIL_LOOPS",
+   "toe3_j3_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+  },
+  "margin_zero": [
+   "thumb_mcp_l",
+   "thumb_mcp_r",
+   "toe1_j1_l",
+   "toe1_j1_r",
+   "toe2_j2_l",
+   "toe2_j2_r",
+   "toe3_j1_l",
+   "toe3_j1_r"
+  ],
+  "firm_pass_count": 67,
+  "stations": 69
+ },
+ "stations": {
+  "neck": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      2.8941,
+      1.9469
+     ],
+     "loops": 11
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      2.8941,
+      1.9469
+     ],
+     "loops": 11
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.7059,
+      0.4119
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.2011,
+      0.0372
+     ],
+     "loops": 19
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 7,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3555,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "shoulder_l": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      5.9178,
+      5.539
+     ],
+     "loops": 10
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.8506,
+      2.3196
+     ],
+     "loops": 11
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.7849,
+      4.4327
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.7204,
+      3.997
+     ],
+     "loops": 10
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 7,
+   "loops_v2": 7,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.869,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "elbow_l": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.5653,
+      1.6663
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3498,
+      0.0973
+     ],
+     "no_path": true
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      5.5389,
+      5.4151
+     ],
+     "loops": 2
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1164,
+      0.3202
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 4,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.7296,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "wrist_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1917,
+      0.122
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.242,
+      0.0981
+     ],
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.8842,
+      1.3854
+     ],
+     "loops": 2
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.307,
+      0.9582
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 10,
+   "closed_rings_anatomical": 10,
+   "loops_legacy": 10,
+   "loops_v2": 10,
+   "margin": 7,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4635,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.3073,
+      1.0876
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0431,
+      0.0754
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2376,
+      0.0985
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.3538,
+      0.2198
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 5,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 5,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    9798
+   ],
+   "within2_own_digit": [
+    9798
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.277,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.0469,
+      0.9682
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.039,
+      0.0228
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3074,
+      0.2913
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3779,
+      1.1779
+     ],
+     "loops": 10
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 5,
+   "closed_rings": 8,
+   "closed_rings_anatomical": 8,
+   "loops_legacy": 8,
+   "loops_v2": 8,
+   "margin": 6,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2112,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.038,
+      0.9345
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1461,
+      0.1149
+     ],
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.274,
+      0.3487
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3553,
+      0.4248
+     ],
+     "loops": 7
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1739,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.1374,
+      1.1163
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0819,
+      0.1262
+     ],
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.099,
+      0.0619
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2866,
+      0.2896
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    9500,
+    9539
+   ],
+   "within2_own_digit": [
+    9500
+   ],
+   "within2_adjacent_digit": [
+    9539
+   ],
+   "local_loop_cm": 0.3465,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7778,
+      0.7495
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0192,
+      0.0557
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3821,
+      1.0333
+     ],
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2099,
+      0.1621
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 5,
+   "closed_rings": 7,
+   "closed_rings_anatomical": 7,
+   "loops_legacy": 7,
+   "loops_v2": 7,
+   "margin": 5,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.224,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.077,
+      1.1209
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1111,
+      0.0975
+     ],
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3231,
+      0.3339
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1479,
+      0.1733
+     ],
+     "loops": 7
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 6,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1545,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.2216,
+      1.3932
+     ],
+     "loops": 9
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1267,
+      0.0693
+     ],
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1639,
+      0.1119
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2394,
+      0.1076
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    9538
+   ],
+   "within2_own_digit": [
+    9538
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3086,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.0807,
+      0.9651
+     ],
+     "loops": 2
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0693,
+      0.0273
+     ],
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3132,
+      0.2241
+     ],
+     "loops": 8
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1454,
+      0.0572
+     ],
+     "loops": 7
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1674,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.1066,
+      1.0783
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1198,
+      0.09
+     ],
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1387,
+      0.1954
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1765,
+      0.2721
+     ],
+     "loops": 6
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 6,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1642,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.3629,
+      1.2679
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.161,
+      0.0232
+     ],
+     "loops": 6
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.4493,
+      0.2943
+     ],
+     "loops": 1
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0662,
+      0.1237
+     ],
+     "loops": 6
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 6,
+   "closed_rings": 1,
+   "closed_rings_anatomical": 1,
+   "loops_legacy": 1,
+   "loops_v2": 6,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    9823
+   ],
+   "within2_own_digit": [
+    9823
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.224,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "pinky_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.1148,
+      0.8948
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0356,
+      0.0421
+     ],
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.638,
+      0.1649
+     ],
+     "D5_undefined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0567,
+      0.0812
+     ],
+     "loops": 19
+    }
+   ],
+   "D5_undefined_sides": [
+    "+q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 7,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.169,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9319,
+      1.1256
+     ],
+     "loops": 15
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0906,
+      0.0102
+     ],
+     "loops": 8
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2601,
+      0.321
+     ],
+     "loops": 8
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1544,
+      0.2323
+     ],
+     "loops": 8
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 8,
+   "band_loops_defined": 8,
+   "closed_rings": 10,
+   "closed_rings_anatomical": 10,
+   "loops_legacy": 10,
+   "loops_v2": 10,
+   "margin": 8,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1595,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "thumb_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.4356,
+      0.3543
+     ],
+     "loops": 1
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.8372,
+      1.0255
+     ],
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9473,
+      0.1968
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.3746,
+      0.9688
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [],
+   "band_loops_legacy": 1,
+   "band_loops_defined": null,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 3,
+   "loops_legacy": 1,
+   "loops_v2": 3,
+   "margin": 0,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4376,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_CLOSED_RING",
+   "status_D1_D3": "PASS_FALLBACK_CLOSED_RING"
+  },
+  "thumb_ip_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2301,
+      0.1382
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2732,
+      0.182
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1346,
+      0.122
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.3941,
+      0.8618
+     ],
+     "loops": 1
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 5,
+   "closed_rings": 7,
+   "closed_rings_anatomical": 7,
+   "loops_legacy": 7,
+   "loops_v2": 7,
+   "margin": 5,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2603,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "hip_l": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.593,
+      0.234
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.5234,
+      0.3899
+     ],
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      10.8022,
+      10.3509
+     ],
+     "loops": 9
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.3338,
+      3.5044
+     ],
+     "loops": 6
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": -2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 1.1861,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": false,
+   "strict_D1_D3": false,
+   "status_D1": "FAIL_LOOPS",
+   "status_D1_D3": "FAIL_LOOPS"
+  },
+  "knee_l": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      3.0902,
+      0.9084
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1319,
+      1.2047
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      2.8703,
+      0.7326
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      4.8811,
+      4.9143
+     ],
+     "merged": true
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 17,
+   "closed_rings_anatomical": 17,
+   "loops_legacy": 17,
+   "loops_v2": 17,
+   "margin": 13,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.6951,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ankle_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2551,
+      0.5083
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      2.7617,
+      1.9667
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      2.6134,
+      4.9977
+     ],
+     "loops": 15
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.7543,
+      2.2946
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.6249,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe1_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1959,
+      0.2008
+     ],
+     "loops": 2
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.6368,
+      1.2612
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.461,
+      0.2334
+     ],
+     "D5_undefined": true,
+     "loops": 2
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2165,
+      0.0749
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [
+    "+q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.391,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe1_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1267,
+      0.1661
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.9439,
+      2.0359
+     ],
+     "loops": 2
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.063,
+      0.0867
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0762,
+      0.1103
+     ],
+     "loops": 19
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2678,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2087,
+      0.0409
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.7705,
+      1.2426
+     ],
+     "loops": 17
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3487,
+      0.1361
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3861,
+      0.1385
+     ],
+     "loops": 14
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    57538,
+    57550,
+    57820,
+    57821
+   ],
+   "within2_own_digit": [
+    57538,
+    57550,
+    57820,
+    57821
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2968,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0805,
+      0.1736
+     ],
+     "loops": 2
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.3514,
+      1.5262
+     ],
+     "loops": 18
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0413,
+      0.0696
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0436,
+      0.0566
+     ],
+     "no_path": true
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2456,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0943,
+      0.0123
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.1317,
+      1.1285
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1019,
+      0.0396
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0355,
+      0.0658
+     ],
+     "no_path": true
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 3,
+   "closed_rings_anatomical": 3,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": 1,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    12497
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    12497
+   ],
+   "local_loop_cm": 0.1811,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2116,
+      0.1336
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.4717,
+      0.7518
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2358,
+      0.0859
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.255,
+      0.0473
+     ],
+     "loops": 2
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2559,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0361,
+      0.1277
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7717,
+      1.1459
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1239,
+      0.0575
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1546,
+      0.1801
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "margin": 3,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2036,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1002,
+      0.0183
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.5422,
+      1.1821
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1055,
+      0.0905
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1829,
+      0.0535
+     ],
+     "loops": 4
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [
+    12629,
+    12630
+   ],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [
+    12629,
+    12630
+   ],
+   "within2_poles": [
+    12629,
+    12630
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    12629,
+    12630
+   ],
+   "local_loop_cm": 0.1619,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "FAIL_CREASE_POLE",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+  },
+  "toe4_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.298,
+      0.0136
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.4737,
+      1.0599
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.268,
+      0.097
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3758,
+      0.0558
+     ],
+     "merged": true
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2535,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1446,
+      0.0098
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.2975,
+      1.3628
+     ],
+     "loops": 9
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1183,
+      0.0571
+     ],
+     "loops": 8
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0095,
+      0.0952
+     ],
+     "loops": 21
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1923,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0811,
+      0.047
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.0646,
+      1.1078
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0458,
+      0.0425
+     ],
+     "loops": 24
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1041,
+      0.0231
+     ],
+     "loops": 4
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    13189
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    13189
+   ],
+   "local_loop_cm": 0.1611,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1549,
+      0.0456
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.1664,
+      0.7559
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1581,
+      0.0967
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.824,
+      0.2566
+     ],
+     "D5_undefined": true,
+     "merged": true
+    }
+   ],
+   "D5_undefined_sides": [
+    "-q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": 1,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2803,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0197,
+      0.0436
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8965,
+      0.9279
+     ],
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0685,
+      0.054
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1973,
+      0.0429
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1853,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0919,
+      0.0248
+     ],
+     "loops": 9
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.4507,
+      0.7457
+     ],
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0478,
+      0.0475
+     ],
+     "loops": 10
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0578,
+      0.0176
+     ],
+     "loops": 7
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1656,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "shoulder_r": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.8506,
+      2.3196
+     ],
+     "loops": 11
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      7.6477,
+      5.539
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.7849,
+      4.4327
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.7204,
+      3.9973
+     ],
+     "loops": 10
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 7,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 5,
+   "loops_v2": 7,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.869,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "elbow_r": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3498,
+      0.0973
+     ],
+     "no_path": true
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.5653,
+      1.6444
+     ],
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      4.3735,
+      5.5357
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1164,
+      0.3202
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 4,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.7303,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "wrist_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2416,
+      0.0982
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.191,
+      0.1225
+     ],
+     "loops": 6
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.8841,
+      1.3851
+     ],
+     "loops": 2
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.3069,
+      0.9565
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 10,
+   "closed_rings_anatomical": 10,
+   "loops_legacy": 10,
+   "loops_v2": 10,
+   "margin": 7,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4633,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0431,
+      0.0754
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.3073,
+      0.9749
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2376,
+      0.0985
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.2637,
+      0.2198
+     ],
+     "merged": true
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 5,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "margin": 2,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    3130
+   ],
+   "within2_own_digit": [
+    3130
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.277,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.039,
+      0.0228
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8945,
+      0.8662
+     ],
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3074,
+      0.2913
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3779,
+      1.1779
+     ],
+     "loops": 10
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 5,
+   "closed_rings": 8,
+   "closed_rings_anatomical": 8,
+   "loops_legacy": 8,
+   "loops_v2": 8,
+   "margin": 6,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2112,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1461,
+      0.1149
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9319,
+      0.9345
+     ],
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.274,
+      0.3487
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3553,
+      0.4248
+     ],
+     "loops": 7
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1739,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0819,
+      0.1262
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.1374,
+      1.1684
+     ],
+     "loops": 6
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.099,
+      0.0619
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2866,
+      0.2896
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    2832,
+    2871
+   ],
+   "within2_own_digit": [
+    2832
+   ],
+   "within2_adjacent_digit": [
+    2871
+   ],
+   "local_loop_cm": 0.3465,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0192,
+      0.0557
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8506,
+      0.7495
+     ],
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3821,
+      1.0333
+     ],
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2099,
+      0.1621
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 5,
+   "closed_rings": 7,
+   "closed_rings_anatomical": 7,
+   "loops_legacy": 7,
+   "loops_v2": 7,
+   "margin": 5,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.224,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1111,
+      0.0975
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.077,
+      1.1209
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3231,
+      0.3339
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1479,
+      0.1733
+     ],
+     "loops": 7
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 6,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1545,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1267,
+      0.0693
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.2216,
+      1.3932
+     ],
+     "loops": 9
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1639,
+      0.1119
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2394,
+      0.1076
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    2870
+   ],
+   "within2_own_digit": [
+    2870
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3085,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0693,
+      0.0273
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.0807,
+      0.9651
+     ],
+     "loops": 2
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3132,
+      0.2241
+     ],
+     "loops": 8
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1454,
+      0.0572
+     ],
+     "loops": 7
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1674,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1198,
+      0.09
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.1066,
+      1.0783
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1387,
+      0.1954
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1765,
+      0.2721
+     ],
+     "loops": 6
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 6,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1642,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.161,
+      0.0232
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.4279,
+      1.3338
+     ],
+     "loops": 7
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.4493,
+      0.2943
+     ],
+     "loops": 1
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0627,
+      0.1237
+     ],
+     "loops": 6
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 6,
+   "closed_rings": 1,
+   "closed_rings_anatomical": 1,
+   "loops_legacy": 1,
+   "loops_v2": 6,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    3155
+   ],
+   "within2_own_digit": [
+    3155
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2239,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "pinky_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0356,
+      0.0421
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.1148,
+      0.9121
+     ],
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.638,
+      0.1649
+     ],
+     "D5_undefined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0567,
+      0.0812
+     ],
+     "loops": 19
+    }
+   ],
+   "D5_undefined_sides": [
+    "+q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 7,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.169,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0906,
+      0.0102
+     ],
+     "loops": 8
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.108,
+      0.7329
+     ],
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2601,
+      0.321
+     ],
+     "loops": 8
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1544,
+      0.2323
+     ],
+     "loops": 8
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 8,
+   "closed_rings": 10,
+   "closed_rings_anatomical": 10,
+   "loops_legacy": 10,
+   "loops_v2": 10,
+   "margin": 8,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1595,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "thumb_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.0986,
+      1.0833
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3323,
+      0.3543
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.2968,
+      0.1968
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.646,
+      1.5032
+     ],
+     "loops": 9
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [],
+   "band_loops_legacy": 4,
+   "band_loops_defined": null,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 3,
+   "loops_legacy": 4,
+   "loops_v2": 3,
+   "margin": 0,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4376,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "thumb_ip_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2732,
+      0.182
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2301,
+      0.1382
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1346,
+      0.122
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.2353,
+      0.7847
+     ],
+     "loops": 7
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 5,
+   "closed_rings": 7,
+   "closed_rings_anatomical": 7,
+   "loops_legacy": 7,
+   "loops_v2": 7,
+   "margin": 5,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2598,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "hip_r": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.5234,
+      0.3898
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.5932,
+      0.234
+     ],
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      7.667,
+      9.3432
+     ],
+     "loops": 15
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.3307,
+      3.5078
+     ],
+     "loops": 6
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": -2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 1.1863,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": false,
+   "strict_D1_D3": false,
+   "status_D1": "FAIL_LOOPS",
+   "status_D1_D3": "FAIL_LOOPS"
+  },
+  "knee_r": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1313,
+      1.2049
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      3.09,
+      0.9079
+     ],
+     "loops": 3
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      2.8704,
+      0.7335
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      4.8802,
+      4.9153
+     ],
+     "merged": true
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 17,
+   "closed_rings_anatomical": 17,
+   "loops_legacy": 17,
+   "loops_v2": 17,
+   "margin": 13,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.6946,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ankle_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      2.7445,
+      1.9667
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2552,
+      0.5083
+     ],
+     "loops": 5
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      2.5995,
+      5.1994
+     ],
+     "loops": 16
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.7477,
+      2.2946
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.6241,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe1_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1959,
+      0.2008
+     ],
+     "loops": 2
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.6368,
+      1.5208
+     ],
+     "loops": 6
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2165,
+      0.0749
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.461,
+      0.2334
+     ],
+     "D5_undefined": true,
+     "loops": 2
+    }
+   ],
+   "D5_undefined_sides": [
+    "-q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.391,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe1_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1267,
+      0.1661
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.4468,
+      2.0359
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0762,
+      0.1103
+     ],
+     "loops": 19
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.063,
+      0.0867
+     ],
+     "loops": 4
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2675,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2087,
+      0.0409
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.7704,
+      1.4817
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.386,
+      0.1385
+     ],
+     "loops": 14
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3488,
+      0.1356
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": 1,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    57562,
+    57573,
+    57838,
+    57839
+   ],
+   "within2_own_digit": [
+    57562,
+    57573,
+    57838,
+    57839
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2968,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0805,
+      0.1736
+     ],
+     "loops": 2
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.3521,
+      1.3031
+     ],
+     "loops": 16
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0436,
+      0.0566
+     ],
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0413,
+      0.0696
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2456,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0943,
+      0.0123
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.0472,
+      1.2887
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0355,
+      0.0658
+     ],
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1019,
+      0.0396
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 3,
+   "closed_rings_anatomical": 3,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": 1,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    5900
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    5900
+   ],
+   "local_loop_cm": 0.1811,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2111,
+      0.1337
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.6698,
+      1.3691
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.255,
+      0.0473
+     ],
+     "loops": 2
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2353,
+      0.0858
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2568,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0361,
+      0.1277
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.904,
+      1.2629
+     ],
+     "loops": 17
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1546,
+      0.1801
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1239,
+      0.0575
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2039,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1002,
+      0.0183
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8036,
+      0.7689
+     ],
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1829,
+      0.0535
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1055,
+      0.0905
+     ],
+     "loops": 5
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [
+    6032,
+    6033
+   ],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [
+    6032,
+    6033
+   ],
+   "within2_poles": [
+    6032,
+    6033
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    6032,
+    6033
+   ],
+   "local_loop_cm": 0.1619,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "FAIL_CREASE_POLE",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+  },
+  "toe4_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.298,
+      0.0136
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7587,
+      0.9129
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3758,
+      0.0558
+     ],
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.268,
+      0.097
+     ],
+     "loops": 4
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2534,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1445,
+      0.0098
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9916,
+      1.4233
+     ],
+     "loops": 11
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0095,
+      0.0952
+     ],
+     "loops": 21
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1184,
+      0.0571
+     ],
+     "loops": 8
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1922,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0811,
+      0.047
+     ],
+     "loops": 6
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9032,
+      1.1308
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1041,
+      0.0231
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0458,
+      0.0425
+     ],
+     "loops": 24
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    6593
+   ],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [
+    6593
+   ],
+   "local_loop_cm": 0.1616,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1548,
+      0.0456
+     ],
+     "loops": 3
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.0276,
+      0.684
+     ],
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.824,
+      0.2566
+     ],
+     "D5_undefined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1581,
+      0.0967
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [
+    "+q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2803,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0197,
+      0.0436
+     ],
+     "loops": 4
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7441,
+      0.5971
+     ],
+     "loops": 4
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1973,
+      0.0429
+     ],
+     "loops": 5
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0685,
+      0.054
+     ],
+     "loops": 3
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1859,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0919,
+      0.0253
+     ],
+     "loops": 9
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6977,
+      0.7457
+     ],
+     "loops": 12
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0578,
+      0.0176
+     ],
+     "loops": 7
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0478,
+      0.0475
+     ],
+     "loops": 10
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1656,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  }
+ }
+}

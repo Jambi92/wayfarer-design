@@ -1,5 +1,15 @@
 # Character Design Status
 
+## FENN RP3 — C2 CENTRAL REFERENCE PASS; BODY PASS; HIDDEN-EAR FACE NOT MET → FENN BODY NEEDS RACE-SPECIFIC BRANCH (craniofacial source) — NOT FROZEN (2026-10-27)
+
+- **Gate:** `reviews/claude-rac-rp3-fenn-body-and-ear-branch-gate.md` (order 57dc328). Evidence: `reviews/rac-rp3-evidence/fenn_rp3_v001/`.
+- **FNF181:** 180.99 cm; MF-F-R base + exactly the FNL4 targets / bone scales; rebuild-identical. Candidate in `reviews/reference-assets` (pending acceptance). Skeletal-proxy E-A2 bitrochanteric / crest is a −0.09 % tie (author note).
+- **Body-family candidates:** `E:/…/Fenn/RP3/FN_{M,F}_REF_RP3_bodyfam_v001.blend` (`cbcc4d00…` / `e30215fc…`) on unchanged v005. 69 / 69 D1–D6; Standard v1 gates pass. These are diagnostic: they still carry the human auricle.
+- **Hidden-ear body identity:** PASS.
+- **Hidden-ear facial identity:** NOT MET beyond the orbit / eye region. The accepted FNL4 head is the MPFB human head scaled −1.2 % plus eye targets, so cranium, forehead, cheeks / mid-face and jaw / chin carry no Fenn tendency. This is a source-authoring gap, not a topology one.
+- **Part C (ear branch):** not started (§8 stop rule).
+- **Next:** STOP for ChatGPT review (craniofacial source decision; FNF181 acceptance).
+
 ## SAGEKIN RP3 — AUTHOR ACCEPTED / FROZEN — MPFB FAMILY PROPAGATION PASS (2026-10-27)
 
 - **Freeze record:** `SAGEKIN_RP3_FREEZE.json` (`85147a24…`; E: `Sagekin/RP3/`; copy in `reviews/rac-rp3-evidence/sagekin_rp3_freeze/`).

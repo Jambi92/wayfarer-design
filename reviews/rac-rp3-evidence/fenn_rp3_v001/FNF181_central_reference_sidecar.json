@@ -1,0 +1,142 @@
+{
+ "id": "FNF181",
+ "race": "Fenn",
+ "role": "configuration-2 CENTRAL REFERENCE CANDIDATE (order 57dc328 Part A: PASS - READY FOR BODY PROPAGATION; pending author acceptance)",
+ "construction": "tools/rac/w1/build_variant.py: base MF-F-R_build.json (accepted human-family configuration-2 architecture) + overrides = exactly the FNL4 targets and bone scales + stature 181 (resolve_stature); cfg identical to FNL4 except gender (and id)",
+ "mpfb": "MPFB 2.0.17 / Blender 5.2.2 LTS",
+ "cfg": {
+  "gender": 0.0,
+  "age_years": 35,
+  "age": 0.5769230769,
+  "muscle": 0.5,
+  "weight": 0.5,
+  "proportions": 0.5,
+  "stature": 181.0,
+  "targets": {
+   "measure-napetowaist-dist-decr": 0.3,
+   "torso-scale-depth-decr": 0.35,
+   "torso-scale-horiz-decr": 0.15,
+   "measure-upperarm-length-incr": 0.15,
+   "measure-lowerarm-length-incr": 0.35,
+   "measure-upperleg-height-incr": 0.05,
+   "measure-lowerleg-height-incr": 0.5,
+   "LR:hand-fingers-length-incr": 0.35,
+   "LR:hand-scale-incr": 0.1,
+   "measure-wrist-circ-decr": 0.4,
+   "measure-ankle-circ-decr": 0.4,
+   "measure-knee-circ-decr": 0.6,
+   "LR:eye-scale-incr": 0.7,
+   "LR:eye-height2-incr": 0.6,
+   "hip-scale-horiz-decr": 0.1,
+   "LR:foot-scale-incr": 0.25,
+   "LR:foot-scale-horiz-decr": 0.4
+  },
+  "id": "FNF181",
+  "bone_scales": {
+   "pelvis": [
+    1.04,
+    1.0,
+    1.04
+   ],
+   "spine_01": [
+    1.03,
+    1.0,
+    1.0
+   ],
+   "LR:lowerarm": [
+    0.95,
+    1.005,
+    0.95
+   ],
+   "LR:upperarm": [
+    0.95,
+    1,
+    0.95
+   ],
+   "LR:thigh": [
+    0.96,
+    1,
+    0.96
+   ],
+   "LR:calf": [
+    0.96,
+    1,
+    0.96
+   ]
+  }
+ },
+ "height_macro": 0.63916015625,
+ "height_solve": {
+  "reachable": true,
+  "stature": 180.9921419247985,
+  "iters": 11
+ },
+ "pose": {
+  "arm_abduction_deg": 8.0,
+  "palm_twist_deg_l": 0.14,
+  "palm_residual_deg_l": -0.0,
+  "palm_twist_deg_r": -0.14,
+  "palm_residual_deg_r": 0.0
+ },
+ "stature_r6_cm": 180.9921419247985,
+ "r6": "reviews/reference-assets/r6/FNF181_r6.npz",
+ "r6_sha256": "05c41aa0f7212f97524ed9c02be304df7ce7fa4970230c19401e128b88048b6e",
+ "build_sha256": "80948a51dfacb7098a29e72e8db0b105879def94689197f03c71c9e52f75acf8",
+ "geometry_hash": "2180b53bb95bf7ddf789964022ba222b86754f0038e7ba5859c16e31c79c96a1",
+ "rebuild_identity": {
+  "regen": {
+   "geometry_identical": true,
+   "max_abs_dV_cm": 0.0
+  },
+  "second_full_resolve": "identical (max |dV| 0, same height macro 0.63916015625)"
+ },
+ "integrity": {
+  "verts": 13380,
+  "quads": 13378,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "orientation_inconsistent_edges": 0,
+  "degenerate_faces": 0,
+  "coincident_vertex_pairs": 0,
+  "signed_volume_L": -57.883
+ },
+ "identity": {
+  "canon_measures": 16,
+  "c1_canon_ok": 16,
+  "c2_canon_ok": 15,
+  "c2_replicates_c1_sign": 21,
+  "measures": 22,
+  "c1_failures": [],
+  "c2_failures": [
+   "bitroch_over_crest"
+  ]
+ },
+ "pelvis": {
+  "hip_joint_height_share_gt_MF": {
+   "c1": true,
+   "c2": true
+  },
+  "bitroch_over_crest_not_lower_than_MF": {
+   "c1": true,
+   "c2": false,
+   "c2_pct_by_t": [
+    -0.09,
+    -0.09,
+    -0.09
+   ],
+   "c1_pct_by_t": [
+    0.18,
+    0.19,
+    0.2
+   ],
+   "resolution_note": "proxy alignment residual 0.351 cm on a ~30 cm bitrochanteric breadth = 1.15 % of the ratio; the c2 difference (-0.09 %) is below the method resolution (a tie), not a measurable narrowing"
+  }
+ },
+ "configuration": {
+  "max_abs_fenn_minus_architecture_pct": 4.17,
+  "sign_agreement_with_marchfolk": 22,
+  "measures": 22
+ },
+ "ear_limitation": "carries the MPFB human auricle; not canonical Fenn ear anatomy (order 57dc328 \u00a72)"
+}
