@@ -1,0 +1,9 @@
+# Stage 1 world building broader rock forms and local lighting
+
+The separate v016 development level gives the existing excavation broader uneven rock contours, with local displacement up to roughly 61 cm. Thirty duplicated rock meshes retain their topology; collision follows the visible geometry. Floors, protected walking envelopes, sampled faces, scaffold bearings and embedded detail remain preserved. A bounded lighting adjustment improves the balance between lit work areas and surrounding rock while keeping the study faces readable.
+
+Saved ground, headroom, branch-barrier and recovery-passage checks pass. A fresh full native test passes all 64 continuous movement legs across eight routes, both race-height extremes, walking and sprinting out and back. All terrain samples and route definitions match the previous version. Source seams, native bounds, interior rock cover and embedded ridge fits pass. A separate real-time editor recording checks the descent; sparse diagnostic fixtures do not establish final controllers, crowds or shipping performance.
+
+Eight final native views pass inspection as an incremental rock-contour and lighting milestone. Some inherited wall fins, sharp transitions, repeated textures, props and lighting arrangement still need further art work. The original project and every earlier checkpoint verify unchanged; the compressed development backup and all archived payload hashes verify. Geometry, images, source bibles, local paths and raw diagnostics remain local.
+
+Canonical archaeology and the existing layered-site interpretation remain authoritative. Deposits stay unclassified and potential metal-crafting ingredients remain a proposal without approved identities, recipes, rarity, yields, harvesting or special story associations. No new geography, dialogue or character changes were introduced. No purchases were needed.
