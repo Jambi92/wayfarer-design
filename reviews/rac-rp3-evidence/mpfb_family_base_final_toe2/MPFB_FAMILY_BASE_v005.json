@@ -1,0 +1,352 @@
+{
+ "family_base": "MPFB Family Base v005 (final margin-hardened successor: v004 heel / hip / toe-3 retained, toe-2 closed ring replaced by a dorsal racetrack)",
+ "status": "CANDIDATE - NOT FROZEN (gate: FAMILY BASE PASS WITH DOCUMENTED TOE2 EXCEPTION - AUTHOR DECISION; reviews/claude-rac-rp3-mpfb-family-base-final-toe2-web-gate.md)",
+ "order": "reviews/chatgpt-rac-rp3-mpfb-family-base-final-toe2-web-order.md (33a2dfe)",
+ "history": {
+  "v003": "historical accepted MPFB Family Base v1 (frozen, immutable)",
+  "v004": "margin-hardening provenance (candidate, unchanged)",
+  "v005": "final successor candidate"
+ },
+ "parents": {
+  "v003_freeze_record": {
+   "file": "MF_RP3_v003_FREEZE.json",
+   "sha256": "4af62f81ff4ba55e0396f70397e1e4945739353bc7247bc2ded00b6c12d35ba9",
+   "face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262"
+  },
+  "v004_manifest": {
+   "file": "MPFB_FAMILY_BASE_v004.json",
+   "sha256": "539812cfed5a1b3178973b816670fd7525885fa4c97d1531992745c7e3f43128"
+  }
+ },
+ "topology": {
+  "verts": 57842,
+  "quads": 57840,
+  "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+  "identical_in_all_configurations": true
+ },
+ "maps": {
+  "hm08_to_v005": {
+   "file": "MPFB_FAMILY_BASE_v005_hm08_map.npz",
+   "sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "identical_for_every_race": true
+  },
+  "v003_to_v005": {
+   "file": "MPFB_FAMILY_v003_to_v005_map.npz",
+   "sha256": "928bec17267b81156ec1c569fd1a991cf4c78347df216425bb943647445874db"
+  },
+  "v004_to_v005": {
+   "file": "MPFB_FAMILY_v004_to_v005_map.npz",
+   "sha256": "cdb401a169a604d941aa4c511e2971717f8901534ae821447dc11de1d7e36ee3"
+  },
+  "core": {
+   "file": "MPFB_FAMILY_BASE_v005_core.npz",
+   "sha256": "b24fbae36fcd670046e51a31a12234758a3599070e44a3385102a4c50c0bb8aa"
+  },
+  "row_classes": {
+   "legend": {
+    "0": "frozen v003 row (unchanged)",
+    "1": "new ring vertex, linear edge-midpoint row (seam / UV-guard)",
+    "2": "posterior-heel row re-expressed on-surface barycentric",
+    "3": "new ring vertex, on-surface barycentric row",
+    "4": "frozen v003 vertex re-expressed barycentric by toe-patch fairing / toe-3 crease-pole relocation",
+    "5": "toe-2 racetrack vertex, on-surface barycentric row",
+    "6": "toe-2 racetrack vertex, linear row (seam)",
+    "7": "retained vertex re-expressed barycentric by toe-2 racetrack turn optimisation / fairing"
+   },
+   "counts": {
+    "0": 57636,
+    "1": 5,
+    "2": 8,
+    "3": 127,
+    "4": 22,
+    "5": 36,
+    "6": 0,
+    "7": 8
+   }
+  }
+ },
+ "validator": {
+  "authoritative": "D1 + D3 + D4 + D5 (validator_v2.py --scale-ref 173.143 --d5)",
+  "firm_pass": {
+   "MF-M-R": 69,
+   "MF-F-R": 69,
+   "SK208-C1R": 69,
+   "SKF208": 69
+  },
+  "margin0": {
+   "MF-M-R": [
+    "thumb_mcp_l",
+    "thumb_mcp_r",
+    "toe1_j1_l",
+    "toe1_j1_r",
+    "toe2_j1_l",
+    "toe2_j1_r",
+    "toe2_j2_l",
+    "toe2_j2_r",
+    "toe4_j1_l",
+    "toe4_j1_r"
+   ],
+   "MF-F-R": [
+    "toe1_j1_l",
+    "toe1_j1_r",
+    "toe4_j1_l",
+    "toe4_j1_r"
+   ],
+   "SK208-C1R": [
+    "hip_l",
+    "hip_r",
+    "thumb_mcp_l",
+    "thumb_mcp_r",
+    "toe1_j1_l",
+    "toe1_j1_r",
+    "toe2_j1_l",
+    "toe2_j1_r",
+    "toe4_j1_l",
+    "toe4_j1_r"
+   ],
+   "SKF208": [
+    "toe1_j1_l",
+    "toe1_j1_r"
+   ]
+  }
+ },
+ "toe2": {
+  "architecture": "dorsal racetrack around frozen-v003 loop 497 (strips 497|1262 and 497|1119), sector >= 100 deg from plantar, 8 corner turns",
+  "local_audit": {
+   "MF-M-R": {
+    "quads": 88,
+    "T4": 28,
+    "angle_viol": 24,
+    "aspect_viol": 6,
+    "aspect_gt10": 0,
+    "aspect_max": 4.68,
+    "aspect_p95": 4.62,
+    "angle_p1": 28.4,
+    "angle_p99": 149.1
+   },
+   "MF-F-R": {
+    "quads": 88,
+    "T4": 28,
+    "angle_viol": 24,
+    "aspect_viol": 8,
+    "aspect_gt10": 0,
+    "aspect_max": 4.3,
+    "aspect_p95": 4.17,
+    "angle_p1": 26.3,
+    "angle_p99": 149.8
+   },
+   "SK208-C1R": {
+    "quads": 88,
+    "T4": 30,
+    "angle_viol": 26,
+    "aspect_viol": 6,
+    "aspect_gt10": 0,
+    "aspect_max": 4.7,
+    "aspect_p95": 4.63,
+    "angle_p1": 28.5,
+    "angle_p99": 148.9
+   },
+   "SKF208": {
+    "quads": 88,
+    "T4": 26,
+    "angle_viol": 24,
+    "aspect_viol": 6,
+    "aspect_gt10": 0,
+    "aspect_max": 4.32,
+    "aspect_p95": 4.16,
+    "angle_p1": 28.2,
+    "angle_p99": 146.5
+   }
+  },
+  "toe_ext30_new_flips": {
+   "MF-F-R": {
+    "new_flips": 9,
+    "flipped_in_parent_posed_geometry": 6
+   },
+   "SKF208": {
+    "new_flips": 8,
+    "flipped_in_parent_posed_geometry": 6
+   },
+   "MF-M-R": {
+    "new_flips": 0,
+    "flipped_in_parent_posed_geometry": 0
+   },
+   "SK208-C1R": {
+    "new_flips": 0,
+    "flipped_in_parent_posed_geometry": 0
+   }
+  }
+ },
+ "T4_union": {
+  "MF-M-R": {
+   "v003": {
+    "union": 2322,
+    "quads": 57672,
+    "pct": 4.026,
+    "angle": 935,
+    "aspect": 1563,
+    "asp_gt10": 89
+   },
+   "tw0": {
+    "union": 2371,
+    "quads": 57804,
+    "pct": 4.102,
+    "angle": 956,
+    "aspect": 1603,
+    "asp_gt10": 97
+   },
+   "v004": {
+    "union": 2401,
+    "quads": 57852,
+    "pct": 4.15,
+    "angle": 966,
+    "aspect": 1629,
+    "asp_gt10": 111
+   },
+   "v005": {
+    "union": 2377,
+    "quads": 57840,
+    "pct": 4.11,
+    "angle": 962,
+    "aspect": 1605,
+    "asp_gt10": 97
+   },
+   "delta_pp_v005_vs_v003": 0.084
+  },
+  "MF-F-R": {
+   "v003": {
+    "union": 2271,
+    "quads": 57672,
+    "pct": 3.938,
+    "angle": 938,
+    "aspect": 1489,
+    "asp_gt10": 64
+   },
+   "tw0": {
+    "union": 2301,
+    "quads": 57804,
+    "pct": 3.981,
+    "angle": 948,
+    "aspect": 1521,
+    "asp_gt10": 72
+   },
+   "v004": {
+    "union": 2343,
+    "quads": 57852,
+    "pct": 4.05,
+    "angle": 966,
+    "aspect": 1569,
+    "asp_gt10": 82
+   },
+   "v005": {
+    "union": 2313,
+    "quads": 57840,
+    "pct": 3.999,
+    "angle": 956,
+    "aspect": 1527,
+    "asp_gt10": 72
+   },
+   "delta_pp_v005_vs_v003": 0.061
+  },
+  "SK208-C1R": {
+   "v003": {
+    "union": 3018,
+    "quads": 57672,
+    "pct": 5.233,
+    "angle": 1004,
+    "aspect": 2201,
+    "asp_gt10": 73
+   },
+   "tw0": {
+    "union": 3066,
+    "quads": 57804,
+    "pct": 5.304,
+    "angle": 1024,
+    "aspect": 2241,
+    "asp_gt10": 81
+   },
+   "v004": {
+    "union": 3096,
+    "quads": 57852,
+    "pct": 5.352,
+    "angle": 1034,
+    "aspect": 2267,
+    "asp_gt10": 97
+   },
+   "v005": {
+    "union": 3074,
+    "quads": 57840,
+    "pct": 5.315,
+    "angle": 1032,
+    "aspect": 2243,
+    "asp_gt10": 81
+   },
+   "delta_pp_v005_vs_v003": 0.082
+  },
+  "SKF208": {
+   "v003": {
+    "union": 2274,
+    "quads": 57672,
+    "pct": 3.943,
+    "angle": 870,
+    "aspect": 1549,
+    "asp_gt10": 62
+   },
+   "tw0": {
+    "union": 2304,
+    "quads": 57804,
+    "pct": 3.986,
+    "angle": 882,
+    "aspect": 1579,
+    "asp_gt10": 72
+   },
+   "v004": {
+    "union": 2340,
+    "quads": 57852,
+    "pct": 4.045,
+    "angle": 896,
+    "aspect": 1619,
+    "asp_gt10": 84
+   },
+   "v005": {
+    "union": 2312,
+    "quads": 57840,
+    "pct": 3.997,
+    "angle": 888,
+    "aspect": 1583,
+    "asp_gt10": 72
+   },
+   "delta_pp_v005_vs_v003": 0.054
+  }
+ },
+ "configurations": {
+  "MF-M-R": {
+   "production": "MF_M_REF_RP3_retopo_v005.blend",
+   "sha256": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+   "geometry_hash": "79c986ebbc866d2a5c0ff40e1c45c20e14d6209237108f6739b3ccc12bf40e5f",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+   "sidecar": "MF_M_REF_RP3_retopo_v005.json"
+  },
+  "MF-F-R": {
+   "production": "MF_F_REF_RP3_retopo_v005.blend",
+   "sha256": "f2f2f9dc4bb15ef2ba48f64d1198297f29605a10fee347aac94e12e89e4db75d",
+   "geometry_hash": "6fba379a77e5987fcb46053767c75ef3db013a79be860f169931644ccdc4fc50",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+   "sidecar": "MF_F_REF_RP3_retopo_v005.json"
+  },
+  "SK208-C1R": {
+   "production": "SK_M_REF_RP3_retopo_v003.blend",
+   "sha256": "76229b35c9139c898cff8d4c466032e7b9706f95cd7a03b2f0fb50eec8f320ff",
+   "geometry_hash": "024dd059cb46405e52b80b549e92c7ff1fdeb2296d41213bb3870396165716b8",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+   "sidecar": "SK_M_REF_RP3_retopo_v003.json"
+  },
+  "SKF208": {
+   "production": "SK_F_REF_RP3_retopo_v003.blend",
+   "sha256": "4ff0ce6fcb0f68b08b0c92eee32d53a81a79abd7db415c166d968938c518e5e2",
+   "geometry_hash": "5f73895e9ca6e4ea25d9249f46d65c20e94c3b0e29980606180043cf50c55937",
+   "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+   "sidecar": "SK_F_REF_RP3_retopo_v003.json"
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "file": "SK_F_REF_RP3_retopo_v003.blend",
+ "sha256": "4ff0ce6fcb0f68b08b0c92eee32d53a81a79abd7db415c166d968938c518e5e2",
+ "geometry_hash": "5f73895e9ca6e4ea25d9249f46d65c20e94c3b0e29980606180043cf50c55937",
+ "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+ "verts": 57842,
+ "quads": 57840,
+ "race": "Skarn",
+ "configuration": "SKF208",
+ "status": "MPFB FAMILY BASE v005 FINAL SUCCESSOR CANDIDATE (Skarn) - NOT FROZEN",
+ "source": {
+  "id": "SKF208",
+  "r6": "reviews/reference-assets/r6/SKF208_r6.npz",
+  "r6_sha256": "0245683ec889d36e4d284ad0fe4ae533a3c7ab8ce17c28e46cda92a99769ab4f"
+ },
+ "mapping": {
+  "hm08_map": "SK_F_REF_RP3_retopo_v003_hm08_map.npz",
+  "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+  "family_map": "MPFB_FAMILY_BASE_v005_hm08_map.npz (identical)"
+ },
+ "frame": {
+  "analysis": "cm, x subject left, f forward, u up (R-6)",
+  "blender": "m, Z up, faces -Y, subject left +X, origin = pelvis root projected to ground",
+  "origin_translation_cm": [
+   -0.0,
+   -2.6450254023075104,
+   -0.0
+  ]
+ },
+ "landmarks": "SK_F_REF_RP3_v003_landmarks.json",
+ "readback": {
+  "max_abs_diff_vs_candidate_m": 1.1920928955078125e-07,
+  "faces_equal_candidate": true,
+  "normals_outward": true
+ },
+ "topology": {
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "degenerate_faces": 0,
+  "self_intersection_face_pairs": 94,
+  "T4_angle": 888,
+  "T4_aspect": 1583,
+  "density": {
+   "face": 0.129,
+   "ears": 0.098,
+   "hand": 0.133,
+   "foot": 0.199,
+   "trunk": 0.522,
+   "arm": 0.446,
+   "leg": 0.528,
+   "neck": 0.292,
+   "head": 0.217
+  },
+  "validator_D1_D3_D4_D5_firm_fail": [],
+  "margin0": [
+   "toe1_j1_l",
+   "toe1_j1_r"
+  ]
+ },
+ "anatomy": {
+  "T1_T2_pass": true,
+  "T3_pass": true,
+  "T7_pass": true,
+  "stature_diff_mm": 2e-05,
+  "feet_T2_max_mm": 0.8653,
+  "silhouette_iou": {
+   "front": 0.998042,
+   "rear": 0.998042,
+   "profile_left": 0.998257,
+   "profile_right": 0.99823,
+   "q3_front_left": 0.998404,
+   "q3_front_right": 0.998404
+  }
+ },
+ "gate": "reviews/claude-rac-rp3-mpfb-family-base-final-toe2-web-gate.md"
+}

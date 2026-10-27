@@ -1,0 +1,31 @@
+{
+ "base_tw0": {
+  "command": "RINGS_SPEC=\"hip_support:195:790,toe3_root:508:1264\" python3 tools/rac/rp/marchfolk_rp3_v001/v004_build.py tw0.npz --relocate-toe3",
+  "core_sha256": "fc8b972307bbb765a1aa9856d0307a8fd1b61845963401e3f437577d5e936649",
+  "result": "retained v004 architecture without the toe-2 ring; heel / hip / toe-3 / pole-slide rows bit-identical to v004; SK toe2_j1 D5 = 1 (C1R) -> needs toe-2 support"
+ },
+ "TW1": {
+  "command": "python3 tools/rac/rp/marchfolk_rp3_v001/tw_build.py tw0.npz tw1.npz --sector 110",
+  "core_sha256": "a3fa165d1b6c8fcdae8c5738b1bb5869878a53b6d4f7395ac0ed7f8a739745b3",
+  "result": "dorsal racetrack, turns at loop-497 edges 19 / 0; aspect max 3.5; FAIL: C1R toe2_j1 own-digit crease pole (valence-5 turn corner at axial 0.42 local loop); turn-quad angles 24-157 deg",
+  "verdict": "rejected"
+ },
+ "TW2": {
+  "command": "python3 tools/rac/rp/marchfolk_rp3_v001/tw_build.py tw0.npz v5core.npz --sector 100 --opt",
+  "core_sha256": "b24fbae36fcd670046e51a31a12234758a3599070e44a3385102a4c50c0bb8aa",
+  "result": "turns moved to edges 18 / 0 (outside the crease window); per-turn on-surface angle optimisation; 69/69 x 4 (D1+D3+D4+D5); patch aspect max 4.7, 0 quads > 10; toe ext: 3 (MF-F) / 2 (SK-F) topology-attributable flips",
+  "verdict": "SELECTED (final v005)",
+  "rejected_refinements_inside_TW2": [
+   "tangential fairing 6 it (no gain, toe2 plantar loop 3 -> 2 on MF-M)",
+   "quad-centroid smoothing 3 / 8 it (more angle violations)",
+   "wider optimisation neighbourhood (asymmetric, worse on MF-M / C1R)",
+   "hard 45-135 penalty / 3 passes (more violations)"
+  ]
+ },
+ "TW3": {
+  "command": "python3 tools/rac/rp/marchfolk_rp3_v001/tw_build.py tw0.npz tw3_d0.35.npz --sector 100 --opt --dfrac 0.35",
+  "core_sha256": "20298ce3bea18d9a47956f9231be011d1ff6be8ac73684f4ae0c5720c82c7295",
+  "result": "D-strip split moved toward loop 497: toe-ext topology-attributable flips 2 (MF-F) / 1 (SK-F) instead of 3 / 2, but toe-2 region T-4 +4..+6 and aspect p95 4.7-5.0; still not zero",
+  "verdict": "rejected (trades one flip for worse local quality)"
+ }
+}

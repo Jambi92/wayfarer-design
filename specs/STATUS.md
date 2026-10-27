@@ -1,5 +1,22 @@
 # Character Design Status
 
+## RAC RP3 MPFB Family Base final toe-2 web correction — 2026-10-27 — gate returned: FAMILY BASE PASS WITH DOCUMENTED TOE2 EXCEPTION — AUTHOR DECISION; NOT FROZEN; awaiting ChatGPT review
+
+- **Gate:** `reviews/claude-rac-rp3-mpfb-family-base-final-toe2-web-gate.md` (order 33a2dfe). Evidence: `reviews/rac-rp3-evidence/mpfb_family_base_final_toe2/`.
+- **Rules:** D4 + D5 accepted; the authoritative validator is D1 + D3 + D4 + D5.
+- **Final successor v005:** 57,842 V / 57,840 Q, face `ec768ae2…`, hm08 map `e690fbaf…`.
+  - `E:/…/Marchfolk/RP3/MF_{M,F}_REF_RP3_retopo_v005.blend`
+  - `E:/…/Skarn/RP3/SK_{M,F}_REF_RP3_retopo_v003.blend`
+  - manifest `MPFB_FAMILY_BASE_v005.json`
+  - It keeps the v004 heel / hip / toe-3 work and replaces the toe-2 closed ring with a dorsal racetrack.
+- **Results:**
+  - 69 / 69 on all four.
+  - 0 toe-2 slivers (aspect max 4.7).
+  - No new contact; anatomy, identity, density and face unchanged.
+  - T-4 +0.05–0.08 pp vs v003.
+- **Open:** toe extension 30° on the female configurations — 3 (MF-F) / 2 (SK-F) topology-attributable flipped faces (males 0).
+- **Not done:** nothing frozen; v003 stays active; the standard stays DRAFT pending the author decision.
+
 ## RAC RP3 MPFB Family Base v004 margin hardening — 2026-10-26 — gate returned: NEEDS AUTHOR DECISION (proposed D5); NOT FROZEN; awaiting ChatGPT review
 
 - **Gate:** `reviews/claude-rac-rp3-mpfb-family-base-v004-margin-hardening-gate.md` (order a18371c). Evidence: `reviews/rac-rp3-evidence/mpfb_family_base_v004/`.

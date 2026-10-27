@@ -1,0 +1,156 @@
+{
+ "verts": 57842,
+ "quads": 57840,
+ "row_class_counts": {
+  "0": 57636,
+  "1": 5,
+  "2": 8,
+  "3": 127,
+  "4": 22,
+  "5": 36,
+  "6": 0,
+  "7": 8
+ },
+ "row_class_legend": {
+  "0": "frozen v003 row (unchanged)",
+  "1": "new ring vertex, linear edge-midpoint row (seam / UV-guard)",
+  "2": "posterior-heel row re-expressed on-surface barycentric",
+  "3": "new ring vertex, on-surface barycentric row",
+  "4": "frozen v003 vertex re-expressed barycentric by toe-patch fairing / toe-3 crease-pole relocation",
+  "5": "toe-2 racetrack vertex, on-surface barycentric row",
+  "6": "toe-2 racetrack vertex, linear row (seam)",
+  "7": "retained vertex re-expressed barycentric by toe-2 racetrack turn optimisation / fairing"
+ },
+ "maps": {
+  "v003_to_v005": {
+   "shape": [
+    57842,
+    57674
+   ],
+   "exact_rows": 57710,
+   "max_residual_mm_by_row_class": {
+    "MF-M-R": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 1.5093,
+     "3": 0.7116,
+     "4": 0.8683,
+     "5": 0.7636,
+     "7": 1.1769
+    },
+    "MF-F-R": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 0.3625,
+     "3": 0.8578,
+     "4": 0.6817,
+     "5": 1.0713,
+     "7": 1.6969
+    },
+    "SK208-C1R": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 1.7132,
+     "3": 0.7477,
+     "4": 1.1312,
+     "5": 0.9823,
+     "7": 1.5168
+    },
+    "SKF208": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 0.5797,
+     "3": 0.9469,
+     "4": 0.9428,
+     "5": 1.2191,
+     "7": 1.9787
+    }
+   }
+  },
+  "v004_to_v005": {
+   "shape": [
+    57842,
+    57854
+   ],
+   "exact_rows": 57802,
+   "max_residual_mm_by_row_class": {
+    "MF-M-R": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.7636,
+     "7": 1.1769
+    },
+    "MF-F-R": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 1.0713,
+     "7": 1.6969
+    },
+    "SK208-C1R": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.9823,
+     "7": 1.5168
+    },
+    "SKF208": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 1.2191,
+     "7": 1.9787
+    }
+   }
+  },
+  "hm08_to_v005": {
+   "row_sum_min": 0.9999999999999999,
+   "row_sum_max": 1.0000000000000002,
+   "negative_weights": 0,
+   "max_row_support": 4,
+   "rows_identical_to_v004": 57798
+  }
+ },
+ "weights": {
+  "bones": 53,
+  "sum_min": 0.999899979273323,
+  "sum_max": 1.000000175088644,
+  "min_weight": 0.0,
+  "rows_identical_to_v004": 57798,
+  "identical_rows_max_abs_diff_vs_v004": 0.0,
+  "rule": "v005 weights = M5 @ hm08 weights (convex rows -> partition of unity, non-negative)"
+ },
+ "uv": {
+  "faces_identical_to_v004": 57722,
+  "uv_max_diff_on_those": 0.0,
+  "seam_vertices": 2374,
+  "new_seam_vertices": 0,
+  "uv_in_unit_square": true
+ },
+ "mpfb_target_transfer": {
+  "cases": {
+   "MF-M-R -> MF-F-R": {
+    "max_abs_diff_cm": 5.684341886080802e-14,
+    "equals_target_realization": 0.0
+   },
+   "MF-F-R -> SKF208": {
+    "max_abs_diff_cm": 5.684341886080802e-14,
+    "equals_target_realization": 0.0
+   },
+   "MF-M-R -> SK208-C1R": {
+    "max_abs_diff_cm": 5.684341886080802e-14,
+    "equals_target_realization": 0.0
+   }
+  },
+  "rule": "family-base morph target = M5 @ (hm08 target delta); exact by linearity"
+ }
+}

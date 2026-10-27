@@ -8,7 +8,7 @@
 #  D3 (accepted, 85b7c1c): for digit stations a pole is a crease pole only if its nearest digit axis is the station's own digit.
 #  D4 (ACCEPTED, a18371c): station geometry (band half-width W, probe radius R, pole radius Rp, ring radius / axial window, anatomical fallback
 #     radius) is defined on the family reference body (Marchfolk configuration 1, stature 173.143 cm) and scaled by s = stature / 173.143.
-#  D5 (PROPOSED a18371c return, NOT authoritative; d5=True): digit stations only -- a band side is undefined when the endpoint selected at either band
+#  D5 (ACCEPTED 33a2dfe; d5=True; authoritative with D4): digit stations only -- a band side is undefined when the endpoint selected at either band
 #     end lies farther from its probe line than the band half-width W, i.e. no surface vertex of the digit's own cross-section answers the probe (the
 #     selection fell through to a vertex across an inter-digital web / cleft). The side is then excluded exactly as in D1. Every side always reports
 #     its two endpoint offsets (endpoint_offset_cm) as diagnostics.
@@ -86,7 +86,9 @@ def evaluate(V, Q, meta, ref_stature=0.0, names=None, loops=None, au=None, d5=Fa
         st_d1 = status(firm_d1, loops_d1 >= need, len(cre)); st_d3 = status(firm_d3, loops_d1 >= need, len(cre_own))
         if st_d3 == 'PASS' and not firm_d1 and firm_d3: st_d3 = 'PASS_SCOPED_ADJACENT_DIGIT_POLE'
         if st_d3.startswith('PASS_FALLBACK') and len(adj): st_d3 += '+SCOPED_ADJACENT_DIGIT_POLE'
-        R[nm] = dict(required=need, sides=sides, band_loops_legacy=band_legacy, band_loops_defined=band_def, closed_rings=rings_std, closed_rings_anatomical=rings_anat, loops_legacy=loops_legacy, loops_v2=loops_d1,
+        d5u = [x['side'] for x in sides if x.get('D5_undefined')]
+        if d5u and st_d3.startswith('PASS_FALLBACK'): st_d3 += '+D5_INTERDIGITAL_UNDEFINED'
+        R[nm] = dict(required=need, sides=sides, D5_undefined_sides=d5u, valid_sides=[x['side'] for x in sides if x['defined'] and 'loops' in x], band_loops_legacy=band_legacy, band_loops_defined=band_def, closed_rings=rings_std, closed_rings_anatomical=rings_anat, loops_legacy=loops_legacy, loops_v2=loops_d1,
                      margin=int(loops_d1 - need), loop_mode=mode, crease_poles=[int(p) for p in cre], crease_poles_own_digit=cre_own, crease_poles_adjacent_digit=adj, within2_poles=[int(p) for p in w2],
                      within2_own_digit=w2_own, within2_adjacent_digit=adj_w2, local_loop_cm=round(h, 4), firm_legacy=bool(firm_legacy), strict_legacy=bool(strict_legacy), firm_D1=bool(firm_d1),
                      strict_D1=bool(strict_d1), firm_D1_D3=bool(firm_d3), strict_D1_D3=bool(strict_d3), status_D1=st_d1, status_D1_D3=st_d3)
@@ -95,5 +97,5 @@ def evaluate(V, Q, meta, ref_stature=0.0, names=None, loops=None, au=None, d5=Fa
                 D1_fallback_passes={k: v['status_D1'] for k, v in R.items() if v['status_D1'].startswith('PASS_FALLBACK')},
                 D1_D3_non_plain={k: v['status_D1_D3'] for k, v in R.items() if v['status_D1_D3'] != 'PASS'},
                 margin_zero=sorted(k for k, v in R.items() if v['margin'] == 0), firm_pass_count=int(sum(v['firm_D1_D3'] for v in R.values())), stations=len(R))
-    return dict(validator='RAC §7 validator v2 (D1 + D3 accepted 85b7c1c; D4 stature-normalised station geometry accepted a18371c)', station_scale=SCALE, reference_stature_cm=ref_stature,
+    return dict(validator='RAC §7 validator v2 (D1 + D3 accepted 85b7c1c; D4 stature-normalised station geometry accepted a18371c; D5 interdigital endpoint validity accepted 33a2dfe)', D5_applied=bool(d5), station_scale=SCALE, reference_stature_cm=ref_stature,
                 stature_cm=STATURE, anatomical_ring_radius_cm=ANAT_RING_R, summary=summ, stations=R)

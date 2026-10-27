@@ -2,6 +2,28 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-27) — MPFB FAMILY BASE FINAL TOE-2 WEB CORRECTION — awaiting ChatGPT review
+
+**What was done**
+- Order 33a2dfe executed. Gate: `reviews/claude-rac-rp3-mpfb-family-base-final-toe2-web-gate.md` (PASS WITH DOCUMENTED TOE2 EXCEPTION — AUTHOR DECISION; nothing frozen).
+- **Workspace** `/tmp/claude-0/rt/v5`:
+  - `v5core.npz` = final successor (TW2);
+  - `work/tw0.npz` = v004 without the toe-2 ring; `work/tw1.npz`, `work/tw3_d0.35.npz`;
+  - `cand/*_v005.npz`, `maps/`, `audit/`, `anat/`, `lm/`, `val/`, `def/`, `freeze/`, `sheets/`;
+  - run with `run_v5eval.sh`.
+- **Build:**
+  - `RINGS_SPEC="hip_support:195:790,toe3_root:508:1264" v004_build.py tw0.npz --relocate-toe3`;
+  - then `tw_build.py tw0.npz v5core.npz --sector 100 --opt` (dorsal racetrack around v003 loop 497, strips 497|1262 + 497|1119);
+  - then `make_v5cand.py v5core.npz /tmp/claude-0/rt/v4/v4core.npz WORK`.
+- **Validator:** `validator_v2.py --scale-ref 173.143 --d5` is authoritative (D5 accepted).
+- **Production:** `/mnt/user-data/outputs/rp5/` and E: (MF v005, SK v003, NOT FROZEN).
+
+**Key findings**
+- Fold test (`def/MPFB_v005_flip_parentage.json`): most female toe-extension flips are parent-quad LBS folds. 3 / 2 remain topology-attributable.
+- The rejected v004 ring's toe-extension flips were all parent folds.
+
+**Next:** STOP for ChatGPT review (accept the exception → freeze v005 + Skarn + promote the standard; or TW3; or rig-class deferral).
+
 ## LATEST (2026-10-26) — MPFB FAMILY BASE v004 MARGIN HARDENING — awaiting ChatGPT review
 
 **What was done**

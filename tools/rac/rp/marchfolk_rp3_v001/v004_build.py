@@ -53,6 +53,8 @@ for v in heel:
 M = Ml.tocsr(); print('A heel rows', heel, '%.0fs' % (time.time() - t0), flush=True)
 # ------------------------------------------------------------------ B / C: rings (frozen-v003 loop ids, left side; mirrored)
 RINGS = [('hip_support', 195, 790), ('toe2_root', int(os.environ.get('TOE2A', 497)), int(os.environ.get('TOE2B', 1262))), ('toe3_root', 508, 1264)]
+if os.environ.get('RINGS_SPEC'):                                 # e.g. "hip_support:195:790,toe3_root:508:1264" (v005 toe-2 web order: toe-2 ring removed / replaced)
+    RINGS = [(x.split(':')[0], int(x.split(':')[1]), int(x.split(':')[2])) for x in os.environ['RINGS_SPEC'].split(',')]
 parents = []; ring_of = []
 for nm, la, lb in RINGS:
     for side, (A_, B_) in (('l', (loops0[la], loops0[lb])), ('r', (mir[loops0[la]], mir[loops0[lb]]))):

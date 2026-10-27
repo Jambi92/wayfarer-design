@@ -1,18 +1,19 @@
 # RAC — MPFB Family Propagation Standard v1 (DRAFT)
 
-**Status:** DRAFT. It is **not yet** promoted to AUTHOR-ACCEPTED TECHNICAL STANDARD v1.
-- Written from the first reuse validation (Skarn, order 85b7c1c).
-- Revised by the margin-hardening order a18371c: D4 is incorporated as **accepted**, and successor metrics are recorded below.
-- Promotion criteria (order a18371c §16) are **not met**. The successor family base is 69 / 69 firm on both Marchfolk configurations but 67 / 69 on both Skarn configurations (`toe2_j1_l/r`). That needs an author decision on the proposed D5 rule (§6). Gate: `reviews/claude-rac-rp3-mpfb-family-base-v004-margin-hardening-gate.md`.
+**Status:** DRAFT — **ready for promotion pending one author decision.** It is not yet promoted to AUTHOR-ACCEPTED TECHNICAL STANDARD v1.
+- Written from the first reuse validation (Skarn, order 85b7c1c); revised by orders a18371c and 33a2dfe.
+- **D4 and D5 are accepted** (order 33a2dfe §2). The authoritative validator is D1 + D3 + D4 + D5 (§6).
+- The final family-base candidate v005 is 69 / 69 firm on all four configurations. Promotion (order 33a2dfe §18) needs every gate to pass. One deformation item is open: 3 (MF-F) / 2 (SK-F) toe-extension flips in the new toe-2 support. The gate returned FAMILY BASE PASS WITH DOCUMENTED TOE2 EXCEPTION — AUTHOR DECISION (`reviews/claude-rac-rp3-mpfb-family-base-final-toe2-web-gate.md`).
 
 **Family base**
 
-| | Role | Record | Face topology hash | Verts / quads |
-|---|---|---|---|---|
-| Frozen v003 (MPFB Family Base v1) | **active** | `MF_RP3_v003_FREEZE.json` (`4af62f81…`) | `68f7b6a9…` | 57,674 / 57,672 |
-| Successor v004 (margin-hardened) | **candidate, NOT frozen** | `MPFB_FAMILY_BASE_v004.json` | `2bd4c8b3…` | 57,854 / 57,852 |
+| | Role | Record | Face topology hash | Verts / quads | hm08 map |
+|---|---|---|---|---|---|
+| Frozen v003 (MPFB Family Base v1) | **active** (historical v1) | `MF_RP3_v003_FREEZE.json` (`4af62f81…`) | `68f7b6a9…` | 57,674 / 57,672 | `bc3b7c54…` |
+| v004 (margin hardening) | provenance only | `MPFB_FAMILY_BASE_v004.json` | `2bd4c8b3…` | 57,854 / 57,852 | `19a83550…` |
+| **v005 (final successor)** | **candidate, NOT frozen** | `MPFB_FAMILY_BASE_v005.json` | `ec768ae2…` | 57,842 / 57,840 | `e690fbaf…` |
 
-The successor's hm08 map is `19a83550…`. It becomes the active base only if the author freezes it.
+v005 becomes the active base only when the author freezes it. **Technical process is standardised; race anatomy and identity remain explicit author gates.**
 
 **Scope:** the **technical** pipeline only.
 - The anatomy and identity judgement for each race stays an explicit human / author gate. It is never automated away.
@@ -71,18 +72,17 @@ Implementation: `tools/rac/rp/marchfolk_rp3_v001/val2lib.py`, with CLI `validato
 - **firm** = loops ≥ minimum and no crease pole.
 - **strict** = additionally no pole within 2 loops.
 
-**Hierarchy:** ordinary band → D1 → D3 → D4.
+**Hierarchy:** ordinary band → D1 → D3 → D4 → D5. Authoritative CLI: `validator_v2.py CAND OUT --scale-ref 173.143 --d5`.
 
 | Rule | Status | Effect |
 |---|---|---|
 | **D1** | accepted, 85b7c1c | A band side whose ray exit is undefined is excluded (no probe candidate passes the facing test, normal · side ≤ 0.3). If no side is defined, the station uses closed rings at an anatomical radius (thumb MCP 3.0 cm). Statuses `PASS_FALLBACK_DEFINED_SIDES` and `PASS_FALLBACK_CLOSED_RING` are reported separately. |
 | **D3** | accepted, 85b7c1c | For digit stations, a pole counts only if its nearest digit axis is the audited digit (`…+SCOPED_ADJACENT_DIGIT_POLE`). |
 | **D4** | **accepted, a18371c** | station_scale = race stature / 173.143 (Marchfolk configuration 1). It scales band width W, probe radius R, pole radius Rp, ring radius / axial window and the anatomical fallback radius. **Authoritative.** |
-| **D5** | **proposed, not accepted** | For digit stations only: a band side is undefined when the endpoint selected at either band end lies farther from its probe line than W. This means no vertex of the digit's own cross-section answers the probe; the selection fell through across an inter-digital web. The side is then excluded as in D1. On the v004 successor it changes **only** `toe2_j1_l/r` on Skarn (1 → 2 / 3) and `toe1_j2_l/r` on SK-F (3 → 4, already passing). No verdict changes on Marchfolk. |
+| **D5** | **accepted, 33a2dfe** | For digit stations only: a band side is undefined when the endpoint selected at either band end lies farther from its probe line than W (no vertex of the digit's own cross-section answers the probe; the selection fell across an inter-digital web). The side is excluded exactly as D1 excludes one and never lowers a topology verdict. The status records it (`…+D5_INTERDIGITAL_UNDEFINED`); every station lists its `valid_sides` and `D5_undefined_sides`. **Authoritative with D4.** |
 
 **Reporting.**
-- Report legacy, D1 + D3 and D1 + D3 + D4 verdicts. D1 + D3 + D4 is authoritative.
-- Report D5 separately until it is decided.
+- Report legacy, D1 + D3, D1 + D3 + D4 and D1 + D3 + D4 + D5 verdicts. **D1 + D3 + D4 + D5 is authoritative.**
 - Every station also reports its margin (loops − minimum); every band side reports its endpoint offsets.
 - `tools/rac/rp/mpfb_family/margin_table.py` writes the family margin table.
 
@@ -157,26 +157,37 @@ Cameras are identical across configurations.
   - the manifest: parent base and map hashes, source hashes, production hashes, topology identity, row classes.
 - **Propagation gate decision:** PASS — ready for author freeze / NEEDS RACE-SPECIFIC BRANCH / FAIL, with the race identity gate answered explicitly.
 
-## Family-base margins (D1 + D3 + D4, successor v004 candidate)
+## Family-base margins (D1 + D3 + D4 + D5, final candidate v005)
 
-**Watch items.** At margin 0 in all four configurations: `toe1_j1_l/r` (2 / 2). At margin 0 somewhere:
+Table: `reviews/rac-rp3-evidence/mpfb_family_base_final_toe2/audit/MPFB_FAMILY_v005_margin_table.{json,csv}`. Firm 69 / 69 on MF-M, MF-F, SK-C1R and SK-F.
 
-| Station | Configurations at 2 / 2 or 3 / 3 |
+**At margin 0 in all four:** `toe1_j1_l/r` (2 / 2). **At margin 0 somewhere:**
+
+| Station | Configurations at the minimum |
 |---|---|
+| `toe2_j1_l/r` | MF-M (web side valid, 2 / 2), SK-C1R (dorsal side, 2 / 2) |
 | `thumb_mcp_l/r` | MF-M, SK-C1R |
-| `toe2_j1_l/r` | MF-M |
 | `toe2_j2_l/r` | MF-M |
 | `toe4_j1_l/r` | MF-M, MF-F, SK-C1R |
 | `hip_l/r` | SK-C1R (5 / 5) |
 
-**Heel.** Posterior-heel quad-centre rows are re-expressed on the surface. Foot T-2 max:
+**Heel:** foot T-2 max MF-M 0.92, MF-F 0.83, SK-C1R 1.19, SK-F 0.87 mm (retained from v004).
 
-| MF-M | MF-F | SK-C1R | SK-F |
-|---|---|---|---|
-| 0.92 mm | 0.83 mm | 1.19 mm | 0.87 mm |
+**Toe 2:** dorsal racetrack (no closed ring). Its patch has aspect ≤ 4.7 and no quad with aspect > 10.
 
-The new feet maximum is a medial-arch quad-centre row at 1.19 mm on SK-C1R.
+**Open deformation item:** toe extension 30°, female configurations only. 3 (MF-F) / 2 (SK-F) newly flipped faces are not explained by a fold of their parent quad.
 
-**Open.**
-- `toe2_j1` on Skarn: 1 / 2, resolved only under proposed D5.
-- Toe-root ring quality: the doubled-aspect web-side strip quads, and 4–8 extra flipped faces in toe extension.
+## Propagation checklist (per new MPFB-family race)
+
+1. Regenerate the accepted source; prove geometry identity (§1). Stop on mismatch.
+2. Export hm08; check face list / `src_index` / UV against the active family map (§2).
+3. Realise V = M @ race hm08 with the active map; no topology change, no fitting (§2).
+4. Write the production file in the production frame (§4); read it back exactly (`freeze_check.py`, §5).
+5. Topology identity and integrity (§5).
+6. Validator D1 + D3 + D4 + D5, 69 / 69 firm; family margin table (§6).
+7. Density, 9 zones (§7).
+8. Anatomy T-1 / T-2 / T-3 / T-7; contact against the family parent; race identity gate (§8).
+9. Face readiness (§9).
+10. Deformation sanity, classified (§10).
+11. Visual evidence set (§11); manifest and sidecars (§12).
+12. Author gates: race anatomy and identity (never automated).
