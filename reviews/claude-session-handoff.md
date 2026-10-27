@@ -2,7 +2,24 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-27) — FENN BODY + HIDDEN-EAR GATE — awaiting ChatGPT review
+## LATEST (2026-10-27) — FENN CRANIOFACIAL SOURCE (CF1/CF2/CF3) — awaiting ChatGPT review
+
+**What was done**
+- Order 2de0e28 executed. Gate: `reviews/claude-rac-rp3-fenn-craniofacial-source-gate.md`.
+- **Result:** FENN CRANIOFACIAL PASS — CF2 RECOMMENDED. Nothing frozen.
+- **Workspace** `/tmp/claude-0/rt/fn/cf`:
+  - `probe/` (24 target probes), `cand/` (CF builds + `*_overrides.json`), `cand_v1/` (rejected head-diamond iteration);
+  - `src/`, `fam/`, `audit/`, `anat/`, `lm/`, `val/`, `prod/`, `readback/`, `sheets/`, `ov/`;
+  - `CF_hidden_ear_eval.json`, `CF_expression_sanity.json`.
+  - Run with `build_cf.sh`, then `run_cfeval.sh`, then `cf_eval.py`, `cf_expr.py` (bpy) and `cf_sheets.py`.
+- **Metrics:** `fn_face_metrics.py` uses fixed hm08 landmark vertices from the FNL4 template (replaces the parent gate's band descriptors).
+- **Manifest:** FNF181 body accepted; FNL4 / FNF181 craniofacial provisional.
+- **E:** `Fenn/RP3/craniofacial/`.
+- **Ear-branch prep:** `ear_branch_prep/FENN_EAR_BRANCH_PREP.md` (52-vertex root loop; W1e FN-elven basis).
+
+**Next:** STOP for ChatGPT review: CF selection, then the ear prototype order.
+
+## (previous) 2026-10-27 — FENN BODY + HIDDEN-EAR GATE
 
 **What was done**
 - Order 57dc328 executed. Gate: `reviews/claude-rac-rp3-fenn-body-and-ear-branch-gate.md`.

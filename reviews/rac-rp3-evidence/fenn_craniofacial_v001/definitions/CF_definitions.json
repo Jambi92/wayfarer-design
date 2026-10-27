@@ -1,0 +1,48 @@
+{
+ "architecture": "one MPFB head / cheek / chin target set (CF2 = balanced central); CF1 = 0.55 x CF2, CF3 = 1.6 x CF2 (capped at 1.0); identical target keys and signs for configuration 1 (FNL4) and configuration 2 (FNF181); height macro held (body skeleton unchanged); accepted eye-scale / eye-height targets kept",
+ "design_method": "probe responses of 24 MPFB head-region targets at 0.5 on FNL4 (cf_probe_eval.py) -> bounded ridge least squares (0..0.6, lambda 1, cranium-vault RMS penalty, crown-roundness guard) toward canon-direction descriptor departures; nose / mouth targets excluded (order \u00a74.5); head-diamond rejected after visual review (peaked crown, iteration 1 in cand_v1/)",
+ "candidates": {
+  "CF1": {
+   "strength": 0.55,
+   "targets": {
+    "head-oval": 0.066,
+    "head-scale-horiz-decr": 0.0798,
+    "head-scale-vert-incr": 0.0385,
+    "head-scale-depth-decr": 0.33,
+    "LR:cheek-trans-up": 0.33,
+    "LR:cheek-inner-decr": 0.1375,
+    "LR:cheek-volume-decr": 0.176,
+    "chin-bones-decr": 0.33,
+    "chin-height-decr": 0.077
+   }
+  },
+  "CF2": {
+   "strength": 1.0,
+   "targets": {
+    "head-oval": 0.12,
+    "head-scale-horiz-decr": 0.145,
+    "head-scale-vert-incr": 0.07,
+    "head-scale-depth-decr": 0.6,
+    "LR:cheek-trans-up": 0.6,
+    "LR:cheek-inner-decr": 0.25,
+    "LR:cheek-volume-decr": 0.32,
+    "chin-bones-decr": 0.6,
+    "chin-height-decr": 0.14
+   }
+  },
+  "CF3": {
+   "strength": 1.6,
+   "targets": {
+    "head-oval": 0.192,
+    "head-scale-horiz-decr": 0.232,
+    "head-scale-vert-incr": 0.112,
+    "head-scale-depth-decr": 0.96,
+    "LR:cheek-trans-up": 0.96,
+    "LR:cheek-inner-decr": 0.4,
+    "LR:cheek-volume-decr": 0.512,
+    "chin-bones-decr": 0.96,
+    "chin-height-decr": 0.224
+   }
+  }
+ }
+}

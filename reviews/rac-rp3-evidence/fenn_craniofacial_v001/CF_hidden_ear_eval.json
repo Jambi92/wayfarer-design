@@ -1,0 +1,1456 @@
+{
+ "selection_constraint_pct": 1.0,
+ "configs": {
+  "c1": {
+   "source": {
+    "file": "../../../../home/claude/wayfarer-design/reviews/reference-assets/r6/FNL4_r6.npz",
+    "descriptors": {
+     "cranial_height_over_face": {
+      "value": 0.9656,
+      "vs_MF_pct": -0.01,
+      "vs_SG_pct": -0.01,
+      "human_baseline_pct": 0.01,
+      "canon": 1,
+      "canon_direction_ok": false,
+      "material": false
+     },
+     "skull_breadth_over_HH": {
+      "value": 0.6467,
+      "vs_MF_pct": 0.0,
+      "vs_SG_pct": 0.0,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": false,
+      "material": false
+     },
+     "bizygomatic_over_HH": {
+      "value": 0.5784,
+      "vs_MF_pct": 0.01,
+      "vs_SG_pct": 0.01,
+      "human_baseline_pct": 0.01,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "lower_face_width_over_bizygomatic": {
+      "value": 0.897,
+      "vs_MF_pct": 0.01,
+      "vs_SG_pct": 0.01,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": false,
+      "material": false
+     },
+     "lower_face_height_over_HH": {
+      "value": 0.2546,
+      "vs_MF_pct": 0.01,
+      "vs_SG_pct": 0.01,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": false,
+      "material": false
+     },
+     "jaw_width_over_bizygomatic": {
+      "value": 0.7496,
+      "vs_MF_pct": -0.29,
+      "vs_SG_pct": -0.32,
+      "human_baseline_pct": 0.04,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": false
+     },
+     "cheekbone_height_over_HH": {
+      "value": 0.3625,
+      "vs_MF_pct": 0.03,
+      "vs_SG_pct": 0.02,
+      "human_baseline_pct": 0.02,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": false
+     },
+     "midface_projection_over_HH": {
+      "value": 0.1843,
+      "vs_MF_pct": -0.06,
+      "vs_SG_pct": -0.03,
+      "human_baseline_pct": 0.03,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": false
+     },
+     "forehead_cranium_turn_deg": {
+      "value": 39.9801,
+      "vs_MF_pct": 0.2,
+      "vs_SG_pct": 0.1,
+      "human_baseline_pct": 0.1,
+      "canon": -1,
+      "canon_direction_ok": false,
+      "material": false
+     },
+     "head_height_cm": {
+      "value": 22.9485,
+      "vs_MF_pct": -1.18,
+      "vs_SG_pct": -0.58,
+      "human_baseline_pct": 0.6,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "crown_breadth_over_euryon": {
+      "value": 0.7038,
+      "vs_MF_pct": -0.01,
+      "vs_SG_pct": -0.0,
+      "human_baseline_pct": 0.0,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     }
+    },
+    "systems": {
+     "1 cranium height / shape": {
+      "descriptors": [
+       "cranial_height_over_face"
+      ],
+      "material": false,
+      "direction_ok": false
+     },
+     "2 skull breadth / cranial proportion": {
+      "descriptors": [
+       "skull_breadth_over_HH"
+      ],
+      "material": false,
+      "direction_ok": false
+     },
+     "3 forehead-to-cranium transition": {
+      "descriptors": [
+       "forehead_cranium_turn_deg"
+      ],
+      "material": false,
+      "direction_ok": false
+     },
+     "4 cheekbone / mid-face": {
+      "descriptors": [
+       "cheekbone_height_over_HH",
+       "midface_projection_over_HH"
+      ],
+      "material": false,
+      "direction_ok": true
+     },
+     "5 lower-face mass": {
+      "descriptors": [
+       "lower_face_width_over_bizygomatic",
+       "lower_face_height_over_HH"
+      ],
+      "material": false,
+      "direction_ok": false
+     },
+     "6 jaw / chin": {
+      "descriptors": [
+       "jaw_width_over_bizygomatic"
+      ],
+      "material": false,
+      "direction_ok": true
+     }
+    },
+    "systems_material": 0,
+    "systems_direction_ok": 2,
+    "region_rms_vs_MF_mm": {
+     "cranium_vault": 0.14,
+     "forehead": 0.26,
+     "orbit_eye_region": 1.172,
+     "nose": 0.394,
+     "cheeks_midface": 0.306,
+     "mouth": 0.031,
+     "jaw_chin": 0.079
+    },
+    "region_rms_vs_SG_mm": {
+     "cranium_vault": 0.133,
+     "forehead": 0.26,
+     "orbit_eye_region": 1.175,
+     "nose": 0.393,
+     "cheeks_midface": 0.306,
+     "mouth": 0.022,
+     "jaw_chin": 0.078
+    },
+    "orbit_share_of_face_residual": 0.8,
+    "orbit_is_dominant": true,
+    "nonhead_max_change_mm": 0.0,
+    "stature_cm": 181.162,
+    "head_height_change_pct_vs_source": 0.0
+   },
+   "CF1": {
+    "file": "cf/cand/FNL4-CF1/FNL4-CF1_r6.npz",
+    "descriptors": {
+     "cranial_height_over_face": {
+      "value": 0.9774,
+      "vs_MF_pct": 1.21,
+      "vs_SG_pct": 1.22,
+      "human_baseline_pct": 0.01,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "skull_breadth_over_HH": {
+      "value": 0.6378,
+      "vs_MF_pct": -1.38,
+      "vs_SG_pct": -1.38,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "bizygomatic_over_HH": {
+      "value": 0.5705,
+      "vs_MF_pct": -1.34,
+      "vs_SG_pct": -1.35,
+      "human_baseline_pct": 0.01,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "lower_face_width_over_bizygomatic": {
+      "value": 0.882,
+      "vs_MF_pct": -1.65,
+      "vs_SG_pct": -1.66,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "lower_face_height_over_HH": {
+      "value": 0.2514,
+      "vs_MF_pct": -1.22,
+      "vs_SG_pct": -1.23,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "jaw_width_over_bizygomatic": {
+      "value": 0.7414,
+      "vs_MF_pct": -1.37,
+      "vs_SG_pct": -1.41,
+      "human_baseline_pct": 0.04,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "cheekbone_height_over_HH": {
+      "value": 0.3649,
+      "vs_MF_pct": 0.69,
+      "vs_SG_pct": 0.67,
+      "human_baseline_pct": 0.02,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": false
+     },
+     "midface_projection_over_HH": {
+      "value": 0.1811,
+      "vs_MF_pct": -1.78,
+      "vs_SG_pct": -1.75,
+      "human_baseline_pct": 0.03,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "forehead_cranium_turn_deg": {
+      "value": 39.4298,
+      "vs_MF_pct": -1.17,
+      "vs_SG_pct": -1.28,
+      "human_baseline_pct": 0.1,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "head_height_cm": {
+      "value": 23.1038,
+      "vs_MF_pct": -0.51,
+      "vs_SG_pct": 0.09,
+      "human_baseline_pct": 0.6,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "crown_breadth_over_euryon": {
+      "value": 0.6987,
+      "vs_MF_pct": -0.74,
+      "vs_SG_pct": -0.74,
+      "human_baseline_pct": 0.0,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     }
+    },
+    "systems": {
+     "1 cranium height / shape": {
+      "descriptors": [
+       "cranial_height_over_face"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "2 skull breadth / cranial proportion": {
+      "descriptors": [
+       "skull_breadth_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "3 forehead-to-cranium transition": {
+      "descriptors": [
+       "forehead_cranium_turn_deg"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "4 cheekbone / mid-face": {
+      "descriptors": [
+       "cheekbone_height_over_HH",
+       "midface_projection_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "5 lower-face mass": {
+      "descriptors": [
+       "lower_face_width_over_bizygomatic",
+       "lower_face_height_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "6 jaw / chin": {
+      "descriptors": [
+       "jaw_width_over_bizygomatic"
+      ],
+      "material": true,
+      "direction_ok": true
+     }
+    },
+    "systems_material": 6,
+    "systems_direction_ok": 6,
+    "region_rms_vs_MF_mm": {
+     "cranium_vault": 2.326,
+     "forehead": 1.518,
+     "orbit_eye_region": 1.349,
+     "nose": 0.492,
+     "cheeks_midface": 1.185,
+     "mouth": 0.715,
+     "jaw_chin": 1.199
+    },
+    "region_rms_vs_SG_mm": {
+     "cranium_vault": 2.339,
+     "forehead": 1.517,
+     "orbit_eye_region": 1.352,
+     "nose": 0.491,
+     "cheeks_midface": 1.184,
+     "mouth": 0.713,
+     "jaw_chin": 1.192
+    },
+    "orbit_share_of_face_residual": 0.139,
+    "orbit_is_dominant": false,
+    "nonhead_max_change_mm": 0.058,
+    "stature_cm": 181.317,
+    "head_height_change_pct_vs_source": 0.68
+   },
+   "CF2": {
+    "file": "cf/cand/FNL4-CF2/FNL4-CF2_r6.npz",
+    "descriptors": {
+     "cranial_height_over_face": {
+      "value": 0.987,
+      "vs_MF_pct": 2.21,
+      "vs_SG_pct": 2.21,
+      "human_baseline_pct": 0.01,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "skull_breadth_over_HH": {
+      "value": 0.6306,
+      "vs_MF_pct": -2.49,
+      "vs_SG_pct": -2.49,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "bizygomatic_over_HH": {
+      "value": 0.5642,
+      "vs_MF_pct": -2.44,
+      "vs_SG_pct": -2.45,
+      "human_baseline_pct": 0.01,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "lower_face_width_over_bizygomatic": {
+      "value": 0.8697,
+      "vs_MF_pct": -3.03,
+      "vs_SG_pct": -3.04,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "lower_face_height_over_HH": {
+      "value": 0.2489,
+      "vs_MF_pct": -2.22,
+      "vs_SG_pct": -2.23,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "jaw_width_over_bizygomatic": {
+      "value": 0.7347,
+      "vs_MF_pct": -2.26,
+      "vs_SG_pct": -2.3,
+      "human_baseline_pct": 0.04,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "cheekbone_height_over_HH": {
+      "value": 0.3668,
+      "vs_MF_pct": 1.22,
+      "vs_SG_pct": 1.2,
+      "human_baseline_pct": 0.02,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "midface_projection_over_HH": {
+      "value": 0.1786,
+      "vs_MF_pct": -3.17,
+      "vs_SG_pct": -3.14,
+      "human_baseline_pct": 0.03,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "forehead_cranium_turn_deg": {
+      "value": 38.9905,
+      "vs_MF_pct": -2.28,
+      "vs_SG_pct": -2.38,
+      "human_baseline_pct": 0.1,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "head_height_cm": {
+      "value": 23.2309,
+      "vs_MF_pct": 0.04,
+      "vs_SG_pct": 0.64,
+      "human_baseline_pct": 0.6,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "crown_breadth_over_euryon": {
+      "value": 0.6944,
+      "vs_MF_pct": -1.35,
+      "vs_SG_pct": -1.35,
+      "human_baseline_pct": 0.0,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     }
+    },
+    "systems": {
+     "1 cranium height / shape": {
+      "descriptors": [
+       "cranial_height_over_face"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "2 skull breadth / cranial proportion": {
+      "descriptors": [
+       "skull_breadth_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "3 forehead-to-cranium transition": {
+      "descriptors": [
+       "forehead_cranium_turn_deg"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "4 cheekbone / mid-face": {
+      "descriptors": [
+       "cheekbone_height_over_HH",
+       "midface_projection_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "5 lower-face mass": {
+      "descriptors": [
+       "lower_face_width_over_bizygomatic",
+       "lower_face_height_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "6 jaw / chin": {
+      "descriptors": [
+       "jaw_width_over_bizygomatic"
+      ],
+      "material": true,
+      "direction_ok": true
+     }
+    },
+    "systems_material": 6,
+    "systems_direction_ok": 6,
+    "region_rms_vs_MF_mm": {
+     "cranium_vault": 4.224,
+     "forehead": 2.756,
+     "orbit_eye_region": 1.653,
+     "nose": 0.719,
+     "cheeks_midface": 2.135,
+     "mouth": 1.308,
+     "jaw_chin": 2.191
+    },
+    "region_rms_vs_SG_mm": {
+     "cranium_vault": 4.237,
+     "forehead": 2.755,
+     "orbit_eye_region": 1.655,
+     "nose": 0.717,
+     "cheeks_midface": 2.133,
+     "mouth": 1.306,
+     "jaw_chin": 2.184
+    },
+    "orbit_share_of_face_residual": 0.069,
+    "orbit_is_dominant": false,
+    "nonhead_max_change_mm": 0.106,
+    "stature_cm": 181.444,
+    "head_height_change_pct_vs_source": 1.23
+   },
+   "CF3": {
+    "file": "cf/cand/FNL4-CF3/FNL4-CF3_r6.npz",
+    "descriptors": {
+     "cranial_height_over_face": {
+      "value": 0.9999,
+      "vs_MF_pct": 3.54,
+      "vs_SG_pct": 3.54,
+      "human_baseline_pct": 0.01,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "skull_breadth_over_HH": {
+      "value": 0.6212,
+      "vs_MF_pct": -3.95,
+      "vs_SG_pct": -3.95,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "bizygomatic_over_HH": {
+      "value": 0.5559,
+      "vs_MF_pct": -3.88,
+      "vs_SG_pct": -3.89,
+      "human_baseline_pct": 0.01,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "lower_face_width_over_bizygomatic": {
+      "value": 0.853,
+      "vs_MF_pct": -4.89,
+      "vs_SG_pct": -4.9,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "lower_face_height_over_HH": {
+      "value": 0.2456,
+      "vs_MF_pct": -3.54,
+      "vs_SG_pct": -3.54,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "jaw_width_over_bizygomatic": {
+      "value": 0.7256,
+      "vs_MF_pct": -3.48,
+      "vs_SG_pct": -3.51,
+      "human_baseline_pct": 0.04,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "cheekbone_height_over_HH": {
+      "value": 0.3693,
+      "vs_MF_pct": 1.91,
+      "vs_SG_pct": 1.89,
+      "human_baseline_pct": 0.02,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "midface_projection_over_HH": {
+      "value": 0.1752,
+      "vs_MF_pct": -4.99,
+      "vs_SG_pct": -4.96,
+      "human_baseline_pct": 0.03,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "forehead_cranium_turn_deg": {
+      "value": 38.4193,
+      "vs_MF_pct": -3.71,
+      "vs_SG_pct": -3.81,
+      "human_baseline_pct": 0.1,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "head_height_cm": {
+      "value": 23.4003,
+      "vs_MF_pct": 0.77,
+      "vs_SG_pct": 1.37,
+      "human_baseline_pct": 0.6,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "crown_breadth_over_euryon": {
+      "value": 0.6886,
+      "vs_MF_pct": -2.17,
+      "vs_SG_pct": -2.17,
+      "human_baseline_pct": 0.0,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     }
+    },
+    "systems": {
+     "1 cranium height / shape": {
+      "descriptors": [
+       "cranial_height_over_face"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "2 skull breadth / cranial proportion": {
+      "descriptors": [
+       "skull_breadth_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "3 forehead-to-cranium transition": {
+      "descriptors": [
+       "forehead_cranium_turn_deg"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "4 cheekbone / mid-face": {
+      "descriptors": [
+       "cheekbone_height_over_HH",
+       "midface_projection_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "5 lower-face mass": {
+      "descriptors": [
+       "lower_face_width_over_bizygomatic",
+       "lower_face_height_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "6 jaw / chin": {
+      "descriptors": [
+       "jaw_width_over_bizygomatic"
+      ],
+      "material": true,
+      "direction_ok": true
+     }
+    },
+    "systems_material": 6,
+    "systems_direction_ok": 6,
+    "region_rms_vs_MF_mm": {
+     "cranium_vault": 6.757,
+     "forehead": 4.416,
+     "orbit_eye_region": 2.171,
+     "nose": 1.081,
+     "cheeks_midface": 3.416,
+     "mouth": 2.1,
+     "jaw_chin": 3.514
+    },
+    "region_rms_vs_SG_mm": {
+     "cranium_vault": 6.77,
+     "forehead": 4.415,
+     "orbit_eye_region": 2.173,
+     "nose": 1.079,
+     "cheeks_midface": 3.415,
+     "mouth": 2.098,
+     "jaw_chin": 3.507
+    },
+    "orbit_share_of_face_residual": 0.047,
+    "orbit_is_dominant": false,
+    "nonhead_max_change_mm": 0.169,
+    "stature_cm": 181.613,
+    "head_height_change_pct_vs_source": 1.97
+   }
+  },
+  "c2": {
+   "source": {
+    "file": "../../../../home/claude/wayfarer-design/reviews/reference-assets/r6/FNF181_r6.npz",
+    "descriptors": {
+     "cranial_height_over_face": {
+      "value": 0.9873,
+      "vs_MF_pct": 0.02,
+      "vs_SG_pct": 0.01,
+      "human_baseline_pct": 0.01,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": false
+     },
+     "skull_breadth_over_HH": {
+      "value": 0.6718,
+      "vs_MF_pct": 0.05,
+      "vs_SG_pct": 0.02,
+      "human_baseline_pct": 0.02,
+      "canon": -1,
+      "canon_direction_ok": false,
+      "material": false
+     },
+     "bizygomatic_over_HH": {
+      "value": 0.6021,
+      "vs_MF_pct": 0.06,
+      "vs_SG_pct": 0.03,
+      "human_baseline_pct": 0.03,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "lower_face_width_over_bizygomatic": {
+      "value": 0.8925,
+      "vs_MF_pct": 0.01,
+      "vs_SG_pct": 0.0,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": false,
+      "material": false
+     },
+     "lower_face_height_over_HH": {
+      "value": 0.2552,
+      "vs_MF_pct": 0.01,
+      "vs_SG_pct": 0.01,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": false,
+      "material": false
+     },
+     "jaw_width_over_bizygomatic": {
+      "value": 0.6908,
+      "vs_MF_pct": -0.42,
+      "vs_SG_pct": -0.41,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": false
+     },
+     "cheekbone_height_over_HH": {
+      "value": 0.3425,
+      "vs_MF_pct": -0.04,
+      "vs_SG_pct": -0.02,
+      "human_baseline_pct": 0.02,
+      "canon": 1,
+      "canon_direction_ok": false,
+      "material": false
+     },
+     "midface_projection_over_HH": {
+      "value": 0.1847,
+      "vs_MF_pct": -0.06,
+      "vs_SG_pct": -0.03,
+      "human_baseline_pct": 0.03,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": false
+     },
+     "forehead_cranium_turn_deg": {
+      "value": 36.5123,
+      "vs_MF_pct": 0.12,
+      "vs_SG_pct": 0.06,
+      "human_baseline_pct": 0.06,
+      "canon": -1,
+      "canon_direction_ok": false,
+      "material": false
+     },
+     "head_height_cm": {
+      "value": 22.0649,
+      "vs_MF_pct": -1.27,
+      "vs_SG_pct": -0.67,
+      "human_baseline_pct": 0.6,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "crown_breadth_over_euryon": {
+      "value": 0.6979,
+      "vs_MF_pct": -0.02,
+      "vs_SG_pct": -0.01,
+      "human_baseline_pct": 0.01,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     }
+    },
+    "systems": {
+     "1 cranium height / shape": {
+      "descriptors": [
+       "cranial_height_over_face"
+      ],
+      "material": false,
+      "direction_ok": true
+     },
+     "2 skull breadth / cranial proportion": {
+      "descriptors": [
+       "skull_breadth_over_HH"
+      ],
+      "material": false,
+      "direction_ok": false
+     },
+     "3 forehead-to-cranium transition": {
+      "descriptors": [
+       "forehead_cranium_turn_deg"
+      ],
+      "material": false,
+      "direction_ok": false
+     },
+     "4 cheekbone / mid-face": {
+      "descriptors": [
+       "cheekbone_height_over_HH",
+       "midface_projection_over_HH"
+      ],
+      "material": false,
+      "direction_ok": false
+     },
+     "5 lower-face mass": {
+      "descriptors": [
+       "lower_face_width_over_bizygomatic",
+       "lower_face_height_over_HH"
+      ],
+      "material": false,
+      "direction_ok": false
+     },
+     "6 jaw / chin": {
+      "descriptors": [
+       "jaw_width_over_bizygomatic"
+      ],
+      "material": false,
+      "direction_ok": true
+     }
+    },
+    "systems_material": 0,
+    "systems_direction_ok": 2,
+    "region_rms_vs_MF_mm": {
+     "cranium_vault": 0.137,
+     "forehead": 0.259,
+     "orbit_eye_region": 1.181,
+     "nose": 0.397,
+     "cheeks_midface": 0.314,
+     "mouth": 0.035,
+     "jaw_chin": 0.098
+    },
+    "region_rms_vs_SG_mm": {
+     "cranium_vault": 0.137,
+     "forehead": 0.259,
+     "orbit_eye_region": 1.179,
+     "nose": 0.395,
+     "cheeks_midface": 0.31,
+     "mouth": 0.027,
+     "jaw_chin": 0.089
+    },
+    "orbit_share_of_face_residual": 0.798,
+    "orbit_is_dominant": true,
+    "nonhead_max_change_mm": 0.0,
+    "stature_cm": 180.992,
+    "head_height_change_pct_vs_source": 0.0
+   },
+   "CF1": {
+    "file": "cf/cand/FNF181-CF1/FNF181-CF1_r6.npz",
+    "descriptors": {
+     "cranial_height_over_face": {
+      "value": 0.9997,
+      "vs_MF_pct": 1.28,
+      "vs_SG_pct": 1.27,
+      "human_baseline_pct": 0.01,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "skull_breadth_over_HH": {
+      "value": 0.6623,
+      "vs_MF_pct": -1.36,
+      "vs_SG_pct": -1.38,
+      "human_baseline_pct": 0.02,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "bizygomatic_over_HH": {
+      "value": 0.5938,
+      "vs_MF_pct": -1.32,
+      "vs_SG_pct": -1.35,
+      "human_baseline_pct": 0.03,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "lower_face_width_over_bizygomatic": {
+      "value": 0.8775,
+      "vs_MF_pct": -1.67,
+      "vs_SG_pct": -1.67,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "lower_face_height_over_HH": {
+      "value": 0.2519,
+      "vs_MF_pct": -1.27,
+      "vs_SG_pct": -1.28,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "jaw_width_over_bizygomatic": {
+      "value": 0.6823,
+      "vs_MF_pct": -1.65,
+      "vs_SG_pct": -1.64,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "cheekbone_height_over_HH": {
+      "value": 0.3451,
+      "vs_MF_pct": 0.72,
+      "vs_SG_pct": 0.74,
+      "human_baseline_pct": 0.02,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": false
+     },
+     "midface_projection_over_HH": {
+      "value": 0.1814,
+      "vs_MF_pct": -1.84,
+      "vs_SG_pct": -1.82,
+      "human_baseline_pct": 0.03,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "forehead_cranium_turn_deg": {
+      "value": 36.0245,
+      "vs_MF_pct": -1.22,
+      "vs_SG_pct": -1.27,
+      "human_baseline_pct": 0.06,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "head_height_cm": {
+      "value": 22.2202,
+      "vs_MF_pct": -0.57,
+      "vs_SG_pct": 0.03,
+      "human_baseline_pct": 0.6,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "crown_breadth_over_euryon": {
+      "value": 0.6927,
+      "vs_MF_pct": -0.76,
+      "vs_SG_pct": -0.75,
+      "human_baseline_pct": 0.01,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     }
+    },
+    "systems": {
+     "1 cranium height / shape": {
+      "descriptors": [
+       "cranial_height_over_face"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "2 skull breadth / cranial proportion": {
+      "descriptors": [
+       "skull_breadth_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "3 forehead-to-cranium transition": {
+      "descriptors": [
+       "forehead_cranium_turn_deg"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "4 cheekbone / mid-face": {
+      "descriptors": [
+       "cheekbone_height_over_HH",
+       "midface_projection_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "5 lower-face mass": {
+      "descriptors": [
+       "lower_face_width_over_bizygomatic",
+       "lower_face_height_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "6 jaw / chin": {
+      "descriptors": [
+       "jaw_width_over_bizygomatic"
+      ],
+      "material": true,
+      "direction_ok": true
+     }
+    },
+    "systems_material": 6,
+    "systems_direction_ok": 6,
+    "region_rms_vs_MF_mm": {
+     "cranium_vault": 2.407,
+     "forehead": 1.564,
+     "orbit_eye_region": 1.362,
+     "nose": 0.48,
+     "cheeks_midface": 1.14,
+     "mouth": 0.68,
+     "jaw_chin": 1.14
+    },
+    "region_rms_vs_SG_mm": {
+     "cranium_vault": 2.396,
+     "forehead": 1.552,
+     "orbit_eye_region": 1.36,
+     "nose": 0.482,
+     "cheeks_midface": 1.15,
+     "mouth": 0.683,
+     "jaw_chin": 1.145
+    },
+    "orbit_share_of_face_residual": 0.139,
+    "orbit_is_dominant": false,
+    "nonhead_max_change_mm": 0.058,
+    "stature_cm": 181.147,
+    "head_height_change_pct_vs_source": 0.7
+   },
+   "CF2": {
+    "file": "cf/cand/FNF181-CF2/FNF181-CF2_r6.npz",
+    "descriptors": {
+     "cranial_height_over_face": {
+      "value": 1.0098,
+      "vs_MF_pct": 2.3,
+      "vs_SG_pct": 2.29,
+      "human_baseline_pct": 0.01,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "skull_breadth_over_HH": {
+      "value": 0.6547,
+      "vs_MF_pct": -2.49,
+      "vs_SG_pct": -2.51,
+      "human_baseline_pct": 0.02,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "bizygomatic_over_HH": {
+      "value": 0.5871,
+      "vs_MF_pct": -2.44,
+      "vs_SG_pct": -2.47,
+      "human_baseline_pct": 0.03,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "lower_face_width_over_bizygomatic": {
+      "value": 0.8652,
+      "vs_MF_pct": -3.05,
+      "vs_SG_pct": -3.06,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "lower_face_height_over_HH": {
+      "value": 0.2492,
+      "vs_MF_pct": -2.31,
+      "vs_SG_pct": -2.31,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "jaw_width_over_bizygomatic": {
+      "value": 0.6752,
+      "vs_MF_pct": -2.67,
+      "vs_SG_pct": -2.66,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "cheekbone_height_over_HH": {
+      "value": 0.3472,
+      "vs_MF_pct": 1.33,
+      "vs_SG_pct": 1.35,
+      "human_baseline_pct": 0.02,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "midface_projection_over_HH": {
+      "value": 0.1787,
+      "vs_MF_pct": -3.29,
+      "vs_SG_pct": -3.26,
+      "human_baseline_pct": 0.03,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "forehead_cranium_turn_deg": {
+      "value": 35.6346,
+      "vs_MF_pct": -2.29,
+      "vs_SG_pct": -2.34,
+      "human_baseline_pct": 0.06,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "head_height_cm": {
+      "value": 22.3473,
+      "vs_MF_pct": -0.0,
+      "vs_SG_pct": 0.6,
+      "human_baseline_pct": 0.6,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "crown_breadth_over_euryon": {
+      "value": 0.6884,
+      "vs_MF_pct": -1.38,
+      "vs_SG_pct": -1.37,
+      "human_baseline_pct": 0.01,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     }
+    },
+    "systems": {
+     "1 cranium height / shape": {
+      "descriptors": [
+       "cranial_height_over_face"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "2 skull breadth / cranial proportion": {
+      "descriptors": [
+       "skull_breadth_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "3 forehead-to-cranium transition": {
+      "descriptors": [
+       "forehead_cranium_turn_deg"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "4 cheekbone / mid-face": {
+      "descriptors": [
+       "cheekbone_height_over_HH",
+       "midface_projection_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "5 lower-face mass": {
+      "descriptors": [
+       "lower_face_width_over_bizygomatic",
+       "lower_face_height_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "6 jaw / chin": {
+      "descriptors": [
+       "jaw_width_over_bizygomatic"
+      ],
+      "material": true,
+      "direction_ok": true
+     }
+    },
+    "systems_material": 6,
+    "systems_direction_ok": 6,
+    "region_rms_vs_MF_mm": {
+     "cranium_vault": 4.333,
+     "forehead": 2.826,
+     "orbit_eye_region": 1.663,
+     "nose": 0.694,
+     "cheeks_midface": 2.068,
+     "mouth": 1.254,
+     "jaw_chin": 2.103
+    },
+    "region_rms_vs_SG_mm": {
+     "cranium_vault": 4.322,
+     "forehead": 2.813,
+     "orbit_eye_region": 1.661,
+     "nose": 0.697,
+     "cheeks_midface": 2.078,
+     "mouth": 1.257,
+     "jaw_chin": 2.109
+    },
+    "orbit_share_of_face_residual": 0.069,
+    "orbit_is_dominant": false,
+    "nonhead_max_change_mm": 0.106,
+    "stature_cm": 181.274,
+    "head_height_change_pct_vs_source": 1.28
+   },
+   "CF3": {
+    "file": "cf/cand/FNF181-CF3/FNF181-CF3_r6.npz",
+    "descriptors": {
+     "cranial_height_over_face": {
+      "value": 1.0233,
+      "vs_MF_pct": 3.67,
+      "vs_SG_pct": 3.66,
+      "human_baseline_pct": 0.01,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "skull_breadth_over_HH": {
+      "value": 0.6447,
+      "vs_MF_pct": -3.98,
+      "vs_SG_pct": -4.0,
+      "human_baseline_pct": 0.02,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "bizygomatic_over_HH": {
+      "value": 0.5782,
+      "vs_MF_pct": -3.91,
+      "vs_SG_pct": -3.94,
+      "human_baseline_pct": 0.03,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "lower_face_width_over_bizygomatic": {
+      "value": 0.8484,
+      "vs_MF_pct": -4.93,
+      "vs_SG_pct": -4.93,
+      "human_baseline_pct": 0.0,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "lower_face_height_over_HH": {
+      "value": 0.2458,
+      "vs_MF_pct": -3.67,
+      "vs_SG_pct": -3.68,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "jaw_width_over_bizygomatic": {
+      "value": 0.6657,
+      "vs_MF_pct": -4.05,
+      "vs_SG_pct": -4.03,
+      "human_baseline_pct": 0.01,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "cheekbone_height_over_HH": {
+      "value": 0.35,
+      "vs_MF_pct": 2.14,
+      "vs_SG_pct": 2.16,
+      "human_baseline_pct": 0.02,
+      "canon": 1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "midface_projection_over_HH": {
+      "value": 0.1752,
+      "vs_MF_pct": -5.18,
+      "vs_SG_pct": -5.15,
+      "human_baseline_pct": 0.03,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "forehead_cranium_turn_deg": {
+      "value": 35.127,
+      "vs_MF_pct": -3.68,
+      "vs_SG_pct": -3.73,
+      "human_baseline_pct": 0.06,
+      "canon": -1,
+      "canon_direction_ok": true,
+      "material": true
+     },
+     "head_height_cm": {
+      "value": 22.5167,
+      "vs_MF_pct": 0.76,
+      "vs_SG_pct": 1.36,
+      "human_baseline_pct": 0.6,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     },
+     "crown_breadth_over_euryon": {
+      "value": 0.6825,
+      "vs_MF_pct": -2.22,
+      "vs_SG_pct": -2.21,
+      "human_baseline_pct": 0.01,
+      "canon": 0,
+      "canon_direction_ok": null,
+      "material": null
+     }
+    },
+    "systems": {
+     "1 cranium height / shape": {
+      "descriptors": [
+       "cranial_height_over_face"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "2 skull breadth / cranial proportion": {
+      "descriptors": [
+       "skull_breadth_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "3 forehead-to-cranium transition": {
+      "descriptors": [
+       "forehead_cranium_turn_deg"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "4 cheekbone / mid-face": {
+      "descriptors": [
+       "cheekbone_height_over_HH",
+       "midface_projection_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "5 lower-face mass": {
+      "descriptors": [
+       "lower_face_width_over_bizygomatic",
+       "lower_face_height_over_HH"
+      ],
+      "material": true,
+      "direction_ok": true
+     },
+     "6 jaw / chin": {
+      "descriptors": [
+       "jaw_width_over_bizygomatic"
+      ],
+      "material": true,
+      "direction_ok": true
+     }
+    },
+    "systems_material": 6,
+    "systems_direction_ok": 6,
+    "region_rms_vs_MF_mm": {
+     "cranium_vault": 6.903,
+     "forehead": 4.517,
+     "orbit_eye_region": 2.174,
+     "nose": 1.042,
+     "cheeks_midface": 3.321,
+     "mouth": 2.021,
+     "jaw_chin": 3.391
+    },
+    "region_rms_vs_SG_mm": {
+     "cranium_vault": 6.892,
+     "forehead": 4.505,
+     "orbit_eye_region": 2.173,
+     "nose": 1.045,
+     "cheeks_midface": 3.331,
+     "mouth": 2.023,
+     "jaw_chin": 3.396
+    },
+    "orbit_share_of_face_residual": 0.047,
+    "orbit_is_dominant": false,
+    "nonhead_max_change_mm": 0.169,
+    "stature_cm": 181.443,
+    "head_height_change_pct_vs_source": 2.05
+   }
+  }
+ },
+ "configuration_consistency": {
+  "CF1": {
+   "same_signs": true,
+   "ratio_c2_over_c1": {
+    "cranial_height_over_face": 1.06,
+    "skull_breadth_over_HH": 0.99,
+    "lower_face_width_over_bizygomatic": 1.01,
+    "lower_face_height_over_HH": 1.04,
+    "jaw_width_over_bizygomatic": 1.2,
+    "cheekbone_height_over_HH": 1.04,
+    "midface_projection_over_HH": 1.03,
+    "forehead_cranium_turn_deg": 1.04
+   },
+   "identity_strength_c1": 3.8,
+   "identity_strength_c2": 4.0
+  },
+  "CF2": {
+   "same_signs": true,
+   "ratio_c2_over_c1": {
+    "cranial_height_over_face": 1.04,
+    "skull_breadth_over_HH": 1.0,
+    "lower_face_width_over_bizygomatic": 1.01,
+    "lower_face_height_over_HH": 1.04,
+    "jaw_width_over_bizygomatic": 1.18,
+    "cheekbone_height_over_HH": 1.09,
+    "midface_projection_over_HH": 1.04,
+    "forehead_cranium_turn_deg": 1.0
+   },
+   "identity_strength_c1": 6.86,
+   "identity_strength_c2": 7.15
+  },
+  "CF3": {
+   "same_signs": true,
+   "ratio_c2_over_c1": {
+    "cranial_height_over_face": 1.04,
+    "skull_breadth_over_HH": 1.01,
+    "lower_face_width_over_bizygomatic": 1.01,
+    "lower_face_height_over_HH": 1.04,
+    "jaw_width_over_bizygomatic": 1.16,
+    "cheekbone_height_over_HH": 1.12,
+    "midface_projection_over_HH": 1.04,
+    "forehead_cranium_turn_deg": 0.99
+   },
+   "identity_strength_c1": 10.91,
+   "identity_strength_c2": 11.33
+  }
+ }
+}

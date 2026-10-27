@@ -1,5 +1,16 @@
 # Character Design Status
 
+## FENN RP3 CRANIOFACIAL — PASS, CF2 RECOMMENDED — NOT FROZEN (2026-10-27)
+
+- **Gate:** `reviews/claude-rac-rp3-fenn-craniofacial-source-gate.md` (order 2de0e28). Evidence: `reviews/rac-rp3-evidence/fenn_craniofacial_v001/`.
+- **Accepted:** FNF181 configuration-2 body reference; E-A2 tie; body-family propagation.
+- **Craniofacial candidates:** one MPFB head / cheek / chin target set (CF2), scaled 0.55 / 1.0 / 1.6 for CF1 / CF2 / CF3, identical for FNL4 and FNF181. Height macro held, so the body is unchanged (≤ 0.17 mm at the neck seam).
+- **Hidden-ear face:** 6 / 6 canon systems material (CF1 borderline). Orbit residual share 0.80 → 0.07.
+- **Integrity:** face topology unchanged; 69 / 69; UFCA intact.
+- **E:** `Fenn/RP3/craniofacial/FN_{M,F}_REF_RP3_cf{1,2,3}_v001.blend`.
+- **Ear branch:** preparation note only.
+- **Next:** STOP for ChatGPT review (CF selection; then ear prototypes).
+
 ## FENN RP3 — C2 CENTRAL REFERENCE PASS; BODY PASS; HIDDEN-EAR FACE NOT MET → FENN BODY NEEDS RACE-SPECIFIC BRANCH (craniofacial source) — NOT FROZEN (2026-10-27)
 
 - **Gate:** `reviews/claude-rac-rp3-fenn-body-and-ear-branch-gate.md` (order 57dc328). Evidence: `reviews/rac-rp3-evidence/fenn_rp3_v001/`.
