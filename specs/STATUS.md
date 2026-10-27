@@ -1,5 +1,22 @@
 # Character Design Status
 
+## RAC RP3 MPFB Family Base v004 margin hardening — 2026-10-26 — gate returned: NEEDS AUTHOR DECISION (proposed D5); NOT FROZEN; awaiting ChatGPT review
+
+- **Gate:** `reviews/claude-rac-rp3-mpfb-family-base-v004-margin-hardening-gate.md` (order a18371c). Evidence: `reviews/rac-rp3-evidence/mpfb_family_base_v004/`.
+- **Successor candidate:** one topology on all four configurations, 57,854 V / 57,852 Q, face hash `2bd4c8b3…`, hm08 map `19a83550…`.
+  - `E:/…/Marchfolk/RP3/MF_{M,F}_REF_RP3_retopo_v004.blend`
+  - `E:/…/Skarn/RP3/SK_{M,F}_REF_RP3_retopo_v002.blend`
+  - manifest `MPFB_FAMILY_BASE_v004.json` (CANDIDATE)
+- **Results:**
+  - D4 is implemented.
+  - Heel: C1R feet T-2 1.70 → 1.19 mm.
+  - Hip: MF-M 5 → 6, C1R 4 → 5.
+  - Toe 3: MF-F / SK-F 2 → 3; C1R crease pole cleared.
+  - No new contact; anatomy, identity, density and face unchanged.
+  - T-4 +0.12 pp.
+- **Firm D1 + D3 + D4:** MF 69 / 69 both; Skarn 67 / 69 both (`toe2_j1_l/r`, a web-side probe condition that no ring can fix). Under the proposed D5 rule all four are 69 / 69.
+- **Not done:** frozen v003 stays the active base; v004 is not frozen; Skarn not frozen; the standard stays DRAFT (D4 accepted, D5 proposed).
+
 ## MARCHFOLK RP3 v003 — AUTHOR ACCEPTED / FROZEN — MPFB FAMILY BASE (2026-10-26)
 
 - **Freeze record:** `E:/…/production/Marchfolk/RP3/MF_RP3_v003_FREEZE.json` (`4af62f81…`; copy in `reviews/rac-rp3-evidence/marchfolk_v003_freeze/`).

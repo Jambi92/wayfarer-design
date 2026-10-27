@@ -1,0 +1,529 @@
+{
+ "family_base": "MPFB Family Base v004 (margin-hardened successor of frozen Marchfolk v003)",
+ "status": "CANDIDATE - NOT FROZEN (gate returned NEEDS AUTHOR DECISION; see reviews/claude-rac-rp3-mpfb-family-base-v004-margin-hardening-gate.md)",
+ "order": "reviews/chatgpt-rac-rp3-mpfb-family-base-v004-margin-hardening-order.md (a18371c)",
+ "supersedes_if_frozen": "v003 = historical accepted MPFB Family Base v1 (stays frozen, immutable)",
+ "parent": {
+  "record": "MF_RP3_v003_FREEZE.json",
+  "record_sha256": "4af62f81ff4ba55e0396f70397e1e4945739353bc7247bc2ded00b6c12d35ba9",
+  "files": {
+   "MF_M_REF_RP3_retopo_v003.blend": {
+    "sha256": "5b793eda8d4513a31fa018ef095d2eff25821618b297014a243ec472f6e17276",
+    "geometry_hash": "64ecbff04faf3615e45ee452bc117fc6a49195d9611edb2f1abce64c2f3041da",
+    "face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262",
+    "verts": 57674,
+    "quads": 57672,
+    "sidecar": "MF_M_REF_RP3_retopo_v003.json",
+    "sidecar_sha256": "13879a8aa09839edc8825292629a79d9c138026a9f83948b41562c2f4bce25a8",
+    "landmarks": "MF_M_REF_RP3_v003_landmarks.json",
+    "landmarks_sha256": "8132d507132b9e40b9fabe13b9445aa005c89003400674e7634e23a3c7ab82fb",
+    "note": "sidecar gate_state field predates acceptance; this freeze record supersedes it"
+   },
+   "MF_F_REF_RP3_retopo_v003.blend": {
+    "sha256": "a5d8adfe979e0c6314ddc825062f6f953a24a1288f79c987dff5232ef45dc188",
+    "geometry_hash": "ebf5829d9e6d98192a1fb2771b48feb8983027b22f8c0875bfe1d9c14b6599d4",
+    "face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262",
+    "verts": 57674,
+    "quads": 57672,
+    "sidecar": "MF_F_REF_RP3_retopo_v003.json",
+    "sidecar_sha256": "6a53e72184e0f3b9ef6fede81395525818d06520e40bcff0ad1e62c9b28f1f4d",
+    "landmarks": "MF_F_REF_RP3_v003_landmarks.json",
+    "landmarks_sha256": "953b2359a4c94b0cec30ac50be716c1c5512de42c28ec53a1060b51e972d47c7",
+    "note": "sidecar gate_state field predates acceptance; this freeze record supersedes it"
+   }
+  },
+  "hm08_map_sha256": "bc3b7c548293a2a653e89c13e37c7088b5f12fdb42968fdb6bd9147cfd248a17",
+  "face_topology_hash": "68f7b6a90a40917e40f2ab191218ab7ae2245d0cb1b1b20ede2fe5b56e5e8262",
+  "verts": 57674,
+  "quads": 57672
+ },
+ "topology": {
+  "verts": 57854,
+  "quads": 57852,
+  "face_topology_hash": "2bd4c8b315044a01d577dc33000ece5db71f0f2d4a7b2ec0a8770d8f4fc4dd3f",
+  "identical_in_all_configurations": true
+ },
+ "maps": {
+  "hm08_to_v004": {
+   "file": "MPFB_FAMILY_BASE_v004_hm08_map.npz",
+   "sha256": "19a835501b67d0f3a566729bd373128373d7c533eb2d5a7862ed1a28cf041cb7",
+   "identical_for_every_race": true,
+   "max_row_support": 4,
+   "row_sum": [
+    0.9999999999999999,
+    1.0000000000000002
+   ]
+  },
+  "v003_to_v004": {
+   "file": "MPFB_FAMILY_v003_to_v004_map.npz",
+   "sha256": "5274202e445f4659c816cb7156a0395883d564413534ed83d6791d9a3fc2fc4b",
+   "exact_rows": 57644,
+   "residual_mm_by_row_class": {
+    "MF-M-R": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 1.5093,
+     "3": 0.7116,
+     "4": 0.8683
+    },
+    "MF-F-R": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 0.3625,
+     "3": 0.8578,
+     "4": 0.6817
+    },
+    "SK208-C1R": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 1.7132,
+     "3": 0.7477,
+     "4": 1.1312
+    },
+    "SKF208": {
+     "0": 0.0,
+     "1": 0.0,
+     "2": 0.5797,
+     "3": 0.9469,
+     "4": 0.9428
+    }
+   }
+  },
+  "core": {
+   "file": "MPFB_FAMILY_BASE_v004_core.npz",
+   "sha256": "ce5b8765cf33144b315d3326f4f66df552c060a39f938979e285da8e930ea3d4"
+  },
+  "row_classes": {
+   "legend": {
+    "0": "frozen v003 row (unchanged)",
+    "1": "new ring vertex, linear edge-midpoint row (seam / UV-guard)",
+    "2": "posterior-heel row re-expressed on-surface barycentric",
+    "3": "new ring vertex, on-surface barycentric row",
+    "4": "frozen v003 vertex re-expressed barycentric by toe-patch fairing / toe-3 crease-pole relocation"
+   },
+   "counts": {
+    "0": 57644,
+    "1": 9,
+    "2": 8,
+    "3": 171,
+    "4": 22
+   }
+  }
+ },
+ "operations": {
+  "A_heel": {
+   "vertices": [
+    45557,
+    45811,
+    45819,
+    45830,
+    52280,
+    52537,
+    52545,
+    52557
+   ],
+   "rule": "posterior-heel linear quad-centre rows with v003 deviation > 1.0 mm on any accepted configuration -> on-surface barycentric row of the same hm08 quad"
+  },
+  "B_hip": [
+   {
+    "name": "hip_support_lr",
+    "v003_loop_a": [
+     4217,
+     22237,
+     4218,
+     22240,
+     4219,
+     22242,
+     4220,
+     22244,
+     4221,
+     22246,
+     4222,
+     22248,
+     4223,
+     22251,
+     10858,
+     35445,
+     10857,
+     35443,
+     10856,
+     35441,
+     10855,
+     35439,
+     10854,
+     35436,
+     10853,
+     35438,
+     10867,
+     35449,
+     10860,
+     35451,
+     10918,
+     35571,
+     10917,
+     35572,
+     10920,
+     35575,
+     10919,
+     35576,
+     10921,
+     35579,
+     10922,
+     35582,
+     10962,
+     35669,
+     10965,
+     35676,
+     10966,
+     35674,
+     10964,
+     35671,
+     10963,
+     35673,
+     10984,
+     22500,
+     4335,
+     22499,
+     4360,
+     22505,
+     4337,
+     22503,
+     4338,
+     22506,
+     4340,
+     22508,
+     4339,
+     22501,
+     4336,
+     22401,
+     4292,
+     22398,
+     4291,
+     22395,
+     4289,
+     22394,
+     4290,
+     22391,
+     4287,
+     22390,
+     4288,
+     22255,
+     4225,
+     22253,
+     4233,
+     22239
+    ],
+    "v003_loop_b": [
+     22220,
+     44059,
+     22223,
+     44060,
+     22225,
+     44061,
+     22227,
+     44062,
+     22229,
+     44063,
+     22231,
+     44064,
+     22232,
+     50718,
+     35432,
+     50717,
+     35431,
+     50716,
+     35429,
+     50715,
+     35427,
+     50713,
+     35425,
+     50712,
+     35422,
+     50909,
+     35448,
+     50721,
+     35434,
+     50801,
+     35562,
+     50772,
+     35561,
+     50773,
+     35566,
+     50775,
+     35565,
+     50776,
+     35568,
+     50774,
+     35569,
+     50881,
+     35660,
+     50826,
+     35667,
+     50828,
+     35668,
+     50827,
+     35665,
+     50830,
+     35662,
+     50844,
+     35710,
+     50829,
+     22485,
+     44153,
+     22548,
+     44167,
+     22491,
+     44154,
+     22494,
+     44151,
+     22497,
+     44152,
+     22496,
+     44150,
+     22489,
+     44186,
+     22388,
+     44110,
+     22387,
+     44112,
+     22384,
+     44111,
+     22385,
+     44109,
+     22380,
+     44108,
+     22381,
+     44135,
+     22235,
+     44067,
+     22252,
+     44210
+    ],
+    "strip_quads": 84,
+    "verts_added": 84,
+    "self_mirrored": true
+   }
+  ],
+  "C_toes": [
+   {
+    "name": "toe2_root_l",
+    "strip_quads": 24,
+    "verts_added": 24
+   },
+   {
+    "name": "toe2_root_r",
+    "strip_quads": 24,
+    "verts_added": 24
+   },
+   {
+    "name": "toe3_root_l",
+    "strip_quads": 24,
+    "verts_added": 24
+   },
+   {
+    "name": "toe3_root_r",
+    "strip_quads": 24,
+    "verts_added": 24
+   }
+  ],
+  "C_toe3_pole_slides": [
+   {
+    "pole": 5999,
+    "side": "r",
+    "direction": "distal",
+    "shift_cm": 0.08,
+    "region": 6,
+    "worst_before": "SK208-C1R",
+    "t_over_h_before": 0.463
+   },
+   {
+    "pole": 6558,
+    "side": "r",
+    "direction": "proximal",
+    "shift_cm": 0.06,
+    "region": 6,
+    "worst_before": "SK208-C1R",
+    "t_over_h_before": 0.259
+   },
+   {
+    "pole": 12596,
+    "side": "l",
+    "direction": "distal",
+    "shift_cm": 0.08,
+    "region": 6,
+    "worst_before": "SK208-C1R",
+    "t_over_h_before": 0.464
+   },
+   {
+    "pole": 13154,
+    "side": "l",
+    "direction": "proximal",
+    "shift_cm": 0.06,
+    "region": 6,
+    "worst_before": "SK208-C1R",
+    "t_over_h_before": 0.259
+   }
+  ]
+ },
+ "validator": {
+  "authoritative": "D1 + D3 + D4 (val2lib.py / validator_v2.py --scale-ref 173.143)",
+  "firm_pass": {
+   "MF-M-R": 69,
+   "MF-F-R": 69,
+   "SK208-C1R": 67,
+   "SKF208": 67
+  },
+  "fails": {
+   "MF-M-R": [],
+   "MF-F-R": [],
+   "SK208-C1R": [
+    "toe2_j1_l",
+    "toe2_j1_r"
+   ],
+   "SKF208": [
+    "toe2_j1_l",
+    "toe2_j1_r"
+   ]
+  },
+  "margin0": {
+   "MF-M-R": [
+    "thumb_mcp_l",
+    "thumb_mcp_r",
+    "toe1_j1_l",
+    "toe1_j1_r",
+    "toe2_j1_l",
+    "toe2_j1_r",
+    "toe2_j2_l",
+    "toe2_j2_r",
+    "toe4_j1_l",
+    "toe4_j1_r"
+   ],
+   "MF-F-R": [
+    "toe1_j1_l",
+    "toe1_j1_r",
+    "toe4_j1_l",
+    "toe4_j1_r"
+   ],
+   "SK208-C1R": [
+    "hip_l",
+    "hip_r",
+    "thumb_mcp_l",
+    "thumb_mcp_r",
+    "toe1_j1_l",
+    "toe1_j1_r",
+    "toe4_j1_l",
+    "toe4_j1_r"
+   ],
+   "SKF208": [
+    "toe1_j1_l",
+    "toe1_j1_r"
+   ]
+  },
+  "proposed_D5_firm_pass": {
+   "MF-M-R": 69,
+   "MF-F-R": 69,
+   "SK208-C1R": 69,
+   "SKF208": 69
+  }
+ },
+ "T4_union": {
+  "MF-M-R": {
+   "v003": [
+    2322,
+    57672,
+    4.026,
+    89,
+    31.98
+   ],
+   "v004": [
+    2401,
+    57852,
+    4.15,
+    111,
+    31.98
+   ],
+   "delta_pp": 0.124
+  },
+  "MF-F-R": {
+   "v003": [
+    2271,
+    57672,
+    3.938,
+    64,
+    38.16
+   ],
+   "v004": [
+    2343,
+    57852,
+    4.05,
+    82,
+    38.16
+   ],
+   "delta_pp": 0.112
+  },
+  "SK208-C1R": {
+   "v003": [
+    3018,
+    57672,
+    5.233,
+    73,
+    32.07
+   ],
+   "v004": [
+    3096,
+    57852,
+    5.352,
+    97,
+    32.07
+   ],
+   "delta_pp": 0.119
+  },
+  "SKF208": {
+   "v003": [
+    2274,
+    57672,
+    3.943,
+    62,
+    47.86
+   ],
+   "v004": [
+    2340,
+    57852,
+    4.045,
+    84,
+    47.86
+   ],
+   "delta_pp": 0.102
+  }
+ },
+ "configurations": {
+  "MF-M-R": {
+   "production": "MF_M_REF_RP3_retopo_v004.blend",
+   "sha256": "398dbd26f8e233ce1ccc94a0e991bca4529ee4a73f637c30a91395f6d7341cfc",
+   "geometry_hash": "4aeae464e6f458be941d2286fc1c1f76a7e681a88ec5622bf1481d04550ddbe0",
+   "face_topology_hash": "2bd4c8b315044a01d577dc33000ece5db71f0f2d4a7b2ec0a8770d8f4fc4dd3f",
+   "sidecar": "MF_M_REF_RP3_retopo_v004.json"
+  },
+  "MF-F-R": {
+   "production": "MF_F_REF_RP3_retopo_v004.blend",
+   "sha256": "2729750d39188826dfd7214d20d61d5c2b2e1f454aa7d2171a44bf60d4f0b294",
+   "geometry_hash": "7251a7fe1506ee6577c32b0dd78510c85fccd35788945f5193ba3648f85dd3e5",
+   "face_topology_hash": "2bd4c8b315044a01d577dc33000ece5db71f0f2d4a7b2ec0a8770d8f4fc4dd3f",
+   "sidecar": "MF_F_REF_RP3_retopo_v004.json"
+  },
+  "SK208-C1R": {
+   "production": "SK_M_REF_RP3_retopo_v002.blend",
+   "sha256": "05616b80dd23407a703e384a6c1812144cc3d09d6fe8c477d05c1ce8776a1f57",
+   "geometry_hash": "af3fa9248187a47b1e735543c53148aed731cb81ac947d26436b11f2a8f067dc",
+   "face_topology_hash": "2bd4c8b315044a01d577dc33000ece5db71f0f2d4a7b2ec0a8770d8f4fc4dd3f",
+   "sidecar": "SK_M_REF_RP3_retopo_v002.json"
+  },
+  "SKF208": {
+   "production": "SK_F_REF_RP3_retopo_v002.blend",
+   "sha256": "e595a6c6ff2e7419cd339589e6b7be9a6d744d0bc7004075463508cec4bb1e66",
+   "geometry_hash": "823339f5ec4d55b555b82705d0af11565cfab43b84c03bf5d4d9cb05008ba104",
+   "face_topology_hash": "2bd4c8b315044a01d577dc33000ece5db71f0f2d4a7b2ec0a8770d8f4fc4dd3f",
+   "sidecar": "SK_F_REF_RP3_retopo_v002.json"
+  }
+ }
+}

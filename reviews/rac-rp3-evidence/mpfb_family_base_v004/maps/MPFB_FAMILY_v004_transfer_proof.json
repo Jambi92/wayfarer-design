@@ -1,0 +1,99 @@
+{
+ "verts": 57854,
+ "quads": 57852,
+ "row_class_counts": {
+  "0": 57644,
+  "1": 9,
+  "2": 8,
+  "3": 171,
+  "4": 22
+ },
+ "row_class_legend": {
+  "0": "frozen v003 row (unchanged)",
+  "1": "new ring vertex, linear edge-midpoint row (seam / UV-guard)",
+  "2": "posterior-heel row re-expressed on-surface barycentric",
+  "3": "new ring vertex, on-surface barycentric row",
+  "4": "frozen v003 vertex re-expressed barycentric by toe-patch fairing / toe-3 crease-pole relocation"
+ },
+ "v003_to_v004": {
+  "shape": [
+   57854,
+   57674
+  ],
+  "exact_rows": 57644,
+  "max_residual_mm_by_row_class": {
+   "MF-M-R": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 1.5093,
+    "3": 0.7116,
+    "4": 0.8683
+   },
+   "MF-F-R": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.3625,
+    "3": 0.8578,
+    "4": 0.6817
+   },
+   "SK208-C1R": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 1.7132,
+    "3": 0.7477,
+    "4": 1.1312
+   },
+   "SKF208": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.5797,
+    "3": 0.9469,
+    "4": 0.9428
+   }
+  }
+ },
+ "hm08_map": {
+  "row_sum_min": 0.9999999999999999,
+  "row_sum_max": 1.0000000000000002,
+  "negative_weights": 0,
+  "max_row_support": 4,
+  "unchanged_rows_identical_to_frozen": true
+ },
+ "weights": {
+  "bones": 53,
+  "sum_min": 0.999899979273323,
+  "sum_max": 1.000000175088644,
+  "min_weight": 0.0,
+  "unchanged_rows_max_abs_diff_vs_v003": 0.0,
+  "rule": "v004 weights = M4 @ hm08 weights (partition of unity and non-negativity inherited because every map row is a convex combination)"
+ },
+ "uv": {
+  "faces_unchanged": 57492,
+  "faces_unchanged_uv_max_diff": 0.0,
+  "seam_vertices_v003": 2369,
+  "seam_vertices_v004": 2378,
+  "new_seam_vertices": 9,
+  "uv_in_unit_square": true,
+  "rule": "one per-corner UV layout for the family base (identical for every race); split faces interpolate their parent corner UVs; re-expressed non-seam vertices take the hm08 UV at their barycentric point"
+ },
+ "mpfb_target_transfer": {
+  "cases": {
+   "MF-M-R -> MF-F-R": {
+    "max_abs_diff_cm": 5.684341886080802e-14,
+    "equals_target_realization": 0.0,
+    "delta_max_cm": 7.654594071209431
+   },
+   "MF-F-R -> SKF208": {
+    "max_abs_diff_cm": 5.684341886080802e-14,
+    "equals_target_realization": 0.0,
+    "delta_max_cm": 35.01759581267834
+   },
+   "MF-M-R -> SK208-C1R": {
+    "max_abs_diff_cm": 5.684341886080802e-14,
+    "equals_target_realization": 0.0,
+    "delta_max_cm": 34.86305866390467
+   }
+  },
+  "rule": "a family-base morph target = M4 @ (hm08 target delta); exact by linearity (the map has no per-race term)"
+ }
+}

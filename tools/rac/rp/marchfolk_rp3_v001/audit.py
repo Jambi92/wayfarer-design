@@ -94,7 +94,7 @@ R['angle_p01_p99'] = [round(float(np.percentile(ang, 1)), 1), round(float(np.per
 el = np.linalg.norm(V[uE[:, 0]] - V[uE[:, 1]], axis=1); ez = zone_f[uE[:, 0]]; same = zone_f[uE[:, 0]] == zone_f[uE[:, 1]]
 LIM = {'face': 0.25, 'ears': 0.25, 'hand': 0.3, 'foot': 0.3, 'trunk': 0.6, 'arm': 0.6, 'leg': 0.6, 'neck': 0.6, 'head': 0.6}
 R['density_pct_of_stature'] = {k: dict(mean=round(float(el[same & (ez == k)].mean() / stature * 100), 3), median=round(float(np.median(el[same & (ez == k)]) / stature * 100), 3),
-                                       p90=round(float(np.percentile(el[same & (ez == k)], 90) / stature * 100), 3), limit=LIM.get(k), pass_mean=bool(el[same & (ez == k)].mean() / stature * 100 <= LIM.get(k, 9)))
+                                       p90=round(float(np.percentile(el[same & (ez == k)], 90) / stature * 100), 3), p95=round(float(np.percentile(el[same & (ez == k)], 95) / stature * 100), 3), limit=LIM.get(k), pass_mean=bool(el[same & (ez == k)].mean() / stature * 100 <= LIM.get(k, 9)))
                                for k in LIM if (same & (ez == k)).any()}
 R['density_overall_median_pct'] = round(float(np.median(el) / stature * 100), 3)
 # ---------- edge loops

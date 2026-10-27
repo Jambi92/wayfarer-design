@@ -1,0 +1,85 @@
+{
+ "file": "MF_M_REF_RP3_retopo_v004.blend",
+ "sha256": "398dbd26f8e233ce1ccc94a0e991bca4529ee4a73f637c30a91395f6d7341cfc",
+ "geometry_hash": "4aeae464e6f458be941d2286fc1c1f76a7e681a88ec5622bf1481d04550ddbe0",
+ "face_topology_hash": "2bd4c8b315044a01d577dc33000ece5db71f0f2d4a7b2ec0a8770d8f4fc4dd3f",
+ "verts": 57854,
+ "quads": 57852,
+ "race": "Marchfolk",
+ "configuration": "MF-M-R",
+ "status": "MPFB FAMILY BASE v004 SUCCESSOR CANDIDATE (Marchfolk) - NOT FROZEN",
+ "source": {
+  "id": "MF-M-R",
+  "r6": "reviews/reference-assets/r6/MF-M-R_r6.npz",
+  "r6_sha256": "2caaf056fff559c8c2c8b92dd5e2bc751be0c3efd9a98d0f8d4a7052f65be4d7"
+ },
+ "mapping": {
+  "hm08_map": "MF_M_REF_RP3_retopo_v004_hm08_map.npz",
+  "hm08_map_sha256": "19a835501b67d0f3a566729bd373128373d7c533eb2d5a7862ed1a28cf041cb7",
+  "family_map": "MPFB_FAMILY_BASE_v004_hm08_map.npz (identical)"
+ },
+ "frame": {
+  "analysis": "cm, x subject left, f forward, u up (R-6)",
+  "blender": "m, Z up, faces -Y, subject left +X, origin = pelvis root projected to ground",
+  "origin_translation_cm": [
+   -0.0,
+   -0.3167869057506323,
+   -0.0
+  ]
+ },
+ "landmarks": "MF_M_REF_RP3_v004_landmarks.json",
+ "readback": {
+  "max_abs_diff_vs_candidate_m": 5.959994497928278e-08,
+  "faces_equal_candidate": true,
+  "normals_outward": true
+ },
+ "topology": {
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "degenerate_faces": 0,
+  "self_intersection_face_pairs": 60,
+  "T4_angle": 966,
+  "T4_aspect": 1629,
+  "density": {
+   "face": 0.137,
+   "ears": 0.103,
+   "hand": 0.139,
+   "foot": 0.195,
+   "trunk": 0.507,
+   "arm": 0.483,
+   "leg": 0.514,
+   "neck": 0.325,
+   "head": 0.239
+  },
+  "validator_D1_D3_D4_firm_fail": [],
+  "validator_D1_D3_D4_margin0": [
+   "thumb_mcp_l",
+   "thumb_mcp_r",
+   "toe1_j1_l",
+   "toe1_j1_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe2_j2_l",
+   "toe2_j2_r",
+   "toe4_j1_l",
+   "toe4_j1_r"
+  ]
+ },
+ "anatomy": {
+  "T1_T2_pass": true,
+  "T3_pass": true,
+  "T7_pass": true,
+  "stature_diff_mm": -0.41461,
+  "feet_T2_max_mm": 0.9185,
+  "silhouette_iou": {
+   "front": 0.997808,
+   "rear": 0.997808,
+   "profile_left": 0.997334,
+   "profile_right": 0.997295,
+   "q3_front_left": 0.998113,
+   "q3_front_right": 0.998068
+  }
+ },
+ "gate": "reviews/claude-rac-rp3-mpfb-family-base-v004-margin-hardening-gate.md"
+}

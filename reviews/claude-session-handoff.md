@@ -2,6 +2,30 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-26) — MPFB FAMILY BASE v004 MARGIN HARDENING — awaiting ChatGPT review
+
+**What was done**
+- Order a18371c executed. Gate: `reviews/claude-rac-rp3-mpfb-family-base-v004-margin-hardening-gate.md` (NEEDS AUTHOR DECISION, D5; nothing frozen).
+- **Workspace** `/tmp/claude-0/rt/v4`:
+  - `v4core.npz` = the successor definition (Q, UV, M, row_class, ring_parents);
+  - `cand/<ID>_v004.npz` for the four configurations;
+  - `maps/`, `audit/`, `anat/`, `lm/`, `val/`, `def/`, `freeze/` (read-backs), `sheets/`;
+  - `work/` holds the search JSONs and debug scripts.
+  - Run with `run_v4eval.sh`; then `margin_table.py`, `v4_sheets.py`, `family_manifest_v4.py`.
+- **Build:** `v004_build.py OUT --relocate-toe3`.
+  - Heel rows: rule-selected, 8 vertices.
+  - Rings: hip strip 195 | 790 (self-mirrored), toe2 strip 497 | 1262, toe3 strip 508 | 1264; frozen-v003 loop ids from `closed_loops`.
+  - Minimal toe-3 crease-pole slides.
+- **Validator:** now the library `val2lib.py` (D4 accepted; D5 proposed via `d5=True`); `validator_v2.py` is its CLI (regression-identical).
+- **Production:** `/mnt/user-data/outputs/rp4/` and E: (MF v004, SK v002, NOT FROZEN).
+
+**Key finding**
+- Skarn `toe2_j1` is 1 / 2 because the web-side band "path" is a single edge of loop 1120. No closed strip crosses it, so no ring can fix it.
+- D5 (endpoint offset > W ⇒ side undefined, digits only) changes only that station.
+- Validator semantics: the facing test uses inward numeric normals in the analysis frame.
+
+**Next:** STOP for ChatGPT review (accept / reject D5; the toe-ring local slivers and flips; freeze).
+
 ## LATEST (2026-10-26) — MARCHFOLK v003 FROZEN + SKARN FAMILY PROPAGATION — awaiting ChatGPT review
 
 **What was done**
