@@ -1,0 +1,9 @@
+# Stage 1 world building: connected caverns and elevated study access
+
+The separate v012 development level replaces the overly straight upper excavation route with a bending descent, two broader irregular caverns and side passages that rise and descend into survey/study areas. Variable ceilings give the chambers a different scale from the connecting tunnels. A timber scaffold with switchback stairs reaches an elevated wall study deck. Plain stonework placeholders suggest areas under investigation without assigning artifact identities, inscriptions or new lore.
+
+The deeper ancient construction and the Main Story Bible/Prologue progression remain. The upper physical floor and route geometry are deliberately rebuilt in this new copy. All native terrain heights remain unchanged. Saved geometry, passage and barrier checks pass, followed by fifty-six continuous walking/sprinting legs across seven paths for the smallest and largest race-height fixtures, including scaffold ascent and descent. These are diagnostic fixtures, not final character-controller, crowd or assisted-evacuation acceptance.
+
+A separate real-time main-descent performance recording maintains ground contact. It is an early sparse editor sample, not shipping or populated-world performance acceptance. The original project and every prior checkpoint verify unchanged, and a new compressed development checkpoint is verified. Character work and approved production assets remain untouched. No purchases were needed.
+
+This is an early layout and traversal milestone. Rock silhouettes, lighting, scaffolding and unlabelled study pieces still need final environment-art treatment. Authored event logic, dialogue, NPC navigation and detailed excavation activity remain future work. Approved map registration is still required before geographical expansion. Geometry, screenshots, source bibles, local paths and raw diagnostic records remain local; only this progress summary is published.
