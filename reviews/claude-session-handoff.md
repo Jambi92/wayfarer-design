@@ -2,7 +2,33 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-27) — MPFB FAMILY BASE v005 FROZEN + SKARN FROZEN + STANDARD v1 ACCEPTED — awaiting ChatGPT review
+## LATEST (2026-10-27) — SAGEKIN CONFIG-2 REFERENCE + FAMILY PROPAGATION — awaiting ChatGPT review
+
+**What was done**
+- Order c6c7940 executed. Gate: `reviews/claude-rac-rp3-sagekin-config2-reference-and-propagation-gate.md`.
+  - Part A PASS (SGF178).
+  - Part B NEEDS AUTHOR DECISION on proposed validator rule D6.
+  - Nothing frozen; no topology change.
+- **Workspace** `/tmp/claude-0/rt/sg`:
+  - `src/` (regen + native), `cand/*_fam.npz`, `audit/`, `anat/`, `lm/`, `val/`, `def/`, `prod/`, `readback/`;
+  - `partA/` (`resolve/` full SGF178 re-solve; `cmp/` MFF178 / MFM178 diagnostic comparators);
+  - `hipdiag/`, `d6/`, `sheets/`;
+  - run with `run_sgeval.sh`.
+- **Tools** (`tools/rac/rp/sagekin_rp3_v001/`):
+  - `partA_reference.py`, `hip_diag.py`, `contact_prop.py`, `sg_identity.py`, `sg_extra_sheets.py`, `sg_manifest.py WORK EVIDIR`.
+  - Standard sheets: `FAM_VAL=_D4_D5 family_sheets.py WORK Sagekin SG:SG SGF178:SGF178`.
+- **Proposed D6:** `val2lib.evaluate(d6=(W, bones))` / `validator_v2.py --d6-native NATIVE.npz`. Off by default; the authoritative output is unchanged.
+- **Production candidates:** E: `Sagekin/RP3/SG_{M,F}_REF_RP3_retopo_v001.*` plus the manifest and the SGF178 sidecar. PC read-back sha is equal. Staging copies are in `/mnt/user-data/outputs/sg_rp3`.
+
+**Key finding**
+- The hip +p band side lands on the forearm in the R-6 stance on every family realization (elbow −p lands on the trunk).
+- The longer Sagekin forearm drops that forearm count to 4, so SG hip is 4 / 5.
+- D6 → 69 / 69 on all six configurations.
+- If D6 is rejected, a ring search found single-ring options (e.g. 424 | 1043) that make all six firm; this would need a new order.
+
+**Next:** STOP for ChatGPT review: D6 ruling, SGF178 acceptance as the configuration-2 central reference, Sagekin freeze.
+
+## (previous) 2026-10-27 — MPFB FAMILY BASE v005 FROZEN + SKARN FROZEN + STANDARD v1 ACCEPTED
 
 **What was done**
 - Order 78a109f executed. Freeze by record; no file was re-saved.

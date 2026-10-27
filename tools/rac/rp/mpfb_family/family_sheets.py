@@ -27,7 +27,8 @@ def ramp(t):
 for cid, lab in IDS:
     nz = np.load('%s/src/%s_native.npz' % (W, cid)); fz = np.load('%s/cand/%s_fam.npz' % (W, cid)); m = json.loads(str(nz['meta'])); Hd = {k: np.array(v) for k, v in m['heads'].items()}
     Vn, Qn, Vf, Qf = nz['V'], nz['Q'], fz['V'], fz['Q']; st = Vn[:, 2].max() - Vn[:, 2].min()
-    val = json.load(open('%s/val/%s_fam_validator_v2.json' % (W, cid)))['stations']; au = json.load(open('%s/audit/%s_fam_audit.json' % (W, cid))); aun = json.load(open('%s/audit/%s_native_audit.json' % (W, cid)))
+    VS = os.environ.get('FAM_VAL', ''); VL = os.environ.get('FAM_VAL_LABEL', 'D1 + D3')   # e.g. FAM_VAL=_D4_D5 FAM_VAL_LABEL='D1 + D3 + D4 + D5' (authoritative since 78a109f)
+    val = json.load(open('%s/val/%s_fam_validator_v2%s.json' % (W, cid, VS)))['stations']; au = json.load(open('%s/audit/%s_fam_audit.json' % (W, cid))); aun = json.load(open('%s/audit/%s_native_audit.json' % (W, cid)))
     an = json.load(open('%s/anat/%s_fam_anatomy.json' % (W, cid))); fr = json.load(open('%s/audit/%s_fam_face.json' % (W, cid))); frn = json.load(open('%s/audit/%s_native_face.json' % (W, cid)))
     lz = np.load('%s/audit/%s_fam_loops.npz' % (W, cid), allow_pickle=True); loops = lz['loops']; jl = json.loads(str(lz['joint_loop_ids'])); poles = lz['poles']
     # ---- body
@@ -73,7 +74,7 @@ for cid, lab in IDS:
           ('pelvis', (0.15, 1, 0.1), Hd['thigh_l'] + [-6, 0, -4], 16, ['hip_l']), ('knee', (0.3, 1, 0.1), Hd['calf_l'], 11, ['knee_l']),
           ('foot', (0.6, 0.6, 0.55), Hd['ball_l'] + [0, 1.5, 0], 10, ['ankle_l', 'toe1_j1_l', 'toe2_j1_l', 'toe3_j1_l', 'toe3_j3_l', 'toe4_j2_l', 'toe5_j1_l'])]
     cell = 250; S = Image.new('RGB', (3 * cell + 420, 40 + len(CU) * (cell + 8)), 'white'); d = ImageDraw.Draw(S)
-    d.text((10, 8), '%s %s close-ups — source hm08 wire | family wire | family counted loops (poles red); validator v2 (D1 + D3) per station' % (RACE, cid), fill=(0, 0, 0), font=f(13, True))
+    d.text((10, 8), '%s %s close-ups — source hm08 wire | family wire | family counted loops (poles red); validator v2 (%s) per station' % (RACE, cid, VL), fill=(0, 0, 0), font=f(13, True))
     for i, (nm, dr_, cc, h, js) in enumerate(CU):
         v = vs_([('c', dr_, cc, h)]); render(Vn, Qn, np.tile(CLAY, (len(Qn), 1)), 'cn_%s_%s' % (nm, cid), v, '1', 500); render(Vf, Qf, np.tile(CLAY, (len(Qf), 1)), 'cf_%s_%s' % (nm, cid), v, '1', 500)
         render(Vf, Qf, loopcol([jl[rn(k)] for k in js if rn(k) in jl]), 'cl_%s_%s' % (nm, cid), v, '0', 500)
@@ -118,7 +119,7 @@ for cid, lab in IDS:
     S.save(SH + '/%s_density_%s.jpg' % (RACE, cid), quality=85)
     # ---- validator table
     rows = sorted(val.items()); S = Image.new('RGB', (1500, 70 + (len(rows) // 2 + 1) * 15), 'white'); d = ImageDraw.Draw(S)
-    d.text((10, 8), '%s %s — 69-station §7 validator v2 (standard: D1 undefined-band fallback + D3 same-digit pole ownership); legacy|D1|D1+D3, loops (need), crease poles all / own digit' % (RACE, cid), fill=(0, 0, 0), font=f(12, True))
+    d.text((10, 8), '%s %s — 69-station §7 validator v2 (%s); legacy|D1|verdict, loops (need), crease poles all / own digit' % (RACE, cid, VL), fill=(0, 0, 0), font=f(12, True))
     for i, (k, r) in enumerate(rows):
         x0 = 10 + (i % 2) * 745; y0 = 34 + (i // 2) * 15; col = (0, 110, 0) if r['status_D1_D3'] == 'PASS' else ((0, 70, 170) if r['firm_D1_D3'] else (180, 0, 0))
         d.text((x0, y0), '%-13s %s|%s|%s  loops %d (%d)  crease %d/%d  %s' % (k, 'P' if r['firm_legacy'] else 'F', 'P' if r['firm_D1'] else 'F', 'P' if r['firm_D1_D3'] else 'F', r['loops_v2'], r['required'], len(r['crease_poles']), len(r['crease_poles_own_digit']), r['status_D1_D3']), fill=col, font=f(10))

@@ -12,10 +12,16 @@
 #     end lies farther from its probe line than the band half-width W, i.e. no surface vertex of the digit's own cross-section answers the probe (the
 #     selection fell through to a vertex across an inter-digital web / cleft). The side is then excluded exactly as in D1. Every side always reports
 #     its two endpoint offsets (endpoint_offset_cm) as diagnostics.
+#  D6 (PROPOSED by order c6c7940, NOT authoritative; d6=(W, bone_names) enables it, default off): non-digit stations only -- a band side is undefined
+#     when the endpoint selected at either band end lies on a FOREIGN body segment, i.e. its dominant skin bone (largest deform weight, carried through
+#     the family map) is not one of the station's own bones (the two segments meeting at the joint plus the adjacent trunk segment). Example: the hip
+#     +p (lateral) probe ball reaches the forearm hanging beside the hip in the R-6 stance and counts forearm loops. Excluded exactly as D1 / D5.
 import numpy as np
 from core3lib import *
 REF_STATURE_CM = 173.143
-def evaluate(V, Q, meta, ref_stature=0.0, names=None, loops=None, au=None, d5=False):
+D6_OWN = {'neck': ('neck_01', 'head', 'spine_03'), 'shoulder': ('clavicle_{s}', 'upperarm_{s}', 'spine_03', 'spine_02'), 'elbow': ('upperarm_{s}', 'lowerarm_{s}'),
+          'wrist': ('lowerarm_{s}', 'hand_{s}'), 'hip': ('pelvis', 'spine_01', 'thigh_{s}'), 'knee': ('thigh_{s}', 'calf_{s}'), 'ankle': ('calf_{s}', 'foot_{s}', 'ball_{s}')}
+def evaluate(V, Q, meta, ref_stature=0.0, names=None, loops=None, au=None, d5=False, d6=None):
     V = np.asarray(V, float); Q = np.asarray(Q); nV = len(V)
     H = {k: np.array(v) for k, v in meta['heads'].items()}; T_ = {k: np.array(v) for k, v in meta['tails'].items()}; JC = {k: np.array(v) for k, v in meta['joint_cubes'].items()}
     loops = closed_loops(Q, nV) if loops is None else loops; au = Auditor(V, Q) if au is None else au; S = stations(meta); JR = {j[0]: j for j in ring_stations(meta)}
@@ -58,6 +64,9 @@ def evaluate(V, Q, meta, ref_stature=0.0, names=None, loops=None, au=None, d5=Fa
                 r_ = V[e_] - p0; offs.append(round(float(np.linalg.norm(r_ - (r_ @ side) * side)), 4))
             ent['endpoint_offset_cm'] = offs
             if d5 and ent['defined'] and digit_of(nm) is not None and max(offs) > Wd: ent['defined'] = False; ent['D5_undefined'] = True
+            if d6 is not None and digit_of(nm) is None:
+                key6 = nm.split('_')[0]; own6 = {b.format(s=nm[-1]) for b in D6_OWN[key6]}; dom = [str(d6[1][int(np.argmax(d6[0][e_]))]) for e_ in (a, b)]; ent['endpoint_dominant_bone'] = dom
+                if ent['defined'] and any(x not in own6 for x in dom): ent['defined'] = False; ent['D6_undefined'] = True
             if np.linalg.norm(V[a] - V[b]) < 0.7 * 2 * Wd: ent['merged'] = True; sides.append(ent); continue
             _, pred = dijkstra(au.G, indices=a, return_predecessors=True, limit=4 * Wd + 3 * Rr)
             if pred[b] < 0: ent['no_path'] = True; sides.append(ent); continue
@@ -88,7 +97,9 @@ def evaluate(V, Q, meta, ref_stature=0.0, names=None, loops=None, au=None, d5=Fa
         if st_d3.startswith('PASS_FALLBACK') and len(adj): st_d3 += '+SCOPED_ADJACENT_DIGIT_POLE'
         d5u = [x['side'] for x in sides if x.get('D5_undefined')]
         if d5u and st_d3.startswith('PASS_FALLBACK'): st_d3 += '+D5_INTERDIGITAL_UNDEFINED'
-        R[nm] = dict(required=need, sides=sides, D5_undefined_sides=d5u, valid_sides=[x['side'] for x in sides if x['defined'] and 'loops' in x], band_loops_legacy=band_legacy, band_loops_defined=band_def, closed_rings=rings_std, closed_rings_anatomical=rings_anat, loops_legacy=loops_legacy, loops_v2=loops_d1,
+        d6u = [x['side'] for x in sides if x.get('D6_undefined')]
+        if d6u and st_d3.startswith('PASS_FALLBACK'): st_d3 += '+D6_FOREIGN_SEGMENT_UNDEFINED'
+        R[nm] = dict(required=need, sides=sides, D5_undefined_sides=d5u, D6_undefined_sides=d6u, valid_sides=[x['side'] for x in sides if x['defined'] and 'loops' in x], band_loops_legacy=band_legacy, band_loops_defined=band_def, closed_rings=rings_std, closed_rings_anatomical=rings_anat, loops_legacy=loops_legacy, loops_v2=loops_d1,
                      margin=int(loops_d1 - need), loop_mode=mode, crease_poles=[int(p) for p in cre], crease_poles_own_digit=cre_own, crease_poles_adjacent_digit=adj, within2_poles=[int(p) for p in w2],
                      within2_own_digit=w2_own, within2_adjacent_digit=adj_w2, local_loop_cm=round(h, 4), firm_legacy=bool(firm_legacy), strict_legacy=bool(strict_legacy), firm_D1=bool(firm_d1),
                      strict_D1=bool(strict_d1), firm_D1_D3=bool(firm_d3), strict_D1_D3=bool(strict_d3), status_D1=st_d1, status_D1_D3=st_d3)
@@ -97,5 +108,5 @@ def evaluate(V, Q, meta, ref_stature=0.0, names=None, loops=None, au=None, d5=Fa
                 D1_fallback_passes={k: v['status_D1'] for k, v in R.items() if v['status_D1'].startswith('PASS_FALLBACK')},
                 D1_D3_non_plain={k: v['status_D1_D3'] for k, v in R.items() if v['status_D1_D3'] != 'PASS'},
                 margin_zero=sorted(k for k, v in R.items() if v['margin'] == 0), firm_pass_count=int(sum(v['firm_D1_D3'] for v in R.values())), stations=len(R))
-    return dict(validator='RAC §7 validator v2 (D1 + D3 accepted 85b7c1c; D4 stature-normalised station geometry accepted a18371c; D5 interdigital endpoint validity accepted 33a2dfe)', D5_applied=bool(d5), station_scale=SCALE, reference_stature_cm=ref_stature,
+    return dict(validator='RAC §7 validator v2 (D1 + D3 accepted 85b7c1c; D4 stature-normalised station geometry accepted a18371c; D5 interdigital endpoint validity accepted 33a2dfe; D6 foreign-segment endpoint PROPOSED c6c7940, off unless requested)', D5_applied=bool(d5), D6_applied=d6 is not None, station_scale=SCALE, reference_stature_cm=ref_stature,
                 stature_cm=STATURE, anatomical_ring_radius_cm=ANAT_RING_R, summary=summ, stations=R)

@@ -1,5 +1,22 @@
 # Character Design Status
 
+## SAGEKIN RP3 — CONFIG-2 CENTRAL REFERENCE PASS; FAMILY PROPAGATION NEEDS AUTHOR DECISION (validator rule D6) — NOT FROZEN (2026-10-27)
+
+- **Gate:** `reviews/claude-rac-rp3-sagekin-config2-reference-and-propagation-gate.md` (order c6c7940). Evidence: `reviews/rac-rp3-evidence/sagekin_rp3_v001/`.
+- **Part A:** SG CONFIG-2 CENTRAL REFERENCE PASS — READY FOR PROPAGATION.
+  - `SGF178` (178.00 cm): the canonical configuration-2 construction base of SGF152-NAT / SGF208.
+  - Rebuild-identical: regen and full height re-solve both give max |dV| 0.
+  - Coherent inside the 152–208 envelope.
+  - Not yet entered in the reference-asset manifest as accepted.
+- **Part B:** both configurations propagated onto active v005 unchanged (face `ec768ae2…`, map `e690fbaf…`, V = M @ hm08 exactly).
+  - `E:/…/Sagekin/RP3/SG_M_REF_RP3_retopo_v001.blend` (`bb156e9c…`) and `SG_F_REF_RP3_retopo_v001.blend` (`0ef62ffc…`), CANDIDATE — NOT FROZEN.
+  - Anatomy, identity, face, density, contact and deformation all pass.
+- **Blocker:** authoritative D1 + D3 + D4 + D5 gives SG **67 / 69**; SGF178 is 69 / 69.
+  - `hip_l` / `hip_r` (4 / 5): the hip +p band side samples the forearm hanging beside the hip, in all six family realizations.
+  - Proposed D6 (foreign-segment endpoint) → 69 / 69 everywhere, lowering nothing.
+  - No race-specific branch needed if D6 is accepted.
+- **Next:** STOP for ChatGPT review (D6 ruling; SGF178 acceptance; Sagekin freeze).
+
 ## MARCHFOLK RP3 v005 — AUTHOR ACCEPTED / FROZEN — ACTIVE MPFB FAMILY BASE (2026-10-27)
 
 - **Freeze record:** `MPFB_FAMILY_BASE_v005_FREEZE.json` (E: Marchfolk/RP3 + Skarn/RP3; copy in `reviews/rac-rp3-evidence/mpfb_family_base_v005_freeze/`).

@@ -1,0 +1,115 @@
+{
+ "id": "SGF178",
+ "race": "Sagekin",
+ "role": "configuration-2 CENTRAL REFERENCE CANDIDATE (order c6c7940 Part A: PASS - READY FOR PROPAGATION); not yet author-accepted",
+ "previous_role": "configuration-2 construction base for SGF152-NAT / SGF208 (RM-OT-05A \u00a72; reviews/reference-assets/manifest.json)",
+ "provenance": {
+  "built_in": "RM-OT-05 \u00a74 / RM-OT-05A (scratch $S/rmot05r/b/SGF178), committed with the reference assets in 7a7b016 (2026-10-19)",
+  "builder": "tools/rac/w1/build_variant.py (route: height macro re-solved)",
+  "base": "MF-F-R_build.json (accepted Marchfolk configuration-2 reference)",
+  "overrides": {
+   "targets": {
+    "measure-upperleg-height-incr": 0.12,
+    "measure-lowerleg-height-incr": 0.12,
+    "measure-napetowaist-dist-decr": 0.15,
+    "torso-scale-depth-decr": 0.2,
+    "measure-lowerarm-length-incr": 0.2,
+    "LR:hand-fingers-length-incr": 0.25,
+    "LR:hand-scale-incr": 0.05,
+    "LR:hand-fingers-diameter-decr": 0.2
+   },
+   "stature": 178.0,
+   "resolve_stature": true
+  },
+  "note": "targets identical to the accepted configuration-1 SG; only the configuration (gender 0) and the stature re-solve differ; SGF152-NAT is built from its height macro, SGF208 by the same route at 208"
+ },
+ "mpfb": "MPFB 2.0.17 / Blender 5.2.2 LTS (tools/rac/w1/arm_lib.py)",
+ "cfg": {
+  "gender": 0.0,
+  "age_years": 35,
+  "age": 0.5769230769,
+  "muscle": 0.5,
+  "weight": 0.5,
+  "proportions": 0.5,
+  "stature": 178.0,
+  "targets": {
+   "measure-upperleg-height-incr": 0.12,
+   "measure-lowerleg-height-incr": 0.12,
+   "measure-napetowaist-dist-decr": 0.15,
+   "torso-scale-depth-decr": 0.2,
+   "measure-lowerarm-length-incr": 0.2,
+   "LR:hand-fingers-length-incr": 0.25,
+   "LR:hand-scale-incr": 0.05,
+   "LR:hand-fingers-diameter-decr": 0.2
+  },
+  "id": "SGF178"
+ },
+ "height_macro": 0.630126953125,
+ "pose": {
+  "arm_abduction_deg": 8.0,
+  "palm_twist_deg_l": 0.04,
+  "palm_residual_deg_l": 0.0,
+  "palm_twist_deg_r": -0.04,
+  "palm_residual_deg_r": -0.0
+ },
+ "pose_sequence": "build -> ground -> pose_r6 (arm abduction 8 deg, palm twist) -> ground",
+ "r6": "reviews/reference-assets/r6/SGF178_r6.npz",
+ "r6_sha256": "52ff5e04331561a4b6f19cb88d8987b6b8e240199e7eec76246cc86202f059e1",
+ "build_sha256": "7f50254337ab0d26a2eada3d9e860edcb7c2f113893b67dff0cb0dd038019620",
+ "geometry_hash": "7755a8f00de921dd8651a899c96e1050ff65b481a0ebf08025b0c82875359a25",
+ "stature_r6_cm": 178.0012747272849,
+ "rebuild_identity": {
+  "regen_py": {
+   "geometry_identical": true,
+   "max_abs_dV_cm": 0.0
+  },
+  "full_height_resolve": {
+   "geometry_identical": true,
+   "max_abs_dV_cm": 0.0,
+   "height_macro_equal": true
+  }
+ },
+ "integrity": {
+  "verts": 13380,
+  "unused_verts": 0,
+  "quads": 13378,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "orientation_inconsistent_edges": 0,
+  "degenerate_faces": 0,
+  "coincident_vertex_pairs": 0,
+  "signed_volume_L": -60.343,
+  "bbox_cm": [
+   52.88,
+   31.36,
+   178.001
+  ]
+ },
+ "continuity": {
+  "within_bounds": 16,
+  "measures": 20,
+  "tolerance_rel": 0.0025,
+  "outside_but_same_pattern_as_accepted_c1": [
+   "torso_share",
+   "forearm_over_arm",
+   "foot_share"
+  ],
+  "outside_new_pattern": [
+   [
+    "thorax_d_over_b",
+    -1.22
+   ]
+  ],
+  "route_note": "SGF152-NAT is the native short-adult route (different allometry from the macro route of SGF178 / SGF208), so shares need not be monotone in stature; the accepted c1 triple SG152-NAT / SG / SG208 shows the same structure",
+  "sex_delta_max_abs_disagreement_pct": 3.11,
+  "sex_delta_sign_agreement": 20
+ },
+ "identity": {
+  "c2_sign_matches_closure": 8,
+  "compared": 8,
+  "c2_abs_max_pct": 5.45,
+  "note": "closure-gate rows (RM-OT-05 \u00a74) were measured at 152 / 208; 178 is the first matched central comparison"
+ },
+ "partA_verdict": "SG CONFIG-2 CENTRAL REFERENCE PASS - READY FOR PROPAGATION"
+}

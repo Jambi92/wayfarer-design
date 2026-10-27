@@ -11,6 +11,9 @@ NAT = {'MF-M-R': '/tmp/claude-0/rt/m3/src/MF-M-R_native.npz', 'MF-F-R': '/tmp/cl
        'SK208-C1R': '/tmp/claude-0/rt/sk/src/SK208-C1R_native.npz', 'SKF208': '/tmp/claude-0/rt/sk/src/SKF208_native.npz'}
 R6 = {'MF-M-R': '/home/claude/wayfarer-design/reviews/reference-assets/r6/MF-M-R_r6.npz', 'MF-F-R': '/home/claude/wayfarer-design/reviews/reference-assets/r6/MF-F-R_r6.npz',
       'SK208-C1R': '/home/claude/wayfarer-design/reviews/rac-w3d-evidence/geometry/SK208-C1R_r6.npz', 'SKF208': '/home/claude/wayfarer-design/reviews/reference-assets/r6/SKF208_r6.npz'}
+import os as _os
+for _e in filter(None, _os.environ.get('EXTRA_NAT', '').split(',')):   # diagnostic only (order c6c7940): extra race configs "ID=NATIVE.npz=R6.npz" scored alongside the four
+    _i, _n, _r = _e.split('='); NAT[_i] = _n; R6[_i] = _r
 CFG = list(NAT)
 sha = lambda p: hashlib.sha256(open(p, 'rb').read()).hexdigest()
 def csr(z, pre='M_'): return sp.csr_matrix((z[pre + 'data'], z[pre + 'indices'], z[pre + 'indptr']), shape=tuple(z[pre + 'shape']))

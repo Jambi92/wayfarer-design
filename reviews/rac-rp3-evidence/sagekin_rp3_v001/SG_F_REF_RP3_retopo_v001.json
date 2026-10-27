@@ -1,0 +1,113 @@
+{
+ "file": "SG_F_REF_RP3_retopo_v001.blend",
+ "sha256": "0ef62ffc34aa7b89c8f3f8236e306634b929e5b4dd174830be8a1cad62295137",
+ "geometry_hash": "9dcc50002e09a2ba079313e0d940a418850a7a2a7236a2c90ca2608a806f2642",
+ "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+ "verts": 57842,
+ "quads": 57840,
+ "race": "Sagekin",
+ "configuration": "SGF178",
+ "role": "configuration 2 (SGF178 central reference candidate, Part A PASS)",
+ "status": "PRODUCTION CANDIDATE (RP3 Sagekin, MPFB Family Base v005) - CANDIDATE - NOT FROZEN",
+ "source": {
+  "id": "SGF178",
+  "r6": "reviews/reference-assets/r6/SGF178_r6.npz",
+  "r6_sha256": "52ff5e04331561a4b6f19cb88d8987b6b8e240199e7eec76246cc86202f059e1",
+  "build": "reviews/reference-assets/builds/SGF178_build.json",
+  "build_sha256": "7f50254337ab0d26a2eada3d9e860edcb7c2f113893b67dff0cb0dd038019620",
+  "regen_geometry_identical": true,
+  "regen_max_abs_dV_cm": 0.0
+ },
+ "mapping": {
+  "hm08_map": "SG_F_REF_RP3_retopo_v001_hm08_map.npz",
+  "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+  "family_map": "MF_M_REF_RP3_retopo_v005_hm08_map.npz (byte-identical)"
+ },
+ "frame": {
+  "analysis": "cm, x subject left, f forward, u up (R-6)",
+  "blender": "m, Z up, faces -Y, subject left +X, origin = pelvis root projected to ground",
+  "origin_translation_cm": [
+   -0.0,
+   -2.517850324511528,
+   -0.0
+  ]
+ },
+ "landmarks": "SG_F_REF_RP3_v001_landmarks.json",
+ "readback": {
+  "max_abs_diff_vs_candidate_m": 5.9603705970801e-08,
+  "faces_equal_candidate": true,
+  "normals_outward": true
+ },
+ "topology": {
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "nonmanifold_vertices": 0,
+  "degenerate_faces": 0,
+  "self_intersection_face_pairs": 122,
+  "density": {
+   "face": 0.132,
+   "ears": 0.101,
+   "hand": 0.13,
+   "foot": 0.183,
+   "trunk": 0.498,
+   "arm": 0.446,
+   "leg": 0.502,
+   "neck": 0.29,
+   "head": 0.223
+  }
+ },
+ "validator": {
+  "authoritative": "D1 + D3 + D4 + D5",
+  "firm": 69,
+  "stations": 69,
+  "fails": [],
+  "margin_zero": [
+   "toe1_j1_l",
+   "toe1_j1_r",
+   "toe4_j1_l",
+   "toe4_j1_r"
+  ],
+  "proposed_D6_firm": 69
+ },
+ "anatomy": {
+  "T1_T2": true,
+  "T3": true,
+  "T7": true,
+  "stature_cm": 178.0012747272849,
+  "stature_diff_mm": -7e-05,
+  "iou": {
+   "front": 0.998044,
+   "rear": 0.998044,
+   "profile_left": 0.997635,
+   "profile_right": 0.997635,
+   "q3_front_left": 0.998292,
+   "q3_front_right": 0.998223
+  },
+  "body": {
+   "median_mm": 0.0,
+   "p95_mm": 0.1654,
+   "max_mm": 2.0193
+  }
+ },
+ "face": {
+  "mouth_rings": 34,
+  "orbit_rings": [
+   43,
+   43
+  ],
+  "poles_at_mouth_corners": 0,
+  "poles_within_2cm_of_mouth": 0
+ },
+ "contact": {
+  "classes": {
+   "source": 122,
+   "family": 0,
+   "new": 0
+  },
+  "new_hand_foot_defects": 0
+ },
+ "identity": {
+  "holds_all_zones": true
+ }
+}
