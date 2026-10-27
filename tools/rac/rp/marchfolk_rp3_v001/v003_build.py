@@ -117,9 +117,10 @@ def local_state(Vc, ids):
             nsx = len(seen)
         out[C] = (mx, nsx)
     return out
+ENV_CM = float(sys.argv[sys.argv.index('--env-mm') + 1]) / 10 if '--env-mm' in sys.argv else 0.08
 def envelope_ok(Vold, Vnew, ids):
     a = local_state(Vold, ids); b = local_state(Vnew, ids)
-    return all(b[C][0] <= max(0.08, a[C][0] + 1e-6) and b[C][1] <= a[C][1] for C in 'MF')
+    return all(b[C][0] <= max(ENV_CM, a[C][0] + 1e-6) and b[C][1] <= a[C][1] for C in 'MF')
 cen = {C: {s[0]: (np.asarray(s[1], float), max(s[4], 2 * s[3]) + 1.0) for s in S[C]} for C in 'MF'}
 def audit(Vc, names=None):
     R = {}
