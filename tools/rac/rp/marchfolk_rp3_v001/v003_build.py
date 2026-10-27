@@ -88,6 +88,38 @@ def relax(Xa, mv, region, fixed, it=4, lam=0.35, para=0.0):
             for k in range(4): pr = Xa[q[:, (k - 1) % 4]] + Xa[q[:, (k + 1) % 4]] - Xa[q[:, (k + 2) % 4]]; np.add.at(acc, q[:, k], pr); np.add.at(cnt, q[:, k], 1)
             tgt = (1 - para) * L + para * acc[region] / np.maximum(cnt[region], 1)[:, None]
         dX = lam * (tgt - Xa[region]); dX -= (dX * N[region]).sum(1, keepdims=True) * N[region]; Xa[region] += dX; project(Xa, mv, region)
+try:
+    import bpy  # noqa: F401
+    from mathutils.bvhtree import BVHTree
+    HAVE_BVH = True
+except Exception: HAVE_BVH = False
+TRI_ = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; QID_ = np.r_[np.arange(len(Q)), np.arange(len(Q))]
+def local_state(Vc, ids):
+    """(max source-vertex distance to the production surface, self-x pairs) in a 2 cm neighbourhood of the changed vertices, per configuration"""
+    out = {}
+    for C in 'MF':
+        V = Vc[C]; P = V[np.asarray(list(ids), int)]; kd = cKDTree(P)
+        Vh = B[C]['Vh']; dh, _ = kd.query(Vh); src = np.nonzero(dh < 2.0)[0]
+        cen_ = V[TRI_].mean(1); dt, _ = kd.query(cen_); tl = np.nonzero(dt < 2.5)[0]
+        mx = 0.0
+        if len(src) and len(tl):
+            kt = cKDTree(cen_[tl]); _, idx = kt.query(Vh[src], k=min(16, len(tl)))
+            idx = np.atleast_2d(idx)
+            for i, j in enumerate(src):
+                T = TRI_[tl[idx[i]]]; q, _ = closest_on_tris(np.repeat(Vh[j:j + 1], len(T), 0), V[T[:, 0]], V[T[:, 1]], V[T[:, 2]]); mx = max(mx, float(np.linalg.norm(q - Vh[j], axis=1).min()))
+        nsx = 0
+        if HAVE_BVH and len(tl):
+            sub = TRI_[tl]; bvh = BVHTree.FromPolygons(V.tolist(), sub.tolist(), all_triangles=True, epsilon=0.0); seen = set()
+            for i, j in bvh.overlap(bvh):
+                fi, fj = QID_[tl[i]], QID_[tl[j]]
+                if fi == fj or set(Q[fi]) & set(Q[fj]): continue
+                seen.add((min(fi, fj), max(fi, fj)))
+            nsx = len(seen)
+        out[C] = (mx, nsx)
+    return out
+def envelope_ok(Vold, Vnew, ids):
+    a = local_state(Vold, ids); b = local_state(Vnew, ids)
+    return all(b[C][0] <= max(0.08, a[C][0] + 1e-6) and b[C][1] <= a[C][1] for C in 'MF')
 cen = {C: {s[0]: (np.asarray(s[1], float), max(s[4], 2 * s[3]) + 1.0) for s in S[C]} for C in 'MF'}
 def audit(Vc, names=None):
     R = {}
@@ -135,6 +167,7 @@ def try_move(target, plan):
         if VERB:
             worse = [(C, nm, key(CUR[C][nm]), key(Rt[C][nm])) for C in 'MF' for nm in names if key(Rt[C][nm]) != key(CUR[C][nm])]
             print('      variant', variant, 'ok', ok, 'gain', gain, worse[:12], flush=True)
+        if ok and gain > 0 and not envelope_ok(positions(X, moved), positions(Xt, mvt), ch): ok = False
         if ok and gain > 0:
             X = Xt; moved = mvt
             for C in 'MF': CUR[C].update(Rt[C])
@@ -226,6 +259,7 @@ for rnd in range(T4R if 'T' in PHASES else 0):
                     if b[0] > a[0] or b[1] > a[1] or b[2] > a[2]: ok = False
         if ok and len(reg) and Vt['M'][list(reg)][:, 2].max() > 140:              # face region: rings must be preserved
             if face_rings(Vt) != FACE0: ok = False
+        if ok and not envelope_ok(Vc, Vt, list(reg)): ok = False
         if ok:
             X = Xt; moved = mvt; Vc = Vt; acc += 1
             if names:
