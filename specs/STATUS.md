@@ -1,5 +1,19 @@
 # Character Design Status
 
+## FENN RP3 EAR BRANCH — PASS, E2 RECOMMENDED — CF2 ACCEPTED — NOT FROZEN (2026-10-27)
+
+- **Gate:** `reviews/claude-rac-rp3-fenn-ear-branch-gate.md` (order bdcd6a6). Evidence: `reviews/rac-rp3-evidence/fenn_ear_branch_v001/`.
+- **CF2 accepted:** FNL4-CF2 / FNF181-CF2 recorded (manifest, R-6, builds). Carry-forward FENN-CF-1 (c2 mouth corner) registered. Hidden-ear identity is a hard condition and remains PASS.
+- **Ear branch:** one all-quad Fenn topology on frozen v005: 52-vertex root kept, 1,300 V / 1,325 Q per side; mesh 58,080 V / 58,078 Q. Identical for c1 / c2 × E1 / E2 / E3.
+- **Audit (all six):**
+  - 0 branch self-intersections; outside branch byte-identical;
+  - density 0.107–0.122 % of stature;
+  - aspect ≤ 6.93;
+  - 8 head / neck poses clean; 10 shape probes clean.
+- **Weakness:** T-4 angles 13–20 % vs v005 3.4 %. A bounded refinement (tip block, cuff transitions, attachment corners) is recommended before the freeze.
+- **E:** `Fenn/RP3/ear_branch/FN_{M,F}_REF_RP3_cf2_ear{E1,E2,E3}_proto_v001.blend`.
+- **Next:** STOP for ChatGPT review: ear selection / refinement, then the consolidation (plan prepared, not executed).
+
 ## FENN RP3 CRANIOFACIAL — PASS, CF2 RECOMMENDED — NOT FROZEN (2026-10-27)
 
 - **Gate:** `reviews/claude-rac-rp3-fenn-craniofacial-source-gate.md` (order 2de0e28). Evidence: `reviews/rac-rp3-evidence/fenn_craniofacial_v001/`.

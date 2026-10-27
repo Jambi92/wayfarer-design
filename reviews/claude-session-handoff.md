@@ -2,7 +2,33 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-27) — FENN CRANIOFACIAL SOURCE (CF1/CF2/CF3) — awaiting ChatGPT review
+## LATEST (2026-10-27) — FENN CF2 ACCEPTED + EAR BRANCH (E1/E2/E3) — awaiting ChatGPT review
+
+**What was done**
+- Order bdcd6a6 executed. Gate: `reviews/claude-rac-rp3-fenn-ear-branch-gate.md`.
+- **Result:** FENN EAR BRANCH PASS — E2 RECOMMENDED. A bounded topology refinement is recommended before the freeze. Nothing frozen.
+- **CF2 records:**
+  - manifest entries FNL4-CF2 / FNF181-CF2, with `r6/` + `builds/` copies;
+  - FENN-CF-1 in the carry-forward register;
+  - FENN_V1 RP3 status block.
+- **Tools** (`tools/rac/rp/fenn_rp3_v001/`):
+  - `ear_branch_lib.py` (layout2, cuff_build3 with DP valence guards, realize);
+  - `ear_build.py`, `ear_audit.py`, `ear_measure.py`, `ear_deform.py`, `ear_blend.py`;
+  - `ear_sheets.py`, `ear_sections.py`, `ear_export.py`, `ear_summaries.py`;
+  - `run_earbranch.sh` (env `EAR_WORK`, default `/tmp/claude-0/rt/fn/ear/final`).
+  - bpy python is `/home/claude/stc/bin/python3`.
+- **Workspace:**
+  - `/tmp/claude-0/rt/fn/ear/final2` is the final run, with the guarded canon `canon_branch_topology.json`;
+  - `final/` is the earlier pre-guard run;
+  - it needs the CF2 run in `/tmp/claude-0/rt/fn/cf` (`fam/`, `src/`, `lm/`).
+- **Topology:** TOPO2 n_a 28, u1 16, kb 12, j_f 3, K_r 4; J = 70; cuff 52 / 56 / 60 / 64 / 68. One valence-6 per side at ring 1 is forced by the v005 root pattern.
+- **E:** `Fenn/RP3/ear_branch/` (6 blends + map + sheet-17 pair); readback in evidence `production/pc_readback_sha256.txt`.
+
+**Refinement candidates, if ordered:** upper-extension kite → taper-following rows; cuff ±2 transition shear; attachment-corner cells; lobe-cusp knob.
+
+**Next:** STOP for ChatGPT review (ear selection / refinement, then the consolidation plan in evidence).
+
+## (previous) 2026-10-27 — FENN CRANIOFACIAL SOURCE (CF1/CF2/CF3)
 
 **What was done**
 - Order 2de0e28 executed. Gate: `reviews/claude-rac-rp3-fenn-craniofacial-source-gate.md`.
