@@ -1,5 +1,25 @@
 # Character Design Status
 
+## FENN RP3 EAR v002 REFINEMENT — PASS WITH DOCUMENTED T-4 RESIDUAL — AUTHOR DECISION — NOT FROZEN (2026-10-27)
+
+- **Gate:** `reviews/claude-rac-rp3-fenn-ear-v002-refinement-gate.md` (order 0d9c70b). Evidence: `reviews/rac-rp3-evidence/fenn_ear_v002/`.
+- **Selected ear:** E2, refined once (R1 / R2 / R3) on one shared c1 / c2 topology v002: 1,732 V / 1,757 Q per side; mesh 58,944 V / 58,942 Q. Root loop, junction, root band and v005 outside the branch are unchanged.
+- **T-4:** 15.8 / 16.3 % → **4.4 / 3.9 %**. Upper extension 28.9 → 3.1 %; cuff count transitions 42 → 10–14 %; attachment corners 47 → 17–25 %; lobe-cusp knob removed.
+- **Hard gates:** all pass on both configurations and 10 probes:
+  - aspect ≤ 9.33;
+  - 0 branch self-intersections;
+  - root crease 64° (v001 73 / 66.5°);
+  - density 0.098 %;
+  - 8 poses 0 / 0 / 0;
+  - hidden-ear CF2 identity unchanged;
+  - FENN-CF-1 unchanged.
+- **Residual (author decision):**
+  - 1–2 root-band cells per configuration sharper than v001 (min 7.9 / 12.7°; locked root-band topology);
+  - aspect 6–10 quads 17 / 19;
+  - bridge-corner obtuse cells.
+- **E:** `Fenn/RP3/ear_branch_v002/FN_{M,F}_REF_RP3_cf2_earE2_v002.blend` + v005 → v002 map (read-back equal).
+- **Next:** STOP for ChatGPT review. The final consolidation package is prepared, not executed (`fenn_ear_v002/FENN_FINAL_CONSOLIDATION_PACKAGE.md`).
+
 ## FENN RP3 EAR BRANCH — PASS, E2 RECOMMENDED — CF2 ACCEPTED — NOT FROZEN (2026-10-27)
 
 - **Gate:** `reviews/claude-rac-rp3-fenn-ear-branch-gate.md` (order bdcd6a6). Evidence: `reviews/rac-rp3-evidence/fenn_ear_branch_v001/`.

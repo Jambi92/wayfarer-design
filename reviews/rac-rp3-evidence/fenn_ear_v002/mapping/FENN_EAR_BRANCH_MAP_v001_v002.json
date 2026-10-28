@@ -1,0 +1,17 @@
+{
+ "order": "0d9c70b",
+ "rule": "per v002 patch vertex: junction ring -> the identical v001 junction vertex (same (s, t)); sheet / rim -> the nearest v001 vertex of the same part in the E2 in-plane metric (distance recorded; correspondence, not identity: the sheet topology changed); cuff -> the v001 vertex of the same ring and index (ring sizes unchanged). Global index = patch_first[side] + local. Kept v005 vertices: identical in both versions.",
+ "kept_v005": "identity (both versions keep the same v005 vertices in the same compacted order)",
+ "counts": {
+  "cuff_ring_index": 300,
+  "junction_identical": 70,
+  "rim_nearest_st": 255,
+  "sheet_nearest_st": 1107
+ },
+ "inplane_distance_cm": {
+  "mean": 0.06641002848970767,
+  "max": 0.24925448817938634
+ },
+ "v001_patch_vertices": 1300,
+ "v002_patch_vertices": 1732
+}

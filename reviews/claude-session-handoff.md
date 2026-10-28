@@ -2,7 +2,32 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-27) — FENN CF2 ACCEPTED + EAR BRANCH (E1/E2/E3) — awaiting ChatGPT review
+## LATEST (2026-10-27) — FENN EAR v002 REFINEMENT (E2) — awaiting ChatGPT review
+
+**What was done**
+- Order 0d9c70b executed. Gate: `reviews/claude-rac-rp3-fenn-ear-v002-refinement-gate.md`.
+- **Result:** FENN EAR v002 PASS WITH DOCUMENTED T-4 RESIDUAL — AUTHOR DECISION. Nothing frozen.
+- **Tools** (`tools/rac/rp/fenn_rp3_v001/`):
+  - `ear_layout3.py` (tapered-leaf layout + sheet quality);
+  - `ear_quality3d.py` (3-D cuff corner-angle pass);
+  - `ear_zones.py`, `ear_export_v002.py`, `ear_compare_v002.py`, `ear_sheets_v002.py`;
+  - `run_ear_v002_head.sh` (deformation guard loop), `run_earbranch_v002.sh` (env `EAR_WORK`).
+  - v002 is the library default (`EAR_TOPO`, default v002; v001 is still selectable).
+  - `ear_build.py` Q3 defaults are the final R3 values (th_cap 64).
+- **Workspace:**
+  - `/tmp/claude-0/rt/fn/ear/v002_r3` is the final run;
+  - `v002` is R2, `v002_r1` is R1, `final2` is v001;
+  - it needs `/tmp/claude-0/rt/fn/cf`.
+- **Regenerating the evidence:**
+  1. `ear_export_v002.py W EV`
+  2. `EAR_ORDER=0d9c70b EAR_CANDS=E2 ear_summaries.py W EV`
+  3. `ear_compare_v002.py final2 W EV`
+  4. `ear_sheets_v002.py final2 W OUT` (EAR_SHEET_THREADS 2 — six Blender processes ran out of memory)
+- **E:** `Fenn/RP3/ear_branch_v002/` (2 blends, sidecars, v005 → v002 map); readback in evidence `production/pc_readback_sha256.txt`.
+
+**Next:** STOP for ChatGPT review: accept the residual, then execute the final consolidation package.
+
+## (previous) 2026-10-27 — FENN CF2 ACCEPTED + EAR BRANCH (E1/E2/E3) — awaiting ChatGPT review
 
 **What was done**
 - Order bdcd6a6 executed. Gate: `reviews/claude-rac-rp3-fenn-ear-branch-gate.md`.

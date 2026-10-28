@@ -2,10 +2,10 @@
 # plotted in the (posterior b, lateral n) plane of the root frame, true scale; ear sheet orange / violet / yellow, cuff blue, head grey.
 import sys, os, json, numpy as np
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
-W_, OUT = sys.argv[1], sys.argv[2]; HEADS = {'c1': 'FNL4-CF2', 'c2': 'FNF181-CF2'}; CANDS = ['E1', 'E2', 'E3']
+W_, OUT = sys.argv[1], sys.argv[2]; HEADS = {'c1': 'FNL4-CF2', 'c2': 'FNF181-CF2'}; CANDS = os.environ.get('EAR_CANDS', 'E1,E2,E3').split(',')
 COL = {'front': '#d9774a', 'back': '#8f6fb8', 'rim': '#d8b23a', 'cuff': '#4f8fd0', 'transition': '#4caf50', 'v005': '#9a9a9a'}
 for cf_, h in HEADS.items():
-    LV = [-2.0, 0.0, 2.0, 4.0]; fig, axs = plt.subplots(len(CANDS), len(LV), figsize=(4.2 * len(LV), 4.2 * len(CANDS)))
+    LV = [-2.0, 0.0, 2.0, 4.0]; fig, axs = plt.subplots(len(CANDS), len(LV), figsize=(4.2 * len(LV), 4.2 * len(CANDS)), squeeze=False)
     for i, c in enumerate(CANDS):
         z = np.load('%s/build/%s_%s_branch.npz' % (W_, h, c)); r = json.load(open('%s/build/%s_%s_branch.json' % (W_, h, c))); f = r['sides']['l']['frame']
         O, n, b, u = [np.array(f[k]) for k in ('O', 'n', 'b', 'u')]; V = z['V']; Q = z['Q']; part = z['part']

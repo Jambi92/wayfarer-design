@@ -15,6 +15,13 @@
 #   rim        K_r rows round the free outline (helix roll); J = A + B_att + rim end + U + rim end + D_att = 2 (n_a + j_f + K_r) = 70
 #   (layout(), rim_fill(), cuff_topology(), cuff_build() below are the superseded first-pass variants, kept for the record only)
 #
+# TOPOLOGY v002 (order 0d9c70b; the default, EAR_TOPO=v002; EAR_TOPO=v001 reproduces v001 exactly): ear_layout3.layout3() replaces the
+#   front / back sheet partition: bridge (unchanged) + crescent F1' (whole notch U, 28 x 12, to a cut c1f -> P_up) + tapered leaf (rows across the
+#   upper extension, columns 12 -> 2 by staggered 3 -> 1 templates, one diamond cap), rim strip on the new outline path. Junction ring J, root band and
+#   the cuff transition rule are unchanged; attachment-line ends A_EX 0.7 -> 1.5 (LAYOUT3_KW a_ex); attached lobe front GEO_V2 (target D).
+#   Cuff positions: biharmonic fairing -> tangential pre-smoothing -> protected untangling -> 3-D quality pass (ear_quality3d.py) with root-crease
+#   term, rest-contact / clearance guard and (run_ear_v002_head.sh) a deformation-aware guard -> local aspect repair (ear_build.py).
+#
 # GEOMETRY (per head / side / candidate, deterministic):
 #   W1e FN-elven outline + relief laws (tools/rac/w1/ear_families_v2.py), evaluated at each vertex's fixed (s, t) ear parameters;
 #   in-plane: W1e plate -> W1e tilt -> the attachment + lobe are rotated about the helix root (c1) to the attachment angle tauA so the
@@ -109,7 +116,11 @@ class InPlane:
         x = self.flat(s, t) - self.hinge; a = x @ self.h; d = x @ self.k
         Yb = np.interp(d, self.dd, self.Yb); Xb = np.interp(d, self.dd, self.Xb); ph = np.interp(d, self.dd, self.phi)
         ss = np.asarray(s, float); g = self.g
-        lift = (g.get('lift_lobe', 0.0) * smooth((S0 - ss) / 0.10) + g.get('lift_top', 0.0) * smooth((ss - S1) / 0.08) * (1 - smooth((ss - S1 - 0.25) / 0.2))) \
+        le = g.get('lobe_lift_end'); lw = g.get('lobe_lift_w', 0.04); tw = g.get('lobe_lift_tw', 0.5)
+        lobe_f = smooth((S0 - ss) / 0.10)
+        if le is not None:                                                     # v002 (target D): no lobe lift on the attached lobe front (Datt, c0f)
+            tt_ = np.asarray(t, float); att = (1 - smooth((tt_ + 1) / tw)) * smooth((ss - (le - lw)) / lw); lobe_f = lobe_f * (1 - g.get('lobe_lift_att', 1.0) * att)
+        lift = (g.get('lift_lobe', 0.0) * lobe_f + g.get('lift_top', 0.0) * smooth((ss - S1) / 0.08) * (1 - smooth((ss - S1 - 0.25) / 0.2))) \
                * np.exp(-(np.maximum(d, 0) / 1.2) ** 2)
         Xb = Xb + lift                                              # free lobe and helix-root edges stand off the skin beyond the attachment
         P2 = self.hinge + a[..., None] * self.h + Yb[..., None] * self.k
@@ -351,6 +362,10 @@ def ear_sheet(Lo, p, sc):
     """front / back / rim positions in the ear frame (lateral X, posterior y, up z), cm at head scale; h0 not yet applied"""
     ip = InPlane(p); st = Lo['st']; part = Lo['part']; S, T = st[:, 0], st[:, 1]
     base, N, d = ip.bent(S, T); rel, th, parts = relief(S, T, p)
+    g = ip.g
+    if g.get('lobe_lift_end') is not None and g.get('lobe_thin', 0.0) > 0:    # v002 target D: the attached lobe front thins into the skin
+        att = (1 - smooth((T + 1) / g.get('lobe_lift_tw', 0.5))) * smooth((S - (g['lobe_lift_end'] - g.get('lobe_lift_w', 0.04))) / g.get('lobe_lift_w', 0.04)) * smooth((S0 - S) / 0.05)
+        th = th * (1 - g['lobe_thin'] * att)
     X = np.zeros((len(st), 3)); fr = part == 'front'; bk = part == 'back'
     X[fr] = base[fr] + rel[fr, None] * N[fr]; rb = np.minimum(rel, BACK_RIDGE * rel); X[bk] = base[bk] + (rb[bk] - th[bk])[:, None] * N[bk]
     X *= sc
@@ -429,7 +444,14 @@ def patch_mesh(Lo, R, loop):
     return P, np.array(F), base
 
 # ------------------------------------------------------------------ cuff v2: angular rings + DP-matched quad bands (+ / - 2 transitions)
-CUFF_SIZES = (52, 56, 60, 64, 68)           # ring1 .. ring5; J (70) on top
+CUFF_SIZES = (52, 56, 60, 64, 68)           # ring1 .. ring5; J (70) on top (v001)
+# v002 cuff transition rule: the v001 DP rule is retained (sizes, pole penalty, valence guards). Order 0d9c70b R1 tested regular end bands
+# (52/52/58/64/70), the minimum-transition DP (penalty 2.0) and angular staggering (0.2-1.0): every variant gave more skewed cells and more
+# contacts after fairing, so the v002 cuff gain comes from the 3-D quality pass (ear_quality3d.py) on the unchanged transition rule.
+CUFF_SIZES_V2 = (52, 56, 60, 64, 68)
+POLE_PEN_V2 = 0.5; STAGGER_V2 = 0.0
+_cv = json.loads(__import__('os').environ.get('EAR_CUFF', '{}'))
+CUFF_SIZES_V2 = tuple(_cv.get('sizes', CUFF_SIZES_V2)); POLE_PEN_V2 = float(_cv.get('pen', POLE_PEN_V2)); STAGGER_V2 = float(_cv.get('stag', STAGGER_V2))
 POLE_PEN = 0.5
 BACK_RIDGE = 0.5                            # back (cranial) surface follows the front relief fully in hollows, half on ridges
 
@@ -441,7 +463,7 @@ def _quantile_angles(theta, n):
     th = np.maximum.accumulate(theta - theta[0]) + theta[0]; m = len(th); x = np.r_[np.arange(m), m]; y = np.r_[th, th[0] + 2 * np.pi]
     return np.interp(np.arange(n) * m / n, x, y)
 
-def _band_dp(tb, tt, pen=POLE_PEN, no_mid=frozenset(), no_src=frozenset()):
+def _band_dp(tb, tt, pen=POLE_PEN, no_mid=frozenset(), no_src=frozenset(), avoid=(), stag=0.0, stag_w=0.35):
     """quad band between bottom angles tb (nb) and top angles tt (nt), both increasing, cyclic. Returns faces as (('b',i)|('t',j)) lists.
     Steps: (1,1) regular quad, (0,2) top-only quad (bottom source i gets 2 rungs), (2,0) bottom-only quad (bottom middle i+1 gets none).
     Valence guards: no two transition steps in a row; a bottom vertex in no_mid (already without a downward rung) is never a (2,0) middle,
@@ -463,6 +485,9 @@ def _band_dp(tb, tt, pen=POLE_PEN, no_mid=frozenset(), no_src=frozenset()):
                         ii, jj = i + di, j + dj
                         if ii > nb or jj > nt: continue
                         nl = 1 if st else 0; c = c0 + pp + abs(tb2[ii] - tt2[j0 + jj])
+                        if st and stag > 0 and len(avoid):                        # v002: stagger transitions against the previous band's
+                            ang_ = tb2[min(i, len(tb2) - 1)] % (2 * np.pi); dd_ = np.abs((np.asarray(avoid) - ang_ + np.pi) % (2 * np.pi) - np.pi)
+                            c += stag * float(np.exp(-(dd_ / stag_w) ** 2).sum())
                         if c < C[ii, jj, nl]: C[ii, jj, nl] = c; B[ii, jj, nl] = (st, lt)
         end = min((C[nb, nt, 0], 0), (C[nb, nt, 1], 1))
         if end[0] < INF and (best is None or end[0] < best[0]):
@@ -476,7 +501,8 @@ def _band_dp(tb, tt, pen=POLE_PEN, no_mid=frozenset(), no_src=frozenset()):
         if st == 0: faces.append([bi(i - 1), bi(i), tj(j), tj(j - 1)])
         elif st == 1: faces.append([bi(i), tj(j), tj(j - 1), tj(j - 2)])
         else: faces.append([bi(i - 2), bi(i - 1), bi(i), tj(j)])
-    return faces, dict(cost=float(cost), j0=int(j0), transitions=int(sum(1 for s in steps if s[2] != 0)))
+    tr_ang = [float(tb2[min(i, len(tb2) - 1)] % (2 * np.pi)) for (i, j, st) in steps if st]
+    return faces, dict(cost=float(cost), j0=int(j0), transitions=int(sum(1 for s in steps if s[2] != 0)), transition_angles=tr_ang)
 
 def _interp_loop(theta, X, q):
     """periodic linear interpolation of per-vertex data X (n x k) at angles q along increasing theta"""
@@ -576,12 +602,12 @@ def layout2(p=CAND['E2'], topo=TOPO2):
         key = (sheet, round(float(s_t[0]), 9), round(float(s_t[1]), 9))
         if key not in idx: idx[key] = len(sts); sts.append(np.array(s_t, float)); part.append(sheet)
         return idx[key]
-    F = []
+    F = []; FB = []
     for nm, (st, sh) in grids.items():
         for sheet in sh:
             ni, nj = st.shape[0] - 1, st.shape[1] - 1; ids = [[vid(sheet, st[i, j]) for j in range(nj + 1)] for i in range(ni + 1)]
             for i in range(ni):
-                for j in range(nj): F.append([ids[i][j], ids[i + 1][j], ids[i + 1][j + 1], ids[i][j + 1]])
+                for j in range(nj): F.append([ids[i][j], ids[i + 1][j], ids[i + 1][j + 1], ids[i][j + 1]]); FB.append(nm + '_' + sheet)
     path = np.r_[Dp, Plow[1:], Pup[1:], Ant[::-1][1:]]                                   # c0f ... tip ... c1f
     fr = [vid('front', q) for q in path]; bk = [vid('back', q) for q in path]; rim = []
     for q in range(len(path)):
@@ -589,7 +615,7 @@ def layout2(p=CAND['E2'], topo=TOPO2):
         for r in range(1, Kr): idx[('rim', r, q)] = len(sts); sts.append(path[q].copy()); part.append('rim'); row.append(len(sts) - 1)
         row.append(bk[q]); rim.append(row)
     for q in range(len(path) - 1):
-        for r in range(Kr): F.append([rim[q][r], rim[q + 1][r], rim[q + 1][r + 1], rim[q][r + 1]])
+        for r in range(Kr): F.append([rim[q][r], rim[q + 1][r], rim[q + 1][r + 1], rim[q][r + 1]]); FB.append('rim_up' if min(path[q][0], path[q + 1][0]) >= S_UP and q >= len(Dp) - 1 else 'rim')
     J = [vid('front', q) for q in A] + [vid('front', q) for q in Batt[1:]] + rim[-1][1:] + [vid('back', q) for q in U[::-1][1:]]
     J += rim[0][1:][::-1][1:] + [vid('front', q) for q in Datt[::-1][:-1]]
     Jseg = ['A'] * (na + 1) + ['Batt'] * jf + ['rimB'] * (Kr - 1) + ['U'] * (na + 1) + ['rimD'] * (Kr - 1) + ['Datt'] * jf
@@ -614,7 +640,7 @@ def layout2(p=CAND['E2'], topo=TOPO2):
     corners = dict(c0=vid('front', A[0]), c1=vid('front', A[-1]), c0f=vid('front', c0f), c1f=vid('front', c1f), Y=vid('front', Y), P_lo=vid('front', Plow[0]),
                    P_up=vid('front', Plow[-1]), tip=vid('front', Pup[-1]), tip_b=vid('back', Pup[-1]))
     return dict(st=sts, part=part, F=F, J=np.array(J), Jseg=Jseg, Jdir=np.array(Jdir), Jnb=Jnb, rim=rim, rim_inward=inward, idx=idx,
-                info=dict(corners=corners, inv_err_max=err, path_edges=len(path) - 1), topo=dict(topo, ka=ka))
+                info=dict(corners=corners, inv_err_max=err, path_edges=len(path) - 1), topo=dict(topo, ka=ka), face_block_list=FB)
 
 def rim_fill2(Lo, X):
     Kr = Lo['topo']['K_r']; rim = Lo['rim']; P = np.array([X[r[0]] for r in rim])
@@ -705,9 +731,26 @@ def optimise_sheet(Lo, p=CAND['E2'], it=400, verbose=False):
     return Lo
 
 _CL = {}
+import os as _os
+TOPO_VERSION = _os.environ.get('EAR_TOPO', 'v002')          # 'v001' reproduces order bdcd6a6; 'v002' = order 0d9c70b (ear_layout3)
+GEO_V2 = dict(lobe_lift_end=0.0974, lobe_lift_w=0.04, lobe_lift_tw=0.5, lobe_lift_att=0.4, lobe_thin=0.6)   # v002 target D: attached lobe front (c0f s = 0.0974)
+#   stands off the skin less (lift x (1 - 0.4 att)) and thins into the skin (thickness x (1 - 0.6 att)); the free lobe is unchanged
+GEO_V2.update(json.loads(_os.environ.get('EAR_GEO', '{}')))
+if TOPO_VERSION != 'v001': GEO.update(GEO_V2)
+LAYOUT3_KW = dict(h_red=0.9, cap=1.8, gap=2, stagger=1, a_ex=1.5,     # a_ex: attachment-line end shape (v001 0.7), target C
+                  step_min=0.6, h_red_last=1.6, cap_d=0.35)          # R2: rows tighten to the tip; last 4 -> 2 reduction earlier; cap over the last 0.35 cm
+LAYOUT3_KW.update(json.loads(_os.environ.get('EAR_L3', '{}')))
+QUALITY_KW = dict(lo=55.0, hi=125.0, mu=0.02, iters=2000)
+SLIDE_W = 0.05
 def canonical_layout():
-    """the one shared branch sheet layout: layout v2 in the E2 (W1e FN-elven) metric, angle-optimised; cached"""
-    if 'L' not in _CL: _CL['L'] = optimise_sheet(layout2(CAND['E2'], TOPO2), CAND['E2'], it=400)
+    """the one shared branch sheet layout in the E2 (W1e FN-elven) metric; cached.
+    v001: layout v2 (kite upper extension) + angle optimisation. v002: layout v3 (crescent F1' + tapered leaf) + angle optimisation + corner-angle energy pass."""
+    if 'L' not in _CL:
+        if TOPO_VERSION == 'v001': _CL['L'] = optimise_sheet(layout2(CAND['E2'], TOPO2), CAND['E2'], it=400)
+        else:
+            import ear_layout3 as L3
+            _CL['L'] = L3.quality_sheet(L3.optimise_sheet3(L3.layout3(CAND['E2'], **LAYOUT3_KW), CAND['E2'], it=600, slide_w=SLIDE_W), CAND['E2'], **QUALITY_KW)
+        _CL['L']['version'] = TOPO_VERSION
     return _CL['L']
 
 # ------------------------------------------------------------------ cuff v3 positions: 2-D smoothed annulus over the root plane + rho^2 rise above the skull
@@ -719,23 +762,27 @@ def cuff_build3(rd, anc_P, anc_T, Jw, skull, canon=None, band_faces=None, root_f
     Jord = np.arange(len(Jw))[::-1] if rev else np.arange(len(Jw)); tJ = _ang(Jb[Jord], c) * sense
     Ab = bu(anc_P); tA = _ang(Ab, c) * sense; tLs = tL * sense
     tJ = tJ - 2 * np.pi * np.round((tJ[0] - tLs[0]) / (2 * np.pi)); tA = tA - 2 * np.pi * np.round((tA[0] - tLs[0]) / (2 * np.pi))
-    nR = len(CUFF_SIZES); rho = [(k + 1) / (nR + 1) for k in range(nR)]
-    ring_th = [tA] + [(1 - rho[k]) * _quantile_angles(tA, CUFF_SIZES[k]) + rho[k] * _quantile_angles(tJ, CUFF_SIZES[k]) for k in range(1, nR)]
+    SZ = CUFF_SIZES if TOPO_VERSION == 'v001' else CUFF_SIZES_V2
+    nR = len(SZ); rho = [(k + 1) / (nR + 1) for k in range(nR)]
+    ring_th = [tA] + [(1 - rho[k]) * _quantile_angles(tA, SZ[k]) + rho[k] * _quantile_angles(tJ, SZ[k]) for k in range(1, nR)]
     P2 = []
     for k in range(nR):
         q = ring_th[k]; Jq = _interp_loop(tJ, Jb[Jord], q); Rq = Ab if k == 0 else _interp_loop(tLs, Lb, q)
         P2.append((1 - rho[k]) * Rq + rho[k] * Jq)
     if canon is None:
-        bands = []; no_mid, no_src = set(ring1_guard[0]), set(ring1_guard[1])
+        bands = []; no_mid, no_src = set(ring1_guard[0]), set(ring1_guard[1]); prev_ang = []
+        v2 = TOPO_VERSION != 'v001'
         for k in range(nR):
             tb = np.maximum.accumulate(ring_th[k]); tt = np.maximum.accumulate(ring_th[k + 1] if k + 1 < nR else tJ)
-            f, info = _band_dp(tb, tt, no_mid=frozenset(no_mid), no_src=frozenset(no_src)); bands.append(dict(faces=f, info=info))
+            f, info = _band_dp(tb, tt, pen=POLE_PEN_V2 if v2 else POLE_PEN, no_mid=frozenset(no_mid), no_src=frozenset(no_src),
+                               avoid=prev_ang if v2 else (), stag=STAGGER_V2 if v2 else 0.0)
+            bands.append(dict(faces=f, info=info)); prev_ang = prev_ang + info['transition_angles']
             no_mid, no_src = set(), set()                     # top-ring vertices of this band seen from the next band
             for q in f:
                 tops = [i for t, i in q if t == 't']; bots = [i for t, i in q if t == 'b']
                 if len(tops) == 3: no_mid.add(tops[1])        # top-only quad: its middle top vertex has no downward rung
                 if len(bots) == 3: no_src.add(tops[0])        # bottom-only quad: its top vertex carries an extra downward rung
-        canon = dict(J_reversed=rev, sizes=list(CUFF_SIZES), bands=bands)
+        canon = dict(J_reversed=rev, sizes=list(SZ), bands=bands)
     # graph over ring vertices (+ fixed J and root-loop neighbours) for 2-D smoothing
     off = np.cumsum([0] + [len(p) for p in P2]); nfree = off[-1]; X = np.concatenate(P2)
     fixedX = {}; nb = [set() for _ in range(nfree)]

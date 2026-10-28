@@ -81,7 +81,8 @@ for pn, dl in POSES.items():
     res['poses'][pn] = dict(new_selfx_pairs_touching_branch=len(new), flipped_branch_faces=int(flip.sum()), root_band_area_ratio_min=float(ar.min()), root_band_area_ratio_max=float(ar.max()),
                             root_band_inverted=int((((N * nc).sum(1) < 0)[band]).sum()), root_loop_edge_strain_pct=[float(100 * st_.min()), float(100 * st_.max())],
                             ear_to_nonhead_clearance_cm=clearance(X),
-                            new_pairs=[[int(f), int(g), '/'.join(sorted(set(part[Q[f]].tolist()))), '/'.join(sorted(set(part[Q[g]].tolist())))] for f, g in sorted(new)[:20]])
+                            new_pairs=[[int(f), int(g), '/'.join(sorted(set(part[Q[f]].tolist()))), '/'.join(sorted(set(part[Q[g]].tolist())))] for f, g in sorted(new)[:20]],
+                            flipped_faces=[int(f) for f in np.nonzero(flip)[0][:50]], root_inverted_faces=[int(f) for f in band[((N * nc).sum(1) < 0)[band]][:50]])
     if SAVE: np.save('%s_%s.npy' % (SAVE, pn), X.astype(np.float32))
     print(pn, res['poses'][pn], flush=True)
 if FAM:                                                    # v005 baseline: the same root-loop edges on the CF2 family realization

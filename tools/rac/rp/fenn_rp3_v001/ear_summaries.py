@@ -1,4 +1,4 @@
-# ear_summaries.py WORK EVIDENCE_DIR : order bdcd6a6 -- summary records rebuilt from a run_earbranch.sh work folder:
+# ear_summaries.py WORK EVIDENCE_DIR : order bdcd6a6 (v002: order 0d9c70b, EAR_ORDER / EAR_CANDS env) -- summary records rebuilt from a run_earbranch.sh work folder:
 #   FENN_EAR_hidden_ear_CF2_regression.json  (§4 / §14: descriptor landmarks outside the branch and byte-identical in every realization)
 #   probes/FENN_EAR_shape_probes.json        (§13 ear-shape readiness, geometry-only probes on configuration 1 E2)
 #   audit/FENN_EAR_root_deviation_by_ring.json (§12: cuff skin vs the hidden-ear CF2 skull, by graph ring from the root loop)
@@ -9,11 +9,12 @@ import scipy.sparse as sp
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import fn_face_metrics as FM
 W_, EV = sys.argv[1], sys.argv[2]; CF = '/tmp/claude-0/rt/fn/cf'; R6 = '/home/claude/wayfarer-design/reviews/reference-assets/r6'
-HEADS = ('FNL4-CF2', 'FNF181-CF2'); CANDS = ('E1', 'E2', 'E3')
+HEADS = ('FNL4-CF2', 'FNF181-CF2'); CANDS = tuple(os.environ.get('EAR_CANDS', 'E1,E2,E3').split(','))
 jl = lambda p: json.load(open(p))
+ORD = os.environ.get('EAR_ORDER', 'bdcd6a6')                                     # order label written into the records (v002: EAR_ORDER=0d9c70b)
 dump = lambda o, p: json.dump(o, open(p, 'w'), indent=1, default=lambda x: x.tolist() if hasattr(x, 'tolist') else float(x))
 # ---------------- hidden-ear CF2 regression
-H = dict(order='bdcd6a6 §4 / §14 hidden-ear CF2 identity with the ear branch',
+H = dict(order=ORD + ' §4 / §14 hidden-ear CF2 identity with the ear branch',
          rule='hidden-ear body + face identity is evaluated on the accepted R-6 sources with the external ear excluded; the branch changes no source and no production vertex outside the branch',
          heads={}, CF2_hidden_ear_eval_reference='reviews/rac-rp3-evidence/fenn_craniofacial_v001/CF_hidden_ear_eval.json')
 ok_all = True
@@ -35,7 +36,7 @@ H['verdict'] = ('hidden-ear CF2 identity PASS unchanged (sources unchanged; ever
                 else 'CHECK: a descriptor landmark touches the branch or changed')
 dump(H, os.path.join(EV, 'FENN_EAR_hidden_ear_CF2_regression.json'))
 # ---------------- probes
-P = dict(order='bdcd6a6 §13 ear-shape readiness (geometry-only, same topology, configuration 1 E2 base; not production morphs)', base='FNL4-CF2 E2', probes={})
+P = dict(order=ORD + ' §13 ear-shape readiness (geometry-only, same topology, configuration 1 E2 base; not production morphs)', base='FNL4-CF2 E2', probes={})
 base_q = np.load(os.path.join(W_, 'build/FNL4-CF2_E2_branch.npz'))['Q']
 for d in sorted(glob.glob(os.path.join(W_, 'probe', '*'))):
     nm = os.path.basename(d); a = jl(os.path.join(d, 'audit.json')); m = jl(os.path.join(d, 'measure.json'))['sides']['l']
@@ -54,7 +55,7 @@ os.makedirs(os.path.join(EV, 'probes'), exist_ok=True); dump(P, os.path.join(EV,
 # ---------------- root deviation by ring + technical summary
 RD = dict(note='distance of cuff skin from the hidden-ear CF2 skull (v005 ear zone harmonically collapsed onto its root loop), by graph ring inside the root loop; '
                'the root loop itself is unchanged (0). The transition ring lies outside the root and is reported as its displacement from v005.', realizations={})
-TS = dict(order='bdcd6a6 per-realization technical summary (from audit / deform / measure / build records)', realizations={})
+TS = dict(order=ORD + ' per-realization technical summary (from audit / deform / measure / build records)', realizations={})
 for h in HEADS:
     for c in CANDS:
         k = '%s_%s' % (h, c); z = np.load(os.path.join(W_, 'build', k + '_branch.npz')); rec = jl(os.path.join(W_, 'build', k + '_branch.json'))
