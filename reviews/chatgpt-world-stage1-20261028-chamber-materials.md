@@ -1,0 +1,9 @@
+# Stage 1 chamber materials and age
+
+A separate development level adds distinct surfaces for natural rock, bearing stone, worn floors, old iron, repair metal, timber and rope. Mineral staining and localized damp variation break up the rock, while corrosion changes the iron's color, roughness and metallic response. Repair pieces retain a less oxidized finish. Timber and rope have restrained fibre variation. Close-up review removed repeating grain and regular corrosion patterns.
+
+This pass changes material slots only. The accepted geometry, collision, routes, fixture positions and light outputs are retained. Seven native material graphs passed source and connection checks, with no displacement. Saved and reopened checks passed thirteen retained routes and all 3,600 local boundary probes, with 4.06 m minimum sampled headroom. The prior twelve continuous movement legs remain evidence for unchanged geometry and were not rerun for this surface-only pass. All 4,068,289 terrain height samples remain identical, and map checking reported zero errors or warnings.
+
+A one-minute static gameplay sample averaged 119.23 FPS with 9.56 ms p99 frame time. Rendered surface measurements confirmed retained flame-light variation. This is a scoped sample, not AI, combat or shipping-performance acceptance; navigation export cost still needs its dedicated encounter pass.
+
+Eight final native views passed the bounded material review. This is an initial material and age pass; strong warm lighting still masks some cooler rock tones, and detailed timber damage and final environment polish remain later work. Lighting rebalance is next. The compressed native checkpoint was verified, and original plus accepted earlier files retain their hashes. Character work and established story and geography are unchanged. Only prose is published here; native assets, source, screenshots, bibles and raw evidence remain private.
