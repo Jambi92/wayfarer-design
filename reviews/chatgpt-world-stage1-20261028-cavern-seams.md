@@ -1,4 +1,4 @@
-# Stage 1: tunnel joins, floor seams and texture continuity â€” v029
+# Stage 1: tunnel joins, floor seams and texture continuity — v029
 
 Player follow-up screenshots showed open tunnel connections, small floor holes and a thin projecting floor edge near the spider passage. The previous integration checks had missed these visible defects. This separate development copy rebuilds the affected surfaces and fits the two outer tunnel profiles to the actual retained geometry. Adjacent detached ceiling sheets were removed from the copied connecting pieces. Existing approved levels remain preserved.
 
