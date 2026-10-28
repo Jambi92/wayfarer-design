@@ -1,0 +1,11 @@
+# Stage 1: tunnel joins, floor seams and texture continuity â€” v029
+
+Player follow-up screenshots showed open tunnel connections, small floor holes and a thin projecting floor edge near the spider passage. The previous integration checks had missed these visible defects. This separate development copy rebuilds the affected surfaces and fits the two outer tunnel profiles to the actual retained geometry. Adjacent detached ceiling sheets were removed from the copied connecting pieces. Existing approved levels remain preserved.
+
+The chamber, approach and spider-passage floor and wall contacts now form a continuous surface. The local surface was rebuilt to remove overlapping slivers, then projected to the established floor geometry. Small measured floor-height differences are recorded and checked by collision and movement tests. The repaired export has no unintended open boundaries; its two intended open port boundaries match the retained connecting tunnel profiles.
+
+Rock and floor use common world-aligned texture sampling at fixed physical scales. A continuous slope blend removes triangular material changes at the wall feet. Existing torches and lanterns are refitted to the rebuilt surface while retaining their saved flame flicker settings. Pools, downstream seep animation, the navigation HUD and character work retain their prior scope.
+
+Twelve targeted close views passed review. The reopened level passed geometry and fixture checks, all 13 sampled routes cleared the smallest/tallest race capsules, eight outward/return walking legs completed with camera turns and 21,384 bounded rays without misses, and six jump pushes passed after landing. The final native mesh matches its source triangle count. All 4,068,289 terrain samples remain identical; the map check reported zero errors and warnings. A one-minute static water/HUD editor sample held approximately 119.8 FPS, without an AI/combat or shipping claim. The compressed checkpoint was verified locally, and the original project plus accepted v001–v028 versions retained their hashes. This remains a targeted development repair, rather than acceptance of every older cave section or completion of final environment art and tutorial gameplay.
+
+Only prose is published here. Assets, canonical bibles, screenshots and raw diagnostics remain local.
