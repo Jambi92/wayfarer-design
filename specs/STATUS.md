@@ -1,6 +1,15 @@
 # Character Design Status
 
-## VAEL RP3 CUSTOM BODY DEFORMATION — VAEL BODY NEEDS LOCAL REVISION — VD2 PROVISIONAL — EARS LOCKED — NOT FROZEN (2026-10-28)
+## VAEL RP3 ELF-FRAME — VAEL HUMAN FIREWALL PASS — VF2 RECOMMENDED — EAR PROTOTYPING UNLOCKED — NOT FROZEN (2026-10-28)
+
+- **Gate:** `reviews/claude-rac-rp3-vael-elf-frame-human-firewall-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_elf_frame/` (22 sheets). Ear proposal: `reviews/claude-rac-rp3-vael-ear-branch-proposal.md`.
+- **Term:** shared deterministic elf-frame term VEF1 (clavicle span A, axillary continuity A2, shaft gracility B) on top of VD2 (VD field 1.0); VF1 / VF2 / VF3 = 0.6 / 1.0 / 1.4x; 0 rebuild drift; regen identical.
+- **VF2 (`VAL4-R1-VD2-VF2` / `VALF178-R1-VD2-VF2`, CANDIDATE):** shoulder span −3.5 / −3.3 % vs MF (ordering MF > SG > Vael > Fenn / Aelari); mid-shaft −2.2 to −3.4 % vs VD2 with joint and extremity bases retained (canon 20 / 20); pelvis 9 / 9; torso depth kept, no waist pinch; composition-invariant; VC2 unchanged; source self-intersections reduced (56 → 50, 86 → 82).
+- **Family:** `VA_{M,F}_REF_RP3_bodyfam_v004` 69 / 69 D1–D6, topology identical, 0 new contacts, E: read-back identical.
+- **Disclosed:** c1 `shoulder_flex90` 19 flipped faces vs MF 13 (+6; VD2 16), traced by ablation to the clavicle-scale rig / LBS route — rigging-stage corrective. VF3 rejected (crosses Fenn on joint span).
+- **Next:** STOP for ChatGPT review — authorise the VA-E1 / E2 / E3 ear order (reuse Fenn-v002 engineering topology; root interface fits).
+
+## (previous) VAEL RP3 CUSTOM BODY DEFORMATION — VAEL BODY NEEDS LOCAL REVISION — VD2 PROVISIONAL — EARS LOCKED — NOT FROZEN (2026-10-28)
 
 - **Gate:** `reviews/claude-rac-rp3-vael-custom-body-deformation-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_custom_deformation/` (21 sheets).
 - **Author rulings applied:** VC2 accepted and locked; brow lighter than humans, stronger than Aelari; composite "central vertical < Aelari" RETIRED as a hard gate (component rows neck / cranial < Aelari + VA-P6 kept; `va2_eval.py` canon now 20 rows); VA-P3 "lighter than MF" visual / construction only.

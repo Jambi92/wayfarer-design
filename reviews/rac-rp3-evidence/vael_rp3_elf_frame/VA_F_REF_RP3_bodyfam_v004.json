@@ -1,0 +1,188 @@
+{
+ "file": "VA_F_REF_RP3_bodyfam_v004.blend",
+ "sha256": "f650ca75f1b30533eac5422d8ec12a452e7f86c80dbb238de1e65f416c238674",
+ "geometry_hash": "fa6f1a92e1e8c097045e5165ae05375a2c884bc27976058c1b3e9d9766613846",
+ "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+ "verts": 57842,
+ "quads": 57840,
+ "race": "Vael",
+ "configuration": "VALF178-R1-VD2-VF2",
+ "role": "configuration 2 (VALF178-R1-VD2-VF2: VALF178 foundation + the identical Vael body correction + craniofacial source)",
+ "status": "PROVISIONAL BODY + CRANIOFACIAL SOURCE CANDIDATE - NOT FROZEN (carries the family human auricle; the final Vael ear is a later branch)",
+ "source": {
+  "id": "VALF178-R1-VD2-VF2",
+  "r6": "reviews/reference-assets/r6/VALF178-R1-VD2-VF2_r6.npz",
+  "r6_sha256": "c338d97240c29129fef85578818eba84f632f99918fc9ed6861325937444e1e8",
+  "build_sha256": "0e32948a4c9fc3f648602a07f28983456b462669693c5fbe08740bf69ebd6aa1",
+  "regen_geometry_identical": true,
+  "regen_max_abs_dV_cm": 0.0
+ },
+ "mapping": {
+  "hm08_map": "family map MF_M_REF_RP3_retopo_v005_hm08_map.npz (arrays identical)"
+ },
+ "frame": {
+  "origin_translation_cm": [
+   -0.0,
+   -2.5241658091545105,
+   -0.0
+  ]
+ },
+ "readback": {
+  "max_abs_diff_vs_candidate_m": 5.9558481035892896e-08,
+  "faces_equal_candidate": true,
+  "normals_outward": true
+ },
+ "validator": {
+  "rules": "D1 + D3 + D4 + D5 + D6",
+  "firm": 69,
+  "fails": [],
+  "margin_zero": [
+   "toe1_j1_l",
+   "toe1_j1_r",
+   "toe4_j1_l",
+   "toe4_j1_r"
+  ],
+  "without_D6": 69,
+  "fallback": {
+   "shoulder_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+   "toe1_j2_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe3_j3_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+   "toe4_j2_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+   "shoulder_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe3_j3_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+   "toe4_j2_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+  },
+  "D5_exclusions": {
+   "toe1_j1_l": [
+    "+q"
+   ],
+   "toe2_j1_l": [
+    "+q",
+    "-q"
+   ],
+   "toe2_j3_l": [
+    "-p"
+   ],
+   "toe3_j1_l": [
+    "-q"
+   ],
+   "toe1_j1_r": [
+    "-q"
+   ],
+   "toe2_j1_r": [
+    "+q",
+    "-q"
+   ],
+   "toe2_j3_r": [
+    "-p"
+   ],
+   "toe3_j1_r": [
+    "+q"
+   ]
+  },
+  "D6_exclusions": {
+   "elbow_l": [
+    "-p"
+   ],
+   "wrist_l": [
+    "-p"
+   ],
+   "hip_l": [
+    "+p"
+   ],
+   "elbow_r": [
+    "+p"
+   ],
+   "wrist_r": [
+    "+p"
+   ],
+   "hip_r": [
+    "-p"
+   ]
+  }
+ },
+ "anatomy": {
+  "T1_T2": true,
+  "T3": true,
+  "T7": true,
+  "iou_min": 0.997075,
+  "body": {
+   "median_mm": 0.0,
+   "p95_mm": 0.1672,
+   "max_mm": 1.949
+  },
+  "head": {
+   "median_mm": 0.0,
+   "p95_mm": 0.0811,
+   "max_mm": 0.9305
+  },
+  "ears_zone_note": "ear zone reported separately: non-final source anatomy (MPFB human auricle) - NOT a final Vael-ear PASS",
+  "ears": {
+   "median_mm": 0.0,
+   "p95_mm": 0.1046,
+   "max_mm": 0.4598
+  }
+ },
+ "density": {
+  "face": 0.134,
+  "ears": 0.102,
+  "hand": 0.129,
+  "foot": 0.191,
+  "trunk": 0.505,
+  "arm": 0.441,
+  "leg": 0.494,
+  "neck": 0.296,
+  "head": 0.226
+ },
+ "density_all_pass": true,
+ "face": {
+  "mouth_rings": 33,
+  "orbit_rings": [
+   43,
+   43
+  ],
+  "poles_at_mouth_corners": 0,
+  "mouth_pass": true,
+  "orbit_pass": true
+ },
+ "integrity": {
+  "components": 1,
+  "boundary": 0,
+  "nonmanifold": 0,
+  "degenerate": 0,
+  "outward": true,
+  "self_intersection_pairs": 110
+ },
+ "contact": {
+  "source": 110,
+  "family": 0,
+  "new": 0
+ },
+ "contact_by_zone": {
+  "arm": {
+   "source": 78
+  },
+  "trunk": {
+   "source": 12
+  },
+  "foot": {
+   "source": 20
+  }
+ },
+ "deformation": {
+  "worst_flip_excess_vs_marchfolk_v005": 2,
+  "poses_worse_by_more_than_5": []
+ },
+ "native_integrity": {
+  "verts": 13380,
+  "quads": 13378,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "orientation_inconsistent_edges": 0,
+  "degenerate_faces": 0,
+  "coincident_vertex_pairs": 0,
+  "signed_volume_L": -61.845
+ }
+}

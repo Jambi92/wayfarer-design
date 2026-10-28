@@ -17,6 +17,12 @@ normalisation rule. Regions (order §4 / §6):
   clav     shoulder / clavicle integration: forward-up relief on the front skin along the clavicle line (sternal end -> shoulder joint), Gaussian in height
   palm     wrist-to-hand base: palm-root broadening across the palm (pinky -> index axis) between the wrist line and mid-palm
   heel     ankle-to-foot base: heel / proximal-foot broadening across the foot below the malleoli
+VEF1 (elf-frame order, reviews/chatgpt-rac-rp3-vael-elf-frame-human-firewall-order.md), optional spec["vef"] with its own magnitude (vef_magnitude):
+  A  clavicle span: the clavicle bone LENGTH (bone-space Y) x (1 - clavicle_len_k * vef_magnitude), applied with the bone scales in arm_lib.build
+     (shoulder-joint placement moves medially along the clavicle; skeletal, not a skin pinch)
+  A2 axilla  upper-thorax side wall below the axilla moved medially by the shoulder joint's own medial shift (k_shift x shift), keeping arm / trunk clearance
+  B  shaft    upper arm / forearm / thigh / calf soft-envelope gracility: radial reduction k * rel * vef_magnitude toward the bone axis, window t0..t1 of
+     the bone with smoothstep fades (joints untouched)
 The field is mesh-smoothed (Laplacian, body vertices only) so no crease forms at weight seams. Ears, head and neck carry zero by mask."""
 import json, hashlib, numpy as np
 
@@ -48,7 +54,7 @@ def _smooth(D, E, n, mask, iters):
         D = np.where(mask[:, None], 0.5 * D + 0.5 * (A @ D) / deg[:, None], D)
     return D
 
-def field(V, W, J, keep, F, spec, magnitude=1.0, return_parts=False, edges=None):
+def field(V, W, J, keep, F, spec, magnitude=1.0, return_parts=False, edges=None, vef_magnitude=0.0):
     """V (n x 3, cm analysis frame), W {bone: weights}, J {bone: [head, tail]}, keep (body vertices), F faces. Returns D (n x 3, cm)."""
     V = np.asarray(V, float); n = len(V); keep = np.asarray(keep, bool); m = float(magnitude)
     w = lambda k: np.asarray(W.get(k, np.zeros(n)), float)
@@ -133,6 +139,32 @@ def field(V, W, J, keep, F, spec, magnitude=1.0, return_parts=False, edges=None)
     Dl = _smooth(P['palm'] + P['heel'], E, n, keep & (wn < 0.5), it_)
     wf = w('fingers_l') + w('fingers_r'); Dl *= np.clip(1 - 3.0 * wf, 0, 1)[:, None]   # digits incl. the thumb ray (thumb_01) carry no palm-root displacement (finger / thumb loops untouched)
     D = Dt + Dl
+    # VEF1 component B (elf-frame order): long-bone soft-envelope gracility -- radial reduction toward each shaft's own bone axis, strongest mid-shaft,
+    # faded to zero before both joints (elbow / wrist / knee / ankle / hip / shoulder stations untouched), weighted by the bone's own skin weight
+    ve = spec.get('vef')
+    if ve and vef_magnitude:
+        Ps = np.zeros((n, 3)); sh = ve['shaft']
+        for b, (t0, t1, rel) in sh['bones'].items():
+            for sd in ('l', 'r'):
+                h_, t_ = head(b + '_' + sd), np.asarray(J[b + '_' + sd][1], float); ax = t_ - h_; L = np.linalg.norm(ax); ax /= L
+                wb = w(b + '_' + sd); mk = keep & (wb > 0.05); q = V - h_; tt = (q @ ax) / L; rad = q - np.outer(tt * L, ax)
+                win = _ss((tt - t0) / sh['fade']) * (1 - _ss((tt - t1) / sh['fade']))
+                Ps += -(sh['k'] * rel * vef_magnitude * win * wb * mk)[:, None] * rad
+        Ps = _smooth(Ps, E, n, keep & (wn < 0.5), it_)
+        P['shaft'] = Ps; D = D + Ps
+        # A2 (continuity with component A): the upper-thorax side wall below the axilla follows the medial shift of the shoulder joint, so the narrower
+        # girdle keeps the arm-to-trunk clearance of the accepted body (no new arm / trunk contact); lateral azimuth only, faded above / below
+        ax_ = ve.get('axilla')
+        if ax_:
+            sft = 0.0
+            for sd in ('l', 'r'):
+                c0, c1 = head('clavicle_' + sd), head('upperarm_' + sd); f = 1.0 - ve['clavicle_len_k'] * vef_magnitude
+                sft += 0.5 * abs(c1[0] - c0[0]) * (1.0 / f - 1.0)          # medial shift of the shoulder joint (clavicle already shortened here)
+            u3_, uc = head('spine_03')[2], cl; rr = (V[:, 2] - u3_) / (uc - u3_)
+            wt3 = w('spine_03') + w('spine_02') + w('clavicle_l') + w('clavicle_r'); ta = keep & (wt3 > 0.2) & (wn < 0.3)
+            a = ax_['k_shift'] * sft * _g(rr, ax_['r'], ax_['sigma_r']) * lat(ax_['phi_min_deg']) * ta * np.clip(wt3 / (wt3 + warm + 1e-9), 0, 1)   # trunk share of the axillary skin
+            Pa = _smooth(np.c_[-np.sign(dx) * a, 0 * a, 0 * a], E, n, keep & (wn < 0.5), it_)
+            P['axilla'] = Pa; D = D + Pa; info_ax = sft
     D[~keep] = 0.0; D[keep & (wn > 0.5)] = 0.0
     info = dict(H=float(H), s=float(s), hip_u=float(hip), clavicle_u=float(cl), r_waist=r_w, waist_half_breadth_cm=hb_w)
     if return_parts: return D, P, info

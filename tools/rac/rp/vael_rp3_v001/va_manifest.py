@@ -64,6 +64,10 @@ if R1:   # source sidecars for the provisional R1 sources (both configurations):
             cen['role'] = 'PROVISIONAL Vael configuration-%s source (custom body-deformation order): %s + Vael body field %s at magnitude %s; R1 kept unchanged as ancestry' % (cfg[1], cid.rsplit('-', 1)[0], vf.get('spec', {}).get('version'), vf.get('magnitude'))
             cen['construction'] = 'tools/rac/w1/build_variant.py: %s_build.json + overrides {"vael_field": definition + magnitude} (tools/rac/rp/vael_rp3_v001/build_vd.sh), height macro held; field applied by arm_lib.build (tools/rac/w1/vael_body_field.py)' % cid.rsplit('-', 1)[0]
             cen['field_definition_sha256'] = vf.get('spec_sha256'); cen['field_magnitude'] = vf.get('magnitude')
+            if vf.get('vef_magnitude'):   # elf-frame order: + VEF1 (clavicle span + axillary continuity + shaft gracility)
+                cen['role'] = 'PROVISIONAL Vael configuration-%s source (elf-frame order): %s + elf-frame term %s at vef_magnitude %s (VD field 1.0); %s kept unchanged as ancestry' % (cfg[1], cid.rsplit('-', 1)[0], vf['spec'].get('vef', {}).get('version'), vf['vef_magnitude'], cid.rsplit('-', 1)[0])
+                cen['construction'] = 'tools/rac/w1/build_variant.py: %s_build.json + overrides {"vael_field": definition (VD + vef) + magnitude 1.0 + vef_magnitude} (tools/rac/rp/vael_rp3_v001/build_vf.sh), height macro held; clavicle length scale + field applied by arm_lib.build (vael_body_field.py)' % cid.rsplit('-', 1)[0]
+                cen['vef_magnitude'] = vf['vef_magnitude']
         json.dump(cen, open(E + '/%s_source_sidecar.json' % cid, 'w'), indent=1)
     print(man['topology_identity_proof']); print({c: (d['worst_flip_excess'], d['poses_worse_by_more_than_5']) for c, d in DEF.items()}); sys.exit(0)
 b = jl(RA + '/builds/%s_build.json' % C2); rc = jl(W + '/src/%s_regen_check.json' % C2); pa = jl(W + '/partA/VALF178_reference_validation.json')

@@ -2,7 +2,22 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-28) — VAEL CUSTOM BODY DEFORMATION — BODY NEEDS LOCAL REVISION — awaiting ChatGPT review
+## LATEST (2026-10-28) — VAEL ELF-FRAME — HUMAN FIREWALL PASS — VF2 RECOMMENDED — EAR PROTOTYPING UNLOCKED — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-vael-elf-frame-human-firewall-order.md`. Gate: `reviews/claude-rac-rp3-vael-elf-frame-human-firewall-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_elf_frame/`. Ear proposal (no geometry): `reviews/claude-rac-rp3-vael-ear-branch-proposal.md`.
+- VEF1 added to `tools/rac/w1/vael_body_field.py` (A clavicle span via bone scale in `arm_lib.build`, A2 axilla, B shaft); activated by `cfg["vael_field"]["vef_magnitude"]` (inert otherwise).
+- VF1 / VF2 / VF3 built on VD2 (`tools/rac/rp/vael_rp3_v001/build_vf.sh`); eval `vf_eval.py`, `vf_comp.py`, `vf_ear_root.py`, sheets `vf_sheets.py`; manifest `va_manifest.py` (v004).
+- VF2 propagated: `VAL4-R1-VD2-VF2` / `VALF178-R1-VD2-VF2` (CANDIDATE) -> `VA_{M,F}_REF_RP3_bodyfam_v004` (E: `Vael/RP3/`, read-back identical).
+- Workspace `/tmp/claude-0/rt/vf/` (cand, cand2, skp, lean, comp, prod, chain.sh).
+
+**Key findings**
+- Human and three-elf firewalls pass; pelvis 9 / 9; VC2 unchanged; composition-invariant.
+- Disclosed: c1 shoulder_flex90 +6 vs MF (rig / LBS from the clavicle scale).
+
+**Next:** STOP for ChatGPT review (ear order VA-E1 / E2 / E3).
+
+## (previous) 2026-10-28 — VAEL CUSTOM BODY DEFORMATION — BODY NEEDS LOCAL REVISION
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-vael-custom-body-deformation-order.md`. Gate: `reviews/claude-rac-rp3-vael-custom-body-deformation-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_custom_deformation/`.

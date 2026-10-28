@@ -1,0 +1,267 @@
+{
+ "id": "VALF178-R1-VD2-VF1",
+ "base": "VALF178-R1-VD2_build.json",
+ "overrides": {
+  "vael_field": {
+   "spec": {
+    "version": "VDF1.2",
+    "rib": {
+     "k": -0.07,
+     "at": [
+      1.0,
+      1.0
+     ],
+     "sigma_seg": 0.85,
+     "phi_min_deg": 62.0
+    },
+    "flank": {
+     "k": -0.03,
+     "at": [
+      0.0,
+      0.6
+     ],
+     "sigma_seg": 0.55,
+     "phi_min_deg": 55.0,
+     "crest_r": 0.16
+    },
+    "asis": {
+     "k": 0.03,
+     "r": 0.1,
+     "sigma_r": 0.06,
+     "phi_deg": 50.0,
+     "sigma_phi_deg": 22.0
+    },
+    "clav": {
+     "k_cm": 0.35,
+     "sigma_cm": 1.4,
+     "dz_cm": 0.5,
+     "t0": 0.12,
+     "t1": 0.85,
+     "dir": [
+      0.0,
+      0.8,
+      0.6
+     ]
+    },
+    "palm": {
+     "k": 0.08,
+     "t0": 0.22,
+     "t1": 0.65
+    },
+    "heel": {
+     "k": 0.08,
+     "t0": 0.45,
+     "zfade_cm": 3.0
+    },
+    "smooth_iters": 8,
+    "vef": {
+     "version": "VEF1",
+     "clavicle_len_k": 0.04,
+     "axilla": {
+      "k_shift": 1.4,
+      "r": 0.55,
+      "sigma_r": 0.15,
+      "phi_min_deg": 75.0
+     },
+     "shaft": {
+      "k": 0.04,
+      "fade": 0.12,
+      "bones": {
+       "upperarm": [
+        0.18,
+        0.78,
+        1.0
+       ],
+       "lowerarm": [
+        0.15,
+        0.65,
+        0.8
+       ],
+       "thigh": [
+        0.22,
+        0.78,
+        1.0
+       ],
+       "calf": [
+        0.15,
+        0.7,
+        0.8
+       ]
+      }
+     }
+    }
+   },
+   "magnitude": 1.0,
+   "vef_magnitude": 0.6,
+   "spec_sha256": "b0bf94cf4aa64ffc2866e9d12e61daf8e3e4273a6e51c3c211c3883ba808990c"
+  }
+ },
+ "cfg": {
+  "gender": 0.0,
+  "age_years": 35,
+  "age": 0.5769230769,
+  "muscle": 0.5,
+  "weight": 0.5,
+  "proportions": 0.5,
+  "stature": 178.0,
+  "targets": {
+   "torso-scale-depth-incr": 0.25,
+   "LR:hand-scale-incr": 0.1,
+   "LR:foot-scale-horiz-incr": 0.2,
+   "LR:hand-fingers-distance-incr": 0.2,
+   "LR:eye-scale-incr": 0.15,
+   "LR:cheek-bones-incr": 0.2,
+   "measure-wrist-circ-decr": 0.35,
+   "measure-lowerleg-height-decr": 0.1,
+   "measure-ankle-circ-decr": 0.1,
+   "measure-knee-circ-decr": 0.05,
+   "neck-scale-horiz-incr": 0.2,
+   "LR:foot-scale-depth-incr": 0.06,
+   "head-oval": 0.15,
+   "forehead-scale-vert-incr": 0.03,
+   "head-scale-horiz-incr": 0.06,
+   "chin-height-decr": 0.2,
+   "LR:cheek-inner-incr": 0.35,
+   "LR:cheek-trans-up": 0.8,
+   "chin-bones-incr": 0.3,
+   "head-diamond": 0.12,
+   "eyebrows-trans-backward": 0.015
+  },
+  "id": "VALF178-R1-VD2-VF1",
+  "bone_scales": {
+   "pelvis": [
+    1.02,
+    1.045,
+    1.03
+   ],
+   "LR:thigh": [
+    1,
+    0.98602,
+    1
+   ],
+   "LR:calf": [
+    1,
+    1.02723,
+    1
+   ],
+   "spine_03": [
+    1,
+    0.9747,
+    1
+   ],
+   "LR:upperarm": [
+    1,
+    0.99414,
+    1
+   ],
+   "LR:lowerarm": [
+    1,
+    1.00565,
+    1
+   ]
+  },
+  "vael_field": {
+   "spec": {
+    "version": "VDF1.2",
+    "rib": {
+     "k": -0.07,
+     "at": [
+      1.0,
+      1.0
+     ],
+     "sigma_seg": 0.85,
+     "phi_min_deg": 62.0
+    },
+    "flank": {
+     "k": -0.03,
+     "at": [
+      0.0,
+      0.6
+     ],
+     "sigma_seg": 0.55,
+     "phi_min_deg": 55.0,
+     "crest_r": 0.16
+    },
+    "asis": {
+     "k": 0.03,
+     "r": 0.1,
+     "sigma_r": 0.06,
+     "phi_deg": 50.0,
+     "sigma_phi_deg": 22.0
+    },
+    "clav": {
+     "k_cm": 0.35,
+     "sigma_cm": 1.4,
+     "dz_cm": 0.5,
+     "t0": 0.12,
+     "t1": 0.85,
+     "dir": [
+      0.0,
+      0.8,
+      0.6
+     ]
+    },
+    "palm": {
+     "k": 0.08,
+     "t0": 0.22,
+     "t1": 0.65
+    },
+    "heel": {
+     "k": 0.08,
+     "t0": 0.45,
+     "zfade_cm": 3.0
+    },
+    "smooth_iters": 8,
+    "vef": {
+     "version": "VEF1",
+     "clavicle_len_k": 0.04,
+     "axilla": {
+      "k_shift": 1.4,
+      "r": 0.55,
+      "sigma_r": 0.15,
+      "phi_min_deg": 75.0
+     },
+     "shaft": {
+      "k": 0.04,
+      "fade": 0.12,
+      "bones": {
+       "upperarm": [
+        0.18,
+        0.78,
+        1.0
+       ],
+       "lowerarm": [
+        0.15,
+        0.65,
+        0.8
+       ],
+       "thigh": [
+        0.22,
+        0.78,
+        1.0
+       ],
+       "calf": [
+        0.15,
+        0.7,
+        0.8
+       ]
+      }
+     }
+    }
+   },
+   "magnitude": 1.0,
+   "vef_magnitude": 0.6,
+   "spec_sha256": "b0bf94cf4aa64ffc2866e9d12e61daf8e3e4273a6e51c3c211c3883ba808990c"
+  }
+ },
+ "route": "height macro held from base",
+ "height_macro": 0.642578125,
+ "pose": {
+  "arm_abduction_deg": 8.0,
+  "palm_twist_deg_l": 0.12,
+  "palm_residual_deg_l": -0.0,
+  "palm_twist_deg_r": -0.12,
+  "palm_residual_deg_r": 0.0
+ },
+ "stature_r6": 178.00111882388592
+}

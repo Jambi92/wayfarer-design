@@ -51,6 +51,11 @@ def build(cfg):
     for k in list(bs):
         if k.startswith("LR:"):
             v = bs.pop(k); bs[k[3:] + "_l"] = v; bs[k[3:] + "_r"] = v
+    _vf = cfg.get("vael_field") or {}; _ve = (_vf.get("spec") or {}).get("vef")
+    if _ve and _vf.get("vef_magnitude"):   # Vael elf-frame term VEF1 component A: clavicle span (bone length) toward the shared elven shoulder foundation
+        f = 1.0 - _ve["clavicle_len_k"] * _vf["vef_magnitude"]
+        for s in ("l", "r"):
+            c = list(bs.get("clavicle_" + s, (1.0, 1.0, 1.0))); c[1] *= f; bs["clavicle_" + s] = c
     if bs: apply_bone_scales(body, rig, bs)
     if cfg.get("vael_field"): vael_field_apply(body, rig, cfg["vael_field"])
     return body, rig
@@ -68,7 +73,7 @@ def vael_field_apply(body, rig, vf):
     for s in ("l", "r"): W["fingers_" + s] = np.array([max([g[k].get(i, 0.0) for k in hg if k.endswith("_" + s)] + [0.0]) for i in range(n)])
     J = {k: [v[0].tolist(), v[1].tolist()] for k, v in bone_pts(rig).items()}
     E = np.array([tuple(e.vertices) for e in body.data.edges])
-    D, info = VF.field(c, W, J, keep, None, vf["spec"], vf.get("magnitude", 1.0), edges=E)
+    D, info = VF.field(c, W, J, keep, None, vf["spec"], vf.get("magnitude", 1.0), edges=E, vef_magnitude=vf.get("vef_magnitude", 0.0))
     M3 = np.array(body.matrix_world)[:3, :3]; Dw = np.c_[D[:, 0], -D[:, 1], D[:, 2]] / 100.0; Do = Dw @ np.linalg.inv(M3).T
     if body.data.shape_keys is None: body.shape_key_add(name="Basis")
     kb = body.shape_key_add(name="WF_VaelBodyField", from_mix=True)
