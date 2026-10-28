@@ -1,0 +1,435 @@
+{
+ "record": "AELARI RP3 FINAL PASS \u2014 AUTHOR ACCEPTED / FROZEN",
+ "date": "2026-10-28",
+ "authority": "reviews/chatgpt-rac-rp3-aelari-final-consolidation-freeze-order.md (author review of Claude return 7d2f734)",
+ "freeze_method": "freeze-by-record: both production .blend files are preserved byte-identical (not re-saved); this record is authoritative over the sidecar / embedded RAC_status strings",
+ "family_base": {
+  "record": "MPFB_FAMILY_BASE_v005_FREEZE.json",
+  "record_sha256": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+  "blend": "MF_M_REF_RP3_retopo_v005.blend",
+  "blend_sha256": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+  "hm08_map": "MF_M_REF_RP3_retopo_v005_hm08_map.npz",
+  "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+  "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+  "verts": 57842,
+  "quads": 57840,
+  "unchanged": true,
+  "note": "active family base unchanged; Aelari uses it everywhere outside the ear branch"
+ },
+ "ear_branch": {
+  "description": "accepted Aelari-specific external-ear branch = AE-E2 Aelari geometry + reused Fenn ear topology v002 (ENGINEERING TOPOLOGY ONLY; not a universal elf ear topology, not Fenn ear geometry)",
+  "geometry": "AE-E2 (W1e AE-elven; accepted as the canonical central Aelari ear, order 2026-10-28 \u00a71.5)",
+  "params": {
+   "L": 9.4,
+   "wb": 1.7,
+   "taper": [
+    "continuous",
+    0.25,
+    0.95
+   ],
+   "lobe": 0.14,
+   "proj": 24,
+   "tilt": 30,
+   "sweep": 1.7,
+   "thick": 0.25,
+   "ah": 0.23,
+   "crura": 1.0,
+   "concha": 0.7,
+   "crus": 0.12,
+   "trag": 0.24,
+   "atrag": 0.18,
+   "helix": [
+    0.25,
+    0.25
+   ]
+  },
+  "engineering_topology": "FENN_EAR_BRANCH_TOPOLOGY_v002 (frozen with Fenn, 6d2eadc; reuse accepted 2026-10-28 \u00a71.6)",
+  "topology_json_sha256": "e8d6e91a249220794d296f7c6a317085cae87cb470cbec7f9b4f6dedf63decc7",
+  "topology_npz_sha256": "85a53c81c0f2c9bf0f307571d93ab74e118981ff55e6432acd0143d1218101bf",
+  "cuff_canon_sha256": "2f1c1ed637566c04d931b5050fc38d82d796aba984d79aff887ccb78af255d8e",
+  "map_v005_v002_npz_sha256": "29a82c5a9f943440ce2717b474b9ccf309f2a7962778ac31312c5313da99f559",
+  "per_side": {
+   "patch_vertices": 1732,
+   "patch_faces": 1757,
+   "sheet_and_rim_faces": 1396,
+   "cuff_faces": 309,
+   "removed_v005_vertices": 1181,
+   "removed_v005_faces": 1206,
+   "root_loop_vertices": 52,
+   "transition_ring_v005_vertices": 51
+  },
+  "whole_mesh": {
+   "v005_verts": 57842,
+   "v005_faces": 57840,
+   "branch_verts": 58944,
+   "branch_faces": 58942
+  },
+  "face_list_equals_frozen_fenn": true,
+  "shared_by": "configuration 1 and configuration 2 (identical face list)"
+ },
+ "lineage": {
+  "c1": "AEL1 (ancestry, W1 accepted) -> AEL1-R1 (accepted corrected central body, 0f6aba8 / 2026-10-28 \u00a71.1) -> AE_M_REF_RP3_v001",
+  "c2": "AELF190 (MF-F route + Aelari design, fd71f15) -> AELF190-R1 (accepted corrected central body) -> AE_F_REF_RP3_v001",
+  "ear": "AE-E2 geometry + reused Fenn-v002 engineering topology = accepted Aelari-specific external-ear branch",
+  "body_correction": {
+   "spine_03_Y": [
+    0.9704,
+    0.99
+   ],
+   "LR_thigh_Y": [
+    0.9875,
+    1.01
+   ],
+   "LR_calf_Y": [
+    1.0523,
+    1.03
+   ],
+   "height_macro": "re-solved to ~190 cm"
+  }
+ },
+ "references": {
+  "AEL1": {
+   "role": "configuration-1 ancestry (immutable)",
+   "r6_sha256": "7bc1021a6a68feea08d835c95d29e01e08ec3177f346bff62397964d300386fb",
+   "build_sha256": "bf7ac6d63b508d9c4e0a5cae7b41acf5ec1cb6d0b2845557483c1dd279e52912"
+  },
+  "AELF190": {
+   "role": "configuration-2 ancestry (immutable)",
+   "r6_sha256": "a81407ff36c7174ed08d01a3f7de18db4e3f336b8dea79f8f35434d6028607a4",
+   "build_sha256": "040de50a48f43874d46053a25dbde95c64db1ad97539f938d665aa7c52ad461f"
+  },
+  "AEL1-R1": {
+   "role": "accepted configuration-1 central body source",
+   "r6_sha256": "17ae6d138809d3b3936c0631a6bbe30f2a891c16782052c3bc0ccc156f0c0faf",
+   "build_sha256": "73ec892fc04a840fe704d6fde5925c741bd3aa72cc4051bfcdfc3e62531dfcff"
+  },
+  "AELF190-R1": {
+   "role": "accepted configuration-2 central body source",
+   "r6_sha256": "93a951d585a7c9d8fcba7a7a77795686eea1ac57326ad3107f1b7a6636a59239",
+   "build_sha256": "73fab1c8777c1b45e0c8652cd1626f5bb30311094a94da8c81e4b25471917238"
+  }
+ },
+ "fenn_comparison": {
+  "freeze_record": "reviews/rac-rp3-evidence/fenn_rp3_freeze/FENN_RP3_FREEZE.json",
+  "freeze_record_sha256": "0bafdfb416eac50f8026145a48316bcbad69494e6361ba6222159b75c1f4c153",
+  "FN_M_REF_RP3_v001_sha256": "3f7f17783ad59d5fff9c139ccd64d312ccb4c7295fe58a365229ef4b72d8633c",
+  "FN_F_REF_RP3_v001_sha256": "14c1cf81bec30ed7656e81a2b6ce1b7cd4bbdfad18aa372642a1a9dd48cd9f6e",
+  "comparators": "FNM190 / FNF190 (frozen Fenn route at 190 cm, body comparisons); FNL4-CF2 E2 (visible-ear firewall)",
+  "unchanged": true
+ },
+ "validator": {
+  "rules": "D1 + D3 + D4 + D5 + D6 (authoritative)",
+  "implementation": "tools/rac/rp/marchfolk_rp3_v001/validator_v2.py --scale-ref 173.143 --d5 --d6-native",
+  "files": {
+   "AE_M_REF_RP3_v001.blend": "69 / 69",
+   "AE_F_REF_RP3_v001.blend": "69 / 69"
+  }
+ },
+ "files": {
+  "AE_M_REF_RP3_v001.blend": {
+   "race": "Aelari",
+   "configuration": "c1",
+   "source": "AEL1-R1",
+   "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Aelari/RP3/AE_M_REF_RP3_v001.blend",
+   "sha256": "b4bcf9ee124985dad476c7794b828d44ee6fc99ebeab75c6150626214f640414",
+   "geometry_hash": "6c9ceddca19386afecb307fb65a0b8075376549576213c503cc8eee2f1ce3873",
+   "face_topology_hash": "4615d6bcb6ad5afeffcebdcad925ee51dc402a6e1fe318b8e0d4fb95d2814688",
+   "verts": 58944,
+   "quads": 58942,
+   "sidecar": "AE_M_REF_RP3_v001.json",
+   "sidecar_sha256": "680bd549ffb2ac30890b8cd737a3f1b008e6ed0ccbaee3f42028c7b7d84cd3f1",
+   "branch_map": "AE_M_REF_RP3_v001_branch_map.npz",
+   "branch_map_sha256": "a90aa2018c90526ef659619b0298114948e4b43ed8cec1250efb6c89aa4af63d",
+   "landmarks": "AE_M_REF_RP3_v001_landmarks.json",
+   "landmarks_sha256": "e6fe232c74efcec7125843ce622815a7c1862d7f8576309dbd117a4b7b09fb1f",
+   "embedded_status": "AELARI RP3 FINAL PRODUCTION BODY (order 2026-10-28 final consolidation) - freeze status is held by record: AELARI_RP3_FREEZE.json",
+   "readback_all_pass": true,
+   "readback_validator": {
+    "firm": 69,
+    "stations": 69,
+    "fails": [],
+    "margin_zero": [
+     "thumb_mcp_l",
+     "thumb_mcp_r",
+     "toe1_j1_l",
+     "toe1_j1_r"
+    ]
+   },
+   "rebuild": {
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0,
+    "full_record_rebuild_max_abs_dV_cm": 0.0,
+    "family_equals_reviewed_v002_candidate": true,
+    "branch_arrays_equal_reviewed_AE_E2": true,
+    "outside_branch_equals_family": true,
+    "face_list_equals_frozen_fenn_v002": true
+   },
+   "integrity": {
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "winding_consistent": true,
+    "normals_outward": true,
+    "coincident_vertex_pairs": 0,
+    "self_intersection_pairs": 62,
+    "family_self_intersection_pairs": 62,
+    "contact_pairs_equal_family_set": true,
+    "branch_self_intersections": 0,
+    "root_valence_4": true
+   },
+   "validator": {
+    "firm": 69,
+    "stations": 69,
+    "margin_zero": [
+     "thumb_mcp_l",
+     "thumb_mcp_r",
+     "toe1_j1_l",
+     "toe1_j1_r"
+    ],
+    "stations_identical_to_family": 69
+   },
+   "anatomy": {
+    "T1": true,
+    "T2": true,
+    "T3": true,
+    "T7": true,
+    "unmasked_failing": [
+     "T1_T2_pass",
+     "T7_pass"
+    ],
+    "unmasked_classification": "expected source-vs-new-ear anatomy divergence (R-6 source carries the MPFB human auricle; production carries AE-E2)",
+    "identity_holds_all_zones": true
+   },
+   "body_identity": {
+    "pass_": true,
+    "canon": "16 / 19",
+    "thoracic_vs_FN_pct": 1.0,
+    "shin_over_leg_gap_to_MF": 0.00957,
+    "fenn_gap": 0.01918
+   },
+   "pelvis_all_rules_all_t": true,
+   "hidden_ear_face": {
+    "pass_": true,
+    "systems_material": 7,
+    "descriptors_equal_reviewed_R1": true
+   },
+   "face": {
+    "mouth_rings": 30,
+    "orbit_rings": [
+     43,
+     43
+    ],
+    "poles_at_mouth_corners": 0,
+    "mouth_pass": true,
+    "orbit_pass": true,
+    "equals_family": true
+   },
+   "density": {
+    "all_9_zones_pass": true,
+    "ear_branch_mean_pct_stature": 0.10309494920883343
+   },
+   "ear": {
+    "T4": 117,
+    "branch_faces": 3718,
+    "T4_rate": 0.0315,
+    "aspect_max": 8.284963422138855,
+    "aspect_gt10": 0,
+    "root_crease_max_deg": 51.903689899281126,
+    "measures_equal_reviewed": true,
+    "measures": {
+     "length_lobe_to_tip_cm": 9.674456455629132,
+     "auricle_height_cm": 9.299579027762732,
+     "max_width_cm": 3.2375724481485615,
+     "auricle_body_angle_deg": 27.192632956553464,
+     "total_lateral_extent_from_root_plane_cm": 2.542998345704395,
+     "side_view_upper_extension_deg": 38.03975593024484,
+     "sweep_max_axis_deviation_cm": 1.1555091732067635,
+     "tip_in_plane_angle_deg_at_1cm": 31.414282800020132
+    }
+   },
+   "deformation": {
+    "standard_v1_final_minus_family_flipped_max": 0,
+    "standard_v1_final_minus_family_selfx_max": 0,
+    "standard_v1_poses_worse_than_family": [],
+    "ear_readiness_all_zero": true
+   }
+  },
+  "AE_F_REF_RP3_v001.blend": {
+   "race": "Aelari",
+   "configuration": "c2",
+   "source": "AELF190-R1",
+   "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Aelari/RP3/AE_F_REF_RP3_v001.blend",
+   "sha256": "505f340573b573c7b09bed547112b555925bc975ea7f0249ec191365fae1175c",
+   "geometry_hash": "d51375d683b639541f7e890c9457b7b0fefbd7f98f4bc3fa30bef26d0b9d473d",
+   "face_topology_hash": "4615d6bcb6ad5afeffcebdcad925ee51dc402a6e1fe318b8e0d4fb95d2814688",
+   "verts": 58944,
+   "quads": 58942,
+   "sidecar": "AE_F_REF_RP3_v001.json",
+   "sidecar_sha256": "af82a48107f33b7ebd37591f49cd1e4b9d2a5c17a505ec46c39f430af0072e07",
+   "branch_map": "AE_F_REF_RP3_v001_branch_map.npz",
+   "branch_map_sha256": "72357e186023637cff906a7cb0ff56a5a38b3d0e5844f26f1e6b2633e1048009",
+   "landmarks": "AE_F_REF_RP3_v001_landmarks.json",
+   "landmarks_sha256": "14cefd65c03464a9cf80d3a3b9d507b1a8e82f9dc65b9b4627b69d451983fe3b",
+   "embedded_status": "AELARI RP3 FINAL PRODUCTION BODY (order 2026-10-28 final consolidation) - freeze status is held by record: AELARI_RP3_FREEZE.json",
+   "readback_all_pass": true,
+   "readback_validator": {
+    "firm": 69,
+    "stations": 69,
+    "fails": [],
+    "margin_zero": [
+     "toe1_j1_l",
+     "toe1_j1_r"
+    ]
+   },
+   "rebuild": {
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0,
+    "full_record_rebuild_max_abs_dV_cm": 0.0,
+    "family_equals_reviewed_v002_candidate": true,
+    "branch_arrays_equal_reviewed_AE_E2": true,
+    "outside_branch_equals_family": true,
+    "face_list_equals_frozen_fenn_v002": true
+   },
+   "integrity": {
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "winding_consistent": true,
+    "normals_outward": true,
+    "coincident_vertex_pairs": 0,
+    "self_intersection_pairs": 154,
+    "family_self_intersection_pairs": 154,
+    "contact_pairs_equal_family_set": true,
+    "branch_self_intersections": 0,
+    "root_valence_4": true
+   },
+   "validator": {
+    "firm": 69,
+    "stations": 69,
+    "margin_zero": [
+     "toe1_j1_l",
+     "toe1_j1_r"
+    ],
+    "stations_identical_to_family": 69
+   },
+   "anatomy": {
+    "T1": true,
+    "T2": true,
+    "T3": true,
+    "T7": true,
+    "unmasked_failing": [
+     "T1_T2_pass",
+     "T7_pass"
+    ],
+    "unmasked_classification": "expected source-vs-new-ear anatomy divergence (R-6 source carries the MPFB human auricle; production carries AE-E2)",
+    "identity_holds_all_zones": true
+   },
+   "body_identity": {
+    "pass_": true,
+    "canon": "17 / 19",
+    "thoracic_vs_FN_pct": 1.32,
+    "shin_over_leg_gap_to_MF": 0.00944,
+    "fenn_gap": 0.02029
+   },
+   "pelvis_all_rules_all_t": true,
+   "hidden_ear_face": {
+    "pass_": true,
+    "systems_material": 7,
+    "descriptors_equal_reviewed_R1": true
+   },
+   "face": {
+    "mouth_rings": 36,
+    "orbit_rings": [
+     43,
+     43
+    ],
+    "poles_at_mouth_corners": 0,
+    "mouth_pass": true,
+    "orbit_pass": true,
+    "equals_family": true
+   },
+   "density": {
+    "all_9_zones_pass": true,
+    "ear_branch_mean_pct_stature": 0.0993931298077838
+   },
+   "ear": {
+    "T4": 120,
+    "branch_faces": 3718,
+    "T4_rate": 0.0323,
+    "aspect_max": 8.545462045198397,
+    "aspect_gt10": 0,
+    "root_crease_max_deg": 51.548721586053546,
+    "measures_equal_reviewed": true,
+    "measures": {
+     "length_lobe_to_tip_cm": 9.345333919532113,
+     "auricle_height_cm": 8.983209725953373,
+     "max_width_cm": 3.1274310608965306,
+     "auricle_body_angle_deg": 27.19263295655344,
+     "total_lateral_extent_from_root_plane_cm": 2.3394146006919976,
+     "side_view_upper_extension_deg": 38.039755930245136,
+     "sweep_max_axis_deviation_cm": 1.1161990464504599,
+     "tip_in_plane_angle_deg_at_1cm": 31.414282800019972
+    }
+   },
+   "deformation": {
+    "standard_v1_final_minus_family_flipped_max": 0,
+    "standard_v1_final_minus_family_selfx_max": 0,
+    "standard_v1_poses_worse_than_family": [],
+    "ear_readiness_all_zero": true
+   }
+  }
+ },
+ "accepted_diagnostic_notes": [
+  "skin wrist / knee / ankle gracility rows are diagnostic only (skin breadth unstable across the stature macro; order \u00a719)",
+  "unmasked anatomy.py T-1 / T-2 / T-7 differences are the expected source-vs-new-ear anatomy divergence (R-6 source carries the MPFB human auricle)",
+  "accepted narrower R1 margins: leg share > MF ~+0.34 / +0.35 %, waist interval / torso > Fenn ~+1.33 % / +0.62 %",
+  "ear branch faces carry a zero placeholder UV (UV / materials out of scope)"
+ ],
+ "carry_forward": {
+  "register": "specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md",
+  "new_ids": []
+ },
+ "gates": {
+  "record": "AELARI_FINAL_gates.json",
+  "report": "reviews/claude-rac-rp3-aelari-final-freeze-report.md",
+  "parents": [
+   "reviews/claude-rac-rp3-aelari-body-face-ear-gate.md",
+   "reviews/claude-rac-rp3-aelari-body-source-correction-gate.md"
+  ],
+  "firewall_all_hold": true,
+  "probes_all_clean": true
+ },
+ "readback": {
+  "file": "AELARI_RP3_freeze_readback.json",
+  "all_pass": true,
+  "c1_c2_face_topology_identical": true
+ },
+ "provenance": [
+  "AEL1-R1 / AELF190-R1 R-6 regenerated from reviews/reference-assets/builds (regen.py: geometry identical, max |dV| 0) and fully re-built from the record (max |dV| 0)",
+  "native hm08 export",
+  "propagate.py onto MPFB Family Base v005 -> family realization (byte-identical to the reviewed bodyfam_v002 candidate)",
+  "AE-E2 on the reused Fenn ear topology v002 from the committed cuff canon (run_ae_ear.sh; arrays identical to the reviewed corrected AE-E2 prototype)",
+  "fn_make_prod.py production frame (m, Z up, faces -Y, subject left +X, origin pelvis root on ground)",
+  "E: copies read back byte-identical; validator recomputed from the read-back candidate"
+ ],
+ "freezes": [
+  "Aelari RP3 configuration-1 / configuration-2 final production bodies",
+  "AE-E2 on the reused Fenn-v002 engineering topology as the accepted Aelari-specific external-ear branch"
+ ],
+ "not_done": [
+  "production ear rigging",
+  "creator morphs",
+  "final UV / materials",
+  "LODs",
+  "UE5 integration",
+  "Vael / Halvren (not started)",
+  "no universal elf anatomy / topology declared"
+ ],
+ "all_gates_pass": true
+}

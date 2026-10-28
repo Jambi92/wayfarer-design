@@ -13,8 +13,8 @@ one(){ h=$1; c=$2; sx=M; case $h in AELF*) sx=F;; esac
   $B $T/ear_blend.py -- build/${h}_${c}_branch.npz $CF/fam/${h}_fam.npz $CF/lm/${h}_fam_landmarks.json AE_${sx}_REF_RP3_ear${c#AE-}_proto_$EV_ blend > blend/${h}_$c.log 2>&1; echo "EAR $h $c"; }
 [ "${SKIP_MAIN:-0}" = 1 ] || for c in ${AE_EAR_CANDS:-AE-E2 AE-E1 AE-E3}; do one $H1 $c & one $H2 $c & wait; done
 [ "${SKIP_PROBES:-0}" = 1 ] && { echo AEEAR_DONE; exit 0; }
-run(){ mkdir -p probe/$1; $B $T/ear_build.py AEL1 AE-E2 probe/$1 --canon canon_branch_topology.json --probe $2 > probe/$1/build.log 2>&1
-       $B $T/ear_audit.py -- probe/$1/AEL1_AE-E2_branch.npz $CF/fam/AEL1_fam.npz probe/$1/audit.json > probe/$1/audit.log 2>&1; python3 $T/ear_measure.py probe/$1/AEL1_AE-E2_branch.npz probe/$1/measure.json > /dev/null 2>&1; }
+run(){ mkdir -p probe/$1; $B $T/ear_build.py $H1 AE-E2 probe/$1 --canon canon_branch_topology.json --probe $2 > probe/$1/build.log 2>&1   # probes on configuration 1 ($H1)
+       $B $T/ear_audit.py -- probe/$1/${H1}_AE-E2_branch.npz $CF/fam/${H1}_fam.npz probe/$1/audit.json > probe/$1/audit.log 2>&1; python3 $T/ear_measure.py probe/$1/${H1}_AE-E2_branch.npz probe/$1/measure.json > /dev/null 2>&1; }
 run proj_m10 proj=14 & run proj_p10 proj=34 & run tilt_m8 tilt=22 & wait
 run tilt_p8 tilt=38 & run sweep_m06 sweep=1.1 & run sweep_p06 sweep=2.3 & wait
 run len_m10 L=8.46 & run len_p10 L=10.34 & wait

@@ -25,7 +25,7 @@ me = bpy.data.meshes.new(NAME); me.from_pydata(Vb.tolist(), [], Q.tolist()); me.
 uvl = me.uv_layers.new(name='UVMap'); uvl.data.foreach_set('uv', UV.reshape(-1, 2).ravel())
 ob = bpy.data.objects.new(NAME, me); bpy.context.scene.collection.objects.link(ob)
 ob['RAC_status'] = STATUS; ob['RAC_frame'] = 'm, Z up, faces -Y, subject left +X, origin pelvis root on ground'
-ob['RAC_composition'] = 'Fenn RP3: CF2 family realization on MPFB Family Base v005 outside the ear branch + Fenn ear branch topology v002 (E2)'
+ob['RAC_composition'] = os.environ.get('RAC_COMPOSITION', 'Fenn RP3: CF2 family realization on MPFB Family Base v005 outside the ear branch + Fenn ear branch topology v002 (E2)')   # order 0f6aba8+: Aelari passes its own
 vg = ob.vertex_groups.new(name='ear_branch'); vg.add([int(i) for i in np.nonzero(part != 'v005')[0]], 1.0, 'REPLACE')
 for p in me.polygons: p.use_smooth = True
 path = os.path.join(O, NAME + '.blend'); bpy.ops.wm.save_as_mainfile(filepath=path, compress=True)

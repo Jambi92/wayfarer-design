@@ -1347,7 +1347,7 @@
   },
   "AELF190": {
    "race": "Aelari",
-   "role": "reference, configuration 2 (central reference CANDIDATE, order fd71f15 Part A; pending author acceptance)",
+   "role": "reference, configuration 2 (central reference CANDIDATE, order fd71f15 Part A; pending author acceptance); superseded as the central reference by AELF190-R1 (accepted 2026-10-28); retained as immutable ancestry",
    "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-aelari-body-face-ear-gate.md)",
    "provenance": "build_variant.py: MF-F-R_build.json base + exactly the AEL1 targets and bone scales + stature 190 (resolve_stature); cfg identical to AEL1 except gender",
    "stature_r6": 190.00081587582827,
@@ -1359,32 +1359,45 @@
   },
   "AEL1-R1": {
    "race": "Aelari",
-   "role": "reference, configuration 1, CORRECTED body source (order 0f6aba8; AEL1 kept unchanged as ancestry)",
-   "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-aelari-body-source-correction-gate.md)",
+   "role": "reference, configuration 1, ACCEPTED corrected central Aelari body source (order 0f6aba8; accepted 2026-10-28); AEL1 kept unchanged as ancestry",
+   "accepted": "ACCEPTED (reviews/chatgpt-rac-rp3-aelari-final-consolidation-freeze-order.md \u00a71.1, 2026-10-28)",
    "provenance": "build_variant.py: AEL1_build.json + overrides bone_scales spine_03 Y 0.9704->0.99, LR:thigh Y 0.9875->1.01, LR:calf Y 1.0523->1.03, stature 190 (resolve_stature); every other control identical to AEL1",
    "stature_r6": 189.98460043221712,
    "file": "r6/AEL1-R1_r6.npz",
    "sha256": "17ae6d138809d3b3936c0631a6bbe30f2a891c16782052c3bc0ccc156f0c0faf",
    "build": "builds/AEL1-R1_build.json",
    "build_sha256": "73ec892fc04a840fe704d6fde5925c741bd3aa72cc4051bfcdfc3e62531dfcff",
-   "height_macro": 0.5576171875
+   "height_macro": 0.5576171875,
+   "frozen": {
+    "order": "reviews/chatgpt-rac-rp3-aelari-final-consolidation-freeze-order.md (2026-10-28)",
+    "record": "reviews/rac-rp3-evidence/aelari_rp3_freeze/AELARI_RP3_FREEZE.json",
+    "production": "AE_M_REF_RP3_v001.blend",
+    "date": "2026-10-28"
+   }
   },
   "AELF190-R1": {
    "race": "Aelari",
-   "role": "reference, configuration 2, CORRECTED body source (order 0f6aba8; AELF190 kept unchanged as ancestry)",
-   "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-aelari-body-source-correction-gate.md)",
+   "role": "reference, configuration 2, ACCEPTED corrected central Aelari body source (order 0f6aba8; accepted 2026-10-28); AELF190 kept unchanged as ancestry",
+   "accepted": "ACCEPTED (reviews/chatgpt-rac-rp3-aelari-final-consolidation-freeze-order.md \u00a71.1, 2026-10-28)",
    "provenance": "build_variant.py: MF-F-R_build.json base + the AEL1 targets / bone scales + overrides bone_scales spine_03 Y 0.9704->0.99, LR:thigh Y 0.9875->1.01, LR:calf Y 1.0523->1.03, stature 190 (resolve_stature); every other control identical to AELF190",
    "stature_r6": 189.99507687985897,
    "file": "r6/AELF190-R1_r6.npz",
    "sha256": "93a951d585a7c9d8fcba7a7a77795686eea1ac57326ad3107f1b7a6636a59239",
    "build": "builds/AELF190-R1_build.json",
    "build_sha256": "73fab1c8777c1b45e0c8652cd1626f5bb30311094a94da8c81e4b25471917238",
-   "height_macro": 0.656494140625
+   "height_macro": 0.656494140625,
+   "frozen": {
+    "order": "reviews/chatgpt-rac-rp3-aelari-final-consolidation-freeze-order.md (2026-10-28)",
+    "record": "reviews/rac-rp3-evidence/aelari_rp3_freeze/AELARI_RP3_FREEZE.json",
+    "production": "AE_F_REF_RP3_v001.blend",
+    "date": "2026-10-28"
+   }
   }
  },
  "also": {
   "Skarn C1R central faces": "reviews/rac-w3d-evidence/geometry/ (SK208-C1R, SKF208-C1R) + tools/rac/w1/cfg/w3d/SK-C1R.json",
   "Saurin": "canonical W2 asset (saurin_w2_final_base.npz f86ae800..., surface delta, seeds, SA-F realization) at RaceBodies/out on the PC (SAURIN_V1 s254 W2 update); stature extremes regenerate deterministically via tools/rac/w1/w2i_drivers/sa_finish.build_f (W2I D1 regional route)",
-  "Fenn RP3 final production bodies (frozen by record)": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Fenn/RP3/FN_{M,F}_REF_RP3_v001.blend (+ _branch_map.npz, .json, _landmarks.json); record reviews/rac-rp3-evidence/fenn_rp3_freeze/FENN_RP3_FREEZE.json; external ear = Fenn ear branch topology v002 + E2 (reviews/rac-rp3-evidence/fenn_ear_v002/), Fenn only"
+  "Fenn RP3 final production bodies (frozen by record)": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Fenn/RP3/FN_{M,F}_REF_RP3_v001.blend (+ _branch_map.npz, .json, _landmarks.json); record reviews/rac-rp3-evidence/fenn_rp3_freeze/FENN_RP3_FREEZE.json; external ear = Fenn ear branch topology v002 + E2 (reviews/rac-rp3-evidence/fenn_ear_v002/), Fenn only",
+  "Aelari RP3 final production bodies (frozen by record)": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Aelari/RP3/AE_{M,F}_REF_RP3_v001.blend (+ _branch_map.npz, .json, _landmarks.json); record reviews/rac-rp3-evidence/aelari_rp3_freeze/AELARI_RP3_FREEZE.json; sources AEL1-R1 / AELF190-R1; external ear = AE-E2 Aelari geometry on the reused Fenn ear topology v002 (engineering topology only; Aelari-specific ear branch)"
  }
 }

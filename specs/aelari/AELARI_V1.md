@@ -631,3 +631,17 @@ The review isn't performed until Vael v1.0–v1.5 are complete (since performed 
 **UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Aelari body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Aelari anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13.
 
 **Reference-anatomy status (RAC Phase 2, October 5, 2026):** the reference-anatomy method (approved reference meshes, reference composition, measurement stance, acceptance and circularity rules, measurement waves) is canonical in `decisions/REFERENCE_ANATOMY_V1.md`. Measurement has not started; no new numeric envelope is set. Aelari directional constraints for measurement are consolidated in `reviews/claude-rac-03-pelvis-axial-closure.md` §2 and `reviews/claude-rac-04-segment-stature-closure.md` §2 (constraints, not magnitudes). **Sex-related external biology is deferred** to a later focused pass; human or humanoid soft tissue is not imported by assumption; independence rules stand (AD-R21). **Body hair stays hidden/deferred**; facial-hair permission is not extended to body hair.
+
+**RP3 FINAL STATUS (order `reviews/chatgpt-rac-rp3-aelari-final-consolidation-freeze-order.md`, October 28, 2026): AELARI RP3 FINAL PASS — AUTHOR ACCEPTED / FROZEN (by record).**
+- **Accepted central body sources:** `AEL1-R1` (configuration 1) and `AELF190-R1` (configuration 2), each about 190 cm.
+  - The bounded R1 correction is canonical for the central reference pair: spine_03 Y 0.9704 → 0.99, thigh Y 0.9875 → 1.01, calf Y 1.0523 → 1.03, height macro re-solved.
+  - Effect: thoracic vertical exceeds Fenn, and thigh / lower-leg distribution is more even than Fenn.
+  - AEL1 and AELF190 are kept as immutable ancestry.
+- **Frozen production bodies:** `AE_M_REF_RP3_v001.blend` (AEL1 → AEL1-R1) and `AE_F_REF_RP3_v001.blend` (AELF190 route → AELF190-R1). Each is MPFB Family Base v005 outside the ear branch, the accepted Aelari face (unchanged), and the Aelari external-ear branch; 58,944 V / 58,942 Q, with an identical face list on both configurations.
+  - Record: `reviews/rac-rp3-evidence/aelari_rp3_freeze/AELARI_RP3_FREEZE.json`.
+  - Report: `reviews/claude-rac-rp3-aelari-final-freeze-report.md`.
+- **Ear:** AE-E2 is the canonical central Aelari ear direction (closer-set and more upward than Fenn, gradual taper). The ear branch is **AE-E2 Aelari geometry on the reused Fenn ear topology v002 as engineering topology only**: it is an Aelari-specific branch, not Fenn geometry, and not a universal elf ear topology.
+- **Accepted notes:**
+  - Narrower R1 margins: leg share > MF about +0.34 / +0.35 %; waist interval / torso > Fenn +1.33 % / +0.62 %.
+  - Skin wrist / knee / ankle gracility readings are diagnostic only.
+  - Vael / Halvren body, head and ear biology need their own gates.

@@ -2,7 +2,26 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-27) — AELARI BODY-SOURCE CORRECTION — awaiting ChatGPT review
+## LATEST (2026-10-28) — AELARI RP3 FINAL — FROZEN — awaiting ChatGPT review
+
+**What was done**
+- Final consolidation order executed (`reviews/chatgpt-rac-rp3-aelari-final-consolidation-freeze-order.md`). Report: `reviews/claude-rac-rp3-aelari-final-freeze-report.md`.
+- **Result:** AELARI RP3 FINAL PASS — AUTHOR ACCEPTED / FROZEN (by record `AELARI_RP3_FREEZE.json`).
+- **Workspace** `/tmp/claude-0/rt/ae/final`: the clean rebuild (`src`, `fam`, `full`, `lean`, `skp`, `ear/`, `prod`, `readback_local`, `pcrb`), the eval outputs and `sheet_r`.
+- **Tools** (`tools/rac/rp/aelari_rp3_v001/`):
+  - `run_aefinal.sh` (env `AE_FINAL`), `run_aefinal_prod.sh`, `run_aefinal_eval.sh`;
+  - `ae_final_gates.py`, `ae_final_sheets.py`, `ae_freeze_verify.py`, `ae_freeze_record.py`.
+  - `fn_make_prod.py` gained env `RAC_COMPOSITION` (the default leaves Fenn unchanged).
+- **E:** `Aelari/RP3/AE_{M,F}_REF_RP3_v001.blend` + `.json` / `_landmarks.json` / `_branch_map.npz`. Read-back is in evidence `production/pc_readback_sha256.txt`.
+
+**Next:** STOP for ChatGPT review.
+- Recommended next race: **Vael** (not started).
+- Fenn and Aelari are separate frozen elven population references.
+- Vael must not become "dark Aelari" or "subterranean Fenn".
+- Shared engineering may be tested, but Vael body / head / ear biology needs its own gate.
+- No universal elf topology has been declared.
+
+## (previous) 2026-10-27 — AELARI BODY-SOURCE CORRECTION — awaiting ChatGPT review
 
 **What was done**
 - Order 0f6aba8 executed. Gate: `reviews/claude-rac-rp3-aelari-body-source-correction-gate.md`.

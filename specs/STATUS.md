@@ -1,6 +1,25 @@
 # Character Design Status
 
-## AELARI RP3 BODY-SOURCE CORRECTION — PASS — READY FOR FINAL CONSOLIDATION — NOT FROZEN (2026-10-27)
+## AELARI RP3 — FINAL PASS — AUTHOR ACCEPTED / FROZEN (2026-10-28)
+
+- **Report:** `reviews/claude-rac-rp3-aelari-final-freeze-report.md`. Record: `reviews/rac-rp3-evidence/aelari_rp3_freeze/AELARI_RP3_FREEZE.json`. The production bodies and the record are on E: and read back byte-identical.
+- **Frozen bodies:**
+  - `Aelari/RP3/AE_M_REF_RP3_v001.blend` (AEL1 → AEL1-R1);
+  - `Aelari/RP3/AE_F_REF_RP3_v001.blend` (AELF190 → AELF190-R1).
+  - Composition: v005 outside the ear branch + AE-E2 on the reused Fenn v002 engineering topology; 58,944 V / 58,942 Q; identical face list.
+- **Clean rebuild:** the sources regenerate with \|dV\| 0; the family realization and the AE-E2 branch are byte- / array-identical to the reviewed candidates.
+- **Gates (both configurations):**
+  - D1–D6 69 / 69;
+  - T-1 / T-2 / T-3 / T-7 pass with the ear excluded (the unmasked result is expected ear divergence);
+  - body identity vs Fenn and humans holds, and pelvis 6 / 6 at all t;
+  - hidden-ear face 7 / 7;
+  - UFCA rings pass, density 9 / 9 + ear 0.10 %;
+  - 0 deformation regression vs the family, ear readiness 0 / 0 / 0;
+  - ear T-4 117 / 120, aspect ≤ 8.55;
+  - firewall vs Fenn holds; probes clean.
+- **Next:** recommend Vael. It is not started, and must not become "dark Aelari" or "subterranean Fenn". STOP for ChatGPT review.
+
+## AELARI RP3 BODY-SOURCE CORRECTION — PASS — READY FOR FINAL CONSOLIDATION (2026-10-27; accepted and frozen 2026-10-28, above)
 
 - **Gate:** `reviews/claude-rac-rp3-aelari-body-source-correction-gate.md` (order 0f6aba8). Evidence: `reviews/rac-rp3-evidence/aelari_rp3_correction/`.
 - **Corrected sources (CANDIDATE):** AEL1-R1 / AELF190-R1. The originals AEL1 / AELF190 are kept as ancestry.
