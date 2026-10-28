@@ -1,5 +1,7 @@
 # Stage 1: camera-aware cavern inspection and drainage study - v027
 
+Follow-up: player inspection found visible junction and fixture issues beyond the sampled checks recorded here. See [v028 cavern integration](chatgpt-world-stage1-20261027-cavern-integration.md) for their repair and updated acceptance scope.
+
 The separate development level now has a fitted connection between the grand-chamber approach and the adjoining tunnel. Looking back during a walking inspection exposed gaps around the different tunnel mouth sizes. A continuous tapered rock connection closes those reproduced side and roof openings. The branch and existing traversal remain available; no approved level is replaced.
 
 ## Inspection improvement
