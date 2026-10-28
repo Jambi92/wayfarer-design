@@ -1,0 +1,4272 @@
+{
+ "cfg": "c1",
+ "comparators": {
+  "MF": "MFM178",
+  "SG": "SGM178",
+  "FN": "FNM178",
+  "AE": "AEM178"
+ },
+ "rules": {
+  "body_material": "descriptor: >= 1 % and > |SG/MF - 1| in the Vael direction (strong: > 2 x); or region RMS vs MF >= 1.25 x SG-MF RMS",
+  "face_material": "descriptor: >= 1 % and > 2 x |SG/MF - 1| in the Vael direction; or region RMS vs MF > 2 x SG-MF RMS and > 0.5 % HH"
+ },
+ "human_baseline_body_rms_mm": {
+  "trunk": 8.75,
+  "arm": 4.29,
+  "hand": 11.2,
+  "leg": 7.58,
+  "foot": 1.35,
+  "neck": 1.52
+ },
+ "human_baseline_face_rms_mm": {
+  "cranium_vault": 0.026,
+  "forehead": 0.014,
+  "orbit_eye_region": 0.009,
+  "nose": 0.012,
+  "cheeks_midface": 0.017,
+  "mouth": 0.014,
+  "jaw_chin": 0.019
+ },
+ "items": {
+  "R1": {
+   "report_rows": [
+    {
+     "row": "central vertical vs Aelari (RETIRED composite; report only)",
+     "key": "central_vertical_share",
+     "VA": 0.39975,
+     "MF": 0.39923,
+     "SG": 0.39297,
+     "FN": 0.387,
+     "AE": 0.39851,
+     "vs_pct": {
+      "MF": 0.13,
+      "SG": 1.73,
+      "FN": 3.3,
+      "AE": 0.31
+     }
+    }
+   ],
+   "canon": [
+    {
+     "row": "torso share > Fenn",
+     "key": "torso_share",
+     "VA": 0.28141,
+     "MF": 0.28245,
+     "SG": 0.27694,
+     "FN": 0.27096,
+     "AE": 0.27774,
+     "vs_pct": {
+      "MF": -0.37,
+      "SG": 1.61,
+      "FN": 3.86,
+      "AE": 1.32
+     },
+     "results": {
+      ">FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "thorax depth > Fenn, Aelari",
+     "key": "thorax_depth_share",
+     "VA": 0.13834,
+     "MF": 0.13109,
+     "SG": 0.1272,
+     "FN": 0.12425,
+     "AE": 0.12288,
+     "vs_pct": {
+      "MF": 5.53,
+      "SG": 8.75,
+      "FN": 11.34,
+      "AE": 12.58
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "waist interval / torso < Aelari (VA-P6)",
+     "key": "waist_interval_over_torso",
+     "VA": 0.2659,
+     "MF": 0.26475,
+     "SG": 0.26372,
+     "FN": 0.26235,
+     "AE": 0.2697,
+     "vs_pct": {
+      "MF": 0.43,
+      "SG": 0.83,
+      "FN": 1.35,
+      "AE": -1.41
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "neck share < Aelari (component of the retired central-vertical row)",
+     "key": "neck_share",
+     "VA": 0.05439,
+     "MF": 0.05436,
+     "SG": 0.054,
+     "FN": 0.05297,
+     "AE": 0.0564,
+     "vs_pct": {
+      "MF": 0.05,
+      "SG": 0.72,
+      "FN": 2.69,
+      "AE": -3.57
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "cranial vertical share < Aelari (component)",
+     "key": "cranial_vertical_share",
+     "VA": 0.06395,
+     "MF": 0.06241,
+     "SG": 0.06203,
+     "FN": 0.06308,
+     "AE": 0.06437,
+     "vs_pct": {
+      "MF": 2.47,
+      "SG": 3.11,
+      "FN": 1.39,
+      "AE": -0.65
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "extremity < Fenn",
+     "key": "extremity_share",
+     "VA": 1.2124,
+     "MF": 1.20353,
+     "SG": 1.22502,
+     "FN": 1.25236,
+     "AE": 1.22089,
+     "vs_pct": {
+      "MF": 0.74,
+      "SG": -1.03,
+      "FN": -3.19,
+      "AE": -0.7
+     },
+     "results": {
+      "<FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "hip-joint height / stature > MF, < Fenn, < Aelari (VA-P2a)",
+     "key": "leg_share",
+     "VA": 0.5351,
+     "MF": 0.53457,
+     "SG": 0.54175,
+     "FN": 0.54812,
+     "AE": 0.53571,
+     "vs_pct": {
+      "MF": 0.1,
+      "SG": -1.23,
+      "FN": -2.38,
+      "AE": -0.11
+     },
+     "results": {
+      ">MF": true,
+      "<FN": true,
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "arm share > MF, < Fenn",
+     "key": "arm_share",
+     "VA": 0.41127,
+     "MF": 0.40769,
+     "SG": 0.41778,
+     "FN": 0.42908,
+     "AE": 0.41547,
+     "vs_pct": {
+      "MF": 0.88,
+      "SG": -1.56,
+      "FN": -4.15,
+      "AE": -1.01
+     },
+     "results": {
+      ">MF": true,
+      "<FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "arm <= Aelari (BM-3)",
+     "key": "arm_share",
+     "VA": 0.41127,
+     "MF": 0.40769,
+     "SG": 0.41778,
+     "FN": 0.42908,
+     "AE": 0.41547,
+     "vs_pct": {
+      "MF": 0.88,
+      "SG": -1.56,
+      "FN": -4.15,
+      "AE": -1.01
+     },
+     "results": {
+      "<=AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "elbow presence > FN, AE",
+     "key": "elbow_over_humerus",
+     "VA": 0.34645,
+     "MF": 0.34454,
+     "SG": 0.3473,
+     "FN": 0.32152,
+     "AE": 0.33993,
+     "vs_pct": {
+      "MF": 0.55,
+      "SG": -0.24,
+      "FN": 7.75,
+      "AE": 1.92
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "wrist presence > FN, AE",
+     "key": "wrist_over_forearm",
+     "VA": 0.20919,
+     "MF": 0.21137,
+     "SG": 0.20421,
+     "FN": 0.1878,
+     "AE": 0.20425,
+     "vs_pct": {
+      "MF": -1.03,
+      "SG": 2.44,
+      "FN": 11.39,
+      "AE": 2.42
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "knee presence > FN, AE",
+     "key": "knee_over_femur",
+     "VA": 0.28794,
+     "MF": 0.2851,
+     "SG": 0.27959,
+     "FN": 0.26776,
+     "AE": 0.27949,
+     "vs_pct": {
+      "MF": 1.0,
+      "SG": 2.99,
+      "FN": 7.54,
+      "AE": 3.02
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "ankle presence > FN, AE",
+     "key": "ankle_over_shin",
+     "VA": 0.34499,
+     "MF": 0.34811,
+     "SG": 0.33987,
+     "FN": 0.3294,
+     "AE": 0.3403,
+     "vs_pct": {
+      "MF": -0.9,
+      "SG": 1.51,
+      "FN": 4.74,
+      "AE": 1.38
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "joints gracile vs humans (mean of 4 joint / segment ratios < MF)",
+     "key": "joint_mean",
+     "VA": 0.29714,
+     "MF": 0.29728,
+     "SG": 0.29274,
+     "FN": 0.27662,
+     "AE": 0.29099,
+     "vs_pct": {
+      "MF": -0.05,
+      "SG": 1.5,
+      "FN": 7.42,
+      "AE": 2.11
+     },
+     "results": {
+      "<MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "palm breadth / hand > FN, AE",
+     "key": "palm_breadth_over_hand",
+     "VA": 0.44103,
+     "MF": 0.43791,
+     "SG": 0.41845,
+     "FN": 0.41202,
+     "AE": 0.43585,
+     "vs_pct": {
+      "MF": 0.71,
+      "SG": 5.39,
+      "FN": 7.04,
+      "AE": 1.19
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "hand share > MF",
+     "key": "hand_share",
+     "VA": 0.11533,
+     "MF": 0.11214,
+     "SG": 0.11769,
+     "FN": 0.12031,
+     "AE": 0.11719,
+     "vs_pct": {
+      "MF": 2.85,
+      "SG": -2.0,
+      "FN": -4.14,
+      "AE": -1.59
+     },
+     "results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "foot breadth / length > FN, AE",
+     "key": "foot_breadth_over_length",
+     "VA": 0.403,
+     "MF": 0.37431,
+     "SG": 0.37424,
+     "FN": 0.33121,
+     "AE": 0.35224,
+     "vs_pct": {
+      "MF": 7.67,
+      "SG": 7.68,
+      "FN": 21.68,
+      "AE": 14.41
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "foot share > MF",
+     "key": "foot_share",
+     "VA": 0.15069,
+     "MF": 0.14913,
+     "SG": 0.1478,
+     "FN": 0.15486,
+     "AE": 0.15252,
+     "vs_pct": {
+      "MF": 1.05,
+      "SG": 1.95,
+      "FN": -2.69,
+      "AE": -1.2
+     },
+     "results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "pelvic AP depth > FN, AE (VA-P4 skin)",
+     "key": "pelvic_depth_share",
+     "VA": 0.13034,
+     "MF": 0.12741,
+     "SG": 0.12666,
+     "FN": 0.12477,
+     "AE": 0.12466,
+     "vs_pct": {
+      "MF": 2.3,
+      "SG": 2.91,
+      "FN": 4.47,
+      "AE": 4.56
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "bitroch / crest >= MF (VA-P2b skin)",
+     "key": "bitroch_over_crest",
+     "VA": 1.16995,
+     "MF": 1.16242,
+     "SG": 1.16253,
+     "FN": 1.17771,
+     "AE": 1.17898,
+     "vs_pct": {
+      "MF": 0.65,
+      "SG": 0.64,
+      "FN": -0.66,
+      "AE": -0.77
+     },
+     "results": {
+      ">=MF": true
+     },
+     "holds": true
+    }
+   ],
+   "canon_holds": 20,
+   "canon_of": 20,
+   "canon_failing": [],
+   "body_systems": {
+    "1 ribcage depth / thoracic volume": {
+     "descriptors": [
+      {
+       "key": "thorax_depth_share",
+       "dir": 1,
+       "VA": 0.13834,
+       "MF": 0.13109,
+       "SG": 0.1272,
+       "VA_vs_MF_pct": 5.53,
+       "human_var_pct": 2.96,
+       "material": true,
+       "strong": false
+      },
+      {
+       "key": "thorax_d_over_b",
+       "dir": 1,
+       "VA": 0.7339,
+       "MF": 0.69547,
+       "SG": 0.67871,
+       "VA_vs_MF_pct": 5.52,
+       "human_var_pct": 2.41,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": {
+      "region": "trunk",
+      "VA_vs_MF_mm": 5.68,
+      "SG_vs_MF_mm": 8.75,
+      "material": false
+     },
+     "material": true,
+     "strong": true
+    },
+    "2 torso-to-pelvis continuity": {
+     "descriptors": [
+      {
+       "key": "pelvic_depth_over_thorax_depth",
+       "dir": 1,
+       "VA": 0.94221,
+       "MF": 0.97194,
+       "SG": 0.9957,
+       "VA_vs_MF_pct": -3.06,
+       "human_var_pct": 2.44,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "waist_interval_over_torso",
+       "dir": -1,
+       "VA": 0.2659,
+       "MF": 0.26475,
+       "SG": 0.26372,
+       "VA_vs_MF_pct": 0.43,
+       "human_var_pct": 0.39,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "trunk",
+      "VA_vs_MF_mm": 5.68,
+      "SG_vs_MF_mm": 8.75,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "3 limb share (long vs humans)": {
+     "descriptors": [
+      {
+       "key": "leg_share",
+       "dir": 1,
+       "VA": 0.5351,
+       "MF": 0.53457,
+       "SG": 0.54175,
+       "VA_vs_MF_pct": 0.1,
+       "human_var_pct": 1.34,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "arm_share",
+       "dir": 1,
+       "VA": 0.41127,
+       "MF": 0.40769,
+       "SG": 0.41778,
+       "VA_vs_MF_pct": 0.88,
+       "human_var_pct": 2.48,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "leg",
+      "VA_vs_MF_mm": 4.74,
+      "SG_vs_MF_mm": 7.58,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "4 joint scale (gracile vs humans)": {
+     "descriptors": [
+      {
+       "key": "joint_mean",
+       "dir": -1,
+       "VA": 0.29714,
+       "MF": 0.29728,
+       "SG": 0.29274,
+       "VA_vs_MF_pct": -0.05,
+       "human_var_pct": 1.53,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "wrist_over_forearm",
+       "dir": -1,
+       "VA": 0.20919,
+       "MF": 0.21137,
+       "SG": 0.20421,
+       "VA_vs_MF_pct": -1.03,
+       "human_var_pct": 3.39,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "ankle_over_shin",
+       "dir": -1,
+       "VA": 0.34499,
+       "MF": 0.34811,
+       "SG": 0.33987,
+       "VA_vs_MF_pct": -0.9,
+       "human_var_pct": 2.37,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "arm",
+      "VA_vs_MF_mm": 1.53,
+      "SG_vs_MF_mm": 4.29,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "5 hand base / elven hand": {
+     "descriptors": [
+      {
+       "key": "finger_over_hand",
+       "dir": 1,
+       "VA": 0.43593,
+       "MF": 0.43585,
+       "SG": 0.45898,
+       "VA_vs_MF_pct": 0.02,
+       "human_var_pct": 5.31,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "palm_breadth_over_hand",
+       "dir": 1,
+       "VA": 0.44103,
+       "MF": 0.43791,
+       "SG": 0.41845,
+       "VA_vs_MF_pct": 0.71,
+       "human_var_pct": 4.44,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "hand",
+      "VA_vs_MF_mm": 5.91,
+      "SG_vs_MF_mm": 11.2,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "6 foot base": {
+     "descriptors": [
+      {
+       "key": "foot_breadth_over_length",
+       "dir": 1,
+       "VA": 0.403,
+       "MF": 0.37431,
+       "SG": 0.37424,
+       "VA_vs_MF_pct": 7.67,
+       "human_var_pct": 0.02,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": {
+      "region": "foot",
+      "VA_vs_MF_mm": 3.95,
+      "SG_vs_MF_mm": 1.35,
+      "material": true
+     },
+     "material": true,
+     "strong": true
+    },
+    "7 pelvis / hip relationship": {
+     "descriptors": [
+      {
+       "key": "pelvic_depth_share",
+       "dir": 1,
+       "VA": 0.13034,
+       "MF": 0.12741,
+       "SG": 0.12666,
+       "VA_vs_MF_pct": 2.3,
+       "human_var_pct": 0.59,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "bitroch_over_crest",
+       "dir": 1,
+       "VA": 1.16995,
+       "MF": 1.16242,
+       "SG": 1.16253,
+       "VA_vs_MF_pct": 0.65,
+       "human_var_pct": 0.01,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": null,
+     "material": true,
+     "strong": true
+    },
+    "8 shoulder / neck integration": {
+     "descriptors": [
+      {
+       "key": "neck_breadth_over_shoulder_joint",
+       "dir": 1,
+       "VA": 0.31864,
+       "MF": 0.3081,
+       "SG": 0.30821,
+       "VA_vs_MF_pct": 3.42,
+       "human_var_pct": 0.04,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "neck_breadth_share",
+       "dir": 1,
+       "VA": 0.06747,
+       "MF": 0.06522,
+       "SG": 0.06487,
+       "VA_vs_MF_pct": 3.46,
+       "human_var_pct": 0.54,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "neck_depth_share",
+       "dir": 1,
+       "VA": 0.0405,
+       "MF": 0.04442,
+       "SG": 0.04331,
+       "VA_vs_MF_pct": -8.84,
+       "human_var_pct": 2.52,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "neck",
+      "VA_vs_MF_mm": 3.41,
+      "SG_vs_MF_mm": 1.52,
+      "material": true
+     },
+     "material": true,
+     "strong": true
+    }
+   },
+   "body_systems_material": 4,
+   "body_systems_strong": 4,
+   "body_region_rms_mm": {
+    "trunk": {
+     "VA_vs_MF": 5.68,
+     "VA_vs_SG": 9.15,
+     "VA_vs_FN": 16.13,
+     "VA_vs_AE": 12.07,
+     "SG_vs_MF": 8.75
+    },
+    "arm": {
+     "VA_vs_MF": 1.53,
+     "VA_vs_SG": 4.51,
+     "VA_vs_FN": 11.71,
+     "VA_vs_AE": 10.75,
+     "SG_vs_MF": 4.29
+    },
+    "hand": {
+     "VA_vs_MF": 5.91,
+     "VA_vs_SG": 5.98,
+     "VA_vs_FN": 23.62,
+     "VA_vs_AE": 12.12,
+     "SG_vs_MF": 11.2
+    },
+    "leg": {
+     "VA_vs_MF": 4.74,
+     "VA_vs_SG": 6.77,
+     "VA_vs_FN": 21.67,
+     "VA_vs_AE": 10.98,
+     "SG_vs_MF": 7.58
+    },
+    "foot": {
+     "VA_vs_MF": 3.95,
+     "VA_vs_SG": 4.99,
+     "VA_vs_FN": 9.04,
+     "VA_vs_AE": 10.78,
+     "SG_vs_MF": 1.35
+    },
+    "neck": {
+     "VA_vs_MF": 3.41,
+     "VA_vs_SG": 4.72,
+     "VA_vs_FN": 5.13,
+     "VA_vs_AE": 5.51,
+     "SG_vs_MF": 1.52
+    }
+   },
+   "face_systems": {
+    "1 cranial proportion / shared elven ancestry": {
+     "descriptors": [
+      {
+       "key": "cranial_height_over_stature",
+       "dir": 1,
+       "VA": 0.06489,
+       "MF": 0.06334,
+       "VA_vs_MF_pct": 2.45,
+       "human_var_pct": 0.6,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "cranial_height_over_face",
+       "dir": 1,
+       "VA": 1.00506,
+       "MF": 0.96558,
+       "VA_vs_MF_pct": 4.09,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cranium_vault": true,
+      "forehead": false
+     },
+     "material": true
+    },
+    "2 compact vertical distribution": {
+     "descriptors": [
+      {
+       "key": "face_height_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.83956,
+       "MF": 0.8796,
+       "VA_vs_MF_pct": -4.55,
+       "human_var_pct": 0.0,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "lower_face_height_over_HH",
+       "dir": -1,
+       "VA": 0.24548,
+       "MF": 0.25459,
+       "VA_vs_MF_pct": -3.58,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "jaw_chin": true,
+      "mouth": false
+     },
+     "material": true
+    },
+    "3 cheek / mid-face integration": {
+     "descriptors": [
+      {
+       "key": "bizygomatic_over_HH",
+       "dir": 1,
+       "VA": 0.59404,
+       "MF": 0.57839,
+       "VA_vs_MF_pct": 2.71,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "cheekbone_height_over_HH",
+       "dir": 1,
+       "VA": 0.36631,
+       "MF": 0.36251,
+       "VA_vs_MF_pct": 1.05,
+       "human_var_pct": 0.02,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cheeks_midface": true
+     },
+     "material": true
+    },
+    "4 mid-face depth": {
+     "descriptors": [
+      {
+       "key": "midface_projection_over_HH",
+       "dir": 1,
+       "VA": 0.19166,
+       "MF": 0.18431,
+       "VA_vs_MF_pct": 3.99,
+       "human_var_pct": 0.03,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cheeks_midface": true,
+      "nose": false
+     },
+     "material": true
+    },
+    "5 orbit / brow system": {
+     "descriptors": [
+      {
+       "key": "brow_projection_over_HH",
+       "dir": -1,
+       "VA": 0.02134,
+       "MF": 0.02162,
+       "VA_vs_MF_pct": -1.3,
+       "human_var_pct": 0.22,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "orbit_eye_region": false
+     },
+     "material": true
+    },
+    "6 mandibular system (more than elves, gracile vs humans)": {
+     "descriptors": [
+      {
+       "key": "jaw_width_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.75547,
+       "MF": 0.75226,
+       "VA_vs_MF_pct": 0.43,
+       "human_var_pct": 0.04,
+       "material": false,
+       "wrong_material": false
+      },
+      {
+       "key": "lower_face_width_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.8836,
+       "MF": 0.89697,
+       "VA_vs_MF_pct": -1.49,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "jaw_chin": true
+     },
+     "material": true
+    }
+   },
+   "face_systems_material": 6,
+   "face_regions": {
+    "cranium_vault": {
+     "VA_vs_MF_mm": 1.682,
+     "VA_vs_SG_mm": 1.693,
+     "VA_vs_FN_mm": 3.377,
+     "VA_vs_AE_mm": 3.228,
+     "human_baseline_mm": 0.026,
+     "material_vs_MF": true
+    },
+    "forehead": {
+     "VA_vs_MF_mm": 0.575,
+     "VA_vs_SG_mm": 0.578,
+     "VA_vs_FN_mm": 2.785,
+     "VA_vs_AE_mm": 2.684,
+     "human_baseline_mm": 0.014,
+     "material_vs_MF": false
+    },
+    "orbit_eye_region": {
+     "VA_vs_MF_mm": 0.503,
+     "VA_vs_SG_mm": 0.509,
+     "VA_vs_FN_mm": 1.696,
+     "VA_vs_AE_mm": 2.033,
+     "human_baseline_mm": 0.009,
+     "material_vs_MF": false
+    },
+    "nose": {
+     "VA_vs_MF_mm": 0.257,
+     "VA_vs_SG_mm": 0.249,
+     "VA_vs_FN_mm": 0.767,
+     "VA_vs_AE_mm": 1.073,
+     "human_baseline_mm": 0.012,
+     "material_vs_MF": false
+    },
+    "cheeks_midface": {
+     "VA_vs_MF_mm": 2.751,
+     "VA_vs_SG_mm": 2.749,
+     "VA_vs_FN_mm": 2.15,
+     "VA_vs_AE_mm": 3.268,
+     "human_baseline_mm": 0.017,
+     "material_vs_MF": true
+    },
+    "mouth": {
+     "VA_vs_MF_mm": 0.254,
+     "VA_vs_SG_mm": 0.259,
+     "VA_vs_FN_mm": 1.499,
+     "VA_vs_AE_mm": 1.037,
+     "human_baseline_mm": 0.014,
+     "material_vs_MF": false
+    },
+    "jaw_chin": {
+     "VA_vs_MF_mm": 1.409,
+     "VA_vs_SG_mm": 1.408,
+     "VA_vs_FN_mm": 2.745,
+     "VA_vs_AE_mm": 4.932,
+     "human_baseline_mm": 0.019,
+     "material_vs_MF": true
+    }
+   },
+   "face_canon_vs_elves": {
+    "face_height_over_bizygomatic": {
+     "VA": 0.83956,
+     "ref": "AE",
+     "ref_value": 0.94334,
+     "VA_vs_ref_pct": -11.0,
+     "holds": true
+    },
+    "forehead_to_chin_over_bizygomatic": {
+     "VA": 1.14972,
+     "ref": "AE",
+     "ref_value": 1.2756,
+     "VA_vs_ref_pct": -9.87,
+     "holds": true
+    },
+    "cranial_height_over_stature": {
+     "VA": 0.06489,
+     "ref": "AE",
+     "ref_value": 0.06526,
+     "VA_vs_ref_pct": -0.56,
+     "holds": true
+    },
+    "bizygomatic_over_HH": {
+     "VA": 0.59404,
+     "ref": "AE",
+     "ref_value": 0.54564,
+     "VA_vs_ref_pct": 8.87,
+     "holds": true
+    },
+    "midface_projection_over_HH": {
+     "VA": 0.19166,
+     "ref": "AE",
+     "ref_value": 0.17039,
+     "VA_vs_ref_pct": 12.48,
+     "holds": true
+    },
+    "orbit_breadth_over_HL": {
+     "VA": 0.13033,
+     "ref": "AE",
+     "ref_value": 0.12723,
+     "VA_vs_ref_pct": 2.43,
+     "holds": true
+    },
+    "brow_projection_over_HH": {
+     "VA": 0.02134,
+     "ref": "AE",
+     "ref_value": 0.02042,
+     "VA_vs_ref_pct": 4.48,
+     "holds": true
+    },
+    "jaw_width_over_bizygomatic": {
+     "VA": 0.75547,
+     "ref": "AE",
+     "ref_value": 0.721,
+     "VA_vs_ref_pct": 4.78,
+     "holds": true
+    },
+    "jaw_width_over_bizygomatic@FN": {
+     "VA": 0.75547,
+     "ref": "FN",
+     "ref_value": 0.7351,
+     "VA_vs_ref_pct": 2.77,
+     "holds": true
+    }
+   },
+   "face_canon_vs_elves_holds": 9,
+   "face_desc": {
+    "cranial_height_over_face": 1.00506,
+    "skull_breadth_over_HH": 0.66064,
+    "bizygomatic_over_HH": 0.59404,
+    "lower_face_width_over_bizygomatic": 0.8836,
+    "lower_face_height_over_HH": 0.24548,
+    "jaw_width_over_bizygomatic": 0.75547,
+    "cheekbone_height_over_HH": 0.36631,
+    "midface_projection_over_HH": 0.19166,
+    "forehead_cranium_turn_deg": 39.66281,
+    "head_height_cm": 23.04295,
+    "crown_breadth_over_euryon": 0.6739,
+    "cranial_height_over_stature": 0.06489,
+    "face_height_over_bizygomatic": 0.83956,
+    "forehead_to_chin_over_bizygomatic": 1.14972,
+    "brow_projection_over_HH": 0.02134,
+    "orbit_breadth_over_HL": 0.13033,
+    "orbit_height_over_HH": 0.11914,
+    "eye_aperture_area_over_HH2": 0.00243
+   },
+   "face_desc_vs_MF_pct": {
+    "cranial_height_over_face": 4.09,
+    "skull_breadth_over_HH": 2.16,
+    "bizygomatic_over_HH": 2.71,
+    "lower_face_width_over_bizygomatic": -1.49,
+    "lower_face_height_over_HH": -3.58,
+    "jaw_width_over_bizygomatic": 0.43,
+    "cheekbone_height_over_HH": 1.05,
+    "midface_projection_over_HH": 3.99,
+    "forehead_cranium_turn_deg": -0.79,
+    "head_height_cm": 0.39,
+    "crown_breadth_over_euryon": -4.25,
+    "cranial_height_over_stature": 2.45,
+    "face_height_over_bizygomatic": -4.55,
+    "forehead_to_chin_over_bizygomatic": -3.7,
+    "brow_projection_over_HH": -1.3,
+    "orbit_breadth_over_HL": -15.43,
+    "orbit_height_over_HH": 16.27,
+    "eye_aperture_area_over_HH2": 5.38
+   },
+   "stature": 177.9901275523007
+  },
+  "VD1": {
+   "report_rows": [
+    {
+     "row": "central vertical vs Aelari (RETIRED composite; report only)",
+     "key": "central_vertical_share",
+     "VA": 0.39975,
+     "MF": 0.39923,
+     "SG": 0.39297,
+     "FN": 0.387,
+     "AE": 0.39851,
+     "vs_pct": {
+      "MF": 0.13,
+      "SG": 1.73,
+      "FN": 3.29,
+      "AE": 0.31
+     }
+    }
+   ],
+   "canon": [
+    {
+     "row": "torso share > Fenn",
+     "key": "torso_share",
+     "VA": 0.28141,
+     "MF": 0.28245,
+     "SG": 0.27694,
+     "FN": 0.27096,
+     "AE": 0.27774,
+     "vs_pct": {
+      "MF": -0.37,
+      "SG": 1.61,
+      "FN": 3.86,
+      "AE": 1.32
+     },
+     "results": {
+      ">FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "thorax depth > Fenn, Aelari",
+     "key": "thorax_depth_share",
+     "VA": 0.13834,
+     "MF": 0.13109,
+     "SG": 0.1272,
+     "FN": 0.12425,
+     "AE": 0.12288,
+     "vs_pct": {
+      "MF": 5.53,
+      "SG": 8.75,
+      "FN": 11.34,
+      "AE": 12.58
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "waist interval / torso < Aelari (VA-P6)",
+     "key": "waist_interval_over_torso",
+     "VA": 0.2659,
+     "MF": 0.26475,
+     "SG": 0.26372,
+     "FN": 0.26235,
+     "AE": 0.2697,
+     "vs_pct": {
+      "MF": 0.43,
+      "SG": 0.83,
+      "FN": 1.35,
+      "AE": -1.41
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "neck share < Aelari (component of the retired central-vertical row)",
+     "key": "neck_share",
+     "VA": 0.05439,
+     "MF": 0.05436,
+     "SG": 0.054,
+     "FN": 0.05297,
+     "AE": 0.0564,
+     "vs_pct": {
+      "MF": 0.05,
+      "SG": 0.72,
+      "FN": 2.69,
+      "AE": -3.57
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "cranial vertical share < Aelari (component)",
+     "key": "cranial_vertical_share",
+     "VA": 0.06395,
+     "MF": 0.06241,
+     "SG": 0.06203,
+     "FN": 0.06308,
+     "AE": 0.06437,
+     "vs_pct": {
+      "MF": 2.47,
+      "SG": 3.11,
+      "FN": 1.39,
+      "AE": -0.65
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "extremity < Fenn",
+     "key": "extremity_share",
+     "VA": 1.2124,
+     "MF": 1.20353,
+     "SG": 1.22502,
+     "FN": 1.25236,
+     "AE": 1.22089,
+     "vs_pct": {
+      "MF": 0.74,
+      "SG": -1.03,
+      "FN": -3.19,
+      "AE": -0.7
+     },
+     "results": {
+      "<FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "hip-joint height / stature > MF, < Fenn, < Aelari (VA-P2a)",
+     "key": "leg_share",
+     "VA": 0.5351,
+     "MF": 0.53457,
+     "SG": 0.54175,
+     "FN": 0.54812,
+     "AE": 0.53571,
+     "vs_pct": {
+      "MF": 0.1,
+      "SG": -1.23,
+      "FN": -2.37,
+      "AE": -0.11
+     },
+     "results": {
+      ">MF": true,
+      "<FN": true,
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "arm share > MF, < Fenn",
+     "key": "arm_share",
+     "VA": 0.41127,
+     "MF": 0.40769,
+     "SG": 0.41778,
+     "FN": 0.42908,
+     "AE": 0.41547,
+     "vs_pct": {
+      "MF": 0.88,
+      "SG": -1.56,
+      "FN": -4.15,
+      "AE": -1.01
+     },
+     "results": {
+      ">MF": true,
+      "<FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "arm <= Aelari (BM-3)",
+     "key": "arm_share",
+     "VA": 0.41127,
+     "MF": 0.40769,
+     "SG": 0.41778,
+     "FN": 0.42908,
+     "AE": 0.41547,
+     "vs_pct": {
+      "MF": 0.88,
+      "SG": -1.56,
+      "FN": -4.15,
+      "AE": -1.01
+     },
+     "results": {
+      "<=AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "elbow presence > FN, AE",
+     "key": "elbow_over_humerus",
+     "VA": 0.34645,
+     "MF": 0.34454,
+     "SG": 0.3473,
+     "FN": 0.32152,
+     "AE": 0.33993,
+     "vs_pct": {
+      "MF": 0.55,
+      "SG": -0.24,
+      "FN": 7.75,
+      "AE": 1.92
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "wrist presence > FN, AE",
+     "key": "wrist_over_forearm",
+     "VA": 0.20501,
+     "MF": 0.21137,
+     "SG": 0.20421,
+     "FN": 0.1878,
+     "AE": 0.20425,
+     "vs_pct": {
+      "MF": -3.01,
+      "SG": 0.39,
+      "FN": 9.17,
+      "AE": 0.37
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "knee presence > FN, AE",
+     "key": "knee_over_femur",
+     "VA": 0.28794,
+     "MF": 0.2851,
+     "SG": 0.27959,
+     "FN": 0.26776,
+     "AE": 0.27949,
+     "vs_pct": {
+      "MF": 1.0,
+      "SG": 2.99,
+      "FN": 7.54,
+      "AE": 3.02
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "ankle presence > FN, AE",
+     "key": "ankle_over_shin",
+     "VA": 0.34501,
+     "MF": 0.34811,
+     "SG": 0.33987,
+     "FN": 0.3294,
+     "AE": 0.3403,
+     "vs_pct": {
+      "MF": -0.89,
+      "SG": 1.51,
+      "FN": 4.74,
+      "AE": 1.38
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "joints gracile vs humans (mean of 4 joint / segment ratios < MF)",
+     "key": "joint_mean",
+     "VA": 0.2961,
+     "MF": 0.29728,
+     "SG": 0.29274,
+     "FN": 0.27662,
+     "AE": 0.29099,
+     "vs_pct": {
+      "MF": -0.4,
+      "SG": 1.15,
+      "FN": 7.04,
+      "AE": 1.76
+     },
+     "results": {
+      "<MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "palm breadth / hand > FN, AE",
+     "key": "palm_breadth_over_hand",
+     "VA": 0.44397,
+     "MF": 0.43791,
+     "SG": 0.41845,
+     "FN": 0.41202,
+     "AE": 0.43585,
+     "vs_pct": {
+      "MF": 1.38,
+      "SG": 6.1,
+      "FN": 7.75,
+      "AE": 1.86
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "hand share > MF",
+     "key": "hand_share",
+     "VA": 0.11533,
+     "MF": 0.11214,
+     "SG": 0.11769,
+     "FN": 0.12031,
+     "AE": 0.11719,
+     "vs_pct": {
+      "MF": 2.84,
+      "SG": -2.0,
+      "FN": -4.14,
+      "AE": -1.59
+     },
+     "results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "foot breadth / length > FN, AE",
+     "key": "foot_breadth_over_length",
+     "VA": 0.4036,
+     "MF": 0.37431,
+     "SG": 0.37424,
+     "FN": 0.33121,
+     "AE": 0.35224,
+     "vs_pct": {
+      "MF": 7.83,
+      "SG": 7.84,
+      "FN": 21.86,
+      "AE": 14.58
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "foot share > MF",
+     "key": "foot_share",
+     "VA": 0.15069,
+     "MF": 0.14913,
+     "SG": 0.1478,
+     "FN": 0.15486,
+     "AE": 0.15252,
+     "vs_pct": {
+      "MF": 1.05,
+      "SG": 1.95,
+      "FN": -2.69,
+      "AE": -1.2
+     },
+     "results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "pelvic AP depth > FN, AE (VA-P4 skin)",
+     "key": "pelvic_depth_share",
+     "VA": 0.13049,
+     "MF": 0.12741,
+     "SG": 0.12666,
+     "FN": 0.12477,
+     "AE": 0.12466,
+     "vs_pct": {
+      "MF": 2.42,
+      "SG": 3.03,
+      "FN": 4.59,
+      "AE": 4.68
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "bitroch / crest >= MF (VA-P2b skin)",
+     "key": "bitroch_over_crest",
+     "VA": 1.17971,
+     "MF": 1.16242,
+     "SG": 1.16253,
+     "FN": 1.17771,
+     "AE": 1.17898,
+     "vs_pct": {
+      "MF": 1.49,
+      "SG": 1.48,
+      "FN": 0.17,
+      "AE": 0.06
+     },
+     "results": {
+      ">=MF": true
+     },
+     "holds": true
+    }
+   ],
+   "canon_holds": 20,
+   "canon_of": 20,
+   "canon_failing": [],
+   "body_systems": {
+    "1 ribcage depth / thoracic volume": {
+     "descriptors": [
+      {
+       "key": "thorax_depth_share",
+       "dir": 1,
+       "VA": 0.13834,
+       "MF": 0.13109,
+       "SG": 0.1272,
+       "VA_vs_MF_pct": 5.53,
+       "human_var_pct": 2.96,
+       "material": true,
+       "strong": false
+      },
+      {
+       "key": "thorax_d_over_b",
+       "dir": 1,
+       "VA": 0.73498,
+       "MF": 0.69547,
+       "SG": 0.67871,
+       "VA_vs_MF_pct": 5.68,
+       "human_var_pct": 2.41,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": {
+      "region": "trunk",
+      "VA_vs_MF_mm": 5.91,
+      "SG_vs_MF_mm": 8.75,
+      "material": false
+     },
+     "material": true,
+     "strong": true
+    },
+    "2 torso-to-pelvis continuity": {
+     "descriptors": [
+      {
+       "key": "pelvic_depth_over_thorax_depth",
+       "dir": 1,
+       "VA": 0.9433,
+       "MF": 0.97194,
+       "SG": 0.9957,
+       "VA_vs_MF_pct": -2.95,
+       "human_var_pct": 2.44,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "waist_interval_over_torso",
+       "dir": -1,
+       "VA": 0.2659,
+       "MF": 0.26475,
+       "SG": 0.26372,
+       "VA_vs_MF_pct": 0.43,
+       "human_var_pct": 0.39,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "trunk",
+      "VA_vs_MF_mm": 5.91,
+      "SG_vs_MF_mm": 8.75,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "3 limb share (long vs humans)": {
+     "descriptors": [
+      {
+       "key": "leg_share",
+       "dir": 1,
+       "VA": 0.5351,
+       "MF": 0.53457,
+       "SG": 0.54175,
+       "VA_vs_MF_pct": 0.1,
+       "human_var_pct": 1.34,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "arm_share",
+       "dir": 1,
+       "VA": 0.41127,
+       "MF": 0.40769,
+       "SG": 0.41778,
+       "VA_vs_MF_pct": 0.88,
+       "human_var_pct": 2.48,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "leg",
+      "VA_vs_MF_mm": 4.76,
+      "SG_vs_MF_mm": 7.58,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "4 joint scale (gracile vs humans)": {
+     "descriptors": [
+      {
+       "key": "joint_mean",
+       "dir": -1,
+       "VA": 0.2961,
+       "MF": 0.29728,
+       "SG": 0.29274,
+       "VA_vs_MF_pct": -0.4,
+       "human_var_pct": 1.53,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "wrist_over_forearm",
+       "dir": -1,
+       "VA": 0.20501,
+       "MF": 0.21137,
+       "SG": 0.20421,
+       "VA_vs_MF_pct": -3.01,
+       "human_var_pct": 3.39,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "ankle_over_shin",
+       "dir": -1,
+       "VA": 0.34501,
+       "MF": 0.34811,
+       "SG": 0.33987,
+       "VA_vs_MF_pct": -0.89,
+       "human_var_pct": 2.37,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "arm",
+      "VA_vs_MF_mm": 1.53,
+      "SG_vs_MF_mm": 4.29,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "5 hand base / elven hand": {
+     "descriptors": [
+      {
+       "key": "finger_over_hand",
+       "dir": 1,
+       "VA": 0.43593,
+       "MF": 0.43585,
+       "SG": 0.45898,
+       "VA_vs_MF_pct": 0.02,
+       "human_var_pct": 5.31,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "palm_breadth_over_hand",
+       "dir": 1,
+       "VA": 0.44397,
+       "MF": 0.43791,
+       "SG": 0.41845,
+       "VA_vs_MF_pct": 1.38,
+       "human_var_pct": 4.44,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "hand",
+      "VA_vs_MF_mm": 5.91,
+      "SG_vs_MF_mm": 11.2,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "6 foot base": {
+     "descriptors": [
+      {
+       "key": "foot_breadth_over_length",
+       "dir": 1,
+       "VA": 0.4036,
+       "MF": 0.37431,
+       "SG": 0.37424,
+       "VA_vs_MF_pct": 7.83,
+       "human_var_pct": 0.02,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": {
+      "region": "foot",
+      "VA_vs_MF_mm": 4.03,
+      "SG_vs_MF_mm": 1.35,
+      "material": true
+     },
+     "material": true,
+     "strong": true
+    },
+    "7 pelvis / hip relationship": {
+     "descriptors": [
+      {
+       "key": "pelvic_depth_share",
+       "dir": 1,
+       "VA": 0.13049,
+       "MF": 0.12741,
+       "SG": 0.12666,
+       "VA_vs_MF_pct": 2.42,
+       "human_var_pct": 0.59,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "bitroch_over_crest",
+       "dir": 1,
+       "VA": 1.17971,
+       "MF": 1.16242,
+       "SG": 1.16253,
+       "VA_vs_MF_pct": 1.49,
+       "human_var_pct": 0.01,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": null,
+     "material": true,
+     "strong": true
+    },
+    "8 shoulder / neck integration": {
+     "descriptors": [
+      {
+       "key": "neck_breadth_over_shoulder_joint",
+       "dir": 1,
+       "VA": 0.31864,
+       "MF": 0.3081,
+       "SG": 0.30821,
+       "VA_vs_MF_pct": 3.42,
+       "human_var_pct": 0.04,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "neck_breadth_share",
+       "dir": 1,
+       "VA": 0.06747,
+       "MF": 0.06522,
+       "SG": 0.06487,
+       "VA_vs_MF_pct": 3.46,
+       "human_var_pct": 0.54,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "neck_depth_share",
+       "dir": 1,
+       "VA": 0.04049,
+       "MF": 0.04442,
+       "SG": 0.04331,
+       "VA_vs_MF_pct": -8.84,
+       "human_var_pct": 2.52,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "neck",
+      "VA_vs_MF_mm": 3.4,
+      "SG_vs_MF_mm": 1.52,
+      "material": true
+     },
+     "material": true,
+     "strong": true
+    }
+   },
+   "body_systems_material": 4,
+   "body_systems_strong": 4,
+   "body_region_rms_mm": {
+    "trunk": {
+     "VA_vs_MF": 5.91,
+     "VA_vs_SG": 9.24,
+     "VA_vs_FN": 16.0,
+     "VA_vs_AE": 11.82,
+     "SG_vs_MF": 8.75
+    },
+    "arm": {
+     "VA_vs_MF": 1.53,
+     "VA_vs_SG": 4.5,
+     "VA_vs_FN": 11.72,
+     "VA_vs_AE": 10.75,
+     "SG_vs_MF": 4.29
+    },
+    "hand": {
+     "VA_vs_MF": 5.91,
+     "VA_vs_SG": 6.01,
+     "VA_vs_FN": 23.64,
+     "VA_vs_AE": 12.13,
+     "SG_vs_MF": 11.2
+    },
+    "leg": {
+     "VA_vs_MF": 4.76,
+     "VA_vs_SG": 6.77,
+     "VA_vs_FN": 21.66,
+     "VA_vs_AE": 11.0,
+     "SG_vs_MF": 7.58
+    },
+    "foot": {
+     "VA_vs_MF": 4.03,
+     "VA_vs_SG": 5.07,
+     "VA_vs_FN": 9.1,
+     "VA_vs_AE": 10.84,
+     "SG_vs_MF": 1.35
+    },
+    "neck": {
+     "VA_vs_MF": 3.4,
+     "VA_vs_SG": 4.7,
+     "VA_vs_FN": 5.13,
+     "VA_vs_AE": 5.51,
+     "SG_vs_MF": 1.52
+    }
+   },
+   "face_systems": {
+    "1 cranial proportion / shared elven ancestry": {
+     "descriptors": [
+      {
+       "key": "cranial_height_over_stature",
+       "dir": 1,
+       "VA": 0.06489,
+       "MF": 0.06334,
+       "VA_vs_MF_pct": 2.45,
+       "human_var_pct": 0.6,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "cranial_height_over_face",
+       "dir": 1,
+       "VA": 1.00506,
+       "MF": 0.96558,
+       "VA_vs_MF_pct": 4.09,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cranium_vault": true,
+      "forehead": false
+     },
+     "material": true
+    },
+    "2 compact vertical distribution": {
+     "descriptors": [
+      {
+       "key": "face_height_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.83957,
+       "MF": 0.8796,
+       "VA_vs_MF_pct": -4.55,
+       "human_var_pct": 0.0,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "lower_face_height_over_HH",
+       "dir": -1,
+       "VA": 0.24548,
+       "MF": 0.25459,
+       "VA_vs_MF_pct": -3.58,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "jaw_chin": true,
+      "mouth": false
+     },
+     "material": true
+    },
+    "3 cheek / mid-face integration": {
+     "descriptors": [
+      {
+       "key": "bizygomatic_over_HH",
+       "dir": 1,
+       "VA": 0.59404,
+       "MF": 0.57839,
+       "VA_vs_MF_pct": 2.71,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "cheekbone_height_over_HH",
+       "dir": 1,
+       "VA": 0.36631,
+       "MF": 0.36251,
+       "VA_vs_MF_pct": 1.05,
+       "human_var_pct": 0.02,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cheeks_midface": true
+     },
+     "material": true
+    },
+    "4 mid-face depth": {
+     "descriptors": [
+      {
+       "key": "midface_projection_over_HH",
+       "dir": 1,
+       "VA": 0.19166,
+       "MF": 0.18431,
+       "VA_vs_MF_pct": 3.99,
+       "human_var_pct": 0.03,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cheeks_midface": true,
+      "nose": false
+     },
+     "material": true
+    },
+    "5 orbit / brow system": {
+     "descriptors": [
+      {
+       "key": "brow_projection_over_HH",
+       "dir": -1,
+       "VA": 0.02134,
+       "MF": 0.02162,
+       "VA_vs_MF_pct": -1.3,
+       "human_var_pct": 0.22,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "orbit_eye_region": false
+     },
+     "material": true
+    },
+    "6 mandibular system (more than elves, gracile vs humans)": {
+     "descriptors": [
+      {
+       "key": "jaw_width_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.75547,
+       "MF": 0.75226,
+       "VA_vs_MF_pct": 0.43,
+       "human_var_pct": 0.04,
+       "material": false,
+       "wrong_material": false
+      },
+      {
+       "key": "lower_face_width_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.8836,
+       "MF": 0.89697,
+       "VA_vs_MF_pct": -1.49,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "jaw_chin": true
+     },
+     "material": true
+    }
+   },
+   "face_systems_material": 6,
+   "face_regions": {
+    "cranium_vault": {
+     "VA_vs_MF_mm": 1.682,
+     "VA_vs_SG_mm": 1.693,
+     "VA_vs_FN_mm": 3.377,
+     "VA_vs_AE_mm": 3.228,
+     "human_baseline_mm": 0.026,
+     "material_vs_MF": true
+    },
+    "forehead": {
+     "VA_vs_MF_mm": 0.575,
+     "VA_vs_SG_mm": 0.578,
+     "VA_vs_FN_mm": 2.785,
+     "VA_vs_AE_mm": 2.684,
+     "human_baseline_mm": 0.014,
+     "material_vs_MF": false
+    },
+    "orbit_eye_region": {
+     "VA_vs_MF_mm": 0.503,
+     "VA_vs_SG_mm": 0.509,
+     "VA_vs_FN_mm": 1.696,
+     "VA_vs_AE_mm": 2.033,
+     "human_baseline_mm": 0.009,
+     "material_vs_MF": false
+    },
+    "nose": {
+     "VA_vs_MF_mm": 0.257,
+     "VA_vs_SG_mm": 0.249,
+     "VA_vs_FN_mm": 0.767,
+     "VA_vs_AE_mm": 1.073,
+     "human_baseline_mm": 0.012,
+     "material_vs_MF": false
+    },
+    "cheeks_midface": {
+     "VA_vs_MF_mm": 2.751,
+     "VA_vs_SG_mm": 2.749,
+     "VA_vs_FN_mm": 2.15,
+     "VA_vs_AE_mm": 3.268,
+     "human_baseline_mm": 0.017,
+     "material_vs_MF": true
+    },
+    "mouth": {
+     "VA_vs_MF_mm": 0.254,
+     "VA_vs_SG_mm": 0.259,
+     "VA_vs_FN_mm": 1.499,
+     "VA_vs_AE_mm": 1.037,
+     "human_baseline_mm": 0.014,
+     "material_vs_MF": false
+    },
+    "jaw_chin": {
+     "VA_vs_MF_mm": 1.409,
+     "VA_vs_SG_mm": 1.408,
+     "VA_vs_FN_mm": 2.745,
+     "VA_vs_AE_mm": 4.932,
+     "human_baseline_mm": 0.019,
+     "material_vs_MF": true
+    }
+   },
+   "face_canon_vs_elves": {
+    "face_height_over_bizygomatic": {
+     "VA": 0.83957,
+     "ref": "AE",
+     "ref_value": 0.94334,
+     "VA_vs_ref_pct": -11.0,
+     "holds": true
+    },
+    "forehead_to_chin_over_bizygomatic": {
+     "VA": 1.14972,
+     "ref": "AE",
+     "ref_value": 1.2756,
+     "VA_vs_ref_pct": -9.87,
+     "holds": true
+    },
+    "cranial_height_over_stature": {
+     "VA": 0.06489,
+     "ref": "AE",
+     "ref_value": 0.06526,
+     "VA_vs_ref_pct": -0.56,
+     "holds": true
+    },
+    "bizygomatic_over_HH": {
+     "VA": 0.59404,
+     "ref": "AE",
+     "ref_value": 0.54564,
+     "VA_vs_ref_pct": 8.87,
+     "holds": true
+    },
+    "midface_projection_over_HH": {
+     "VA": 0.19166,
+     "ref": "AE",
+     "ref_value": 0.17039,
+     "VA_vs_ref_pct": 12.48,
+     "holds": true
+    },
+    "orbit_breadth_over_HL": {
+     "VA": 0.13033,
+     "ref": "AE",
+     "ref_value": 0.12723,
+     "VA_vs_ref_pct": 2.43,
+     "holds": true
+    },
+    "brow_projection_over_HH": {
+     "VA": 0.02134,
+     "ref": "AE",
+     "ref_value": 0.02042,
+     "VA_vs_ref_pct": 4.48,
+     "holds": true
+    },
+    "jaw_width_over_bizygomatic": {
+     "VA": 0.75547,
+     "ref": "AE",
+     "ref_value": 0.721,
+     "VA_vs_ref_pct": 4.78,
+     "holds": true
+    },
+    "jaw_width_over_bizygomatic@FN": {
+     "VA": 0.75547,
+     "ref": "FN",
+     "ref_value": 0.7351,
+     "VA_vs_ref_pct": 2.77,
+     "holds": true
+    }
+   },
+   "face_canon_vs_elves_holds": 9,
+   "face_desc": {
+    "cranial_height_over_face": 1.00506,
+    "skull_breadth_over_HH": 0.66064,
+    "bizygomatic_over_HH": 0.59404,
+    "lower_face_width_over_bizygomatic": 0.8836,
+    "lower_face_height_over_HH": 0.24548,
+    "jaw_width_over_bizygomatic": 0.75547,
+    "cheekbone_height_over_HH": 0.36631,
+    "midface_projection_over_HH": 0.19166,
+    "forehead_cranium_turn_deg": 39.66281,
+    "head_height_cm": 23.04295,
+    "crown_breadth_over_euryon": 0.6739,
+    "cranial_height_over_stature": 0.06489,
+    "face_height_over_bizygomatic": 0.83957,
+    "forehead_to_chin_over_bizygomatic": 1.14972,
+    "brow_projection_over_HH": 0.02134,
+    "orbit_breadth_over_HL": 0.13033,
+    "orbit_height_over_HH": 0.11914,
+    "eye_aperture_area_over_HH2": 0.00243
+   },
+   "face_desc_vs_MF_pct": {
+    "cranial_height_over_face": 4.09,
+    "skull_breadth_over_HH": 2.16,
+    "bizygomatic_over_HH": 2.71,
+    "lower_face_width_over_bizygomatic": -1.49,
+    "lower_face_height_over_HH": -3.58,
+    "jaw_width_over_bizygomatic": 0.43,
+    "cheekbone_height_over_HH": 1.05,
+    "midface_projection_over_HH": 3.99,
+    "forehead_cranium_turn_deg": -0.79,
+    "head_height_cm": 0.39,
+    "crown_breadth_over_euryon": -4.25,
+    "cranial_height_over_stature": 2.45,
+    "face_height_over_bizygomatic": -4.55,
+    "forehead_to_chin_over_bizygomatic": -3.7,
+    "brow_projection_over_HH": -1.3,
+    "orbit_breadth_over_HL": -15.43,
+    "orbit_height_over_HH": 16.27,
+    "eye_aperture_area_over_HH2": 5.38
+   },
+   "stature": 177.99162291362882
+  },
+  "VD2": {
+   "report_rows": [
+    {
+     "row": "central vertical vs Aelari (RETIRED composite; report only)",
+     "key": "central_vertical_share",
+     "VA": 0.39975,
+     "MF": 0.39923,
+     "SG": 0.39297,
+     "FN": 0.387,
+     "AE": 0.39851,
+     "vs_pct": {
+      "MF": 0.13,
+      "SG": 1.73,
+      "FN": 3.29,
+      "AE": 0.31
+     }
+    }
+   ],
+   "canon": [
+    {
+     "row": "torso share > Fenn",
+     "key": "torso_share",
+     "VA": 0.28141,
+     "MF": 0.28245,
+     "SG": 0.27694,
+     "FN": 0.27096,
+     "AE": 0.27774,
+     "vs_pct": {
+      "MF": -0.37,
+      "SG": 1.61,
+      "FN": 3.86,
+      "AE": 1.32
+     },
+     "results": {
+      ">FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "thorax depth > Fenn, Aelari",
+     "key": "thorax_depth_share",
+     "VA": 0.13834,
+     "MF": 0.13109,
+     "SG": 0.1272,
+     "FN": 0.12425,
+     "AE": 0.12288,
+     "vs_pct": {
+      "MF": 5.53,
+      "SG": 8.75,
+      "FN": 11.34,
+      "AE": 12.58
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "waist interval / torso < Aelari (VA-P6)",
+     "key": "waist_interval_over_torso",
+     "VA": 0.2659,
+     "MF": 0.26475,
+     "SG": 0.26372,
+     "FN": 0.26235,
+     "AE": 0.2697,
+     "vs_pct": {
+      "MF": 0.43,
+      "SG": 0.83,
+      "FN": 1.35,
+      "AE": -1.41
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "neck share < Aelari (component of the retired central-vertical row)",
+     "key": "neck_share",
+     "VA": 0.05439,
+     "MF": 0.05436,
+     "SG": 0.054,
+     "FN": 0.05297,
+     "AE": 0.0564,
+     "vs_pct": {
+      "MF": 0.04,
+      "SG": 0.72,
+      "FN": 2.69,
+      "AE": -3.57
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "cranial vertical share < Aelari (component)",
+     "key": "cranial_vertical_share",
+     "VA": 0.06395,
+     "MF": 0.06241,
+     "SG": 0.06203,
+     "FN": 0.06308,
+     "AE": 0.06437,
+     "vs_pct": {
+      "MF": 2.47,
+      "SG": 3.11,
+      "FN": 1.39,
+      "AE": -0.65
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "extremity < Fenn",
+     "key": "extremity_share",
+     "VA": 1.2124,
+     "MF": 1.20353,
+     "SG": 1.22502,
+     "FN": 1.25236,
+     "AE": 1.22089,
+     "vs_pct": {
+      "MF": 0.74,
+      "SG": -1.03,
+      "FN": -3.19,
+      "AE": -0.7
+     },
+     "results": {
+      "<FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "hip-joint height / stature > MF, < Fenn, < Aelari (VA-P2a)",
+     "key": "leg_share",
+     "VA": 0.53511,
+     "MF": 0.53457,
+     "SG": 0.54175,
+     "FN": 0.54812,
+     "AE": 0.53571,
+     "vs_pct": {
+      "MF": 0.1,
+      "SG": -1.23,
+      "FN": -2.37,
+      "AE": -0.11
+     },
+     "results": {
+      ">MF": true,
+      "<FN": true,
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "arm share > MF, < Fenn",
+     "key": "arm_share",
+     "VA": 0.41127,
+     "MF": 0.40769,
+     "SG": 0.41778,
+     "FN": 0.42908,
+     "AE": 0.41547,
+     "vs_pct": {
+      "MF": 0.88,
+      "SG": -1.56,
+      "FN": -4.15,
+      "AE": -1.01
+     },
+     "results": {
+      ">MF": true,
+      "<FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "arm <= Aelari (BM-3)",
+     "key": "arm_share",
+     "VA": 0.41127,
+     "MF": 0.40769,
+     "SG": 0.41778,
+     "FN": 0.42908,
+     "AE": 0.41547,
+     "vs_pct": {
+      "MF": 0.88,
+      "SG": -1.56,
+      "FN": -4.15,
+      "AE": -1.01
+     },
+     "results": {
+      "<=AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "elbow presence > FN, AE",
+     "key": "elbow_over_humerus",
+     "VA": 0.34645,
+     "MF": 0.34454,
+     "SG": 0.3473,
+     "FN": 0.32152,
+     "AE": 0.33993,
+     "vs_pct": {
+      "MF": 0.55,
+      "SG": -0.24,
+      "FN": 7.75,
+      "AE": 1.92
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "wrist presence > FN, AE",
+     "key": "wrist_over_forearm",
+     "VA": 0.20525,
+     "MF": 0.21137,
+     "SG": 0.20421,
+     "FN": 0.1878,
+     "AE": 0.20425,
+     "vs_pct": {
+      "MF": -2.89,
+      "SG": 0.51,
+      "FN": 9.29,
+      "AE": 0.49
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "knee presence > FN, AE",
+     "key": "knee_over_femur",
+     "VA": 0.28794,
+     "MF": 0.2851,
+     "SG": 0.27959,
+     "FN": 0.26776,
+     "AE": 0.27949,
+     "vs_pct": {
+      "MF": 1.0,
+      "SG": 2.99,
+      "FN": 7.54,
+      "AE": 3.02
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "ankle presence > FN, AE",
+     "key": "ankle_over_shin",
+     "VA": 0.34502,
+     "MF": 0.34811,
+     "SG": 0.33987,
+     "FN": 0.3294,
+     "AE": 0.3403,
+     "vs_pct": {
+      "MF": -0.89,
+      "SG": 1.52,
+      "FN": 4.74,
+      "AE": 1.39
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "joints gracile vs humans (mean of 4 joint / segment ratios < MF)",
+     "key": "joint_mean",
+     "VA": 0.29617,
+     "MF": 0.29728,
+     "SG": 0.29274,
+     "FN": 0.27662,
+     "AE": 0.29099,
+     "vs_pct": {
+      "MF": -0.37,
+      "SG": 1.17,
+      "FN": 7.07,
+      "AE": 1.78
+     },
+     "results": {
+      "<MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "palm breadth / hand > FN, AE",
+     "key": "palm_breadth_over_hand",
+     "VA": 0.44593,
+     "MF": 0.43791,
+     "SG": 0.41845,
+     "FN": 0.41202,
+     "AE": 0.43585,
+     "vs_pct": {
+      "MF": 1.83,
+      "SG": 6.57,
+      "FN": 8.23,
+      "AE": 2.31
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "hand share > MF",
+     "key": "hand_share",
+     "VA": 0.11533,
+     "MF": 0.11214,
+     "SG": 0.11769,
+     "FN": 0.12031,
+     "AE": 0.11719,
+     "vs_pct": {
+      "MF": 2.84,
+      "SG": -2.0,
+      "FN": -4.14,
+      "AE": -1.59
+     },
+     "results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "foot breadth / length > FN, AE",
+     "key": "foot_breadth_over_length",
+     "VA": 0.404,
+     "MF": 0.37431,
+     "SG": 0.37424,
+     "FN": 0.33121,
+     "AE": 0.35224,
+     "vs_pct": {
+      "MF": 7.93,
+      "SG": 7.95,
+      "FN": 21.98,
+      "AE": 14.69
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "foot share > MF",
+     "key": "foot_share",
+     "VA": 0.15069,
+     "MF": 0.14913,
+     "SG": 0.1478,
+     "FN": 0.15486,
+     "AE": 0.15252,
+     "vs_pct": {
+      "MF": 1.05,
+      "SG": 1.95,
+      "FN": -2.69,
+      "AE": -1.2
+     },
+     "results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "pelvic AP depth > FN, AE (VA-P4 skin)",
+     "key": "pelvic_depth_share",
+     "VA": 0.13059,
+     "MF": 0.12741,
+     "SG": 0.12666,
+     "FN": 0.12477,
+     "AE": 0.12466,
+     "vs_pct": {
+      "MF": 2.5,
+      "SG": 3.11,
+      "FN": 4.67,
+      "AE": 4.76
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "bitroch / crest >= MF (VA-P2b skin)",
+     "key": "bitroch_over_crest",
+     "VA": 1.1863,
+     "MF": 1.16242,
+     "SG": 1.16253,
+     "FN": 1.17771,
+     "AE": 1.17898,
+     "vs_pct": {
+      "MF": 2.05,
+      "SG": 2.04,
+      "FN": 0.73,
+      "AE": 0.62
+     },
+     "results": {
+      ">=MF": true
+     },
+     "holds": true
+    }
+   ],
+   "canon_holds": 20,
+   "canon_of": 20,
+   "canon_failing": [],
+   "body_systems": {
+    "1 ribcage depth / thoracic volume": {
+     "descriptors": [
+      {
+       "key": "thorax_depth_share",
+       "dir": 1,
+       "VA": 0.13834,
+       "MF": 0.13109,
+       "SG": 0.1272,
+       "VA_vs_MF_pct": 5.53,
+       "human_var_pct": 2.96,
+       "material": true,
+       "strong": false
+      },
+      {
+       "key": "thorax_d_over_b",
+       "dir": 1,
+       "VA": 0.73571,
+       "MF": 0.69547,
+       "SG": 0.67871,
+       "VA_vs_MF_pct": 5.79,
+       "human_var_pct": 2.41,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": {
+      "region": "trunk",
+      "VA_vs_MF_mm": 6.32,
+      "SG_vs_MF_mm": 8.75,
+      "material": false
+     },
+     "material": true,
+     "strong": true
+    },
+    "2 torso-to-pelvis continuity": {
+     "descriptors": [
+      {
+       "key": "pelvic_depth_over_thorax_depth",
+       "dir": 1,
+       "VA": 0.94403,
+       "MF": 0.97194,
+       "SG": 0.9957,
+       "VA_vs_MF_pct": -2.87,
+       "human_var_pct": 2.44,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "waist_interval_over_torso",
+       "dir": -1,
+       "VA": 0.2659,
+       "MF": 0.26475,
+       "SG": 0.26372,
+       "VA_vs_MF_pct": 0.43,
+       "human_var_pct": 0.39,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "trunk",
+      "VA_vs_MF_mm": 6.32,
+      "SG_vs_MF_mm": 8.75,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "3 limb share (long vs humans)": {
+     "descriptors": [
+      {
+       "key": "leg_share",
+       "dir": 1,
+       "VA": 0.53511,
+       "MF": 0.53457,
+       "SG": 0.54175,
+       "VA_vs_MF_pct": 0.1,
+       "human_var_pct": 1.34,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "arm_share",
+       "dir": 1,
+       "VA": 0.41127,
+       "MF": 0.40769,
+       "SG": 0.41778,
+       "VA_vs_MF_pct": 0.88,
+       "human_var_pct": 2.48,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "leg",
+      "VA_vs_MF_mm": 4.77,
+      "SG_vs_MF_mm": 7.58,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "4 joint scale (gracile vs humans)": {
+     "descriptors": [
+      {
+       "key": "joint_mean",
+       "dir": -1,
+       "VA": 0.29617,
+       "MF": 0.29728,
+       "SG": 0.29274,
+       "VA_vs_MF_pct": -0.37,
+       "human_var_pct": 1.53,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "wrist_over_forearm",
+       "dir": -1,
+       "VA": 0.20525,
+       "MF": 0.21137,
+       "SG": 0.20421,
+       "VA_vs_MF_pct": -2.89,
+       "human_var_pct": 3.39,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "ankle_over_shin",
+       "dir": -1,
+       "VA": 0.34502,
+       "MF": 0.34811,
+       "SG": 0.33987,
+       "VA_vs_MF_pct": -0.89,
+       "human_var_pct": 2.37,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "arm",
+      "VA_vs_MF_mm": 1.52,
+      "SG_vs_MF_mm": 4.29,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "5 hand base / elven hand": {
+     "descriptors": [
+      {
+       "key": "finger_over_hand",
+       "dir": 1,
+       "VA": 0.43593,
+       "MF": 0.43585,
+       "SG": 0.45898,
+       "VA_vs_MF_pct": 0.02,
+       "human_var_pct": 5.31,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "palm_breadth_over_hand",
+       "dir": 1,
+       "VA": 0.44593,
+       "MF": 0.43791,
+       "SG": 0.41845,
+       "VA_vs_MF_pct": 1.83,
+       "human_var_pct": 4.44,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "hand",
+      "VA_vs_MF_mm": 5.91,
+      "SG_vs_MF_mm": 11.2,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "6 foot base": {
+     "descriptors": [
+      {
+       "key": "foot_breadth_over_length",
+       "dir": 1,
+       "VA": 0.404,
+       "MF": 0.37431,
+       "SG": 0.37424,
+       "VA_vs_MF_pct": 7.93,
+       "human_var_pct": 0.02,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": {
+      "region": "foot",
+      "VA_vs_MF_mm": 4.1,
+      "SG_vs_MF_mm": 1.35,
+      "material": true
+     },
+     "material": true,
+     "strong": true
+    },
+    "7 pelvis / hip relationship": {
+     "descriptors": [
+      {
+       "key": "pelvic_depth_share",
+       "dir": 1,
+       "VA": 0.13059,
+       "MF": 0.12741,
+       "SG": 0.12666,
+       "VA_vs_MF_pct": 2.5,
+       "human_var_pct": 0.59,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "bitroch_over_crest",
+       "dir": 1,
+       "VA": 1.1863,
+       "MF": 1.16242,
+       "SG": 1.16253,
+       "VA_vs_MF_pct": 2.05,
+       "human_var_pct": 0.01,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": null,
+     "material": true,
+     "strong": true
+    },
+    "8 shoulder / neck integration": {
+     "descriptors": [
+      {
+       "key": "neck_breadth_over_shoulder_joint",
+       "dir": 1,
+       "VA": 0.31864,
+       "MF": 0.3081,
+       "SG": 0.30821,
+       "VA_vs_MF_pct": 3.42,
+       "human_var_pct": 0.04,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "neck_breadth_share",
+       "dir": 1,
+       "VA": 0.06747,
+       "MF": 0.06522,
+       "SG": 0.06487,
+       "VA_vs_MF_pct": 3.46,
+       "human_var_pct": 0.54,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "neck_depth_share",
+       "dir": 1,
+       "VA": 0.04049,
+       "MF": 0.04442,
+       "SG": 0.04331,
+       "VA_vs_MF_pct": -8.84,
+       "human_var_pct": 2.52,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "neck",
+      "VA_vs_MF_mm": 3.39,
+      "SG_vs_MF_mm": 1.52,
+      "material": true
+     },
+     "material": true,
+     "strong": true
+    }
+   },
+   "body_systems_material": 4,
+   "body_systems_strong": 4,
+   "body_region_rms_mm": {
+    "trunk": {
+     "VA_vs_MF": 6.32,
+     "VA_vs_SG": 9.47,
+     "VA_vs_FN": 16.02,
+     "VA_vs_AE": 11.78,
+     "SG_vs_MF": 8.75
+    },
+    "arm": {
+     "VA_vs_MF": 1.52,
+     "VA_vs_SG": 4.5,
+     "VA_vs_FN": 11.72,
+     "VA_vs_AE": 10.75,
+     "SG_vs_MF": 4.29
+    },
+    "hand": {
+     "VA_vs_MF": 5.91,
+     "VA_vs_SG": 6.03,
+     "VA_vs_FN": 23.65,
+     "VA_vs_AE": 12.14,
+     "SG_vs_MF": 11.2
+    },
+    "leg": {
+     "VA_vs_MF": 4.77,
+     "VA_vs_SG": 6.78,
+     "VA_vs_FN": 21.65,
+     "VA_vs_AE": 11.01,
+     "SG_vs_MF": 7.58
+    },
+    "foot": {
+     "VA_vs_MF": 4.1,
+     "VA_vs_SG": 5.13,
+     "VA_vs_FN": 9.15,
+     "VA_vs_AE": 10.88,
+     "SG_vs_MF": 1.35
+    },
+    "neck": {
+     "VA_vs_MF": 3.39,
+     "VA_vs_SG": 4.69,
+     "VA_vs_FN": 5.12,
+     "VA_vs_AE": 5.52,
+     "SG_vs_MF": 1.52
+    }
+   },
+   "face_systems": {
+    "1 cranial proportion / shared elven ancestry": {
+     "descriptors": [
+      {
+       "key": "cranial_height_over_stature",
+       "dir": 1,
+       "VA": 0.06489,
+       "MF": 0.06334,
+       "VA_vs_MF_pct": 2.45,
+       "human_var_pct": 0.6,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "cranial_height_over_face",
+       "dir": 1,
+       "VA": 1.00506,
+       "MF": 0.96558,
+       "VA_vs_MF_pct": 4.09,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cranium_vault": true,
+      "forehead": false
+     },
+     "material": true
+    },
+    "2 compact vertical distribution": {
+     "descriptors": [
+      {
+       "key": "face_height_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.83957,
+       "MF": 0.8796,
+       "VA_vs_MF_pct": -4.55,
+       "human_var_pct": 0.0,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "lower_face_height_over_HH",
+       "dir": -1,
+       "VA": 0.24548,
+       "MF": 0.25459,
+       "VA_vs_MF_pct": -3.58,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "jaw_chin": true,
+      "mouth": false
+     },
+     "material": true
+    },
+    "3 cheek / mid-face integration": {
+     "descriptors": [
+      {
+       "key": "bizygomatic_over_HH",
+       "dir": 1,
+       "VA": 0.59404,
+       "MF": 0.57839,
+       "VA_vs_MF_pct": 2.71,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "cheekbone_height_over_HH",
+       "dir": 1,
+       "VA": 0.36631,
+       "MF": 0.36251,
+       "VA_vs_MF_pct": 1.05,
+       "human_var_pct": 0.02,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cheeks_midface": true
+     },
+     "material": true
+    },
+    "4 mid-face depth": {
+     "descriptors": [
+      {
+       "key": "midface_projection_over_HH",
+       "dir": 1,
+       "VA": 0.19166,
+       "MF": 0.18431,
+       "VA_vs_MF_pct": 3.99,
+       "human_var_pct": 0.03,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cheeks_midface": true,
+      "nose": false
+     },
+     "material": true
+    },
+    "5 orbit / brow system": {
+     "descriptors": [
+      {
+       "key": "brow_projection_over_HH",
+       "dir": -1,
+       "VA": 0.02134,
+       "MF": 0.02162,
+       "VA_vs_MF_pct": -1.3,
+       "human_var_pct": 0.22,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "orbit_eye_region": false
+     },
+     "material": true
+    },
+    "6 mandibular system (more than elves, gracile vs humans)": {
+     "descriptors": [
+      {
+       "key": "jaw_width_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.75547,
+       "MF": 0.75226,
+       "VA_vs_MF_pct": 0.43,
+       "human_var_pct": 0.04,
+       "material": false,
+       "wrong_material": false
+      },
+      {
+       "key": "lower_face_width_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.8836,
+       "MF": 0.89697,
+       "VA_vs_MF_pct": -1.49,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "jaw_chin": true
+     },
+     "material": true
+    }
+   },
+   "face_systems_material": 6,
+   "face_regions": {
+    "cranium_vault": {
+     "VA_vs_MF_mm": 1.682,
+     "VA_vs_SG_mm": 1.693,
+     "VA_vs_FN_mm": 3.377,
+     "VA_vs_AE_mm": 3.228,
+     "human_baseline_mm": 0.026,
+     "material_vs_MF": true
+    },
+    "forehead": {
+     "VA_vs_MF_mm": 0.575,
+     "VA_vs_SG_mm": 0.578,
+     "VA_vs_FN_mm": 2.785,
+     "VA_vs_AE_mm": 2.684,
+     "human_baseline_mm": 0.014,
+     "material_vs_MF": false
+    },
+    "orbit_eye_region": {
+     "VA_vs_MF_mm": 0.503,
+     "VA_vs_SG_mm": 0.509,
+     "VA_vs_FN_mm": 1.696,
+     "VA_vs_AE_mm": 2.033,
+     "human_baseline_mm": 0.009,
+     "material_vs_MF": false
+    },
+    "nose": {
+     "VA_vs_MF_mm": 0.257,
+     "VA_vs_SG_mm": 0.249,
+     "VA_vs_FN_mm": 0.767,
+     "VA_vs_AE_mm": 1.073,
+     "human_baseline_mm": 0.012,
+     "material_vs_MF": false
+    },
+    "cheeks_midface": {
+     "VA_vs_MF_mm": 2.751,
+     "VA_vs_SG_mm": 2.749,
+     "VA_vs_FN_mm": 2.15,
+     "VA_vs_AE_mm": 3.268,
+     "human_baseline_mm": 0.017,
+     "material_vs_MF": true
+    },
+    "mouth": {
+     "VA_vs_MF_mm": 0.254,
+     "VA_vs_SG_mm": 0.259,
+     "VA_vs_FN_mm": 1.499,
+     "VA_vs_AE_mm": 1.037,
+     "human_baseline_mm": 0.014,
+     "material_vs_MF": false
+    },
+    "jaw_chin": {
+     "VA_vs_MF_mm": 1.409,
+     "VA_vs_SG_mm": 1.408,
+     "VA_vs_FN_mm": 2.745,
+     "VA_vs_AE_mm": 4.932,
+     "human_baseline_mm": 0.019,
+     "material_vs_MF": true
+    }
+   },
+   "face_canon_vs_elves": {
+    "face_height_over_bizygomatic": {
+     "VA": 0.83957,
+     "ref": "AE",
+     "ref_value": 0.94334,
+     "VA_vs_ref_pct": -11.0,
+     "holds": true
+    },
+    "forehead_to_chin_over_bizygomatic": {
+     "VA": 1.14972,
+     "ref": "AE",
+     "ref_value": 1.2756,
+     "VA_vs_ref_pct": -9.87,
+     "holds": true
+    },
+    "cranial_height_over_stature": {
+     "VA": 0.06489,
+     "ref": "AE",
+     "ref_value": 0.06526,
+     "VA_vs_ref_pct": -0.56,
+     "holds": true
+    },
+    "bizygomatic_over_HH": {
+     "VA": 0.59404,
+     "ref": "AE",
+     "ref_value": 0.54564,
+     "VA_vs_ref_pct": 8.87,
+     "holds": true
+    },
+    "midface_projection_over_HH": {
+     "VA": 0.19166,
+     "ref": "AE",
+     "ref_value": 0.17039,
+     "VA_vs_ref_pct": 12.48,
+     "holds": true
+    },
+    "orbit_breadth_over_HL": {
+     "VA": 0.13033,
+     "ref": "AE",
+     "ref_value": 0.12723,
+     "VA_vs_ref_pct": 2.43,
+     "holds": true
+    },
+    "brow_projection_over_HH": {
+     "VA": 0.02134,
+     "ref": "AE",
+     "ref_value": 0.02042,
+     "VA_vs_ref_pct": 4.48,
+     "holds": true
+    },
+    "jaw_width_over_bizygomatic": {
+     "VA": 0.75547,
+     "ref": "AE",
+     "ref_value": 0.721,
+     "VA_vs_ref_pct": 4.78,
+     "holds": true
+    },
+    "jaw_width_over_bizygomatic@FN": {
+     "VA": 0.75547,
+     "ref": "FN",
+     "ref_value": 0.7351,
+     "VA_vs_ref_pct": 2.77,
+     "holds": true
+    }
+   },
+   "face_canon_vs_elves_holds": 9,
+   "face_desc": {
+    "cranial_height_over_face": 1.00506,
+    "skull_breadth_over_HH": 0.66064,
+    "bizygomatic_over_HH": 0.59404,
+    "lower_face_width_over_bizygomatic": 0.8836,
+    "lower_face_height_over_HH": 0.24548,
+    "jaw_width_over_bizygomatic": 0.75547,
+    "cheekbone_height_over_HH": 0.36631,
+    "midface_projection_over_HH": 0.19166,
+    "forehead_cranium_turn_deg": 39.66273,
+    "head_height_cm": 23.04295,
+    "crown_breadth_over_euryon": 0.6739,
+    "cranial_height_over_stature": 0.06489,
+    "face_height_over_bizygomatic": 0.83957,
+    "forehead_to_chin_over_bizygomatic": 1.14972,
+    "brow_projection_over_HH": 0.02134,
+    "orbit_breadth_over_HL": 0.13033,
+    "orbit_height_over_HH": 0.11914,
+    "eye_aperture_area_over_HH2": 0.00243
+   },
+   "face_desc_vs_MF_pct": {
+    "cranial_height_over_face": 4.09,
+    "skull_breadth_over_HH": 2.16,
+    "bizygomatic_over_HH": 2.71,
+    "lower_face_width_over_bizygomatic": -1.49,
+    "lower_face_height_over_HH": -3.58,
+    "jaw_width_over_bizygomatic": 0.43,
+    "cheekbone_height_over_HH": 1.05,
+    "midface_projection_over_HH": 3.99,
+    "forehead_cranium_turn_deg": -0.79,
+    "head_height_cm": 0.39,
+    "crown_breadth_over_euryon": -4.25,
+    "cranial_height_over_stature": 2.45,
+    "face_height_over_bizygomatic": -4.55,
+    "forehead_to_chin_over_bizygomatic": -3.7,
+    "brow_projection_over_HH": -1.3,
+    "orbit_breadth_over_HL": -15.43,
+    "orbit_height_over_HH": 16.27,
+    "eye_aperture_area_over_HH2": 5.38
+   },
+   "stature": 177.9926147274673
+  },
+  "VD3": {
+   "report_rows": [
+    {
+     "row": "central vertical vs Aelari (RETIRED composite; report only)",
+     "key": "central_vertical_share",
+     "VA": 0.39975,
+     "MF": 0.39923,
+     "SG": 0.39297,
+     "FN": 0.387,
+     "AE": 0.39851,
+     "vs_pct": {
+      "MF": 0.13,
+      "SG": 1.72,
+      "FN": 3.29,
+      "AE": 0.31
+     }
+    }
+   ],
+   "canon": [
+    {
+     "row": "torso share > Fenn",
+     "key": "torso_share",
+     "VA": 0.2814,
+     "MF": 0.28245,
+     "SG": 0.27694,
+     "FN": 0.27096,
+     "AE": 0.27774,
+     "vs_pct": {
+      "MF": -0.37,
+      "SG": 1.61,
+      "FN": 3.86,
+      "AE": 1.32
+     },
+     "results": {
+      ">FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "thorax depth > Fenn, Aelari",
+     "key": "thorax_depth_share",
+     "VA": 0.13834,
+     "MF": 0.13109,
+     "SG": 0.1272,
+     "FN": 0.12425,
+     "AE": 0.12288,
+     "vs_pct": {
+      "MF": 5.53,
+      "SG": 8.75,
+      "FN": 11.34,
+      "AE": 12.58
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "waist interval / torso < Aelari (VA-P6)",
+     "key": "waist_interval_over_torso",
+     "VA": 0.2659,
+     "MF": 0.26475,
+     "SG": 0.26372,
+     "FN": 0.26235,
+     "AE": 0.2697,
+     "vs_pct": {
+      "MF": 0.43,
+      "SG": 0.83,
+      "FN": 1.35,
+      "AE": -1.41
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "neck share < Aelari (component of the retired central-vertical row)",
+     "key": "neck_share",
+     "VA": 0.05439,
+     "MF": 0.05436,
+     "SG": 0.054,
+     "FN": 0.05297,
+     "AE": 0.0564,
+     "vs_pct": {
+      "MF": 0.04,
+      "SG": 0.72,
+      "FN": 2.69,
+      "AE": -3.57
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "cranial vertical share < Aelari (component)",
+     "key": "cranial_vertical_share",
+     "VA": 0.06395,
+     "MF": 0.06241,
+     "SG": 0.06203,
+     "FN": 0.06308,
+     "AE": 0.06437,
+     "vs_pct": {
+      "MF": 2.47,
+      "SG": 3.1,
+      "FN": 1.39,
+      "AE": -0.65
+     },
+     "results": {
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "extremity < Fenn",
+     "key": "extremity_share",
+     "VA": 1.2124,
+     "MF": 1.20353,
+     "SG": 1.22502,
+     "FN": 1.25236,
+     "AE": 1.22089,
+     "vs_pct": {
+      "MF": 0.74,
+      "SG": -1.03,
+      "FN": -3.19,
+      "AE": -0.7
+     },
+     "results": {
+      "<FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "hip-joint height / stature > MF, < Fenn, < Aelari (VA-P2a)",
+     "key": "leg_share",
+     "VA": 0.53511,
+     "MF": 0.53457,
+     "SG": 0.54175,
+     "FN": 0.54812,
+     "AE": 0.53571,
+     "vs_pct": {
+      "MF": 0.1,
+      "SG": -1.23,
+      "FN": -2.37,
+      "AE": -0.11
+     },
+     "results": {
+      ">MF": true,
+      "<FN": true,
+      "<AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "arm share > MF, < Fenn",
+     "key": "arm_share",
+     "VA": 0.41126,
+     "MF": 0.40769,
+     "SG": 0.41778,
+     "FN": 0.42908,
+     "AE": 0.41547,
+     "vs_pct": {
+      "MF": 0.88,
+      "SG": -1.56,
+      "FN": -4.15,
+      "AE": -1.01
+     },
+     "results": {
+      ">MF": true,
+      "<FN": true
+     },
+     "holds": true
+    },
+    {
+     "row": "arm <= Aelari (BM-3)",
+     "key": "arm_share",
+     "VA": 0.41126,
+     "MF": 0.40769,
+     "SG": 0.41778,
+     "FN": 0.42908,
+     "AE": 0.41547,
+     "vs_pct": {
+      "MF": 0.88,
+      "SG": -1.56,
+      "FN": -4.15,
+      "AE": -1.01
+     },
+     "results": {
+      "<=AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "elbow presence > FN, AE",
+     "key": "elbow_over_humerus",
+     "VA": 0.34645,
+     "MF": 0.34454,
+     "SG": 0.3473,
+     "FN": 0.32152,
+     "AE": 0.33993,
+     "vs_pct": {
+      "MF": 0.55,
+      "SG": -0.24,
+      "FN": 7.75,
+      "AE": 1.92
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "wrist presence > FN, AE",
+     "key": "wrist_over_forearm",
+     "VA": 0.2055,
+     "MF": 0.21137,
+     "SG": 0.20421,
+     "FN": 0.1878,
+     "AE": 0.20425,
+     "vs_pct": {
+      "MF": -2.78,
+      "SG": 0.63,
+      "FN": 9.42,
+      "AE": 0.61
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "knee presence > FN, AE",
+     "key": "knee_over_femur",
+     "VA": 0.28794,
+     "MF": 0.2851,
+     "SG": 0.27959,
+     "FN": 0.26776,
+     "AE": 0.27949,
+     "vs_pct": {
+      "MF": 1.0,
+      "SG": 2.99,
+      "FN": 7.54,
+      "AE": 3.02
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "ankle presence > FN, AE",
+     "key": "ankle_over_shin",
+     "VA": 0.34503,
+     "MF": 0.34811,
+     "SG": 0.33987,
+     "FN": 0.3294,
+     "AE": 0.3403,
+     "vs_pct": {
+      "MF": -0.88,
+      "SG": 1.52,
+      "FN": 4.75,
+      "AE": 1.39
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "joints gracile vs humans (mean of 4 joint / segment ratios < MF)",
+     "key": "joint_mean",
+     "VA": 0.29623,
+     "MF": 0.29728,
+     "SG": 0.29274,
+     "FN": 0.27662,
+     "AE": 0.29099,
+     "vs_pct": {
+      "MF": -0.35,
+      "SG": 1.19,
+      "FN": 7.09,
+      "AE": 1.8
+     },
+     "results": {
+      "<MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "palm breadth / hand > FN, AE",
+     "key": "palm_breadth_over_hand",
+     "VA": 0.44789,
+     "MF": 0.43791,
+     "SG": 0.41845,
+     "FN": 0.41202,
+     "AE": 0.43585,
+     "vs_pct": {
+      "MF": 2.28,
+      "SG": 7.03,
+      "FN": 8.7,
+      "AE": 2.76
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "hand share > MF",
+     "key": "hand_share",
+     "VA": 0.11533,
+     "MF": 0.11214,
+     "SG": 0.11769,
+     "FN": 0.12031,
+     "AE": 0.11719,
+     "vs_pct": {
+      "MF": 2.84,
+      "SG": -2.0,
+      "FN": -4.14,
+      "AE": -1.59
+     },
+     "results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "foot breadth / length > FN, AE",
+     "key": "foot_breadth_over_length",
+     "VA": 0.4044,
+     "MF": 0.37431,
+     "SG": 0.37424,
+     "FN": 0.33121,
+     "AE": 0.35224,
+     "vs_pct": {
+      "MF": 8.04,
+      "SG": 8.06,
+      "FN": 22.1,
+      "AE": 14.81
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "foot share > MF",
+     "key": "foot_share",
+     "VA": 0.15069,
+     "MF": 0.14913,
+     "SG": 0.1478,
+     "FN": 0.15486,
+     "AE": 0.15252,
+     "vs_pct": {
+      "MF": 1.05,
+      "SG": 1.95,
+      "FN": -2.69,
+      "AE": -1.2
+     },
+     "results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "row": "pelvic AP depth > FN, AE (VA-P4 skin)",
+     "key": "pelvic_depth_share",
+     "VA": 0.13069,
+     "MF": 0.12741,
+     "SG": 0.12666,
+     "FN": 0.12477,
+     "AE": 0.12466,
+     "vs_pct": {
+      "MF": 2.58,
+      "SG": 3.19,
+      "FN": 4.75,
+      "AE": 4.84
+     },
+     "results": {
+      ">FN": true,
+      ">AE": true
+     },
+     "holds": true
+    },
+    {
+     "row": "bitroch / crest >= MF (VA-P2b skin)",
+     "key": "bitroch_over_crest",
+     "VA": 1.19296,
+     "MF": 1.16242,
+     "SG": 1.16253,
+     "FN": 1.17771,
+     "AE": 1.17898,
+     "vs_pct": {
+      "MF": 2.63,
+      "SG": 2.62,
+      "FN": 1.29,
+      "AE": 1.19
+     },
+     "results": {
+      ">=MF": true
+     },
+     "holds": true
+    }
+   ],
+   "canon_holds": 20,
+   "canon_of": 20,
+   "canon_failing": [],
+   "body_systems": {
+    "1 ribcage depth / thoracic volume": {
+     "descriptors": [
+      {
+       "key": "thorax_depth_share",
+       "dir": 1,
+       "VA": 0.13834,
+       "MF": 0.13109,
+       "SG": 0.1272,
+       "VA_vs_MF_pct": 5.53,
+       "human_var_pct": 2.96,
+       "material": true,
+       "strong": false
+      },
+      {
+       "key": "thorax_d_over_b",
+       "dir": 1,
+       "VA": 0.73644,
+       "MF": 0.69547,
+       "SG": 0.67871,
+       "VA_vs_MF_pct": 5.89,
+       "human_var_pct": 2.41,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": {
+      "region": "trunk",
+      "VA_vs_MF_mm": 6.89,
+      "SG_vs_MF_mm": 8.75,
+      "material": false
+     },
+     "material": true,
+     "strong": true
+    },
+    "2 torso-to-pelvis continuity": {
+     "descriptors": [
+      {
+       "key": "pelvic_depth_over_thorax_depth",
+       "dir": 1,
+       "VA": 0.94476,
+       "MF": 0.97194,
+       "SG": 0.9957,
+       "VA_vs_MF_pct": -2.8,
+       "human_var_pct": 2.44,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "waist_interval_over_torso",
+       "dir": -1,
+       "VA": 0.2659,
+       "MF": 0.26475,
+       "SG": 0.26372,
+       "VA_vs_MF_pct": 0.43,
+       "human_var_pct": 0.39,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "trunk",
+      "VA_vs_MF_mm": 6.89,
+      "SG_vs_MF_mm": 8.75,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "3 limb share (long vs humans)": {
+     "descriptors": [
+      {
+       "key": "leg_share",
+       "dir": 1,
+       "VA": 0.53511,
+       "MF": 0.53457,
+       "SG": 0.54175,
+       "VA_vs_MF_pct": 0.1,
+       "human_var_pct": 1.34,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "arm_share",
+       "dir": 1,
+       "VA": 0.41126,
+       "MF": 0.40769,
+       "SG": 0.41778,
+       "VA_vs_MF_pct": 0.88,
+       "human_var_pct": 2.48,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "leg",
+      "VA_vs_MF_mm": 4.79,
+      "SG_vs_MF_mm": 7.58,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "4 joint scale (gracile vs humans)": {
+     "descriptors": [
+      {
+       "key": "joint_mean",
+       "dir": -1,
+       "VA": 0.29623,
+       "MF": 0.29728,
+       "SG": 0.29274,
+       "VA_vs_MF_pct": -0.35,
+       "human_var_pct": 1.53,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "wrist_over_forearm",
+       "dir": -1,
+       "VA": 0.2055,
+       "MF": 0.21137,
+       "SG": 0.20421,
+       "VA_vs_MF_pct": -2.78,
+       "human_var_pct": 3.39,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "ankle_over_shin",
+       "dir": -1,
+       "VA": 0.34503,
+       "MF": 0.34811,
+       "SG": 0.33987,
+       "VA_vs_MF_pct": -0.88,
+       "human_var_pct": 2.37,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "arm",
+      "VA_vs_MF_mm": 1.52,
+      "SG_vs_MF_mm": 4.29,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "5 hand base / elven hand": {
+     "descriptors": [
+      {
+       "key": "finger_over_hand",
+       "dir": 1,
+       "VA": 0.43593,
+       "MF": 0.43585,
+       "SG": 0.45898,
+       "VA_vs_MF_pct": 0.02,
+       "human_var_pct": 5.31,
+       "material": false,
+       "strong": false
+      },
+      {
+       "key": "palm_breadth_over_hand",
+       "dir": 1,
+       "VA": 0.44789,
+       "MF": 0.43791,
+       "SG": 0.41845,
+       "VA_vs_MF_pct": 2.28,
+       "human_var_pct": 4.44,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "hand",
+      "VA_vs_MF_mm": 5.92,
+      "SG_vs_MF_mm": 11.2,
+      "material": false
+     },
+     "material": false,
+     "strong": false
+    },
+    "6 foot base": {
+     "descriptors": [
+      {
+       "key": "foot_breadth_over_length",
+       "dir": 1,
+       "VA": 0.4044,
+       "MF": 0.37431,
+       "SG": 0.37424,
+       "VA_vs_MF_pct": 8.04,
+       "human_var_pct": 0.02,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": {
+      "region": "foot",
+      "VA_vs_MF_mm": 4.18,
+      "SG_vs_MF_mm": 1.35,
+      "material": true
+     },
+     "material": true,
+     "strong": true
+    },
+    "7 pelvis / hip relationship": {
+     "descriptors": [
+      {
+       "key": "pelvic_depth_share",
+       "dir": 1,
+       "VA": 0.13069,
+       "MF": 0.12741,
+       "SG": 0.12666,
+       "VA_vs_MF_pct": 2.58,
+       "human_var_pct": 0.59,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "bitroch_over_crest",
+       "dir": 1,
+       "VA": 1.19296,
+       "MF": 1.16242,
+       "SG": 1.16253,
+       "VA_vs_MF_pct": 2.63,
+       "human_var_pct": 0.01,
+       "material": true,
+       "strong": true
+      }
+     ],
+     "region": null,
+     "material": true,
+     "strong": true
+    },
+    "8 shoulder / neck integration": {
+     "descriptors": [
+      {
+       "key": "neck_breadth_over_shoulder_joint",
+       "dir": 1,
+       "VA": 0.31864,
+       "MF": 0.3081,
+       "SG": 0.30821,
+       "VA_vs_MF_pct": 3.42,
+       "human_var_pct": 0.04,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "neck_breadth_share",
+       "dir": 1,
+       "VA": 0.06747,
+       "MF": 0.06522,
+       "SG": 0.06487,
+       "VA_vs_MF_pct": 3.46,
+       "human_var_pct": 0.54,
+       "material": true,
+       "strong": true
+      },
+      {
+       "key": "neck_depth_share",
+       "dir": 1,
+       "VA": 0.04049,
+       "MF": 0.04442,
+       "SG": 0.04331,
+       "VA_vs_MF_pct": -8.84,
+       "human_var_pct": 2.52,
+       "material": false,
+       "strong": false
+      }
+     ],
+     "region": {
+      "region": "neck",
+      "VA_vs_MF_mm": 3.38,
+      "SG_vs_MF_mm": 1.52,
+      "material": true
+     },
+     "material": true,
+     "strong": true
+    }
+   },
+   "body_systems_material": 4,
+   "body_systems_strong": 4,
+   "body_region_rms_mm": {
+    "trunk": {
+     "VA_vs_MF": 6.89,
+     "VA_vs_SG": 9.82,
+     "VA_vs_FN": 16.11,
+     "VA_vs_AE": 11.85,
+     "SG_vs_MF": 8.75
+    },
+    "arm": {
+     "VA_vs_MF": 1.52,
+     "VA_vs_SG": 4.49,
+     "VA_vs_FN": 11.73,
+     "VA_vs_AE": 10.76,
+     "SG_vs_MF": 4.29
+    },
+    "hand": {
+     "VA_vs_MF": 5.92,
+     "VA_vs_SG": 6.06,
+     "VA_vs_FN": 23.67,
+     "VA_vs_AE": 12.15,
+     "SG_vs_MF": 11.2
+    },
+    "leg": {
+     "VA_vs_MF": 4.79,
+     "VA_vs_SG": 6.78,
+     "VA_vs_FN": 21.64,
+     "VA_vs_AE": 11.02,
+     "SG_vs_MF": 7.58
+    },
+    "foot": {
+     "VA_vs_MF": 4.18,
+     "VA_vs_SG": 5.19,
+     "VA_vs_FN": 9.2,
+     "VA_vs_AE": 10.93,
+     "SG_vs_MF": 1.35
+    },
+    "neck": {
+     "VA_vs_MF": 3.38,
+     "VA_vs_SG": 4.68,
+     "VA_vs_FN": 5.11,
+     "VA_vs_AE": 5.52,
+     "SG_vs_MF": 1.52
+    }
+   },
+   "face_systems": {
+    "1 cranial proportion / shared elven ancestry": {
+     "descriptors": [
+      {
+       "key": "cranial_height_over_stature",
+       "dir": 1,
+       "VA": 0.06489,
+       "MF": 0.06334,
+       "VA_vs_MF_pct": 2.45,
+       "human_var_pct": 0.6,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "cranial_height_over_face",
+       "dir": 1,
+       "VA": 1.00506,
+       "MF": 0.96558,
+       "VA_vs_MF_pct": 4.09,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cranium_vault": true,
+      "forehead": false
+     },
+     "material": true
+    },
+    "2 compact vertical distribution": {
+     "descriptors": [
+      {
+       "key": "face_height_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.83956,
+       "MF": 0.8796,
+       "VA_vs_MF_pct": -4.55,
+       "human_var_pct": 0.0,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "lower_face_height_over_HH",
+       "dir": -1,
+       "VA": 0.24548,
+       "MF": 0.25459,
+       "VA_vs_MF_pct": -3.58,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "jaw_chin": true,
+      "mouth": false
+     },
+     "material": true
+    },
+    "3 cheek / mid-face integration": {
+     "descriptors": [
+      {
+       "key": "bizygomatic_over_HH",
+       "dir": 1,
+       "VA": 0.59404,
+       "MF": 0.57839,
+       "VA_vs_MF_pct": 2.71,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      },
+      {
+       "key": "cheekbone_height_over_HH",
+       "dir": 1,
+       "VA": 0.36631,
+       "MF": 0.36251,
+       "VA_vs_MF_pct": 1.05,
+       "human_var_pct": 0.02,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cheeks_midface": true
+     },
+     "material": true
+    },
+    "4 mid-face depth": {
+     "descriptors": [
+      {
+       "key": "midface_projection_over_HH",
+       "dir": 1,
+       "VA": 0.19166,
+       "MF": 0.18431,
+       "VA_vs_MF_pct": 3.99,
+       "human_var_pct": 0.03,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "cheeks_midface": true,
+      "nose": false
+     },
+     "material": true
+    },
+    "5 orbit / brow system": {
+     "descriptors": [
+      {
+       "key": "brow_projection_over_HH",
+       "dir": -1,
+       "VA": 0.02134,
+       "MF": 0.02162,
+       "VA_vs_MF_pct": -1.3,
+       "human_var_pct": 0.22,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "orbit_eye_region": false
+     },
+     "material": true
+    },
+    "6 mandibular system (more than elves, gracile vs humans)": {
+     "descriptors": [
+      {
+       "key": "jaw_width_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.75547,
+       "MF": 0.75226,
+       "VA_vs_MF_pct": 0.43,
+       "human_var_pct": 0.04,
+       "material": false,
+       "wrong_material": false
+      },
+      {
+       "key": "lower_face_width_over_bizygomatic",
+       "dir": -1,
+       "VA": 0.8836,
+       "MF": 0.89697,
+       "VA_vs_MF_pct": -1.49,
+       "human_var_pct": 0.01,
+       "material": true,
+       "wrong_material": false
+      }
+     ],
+     "regions": {
+      "jaw_chin": true
+     },
+     "material": true
+    }
+   },
+   "face_systems_material": 6,
+   "face_regions": {
+    "cranium_vault": {
+     "VA_vs_MF_mm": 1.682,
+     "VA_vs_SG_mm": 1.693,
+     "VA_vs_FN_mm": 3.377,
+     "VA_vs_AE_mm": 3.228,
+     "human_baseline_mm": 0.026,
+     "material_vs_MF": true
+    },
+    "forehead": {
+     "VA_vs_MF_mm": 0.575,
+     "VA_vs_SG_mm": 0.578,
+     "VA_vs_FN_mm": 2.785,
+     "VA_vs_AE_mm": 2.684,
+     "human_baseline_mm": 0.014,
+     "material_vs_MF": false
+    },
+    "orbit_eye_region": {
+     "VA_vs_MF_mm": 0.503,
+     "VA_vs_SG_mm": 0.509,
+     "VA_vs_FN_mm": 1.696,
+     "VA_vs_AE_mm": 2.033,
+     "human_baseline_mm": 0.009,
+     "material_vs_MF": false
+    },
+    "nose": {
+     "VA_vs_MF_mm": 0.257,
+     "VA_vs_SG_mm": 0.249,
+     "VA_vs_FN_mm": 0.767,
+     "VA_vs_AE_mm": 1.073,
+     "human_baseline_mm": 0.012,
+     "material_vs_MF": false
+    },
+    "cheeks_midface": {
+     "VA_vs_MF_mm": 2.751,
+     "VA_vs_SG_mm": 2.749,
+     "VA_vs_FN_mm": 2.15,
+     "VA_vs_AE_mm": 3.268,
+     "human_baseline_mm": 0.017,
+     "material_vs_MF": true
+    },
+    "mouth": {
+     "VA_vs_MF_mm": 0.254,
+     "VA_vs_SG_mm": 0.259,
+     "VA_vs_FN_mm": 1.499,
+     "VA_vs_AE_mm": 1.037,
+     "human_baseline_mm": 0.014,
+     "material_vs_MF": false
+    },
+    "jaw_chin": {
+     "VA_vs_MF_mm": 1.409,
+     "VA_vs_SG_mm": 1.408,
+     "VA_vs_FN_mm": 2.745,
+     "VA_vs_AE_mm": 4.932,
+     "human_baseline_mm": 0.019,
+     "material_vs_MF": true
+    }
+   },
+   "face_canon_vs_elves": {
+    "face_height_over_bizygomatic": {
+     "VA": 0.83956,
+     "ref": "AE",
+     "ref_value": 0.94334,
+     "VA_vs_ref_pct": -11.0,
+     "holds": true
+    },
+    "forehead_to_chin_over_bizygomatic": {
+     "VA": 1.14972,
+     "ref": "AE",
+     "ref_value": 1.2756,
+     "VA_vs_ref_pct": -9.87,
+     "holds": true
+    },
+    "cranial_height_over_stature": {
+     "VA": 0.06489,
+     "ref": "AE",
+     "ref_value": 0.06526,
+     "VA_vs_ref_pct": -0.56,
+     "holds": true
+    },
+    "bizygomatic_over_HH": {
+     "VA": 0.59404,
+     "ref": "AE",
+     "ref_value": 0.54564,
+     "VA_vs_ref_pct": 8.87,
+     "holds": true
+    },
+    "midface_projection_over_HH": {
+     "VA": 0.19166,
+     "ref": "AE",
+     "ref_value": 0.17039,
+     "VA_vs_ref_pct": 12.48,
+     "holds": true
+    },
+    "orbit_breadth_over_HL": {
+     "VA": 0.13033,
+     "ref": "AE",
+     "ref_value": 0.12723,
+     "VA_vs_ref_pct": 2.43,
+     "holds": true
+    },
+    "brow_projection_over_HH": {
+     "VA": 0.02134,
+     "ref": "AE",
+     "ref_value": 0.02042,
+     "VA_vs_ref_pct": 4.48,
+     "holds": true
+    },
+    "jaw_width_over_bizygomatic": {
+     "VA": 0.75547,
+     "ref": "AE",
+     "ref_value": 0.721,
+     "VA_vs_ref_pct": 4.78,
+     "holds": true
+    },
+    "jaw_width_over_bizygomatic@FN": {
+     "VA": 0.75547,
+     "ref": "FN",
+     "ref_value": 0.7351,
+     "VA_vs_ref_pct": 2.77,
+     "holds": true
+    }
+   },
+   "face_canon_vs_elves_holds": 9,
+   "face_desc": {
+    "cranial_height_over_face": 1.00506,
+    "skull_breadth_over_HH": 0.66064,
+    "bizygomatic_over_HH": 0.59404,
+    "lower_face_width_over_bizygomatic": 0.8836,
+    "lower_face_height_over_HH": 0.24548,
+    "jaw_width_over_bizygomatic": 0.75547,
+    "cheekbone_height_over_HH": 0.36631,
+    "midface_projection_over_HH": 0.19166,
+    "forehead_cranium_turn_deg": 39.66281,
+    "head_height_cm": 23.04295,
+    "crown_breadth_over_euryon": 0.6739,
+    "cranial_height_over_stature": 0.06489,
+    "face_height_over_bizygomatic": 0.83956,
+    "forehead_to_chin_over_bizygomatic": 1.14972,
+    "brow_projection_over_HH": 0.02134,
+    "orbit_breadth_over_HL": 0.13033,
+    "orbit_height_over_HH": 0.11914,
+    "eye_aperture_area_over_HH2": 0.00243
+   },
+   "face_desc_vs_MF_pct": {
+    "cranial_height_over_face": 4.09,
+    "skull_breadth_over_HH": 2.16,
+    "bizygomatic_over_HH": 2.71,
+    "lower_face_width_over_bizygomatic": -1.49,
+    "lower_face_height_over_HH": -3.58,
+    "jaw_width_over_bizygomatic": 0.43,
+    "cheekbone_height_over_HH": 1.05,
+    "midface_projection_over_HH": 3.99,
+    "forehead_cranium_turn_deg": -0.79,
+    "head_height_cm": 0.39,
+    "crown_breadth_over_euryon": -4.25,
+    "cranial_height_over_stature": 2.45,
+    "face_height_over_bizygomatic": -4.55,
+    "forehead_to_chin_over_bizygomatic": -3.7,
+    "brow_projection_over_HH": -1.3,
+    "orbit_breadth_over_HL": -15.43,
+    "orbit_height_over_HH": 16.27,
+    "eye_aperture_area_over_HH2": 5.38
+   },
+   "stature": 177.993621814996
+  }
+ }
+}

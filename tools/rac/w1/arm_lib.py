@@ -52,7 +52,32 @@ def build(cfg):
         if k.startswith("LR:"):
             v = bs.pop(k); bs[k[3:] + "_l"] = v; bs[k[3:] + "_r"] = v
     if bs: apply_bone_scales(body, rig, bs)
+    if cfg.get("vael_field"): vael_field_apply(body, rig, cfg["vael_field"])
     return body, rig
+
+def vael_field_apply(body, rig, vf):
+    """Vael custom body-deformation order: the deterministic VAEL BODY FIELD (tools/rac/w1/vael_body_field.py) on the rest mesh after targets
+    and bone scales, as a shape key (as face_forward); joint centres unchanged. vf = {"spec": field definition, "magnitude": m}."""
+    import vael_body_field as VF
+    g = groups(body); c = coords(body); n = len(c)
+    keep = np.array([g["body"].get(i, 0) > 0.5 for i in range(n)])
+    wn = ["head", "ears", "neck_01", "pelvis", "spine_01", "spine_02", "spine_03", "clavicle_l", "clavicle_r", "upperarm_l", "upperarm_r", "lowerarm_l",
+          "lowerarm_r", "hand_l", "hand_r", "thigh_l", "thigh_r", "calf_l", "calf_r", "foot_l", "foot_r", "ball_l", "ball_r"]
+    W = {k: np.array([g.get(k, {}).get(i, 0.0) for i in range(n)]) for k in wn}
+    hg = [k for k in g if any(k.startswith(p) for p in ("index", "middle", "ring", "pinky", "thumb"))]
+    for s in ("l", "r"): W["fingers_" + s] = np.array([max([g[k].get(i, 0.0) for k in hg if k.endswith("_" + s)] + [0.0]) for i in range(n)])
+    J = {k: [v[0].tolist(), v[1].tolist()] for k, v in bone_pts(rig).items()}
+    E = np.array([tuple(e.vertices) for e in body.data.edges])
+    D, info = VF.field(c, W, J, keep, None, vf["spec"], vf.get("magnitude", 1.0), edges=E)
+    M3 = np.array(body.matrix_world)[:3, :3]; Dw = np.c_[D[:, 0], -D[:, 1], D[:, 2]] / 100.0; Do = Dw @ np.linalg.inv(M3).T
+    if body.data.shape_keys is None: body.shape_key_add(name="Basis")
+    kb = body.shape_key_add(name="WF_VaelBodyField", from_mix=True)
+    for i, k in enumerate(body.data.shape_keys.key_blocks):
+        if i > 0 and k.name != kb.name: k.value = 0.0
+    kb.value = 1.0
+    co = np.empty(n * 3); kb.data.foreach_get("co", co); co = co.reshape(-1, 3) + Do; kb.data.foreach_set("co", co.ravel())
+    body.data.update(); bpy.context.view_layer.update()
+    return info
 
 def bake(body, rig):
     """Apply the scaled pose as the new rest shape (mesh + armature)."""

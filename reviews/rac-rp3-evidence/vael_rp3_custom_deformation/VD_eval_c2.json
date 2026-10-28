@@ -1,0 +1,708 @@
+{
+ "cfg": "c2",
+ "sources": {
+  "R1": "/tmp/claude-0/rt/va2/vc2/r1/VALF178-R1",
+  "VD1": "/tmp/claude-0/rt/vd/cand/VALF178-R1-VD1",
+  "VD2": "/tmp/claude-0/rt/vd/cand/VALF178-R1-VD2",
+  "VD3": "/tmp/claude-0/rt/vd/cand/VALF178-R1-VD3",
+  "MF": "/tmp/claude-0/rt/va/partA/cmp/MFF178",
+  "SG": "/tmp/claude-0/rt/va/partA/cmp/SGF178",
+  "FN": "/tmp/claude-0/rt/va/partA/cmp/FNF178",
+  "AE": "/tmp/claude-0/rt/va/partA/cmp/AEF178"
+ },
+ "field_definition_sha256": "9f208810e8a3accc995e55ff4f50049794483516ca061af9af4ff266033d93ea",
+ "audit": {
+  "field_info": {
+   "H": 177.57502748258412,
+   "s": 1.0256152678906327,
+   "hip_u": 93.27928423881531,
+   "clavicle_u": 143.81279945373535,
+   "r_waist": 0.5,
+   "waist_half_breadth_cm": 12.561416244506836
+  },
+  "regions": {},
+  "VD1": {
+   "magnitude": 0.6,
+   "affected_vertices_rest": 1455,
+   "max_cm_rest": 0.5056028366088867,
+   "rms_cm_rest_affected": 0.18300416844057374,
+   "affected_vertices_r6": 1463,
+   "max_cm_r6": 0.505602477470076,
+   "head_max_cm": 0.0,
+   "ears_max_cm": 0.0,
+   "per_region": {
+    "rib": {
+     "vertices": 360,
+     "max_cm": 0.5056028366088867,
+     "rms_cm": 0.34872616589846595
+    },
+    "flank": {
+     "vertices": 124,
+     "max_cm": 0.464783668518204,
+     "rms_cm": 0.33411393529127736
+    },
+    "asis": {
+     "vertices": 54,
+     "max_cm": 0.10510716213261859,
+     "rms_cm": 0.07086572074219698
+    },
+    "clav": {
+     "vertices": 38,
+     "max_cm": 0.08764190683873443,
+     "rms_cm": 0.052389703813787006
+    },
+    "palm": {
+     "vertices": 178,
+     "max_cm": 0.15383618297525414,
+     "rms_cm": 0.07574546398377202
+    },
+    "heel": {
+     "vertices": 190,
+     "max_cm": 0.14218502783903114,
+     "rms_cm": 0.08872229587991494
+    }
+   }
+  },
+  "VD2": {
+   "magnitude": 1.0,
+   "affected_vertices_rest": 1609,
+   "max_cm_rest": 0.8426704406738281,
+   "rms_cm_rest_affected": 0.29007279351660564,
+   "affected_vertices_r6": 1614,
+   "max_cm_r6": 0.8426710885611802,
+   "head_max_cm": 0.0,
+   "ears_max_cm": 0.0,
+   "per_region": {
+    "rib": {
+     "vertices": 360,
+     "max_cm": 0.8426704406738281,
+     "rms_cm": 0.5812102412609896
+    },
+    "flank": {
+     "vertices": 124,
+     "max_cm": 0.7746400833132175,
+     "rms_cm": 0.5568566043387164
+    },
+    "asis": {
+     "vertices": 54,
+     "max_cm": 0.1751776821480444,
+     "rms_cm": 0.11810967877580253
+    },
+    "clav": {
+     "vertices": 38,
+     "max_cm": 0.14607543946109453,
+     "rms_cm": 0.08731656325067969
+    },
+    "palm": {
+     "vertices": 178,
+     "max_cm": 0.2563866073741655,
+     "rms_cm": 0.1262413783716635
+    },
+    "heel": {
+     "vertices": 190,
+     "max_cm": 0.23697567855565738,
+     "rms_cm": 0.14787062878575327
+    }
+   }
+  },
+  "VD3": {
+   "magnitude": 1.4,
+   "affected_vertices_rest": 1701,
+   "max_cm_rest": 1.179738998413086,
+   "rms_cm_rest_affected": 0.3949767786166035,
+   "affected_vertices_r6": 1716,
+   "max_cm_r6": 1.1797397184786447,
+   "head_max_cm": 0.0,
+   "ears_max_cm": 0.0,
+   "per_region": {
+    "rib": {
+     "vertices": 360,
+     "max_cm": 1.179738998413086,
+     "rms_cm": 0.8136943068665892
+    },
+    "flank": {
+     "vertices": 124,
+     "max_cm": 1.0844974517826458,
+     "rms_cm": 0.7795991448775186
+    },
+    "asis": {
+     "vertices": 54,
+     "max_cm": 0.2452489100147489,
+     "rms_cm": 0.16535338118729065
+    },
+    "clav": {
+     "vertices": 38,
+     "max_cm": 0.20450973521637816,
+     "rms_cm": 0.1222447702894554
+    },
+    "palm": {
+     "vertices": 178,
+     "max_cm": 0.3589344788266518,
+     "rms_cm": 0.17673820779573307
+    },
+    "heel": {
+     "vertices": 190,
+     "max_cm": 0.3317663386675824,
+     "rms_cm": 0.2070189301539796
+    }
+   }
+  }
+ },
+ "systems": {
+  "1 thoracic side-wall / ribcage": {
+   "region": "rib",
+   "region_vertices": 360,
+   "SG_vs_MF_rms_mm": 9.41,
+   "descriptor": "thorax_depth_over_rib_breadth",
+   "direction": 1,
+   "items": {
+    "R1": {
+     "vs_MF_rms_mm": 6.53,
+     "rms_ratio_over_human": 0.69,
+     "value": 0.91667,
+     "vs_MF_pct": 5.53
+    },
+    "VD1": {
+     "vs_MF_rms_mm": 7.29,
+     "rms_ratio_over_human": 0.77,
+     "value": 0.95216,
+     "vs_MF_pct": 9.62
+    },
+    "VD2": {
+     "vs_MF_rms_mm": 8.58,
+     "rms_ratio_over_human": 0.91,
+     "value": 0.97666,
+     "vs_MF_pct": 12.44
+    },
+    "VD3": {
+     "vs_MF_rms_mm": 10.24,
+     "rms_ratio_over_human": 1.09,
+     "value": 0.99938,
+     "vs_MF_pct": 15.05
+    },
+    "FN": {
+     "vs_MF_rms_mm": 17.69,
+     "rms_ratio_over_human": 1.88,
+     "value": 0.85275,
+     "vs_MF_pct": -1.83
+    },
+    "AE": {
+     "vs_MF_rms_mm": 9.57,
+     "rms_ratio_over_human": 1.02,
+     "value": 0.86426,
+     "vs_MF_pct": -0.5
+    }
+   },
+   "MF": 0.86862,
+   "SG": 0.84051,
+   "human_var_pct": 3.24
+  },
+  "2 torso-to-pelvis continuity": {
+   "region": "flank",
+   "region_vertices": 124,
+   "SG_vs_MF_rms_mm": 11.76,
+   "descriptor": "waist_over_rib",
+   "direction": 1,
+   "items": {
+    "R1": {
+     "vs_MF_rms_mm": 5.77,
+     "rms_ratio_over_human": 0.49,
+     "value": 1.17914,
+     "vs_MF_pct": 0.7
+    },
+    "VD1": {
+     "vs_MF_rms_mm": 6.39,
+     "rms_ratio_over_human": 0.54,
+     "value": 1.20019,
+     "vs_MF_pct": 2.5
+    },
+    "VD2": {
+     "vs_MF_rms_mm": 7.63,
+     "rms_ratio_over_human": 0.65,
+     "value": 1.21426,
+     "vs_MF_pct": 3.7
+    },
+    "VD3": {
+     "vs_MF_rms_mm": 9.25,
+     "rms_ratio_over_human": 0.79,
+     "value": 1.2253,
+     "vs_MF_pct": 4.65
+    },
+    "FN": {
+     "vs_MF_rms_mm": 22.47,
+     "rms_ratio_over_human": 1.91,
+     "value": 1.20036,
+     "vs_MF_pct": 2.52
+    },
+    "AE": {
+     "vs_MF_rms_mm": 11.29,
+     "rms_ratio_over_human": 0.96,
+     "value": 1.16916,
+     "vs_MF_pct": -0.15
+    }
+   },
+   "MF": 1.1709,
+   "SG": 1.1713,
+   "human_var_pct": 0.03
+  },
+  "3 shoulder / clavicle integration": {
+   "region": "clav",
+   "region_vertices": 38,
+   "SG_vs_MF_rms_mm": 3.67,
+   "descriptor": null,
+   "direction": 0,
+   "items": {
+    "R1": {
+     "vs_MF_rms_mm": 1.47,
+     "rms_ratio_over_human": 0.4
+    },
+    "VD1": {
+     "vs_MF_rms_mm": 1.48,
+     "rms_ratio_over_human": 0.4
+    },
+    "VD2": {
+     "vs_MF_rms_mm": 1.58,
+     "rms_ratio_over_human": 0.43
+    },
+    "VD3": {
+     "vs_MF_rms_mm": 1.75,
+     "rms_ratio_over_human": 0.48
+    },
+    "FN": {
+     "vs_MF_rms_mm": 7.06,
+     "rms_ratio_over_human": 1.93
+    },
+    "AE": {
+     "vs_MF_rms_mm": 10.23,
+     "rms_ratio_over_human": 2.79
+    }
+   }
+  },
+  "4 pelvis / hip silhouette": {
+   "region": "asis",
+   "region_vertices": 54,
+   "SG_vs_MF_rms_mm": 12.86,
+   "descriptor": "crest_band_breadth_share",
+   "direction": 0,
+   "items": {
+    "R1": {
+     "vs_MF_rms_mm": 3.13,
+     "rms_ratio_over_human": 0.24,
+     "value": 0.14764,
+     "vs_MF_pct": 1.63
+    },
+    "VD1": {
+     "vs_MF_rms_mm": 3.5,
+     "rms_ratio_over_human": 0.27,
+     "value": 0.14852,
+     "vs_MF_pct": 2.23
+    },
+    "VD2": {
+     "vs_MF_rms_mm": 3.79,
+     "rms_ratio_over_human": 0.29,
+     "value": 0.14911,
+     "vs_MF_pct": 2.64
+    },
+    "VD3": {
+     "vs_MF_rms_mm": 4.12,
+     "rms_ratio_over_human": 0.32,
+     "value": 0.1497,
+     "vs_MF_pct": 3.04
+    },
+    "FN": {
+     "vs_MF_rms_mm": 24.98,
+     "rms_ratio_over_human": 1.94,
+     "value": 0.12105,
+     "vs_MF_pct": -16.68
+    },
+    "AE": {
+     "vs_MF_rms_mm": 8.71,
+     "rms_ratio_over_human": 0.68,
+     "value": 0.13691,
+     "vs_MF_pct": -5.76
+    }
+   },
+   "MF": 0.14528,
+   "SG": 0.14442,
+   "human_var_pct": 0.59
+  },
+  "5 wrist / hand base": {
+   "region": "palm",
+   "region_vertices": 178,
+   "SG_vs_MF_rms_mm": 6.18,
+   "descriptor": "palm_root_over_wrist",
+   "direction": 1,
+   "items": {
+    "R1": {
+     "vs_MF_rms_mm": 4.99,
+     "rms_ratio_over_human": 0.81,
+     "value": 1.19474,
+     "vs_MF_pct": 6.19
+    },
+    "VD1": {
+     "vs_MF_rms_mm": 5.34,
+     "rms_ratio_over_human": 0.86,
+     "value": 1.21188,
+     "vs_MF_pct": 7.71
+    },
+    "VD2": {
+     "vs_MF_rms_mm": 5.61,
+     "rms_ratio_over_human": 0.91,
+     "value": 1.22292,
+     "vs_MF_pct": 8.69
+    },
+    "VD3": {
+     "vs_MF_rms_mm": 5.91,
+     "rms_ratio_over_human": 0.96,
+     "value": 1.23377,
+     "vs_MF_pct": 9.66
+    },
+    "FN": {
+     "vs_MF_rms_mm": 21.91,
+     "rms_ratio_over_human": 3.54,
+     "value": 1.27547,
+     "vs_MF_pct": 13.36
+    },
+    "AE": {
+     "vs_MF_rms_mm": 12.22,
+     "rms_ratio_over_human": 1.98,
+     "value": 1.18823,
+     "vs_MF_pct": 5.61
+    }
+   },
+   "MF": 1.12513,
+   "SG": 1.13861,
+   "human_var_pct": 1.2
+  },
+  "6 ankle / foot base": {
+   "region": "heel",
+   "region_vertices": 190,
+   "SG_vs_MF_rms_mm": 0.86,
+   "descriptor": "heel_breadth_over_foot_length",
+   "direction": 1,
+   "items": {
+    "R1": {
+     "vs_MF_rms_mm": 3.88,
+     "rms_ratio_over_human": 4.51,
+     "value": 0.30644,
+     "vs_MF_pct": 7.19
+    },
+    "VD1": {
+     "vs_MF_rms_mm": 4.49,
+     "rms_ratio_over_human": 5.22,
+     "value": 0.31731,
+     "vs_MF_pct": 10.99
+    },
+    "VD2": {
+     "vs_MF_rms_mm": 4.95,
+     "rms_ratio_over_human": 5.75,
+     "value": 0.32455,
+     "vs_MF_pct": 13.52
+    },
+    "VD3": {
+     "vs_MF_rms_mm": 5.43,
+     "rms_ratio_over_human": 6.31,
+     "value": 0.33179,
+     "vs_MF_pct": 16.05
+    },
+    "FN": {
+     "vs_MF_rms_mm": 3.44,
+     "rms_ratio_over_human": 4.0,
+     "value": 0.25056,
+     "vs_MF_pct": -12.36
+    },
+    "AE": {
+     "vs_MF_rms_mm": 6.98,
+     "rms_ratio_over_human": 8.11,
+     "value": 0.2686,
+     "vs_MF_pct": -6.05
+    }
+   },
+   "MF": 0.2859,
+   "SG": 0.28636,
+   "human_var_pct": 0.16
+  }
+ },
+ "descriptors": {
+  "R1": {
+   "rib_breadth_share": 0.14193,
+   "waist_breadth_share": 0.16736,
+   "crest_band_breadth_share": 0.14764,
+   "waist_over_rib": 1.17914,
+   "thorax_depth_over_rib_breadth": 0.91667,
+   "palm_root_over_wrist": 1.19474,
+   "palm_root_share": 0.03622,
+   "heel_breadth_over_foot_length": 0.30644,
+   "palm_breadth_over_hand": 0.44111,
+   "foot_breadth_over_length": 0.44269
+  },
+  "VD1": {
+   "rib_breadth_share": 0.13664,
+   "waist_breadth_share": 0.164,
+   "crest_band_breadth_share": 0.14852,
+   "waist_over_rib": 1.20019,
+   "thorax_depth_over_rib_breadth": 0.95216,
+   "palm_root_over_wrist": 1.21188,
+   "palm_root_share": 0.03683,
+   "heel_breadth_over_foot_length": 0.31731,
+   "palm_breadth_over_hand": 0.44393,
+   "foot_breadth_over_length": 0.44334
+  },
+  "VD2": {
+   "rib_breadth_share": 0.13321,
+   "waist_breadth_share": 0.16175,
+   "crest_band_breadth_share": 0.14911,
+   "waist_over_rib": 1.21426,
+   "thorax_depth_over_rib_breadth": 0.97666,
+   "palm_root_over_wrist": 1.22292,
+   "palm_root_share": 0.03723,
+   "heel_breadth_over_foot_length": 0.32455,
+   "palm_breadth_over_hand": 0.44582,
+   "foot_breadth_over_length": 0.44376
+  },
+  "VD3": {
+   "rib_breadth_share": 0.13018,
+   "waist_breadth_share": 0.15951,
+   "crest_band_breadth_share": 0.1497,
+   "waist_over_rib": 1.2253,
+   "thorax_depth_over_rib_breadth": 0.99938,
+   "palm_root_over_wrist": 1.23377,
+   "palm_root_share": 0.03762,
+   "heel_breadth_over_foot_length": 0.33179,
+   "palm_breadth_over_hand": 0.4477,
+   "foot_breadth_over_length": 0.44419
+  },
+  "MF": {
+   "rib_breadth_share": 0.14176,
+   "waist_breadth_share": 0.16598,
+   "crest_band_breadth_share": 0.14528,
+   "waist_over_rib": 1.1709,
+   "thorax_depth_over_rib_breadth": 0.86862,
+   "palm_root_over_wrist": 1.12513,
+   "palm_root_share": 0.03464,
+   "heel_breadth_over_foot_length": 0.2859,
+   "palm_breadth_over_hand": 0.43757,
+   "foot_breadth_over_length": 0.41523
+  },
+  "SG": {
+   "rib_breadth_share": 0.14089,
+   "waist_breadth_share": 0.16502,
+   "crest_band_breadth_share": 0.14442,
+   "waist_over_rib": 1.1713,
+   "thorax_depth_over_rib_breadth": 0.84051,
+   "palm_root_over_wrist": 1.13861,
+   "palm_root_share": 0.03529,
+   "heel_breadth_over_foot_length": 0.28636,
+   "palm_breadth_over_hand": 0.41618,
+   "foot_breadth_over_length": 0.41575
+  },
+  "FN": {
+   "rib_breadth_share": 0.13488,
+   "waist_breadth_share": 0.16191,
+   "crest_band_breadth_share": 0.12105,
+   "waist_over_rib": 1.20036,
+   "thorax_depth_over_rib_breadth": 0.85275,
+   "palm_root_over_wrist": 1.27547,
+   "palm_root_share": 0.03514,
+   "heel_breadth_over_foot_length": 0.25056,
+   "palm_breadth_over_hand": 0.40914,
+   "foot_breadth_over_length": 0.36646
+  },
+  "AE": {
+   "rib_breadth_share": 0.13222,
+   "waist_breadth_share": 0.15458,
+   "crest_band_breadth_share": 0.13691,
+   "waist_over_rib": 1.16916,
+   "thorax_depth_over_rib_breadth": 0.86426,
+   "palm_root_over_wrist": 1.18823,
+   "palm_root_share": 0.03626,
+   "heel_breadth_over_foot_length": 0.2686,
+   "palm_breadth_over_hand": 0.43551,
+   "foot_breadth_over_length": 0.38969
+  }
+ },
+ "guard_rails_over_stature": {
+  "thorax_breadth_max": {
+   "R1": 0.16916,
+   "VD1": 0.16857,
+   "VD2": 0.16817,
+   "VD3": 0.16777,
+   "MF": 0.16905,
+   "SG": 0.1717,
+   "FN": 0.16596,
+   "AE": 0.15969
+  },
+  "waist_breadth": {
+   "R1": 0.17228,
+   "VD1": 0.1689,
+   "VD2": 0.16664,
+   "VD3": 0.16439,
+   "MF": 0.17081,
+   "SG": 0.16982,
+   "FN": 0.16191,
+   "AE": 0.15458
+  },
+  "iliac_crest_breadth": {
+   "R1": 0.1587,
+   "VD1": 0.15667,
+   "VD2": 0.15531,
+   "VD3": 0.15396,
+   "MF": 0.15704,
+   "SG": 0.15616,
+   "FN": 0.1555,
+   "AE": 0.14766
+  },
+  "bitrochanteric_breadth": {
+   "R1": 0.21257,
+   "VD1": 0.21274,
+   "VD2": 0.21286,
+   "VD3": 0.21297,
+   "MF": 0.20961,
+   "SG": 0.20851,
+   "FN": 0.20648,
+   "AE": 0.1989
+  },
+  "bideltoid_breadth": {
+   "R1": 0.27136,
+   "VD1": 0.27136,
+   "VD2": 0.27136,
+   "VD3": 0.27136,
+   "MF": 0.27137,
+   "SG": 0.26974,
+   "FN": 0.26041,
+   "AE": 0.25776
+  },
+  "thorax_depth_max": {
+   "R1": 0.1301,
+   "VD1": 0.1301,
+   "VD2": 0.1301,
+   "VD3": 0.1301,
+   "MF": 0.12313,
+   "SG": 0.11842,
+   "FN": 0.11502,
+   "AE": 0.11427
+  },
+  "pelvic_depth": {
+   "R1": 0.13098,
+   "VD1": 0.13113,
+   "VD2": 0.13123,
+   "VD3": 0.13133,
+   "MF": 0.12796,
+   "SG": 0.1272,
+   "FN": 0.12817,
+   "AE": 0.12849
+  },
+  "shoulder_joint_breadth": {
+   "R1": 0.18791,
+   "VD1": 0.18791,
+   "VD2": 0.18791,
+   "VD3": 0.18791,
+   "MF": 0.18772,
+   "SG": 0.18653,
+   "FN": 0.1793,
+   "AE": 0.17645
+  }
+ },
+ "limb_gracility": {
+  "elbow_over_humerus": {
+   "R1": 0.30216,
+   "VD1": 0.30216,
+   "VD2": 0.30216,
+   "VD3": 0.30216,
+   "MF": 0.3006,
+   "SG": 0.30189,
+   "FN": 0.27968,
+   "AE": 0.29401
+  },
+  "wrist_over_forearm": {
+   "R1": 0.22618,
+   "VD1": 0.22674,
+   "VD2": 0.22711,
+   "VD3": 0.22748,
+   "MF": 0.2317,
+   "SG": 0.22292,
+   "FN": 0.19169,
+   "AE": 0.22151
+  },
+  "knee_over_femur": {
+   "R1": 0.26866,
+   "VD1": 0.26866,
+   "VD2": 0.26866,
+   "VD3": 0.26866,
+   "MF": 0.26628,
+   "SG": 0.25433,
+   "FN": 0.23868,
+   "AE": 0.24831
+  },
+  "ankle_over_shin": {
+   "R1": 0.27982,
+   "VD1": 0.2796,
+   "VD2": 0.27962,
+   "VD3": 0.27964,
+   "MF": 0.28251,
+   "SG": 0.27532,
+   "FN": 0.25971,
+   "AE": 0.26882
+  },
+  "palm_breadth_over_hand": {
+   "R1": 0.44111,
+   "VD1": 0.44393,
+   "VD2": 0.44582,
+   "VD3": 0.4477,
+   "MF": 0.43757,
+   "SG": 0.41618,
+   "FN": 0.40914,
+   "AE": 0.43551
+  },
+  "hand_share": {
+   "R1": 0.1064,
+   "VD1": 0.10639,
+   "VD2": 0.10639,
+   "VD3": 0.10639,
+   "MF": 0.10313,
+   "SG": 0.10875,
+   "FN": 0.11139,
+   "AE": 0.10713
+  },
+  "foot_share": {
+   "R1": 0.13615,
+   "VD1": 0.13615,
+   "VD2": 0.13615,
+   "VD3": 0.13616,
+   "MF": 0.13434,
+   "SG": 0.13303,
+   "FN": 0.14086,
+   "AE": 0.13627
+  },
+  "arm_share": {
+   "R1": 0.38956,
+   "VD1": 0.38956,
+   "VD2": 0.38955,
+   "VD3": 0.38955,
+   "MF": 0.38576,
+   "SG": 0.39582,
+   "FN": 0.40687,
+   "AE": 0.39191
+  },
+  "leg_share": {
+   "R1": 0.52643,
+   "VD1": 0.52643,
+   "VD2": 0.52643,
+   "VD3": 0.52643,
+   "MF": 0.52614,
+   "SG": 0.53329,
+   "FN": 0.53962,
+   "AE": 0.52795
+  },
+  "foot_breadth_over_length": {
+   "R1": 0.44269,
+   "VD1": 0.44334,
+   "VD2": 0.44376,
+   "VD3": 0.44419,
+   "MF": 0.41523,
+   "SG": 0.41575,
+   "FN": 0.36646,
+   "AE": 0.38969
+  }
+ }
+}

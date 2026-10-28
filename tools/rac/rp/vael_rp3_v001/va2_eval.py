@@ -49,12 +49,16 @@ def R(d, k):
     if k == 'neck_breadth_over_shoulder_joint': return neck_dims(d['V'])[0] / r['shoulder_joint_share']
     raise KeyError(k)
 CANON = [('torso share > Fenn', 'torso_share', ['>FN']), ('thorax depth > Fenn, Aelari', 'thorax_depth_share', ['>FN', '>AE']), ('waist interval / torso < Aelari (VA-P6)', 'waist_interval_over_torso', ['<AE']),
-         ('central vertical < Aelari', 'central_vertical_share', ['<AE']), ('extremity < Fenn', 'extremity_share', ['<FN']),
+         ('neck share < Aelari (component of the retired central-vertical row)', 'neck_share', ['<AE']), ('cranial vertical share < Aelari (component)', 'cranial_vertical_share', ['<AE']),
+         ('extremity < Fenn', 'extremity_share', ['<FN']),
          ('hip-joint height / stature > MF, < Fenn, < Aelari (VA-P2a)', 'leg_share', ['>MF', '<FN', '<AE']), ('arm share > MF, < Fenn', 'arm_share', ['>MF', '<FN']), ('arm <= Aelari (BM-3)', 'arm_share', ['<=AE']),
          ('elbow presence > FN, AE', 'elbow_over_humerus', ['>FN', '>AE']), ('wrist presence > FN, AE', 'wrist_over_forearm', ['>FN', '>AE']), ('knee presence > FN, AE', 'knee_over_femur', ['>FN', '>AE']),
          ('ankle presence > FN, AE', 'ankle_over_shin', ['>FN', '>AE']), ('joints gracile vs humans (mean of 4 joint / segment ratios < MF)', 'joint_mean', ['<MF']),
          ('palm breadth / hand > FN, AE', 'palm_breadth_over_hand', ['>FN', '>AE']), ('hand share > MF', 'hand_share', ['>MF']), ('foot breadth / length > FN, AE', 'foot_breadth_over_length', ['>FN', '>AE']),
          ('foot share > MF', 'foot_share', ['>MF']), ('pelvic AP depth > FN, AE (VA-P4 skin)', 'pelvic_depth_share', ['>FN', '>AE']), ('bitroch / crest >= MF (VA-P2b skin)', 'bitroch_over_crest', ['>=MF'])]
+# REPORT-ONLY (retired as a hard gate by reviews/chatgpt-rac-rp3-vael-custom-body-deformation-order.md §1.3: mathematically incompatible with the
+# canon partition given leg < Aelari and a compact face): central vertical (cranial + neck + torso share) vs Aelari
+REPORT_ROWS = [('central vertical vs Aelari (RETIRED composite; report only)', 'central_vertical_share', ['<AE'])]
 def chk(v, ref, rule):
     if rule.startswith('>='): return v >= ref * 0.997
     if rule.startswith('<='): return v <= ref * 1.01
@@ -100,6 +104,7 @@ for tag, prefix in ITEMS:
     for lab, k, rules in CANON:
         v = R(d, k); ok = {rl: bool(chk(v, R(REF[rl.lstrip('>=<')], k), rl)) for rl in rules}
         rows.append(dict(row=lab, key=k, VA=round(v, 5), **{x: round(R(REF[x], k), 5) for x in REF}, vs_pct={x: round(100 * (v / R(REF[x], k) - 1), 2) for x in REF}, results=ok, holds=all(ok.values())))
+    it['report_rows'] = [dict(row=lab, key=k, VA=round(R(d, k), 5), **{x: round(R(REF[x], k), 5) for x in REF}, vs_pct={x: round(100 * (R(d, k) / R(REF[x], k) - 1), 2) for x in REF}) for lab, k, rules in REPORT_ROWS]
     it['canon'] = rows; it['canon_holds'] = sum(r['holds'] for r in rows); it['canon_of'] = len(rows); it['canon_failing'] = [r['row'] for r in rows if not r['holds']]
     bs = {}
     for s, (ds, reg) in BSYS.items():

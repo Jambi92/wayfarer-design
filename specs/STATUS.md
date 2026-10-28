@@ -1,6 +1,15 @@
 # Character Design Status
 
-## VAEL RP3 BODY / FACE SOURCE — BODY NEEDS REVISION / FACE PASS — VB2 + VC2 PROVISIONAL — EARS LOCKED — NOT FROZEN (2026-10-28)
+## VAEL RP3 CUSTOM BODY DEFORMATION — VAEL BODY NEEDS LOCAL REVISION — VD2 PROVISIONAL — EARS LOCKED — NOT FROZEN (2026-10-28)
+
+- **Gate:** `reviews/claude-rac-rp3-vael-custom-body-deformation-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_custom_deformation/` (21 sheets).
+- **Author rulings applied:** VC2 accepted and locked; brow lighter than humans, stronger than Aelari; composite "central vertical < Aelari" RETIRED as a hard gate (component rows neck / cranial < Aelari + VA-P6 kept; `va2_eval.py` canon now 20 rows); VA-P3 "lighter than MF" visual / construction only.
+- **Field:** deterministic Vael body field VDF1.2 (`tools/rac/w1/vael_body_field.py`, applied by `arm_lib.build` from `cfg["vael_field"]`); VD1 / VD2 / VD3 = 0.6 / 1.0 / 1.4x on R1; 0 rebuild drift; regen identical.
+- **VD2 (`VAL4-R1-VD2` / `VALF178-R1-VD2`, CANDIDATE):** canon 20 / 20, pelvis 9 / 9 (hip ordering unchanged), VC2 unchanged, family `VA_{M,F}_REF_RP3_bodyfam_v003` 69 / 69 D1–D6, 0 new contacts, deformation OK, E: read-back identical. Five of six systems move measurably from MF (ribcage side wall, continuity, pelvis band, palm root, heel); clavicle term negligible.
+- **Not passed:** human firewall at full-body scale (VD2 / VD3 still read as Marchfolk; the accepted elves' frontal signal is shoulder span + limb envelope, outside the authorised systems). Ears stay locked.
+- **Next:** STOP for ChatGPT review — author decision (a) frame-level shoulder-span + limb-gracility term, (b) close-range / profile firewall standard, or (c) clavicle term only.
+
+## (previous) VAEL RP3 BODY / FACE SOURCE — BODY NEEDS REVISION / FACE PASS — VB2 + VC2 PROVISIONAL — EARS LOCKED — NOT FROZEN (2026-10-28)
 
 - **Gate:** `reviews/claude-rac-rp3-vael-body-face-source-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_source/` (25 sheets).
 - **Provisional sources:** `VAL4-R1` / `VALF178-R1` = VAL4 / VALF178 + shared body correction VB2g + craniofacial VC2. Deterministic; manifest CANDIDATE.

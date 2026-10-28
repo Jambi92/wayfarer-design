@@ -2,7 +2,22 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-28) — VAEL BODY / FACE SOURCE — BODY NEEDS REVISION / FACE PASS — awaiting ChatGPT review
+## LATEST (2026-10-28) — VAEL CUSTOM BODY DEFORMATION — BODY NEEDS LOCAL REVISION — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-vael-custom-body-deformation-order.md`. Gate: `reviews/claude-rac-rp3-vael-custom-body-deformation-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_custom_deformation/`.
+- New deterministic field `tools/rac/w1/vael_body_field.py` (VDF1.2: rib side wall, lumbar continuity, ASIS, clavicle, palm root, heel); `arm_lib.build` applies it when `cfg["vael_field"]` = {spec, magnitude} (inert otherwise; regen reproduces it).
+- VD1 / VD2 / VD3 built on R1 (`tools/rac/rp/vael_rp3_v001/build_vd.sh`; overrides `/tmp/claude-0/rt/vd/ov_VD*.json`); eval `vd_eval.py`, `vd_selfx.py`, `va2_eval.py` (composite central row retired), sheets `vd_sheets.py`.
+- VD2 propagated: `VAL4-R1-VD2` / `VALF178-R1-VD2` (reference-assets CANDIDATE) -> `VA_{M,F}_REF_RP3_bodyfam_v003` (E: `Vael/RP3/`, read-back identical).
+- Workspace `/tmp/claude-0/rt/vd/` (cand, cand2, skp, lean, prod, sheet_r, chain.sh).
+
+**Key findings**
+- All technical / canon / pelvis / VC2 gates pass; five systems move measurably at close range.
+- Full-body human firewall still fails: frontal elf signal is shoulder span + limb envelope (outside the authorised systems).
+
+**Next:** STOP for ChatGPT review (author decision a / b / c, gate §9).
+
+## (previous) 2026-10-28 — VAEL BODY / FACE SOURCE — BODY NEEDS REVISION / FACE PASS
 
 **What was done**
 - Order executed: `reviews/chatgpt-rac-rp3-vael-body-face-source-order.md`. Gate: `reviews/claude-rac-rp3-vael-body-face-source-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_source/`.

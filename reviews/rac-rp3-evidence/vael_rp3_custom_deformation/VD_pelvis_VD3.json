@@ -1,0 +1,873 @@
+{
+ "order": "reviews/chatgpt-rac-rp3-vael-body-face-source-order.md \u00a78",
+ "sources": {
+  "c1": "VAL4-R1-VD3",
+  "c2": "VALF178-R1-VD3"
+ },
+ "rules": {
+  "c1": [
+   {
+    "rule": "VA-P2a hip-joint height / stature > MF",
+    "key": "leg_share",
+    "rel": ">MF",
+    "by_t": {
+     "0.0": {
+      "VA": 0.535109,
+      "ref": 0.534572,
+      "diff_pct": 0.1,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.535109,
+      "ref": 0.534572,
+      "diff_pct": 0.1,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.535109,
+      "ref": 0.534572,
+      "diff_pct": 0.1,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P2a hip-joint height / stature < Fenn",
+    "key": "leg_share",
+    "rel": "<FN",
+    "by_t": {
+     "0.0": {
+      "VA": 0.535109,
+      "ref": 0.548119,
+      "diff_pct": -2.374,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.535109,
+      "ref": 0.548119,
+      "diff_pct": -2.374,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.535109,
+      "ref": 0.548119,
+      "diff_pct": -2.374,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P2a hip-joint height / stature < Aelari",
+    "key": "leg_share",
+    "rel": "<AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.535109,
+      "ref": 0.535711,
+      "diff_pct": -0.112,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.535109,
+      "ref": 0.535711,
+      "diff_pct": -0.112,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.535109,
+      "ref": 0.535711,
+      "diff_pct": -0.112,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P2b bitrochanteric / crest not lower than MF",
+    "key": "bitroch_over_crest",
+    "rel": ">=MF",
+    "by_t": {
+     "0.0": {
+      "VA": 1.116079,
+      "ref": 1.103604,
+      "diff_pct": 1.13,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 1.120209,
+      "ref": 1.107311,
+      "diff_pct": 1.165,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 1.124643,
+      "ref": 1.111294,
+      "diff_pct": 1.201,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P2c hip-joint scale (proximal femur / stature) > Fenn",
+    "key": "hip_joint_scale_share",
+    "rel": ">FN",
+    "by_t": {
+     "0.0": {
+      "VA": 0.030599,
+      "ref": 0.028839,
+      "diff_pct": 6.104,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.027711,
+      "ref": 0.025951,
+      "diff_pct": 6.783,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.024823,
+      "ref": 0.023063,
+      "diff_pct": 7.633,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": false,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P2c hip-joint scale > Aelari",
+    "key": "hip_joint_scale_share",
+    "rel": ">AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.030599,
+      "ref": 0.028355,
+      "diff_pct": 7.915,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.027711,
+      "ref": 0.025467,
+      "diff_pct": 8.813,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.024823,
+      "ref": 0.022579,
+      "diff_pct": 9.94,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": false,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P2c hip-joint scale gracile vs MF",
+    "key": "hip_joint_scale_share",
+    "rel": "<MF",
+    "by_t": {
+     "0.0": {
+      "VA": 0.030599,
+      "ref": 0.030333,
+      "diff_pct": 0.877,
+      "holds": false
+     },
+     "0.5": {
+      "VA": 0.027711,
+      "ref": 0.027445,
+      "diff_pct": 0.969,
+      "holds": false
+     },
+     "1.0": {
+      "VA": 0.024823,
+      "ref": 0.024557,
+      "diff_pct": 1.083,
+      "holds": false
+     }
+    },
+    "holds_all_t": false,
+    "gating": false,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P3 iliac structural presence (crest x AP depth / stature^2) > Fenn",
+    "key": "iliac_envelope_share",
+    "rel": ">FN",
+    "by_t": {
+     "0.0": {
+      "VA": 0.016457,
+      "ref": 0.01571,
+      "diff_pct": 4.753,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.014954,
+      "ref": 0.014242,
+      "diff_pct": 5.0,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.013518,
+      "ref": 0.01284,
+      "diff_pct": 5.276,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": false,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P3 iliac structural presence > Aelari",
+    "key": "iliac_envelope_share",
+    "rel": ">AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.016457,
+      "ref": 0.014836,
+      "diff_pct": 10.923,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.014954,
+      "ref": 0.01342,
+      "diff_pct": 11.434,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.013518,
+      "ref": 0.012069,
+      "diff_pct": 12.0,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": false,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P3 iliac structural presence lighter than MF",
+    "key": "iliac_envelope_share",
+    "rel": "<MF",
+    "by_t": {
+     "0.0": {
+      "VA": 0.016457,
+      "ref": 0.015926,
+      "diff_pct": 3.332,
+      "holds": false
+     },
+     "0.5": {
+      "VA": 0.014954,
+      "ref": 0.014444,
+      "diff_pct": 3.531,
+      "holds": false
+     },
+     "1.0": {
+      "VA": 0.013518,
+      "ref": 0.013028,
+      "diff_pct": 3.756,
+      "holds": false
+     }
+    },
+    "holds_all_t": false,
+    "gating": false,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P3 no Aelari-style vertical iliac elongation (pelvic vertical / crest < Aelari)",
+    "key": "pelvic_vertical_over_crest",
+    "rel": "<AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.342299,
+      "ref": 0.364371,
+      "diff_pct": -6.057,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.354476,
+      "ref": 0.378381,
+      "diff_pct": -6.318,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.367552,
+      "ref": 0.393512,
+      "diff_pct": -6.597,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P4 pelvic AP depth / stature > Fenn",
+    "key": "pelvic_depth_share",
+    "rel": ">FN",
+    "by_t": {
+     "0.0": {
+      "VA": 0.097883,
+      "ref": 0.095484,
+      "diff_pct": 2.512,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.092107,
+      "ref": 0.089708,
+      "diff_pct": 2.674,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.086331,
+      "ref": 0.083933,
+      "diff_pct": 2.858,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P4 pelvic AP depth / stature > Aelari",
+    "key": "pelvic_depth_share",
+    "rel": ">AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.097883,
+      "ref": 0.095115,
+      "diff_pct": 2.91,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.092107,
+      "ref": 0.089339,
+      "diff_pct": 3.098,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.086331,
+      "ref": 0.083563,
+      "diff_pct": 3.312,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P4 pelvic AP depth / stature ~ MF (minimum relation; > MF not required)",
+    "key": "pelvic_depth_share",
+    "rel": "~=MF",
+    "by_t": {
+     "0.0": {
+      "VA": 0.097883,
+      "ref": 0.095268,
+      "diff_pct": 2.744,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.092107,
+      "ref": 0.089493,
+      "diff_pct": 2.921,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.086331,
+      "ref": 0.083717,
+      "diff_pct": 3.123,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.08018416353537816
+   },
+   {
+    "rule": "VA-P6 waist interval / torso < Aelari (compact continuity)",
+    "key": "waist_interval_over_torso",
+    "rel": "<AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.265431,
+      "ref": 0.269648,
+      "diff_pct": -1.564,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.265431,
+      "ref": 0.269648,
+      "diff_pct": -1.564,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.265431,
+      "ref": 0.269648,
+      "diff_pct": -1.564,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.08018416353537816
+   }
+  ],
+  "c2": [
+   {
+    "rule": "VA-P2a hip-joint height / stature > MF",
+    "key": "leg_share",
+    "rel": ">MF",
+    "by_t": {
+     "0.0": {
+      "VA": 0.526434,
+      "ref": 0.526143,
+      "diff_pct": 0.055,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.526434,
+      "ref": 0.526143,
+      "diff_pct": 0.055,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.526434,
+      "ref": 0.526143,
+      "diff_pct": 0.055,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P2a hip-joint height / stature < Fenn",
+    "key": "leg_share",
+    "rel": "<FN",
+    "by_t": {
+     "0.0": {
+      "VA": 0.526434,
+      "ref": 0.539617,
+      "diff_pct": -2.443,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.526434,
+      "ref": 0.539617,
+      "diff_pct": -2.443,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.526434,
+      "ref": 0.539617,
+      "diff_pct": -2.443,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P2a hip-joint height / stature < Aelari",
+    "key": "leg_share",
+    "rel": "<AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.526434,
+      "ref": 0.527954,
+      "diff_pct": -0.288,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.526434,
+      "ref": 0.527954,
+      "diff_pct": -0.288,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.526434,
+      "ref": 0.527954,
+      "diff_pct": -0.288,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P2b bitrochanteric / crest not lower than MF",
+    "key": "bitroch_over_crest",
+    "rel": ">=MF",
+    "by_t": {
+     "0.0": {
+      "VA": 1.100491,
+      "ref": 1.080477,
+      "diff_pct": 1.852,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 1.10427,
+      "ref": 1.083502,
+      "diff_pct": 1.917,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 1.108345,
+      "ref": 1.086762,
+      "diff_pct": 1.986,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P2c hip-joint scale (proximal femur / stature) > Fenn",
+    "key": "hip_joint_scale_share",
+    "rel": ">FN",
+    "by_t": {
+     "0.0": {
+      "VA": 0.034631,
+      "ref": 0.032895,
+      "diff_pct": 5.277,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.031743,
+      "ref": 0.030007,
+      "diff_pct": 5.785,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.028855,
+      "ref": 0.027119,
+      "diff_pct": 6.401,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": false,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P2c hip-joint scale > Aelari",
+    "key": "hip_joint_scale_share",
+    "rel": ">AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.034631,
+      "ref": 0.032564,
+      "diff_pct": 6.347,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.031743,
+      "ref": 0.029676,
+      "diff_pct": 6.965,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.028855,
+      "ref": 0.026788,
+      "diff_pct": 7.716,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": false,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P2c hip-joint scale gracile vs MF",
+    "key": "hip_joint_scale_share",
+    "rel": "<MF",
+    "by_t": {
+     "0.0": {
+      "VA": 0.034631,
+      "ref": 0.028163,
+      "diff_pct": 22.967,
+      "holds": false
+     },
+     "0.5": {
+      "VA": 0.031743,
+      "ref": 0.025275,
+      "diff_pct": 25.591,
+      "holds": false
+     },
+     "1.0": {
+      "VA": 0.028855,
+      "ref": 0.022387,
+      "diff_pct": 28.892,
+      "holds": false
+     }
+    },
+    "holds_all_t": false,
+    "gating": false,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P3 iliac structural presence (crest x AP depth / stature^2) > Fenn",
+    "key": "iliac_envelope_share",
+    "rel": ">FN",
+    "by_t": {
+     "0.0": {
+      "VA": 0.014324,
+      "ref": 0.013698,
+      "diff_pct": 4.563,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.012917,
+      "ref": 0.012321,
+      "diff_pct": 4.841,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.011578,
+      "ref": 0.01101,
+      "diff_pct": 5.158,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": false,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P3 iliac structural presence > Aelari",
+    "key": "iliac_envelope_share",
+    "rel": ">AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.014324,
+      "ref": 0.012793,
+      "diff_pct": 11.961,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.012917,
+      "ref": 0.011472,
+      "diff_pct": 12.603,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.011578,
+      "ref": 0.010217,
+      "diff_pct": 13.326,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": false,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P3 iliac structural presence lighter than MF",
+    "key": "iliac_envelope_share",
+    "rel": "<MF",
+    "by_t": {
+     "0.0": {
+      "VA": 0.014324,
+      "ref": 0.013929,
+      "diff_pct": 2.833,
+      "holds": false
+     },
+     "0.5": {
+      "VA": 0.012917,
+      "ref": 0.012537,
+      "diff_pct": 3.036,
+      "holds": false
+     },
+     "1.0": {
+      "VA": 0.011578,
+      "ref": 0.011211,
+      "diff_pct": 3.27,
+      "holds": false
+     }
+    },
+    "holds_all_t": false,
+    "gating": false,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P3 no Aelari-style vertical iliac elongation (pelvic vertical / crest < Aelari)",
+    "key": "pelvic_vertical_over_crest",
+    "rel": "<AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.336622,
+      "ref": 0.355277,
+      "diff_pct": -5.251,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.349282,
+      "ref": 0.36966,
+      "diff_pct": -5.513,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.362932,
+      "ref": 0.385257,
+      "diff_pct": -5.795,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P4 pelvic AP depth / stature > Fenn",
+    "key": "pelvic_depth_share",
+    "rel": ">FN",
+    "by_t": {
+     "0.0": {
+      "VA": 0.089892,
+      "ref": 0.087211,
+      "diff_pct": 3.074,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.084116,
+      "ref": 0.081435,
+      "diff_pct": 3.292,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.07834,
+      "ref": 0.07566,
+      "diff_pct": 3.543,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P4 pelvic AP depth / stature > Aelari",
+    "key": "pelvic_depth_share",
+    "rel": ">AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.089892,
+      "ref": 0.086185,
+      "diff_pct": 4.301,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.084116,
+      "ref": 0.080409,
+      "diff_pct": 4.61,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.07834,
+      "ref": 0.074634,
+      "diff_pct": 4.967,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P4 pelvic AP depth / stature ~ MF (minimum relation; > MF not required)",
+    "key": "pelvic_depth_share",
+    "rel": "~=MF",
+    "by_t": {
+     "0.0": {
+      "VA": 0.089892,
+      "ref": 0.087351,
+      "diff_pct": 2.908,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.084116,
+      "ref": 0.081575,
+      "diff_pct": 3.114,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.07834,
+      "ref": 0.0758,
+      "diff_pct": 3.352,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.3535312434813527
+   },
+   {
+    "rule": "VA-P6 waist interval / torso < Aelari (compact continuity)",
+    "key": "waist_interval_over_torso",
+    "rel": "<AE",
+    "by_t": {
+     "0.0": {
+      "VA": 0.337428,
+      "ref": 0.338412,
+      "diff_pct": -0.291,
+      "holds": true
+     },
+     "0.5": {
+      "VA": 0.337428,
+      "ref": 0.338412,
+      "diff_pct": -0.291,
+      "holds": true
+     },
+     "1.0": {
+      "VA": 0.337428,
+      "ref": 0.338412,
+      "diff_pct": -0.291,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "gating": true,
+    "align_resid_cm": 0.3535312434813527
+   }
+  ]
+ },
+ "summary": {
+  "c1": {
+   "gating_hold": 9,
+   "gating_of": 9,
+   "failing": [],
+   "report_only_not_holding": [
+    "VA-P2c hip-joint scale gracile vs MF",
+    "VA-P3 iliac structural presence lighter than MF"
+   ]
+  },
+  "c2": {
+   "gating_hold": 9,
+   "gating_of": 9,
+   "failing": [],
+   "report_only_not_holding": [
+    "VA-P2c hip-joint scale gracile vs MF",
+    "VA-P3 iliac structural presence lighter than MF"
+   ]
+  }
+ }
+}

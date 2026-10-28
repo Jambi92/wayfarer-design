@@ -1,0 +1,61 @@
+{
+ "record": "VAEL RP3 custom body-field propagation manifest v003 (PROVISIONAL: R1 + Vael body field VD2 + VC2 face; family human ear, not final Vael ear)",
+ "order": "reviews/chatgpt-rac-rp3-vael-custom-body-deformation-order.md (2026-10-28)",
+ "status": "PROVISIONAL BODY + CRANIOFACIAL SOURCE CANDIDATES - NOT FROZEN",
+ "active_family_base": {
+  "record": "MPFB_FAMILY_BASE_v005_FREEZE.json",
+  "record_sha256": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+  "base_blend_sha256": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+  "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+  "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0"
+ },
+ "validator": "D1 + D3 + D4 + D5 + D6 (authoritative)",
+ "configurations": {
+  "VAL4-R1-VD2": {
+   "production": "VA_M_REF_RP3_bodyfam_v003.blend",
+   "sha256": "212ef083ac1b0e822f925ab993b91456ad90a7069b5c97bc1182fce93f92d7cb",
+   "geometry_hash": "8b40fb8c13111ee0a2fb8a127eb6b53344750f56be37fa70dc2cf25fb2134280",
+   "sidecar_sha256": "cb87a23679d43efdf981adf3dbd33d2c01ab0f42d1f6228658d65c0f6fef0b5a",
+   "source": {
+    "id": "VAL4-R1-VD2",
+    "r6": "reviews/reference-assets/r6/VAL4-R1-VD2_r6.npz",
+    "r6_sha256": "7be629b867d0802b34463923de20881c4db5cfa91d89c4a8f73a693b3075f2ac",
+    "build_sha256": "d4867dfcd3be3c73d4854f743901b88fe69a3ad9d0694060f5563f3a65003801",
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0
+   },
+   "validator": 69
+  },
+  "VALF178-R1-VD2": {
+   "production": "VA_F_REF_RP3_bodyfam_v003.blend",
+   "sha256": "fd5ce26b68e8a1d065f8235d25cd86233e1e2b402bfdae7419126f847719f247",
+   "geometry_hash": "6b846f4b662b40d42eca761e7fc9282661def9582a393da02a8e1bcd1d53d3ea",
+   "sidecar_sha256": "a5c7b007d36fbbfc6411d8bc6392e832c6da6c8fd50803a05be765bbb10c149d",
+   "source": {
+    "id": "VALF178-R1-VD2",
+    "r6": "reviews/reference-assets/r6/VALF178-R1-VD2_r6.npz",
+    "r6_sha256": "c1ae8103e2448bfc493e42906470acbf2c5ae1f015945be3e6e623bc3f412644",
+    "build_sha256": "2bb63e550bf36f3050595d4fa9257a0c2fce0ab84641e769a6cd78b0587c2116",
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0
+   },
+   "validator": 69
+  }
+ },
+ "topology_identity_proof": {
+  "VAL4-R1-VD2": {
+   "face_hash_equal": true,
+   "faces_equal": true,
+   "uv_equal": true,
+   "map_equal": true,
+   "V_eq_M_hm08": 0.0
+  },
+  "VALF178-R1-VD2": {
+   "face_hash_equal": true,
+   "faces_equal": true,
+   "uv_equal": true,
+   "map_equal": true,
+   "V_eq_M_hm08": 0.0
+  }
+ }
+}
