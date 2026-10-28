@@ -2,7 +2,25 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-28) — AELARI RP3 FINAL — FROZEN — awaiting ChatGPT review
+## LATEST (2026-10-28) — VAEL c2 + HIDDEN-EAR GATES — BODY/CRANIOFACIAL SOURCE WORK REQUIRED — awaiting ChatGPT review
+
+**What was done**
+- Vael order executed (`reviews/chatgpt-rac-rp3-vael-body-face-ear-order.md`). Gate: `reviews/claude-rac-rp3-vael-body-face-ear-gate.md`.
+- **Result:** VAEL BODY SOURCE/BRANCH WORK REQUIRED, plus craniofacial source work required. Ears not started. Nothing frozen.
+- **Workspace** `/tmp/claude-0/rt/va`:
+  - `partA/`: `ref` VAL4, `build`/`build2` VALF178, `cmp` 178 cm comparators (MF, SG, FN = FNL4-CF2 / FNF181-CF2, AE = AEL1-R1 / AELF190-R1), `skp`, `regen`, `diag` (Vael @190, original Aelari @178);
+  - `src`, `fam`, `audit`, `anat`, `val`, `def`, `contact`, `lm`, `prod`, `readback`, `ov`;
+  - `VA_hidden_ear_identity.json`, `sheet_r`.
+- **Tools:** `tools/rac/rp/vael_rp3_v001/` (`build_va_partA.sh`, `skp_va.sh`, `va_partA.py`, `build_va_diag.sh`, `run_va_prod.sh`, `va_manifest.py`, `va_hidden_ear.py`, `va_sheets.py`). Part B used `aelari_rp3_v001/run_aeeval.sh` with `AE_WORK=/tmp/claude-0/rt/va AE_C1=VAL4 AE_C2=VALF178`.
+- **E:** `Vael/RP3/VA_{M,F}_REF_RP3_bodyfam_v001.*`, the manifest and the VALF178 sidecar. Read-back is in evidence `pc_readback_sha256.txt`.
+
+**Key findings**
+- **Ordering:** the Aelari R1 correction leaves only a 0.21 / 0.34 % MF–Aelari hip-height window at 178 cm, and Vael now sits above Aelari (VA-P2a). c2 waist is also inverted (VA-P6).
+- **Face:** the Vael face equals the Marchfolk face; a Vael CF pass is needed.
+
+**Next:** STOP for ChatGPT review (author decisions in the gate, §9 item 16).
+
+## (previous) 2026-10-28 — AELARI RP3 FINAL — FROZEN — awaiting ChatGPT review
 
 **What was done**
 - Final consolidation order executed (`reviews/chatgpt-rac-rp3-aelari-final-consolidation-freeze-order.md`). Report: `reviews/claude-rac-rp3-aelari-final-freeze-report.md`.

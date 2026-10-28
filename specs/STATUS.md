@@ -1,5 +1,19 @@
 # Character Design Status
 
+## VAEL RP3 — BODY SOURCE/BRANCH WORK REQUIRED (+ CRANIOFACIAL SOURCE WORK REQUIRED) — EARS NOT STARTED — NOT FROZEN (2026-10-28)
+
+- **Gate:** `reviews/claude-rac-rp3-vael-body-face-ear-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_v001/`.
+- **c2 central reference:** VALF178 (178.01 cm; MF-F route + exactly the VAL4 design). Deterministic, integrity clean; manifest CANDIDATE.
+- **Body-family candidates:** `VA_{M,F}_REF_RP3_bodyfam_v001` on v005 pass 69 / 69 D1–D6, anatomy, density, contact, face rings and deformation.
+- **Fails:**
+  - At equal height, Vael hip-joint height (VA-P2a, both configurations) and the c2 waist interval (VA-P6) sit 0.2–0.5 % **above** the frozen R1 Aelari. Against the pre-R1 Aelari they held.
+  - The Vael body is close to Marchfolk.
+  - The Vael face **is** the Marchfolk face (no Vael craniofacial source; every region ≤ 0.54 mm from Marchfolk).
+- **Not run:** expressions and ears (Part C locked). No low-light physiology was invented.
+- **Next:** STOP for ChatGPT review. Author decisions:
+  - the elf-ordering reading after Aelari R1 (bounded Vael body correction vs overlap / reference-stature reading);
+  - authorize a Vael craniofacial source pass.
+
 ## AELARI RP3 — FINAL PASS — AUTHOR ACCEPTED / FROZEN (2026-10-28)
 
 - **Report:** `reviews/claude-rac-rp3-aelari-final-freeze-report.md`. Record: `reviews/rac-rp3-evidence/aelari_rp3_freeze/AELARI_RP3_FREEZE.json`. The production bodies and the record are on E: and read back byte-identical.

@@ -1,0 +1,265 @@
+{
+ "id": "VALF178",
+ "race": "Vael",
+ "role": "configuration-2 CENTRAL REFERENCE CANDIDATE (Vael order 2026-10-28 Part A; pending author acceptance)",
+ "construction": "tools/rac/w1/build_variant.py: base MF-F-R_build.json (accepted human-family configuration-2 route, as MF-F / SGF178 / FNF181 / AELF190-R1) + overrides = exactly the VAL4 targets and bone scales + stature 178 (resolve_stature); cfg identical to VAL4 except gender (and id)",
+ "mpfb": "MPFB 2.0.17 / Blender 5.2.2 LTS",
+ "cfg": {
+  "gender": 0.0,
+  "age_years": 35,
+  "age": 0.5769230769,
+  "muscle": 0.5,
+  "weight": 0.5,
+  "proportions": 0.5,
+  "stature": 178.0,
+  "targets": {
+   "torso-scale-depth-incr": 0.15,
+   "LR:hand-scale-incr": 0.1,
+   "LR:foot-scale-horiz-incr": 0.2,
+   "LR:hand-fingers-distance-incr": 0.2,
+   "LR:eye-scale-incr": 0.15,
+   "LR:cheek-bones-incr": 0.2,
+   "measure-wrist-circ-decr": 0.35,
+   "measure-lowerleg-height-decr": 0.1,
+   "measure-ankle-circ-decr": 0.1,
+   "measure-knee-circ-decr": 0.05
+  },
+  "id": "VALF178",
+  "bone_scales": {
+   "pelvis": [
+    1.02,
+    1.0,
+    1.03
+   ],
+   "LR:thigh": [
+    1,
+    0.98849,
+    1
+   ],
+   "LR:calf": [
+    1,
+    1.02981,
+    1
+   ],
+   "spine_03": [
+    1,
+    0.9747,
+    1
+   ],
+   "LR:upperarm": [
+    1,
+    0.99414,
+    1
+   ],
+   "LR:lowerarm": [
+    1,
+    1.00565,
+    1
+   ]
+  }
+ },
+ "height_macro": 0.645751953125,
+ "height_solve": {
+  "reachable": true,
+  "stature": 178.01432833075523,
+  "iters": 12
+ },
+ "pose": {
+  "arm_abduction_deg": 8.0,
+  "palm_twist_deg_l": 0.12,
+  "palm_residual_deg_l": -0.0,
+  "palm_twist_deg_r": -0.12,
+  "palm_residual_deg_r": 0.0
+ },
+ "stature_r6_cm": 178.01432833075523,
+ "r6": "reviews/reference-assets/r6/VALF178_r6.npz",
+ "r6_sha256": "3d5111c560b20be7d4412dc000792c1414a07b3df619923d669e96fdc06aa8bb",
+ "build_sha256": "0efae39e9a4d054f16b107b3148611da2b50635f783c48661d70ba530bb606ae",
+ "geometry_hash": "516723544d3233890bfe8a967c9f73483a4b42bc1b709175b7101fd1a502f7cb",
+ "rebuild_identity": {
+  "regen": {
+   "geometry_identical": true,
+   "max_abs_dV_cm": 0.0
+  },
+  "second_full_resolve": {
+   "height_macro": [
+    0.645751953125,
+    0.645751953125
+   ],
+   "second_resolve_max_abs_dV_cm": 0.0,
+   "faces_identical": true,
+   "stature_r6": [
+    178.01432833075523,
+    178.01432833075523
+   ],
+   "cfg_differs_from_VAL4": [
+    "gender",
+    "id"
+   ]
+  }
+ },
+ "envelope": {
+  "VA157_NAT": 156.9966579079628,
+  "VAL4": 178.0022582784295,
+  "VALF178": 178.01432799175382,
+  "VA203": 202.99487303569913,
+  "inside": true
+ },
+ "identity": {
+  "c1": {
+   "holds": 13,
+   "of": 18,
+   "failures": [
+    "leg_share",
+    "shin_over_thigh",
+    "forearm_over_upperarm",
+    "elbow_over_humerus",
+    "knee_over_femur"
+   ]
+  },
+  "c2": {
+   "holds": 12,
+   "of": 18,
+   "failures": [
+    "waist_interval_over_torso",
+    "leg_share",
+    "shin_over_thigh",
+    "forearm_over_upperarm",
+    "elbow_over_humerus",
+    "knee_over_femur"
+   ]
+  }
+ },
+ "pelvis": {
+  "c1": [
+   [
+    "VA-P2a hip-joint height / stature > MF",
+    true
+   ],
+   [
+    "VA-P2a hip-joint height / stature < Fenn",
+    true
+   ],
+   [
+    "VA-P2a hip-joint height / stature < Aelari",
+    false
+   ],
+   [
+    "VA-P2b bitrochanteric / crest not lower than MF",
+    true
+   ],
+   [
+    "VA-P2c hip-joint scale (proximal femur / stature) > Fenn",
+    true
+   ],
+   [
+    "VA-P2c hip-joint scale > Aelari",
+    true
+   ],
+   [
+    "VA-P2c hip-joint scale gracile vs MF",
+    false
+   ],
+   [
+    "VA-P3 iliac structural presence (crest x AP depth / stature^2) > Fenn",
+    true
+   ],
+   [
+    "VA-P3 iliac structural presence > Aelari",
+    true
+   ],
+   [
+    "VA-P3 iliac structural presence lighter than MF",
+    false
+   ],
+   [
+    "VA-P3 no Aelari-style vertical iliac elongation (pelvic vertical / crest < Aelari)",
+    true
+   ],
+   [
+    "VA-P4 pelvic AP depth / stature > Fenn",
+    true
+   ],
+   [
+    "VA-P4 pelvic AP depth / stature > Aelari",
+    true
+   ],
+   [
+    "VA-P4 pelvic AP depth / stature ~ MF (minimum relation; > MF not required)",
+    true
+   ],
+   [
+    "VA-P6 waist interval / torso < Aelari (compact continuity)",
+    true
+   ]
+  ],
+  "c2": [
+   [
+    "VA-P2a hip-joint height / stature > MF",
+    true
+   ],
+   [
+    "VA-P2a hip-joint height / stature < Fenn",
+    true
+   ],
+   [
+    "VA-P2a hip-joint height / stature < Aelari",
+    false
+   ],
+   [
+    "VA-P2b bitrochanteric / crest not lower than MF",
+    true
+   ],
+   [
+    "VA-P2c hip-joint scale (proximal femur / stature) > Fenn",
+    true
+   ],
+   [
+    "VA-P2c hip-joint scale > Aelari",
+    true
+   ],
+   [
+    "VA-P2c hip-joint scale gracile vs MF",
+    false
+   ],
+   [
+    "VA-P3 iliac structural presence (crest x AP depth / stature^2) > Fenn",
+    true
+   ],
+   [
+    "VA-P3 iliac structural presence > Aelari",
+    true
+   ],
+   [
+    "VA-P3 iliac structural presence lighter than MF",
+    false
+   ],
+   [
+    "VA-P3 no Aelari-style vertical iliac elongation (pelvic vertical / crest < Aelari)",
+    true
+   ],
+   [
+    "VA-P4 pelvic AP depth / stature > Fenn",
+    true
+   ],
+   [
+    "VA-P4 pelvic AP depth / stature > Aelari",
+    true
+   ],
+   [
+    "VA-P4 pelvic AP depth / stature ~ MF (minimum relation; > MF not required)",
+    true
+   ],
+   [
+    "VA-P6 waist interval / torso < Aelari (compact continuity)",
+    false
+   ]
+  ]
+ },
+ "configuration_consistency": {
+  "same_sign": 16,
+  "of": 17
+ },
+ "ear_limitation": "carries the MPFB human auricle; not canonical Vael ear anatomy (order \u00a713)",
+ "existing_local_c2_build": "none found (searched /tmp/claude-0/rt and the repository before construction)"
+}
