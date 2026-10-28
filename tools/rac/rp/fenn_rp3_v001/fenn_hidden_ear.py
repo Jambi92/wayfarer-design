@@ -4,10 +4,11 @@
 #  Body: per body-region correspondence RMS of Fenn vs Marchfolk / Sagekin against the human-human baseline (Sagekin vs Marchfolk).
 #  Face: per facial region (cranium vault, forehead, orbit / eye region, nose, cheeks / mid-face, mouth, jaw / chin) after a similarity
 #  (scale-removing) alignment of each head onto the Fenn head on all non-ear head vertices; plus canon-direction descriptors (FENN_V1 §2-7).
-import sys, json, numpy as np, scipy.sparse as sp
+import sys, os, json, numpy as np, scipy.sparse as sp
 W, OUT = sys.argv[1:3]; RA = '/home/claude/wayfarer-design/reviews/reference-assets/r6'; PA = W + '/partA'
-CFG = {'c1': dict(FN=('FNL4', RA + '/FNL4_r6.npz'), MF=('MFM181', PA + '/cmp/MFM181_r6.npz'), SG=('SGM181', PA + '/cmp/SGM181_r6.npz')),
-       'c2': dict(FN=('FNF181', PA + '/build/FNF181_r6.npz'), MF=('MFF181', PA + '/cmp/MFF181_r6.npz'), SG=('SGF181', PA + '/cmp/SGF181_r6.npz'))}
+_fe = lambda k, d: tuple(os.environ[k].split(':')) if k in os.environ else d    # order 6d2eadc: FN_HE_C1 / FN_HE_C2 = ID:R6 (final consolidation re-run on the CF2 sources)
+CFG = {'c1': dict(FN=_fe('FN_HE_C1', ('FNL4', RA + '/FNL4_r6.npz')), MF=('MFM181', PA + '/cmp/MFM181_r6.npz'), SG=('SGM181', PA + '/cmp/SGM181_r6.npz')),
+       'c2': dict(FN=_fe('FN_HE_C2', ('FNF181', PA + '/build/FNF181_r6.npz')), MF=('MFF181', PA + '/cmp/MFF181_r6.npz'), SG=('SGF181', PA + '/cmp/SGF181_r6.npz'))}
 nz = np.load(W + '/src/FNL4_native.npz'); si = nz['src_index']; Q = np.asarray(nz['Q']); nV = len(si); bones = [str(b) for b in nz['bones']]
 A = sp.coo_matrix((np.ones(4 * len(Q)), (np.repeat(Q[:, :4].ravel(), 1), np.roll(Q, -1, 1).ravel())), shape=(nV, nV)).tocsr(); A = ((A + A.T) > 0).astype(float)
 def load(p):
@@ -34,7 +35,7 @@ res = dict(note='ears excluded (hm08 w_ears > 0.05) from every metric', configs=
 for cfg, B in CFG.items():
     D = {k: load(p) for k, (n, p) in B.items()}; ear = D['FN']['we'] > 0.05; head = (D['FN']['wh'] > 0.5) & ~ear
     for k, (n, p) in B.items():
-        np.savez('%s/ov/%s_earhidden.npz' % (W, n), V=collapse_ears(D[k]['V'], ear), Q=Q)
+        np.savez('%s/%s_earhidden.npz' % (os.environ.get('FN_HE_OV', W + '/ov'), n), V=collapse_ears(D[k]['V'], ear), Q=Q)
     # ---- body
     body = {}
     for r in ('trunk', 'arm', 'hand', 'leg', 'foot', 'neck'):

@@ -29,11 +29,16 @@ Context: male configurations (MF-M, SK-C1R) have 0. Accepted by order 78a109f §
   - `reviews/rac-rp3-evidence/sagekin_rp3_freeze/SAGEKIN_toe_flip_overlap_vs_marchfolk_v005.json`;
   - `reviews/rac-rp3-evidence/sagekin_rp3_v001/SAGEKIN_RP3_deformation_comparison.json`.
 
-## Fenn RP3 (not frozen; order bdcd6a6)
+## Fenn RP3 (FROZEN by record, order 6d2eadc; register opened bdcd6a6)
 
 | ID | Configuration | Item | Class / owning stage | Evidence |
 |---|---|---|---|---|
 | FENN-CF-1 | Fenn configuration 2 (FNF181-CF2) | Generic diagnostic MPFB expression units, existing mouth-corner fold region. **Smile:** +6 self-intersection pairs against the pre-CF source, while flipped faces improve. **Sadness:** +10 self-intersection pairs and +12 flipped faces. Neutral / rest geometry is clean; topology and UFCA readiness pass; other expression metrics are equal or better. The source already folds there; CF strength scales the generic unit. | **FACIAL RIG / MOUTH-CORNER CORRECTIVE CARRY-FORWARD** — facial-rig stage. Not a source or topology blocker; CF2 geometry is not reopened for it. No production facial weights or correctives in RP3. | `reviews/rac-rp3-evidence/fenn_craniofacial_v001/CF_expression_sanity.json`; `reviews/claude-rac-rp3-fenn-craniofacial-source-gate.md` |
+
+Final consolidation (order 6d2eadc, `reviews/claude-rac-rp3-fenn-final-freeze-report.md`):
+- FENN-CF-1 is carried unchanged into the frozen bodies `FN_F_REF_RP3_v001` (and does not apply to `FN_M_REF_RP3_v001`).
+- No new Fenn ID: the final Standard v1 deformation set adds 0 flips / 0 self-intersections / 0 folds over the CF2 family realization on every pose, and the ear head / neck readiness poses are 0 / 0 / 0.
+- The accepted ear topology v002 T-4 residuals (root-band cells, aspect 6-10 quads, bridge-corner cells) are **topology-quality residuals accepted in 6d2eadc §2, not carry-forward items**.
 
 ## Grask RP2 (frozen v003)
 

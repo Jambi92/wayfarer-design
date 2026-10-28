@@ -1,5 +1,23 @@
 # Character Design Status
 
+## FENN RP3 — FINAL PASS — AUTHOR ACCEPTED / FROZEN (2026-10-27)
+
+- **Report:** `reviews/claude-rac-rp3-fenn-final-freeze-report.md` (order 6d2eadc). Evidence and freeze record: `reviews/rac-rp3-evidence/fenn_rp3_freeze/FENN_RP3_FREEZE.json` (also on E:, read back byte-identical).
+- **Frozen bodies:** `Fenn/RP3/FN_M_REF_RP3_v001.blend` (FNL4 + FNL4-CF2) and `FN_F_REF_RP3_v001.blend` (FNF181 + FNF181-CF2): MPFB Family Base v005 outside the ear branch + E2 ear on ear topology v002; 58,944 V / 58,942 Q; identical face list.
+- **Clean rebuild:** sources, family realizations, ear branch and probes are byte- / array-identical to the reviewed candidates.
+- **Gates (both configurations):**
+  - validator D1–D6 69 / 69;
+  - T-1 / T-2 / T-3 / T-7 pass (ear excluded);
+  - identity holds in all zones;
+  - hidden-ear body + face PASS (CF2 6 / 6);
+  - face rings pass;
+  - 9 / 9 density zones;
+  - 0 new deformation failures over the family realization; ear readiness 0 / 0 / 0;
+  - ear T-4 4.4 / 3.9 %, aspect ≤ 9.3;
+  - probes clean.
+- **Residuals:** accepted v002 topology-quality residuals; FENN-CF-1 carried; no new ID.
+- **Next:** recommend Aelari (not started; must not inherit Fenn geometry). STOP for ChatGPT review.
+
 ## FENN RP3 EAR v002 REFINEMENT — PASS WITH DOCUMENTED T-4 RESIDUAL — AUTHOR DECISION — NOT FROZEN (2026-10-27)
 
 - **Gate:** `reviews/claude-rac-rp3-fenn-ear-v002-refinement-gate.md` (order 0d9c70b). Evidence: `reviews/rac-rp3-evidence/fenn_ear_v002/`.

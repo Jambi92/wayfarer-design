@@ -1,0 +1,284 @@
+{
+ "record": "FENN RP3 FINAL PASS \u2014 AUTHOR ACCEPTED / FROZEN",
+ "date": "2026-10-27",
+ "authority": "reviews/chatgpt-rac-rp3-fenn-final-consolidation-freeze-order.md (6d2eadc), author review of Claude return 96c41d0",
+ "freeze_method": "freeze-by-record: both production .blend files are preserved byte-identical (not re-saved); this record is authoritative over the sidecar / embedded RAC_status strings",
+ "family_base": {
+  "record": "MPFB_FAMILY_BASE_v005_FREEZE.json",
+  "record_sha256": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+  "blend": "MF_M_REF_RP3_retopo_v005.blend",
+  "blend_sha256": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+  "hm08_map": "MF_M_REF_RP3_retopo_v005_hm08_map.npz",
+  "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+  "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+  "verts": 57842,
+  "quads": 57840,
+  "unchanged": true,
+  "note": "active family base unchanged; Fenn uses it everywhere outside the ear branch"
+ },
+ "ear_branch": {
+  "topology": "FENN_EAR_BRANCH_TOPOLOGY_v002 (accepted 6d2eadc \u00a71.4)",
+  "topology_json_sha256": "e8d6e91a249220794d296f7c6a317085cae87cb470cbec7f9b4f6dedf63decc7",
+  "topology_npz_sha256": "85a53c81c0f2c9bf0f307571d93ab74e118981ff55e6432acd0143d1218101bf",
+  "cuff_canon_sha256": "2f1c1ed637566c04d931b5050fc38d82d796aba984d79aff887ccb78af255d8e",
+  "map_v005_v002_npz_sha256": "29a82c5a9f943440ce2717b474b9ccf309f2a7962778ac31312c5313da99f559",
+  "map_v005_v002_json_sha256": "e755741080dd0d6a18f773fc6f7ff66db741280c9d3944ffcd428227d01f8ca6",
+  "geometry_record_sha256": "b5fd3786fd5856f38e592bb41c4e135ad3e5775ea068b8b4e5215571f21e15e4",
+  "geometry": "E2 (W1e FN-elven balanced; accepted 6d2eadc \u00a71.3)",
+  "per_side": {
+   "patch_vertices": 1732,
+   "patch_faces": 1757,
+   "sheet_and_rim_faces": 1396,
+   "cuff_faces": 309,
+   "removed_v005_vertices": 1181,
+   "removed_v005_faces": 1206,
+   "root_loop_vertices": 52,
+   "transition_ring_v005_vertices": 51
+  },
+  "whole_mesh": {
+   "v005_verts": 57842,
+   "v005_faces": 57840,
+   "branch_verts": 58944,
+   "branch_faces": 58942
+  },
+  "shared_by": "configuration 1 and configuration 2 (identical face list)"
+ },
+ "references": {
+  "FNL4": {
+   "role": "configuration-1 body ancestry",
+   "r6_sha256": "9c37d16a231fa8865c5d0434d52a61604c9ea389cfc4aa83ea59a6f9f605e9f1"
+  },
+  "FNF181": {
+   "role": "configuration-2 body ancestry",
+   "r6_sha256": "05c41aa0f7212f97524ed9c02be304df7ce7fa4970230c19401e128b88048b6e"
+  },
+  "FNL4-CF2": {
+   "role": "accepted configuration-1 craniofacial reference (CF2)",
+   "r6_sha256": "b10fb7912afabc4ce9797d917da0aba4e54f1db1951870544757f2c65354844f",
+   "build_sha256": "b5b2117cea423eaa788a30ea8c865818091a41ad853ddd49b9899cf12bc87e42",
+   "regen_geometry_identical": true,
+   "family_realization_sha256": "2331cebfe57fe1969cefb99996a0a852e82f5ef2d178400b524db1413ff986b8"
+  },
+  "FNF181-CF2": {
+   "role": "accepted configuration-2 craniofacial reference (CF2)",
+   "r6_sha256": "3674b72419cd4a7ecb547cba175c404745cd803bffee0da90b60c9f96233a79f",
+   "build_sha256": "4c1718e75724ee944a69c037cc999358f1bdddedb7a99a871ff2210e2f8e6928",
+   "regen_geometry_identical": true,
+   "family_realization_sha256": "5727201a8f3efb12d72f156820616ac8f25edfef2d9ddeaede3a432753adab81"
+  }
+ },
+ "validator": {
+  "rules": "D1 + D3 + D4 + D5 + D6 (authoritative)",
+  "implementation": "tools/rac/rp/marchfolk_rp3_v001/validator_v2.py --scale-ref 173.143 --d5 --d6-native",
+  "files": {
+   "FN_M_REF_RP3_v001.blend": "69 / 69",
+   "FN_F_REF_RP3_v001.blend": "69 / 69"
+  }
+ },
+ "files": {
+  "FN_M_REF_RP3_v001.blend": {
+   "race": "Fenn",
+   "configuration": "c1",
+   "head": "FNL4-CF2",
+   "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Fenn/RP3/FN_M_REF_RP3_v001.blend",
+   "sha256": "3f7f17783ad59d5fff9c139ccd64d312ccb4c7295fe58a365229ef4b72d8633c",
+   "geometry_hash": "36aedf19d8e304a29fb92d9eefa888a1436417ed92f213ed422dc8dcbfb5df88",
+   "face_topology_hash": "4615d6bcb6ad5afeffcebdcad925ee51dc402a6e1fe318b8e0d4fb95d2814688",
+   "verts": 58944,
+   "quads": 58942,
+   "sidecar": "FN_M_REF_RP3_v001.json",
+   "sidecar_sha256": "8e14c02348506c1c95607397d1fc1d44bfa328499e22c0034087059f867e22e0",
+   "branch_map": "FN_M_REF_RP3_v001_branch_map.npz",
+   "branch_map_sha256": "5d8b783c63db90363718ee2eb99b873df911826d97ff5199a1d21a0797c94171",
+   "landmarks": "FN_M_REF_RP3_v001_landmarks.json",
+   "landmarks_sha256": "a5b013ddac05e1a70edccebdc747019422b0aaaa8a4d2f1ddd6d712fcdaee203",
+   "embedded_status": "FENN RP3 FINAL PRODUCTION BODY (order 6d2eadc) - freeze status is held by record: FENN_RP3_FREEZE.json",
+   "readback_all_pass": true,
+   "integrity": {
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "normals_outward": true,
+    "self_intersection_pairs": 60,
+    "family_self_intersection_pairs": 60,
+    "contact_pairs_equal_family_set": true,
+    "branch_self_intersections": 0
+   },
+   "validator": {
+    "firm": 69,
+    "stations": 69,
+    "margin_zero": [
+     "thumb_mcp_l",
+     "thumb_mcp_r",
+     "toe1_j1_l",
+     "toe1_j1_r",
+     "toe2_j2_l",
+     "toe2_j2_r",
+     "toe3_j1_l",
+     "toe3_j1_r"
+    ]
+   },
+   "anatomy": {
+    "T1": true,
+    "T2": true,
+    "T3": true,
+    "T7": true,
+    "identity_holds_all_zones": true,
+    "hidden_ear_body": true,
+    "hidden_ear_face": true
+   },
+   "face": {
+    "mouth_rings": 31,
+    "orbit_rings": [
+     43,
+     43
+    ],
+    "poles_at_mouth_corners": 0,
+    "mouth_pass": true,
+    "orbit_pass": true
+   },
+   "density": {
+    "all_9_zones_pass": true,
+    "ear_branch_mean_pct_stature": 0.09810129671897552
+   },
+   "ear": {
+    "T4": 165,
+    "branch_faces": 3718,
+    "T4_rate": 0.0444,
+    "aspect_max": 9.29092236685951,
+    "aspect_gt10": 0,
+    "root_crease_max_deg": 64.00333704076749
+   },
+   "deformation": {
+    "standard_v1_final_minus_family_flipped_max": 0,
+    "standard_v1_poses_worse_than_family": [],
+    "ear_readiness_all_zero": true
+   }
+  },
+  "FN_F_REF_RP3_v001.blend": {
+   "race": "Fenn",
+   "configuration": "c2",
+   "head": "FNF181-CF2",
+   "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Fenn/RP3/FN_F_REF_RP3_v001.blend",
+   "sha256": "14c1cf81bec30ed7656e81a2b6ce1b7cd4bbdfad18aa372642a1a9dd48cd9f6e",
+   "geometry_hash": "bff70eb0886b9a500d9ddae1a3a2ef3e6cd6674eec6b9f954328368f502de741",
+   "face_topology_hash": "4615d6bcb6ad5afeffcebdcad925ee51dc402a6e1fe318b8e0d4fb95d2814688",
+   "verts": 58944,
+   "quads": 58942,
+   "sidecar": "FN_F_REF_RP3_v001.json",
+   "sidecar_sha256": "514cc3366376f087eda086a4a559df4e7787743f79bd7da5a2c3a73bf676626f",
+   "branch_map": "FN_F_REF_RP3_v001_branch_map.npz",
+   "branch_map_sha256": "c03cb673c0b8c92e3cc91a12ab3a8b6c604b8a6199a04e42f7a47922183e35c7",
+   "landmarks": "FN_F_REF_RP3_v001_landmarks.json",
+   "landmarks_sha256": "4d6fd7e79821bdfd03c55fe286c96f09ed95377cc89cdcf4b888e89bed7f2f73",
+   "embedded_status": "FENN RP3 FINAL PRODUCTION BODY (order 6d2eadc) - freeze status is held by record: FENN_RP3_FREEZE.json",
+   "readback_all_pass": true,
+   "integrity": {
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "normals_outward": true,
+    "self_intersection_pairs": 166,
+    "family_self_intersection_pairs": 166,
+    "contact_pairs_equal_family_set": true,
+    "branch_self_intersections": 0
+   },
+   "validator": {
+    "firm": 69,
+    "stations": 69,
+    "margin_zero": [
+     "toe1_j1_l",
+     "toe1_j1_r"
+    ]
+   },
+   "anatomy": {
+    "T1": true,
+    "T2": true,
+    "T3": true,
+    "T7": true,
+    "identity_holds_all_zones": true,
+    "hidden_ear_body": true,
+    "hidden_ear_face": true
+   },
+   "face": {
+    "mouth_rings": 34,
+    "orbit_rings": [
+     43,
+     43
+    ],
+    "poles_at_mouth_corners": 0,
+    "mouth_pass": true,
+    "orbit_pass": true
+   },
+   "density": {
+    "all_9_zones_pass": true,
+    "ear_branch_mean_pct_stature": 0.0952892314389251
+   },
+   "ear": {
+    "T4": 145,
+    "branch_faces": 3718,
+    "T4_rate": 0.039,
+    "aspect_max": 8.706460334318345,
+    "aspect_gt10": 0,
+    "root_crease_max_deg": 64.00346319254572
+   },
+   "deformation": {
+    "standard_v1_final_minus_family_flipped_max": 0,
+    "standard_v1_poses_worse_than_family": [],
+    "ear_readiness_all_zero": true
+   }
+  }
+ },
+ "accepted_residuals": {
+  "topology_quality": [
+   "1-2 sharp root-band cells per configuration (min corner c1 7.9 deg, c2 12.7 deg; locked root-band topology)",
+   "17 / 19 branch quads with aspect between 6 and 10 (none > 10)",
+   "small obtuse-cell cluster at the bridge / concha-floor corner"
+  ],
+  "accepted_by": "6d2eadc \u00a72",
+  "note": "accepted topology-quality residuals, NOT rig carry-forward items"
+ },
+ "carry_forward": {
+  "register": "specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md",
+  "ids": [
+   "FENN-CF-1 (configuration-2 CF2 mouth-corner expression units; facial rig / corrective stage; unchanged)"
+  ],
+  "new_ids": []
+ },
+ "gates": {
+  "record": "FENN_FINAL_gates.json",
+  "report": "reviews/claude-rac-rp3-fenn-final-freeze-report.md",
+  "parent": "reviews/claude-rac-rp3-fenn-ear-v002-refinement-gate.md"
+ },
+ "readback": {
+  "file": "FENN_RP3_freeze_readback.json",
+  "all_pass": true,
+  "c1_c2_face_topology_identical": true
+ },
+ "provenance": [
+  "FNL4-CF2 / FNF181-CF2 R-6 regenerated from reviews/reference-assets/builds (regen.py: geometry identical, max |dV| 0)",
+  "native hm08 export",
+  "propagate.py onto MPFB Family Base v005 (frozen blend + hm08 map) -> CF2 family realization (byte-identical to the reviewed one)",
+  "Fenn ear branch topology v002, E2, from the committed cuff canon (run_earbranch_v002.sh; byte-identical arrays to the reviewed v002 candidate; 10 probes identical)",
+  "fn_make_prod.py production frame (m, Z up, faces -Y, origin pelvis root on ground)",
+  "E: copies read back byte-identical"
+ ],
+ "freezes": [
+  "Fenn RP3 configuration-1 / configuration-2 final production bodies",
+  "Fenn ear branch topology v002 + E2 as the accepted Fenn external-ear branch (Fenn only; not a universal elf ear)"
+ ],
+ "not_done": [
+  "production ear rigging",
+  "creator morphs",
+  "final UV / materials (branch faces carry a zero placeholder UV)",
+  "LODs",
+  "UE5 integration"
+ ],
+ "all_gates_pass": true
+}

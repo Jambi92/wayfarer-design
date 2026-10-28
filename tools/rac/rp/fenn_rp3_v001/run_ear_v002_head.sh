@@ -1,7 +1,7 @@
 # run_ear_v002_head.sh HEAD WORK : order 0d9c70b -- one v002 E2 realization with the deformation-aware guard: build -> 8-pose deformation check
 # -> faces with a new posed contact / flip / root inversion, or a degenerate (twisted) rest face, are held at the untangled state (+1 ring; +2 rings
 # from the third iteration) -> rebuild (at most 6 guard iterations; logged).
-H=$1; W=$2; B=/home/claude/stc/bin/python3; T=/home/claude/wayfarer-design/tools/rac/rp/fenn_rp3_v001; CF=/tmp/claude-0/rt/fn/cf; cd $W; export EAR_TOPO=v002
+H=$1; W=$2; B=/home/claude/stc/bin/python3; T=/home/claude/wayfarer-design/tools/rac/rp/fenn_rp3_v001; CF=${EAR_CF:-/tmp/claude-0/rt/fn/cf}; cd $W; export EAR_TOPO=v002
 FZ=$W/build/${H}_E2_deform_guard.json; rm -f $FZ; echo '[]' > $FZ
 for it in 0 1 2 3 4 5; do
   RINGS=1; [ $it -ge 2 ] && RINGS=2

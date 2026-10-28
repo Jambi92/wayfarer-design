@@ -1,7 +1,7 @@
 # run_earbranch_v002.sh : order 0d9c70b -- Fenn ear-branch TOPOLOGY v002 (selected E2) on both CF2 configurations + the ten shape probes.
 # Needs the CF2 family realizations / native rigs from run_cfeval.sh in /tmp/claude-0/rt/fn/cf. v002 is the library default (EAR_TOPO=v002).
 B=/home/claude/stc/bin/python3; T=/home/claude/wayfarer-design/tools/rac/rp/fenn_rp3_v001; EV=/home/claude/wayfarer-design/reviews/rac-rp3-evidence/fenn_ear_v002
-W=${EAR_WORK:-/tmp/claude-0/rt/fn/ear/v002}; CF=/tmp/claude-0/rt/fn/cf; mkdir -p $W/{build,audit,meas,deform,probe,blend,sheets}; cd $W
+W=${EAR_WORK:-/tmp/claude-0/rt/fn/ear/v002}; CF=${EAR_CF:-/tmp/claude-0/rt/fn/cf}; export EAR_CF=$CF; mkdir -p $W/{build,audit,meas,deform,probe,blend,sheets}; cd $W
 export EAR_TOPO=v002
 # canonical cuff topology: written once on configuration 1 E2, then read-only for every realization (identical topology)
 [ -f canon_branch_topology.json ] || cp $EV/topology/FENN_EAR_BRANCH_CUFF_CANON_v002.json canon_branch_topology.json 2>/dev/null || \

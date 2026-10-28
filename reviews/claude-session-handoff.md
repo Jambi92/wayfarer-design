@@ -2,7 +2,23 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-27) — FENN EAR v002 REFINEMENT (E2) — awaiting ChatGPT review
+## LATEST (2026-10-27) — FENN RP3 FINAL CONSOLIDATION — FROZEN — awaiting ChatGPT review
+
+**What was done**
+- Order 6d2eadc executed. Report: `reviews/claude-rac-rp3-fenn-final-freeze-report.md`.
+- **Result:** FENN RP3 FINAL PASS — AUTHOR ACCEPTED / FROZEN (by record).
+- **Tools** (`tools/rac/rp/fenn_rp3_v001/`):
+  - `run_fnfinal.sh`: clean rebuild — regen CF2 → native → propagate → ear v002 (env `FN_FINAL`, default `/tmp/claude-0/rt/fn/final`).
+  - `run_fnfinal_eval.sh`: audit / face / anatomy / validator / 18-pose deform on the final and family realizations, identity, hidden ear, cf_eval.
+  - `fn_make_prod.py` (production blend + sidecars) and `fn_final_anatomy.py` (ear-excluded T gates).
+  - `fn_final_gates.py`, `fn_final_sheets.py` (env `FN_SHEET_TMP`), `fn_freeze_verify.py` (PC read-back), `fn_freeze_record.py`.
+  - The ear tools take env `EAR_CF` (CF2 workspace).
+- **E:** `Fenn/RP3/FN_{M,F}_REF_RP3_v001.blend` + `_branch_map.npz` / `.json` / `_landmarks.json` + `FENN_RP3_FREEZE.json`; read-back in evidence `production/pc_readback_sha256.txt`.
+- **Note:** `anatomy.py` unmasked reports T-1 / T-2 / T-7 FAIL on the production body only because the R-6 source carries the human auricle. `fn_final_anatomy.py` excludes the ear; both are recorded.
+
+**Next:** STOP for ChatGPT review. Recommended next race: Aelari. Not started; it must not inherit Fenn geometry.
+
+## (previous) 2026-10-27 — FENN EAR v002 REFINEMENT (E2) — awaiting ChatGPT review
 
 **What was done**
 - Order 0d9c70b executed. Gate: `reviews/claude-rac-rp3-fenn-ear-v002-refinement-gate.md`.

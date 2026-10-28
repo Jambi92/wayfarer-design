@@ -1,0 +1,1718 @@
+{
+ "order": "6d2eadc",
+ "work": "/tmp/claude-0/rt/fn/final",
+ "configurations": {
+  "c1": {
+   "rebuild": {
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0,
+    "committed_r6_sha256": "b10fb7912afabc4ce9797d917da0aba4e54f1db1951870544757f2c65354844f",
+    "build_sha256": "b5b2117cea423eaa788a30ea8c865818091a41ad853ddd49b9899cf12bc87e42",
+    "family_realization_sha256": "2331cebfe57fe1969cefb99996a0a852e82f5ef2d178400b524db1413ff986b8",
+    "family_equals_reviewed": true,
+    "branch_arrays_equal_reviewed_v002": true,
+    "branch_geometry_max_abs_diff_vs_committed_record_cm": 1.7763568394002505e-15,
+    "outside_branch_equals_family": true,
+    "transition_ring_vertices": 102
+   },
+   "production": {
+    "sidecar": {
+     "name": "FN_M_REF_RP3_v001",
+     "file": "FN_M_REF_RP3_v001.blend",
+     "file_sha256": "3f7f17783ad59d5fff9c139ccd64d312ccb4c7295fe58a365229ef4b72d8633c",
+     "geometry_hash": "36aedf19d8e304a29fb92d9eefa888a1436417ed92f213ed422dc8dcbfb5df88",
+     "face_topology_hash": "4615d6bcb6ad5afeffcebdcad925ee51dc402a6e1fe318b8e0d4fb95d2814688",
+     "verts": 58944,
+     "quads": 58942,
+     "uv_layer": "UVMap",
+     "uv_family_faces": 55428,
+     "uv_placeholder_faces": 3514,
+     "vertex_groups": [
+      "ear_branch"
+     ],
+     "ear_branch_vertices": 3566,
+     "branch_map": "FN_M_REF_RP3_v001_branch_map.npz",
+     "branch_map_sha256": "5d8b783c63db90363718ee2eb99b873df911826d97ff5199a1d21a0797c94171",
+     "landmarks": "FN_M_REF_RP3_v001_landmarks.json",
+     "landmarks_sha256": "a5b013ddac05e1a70edccebdc747019422b0aaaa8a4d2f1ddd6d712fcdaee203",
+     "source_branch_npz_sha256": "500e099c1c849e836ed28a9ffc6311bacb8933459435bacfc5ce71fd1128e9ee",
+     "family_realization_sha256": "2331cebfe57fe1969cefb99996a0a852e82f5ef2d178400b524db1413ff986b8",
+     "embedded_status": "FENN RP3 FINAL PRODUCTION BODY (order 6d2eadc) - freeze status is held by record: FENN_RP3_FREEZE.json"
+    },
+    "readback_local": {
+     "file": "FN_M_REF_RP3_v001.blend",
+     "sha256": "3f7f17783ad59d5fff9c139ccd64d312ccb4c7295fe58a365229ef4b72d8633c",
+     "geometry_hash": "36aedf19d8e304a29fb92d9eefa888a1436417ed92f213ed422dc8dcbfb5df88",
+     "face_topology_hash": "4615d6bcb6ad5afeffcebdcad925ee51dc402a6e1fe318b8e0d4fb95d2814688",
+     "verts": 58944,
+     "faces": 58942,
+     "quads_pct": 100.0,
+     "mesh_objects": 1,
+     "uv_layers": [
+      "UVMap"
+     ],
+     "properties": {
+      "RAC_status": "FENN RP3 FINAL PRODUCTION BODY (order 6d2eadc) - freeze status is held by record: FENN_RP3_FREEZE.json",
+      "RAC_frame": "m, Z up, faces -Y, subject left +X, origin pelvis root on ground",
+      "RAC_composition": "Fenn RP3: CF2 family realization on MPFB Family Base v005 outside the ear branch + Fenn ear branch topology v002 (E2)"
+     },
+     "boundary_edges": 0,
+     "nonmanifold_edges": 0,
+     "components": 1,
+     "nonmanifold_vertices": 0,
+     "degenerate_faces": 0,
+     "signed_volume_m3": 0.06229790378040365,
+     "normals_outward": true,
+     "max_abs_diff_vs_candidate_m": 5.959604409966346e-08,
+     "faces_equal_candidate": true
+    }
+   },
+   "integrity": {
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "winding_consistent": true,
+    "normals_outward": true,
+    "coincident_vertex_pairs": 0,
+    "self_intersection_pairs": 60,
+    "family_self_intersection_pairs": 60,
+    "contact_pairs_equal_family_set": true,
+    "contact_pairs_on_branch_faces": 0,
+    "family_contact_class": {
+     "source": 60,
+     "new": 0,
+     "note": "Fenn body-family contact record (order 57dc328); CF2 changes only the head, the pair set is identical"
+    },
+    "branch_self_intersections": 0,
+    "root_valence": {
+     "l": {
+      "4": 52
+     },
+     "r": {
+      "4": 52
+     }
+    },
+    "root_seam_float_burial": {
+     "boundary": 0,
+     "clearance_min_cm": 0.3767030903533997
+    },
+    "transition_displacement_max_cm": 0.05668711770750959
+   },
+   "validator": {
+    "rules": "D1 + D3 + D4 + D5 + D6 (validator_v2.py --scale-ref 173.143 --d5 --d6-native)",
+    "firm": 69,
+    "stations": 69,
+    "firm_fail": [],
+    "margin_zero": [
+     "thumb_mcp_l",
+     "thumb_mcp_r",
+     "toe1_j1_l",
+     "toe1_j1_r",
+     "toe2_j2_l",
+     "toe2_j2_r",
+     "toe3_j1_l",
+     "toe3_j1_r"
+    ],
+    "fallback_statuses": {
+     "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+     "hip_l": "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED",
+     "toe3_j3_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+     "pinky_mcp_r": "PASS_FALLBACK_DEFINED_SIDES",
+     "hip_r": "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED",
+     "toe1_j2_r": "PASS_FALLBACK_DEFINED_SIDES",
+     "toe3_j3_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+    },
+    "D5_exclusions": {
+     "pinky_ip1_l": [
+      "+q"
+     ],
+     "toe1_j1_l": [
+      "+q"
+     ],
+     "toe5_j1_l": [
+      "-q"
+     ],
+     "pinky_ip1_r": [
+      "+q"
+     ],
+     "toe1_j1_r": [
+      "-q"
+     ],
+     "toe5_j1_r": [
+      "+q"
+     ]
+    },
+    "D6_exclusions": {
+     "elbow_l": [
+      "-p"
+     ],
+     "hip_l": [
+      "+p"
+     ],
+     "elbow_r": [
+      "+p"
+     ],
+     "hip_r": [
+      "-p"
+     ]
+    },
+    "family_firm": 69,
+    "stations_identical_to_family": 69,
+    "status_label_differences_vs_family": {
+     "index_mcp_l": [
+      "PASS_FALLBACK_DEFINED_SIDES",
+      "PASS"
+     ],
+     "pinky_mcp_l": [
+      "PASS_FALLBACK_DEFINED_SIDES",
+      "PASS"
+     ],
+     "shoulder_r": [
+      "PASS_FALLBACK_DEFINED_SIDES",
+      "PASS"
+     ],
+     "toe1_j2_r": [
+      "PASS",
+      "PASS_FALLBACK_DEFINED_SIDES"
+     ]
+    },
+    "note": "loops, margins, valid sides and D5 / D6 exclusions are identical to the CF2 family realization at every station; the label differences are fallback annotations driven by the raw loop count of an already-excluded (undefined) side, which depends on vertex order (the branch re-indexes the mesh); no verdict changes"
+   },
+   "anatomy": {
+    "final_ear_excluded": {
+     "T1": true,
+     "T2": true,
+     "T3": true,
+     "T7": true,
+     "stature_diff_mm": -0.44785,
+     "bbox_diff_mm": [
+      0.21644,
+      -0.0,
+      0.44791,
+      -0.21644,
+      -0.04807,
+      6e-05
+     ],
+     "iou": {
+      "front": 0.998166,
+      "rear": 0.998166,
+      "profile_left": 0.997364,
+      "profile_right": 0.997325,
+      "q3_front_left": 0.998183,
+      "q3_front_right": 0.998227
+     },
+     "prod_to_source": {
+      "body": {
+       "median_mm": 0.0,
+       "p95_mm": 0.2,
+       "max_mm": 1.8101,
+       "n": 55378
+      },
+      "head": {
+       "median_mm": 0.0,
+       "p95_mm": 0.0881,
+       "max_mm": 0.8784,
+       "n": 13811
+      },
+      "hands": {
+       "median_mm": 0.0,
+       "p95_mm": 0.08,
+       "max_mm": 0.8419,
+       "n": 12809
+      },
+      "feet": {
+       "median_mm": 0.0,
+       "p95_mm": 0.1024,
+       "max_mm": 0.8759,
+       "n": 8844
+      }
+     },
+     "source_to_prod": {
+      "body": {
+       "median_mm": 0.0,
+       "p95_mm": 0.1561,
+       "max_mm": 0.967,
+       "n": 12660
+      },
+      "head": {
+       "median_mm": 0.0,
+       "p95_mm": 0.1148,
+       "max_mm": 0.7221,
+       "n": 3349
+      },
+      "hands": {
+       "median_mm": 0.0,
+       "p95_mm": 0.1603,
+       "max_mm": 0.967,
+       "n": 3182
+      },
+      "feet": {
+       "median_mm": 0.0,
+       "p95_mm": 0.3405,
+       "max_mm": 0.7973,
+       "n": 2135
+      }
+     }
+    },
+    "final_unmasked_anatomy_py": {
+     "T1_T2": false,
+     "T3": true,
+     "T7": false,
+     "iou": {
+      "front": 0.99396,
+      "rear": 0.99396,
+      "profile_left": 0.997398,
+      "profile_right": 0.99736,
+      "q3_front_left": 0.998055,
+      "q3_front_right": 0.998099
+     },
+     "ears_prod_to_source": {
+      "median_mm": 6.4306,
+      "p95_mm": 20.2148,
+      "max_mm": 32.132
+     },
+     "note": "fails only because the R-6 source still carries the MPFB human auricle and the production body carries the accepted E2 ear branch"
+    },
+    "family_anatomy_py": {
+     "T1_T2": true,
+     "T3": true,
+     "T7": true,
+     "iou_min": 0.99736,
+     "body": {
+      "median_mm": 0.0,
+      "p95_mm": 0.1959,
+      "max_mm": 1.8101
+     }
+    },
+    "identity": {
+     "holds_all_zones": true,
+     "verdict": {
+      "ALL": {
+       "fit_p95_mm": 0.196,
+       "nearest_other": "SGM181",
+       "signal_median_mm": 9.637,
+       "ratio_signal_median_over_fit_p95": 49.2,
+       "identity_holds": true
+      },
+      "arm": {
+       "fit_p95_mm": 0.299,
+       "nearest_other": "SGM181",
+       "signal_median_mm": 7.648,
+       "ratio_signal_median_over_fit_p95": 25.6,
+       "identity_holds": true
+      },
+      "ears": {
+       "fit_p95_mm": 0.133,
+       "nearest_other": "SGM181",
+       "signal_median_mm": 2.592,
+       "ratio_signal_median_over_fit_p95": 19.5,
+       "identity_holds": true
+      },
+      "face": {
+       "fit_p95_mm": 0.081,
+       "nearest_other": "FNF181-CF2",
+       "signal_median_mm": 4.33,
+       "ratio_signal_median_over_fit_p95": 53.5,
+       "identity_holds": true
+      },
+      "foot": {
+       "fit_p95_mm": 0.102,
+       "nearest_other": "MFM181",
+       "signal_median_mm": 8.817,
+       "ratio_signal_median_over_fit_p95": 86.4,
+       "identity_holds": true
+      },
+      "hand": {
+       "fit_p95_mm": 0.08,
+       "nearest_other": "SGM181",
+       "signal_median_mm": 15.643,
+       "ratio_signal_median_over_fit_p95": 195.5,
+       "identity_holds": true
+      },
+      "head": {
+       "fit_p95_mm": 0.179,
+       "nearest_other": "SGM181",
+       "signal_median_mm": 3.243,
+       "ratio_signal_median_over_fit_p95": 18.1,
+       "identity_holds": true
+      },
+      "leg": {
+       "fit_p95_mm": 0.399,
+       "nearest_other": "SGM181",
+       "signal_median_mm": 20.121,
+       "ratio_signal_median_over_fit_p95": 50.4,
+       "identity_holds": true
+      },
+      "neck": {
+       "fit_p95_mm": 0.243,
+       "nearest_other": "SGM181",
+       "signal_median_mm": 3.231,
+       "ratio_signal_median_over_fit_p95": 13.3,
+       "identity_holds": true
+      },
+      "trunk": {
+       "fit_p95_mm": 0.372,
+       "nearest_other": "SGM181",
+       "signal_median_mm": 9.335,
+       "ratio_signal_median_over_fit_p95": 25.1,
+       "identity_holds": true
+      }
+     }
+    },
+    "hidden_ear_body": {
+     "regions": {
+      "trunk": {
+       "FN_vs_MF_mm": 19.35,
+       "human_baseline_mm": 8.92,
+       "ratio": 2.17
+      },
+      "arm": {
+       "FN_vs_MF_mm": 11.09,
+       "human_baseline_mm": 4.37,
+       "ratio": 2.54
+      },
+      "hand": {
+       "FN_vs_MF_mm": 26.59,
+       "human_baseline_mm": 11.08,
+       "ratio": 2.4
+      },
+      "leg": {
+       "FN_vs_MF_mm": 26.76,
+       "human_baseline_mm": 7.67,
+       "ratio": 3.49
+      },
+      "foot": {
+       "FN_vs_MF_mm": 8.41,
+       "human_baseline_mm": 1.32,
+       "ratio": 6.35
+      },
+      "neck": {
+       "FN_vs_MF_mm": 4.96,
+       "human_baseline_mm": 1.7,
+       "ratio": 2.91
+      }
+     },
+     "pass_": true
+    },
+    "hidden_ear_face": {
+     "regions_material": {
+      "cranium_vault": true,
+      "forehead": true,
+      "orbit_eye_region": true,
+      "nose": false,
+      "cheeks_midface": true,
+      "mouth": true,
+      "jaw_chin": true
+     },
+     "canon_descriptors_direction_holds": {
+      "cranial_height_over_face": true,
+      "skull_breadth_over_HH": true,
+      "lower_face_width_over_bizygomatic": true,
+      "jaw_width_over_bizygomatic": true,
+      "cheekbone_height_over_HH": false,
+      "forehead_profile_mean_turn_rad": true,
+      "head_height_over_stature": null
+     },
+     "cf_eval_systems_material": 6,
+     "cf_eval_systems_direction_ok": 6,
+     "cf_eval_equals_accepted_CF2": true,
+     "pass_": true
+    }
+   },
+   "face": {
+    "mouth_rings": 31,
+    "orbit_rings": [
+     43,
+     43
+    ],
+    "poles_at_mouth_corners": 0,
+    "poles_within_2cm_of_mouth": 0,
+    "poles_within_2cm_of_eyes": [
+     4,
+     4
+    ],
+    "mouth_pass": true,
+    "orbit_pass": true,
+    "face_density_pct": {
+     "mean": 0.136,
+     "median": 0.101,
+     "p90": 0.28,
+     "p95": 0.373,
+     "limit": 0.25,
+     "pass_mean": true
+    },
+    "equals_family": true
+   },
+   "ear": {
+    "T4": 165,
+    "branch_faces": 3718,
+    "T4_rate": 0.04437869822485207,
+    "aspect_max": 9.29092236685951,
+    "aspect_gt10": 0,
+    "min_angle": 7.852256287012826,
+    "density": {
+     "branch_mean_edge_cm": 0.177954966956659,
+     "branch_mean_edge_pct_stature": 0.09810129671897552,
+     "limit_pct": 0.25,
+     "pass_mean": true,
+     "p95_pct": 0.1700842012757399,
+     "max_edge_cm": 0.7982869049552633,
+     "branch_faces_per_side": 1859,
+     "v005_ear_zone_faces_per_side": 1206,
+     "ratio": 1.5414593698175787
+    },
+    "root_dihedral": {
+     "l": {
+      "max_deg": 64.00333704076749,
+      "mean_deg": 28.907172886644123,
+      "v005_max_deg": 71.06086069797288,
+      "v005_mean_deg": 29.226257357043302
+     },
+     "r": {
+      "max_deg": 64.00121106310598,
+      "mean_deg": 28.718866829107064,
+      "v005_max_deg": 71.06086069797288,
+      "v005_mean_deg": 29.22625735704342
+     }
+    },
+    "transition": {
+     "vertices": 102,
+     "displacement_mean_cm": 0.029950768831204233,
+     "displacement_p95_cm": 0.050250264607175674,
+     "displacement_max_cm": 0.05668711770750959
+    },
+    "root_deviation": {
+     "note": "distance of the new skull skin inside the root (cuff vertices) from the hidden-ear CF2 skull (v005 ear zone harmonically collapsed); root loop itself is unchanged (0)",
+     "cuff_mean_cm": 0.19898404376083528,
+     "cuff_p95_cm": 0.4712357425935508,
+     "cuff_max_cm": 0.5974076122574888
+    },
+    "clearance": {
+     "min_cm": 0.3767030903533997,
+     "p01_cm": 0.501704375541117,
+     "n_below_0p2cm": 0
+    },
+    "measures_equal_reviewed_v002": true,
+    "measures": {
+     "length_lobe_to_tip_cm": 8.104490583698999,
+     "auricle_height_cm": 7.936482366413454,
+     "max_width_cm": 3.062894898398764,
+     "auricle_body_angle_deg": 52.678229691809456,
+     "total_lateral_extent_from_root_plane_cm": 2.626430399247456,
+     "side_view_upper_extension_deg": 32.31973985679804,
+     "sweep_max_axis_deviation_cm": 0.7728424838314321,
+     "tip_in_plane_angle_deg_at_1cm": 32.94200881154396
+    },
+    "thickness_cm": {
+     "median": 0.29017468551132763,
+     "min": 0.14764329040485483,
+     "p05": 0.2786469088825079,
+     "upper_extension_median": 0.4124720257172244
+    },
+    "deform": {
+     "neck_flex30": [
+      0,
+      0,
+      0
+     ],
+     "neck_ext30": [
+      0,
+      0,
+      0
+     ],
+     "head_yaw_l45": [
+      0,
+      0,
+      0
+     ],
+     "head_yaw_r45": [
+      0,
+      0,
+      0
+     ],
+     "head_pitch_down20": [
+      0,
+      0,
+      0
+     ],
+     "head_pitch_up20": [
+      0,
+      0,
+      0
+     ],
+     "head_roll_l20": [
+      0,
+      0,
+      0
+     ],
+     "head_roll_r20": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "density": {
+    "zones": {
+     "face": {
+      "mean": 0.136,
+      "limit": 0.25,
+      "pass_": true
+     },
+     "ears": {
+      "mean": 0.096,
+      "limit": 0.25,
+      "pass_": true
+     },
+     "hand": {
+      "mean": 0.144,
+      "limit": 0.3,
+      "pass_": true
+     },
+     "foot": {
+      "mean": 0.2,
+      "limit": 0.3,
+      "pass_": true
+     },
+     "trunk": {
+      "mean": 0.484,
+      "limit": 0.6,
+      "pass_": true
+     },
+     "arm": {
+      "mean": 0.481,
+      "limit": 0.6,
+      "pass_": true
+     },
+     "leg": {
+      "mean": 0.496,
+      "limit": 0.6,
+      "pass_": true
+     },
+     "neck": {
+      "mean": 0.309,
+      "limit": 0.6,
+      "pass_": true
+     },
+     "head": {
+      "mean": 0.299,
+      "limit": 0.6,
+      "pass_": true
+     }
+    },
+    "all_pass": true,
+    "ear_branch_mean_pct": 0.09810129671897552,
+    "ear_branch_p95_pct": 0.1700842012757399,
+    "family_zones_equal_except_ear_head": [
+     "face",
+     "ears",
+     "head"
+    ]
+   },
+   "deformation": {
+    "standard_v1": {
+     "head": "FNL4-CF2",
+     "reference_marchfolk": "MF-M-R v005",
+     "poses": {
+      "shoulder_abd45_l": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 7,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "shoulder_abd90_l": {
+       "final_flipped": 16,
+       "family_flipped": 16,
+       "native_flipped": 4,
+       "marchfolk_v005_flipped": 25,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "shoulder_flex90_l": {
+       "final_flipped": 15,
+       "family_flipped": 15,
+       "native_flipped": 4,
+       "marchfolk_v005_flipped": 13,
+       "final_new_selfx": 48,
+       "family_new_selfx": 48,
+       "final_new_folds": 5,
+       "family_new_folds": 5
+      },
+      "elbow_90_l": {
+       "final_flipped": 27,
+       "family_flipped": 27,
+       "native_flipped": 8,
+       "marchfolk_v005_flipped": 31,
+       "final_new_selfx": 38,
+       "family_new_selfx": 38,
+       "final_new_folds": 6,
+       "family_new_folds": 6
+      },
+      "elbow_130_l": {
+       "final_flipped": 52,
+       "family_flipped": 52,
+       "native_flipped": 13,
+       "marchfolk_v005_flipped": 54,
+       "final_new_selfx": 93,
+       "family_new_selfx": 93,
+       "final_new_folds": 12,
+       "family_new_folds": 12
+      },
+      "wrist_flex60_l": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 243,
+       "family_new_selfx": 243,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "wrist_ext60_l": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 1,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "fist_l": {
+       "final_flipped": 245,
+       "family_flipped": 245,
+       "native_flipped": 62,
+       "marchfolk_v005_flipped": 281,
+       "final_new_selfx": 587,
+       "family_new_selfx": 587,
+       "final_new_folds": 45,
+       "family_new_folds": 45
+      },
+      "thumb_opposition_l": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 52,
+       "family_new_selfx": 52,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "hip_flex90_l": {
+       "final_flipped": 53,
+       "family_flipped": 53,
+       "native_flipped": 10,
+       "marchfolk_v005_flipped": 56,
+       "final_new_selfx": 53,
+       "family_new_selfx": 53,
+       "final_new_folds": 11,
+       "family_new_folds": 11
+      },
+      "knee_90_l": {
+       "final_flipped": 8,
+       "family_flipped": 8,
+       "native_flipped": 1,
+       "marchfolk_v005_flipped": 15,
+       "final_new_selfx": 23,
+       "family_new_selfx": 23,
+       "final_new_folds": 7,
+       "family_new_folds": 7
+      },
+      "knee_140_l": {
+       "final_flipped": 76,
+       "family_flipped": 76,
+       "native_flipped": 10,
+       "marchfolk_v005_flipped": 76,
+       "final_new_selfx": 153,
+       "family_new_selfx": 153,
+       "final_new_folds": 3,
+       "family_new_folds": 3
+      },
+      "ankle_dorsi20_l": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "toe_flex30_l": {
+       "final_flipped": 1,
+       "family_flipped": 1,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 2,
+       "family_new_selfx": 2,
+       "final_new_folds": 4,
+       "family_new_folds": 4
+      },
+      "toe_ext30_l": {
+       "final_flipped": 67,
+       "family_flipped": 67,
+       "native_flipped": 18,
+       "marchfolk_v005_flipped": 70,
+       "final_new_selfx": 84,
+       "family_new_selfx": 84,
+       "final_new_folds": 50,
+       "family_new_folds": 50
+      },
+      "trunk_twist30": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 5,
+       "family_new_selfx": 5,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "neck_flex30": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "neck_rot45": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      }
+     },
+     "final_minus_family_flipped_max": 0,
+     "final_minus_family_selfx_max": 0,
+     "final_minus_marchfolk_flipped_max": 2,
+     "poses_worse_than_family": []
+    },
+    "ear_readiness": {
+     "poses": [
+      "neck_flex30",
+      "neck_ext30",
+      "head_yaw_l45",
+      "head_yaw_r45",
+      "head_pitch_down20",
+      "head_pitch_up20",
+      "head_roll_l20",
+      "head_roll_r20"
+     ],
+     "all_zero": true
+    }
+   },
+   "probes": {
+    "rebuilt": {
+     "len_m10": {
+      "geometry_equals_reviewed": true,
+      "T4": 151,
+      "aspect_max": 9.06213780298862,
+      "aspect_gt10": 0,
+      "self_intersection_branch": 0,
+      "boundary": 0
+     },
+     "len_p10": {
+      "geometry_equals_reviewed": true,
+      "T4": 159,
+      "aspect_max": 8.392695899918762,
+      "aspect_gt10": 0,
+      "self_intersection_branch": 0,
+      "boundary": 0
+     },
+     "proj_m10": {
+      "geometry_equals_reviewed": true,
+      "T4": 131,
+      "aspect_max": 8.650504489924758,
+      "aspect_gt10": 0,
+      "self_intersection_branch": 0,
+      "boundary": 0
+     },
+     "proj_p10": {
+      "geometry_equals_reviewed": true,
+      "T4": 139,
+      "aspect_max": 9.329020542346015,
+      "aspect_gt10": 0,
+      "self_intersection_branch": 0,
+      "boundary": 0
+     },
+     "sweep_m06": {
+      "geometry_equals_reviewed": true,
+      "T4": 159,
+      "aspect_max": 8.907371995941741,
+      "aspect_gt10": 0,
+      "self_intersection_branch": 0,
+      "boundary": 0
+     },
+     "sweep_p06": {
+      "geometry_equals_reviewed": true,
+      "T4": 128,
+      "aspect_max": 8.500174137686983,
+      "aspect_gt10": 0,
+      "self_intersection_branch": 0,
+      "boundary": 0
+     },
+     "tilt_m8": {
+      "geometry_equals_reviewed": true,
+      "T4": 140,
+      "aspect_max": 8.706460334320553,
+      "aspect_gt10": 0,
+      "self_intersection_branch": 0,
+      "boundary": 0
+     },
+     "tilt_p8": {
+      "geometry_equals_reviewed": true,
+      "T4": 140,
+      "aspect_max": 8.706460334320662,
+      "aspect_gt10": 0,
+      "self_intersection_branch": 0,
+      "boundary": 0
+     },
+     "tip_blunt": {
+      "geometry_equals_reviewed": true,
+      "T4": 143,
+      "aspect_max": 8.707413080242063,
+      "aspect_gt10": 0,
+      "self_intersection_branch": 0,
+      "boundary": 0
+     },
+     "tip_sharp": {
+      "geometry_equals_reviewed": true,
+      "T4": 211,
+      "aspect_max": 8.705105649712769,
+      "aspect_gt10": 0,
+      "self_intersection_branch": 0,
+      "boundary": 0
+     }
+    },
+    "reviewed_record": {
+     "n": 10,
+     "all_same_topology": true,
+     "all_self_intersection_0": true,
+     "all_closed_manifold": true,
+     "aspect_max": 9.329020542346015,
+     "clearance_min_cm": 0.3130218924178709
+    }
+   }
+  },
+  "c2": {
+   "rebuild": {
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0,
+    "committed_r6_sha256": "3674b72419cd4a7ecb547cba175c404745cd803bffee0da90b60c9f96233a79f",
+    "build_sha256": "4c1718e75724ee944a69c037cc999358f1bdddedb7a99a871ff2210e2f8e6928",
+    "family_realization_sha256": "5727201a8f3efb12d72f156820616ac8f25edfef2d9ddeaede3a432753adab81",
+    "family_equals_reviewed": true,
+    "branch_arrays_equal_reviewed_v002": true,
+    "branch_geometry_max_abs_diff_vs_committed_record_cm": 1.7763568394002505e-15,
+    "outside_branch_equals_family": true,
+    "transition_ring_vertices": 102
+   },
+   "production": {
+    "sidecar": {
+     "name": "FN_F_REF_RP3_v001",
+     "file": "FN_F_REF_RP3_v001.blend",
+     "file_sha256": "14c1cf81bec30ed7656e81a2b6ce1b7cd4bbdfad18aa372642a1a9dd48cd9f6e",
+     "geometry_hash": "bff70eb0886b9a500d9ddae1a3a2ef3e6cd6674eec6b9f954328368f502de741",
+     "face_topology_hash": "4615d6bcb6ad5afeffcebdcad925ee51dc402a6e1fe318b8e0d4fb95d2814688",
+     "verts": 58944,
+     "quads": 58942,
+     "uv_layer": "UVMap",
+     "uv_family_faces": 55428,
+     "uv_placeholder_faces": 3514,
+     "vertex_groups": [
+      "ear_branch"
+     ],
+     "ear_branch_vertices": 3566,
+     "branch_map": "FN_F_REF_RP3_v001_branch_map.npz",
+     "branch_map_sha256": "c03cb673c0b8c92e3cc91a12ab3a8b6c604b8a6199a04e42f7a47922183e35c7",
+     "landmarks": "FN_F_REF_RP3_v001_landmarks.json",
+     "landmarks_sha256": "4d6fd7e79821bdfd03c55fe286c96f09ed95377cc89cdcf4b888e89bed7f2f73",
+     "source_branch_npz_sha256": "e38e3de908ed32c50a5921abb4a57186d784fd64c2d089779a57f904f0bf1dbb",
+     "family_realization_sha256": "5727201a8f3efb12d72f156820616ac8f25edfef2d9ddeaede3a432753adab81",
+     "embedded_status": "FENN RP3 FINAL PRODUCTION BODY (order 6d2eadc) - freeze status is held by record: FENN_RP3_FREEZE.json"
+    },
+    "readback_local": {
+     "file": "FN_F_REF_RP3_v001.blend",
+     "sha256": "14c1cf81bec30ed7656e81a2b6ce1b7cd4bbdfad18aa372642a1a9dd48cd9f6e",
+     "geometry_hash": "bff70eb0886b9a500d9ddae1a3a2ef3e6cd6674eec6b9f954328368f502de741",
+     "face_topology_hash": "4615d6bcb6ad5afeffcebdcad925ee51dc402a6e1fe318b8e0d4fb95d2814688",
+     "verts": 58944,
+     "faces": 58942,
+     "quads_pct": 100.0,
+     "mesh_objects": 1,
+     "uv_layers": [
+      "UVMap"
+     ],
+     "properties": {
+      "RAC_status": "FENN RP3 FINAL PRODUCTION BODY (order 6d2eadc) - freeze status is held by record: FENN_RP3_FREEZE.json",
+      "RAC_frame": "m, Z up, faces -Y, subject left +X, origin pelvis root on ground",
+      "RAC_composition": "Fenn RP3: CF2 family realization on MPFB Family Base v005 outside the ear branch + Fenn ear branch topology v002 (E2)"
+     },
+     "boundary_edges": 0,
+     "nonmanifold_edges": 0,
+     "components": 1,
+     "nonmanifold_vertices": 0,
+     "degenerate_faces": 0,
+     "signed_volume_m3": 0.057667046689107104,
+     "normals_outward": true,
+     "max_abs_diff_vs_candidate_m": 5.9582960787452066e-08,
+     "faces_equal_candidate": true
+    }
+   },
+   "integrity": {
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "winding_consistent": true,
+    "normals_outward": true,
+    "coincident_vertex_pairs": 0,
+    "self_intersection_pairs": 166,
+    "family_self_intersection_pairs": 166,
+    "contact_pairs_equal_family_set": true,
+    "contact_pairs_on_branch_faces": 0,
+    "family_contact_class": {
+     "source": 158,
+     "new": 8,
+     "note": "Fenn body-family contact record (order 57dc328); CF2 changes only the head, the pair set is identical"
+    },
+    "branch_self_intersections": 0,
+    "root_valence": {
+     "l": {
+      "4": 52
+     },
+     "r": {
+      "4": 52
+     }
+    },
+    "root_seam_float_burial": {
+     "boundary": 0,
+     "clearance_min_cm": 0.4510634595199552
+    },
+    "transition_displacement_max_cm": 0.059105052572240004
+   },
+   "validator": {
+    "rules": "D1 + D3 + D4 + D5 + D6 (validator_v2.py --scale-ref 173.143 --d5 --d6-native)",
+    "firm": 69,
+    "stations": 69,
+    "firm_fail": [],
+    "margin_zero": [
+     "toe1_j1_l",
+     "toe1_j1_r"
+    ],
+    "fallback_statuses": {
+     "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+     "hip_l": "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED",
+     "toe3_j3_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+     "toe4_j2_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+     "shoulder_r": "PASS_FALLBACK_DEFINED_SIDES",
+     "toe3_j3_r": "PASS_SCOPED_ADJACENT_DIGIT_POLE",
+     "toe4_j2_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+    },
+    "D5_exclusions": {
+     "toe1_j1_l": [
+      "+q"
+     ],
+     "toe2_j1_l": [
+      "+q",
+      "-q"
+     ],
+     "toe5_j3_l": [
+      "-p"
+     ],
+     "toe1_j1_r": [
+      "-q"
+     ],
+     "toe2_j1_r": [
+      "+q",
+      "-q"
+     ],
+     "toe5_j3_r": [
+      "-p"
+     ]
+    },
+    "D6_exclusions": {
+     "elbow_l": [
+      "-p"
+     ],
+     "hip_l": [
+      "+p"
+     ],
+     "elbow_r": [
+      "+p"
+     ],
+     "hip_r": [
+      "-p"
+     ]
+    },
+    "family_firm": 69,
+    "stations_identical_to_family": 69,
+    "status_label_differences_vs_family": {
+     "shoulder_l": [
+      "PASS_FALLBACK_DEFINED_SIDES",
+      "PASS"
+     ],
+     "hip_l": [
+      "PASS",
+      "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED"
+     ]
+    },
+    "note": "loops, margins, valid sides and D5 / D6 exclusions are identical to the CF2 family realization at every station; the label differences are fallback annotations driven by the raw loop count of an already-excluded (undefined) side, which depends on vertex order (the branch re-indexes the mesh); no verdict changes"
+   },
+   "anatomy": {
+    "final_ear_excluded": {
+     "T1": true,
+     "T2": true,
+     "T3": true,
+     "T7": true,
+     "stature_diff_mm": -1e-05,
+     "bbox_diff_mm": [
+      0.19875,
+      0.0,
+      -0.0,
+      -0.19875,
+      -0.01729,
+      -1e-05
+     ],
+     "iou": {
+      "front": 0.99722,
+      "rear": 0.99722,
+      "profile_left": 0.997788,
+      "profile_right": 0.997747,
+      "q3_front_left": 0.997896,
+      "q3_front_right": 0.997825
+     },
+     "prod_to_source": {
+      "body": {
+       "median_mm": 0.0,
+       "p95_mm": 0.1677,
+       "max_mm": 1.9267,
+       "n": 55378
+      },
+      "head": {
+       "median_mm": 0.0,
+       "p95_mm": 0.075,
+       "max_mm": 0.8561,
+       "n": 13811
+      },
+      "hands": {
+       "median_mm": 0.0,
+       "p95_mm": 0.0726,
+       "max_mm": 0.7505,
+       "n": 12809
+      },
+      "feet": {
+       "median_mm": 0.0,
+       "p95_mm": 0.0837,
+       "max_mm": 0.8522,
+       "n": 8844
+      }
+     },
+     "source_to_prod": {
+      "body": {
+       "median_mm": 0.0,
+       "p95_mm": 0.1513,
+       "max_mm": 0.9326,
+       "n": 12660
+      },
+      "head": {
+       "median_mm": 0.0,
+       "p95_mm": 0.1169,
+       "max_mm": 0.7504,
+       "n": 3349
+      },
+      "hands": {
+       "median_mm": 0.0,
+       "p95_mm": 0.1414,
+       "max_mm": 0.9326,
+       "n": 3182
+      },
+      "feet": {
+       "median_mm": 0.0,
+       "p95_mm": 0.2736,
+       "max_mm": 0.7693,
+       "n": 2135
+      }
+     }
+    },
+    "final_unmasked_anatomy_py": {
+     "T1_T2": false,
+     "T3": true,
+     "T7": false,
+     "iou": {
+      "front": 0.993023,
+      "rear": 0.993023,
+      "profile_left": 0.997815,
+      "profile_right": 0.997775,
+      "q3_front_left": 0.997548,
+      "q3_front_right": 0.997478
+     },
+     "ears_prod_to_source": {
+      "median_mm": 6.9221,
+      "p95_mm": 19.3418,
+      "max_mm": 30.4864
+     },
+     "note": "fails only because the R-6 source still carries the MPFB human auricle and the production body carries the accepted E2 ear branch"
+    },
+    "family_anatomy_py": {
+     "T1_T2": true,
+     "T3": true,
+     "T7": true,
+     "iou_min": 0.997189,
+     "body": {
+      "median_mm": 0.0,
+      "p95_mm": 0.1653,
+      "max_mm": 1.9267
+     }
+    },
+    "identity": {
+     "holds_all_zones": true,
+     "verdict": {
+      "ALL": {
+       "fit_p95_mm": 0.165,
+       "nearest_other": "SGF181",
+       "signal_median_mm": 9.519,
+       "ratio_signal_median_over_fit_p95": 57.7,
+       "identity_holds": true
+      },
+      "arm": {
+       "fit_p95_mm": 0.279,
+       "nearest_other": "SGF181",
+       "signal_median_mm": 7.874,
+       "ratio_signal_median_over_fit_p95": 28.2,
+       "identity_holds": true
+      },
+      "ears": {
+       "fit_p95_mm": 0.144,
+       "nearest_other": "SGF181",
+       "signal_median_mm": 1.508,
+       "ratio_signal_median_over_fit_p95": 10.5,
+       "identity_holds": true
+      },
+      "face": {
+       "fit_p95_mm": 0.07,
+       "nearest_other": "FNL4-CF2",
+       "signal_median_mm": 4.342,
+       "ratio_signal_median_over_fit_p95": 62.0,
+       "identity_holds": true
+      },
+      "foot": {
+       "fit_p95_mm": 0.084,
+       "nearest_other": "MFF181",
+       "signal_median_mm": 8.833,
+       "ratio_signal_median_over_fit_p95": 105.2,
+       "identity_holds": true
+      },
+      "hand": {
+       "fit_p95_mm": 0.073,
+       "nearest_other": "SGF181",
+       "signal_median_mm": 16.093,
+       "ratio_signal_median_over_fit_p95": 220.5,
+       "identity_holds": true
+      },
+      "head": {
+       "fit_p95_mm": 0.152,
+       "nearest_other": "SGF181",
+       "signal_median_mm": 2.325,
+       "ratio_signal_median_over_fit_p95": 15.3,
+       "identity_holds": true
+      },
+      "leg": {
+       "fit_p95_mm": 0.296,
+       "nearest_other": "SGF181",
+       "signal_median_mm": 19.421,
+       "ratio_signal_median_over_fit_p95": 65.6,
+       "identity_holds": true
+      },
+      "neck": {
+       "fit_p95_mm": 0.151,
+       "nearest_other": "SGF181",
+       "signal_median_mm": 2.128,
+       "ratio_signal_median_over_fit_p95": 14.1,
+       "identity_holds": true
+      },
+      "trunk": {
+       "fit_p95_mm": 0.337,
+       "nearest_other": "SGF181",
+       "signal_median_mm": 8.121,
+       "ratio_signal_median_over_fit_p95": 24.1,
+       "identity_holds": true
+      }
+     }
+    },
+    "hidden_ear_body": {
+     "regions": {
+      "trunk": {
+       "FN_vs_MF_mm": 18.17,
+       "human_baseline_mm": 8.87,
+       "ratio": 2.05
+      },
+      "arm": {
+       "FN_vs_MF_mm": 11.1,
+       "human_baseline_mm": 4.35,
+       "ratio": 2.55
+      },
+      "hand": {
+       "FN_vs_MF_mm": 26.86,
+       "human_baseline_mm": 10.95,
+       "ratio": 2.45
+      },
+      "leg": {
+       "FN_vs_MF_mm": 26.14,
+       "human_baseline_mm": 7.62,
+       "ratio": 3.43
+      },
+      "foot": {
+       "FN_vs_MF_mm": 8.42,
+       "human_baseline_mm": 1.29,
+       "ratio": 6.51
+      },
+      "neck": {
+       "FN_vs_MF_mm": 3.84,
+       "human_baseline_mm": 1.7,
+       "ratio": 2.26
+      }
+     },
+     "pass_": true
+    },
+    "hidden_ear_face": {
+     "regions_material": {
+      "cranium_vault": true,
+      "forehead": true,
+      "orbit_eye_region": true,
+      "nose": false,
+      "cheeks_midface": true,
+      "mouth": true,
+      "jaw_chin": true
+     },
+     "canon_descriptors_direction_holds": {
+      "cranial_height_over_face": true,
+      "skull_breadth_over_HH": true,
+      "lower_face_width_over_bizygomatic": true,
+      "jaw_width_over_bizygomatic": true,
+      "cheekbone_height_over_HH": false,
+      "forehead_profile_mean_turn_rad": true,
+      "head_height_over_stature": null
+     },
+     "cf_eval_systems_material": 6,
+     "cf_eval_systems_direction_ok": 6,
+     "cf_eval_equals_accepted_CF2": true,
+     "pass_": true
+    }
+   },
+   "face": {
+    "mouth_rings": 34,
+    "orbit_rings": [
+     43,
+     43
+    ],
+    "poles_at_mouth_corners": 0,
+    "poles_within_2cm_of_mouth": 0,
+    "poles_within_2cm_of_eyes": [
+     4,
+     4
+    ],
+    "mouth_pass": true,
+    "orbit_pass": true,
+    "face_density_pct": {
+     "mean": 0.133,
+     "median": 0.101,
+     "p90": 0.268,
+     "p95": 0.365,
+     "limit": 0.25,
+     "pass_mean": true
+    },
+    "equals_family": true
+   },
+   "ear": {
+    "T4": 145,
+    "branch_faces": 3718,
+    "T4_rate": 0.038999462076385154,
+    "aspect_max": 8.706460334318345,
+    "aspect_gt10": 0,
+    "min_angle": 12.65928441988667,
+    "density": {
+     "branch_mean_edge_cm": 0.172734442719164,
+     "branch_mean_edge_pct_stature": 0.0952892314389251,
+     "limit_pct": 0.25,
+     "pass_mean": true,
+     "p95_pct": 0.16656335745744882,
+     "max_edge_cm": 0.767923939882128,
+     "branch_faces_per_side": 1859,
+     "v005_ear_zone_faces_per_side": 1206,
+     "ratio": 1.5414593698175787
+    },
+    "root_dihedral": {
+     "l": {
+      "max_deg": 64.00248523759774,
+      "mean_deg": 27.353835538831632,
+      "v005_max_deg": 67.11994831372256,
+      "v005_mean_deg": 26.923433495729604
+     },
+     "r": {
+      "max_deg": 64.00346319254572,
+      "mean_deg": 27.558406807698894,
+      "v005_max_deg": 67.11994831372256,
+      "v005_mean_deg": 26.923433495729743
+     }
+    },
+    "transition": {
+     "vertices": 102,
+     "displacement_mean_cm": 0.028680607779547018,
+     "displacement_p95_cm": 0.057411826042250834,
+     "displacement_max_cm": 0.059105052572240004
+    },
+    "root_deviation": {
+     "note": "distance of the new skull skin inside the root (cuff vertices) from the hidden-ear CF2 skull (v005 ear zone harmonically collapsed); root loop itself is unchanged (0)",
+     "cuff_mean_cm": 0.22251797565351444,
+     "cuff_p95_cm": 0.528263167646195,
+     "cuff_max_cm": 0.6641904110192827
+    },
+    "clearance": {
+     "min_cm": 0.4510634595199552,
+     "p01_cm": 0.6056315775829254,
+     "n_below_0p2cm": 0
+    },
+    "measures_equal_reviewed_v002": true,
+    "measures": {
+     "length_lobe_to_tip_cm": 7.79623503923132,
+     "auricle_height_cm": 7.634617040301695,
+     "max_width_cm": 2.946397220376631,
+     "auricle_body_angle_deg": 52.678229691809456,
+     "total_lateral_extent_from_root_plane_cm": 2.6320322106723077,
+     "side_view_upper_extension_deg": 32.31973985679829,
+     "sweep_max_axis_deviation_cm": 0.7434473012248521,
+     "tip_in_plane_angle_deg_at_1cm": 32.94200881154516
+    },
+    "thickness_cm": {
+     "median": 0.27913784676751585,
+     "min": 0.1420276551714371,
+     "p05": 0.26804853089381836,
+     "upper_extension_median": 0.3967835888497798
+    },
+    "deform": {
+     "neck_flex30": [
+      0,
+      0,
+      0
+     ],
+     "neck_ext30": [
+      0,
+      0,
+      0
+     ],
+     "head_yaw_l45": [
+      0,
+      0,
+      0
+     ],
+     "head_yaw_r45": [
+      0,
+      0,
+      0
+     ],
+     "head_pitch_down20": [
+      0,
+      0,
+      0
+     ],
+     "head_pitch_up20": [
+      0,
+      0,
+      0
+     ],
+     "head_roll_l20": [
+      0,
+      0,
+      0
+     ],
+     "head_roll_r20": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "density": {
+    "zones": {
+     "face": {
+      "mean": 0.133,
+      "limit": 0.25,
+      "pass_": true
+     },
+     "ears": {
+      "mean": 0.093,
+      "limit": 0.25,
+      "pass_": true
+     },
+     "hand": {
+      "mean": 0.133,
+      "limit": 0.3,
+      "pass_": true
+     },
+     "foot": {
+      "mean": 0.19,
+      "limit": 0.3,
+      "pass_": true
+     },
+     "trunk": {
+      "mean": 0.485,
+      "limit": 0.6,
+      "pass_": true
+     },
+     "arm": {
+      "mean": 0.444,
+      "limit": 0.6,
+      "pass_": true
+     },
+     "leg": {
+      "mean": 0.483,
+      "limit": 0.6,
+      "pass_": true
+     },
+     "neck": {
+      "mean": 0.28,
+      "limit": 0.6,
+      "pass_": true
+     },
+     "head": {
+      "mean": 0.302,
+      "limit": 0.6,
+      "pass_": true
+     }
+    },
+    "all_pass": true,
+    "ear_branch_mean_pct": 0.0952892314389251,
+    "ear_branch_p95_pct": 0.16656335745744882,
+    "family_zones_equal_except_ear_head": [
+     "face",
+     "ears",
+     "head"
+    ]
+   },
+   "deformation": {
+    "standard_v1": {
+     "head": "FNF181-CF2",
+     "reference_marchfolk": "MF-F-R v005",
+     "poses": {
+      "shoulder_abd45_l": {
+       "final_flipped": 14,
+       "family_flipped": 14,
+       "native_flipped": 3,
+       "marchfolk_v005_flipped": 16,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "shoulder_abd90_l": {
+       "final_flipped": 17,
+       "family_flipped": 17,
+       "native_flipped": 4,
+       "marchfolk_v005_flipped": 19,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "shoulder_flex90_l": {
+       "final_flipped": 11,
+       "family_flipped": 11,
+       "native_flipped": 3,
+       "marchfolk_v005_flipped": 14,
+       "final_new_selfx": 39,
+       "family_new_selfx": 39,
+       "final_new_folds": 8,
+       "family_new_folds": 8
+      },
+      "elbow_90_l": {
+       "final_flipped": 19,
+       "family_flipped": 19,
+       "native_flipped": 6,
+       "marchfolk_v005_flipped": 22,
+       "final_new_selfx": 29,
+       "family_new_selfx": 29,
+       "final_new_folds": 7,
+       "family_new_folds": 7
+      },
+      "elbow_130_l": {
+       "final_flipped": 41,
+       "family_flipped": 41,
+       "native_flipped": 10,
+       "marchfolk_v005_flipped": 45,
+       "final_new_selfx": 64,
+       "family_new_selfx": 64,
+       "final_new_folds": 4,
+       "family_new_folds": 4
+      },
+      "wrist_flex60_l": {
+       "final_flipped": 13,
+       "family_flipped": 13,
+       "native_flipped": 3,
+       "marchfolk_v005_flipped": 16,
+       "final_new_selfx": 78,
+       "family_new_selfx": 78,
+       "final_new_folds": 3,
+       "family_new_folds": 3
+      },
+      "wrist_ext60_l": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "fist_l": {
+       "final_flipped": 237,
+       "family_flipped": 237,
+       "native_flipped": 57,
+       "marchfolk_v005_flipped": 278,
+       "final_new_selfx": 611,
+       "family_new_selfx": 611,
+       "final_new_folds": 47,
+       "family_new_folds": 47
+      },
+      "thumb_opposition_l": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 38,
+       "family_new_selfx": 38,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "hip_flex90_l": {
+       "final_flipped": 35,
+       "family_flipped": 35,
+       "native_flipped": 8,
+       "marchfolk_v005_flipped": 40,
+       "final_new_selfx": 53,
+       "family_new_selfx": 53,
+       "final_new_folds": 5,
+       "family_new_folds": 5
+      },
+      "knee_90_l": {
+       "final_flipped": 24,
+       "family_flipped": 24,
+       "native_flipped": 3,
+       "marchfolk_v005_flipped": 36,
+       "final_new_selfx": 49,
+       "family_new_selfx": 49,
+       "final_new_folds": 3,
+       "family_new_folds": 3
+      },
+      "knee_140_l": {
+       "final_flipped": 79,
+       "family_flipped": 79,
+       "native_flipped": 13,
+       "marchfolk_v005_flipped": 90,
+       "final_new_selfx": 157,
+       "family_new_selfx": 157,
+       "final_new_folds": 2,
+       "family_new_folds": 2
+      },
+      "ankle_dorsi20_l": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 2,
+       "family_new_selfx": 2,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "toe_flex30_l": {
+       "final_flipped": 12,
+       "family_flipped": 12,
+       "native_flipped": 2,
+       "marchfolk_v005_flipped": 43,
+       "final_new_selfx": 19,
+       "family_new_selfx": 19,
+       "final_new_folds": 7,
+       "family_new_folds": 7
+      },
+      "toe_ext30_l": {
+       "final_flipped": 43,
+       "family_flipped": 43,
+       "native_flipped": 10,
+       "marchfolk_v005_flipped": 60,
+       "final_new_selfx": 43,
+       "family_new_selfx": 43,
+       "final_new_folds": 21,
+       "family_new_folds": 21
+      },
+      "trunk_twist30": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 21,
+       "family_new_selfx": 21,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "neck_flex30": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      },
+      "neck_rot45": {
+       "final_flipped": 0,
+       "family_flipped": 0,
+       "native_flipped": 0,
+       "marchfolk_v005_flipped": 0,
+       "final_new_selfx": 0,
+       "family_new_selfx": 0,
+       "final_new_folds": 0,
+       "family_new_folds": 0
+      }
+     },
+     "final_minus_family_flipped_max": 0,
+     "final_minus_family_selfx_max": 0,
+     "final_minus_marchfolk_flipped_max": 0,
+     "poses_worse_than_family": []
+    },
+    "ear_readiness": {
+     "poses": [
+      "neck_flex30",
+      "neck_ext30",
+      "head_yaw_l45",
+      "head_yaw_r45",
+      "head_pitch_down20",
+      "head_pitch_up20",
+      "head_roll_l20",
+      "head_roll_r20"
+     ],
+     "all_zero": true
+    }
+   }
+  }
+ }
+}

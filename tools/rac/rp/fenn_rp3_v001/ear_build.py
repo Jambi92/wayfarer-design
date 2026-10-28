@@ -12,7 +12,7 @@ from scipy.spatial import cKDTree
 a = sys.argv[1:]; HEAD, CAND, OUT = a[:3]; os.makedirs(OUT, exist_ok=True)
 CANON = a[a.index('--canon') + 1] if '--canon' in a else None; WRITE = '--write-canon' in a
 PROBE = dict(kv.split('=') for kv in a[a.index('--probe') + 1].split(',')) if '--probe' in a else {}
-RT = '/tmp/claude-0/rt/fn/cf'
+RT = os.environ.get('EAR_CF', '/tmp/claude-0/rt/fn/cf')                            # CF2 source / family workspace (final consolidation: clean rebuild folder)
 fz = np.load('%s/fam/%s_fam.npz' % (RT, HEAD)); Q0 = np.asarray(fz['Q']); V0 = fz['V'].astype(float); si = fz['src_index']
 M0 = sp.csr_matrix((fz['M_data'], fz['M_indices'], fz['M_indptr']), shape=tuple(fz['M_shape']))
 r6p = '/home/claude/wayfarer-design/reviews/reference-assets/r6/%s_r6.npz' % HEAD; z6 = np.load(r6p); we = M0 @ z6['w_ears'][si].astype(float)
