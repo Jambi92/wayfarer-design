@@ -2,7 +2,32 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-27) — FENN RP3 FINAL CONSOLIDATION — FROZEN — awaiting ChatGPT review
+## LATEST (2026-10-27) — AELARI c2 + HIDDEN-EAR + EAR PROTOTYPE — awaiting ChatGPT review
+
+**What was done**
+- Order fd71f15 executed. Gate: `reviews/claude-rac-rp3-aelari-body-face-ear-gate.md`.
+- **Result:** AELARI BODY/FACE PASS + EAR BRANCH READY FOR AUTHOR SELECTION. Nothing frozen.
+- **Workspace** `/tmp/claude-0/rt/ae`:
+  - `partA/`: builds, comparators at 190 cm, `skp`, `AELF190_reference_validation.json`;
+  - `src`, `fam`, `audit`, `anat`, `val`, `def`, `contact`, `prod`, `readback`, `ov`;
+  - `AE_hidden_ear_identity.json`;
+  - `ear/`: AE-E1..E3 × AEL1 / AELF190 + probes; `eartest_*` holds the reuse variants.
+- **Tools** (`tools/rac/rp/aelari_rp3_v001/`):
+  - `build_ae_partA.sh`, `skp_ae.sh`, `ae_partA.py`;
+  - `run_aeeval.sh`, `ae_manifest.py`, `ae_hidden_ear.py`;
+  - `run_ae_ear.sh`, `ae_ear_summary.py`;
+  - `ae_sheets.py` (env `AE_SHEET_TMP`).
+- **Fenn ear tool switches** (defaults keep Fenn unchanged):
+  - `ear_branch_lib` `W1A` / `AE-E1..3` and `EAR_LAYOUT_METRIC`;
+  - `run_ear_v002_head.sh` `EAR_CAND`;
+  - `ear_sections.py` `EAR_HEADS` / `EAR_RACE`;
+  - `ear_blend.py` `EAR_BLEND_STATUS`.
+- **AELF190** is in `reviews/reference-assets` (r6 / build / meas; manifest CANDIDATE).
+- **E:** `Aelari/RP3/` (bodyfam blends, maps, sidecars, manifest, AELF190 sidecar) and `Aelari/RP3/ear_branch/` (6 proto blends). Read-back in evidence `pc_readback_sha256.txt`.
+
+**Next:** STOP for ChatGPT review: accept AELF190, rule on the AEL1 ties (ribcage vertical, shin share), select the Aelari ear (AE-E2 recommended), then Aelari consolidation.
+
+## (previous) 2026-10-27 — FENN RP3 FINAL CONSOLIDATION — FROZEN — awaiting ChatGPT review
 
 **What was done**
 - Order 6d2eadc executed. Report: `reviews/claude-rac-rp3-fenn-final-freeze-report.md`.

@@ -1,5 +1,16 @@
 # Character Design Status
 
+## AELARI RP3 — BODY / FACE PASS + EAR BRANCH READY FOR AUTHOR SELECTION — NOT FROZEN (2026-10-27)
+
+- **Gate:** `reviews/claude-rac-rp3-aelari-body-face-ear-gate.md` (order fd71f15). Evidence: `reviews/rac-rp3-evidence/aelari_rp3_v001/`.
+- **c2 central reference:** AELF190 (190.00 cm; MF-F route + exactly the AEL1 targets / bone scales). Deterministic; candidate in the manifest. Two inherited AEL1 ties are flagged for the author: ribcage vertical ≈ Fenn, and c1 shin share ≈ Fenn.
+- **Body-family candidates:** `AE_{M,F}_REF_RP3_bodyfam_v001` on unchanged v005, 69 / 69 D1–D6; anatomy, density, face, contact and deformation pass.
+- **Hidden-ear identity:**
+  - body PASS: vertically continuous vs Fenn's compact centre (central share +2.2 %, extremity −2.4 %);
+  - face PASS: 7 / 7 systems material; no craniofacial source work needed.
+- **Ear branch:** the Fenn v002 engineering topology is reused with wholly Aelari geometry (identical face list). AE-E1 / E2 / E3 are clean on c1 and c2 (T-4 2.8–3.7 %, aspect ≤ 8.6). AE-E2 is recommended.
+- **Next:** STOP for ChatGPT review: accept AELF190, rule on the AEL1 ties, select the ear.
+
 ## FENN RP3 — FINAL PASS — AUTHOR ACCEPTED / FROZEN (2026-10-27)
 
 - **Report:** `reviews/claude-rac-rp3-fenn-final-freeze-report.md` (order 6d2eadc). Evidence and freeze record: `reviews/rac-rp3-evidence/fenn_rp3_freeze/FENN_RP3_FREEZE.json` (also on E:, read back byte-identical).

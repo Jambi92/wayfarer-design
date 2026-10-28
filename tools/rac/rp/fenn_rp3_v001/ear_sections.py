@@ -2,7 +2,7 @@
 # plotted in the (posterior b, lateral n) plane of the root frame, true scale; ear sheet orange / violet / yellow, cuff blue, head grey.
 import sys, os, json, numpy as np
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
-W_, OUT = sys.argv[1], sys.argv[2]; HEADS = {'c1': 'FNL4-CF2', 'c2': 'FNF181-CF2'}; CANDS = os.environ.get('EAR_CANDS', 'E1,E2,E3').split(',')
+W_, OUT = sys.argv[1], sys.argv[2]; HEADS = dict(x.split(':') for x in os.environ['EAR_HEADS'].split(',')) if 'EAR_HEADS' in os.environ else {'c1': 'FNL4-CF2', 'c2': 'FNF181-CF2'}; CANDS = os.environ.get('EAR_CANDS', 'E1,E2,E3').split(',')   # Aelari: EAR_HEADS=c1:AEL1,c2:AELF190
 COL = {'front': '#d9774a', 'back': '#8f6fb8', 'rim': '#d8b23a', 'cuff': '#4f8fd0', 'transition': '#4caf50', 'v005': '#9a9a9a'}
 for cf_, h in HEADS.items():
     LV = [-2.0, 0.0, 2.0, 4.0]; fig, axs = plt.subplots(len(CANDS), len(LV), figsize=(4.2 * len(LV), 4.2 * len(CANDS)), squeeze=False)
@@ -19,6 +19,6 @@ for cf_, h in HEADS.items():
             ax.set_aspect('equal'); ax.set_xlim(-3.5, 4.0); ax.set_ylim(-1.5, 4.0); ax.grid(alpha=0.3); ax.set_title('%s  up %+.1f cm' % (c, lv), fontsize=10)
             if j == 0: ax.set_ylabel('lateral from root plane (cm)')
             if i == len(CANDS) - 1: ax.set_xlabel('posterior (cm)')
-    fig.legend(loc='upper right'); fig.suptitle('Fenn ear branch %s (%s) — horizontal sections through the left ear (root frame; true scale)' % (cf_, h)); fig.tight_layout(rect=(0, 0, 0.95, 0.96))
+    fig.legend(loc='upper right'); fig.suptitle(os.environ.get('EAR_RACE', 'Fenn') + ' ear branch %s (%s) — horizontal sections through the left ear (root frame; true scale)' % (cf_, h)); fig.tight_layout(rect=(0, 0, 0.95, 0.96))
     fig.savefig(os.path.join(OUT, 'FENN_EAR_13b_sections_%s.jpg' % cf_), dpi=110); plt.close(fig)
 print('sections done')

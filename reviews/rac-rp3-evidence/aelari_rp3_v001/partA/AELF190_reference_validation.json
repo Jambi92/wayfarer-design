@@ -1,0 +1,1304 @@
+{
+ "order": "fd71f15",
+ "configs": {
+  "c1": {
+   "bodies": {
+    "AE": "AEL1",
+    "MF": "MFM190",
+    "SG": "SGM190",
+    "FN": "FNM190"
+   },
+   "stature": {
+    "AE": 190.013580404222,
+    "MF": 190.00247194990516,
+    "SG": 190.00085448101163,
+    "FN": 189.9913330078125
+   },
+   "canon": [
+    {
+     "measure": "central vertical share (cranium + neck + torso) > Fenn",
+     "key": "central_vertical_share",
+     "AE": 0.39253,
+     "MF": 0.39528,
+     "SG": 0.38942,
+     "FN": 0.38384,
+     "AE_vs_MF_pct": -0.7,
+     "AE_vs_FN_pct": 2.26,
+     "AE_vs_SG_pct": 0.8,
+     "rules": [
+      ">FN"
+     ],
+     "rule_results": {
+      ">FN": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "extremity share (arm + hand + leg + foot) < Fenn (Fenn extremity emphasis)",
+     "key": "extremity_share",
+     "AE": 1.2259,
+     "MF": 1.20967,
+     "SG": 1.22984,
+     "FN": 1.2555,
+     "AE_vs_MF_pct": 1.34,
+     "AE_vs_FN_pct": -2.36,
+     "AE_vs_SG_pct": -0.32,
+     "rules": [
+      "<FN"
+     ],
+     "rule_results": {
+      "<FN": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "torso share > Fenn (longer torso)",
+     "key": "torso_share",
+     "AE": 0.27413,
+     "MF": 0.28038,
+     "SG": 0.27522,
+     "FN": 0.26962,
+     "AE_vs_MF_pct": -2.23,
+     "AE_vs_FN_pct": 1.67,
+     "AE_vs_SG_pct": -0.39,
+     "rules": [
+      ">FN"
+     ],
+     "rule_results": {
+      ">FN": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "neck contribution > Fenn and > humans",
+     "key": "neck_share",
+     "AE": 0.05535,
+     "MF": 0.05361,
+     "SG": 0.05327,
+     "FN": 0.0523,
+     "AE_vs_MF_pct": 3.25,
+     "AE_vs_FN_pct": 5.84,
+     "AE_vs_SG_pct": 3.92,
+     "rules": [
+      ">FN",
+      ">MF",
+      ">SG"
+     ],
+     "rule_results": {
+      ">FN": true,
+      ">MF": true,
+      ">SG": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "cranial vertical contribution > Fenn and humans",
+     "key": "cranial_vertical_share",
+     "AE": 0.06304,
+     "MF": 0.06129,
+     "SG": 0.06093,
+     "FN": 0.06192,
+     "AE_vs_MF_pct": 2.86,
+     "AE_vs_FN_pct": 1.82,
+     "AE_vs_SG_pct": 3.47,
+     "rules": [
+      ">FN",
+      ">MF"
+     ],
+     "rule_results": {
+      ">FN": true,
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "ribcage / thoracic vertical > Fenn",
+     "key": "thoracic_vertical_share",
+     "AE": 0.14313,
+     "MF": 0.15076,
+     "SG": 0.14752,
+     "FN": 0.14402,
+     "AE_vs_MF_pct": -5.06,
+     "AE_vs_FN_pct": -0.62,
+     "AE_vs_SG_pct": -2.98,
+     "rules": [
+      ">FN"
+     ],
+     "rule_results": {
+      ">FN": false
+     },
+     "holds": false
+    },
+    {
+     "measure": "waist interval / torso > Fenn, >= MF (AE-P6 skin diag.)",
+     "key": "waist_interval_over_torso",
+     "AE": 0.27496,
+     "MF": 0.27046,
+     "SG": 0.26961,
+     "FN": 0.26843,
+     "AE_vs_MF_pct": 1.67,
+     "AE_vs_FN_pct": 2.43,
+     "AE_vs_SG_pct": 1.99,
+     "rules": [
+      ">FN",
+      ">=MF"
+     ],
+     "rule_results": {
+      ">FN": true,
+      ">=MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "arm share > human (MF)",
+     "key": "arm_share",
+     "AE": 0.41554,
+     "MF": 0.40879,
+     "SG": 0.41826,
+     "FN": 0.42889,
+     "AE_vs_MF_pct": 1.65,
+     "AE_vs_FN_pct": -3.11,
+     "AE_vs_SG_pct": -0.65,
+     "rules": [
+      ">MF"
+     ],
+     "rule_results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "arm elongation even: forearm / upper arm closer to MF than Fenn",
+     "key": "forearm_over_upperarm",
+     "AE": 1.05775,
+     "MF": 1.01019,
+     "SG": 1.06058,
+     "FN": 1.06644,
+     "AE_vs_MF_pct": 4.71,
+     "AE_vs_FN_pct": -0.81,
+     "AE_vs_SG_pct": -0.27,
+     "rules": [
+      "evenMF"
+     ],
+     "rule_results": {
+      "evenMF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "leg share > human (MF)",
+     "key": "leg_share",
+     "AE": 0.54421,
+     "MF": 0.54015,
+     "SG": 0.54688,
+     "FN": 0.55283,
+     "AE_vs_MF_pct": 0.75,
+     "AE_vs_FN_pct": -1.56,
+     "AE_vs_SG_pct": -0.49,
+     "rules": [
+      ">MF"
+     ],
+     "rule_results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "leg elongation even: shin / leg closer to MF than Fenn",
+     "key": "shin_over_leg",
+     "AE": 0.51633,
+     "MF": 0.49654,
+     "SG": 0.4967,
+     "FN": 0.51572,
+     "AE_vs_MF_pct": 3.99,
+     "AE_vs_FN_pct": 0.12,
+     "AE_vs_SG_pct": 3.95,
+     "rules": [
+      "evenMF"
+     ],
+     "rule_results": {
+      "evenMF": false
+     },
+     "holds": false
+    },
+    {
+     "measure": "hands long: hand share > human (MF)",
+     "key": "hand_share",
+     "AE": 0.11526,
+     "MF": 0.11136,
+     "SG": 0.11656,
+     "FN": 0.11902,
+     "AE_vs_MF_pct": 3.51,
+     "AE_vs_FN_pct": -3.16,
+     "AE_vs_SG_pct": -1.12,
+     "rules": [
+      ">MF"
+     ],
+     "rule_results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "finger / hand >= human (MF)",
+     "key": "finger_over_hand",
+     "AE": 0.43622,
+     "MF": 0.43676,
+     "SG": 0.45864,
+     "FN": 0.46762,
+     "AE_vs_MF_pct": -0.12,
+     "AE_vs_FN_pct": -6.72,
+     "AE_vs_SG_pct": -4.89,
+     "rules": [
+      ">=MF"
+     ],
+     "rule_results": {
+      ">=MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "wrist gracile: wrist breadth share < MF, Fenn more gracile",
+     "key": "wrist_breadth_share",
+     "AE": 0.03103,
+     "MF": 0.03092,
+     "SG": 0.0311,
+     "FN": 0.02916,
+     "AE_vs_MF_pct": 0.37,
+     "AE_vs_FN_pct": 6.43,
+     "AE_vs_SG_pct": -0.21,
+     "rules": [
+      "<MF",
+      ">=FN"
+     ],
+     "rule_results": {
+      "<MF": false,
+      ">=FN": true
+     },
+     "holds": false
+    },
+    {
+     "measure": "elbow gracile: elbow breadth share < MF, Fenn more gracile",
+     "key": "elbow_breadth_share",
+     "AE": 0.04732,
+     "MF": 0.04893,
+     "SG": 0.04868,
+     "FN": 0.04635,
+     "AE_vs_MF_pct": -3.29,
+     "AE_vs_FN_pct": 2.09,
+     "AE_vs_SG_pct": -2.8,
+     "rules": [
+      "<MF",
+      ">=FN"
+     ],
+     "rule_results": {
+      "<MF": true,
+      ">=FN": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "knee gracile: knee breadth share < MF, Fenn more gracile",
+     "key": "knee_breadth_share",
+     "AE": 0.064,
+     "MF": 0.05437,
+     "SG": 0.05408,
+     "FN": 0.05742,
+     "AE_vs_MF_pct": 17.71,
+     "AE_vs_FN_pct": 11.45,
+     "AE_vs_SG_pct": 18.33,
+     "rules": [
+      "<MF",
+      ">=FN"
+     ],
+     "rule_results": {
+      "<MF": false,
+      ">=FN": true
+     },
+     "holds": false
+    },
+    {
+     "measure": "ankle gracile: ankle breadth share < MF, Fenn more gracile",
+     "key": "ankle_breadth_share",
+     "AE": 0.08711,
+     "MF": 0.08767,
+     "SG": 0.08696,
+     "FN": 0.08819,
+     "AE_vs_MF_pct": -0.65,
+     "AE_vs_FN_pct": -1.22,
+     "AE_vs_SG_pct": 0.17,
+     "rules": [
+      "<MF",
+      ">=FN"
+     ],
+     "rule_results": {
+      "<MF": true,
+      ">=FN": false
+     },
+     "holds": false
+    },
+    {
+     "measure": "relatively shallow ribcage: thorax depth share < MF",
+     "key": "thorax_depth_share",
+     "AE": 0.12017,
+     "MF": 0.12806,
+     "SG": 0.12441,
+     "FN": 0.12172,
+     "AE_vs_MF_pct": -6.15,
+     "AE_vs_FN_pct": -1.27,
+     "AE_vs_SG_pct": -3.41,
+     "rules": [
+      "<MF"
+     ],
+     "rule_results": {
+      "<MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "feet longer: foot share > MF",
+     "key": "foot_share",
+     "AE": 0.15088,
+     "MF": 0.14937,
+     "SG": 0.14813,
+     "FN": 0.15475,
+     "AE_vs_MF_pct": 1.01,
+     "AE_vs_FN_pct": -2.5,
+     "AE_vs_SG_pct": 1.86,
+     "rules": [
+      ">MF"
+     ],
+     "rule_results": {
+      ">MF": true
+     },
+     "holds": true
+    }
+   ],
+   "holds": 14,
+   "of": 19
+  },
+  "c2": {
+   "bodies": {
+    "AE": "AELF190",
+    "MF": "MFF190",
+    "SG": "SGF190",
+    "FN": "FNF190"
+   },
+   "stature": {
+    "AE": 190.0008087232709,
+    "MF": 189.9884338453412,
+    "SG": 189.9906311109662,
+    "FN": 190.01875302568078
+   },
+   "canon": [
+    {
+     "measure": "central vertical share (cranium + neck + torso) > Fenn",
+     "key": "central_vertical_share",
+     "AE": 0.40223,
+     "MF": 0.40485,
+     "SG": 0.39901,
+     "FN": 0.39345,
+     "AE_vs_MF_pct": -0.65,
+     "AE_vs_FN_pct": 2.23,
+     "AE_vs_SG_pct": 0.81,
+     "rules": [
+      ">FN"
+     ],
+     "rule_results": {
+      ">FN": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "extremity share (arm + hand + leg + foot) < Fenn (Fenn extremity emphasis)",
+     "key": "extremity_share",
+     "AE": 1.17667,
+     "MF": 1.1595,
+     "SG": 1.17965,
+     "FN": 1.20562,
+     "AE_vs_MF_pct": 1.48,
+     "AE_vs_FN_pct": -2.4,
+     "AE_vs_SG_pct": -0.25,
+     "rules": [
+      "<FN"
+     ],
+     "rule_results": {
+      "<FN": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "torso share > Fenn (longer torso)",
+     "key": "torso_share",
+     "AE": 0.27666,
+     "MF": 0.28251,
+     "SG": 0.27736,
+     "FN": 0.27176,
+     "AE_vs_MF_pct": -2.07,
+     "AE_vs_FN_pct": 1.8,
+     "AE_vs_SG_pct": -0.25,
+     "rules": [
+      ">FN"
+     ],
+     "rule_results": {
+      ">FN": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "neck contribution > Fenn and > humans",
+     "key": "neck_share",
+     "AE": 0.06204,
+     "MF": 0.06071,
+     "SG": 0.06038,
+     "FN": 0.05941,
+     "AE_vs_MF_pct": 2.19,
+     "AE_vs_FN_pct": 4.43,
+     "AE_vs_SG_pct": 2.76,
+     "rules": [
+      ">FN",
+      ">MF",
+      ">SG"
+     ],
+     "rule_results": {
+      ">FN": true,
+      ">MF": true,
+      ">SG": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "cranial vertical contribution > Fenn and humans",
+     "key": "cranial_vertical_share",
+     "AE": 0.06353,
+     "MF": 0.06163,
+     "SG": 0.06128,
+     "FN": 0.06227,
+     "AE_vs_MF_pct": 3.08,
+     "AE_vs_FN_pct": 2.02,
+     "AE_vs_SG_pct": 3.67,
+     "rules": [
+      ">FN",
+      ">MF"
+     ],
+     "rule_results": {
+      ">FN": true,
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "ribcage / thoracic vertical > Fenn",
+     "key": "thoracic_vertical_share",
+     "AE": 0.12978,
+     "MF": 0.13696,
+     "SG": 0.13373,
+     "FN": 0.13021,
+     "AE_vs_MF_pct": -5.24,
+     "AE_vs_FN_pct": -0.33,
+     "AE_vs_SG_pct": -2.95,
+     "rules": [
+      ">FN"
+     ],
+     "rule_results": {
+      ">FN": false
+     },
+     "holds": false
+    },
+    {
+     "measure": "waist interval / torso > Fenn, >= MF (AE-P6 skin diag.)",
+     "key": "waist_interval_over_torso",
+     "AE": 0.3442,
+     "MF": 0.33821,
+     "SG": 0.33861,
+     "FN": 0.3388,
+     "AE_vs_MF_pct": 1.77,
+     "AE_vs_FN_pct": 1.59,
+     "AE_vs_SG_pct": 1.65,
+     "rules": [
+      ">FN",
+      ">=MF"
+     ],
+     "rule_results": {
+      ">FN": true,
+      ">=MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "arm share > human (MF)",
+     "key": "arm_share",
+     "AE": 0.39565,
+     "MF": 0.38845,
+     "SG": 0.39789,
+     "FN": 0.4083,
+     "AE_vs_MF_pct": 1.85,
+     "AE_vs_FN_pct": -3.1,
+     "AE_vs_SG_pct": -0.56,
+     "rules": [
+      ">MF"
+     ],
+     "rule_results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "arm elongation even: forearm / upper arm closer to MF than Fenn",
+     "key": "forearm_over_upperarm",
+     "AE": 0.91597,
+     "MF": 0.87182,
+     "SG": 0.91899,
+     "FN": 0.92729,
+     "AE_vs_MF_pct": 5.06,
+     "AE_vs_FN_pct": -1.22,
+     "AE_vs_SG_pct": -0.33,
+     "rules": [
+      "evenMF"
+     ],
+     "rule_results": {
+      "evenMF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "leg share > human (MF)",
+     "key": "leg_share",
+     "AE": 0.53635,
+     "MF": 0.53258,
+     "SG": 0.53928,
+     "FN": 0.54522,
+     "AE_vs_MF_pct": 0.71,
+     "AE_vs_FN_pct": -1.63,
+     "AE_vs_SG_pct": -0.54,
+     "rules": [
+      ">MF"
+     ],
+     "rule_results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "leg elongation even: shin / leg closer to MF than Fenn",
+     "key": "shin_over_leg",
+     "AE": 0.48833,
+     "MF": 0.46868,
+     "SG": 0.46931,
+     "FN": 0.48897,
+     "AE_vs_MF_pct": 4.19,
+     "AE_vs_FN_pct": -0.13,
+     "AE_vs_SG_pct": 4.05,
+     "rules": [
+      "evenMF"
+     ],
+     "rule_results": {
+      "evenMF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "hands long: hand share > human (MF)",
+     "key": "hand_share",
+     "AE": 0.10697,
+     "MF": 0.10289,
+     "SG": 0.10816,
+     "FN": 0.11063,
+     "AE_vs_MF_pct": 3.96,
+     "AE_vs_FN_pct": -3.31,
+     "AE_vs_SG_pct": -1.1,
+     "rules": [
+      ">MF"
+     ],
+     "rule_results": {
+      ">MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "finger / hand >= human (MF)",
+     "key": "finger_over_hand",
+     "AE": 0.43981,
+     "MF": 0.44063,
+     "SG": 0.46434,
+     "FN": 0.474,
+     "AE_vs_MF_pct": -0.19,
+     "AE_vs_FN_pct": -7.21,
+     "AE_vs_SG_pct": -5.28,
+     "rules": [
+      ">=MF"
+     ],
+     "rule_results": {
+      ">=MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "wrist gracile: wrist breadth share < MF, Fenn more gracile",
+     "key": "wrist_breadth_share",
+     "AE": 0.02872,
+     "MF": 0.03011,
+     "SG": 0.03027,
+     "FN": 0.0269,
+     "AE_vs_MF_pct": -4.64,
+     "AE_vs_FN_pct": 6.75,
+     "AE_vs_SG_pct": -5.15,
+     "rules": [
+      "<MF",
+      ">=FN"
+     ],
+     "rule_results": {
+      "<MF": true,
+      ">=FN": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "elbow gracile: elbow breadth share < MF, Fenn more gracile",
+     "key": "elbow_breadth_share",
+     "AE": 0.04272,
+     "MF": 0.04417,
+     "SG": 0.04397,
+     "FN": 0.04168,
+     "AE_vs_MF_pct": -3.28,
+     "AE_vs_FN_pct": 2.51,
+     "AE_vs_SG_pct": -2.84,
+     "rules": [
+      "<MF",
+      ">=FN"
+     ],
+     "rule_results": {
+      "<MF": true,
+      ">=FN": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "knee gracile: knee breadth share < MF, Fenn more gracile",
+     "key": "knee_breadth_share",
+     "AE": 0.06207,
+     "MF": 0.05728,
+     "SG": 0.058,
+     "FN": 0.04956,
+     "AE_vs_MF_pct": 8.37,
+     "AE_vs_FN_pct": 25.24,
+     "AE_vs_SG_pct": 7.02,
+     "rules": [
+      "<MF",
+      ">=FN"
+     ],
+     "rule_results": {
+      "<MF": false,
+      ">=FN": true
+     },
+     "holds": false
+    },
+    {
+     "measure": "ankle gracile: ankle breadth share < MF, Fenn more gracile",
+     "key": "ankle_breadth_share",
+     "AE": 0.06508,
+     "MF": 0.06639,
+     "SG": 0.06577,
+     "FN": 0.06534,
+     "AE_vs_MF_pct": -1.97,
+     "AE_vs_FN_pct": -0.41,
+     "AE_vs_SG_pct": -1.05,
+     "rules": [
+      "<MF",
+      ">=FN"
+     ],
+     "rule_results": {
+      "<MF": true,
+      ">=FN": false
+     },
+     "holds": false
+    },
+    {
+     "measure": "relatively shallow ribcage: thorax depth share < MF",
+     "key": "thorax_depth_share",
+     "AE": 0.11262,
+     "MF": 0.12047,
+     "SG": 0.11604,
+     "FN": 0.11285,
+     "AE_vs_MF_pct": -6.52,
+     "AE_vs_FN_pct": -0.21,
+     "AE_vs_SG_pct": -2.95,
+     "rules": [
+      "<MF"
+     ],
+     "rule_results": {
+      "<MF": true
+     },
+     "holds": true
+    },
+    {
+     "measure": "feet longer: foot share > MF",
+     "key": "foot_share",
+     "AE": 0.1377,
+     "MF": 0.13557,
+     "SG": 0.13432,
+     "FN": 0.14147,
+     "AE_vs_MF_pct": 1.57,
+     "AE_vs_FN_pct": -2.67,
+     "AE_vs_SG_pct": 2.52,
+     "rules": [
+      ">MF"
+     ],
+     "rule_results": {
+      ">MF": true
+     },
+     "holds": true
+    }
+   ],
+   "holds": 16,
+   "of": 19
+  }
+ },
+ "notes": [],
+ "configuration_consistency": {
+  "rows": [
+   {
+    "key": "central_vertical_share",
+    "d_AE": 0.0097,
+    "d_MF": 0.00957,
+    "d_SG": 0.0096,
+    "d_FN": 0.00961,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "extremity_share",
+    "d_AE": -0.04923,
+    "d_MF": -0.05017,
+    "d_SG": -0.05019,
+    "d_FN": -0.04987,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "torso_share",
+    "d_AE": 0.00253,
+    "d_MF": 0.00213,
+    "d_SG": 0.00214,
+    "d_FN": 0.00214,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "neck_share",
+    "d_AE": 0.00669,
+    "d_MF": 0.0071,
+    "d_SG": 0.00711,
+    "d_FN": 0.00711,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "cranial_vertical_share",
+    "d_AE": 0.00049,
+    "d_MF": 0.00034,
+    "d_SG": 0.00035,
+    "d_FN": 0.00035,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "thoracic_vertical_share",
+    "d_AE": -0.01335,
+    "d_MF": -0.0138,
+    "d_SG": -0.0138,
+    "d_FN": -0.01381,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "waist_interval_over_torso",
+    "d_AE": 0.06924,
+    "d_MF": 0.06775,
+    "d_SG": 0.06901,
+    "d_FN": 0.07037,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "arm_share",
+    "d_AE": -0.01989,
+    "d_MF": -0.02034,
+    "d_SG": -0.02037,
+    "d_FN": -0.02059,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "forearm_over_upperarm",
+    "d_AE": -0.14178,
+    "d_MF": -0.13837,
+    "d_SG": -0.14159,
+    "d_FN": -0.13915,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "leg_share",
+    "d_AE": -0.00787,
+    "d_MF": -0.00756,
+    "d_SG": -0.0076,
+    "d_FN": -0.00762,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "shin_over_leg",
+    "d_AE": -0.02799,
+    "d_MF": -0.02786,
+    "d_SG": -0.02738,
+    "d_FN": -0.02675,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "hand_share",
+    "d_AE": -0.00829,
+    "d_MF": -0.00847,
+    "d_SG": -0.0084,
+    "d_FN": -0.00839,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "finger_over_hand",
+    "d_AE": 0.00359,
+    "d_MF": 0.00387,
+    "d_SG": 0.0057,
+    "d_FN": 0.00638,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "wrist_breadth_share",
+    "d_AE": -0.00232,
+    "d_MF": -0.00081,
+    "d_SG": -0.00083,
+    "d_FN": -0.00226,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "elbow_breadth_share",
+    "d_AE": -0.0046,
+    "d_MF": -0.00476,
+    "d_SG": -0.00471,
+    "d_FN": -0.00467,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "knee_breadth_share",
+    "d_AE": -0.00192,
+    "d_MF": 0.00291,
+    "d_SG": 0.00392,
+    "d_FN": -0.00786,
+    "same_sign_as_MF": false
+   },
+   {
+    "key": "ankle_breadth_share",
+    "d_AE": -0.02203,
+    "d_MF": -0.02129,
+    "d_SG": -0.02119,
+    "d_FN": -0.02284,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "thorax_depth_share",
+    "d_AE": -0.00756,
+    "d_MF": -0.00759,
+    "d_SG": -0.00837,
+    "d_FN": -0.00887,
+    "same_sign_as_MF": true
+   },
+   {
+    "key": "foot_share",
+    "d_AE": -0.01318,
+    "d_MF": -0.0138,
+    "d_SG": -0.01381,
+    "d_FN": -0.01328,
+    "same_sign_as_MF": true
+   }
+  ],
+  "same_sign": 18,
+  "of": 19,
+  "c1_signs_replicated_in_c2": 18
+ },
+ "pelvis_skeletal_proxy": {
+  "c1": [
+   {
+    "rule": "AE-P2a hip-joint height / stature > MF",
+    "key": "leg_share",
+    "by_t": {
+     "0.0": {
+      "AE": 0.54421,
+      "ref": 0.54015,
+      "diff_pct": 0.75,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 0.54421,
+      "ref": 0.54015,
+      "diff_pct": 0.75,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 0.54421,
+      "ref": 0.54015,
+      "diff_pct": 0.75,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.025150027008479015
+   },
+   {
+    "rule": "AE-P2b / E-A2 bitrochanteric / crest not lower than MF",
+    "key": "bitroch_over_crest",
+    "by_t": {
+     "0.0": {
+      "AE": 1.11047,
+      "ref": 1.10225,
+      "diff_pct": 0.75,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 1.11478,
+      "ref": 1.10598,
+      "diff_pct": 0.8,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 1.11944,
+      "ref": 1.10999,
+      "diff_pct": 0.85,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.025150027008479015
+   },
+   {
+    "rule": "AE-P3 pelvic vertical / crest > MF",
+    "key": "pelvic_vertical_over_crest",
+    "by_t": {
+     "0.0": {
+      "AE": 0.36189,
+      "ref": 0.32803,
+      "diff_pct": 10.32,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 0.37601,
+      "ref": 0.33999,
+      "diff_pct": 10.6,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 0.39128,
+      "ref": 0.35286,
+      "diff_pct": 10.89,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.025150027008479015
+   },
+   {
+    "rule": "AE-P3 pelvic vertical / crest > Fenn",
+    "key": "pelvic_vertical_over_crest",
+    "by_t": {
+     "0.0": {
+      "AE": 0.36189,
+      "ref": 0.32857,
+      "diff_pct": 10.14,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 0.37601,
+      "ref": 0.3407,
+      "diff_pct": 10.36,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 0.39128,
+      "ref": 0.35377,
+      "diff_pct": 10.6,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.025150027008479015
+   },
+   {
+    "rule": "AE-P6 waist interval / torso > Fenn",
+    "key": "waist_interval_over_torso",
+    "by_t": {
+     "0.0": {
+      "AE": 0.27482,
+      "ref": 0.26818,
+      "diff_pct": 2.48,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 0.27482,
+      "ref": 0.26818,
+      "diff_pct": 2.48,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 0.27482,
+      "ref": 0.26818,
+      "diff_pct": 2.48,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.025150027008479015
+   },
+   {
+    "rule": "AE-P6 waist interval / torso >= MF",
+    "key": "waist_interval_over_torso",
+    "by_t": {
+     "0.0": {
+      "AE": 0.27482,
+      "ref": 0.27016,
+      "diff_pct": 1.72,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 0.27482,
+      "ref": 0.27016,
+      "diff_pct": 1.72,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 0.27482,
+      "ref": 0.27016,
+      "diff_pct": 1.72,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.025150027008479015
+   }
+  ],
+  "c2": [
+   {
+    "rule": "AE-P2a hip-joint height / stature > MF",
+    "key": "leg_share",
+    "by_t": {
+     "0.0": {
+      "AE": 0.53635,
+      "ref": 0.53258,
+      "diff_pct": 0.71,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 0.53635,
+      "ref": 0.53258,
+      "diff_pct": 0.71,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 0.53635,
+      "ref": 0.53258,
+      "diff_pct": 0.71,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.3696699019119869
+   },
+   {
+    "rule": "AE-P2b / E-A2 bitrochanteric / crest not lower than MF",
+    "key": "bitroch_over_crest",
+    "by_t": {
+     "0.0": {
+      "AE": 1.08744,
+      "ref": 1.08232,
+      "diff_pct": 0.47,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 1.09101,
+      "ref": 1.08546,
+      "diff_pct": 0.51,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 1.09489,
+      "ref": 1.08886,
+      "diff_pct": 0.55,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.3696699019119869
+   },
+   {
+    "rule": "AE-P3 pelvic vertical / crest > MF",
+    "key": "pelvic_vertical_over_crest",
+    "by_t": {
+     "0.0": {
+      "AE": 0.35407,
+      "ref": 0.32144,
+      "diff_pct": 10.15,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 0.36855,
+      "ref": 0.33372,
+      "diff_pct": 10.44,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 0.38427,
+      "ref": 0.34698,
+      "diff_pct": 10.75,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.3696699019119869
+   },
+   {
+    "rule": "AE-P3 pelvic vertical / crest > Fenn",
+    "key": "pelvic_vertical_over_crest",
+    "by_t": {
+     "0.0": {
+      "AE": 0.35407,
+      "ref": 0.32207,
+      "diff_pct": 9.94,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 0.36855,
+      "ref": 0.33455,
+      "diff_pct": 10.17,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 0.38427,
+      "ref": 0.34802,
+      "diff_pct": 10.42,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.3696699019119869
+   },
+   {
+    "rule": "AE-P6 waist interval / torso > Fenn",
+    "key": "waist_interval_over_torso",
+    "by_t": {
+     "0.0": {
+      "AE": 0.34363,
+      "ref": 0.33818,
+      "diff_pct": 1.61,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 0.34363,
+      "ref": 0.33818,
+      "diff_pct": 1.61,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 0.34363,
+      "ref": 0.33818,
+      "diff_pct": 1.61,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.3696699019119869
+   },
+   {
+    "rule": "AE-P6 waist interval / torso >= MF",
+    "key": "waist_interval_over_torso",
+    "by_t": {
+     "0.0": {
+      "AE": 0.34363,
+      "ref": 0.33757,
+      "diff_pct": 1.8,
+      "holds": true
+     },
+     "0.5": {
+      "AE": 0.34363,
+      "ref": 0.33757,
+      "diff_pct": 1.8,
+      "holds": true
+     },
+     "1.0": {
+      "AE": 0.34363,
+      "ref": 0.33757,
+      "diff_pct": 1.8,
+      "holds": true
+     }
+    },
+    "holds_all_t": true,
+    "align_resid_cm": 0.3696699019119869
+   }
+  ]
+ },
+ "pelvis_skin_diagnostic": {
+  "c1": {
+   "bitroch_over_crest": {
+    "AE": 1.1759770356615162,
+    "MF": 1.158648672101209,
+    "FN": 1.1737975061817292
+   },
+   "pelvic_vertical_over_crest": {
+    "AE": 0.37096344002930853,
+    "MF": 0.33401470827319796,
+    "FN": 0.338999194994856
+   },
+   "waist_interval_over_torso": {
+    "AE": 0.27496373775104943,
+    "MF": 0.2704593900189889,
+    "FN": 0.2684288779807596
+   },
+   "leg_share": {
+    "AE": 0.5442133093166702,
+    "MF": 0.5401489605106788,
+    "FN": 0.5528337034561609
+   }
+  },
+  "c2": {
+   "bitroch_over_crest": {
+    "AE": 1.341583459187283,
+    "MF": 1.3307442305187656,
+    "FN": 1.3234585491323025
+   },
+   "pelvic_vertical_over_crest": {
+    "AE": 0.355893630828691,
+    "MF": 0.32566566234810995,
+    "FN": 0.32488314857369355
+   },
+   "waist_interval_over_torso": {
+    "AE": 0.3442016290650939,
+    "MF": 0.33820641467276996,
+    "FN": 0.3388022280328715
+   },
+   "leg_share": {
+    "AE": 0.5363481680848133,
+    "MF": 0.5325843619245259,
+    "FN": 0.5452164418009542
+   }
+  }
+ },
+ "determinism": {
+  "height_macro": [
+   0.661865234375,
+   0.661865234375
+  ],
+  "second_resolve_max_abs_dV_cm": 0.0,
+  "faces_identical": true,
+  "stature_r6": [
+   190.00081587582827,
+   190.00081587582827
+  ],
+  "cfg_equals_AEL1_except": [
+   "id",
+   "gender"
+  ]
+ },
+ "envelope": {
+  "AE168N_NAT": 168.00003081560135,
+  "AEL1": 190.013580404222,
+  "AELF190": 190.0008087232709,
+  "AE221": 220.98759470134974,
+  "inside": true
+ }
+}

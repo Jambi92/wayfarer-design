@@ -19,7 +19,7 @@ bpy.ops.wm.read_factory_settings(use_empty=True)
 me = bpy.data.meshes.new(NAME); me.from_pydata(Vb.tolist(), [], Q.tolist()); me.update()
 uvl = me.uv_layers.new(name='UVMap'); uvl.data.foreach_set('uv', UV.reshape(-1, 2).ravel())
 ob = bpy.data.objects.new(NAME, me); bpy.context.scene.collection.objects.link(ob)
-ob['RAC_status'] = 'FENN EAR BRANCH PROTOTYPE (order bdcd6a6) - review only, not accepted, not frozen'; ob['RAC_frame'] = 'm, Z up, faces -Y, subject left +X, origin pelvis root on ground'
+ob['RAC_status'] = os.environ.get('EAR_BLEND_STATUS', 'FENN EAR BRANCH PROTOTYPE (order bdcd6a6) - review only, not accepted, not frozen'); ob['RAC_frame'] = 'm, Z up, faces -Y, subject left +X, origin pelvis root on ground'
 vg = ob.vertex_groups.new(name='ear_branch'); vg.add([int(i) for i in np.nonzero(part != 'v005')[0]], 1.0, 'REPLACE')
 for p in me.polygons: p.use_smooth = True
 path = os.path.join(O, NAME + '.blend'); bpy.ops.wm.save_as_mainfile(filepath=path, compress=True)

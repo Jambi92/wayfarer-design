@@ -47,6 +47,14 @@ GEO = dict(tauA=12.0, phi0=35.0, d_r=1.25, clear=0.05, lift_lobe=0.45, lift_top=
 CAND = {'E1': dict(W1E, L=7.6, wb=1.75, proj=42, tilt=28, sweep=1.2),
         'E2': dict(W1E),
         'E3': dict(W1E, L=9.4, wb=1.85, proj=55, tilt=35, sweep=1.9)}
+# Aelari candidates (order fd71f15 §13 / §15): W1e AE-elven evidence (ear_families.py FAM + ear_families_v2.py DET) -- wholly Aelari parameters on the
+# Fenn v002 engineering topology (reuse test). AE-E1 restrained, AE-E2 balanced central (= evidence), AE-E3 stronger (still closer-set than Fenn central).
+W1A = dict(L=9.4, wb=1.70, taper=("continuous", 0.25, 0.95), lobe=0.14, proj=24, tilt=30, sweep=1.7, thick=0.25,
+           ah=0.23, crura=1.0, concha=0.70, crus=0.12, trag=0.24, atrag=0.18, helix=(0.25, 0.25))
+CAND.update({'AE-E1': dict(W1A, L=8.3, wb=1.65, proj=19, tilt=27, sweep=1.3),
+             'AE-E2': dict(W1A),
+             'AE-E3': dict(W1A, L=10.4, wb=1.75, proj=29, tilt=34, sweep=2.0)})
+LAYOUT_METRIC = __import__('os').environ.get('EAR_LAYOUT_METRIC', 'E2')          # metric of the sheet position optimisation (connectivity always from the E2 layout)
 
 def smooth(t):
     t = np.clip(t, 0, 1); return t * t * (3 - 2 * t)
@@ -749,7 +757,8 @@ def canonical_layout():
         if TOPO_VERSION == 'v001': _CL['L'] = optimise_sheet(layout2(CAND['E2'], TOPO2), CAND['E2'], it=400)
         else:
             import ear_layout3 as L3
-            _CL['L'] = L3.quality_sheet(L3.optimise_sheet3(L3.layout3(CAND['E2'], **LAYOUT3_KW), CAND['E2'], it=600, slide_w=SLIDE_W), CAND['E2'], **QUALITY_KW)
+            pm = CAND[LAYOUT_METRIC]; _CL['L'] = L3.quality_sheet(L3.optimise_sheet3(L3.layout3(CAND['E2'], **LAYOUT3_KW), pm, it=600, slide_w=SLIDE_W), pm, **QUALITY_KW)
+            _CL['L']['layout_metric'] = LAYOUT_METRIC
         _CL['L']['version'] = TOPO_VERSION
     return _CL['L']
 

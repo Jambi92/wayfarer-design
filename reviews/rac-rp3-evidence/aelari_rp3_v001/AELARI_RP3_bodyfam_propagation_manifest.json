@@ -1,0 +1,61 @@
+{
+ "record": "AELARI RP3 body-family propagation manifest v001 (DIAGNOSTIC body candidates; family human ear, not final Aelari ear)",
+ "order": "reviews/chatgpt-rac-rp3-aelari-body-face-ear-order.md (fd71f15)",
+ "status": "BODY-FAMILY DIAGNOSTIC CANDIDATES - NOT FROZEN",
+ "active_family_base": {
+  "record": "MPFB_FAMILY_BASE_v005_FREEZE.json",
+  "record_sha256": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+  "base_blend_sha256": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+  "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+  "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0"
+ },
+ "validator": "D1 + D3 + D4 + D5 + D6 (authoritative)",
+ "configurations": {
+  "AEL1": {
+   "production": "AE_M_REF_RP3_bodyfam_v001.blend",
+   "sha256": "7be4dd3080f128e58b7b2c44466fa06535e99034041163ff27a39538d6e957a8",
+   "geometry_hash": "1ba6df57ab4b54f6d630daf818ac79c83d512b98bf7d614cd7143aeed74ab928",
+   "sidecar_sha256": "85e2b8a874b3c7e3721cb04d7625ecf8838b6f8701cd2b9eee6ed554973e5bf6",
+   "source": {
+    "id": "AEL1",
+    "r6": "reviews/reference-assets/r6/AEL1_r6.npz",
+    "r6_sha256": "7bc1021a6a68feea08d835c95d29e01e08ec3177f346bff62397964d300386fb",
+    "build_sha256": "bf7ac6d63b508d9c4e0a5cae7b41acf5ec1cb6d0b2845557483c1dd279e52912",
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0
+   },
+   "validator": 69
+  },
+  "AELF190": {
+   "production": "AE_F_REF_RP3_bodyfam_v001.blend",
+   "sha256": "608c127e2de7e99439920a9e61e92a5dd72ba4960016a413fd304d1d28c6d472",
+   "geometry_hash": "291f357229450ba362a1985e477923f1dc5de1d379928c1f67f970d685c02677",
+   "sidecar_sha256": "3ab5942b2e6fcd9451da001f2ac26daa054e926a28270aa6f1afb649db0c1215",
+   "source": {
+    "id": "AELF190",
+    "r6": "reviews/reference-assets/r6/AELF190_r6.npz",
+    "r6_sha256": "a81407ff36c7174ed08d01a3f7de18db4e3f336b8dea79f8f35434d6028607a4",
+    "build_sha256": "040de50a48f43874d46053a25dbde95c64db1ad97539f938d665aa7c52ad461f",
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0
+   },
+   "validator": 69
+  }
+ },
+ "topology_identity_proof": {
+  "AEL1": {
+   "face_hash_equal": true,
+   "faces_equal": true,
+   "uv_equal": true,
+   "map_equal": true,
+   "V_eq_M_hm08": 0.0
+  },
+  "AELF190": {
+   "face_hash_equal": true,
+   "faces_equal": true,
+   "uv_equal": true,
+   "map_equal": true,
+   "V_eq_M_hm08": 0.0
+  }
+ }
+}
