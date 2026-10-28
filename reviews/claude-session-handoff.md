@@ -2,7 +2,34 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-28) — VAEL c2 + HIDDEN-EAR GATES — BODY/CRANIOFACIAL SOURCE WORK REQUIRED — awaiting ChatGPT review
+## LATEST (2026-10-28) — VAEL BODY / FACE SOURCE — BODY NEEDS REVISION / FACE PASS — awaiting ChatGPT review
+
+**What was done**
+- Order executed: `reviews/chatgpt-rac-rp3-vael-body-face-source-order.md`. Gate: `reviews/claude-rac-rp3-vael-body-face-source-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_source/`.
+- **Probe matrix:** 16 body + 26 face probes on VAL4, height held.
+- **Body correction VB1 / VB2 / VB3** (one architecture):
+  - pelvis bone scale [1.02, 1.045, 1.03];
+  - thigh / calf Y × 0.9975;
+  - torso-depth / neck-horiz / foot-depth at three magnitudes.
+- **Face VC1 / VC2 / VC3:** same keys at 0.6 / 1.0 / 1.4×. Iteration 3 is final; its brow term is `eyebrows-trans-backward` 0.015.
+- **Selected R1:** VB2g + VC2, rebuilt as `VAL4-R1` / `VALF178-R1` (reference-assets, CANDIDATE).
+- **Family:** `VA_{M,F}_REF_RP3_bodyfam_v002` on v005; all technical gates pass. Delivered to E: `Vael/RP3/` with identical read-back.
+- **Workspaces:**
+  - `/tmp/claude-0/rt/va2/`: `probe`, `vb`, `vc`, `vc2` (cand, r1, skp, lean);
+  - `/tmp/claude-0/rt/va2/prod/`: `src`, `fam`, `audit`, `val`, `def`, `contact`, `lm`, `prod`, `readback`, `ov`, `sheet_r`; `partA` symlinks to `../../va/partA`.
+- **Tools:** `tools/rac/rp/vael_rp3_v001/`:
+  - `probe_va2.sh`, `va2_eval.py`, `va2_probe_matrix.py`, `build_vb.sh`, `build_va_r1.sh`, `skp_va2.sh`, `va2_pelvis.py`, `va2_sheets.py`;
+  - `run_va_prod.sh` and `va_manifest.py`, run with env `VA_C1` / `VA_C2` / `VA_PROD_VER` / `VA_R1_*`.
+
+**Key findings**
+- **Numeric gates pass:** hip ordering (sub-1 %), VA-P6, pelvis 9 / 9, body 4 / 8, face 6 / 6.
+- **Visual human firewall fails:** the body still reads as Marchfolk; the face departure is about 45 % of the Fenn / Aelari scale.
+- **"Central vertical < Aelari"** cannot hold by partition identity.
+- **Jaw-width descriptor** is contaminated by the neck target.
+
+**Next:** STOP for ChatGPT review (author decisions A–E in gate §8).
+
+## (previous) 2026-10-28 — VAEL c2 + HIDDEN-EAR GATES — BODY/CRANIOFACIAL SOURCE WORK REQUIRED
 
 **What was done**
 - Vael order executed (`reviews/chatgpt-rac-rp3-vael-body-face-ear-order.md`). Gate: `reviews/claude-rac-rp3-vael-body-face-ear-gate.md`.

@@ -1,6 +1,24 @@
 # Character Design Status
 
-## VAEL RP3 — BODY SOURCE/BRANCH WORK REQUIRED (+ CRANIOFACIAL SOURCE WORK REQUIRED) — EARS NOT STARTED — NOT FROZEN (2026-10-28)
+## VAEL RP3 BODY / FACE SOURCE — BODY NEEDS REVISION / FACE PASS — VB2 + VC2 PROVISIONAL — EARS LOCKED — NOT FROZEN (2026-10-28)
+
+- **Gate:** `reviews/claude-rac-rp3-vael-body-face-source-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_source/` (25 sheets).
+- **Provisional sources:** `VAL4-R1` / `VALF178-R1` = VAL4 / VALF178 + shared body correction VB2g + craniofacial VC2. Deterministic; manifest CANDIDATE.
+- **Family candidates:** `VA_{M,F}_REF_RP3_bodyfam_v002` on v005 (PROVISIONAL). Both 69 / 69 D1–D6; anatomy, density, face rings, contact (0 new) and deformation pass; E: read-back identical.
+- **Pass:**
+  - hip ordering MF < Vael < Aelari < Fenn, sub-1 % margins (c1 +0.10 / −0.11 %, c2 +0.05 / −0.29 %);
+  - VA-P6 and the pelvis gate 9 / 9 on both;
+  - body systems 4 / 8 (up from 2) and face systems 6 / 6 vs humans;
+  - distinct from frozen Fenn / Aelari.
+- **Not passed:** the human firewall, visually. At equal height the body still reads as Marchfolk; the face departure is about 45 % of the Fenn / Aelari scale. Ears stay locked.
+- **Next:** STOP for ChatGPT review. Author decisions A–E:
+  - brow direction;
+  - retire the infeasible "central vertical < Aelari" composite;
+  - VA-P3 proxy;
+  - body path (custom deterministic source deformation vs depth-led reading);
+  - face magnitude.
+
+## (previous) VAEL RP3 — BODY SOURCE/BRANCH WORK REQUIRED (+ CRANIOFACIAL SOURCE WORK REQUIRED) — EARS NOT STARTED — NOT FROZEN (2026-10-28)
 
 - **Gate:** `reviews/claude-rac-rp3-vael-body-face-ear-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_v001/`.
 - **c2 central reference:** VALF178 (178.01 cm; MF-F route + exactly the VAL4 design). Deterministic, integrity clean; manifest CANDIDATE.

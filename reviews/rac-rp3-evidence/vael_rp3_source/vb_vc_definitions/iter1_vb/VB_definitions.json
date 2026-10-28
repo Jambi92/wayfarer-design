@@ -1,0 +1,43 @@
+{
+ "VB1": {
+  "pelvis_Y": 1.06,
+  "leg_factor": 0.996,
+  "targets": {
+   "torso-scale-depth-incr": 0.18,
+   "neck-scale-horiz-incr": 0.08
+  }
+ },
+ "VB2": {
+  "pelvis_Y": 1.06,
+  "leg_factor": 0.996,
+  "targets": {
+   "torso-scale-depth-incr": 0.25,
+   "neck-scale-horiz-incr": 0.2
+  }
+ },
+ "VB3": {
+  "pelvis_Y": 1.06,
+  "leg_factor": 0.996,
+  "targets": {
+   "torso-scale-depth-incr": 0.33,
+   "neck-scale-horiz-incr": 0.32
+  }
+ },
+ "_superseded_first_pass": {
+  "VB1": {
+   "pelvis_Y": 1.06,
+   "leg_factor": 0.996,
+   "targets": {}
+  },
+  "VB3": {
+   "pelvis_Y": 1.07,
+   "leg_factor": 0.996,
+   "targets": {
+    "torso-scale-depth-incr": 0.32,
+    "neck-scale-horiz-incr": 0.3,
+    "LR:hand-fingers-length-incr": 0.12
+   }
+  }
+ },
+ "architecture": "shared: pelvis Y (torso-to-pelvis vertical) 1.0 -> 1.06 + thigh / calf Y x 0.996 (femur / lower-leg balance kept) restores MF < Vael < Aelari hip height; torso-scale-depth-incr (ribcage AP depth) and neck-scale-horiz-incr (shoulder-to-neck integration) carry the bounded human separation; magnitudes VB1 < VB2 < VB3"
+}

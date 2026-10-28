@@ -1,0 +1,181 @@
+{
+ "file": "VA_F_REF_RP3_bodyfam_v002.blend",
+ "sha256": "8fdbfece9914cc6415fd0c59e50d33daccae9915edaff8324a6182106c4a0de9",
+ "geometry_hash": "5d2118a99431d4da40e111f5f54bd9bbb605cde0a77b14ba90512be062650e17",
+ "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+ "verts": 57842,
+ "quads": 57840,
+ "race": "Vael",
+ "configuration": "VALF178-R1",
+ "role": "configuration 2 (VALF178-R1: VALF178 foundation + the identical Vael body correction + craniofacial source)",
+ "status": "PROVISIONAL BODY + CRANIOFACIAL SOURCE CANDIDATE - NOT FROZEN (carries the family human auricle; the final Vael ear is a later branch)",
+ "source": {
+  "id": "VALF178-R1",
+  "r6": "reviews/reference-assets/r6/VALF178-R1_r6.npz",
+  "r6_sha256": "0691e08c0daf715421680a34282860f9f15f94189efca22d63de78c858d82678",
+  "build_sha256": "efa91aba1579d72f53e29346c45cf7c28ea2e2c2bc117102c0417eb58a2ca272",
+  "regen_geometry_identical": true,
+  "regen_max_abs_dV_cm": 0.0
+ },
+ "mapping": {
+  "hm08_map": "family map MF_M_REF_RP3_retopo_v005_hm08_map.npz (arrays identical)"
+ },
+ "frame": {
+  "origin_translation_cm": [
+   -0.0,
+   -2.5241658091545105,
+   -0.0
+  ]
+ },
+ "readback": {
+  "max_abs_diff_vs_candidate_m": 5.955646553701399e-08,
+  "faces_equal_candidate": true,
+  "normals_outward": true
+ },
+ "validator": {
+  "rules": "D1 + D3 + D4 + D5 + D6",
+  "firm": 69,
+  "fails": [],
+  "margin_zero": [
+   "toe1_j1_l",
+   "toe1_j1_r",
+   "toe4_j1_l",
+   "toe4_j1_r"
+  ],
+  "without_D6": 69,
+  "fallback": {
+   "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+   "toe1_j2_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe3_j3_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+   "toe4_j2_l": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+   "thumb_mcp_r": "PASS_FALLBACK_CLOSED_RING",
+   "toe3_j3_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE",
+   "toe4_j2_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+  },
+  "D5_exclusions": {
+   "toe1_j1_l": [
+    "+q"
+   ],
+   "toe2_j1_l": [
+    "+q",
+    "-q"
+   ],
+   "toe2_j3_l": [
+    "-p"
+   ],
+   "toe3_j1_l": [
+    "-q"
+   ],
+   "toe1_j1_r": [
+    "-q"
+   ],
+   "toe2_j1_r": [
+    "+q",
+    "-q"
+   ],
+   "toe2_j3_r": [
+    "-p"
+   ],
+   "toe3_j1_r": [
+    "+q"
+   ]
+  },
+  "D6_exclusions": {
+   "elbow_l": [
+    "-p"
+   ],
+   "hip_l": [
+    "+p"
+   ],
+   "elbow_r": [
+    "+p"
+   ],
+   "hip_r": [
+    "-p"
+   ]
+  }
+ },
+ "anatomy": {
+  "T1_T2": true,
+  "T3": true,
+  "T7": true,
+  "iou_min": 0.997133,
+  "body": {
+   "median_mm": 0.0,
+   "p95_mm": 0.1671,
+   "max_mm": 1.9851
+  },
+  "head": {
+   "median_mm": 0.0,
+   "p95_mm": 0.081,
+   "max_mm": 0.9305
+  },
+  "ears_zone_note": "ear zone reported separately: non-final source anatomy (MPFB human auricle) - NOT a final Vael-ear PASS",
+  "ears": {
+   "median_mm": 0.0,
+   "p95_mm": 0.1046,
+   "max_mm": 0.4598
+  }
+ },
+ "density": {
+  "face": 0.134,
+  "ears": 0.102,
+  "hand": 0.129,
+  "foot": 0.19,
+  "trunk": 0.509,
+  "arm": 0.444,
+  "leg": 0.499,
+  "neck": 0.296,
+  "head": 0.226
+ },
+ "density_all_pass": true,
+ "face": {
+  "mouth_rings": 33,
+  "orbit_rings": [
+   43,
+   43
+  ],
+  "poles_at_mouth_corners": 0,
+  "mouth_pass": true,
+  "orbit_pass": true
+ },
+ "integrity": {
+  "components": 1,
+  "boundary": 0,
+  "nonmanifold": 0,
+  "degenerate": 0,
+  "outward": true,
+  "self_intersection_pairs": 126
+ },
+ "contact": {
+  "source": 126,
+  "family": 0,
+  "new": 0
+ },
+ "contact_by_zone": {
+  "arm": {
+   "source": 92
+  },
+  "trunk": {
+   "source": 14
+  },
+  "foot": {
+   "source": 20
+  }
+ },
+ "deformation": {
+  "worst_flip_excess_vs_marchfolk_v005": 1,
+  "poses_worse_by_more_than_5": []
+ },
+ "native_integrity": {
+  "verts": 13380,
+  "quads": 13378,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "orientation_inconsistent_edges": 0,
+  "degenerate_faces": 0,
+  "coincident_vertex_pairs": 0,
+  "signed_volume_L": -63.575
+ }
+}
