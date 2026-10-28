@@ -16,7 +16,7 @@ RT = os.environ.get('EAR_CF', '/tmp/claude-0/rt/fn/cf')                         
 fz = np.load('%s/fam/%s_fam.npz' % (RT, HEAD)); Q0 = np.asarray(fz['Q']); V0 = fz['V'].astype(float); si = fz['src_index']
 M0 = sp.csr_matrix((fz['M_data'], fz['M_indices'], fz['M_indptr']), shape=tuple(fz['M_shape']))
 r6p = '/home/claude/wayfarer-design/reviews/reference-assets/r6/%s_r6.npz' % HEAD; z6 = np.load(r6p); we = M0 @ z6['w_ears'][si].astype(float)
-p = dict(E.CAND[CAND]); geo = dict(E.GEO)
+p = dict(E.CAND[CAND]); geo = dict(E.GEO); geo.update(p.pop('geo', {}))   # candidate-level geometry overrides (Vael: concha clearance); none for Fenn / Aelari
 Q3_KW = dict(lo=55.0, hi=125.0, ks=50.0, kn=4000.0, kt=20000.0, rho=0.5, iters=int(os.environ.get('EAR_Q3_IT', '600')), amax=6.0, ka=float(os.environ.get('EAR_Q3_KA', '1000')), kd=float(os.environ.get('EAR_Q3_KD', '0')), kr=float(os.environ.get('EAR_Q3_KR', '500')), th_cap=float(os.environ.get('EAR_Q3_THCAP', '64')))
 Q3_WARM = os.environ.get('EAR_Q3_WARM', '0') == '1'
 for k, v in PROBE.items():                          # geometry-only readiness probes (same topology)

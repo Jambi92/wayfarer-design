@@ -2,7 +2,20 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-28) — VAEL ELF-FRAME — HUMAN FIREWALL PASS — VF2 RECOMMENDED — EAR PROTOTYPING UNLOCKED — awaiting ChatGPT review
+## LATEST (2026-10-28) — VAEL EAR PROTOTYPES — PASS — VA-E2 RECOMMENDED — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-vael-ear-prototype-order.md`. Gate: `reviews/claude-rac-rp3-vael-ear-prototype-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_ear_prototype/`. Plan: `reviews/claude-rac-rp3-vael-final-consolidation-plan.md`.
+- `ear_branch_lib.CAND` gained VA-E1 / E2 / E3 (`W1V`, incl. `geo` clear 0.15); `ear_build.py` applies a candidate `geo` override (inert for Fenn / Aelari; frozen ears rebuild dV 0).
+- Driver `tools/rac/rp/vael_rp3_v001/run_va_ear.sh` (EAR_UNT_MODE=contacts) -> `/tmp/claude-0/rt/va/ear`; records `va_ear_summary.py`, `va_ear_export.py`; sheets `va_ear_sheets.py` (renders `/tmp/claude-0/rt/va/sheet_r`).
+- VAEL-CF-SHOULDER-1 added to the rig carry-forward register. E: `Vael/RP3/ear_branch/` (6 prototype blends), read-back identical.
+
+**Key findings**
+- All technical gates pass on all candidates; VA-E2 recommended. Disclosed: tip stand-off > Fenn (by projection angle Fenn still greatest); VA-E2 measured length shorter than the proposal estimate.
+
+**Next:** STOP for ChatGPT review (ear selection / bounded refinement / final consolidation).
+
+## (previous) 2026-10-28 — VAEL ELF-FRAME — HUMAN FIREWALL PASS — VF2 RECOMMENDED — EAR PROTOTYPING UNLOCKED
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-vael-elf-frame-human-firewall-order.md`. Gate: `reviews/claude-rac-rp3-vael-elf-frame-human-firewall-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_elf_frame/`. Ear proposal (no geometry): `reviews/claude-rac-rp3-vael-ear-branch-proposal.md`.

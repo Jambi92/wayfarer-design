@@ -1,6 +1,14 @@
 # Character Design Status
 
-## VAEL RP3 ELF-FRAME — VAEL HUMAN FIREWALL PASS — VF2 RECOMMENDED — EAR PROTOTYPING UNLOCKED — NOT FROZEN (2026-10-28)
+## VAEL RP3 EAR PROTOTYPES — VAEL EAR PROTOTYPE PASS — VA-E2 RECOMMENDED — NOT FROZEN (2026-10-28)
+
+- **Gate:** `reviews/claude-rac-rp3-vael-ear-prototype-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_ear_prototype/` (22 sheets). Consolidation plan (not executed): `reviews/claude-rac-rp3-vael-final-consolidation-plan.md`.
+- **Accepted (author):** R1 + VD2 + VF2 body, VC2 face, pelvis 9 / 9, human and three-elf firewalls PASS — all unchanged (hashes equal; byte-identical outside the ear branch).
+- **Rig carry-forward:** VAEL-CF-SHOULDER-1 (c1 shoulder flex 90° +6 flips, clavicle-length route / LBS) registered in `specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md`.
+- **Ears:** VA-E1 / E2 / E3 on the frozen Fenn v002 engineering connectivity (face list identical to frozen Fenn / Aelari); Vael concha clearance 0.15 cm + contacts-only untangle. All 6 realizations: integrity clean, T-4 123–135, aspect < 10, 0 self-intersections, root valence 4, 0 / 0 / 0 on 8 head poses; 12 / 12 probes pass. Firewall: projection Fenn 52.7° > Vael 37.4° > Aelari 27.2°, Vael broadest base and most backward, blunter taper (VA-E3 misses taper). Disclosed: VA-E2 tip stands further off the skull than Fenn (0.136 vs 0.113 HH); measured length / HH 0.327 vs proposal 0.35.
+- **Next:** STOP for ChatGPT review — select the ear (VA-E2 recommended), optionally a bounded refinement, or authorise Vael final consolidation.
+
+## (previous) VAEL RP3 ELF-FRAME — VAEL HUMAN FIREWALL PASS — VF2 RECOMMENDED — EAR PROTOTYPING UNLOCKED — NOT FROZEN (2026-10-28)
 
 - **Gate:** `reviews/claude-rac-rp3-vael-elf-frame-human-firewall-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_elf_frame/` (22 sheets). Ear proposal: `reviews/claude-rac-rp3-vael-ear-branch-proposal.md`.
 - **Term:** shared deterministic elf-frame term VEF1 (clavicle span A, axillary continuity A2, shaft gracility B) on top of VD2 (VD field 1.0); VF1 / VF2 / VF3 = 0.6 / 1.0 / 1.4x; 0 rebuild drift; regen identical.

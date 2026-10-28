@@ -54,6 +54,15 @@ W1A = dict(L=9.4, wb=1.70, taper=("continuous", 0.25, 0.95), lobe=0.14, proj=24,
 CAND.update({'AE-E1': dict(W1A, L=8.3, wb=1.65, proj=19, tilt=27, sweep=1.3),
              'AE-E2': dict(W1A),
              'AE-E3': dict(W1A, L=10.4, wb=1.75, proj=29, tilt=34, sweep=2.0)})
+# Vael candidates (order chatgpt-rac-rp3-vael-ear-prototype-order §7-§9): W1e VA-elven evidence (ear_families.py FAM + ear_families_v2.py DET relief)
+# with the order's central geometries (+ concha clearance 0.15 cm, see W1V) -- wholly Vael parameters on the Fenn v002 engineering topology (connectivity reuse only). Additive: Fenn / Aelari
+# candidates are unchanged.
+W1V = dict(L=8.5, wb=2.05, taper=("continuous", 0.40, 1.25), lobe=0.16, proj=35, tilt=40, sweep=1.7, thick=0.29,
+           ah=0.27, crura=1.0, concha=0.76, crus=0.14, trag=0.26, atrag=0.20, helix=(0.28, 0.28),
+           geo=dict(clear=0.15))   # concha clearance 0.15 cm (Fenn / Aelari 0.05): the broad, backward Vael base otherwise sits on the cuff (contacts / slivers)
+CAND.update({'VA-E1': dict(W1V, L=7.9, wb=1.95, taper=("continuous", 0.42, 1.25), proj=30, tilt=36, sweep=1.4),
+             'VA-E2': dict(W1V),
+             'VA-E3': dict(W1V, L=9.1, wb=2.15, taper=("continuous", 0.38, 1.25), proj=40, tilt=43, sweep=2.0)})
 LAYOUT_METRIC = __import__('os').environ.get('EAR_LAYOUT_METRIC', 'E2')          # metric of the sheet position optimisation (connectivity always from the E2 layout)
 
 def smooth(t):

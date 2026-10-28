@@ -1,0 +1,1907 @@
+{
+ "order": "chatgpt-rac-rp3-vael-ear-prototype-order",
+ "topology_reuse": {
+  "template": "frozen Fenn ear branch topology v002 -- ENGINEERING connectivity only (52-vertex root interface, cuff, tapered-leaf block layout, guard)",
+  "cuff_canon": "FENN_EAR_BRANCH_CUFF_CANON_v002.json (read-only)",
+  "sheet_layout": "Fenn v002 canonical layout (connectivity and (s, t) parameterisation) unchanged; no Fenn vertex geometry carried",
+  "geometry": "wholly Vael: ear_branch_lib.W1V / CAND VA-E1..E3 (order targets; W1e VA-elven relief), Vael VF2 + VC2 heads",
+  "engineering_setting": "EAR_UNT_MODE=contacts (contacts-only untangling before the unchanged v002 3-D quality pass / aspect repair)",
+  "all_face_lists_equal_frozen_fenn": true,
+  "all_face_lists_equal_frozen_aelari": true,
+  "face_topology_sha256": "4615d6bcb6ad5afeffcebdcad925ee51dc402a6e1fe318b8e0d4fb95d2814688",
+  "verts": 58944,
+  "faces": 58942
+ },
+ "realizations": {
+  "VAL4-R1-VD2-VF2_VA-E1": {
+   "verts": 58944,
+   "faces": 58942,
+   "face_list_equals_frozen_fenn_E2": true,
+   "face_list_equals_frozen_aelari_AE_E2": true,
+   "T4": 132,
+   "branch_faces": 3718,
+   "T4_rate": 0.0355,
+   "T4_by_part": {
+    "front": 72,
+    "back": 28,
+    "rim": 8,
+    "cuff": 14,
+    "transition": 10
+   },
+   "aspect_max": 9.304678367492789,
+   "aspect_gt10": 0,
+   "min_angle": 26.40892020517282,
+   "zones": {
+    "upper_extension_s": [
+     50,
+     1088
+    ],
+    "attachment_corners": [
+     15,
+     115
+    ],
+    "lobe_cusp": [
+     14,
+     146
+    ],
+    "front": [
+     72,
+     1136
+    ],
+    "back": [
+     28,
+     968
+    ],
+    "rim": [
+     8,
+     688
+    ],
+    "cuff": [
+     14,
+     722
+    ],
+    "transition": [
+     10,
+     204
+    ],
+    "upper_extension": [
+     34,
+     960
+    ],
+    "root_band": [
+     0,
+     104
+    ],
+    "cuff_count_transitions": [
+     6,
+     70
+    ]
+   },
+   "density": {
+    "branch_mean_edge_cm": 0.18340605321119274,
+    "branch_mean_edge_pct_stature": 0.10306556766276528,
+    "limit_pct": 0.25,
+    "pass_mean": true,
+    "p95_pct": 0.17733110881096553,
+    "max_edge_cm": 0.814319549669521,
+    "branch_faces_per_side": 1859,
+    "v005_ear_zone_faces_per_side": 1206,
+    "ratio": 1.5414593698175787
+   },
+   "self_intersection_branch": 0,
+   "self_intersection_total": 60,
+   "self_intersection_family_baseline": 60,
+   "outside_identical": true,
+   "root_valence": {
+    "l": {
+     "4": 52
+    },
+    "r": {
+     "4": 52
+    }
+   },
+   "root_dihedral": {
+    "l": {
+     "max_deg": 54.99308602137209,
+     "mean_deg": 23.034141390061293,
+     "v005_max_deg": 68.96129642329815,
+     "v005_mean_deg": 28.32081009760793
+    },
+    "r": {
+     "max_deg": 59.80216780354948,
+     "mean_deg": 24.461114746523478,
+     "v005_max_deg": 68.96129642329815,
+     "v005_mean_deg": 28.320810097608174
+    }
+   },
+   "transition": {
+    "vertices": 102,
+    "displacement_mean_cm": 0.030165096972515598,
+    "displacement_p95_cm": 0.05329867843423562,
+    "displacement_max_cm": 0.057258330168826116
+   },
+   "root_deviation": {
+    "note": "distance of the new skull skin inside the root (cuff vertices) from the hidden-ear CF2 skull (v005 ear zone harmonically collapsed); root loop itself is unchanged (0)",
+    "cuff_mean_cm": 0.44373725701754546,
+    "cuff_p95_cm": 0.8846800443027565,
+    "cuff_max_cm": 1.0444142612302496
+   },
+   "clearance": {
+    "min_cm": 0.9667104328619532,
+    "p01_cm": 1.060858182486433,
+    "n_below_0p2cm": 0
+   },
+   "integrity": {
+    "boundary": 0,
+    "nonmanifold": 0,
+    "components": 1,
+    "degenerate": 0,
+    "outward": true,
+    "all_quads": true
+   },
+   "measure": {
+    "HH_cm": 23.042953491210938,
+    "length_cm": 7.19469880300988,
+    "length_over_HH": 0.3122298886622363,
+    "body_angle_deg": 32.30716750753614,
+    "standoff_max_over_HH": 0.11619495571463448,
+    "standoff_mean_over_HH": 0.0740981690952133,
+    "lateral_extent_over_length": 0.3721455246084136,
+    "tip_above_root_over_HH": 0.15178685361452887,
+    "tip_above_root_over_length": 0.48613812811088275,
+    "max_width_over_length": 0.4442776983404025,
+    "max_width_over_HH": 0.13871677628793846,
+    "side_view_chord_deg": 24.55556476085655,
+    "upper_extension_axis_deg": 39.93602870866228,
+    "tip_behind_root_over_length": 0.4276481435377601,
+    "sweep_over_length": 0.11624723858642286,
+    "tip_angle_deg": 37.68570902781887,
+    "thickness_median_cm": 0.31892196163828335,
+    "thickness_p05_cm": 0.296866126719286,
+    "upper_thickness_median_cm": 0.43981952944950503
+   },
+   "HH_cm": 23.042953491210938,
+   "head_scale": 1.0236762990320274,
+   "params": {
+    "L": 7.9,
+    "wb": 1.95,
+    "taper": [
+     "continuous",
+     0.42,
+     1.25
+    ],
+    "lobe": 0.16,
+    "proj": 30,
+    "tilt": 36,
+    "sweep": 1.4,
+    "thick": 0.29,
+    "ah": 0.27,
+    "crura": 1.0,
+    "concha": 0.76,
+    "crus": 0.14,
+    "trag": 0.26,
+    "atrag": 0.2,
+    "helix": [
+     0.28,
+     0.28
+    ]
+   },
+   "deform": {
+    "neck_flex30": [
+     0,
+     0,
+     0
+    ],
+    "neck_ext30": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_l45": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_r45": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_down20": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_up20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_l20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_r20": [
+     0,
+     0,
+     0
+    ]
+   },
+   "guard": [
+    {
+     "iteration": 0,
+     "guarded_faces_before": 0,
+     "new_problem_faces": 0
+    }
+   ]
+  },
+  "VAL4-R1-VD2-VF2_VA-E2": {
+   "verts": 58944,
+   "faces": 58942,
+   "face_list_equals_frozen_fenn_E2": true,
+   "face_list_equals_frozen_aelari_AE_E2": true,
+   "T4": 127,
+   "branch_faces": 3718,
+   "T4_rate": 0.0342,
+   "T4_by_part": {
+    "front": 66,
+    "back": 28,
+    "rim": 8,
+    "cuff": 15,
+    "transition": 10
+   },
+   "aspect_max": 9.26441105344789,
+   "aspect_gt10": 0,
+   "min_angle": 25.857303589351265,
+   "zones": {
+    "upper_extension_s": [
+     52,
+     1088
+    ],
+    "attachment_corners": [
+     15,
+     103
+    ],
+    "lobe_cusp": [
+     12,
+     132
+    ],
+    "front": [
+     66,
+     1136
+    ],
+    "back": [
+     28,
+     968
+    ],
+    "rim": [
+     8,
+     688
+    ],
+    "cuff": [
+     15,
+     722
+    ],
+    "transition": [
+     10,
+     204
+    ],
+    "upper_extension": [
+     38,
+     960
+    ],
+    "root_band": [
+     0,
+     104
+    ],
+    "cuff_count_transitions": [
+     7,
+     70
+    ]
+   },
+   "density": {
+    "branch_mean_edge_cm": 0.18906235823423062,
+    "branch_mean_edge_pct_stature": 0.10624414480275673,
+    "limit_pct": 0.25,
+    "pass_mean": true,
+    "p95_pct": 0.17909045990876077,
+    "max_edge_cm": 0.8484991157213884,
+    "branch_faces_per_side": 1859,
+    "v005_ear_zone_faces_per_side": 1206,
+    "ratio": 1.5414593698175787
+   },
+   "self_intersection_branch": 0,
+   "self_intersection_total": 60,
+   "self_intersection_family_baseline": 60,
+   "outside_identical": true,
+   "root_valence": {
+    "l": {
+     "4": 52
+    },
+    "r": {
+     "4": 52
+    }
+   },
+   "root_dihedral": {
+    "l": {
+     "max_deg": 53.12447007954917,
+     "mean_deg": 22.762249664071526,
+     "v005_max_deg": 68.96129642329815,
+     "v005_mean_deg": 28.32081009760793
+    },
+    "r": {
+     "max_deg": 58.337660633862455,
+     "mean_deg": 24.25317006616405,
+     "v005_max_deg": 68.96129642329815,
+     "v005_mean_deg": 28.320810097608174
+    }
+   },
+   "transition": {
+    "vertices": 102,
+    "displacement_mean_cm": 0.030493795883057253,
+    "displacement_p95_cm": 0.05403349457161658,
+    "displacement_max_cm": 0.057678618026582466
+   },
+   "root_deviation": {
+    "note": "distance of the new skull skin inside the root (cuff vertices) from the hidden-ear CF2 skull (v005 ear zone harmonically collapsed); root loop itself is unchanged (0)",
+    "cuff_mean_cm": 0.45502640567664776,
+    "cuff_p95_cm": 0.9355800160344883,
+    "cuff_max_cm": 1.116498020938056
+   },
+   "clearance": {
+    "min_cm": 0.9521539240013165,
+    "p01_cm": 1.0376616700943562,
+    "n_below_0p2cm": 0
+   },
+   "integrity": {
+    "boundary": 0,
+    "nonmanifold": 0,
+    "components": 1,
+    "degenerate": 0,
+    "outward": true,
+    "all_quads": true
+   },
+   "measure": {
+    "HH_cm": 23.042953491210938,
+    "length_cm": 7.540000387843711,
+    "length_over_HH": 0.32721501567581707,
+    "body_angle_deg": 37.39382186173857,
+    "standoff_max_over_HH": 0.13627554603009984,
+    "standoff_mean_over_HH": 0.08108037244100406,
+    "lateral_extent_over_length": 0.4164709426572056,
+    "tip_above_root_over_HH": 0.148610479391914,
+    "tip_above_root_over_length": 0.4541676642955389,
+    "max_width_over_length": 0.4484267580362075,
+    "max_width_over_HH": 0.1467319686602735,
+    "side_view_chord_deg": 25.97877603576387,
+    "upper_extension_axis_deg": 45.72297753791481,
+    "tip_behind_root_over_length": 0.438931025904296,
+    "sweep_over_length": 0.14296258745626328,
+    "tip_angle_deg": 34.467647492653114,
+    "thickness_median_cm": 0.31805502069269187,
+    "thickness_p05_cm": 0.29686612671928625,
+    "upper_thickness_median_cm": 0.439819529449607
+   },
+   "HH_cm": 23.042953491210938,
+   "head_scale": 1.0236762990320274,
+   "params": {
+    "L": 8.5,
+    "wb": 2.05,
+    "taper": [
+     "continuous",
+     0.4,
+     1.25
+    ],
+    "lobe": 0.16,
+    "proj": 35,
+    "tilt": 40,
+    "sweep": 1.7,
+    "thick": 0.29,
+    "ah": 0.27,
+    "crura": 1.0,
+    "concha": 0.76,
+    "crus": 0.14,
+    "trag": 0.26,
+    "atrag": 0.2,
+    "helix": [
+     0.28,
+     0.28
+    ]
+   },
+   "deform": {
+    "neck_flex30": [
+     0,
+     0,
+     0
+    ],
+    "neck_ext30": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_l45": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_r45": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_down20": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_up20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_l20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_r20": [
+     0,
+     0,
+     0
+    ]
+   },
+   "guard": [
+    {
+     "iteration": 0,
+     "guarded_faces_before": 0,
+     "new_problem_faces": 0
+    }
+   ]
+  },
+  "VAL4-R1-VD2-VF2_VA-E3": {
+   "verts": 58944,
+   "faces": 58942,
+   "face_list_equals_frozen_fenn_E2": true,
+   "face_list_equals_frozen_aelari_AE_E2": true,
+   "T4": 123,
+   "branch_faces": 3718,
+   "T4_rate": 0.0331,
+   "T4_by_part": {
+    "front": 62,
+    "back": 26,
+    "rim": 8,
+    "cuff": 17,
+    "transition": 10
+   },
+   "aspect_max": 9.43511793471068,
+   "aspect_gt10": 0,
+   "min_angle": 13.642567651209495,
+   "zones": {
+    "upper_extension_s": [
+     50,
+     1088
+    ],
+    "attachment_corners": [
+     15,
+     100
+    ],
+    "lobe_cusp": [
+     13,
+     127
+    ],
+    "front": [
+     62,
+     1136
+    ],
+    "back": [
+     26,
+     968
+    ],
+    "rim": [
+     8,
+     688
+    ],
+    "cuff": [
+     17,
+     722
+    ],
+    "transition": [
+     10,
+     204
+    ],
+    "upper_extension": [
+     40,
+     960
+    ],
+    "root_band": [
+     0,
+     104
+    ],
+    "cuff_count_transitions": [
+     7,
+     70
+    ]
+   },
+   "density": {
+    "branch_mean_edge_cm": 0.1942186254914726,
+    "branch_mean_edge_pct_stature": 0.10914172425874462,
+    "limit_pct": 0.25,
+    "pass_mean": true,
+    "p95_pct": 0.18131469604755485,
+    "max_edge_cm": 0.8834625045953566,
+    "branch_faces_per_side": 1859,
+    "v005_ear_zone_faces_per_side": 1206,
+    "ratio": 1.5414593698175787
+   },
+   "self_intersection_branch": 0,
+   "self_intersection_total": 60,
+   "self_intersection_family_baseline": 60,
+   "outside_identical": true,
+   "root_valence": {
+    "l": {
+     "4": 52
+    },
+    "r": {
+     "4": 52
+    }
+   },
+   "root_dihedral": {
+    "l": {
+     "max_deg": 51.659362693009705,
+     "mean_deg": 21.58987198499373,
+     "v005_max_deg": 68.96129642329815,
+     "v005_mean_deg": 28.32081009760793
+    },
+    "r": {
+     "max_deg": 56.59855731603234,
+     "mean_deg": 22.713651242326897,
+     "v005_max_deg": 68.96129642329815,
+     "v005_mean_deg": 28.320810097608174
+    }
+   },
+   "transition": {
+    "vertices": 102,
+    "displacement_mean_cm": 0.03139174627707803,
+    "displacement_p95_cm": 0.055579615345091364,
+    "displacement_max_cm": 0.059001198646374875
+   },
+   "root_deviation": {
+    "note": "distance of the new skull skin inside the root (cuff vertices) from the hidden-ear CF2 skull (v005 ear zone harmonically collapsed); root loop itself is unchanged (0)",
+    "cuff_mean_cm": 0.44602215714964827,
+    "cuff_p95_cm": 0.9602397033050282,
+    "cuff_max_cm": 1.1668042964289727
+   },
+   "clearance": {
+    "min_cm": 0.8942371151103199,
+    "p01_cm": 0.9802347536771636,
+    "n_below_0p2cm": 0
+   },
+   "integrity": {
+    "boundary": 0,
+    "nonmanifold": 0,
+    "components": 1,
+    "degenerate": 0,
+    "outward": true,
+    "all_quads": true
+   },
+   "measure": {
+    "HH_cm": 23.042953491210938,
+    "length_cm": 7.8998419830715125,
+    "length_over_HH": 0.34283113864221776,
+    "body_angle_deg": 42.41465501128692,
+    "standoff_max_over_HH": 0.15543370254149527,
+    "standoff_mean_over_HH": 0.08578156343700766,
+    "lateral_extent_over_length": 0.4533826861734037,
+    "tip_above_root_over_HH": 0.14904314523801285,
+    "tip_above_root_over_length": 0.4347421469015271,
+    "max_width_over_length": 0.4512919311318649,
+    "max_width_over_HH": 0.15471692660998254,
+    "side_view_chord_deg": 26.623581568487303,
+    "upper_extension_axis_deg": 49.7809251278887,
+    "tip_behind_root_over_length": 0.4491941310967357,
+    "sweep_over_length": 0.16073226132395002,
+    "tip_angle_deg": 30.53783957883421,
+    "thickness_median_cm": 0.31593269337610486,
+    "thickness_p05_cm": 0.29686612671928553,
+    "upper_thickness_median_cm": 0.439819529449696
+   },
+   "HH_cm": 23.042953491210938,
+   "head_scale": 1.0236762990320274,
+   "params": {
+    "L": 9.1,
+    "wb": 2.15,
+    "taper": [
+     "continuous",
+     0.38,
+     1.25
+    ],
+    "lobe": 0.16,
+    "proj": 40,
+    "tilt": 43,
+    "sweep": 2.0,
+    "thick": 0.29,
+    "ah": 0.27,
+    "crura": 1.0,
+    "concha": 0.76,
+    "crus": 0.14,
+    "trag": 0.26,
+    "atrag": 0.2,
+    "helix": [
+     0.28,
+     0.28
+    ]
+   },
+   "deform": {
+    "neck_flex30": [
+     0,
+     0,
+     0
+    ],
+    "neck_ext30": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_l45": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_r45": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_down20": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_up20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_l20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_r20": [
+     0,
+     0,
+     0
+    ]
+   },
+   "guard": [
+    {
+     "iteration": 0,
+     "guarded_faces_before": 0,
+     "new_problem_faces": 2
+    },
+    {
+     "iteration": 1,
+     "guarded_faces_before": 2,
+     "new_problem_faces": 0
+    }
+   ]
+  },
+  "VALF178-R1-VD2-VF2_VA-E1": {
+   "verts": 58944,
+   "faces": 58942,
+   "face_list_equals_frozen_fenn_E2": true,
+   "face_list_equals_frozen_aelari_AE_E2": true,
+   "T4": 135,
+   "branch_faces": 3718,
+   "T4_rate": 0.0363,
+   "T4_by_part": {
+    "front": 72,
+    "back": 28,
+    "rim": 8,
+    "cuff": 15,
+    "transition": 12
+   },
+   "aspect_max": 9.304678367492519,
+   "aspect_gt10": 0,
+   "min_angle": 26.408920205263048,
+   "zones": {
+    "upper_extension_s": [
+     50,
+     1088
+    ],
+    "attachment_corners": [
+     16,
+     125
+    ],
+    "lobe_cusp": [
+     14,
+     157
+    ],
+    "front": [
+     72,
+     1136
+    ],
+    "back": [
+     28,
+     968
+    ],
+    "rim": [
+     8,
+     688
+    ],
+    "cuff": [
+     15,
+     722
+    ],
+    "transition": [
+     12,
+     204
+    ],
+    "upper_extension": [
+     34,
+     960
+    ],
+    "root_band": [
+     0,
+     104
+    ],
+    "cuff_count_transitions": [
+     6,
+     70
+    ]
+   },
+   "density": {
+    "branch_mean_edge_cm": 0.17674561435660863,
+    "branch_mean_edge_pct_stature": 0.09929466484504545,
+    "limit_pct": 0.25,
+    "pass_mean": true,
+    "p95_pct": 0.17342851176792815,
+    "max_edge_cm": 0.7841801770474077,
+    "branch_faces_per_side": 1859,
+    "v005_ear_zone_faces_per_side": 1206,
+    "ratio": 1.5414593698175787
+   },
+   "self_intersection_branch": 0,
+   "self_intersection_total": 110,
+   "self_intersection_family_baseline": 110,
+   "outside_identical": true,
+   "root_valence": {
+    "l": {
+     "4": 52
+    },
+    "r": {
+     "4": 52
+    }
+   },
+   "root_dihedral": {
+    "l": {
+     "max_deg": 57.180605028894846,
+     "mean_deg": 23.902899588753396,
+     "v005_max_deg": 64.25724119640869,
+     "v005_mean_deg": 26.097168904267292
+    },
+    "r": {
+     "max_deg": 61.62462093832076,
+     "mean_deg": 25.21424500269746,
+     "v005_max_deg": 64.25724119640869,
+     "v005_mean_deg": 26.097168904267566
+    }
+   },
+   "transition": {
+    "vertices": 102,
+    "displacement_mean_cm": 0.02872330214777012,
+    "displacement_p95_cm": 0.058145758260813335,
+    "displacement_max_cm": 0.06089083688668512
+   },
+   "root_deviation": {
+    "note": "distance of the new skull skin inside the root (cuff vertices) from the hidden-ear CF2 skull (v005 ear zone harmonically collapsed); root loop itself is unchanged (0)",
+    "cuff_mean_cm": 0.3892220204343006,
+    "cuff_p95_cm": 0.7532323915924716,
+    "cuff_max_cm": 0.9210174125083737
+   },
+   "clearance": {
+    "min_cm": 0.847300211039566,
+    "p01_cm": 0.9771185181578081,
+    "n_below_0p2cm": 0
+   },
+   "integrity": {
+    "boundary": 0,
+    "nonmanifold": 0,
+    "components": 1,
+    "degenerate": 0,
+    "outward": true,
+    "all_quads": true
+   },
+   "measure": {
+    "HH_cm": 22.190093994140625,
+    "length_cm": 6.928410577195086,
+    "length_over_HH": 0.31222988866223633,
+    "body_angle_deg": 32.307167507536136,
+    "standoff_max_over_HH": 0.11163875519021763,
+    "standoff_mean_over_HH": 0.06954196857079693,
+    "lateral_extent_over_length": 0.35755306985035656,
+    "tip_above_root_over_HH": 0.1492834050477822,
+    "tip_above_root_over_length": 0.47812016231820087,
+    "max_width_over_length": 0.44427769834040276,
+    "max_width_over_HH": 0.13871677628793855,
+    "side_view_chord_deg": 24.555564760856548,
+    "upper_extension_axis_deg": 39.93602870866199,
+    "tip_behind_root_over_length": 0.41374902103965544,
+    "sweep_over_length": 0.11624723858642255,
+    "tip_angle_deg": 37.68570902781896,
+    "thickness_median_cm": 0.30711810915421556,
+    "thickness_p05_cm": 0.2858785987694692,
+    "upper_thickness_median_cm": 0.4235410492264258
+   },
+   "HH_cm": 22.190093994140625,
+   "head_scale": 0.9857882716188637,
+   "params": {
+    "L": 7.9,
+    "wb": 1.95,
+    "taper": [
+     "continuous",
+     0.42,
+     1.25
+    ],
+    "lobe": 0.16,
+    "proj": 30,
+    "tilt": 36,
+    "sweep": 1.4,
+    "thick": 0.29,
+    "ah": 0.27,
+    "crura": 1.0,
+    "concha": 0.76,
+    "crus": 0.14,
+    "trag": 0.26,
+    "atrag": 0.2,
+    "helix": [
+     0.28,
+     0.28
+    ]
+   },
+   "deform": {
+    "neck_flex30": [
+     0,
+     0,
+     0
+    ],
+    "neck_ext30": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_l45": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_r45": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_down20": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_up20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_l20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_r20": [
+     0,
+     0,
+     0
+    ]
+   },
+   "guard": [
+    {
+     "iteration": 0,
+     "guarded_faces_before": 0,
+     "new_problem_faces": 0
+    }
+   ]
+  },
+  "VALF178-R1-VD2-VF2_VA-E2": {
+   "verts": 58944,
+   "faces": 58942,
+   "face_list_equals_frozen_fenn_E2": true,
+   "face_list_equals_frozen_aelari_AE_E2": true,
+   "T4": 132,
+   "branch_faces": 3718,
+   "T4_rate": 0.0355,
+   "T4_by_part": {
+    "front": 66,
+    "back": 28,
+    "rim": 8,
+    "cuff": 18,
+    "transition": 12
+   },
+   "aspect_max": 9.264411053445333,
+   "aspect_gt10": 0,
+   "min_angle": 14.407715006014456,
+   "zones": {
+    "upper_extension_s": [
+     52,
+     1088
+    ],
+    "attachment_corners": [
+     15,
+     118
+    ],
+    "lobe_cusp": [
+     18,
+     145
+    ],
+    "front": [
+     66,
+     1136
+    ],
+    "back": [
+     28,
+     968
+    ],
+    "rim": [
+     8,
+     688
+    ],
+    "cuff": [
+     18,
+     722
+    ],
+    "transition": [
+     12,
+     204
+    ],
+    "upper_extension": [
+     38,
+     960
+    ],
+    "root_band": [
+     0,
+     104
+    ],
+    "cuff_count_transitions": [
+     7,
+     70
+    ]
+   },
+   "density": {
+    "branch_mean_edge_cm": 0.18210728038094148,
+    "branch_mean_edge_pct_stature": 0.10230681783585766,
+    "limit_pct": 0.25,
+    "pass_mean": true,
+    "p95_pct": 0.17440797756501283,
+    "max_edge_cm": 0.8170946983416999,
+    "branch_faces_per_side": 1859,
+    "v005_ear_zone_faces_per_side": 1206,
+    "ratio": 1.5414593698175787
+   },
+   "self_intersection_branch": 0,
+   "self_intersection_total": 110,
+   "self_intersection_family_baseline": 110,
+   "outside_identical": true,
+   "root_valence": {
+    "l": {
+     "4": 52
+    },
+    "r": {
+     "4": 52
+    }
+   },
+   "root_dihedral": {
+    "l": {
+     "max_deg": 55.17450457936263,
+     "mean_deg": 23.5408365652059,
+     "v005_max_deg": 64.25724119640869,
+     "v005_mean_deg": 26.097168904267292
+    },
+    "r": {
+     "max_deg": 58.84323944809308,
+     "mean_deg": 23.842943736549312,
+     "v005_max_deg": 64.25724119640869,
+     "v005_mean_deg": 26.097168904267566
+    }
+   },
+   "transition": {
+    "vertices": 102,
+    "displacement_mean_cm": 0.028774780747705044,
+    "displacement_p95_cm": 0.058849575214927834,
+    "displacement_max_cm": 0.06169192699239672
+   },
+   "root_deviation": {
+    "note": "distance of the new skull skin inside the root (cuff vertices) from the hidden-ear CF2 skull (v005 ear zone harmonically collapsed); root loop itself is unchanged (0)",
+    "cuff_mean_cm": 0.4023408833048319,
+    "cuff_p95_cm": 0.8316671465091173,
+    "cuff_max_cm": 0.9859216796010984
+   },
+   "clearance": {
+    "min_cm": 0.825836087974303,
+    "p01_cm": 0.9311844965530466,
+    "n_below_0p2cm": 0
+   },
+   "integrity": {
+    "boundary": 0,
+    "nonmanifold": 0,
+    "components": 1,
+    "degenerate": 0,
+    "outward": true,
+    "all_quads": true
+   },
+   "measure": {
+    "HH_cm": 22.190093994140625,
+    "length_cm": 7.260931954140551,
+    "length_over_HH": 0.3272150156758158,
+    "body_angle_deg": 37.3938218617386,
+    "standoff_max_over_HH": 0.13174930035544363,
+    "standoff_mean_over_HH": 0.07655412676634832,
+    "lateral_extent_over_length": 0.40263830827975394,
+    "tip_above_root_over_HH": 0.1460236338672404,
+    "tip_above_root_over_length": 0.44626201999211274,
+    "max_width_over_length": 0.44842675803620835,
+    "max_width_over_HH": 0.1467319686602732,
+    "side_view_chord_deg": 25.978776035763993,
+    "upper_extension_axis_deg": 45.72297753791517,
+    "tip_behind_root_over_length": 0.42541355813504955,
+    "sweep_over_length": 0.14296258745626325,
+    "tip_angle_deg": 34.46764749265331,
+    "thickness_median_cm": 0.3062832551899707,
+    "thickness_p05_cm": 0.28587859876946853,
+    "upper_thickness_median_cm": 0.423541049226524
+   },
+   "HH_cm": 22.190093994140625,
+   "head_scale": 0.9857882716188637,
+   "params": {
+    "L": 8.5,
+    "wb": 2.05,
+    "taper": [
+     "continuous",
+     0.4,
+     1.25
+    ],
+    "lobe": 0.16,
+    "proj": 35,
+    "tilt": 40,
+    "sweep": 1.7,
+    "thick": 0.29,
+    "ah": 0.27,
+    "crura": 1.0,
+    "concha": 0.76,
+    "crus": 0.14,
+    "trag": 0.26,
+    "atrag": 0.2,
+    "helix": [
+     0.28,
+     0.28
+    ]
+   },
+   "deform": {
+    "neck_flex30": [
+     0,
+     0,
+     0
+    ],
+    "neck_ext30": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_l45": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_r45": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_down20": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_up20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_l20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_r20": [
+     0,
+     0,
+     0
+    ]
+   },
+   "guard": [
+    {
+     "iteration": 0,
+     "guarded_faces_before": 0,
+     "new_problem_faces": 2
+    },
+    {
+     "iteration": 1,
+     "guarded_faces_before": 2,
+     "new_problem_faces": 0
+    }
+   ]
+  },
+  "VALF178-R1-VD2-VF2_VA-E3": {
+   "verts": 58944,
+   "faces": 58942,
+   "face_list_equals_frozen_fenn_E2": true,
+   "face_list_equals_frozen_aelari_AE_E2": true,
+   "T4": 125,
+   "branch_faces": 3718,
+   "T4_rate": 0.0336,
+   "T4_by_part": {
+    "front": 62,
+    "back": 26,
+    "rim": 8,
+    "cuff": 17,
+    "transition": 12
+   },
+   "aspect_max": 9.46183406408009,
+   "aspect_gt10": 0,
+   "min_angle": 19.76857067968644,
+   "zones": {
+    "upper_extension_s": [
+     50,
+     1088
+    ],
+    "attachment_corners": [
+     15,
+     110
+    ],
+    "lobe_cusp": [
+     14,
+     136
+    ],
+    "front": [
+     62,
+     1136
+    ],
+    "back": [
+     26,
+     968
+    ],
+    "rim": [
+     8,
+     688
+    ],
+    "cuff": [
+     17,
+     722
+    ],
+    "transition": [
+     12,
+     204
+    ],
+    "upper_extension": [
+     40,
+     960
+    ],
+    "root_band": [
+     0,
+     104
+    ],
+    "cuff_count_transitions": [
+     7,
+     70
+    ]
+   },
+   "density": {
+    "branch_mean_edge_cm": 0.18716903855542597,
+    "branch_mean_edge_pct_stature": 0.10515048432960176,
+    "limit_pct": 0.25,
+    "pass_mean": true,
+    "p95_pct": 0.17704225604733337,
+    "max_edge_cm": 0.8507640318220197,
+    "branch_faces_per_side": 1859,
+    "v005_ear_zone_faces_per_side": 1206,
+    "ratio": 1.5414593698175787
+   },
+   "self_intersection_branch": 0,
+   "self_intersection_total": 110,
+   "self_intersection_family_baseline": 110,
+   "outside_identical": true,
+   "root_valence": {
+    "l": {
+     "4": 52
+    },
+    "r": {
+     "4": 52
+    }
+   },
+   "root_dihedral": {
+    "l": {
+     "max_deg": 50.61907131211946,
+     "mean_deg": 21.27367579444908,
+     "v005_max_deg": 64.25724119640869,
+     "v005_mean_deg": 26.097168904267292
+    },
+    "r": {
+     "max_deg": 57.042214497971486,
+     "mean_deg": 23.299565322100083,
+     "v005_max_deg": 64.25724119640869,
+     "v005_mean_deg": 26.097168904267566
+    }
+   },
+   "transition": {
+    "vertices": 102,
+    "displacement_mean_cm": 0.029519664190918955,
+    "displacement_p95_cm": 0.06011469113144224,
+    "displacement_max_cm": 0.06323330465337296
+   },
+   "root_deviation": {
+    "note": "distance of the new skull skin inside the root (cuff vertices) from the hidden-ear CF2 skull (v005 ear zone harmonically collapsed); root loop itself is unchanged (0)",
+    "cuff_mean_cm": 0.38256933470012505,
+    "cuff_p95_cm": 0.8436876445800818,
+    "cuff_max_cm": 1.0294954330484813
+   },
+   "clearance": {
+    "min_cm": 0.7405276694866869,
+    "p01_cm": 0.8835102356639997,
+    "n_below_0p2cm": 0
+   },
+   "integrity": {
+    "boundary": 0,
+    "nonmanifold": 0,
+    "components": 1,
+    "degenerate": 0,
+    "outward": true,
+    "all_quads": true
+   },
+   "measure": {
+    "HH_cm": 22.190093994140625,
+    "length_cm": 7.607455190589085,
+    "length_over_HH": 0.3428311386422185,
+    "body_angle_deg": 42.41465501128692,
+    "standoff_max_over_HH": 0.1508187218898641,
+    "standoff_mean_over_HH": 0.08116658278537775,
+    "lateral_extent_over_length": 0.4399213049525813,
+    "tip_above_root_over_HH": 0.14645629971334,
+    "tip_above_root_over_length": 0.4271966084918064,
+    "max_width_over_length": 0.45129193113186467,
+    "max_width_over_HH": 0.15471692660998282,
+    "side_view_chord_deg": 26.62358156848724,
+    "upper_extension_axis_deg": 49.78092512788881,
+    "tip_behind_root_over_length": 0.4365356500518872,
+    "sweep_over_length": 0.16073226132395008,
+    "tip_angle_deg": 30.537839578833406,
+    "thickness_median_cm": 0.30423947887200126,
+    "thickness_p05_cm": 0.28587859876946825,
+    "upper_thickness_median_cm": 0.4235410492266106
+   },
+   "HH_cm": 22.190093994140625,
+   "head_scale": 0.9857882716188637,
+   "params": {
+    "L": 9.1,
+    "wb": 2.15,
+    "taper": [
+     "continuous",
+     0.38,
+     1.25
+    ],
+    "lobe": 0.16,
+    "proj": 40,
+    "tilt": 43,
+    "sweep": 2.0,
+    "thick": 0.29,
+    "ah": 0.27,
+    "crura": 1.0,
+    "concha": 0.76,
+    "crus": 0.14,
+    "trag": 0.26,
+    "atrag": 0.2,
+    "helix": [
+     0.28,
+     0.28
+    ]
+   },
+   "deform": {
+    "neck_flex30": [
+     0,
+     0,
+     0
+    ],
+    "neck_ext30": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_l45": [
+     0,
+     0,
+     0
+    ],
+    "head_yaw_r45": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_down20": [
+     0,
+     0,
+     0
+    ],
+    "head_pitch_up20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_l20": [
+     0,
+     0,
+     0
+    ],
+    "head_roll_r20": [
+     0,
+     0,
+     0
+    ]
+   },
+   "guard": [
+    {
+     "iteration": 0,
+     "guarded_faces_before": 0,
+     "new_problem_faces": 0
+    }
+   ]
+  }
+ },
+ "probes": {
+  "len_m10": {
+   "T4": 196,
+   "aspect_max": 9.66528040238344,
+   "aspect_gt10": 0,
+   "min_angle": 10.9316553457308,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "length_cm",
+   "value": 6.68759003076865,
+   "base": 7.540000387843711,
+   "moves_intended": true
+  },
+  "len_p10": {
+   "T4": 116,
+   "aspect_max": 9.482740730528091,
+   "aspect_gt10": 0,
+   "min_angle": 17.799637341597315,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "length_cm",
+   "value": 8.391217747384102,
+   "base": 7.540000387843711,
+   "moves_intended": true
+  },
+  "proj_m10": {
+   "T4": 126,
+   "aspect_max": 9.285527145023432,
+   "aspect_gt10": 0,
+   "min_angle": 25.82131646198809,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "body_angle_deg",
+   "value": 27.43264650959027,
+   "base": 37.39382186173857,
+   "moves_intended": true
+  },
+  "proj_p10": {
+   "T4": 129,
+   "aspect_max": 9.334857262798641,
+   "aspect_gt10": 0,
+   "min_angle": 16.720416821844854,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "body_angle_deg",
+   "value": 47.42153544514616,
+   "base": 37.39382186173857,
+   "moves_intended": true
+  },
+  "sweep_m06": {
+   "T4": 148,
+   "aspect_max": 9.466777232112213,
+   "aspect_gt10": 0,
+   "min_angle": 13.450911343789688,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "sweep_over_length",
+   "value": 0.11130659457771408,
+   "base": 0.14296258745626328,
+   "moves_intended": true
+  },
+  "sweep_p06": {
+   "T4": 138,
+   "aspect_max": 9.331743808013739,
+   "aspect_gt10": 0,
+   "min_angle": 17.417524218496578,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "sweep_over_length",
+   "value": 0.17606213958434114,
+   "base": 0.14296258745626328,
+   "moves_intended": true
+  },
+  "tilt_m8": {
+   "T4": 121,
+   "aspect_max": 9.264411053447647,
+   "aspect_gt10": 0,
+   "min_angle": 18.23925846904163,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "side_view_chord_deg",
+   "value": 22.872881379431696,
+   "base": 25.97877603576387,
+   "moves_intended": true
+  },
+  "tilt_p8": {
+   "T4": 146,
+   "aspect_max": 9.264411053447743,
+   "aspect_gt10": 0,
+   "min_angle": 13.087025798956882,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "side_view_chord_deg",
+   "value": 29.096644586435197,
+   "base": 25.97877603576387,
+   "moves_intended": true
+  },
+  "tip_blunt": {
+   "T4": 131,
+   "aspect_max": 9.264411053445787,
+   "aspect_gt10": 0,
+   "min_angle": 13.180548188318218,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "tip_angle_deg",
+   "value": 55.02277362780776,
+   "base": 34.467647492653114,
+   "moves_intended": true
+  },
+  "tip_sharp": {
+   "T4": 124,
+   "aspect_max": 9.264411053445906,
+   "aspect_gt10": 0,
+   "min_angle": 17.094970718693716,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "tip_angle_deg",
+   "value": 21.07809408542516,
+   "base": 34.467647492653114,
+   "moves_intended": true
+  },
+  "wb_m8": {
+   "T4": 113,
+   "aspect_max": 9.378269765057444,
+   "aspect_gt10": 0,
+   "min_angle": 23.988312230880823,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "max_width_over_length",
+   "value": 0.4188228669911823,
+   "base": 0.4484267580362075,
+   "moves_intended": true
+  },
+  "wb_p8": {
+   "T4": 154,
+   "aspect_max": 9.744925033112075,
+   "aspect_gt10": 0,
+   "min_angle": 9.772091302584858,
+   "self_intersection_branch": 0,
+   "boundary": 0,
+   "nonmanifold": 0,
+   "root_valence_ok": true,
+   "face_list_equal": true,
+   "measure": "max_width_over_length",
+   "value": 0.4788301006583352,
+   "base": 0.4484267580362075,
+   "moves_intended": true
+  }
+ },
+ "firewall": {
+  "c1": {
+   "frozen": {
+    "Fenn E2": {
+     "HH_cm": 23.23089599609375,
+     "length_cm": 8.104490583698986,
+     "length_over_HH": 0.348866896268734,
+     "body_angle_deg": 52.67822969180946,
+     "standoff_max_over_HH": 0.1130576452879452,
+     "standoff_mean_over_HH": 0.05541747163720492,
+     "lateral_extent_over_length": 0.3240710038617602,
+     "tip_above_root_over_HH": 0.18464368206776582,
+     "tip_above_root_over_length": 0.5292668465899207,
+     "max_width_over_length": 0.37792565328650446,
+     "max_width_over_HH": 0.13184574968239648,
+     "side_view_chord_deg": 19.50405282385109,
+     "upper_extension_axis_deg": 32.3197398567983,
+     "tip_behind_root_over_length": 0.3255216595292864,
+     "sweep_over_length": 0.09535978552259612,
+     "tip_angle_deg": 32.94200881154423,
+     "thickness_median_cm": 0.29017468551132647,
+     "thickness_p05_cm": 0.2786469088825081,
+     "upper_thickness_median_cm": 0.4124720257172245
+    },
+    "Aelari AE-E2": {
+     "HH_cm": 24.906280517578125,
+     "length_cm": 9.674456455629123,
+     "length_over_HH": 0.3884344131112301,
+     "body_angle_deg": 27.19263295655348,
+     "standoff_max_over_HH": 0.10209802010069728,
+     "standoff_mean_over_HH": 0.06268020381128539,
+     "lateral_extent_over_length": 0.26284494023824045,
+     "tip_above_root_over_HH": 0.20183311280703328,
+     "tip_above_root_over_length": 0.5196066723090196,
+     "max_width_over_length": 0.3346516120050099,
+     "max_width_over_HH": 0.12999020250589313,
+     "side_view_chord_deg": 22.935836624338584,
+     "upper_extension_axis_deg": 38.03975593024492,
+     "tip_behind_root_over_length": 0.4275713097126345,
+     "sweep_over_length": 0.11943918281160176,
+     "tip_angle_deg": 31.41428280001987,
+     "thickness_median_cm": 0.28324563316694773,
+     "thickness_p05_cm": 0.27661351085715224,
+     "upper_thickness_median_cm": 0.4145716115337683
+    }
+   },
+   "vael": {
+    "VA-E1": {
+     "vael": {
+      "HH_cm": 23.042953491210938,
+      "length_cm": 7.19469880300988,
+      "length_over_HH": 0.3122298886622363,
+      "body_angle_deg": 32.30716750753614,
+      "standoff_max_over_HH": 0.11619495571463448,
+      "standoff_mean_over_HH": 0.0740981690952133,
+      "lateral_extent_over_length": 0.3721455246084136,
+      "tip_above_root_over_HH": 0.15178685361452887,
+      "tip_above_root_over_length": 0.48613812811088275,
+      "max_width_over_length": 0.4442776983404025,
+      "max_width_over_HH": 0.13871677628793846,
+      "side_view_chord_deg": 24.55556476085655,
+      "upper_extension_axis_deg": 39.93602870866228,
+      "tip_behind_root_over_length": 0.4276481435377601,
+      "sweep_over_length": 0.11624723858642286,
+      "tip_angle_deg": 37.68570902781887,
+      "thickness_median_cm": 0.31892196163828335,
+      "thickness_p05_cm": 0.296866126719286,
+      "upper_thickness_median_cm": 0.43981952944950503
+     },
+     "checks": {
+      "projection (body angle): Fenn > Vael > Aelari": true,
+      "upward extension (tip height / HH): Aelari > Vael": true,
+      "upward extension: Vael within 25 % of Fenn (approximately Fenn)": true,
+      "base width / width:length: Vael broadest": true,
+      "relative length: Vael shorter than Aelari": true,
+      "orientation: Vael more backward than both (side-view chord)": true,
+      "orientation: Vael more backward than both (upper-extension axis)": true,
+      "shorter / blunter taper than Aelari (tip angle)": true,
+      "REPORTED (not a canon rule): tip stand-off from the skull / HH below Fenn": false
+     }
+    },
+    "VA-E2": {
+     "vael": {
+      "HH_cm": 23.042953491210938,
+      "length_cm": 7.540000387843711,
+      "length_over_HH": 0.32721501567581707,
+      "body_angle_deg": 37.39382186173857,
+      "standoff_max_over_HH": 0.13627554603009984,
+      "standoff_mean_over_HH": 0.08108037244100406,
+      "lateral_extent_over_length": 0.4164709426572056,
+      "tip_above_root_over_HH": 0.148610479391914,
+      "tip_above_root_over_length": 0.4541676642955389,
+      "max_width_over_length": 0.4484267580362075,
+      "max_width_over_HH": 0.1467319686602735,
+      "side_view_chord_deg": 25.97877603576387,
+      "upper_extension_axis_deg": 45.72297753791481,
+      "tip_behind_root_over_length": 0.438931025904296,
+      "sweep_over_length": 0.14296258745626328,
+      "tip_angle_deg": 34.467647492653114,
+      "thickness_median_cm": 0.31805502069269187,
+      "thickness_p05_cm": 0.29686612671928625,
+      "upper_thickness_median_cm": 0.439819529449607
+     },
+     "checks": {
+      "projection (body angle): Fenn > Vael > Aelari": true,
+      "upward extension (tip height / HH): Aelari > Vael": true,
+      "upward extension: Vael within 25 % of Fenn (approximately Fenn)": true,
+      "base width / width:length: Vael broadest": true,
+      "relative length: Vael shorter than Aelari": true,
+      "orientation: Vael more backward than both (side-view chord)": true,
+      "orientation: Vael more backward than both (upper-extension axis)": true,
+      "shorter / blunter taper than Aelari (tip angle)": true,
+      "REPORTED (not a canon rule): tip stand-off from the skull / HH below Fenn": false
+     }
+    },
+    "VA-E3": {
+     "vael": {
+      "HH_cm": 23.042953491210938,
+      "length_cm": 7.8998419830715125,
+      "length_over_HH": 0.34283113864221776,
+      "body_angle_deg": 42.41465501128692,
+      "standoff_max_over_HH": 0.15543370254149527,
+      "standoff_mean_over_HH": 0.08578156343700766,
+      "lateral_extent_over_length": 0.4533826861734037,
+      "tip_above_root_over_HH": 0.14904314523801285,
+      "tip_above_root_over_length": 0.4347421469015271,
+      "max_width_over_length": 0.4512919311318649,
+      "max_width_over_HH": 0.15471692660998254,
+      "side_view_chord_deg": 26.623581568487303,
+      "upper_extension_axis_deg": 49.7809251278887,
+      "tip_behind_root_over_length": 0.4491941310967357,
+      "sweep_over_length": 0.16073226132395002,
+      "tip_angle_deg": 30.53783957883421,
+      "thickness_median_cm": 0.31593269337610486,
+      "thickness_p05_cm": 0.29686612671928553,
+      "upper_thickness_median_cm": 0.439819529449696
+     },
+     "checks": {
+      "projection (body angle): Fenn > Vael > Aelari": true,
+      "upward extension (tip height / HH): Aelari > Vael": true,
+      "upward extension: Vael within 25 % of Fenn (approximately Fenn)": true,
+      "base width / width:length: Vael broadest": true,
+      "relative length: Vael shorter than Aelari": true,
+      "orientation: Vael more backward than both (side-view chord)": true,
+      "orientation: Vael more backward than both (upper-extension axis)": true,
+      "shorter / blunter taper than Aelari (tip angle)": false,
+      "REPORTED (not a canon rule): tip stand-off from the skull / HH below Fenn": false
+     }
+    }
+   },
+   "note": "Fenn = frozen FN_*_REF_RP3_v001 ear (E2), Aelari = frozen AE_*_REF_RP3_v001 ear (AE-E2); same configuration; head-height / length normalised (matched presentation)"
+  },
+  "c2": {
+   "frozen": {
+    "Fenn E2": {
+     "HH_cm": 22.347305297851562,
+     "length_cm": 7.79623503923132,
+     "length_over_HH": 0.3488668962687344,
+     "body_angle_deg": 52.678229691809435,
+     "standoff_max_over_HH": 0.11777850508558407,
+     "standoff_mean_over_HH": 0.06013812994982868,
+     "lateral_extent_over_length": 0.33760298367449154,
+     "tip_above_root_over_HH": 0.18215097557351514,
+     "tip_above_root_over_length": 0.5221216960442217,
+     "max_width_over_length": 0.3779256532865043,
+     "max_width_over_HH": 0.13184574968239657,
+     "side_view_chord_deg": 19.504052823851055,
+     "upper_extension_axis_deg": 32.3197398567983,
+     "tip_behind_root_over_length": 0.31318282108321055,
+     "sweep_over_length": 0.0953597855225961,
+     "tip_angle_deg": 32.942008811544085,
+     "thickness_median_cm": 0.2791378467675141,
+     "thickness_p05_cm": 0.2680485308938185,
+     "upper_thickness_median_cm": 0.39678358884978
+    },
+    "Aelari AE-E2": {
+     "HH_cm": 24.058975219726562,
+     "length_cm": 9.345333919532122,
+     "length_over_HH": 0.38843441311123034,
+     "body_angle_deg": 27.192632956553467,
+     "standoff_max_over_HH": 0.09723402324274824,
+     "standoff_mean_over_HH": 0.05781623687691261,
+     "lateral_extent_over_length": 0.25032288582243806,
+     "tip_above_root_over_HH": 0.19947208336306224,
+     "tip_above_root_over_length": 0.5135283502956323,
+     "max_width_over_length": 0.33465161200501115,
+     "max_width_over_HH": 0.1299902025058937,
+     "side_view_chord_deg": 22.935836624338577,
+     "upper_extension_axis_deg": 38.03975593024501,
+     "tip_behind_root_over_length": 0.4185089138970554,
+     "sweep_over_length": 0.1194391828116021,
+     "tip_angle_deg": 31.41428280002002,
+     "thickness_median_cm": 0.27360968911635847,
+     "thickness_p05_cm": 0.26720318991255493,
+     "upper_thickness_median_cm": 0.4004679912624272
+    }
+   },
+   "vael": {
+    "VA-E1": {
+     "vael": {
+      "HH_cm": 22.190093994140625,
+      "length_cm": 6.928410577195086,
+      "length_over_HH": 0.31222988866223633,
+      "body_angle_deg": 32.307167507536136,
+      "standoff_max_over_HH": 0.11163875519021763,
+      "standoff_mean_over_HH": 0.06954196857079693,
+      "lateral_extent_over_length": 0.35755306985035656,
+      "tip_above_root_over_HH": 0.1492834050477822,
+      "tip_above_root_over_length": 0.47812016231820087,
+      "max_width_over_length": 0.44427769834040276,
+      "max_width_over_HH": 0.13871677628793855,
+      "side_view_chord_deg": 24.555564760856548,
+      "upper_extension_axis_deg": 39.93602870866199,
+      "tip_behind_root_over_length": 0.41374902103965544,
+      "sweep_over_length": 0.11624723858642255,
+      "tip_angle_deg": 37.68570902781896,
+      "thickness_median_cm": 0.30711810915421556,
+      "thickness_p05_cm": 0.2858785987694692,
+      "upper_thickness_median_cm": 0.4235410492264258
+     },
+     "checks": {
+      "projection (body angle): Fenn > Vael > Aelari": true,
+      "upward extension (tip height / HH): Aelari > Vael": true,
+      "upward extension: Vael within 25 % of Fenn (approximately Fenn)": true,
+      "base width / width:length: Vael broadest": true,
+      "relative length: Vael shorter than Aelari": true,
+      "orientation: Vael more backward than both (side-view chord)": true,
+      "orientation: Vael more backward than both (upper-extension axis)": true,
+      "shorter / blunter taper than Aelari (tip angle)": true,
+      "REPORTED (not a canon rule): tip stand-off from the skull / HH below Fenn": true
+     }
+    },
+    "VA-E2": {
+     "vael": {
+      "HH_cm": 22.190093994140625,
+      "length_cm": 7.260931954140551,
+      "length_over_HH": 0.3272150156758158,
+      "body_angle_deg": 37.3938218617386,
+      "standoff_max_over_HH": 0.13174930035544363,
+      "standoff_mean_over_HH": 0.07655412676634832,
+      "lateral_extent_over_length": 0.40263830827975394,
+      "tip_above_root_over_HH": 0.1460236338672404,
+      "tip_above_root_over_length": 0.44626201999211274,
+      "max_width_over_length": 0.44842675803620835,
+      "max_width_over_HH": 0.1467319686602732,
+      "side_view_chord_deg": 25.978776035763993,
+      "upper_extension_axis_deg": 45.72297753791517,
+      "tip_behind_root_over_length": 0.42541355813504955,
+      "sweep_over_length": 0.14296258745626325,
+      "tip_angle_deg": 34.46764749265331,
+      "thickness_median_cm": 0.3062832551899707,
+      "thickness_p05_cm": 0.28587859876946853,
+      "upper_thickness_median_cm": 0.423541049226524
+     },
+     "checks": {
+      "projection (body angle): Fenn > Vael > Aelari": true,
+      "upward extension (tip height / HH): Aelari > Vael": true,
+      "upward extension: Vael within 25 % of Fenn (approximately Fenn)": true,
+      "base width / width:length: Vael broadest": true,
+      "relative length: Vael shorter than Aelari": true,
+      "orientation: Vael more backward than both (side-view chord)": true,
+      "orientation: Vael more backward than both (upper-extension axis)": true,
+      "shorter / blunter taper than Aelari (tip angle)": true,
+      "REPORTED (not a canon rule): tip stand-off from the skull / HH below Fenn": false
+     }
+    },
+    "VA-E3": {
+     "vael": {
+      "HH_cm": 22.190093994140625,
+      "length_cm": 7.607455190589085,
+      "length_over_HH": 0.3428311386422185,
+      "body_angle_deg": 42.41465501128692,
+      "standoff_max_over_HH": 0.1508187218898641,
+      "standoff_mean_over_HH": 0.08116658278537775,
+      "lateral_extent_over_length": 0.4399213049525813,
+      "tip_above_root_over_HH": 0.14645629971334,
+      "tip_above_root_over_length": 0.4271966084918064,
+      "max_width_over_length": 0.45129193113186467,
+      "max_width_over_HH": 0.15471692660998282,
+      "side_view_chord_deg": 26.62358156848724,
+      "upper_extension_axis_deg": 49.78092512788881,
+      "tip_behind_root_over_length": 0.4365356500518872,
+      "sweep_over_length": 0.16073226132395008,
+      "tip_angle_deg": 30.537839578833406,
+      "thickness_median_cm": 0.30423947887200126,
+      "thickness_p05_cm": 0.28587859876946825,
+      "upper_thickness_median_cm": 0.4235410492266106
+     },
+     "checks": {
+      "projection (body angle): Fenn > Vael > Aelari": true,
+      "upward extension (tip height / HH): Aelari > Vael": true,
+      "upward extension: Vael within 25 % of Fenn (approximately Fenn)": true,
+      "base width / width:length: Vael broadest": true,
+      "relative length: Vael shorter than Aelari": true,
+      "orientation: Vael more backward than both (side-view chord)": true,
+      "orientation: Vael more backward than both (upper-extension axis)": true,
+      "shorter / blunter taper than Aelari (tip angle)": false,
+      "REPORTED (not a canon rule): tip stand-off from the skull / HH below Fenn": false
+     }
+    }
+   },
+   "note": "Fenn = frozen FN_*_REF_RP3_v001 ear (E2), Aelari = frozen AE_*_REF_RP3_v001 ear (AE-E2); same configuration; head-height / length normalised (matched presentation)"
+  }
+ },
+ "hidden_ear_regression": {
+  "VAL4-R1-VD2-VF2_VA-E1": {
+   "v005_vertices_outside_branch": 55378,
+   "max_displacement_outside_branch_cm": 0.0,
+   "outside_branch_byte_identical": true,
+   "audit_outside_branch_byte_identical": true,
+   "transition_ring_vertices": 102,
+   "transition_ring_max_cm": 0.057258330168826116,
+   "removed_v005_ear_zone_vertices": 2362
+  },
+  "VAL4-R1-VD2-VF2_VA-E2": {
+   "v005_vertices_outside_branch": 55378,
+   "max_displacement_outside_branch_cm": 0.0,
+   "outside_branch_byte_identical": true,
+   "audit_outside_branch_byte_identical": true,
+   "transition_ring_vertices": 102,
+   "transition_ring_max_cm": 0.057678618026582466,
+   "removed_v005_ear_zone_vertices": 2362
+  },
+  "VAL4-R1-VD2-VF2_VA-E3": {
+   "v005_vertices_outside_branch": 55378,
+   "max_displacement_outside_branch_cm": 0.0,
+   "outside_branch_byte_identical": true,
+   "audit_outside_branch_byte_identical": true,
+   "transition_ring_vertices": 102,
+   "transition_ring_max_cm": 0.059001198646374875,
+   "removed_v005_ear_zone_vertices": 2362
+  },
+  "VALF178-R1-VD2-VF2_VA-E1": {
+   "v005_vertices_outside_branch": 55378,
+   "max_displacement_outside_branch_cm": 0.0,
+   "outside_branch_byte_identical": true,
+   "audit_outside_branch_byte_identical": true,
+   "transition_ring_vertices": 102,
+   "transition_ring_max_cm": 0.06089083688668512,
+   "removed_v005_ear_zone_vertices": 2362
+  },
+  "VALF178-R1-VD2-VF2_VA-E2": {
+   "v005_vertices_outside_branch": 55378,
+   "max_displacement_outside_branch_cm": 0.0,
+   "outside_branch_byte_identical": true,
+   "audit_outside_branch_byte_identical": true,
+   "transition_ring_vertices": 102,
+   "transition_ring_max_cm": 0.06169192699239672,
+   "removed_v005_ear_zone_vertices": 2362
+  },
+  "VALF178-R1-VD2-VF2_VA-E3": {
+   "v005_vertices_outside_branch": 55378,
+   "max_displacement_outside_branch_cm": 0.0,
+   "outside_branch_byte_identical": true,
+   "audit_outside_branch_byte_identical": true,
+   "transition_ring_vertices": 102,
+   "transition_ring_max_cm": 0.06323330465337296,
+   "removed_v005_ear_zone_vertices": 2362
+  }
+ }
+}

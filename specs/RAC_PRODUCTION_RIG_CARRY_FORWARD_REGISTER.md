@@ -40,6 +40,12 @@ Final consolidation (order 6d2eadc, `reviews/claude-rac-rp3-fenn-final-freeze-re
 - No new Fenn ID: the final Standard v1 deformation set adds 0 flips / 0 self-intersections / 0 folds over the CF2 family realization on every pose, and the ear head / neck readiness poses are 0 / 0 / 0.
 - The accepted ear topology v002 T-4 residuals (root-band cells, aspect 6-10 quads, bridge-corner cells) are **topology-quality residuals accepted in 6d2eadc §2, not carry-forward items**.
 
+## Vael RP3 (NOT frozen; register opened by order `chatgpt-rac-rp3-vael-ear-prototype-order.md` §2)
+
+| ID | Configuration | Item | Class / owning stage | Evidence |
+|---|---|---|---|---|
+| VAEL-CF-SHOULDER-1 | Vael configuration 1 (`VAL4-R1-VD2-VF2` → `VA_M_REF_RP3_bodyfam_v004`) | Shoulder flex 90° (left): **19** flipped faces vs Marchfolk v005 **13** (+6, one over the family +5 flag; VD2 was 16). The 3 faces above VD2 sit on the front of the shoulder. Native source flips are 5 vs 4. Ablation leaves the count at 19 with axilla A2 off, shaft gracility off, a smaller clavicle term (0.035) or a later upper-arm window, so the faces come from the clavicle-length route carried by the current MPFB weights / plain LBS, not from source anatomy. Configuration 2 is +2. Shoulder abduction 90° equals Marchfolk (25 / 25). | **RIG / WEIGHT / SHOULDER-CORRECTIVE CARRY-FORWARD**, production-rig stage (shoulder corrective / clavicle weighting). Not a source or topology blocker; VF2 anatomy is not reopened for it (author ruling). | `reviews/rac-rp3-evidence/vael_rp3_elf_frame/deform_ablation/VF_shoulder_flex_ablation.json`; `reviews/rac-rp3-evidence/vael_rp3_elf_frame/VAEL_deformation_comparison.json`; `reviews/claude-rac-rp3-vael-elf-frame-human-firewall-gate.md` §7 |
+
 ## Grask RP2 (frozen v003)
 
 Kept separately. See `reviews/claude-rac-rp2-grask-final-closure.md` §2:
