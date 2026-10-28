@@ -14,7 +14,11 @@ man = dict(record='AELARI RP3 body-family propagation manifest v001 (DIAGNOSTIC 
            status='BODY-FAMILY DIAGNOSTIC CANDIDATES - NOT FROZEN', active_family_base=dict(record='MPFB_FAMILY_BASE_v005_FREEZE.json', record_sha256=sha(F5), base_blend_sha256=sha(B5 + '/MF_M_REF_RP3_retopo_v005.blend'),
            hm08_map_sha256=sha(B5 + '/MF_M_REF_RP3_retopo_v005_hm08_map.npz'), face_topology_hash=FACE), validator='D1 + D3 + D4 + D5 + D6 (authoritative)', configurations={}, topology_identity_proof={})
 DEF = {}
-for cid, nm, mf, role in (('AEL1', 'AE_M_REF_RP3_bodyfam_v001', 'MF-M-R', 'configuration 1 (accepted AEL1, W1m)'), ('AELF190', 'AE_F_REF_RP3_bodyfam_v001', 'MF-F-R', 'configuration 2 (AELF190 central-reference candidate, Part A)')):
+ENV = os.environ.get; C1, C2 = ENV('AE_C1', 'AEL1'), ENV('AE_C2', 'AELF190'); V_ = ENV('AE_PROD_VER', 'v001')   # order 0f6aba8: corrected sources AEL1-R1 / AELF190-R1 -> *_bodyfam_v002
+if C1 != 'AEL1':
+    man['order'] = ENV('AE_ORDER_DOC', man['order']); man['record'] = man['record'].replace('manifest v001', 'manifest ' + V_) + ' -- corrected body sources (order 0f6aba8)'
+for cid, nm, mf, role in ((C1, 'AE_M_REF_RP3_bodyfam_' + V_, 'MF-M-R', 'configuration 1 (accepted AEL1, W1m)' if C1 == 'AEL1' else 'configuration 1 (AEL1-R1: AEL1 + body-source correction, order 0f6aba8)'),
+                          (C2, 'AE_F_REF_RP3_bodyfam_' + V_, 'MF-F-R', 'configuration 2 (AELF190 central-reference candidate, Part A)' if C2 == 'AELF190' else 'configuration 2 (AELF190-R1: AELF190 + the identical body-source correction, order 0f6aba8)')):
     rc = jl('%s/src/%s_regen_check.json' % (W, cid)); cz = np.load('%s/fam/%s_fam.npz' % (W, cid)); nz = np.load('%s/src/%s_native.npz' % (W, cid)); ph = PH[nm + '.blend']
     rb = jl('%s/readback/%s_readback.json' % (W, nm)); va = jl('%s/val/%s_fam_validator_v2_D1-D6.json' % (W, cid)); v45 = jl('%s/val/%s_fam_validator_v2_D4_D5.json' % (W, cid))
     an = jl('%s/anat/%s_fam_anatomy.json' % (W, cid)); au = jl('%s/audit/%s_fam_audit.json' % (W, cid)); fr = jl('%s/audit/%s_fam_face.json' % (W, cid)); ct = jl('%s/contact/%s_contact.json' % (W, cid)); lm = jl('%s/lm/%s_fam_landmarks.json' % (W, cid))
@@ -41,13 +45,14 @@ for cid, nm, mf, role in (('AEL1', 'AE_M_REF_RP3_bodyfam_v001', 'MF-M-R', 'confi
     json.dump(side, open('%s/%s.json' % (E, nm), 'w'), indent=1); shutil.copy('%s/lm/%s_fam_landmarks.json' % (W, cid), '%s/%s_landmarks.json' % (E, nm))
     man['configurations'][cid] = dict(production=nm + '.blend', sha256=ph['sha256'], geometry_hash=ph['geometry_hash'], sidecar_sha256=sha('%s/%s.json' % (E, nm)), source=side['source'], validator=side['validator']['firm'])
 json.dump(man, open(E + '/AELARI_RP3_bodyfam_propagation_manifest.json', 'w'), indent=1); json.dump(DEF, open(E + '/AELARI_deformation_comparison.json', 'w'), indent=1)
-b = jl(RA + '/builds/AELF190_build.json'); rc = jl(W + '/src/AELF190_regen_check.json'); pa = jl(W + '/partA/AELF190_reference_validation.json')
-cen = dict(id='AELF190', race='Aelari', role='configuration-2 CENTRAL REFERENCE CANDIDATE (order fd71f15 Part A; pending author acceptance)',
+b = jl(RA + '/builds/%s_build.json' % C2); rc = jl(W + '/src/%s_regen_check.json' % C2); pa = jl(W + '/partA/AELF190_reference_validation.json')
+cen = dict(id=C2, race='Aelari', role='configuration-2 CENTRAL REFERENCE CANDIDATE (order fd71f15 Part A; pending author acceptance)',
            construction='tools/rac/w1/build_variant.py: base MF-F-R_build.json (accepted human-family configuration-2 route, as MF-F / SGF178 / FNF181) + overrides = exactly the AEL1 targets and bone scales + stature 190 (resolve_stature); cfg identical to AEL1 except gender (and id)',
            mpfb='MPFB 2.0.17 / Blender 5.2.2 LTS', cfg=b['cfg'], height_macro=b['height_macro'], height_solve=b.get('height_solve'), pose=b['pose'], stature_r6_cm=b['stature_r6'],
-           r6='reviews/reference-assets/r6/AELF190_r6.npz', r6_sha256=sha(RA + '/r6/AELF190_r6.npz'), build_sha256=sha(RA + '/builds/AELF190_build.json'), geometry_hash=rc['regen_geom'],
+           r6='reviews/reference-assets/r6/%s_r6.npz' % C2, r6_sha256=sha(RA + '/r6/%s_r6.npz' % C2), build_sha256=sha(RA + '/builds/%s_build.json' % C2), geometry_hash=rc['regen_geom'],
            rebuild_identity=dict(regen=dict(geometry_identical=rc['geometry_identical'], max_abs_dV_cm=rc['max_abs_dV_cm']), second_full_resolve=pa['determinism']),
            envelope=pa['envelope'], identity={c: dict(holds=v['holds'], of=v['of'], failures=[r['key'] for r in v['canon'] if not r['holds']]) for c, v in pa['configs'].items()},
            pelvis={c: [(r['rule'], r['holds_all_t']) for r in v] for c, v in pa['pelvis_skeletal_proxy'].items()}, configuration_consistency={k: v for k, v in pa['configuration_consistency'].items() if k != 'rows'},
            ear_limitation='carries the MPFB human auricle; not canonical Aelari ear anatomy (order fd71f15 §11)', existing_local_c2_build='none found (searched /tmp/claude-0/rt and the repository before construction)')
-json.dump(cen, open(E + '/AELF190_central_reference_sidecar.json', 'w'), indent=1); print(man['topology_identity_proof']); print({c: (d['worst_flip_excess'], d['poses_worse_by_more_than_5']) for c, d in DEF.items()})
+if C2 != 'AELF190': cen['role'] = 'configuration-2 CENTRAL REFERENCE CANDIDATE, corrected (AELF190 + order 0f6aba8 body-source correction; AELF190 kept as ancestry)'; cen['construction'] = 'tools/rac/w1/build_variant.py: base MF-F-R_build.json + overrides = the AEL1-R1 targets and bone scales (AEL1 + spine_03 Y 0.99, thigh Y 1.01, calf Y 1.03) + stature 190 (resolve_stature)'
+json.dump(cen, open(E + '/%s_central_reference_sidecar.json' % C2, 'w'), indent=1); print(man['topology_identity_proof']); print({c: (d['worst_flip_excess'], d['poses_worse_by_more_than_5']) for c, d in DEF.items()})

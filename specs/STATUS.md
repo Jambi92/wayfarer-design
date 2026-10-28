@@ -1,6 +1,22 @@
 # Character Design Status
 
-## AELARI RP3 — BODY / FACE PASS + EAR BRANCH READY FOR AUTHOR SELECTION — NOT FROZEN (2026-10-27)
+## AELARI RP3 BODY-SOURCE CORRECTION — PASS — READY FOR FINAL CONSOLIDATION — NOT FROZEN (2026-10-27)
+
+- **Gate:** `reviews/claude-rac-rp3-aelari-body-source-correction-gate.md` (order 0f6aba8). Evidence: `reviews/rac-rp3-evidence/aelari_rp3_correction/`.
+- **Corrected sources (CANDIDATE):** AEL1-R1 / AELF190-R1. The originals AEL1 / AELF190 are kept as ancestry.
+  - **Change:** spine_03 Y 0.9704 → 0.99, thigh Y 0.9875 → 1.01, calf Y 1.0523 → 1.03, stature re-solved to 190 cm; identical on c1 and c2.
+- **Thoracic vertical:** now > frozen Fenn — c1 +1.00 %, c2 +1.32 %.
+- **Shin / leg:** gap to human halved — c1 0.0096, c2 0.0094 (Fenn 0.0192 / 0.0203), so more even than Fenn.
+- **Unrelated shares:** all ≤ 0.43 %.
+  - Torso share +0.68 / +0.58 % (coupled response).
+  - Leg share −0.41 / −0.36 %; still > MF.
+- **Pelvis:** 6 / 6 rules hold.
+- **Family:** `AE_{M,F}_REF_RP3_bodyfam_v002` 69 / 69 D1–D6.
+- **Hidden-ear:** face unchanged (shape RMS ≤ 0.012 mm); body moves further from Fenn.
+- **AE-E2:** regression clean (identical parameters / topology; T-4 117 / 120 unchanged).
+- **Next:** STOP for ChatGPT review → final Aelari consolidation.
+
+## AELARI RP3 — BODY / FACE PASS + EAR BRANCH READY FOR AUTHOR SELECTION — NOT FROZEN (2026-10-27; superseded in part by 0f6aba8 above)
 
 - **Gate:** `reviews/claude-rac-rp3-aelari-body-face-ear-gate.md` (order fd71f15). Evidence: `reviews/rac-rp3-evidence/aelari_rp3_v001/`.
 - **c2 central reference:** AELF190 (190.00 cm; MF-F route + exactly the AEL1 targets / bone scales). Deterministic; candidate in the manifest. Two inherited AEL1 ties are flagged for the author: ribcage vertical ≈ Fenn, and c1 shin share ≈ Fenn.

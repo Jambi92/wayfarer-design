@@ -55,7 +55,7 @@ def check(v, ref, rule):
     if rule.startswith('>='): return v >= ref * (1 - TIE)
     if rule.startswith('>'): return v > ref
     if rule.startswith('<'): return v < ref
-res = dict(order='fd71f15', configs={}, notes=[])
+res = dict(order=os.environ.get('AE_ORDER', 'fd71f15'), configs={}, notes=[])   # order 0f6aba8: AE_ORDER=0f6aba8 with the r1 partA symlink layout
 for cfg, C in CFG.items():
     rows = []
     for lab, k, rules in CANON:

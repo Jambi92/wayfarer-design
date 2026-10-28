@@ -1,0 +1,177 @@
+{
+ "file": "AE_M_REF_RP3_bodyfam_v002.blend",
+ "sha256": "663464c538f601b4556b9b76450c3c01664aff0ce56ac9cf89bc4afd8e42ab1d",
+ "geometry_hash": "8e632e7e3d646e0b0f4f3d5ebfa269ec01f4889618bad02b8577c08b70c53571",
+ "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+ "verts": 57842,
+ "quads": 57840,
+ "race": "Aelari",
+ "configuration": "AEL1-R1",
+ "role": "configuration 1 (AEL1-R1: AEL1 + body-source correction, order 0f6aba8)",
+ "status": "BODY-FAMILY DIAGNOSTIC CANDIDATE - NOT FROZEN (carries the family human auricle; the final Aelari ear is a later branch)",
+ "source": {
+  "id": "AEL1-R1",
+  "r6": "reviews/reference-assets/r6/AEL1-R1_r6.npz",
+  "r6_sha256": "17ae6d138809d3b3936c0631a6bbe30f2a891c16782052c3bc0ccc156f0c0faf",
+  "build_sha256": "73ec892fc04a840fe704d6fde5925c741bd3aa72cc4051bfcdfc3e62531dfcff",
+  "regen_geometry_identical": true,
+  "regen_max_abs_dV_cm": 0.0
+ },
+ "mapping": {
+  "hm08_map": "family map MF_M_REF_RP3_retopo_v005_hm08_map.npz (arrays identical)"
+ },
+ "frame": {
+  "origin_translation_cm": [
+   -0.0,
+   -0.34271026961505413,
+   -0.0
+  ]
+ },
+ "readback": {
+  "max_abs_diff_vs_candidate_m": 5.956232462800415e-08,
+  "faces_equal_candidate": true,
+  "normals_outward": true
+ },
+ "validator": {
+  "rules": "D1 + D3 + D4 + D5 + D6",
+  "firm": 69,
+  "fails": [],
+  "margin_zero": [
+   "thumb_mcp_l",
+   "thumb_mcp_r",
+   "toe1_j1_l",
+   "toe1_j1_r"
+  ],
+  "without_D6": 69,
+  "fallback": {
+   "index_mcp_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe3_j3_l": "PASS_SCOPED_ADJACENT_DIGIT_POLE",
+   "shoulder_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "index_mcp_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe1_j2_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe3_j3_r": "PASS_FALLBACK_DEFINED_SIDES+SCOPED_ADJACENT_DIGIT_POLE"
+  },
+  "D5_exclusions": {
+   "pinky_ip1_l": [
+    "+q"
+   ],
+   "toe1_j1_l": [
+    "+q"
+   ],
+   "toe2_j1_l": [
+    "+q"
+   ],
+   "toe5_j3_l": [
+    "-p"
+   ],
+   "pinky_ip1_r": [
+    "+q"
+   ],
+   "toe1_j1_r": [
+    "-q"
+   ],
+   "toe2_j1_r": [
+    "-q"
+   ],
+   "toe5_j3_r": [
+    "-p"
+   ]
+  },
+  "D6_exclusions": {
+   "elbow_l": [
+    "-p"
+   ],
+   "hip_l": [
+    "+p"
+   ],
+   "elbow_r": [
+    "+p"
+   ],
+   "hip_r": [
+    "-p"
+   ]
+  }
+ },
+ "anatomy": {
+  "T1_T2": true,
+  "T3": true,
+  "T7": true,
+  "iou_min": 0.997609,
+  "body": {
+   "median_mm": 0.0,
+   "p95_mm": 0.201,
+   "max_mm": 1.8216
+  },
+  "head": {
+   "median_mm": 0.0,
+   "p95_mm": 0.091,
+   "max_mm": 1.012
+  },
+  "ears_zone_note": "ear zone reported separately: non-final source anatomy (MPFB human auricle) - NOT a final Aelari-ear PASS",
+  "ears": {
+   "median_mm": 0.0,
+   "p95_mm": 0.0966,
+   "max_mm": 0.4639
+  }
+ },
+ "density": {
+  "face": 0.13,
+  "ears": 0.097,
+  "hand": 0.138,
+  "foot": 0.196,
+  "trunk": 0.479,
+  "arm": 0.474,
+  "leg": 0.497,
+  "neck": 0.307,
+  "head": 0.229
+ },
+ "density_all_pass": true,
+ "face": {
+  "mouth_rings": 30,
+  "orbit_rings": [
+   43,
+   43
+  ],
+  "poles_at_mouth_corners": 0,
+  "mouth_pass": true,
+  "orbit_pass": true
+ },
+ "integrity": {
+  "components": 1,
+  "boundary": 0,
+  "nonmanifold": 0,
+  "degenerate": 0,
+  "outward": true,
+  "self_intersection_pairs": 62
+ },
+ "contact": {
+  "source": 56,
+  "family": 6,
+  "new": 0
+ },
+ "contact_by_zone": {
+  "arm": {
+   "source": 38,
+   "family": 4
+  },
+  "trunk": {
+   "source": 18,
+   "family": 2
+  }
+ },
+ "deformation": {
+  "worst_flip_excess_vs_marchfolk_v005": 4,
+  "poses_worse_by_more_than_5": []
+ },
+ "native_integrity": {
+  "verts": 13380,
+  "quads": 13378,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "orientation_inconsistent_edges": 0,
+  "degenerate_faces": 0,
+  "coincident_vertex_pairs": 0,
+  "signed_volume_L": -70.404
+ }
+}

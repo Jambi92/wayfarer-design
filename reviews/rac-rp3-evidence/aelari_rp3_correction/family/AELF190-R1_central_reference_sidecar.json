@@ -1,0 +1,204 @@
+{
+ "id": "AELF190-R1",
+ "race": "Aelari",
+ "role": "configuration-2 CENTRAL REFERENCE CANDIDATE, corrected (AELF190 + order 0f6aba8 body-source correction; AELF190 kept as ancestry)",
+ "construction": "tools/rac/w1/build_variant.py: base MF-F-R_build.json + overrides = the AEL1-R1 targets and bone scales (AEL1 + spine_03 Y 0.99, thigh Y 1.01, calf Y 1.03) + stature 190 (resolve_stature)",
+ "mpfb": "MPFB 2.0.17 / Blender 5.2.2 LTS",
+ "cfg": {
+  "gender": 0.0,
+  "age_years": 35,
+  "age": 0.5769230769,
+  "muscle": 0.5,
+  "weight": 0.5,
+  "proportions": 0.5,
+  "stature": 190.0,
+  "targets": {
+   "head-scale-vert-incr": 0.2,
+   "measure-neck-height-incr": 0.6,
+   "measure-napetowaist-dist-incr": 0.1,
+   "measure-upperarm-length-incr": 0.2,
+   "measure-lowerarm-length-incr": 0.32,
+   "measure-upperleg-height-incr": 0.25,
+   "measure-lowerleg-height-incr": 0.25,
+   "torso-scale-depth-decr": 0.25,
+   "torso-scale-horiz-decr": 0.1,
+   "measure-wrist-circ-decr": 0.25,
+   "measure-knee-circ-decr": 0.25,
+   "measure-ankle-circ-decr": 0.25,
+   "LR:eye-height2-decr": 0.2,
+   "head-oval": 0.3,
+   "hip-scale-horiz-decr": 0.1,
+   "chin-height-incr": 0.3,
+   "head-scale-horiz-decr": 0.1,
+   "LR:hand-scale-incr": 0.3,
+   "LR:foot-scale-incr": 0.25,
+   "LR:foot-scale-horiz-decr": 0.2
+  },
+  "id": "AELF190-R1",
+  "bone_scales": {
+   "pelvis": [
+    1.0,
+    1.07,
+    1.06
+   ],
+   "spine_01": [
+    1.0,
+    1.08,
+    1.0
+   ],
+   "LR:thigh": [
+    1,
+    1.01,
+    1
+   ],
+   "LR:calf": [
+    1,
+    1.03,
+    1
+   ],
+   "spine_03": [
+    1,
+    0.99,
+    1
+   ],
+   "neck_01": [
+    1,
+    0.925,
+    1
+   ],
+   "LR:foot": [
+    1,
+    1.005,
+    1
+   ]
+  }
+ },
+ "height_macro": 0.656494140625,
+ "height_solve": {
+  "reachable": true,
+  "stature": 189.99507687985897,
+  "iters": 12
+ },
+ "pose": {
+  "arm_abduction_deg": 8.0,
+  "palm_twist_deg_l": 0.56,
+  "palm_residual_deg_l": 0.0,
+  "palm_twist_deg_r": -0.56,
+  "palm_residual_deg_r": -0.0
+ },
+ "stature_r6_cm": 189.99507687985897,
+ "r6": "reviews/reference-assets/r6/AELF190-R1_r6.npz",
+ "r6_sha256": "93a951d585a7c9d8fcba7a7a77795686eea1ac57326ad3107f1b7a6636a59239",
+ "build_sha256": "73fab1c8777c1b45e0c8652cd1626f5bb30311094a94da8c81e4b25471917238",
+ "geometry_hash": "2d5e6b52172afd81c10a4511fe2602d218ad0cb5835061172e58e053739d1c92",
+ "rebuild_identity": {
+  "regen": {
+   "geometry_identical": true,
+   "max_abs_dV_cm": 0.0
+  },
+  "second_full_resolve": {
+   "height_macro": [
+    0.656494140625,
+    0.656494140625
+   ],
+   "second_resolve_max_abs_dV_cm": 0.0,
+   "faces_identical": true,
+   "stature_r6": [
+    189.99507687985897,
+    189.99507687985897
+   ],
+   "cfg_equals_AEL1_except": [
+    "bone_scales",
+    "id",
+    "gender"
+   ]
+  }
+ },
+ "envelope": {
+  "AE168N_NAT": 168.00003081560135,
+  "AEL1": 189.98460377007723,
+  "AELF190": 189.99507139623165,
+  "AE221": 220.98759470134974,
+  "inside": true
+ },
+ "identity": {
+  "c1": {
+   "holds": 16,
+   "of": 19,
+   "failures": [
+    "wrist_breadth_share",
+    "knee_breadth_share",
+    "ankle_breadth_share"
+   ]
+  },
+  "c2": {
+   "holds": 17,
+   "of": 19,
+   "failures": [
+    "knee_breadth_share",
+    "ankle_breadth_share"
+   ]
+  }
+ },
+ "pelvis": {
+  "c1": [
+   [
+    "AE-P2a hip-joint height / stature > MF",
+    true
+   ],
+   [
+    "AE-P2b / E-A2 bitrochanteric / crest not lower than MF",
+    true
+   ],
+   [
+    "AE-P3 pelvic vertical / crest > MF",
+    true
+   ],
+   [
+    "AE-P3 pelvic vertical / crest > Fenn",
+    true
+   ],
+   [
+    "AE-P6 waist interval / torso > Fenn",
+    true
+   ],
+   [
+    "AE-P6 waist interval / torso >= MF",
+    true
+   ]
+  ],
+  "c2": [
+   [
+    "AE-P2a hip-joint height / stature > MF",
+    true
+   ],
+   [
+    "AE-P2b / E-A2 bitrochanteric / crest not lower than MF",
+    true
+   ],
+   [
+    "AE-P3 pelvic vertical / crest > MF",
+    true
+   ],
+   [
+    "AE-P3 pelvic vertical / crest > Fenn",
+    true
+   ],
+   [
+    "AE-P6 waist interval / torso > Fenn",
+    true
+   ],
+   [
+    "AE-P6 waist interval / torso >= MF",
+    true
+   ]
+  ]
+ },
+ "configuration_consistency": {
+  "same_sign": 18,
+  "of": 19,
+  "c1_signs_replicated_in_c2": 18
+ },
+ "ear_limitation": "carries the MPFB human auricle; not canonical Aelari ear anatomy (order fd71f15 \u00a711)",
+ "existing_local_c2_build": "none found (searched /tmp/claude-0/rt and the repository before construction)"
+}

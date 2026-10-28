@@ -22,5 +22,5 @@ one(){ id=$1; R=$RA/r6/${id}_r6.npz; base=$2
   $BP $T/mf_deform.py src/${id}_native.npz src/${id}_native.npz def ${id}_native > def/${id}_native.log 2>&1
   $BP $T/mf_deform.py src/${id}_native.npz fam/${id}_fam.npz def ${id}_fam > def/${id}_fam.log 2>&1
   echo "AEEVAL $id done"; }
-one AEL1 MF-M-R & one AELF190 MF-F-R & wait
+one ${AE_C1:-AEL1} MF-M-R & one ${AE_C2:-AELF190} MF-F-R & wait   # order 0f6aba8: AE_C1=AEL1-R1 AE_C2=AELF190-R1, AE_WORK=/tmp/claude-0/rt/ae/r1
 echo AEEVAL_DONE

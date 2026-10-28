@@ -8,9 +8,10 @@
 import sys, os, json, numpy as np, scipy.sparse as sp
 sys.path.insert(0, '/home/claude/wayfarer-design/tools/rac/rp/fenn_rp3_v001')
 import fn_face_metrics as F
-W, OUT = sys.argv[1:3]; PA = W + '/partA'; OV = W + '/ov'; os.makedirs(OV, exist_ok=True)
-CFG = {'c1': dict(AE=('AEL1', PA + '/ref/AEL1'), FN=('FNM190', PA + '/cmp/FNM190'), MF=('MFM190', PA + '/cmp/MFM190'), SG=('SGM190', PA + '/cmp/SGM190')),
-       'c2': dict(AE=('AELF190', PA + '/build/AELF190'), FN=('FNF190', PA + '/cmp/FNF190'), MF=('MFF190', PA + '/cmp/MFF190'), SG=('SGF190', PA + '/cmp/SGF190'))}
+W, OUT = sys.argv[1:3]; PA = W + '/partA'; OV = os.environ.get('AE_HE_OV', W + '/ov'); os.makedirs(OV, exist_ok=True)
+_ae = lambda k, d: tuple(os.environ[k].split(':')) if k in os.environ else d          # order 0f6aba8: AE_HE_C1 / AE_HE_C2 = ID:path-prefix (corrected sources)
+CFG = {'c1': dict(AE=_ae('AE_HE_C1', ('AEL1', PA + '/ref/AEL1')), FN=('FNM190', PA + '/cmp/FNM190'), MF=('MFM190', PA + '/cmp/MFM190'), SG=('SGM190', PA + '/cmp/SGM190')),
+       'c2': dict(AE=_ae('AE_HE_C2', ('AELF190', PA + '/build/AELF190')), FN=('FNF190', PA + '/cmp/FNF190'), MF=('MFF190', PA + '/cmp/MFF190'), SG=('SGF190', PA + '/cmp/SGF190'))}
 nz = np.load('/tmp/claude-0/rt/fn/src/FNL4_native.npz'); si = nz['src_index']; Q = np.asarray(nz['Q']); nV = len(si); bones = [str(b) for b in nz['bones']]
 A = sp.coo_matrix((np.ones(4 * len(Q)), (Q[:, :4].ravel(), np.roll(Q, -1, 1).ravel())), shape=(nV, nV)).tocsr(); A = ((A + A.T) > 0).astype(float); deg = np.asarray(A.sum(1)).ravel()
 def collapse(V, ear):

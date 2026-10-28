@@ -2,7 +2,28 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-27) — AELARI c2 + HIDDEN-EAR + EAR PROTOTYPE — awaiting ChatGPT review
+## LATEST (2026-10-27) — AELARI BODY-SOURCE CORRECTION — awaiting ChatGPT review
+
+**What was done**
+- Order 0f6aba8 executed. Gate: `reviews/claude-rac-rp3-aelari-body-source-correction-gate.md`.
+- **Result:** AELARI BODY SOURCE CORRECTION PASS — READY FOR FINAL CONSOLIDATION. Nothing frozen.
+- **Sources:** AEL1-R1 / AELF190-R1 in `reviews/reference-assets` (manifest CANDIDATE); the originals are untouched.
+- **Workspace:**
+  - `/tmp/claude-0/rt/ae/corr`: probes, `cand`, `skp`, `*_matrix.json`, overrides `c1_R1.json` / `c2_R1.json`;
+  - `/tmp/claude-0/rt/ae/r1`: the full Standard v1 run, with a `partA/` symlink layout pointing at R1, plus `ov`, `ear/` (AE-E2 on R1 heads), `prod`, `readback` and `sheet_r`.
+- **Tools** (`tools/rac/rp/aelari_rp3_v001/`; all defaults reproduce fd71f15):
+  - `probe_corr.sh`, `build_corr.sh`, `corr_matrix.py`;
+  - `run_ae_r1_prod.sh` (env `AE_EVI`);
+  - `ae_ear_regress.py`, `ae_corr_sheets.py`;
+  - env switches: `run_aeeval.sh` `AE_C1` / `AE_C2`; `ae_manifest.py` `AE_C1` / `AE_C2` / `AE_PROD_VER`; `ae_partA.py` `AE_ORDER`; `ae_hidden_ear.py` `AE_HE_C1` / `AE_HE_C2`; `run_ae_ear.sh` `AE_H1` / `AE_H2` / `AE_CF` / `AE_EAR_CANDS` / `AE_EAR_VER` / `SKIP_PROBES`.
+- **E:** `Aelari/RP3/`:
+  - `AE_{M,F}_REF_RP3_bodyfam_v002.*`, `..._manifest_v002.json`, `AELF190-R1` sidecar;
+  - `ear_branch/AE_{M,F}_REF_RP3_earE2_proto_v002.*`.
+  - Read-back is in evidence `pc_readback_sha256.txt`.
+
+**Next:** STOP for ChatGPT review → final Aelari consolidation / freeze (AE-E2, R1 sources).
+
+## (previous) 2026-10-27 — AELARI c2 + HIDDEN-EAR + EAR PROTOTYPE — awaiting ChatGPT review
 
 **What was done**
 - Order fd71f15 executed. Gate: `reviews/claude-rac-rp3-aelari-body-face-ear-gate.md`.
