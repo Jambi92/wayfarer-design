@@ -1,0 +1,42 @@
+{
+ "name": "VAEL_EAR_BRANCH_TOPOLOGY_v002",
+ "order": "chatgpt-rac-rp3-vael-ear-root-integration-order",
+ "selected": "RI3",
+ "local_derivative": true,
+ "definition": "Vael-specific LOCAL cuff derivative of the frozen Fenn v002 engineering topology: identical sheet layout / faces (front, back, rim), junction ring (70), 52-vertex v005 root interface and root band; the cuff between them has six rings (52, 56, 60, 64, 66, 68) instead of five -- two extra rows next to the junction carry the skin fillet. No Fenn vertex geometry carried; one topology for c1 / c2.",
+ "cuff_canon": {
+  "file": "reviews/rac-rp3-evidence/vael_rp3_ear_root_integration/topology/VAEL_EAR_CUFF_CANON_v001.json",
+  "sha256": "1a0b070b42e84846d1b7beebfd153fec8d1ddf4e5a1d2ecc54a0d4351549a779",
+  "sizes": [
+   52,
+   56,
+   60,
+   64,
+   66,
+   68
+  ]
+ },
+ "sheet_layout_equal_to_fenn_v002": true,
+ "root_loop_v005_equal_to_fenn": {
+  "l": true,
+  "r": true
+ },
+ "removed_v005_equal_to_fenn": true,
+ "counts": {
+  "vertices": 59076,
+  "quads": 59074,
+  "patch_vertices_per_side": 1798,
+  "fenn_v002_vertices": 58944,
+  "fenn_v002_quads": 58942,
+  "added_vertices": 132,
+  "added_quads": 132
+ },
+ "face_topology_sha256": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
+ "identical_for": [
+  "VAL4-R1-VD2-VF2_VA-E2-RI3",
+  "VALF178-R1-VD2-VF2_VA-E2-RI3"
+ ],
+ "identical": true,
+ "map_file": "VAEL_EAR_BRANCH_MAP_v005_v002.npz",
+ "map_sha256": "ad312c8028642f6a0f4df4d6b307ec5db23c589b19a6f9b88503832d79e3bdbb"
+}

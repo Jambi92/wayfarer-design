@@ -1,0 +1,153 @@
+{
+ "RI1": {
+  "definition": "reduced stand-off: VA-E2 parameters unchanged; concha clearance -0.30 cm (prototype 0.15) -- the concha floor may sink below the hidden-ear skull level (inside the junction ring, over the head interior), the whole auricle lowers rigidly so the attachment line meets the skin; Fenn v002 cuff canon",
+  "candidate": "VA-E2-RI1",
+  "params": {
+   "L": 8.5,
+   "wb": 2.05,
+   "taper": [
+    "continuous",
+    0.4,
+    1.25
+   ],
+   "lobe": 0.16,
+   "proj": 35,
+   "tilt": 40,
+   "sweep": 1.7,
+   "thick": 0.29,
+   "ah": 0.27,
+   "crura": 1.0,
+   "concha": 0.76,
+   "crus": 0.14,
+   "trag": 0.26,
+   "atrag": 0.2,
+   "helix": [
+    0.28,
+    0.28
+   ]
+  },
+  "geo": {
+   "tauA": 12.0,
+   "phi0": 35.0,
+   "d_r": 1.25,
+   "clear": -0.3,
+   "lift_lobe": 0.45,
+   "lift_top": 0.35,
+   "corner_dip": 0.0,
+   "lobe_lift_end": 0.0974,
+   "lobe_lift_w": 0.04,
+   "lobe_lift_tw": 0.5,
+   "lobe_lift_att": 0.4,
+   "lobe_thin": 0.6
+  },
+  "cuff_canon_sha256": "2f1c1ed637566c04d931b5050fc38d82d796aba984d79aff887ccb78af255d8e",
+  "engineering_env": {
+   "EAR_TOPO": "v002",
+   "EAR_UNT_MODE": "contacts"
+  }
+ },
+ "RI2": {
+  "definition": "RI1 + skin-hugging cuff: cuff target = planar annulus position at the skin height (hidden-ear skull field + root-loop residual) rising to the junction within a fillet max(0.45 x head scale, 1.4 x junction height) cm; biharmonic fairing + data pull (weight 0.2) on the anterior (front-sheet) attachment, fading to 0 at the root loop (0.45 cm) and near the rim / back junction (0.6 cm); Fenn v002 cuff canon",
+  "candidate": "VA-E2-RI2",
+  "params": {
+   "L": 8.5,
+   "wb": 2.05,
+   "taper": [
+    "continuous",
+    0.4,
+    1.25
+   ],
+   "lobe": 0.16,
+   "proj": 35,
+   "tilt": 40,
+   "sweep": 1.7,
+   "thick": 0.29,
+   "ah": 0.27,
+   "crura": 1.0,
+   "concha": 0.76,
+   "crus": 0.14,
+   "trag": 0.26,
+   "atrag": 0.2,
+   "helix": [
+    0.28,
+    0.28
+   ]
+  },
+  "geo": {
+   "tauA": 12.0,
+   "phi0": 35.0,
+   "d_r": 1.25,
+   "clear": -0.3,
+   "lift_lobe": 0.45,
+   "lift_top": 0.35,
+   "corner_dip": 0.0,
+   "lobe_lift_end": 0.0974,
+   "lobe_lift_w": 0.04,
+   "lobe_lift_tw": 0.5,
+   "lobe_lift_att": 0.4,
+   "lobe_thin": 0.6,
+   "cuff_skin_r": 0.45,
+   "cuff_skin_w": 0.2,
+   "cuff_skin_root": 0.45,
+   "cuff_skin_slope": 1.4,
+   "presmooth": 0
+  },
+  "cuff_canon_sha256": "2f1c1ed637566c04d931b5050fc38d82d796aba984d79aff887ccb78af255d8e",
+  "engineering_env": {
+   "EAR_TOPO": "v002",
+   "EAR_UNT_MODE": "contacts"
+  }
+ },
+ "RI3": {
+  "definition": "RI2 on the local Vael cuff topology derivative: six cuff rings 52 / 56 / 60 / 64 / 66 / 68 (Fenn v002: five, 52 .. 68) -- two extra rows next to the junction carry the skin fillet; 52-vertex v005 root interface, root band, junction ring (70) and the whole ear sheet unchanged; canon VAEL_EAR_CUFF_CANON_v001",
+  "candidate": "VA-E2-RI3",
+  "params": {
+   "L": 8.5,
+   "wb": 2.05,
+   "taper": [
+    "continuous",
+    0.4,
+    1.25
+   ],
+   "lobe": 0.16,
+   "proj": 35,
+   "tilt": 40,
+   "sweep": 1.7,
+   "thick": 0.29,
+   "ah": 0.27,
+   "crura": 1.0,
+   "concha": 0.76,
+   "crus": 0.14,
+   "trag": 0.26,
+   "atrag": 0.2,
+   "helix": [
+    0.28,
+    0.28
+   ]
+  },
+  "geo": {
+   "tauA": 12.0,
+   "phi0": 35.0,
+   "d_r": 1.25,
+   "clear": -0.3,
+   "lift_lobe": 0.45,
+   "lift_top": 0.35,
+   "corner_dip": 0.0,
+   "lobe_lift_end": 0.0974,
+   "lobe_lift_w": 0.04,
+   "lobe_lift_tw": 0.5,
+   "lobe_lift_att": 0.4,
+   "lobe_thin": 0.6,
+   "cuff_skin_r": 0.45,
+   "cuff_skin_w": 0.2,
+   "cuff_skin_root": 0.45,
+   "cuff_skin_slope": 1.4,
+   "presmooth": 0
+  },
+  "cuff_canon_sha256": "1a0b070b42e84846d1b7beebfd153fec8d1ddf4e5a1d2ecc54a0d4351549a779",
+  "engineering_env": {
+   "EAR_TOPO": "v002",
+   "EAR_UNT_MODE": "contacts"
+  }
+ }
+}

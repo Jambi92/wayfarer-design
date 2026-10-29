@@ -63,6 +63,17 @@ W1V = dict(L=8.5, wb=2.05, taper=("continuous", 0.40, 1.25), lobe=0.16, proj=35,
 CAND.update({'VA-E1': dict(W1V, L=7.9, wb=1.95, taper=("continuous", 0.42, 1.25), proj=30, tilt=36, sweep=1.4),
              'VA-E2': dict(W1V),
              'VA-E3': dict(W1V, L=9.1, wb=2.15, taper=("continuous", 0.38, 1.25), proj=40, tilt=43, sweep=2.0)})
+# Vael VA-E2 root-integration alternatives (order chatgpt-rac-rp3-vael-ear-root-integration-order §8): same VA-E2 outer geometry (identical W1V
+# parameters; the whole auricle keeps its shape and orientation). RI1 = reduced stand-off (rigid: the concha floor may sink below the hidden-ear skull
+# level -- it lies inside the junction ring, over the head interior -- so the junction / attachment line comes down to the skin). RI2 = RI1 + skin-hugging
+# cuff (the cuff follows the skull and rises to the junction only within a short fillet, ear_build geo 'cuff_skin_r'), so the root flows from the skin
+# straight into the auricle without a raised cuff perimeter (no v002 cuff pre-smoothing: on the skin cuff it slides vertices across the fillet into
+# contact, c2 min corner 8.0 vs 14.9 deg without it). RI3 = RI2 on a local Vael cuff topology derivative: six cuff rings (52, 56, 60, 64,
+# 66, 68; Fenn v002: 52 .. 68 in five) -- two extra rows next to the junction carry the skin fillet; the 52-vertex root interface, root band, junction
+# ring and the whole sheet are unchanged (canon VAEL_EAR_CUFF_CANON_v001, written on c1 with EAR_CUFF sizes, read-only afterwards).
+CAND.update({'VA-E2-RI1': dict(W1V, geo=dict(clear=-0.30)),
+             'VA-E2-RI2': dict(W1V, geo=dict(clear=-0.30, cuff_skin_r=0.45, cuff_skin_w=0.2, cuff_skin_root=0.45, cuff_skin_slope=1.4, presmooth=0)),
+             'VA-E2-RI3': dict(W1V, geo=dict(clear=-0.30, cuff_skin_r=0.45, cuff_skin_w=0.2, cuff_skin_root=0.45, cuff_skin_slope=1.4, presmooth=0))})
 LAYOUT_METRIC = __import__('os').environ.get('EAR_LAYOUT_METRIC', 'E2')          # metric of the sheet position optimisation (connectivity always from the E2 layout)
 
 def smooth(t):
@@ -781,6 +792,7 @@ def cuff_build3(rd, anc_P, anc_T, Jw, skull, canon=None, band_faces=None, root_f
     Ab = bu(anc_P); tA = _ang(Ab, c) * sense; tLs = tL * sense
     tJ = tJ - 2 * np.pi * np.round((tJ[0] - tLs[0]) / (2 * np.pi)); tA = tA - 2 * np.pi * np.round((tA[0] - tLs[0]) / (2 * np.pi))
     SZ = CUFF_SIZES if TOPO_VERSION == 'v001' else CUFF_SIZES_V2
+    if canon is not None and 'sizes' in canon: SZ = tuple(canon['sizes'])      # a read-only canon carries its own ring sizes (Fenn v002 canon = the default)
     nR = len(SZ); rho = [(k + 1) / (nR + 1) for k in range(nR)]
     ring_th = [tA] + [(1 - rho[k]) * _quantile_angles(tA, SZ[k]) + rho[k] * _quantile_angles(tJ, SZ[k]) for k in range(1, nR)]
     P2 = []

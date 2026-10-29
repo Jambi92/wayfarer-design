@@ -30,6 +30,7 @@ removed = []; patches = {}; recs = {}
 for side, sg in (('l', 1), ('r', -1)):
     rd = E.root_data(V0, Q0, we, sg); rd['V_loop'] = V0[rd['loop']]
     skull, sk_v = E.skull_field(V0, Q0, rd, sg)
+    rd['skull'] = skull
     R = E.realize(Lo, rd, skull, p, sc, canon=canon.get(side), geo=geo)
     canon[side] = R['rec']['canon']
     P, F, base = E.patch_mesh(Lo, R, rd['loop'])
@@ -73,6 +74,33 @@ for side in ('l', 'r'):
         for v in Q0[fi]:
             if int(v) not in zone_: trans.add(int(v2b[v]))
 trans = np.array(sorted(trans)); fair_rec = dict(transition_ring_vertices=int(len(trans)))
+# Vael root integration (RI2 / RI3; geo 'cuff_skin_r', inert without it -- Fenn / Aelari): skin-hugging cuff. A target is built for every cuff vertex:
+# its planar annulus position (cuff_build3, root-plane coordinates) at the skin height (hidden-ear skull field + the root-loop residual), rising to the
+# junction ring J only within a smooth fillet of max(CSR x head scale, cuff_skin_slope x junction height) cm. The cuff + transition ring are then
+# faired with the same biharmonic operator plus a data term pulling the cuff to that target (weight cuff_skin_w), so the root keeps biharmonic
+# continuity with the skin while the raised cuff perimeter disappears. The pull fades to 0 at the root loop (cuff_skin_root x head scale cm).
+CSR = float(geo.get('cuff_skin_r', 0.0))
+TGT = None
+if CSR > 0 and FAIR:
+    fair_rec['cuff_skin'] = {}; TGT = Vb.copy(); TW = np.zeros(len(Vb))
+    for side in ('l', 'r'):
+        P_, F_, rd_, R_ = patches[side]; off_ = side_off[side]; O_, b_, u_, n_ = rd_['O'], rd_['b'], rd_['u'], rd_['n']
+        bu_ = lambda X: np.c_[(X - O_) @ b_, (X - O_) @ u_]
+        Lv = v2b[rd_['loop']]; buL = bu_(Vb[Lv]); rL = (Vb[Lv] - O_) @ n_ - rd_['skull'](buL); tL_ = cKDTree(buL)
+        def skin(B_):                                           # skull field corrected by the inverse-distance root-loop residual
+            dl_, il_ = tL_.query(B_, k=4); wl_ = 1 / np.maximum(dl_, 1e-3) ** 2; return rd_['skull'](B_) + (rL[il_] * wl_).sum(1) / wl_.sum(1)
+        Jv = off_ + np.asarray(Lo['J']); cv = np.nonzero((part_a == 'cuff') & (np.array(side_of) == side))[0]
+        buJ = bu_(Vb[Jv]); hJ = (Vb[Jv] - O_) @ n_ - skin(buJ); buC = bu_(Vb[cv])
+        dC = np.abs(E._inside_dist(buJ, buC))                   # unsigned: the projected J ring need not be a simple polygon
+        dj_, ij_ = cKDTree(buJ).query(buC, k=3); wj_ = 1 / np.maximum(dj_, 1e-3); hn = (hJ[ij_] * wj_).sum(1) / wj_.sum(1)
+        Rf = np.maximum(CSR * sc, float(geo.get('cuff_skin_slope', 1.4)) * np.maximum(hn, 0))   # fillet widens where J stands high (slope cap)
+        w_ = 1 - E.smooth(dC / Rf); hC = skin(buC) + np.maximum(hn, 0) * w_
+        TGT[cv] = O_ + buC[:, :1] * b_ + buC[:, 1:] * u_ + hC[:, None] * n_
+        dLr = tL_.query(buC)[0]; TW[cv] = E.smooth(dLr / (float(geo.get('cuff_skin_root', 0.45)) * sc))   # no pull at the root loop (biharmonic continuity there)
+        nfJ = part_a[Jv] != 'front'; drim = cKDTree(buJ[nfJ]).query(buC)[0]                 # anterior (front-sheet) attachment only: the pull fades out
+        TW[cv] *= E.smooth(drim / (float(geo.get('cuff_skin_corner', 0.6)) * sc)) * (part_a[Jv] == 'front')[cKDTree(buJ).query(buC)[1]]             # towards the rim / back junction (attachment corners c0 / c1 and
+                                                                                               # the narrow postauricular band stay biharmonic)
+        fair_rec['cuff_skin'][side] = dict(fillet_cm=CSR * sc, junction_height_mean_cm=float(hJ.mean()), junction_height_max_cm=float(hJ.max()), cuff_vertices=int(len(cv)), pulled_vertices=int((TW[cv] > 0.5).sum()))
 if FAIR:
     unk = np.r_[np.nonzero(part_a == 'cuff')[0], trans]
     Eg = np.unique(np.sort(np.concatenate([Qb[:, [0, 1]], Qb[:, [1, 2]], Qb[:, [2, 3]], Qb[:, [3, 0]]]), 1), axis=0); nV_ = len(Vb)
@@ -81,7 +109,10 @@ if FAIR:
     isU = np.zeros(nV_, bool); isU[unk] = True; kn = np.nonzero(~isU)[0]
     from scipy.sparse.linalg import spsolve
     rhs = -(B2[unk][:, kn] @ Vb[kn]); X0_ = Vb[trans].copy()
-    Vb[unk] = np.stack([spsolve(B2[unk][:, unk].tocsc(), rhs[:, k]) for k in range(3)], 1)
+    if TGT is None: Vb[unk] = np.stack([spsolve(B2[unk][:, unk].tocsc(), rhs[:, k]) for k in range(3)], 1)
+    else:
+        lam = float(geo.get('cuff_skin_w', 0.2)); dw = (part_a[unk] == 'cuff').astype(float) * lam * TW[unk]; Au = (B2[unk][:, unk] + sp.diags(dw)).tocsc()
+        Vb[unk] = np.stack([spsolve(Au, rhs[:, k] + dw * TGT[unk, k]) for k in range(3)], 1); fair_rec['cuff_skin']['data_weight'] = lam
     dt = np.linalg.norm(Vb[trans] - X0_, axis=1)
     fair_rec.update(transition_ring_displacement_cm=dict(mean=float(dt.mean()), p95=float(np.percentile(dt, 95)), max=float(dt.max())), unknowns=int(len(unk)))
 part_a[trans] = 'transition'; part = list(part_a)
@@ -183,7 +214,7 @@ if HAVE_BVH and os.environ.get('EAR_UNTANGLE', '1') == '1':
     else:
         # v002: tangential pre-smoothing of the cuff away from the root (rings >= 3), re-projected onto the faired skin (fine sampling), then the
         # untangling only for real contacts (no aspect criterion; no transition / root-ring moves)
-        PS = int(os.environ.get('EAR_PRESMOOTH', '40'))
+        PS = int(geo.get('presmooth', os.environ.get('EAR_PRESMOOTH', '40')))   # candidate geo 'presmooth' (Vael skin cuff: 0 -- the planar annulus is already regular)
         ps_mask = (movable | (near_root if os.environ.get('EAR_PS_RINGS', 'all') == 'all' else False)) & (part_a == 'cuff')
         ps_v = np.nonzero(ps_mask)[0]                              # tangential only (re-projected on the faired skin): rings 1-2 may slide too
         if PS:

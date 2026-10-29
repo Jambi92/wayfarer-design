@@ -1,6 +1,14 @@
 # Character Design Status
 
-## VAEL RP3 EAR PROTOTYPES — VAEL EAR PROTOTYPE PASS — VA-E2 RECOMMENDED — NOT FROZEN (2026-10-28)
+## VAEL RP3 EAR ROOT INTEGRATION — PASS — VA-E2 (RI3) READY FOR FINAL CONSOLIDATION — NOT FROZEN (2026-10-28)
+
+- **Gate:** `reviews/claude-rac-rp3-vael-ear-root-integration-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_ear_root_integration/` (19 sheets). Plan updated (not executed): `reviews/claude-rac-rp3-vael-final-consolidation-plan.md`.
+- **Fixed:** the "ear inside an ear" read came from the lifted ear (h0 0.87 / 0.74 cm) and a raised biharmonic cuff mound tracing the human root footprint. RI1 (rigid lowering, concha clearance −0.30), RI2 (+ skin-hugging cuff) and RI3 (RI2 on a six-ring local Vael cuff derivative) built on the unchanged VA-E2 outer geometry.
+- **RI3 recommended:** one continuous auricle in neutral clay / sections; anterior cuff p90 0.43 → 0.17 cm (c1); T-4 123 / 144, min corner 25.9° / 14.9°, 0 self-intersections, 0 / 0 / 0 head poses, probes 12 / 12; silhouette = rigid 0.45 cm shift only. RI1 / RI2 left root / cuff slivers (5.4° / 6.6°; 2.1°). Topology `VAEL_EAR_BRANCH_TOPOLOGY_v002` (59,076 V / 59,074 Q; 52-vertex root interface kept).
+- **Projection:** angle Fenn > Vael > Aelari; stand-off ordering restored on c2, c1 Vael +0.005 HH over Fenn (reported).
+- **Next:** STOP for ChatGPT review — accept RI3 + local cuff derivative, then authorise Vael final consolidation / freeze.
+
+## (previous) VAEL RP3 EAR PROTOTYPES — VAEL EAR PROTOTYPE PASS — VA-E2 RECOMMENDED — NOT FROZEN (2026-10-28)
 
 - **Gate:** `reviews/claude-rac-rp3-vael-ear-prototype-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_ear_prototype/` (22 sheets). Consolidation plan (not executed): `reviews/claude-rac-rp3-vael-final-consolidation-plan.md`.
 - **Accepted (author):** R1 + VD2 + VF2 body, VC2 face, pelvis 9 / 9, human and three-elf firewalls PASS — all unchanged (hashes equal; byte-identical outside the ear branch).

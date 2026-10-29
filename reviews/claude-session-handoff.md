@@ -2,7 +2,20 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-28) — VAEL EAR PROTOTYPES — PASS — VA-E2 RECOMMENDED — awaiting ChatGPT review
+## LATEST (2026-10-28) — VAEL EAR ROOT INTEGRATION — PASS — RI3 READY FOR FINAL CONSOLIDATION — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-vael-ear-root-integration-order.md`. Gate: `reviews/claude-rac-rp3-vael-ear-root-integration-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_ear_root_integration/`. Plan updated.
+- `ear_branch_lib.CAND` VA-E2-RI1 / RI2 / RI3 (geo clear −0.30; RI2 / RI3 + `cuff_skin_*`, `presmooth` 0); `cuff_build3` reads ring sizes from a read-only canon; `ear_build.py` skin-hugging cuff (data-pulled biharmonic) + candidate presmooth. Frozen Fenn / Aelari and the VA-E2 prototype rebuild dV 0.
+- RI3 cuff canon `VAEL_EAR_CUFF_CANON_v001` (six rings, written on c1). Driver `run_va_ri.sh` -> `/tmp/claude-0/rt/va/ri_final/RI{1,2,3}`; records `va_ri_summary.py`, `va_ri_export.py`; sheets `va_ri_sheets.py` (renders `/tmp/claude-0/rt/va/ri_sheet_r`).
+- E: `Vael/RP3/ear_branch/root_integration/` (6 blends), read-back identical.
+
+**Key findings**
+- RI3 reads as one auricle and is technically clean; RI1 / RI2 leave slivers. c1 stand-off marginally above Fenn (reported).
+
+**Next:** STOP for ChatGPT review (accept RI3 / authorise final consolidation).
+
+## (previous) 2026-10-28 — VAEL EAR PROTOTYPES — PASS — VA-E2 RECOMMENDED
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-vael-ear-prototype-order.md`. Gate: `reviews/claude-rac-rp3-vael-ear-prototype-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_ear_prototype/`. Plan: `reviews/claude-rac-rp3-vael-final-consolidation-plan.md`.
