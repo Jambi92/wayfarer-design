@@ -11,7 +11,7 @@ import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 EV, OUT = sys.argv[1:3]; os.makedirs(OUT, exist_ok=True); TMP = os.environ.get('HV_SHEET_TMP', '/tmp/claude-0/rt/hv/ear/sheet_r'); os.makedirs(TMP, exist_ok=True); QK.TMP = TMP
 EW = '/tmp/claude-0/rt/hv/ear'; HP = '/tmp/claude-0/rt/hv/hpe'; jl = lambda p: json.load(open(p)); GREY = np.array([0.80, 0.78, 0.76])
 HEADS = {'c1': 'HVC1-HB2HF2-HPB', 'c2': 'HVF178-HB2HF2-HPB'}; HE = ['HE1', 'HE2', 'HE3']
-S = jl(EV + '/HV_ear_summary.json'); A = jl(EV + '/HV_ear_audit.json'); PRB = jl(EV + '/HV_ear_probes_HE2.json'); V6 = jl(EV + '/HV_HPB_validation.json')
+S = jl(EV + '/HV_ear_summary.json'); A = jl(EV + '/HV_ear_audit.json'); PRB = jl(EV + '/HV_ear_probes_HE2.json') if os.path.exists(EV + '/HV_ear_probes_HE2.json') else {'probes': {}}; V6 = jl(EV + '/HV_HPB_validation.json')
 def he(c, k): return '%s/he/build/%s_%s_branch.npz' % (EW, HEADS[c], k)
 def mf(c): return '%s/fam/%s_fam.npz' % (HP, HEADS[c])
 REF = {'FN': '%s/ref/FN/build/%s_E2_branch.npz' % (EW, HEADS['c1']), 'AE': '%s/ref/FN/build/%s_AE-E2_branch.npz' % (EW, HEADS['c1']), 'VA': '%s/ref/RI3/build/%s_VA-E2-RI3_branch.npz' % (EW, HEADS['c1'])}
@@ -189,7 +189,7 @@ sheet('HVE_22_body_face_ear_mosaic.jpg', 'BODY / FACE / EAR MOSAIC — HB2+HF2+H
 sheet('HVE_23_deformation_readiness.jpg', 'Head / neck readiness, HE2 (flex / ext 30, yaw +/-45, pitch +/-20, roll +/-20): branch contacts / flips / root inversions per pose in captions',
       [(c, [img('epose_%s_%s' % (c, pn), 'tq') for pn in PN], ['%s %d/%d/%d' % (pn.replace('head_', ''), *[SM['HE2 %s' % c]['poses'][pn][q] for q in ('contacts', 'flips', 'root_inv')]) for pn in PN]) for c in HEADS], colw=300)
 pr = sorted(PRB['probes']); half = (len(pr) + 1) // 2
-sheet('HVE_24_shape_probes.jpg', 'HE2 geometry probes (same topology; c1): length, projection, sweep, vertical angle, base width, tip sharpness, lobe — own-domain response in SD units; technical state',
+if pr: sheet('HVE_24_shape_probes.jpg', 'HE2 geometry probes (same topology; c1): length, projection, sweep, vertical angle, base width, tip sharpness, lobe — own-domain response in SD units; technical state',
       [(('probes %d' % r_), [img('pr_' + pn, 'etq') for pn in pr[r_ * half:(r_ + 1) * half]], ['%s  own %+.1f SD  %s' % (pn, PRB['probes'][pn]['own_response_sd'], 'OK' if PRB['probes'][pn]['technical']['pass'] else 'TECH FAIL') for pn in pr[r_ * half:(r_ + 1) * half]]) for r_ in range(2)], colw=300)
 reg = S.get('regression', {})
 sheet('HVE_25_hidden_ear_body_face_regression.jpg', 'Body / face / pelvis regression after ear insertion: outside the ear branch every vertex is byte-identical to the HB2+HF2+HP-B family realization (HE1 / HE2 / HE3, c1 / c2)',
