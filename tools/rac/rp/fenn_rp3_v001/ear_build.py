@@ -21,7 +21,8 @@ Q3_KW = dict(lo=55.0, hi=125.0, ks=50.0, kn=4000.0, kt=20000.0, rho=0.5, iters=i
 Q3_WARM = os.environ.get('EAR_Q3_WARM', '0') == '1'
 for k, v in PROBE.items():                          # geometry-only readiness probes (same topology)
     if k in geo: geo[k] = float(v)
-    elif k == 'taper_ex': p['taper'] = (p['taper'][0], p['taper'][1], float(v))
+    elif k == 'taper_ex': p['taper'] = tuple(p['taper'][:2]) + (float(v),) + tuple(p['taper'][3:])   # (Halvren 4-tuple law keeps its shoulder)
+    elif k == 'taper_sh': p['taper'] = tuple(p['taper'][:3]) + (float(v),)
     else: p[k] = float(v)
 HH, sc = E.head_scale(r6p)
 Lo = E.canonical_layout()                            # canonical layout (deterministic; E2 metric)

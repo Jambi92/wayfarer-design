@@ -74,6 +74,46 @@ CAND.update({'VA-E1': dict(W1V, L=7.9, wb=1.95, taper=("continuous", 0.42, 1.25)
 CAND.update({'VA-E2-RI1': dict(W1V, geo=dict(clear=-0.30)),
              'VA-E2-RI2': dict(W1V, geo=dict(clear=-0.30, cuff_skin_r=0.45, cuff_skin_w=0.2, cuff_skin_root=0.45, cuff_skin_slope=1.4, presmooth=0)),
              'VA-E2-RI3': dict(W1V, geo=dict(clear=-0.30, cuff_skin_r=0.45, cuff_skin_w=0.2, cuff_skin_root=0.45, cuff_skin_slope=1.4, presmooth=0))})
+# Halvren mixed-ear architecture HVEAR1 (order chatgpt-rac-rp3-halvren-central-accept-ear-architecture-order §11-§14). NOT a human<->elf slider and not an
+# interpolation of source ears: each domain carries its own inheritance tendency (root / attachment = geo tauA + phi0 + skin-hugging cuff; base width wb;
+# concha / tragus relief; lobe; projection; upper extension L + taper start; tip = taper exponent; helix shoulder sh (Halvren 'halvren' taper law: human-family
+# helix fullness carried into the apex); vertical angle tilt; sweep). Domains move independently (lobe / projection / base / concha are non-monotone across
+# HE1 -> HE3). Root / cuff: the RI3 skin-hugging cuff (concha floor at the skin, no raised cuff perimeter) on the read-only Vael six-ring cuff canon
+# (engineering connectivity reuse, audited for Halvren in the topology audit). Additive: Fenn / Aelari / Vael candidates are unchanged.
+HV_SKIN = dict(clear=-0.30, cuff_skin_r=0.45, cuff_skin_w=0.2, cuff_skin_root=0.45, cuff_skin_slope=1.4, presmooth=0)
+HV_BASE = dict(L=7.6, wb=1.85, taper=("halvren", 0.45, 1.10, 0.07), lobe=0.17, proj=27, tilt=21, sweep=0.9, thick=0.29,
+               ah=0.27, crura=1.0, concha=0.80, crus=0.15, trag=0.29, atrag=0.21, helix=(0.29, 0.30))
+_g = lambda **k: dict(HV_SKIN, **k)
+CAND.update({
+    # HE1 human-forward mixed: human-family root flare, projection, lobe, concha / tragus and helix roll; elven-derived upper helix (late, blunt apex out of a
+    # retained helix shoulder), mild backward tilt / sweep; base slightly broader than either parent family
+    'HE1': dict(HV_BASE, L=6.9, wb=1.82, taper=("halvren", 0.58, 0.80, 0.12), lobe=0.19, proj=23, tilt=17, sweep=0.65, thick=0.31,
+                ah=0.29, concha=0.84, crus=0.16, trag=0.30, atrag=0.23, helix=(0.30, 0.30), geo=_g(phi0=30.0, tauA=10.0)),
+    # HE2 balanced mixed central: broad mixed base (wider than Marchfolk / Fenn / Aelari, narrower than Vael), human-leaning projection, tragus and lobe,
+    # moderate upper extension and restrained point out of a reduced helix shoulder, moderate backward angle / sweep
+    'HE2': dict(HV_BASE, geo=_g(phi0=33.0, tauA=12.0)),
+    # HE3 elf-forward mixed: long upper extension, earlier / sharper taper, stronger sweep and tilt; human-family lobe size, projection and concha depth retained
+    'HE3': dict(HV_BASE, L=8.7, wb=1.88, taper=("halvren", 0.34, 1.20, 0.03), lobe=0.18, proj=25, tilt=29, sweep=1.5, thick=0.28,
+                ah=0.26, concha=0.79, crus=0.14, trag=0.28, atrag=0.21, helix=(0.28, 0.29), geo=_g(phi0=34.0, tauA=12.0)),
+    # source-population influence diagnostics (internal validation only; not subraces): HE2 Halvren root / base / lobe kept, one elven direction trended
+    'HV-DFN': dict(HV_BASE, proj=40, tilt=25, sweep=1.35, taper=("halvren", 0.42, 1.05, 0.05), geo=_g(phi0=34.0, tauA=12.0)),     # Fenn: lateral projection + sweep
+    'HV-DAE': dict(HV_BASE, L=8.5, taper=("halvren", 0.33, 0.98, 0.04), tilt=26, proj=25, geo=_g(phi0=33.0, tauA=12.0)),          # Aelari: upward extension + long taper
+    'HV-DVA': dict(HV_BASE, wb=2.00, tilt=33, sweep=1.3, proj=31, taper=("halvren", 0.50, 1.30, 0.05), geo=_g(phi0=33.0, tauA=12.0)),  # Vael: broad base, backward, short taper
+    # human-family influence diagnostic: human root / base / projection / lobe / concha; non-human structure kept in the upper helix apex, tilt and sweep
+    'HV-DHU': dict(HV_BASE, L=6.7, wb=1.76, taper=("halvren", 0.62, 0.75, 0.14), lobe=0.19, proj=22, tilt=16, sweep=0.6, thick=0.31,
+                   ah=0.30, concha=0.85, crus=0.16, trag=0.30, atrag=0.24, helix=(0.30, 0.30), geo=_g(phi0=30.0, tauA=10.0)),
+    # topology-audit stress geometries (§9): HVT-HUM = Marchfolk-human ear parameters (W1 v2 MF-human; rounded top approximated by a late blunt apex) on the
+    # engineering topology -- the human-forward bound; HVT-ELF = the elf-forward bound (longer than any HE). Rigid (Fenn v002 cuff, default geo) and skin
+    # (RI3 cuff geo) variants.
+    'HVT-HUM-R': dict(L=6.4, wb=1.75, taper=("halvren", 0.62, 0.70, 0.15), lobe=0.18, proj=22, tilt=12, sweep=0.4, thick=0.30,
+                      ah=0.30, crura=1.0, concha=0.85, crus=0.16, trag=0.30, atrag=0.24, helix=(0.30, 0.30)),
+    'HVT-ELF-R': dict(HV_BASE, L=9.4, wb=1.90, taper=("halvren", 0.30, 1.20, 0.0), proj=42, tilt=34, sweep=1.8, thick=0.27)})
+CAND['HVT-HUM-S'] = dict(CAND['HVT-HUM-R'], geo=_g()); CAND['HVT-ELF-S'] = dict(CAND['HVT-ELF-R'], geo=_g())
+# root / cuff derivative exploration on the human-forward bound (topology audit §10): skin-cuff variants of HVT-HUM-S
+CAND.update({'HVX-HUM-C1': dict(CAND['HVT-HUM-R'], geo=_g(cuff_skin_corner=0.9)), 'HVX-HUM-C2': dict(CAND['HVT-HUM-R'], geo=_g(clear=-0.15)),
+             'HVX-HUM-C3': dict(CAND['HVT-HUM-R'], geo=_g(clear=-0.15, cuff_skin_corner=0.9, lift_lobe=0.6))})
+for _k in ('HE1', 'HE2', 'HE3'):                  # topology audit: the same HE geometry on the rigid Fenn v002 cuff (root geo phi0 / tauA kept, no skin cuff)
+    CAND[_k + '-R'] = dict(CAND[_k], geo={q: v for q, v in CAND[_k]['geo'].items() if q in ('phi0', 'tauA')})
 LAYOUT_METRIC = __import__('os').environ.get('EAR_LAYOUT_METRIC', 'E2')          # metric of the sheet position optimisation (connectivity always from the E2 layout)
 
 def smooth(t):
@@ -81,8 +121,11 @@ def smooth(t):
 
 def width(s, p):
     s = np.asarray(s, float); lobe = np.sqrt(np.clip(s / p["lobe"], 0, 1)) * 0.82 + 0.18 * smooth(s / p["lobe"])
-    w = p["wb"] * np.minimum(1.0, lobe); law, st, ex = p["taper"]; t = np.clip((s - st) / (1 - st), 0, 1)
-    f = np.where(s < st, 1.0, np.cos(t * np.pi / 2) ** ex); return w * f + 0.02
+    w = p["wb"] * np.minimum(1.0, lobe); law, st, ex = p["taper"][:3]; t = np.clip((s - st) / (1 - st), 0, 1)
+    f = np.where(s < st, 1.0, np.cos(t * np.pi / 2) ** ex)
+    if law == "halvren":                                        # Halvren mixed upper ear (HVEAR1): a human-family helix shoulder (fullness sh above the taper
+        f = f * (1 + p["taper"][3] * np.sin(np.pi * t))         # start) carried into a restrained apex; sh = 0 is the continuous law exactly
+    return w * f + 0.02
 
 def w1e_plate(s, t, p):
     """W1e plate coordinates (y backward, z up) before orientation"""

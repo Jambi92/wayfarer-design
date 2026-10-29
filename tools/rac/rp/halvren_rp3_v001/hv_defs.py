@@ -23,6 +23,8 @@ BODY = {'targets': {'torso-scale-depth-decr': 0.05, 'measure-underbust-circ-decr
         'bone_scales': {'LR:upperarm': [0.98, 1.0, 0.98], 'LR:lowerarm': [0.98, 1.0, 0.98], 'LR:thigh': [0.985, 1.0, 0.985], 'LR:calf': [0.985, 1.0, 0.985]}}
 FACE = {'targets': {'head-back-scale-depth-decr': 0.25, 'head-oval': 0.08, 'forehead-scale-vert-incr': 0.06, 'forehead-temple-decr': 0.15,
                     'LR:cheek-trans-up': 0.35, 'LR:cheek-volume-decr': 0.1, 'chin-height-incr': 0.12, 'LR:eye-trans-out': 0.1}}
+# accepted central pelvis direction HP-B (mild mixed relational; order chatgpt-rac-rp3-halvren-central-accept-ear-architecture-order §4); HP-A / HP-C diagnostic only
+PELVIS = {'HP-B': dict(pelvis=[1.0, 1.02, 1.0], horiz=0.05)}
 HVC1_T = ['measure-napetowaist-dist-decr', 'measure-lowerarm-length-incr', 'measure-lowerleg-height-incr', 'torso-scale-depth-decr', 'LR:hand-fingers-length-incr', 'measure-wrist-circ-decr', 'measure-ankle-circ-decr']
 HVC1_V = dict(zip(HVC1_T, [0.1, 0.12, 0.12, 0.05, 0.12, 0.15, 0.1]))
 def sc(v, s): return [round(1 + (x - 1) * s, 5) for x in v] if isinstance(v, list) else round(v * s, 5)
@@ -34,11 +36,12 @@ def overrides(tag):
         t.update(HVC1_V)
     for k in HVC1_T: t.setdefault(k, None)               # c1 base is the HVC1 record: an HVC1 key not in the new design is removed
     if 'HF' in tag: s = STRF[tag[tag.index('HF') + 2]]; t.update({k: sc(v, s) for k, v in FACE['targets'].items()})
+    if tag.endswith('-HPB'): b['pelvis'] = list(PELVIS['HP-B']['pelvis']); t['hip-scale-horiz-decr'] = PELVIS['HP-B']['horiz']   # accepted central pelvis (order e9008f2 §4)
     return dict(targets=t, bone_scales=b, stature=178.0, resolve_stature=True)
 def c2(ov): o = json.loads(json.dumps(ov)); o['targets'] = {k: v for k, v in o['targets'].items() if v is not None}; return o   # c2 base MF-F-R has no HVC1 keys
 if __name__ == '__main__':
     O = sys.argv[1]; os.makedirs(O, exist_ok=True)
-    json.dump(dict(version='HVDEF1', strengths=dict(body=STR, face=STRF), body=BODY, face=FACE, hvc1_targets=HVC1_V, pelvis='held (no pelvic target or bone scale)',
+    json.dump(dict(version='HVDEF1', strengths=dict(body=STR, face=STRF), body=BODY, face=FACE, hvc1_targets=HVC1_V, pelvis=dict(default='held (no pelvic target or bone scale)', accepted_central=PELVIS),
                    note='HB / HF strengths scale the single shared definition; c1 = HVC1 record + overrides, c2 = MF-F-R base + the same overrides; stature re-solved to 178 cm'),
               open(os.path.join(O, 'HV_source_definitions.json'), 'w'), indent=1)
     for tag in sys.argv[2:]:
