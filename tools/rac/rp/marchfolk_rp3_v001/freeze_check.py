@@ -42,4 +42,5 @@ TRI = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; vol = float(np.einsum('ij,ij->i',
 # equality with the candidate map output
 cz = np.load(CZ); LM = json.load(open(LMJ)); Vc = cz['V'].astype(float) + np.array(LM['frame']['origin_translation_cm']); Vb = np.c_[Vc[:, 0], -Vc[:, 1], Vc[:, 2]] / 100.0
 R['max_abs_diff_vs_candidate_m'] = float(np.abs(Vb - V).max()); R['faces_equal_candidate'] = bool(np.array_equal(Q, cz['Q'].astype(np.int32)))
+if os.environ.get('RB_DUMP'): np.savez(os.environ['RB_DUMP'], V_m=V, Q=Q)          # optional: read-back geometry (production frame, m) for recomputation
 json.dump(R, open(OUT, 'w'), indent=1); print('FREEZECHECK', json.dumps({k: v for k, v in R.items() if k != 'properties'}))

@@ -1,0 +1,875 @@
+{
+ "record": "VAEL FINAL CONSOLIDATION NEEDS AUTHOR DECISION \u2014 NOT FROZEN (freeze candidate record; becomes VAEL_RP3_FREEZE.json only on author acceptance)",
+ "date": "2026-10-28",
+ "authority": "reviews/chatgpt-rac-rp3-vael-final-consolidation-freeze-order.md (author review of Claude return f25b345)",
+ "freeze_method": "freeze-by-record: both production .blend files are preserved byte-identical (not re-saved); this record is authoritative over the sidecar / embedded RAC_status strings",
+ "family_base": {
+  "record": "MPFB_FAMILY_BASE_v005_FREEZE.json",
+  "record_sha256": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+  "blend": "MF_M_REF_RP3_retopo_v005.blend",
+  "blend_sha256": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+  "hm08_map": "MF_M_REF_RP3_retopo_v005_hm08_map.npz",
+  "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+  "face_topology_hash": "ec768ae210ea3ee1c053d0c4cd3256d57dad6db35d515502706b74f64281bee0",
+  "verts": 57842,
+  "quads": 57840,
+  "unchanged": true,
+  "note": "active family base unchanged; Vael uses it everywhere outside the ear branch"
+ },
+ "ear_branch": {
+  "description": "accepted Vael-specific external-ear branch = VA-E2 Vael ear geometry + RI3 root / concha integration on VAEL_EAR_BRANCH_TOPOLOGY_v002 (a Vael-specific local cuff derivative of the Fenn / Aelari engineering topology; ENGINEERING TOPOLOGY ONLY, not a universal elf ear topology)",
+  "geometry": "VA-E2 (W1V) with RI3 (geo clear -0.30, skin-hugging six-ring cuff, presmooth 0)",
+  "params": {
+   "L": 8.5,
+   "wb": 2.05,
+   "taper": [
+    "continuous",
+    0.4,
+    1.25
+   ],
+   "lobe": 0.16,
+   "proj": 35,
+   "tilt": 40,
+   "sweep": 1.7,
+   "thick": 0.29,
+   "ah": 0.27,
+   "crura": 1.0,
+   "concha": 0.76,
+   "crus": 0.14,
+   "trag": 0.26,
+   "atrag": 0.2,
+   "helix": [
+    0.28,
+    0.28
+   ]
+  },
+  "geo": {
+   "tauA": 12.0,
+   "phi0": 35.0,
+   "d_r": 1.25,
+   "clear": -0.3,
+   "lift_lobe": 0.45,
+   "lift_top": 0.35,
+   "corner_dip": 0.0,
+   "lobe_lift_end": 0.0974,
+   "lobe_lift_w": 0.04,
+   "lobe_lift_tw": 0.5,
+   "lobe_lift_att": 0.4,
+   "lobe_thin": 0.6,
+   "cuff_skin_r": 0.45,
+   "cuff_skin_w": 0.2,
+   "cuff_skin_root": 0.45,
+   "cuff_skin_slope": 1.4,
+   "presmooth": 0
+  },
+  "topology": "VAEL_EAR_BRANCH_TOPOLOGY_v002",
+  "topology_json_sha256": "5b654f2f8b645708e9dae8fde9798888dbdfdb397efb17dec58044943d940305",
+  "topology_npz_sha256": "5b2d9507e0d781babf965fea3baf1e04471a891bd82794853427ec9028600f41",
+  "cuff_canon": "VAEL_EAR_CUFF_CANON_v001.json",
+  "cuff_canon_sha256": "1a0b070b42e84846d1b7beebfd153fec8d1ddf4e5a1d2ecc54a0d4351549a779",
+  "map_v005_v002_npz_sha256": "ad312c8028642f6a0f4df4d6b307ec5db23c589b19a6f9b88503832d79e3bdbb",
+  "per_side": null,
+  "whole_mesh": null,
+  "face_topology_sha256": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
+  "face_topology_identical_c1_c2": true,
+  "shared_by": "configuration 1 and configuration 2 (identical face list)"
+ },
+ "lineage": {
+  "c1": "VAL4 ancestry -> R1 (VB2g + VC2) -> VD2 (VDF1.2) -> VF2 (VEF1) -> VA_M_REF_RP3_v001",
+  "c2": "VALF178 route -> R1 (VB2g + VC2) -> VD2 (VDF1.2) -> VF2 (VEF1) -> VA_F_REF_RP3_v001",
+  "ear": "VA-E2 -> RI3 -> VAEL_EAR_BRANCH_TOPOLOGY_v002"
+ },
+ "references": {
+  "VAL4": {
+   "role": "configuration-1 ancestry (immutable)",
+   "r6_sha256": "ec73819d78226c4a4e992935cec2d7596ba2fa7228e1b392a5e9f340d3d1ed23",
+   "build_sha256": "57ed9491bcc2b496aeb44bb203a6b19e6d085655b8107fe301ca6eacaf1f9471"
+  },
+  "VALF178": {
+   "role": "configuration-2 route ancestry (immutable)",
+   "r6_sha256": "3d5111c560b20be7d4412dc000792c1414a07b3df619923d669e96fdc06aa8bb",
+   "build_sha256": "0efae39e9a4d054f16b107b3148611da2b50635f783c48661d70ba530bb606ae"
+  },
+  "VAL4-R1": {
+   "role": "R1 = VB2g body + VC2 face (configuration 1)",
+   "r6_sha256": "d5eea5a45366b854c5c55e5785ef49930bacdd75de8c41122c098f0ec5ec1961",
+   "build_sha256": "58c6500896660be59dc8d933fbac7e0cba160e46d617a8f56f273bbee698a4b7"
+  },
+  "VALF178-R1": {
+   "role": "R1 = VB2g body + VC2 face (configuration 2)",
+   "r6_sha256": "0691e08c0daf715421680a34282860f9f15f94189efca22d63de78c858d82678",
+   "build_sha256": "efa91aba1579d72f53e29346c45cf7c28ea2e2c2bc117102c0417eb58a2ca272"
+  },
+  "VAL4-R1-VD2": {
+   "role": "VD2 custom body deformation (VDF1.2)",
+   "r6_sha256": "7be629b867d0802b34463923de20881c4db5cfa91d89c4a8f73a693b3075f2ac",
+   "build_sha256": "d4867dfcd3be3c73d4854f743901b88fe69a3ad9d0694060f5563f3a65003801"
+  },
+  "VALF178-R1-VD2": {
+   "role": "VD2 custom body deformation (VDF1.2)",
+   "r6_sha256": "c1ae8103e2448bfc493e42906470acbf2c5ae1f015945be3e6e623bc3f412644",
+   "build_sha256": "2bb63e550bf36f3050595d4fa9257a0c2fce0ab84641e769a6cd78b0587c2116"
+  },
+  "VAL4-R1-VD2-VF2": {
+   "role": "accepted final configuration-1 body source (VD2 + VEF1 elf frame VF2)",
+   "r6_sha256": "fec300953b2306c326e738c0606a9d7218668592d12d616324a7b78c8a0f8fd0",
+   "build_sha256": "32fd7ffa80519380caf94b94eca91174be97476f585ee3c9a654242047f6d470"
+  },
+  "VALF178-R1-VD2-VF2": {
+   "role": "accepted final configuration-2 body source (VD2 + VEF1 elf frame VF2)",
+   "r6_sha256": "c338d97240c29129fef85578818eba84f632f99918fc9ed6861325937444e1e8",
+   "build_sha256": "0e32948a4c9fc3f648602a07f28983456b462669693c5fbe08740bf69ebd6aa1"
+  }
+ },
+ "definitions": {
+  "VDF1_2_VEF1": {
+   "file": "reviews/rac-rp3-evidence/vael_rp3_elf_frame/VF_definitions.json",
+   "file_sha256": "be41d6e1ebfc09c23a0b02d10043a13f11a7043339d609009f68a632735f1106",
+   "definition_sha256": "b0bf94cf4aa64ffc2866e9d12e61daf8e3e4273a6e51c3c211c3883ba808990c",
+   "module": "tools/rac/w1/vael_body_field.py",
+   "module_sha256": "36b8e1716730a609098f10f6613e460c59ce735f0f15b0508382af5b7a0f1f01",
+   "versions": [
+    "VDF1.2",
+    "VEF1"
+   ],
+   "VF2_magnitude": 1.0
+  },
+  "VDF1_2_VD": {
+   "file": "reviews/rac-rp3-evidence/vael_rp3_custom_deformation/VD_definitions.json",
+   "file_sha256": "c4dd30f43046b1caef45fc021f2d2e56d480e1e563efdc079e42ec893ef3f200",
+   "definition_sha256": "9f208810e8a3accc995e55ff4f50049794483516ca061af9af4ff266033d93ea"
+  },
+  "VC2": {
+   "note": "VC2 face (iteration 3 final) carried unchanged from R1 through VD2 / VF2 into production",
+   "VC_definitions_final_sha256": "f787a192fa71e69ef8fa28098c30ca59141a3b562d5b3f27e32ab22e7015da1f",
+   "c1_VB2gVC2_sha256": "3269964b990183df7ddb9f264b3629f7874b5f0ca3dd7d1c80f2480fe651cf8b",
+   "c2_VB2gVC2_sha256": "f74e786b247f7d64bdd2ecfb27caa9eaaa88fbb6fee1518b1a799a756b84325b"
+  }
+ },
+ "frozen_comparisons": {
+  "fenn": {
+   "freeze_record": "reviews/rac-rp3-evidence/fenn_rp3_freeze/FENN_RP3_FREEZE.json",
+   "freeze_record_sha256": "0bafdfb416eac50f8026145a48316bcbad69494e6361ba6222159b75c1f4c153",
+   "FN_M_REF_RP3_v001_sha256": "3f7f17783ad59d5fff9c139ccd64d312ccb4c7295fe58a365229ef4b72d8633c",
+   "FN_F_REF_RP3_v001_sha256": "14c1cf81bec30ed7656e81a2b6ce1b7cd4bbdfad18aa372642a1a9dd48cd9f6e",
+   "comparators": "FNM178 / FNF178 (frozen Fenn route at 178 cm, body / face); FNL4-CF2 / FNF181-CF2 E2 (visible-ear firewall)",
+   "unchanged": true
+  },
+  "aelari": {
+   "freeze_record": "reviews/rac-rp3-evidence/aelari_rp3_freeze/AELARI_RP3_FREEZE.json",
+   "freeze_record_sha256": "bccd7865af3538dc8b47cbacf246af149a1a8658813a2e1bbeee5bec46cb426a",
+   "AE_M_REF_RP3_v001_sha256": "b4bcf9ee124985dad476c7794b828d44ee6fc99ebeab75c6150626214f640414",
+   "AE_F_REF_RP3_v001_sha256": "505f340573b573c7b09bed547112b555925bc975ea7f0249ec191365fae1175c",
+   "comparators": "AEM178 / AEF178 (frozen Aelari route at 178 cm); AEL1-R1 / AELF190-R1 AE-E2 (visible-ear firewall)",
+   "unchanged": true
+  }
+ },
+ "validator": {
+  "rules": "D1 + D3 + D4 + D5 + D6 (authoritative)",
+  "implementation": "tools/rac/rp/marchfolk_rp3_v001/validator_v2.py --scale-ref 173.143 --d5 --d6-native",
+  "files": {
+   "VA_M_REF_RP3_v001.blend": "69 / 69 (read-back 69 / 69)",
+   "VA_F_REF_RP3_v001.blend": "69 / 69 (read-back 69 / 69)"
+  }
+ },
+ "files": {
+  "VA_M_REF_RP3_v001.blend": {
+   "race": "Vael",
+   "configuration": "c1",
+   "source": "VAL4-R1-VD2-VF2",
+   "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Vael/RP3/VA_M_REF_RP3_v001.blend",
+   "sha256": "42f0cebbf9588bb9acc7fd7746ff804f84fa104cf2d672285372375af2de855b",
+   "geometry_hash": "887c93176058ddc007de28f3cfab47a50cc409c969ab9cfb2be4f5d68e410719",
+   "face_topology_hash": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
+   "verts": 59076,
+   "quads": 59074,
+   "sidecar": "VA_M_REF_RP3_v001.json",
+   "sidecar_sha256": "2c9f74cb00f742ac894fcc14915bf558c60e59bb0d6f7e39a02331944ed0339c",
+   "branch_map": "VA_M_REF_RP3_v001_branch_map.npz",
+   "branch_map_sha256": "147eeefe52efaf684938f93fee5f47ba70d3a18872e8847efebcd726923bec18",
+   "landmarks": "VA_M_REF_RP3_v001_landmarks.json",
+   "landmarks_sha256": "982245a0021e026184bd1a55e1ec2a0d683f461d2b24e01e689bb6a635167041",
+   "embedded_status": "VAEL RP3 FINAL PRODUCTION BODY (freeze order 2026-10-28) - freeze status is held by record: VAEL_RP3_FREEZE.json",
+   "readback_all_pass": true,
+   "readback_validator": {
+    "firm": 69,
+    "stations": 69,
+    "fails": [],
+    "margin_zero": [
+     "thumb_mcp_l",
+     "thumb_mcp_r",
+     "toe1_j1_l",
+     "toe1_j1_r",
+     "toe2_j1_l",
+     "toe2_j1_r",
+     "toe2_j2_l",
+     "toe2_j2_r",
+     "toe4_j1_l",
+     "toe4_j1_r"
+    ]
+   },
+   "rebuild": {
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0,
+    "geometry_hash_equals_accepted": true,
+    "full_record_rebuild_max_abs_dV_cm": 0.0,
+    "full_record_faces_identical": true,
+    "full_record_meas_equals_committed": true,
+    "family_equals_reviewed_bodyfam_v004": true,
+    "branch_arrays_equal_reviewed_RI3": true,
+    "branch_max_abs_diff_vs_reviewed_cm": 0.0,
+    "params_equal_reviewed": true,
+    "geo_equal_reviewed": true,
+    "face_topology_equals_accepted": true,
+    "cuff_canon_equals_accepted": true,
+    "outside_branch_equals_family": true,
+    "committed_r6_equals_accepted": true,
+    "build_equals_accepted": true
+   },
+   "integrity": {
+    "verts": 59076,
+    "quads": 59074,
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "winding_consistent": true,
+    "normals_outward": true,
+    "coincident_vertex_pairs": 0,
+    "self_intersection_pairs": 60,
+    "family_self_intersection_pairs": 60,
+    "contact_pairs_equal_family_set": true,
+    "branch_self_intersections": 0,
+    "root_valence_4": true
+   },
+   "validator": {
+    "firm": 69,
+    "stations": 69,
+    "margin_zero": [
+     "thumb_mcp_l",
+     "thumb_mcp_r",
+     "toe1_j1_l",
+     "toe1_j1_r",
+     "toe2_j1_l",
+     "toe2_j1_r",
+     "toe2_j2_l",
+     "toe2_j2_r",
+     "toe4_j1_l",
+     "toe4_j1_r"
+    ],
+    "stations_identical_to_family": 69,
+    "family_equals_reviewed_v004": true
+   },
+   "anatomy": {
+    "T1": true,
+    "T2": true,
+    "T3": true,
+    "T7": true,
+    "unmasked_failing": [
+     "T1_T2_pass",
+     "T7_pass"
+    ],
+    "unmasked_localised_within_T1_outside_ear": true,
+    "unmasked_classification": "expected source-vs-new-ear divergence localised to the ear (R-6 source carries the MPFB human auricle; production carries VA-E2-RI3)"
+   },
+   "firewalls": {
+    "canon": "20 / 20",
+    "canon_failing": [],
+    "body_systems_vs_humans": "5 / 8",
+    "face_systems": "6 / 6",
+    "elf_face_rows": "9 / 9",
+    "equals_accepted_VF2": true
+   },
+   "pelvis": {
+    "gating": "9 / 9",
+    "equals_accepted_VF2": true
+   },
+   "hidden_ear": {
+    "face_systems_material": "5 / 7",
+    "direction_ok": "7 / 7",
+    "equals_accepted_VF2": true
+   },
+   "face": {
+    "mouth_rings": 37,
+    "orbit_rings": [
+     43,
+     43
+    ],
+    "poles_at_mouth_corners": 0,
+    "mouth_pass": true,
+    "orbit_pass": true,
+    "equals_family": true,
+    "expressions_equal_accepted_VF2": true
+   },
+   "density": {
+    "all_9_zones_pass": true,
+    "ear_branch_mean_pct_stature": 0.10185258699999858,
+    "zones_differing_from_family": [
+     "face",
+     "ears",
+     "head"
+    ]
+   },
+   "ear": {
+    "T4": 123,
+    "branch_faces": 3850,
+    "aspect_max": 9.264411053447912,
+    "aspect_gt10": 0,
+    "min_angle": 25.857303589351176,
+    "root_crease_max_deg": 50.70933992021048,
+    "measures_equal_reviewed": true,
+    "audit_equals_reviewed": true,
+    "root_concha": {
+     "cuff_height_above_skin_mean_cm": 0.4141462749297673,
+     "cuff_height_above_skin_p95_cm": 1.183031257632534,
+     "anterior_cuff_mound_max_cm": 0.42336172658233945,
+     "anterior_cuff_mound_p90_cm": 0.17041139545125042,
+     "anterior_cuff_mound_mean_cm": 0.04929667627476275,
+     "junction_height_above_skin_mean_cm": 0.5732361413068043,
+     "junction_height_above_skin_max_cm": 1.378644376743171,
+     "junction_anterior_height_mean_cm": 0.3052558497840713,
+     "concha_floor_min_vs_skin_cm": -0.3000000000002273,
+     "concha_floor_p10_vs_skin_cm": 0.10081927672699206,
+     "sheet_rigid_lift_h0_cm": 0.42094941111392253
+    }
+   },
+   "deformation": {
+    "final_minus_family_flipped_max": 0,
+    "final_minus_family_selfx_max": 0,
+    "poses_worse_than_family": [
+     "neck_rot45"
+    ],
+    "excess_over_marchfolk_gt5": {
+     "shoulder_flex90_l": 6
+    },
+    "worse_than_family_detail": {
+     "neck_rot45": {
+      "new_fold_face_pairs": [
+       [
+        57125,
+        57126
+       ]
+      ],
+      "parts": [
+       [
+        "cuff"
+       ],
+       [
+        "cuff"
+       ]
+      ],
+      "sides": [
+       [
+        "l"
+       ],
+       [
+        "l"
+       ]
+      ],
+      "edge_lengths_mm": [
+       [
+        0.237,
+        0.861,
+        0.143,
+        0.774
+       ],
+       [
+        1.487,
+        0.329,
+        1.558,
+        0.237
+       ]
+      ]
+     },
+     "diagnostic_rigid_head_ear_weights": {
+      "note": "diagnostic only (not production): ear-branch vertices bound 100 % to the head bone; every Standard v1 pose then equals the family realization (folds / flips / contacts)",
+      "equals_family_all_poses": true,
+      "per_pose": {
+       "shoulder_abd45_l": [
+        0,
+        10,
+        0
+       ],
+       "shoulder_abd90_l": [
+        0,
+        25,
+        0
+       ],
+       "shoulder_flex90_l": [
+        7,
+        19,
+        57
+       ],
+       "elbow_90_l": [
+        5,
+        31,
+        38
+       ],
+       "elbow_130_l": [
+        14,
+        54,
+        93
+       ],
+       "wrist_flex60_l": [
+        0,
+        0,
+        207
+       ],
+       "wrist_ext60_l": [
+        0,
+        0,
+        0
+       ],
+       "fist_l": [
+        45,
+        268,
+        699
+       ],
+       "thumb_opposition_l": [
+        0,
+        0,
+        54
+       ],
+       "hip_flex90_l": [
+        10,
+        56,
+        58
+       ],
+       "knee_90_l": [
+        8,
+        12,
+        43
+       ],
+       "knee_140_l": [
+        3,
+        77,
+        157
+       ],
+       "ankle_dorsi20_l": [
+        0,
+        0,
+        0
+       ],
+       "toe_flex30_l": [
+        0,
+        0,
+        0
+       ],
+       "toe_ext30_l": [
+        42,
+        72,
+        85
+       ],
+       "trunk_twist30": [
+        0,
+        0,
+        2
+       ],
+       "neck_flex30": [
+        0,
+        0,
+        0
+       ],
+       "neck_rot45": [
+        0,
+        0,
+        0
+       ]
+      }
+     }
+    },
+    "family_equals_reviewed_v004": true,
+    "new_rest_contact_class": 0,
+    "ear_readiness_all_zero": true
+   }
+  },
+  "VA_F_REF_RP3_v001.blend": {
+   "race": "Vael",
+   "configuration": "c2",
+   "source": "VALF178-R1-VD2-VF2",
+   "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Vael/RP3/VA_F_REF_RP3_v001.blend",
+   "sha256": "516b18e8933a2d33f62cf51472408d9588af2c23179ff7b2f5119775dd75bc3a",
+   "geometry_hash": "5e5fbf7e1e20a638ca63a0cb7fe387f75ae278a5fdebf0ac1e21b788db976c2a",
+   "face_topology_hash": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
+   "verts": 59076,
+   "quads": 59074,
+   "sidecar": "VA_F_REF_RP3_v001.json",
+   "sidecar_sha256": "c10c439912e3208b4ce91bab4fa330f5c62ce922d98b905275b1b20ab31f6a79",
+   "branch_map": "VA_F_REF_RP3_v001_branch_map.npz",
+   "branch_map_sha256": "b6c8395a93fa698483194af3bc9b28cd68cf9c5a3c05689808dc763aef87d41c",
+   "landmarks": "VA_F_REF_RP3_v001_landmarks.json",
+   "landmarks_sha256": "a9c1cbfe00587f1ff74fe6236bffa7710cbc75798c6cf377f9ade2cdc24114a6",
+   "embedded_status": "VAEL RP3 FINAL PRODUCTION BODY (freeze order 2026-10-28) - freeze status is held by record: VAEL_RP3_FREEZE.json",
+   "readback_all_pass": true,
+   "readback_validator": {
+    "firm": 69,
+    "stations": 69,
+    "fails": [],
+    "margin_zero": [
+     "toe1_j1_l",
+     "toe1_j1_r",
+     "toe4_j1_l",
+     "toe4_j1_r"
+    ]
+   },
+   "rebuild": {
+    "regen_geometry_identical": true,
+    "regen_max_abs_dV_cm": 0.0,
+    "geometry_hash_equals_accepted": true,
+    "full_record_rebuild_max_abs_dV_cm": 0.0,
+    "full_record_faces_identical": true,
+    "full_record_meas_equals_committed": true,
+    "family_equals_reviewed_bodyfam_v004": true,
+    "branch_arrays_equal_reviewed_RI3": true,
+    "branch_max_abs_diff_vs_reviewed_cm": 0.0,
+    "params_equal_reviewed": true,
+    "geo_equal_reviewed": true,
+    "face_topology_equals_accepted": true,
+    "cuff_canon_equals_accepted": true,
+    "outside_branch_equals_family": true,
+    "committed_r6_equals_accepted": true,
+    "build_equals_accepted": true
+   },
+   "integrity": {
+    "verts": 59076,
+    "quads": 59074,
+    "quads_pct": 100.0,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "winding_consistent": true,
+    "normals_outward": true,
+    "coincident_vertex_pairs": 0,
+    "self_intersection_pairs": 110,
+    "family_self_intersection_pairs": 110,
+    "contact_pairs_equal_family_set": true,
+    "branch_self_intersections": 0,
+    "root_valence_4": true
+   },
+   "validator": {
+    "firm": 69,
+    "stations": 69,
+    "margin_zero": [
+     "toe1_j1_l",
+     "toe1_j1_r",
+     "toe4_j1_l",
+     "toe4_j1_r"
+    ],
+    "stations_identical_to_family": 69,
+    "family_equals_reviewed_v004": true
+   },
+   "anatomy": {
+    "T1": true,
+    "T2": true,
+    "T3": true,
+    "T7": true,
+    "unmasked_failing": [
+     "T1_T2_pass",
+     "T7_pass"
+    ],
+    "unmasked_localised_within_T1_outside_ear": true,
+    "unmasked_classification": "expected source-vs-new-ear divergence localised to the ear (R-6 source carries the MPFB human auricle; production carries VA-E2-RI3)"
+   },
+   "firewalls": {
+    "canon": "20 / 20",
+    "canon_failing": [],
+    "body_systems_vs_humans": "5 / 8",
+    "face_systems": "6 / 6",
+    "elf_face_rows": "9 / 9",
+    "equals_accepted_VF2": true
+   },
+   "pelvis": {
+    "gating": "9 / 9",
+    "equals_accepted_VF2": true
+   },
+   "hidden_ear": {
+    "face_systems_material": "6 / 7",
+    "direction_ok": "7 / 7",
+    "equals_accepted_VF2": true
+   },
+   "face": {
+    "mouth_rings": 33,
+    "orbit_rings": [
+     43,
+     43
+    ],
+    "poles_at_mouth_corners": 0,
+    "mouth_pass": true,
+    "orbit_pass": true,
+    "equals_family": true,
+    "expressions_equal_accepted_VF2": true
+   },
+   "density": {
+    "all_9_zones_pass": true,
+    "ear_branch_mean_pct_stature": 0.09851618829893216,
+    "zones_differing_from_family": [
+     "face",
+     "ears",
+     "head"
+    ]
+   },
+   "ear": {
+    "T4": 144,
+    "branch_faces": 3850,
+    "aspect_max": 9.264411053445333,
+    "aspect_gt10": 0,
+    "min_angle": 14.923671978124073,
+    "root_crease_max_deg": 51.07425508405798,
+    "measures_equal_reviewed": true,
+    "audit_equals_reviewed": true,
+    "root_concha": {
+     "cuff_height_above_skin_mean_cm": 0.35976314751427974,
+     "cuff_height_above_skin_p95_cm": 1.0903568008154565,
+     "anterior_cuff_mound_max_cm": 0.3194677334481297,
+     "anterior_cuff_mound_p90_cm": 0.07804862188834055,
+     "anterior_cuff_mound_mean_cm": 0.024142831468317617,
+     "junction_height_above_skin_mean_cm": 0.4292763503471065,
+     "junction_height_above_skin_max_cm": 1.223513049273068,
+     "junction_anterior_height_mean_cm": 0.16105547582515892,
+     "concha_floor_min_vs_skin_cm": -0.29999999999982774,
+     "concha_floor_p10_vs_skin_cm": 0.02717655884726836,
+     "sheet_rigid_lift_h0_cm": 0.2882762525755586
+    }
+   },
+   "deformation": {
+    "final_minus_family_flipped_max": 0,
+    "final_minus_family_selfx_max": 0,
+    "poses_worse_than_family": [],
+    "excess_over_marchfolk_gt5": {},
+    "worse_than_family_detail": {},
+    "family_equals_reviewed_v004": true,
+    "new_rest_contact_class": 0,
+    "ear_readiness_all_zero": true
+   }
+  }
+ },
+ "accepted_residuals": {
+  "c1_standoff": {
+   "note": "c1 mean / tip normalised free-ear stand-off a few thousandths HH above frozen Fenn (order \u00a72; accepted secondary measurement residual; RI3 not deformed to chase it)",
+   "measured": {
+    "mean_over_fenn_HH": 0.00470577103199054,
+    "median_over_fenn_HH": 0.004054729575038336,
+    "tip_over_fenn_HH": 0.0036891541267679018,
+    "stand_off_order_fenn_gt_vael_gt_aelari": false
+   },
+   "c2": {
+    "mean_over_fenn_HH": -0.005291907061638006,
+    "median_over_fenn_HH": -0.005942948518590112,
+    "tip_over_fenn_HH": -0.006308523966860435,
+    "stand_off_order_fenn_gt_vael_gt_aelari": true
+   }
+  }
+ },
+ "accepted_diagnostic_notes": [
+  "unmasked anatomy.py differences are the expected source-vs-new-ear divergence localised to the ear (R-6 source carries the MPFB human auricle; production carries VA-E2-RI3)",
+  "hidden-ear 7-system face read: 5 of 7 material in c1 (the jaw / mandible guard reading is the accepted VF2 result); the order face gate (6 / 6 systems, 9 / 9 elf rows) is the va2_eval record",
+  "VA-P2c and VA-P3 pelvis rows are report-only (as accepted); gating 9 / 9",
+  "ear branch faces carry a zero placeholder UV (UV / materials out of scope)"
+ ],
+ "carry_forward": {
+  "register": "specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md",
+  "carried": [
+   "VAEL-CF-SHOULDER-1"
+  ],
+  "new_ids": [],
+  "VAEL_CF_SHOULDER_1": {
+   "c1": {
+    "shoulder_flex90_final": 19,
+    "family": 19,
+    "marchfolk_v005": 13
+   },
+   "c2": {
+    "shoulder_flex90_final": 16,
+    "family": 16,
+    "marchfolk_v005": 14
+   }
+  }
+ },
+ "gates": {
+  "record": "VAEL_FINAL_gates.json",
+  "report": "reviews/claude-rac-rp3-vael-final-freeze-report.md",
+  "parents": [
+   "reviews/claude-rac-rp3-vael-ear-root-integration-gate.md",
+   "reviews/claude-rac-rp3-vael-ear-prototype-gate.md",
+   "reviews/claude-rac-rp3-vael-elf-frame-human-firewall-gate.md"
+  ],
+  "ear_firewall_all_hold": true,
+  "probes_all_clean": true,
+  "probes": "12 / 12"
+ },
+ "readback": {
+  "file": "VAEL_RP3_freeze_readback.json",
+  "all_pass": true,
+  "c1_c2_face_topology_identical": true,
+  "validator": "recomputed from the read-back geometry"
+ },
+ "provenance": [
+  "VAL4-R1-VD2-VF2 / VALF178-R1-VD2-VF2 R-6 regenerated from reviews/reference-assets/builds (regen.py: geometry identical, max |dV| 0) and fully re-built from the record (max |dV| 0, measures equal)",
+  "native hm08 export",
+  "propagate.py onto MPFB Family Base v005 -> family realization (byte-identical to the reviewed VA_{M,F}_REF_RP3_bodyfam_v004)",
+  "VA-E2-RI3 on VAEL_EAR_BRANCH_TOPOLOGY_v002 from the committed cuff canon (run_va_ri.sh; arrays identical to the reviewed RI3, max |dV| 0, faces identical)",
+  "fn_make_prod.py production frame (m, Z up, faces -Y, subject left +X, origin pelvis root on ground)",
+  "E: copies read back byte-identical; validator recomputed from the read-back geometry"
+ ],
+ "freezes": [
+  "Vael RP3 configuration-1 / configuration-2 final production bodies",
+  "VA-E2-RI3 on VAEL_EAR_BRANCH_TOPOLOGY_v002 as the accepted Vael-specific external-ear branch"
+ ],
+ "not_done": [
+  "production ear rigging",
+  "creator morphs",
+  "final UV / materials",
+  "LODs",
+  "UE5 integration",
+  "low-light physiology (not decided)",
+  "Halvren (not started)",
+  "no universal elf anatomy / topology declared"
+ ],
+ "gate_pass_by_file": {
+  "VA_M_REF_RP3_v001.blend": false,
+  "VA_F_REF_RP3_v001.blend": true
+ },
+ "all_gates_pass": false,
+ "open_items": {
+  "VA_M_REF_RP3_v001.blend": {
+   "neck_rot45": {
+    "new_fold_face_pairs": [
+     [
+      57125,
+      57126
+     ]
+    ],
+    "parts": [
+     [
+      "cuff"
+     ],
+     [
+      "cuff"
+     ]
+    ],
+    "sides": [
+     [
+      "l"
+     ],
+     [
+      "l"
+     ]
+    ],
+    "edge_lengths_mm": [
+     [
+      0.237,
+      0.861,
+      0.143,
+      0.774
+     ],
+     [
+      1.487,
+      0.329,
+      1.558,
+      0.237
+     ]
+    ]
+   },
+   "diagnostic_rigid_head_ear_weights": {
+    "note": "diagnostic only (not production): ear-branch vertices bound 100 % to the head bone; every Standard v1 pose then equals the family realization (folds / flips / contacts)",
+    "equals_family_all_poses": true,
+    "per_pose": {
+     "shoulder_abd45_l": [
+      0,
+      10,
+      0
+     ],
+     "shoulder_abd90_l": [
+      0,
+      25,
+      0
+     ],
+     "shoulder_flex90_l": [
+      7,
+      19,
+      57
+     ],
+     "elbow_90_l": [
+      5,
+      31,
+      38
+     ],
+     "elbow_130_l": [
+      14,
+      54,
+      93
+     ],
+     "wrist_flex60_l": [
+      0,
+      0,
+      207
+     ],
+     "wrist_ext60_l": [
+      0,
+      0,
+      0
+     ],
+     "fist_l": [
+      45,
+      268,
+      699
+     ],
+     "thumb_opposition_l": [
+      0,
+      0,
+      54
+     ],
+     "hip_flex90_l": [
+      10,
+      56,
+      58
+     ],
+     "knee_90_l": [
+      8,
+      12,
+      43
+     ],
+     "knee_140_l": [
+      3,
+      77,
+      157
+     ],
+     "ankle_dorsi20_l": [
+      0,
+      0,
+      0
+     ],
+     "toe_flex30_l": [
+      0,
+      0,
+      0
+     ],
+     "toe_ext30_l": [
+      42,
+      72,
+      85
+     ],
+     "trunk_twist30": [
+      0,
+      0,
+      2
+     ],
+     "neck_flex30": [
+      0,
+      0,
+      0
+     ],
+     "neck_rot45": [
+      0,
+      0,
+      0
+     ]
+    }
+   }
+  }
+ }
+}

@@ -1,6 +1,13 @@
 # Character Design Status
 
-## VAEL RP3 EAR ROOT INTEGRATION — PASS — VA-E2 (RI3) READY FOR FINAL CONSOLIDATION — NOT FROZEN (2026-10-28)
+## VAEL RP3 FINAL CONSOLIDATION — NEEDS AUTHOR DECISION — NOT FROZEN (2026-10-28)
+
+- **Report:** `reviews/claude-rac-rp3-vael-final-freeze-report.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_final/` (21 sheets, `VAEL_FINAL_gates.json`, `VAEL_RP3_FREEZE_CANDIDATE.json`).
+- **Ready to freeze:** clean rebuild dV 0 (family = bodyfam_v004, RI3 arrays = reviewed); `VA_M/F_REF_RP3_v001` written to E: `Vael/RP3/`, read back byte-identical, validator from read-back 69 / 69 both; canon 20 / 20, human 5 / 8, face 6 / 6, elf rows 9 / 9, pelvis 9 / 9, ear T-4 123 / 144, aspect 9.26, probes 12 / 12, readiness 0 / 0 / 0; VAEL-CF-SHOULDER-1 unchanged (+6 / +2); c1 stand-off residual as accepted.
+- **Open item:** c1 `neck_rot45` adds one fold (>120° dihedral) on two sub-mm left cuff quads at the lobe junction (no flip / contact). Cause: 1–1.6 % neck weight on the ear branch under plain LBS; ear bound 100 % to head (diagnostic) = family on all 18 poses. Proposed rig-stage carry-forward `VAEL-CF-EARROOT-1`.
+- **Next:** STOP for ChatGPT review — accept the carry-forward and freeze by record (candidate record → `VAEL_RP3_FREEZE.json`, no rebuild), or order a geometry fix. Halvren next, not started.
+
+## (previous) VAEL RP3 EAR ROOT INTEGRATION — PASS — VA-E2 (RI3) READY FOR FINAL CONSOLIDATION — NOT FROZEN (2026-10-28)
 
 - **Gate:** `reviews/claude-rac-rp3-vael-ear-root-integration-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_ear_root_integration/` (19 sheets). Plan updated (not executed): `reviews/claude-rac-rp3-vael-final-consolidation-plan.md`.
 - **Fixed:** the "ear inside an ear" read came from the lifted ear (h0 0.87 / 0.74 cm) and a raised biharmonic cuff mound tracing the human root footprint. RI1 (rigid lowering, concha clearance −0.30), RI2 (+ skin-hugging cuff) and RI3 (RI2 on a six-ring local Vael cuff derivative) built on the unchanged VA-E2 outer geometry.

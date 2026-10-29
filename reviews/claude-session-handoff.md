@@ -2,7 +2,21 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-28) — VAEL EAR ROOT INTEGRATION — PASS — RI3 READY FOR FINAL CONSOLIDATION — awaiting ChatGPT review
+## LATEST (2026-10-28) — VAEL FINAL CONSOLIDATION — NEEDS AUTHOR DECISION (one c1 neck_rot45 cuff fold) — NOT FROZEN — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-vael-final-consolidation-freeze-order.md`. Report: `reviews/claude-rac-rp3-vael-final-freeze-report.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_final/`.
+- Drivers in `tools/rac/rp/vael_rp3_v001/`: `run_vafinal.sh` (rebuild A + RI3 B) → `run_vafinal_eval.sh` → `run_vafinal_prod.sh` → `va_unmasked_localise.py` → `va_final_gates.py WORK WORK` → `va_final_sheets.py WORK WORK/sheets` → PC copy → `va_freeze_verify.py` (validator from read-back; `freeze_check.py` gained optional `RB_DUMP`) → `va_freeze_record.py` → `va_final_collect.sh`. Work folder `/tmp/claude-0/rt/va/final`.
+- E: `Vael/RP3/VA_{M,F}_REF_RP3_v001.{blend,json}`, `_landmarks.json`, `_branch_map.npz`; read back byte-identical.
+
+**Key findings**
+- All gates pass and match the reviewed VF2 / RI3, except c1 `neck_rot45`: 1 new fold on two sub-mm left cuff quads (no flip / contact). Ear bound rigidly to head (diagnostic) removes it. Proposed `VAEL-CF-EARROOT-1` (rig stage).
+- On acceptance: copy `VAEL_RP3_FREEZE_CANDIDATE.json` → `VAEL_RP3_FREEZE.json` (status line only), then update manifest, `VAEL_V1.md`, register (CF-SHOULDER-1 carried + new id), STATUS.
+- Halvren next (not started): Fenn / Aelari / Vael are separate elf references; Halvren is not a simple average and needs its own biological gate; shared ear engineering may inform it.
+
+**Next:** STOP for ChatGPT review.
+
+## (previous) 2026-10-28 — VAEL EAR ROOT INTEGRATION — PASS — RI3 READY FOR FINAL CONSOLIDATION
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-vael-ear-root-integration-order.md`. Gate: `reviews/claude-rac-rp3-vael-ear-root-integration-gate.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_ear_root_integration/`. Plan updated.
