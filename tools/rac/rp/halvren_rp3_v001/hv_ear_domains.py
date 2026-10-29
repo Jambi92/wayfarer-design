@@ -67,9 +67,12 @@ def one(X, rd, HH, sc):
     conc = float(np.percentile(dep[fill][inside], 99) / L) if inside.any() else 0.0
     Uf = F[:, 1]; ur = Uf.max() - Uf.min(); Bf = F[:, 0]; reg = inside & (cen[:, 0] < Bf.min() + 0.55 * (Bf.max() - Bf.min())) & (cen[:, 1] < Uf.min() + 0.6 * ur); dv = np.where(reg, dep[fill], -1); cav = cen[int(np.argmax(dv))] if reg.any() else None
     trag = float((cav[1] - Uf.min()) / ur) if cav is not None else float('nan')     # the tragus fronts the cavum: deepest concha point height fraction
+    poly = np.c_[(rd['V_loop'] - O) @ b, (rd['V_loop'] - O) @ u]; gx, gy = np.meshgrid(np.arange(poly[:, 0].min(), poly[:, 0].max(), 0.1), np.arange(poly[:, 1].min(), poly[:, 1].max(), 0.1))
+    gp = np.c_[gx.ravel(), gy.ravel()]; gin = gp[E._inside_dist(poly, gp) > 0]; dfr, _ = cKDTree(F).query(gin); cover = float(np.mean(dfr < 0.15))   # share of the v005 root footprint under free auricle
     return dict(length_over_HH=L / HH, width_over_length=W / L, projection_deg=proj, upward_ext_over_HH=float(F[:, 1].max() - Ul.max()) / HH,
                 backward_angle_deg=float(np.degrees(np.arctan2(ax[0], ax[1]))), tip_angle_deg=tip, lobe_fraction=lobe, root_line_deg=rl, concha_depth_over_L=conc,
-                tragus_height_frac=trag, helix_fullness=float(area / (L * W)), raw=dict(length_cm=L, width_cm=W, free_points=int(fr.sum()), attach_points=int(len(antA))))
+                tragus_height_frac=trag, helix_fullness=float(area / (L * W)), raw=dict(length_cm=L, width_cm=W, free_points=int(fr.sum()), attach_points=int(len(antA)), cavum_bu_cm=(cav.tolist() if cav is not None else None),
+                         footprint_free_coverage=cover, cavum_behind_loop_front_cm=(float(cav[0] - poly[:, 0].min()) if cav is not None else None)))
 def measure(kind, path, head):
     HH, sc = E.head_scale('%s/%s_r6.npz' % (RA, head)); z = np.load(path); V = z['V'].astype(float); out = {}
     for sd in ('l', 'r'):

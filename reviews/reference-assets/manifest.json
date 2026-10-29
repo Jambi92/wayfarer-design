@@ -1513,7 +1513,7 @@
   },
   "HVC1-HB2HF2": {
    "race": "Halvren",
-   "role": "reference, configuration 1, RECOMMENDED central mixed-expression body + face source CANDIDATE HB2 + HF2 (HVDEF1; Halvren body / face source order 2026-10-29); pelvis held, ears locked",
+   "role": "reference, configuration 1, RECOMMENDED central mixed-expression body + face source CANDIDATE HB2 + HF2 (HVDEF1; Halvren body / face source order 2026-10-29); pelvis held, ears locked -- superseded for ear work by HVC1-HB2HF2-HPB (HP-B); kept as ancestry",
    "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-halvren-body-face-source-gate.md); NOT frozen",
    "provenance": "build_variant.py: HVC1_build.json + overrides c1_HB2HF2.json (tools/rac/rp/halvren_rp3_v001/hv_defs.py HVDEF1), stature 178 (resolve_stature)",
    "stature_r6": 177.98867598176003,
@@ -1526,7 +1526,7 @@
   },
   "HVF178-HB2HF2": {
    "race": "Halvren",
-   "role": "reference, configuration 2, RECOMMENDED central mixed-expression body + face source CANDIDATE HB2 + HF2 (HVDEF1; Halvren body / face source order 2026-10-29); pelvis held, ears locked",
+   "role": "reference, configuration 2, RECOMMENDED central mixed-expression body + face source CANDIDATE HB2 + HF2 (HVDEF1; Halvren body / face source order 2026-10-29); pelvis held, ears locked -- superseded for ear work by HVF178-HB2HF2-HPB (HP-B); kept as ancestry",
    "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-halvren-body-face-source-gate.md); NOT frozen",
    "provenance": "build_variant.py: MF-F-R_build.json + overrides c2_HB2HF2.json (tools/rac/rp/halvren_rp3_v001/hv_defs.py HVDEF1), stature 178 (resolve_stature)",
    "stature_r6": 177.9828063212335,
@@ -1536,6 +1536,72 @@
    "build_sha256": "ee533ac39b48afd7b7b3647d502d93eb047e92fa6d257fc4469e764c4640aa68",
    "height_macro": 0.62255859375,
    "other_candidates": "HB1 / HB2 / HB3 and HB1HF1 / HB3HF3 / HB2HF1 / HB2HF3 records are in reviews/reference-assets (r6 / builds) as evidence candidates; see reviews/rac-rp3-evidence/halvren_rp3_body_face_source/sources/"
+  },
+  "HVC1-HB2HF2-HPB": {
+   "race": "Halvren",
+   "role": "reference, configuration 1, central Halvren body / face / pelvis source CANDIDATE ACCEPTED FOR EAR WORK (HB2 + HF2 + HP-B; HVDEF1 + HP-B pelvis Y x 1.02, hip-scale-horiz-decr 0.05); not final / not frozen until ear selection and final consolidation",
+   "accepted": "ACCEPTED FOR EAR WORK (reviews/chatgpt-rac-rp3-halvren-central-accept-ear-architecture-order.md \u00a71-\u00a75); NOT final; NOT frozen",
+   "provenance": "build_variant.py: HVC1_build.json + overrides c1_HB2HF2-HPB.json (tools/rac/rp/halvren_rp3_v001/hv_defs.py HVDEF1 + PELVIS HP-B), stature 178 (resolve_stature)",
+   "stature_r6": 178.00766918808222,
+   "file": "r6/HVC1-HB2HF2-HPB_r6.npz",
+   "sha256": "3ae231a861369de9d61a1196b269d8b17630a1ce15b53edadf82bb395f710ba8",
+   "build": "builds/HVC1-HB2HF2-HPB_build.json",
+   "build_sha256": "ea4be40547c7d3ee75d3f2049eae9cee94727380fe1b49d4063350f9ac662493",
+   "height_macro": 0.52685546875,
+   "ancestry": "HVC1-HB2HF2 (pelvis held, body / face source order) -> HVC1-HB2HF2-HPB-HB2HF2-HPB; HVC1 record kept"
+  },
+  "HVF178-HB2HF2-HPB": {
+   "race": "Halvren",
+   "role": "reference, configuration 2, central Halvren body / face / pelvis source CANDIDATE ACCEPTED FOR EAR WORK (HB2 + HF2 + HP-B; HVDEF1 + HP-B pelvis Y x 1.02, hip-scale-horiz-decr 0.05); not final / not frozen until ear selection and final consolidation",
+   "accepted": "ACCEPTED FOR EAR WORK (reviews/chatgpt-rac-rp3-halvren-central-accept-ear-architecture-order.md \u00a71-\u00a75); NOT final; NOT frozen",
+   "provenance": "build_variant.py: MF-F-R_build.json + overrides c2_HB2HF2-HPB.json (the HVF178 route) (tools/rac/rp/halvren_rp3_v001/hv_defs.py HVDEF1 + PELVIS HP-B), stature 178 (resolve_stature)",
+   "stature_r6": 177.98773683607578,
+   "file": "r6/HVF178-HB2HF2-HPB_r6.npz",
+   "sha256": "fc47ba4bf38a807f2e5f6d18826f47c2e9051752b76b27deda3cc13645b4c329",
+   "build": "builds/HVF178-HB2HF2-HPB_build.json",
+   "build_sha256": "827b656859c0133191c43963c5b934d99cb7aaf5a6099c818b6e63a8a5c23400",
+   "height_macro": 0.621337890625,
+   "ancestry": "HVF178-HB2HF2 (pelvis held, body / face source order) -> HVF178-HB2HF2-HPB-HB2HF2-HPB; HVF178 record kept"
+  },
+  "HVC1-HB2HF1-HPB": {
+   "race": "Halvren",
+   "role": "DIAGNOSTIC mosaic source (HB2 + HF1 + HP-B) for the ear mosaic test; not a central candidate",
+   "accepted": "DIAGNOSTIC only",
+   "stature_r6": 177.99330819398165,
+   "file": "r6/HVC1-HB2HF1-HPB_r6.npz",
+   "sha256": "f3d763671158015da534a1ecc830dd0dfcc388d184c6c26e9e2ef7713462fbdc",
+   "build": "builds/HVC1-HB2HF1-HPB_build.json",
+   "build_sha256": "5dde8416607e6739be821c292cf5cd134d83143b922a3564955e4e728ff4355f"
+  },
+  "HVC1-HB2HF3-HPB": {
+   "race": "Halvren",
+   "role": "DIAGNOSTIC mosaic source (HB2 + HF3 + HP-B) for the ear mosaic test; not a central candidate",
+   "accepted": "DIAGNOSTIC only",
+   "stature_r6": 177.99733048304915,
+   "file": "r6/HVC1-HB2HF3-HPB_r6.npz",
+   "sha256": "bc912e9cd4c6c4e564702138c6bbe65433498bd116c5847f1f143f2460c147f6",
+   "build": "builds/HVC1-HB2HF3-HPB_build.json",
+   "build_sha256": "8541aba799f585e34945da0a41daf09fc7f3dcf325f549e7c0f292c5ea02882a"
+  },
+  "HVF178-HB2HF1-HPB": {
+   "race": "Halvren",
+   "role": "DIAGNOSTIC mosaic source (HB2 + HF1 + HP-B) for the ear mosaic test; not a central candidate",
+   "accepted": "DIAGNOSTIC only",
+   "stature_r6": 178.01269236952066,
+   "file": "r6/HVF178-HB2HF1-HPB_r6.npz",
+   "sha256": "e0efda6e93ff1d3cb0f44cec672c9e24d252fb85e45523e03f69921daf1d9582",
+   "build": "builds/HVF178-HB2HF1-HPB_build.json",
+   "build_sha256": "ff58d904653a68772ad2f63dddc3a119122e577b3c568ec3787e6fe389a9a83c"
+  },
+  "HVF178-HB2HF3-HPB": {
+   "race": "Halvren",
+   "role": "DIAGNOSTIC mosaic source (HB2 + HF3 + HP-B) for the ear mosaic test; not a central candidate",
+   "accepted": "DIAGNOSTIC only",
+   "stature_r6": 177.9857786372304,
+   "file": "r6/HVF178-HB2HF3-HPB_r6.npz",
+   "sha256": "8cba1d7fe5b419454ddee280f6e002108e0495c84cd29ac8c3e07aa36ac102ab",
+   "build": "builds/HVF178-HB2HF3-HPB_build.json",
+   "build_sha256": "61d205a1ee0d7543dc422bc8deef89dde5dbfca0ccf2dd8ce10dc9d4bf108185"
   }
  },
  "also": {

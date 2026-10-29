@@ -80,14 +80,19 @@ CAND.update({'VA-E2-RI1': dict(W1V, geo=dict(clear=-0.30)),
 # helix fullness carried into the apex); vertical angle tilt; sweep). Domains move independently (lobe / projection / base / concha are non-monotone across
 # HE1 -> HE3). Root / cuff: the RI3 skin-hugging cuff (concha floor at the skin, no raised cuff perimeter) on the read-only Vael six-ring cuff canon
 # (engineering connectivity reuse, audited for Halvren in the topology audit). Additive: Fenn / Aelari / Vael candidates are unchanged.
-HV_SKIN = dict(clear=-0.30, cuff_skin_r=0.45, cuff_skin_w=0.2, cuff_skin_root=0.45, cuff_skin_slope=1.4, presmooth=0)
+VA_RI3_SKIN = dict(clear=-0.30, cuff_skin_r=0.45, cuff_skin_w=0.2, cuff_skin_root=0.45, cuff_skin_slope=1.4, cuff_skin_corner=0.6, presmooth=0)   # = Vael RI3 exactly (corner 0.6 = ear_build default)
+# HR1 Halvren root / cuff derivative (§10; geometry only -- the RI3 six-ring cuff connectivity is reused read-only): the human-family concha seats deeper
+# (floor 0.50 cm below the hidden-ear skull level; the Marchfolk auricle's own cavum lies ~1.2 cm below it) so the attachment / junction comes down to the
+# skin, and the skin pull fades over 1.2 x head scale cm towards the rim / back junction (RI3: 0.6) so the narrow lower postauricular corner stays
+# biharmonic at short (human-forward) lengths. Topology audit: RI3 geometry -> slivers / self-intersections at the human-forward bound; HR1 clean.
+HV_SKIN = dict(VA_RI3_SKIN, clear=-0.50, cuff_skin_corner=1.2, lift_lobe=0.70)   # + freer human-family lobe edge (lift 0.70; GEO 0.45)
 HV_BASE = dict(L=7.6, wb=1.85, taper=("halvren", 0.45, 1.10, 0.07), lobe=0.17, proj=27, tilt=21, sweep=0.9, thick=0.29,
                ah=0.27, crura=1.0, concha=0.80, crus=0.15, trag=0.29, atrag=0.21, helix=(0.29, 0.30))
 _g = lambda **k: dict(HV_SKIN, **k)
 CAND.update({
     # HE1 human-forward mixed: human-family root flare, projection, lobe, concha / tragus and helix roll; elven-derived upper helix (late, blunt apex out of a
     # retained helix shoulder), mild backward tilt / sweep; base slightly broader than either parent family
-    'HE1': dict(HV_BASE, L=6.9, wb=1.82, taper=("halvren", 0.58, 0.80, 0.12), lobe=0.19, proj=23, tilt=17, sweep=0.65, thick=0.31,
+    'HE1': dict(HV_BASE, L=6.3, wb=1.82, taper=("halvren", 0.58, 0.80, 0.12), lobe=0.19, proj=23, tilt=17, sweep=0.65, thick=0.31,
                 ah=0.29, concha=0.84, crus=0.16, trag=0.30, atrag=0.23, helix=(0.30, 0.30), geo=_g(phi0=30.0, tauA=10.0)),
     # HE2 balanced mixed central: broad mixed base (wider than Marchfolk / Fenn / Aelari, narrower than Vael), human-leaning projection, tragus and lobe,
     # moderate upper extension and restrained point out of a reduced helix shoulder, moderate backward angle / sweep
@@ -108,12 +113,14 @@ CAND.update({
     'HVT-HUM-R': dict(L=6.4, wb=1.75, taper=("halvren", 0.62, 0.70, 0.15), lobe=0.18, proj=22, tilt=12, sweep=0.4, thick=0.30,
                       ah=0.30, crura=1.0, concha=0.85, crus=0.16, trag=0.30, atrag=0.24, helix=(0.30, 0.30)),
     'HVT-ELF-R': dict(HV_BASE, L=9.4, wb=1.90, taper=("halvren", 0.30, 1.20, 0.0), proj=42, tilt=34, sweep=1.8, thick=0.27)})
-CAND['HVT-HUM-S'] = dict(CAND['HVT-HUM-R'], geo=_g()); CAND['HVT-ELF-S'] = dict(CAND['HVT-ELF-R'], geo=_g())
+CAND['HVT-HUM-S'] = dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN)); CAND['HVT-ELF-S'] = dict(CAND['HVT-ELF-R'], geo=dict(VA_RI3_SKIN))      # RI3 root geometry as frozen for Vael
+CAND['HVT-HUM-H'] = dict(CAND['HVT-HUM-R'], geo=_g()); CAND['HVT-ELF-H'] = dict(CAND['HVT-ELF-R'], geo=_g())                                  # HR1 Halvren root geometry
 # root / cuff derivative exploration on the human-forward bound (topology audit §10): skin-cuff variants of HVT-HUM-S
-CAND.update({'HVX-HUM-C1': dict(CAND['HVT-HUM-R'], geo=_g(cuff_skin_corner=0.9)), 'HVX-HUM-C2': dict(CAND['HVT-HUM-R'], geo=_g(clear=-0.15)),
-             'HVX-HUM-C3': dict(CAND['HVT-HUM-R'], geo=_g(clear=-0.15, cuff_skin_corner=0.9, lift_lobe=0.6))})
-for _k in ('HE1', 'HE2', 'HE3'):                  # topology audit: the same HE geometry on the rigid Fenn v002 cuff (root geo phi0 / tauA kept, no skin cuff)
+CAND.update({'HVX-HUM-C1': dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN, cuff_skin_corner=0.9)), 'HVX-HUM-C2': dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN, clear=-0.15)),
+             'HVX-HUM-C3': dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN, clear=-0.15, cuff_skin_corner=0.9, lift_lobe=0.6))})
+for _k in ('HE1', 'HE2', 'HE3'):                  # topology audit: the same HE geometry on the rigid Fenn v002 cuff (-R; root geo phi0 / tauA kept) and on the Vael RI3 root geometry (-V)
     CAND[_k + '-R'] = dict(CAND[_k], geo={q: v for q, v in CAND[_k]['geo'].items() if q in ('phi0', 'tauA')})
+    CAND[_k + '-V'] = dict(CAND[_k], geo=dict(VA_RI3_SKIN, **{q: v for q, v in CAND[_k]['geo'].items() if q in ('phi0', 'tauA')}))   # the same HE on the exact Vael RI3 root geometry
 LAYOUT_METRIC = __import__('os').environ.get('EAR_LAYOUT_METRIC', 'E2')          # metric of the sheet position optimisation (connectivity always from the E2 layout)
 
 def smooth(t):
@@ -429,9 +436,11 @@ def head_scale(r6_path):
     _s.path.insert(0, '/home/claude/wayfarer-design/tools/rac/rp/fenn_rp3_v001'); import fn_face_metrics as FM
     t = FM.load(r6_path); V = t['V']; HH = float(V[FM.LM['vertex'], 2] - V[FM.LM['menton'], 2]); return HH, HH / HH_MF
 
-def ear_sheet(Lo, p, sc):
-    """front / back / rim positions in the ear frame (lateral X, posterior y, up z), cm at head scale; h0 not yet applied"""
-    ip = InPlane(p); st = Lo['st']; part = Lo['part']; S, T = st[:, 0], st[:, 1]
+def ear_sheet(Lo, p, sc, g=None):
+    """front / back / rim positions in the ear frame (lateral X, posterior y, up z), cm at head scale; h0 not yet applied.
+    g: the candidate's merged geometry (Halvren order: candidate-level tauA / phi0 / d_r / lift_* now reach the in-plane map; for every frozen
+    Fenn / Aelari / Vael candidate g equals GEO in those keys, so their realizations are unchanged -- verified dV 0)"""
+    ip = InPlane(p, g if g is not None else GEO); st = Lo['st']; part = Lo['part']; S, T = st[:, 0], st[:, 1]
     base, N, d = ip.bent(S, T); rel, th, parts = relief(S, T, p)
     g = ip.g
     if g.get('lobe_lift_end') is not None and g.get('lobe_thin', 0.0) > 0:    # v002 target D: the attached lobe front thins into the skin
@@ -467,7 +476,7 @@ def realize(Lo, rd, skull, p, sc, canon=None, geo=GEO, beta_r=3.0):
     """one side, one candidate. Returns dict with patch vertex positions (sheet + cuff rings), faces with global-ready refs, records.
     canon: dict(off=ring1 offset, place=(db,du)?) -- off is canonical (fixed); placement is per head (deterministic rule)."""
     n1, bfaces, anchors = root_band([int(c) for c in rd['inner']]); assert n1 == 52
-    Xe, N, d, rel, th, parts, ip = ear_sheet(Lo, p, sc); Xe = rim_fill2(Lo, Xe)
+    Xe, N, d, rel, th, parts, ip = ear_sheet(Lo, p, sc, geo); Xe = rim_fill2(Lo, Xe)
     J = Lo['J']
     poly = np.c_[(rd['V_loop'] - rd['O']) @ rd['b'], (rd['V_loop'] - rd['O']) @ rd['u']]
     # placement: maximise the worst normalised margin of the junction ring inside the root footprint
