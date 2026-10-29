@@ -12,7 +12,7 @@
 #   lobe_fraction        free auricle below the lowest skin-attachment point / length
 #   root_line_deg        side-view inclination of the anterior skin-attachment line from vertical (root relation to the skull)
 #   concha_depth_over_L  front-surface bowl depth (grey closing of the outer surface height map, disk 0.22 L) / length
-#   tragus_height_frac   height fraction of the deepest concha point in the anterior 55 % / lower 60 % of the auricle (cavum) -- the tragus / intertragic level that fronts it
+#   tragus_height_frac   height fraction of the cavum (depth-weighted centroid of the >= 60 %-of-max-depth concha cells in the anterior 55 % / lower 60 %) -- the tragus / intertragic level that fronts it
 #   helix_fullness       side-view hull area / (length x width) (rounded helix ~ 0.75, tapered leaf lower)
 import sys, os, json, numpy as np, scipy.sparse as sp
 os.environ.setdefault('EAR_TOPO', 'v002')
@@ -65,7 +65,8 @@ def one(X, rd, HH, sc):
     Cl = ndimage.grey_closing(Hm, footprint=fp); dep = Cl - Hm
     cells = np.c_[np.nonzero(fill)]; cen = cells * g + mn + g / 2; inside = E._inside_dist(Hv, cen) > 0.25 * sc
     conc = float(np.percentile(dep[fill][inside], 99) / L) if inside.any() else 0.0
-    Uf = F[:, 1]; ur = Uf.max() - Uf.min(); Bf = F[:, 0]; reg = inside & (cen[:, 0] < Bf.min() + 0.55 * (Bf.max() - Bf.min())) & (cen[:, 1] < Uf.min() + 0.6 * ur); dv = np.where(reg, dep[fill], -1); cav = cen[int(np.argmax(dv))] if reg.any() else None
+    Uf = F[:, 1]; ur = Uf.max() - Uf.min(); Bf = F[:, 0]; reg = inside & (cen[:, 0] < Bf.min() + 0.55 * (Bf.max() - Bf.min())) & (cen[:, 1] < Uf.min() + 0.6 * ur); dv = np.where(reg, dep[fill], -1); dm = dv.max()
+    cav = (np.average(cen[dv >= 0.6 * dm], axis=0, weights=dv[dv >= 0.6 * dm]) if reg.any() and dm > 0 else None)   # depth-weighted centroid of the deepest cavum region (stable; was the argmax)
     trag = float((cav[1] - Uf.min()) / ur) if cav is not None else float('nan')     # the tragus fronts the cavum: deepest concha point height fraction
     poly = np.c_[(rd['V_loop'] - O) @ b, (rd['V_loop'] - O) @ u]; gx, gy = np.meshgrid(np.arange(poly[:, 0].min(), poly[:, 0].max(), 0.1), np.arange(poly[:, 1].min(), poly[:, 1].max(), 0.1))
     gp = np.c_[gx.ravel(), gy.ravel()]; gin = gp[E._inside_dist(poly, gp) > 0]; dfr, _ = cKDTree(F).query(gin); cover = float(np.mean(dfr < 0.15))   # share of the v005 root footprint under free auricle

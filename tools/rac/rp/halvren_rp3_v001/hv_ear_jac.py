@@ -5,7 +5,7 @@
 import sys, os, json, glob, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import hv_ear_domains as D
 JD, OUT = sys.argv[1:3]; TG = json.load(open(sys.argv[3])) if len(sys.argv) > 3 else None; jl = lambda p: json.load(open(p))
-SRC = jl('/home/claude/wayfarer-design/reviews/rac-rp3-evidence/halvren_rp3_central_accept_ear/ear/HV_ear_domains.json')['items']; DOM = D.DOM
+SRC = jl(os.environ.get('HV_DOMSRC', '/tmp/claude-0/rt/hv/ear/src_dom.json'))['items']; DOM = D.DOM
 X = {s: np.array([SRC[s][q] for q in DOM]) for s in ('MF', 'FN', 'AE', 'VA')}; sd = np.maximum(np.array(list(X.values())).std(0), [D.FLOOR[q] for q in DOM])
 em = np.mean([X[e] for e in ('FN', 'AE', 'VA')], 0); line = em - X['MF']
 T = {os.path.basename(os.path.dirname(p)): jl(p) for p in glob.glob(JD + '/*/try.json')}; b = T.pop('base'); b0 = np.array([b['domains'][q] for q in DOM])

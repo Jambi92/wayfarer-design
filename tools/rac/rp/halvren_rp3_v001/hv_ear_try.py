@@ -14,7 +14,7 @@ if os.environ.get('HV_REPAIR', '0') == '1':
     subprocess.run(['python3', os.path.dirname(os.path.abspath(__file__)) + '/hv_cuff_repair.py', npz, H], env=env, stdout=open(d + '/repair.log', 'w'), stderr=subprocess.STDOUT)
 subprocess.run([B, T + '/ear_audit.py', '--', npz, '%s/fam/%s_fam.npz' % (env['EAR_CF'], H), d + '/audit.json'], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 A = json.load(open(d + '/audit.json')); m = D.measure('branch', npz, H); z = np.load(npz); rc = S.root_concha(z, json.load(open(npz.replace('.npz', '.json'))), H)
-SRC = json.load(open(os.environ.get('HV_DOMSRC', '/home/claude/wayfarer-design/reviews/rac-rp3-evidence/halvren_rp3_central_accept_ear/ear/HV_ear_domains.json')))['items']
+SRC = json.load(open(os.environ.get('HV_DOMSRC', '/tmp/claude-0/rt/hv/ear/src_dom.json')))['items']
 DOM = D.DOM; X = {s: np.array([SRC[s][q] for q in DOM]) for s in ('MF', 'FN', 'AE', 'VA')}; sd = np.maximum(np.array(list(X.values())).std(0), [D.FLOOR[q] for q in DOM])
 h = np.array([m[q] for q in DOM]); fw = {}
 for e in ('FN', 'AE', 'VA'):
