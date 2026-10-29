@@ -92,7 +92,16 @@ HV_SKIN = dict(VA_RI3_SKIN, clear=-0.50, cuff_skin_corner=1.2, lift_lobe=0.70)  
 # tilt 21, sweep 0.9, concha 0.80, trag 0.29, helix 0.29 -- every domain at t 0.25-0.8 of Marchfolk -> Vael: measured one-alpha R2 0.87, design R2 0.87)
 HV_BASE = dict(L=7.6, wb=1.85, taper=("halvren", 0.45, 1.10, 0.07), lobe=0.17, proj=27, tilt=21, sweep=0.9, thick=0.29,
                ah=0.27, crura=1.0, concha=0.80, crus=0.15, trag=0.29, atrag=0.21, helix=(0.29, 0.30))
-_g = lambda **k: dict(HV_SKIN, **k)
+# HR2 Halvren root VISUAL INTEGRATION (root visual integration order, replaces HR1 on HE1 / HE2 / HE3; the auricle sheet / HVEAR3 morphology is unchanged):
+# HR1 left the auricle mounted on the MPFB human-ear pedestal (root loop up to 0.55 cm posterior / 1.1 cm inferior above the head) with a 40-55 deg crease along
+# the loop -> rear / rear-3/4 'head -> fleshy root -> ear' read (posterior flange) and a raised cuff tab beside the lobe (lower fork). HR2 = (1) root-loop
+# lowering onto the extrapolated head (+0.10 cm, cap 0.30 / inferior 0.60 x head scale, smooth fit, 1.0 cm skin fall-off, no trough), the auricle seated on the
+# lowered head; (2) postauricular sulcus (back / rim sheet near the junction lowered to 0.15 cm above the skull); (3) lobe edge lift 0.70 -> 0.30 (the free lobe
+# hugs the head, no notch under it); (4) wide root fairing (loop + 1 extra v005 ring join the biharmonic solve; loop crease ~5 deg).
+HV_ROOT2 = dict(root_lower=0.10, root_lower_cap=0.30, root_lower_cap_inf=0.60, root_lower_smooth=10.0, root_lower_fall=1.0, root_lower_fall_own=1.0,
+                sulcus_h=0.15, lift_lobe=0.30, fair_rings=1.0)
+_g = lambda **k: dict(HV_SKIN, **dict(HV_ROOT2, **k))
+_g1 = lambda **k: dict(HV_SKIN, **k)                 # HR1 (29f2c16) root geometry -- kept for the before / after evidence and the topology-audit variants
 CAND.update({
     # HE1 human-forward mixed: human-family root flare, projection, lobe, concha / tragus and helix roll; elven-derived upper helix (late, blunt apex out of a
     # retained helix shoulder), mild backward tilt / sweep; base slightly broader than either parent family
@@ -117,18 +126,20 @@ CAND.update({
     # self-intersections, aspect 22); without it HE3 is clean on c1 / c2 at projection 26 / root flare 38 but realizes close to the Marchfolk -> Aelari line
     # (measured R2 ~0.87) -- FLAGGED in the closure report (elf-forward bound; outside the HE2 freeze)
     'HE3': dict(HV_BASE, L=8.2, wb=1.95, taper=("halvren", 0.42, 1.05, 0.10), lobe=0.20, proj=26, tilt=14, sweep=1.5, thick=0.29,
-                ah=0.29, concha=1.00, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=38.0, tauA=12.0, clear=-0.58)),
+                ah=0.29, concha=1.00, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=38.0, tauA=12.0, clear=-0.58, sulcus_h=-1.0)),
+    # (root visual integration order: HE3 takes HR2 WITHOUT the postauricular-sulcus sheet drop -- on the long, more projecting HE3 back sheet it pushes the
+    # back sheet into the cuff, 86-113 branch self-intersections; root lowering / seat / lobe edge / wide fairing as HE2)
     # source-population influence diagnostics (internal validation only; not subraces): the HE2 mosaic with ONE elven direction trended; the Halvren human-family
     # root / projection / lobe / concha relation is kept in each
     'HV-DFN': dict(HV_BASE, L=7.8, wb=2.00, taper=("halvren", 0.36, 1.10, 0.06), lobe=0.20, proj=42, tilt=16, sweep=1.6, thick=0.30,                   # Fenn: lateral projection + sweep
-                   ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=34.0, tauA=12.0)),
+                   ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g1(phi0=34.0, tauA=12.0)),
     'HV-DAE': dict(HV_BASE, L=8.8, wb=2.00, taper=("halvren", 0.28, 0.95, 0.03), lobe=0.20, proj=23, tilt=26, sweep=1.4, thick=0.30,                    # Aelari: upward extension + long taper
-                   ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=33.0, tauA=12.0)),
+                   ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g1(phi0=33.0, tauA=12.0)),
     'HV-DVA': dict(HV_BASE, L=7.8, wb=2.10, taper=("halvren", 0.45, 1.30, 0.04), lobe=0.20, proj=23, tilt=34, sweep=1.5, thick=0.30,                    # Vael: broad base, backward, short taper
-                   ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=33.0, tauA=12.0)),
+                   ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g1(phi0=33.0, tauA=12.0)),
     # human-family influence diagnostic: human root / base / projection / lobe / concha; non-human structure kept in the upper helix apex, tilt and sweep
     'HV-DHU': dict(HV_BASE, L=6.7, wb=1.76, taper=("halvren", 0.62, 0.75, 0.14), lobe=0.19, proj=22, tilt=16, sweep=0.6, thick=0.31,
-                   ah=0.30, concha=0.85, crus=0.16, trag=0.30, atrag=0.24, helix=(0.30, 0.30), geo=_g(phi0=30.0, tauA=10.0)),
+                   ah=0.30, concha=0.85, crus=0.16, trag=0.30, atrag=0.24, helix=(0.30, 0.30), geo=_g1(phi0=30.0, tauA=10.0)),
     # topology-audit stress geometries (§9): HVT-HUM = Marchfolk-human ear parameters (W1 v2 MF-human; rounded top approximated by a late blunt apex) on the
     # engineering topology -- the human-forward bound; HVT-ELF = the elf-forward bound (longer than any HE). Rigid (Fenn v002 cuff, default geo) and skin
     # (RI3 cuff geo) variants.
@@ -136,13 +147,14 @@ CAND.update({
                       ah=0.30, crura=1.0, concha=0.85, crus=0.16, trag=0.30, atrag=0.24, helix=(0.30, 0.30)),
     'HVT-ELF-R': dict(HV_BASE, L=9.4, wb=1.90, taper=("halvren", 0.30, 1.20, 0.0), proj=42, tilt=34, sweep=1.8, thick=0.27)})
 CAND['HVT-HUM-S'] = dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN)); CAND['HVT-ELF-S'] = dict(CAND['HVT-ELF-R'], geo=dict(VA_RI3_SKIN))      # RI3 root geometry as frozen for Vael
-CAND['HVT-HUM-H'] = dict(CAND['HVT-HUM-R'], geo=_g()); CAND['HVT-ELF-H'] = dict(CAND['HVT-ELF-R'], geo=_g())                                  # HR1 Halvren root geometry
+CAND['HVT-HUM-H'] = dict(CAND['HVT-HUM-R'], geo=_g1()); CAND['HVT-ELF-H'] = dict(CAND['HVT-ELF-R'], geo=_g1())                                # HR1 Halvren root geometry
 # root / cuff derivative exploration on the human-forward bound (topology audit §10): skin-cuff variants of HVT-HUM-S
 CAND.update({'HVX-HUM-C1': dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN, cuff_skin_corner=0.9)), 'HVX-HUM-C2': dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN, clear=-0.15)),
              'HVX-HUM-C3': dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN, clear=-0.15, cuff_skin_corner=0.9, lift_lobe=0.6))})
 for _k in ('HE1', 'HE2', 'HE3'):                  # topology audit: the same HE geometry on the rigid Fenn v002 cuff (-R; root geo phi0 / tauA kept) and on the Vael RI3 root geometry (-V)
     CAND[_k + '-R'] = dict(CAND[_k], geo={q: v for q, v in CAND[_k]['geo'].items() if q in ('phi0', 'tauA')})
     CAND[_k + '-V'] = dict(CAND[_k], geo=dict(VA_RI3_SKIN, **{q: v for q, v in CAND[_k]['geo'].items() if q in ('phi0', 'tauA')}))   # the same HE on the exact Vael RI3 root geometry
+    CAND[_k + '-HR1'] = dict(CAND[_k], geo={q: v for q, v in CAND[_k]['geo'].items() if q not in HV_ROOT2 or q == 'lift_lobe'}); CAND[_k + '-HR1']['geo']['lift_lobe'] = HV_SKIN['lift_lobe']   # HR1 (before)
 LAYOUT_METRIC = __import__('os').environ.get('EAR_LAYOUT_METRIC', 'E2')          # metric of the sheet position optimisation (connectivity always from the E2 layout)
 
 def smooth(t):

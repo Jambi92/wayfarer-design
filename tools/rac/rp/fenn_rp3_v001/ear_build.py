@@ -24,14 +24,54 @@ for k, v in PROBE.items():                          # geometry-only readiness pr
     elif k == 'taper_ex': p['taper'] = tuple(p['taper'][:2]) + (float(v),) + tuple(p['taper'][3:])   # (Halvren 4-tuple law keeps its shoulder)
     elif k == 'taper_sh': p['taper'] = tuple(p['taper'][:3]) + (float(v),)
     elif k == 'taper_st': p['taper'] = (p['taper'][0], float(v)) + tuple(p['taper'][2:])                 # Halvren order: taper start
-    elif k in ('place_db', 'place_du', 'phi0', 'tauA', 'd_r', 'lift_lobe', 'lift_top'): geo[k] = float(v)       # Halvren geometry controls (inert unless set)
+    elif k in ('place_db', 'place_du', 'phi0', 'tauA', 'd_r', 'lift_lobe', 'lift_top', 'sulcus_h', 'sulcus_r', 'root_lower', 'root_lower_cap', 'root_lower_cap_inf',
+               'root_lower_smooth', 'root_lower_ring', 'root_lower_fall', 'root_lower_fall_own', 'fair_rings'): geo[k] = float(v)       # Halvren geometry controls (inert unless set)
     else: p[k] = float(v)
+# Halvren HR2 ROOT-RING LOWERING (root visual integration order; geo 'root_lower' >= 0, inert otherwise -- every frozen ear is unchanged): the v005 ear-zone
+# root loop is the base of the MPFB human auricle and stands up to 0.55 cm (posterior) / 1.1 cm (inferior, the old human lobe base) above the surrounding head,
+# so the auricle and its skin-hugging cuff sat on a raised plateau whose rim (the root loop) read as a second, pedestal-shaped contour with a lower tab beside
+# the lobe. The head surface is extrapolated over the ear zone from the skin 3+ rings outside the loop (thin-plate, <= 5 cm, smoothing root_lower_smooth --
+# a stiff fit, 1e-3, overshoots into a false bump below the ear); every root-loop vertex is lowered along the root normal toward it + root_lower cm, capped at
+# root_lower_cap x head scale (root_lower_cap_inf on the inferior third of the loop = the lobe base), loop-smoothed. Outside the loop either the transition ring
+# follows by root_lower_ring, or (root_lower_fall > 0) every head-skin vertex within root_lower_fall x head scale cm follows by (nearest loop drop) x
+# (1 - smooth(d / fall)), never below the head fit (root_lower_fall_own). The ear frame stays the unlowered one; the auricle is then seated on the lowered head
+# (skull field re-fitted), i.e. it sits on the head instead of on the pedestal. Topology unchanged.
+RLW = float(geo.get('root_lower', -1.0)); rl_rec = {}; rl_frame = {}   # root frame kept from the UNLOWERED loop (ear orientation unchanged)
+if RLW >= 0:
+    from scipy.interpolate import RBFInterpolator
+    adj_ = {}
+    for q in Q0:
+        for k in range(4): adj_.setdefault(int(q[k]), set()).update((int(q[(k + 1) % 4]), int(q[(k - 1) % 4])))
+    for side_, sg_ in (('l', 1), ('r', -1)):
+        rd0 = E.root_data(V0, Q0, we, sg_); rl_frame[side_] = {k_: rd0[k_].copy() for k_ in ('O', 'n', 'b', 'u')}; zone0 = set(np.unique(Q0[rd0['faces']]).tolist()); L0 = rd0['loop']
+        r1 = {w for v in L0 for w in adj_[int(v)] if w not in zone0}; r2 = {w for v in r1 for w in adj_[v] if w not in zone0 and w not in r1}
+        d0 = V0 - rd0['O']; cand = np.nonzero((np.linalg.norm(d0, axis=1) < 5.0) & (sg_ * V0[:, 0] > 0) & ((d0 @ rd0['n']) > -2.5))[0]
+        out = np.array([v for v in cand if v not in zone0 and v not in r1 and v not in r2])
+        bu0 = lambda X: np.c_[(X - rd0['O']) @ rd0['b'], (X - rd0['O']) @ rd0['u']]
+        head_ = RBFInterpolator(bu0(V0[out]), (V0[out] - rd0['O']) @ rd0['n'], kernel='thin_plate_spline', smoothing=float(geo.get('root_lower_smooth', 1e-3)))
+        cap_ = float(geo.get('root_lower_cap', 9.0)) * E.head_scale(r6p)[1]; Lg = np.asarray(L0); hL = (V0[Lg] - rd0['O']) @ rd0['n'] - head_(bu0(V0[Lg]))
+        uL_ = bu0(V0[Lg])[:, 1]; s_ = (uL_.mean() - uL_) / max(uL_.mean() - uL_.min(), 1e-6); w_inf = E.smooth(np.clip((s_ - 0.3) / 0.5, 0, 1))   # inferior third of the loop
+        cap_ = cap_ + (float(geo.get('root_lower_cap_inf', geo.get('root_lower_cap', 9.0))) * E.head_scale(r6p)[1] - cap_) * w_inf                 # (lobe base) may drop further
+        dL = np.minimum(np.maximum(hL - RLW, 0), cap_)
+        dL = 0.5 * dL + 0.25 * (np.roll(dL, 1) + np.roll(dL, -1))                       # loop-smoothed drop (no step along the loop)
+        R1 = np.array(sorted(r1)); iL = cKDTree(V0[Lg]).query(V0[R1])[1]; dR = float(geo.get('root_lower_ring', 0.5)) * dL[iL]   # transition ring follows partly
+        RF = float(geo.get('root_lower_fall', 0.0))       # smooth radial fall-off instead of the ring fraction
+        if RF > 0:
+            Rr = np.array([v for v in np.nonzero(np.linalg.norm(V0 - rd0['O'], axis=1) < 6.0)[0] if v not in zone0 and sg_ * V0[v, 0] > 0])   # without a step
+            dd_, ii_ = cKDTree(V0[Lg]).query(V0[Rr]); wf_ = 1 - E.smooth(np.clip(dd_ / (RF * E.head_scale(r6p)[1]), 0, 1)); R1, dR = Rr, dL[ii_] * wf_
+            if geo.get('root_lower_fall_own', 0) > 0:   # never sink a skin vertex below the head fit: drop <= its own excess height (no trough beside the loop)
+                dR = np.minimum(dR, np.maximum((V0[Rr] - rd0['O']) @ rd0['n'] - head_(bu0(V0[Rr])) - RLW, 0))
+        for grp, drop, h_ in ((Lg, dL, hL), (R1, dR, (V0[R1] - rd0['O']) @ rd0['n'] - head_(bu0(V0[R1])))):
+            if not len(drop) or not drop.max() > 0: continue
+            V0[grp] -= drop[:, None] * rd0['n']
+            rl_rec.setdefault(side_, []).append(dict(n=int(len(grp)), height_before_mean_cm=float(h_.mean()), height_before_max_cm=float(h_.max()), max_drop_cm=float(drop.max())))
 HH, sc = E.head_scale(r6p)
 Lo = E.canonical_layout()                            # canonical layout (deterministic; E2 metric)
 canon = json.load(open(CANON)) if CANON and os.path.exists(CANON) else {}
 removed = []; patches = {}; recs = {}
 for side, sg in (('l', 1), ('r', -1)):
     rd = E.root_data(V0, Q0, we, sg); rd['V_loop'] = V0[rd['loop']]
+    if side in rl_frame: rd.update(rl_frame[side])
     skull, sk_v = E.skull_field(V0, Q0, rd, sg)
     rd['skull'] = skull
     R = E.realize(Lo, rd, skull, p, sc, canon=canon.get(side), geo=geo)
@@ -71,6 +111,20 @@ assert done.all(), (~done).sum()
 # ---- fairing (order §5 / §12): biharmonic (uniform umbrella) solve for the new skull skin inside the root (cuff) and the ONE bounded v005
 # transition ring outside the root (v005 vertices sharing a face with the root loop). Root loop, the rest of v005 and the ear sheet are fixed.
 FAIR = os.environ.get('EAR_FAIR', '1') == '1'; part_a = np.array(part, dtype='<U12'); trans = set()
+# Halvren HR2 POSTAURICULAR SULCUS (root visual integration order; geo 'sulcus_h' >= 0, inert otherwise -- every frozen ear is unchanged): the junction ring
+# behind / above / below the auricle (J on the back sheet and rim) stood 0.4-0.9 cm above the hidden-ear skull, so the cuff band climbing to it formed a raised
+# second contour (posterior flange) and, at the lobe, a raised tab beside the free lobe (lower fork). The back / rim sheet near that junction is lowered along
+# the root normal toward the skull: drop = (h_J - sulcus_h) x (1 - smooth(d / sulcus_r)), d = distance to the nearest non-front junction vertex; the front
+# sheet, the anterior (front) attachment and the whole free auricle away from the root are untouched, so the auricle roots into the head in one fold.
+SUL = float(geo.get('sulcus_h', -1.0)); sul_rec = {}
+if SUL >= 0:
+    for side in ('l', 'r'):
+        P_, F_, rd_, R_ = patches[side]; off_ = side_off[side]; O_, b_, u_, n_ = rd_['O'], rd_['b'], rd_['u'], rd_['n']
+        hgt_ = lambda X: (X - O_) @ n_ - rd_['skull'](np.c_[(X - O_) @ b_, (X - O_) @ u_])
+        Jv_ = off_ + np.asarray(Lo['J']); Jb_ = Jv_[part_a[Jv_] != 'front']; sheet_ = off_ + np.nonzero(np.isin(Lo['part'][:len(Lo['st'])], ['back', 'rim']))[0]
+        hJ_ = hgt_(Vb[Jb_]); d_, i_ = cKDTree(Vb[Jb_]).query(Vb[sheet_]); w_s = 1 - E.smooth(d_ / (float(geo.get('sulcus_r', 0.9)) * sc))
+        drop_ = w_s * np.maximum(hJ_[i_] - SUL, 0); Vb[sheet_] -= drop_[:, None] * n_
+        sul_rec[side] = dict(junction_back_height_before_cm=dict(mean=float(hJ_.mean()), max=float(hJ_.max())), moved_vertices=int((drop_ > 1e-4).sum()), max_drop_cm=float(drop_.max()))
 for side in ('l', 'r'):
     rd_ = patches[side][2]; zone_ = set(np.unique(Q0[rd_['faces']]).tolist())
     for fi in np.nonzero(np.isin(Q0, rd_['loop']).any(1) & ~efaces)[0]:
@@ -104,8 +158,24 @@ if CSR > 0 and FAIR:
         TW[cv] *= E.smooth(drim / (float(geo.get('cuff_skin_corner', 0.6)) * sc)) * (part_a[Jv] == 'front')[cKDTree(buJ).query(buC)[1]]             # towards the rim / back junction (attachment corners c0 / c1 and
                                                                                                # the narrow postauricular band stay biharmonic)
         fair_rec['cuff_skin'][side] = dict(fillet_cm=CSR * sc, junction_height_mean_cm=float(hJ.mean()), junction_height_max_cm=float(hJ.max()), cuff_vertices=int(len(cv)), pulled_vertices=int((TW[cv] > 0.5).sum()))
+# Halvren HR2 WIDE ROOT FAIRING (root visual integration order; geo 'fair_rings' > 0, inert otherwise): with the root loop FIXED the faired cuff met the head
+# at a 40-55 deg crease along the loop (posterior / inferior), which drew the loop as a second contour behind and below the auricle (and a cliff where the loop
+# stood above the head behind it). The root loop itself and fair_rings further v005 skin rings outside the transition ring join the biharmonic unknowns, so
+# the auricle base blends into the head over a wide band (loop crease ~5 deg). The rest of v005 and the ear sheet stay fixed boundary.
+FR = int(float(geo.get('fair_rings', 0))); fr_extra = np.zeros(0, int)
+if FR > 0 and FAIR:
+    ex_ = set()
+    for side in ('l', 'r'):
+        rd_ = patches[side][2]; zone_ = set(np.unique(Q0[rd_['faces']]).tolist()); adj0 = {}
+        for q in Q0:
+            for k in range(4): adj0.setdefault(int(q[k]), set()).update((int(q[(k + 1) % 4]), int(q[(k - 1) % 4])))
+        cur = {int(v) for v in rd_['loop']}; seen = set(cur); ex_ |= cur
+        for r_ in range(FR + 1):                                          # ring 1 (= transition ring) .. ring FR + 1
+            cur = {w for v in cur for w in adj0[v] if w not in zone_ and w not in seen}; seen |= cur
+            if r_ >= 1: ex_ |= cur
+    fr_extra = np.array(sorted(int(v2b[v]) for v in ex_ if v2b[v] >= 0)); fr_extra = np.setdiff1d(fr_extra, trans); fair_rec['wide_rings'] = dict(rings=FR, extra_vertices=int(len(fr_extra)))
 if FAIR:
-    unk = np.r_[np.nonzero(part_a == 'cuff')[0], trans]
+    unk = np.r_[np.nonzero(part_a == 'cuff')[0], trans, fr_extra]
     Eg = np.unique(np.sort(np.concatenate([Qb[:, [0, 1]], Qb[:, [1, 2]], Qb[:, [2, 3]], Qb[:, [3, 0]]]), 1), axis=0); nV_ = len(Vb)
     Ag = sp.coo_matrix((np.ones(2 * len(Eg)), (np.r_[Eg[:, 0], Eg[:, 1]], np.r_[Eg[:, 1], Eg[:, 0]])), shape=(nV_, nV_)).tocsr()
     dg = np.asarray(Ag.sum(1)).ravel(); Lg = sp.identity(nV_) - sp.diags(1 / dg) @ Ag; B2 = (Lg.T @ Lg).tocsr()
@@ -343,6 +413,6 @@ np.savez_compressed('%s/%s_%s_branch.npz' % (OUT, HEAD, CAND), V=Vb.astype(np.fl
                     M_shape=np.array(Mb.shape), src_index=si, hm08_Q=fz['hm08_Q'], meta=fz['meta'], part=np.array(part), side=np.array(side_of), **bmap)
 rec = dict(head=HEAD, cand=CAND, params=p, geo=geo, HH_cm=HH, head_scale=sc, verts=int(len(Vb)), faces=int(len(Qb)), v005_verts=int(len(V0)), v005_faces=int(len(Q0)),
            kept_v005_verts=int(len(keep)), removed_v005_verts=int(rem.sum()), removed_v005_faces=int(efaces.sum()), patch_verts=int(len(patches['l'][0])), patch_faces=int(len(patches['l'][1])),
-           sides=recs, probe=PROBE, fairing=fair_rec)
+           sides=recs, probe=PROBE, fairing=dict(fair_rec, **({'sulcus': sul_rec} if sul_rec else {}), **({'root_lower': rl_rec} if rl_rec else {})))
 json.dump(rec, open('%s/%s_%s_branch.json' % (OUT, HEAD, CAND), 'w'), indent=1, default=float)
 print(json.dumps({k: v for k, v in rec.items() if k != 'sides'}, default=float)); print({s: {k: v for k, v in recs[s].items() if k not in ('root_loop_v005', 'frame')} for s in recs})

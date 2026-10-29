@@ -13,6 +13,11 @@ def cams(head):
     nb = lambda w: tuple(np.round(np.asarray(w, float), 4))
     return dict(etq=(nb(n + 0.45 * np.array([0, 1, 0]) + 0.25 * np.array([0, 0, 1])), Ce, 5.0), elat=(nb(n + 0.15 * np.array([0, 1, 0]) + 0.05 * np.array([0, 0, 1])), Ce, 5.4),
                 etqr=(nb(0.6 * n - b + 0.15 * np.array([0, 0, 1])), Ce, 5.0), root=(nb(n + 0.2 * np.array([0, 1, 0])), O + 0.3 * b, 3.2),
+                # NOTE: 'etqr' (used in the HVE / HE2C boards as '3/4 rear') looks BACKWARD at the ear from anterior-lateral (b is posterior, the camera sits on -b);
+                # true posterior views (camera on +b): rq rear 3/4, rq2 stronger rear 3/4, rr direct rear, lr lower-rear 3/4 at the inferior root; aq = the etqr view
+                aq=(nb(0.6 * n - b + 0.15 * np.array([0, 0, 1])), Ce, 5.0), aql=(nb(0.6 * n - b - 0.6 * np.array([0, 0, 1])), O - 1.0 * u + 0.6 * b, 3.6),
+                rq=(nb(0.6 * n + b + 0.15 * np.array([0, 0, 1])), Ce, 5.0), rq2=(nb(0.3 * n + b + 0.1 * np.array([0, 0, 1])), Ce, 5.0),
+                rr=(nb(b + 0.05 * n), Ce, 5.2), lr=(nb(0.6 * n + b - 0.7 * np.array([0, 0, 1])), O - 1.0 * u + 0.6 * b, 3.6), side=(nb(n), Ce, 5.4),
                 front=((0, 1, 0.03), None, 15), prof=((1, 0, 0), None, 15), rear=((0, -1, 0), None, 15), tqf=((1, 1, 0.1), None, 15))
 def run(tag, npz, head, views=VIEWS, px=520, col=None, wire=False):
     z = np.load(npz); V = z['V']; C = cams(head); hv = V[V[:, 2] > V[:, 2].max() - 25]; Hc = np.array([0.0, hv[:, 1].mean(), V[:, 2].max() - 12.0])

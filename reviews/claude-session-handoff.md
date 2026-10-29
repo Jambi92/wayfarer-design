@@ -2,7 +2,20 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-29) — HALVREN HE2 CLOSURE — HE2 FREEZE APPROVED (recommendation) — awaiting ChatGPT review
+## LATEST (2026-10-29) — HALVREN HE2 ROOT VISUAL INTEGRATION — APPROVED, READY FOR FREEZE REVIEW — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-halvren-ear-root-visual-integration-correction-order.md` (651d7f5). Report: `reviews/claude-rac-rp3-halvren-he2-root-visual-integration-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_he2_root_visual/`. Nothing frozen.
+- Library: `ear_build.py` HR2 controls `root_lower` / `_cap` / `_cap_inf` / `_smooth` / `_ring` / `_fall` / `_fall_own`, `sulcus_h` / `sulcus_r`, `fair_rings` (inert unless set); `ear_branch_lib.HV_ROOT2` on HE1 / HE2 / HE3 (HE3 sulcus off); `HE*-HR1` = 29f2c16 root. `hv_cuff_repair.py` stage 2 (slivers at the cuff / rim seam, aspect > 10). `render_attr.py` optional `RENDER_REVEAL=1` cavity shading.
+- Tools: `hv_root_sectors.py` (pedestal vs extrapolated head, loop crease, lower fork), `hv_root_xsec.py`, `hv_he2_rootvis.py EVIDIR` (record), `hv_he2_rootvis_boards.py EVIDIR OUT`; `hv_ear_quick.py` cams `aq` (= old etqr), `rq`, `rq2`, `rr`, `lr`, `side`.
+- Workspace `/tmp/claude-0/rt/hv/ear/{hr2f (final guarded HE1-3 c1/c2), hr2 (trials), before29 (= he3 HR1)}`.
+
+**Key findings**
+- The flange / fork came from the v005 MPFB ear pedestal + a fixed-loop crease, not the auricle. HR2 seats the auricle on the head and fairs the loop. HE2 clean c1 + c2, R2 0.51 / 0.44 / 0.23. Polish items (lobe-base crease, Z-kink in the sheet) recorded; fair_rings 2 removes the crease but is not robust.
+
+**Next:** STOP for ChatGPT review (HE2 freeze decision).
+
+## (previous) 2026-10-29 — HALVREN HE2 CLOSURE — HE2 FREEZE APPROVED (recommendation) — awaiting ChatGPT review
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-halvren-he2-realization-ear-architecture-closure-order.md`. Report: `reviews/claude-rac-rp3-halvren-he2-closure-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_he2_closure/`. Nothing frozen.

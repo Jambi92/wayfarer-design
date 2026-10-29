@@ -1,6 +1,15 @@
 # Character Design Status
 
-## HALVREN RP3 HE2 CLOSURE — HE2 FREEZE APPROVED (recommendation; not frozen) — HE3 / HE1 carry-forwards (2026-10-29)
+## HALVREN RP3 HE2 ROOT VISUAL INTEGRATION — APPROVED, READY FOR CHATGPT / AUTHOR FREEZE REVIEW (not frozen) (2026-10-29)
+
+- **Report:** `reviews/claude-rac-rp3-halvren-he2-root-visual-integration-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_he2_root_visual/` (boards HE2RV_A..G, record, prodcheck, sections, 98 trials, blind review).
+- **Diagnosis:** HR1 mounted the auricle on the v005 MPFB human-ear pedestal (root loop up to 0.93 cm posterior / 1.16 cm inferior above the head) with a 25-32 deg crease along the loop -> second contour behind the pinna; the old lobe base lifted a cuff tab beside the free lobe -> lower fork.
+- **Fix HR2 (topology unchanged):** root loop lowered onto the extrapolated head (+ smooth skin fall-off), auricle seated on the head (0.5 cm, 2 deg), postauricular sulcus, lobe edge lift 0.30, wide root fairing (loop + 1 ring); cuff repair stage 2. HE3: HR2 without the sulcus.
+- **HE2:** pedestal p90 0.93 -> 0.23 cm, loop crease 32 -> 6 deg, no tab below the attachment; clean c1 + c2 (8 poses 0 events), deterministic, mirroring / export / LOD pass; firewall R2 0.51 / 0.44 / 0.23 (< 0.80); morphology preserved (sheet residual 0.05 cm); frozen refs 14 / 14 unchanged, Fenn / Aelari / Vael rebuild dV 0. Blind visual review PASS c1 / c2 (narrow; polish items recorded).
+- **Carry-forwards:** HE1 size floor; HE3 R2 0.88 (now MF->Fenn); HE3 c2 posed contact not observed with HR2 (recorded, not claimed fixed).
+- **Next:** STOP for ChatGPT review — HE2 freeze decision.
+
+## (previous) HALVREN RP3 HE2 CLOSURE — HE2 FREEZE APPROVED (recommendation; not frozen) — HE3 / HE1 carry-forwards (2026-10-29)
 
 - **Report:** `reviews/claude-rac-rp3-halvren-he2-closure-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_he2_closure/` (boards HE2C_A..F, closure record, drift table, Jacobian).
 - **Diagnosis:** W1 human-family parameters do not land on the measured Marchfolk auricle (proj 22 -> 23-25 deg vs 6.5; L 6.4 -> 0.28-0.30 HH vs 0.24) and coupled controls (length -> lobe / upward ext; taper start -> fullness / tip; concha -> junction mound; placement height -> lobe / root line) flattened HVEAR2 HE2 onto the Marchfolk -> elf line.
