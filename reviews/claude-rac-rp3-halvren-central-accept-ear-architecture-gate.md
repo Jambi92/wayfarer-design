@@ -191,7 +191,12 @@ Tendency columns (one source per domain, none in lockstep):
   - HB2+HF3 + HE1: visually coherent, one 3.9° cuff sliver.
   - Face and ear strengths need not match.
 - **Readiness (§22; HVE_23).** HE2, HE1, HE3 and all diagnostics on c1 have 0 contacts / 0 flips / 0 root inversions over the 8 head / neck poses: flex / ext 30, yaw ±45, pitch ±20, roll ±20. On c2 HE1 and HE3 do not (10 / 7 events).
-- **Probes (§22; `ear/HV_ear_probes_HE2.json`; HVE_24).** PROBE_SUMMARY
+- **Probes (§22; `ear/HV_ear_probes_HE2.json`; HVE_24).** HE2 on c1 got 14 probes, a −/+ pair each for length ±10 %, projection ±8°, sweep ±0.4, tilt ±6°, base width ±8 %, tip exponent ×0.78 / ×1.28 and lobe ±0.04. All share one topology.
+  - **11 / 14 are technically clean.** Slivers appear at lobe −0.04 (8.3°), sweep −0.4 (4.9°) and base width +8 % (1.8°), all on the same right-side cuff face (58925) that fails HE2 on c2.
+  - **11 / 14 move their own domain in the right direction:** length, projection, sweep +, tilt, tip and base width.
+  - **Lobe size does not move the measured lobe at all** (0.00 SD): it is not an independent control on this topology.
+  - **Coupling.** Length drags the lobe fraction (±0.9–1.0 SD) and tilt drags the sweep curvature (+1.9 SD).
+  - **Most controls do move independently, but not lobe size, and the probe range is not technically clean** — more evidence for the dedicated branch.
 - **Regression (§23; HVE_25).**
   - Outside the ear branch every vertex is byte-identical to the HB2+HF2+HP-B family realisation for every HE item.
   - So HB2 / HF2 / HP-B are unchanged; the hidden-ear body / face pass (§1) and 69 / 69 stand.

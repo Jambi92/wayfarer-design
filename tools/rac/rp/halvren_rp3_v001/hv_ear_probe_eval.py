@@ -20,9 +20,10 @@ for d in sorted(glob.glob(W + '/probe/*/')):
     tech = dict(components=A['components'], boundary=A['boundary_edges'], nonmanifold=A['nonmanifold_edges'], branch_selfx=A['self_intersection_pairs_touching_branch'], min_angle=A['T4']['min_angle'],
                 aspect_max=A['T4']['aspect_max'], T4=A['T4']['angle_violations'])
     tech['pass'] = bool(A['components'] == 1 and A['boundary_edges'] == 0 and A['nonmanifold_edges'] == 0 and A['self_intersection_pairs_touching_branch'] == 0 and A['T4']['aspect_max'] < 10 and A['T4']['min_angle'] >= 10)
-    top = max(keys, key=lambda k: abs(z[k]))
-    R['probes'][n] = dict(technical=tech, response_sd={k: round(v, 3) for k, v in z.items()}, own_domain=own, own_response_sd=round(z[own], 3), largest=top,
-                          independent=bool(top == own or abs(z[own]) >= 0.8 * abs(z[top])))
-    print(n, 'tech', tech['pass'], 'own %s %+.2f' % (own, z[own]), 'largest', top, '%+.2f' % z[top], flush=True)
-R['all_technical'] = all(p['technical']['pass'] for p in R['probes'].values()); R['all_independent'] = all(p['independent'] for p in R['probes'].values())
+    top = max(keys, key=lambda k: abs(z[k])); kx = [k for k in keys if k != 'tragus_height_frac']; top2 = max(kx, key=lambda k: abs(z[k]))   # cavum-level proxy is an argmax (unstable): also judged without it
+    sgn = {'len_m': -1, 'len_p': 1, 'proj_m': -1, 'proj_p': 1, 'sweep_m': -1, 'sweep_p': 1, 'tilt_m': -1, 'tilt_p': 1, 'wb_m': -1, 'wb_p': 1, 'tip_blunt': 1, 'tip_sharp': -1, 'lobe_m': -1, 'lobe_p': 1}[n]
+    R['probes'][n] = dict(technical=tech, response_sd={k: round(v, 3) for k, v in z.items()}, own_domain=own, own_response_sd=round(z[own], 3), largest=top, largest_excl_cavum_proxy=top2, own_sign_correct=bool(np.sign(z[own]) == sgn and abs(z[own]) >= 0.1),
+                          independent=bool(top == own or abs(z[own]) >= 0.8 * abs(z[top])), independent_excl_cavum_proxy=bool(top2 == own or abs(z[own]) >= 0.8 * abs(z[top2])))
+    print(n, 'tech', tech['pass'], 'own %s %+.2f' % (own, z[own]), 'sign', R['probes'][n]['own_sign_correct'], 'largest', top, '%+.2f' % z[top], 'excl', top2, '%+.2f' % z[top2], 'min %.1f asp %.2f selfx %d' % (tech['min_angle'], tech['aspect_max'], tech['branch_selfx']), flush=True)
+R['all_technical'] = all(p['technical']['pass'] for p in R['probes'].values()); R['all_independent'] = all(p['independent'] for p in R['probes'].values()); R['own_sign_correct'] = sum(p['own_sign_correct'] for p in R['probes'].values()); R['technical_pass_count'] = sum(p['technical']['pass'] for p in R['probes'].values()); R['n'] = len(R['probes'])
 json.dump(R, open(OUT, 'w'), indent=1)
