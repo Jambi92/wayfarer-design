@@ -495,7 +495,13 @@ def realize(Lo, rd, skull, p, sc, canon=None, geo=GEO, beta_r=3.0):
         for du in np.arange(-1.5, 1.51, 0.05):
             off = c_fp - c_J + np.array([db, du]); m_ = _inside_dist(poly, Jbu + off); sc_ = (m_ / (0.35 + Jh)).min()
             if best is None or sc_ > best[0]: best = (sc_, off, m_.min())
-    off = best[1]; bu = Xe[:, 1:3] + off; cJ = Jbu.mean(0) + off
+    off = best[1]
+    if geo.get('place_db', 0.0) or geo.get('place_du', 0.0):                     # Halvren control: placement bias (root-frame posterior / up cm); the junction must stay
+        o2 = off + np.array([geo.get('place_db', 0.0), geo.get('place_du', 0.0)])  # inside the footprint (margin >= 0.15 cm), else the bias is clipped back toward the optimum
+        for f_ in np.linspace(1.0, 0.0, 21):
+            oo = best[1] + f_ * (o2 - best[1])
+            if _inside_dist(poly, Jbu + oo).min() >= 0.15: off = oo; break
+    bu = Xe[:, 1:3] + off; cJ = Jbu.mean(0) + off
     r = np.linalg.norm(bu - cJ, axis=1); beta = np.exp(-(r / beta_r) ** 2); sh = skull(bu)
     # base height: concha / bridge clearance over the skull field (front sheet vertices within the footprint influence)
     fr = Lo['part'] == 'front'; lat0 = Xe[:, 0] - sh; w_ = fr & (beta > 0.4)          # rigid ear in the root frame; clearance vs the true skull

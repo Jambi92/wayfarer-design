@@ -23,6 +23,8 @@ for k, v in PROBE.items():                          # geometry-only readiness pr
     if k in geo: geo[k] = float(v)
     elif k == 'taper_ex': p['taper'] = tuple(p['taper'][:2]) + (float(v),) + tuple(p['taper'][3:])   # (Halvren 4-tuple law keeps its shoulder)
     elif k == 'taper_sh': p['taper'] = tuple(p['taper'][:3]) + (float(v),)
+    elif k == 'taper_st': p['taper'] = (p['taper'][0], float(v)) + tuple(p['taper'][2:])                 # Halvren order: taper start
+    elif k in ('place_db', 'place_du', 'phi0', 'tauA', 'd_r', 'lift_lobe', 'lift_top'): geo[k] = float(v)       # Halvren geometry controls (inert unless set)
     else: p[k] = float(v)
 HH, sc = E.head_scale(r6p)
 Lo = E.canonical_layout()                            # canonical layout (deterministic; E2 metric)
