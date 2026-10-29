@@ -98,8 +98,11 @@ CAND.update({
     # retained helix shoulder), mild backward tilt / sweep; base slightly broader than either parent family
     # (HE2 closure order: projection / vertical angle re-calibrated to the HE2 realization calibration -- proj 23 -> 16, tilt 17 -> 12 -- so the human-forward
     # member is not less human in orientation than HE2; everything else unchanged)
-    'HE1': dict(HV_BASE, L=6.3, wb=1.82, taper=("halvren", 0.58, 0.80, 0.12), lobe=0.19, proj=16, tilt=12, sweep=0.65, thick=0.31,
-                ah=0.29, concha=0.84, crus=0.16, trag=0.30, atrag=0.23, helix=(0.30, 0.30), geo=_g(phi0=30.0, tauA=10.0)),
+    # + c2 robustness (HE2 closure order): the narrow late-tapering HVEAR2 HE1 body (wb 1.82, start 0.58 / ex 0.80, concha 0.84 seat -0.50) put the rim / back of
+    # the short lobe onto the cuff on the c2 head (22 branch self-intersections); HE1 now shares the calibrated HE2 auricle body (wb 2.00, concha 1.00, seat -0.58)
+    # and keeps its own human-forward identity: short (L 6.3), later / blunter shouldered apex (start 0.54, ex 0.85, sh 0.12), mild sweep 0.65
+    'HE1': dict(HV_BASE, L=6.3, wb=2.00, taper=("halvren", 0.54, 0.85, 0.12), lobe=0.19, proj=16, tilt=12, sweep=0.65, thick=0.31,
+                ah=0.29, concha=1.00, crus=0.16, trag=0.30, atrag=0.23, helix=(0.30, 0.30), geo=_g(phi0=30.0, tauA=10.0, clear=-0.58)),
     # HE2 balanced mixed central -- HVEAR3 REALIZATION-CALIBRATED (HE2 closure order): HVEAR2 authored HE2 (L 7.8, wb 2.00, taper (0.36, 1.10, 0.06), proj 23,
     # tilt 16, sweep 1.4, concha 0.86) realized as a near-linear Marchfolk -> Aelari / Vael ear (measured one-alpha R2 0.93 / 0.80) because the W1 human-family
     # parameter values do not land on the measured Marchfolk auricle and the upper-ear controls are coupled (gate §2 diagnosis). The calibrated set targets the
@@ -110,8 +113,11 @@ CAND.update({
     # HE3 elf-forward mixed -- HVEAR3 (HE2 closure order re-check): HVEAR2 HE3 realized as a near-copy of the Marchfolk -> Aelari line (measured one-alpha R2 0.98);
     # recalibrated with the HE2 logic: long elevated upper extension, sharper taper and stronger sweep kept, while the human-family body (broad base, fuller
     # shouldered helix, seated concha, lower projection) is retained and the auricle is placed 0.35 cm higher in the root footprint (less free lobe)
-    'HE3': dict(HV_BASE, L=8.2, wb=1.95, taper=("halvren", 0.42, 1.05, 0.10), lobe=0.20, proj=20, tilt=14, sweep=1.5, thick=0.29,
-                ah=0.29, concha=1.00, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=34.0, tauA=12.0, clear=-0.58, place_du=0.35)),
+    # c2 robustness: the 0.35 cm upward placement (which kept the measured firewall at R2 0.78) puts the back sheet onto the cuff on the c2 head (29 back / cuff
+    # self-intersections, aspect 22); without it HE3 is clean on c1 / c2 at projection 26 / root flare 38 but realizes close to the Marchfolk -> Aelari line
+    # (measured R2 ~0.87) -- FLAGGED in the closure report (elf-forward bound; outside the HE2 freeze)
+    'HE3': dict(HV_BASE, L=8.2, wb=1.95, taper=("halvren", 0.42, 1.05, 0.10), lobe=0.20, proj=26, tilt=14, sweep=1.5, thick=0.29,
+                ah=0.29, concha=1.00, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=38.0, tauA=12.0, clear=-0.58)),
     # source-population influence diagnostics (internal validation only; not subraces): the HE2 mosaic with ONE elven direction trended; the Halvren human-family
     # root / projection / lobe / concha relation is kept in each
     'HV-DFN': dict(HV_BASE, L=7.8, wb=2.00, taper=("halvren", 0.36, 1.10, 0.06), lobe=0.20, proj=42, tilt=16, sweep=1.6, thick=0.30,                   # Fenn: lateral projection + sweep

@@ -42,7 +42,7 @@ def sheet(fn, title, rows, colw=420, note=None, lab_w=160):
     Sh.save(os.path.join(OUT, fn), quality=88)
 FW = R['firewall']; T = R['technical']
 fcap = lambda k: '%s | best R2 %.2f (%s)' % (k, FW[k]['best_r2'], FW[k]['best_pair']) if k in FW else k
-sheet('HE2C_A_before_after.jpg', 'A. HE2 before (HVEAR2 on the shared path) | after (HVEAR3 realization-calibrated, HR1 + cuff repair) — c1, neutral clay, identical cameras',
+sheet('HE2C_A_before_after.jpg', 'A. HE2 before (HVEAR2) | after (HVEAR3 calibrated, HR1 path) — c1, neutral clay',
       [(v, [img('HE2-before_g', v), img('HE2_g', v)], [fcap('HE2-before'), fcap('HE2')] if v == 'etq' else None) for v in ('etq', 'front', 'elat', 'root')], colw=460)
 L7 = ['MF', 'HE1', 'HE2', 'HE3', 'FN', 'AE', 'VA']; LB = dict(MF='Marchfolk', HE1='HE1', HE2='HE2 corrected', HE3='HE3', FN='frozen Fenn', AE='frozen Aelari', VA='frozen Vael')
 sheet('HE2C_B_ear_only_firewall.jpg', 'B. Ear-only firewall — one common Halvren head (face / pigment neutral, no hair), identical camera, matched head scale',
@@ -54,15 +54,13 @@ sheet('HE2C_C_root_concha_gate.jpg', 'C. Root / concha hard gate — corrected H
 sheet('HE2C_D_mosaic.jpg', 'D. Body / face / ear mosaic on HB2 + HF2 + HP-B: HE1 | corrected HE2 | HE3',
       [(v, [img(tag(k) + '_g', v) for k in ('HE1', 'HE2', 'HE3')], [k for k in ('HE1', 'HE2 corrected', 'HE3')] if v == 'tqf' else None) for v in ('tqf', 'front', 'etq')], colw=480)
 TA = R['topology_audit']
-sheet('HE2C_E_topology_audit.jpg', 'E. Corrected HE2 realization path — same HVEAR3 geometry on: rigid Fenn v002 cuff | exact Vael RI3 root | Halvren HR1 path (seat rule + cuff repair); wireframe: front orange, back violet, rim yellow, cuff blue',
+sheet('HE2C_E_topology_audit.jpg', 'E. Corrected HE2 on: rigid Fenn cuff | Vael RI3 root | Halvren HR1 path (wire: front orange, back violet, rim yellow, cuff blue)',
       [(v, [img(tag(k) + s, v) for k in ('HE2 rigid', 'HE2 RI3', 'HE2')], ['%s | %s | %.0f deg | mound %.2f' % (k, 'clean' if TA[k]['technical_pass'] else 'FAIL', TA[k]['min_angle'], TA[k]['mound_p90_cm']) for k in ('HE2 rigid', 'HE2 RI3', 'HE2')] if v == 'etqr' else None)
        for v, s in (('etqr', '_g'), ('root', '_g'), ('elat', '_w'))], colw=440)
 D = R['domains']; DOM = R['domain_list']; fig, axs = plt.subplots(1, 2, figsize=(18, 6.5))
 for ai, k in enumerate(('HE2-before', 'HE2')):
     ax = axs[ai]
-    for j, (pr, col) in enumerate((('MF-FN', '#d9774a'), ('MF-AE', '#4f8fd0'), ('MF-VA', '#4caf50'))):
-        f = FW[k]['pairs'][pr]; ax.scatter([D[k]['t'][q] for q in DOM], np.arange(len(DOM)) + 0.2 * (j - 1), c=col, s=40, label='%s  n %d  R2 %.2f  alpha %.2f' % (pr, f['n'], f['r2'], f['alpha'])) if j == 0 else None
-    ax.scatter([D[k]['t'][q] for q in DOM], np.arange(len(DOM)), c='k', s=45, label='t vs Marchfolk -> elf mean')
+    ax.scatter(np.clip([D[k]['t'][q] for q in DOM], -1.45, 2.45), np.arange(len(DOM)), c='k', s=50, zorder=3)
     ax.set_yticks(range(len(DOM))); ax.set_yticklabels(DOM, fontsize=9); ax.axvspan(0.35, 0.65, color='#eeeeee'); ax.axvline(0, c='k', lw=0.8); ax.axvline(1, c='k', lw=0.8); ax.set_xlim(-1.5, 2.5)
     ax.set_title('%s: R2 %s' % ('before (HVEAR2)' if k == 'HE2-before' else 'after (HVEAR3)', ' / '.join('%s %.2f' % (p, FW[k]['pairs'][p]['r2']) for p in ('MF-FN', 'MF-AE', 'MF-VA'))), fontsize=11)
     ax.set_xlabel('t (0 Marchfolk, 1 elf mean; grey = midpoint band)'); ax.grid(alpha=0.3)

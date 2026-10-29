@@ -1,5 +1,6 @@
 # hv_run_head.sh HEAD WORK (env EAR_CAND, EAR_CF, EAR_PROBE) : Halvren ear realization path = fenn_rp3_v001/run_ear_v002_head.sh (deformation-aware guard, unchanged rule)
-# + the HR1 cuff sliver repair (hv_cuff_repair.py) after every build, before the deformation check; optional EAR_PROBE (k=v,...) geometry controls.
+# + the HR1 cuff sliver repair (hv_cuff_repair.py) after every build, before the deformation check; optional EAR_PROBE (k=v,...) geometry controls;
+# the guard iterates until no problem face remains (frozen faces included), not only until no NEW one appears.
 # -> faces with a new posed contact / flip / root inversion, or a degenerate (twisted) rest face, are held at the untangled state (+1 ring; +2 rings
 # from the third iteration) -> rebuild (at most 6 guard iterations; logged).
 H=$1; W=$2; C=${EAR_CAND:-E2}; B=/home/claude/stc/bin/python3; T=/home/claude/wayfarer-design/tools/rac/rp/fenn_rp3_v001; CF=${EAR_CF:-/tmp/claude-0/rt/fn/cf}; cd $W; export EAR_TOPO=v002
@@ -19,7 +20,7 @@ for v in d['poses'].values():
     new.update(v['flipped_faces']); new.update(v['root_inverted_faces'])
 log = fz.replace('.json', '_log.json'); L = json.load(open(log)) if it else []
 L.append(dict(iteration=it, guarded_faces_before=len(F), new_problem_faces=len(new - F))); json.dump(L, open(log, 'w'), indent=1)
-json.dump(sorted(F | new), open(fz, 'w')); print(len(new - F))
+json.dump(sorted(F | new), open(fz, "w")); print(len(new))   # Halvren path: iterate until NO problem face remains (frozen ones included; rings grow)
 PY
 )
   [ "$n" = "0" ] && break

@@ -1,0 +1,13 @@
+| Domain | Authored t | Authored target | Realized (HVEAR2) | Drift (SD) | Pull | Corrected HE2 | Cause |
+|---|---|---|---|---|---|---|---|
+| length_over_HH | 0.58 | 0.315 | 0.358 (t 0.90) | +0.70 | interpolation line (MF->AE alpha 0.78) | 0.328 | calibration: W1 MF-human L 6.4 already realizes 0.28-0.30 HH (Marchfolk auricle 0.24); L also drives upward extension (+0.41 SD / +0.6 cm) and free lobe (+0.69) |
+| width_over_length | 1.54 | 0.356 | 0.407 (t 1.11) | +0.79 | MF | 0.435 | taper start / early taper narrows the upper ear; width also coupled to concha depth (+0.45), root flare phi0 (-8 deg: +0.42) and placement height (+0.55) |
+| projection_deg | 0.07 | 8.831 | 25.356 (t 0.55) | +0.99 | interpolation line (MF->AE alpha 0.78) | 17.666 | calibration: W1 human proj 22 realizes ~23-25 deg vs the flat Marchfolk auricle 6.5 deg; projection itself is NOT linked to root rotation (phi0 / tauA < 0.07 SD) |
+| upward_ext_over_HH | 0.69 | 0.063 | 0.103 (t 1.27) | +1.12 | AE | 0.092 | the junction-centred placement puts every branch auricle top ~1.9 cm above the root-loop top (Marchfolk 0.3 cm); length and tilt add (+0.41, +0.32) |
+| backward_angle_deg | 0.49 | 14.392 | 19.095 (t 0.72) | +0.53 | interpolation line (MF->AE alpha 0.78) | 14.613 | calibration: W1 human tilt 12 realizes ~14 deg (Marchfolk 4.8); sweep is a second backward driver (-0.4: -0.47 SD) -> tilt + sweep add |
+| tip_angle_deg | 0.92 | 62.405 | 58.427 (t 0.98) | -0.14 | none (on target) | 82.641 | early continuous taper (start 0.36) makes an elf apex (60 deg) whatever the exponent (tex: -0.12 SD per +0.25); only a later start + shoulder rounds it |
+| lobe_fraction | -0.67 | -0.001 | 0.075 (t 0.40) | +2.30 | AE | 0.043 | the lobe parameter is inert in the realized free lobe (0.0 SD); the free lobe follows length (+0.69) and placement height (+1.15) |
+| root_line_deg | 0.00 | -1.519 | -20.355 (t 6.53) | -2.29 | VA | -22.634 | attachment-line inclination is set by the junction placement (place_du +2.5, place_db +1.3) and concha depth (-1.7); Marchfolk / elf differences small |
+| concha_depth_over_L | -0.08 | 0.273 | 0.195 (t 1.19) | -2.14 | interpolation line (MF->AE alpha 0.78) | 0.220 | the authored concha 0.86 is diluted by the longer ear (depth / L) and the -0.50 seat; +0.25 concha -> +0.87 SD, but concha depth also raises the junction (mound) |
+| tragus_height_frac | -0.19 | 0.418 | 0.273 (t 1.70) | -3.13 | FN | 0.264 | cavum level falls as the upper extension lengthens (cavum stays at the base) |
+| helix_fullness | 0.81 | 0.628 | 0.642 (t 0.65) | +0.37 | interpolation line (MF->AE alpha 0.78) | 0.753 | early taper start removes the upper helix body; sweep / tilt / shoulder restore it (+0.82 / +0.61 / +0.29) |

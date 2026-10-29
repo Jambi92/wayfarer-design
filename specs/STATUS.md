@@ -1,6 +1,15 @@
 # Character Design Status
 
-## HALVREN RP3 CENTRAL BODY / FACE / PELVIS ACCEPTED (HB2 + HF2 + HP-B) — EAR TOPOLOGY NEEDS DEDICATED BRANCH — NOT FROZEN (2026-10-29)
+## HALVREN RP3 HE2 CLOSURE — HE2 FREEZE APPROVED (recommendation; not frozen) — HE3 / HE1 carry-forwards (2026-10-29)
+
+- **Report:** `reviews/claude-rac-rp3-halvren-he2-closure-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_he2_closure/` (boards HE2C_A..F, closure record, drift table, Jacobian).
+- **Diagnosis:** W1 human-family parameters do not land on the measured Marchfolk auricle (proj 22 -> 23-25 deg vs 6.5; L 6.4 -> 0.28-0.30 HH vs 0.24) and coupled controls (length -> lobe / upward ext; taper start -> fullness / tip; concha -> junction mound; placement height -> lobe / root line) flattened HVEAR2 HE2 onto the Marchfolk -> elf line.
+- **Fix (Halvren ear realization path, no topology change):** HVEAR3 HE2 calibrated against measured targets (L 7.0, wb 2.00, taper 0.50 / 0.90 / 0.12, proj 16, tilt 12, sweep 1.0, concha 1.00); HR1 seat rule; HR1 cuff sliver repair; placement-bias control; guard until clean.
+- **HE2:** firewall R2 0.36 / 0.38 / 0.32 (was 0.73 / 0.84 / 0.76); HR1 clean c1 + c2 (mound 0.12 / 0.05, junction 0.27 / 0.14 cm; 0 posed events); deterministic; mirroring / export / LOD pass.
+- **Carry-forwards:** HE3 R2 0.87 vs MF->AE + one posed contact on c2 (flagged); HE1 floor +27 % vs Marchfolk (bounded; human size needs the dedicated scaffold).
+- **Next:** STOP for ChatGPT review — confirm HE2 freeze.
+
+## (previous) HALVREN RP3 CENTRAL BODY / FACE / PELVIS ACCEPTED (HB2 + HF2 + HP-B) — EAR TOPOLOGY NEEDS DEDICATED BRANCH — NOT FROZEN (2026-10-29)
 
 - **Gate:** `reviews/claude-rac-rp3-halvren-central-accept-ear-architecture-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_central_accept_ear/` (sheets HVE_01..26). Branch proposal (not executed): `reviews/claude-rac-rp3-halvren-ear-topology-branch-proposal.md`.
 - **Central source:** `HVC1-HB2HF2-HPB` / `HVF178-HB2HF2-HPB` (HB2 + HF2 + HP-B pelvis Y 1.02 + hip-horiz-decr 0.05), deterministic, manifest "accepted for ear work; not final". HP-B validation PASS: 69 / 69, no hip / leg regression, distinct from FN / AE / VA, one-alpha R2 0.69 / 0.73.

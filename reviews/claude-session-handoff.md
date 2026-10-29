@@ -2,7 +2,20 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-29) — HALVREN CENTRAL ACCEPT (HB2 + HF2 + HP-B) + EAR ARCHITECTURE — HALVREN EAR TOPOLOGY NEEDS DEDICATED BRANCH — awaiting ChatGPT review
+## LATEST (2026-10-29) — HALVREN HE2 CLOSURE — HE2 FREEZE APPROVED (recommendation) — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-halvren-he2-realization-ear-architecture-closure-order.md`. Report: `reviews/claude-rac-rp3-halvren-he2-closure-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_he2_closure/`. Nothing frozen.
+- Library: `ear_branch_lib.py` HVEAR3 (HE1 / HE2 / HE3 calibrated; HR1 seat rule; `place_db` / `place_du` placement bias in `realize`); `ear_build.py` probe keys `taper_st`, `place_*`, `phi0`, `tauA`, `d_r`, `lift_*` (inert unless set; frozen ears dV 0).
+- Halvren path: `hv_ear.sh WORK RI3 CAND HEAD` with `HV_REPAIR=1` -> `hv_run_head.sh` (guard + `hv_cuff_repair.py`, iterate until clean); calibration `hv_ear_try.py WORK NAME CAND HEAD k=v,...` (rest build + firewall vs `/tmp/claude-0/rt/hv/ear/src_dom.json`), `hv_ear_jac.py`; records `hv_he2_closure.py EVIDIR`, `hv_he2_drift.py`, `hv_ear_prodcheck.py` (bpy), boards `hv_he2_boards.py`.
+- Workspace `/tmp/claude-0/rt/hv/ear/{he3 (final c1/c2), topo3, jac, des2-5, he3x_*}`.
+
+**Key findings**
+- HE2 now R2 0.36 / 0.38 / 0.32, clean c1 + c2, one auricle. HE3 flagged (R2 0.87 MF->AE; c2 yaw-right contact). HE1 floor bounded (+27 %). Cavum-level domain switched to a depth-weighted centroid (stable).
+
+**Next:** STOP for ChatGPT review (HE2 freeze confirmation; HE3 / HE1 carry-forwards).
+
+## (previous) 2026-10-29 — HALVREN CENTRAL ACCEPT (HB2 + HF2 + HP-B) + EAR ARCHITECTURE — HALVREN EAR TOPOLOGY NEEDS DEDICATED BRANCH
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-halvren-central-accept-ear-architecture-order.md`. Gate: `reviews/claude-rac-rp3-halvren-central-accept-ear-architecture-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_central_accept_ear/` (`hpb_validation/`, `ear/`, `sheets/`). Proposal: `reviews/claude-rac-rp3-halvren-ear-topology-branch-proposal.md`. Nothing frozen.
