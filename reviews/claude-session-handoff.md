@@ -2,7 +2,20 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-29) — HALVREN CENTRAL ANCHOR — BODY + CRANIOFACIAL SOURCE WORK REQUIRED, PELVIS NEEDS AUTHOR DESIGN PASS — awaiting ChatGPT review
+## LATEST (2026-10-29) — HALVREN CENTRAL MIXED BODY/FACE PASS (HB2 + HF2 recommended) — READY FOR PELVIS AUTHOR DECISION — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-halvren-body-face-source-order.md`. Gate: `reviews/claude-rac-rp3-halvren-body-face-source-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_body_face_source/`. Nothing frozen; ears locked; pelvis held.
+- Definition `tools/rac/rp/halvren_rp3_v001/hv_defs.py` (HVDEF1: BODY / FACE dicts, strengths STR / STRF; tag HBn / HBnHFm). Build `build_hb.sh TAG...` -> `/tmp/claude-0/rt/hv/hb/cand` (c1 HVC1-*, c2 HVF178-*). Eval `hv_eval.py OUT CFG ITEM:PREFIX...` (31 metrics, midpoint audit, face regions / descriptors). Propagation `run_hveval.sh ID...` -> `/tmp/claude-0/rt/hv/hbe`; `hv_bf_technical.py`; expression `fenn_rp3_v001/cf_expr.py`; pelvis package `build_hp.sh` + `hv_pelvis_pkg.py` -> `/tmp/claude-0/rt/hv/hp`; `run_hv_bf_prod.sh`, `hv_bf_manifest.py`, `hv_bf_sheets.py`.
+- 16 candidate records added to `reviews/reference-assets` (CANDIDATE; manifest lists HVC1-HB2HF2 / HVF178-HB2HF2). E: `Halvren/RP3/HV_{M,F}_REF_RP3_bodyfam_v002.*` (HB2 + HF2 diagnostic) + candidate manifest + definitions; read-back identical.
+
+**Key findings**
+- HB2 + HF2 departs from Marchfolk across 7 / 9 body systems and 3 / 7 face regions; distinct from every frozen elf; all technical gates pass. Caveat: c2 limb / torso moves about a third toward Fenn coherently (single-α R² 0.70).
+- Pelvis: HP-B (pelvis Y 1.02 + hip-horiz-decr 0.05) recommended; HP-A fallback.
+
+**Next:** STOP for ChatGPT review (accept the pair, choose the pelvis direction; then ear architecture can be ordered).
+
+## (previous) 2026-10-29 — HALVREN CENTRAL ANCHOR — BODY + CRANIOFACIAL SOURCE WORK REQUIRED, PELVIS NEEDS AUTHOR DESIGN PASS
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-halvren-central-anchor-order.md`. Gate: `reviews/claude-rac-rp3-halvren-central-anchor-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_central_anchor/`. Nothing frozen; ears not built.

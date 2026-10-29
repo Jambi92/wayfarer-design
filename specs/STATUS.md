@@ -1,6 +1,15 @@
 # Character Design Status
 
-## HALVREN RP3 CENTRAL ANCHOR — BODY + CRANIOFACIAL SOURCE WORK REQUIRED; PELVIS NEEDS AUTHOR DESIGN PASS — EARS LOCKED — NOT FROZEN (2026-10-29)
+## HALVREN RP3 CENTRAL MIXED BODY/FACE PASS — READY FOR PELVIS AUTHOR DECISION — EARS LOCKED — NOT FROZEN (2026-10-29)
+
+- **Gate:** `reviews/claude-rac-rp3-halvren-body-face-source-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_body_face_source/` (22 sheets).
+- **Source definition HVDEF1** (MPFB targets / bone scales only; one shared design on c1 / c2): body HB1 / HB2 / HB3, face HF1 / HF2 / HF3; pelvis held.
+- **Recommended pair HB2 + HF2:** 10 / 11 of 31 body metrics depart from Marchfolk across 7 / 9 systems (was 2); distinct from every frozen elf; not a scalar blend (best single-α R² 0.51 / 0.70, caveat on c2 MF→Fenn). Face departs in cranium, cheeks / midface, jaw / chin (3 / 7; 12–13 / 15 descriptors); nose, mouth, eye size unchanged (anti-beauty pass).
+- **Technical:** all 10 propagated candidates 69 / 69, exact v005, 0 new contact class. Diagnostic `HV_{M,F}_REF_RP3_bodyfam_v002` (HB2 + HF2) on E: `Halvren/RP3/`, read back identical.
+- **Pelvis decision package:** HP-A (human-dominant) / HP-B (mild mixed, recommended) / HP-C (stronger) — none canonical.
+- **Next:** STOP for ChatGPT review — accept HB2 + HF2, choose the pelvis direction. Ears stay locked.
+
+## (previous) HALVREN RP3 CENTRAL ANCHOR — BODY + CRANIOFACIAL SOURCE WORK REQUIRED; PELVIS NEEDS AUTHOR DESIGN PASS — EARS LOCKED — NOT FROZEN (2026-10-29)
 
 - **Gate:** `reviews/claude-rac-rp3-halvren-central-anchor-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_central_anchor/` (15 sheets).
 - **Technical PASS:** new c2 central anchor `HVF178` (MF-F-R route + exactly the HVC1 body targets, 178.01 cm; second resolve dV 0; consistent with HVC1 31 / 31). v005 family candidates `HV_{M,F}_REF_RP3_bodyfam_v001`: exact topology, V = M @ hm08, **69 / 69** both, T-1/2/3/7, density, 0 new contact class, deformation within +2 flips of Marchfolk. On E: `Halvren/RP3/`, read back identical.

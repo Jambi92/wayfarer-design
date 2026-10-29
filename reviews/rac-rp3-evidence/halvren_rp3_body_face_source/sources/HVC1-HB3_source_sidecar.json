@@ -1,0 +1,63 @@
+{
+ "id": "HVC1-HB3",
+ "race": "Halvren",
+ "configuration": "c1",
+ "tag": "HB3",
+ "status": "SOURCE CANDIDATE - NOT accepted, NOT frozen (Halvren body / face source order)",
+ "definition": "HV_source_definitions.json HVDEF1 (body HB3, face current)",
+ "construction": "tools/rac/w1/build_variant.py: HVC1_build.json + c1_HB3.json",
+ "overrides": {
+  "targets": {
+   "torso-scale-depth-decr": 0.075,
+   "measure-underbust-circ-decr": 0.375,
+   "measure-napetowaist-dist-decr": 0.075,
+   "measure-shoulder-dist-decr": 0.225,
+   "measure-neck-height-incr": 0.225,
+   "measure-upperarm-length-incr": 0.12,
+   "measure-lowerarm-length-incr": 0.225,
+   "measure-upperleg-height-incr": 0.12,
+   "measure-lowerleg-height-incr": 0.225,
+   "measure-wrist-circ-decr": 0.3,
+   "measure-ankle-circ-decr": 0.225,
+   "LR:hand-fingers-length-incr": 0.27,
+   "LR:hand-scale-incr": 0.09,
+   "LR:foot-scale-incr": 0.15,
+   "LR:foot-scale-depth-incr": 0.075
+  },
+  "bone_scales": {
+   "LR:upperarm": [
+    0.97,
+    1.0,
+    0.97
+   ],
+   "LR:lowerarm": [
+    0.97,
+    1.0,
+    0.97
+   ],
+   "LR:thigh": [
+    0.9775,
+    1.0,
+    0.9775
+   ],
+   "LR:calf": [
+    0.9775,
+    1.0,
+    0.9775
+   ]
+  },
+  "stature": 178.0,
+  "resolve_stature": true
+ },
+ "height_macro": 0.521728515625,
+ "height_solve": {
+  "reachable": true,
+  "stature": 178.00082182511687,
+  "iters": 12
+ },
+ "stature_r6": 178.00082182511687,
+ "r6_sha256": "880df61e1b857ec4e18a2ea5ccf78567372041f7bc48eeae86d7ee00a0d48987",
+ "build_sha256": "04147adc1dab0d7f61f978f710989f49402baeb3e6a7f343dcbc4d0644adff83",
+ "pelvis": "held: no pelvic target or bone scale (order \u00a716); ratio deltas are the stature / leg coupling only",
+ "ear": "family human auricle, non-final (ears locked)"
+}

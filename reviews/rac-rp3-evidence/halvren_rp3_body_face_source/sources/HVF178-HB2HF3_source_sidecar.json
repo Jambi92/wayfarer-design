@@ -1,0 +1,86 @@
+{
+ "id": "HVF178-HB2HF3",
+ "race": "Halvren",
+ "configuration": "c2",
+ "tag": "HB2HF3",
+ "status": "SOURCE CANDIDATE - NOT accepted, NOT frozen (Halvren body / face source order)",
+ "definition": "HV_source_definitions.json HVDEF1 (body HB2, face HF3)",
+ "construction": "tools/rac/w1/build_variant.py: MF-F-R_build.json + c2_HB2HF3.json (the HVF178 route)",
+ "overrides": {
+  "targets": {
+   "torso-scale-depth-decr": 0.05,
+   "measure-underbust-circ-decr": 0.25,
+   "measure-napetowaist-dist-decr": 0.05,
+   "measure-shoulder-dist-decr": 0.15,
+   "measure-neck-height-incr": 0.15,
+   "measure-upperarm-length-incr": 0.08,
+   "measure-lowerarm-length-incr": 0.15,
+   "measure-upperleg-height-incr": 0.08,
+   "measure-lowerleg-height-incr": 0.15,
+   "measure-wrist-circ-decr": 0.2,
+   "measure-ankle-circ-decr": 0.15,
+   "LR:hand-fingers-length-incr": 0.18,
+   "LR:hand-scale-incr": 0.06,
+   "LR:foot-scale-incr": 0.1,
+   "LR:foot-scale-depth-incr": 0.05,
+   "head-back-scale-depth-decr": 0.3625,
+   "head-oval": 0.116,
+   "forehead-scale-vert-incr": 0.087,
+   "forehead-temple-decr": 0.2175,
+   "LR:cheek-trans-up": 0.5075,
+   "LR:cheek-volume-decr": 0.145,
+   "chin-height-incr": 0.174,
+   "LR:eye-trans-out": 0.145
+  },
+  "bone_scales": {
+   "LR:upperarm": [
+    0.98,
+    1.0,
+    0.98
+   ],
+   "LR:lowerarm": [
+    0.98,
+    1.0,
+    0.98
+   ],
+   "LR:thigh": [
+    0.985,
+    1.0,
+    0.985
+   ],
+   "LR:calf": [
+    0.985,
+    1.0,
+    0.985
+   ]
+  },
+  "stature": 178.0,
+  "resolve_stature": true
+ },
+ "height_macro": 0.6220703125,
+ "height_solve": {
+  "reachable": true,
+  "stature": 178.01669146865606,
+  "iters": 10
+ },
+ "stature_r6": 178.01669146865606,
+ "r6_sha256": "7b56cc3ad4ed84370a3b142843551290c68af87f18bf56ad2cd94a84b53590df",
+ "build_sha256": "274257d15277fa1ffb05c522dab1a83454420c810c9de492568d8ad084e7db63",
+ "pelvis": "held: no pelvic target or bone scale (order \u00a716); ratio deltas are the stature / leg coupling only",
+ "ear": "family human auricle, non-final (ears locked)",
+ "family": {
+  "source_r6": "reviews/reference-assets/r6/HVF178-HB2HF3_r6.npz",
+  "source_r6_sha256": "7b56cc3ad4ed84370a3b142843551290c68af87f18bf56ad2cd94a84b53590df",
+  "build_sha256": "274257d15277fa1ffb05c522dab1a83454420c810c9de492568d8ad084e7db63",
+  "family_npz_sha256": "60fad3aa78584b9445f8c294b67b0b9e97d76966e2ae5352512a366f9f87e790",
+  "validator": "69 / 69",
+  "technical_pass": true,
+  "regen": {
+   "identical": true,
+   "max_abs_dV_cm": 0.0
+  },
+  "worst_flip_excess_vs_MF_v005": 0,
+  "new_contact_class": 0,
+  "density_max_over_limit": 0.827
+ }
+}

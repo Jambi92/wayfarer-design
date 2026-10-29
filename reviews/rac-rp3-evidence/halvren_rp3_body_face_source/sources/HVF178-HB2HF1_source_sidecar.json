@@ -1,0 +1,86 @@
+{
+ "id": "HVF178-HB2HF1",
+ "race": "Halvren",
+ "configuration": "c2",
+ "tag": "HB2HF1",
+ "status": "SOURCE CANDIDATE - NOT accepted, NOT frozen (Halvren body / face source order)",
+ "definition": "HV_source_definitions.json HVDEF1 (body HB2, face HF1)",
+ "construction": "tools/rac/w1/build_variant.py: MF-F-R_build.json + c2_HB2HF1.json (the HVF178 route)",
+ "overrides": {
+  "targets": {
+   "torso-scale-depth-decr": 0.05,
+   "measure-underbust-circ-decr": 0.25,
+   "measure-napetowaist-dist-decr": 0.05,
+   "measure-shoulder-dist-decr": 0.15,
+   "measure-neck-height-incr": 0.15,
+   "measure-upperarm-length-incr": 0.08,
+   "measure-lowerarm-length-incr": 0.15,
+   "measure-upperleg-height-incr": 0.08,
+   "measure-lowerleg-height-incr": 0.15,
+   "measure-wrist-circ-decr": 0.2,
+   "measure-ankle-circ-decr": 0.15,
+   "LR:hand-fingers-length-incr": 0.18,
+   "LR:hand-scale-incr": 0.06,
+   "LR:foot-scale-incr": 0.1,
+   "LR:foot-scale-depth-incr": 0.05,
+   "head-back-scale-depth-decr": 0.2125,
+   "head-oval": 0.068,
+   "forehead-scale-vert-incr": 0.051,
+   "forehead-temple-decr": 0.1275,
+   "LR:cheek-trans-up": 0.2975,
+   "LR:cheek-volume-decr": 0.085,
+   "chin-height-incr": 0.102,
+   "LR:eye-trans-out": 0.085
+  },
+  "bone_scales": {
+   "LR:upperarm": [
+    0.98,
+    1.0,
+    0.98
+   ],
+   "LR:lowerarm": [
+    0.98,
+    1.0,
+    0.98
+   ],
+   "LR:thigh": [
+    0.985,
+    1.0,
+    0.985
+   ],
+   "LR:calf": [
+    0.985,
+    1.0,
+    0.985
+   ]
+  },
+  "stature": 178.0,
+  "resolve_stature": true
+ },
+ "height_macro": 0.623291015625,
+ "height_solve": {
+  "reachable": true,
+  "stature": 178.01484689116478,
+  "iters": 12
+ },
+ "stature_r6": 178.01484689116478,
+ "r6_sha256": "6f187d7a454914f76f14f551cb247f92e4ba36976f78217aaa3aedcf5731819c",
+ "build_sha256": "3c58215fda5e914b67458cbbe3d3f50f3935446d9caab24c1b20a726aaa2ec9c",
+ "pelvis": "held: no pelvic target or bone scale (order \u00a716); ratio deltas are the stature / leg coupling only",
+ "ear": "family human auricle, non-final (ears locked)",
+ "family": {
+  "source_r6": "reviews/reference-assets/r6/HVF178-HB2HF1_r6.npz",
+  "source_r6_sha256": "6f187d7a454914f76f14f551cb247f92e4ba36976f78217aaa3aedcf5731819c",
+  "build_sha256": "3c58215fda5e914b67458cbbe3d3f50f3935446d9caab24c1b20a726aaa2ec9c",
+  "family_npz_sha256": "f8e4dd6ca118128cbd270d404e7847903c35d78496410186c98a3f641c05d508",
+  "validator": "69 / 69",
+  "technical_pass": true,
+  "regen": {
+   "identical": true,
+   "max_abs_dV_cm": 0.0
+  },
+  "worst_flip_excess_vs_MF_v005": 0,
+  "new_contact_class": 0,
+  "density_max_over_limit": 0.828
+ }
+}

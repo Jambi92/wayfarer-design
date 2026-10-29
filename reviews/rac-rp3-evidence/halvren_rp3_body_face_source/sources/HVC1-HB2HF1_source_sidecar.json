@@ -1,0 +1,86 @@
+{
+ "id": "HVC1-HB2HF1",
+ "race": "Halvren",
+ "configuration": "c1",
+ "tag": "HB2HF1",
+ "status": "SOURCE CANDIDATE - NOT accepted, NOT frozen (Halvren body / face source order)",
+ "definition": "HV_source_definitions.json HVDEF1 (body HB2, face HF1)",
+ "construction": "tools/rac/w1/build_variant.py: HVC1_build.json + c1_HB2HF1.json",
+ "overrides": {
+  "targets": {
+   "torso-scale-depth-decr": 0.05,
+   "measure-underbust-circ-decr": 0.25,
+   "measure-napetowaist-dist-decr": 0.05,
+   "measure-shoulder-dist-decr": 0.15,
+   "measure-neck-height-incr": 0.15,
+   "measure-upperarm-length-incr": 0.08,
+   "measure-lowerarm-length-incr": 0.15,
+   "measure-upperleg-height-incr": 0.08,
+   "measure-lowerleg-height-incr": 0.15,
+   "measure-wrist-circ-decr": 0.2,
+   "measure-ankle-circ-decr": 0.15,
+   "LR:hand-fingers-length-incr": 0.18,
+   "LR:hand-scale-incr": 0.06,
+   "LR:foot-scale-incr": 0.1,
+   "LR:foot-scale-depth-incr": 0.05,
+   "head-back-scale-depth-decr": 0.2125,
+   "head-oval": 0.068,
+   "forehead-scale-vert-incr": 0.051,
+   "forehead-temple-decr": 0.1275,
+   "LR:cheek-trans-up": 0.2975,
+   "LR:cheek-volume-decr": 0.085,
+   "chin-height-incr": 0.102,
+   "LR:eye-trans-out": 0.085
+  },
+  "bone_scales": {
+   "LR:upperarm": [
+    0.98,
+    1.0,
+    0.98
+   ],
+   "LR:lowerarm": [
+    0.98,
+    1.0,
+    0.98
+   ],
+   "LR:thigh": [
+    0.985,
+    1.0,
+    0.985
+   ],
+   "LR:calf": [
+    0.985,
+    1.0,
+    0.985
+   ]
+  },
+  "stature": 178.0,
+  "resolve_stature": true
+ },
+ "height_macro": 0.529052734375,
+ "height_solve": {
+  "reachable": true,
+  "stature": 178.004802018404,
+  "iters": 12
+ },
+ "stature_r6": 178.004802018404,
+ "r6_sha256": "f2e56dadb07b4e8566278773e20bac5eb4cadc44372905c1ba15213223a017f2",
+ "build_sha256": "2aadf52cb8e85a6cd1ac10a340e9e3f82df1d537b018048735e33906f04a8bd0",
+ "pelvis": "held: no pelvic target or bone scale (order \u00a716); ratio deltas are the stature / leg coupling only",
+ "ear": "family human auricle, non-final (ears locked)",
+ "family": {
+  "source_r6": "reviews/reference-assets/r6/HVC1-HB2HF1_r6.npz",
+  "source_r6_sha256": "f2e56dadb07b4e8566278773e20bac5eb4cadc44372905c1ba15213223a017f2",
+  "build_sha256": "2aadf52cb8e85a6cd1ac10a340e9e3f82df1d537b018048735e33906f04a8bd0",
+  "family_npz_sha256": "abf732a0c0650b48ed462fb548bf24ae66ba09ab65f942933abb4e693cfe8e12",
+  "validator": "69 / 69",
+  "technical_pass": true,
+  "regen": {
+   "identical": true,
+   "max_abs_dV_cm": 0.0
+  },
+  "worst_flip_excess_vs_MF_v005": 1,
+  "new_contact_class": 0,
+  "density_max_over_limit": 0.843
+ }
+}

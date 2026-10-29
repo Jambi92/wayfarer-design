@@ -1,0 +1,86 @@
+{
+ "id": "HVC1-HB1HF1",
+ "race": "Halvren",
+ "configuration": "c1",
+ "tag": "HB1HF1",
+ "status": "SOURCE CANDIDATE - NOT accepted, NOT frozen (Halvren body / face source order)",
+ "definition": "HV_source_definitions.json HVDEF1 (body HB1, face HF1)",
+ "construction": "tools/rac/w1/build_variant.py: HVC1_build.json + c1_HB1HF1.json",
+ "overrides": {
+  "targets": {
+   "torso-scale-depth-decr": 0.03,
+   "measure-underbust-circ-decr": 0.15,
+   "measure-napetowaist-dist-decr": 0.03,
+   "measure-shoulder-dist-decr": 0.09,
+   "measure-neck-height-incr": 0.09,
+   "measure-upperarm-length-incr": 0.048,
+   "measure-lowerarm-length-incr": 0.09,
+   "measure-upperleg-height-incr": 0.048,
+   "measure-lowerleg-height-incr": 0.09,
+   "measure-wrist-circ-decr": 0.12,
+   "measure-ankle-circ-decr": 0.09,
+   "LR:hand-fingers-length-incr": 0.108,
+   "LR:hand-scale-incr": 0.036,
+   "LR:foot-scale-incr": 0.06,
+   "LR:foot-scale-depth-incr": 0.03,
+   "head-back-scale-depth-decr": 0.2125,
+   "head-oval": 0.068,
+   "forehead-scale-vert-incr": 0.051,
+   "forehead-temple-decr": 0.1275,
+   "LR:cheek-trans-up": 0.2975,
+   "LR:cheek-volume-decr": 0.085,
+   "chin-height-incr": 0.102,
+   "LR:eye-trans-out": 0.085
+  },
+  "bone_scales": {
+   "LR:upperarm": [
+    0.988,
+    1.0,
+    0.988
+   ],
+   "LR:lowerarm": [
+    0.988,
+    1.0,
+    0.988
+   ],
+   "LR:thigh": [
+    0.991,
+    1.0,
+    0.991
+   ],
+   "LR:calf": [
+    0.991,
+    1.0,
+    0.991
+   ]
+  },
+  "stature": 178.0,
+  "resolve_stature": true
+ },
+ "height_macro": 0.53662109375,
+ "height_solve": {
+  "reachable": true,
+  "stature": 178.0115290544927,
+  "iters": 11
+ },
+ "stature_r6": 178.0115290544927,
+ "r6_sha256": "82d955a50814dc647f2e21a4dec6c4e1ba5a98c815e0ad8809ce0b46b7b8e593",
+ "build_sha256": "a6e0cc6dab037e39098d0e82e6d11ac229d2e7807972926e3d8a445aaee702a8",
+ "pelvis": "held: no pelvic target or bone scale (order \u00a716); ratio deltas are the stature / leg coupling only",
+ "ear": "family human auricle, non-final (ears locked)",
+ "family": {
+  "source_r6": "reviews/reference-assets/r6/HVC1-HB1HF1_r6.npz",
+  "source_r6_sha256": "82d955a50814dc647f2e21a4dec6c4e1ba5a98c815e0ad8809ce0b46b7b8e593",
+  "build_sha256": "a6e0cc6dab037e39098d0e82e6d11ac229d2e7807972926e3d8a445aaee702a8",
+  "family_npz_sha256": "f0951cb01401ff2e35428930f1ec160b08406bdc46b36779de07ad9917585123",
+  "validator": "69 / 69",
+  "technical_pass": true,
+  "regen": {
+   "identical": true,
+   "max_abs_dV_cm": 0.0
+  },
+  "worst_flip_excess_vs_MF_v005": 1,
+  "new_contact_class": 0,
+  "density_max_over_limit": 0.848
+ }
+}
