@@ -637,3 +637,20 @@ The open items are Vael lifespan and aging rate; elven lifespan relationships; e
 **UCCA status (UCCA Phase 2, October 5, 2026):** the universal whole-character creator organization is canonical in `decisions/UCCA_V1.md` (15-slot navigation, control classes, Skeletal Frame and Physical Composition separation, presets, randomization, locks, saved appearance and validation). The Vael body-control organization in this spec stays as approved requirements routed to UCCA slots (`reviews/claude-ucca-11-phase1-architecture-audit.md` Appendix A); Vael anatomy, tendencies, bounds, validators, tests and OPEN items are unchanged. Natural subtle body asymmetry is available as ordinary individual variation (UCCA §16); body hair follows UCCA §13. Shoulder and pelvic breadth are bound through Skeletal Frame (T-10).
 
 **Reference-anatomy status (RAC Phase 2, October 5, 2026):** the reference-anatomy method (approved reference meshes, reference composition, measurement stance, acceptance and circularity rules, measurement waves) is canonical in `decisions/REFERENCE_ANATOMY_V1.md`. Measurement has not started; no new numeric envelope is set. Vael directional constraints for measurement are consolidated in `reviews/claude-rac-03-pelvis-axial-closure.md` §2 and `reviews/claude-rac-04-segment-stature-closure.md` §2 (constraints, not magnitudes). **Sex-related external biology is deferred** to a later focused pass; human or humanoid soft tissue is not imported by assumption; independence rules stand (AD-R21). **Body hair stays hidden/deferred**; facial-hair permission is not extended to body hair.
+
+**RP3 FINAL STATUS (orders `reviews/chatgpt-rac-rp3-vael-final-consolidation-freeze-order.md` and `reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md`, October 29, 2026): VAEL RP3 FINAL PASS — AUTHOR ACCEPTED / FROZEN (by record).**
+- **Accepted central body sources:** `VAL4-R1-VD2-VF2` (configuration 1) and `VALF178-R1-VD2-VF2` (configuration 2), each about 178 cm.
+  - c1 lineage: VAL4 → R1 / VC2 → VD2 / VDF1.2 → VF2 / VEF1 → `VA_M_REF_RP3_v001`.
+  - c2 lineage: VALF178 → R1 / VC2 → VD2 / VDF1.2 → VF2 / VEF1 → `VA_F_REF_RP3_v001`.
+  - VAL4, VALF178, R1 and VD2 are kept as immutable ancestry. The VC2 face is unchanged from R1.
+- **Frozen production bodies:** `VA_M_REF_RP3_v001.blend` and `VA_F_REF_RP3_v001.blend`. Each is MPFB Family Base v005 outside the ear branch, the VC2 face and the Vael external-ear branch; 59,076 V / 59,074 Q, with an identical face list on both configurations.
+  - Record: `reviews/rac-rp3-evidence/vael_rp3_final/VAEL_RP3_FREEZE.json`.
+  - Report: `reviews/claude-rac-rp3-vael-final-freeze-report.md`.
+- **Ear:** VA-E2 is the canonical central Vael ear direction (broadest base, intermediate angular projection, strongest backward trajectory, shorter and blunter than Aelari). Lineage VA-E2 → RI3 → `VAEL_EAR_BRANCH_TOPOLOGY_v002`: RI3 root / concha integration on a Vael-specific local cuff derivative of the Fenn / Aelari engineering topology. It is engineering topology only, not a universal elf ear topology.
+- **Carry-forwards (production rigging):** `VAEL-CF-SHOULDER-1` (c1 shoulder flex 90°, +6 flips over Marchfolk) and `VAEL-CF-EARROOT-1` (c1 neck_rot45 ear-cuff fold; bind the ear branch rigidly to the head at final skinning). See `specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md`.
+- **Accepted notes:**
+  - c1 normalized free-ear stand-off sits a few thousandths HH above frozen Fenn; the angular and visual hierarchy is correct.
+  - Unmasked source-vs-production anatomy differs only at the new ear.
+  - Ear-branch faces carry a placeholder UV.
+  - Low-light physiology is still undecided.
+- **Next race:** Halvren, not started. Fenn, Aelari and Vael are now three separate frozen elf population references; Halvren mixed ancestry is not a numeric or visual average of them and needs its own author gate.

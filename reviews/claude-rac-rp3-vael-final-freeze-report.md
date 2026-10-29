@@ -1,16 +1,42 @@
 # RAC RP3 — Vael final consolidation / validation / freeze report
 
-Order: `reviews/chatgpt-rac-rp3-vael-final-consolidation-freeze-order.md` (db01617).
+Orders:
+- `reviews/chatgpt-rac-rp3-vael-final-consolidation-freeze-order.md` (db01617): consolidation, validation, production.
+- `reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md` (9d1bccd): author acceptance and freeze closure.
+
 Evidence: `reviews/rac-rp3-evidence/vael_rp3_final/`. Visual package: `vael_rp3_final/sheets/VA_FINAL_01..20` plus `18b`.
 Records:
+- `VAEL_RP3_FREEZE.json` (authoritative)
 - `VAEL_FINAL_gates.json`
 - `VAEL_FINAL_deformation_summary.json`
-- `VAEL_RP3_freeze_readback.json`
-- `VAEL_RP3_FREEZE_CANDIDATE.json`
+- `VAEL_RP3_freeze_readback.json`, `VAEL_RP3_freeze_reverify.json`
+- `VAEL_RP3_FREEZE_CANDIDATE.json` (the promoted candidate, kept as provenance)
 
-## RESULT
+## FINAL RESULT (2026-10-29)
 
-## VAEL FINAL CONSOLIDATION NEEDS AUTHOR DECISION
+## VAEL RP3 FINAL PASS — AUTHOR ACCEPTED / FROZEN
+
+- **Author decision resolved.** The c1 `neck_rot45` ear-cuff fold is accepted as a weighting issue and registered as `VAEL-CF-EARROOT-1` in `specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md`. RI3, `VAEL_EAR_BRANCH_TOPOLOGY_v002` and the source body are not implicated.
+- **No geometry or topology rebuild was performed.** Nothing was rebuilt, relaxed, resculpted, retopologized or resaved.
+- **Production blends remain byte-identical:**
+  - The E: copies were re-staged; their SHA-256 values equal the recorded read-back (`VA_M_REF_RP3_v001.blend` `42f0cebb…`, geometry `887c9317…`; `VA_F_REF_RP3_v001.blend` `516b18e8…`, geometry `5e5fbf7e…`; face topology `f8367ab0…` on both).
+  - A verification-only re-read-back (`va_freeze_verify.py`) is identical to the recorded read-back, including the validator recomputed from the read-back geometry: 69 / 69 on both.
+- **Freeze by record:** `VAEL_RP3_FREEZE_CANDIDATE.json` was promoted to `VAEL_RP3_FREEZE.json` by `tools/rac/rp/vael_rp3_v001/va_freeze_promote.py`. Only status, authority, carry-forward and accepted-residual fields changed; every file hash, geometry hash, branch-map, landmark, sidecar and read-back value is preserved.
+- **Carry-forwards, both owned by production rigging:**
+  - `VAEL-CF-SHOULDER-1`: c1 shoulder flex 90°, 19 vs Marchfolk 13 (+6); c2 +2.
+  - `VAEL-CF-EARROOT-1`: c1 neck_rot45 ear-cuff fold; bind the ear branch rigidly to the head at final skinning.
+- **Final status: frozen.** Manifest, `specs/vael/VAEL_V1.md`, STATUS, the register and the handoff are updated.
+- **Next race: Halvren, not started.** Fenn, Aelari and Vael are now three distinct frozen elven population references. Halvren mixed ancestry must not be a numeric or visual average of them. Shared engineering may be tested, but Halvren anatomy needs its own author gate.
+
+**STOP FOR CHATGPT REVIEW.**
+
+---
+
+# Consolidation return (4df3e0c, 2026-10-28) — kept as the validation record
+
+## Result at consolidation (superseded by the final result above)
+
+**VAEL FINAL CONSOLIDATION NEEDS AUTHOR DECISION**
 
 Every gate passes except one Standard v1 deformation row. Configuration 1 `neck_rot45` adds **one fold** that the VF2 family realization does not have. It is a dihedral that crosses 120° on two sub-millimetre left cuff quads at the lobe junction. There is no flip, no contact and no root inversion. This item is new and outside the registered class (§18: "any new deformation excess outside that registered class requires review").
 
@@ -23,9 +49,9 @@ Everything else is ready to freeze by record:
 - The files were read back byte-identical.
 - The validator was recomputed from the read-back: 69 / 69 on both configurations.
 
-`VAEL_RP3_FREEZE.json` is therefore **not** written. The complete record is held as `VAEL_RP3_FREEZE_CANDIDATE.json`. On acceptance it becomes the freeze record unchanged, with no rebuild and no resave.
+At that point `VAEL_RP3_FREEZE.json` was **not** written. The complete record is held as `VAEL_RP3_FREEZE_CANDIDATE.json`. On acceptance it becomes the freeze record unchanged, with no rebuild and no resave.
 
-## Open item — c1 neck_rot45 cuff fold (sheet 18b)
+## Open item at consolidation — c1 neck_rot45 cuff fold (sheet 18b); now VAEL-CF-EARROOT-1
 
 **Where:**
 - Faces 57125 / 57126, left side, part `cuff`.
@@ -202,7 +228,7 @@ Fenn is still visually most outward (sheet 16).
 
 All 9 zones pass on both configurations. The ear branch is ≤ 0.25 %. Only the face, ears and head zone means move from the family, all because of the new ear (head c1 0.239 → 0.293). Export does not change density: the read-back is identical.
 
-## 18. Body deformation — one open item (above)
+## 18. Body deformation — PASS with registered carry-forwards (VAEL-CF-SHOULDER-1, VAEL-CF-EARROOT-1)
 
 - Final equals the family realization pose by pose on 17 / 18 poses in c1 and 18 / 18 in c2 (flips, contacts, folds).
 - The family equals the reviewed v004 on every pose.
@@ -271,12 +297,12 @@ None of the following were started:
 - LODs;
 - UE5 integration.
 
-`manifest.json` and `VAEL_V1.md` are not updated to frozen because the freeze is pending.
+At consolidation, `manifest.json` and `VAEL_V1.md` were held back pending the decision; both were updated at the 2026-10-29 closure.
 
-## Next race (after the Vael decision)
+## Next race
 
 Recommend **Halvren**. Do not start it.
-- Fenn, Aelari and Vael are separate elf population references. Two are frozen now; Vael will be the third once accepted.
+- Fenn, Aelari and Vael are three separate frozen elf population references.
 - Halvren is mixed ancestry and must not be a simple average.
 - Shared ear engineering may inform Halvren, but Halvren needs its own biological gate.
 

@@ -1,6 +1,14 @@
 # Character Design Status
 
-## VAEL RP3 FINAL CONSOLIDATION — NEEDS AUTHOR DECISION — NOT FROZEN (2026-10-28)
+## VAEL RP3 — AUTHOR ACCEPTED / FROZEN (by record, 2026-10-29)
+
+- **Closure:** `reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md`. Record: `reviews/rac-rp3-evidence/vael_rp3_final/VAEL_RP3_FREEZE.json` (promoted from the 4df3e0c candidate; status / carry-forward edits only). Report: `reviews/claude-rac-rp3-vael-final-freeze-report.md`.
+- **Frozen:** `VA_M_REF_RP3_v001.blend` (`42f0cebb…`) and `VA_F_REF_RP3_v001.blend` (`516b18e8…`) on E: `Vael/RP3/`; byte-identical, no rebuild or resave; verification-only re-read-back identical, validator 69 / 69 both.
+- **Lineage:** c1 VAL4 → R1 / VC2 → VD2 / VDF1.2 → VF2 / VEF1 → VA_M; c2 VALF178 → same → VA_F; ear VA-E2 → RI3 → `VAEL_EAR_BRANCH_TOPOLOGY_v002` (no universal elf topology).
+- **Carry-forwards (production rigging):** `VAEL-CF-SHOULDER-1`, `VAEL-CF-EARROOT-1` (registered).
+- **Next:** STOP for ChatGPT review. Halvren recommended next, not started.
+
+## (previous) VAEL RP3 FINAL CONSOLIDATION — NEEDS AUTHOR DECISION — NOT FROZEN (2026-10-28)
 
 - **Report:** `reviews/claude-rac-rp3-vael-final-freeze-report.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_final/` (21 sheets, `VAEL_FINAL_gates.json`, `VAEL_RP3_FREEZE_CANDIDATE.json`).
 - **Ready to freeze:** clean rebuild dV 0 (family = bodyfam_v004, RI3 arrays = reviewed); `VA_M/F_REF_RP3_v001` written to E: `Vael/RP3/`, read back byte-identical, validator from read-back 69 / 69 both; canon 20 / 20, human 5 / 8, face 6 / 6, elf rows 9 / 9, pelvis 9 / 9, ear T-4 123 / 144, aspect 9.26, probes 12 / 12, readiness 0 / 0 / 0; VAEL-CF-SHOULDER-1 unchanged (+6 / +2); c1 stand-off residual as accepted.

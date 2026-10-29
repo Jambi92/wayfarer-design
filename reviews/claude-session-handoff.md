@@ -2,7 +2,19 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-28) — VAEL FINAL CONSOLIDATION — NEEDS AUTHOR DECISION (one c1 neck_rot45 cuff fold) — NOT FROZEN — awaiting ChatGPT review
+## LATEST (2026-10-29) — VAEL RP3 — AUTHOR ACCEPTED / FROZEN (by record) — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md`. No geometry work: verification-only re-stage of the E: copies (byte-identical, `va_freeze_verify.py` re-read-back identical to the recorded read-back, 69 / 69 both), then `va_freeze_promote.py` promoted `VAEL_RP3_FREEZE_CANDIDATE.json` → `VAEL_RP3_FREEZE.json` (status / carry-forward edits only).
+- Registered `VAEL-CF-EARROOT-1`; `VAEL-CF-SHOULDER-1` carried. Updated manifest, `VAEL_V1.md`, STATUS, register, final report.
+
+**State**
+- Fenn, Aelari and Vael are all frozen: three distinct elven population references.
+- Halvren is next and NOT started. Its mixed ancestry must not be a numeric or visual average of the three elves; shared engineering may be tested, but Halvren anatomy needs its own author gate.
+
+**Next:** STOP for ChatGPT review.
+
+## (previous) 2026-10-28 — VAEL FINAL CONSOLIDATION — NEEDS AUTHOR DECISION (one c1 neck_rot45 cuff fold) — NOT FROZEN
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-vael-final-consolidation-freeze-order.md`. Report: `reviews/claude-rac-rp3-vael-final-freeze-report.md`. Evidence: `reviews/rac-rp3-evidence/vael_rp3_final/`.

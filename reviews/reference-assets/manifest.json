@@ -1408,7 +1408,7 @@
   "VAL4-R1": {
    "race": "Vael",
    "role": "reference, configuration 1, PROVISIONAL Vael body + craniofacial source (body / face source order 2026-10-28: shared body correction VB2g + craniofacial VC2); VAL4 kept unchanged as ancestry",
-   "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-vael-body-face-source-gate.md); NOT frozen",
+   "accepted": "ACCEPTED as lineage ancestry of the frozen Vael RP3 final source (reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md, 2026-10-29); not a production source itself",
    "provenance": "build_variant.py: VAL4_build.json + c1_VB2gVC2h overrides, stature 178 (resolve_stature); overrides in reviews/rac-rp3-evidence/vael_rp3_source/vb_vc_definitions/",
    "stature_r6": 177.99012446776032,
    "file": "r6/VAL4-R1_r6.npz",
@@ -1420,7 +1420,7 @@
   "VALF178-R1": {
    "race": "Vael",
    "role": "reference, configuration 2, PROVISIONAL Vael body + craniofacial source (body / face source order 2026-10-28: shared body correction VB2g + craniofacial VC2); VALF178 kept unchanged as ancestry",
-   "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-vael-body-face-source-gate.md); NOT frozen",
+   "accepted": "ACCEPTED as lineage ancestry of the frozen Vael RP3 final source (reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md, 2026-10-29); not a production source itself",
    "provenance": "build_variant.py: MF-F-R_build.json + the full Vael cfg (VALF178 route) + c2_VB2gVC2h overrides, stature 178 (resolve_stature); overrides in reviews/rac-rp3-evidence/vael_rp3_source/vb_vc_definitions/",
    "stature_r6": 177.99907568842173,
    "file": "r6/VALF178-R1_r6.npz",
@@ -1432,7 +1432,7 @@
   "VAL4-R1-VD2": {
    "race": "Vael",
    "role": "reference, configuration 1, PROVISIONAL Vael body (custom body-deformation order 2026-10-28): VAL4-R1 + deterministic Vael body field VDF1.2 at magnitude 1.0 (VD2); VAL4-R1 kept unchanged",
-   "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-vael-custom-body-deformation-gate.md); NOT frozen",
+   "accepted": "ACCEPTED as lineage ancestry of the frozen Vael RP3 final source (reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md, 2026-10-29); not a production source itself",
    "provenance": "build_variant.py: VAL4-R1_build.json + overrides {\"vael_field\": definition sha 9f208810e8a3accc, magnitude 1.0}, height macro held; field applied by tools/rac/w1/arm_lib.build (vael_body_field.py)",
    "stature_r6": 177.9926191084087,
    "file": "r6/VAL4-R1-VD2_r6.npz",
@@ -1444,7 +1444,7 @@
   "VALF178-R1-VD2": {
    "race": "Vael",
    "role": "reference, configuration 2, PROVISIONAL Vael body (custom body-deformation order 2026-10-28): VALF178-R1 + deterministic Vael body field VDF1.2 at magnitude 1.0 (VD2); VALF178-R1 kept unchanged",
-   "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-vael-custom-body-deformation-gate.md); NOT frozen",
+   "accepted": "ACCEPTED as lineage ancestry of the frozen Vael RP3 final source (reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md, 2026-10-29); not a production source itself",
    "provenance": "build_variant.py: VALF178-R1_build.json + overrides {\"vael_field\": definition sha 9f208810e8a3accc, magnitude 1.0}, height macro held; field applied by tools/rac/w1/arm_lib.build (vael_body_field.py)",
    "stature_r6": 178.00111882388592,
    "file": "r6/VALF178-R1-VD2_r6.npz",
@@ -1455,33 +1455,56 @@
   },
   "VAL4-R1-VD2-VF2": {
    "race": "Vael",
-   "role": "reference, configuration 1, PROVISIONAL Vael body (elf-frame order 2026-10-28): VAL4-R1-VD2 + elf-frame term VEF1 at vef_magnitude 1.0 (VF2); VD2 kept unchanged",
-   "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-vael-elf-frame-human-firewall-gate.md); NOT frozen",
+   "role": "reference, configuration 1, ACCEPTED final Vael body source (R1 / VC2 -> VD2 / VDF1.2 -> VF2 / VEF1); production VA_M_REF_RP3_v001.blend",
+   "accepted": "ACCEPTED / FROZEN by record (reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md, 2026-10-29)",
    "provenance": "build_variant.py: VAL4-R1-VD2_build.json + overrides {\"vael_field\": definition sha b0bf94cf4aa64ffc (VD + vef), magnitude 1.0, vef_magnitude 1.0}, height macro held; clavicle length + field applied by tools/rac/w1/arm_lib.build",
    "stature_r6": 177.9926191084087,
    "file": "r6/VAL4-R1-VD2-VF2_r6.npz",
    "sha256": "fec300953b2306c326e738c0606a9d7218668592d12d616324a7b78c8a0f8fd0",
    "build": "builds/VAL4-R1-VD2-VF2_build.json",
    "build_sha256": "32fd7ffa80519380caf94b94eca91174be97476f585ee3c9a654242047f6d470",
-   "height_macro": 0.54443359375
+   "height_macro": 0.54443359375,
+   "frozen": {
+    "order": "reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md",
+    "parent_order": "reviews/chatgpt-rac-rp3-vael-final-consolidation-freeze-order.md",
+    "record": "reviews/rac-rp3-evidence/vael_rp3_final/VAEL_RP3_FREEZE.json",
+    "production": "VA_M_REF_RP3_v001.blend",
+    "date": "2026-10-29",
+    "carry_forward": [
+     "VAEL-CF-SHOULDER-1",
+     "VAEL-CF-EARROOT-1"
+    ]
+   }
   },
   "VALF178-R1-VD2-VF2": {
    "race": "Vael",
-   "role": "reference, configuration 2, PROVISIONAL Vael body (elf-frame order 2026-10-28): VALF178-R1-VD2 + elf-frame term VEF1 at vef_magnitude 1.0 (VF2); VD2 kept unchanged",
-   "accepted": "CANDIDATE - not yet accepted (reviews/claude-rac-rp3-vael-elf-frame-human-firewall-gate.md); NOT frozen",
+   "role": "reference, configuration 2, ACCEPTED final Vael body source (R1 / VC2 -> VD2 / VDF1.2 -> VF2 / VEF1); production VA_F_REF_RP3_v001.blend",
+   "accepted": "ACCEPTED / FROZEN by record (reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md, 2026-10-29)",
    "provenance": "build_variant.py: VALF178-R1-VD2_build.json + overrides {\"vael_field\": definition sha b0bf94cf4aa64ffc (VD + vef), magnitude 1.0, vef_magnitude 1.0}, height macro held; clavicle length + field applied by tools/rac/w1/arm_lib.build",
    "stature_r6": 178.00111882388592,
    "file": "r6/VALF178-R1-VD2-VF2_r6.npz",
    "sha256": "c338d97240c29129fef85578818eba84f632f99918fc9ed6861325937444e1e8",
    "build": "builds/VALF178-R1-VD2-VF2_build.json",
    "build_sha256": "0e32948a4c9fc3f648602a07f28983456b462669693c5fbe08740bf69ebd6aa1",
-   "height_macro": 0.642578125
+   "height_macro": 0.642578125,
+   "frozen": {
+    "order": "reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md",
+    "parent_order": "reviews/chatgpt-rac-rp3-vael-final-consolidation-freeze-order.md",
+    "record": "reviews/rac-rp3-evidence/vael_rp3_final/VAEL_RP3_FREEZE.json",
+    "production": "VA_F_REF_RP3_v001.blend",
+    "date": "2026-10-29",
+    "carry_forward": [
+     "VAEL-CF-SHOULDER-1",
+     "VAEL-CF-EARROOT-1"
+    ]
+   }
   }
  },
  "also": {
   "Skarn C1R central faces": "reviews/rac-w3d-evidence/geometry/ (SK208-C1R, SKF208-C1R) + tools/rac/w1/cfg/w3d/SK-C1R.json",
   "Saurin": "canonical W2 asset (saurin_w2_final_base.npz f86ae800..., surface delta, seeds, SA-F realization) at RaceBodies/out on the PC (SAURIN_V1 s254 W2 update); stature extremes regenerate deterministically via tools/rac/w1/w2i_drivers/sa_finish.build_f (W2I D1 regional route)",
   "Fenn RP3 final production bodies (frozen by record)": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Fenn/RP3/FN_{M,F}_REF_RP3_v001.blend (+ _branch_map.npz, .json, _landmarks.json); record reviews/rac-rp3-evidence/fenn_rp3_freeze/FENN_RP3_FREEZE.json; external ear = Fenn ear branch topology v002 + E2 (reviews/rac-rp3-evidence/fenn_ear_v002/), Fenn only",
-  "Aelari RP3 final production bodies (frozen by record)": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Aelari/RP3/AE_{M,F}_REF_RP3_v001.blend (+ _branch_map.npz, .json, _landmarks.json); record reviews/rac-rp3-evidence/aelari_rp3_freeze/AELARI_RP3_FREEZE.json; sources AEL1-R1 / AELF190-R1; external ear = AE-E2 Aelari geometry on the reused Fenn ear topology v002 (engineering topology only; Aelari-specific ear branch)"
+  "Aelari RP3 final production bodies (frozen by record)": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Aelari/RP3/AE_{M,F}_REF_RP3_v001.blend (+ _branch_map.npz, .json, _landmarks.json); record reviews/rac-rp3-evidence/aelari_rp3_freeze/AELARI_RP3_FREEZE.json; sources AEL1-R1 / AELF190-R1; external ear = AE-E2 Aelari geometry on the reused Fenn ear topology v002 (engineering topology only; Aelari-specific ear branch)",
+  "Vael RP3 final production bodies (frozen by record)": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Vael/RP3/VA_{M,F}_REF_RP3_v001.blend (+ _branch_map.npz, .json, _landmarks.json); record reviews/rac-rp3-evidence/vael_rp3_final/VAEL_RP3_FREEZE.json; sources VAL4-R1-VD2-VF2 / VALF178-R1-VD2-VF2; external ear = VA-E2 Vael geometry with RI3 root / concha integration on VAEL_EAR_BRANCH_TOPOLOGY_v002 (Vael-specific engineering topology; not a universal elf topology); carry-forwards VAEL-CF-SHOULDER-1, VAEL-CF-EARROOT-1"
  }
 }
