@@ -10,7 +10,7 @@
 # Also the DESIGN-PARAMETER audit (same rules) on the authored domain parameters (W1 MF-human / frozen elf parameters vs the HE definitions).
 import sys, json, numpy as np
 sys.path.insert(0, '/home/claude/wayfarer-design/tools/rac/rp/fenn_rp3_v001'); import ear_branch_lib as E
-IN, OUT = sys.argv[1:3]; d = json.load(open(IN)); sys.path.insert(0, '/home/claude/wayfarer-design/tools/rac/rp/halvren_rp3_v001'); import hv_ear_domains as HD; FL = HD.FLOOR; DOM = d['domains']; I = d['items']; SRC = ['MF', 'FN', 'AE', 'VA']; ELF = ['FN', 'AE', 'VA']
+IN, OUT = sys.argv[1:3]; d = json.load(open(IN)); sys.path.insert(0, '/home/claude/wayfarer-design/tools/rac/rp/halvren_rp3_v001'); import hv_ear_domains as HD; FL = HD.FLOOR; FLM = dict(HD.FLOOR); DOM = d['domains']; I = d['items']; SRC = ['MF', 'FN', 'AE', 'VA']; ELF = ['FN', 'AE', 'VA']
 PFL = dict(L=0.2, wb=0.05, taper_start=0.03, taper_ex=0.05, shoulder=0.02, lobe=0.01, proj=2.0, tilt=2.0, sweep=0.1, concha=0.02, trag=0.01, helix_h=0.01)
 def audit(I, DOM, tag):
     X = {k: np.array([I[k][q] for q in DOM], float) for k in I}; S = np.array([X[s] for s in SRC]); sd = np.maximum(S.std(0), np.array([FL.get(q, 1e-9) for q in DOM]))
@@ -51,6 +51,11 @@ for k in I:
     if k not in SRC and k in E.CAND: PI[k] = pv(E.CAND[k])
 FL = PFL; R['design_parameters'] = audit(PI, PD, 'authored domain parameters (ear_branch_lib.CAND)'); R['design_parameters']['values'] = PI
 mp = R['measured']['items']
+# topology control: Marchfolk-PARAMETER ears (W1 MF-human values) realized on the shared engineering topology -- where the topology's human end sits
+Xc = {k: np.array([I[k][q] for q in DOM], float) for k in I}; emx = np.mean([Xc[e] for e in ELF], 0); dvx = emx - Xc['MF']
+sdx = np.maximum(np.array([Xc[s] for s in SRC]).std(0), np.array([FLM.get(q, 1e-9) for q in DOM])); sig = np.abs(dvx) > 0.5 * sdx
+R['topology_control'] = {k: dict(t_vs_elf_mean={q: round(float(v), 2) for q, v in zip(DOM, (Xc[k] - Xc['MF']) / np.where(sig, dvx, 1)) if sig[DOM.index(q)]},
+                                 median_t=round(float(np.median(((Xc[k] - Xc['MF']) / np.where(sig, dvx, 1))[sig])), 2)) for k in I if k.startswith('CTRL')}
 R['gates'] = dict(HE2_not_scalar_blend_measured=mp['HE2']['scalar_fit']['passes'] if 'HE2' in mp else None,
                   HE2_not_scalar_blend_design=R['design_parameters']['items']['HE2']['scalar_fit']['passes'] if 'HE2' in R['design_parameters']['items'] else None,
                   all_HE_not_scalar_blend_measured=all(mp[k]['scalar_fit']['passes'] for k in mp if k.startswith('HE')),

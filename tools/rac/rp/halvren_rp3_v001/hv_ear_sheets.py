@@ -83,6 +83,13 @@ for c, h in HEADS.items():
 for pn in sorted(PRB['probes']):
     p = '%s/he/probe/%s/%s_HE2_branch.npz' % (EW, pn, HEADS['c1'])
     if os.path.exists(p): R_('pr_' + pn, p, HEADS['c1'], ['etq'], px=420)
+TOPO = [('Marchfolk params', [('MF', mf('c1'), 'Marchfolk auricle'), ('HVT-HUM-R', '%s/topo/FN/build/%s_HVT-HUM-R_branch.npz' % (EW, HEADS['c1']), 'Fenn v002 rigid cuff'),
+                               ('HVT-HUM-S', '%s/topo/RI3/build/%s_HVT-HUM-S_branch.npz' % (EW, HEADS['c1']), 'Vael RI3 root')])] + \
+       [(k, [('%s-R' % k, '%s/topo/FN/build/%s_%s-R_branch.npz' % (EW, HEADS['c1'], k), 'Fenn v002 rigid cuff'), ('%s-V' % k, '%s/topo/RI3/build/%s_%s-V_branch.npz' % (EW, HEADS['c1'], k), 'Vael RI3 root'),
+                 (k, he('c1', k), 'Halvren HR1 root')]) for k in HE]
+for row, its in TOPO:
+    for t, p, _ in its:
+        if os.path.exists(p): R_('tp_' + t, p, HEADS['c1'], ['etqr', 'root'], px=420)
 print('render jobs', len(jobs), flush=True)
 done_ = lambda j: all(os.path.exists(os.path.join(TMP, '%s_%s.png' % (j[6], v_.split(':')[0]))) for v_ in j[7].split(';'))
 todo = [j for j in jobs if not done_(j)]; print('to render', len(todo), flush=True)
@@ -170,6 +177,7 @@ for ai, k in enumerate(HE + ['design HE2']):
     keys = sorted(set(sum([list(src['midpoint'][x]['t'].keys()) for x in src['midpoint']], []))); ax.set_yticks(range(len(keys))); ax.set_yticklabels(keys, fontsize=9)
     ax.axvspan(0.35, 0.65, color='#eeeeee'); ax.axvline(0, c='k', lw=0.8); ax.axvline(1, c='k', lw=0.8); ax.set_xlim(-1.5, 2.5); ax.set_xlabel('t = (HV - MF) / (elf - MF)   (0 Marchfolk, 1 elf; grey = midpoint band)')
     ax.set_title('%s  (%s)' % (k, 'measured ear domains' if k != 'design HE2' else 'authored parameters'), fontsize=11); ax.legend(fontsize=8, loc='lower right'); ax.grid(alpha=0.3)
+tc = A.get('topology_control', {}); fig.text(0.01, 0.005, 'topology control: Marchfolk-PARAMETER ears realized on the shared topology sit at median t ' + ', '.join('%s %.2f' % (k, v['median_t']) for k, v in tc.items()) + ' (the topology human end is already half-way to the elf mean)', fontsize=11, color='#a00')
 fig.suptitle('ARITHMETIC-AVERAGE EAR FIREWALL — per-domain inheritance position vs each human / elf pair; fail if one alpha explains HE2 (R2 >= 0.8, n >= 6)'); fig.tight_layout(rect=(0, 0, 1, 0.94)); fig.savefig(os.path.join(OUT, 'HVE_17_arithmetic_average_ear_audit.jpg'), dpi=72); plt.close(fig)
 for i, (k, s) in enumerate(DG.items()):
     nm = {'HV-DFN': 'Fenn-influenced', 'HV-DAE': 'Aelari-influenced', 'HV-DVA': 'Vael-influenced', 'HV-DHU': 'human-forward'}[k]; srcl = 'c1_%s_g' % s
@@ -188,4 +196,11 @@ sheet('HVE_25_hidden_ear_body_face_regression.jpg', 'Body / face / pelvis regres
       [(c, [img('%s_MF_g' % c, 'front'), img('%s_HE2_g' % c, 'front'), img('%s_HE2_g' % c, 'prof')], ['family source (hidden-ear eval basis)', 'HE2 inserted', 'HE2 profile']) for c in HEADS], colw=420,
       note='\n'.join('%s: outside-branch identical %s | hidden-ear eval (ears excluded) = HP-B source eval: body material vs MF %d/31, face departing %d/7, one-alpha best R2 %.2f, 69/69' % (
           k, reg.get(k), V6['sources'][HEADS[k.split()[-1]]]['body']['material_vs']['MF'][1], V6['sources'][HEADS[k.split()[-1]]]['face']['regions_departing_MF'][1], V6['sources'][HEADS[k.split()[-1]]]['body']['scalar_blend'][1]['best_r2']) for k in sorted(reg)))
+TA = S['topology_audit']['guarded']; TL = {'HVT-HUM-R': 'Marchfolk-proportion bound / Fenn v002 rigid cuff', 'HVT-HUM-S': 'Marchfolk-proportion bound / Vael RI3 root geometry'}
+def tcap(t, lab):
+    key = TL.get(t) or ('%s / %s' % (t.split('-')[0], {'R': 'Fenn v002 rigid cuff', 'V': 'Vael RI3 root geometry'}.get(t.split('-')[-1], 'Halvren HR1 root geometry')) if t != 'MF' else None)
+    x = TA.get(key) if key else None
+    return lab if not x else '%s | %s | min %.0f° | mound %.2f' % (lab, 'clean' if x['technical_pass'] else 'FAIL ' + ','.join(x['failed']), x['min_angle'], x['anterior_cuff_mound_p90_cm'])
+sheet('HVE_26_topology_audit.jpg', 'TOPOLOGY AUDIT (§9 / §10 / §21) — 3/4 rear + root closeup, c1: one connectivity, three root geometries (rigid Fenn cuff = raised cuff mound; Vael RI3 = slivers / self-intersections at human-forward lengths; Halvren HR1)',
+      [('%s %s' % (row, v), [img('tp_' + t, v) for t, _, _ in its], [tcap(t, lab) for t, _, lab in its] if v == 'etqr' else None) for row, its in TOPO for v in ('etqr', 'root')], colw=360)
 print('SHEETS_DONE', len(os.listdir(OUT)))

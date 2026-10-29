@@ -86,6 +86,8 @@ VA_RI3_SKIN = dict(clear=-0.30, cuff_skin_r=0.45, cuff_skin_w=0.2, cuff_skin_roo
 # skin, and the skin pull fades over 1.2 x head scale cm towards the rim / back junction (RI3: 0.6) so the narrow lower postauricular corner stays
 # biharmonic at short (human-forward) lengths. Topology audit: RI3 geometry -> slivers / self-intersections at the human-forward bound; HR1 clean.
 HV_SKIN = dict(VA_RI3_SKIN, clear=-0.50, cuff_skin_corner=1.2, lift_lobe=0.70)   # + freer human-family lobe edge (lift 0.70; GEO 0.45)
+# HVEAR1 (first pass, superseded by HVEAR2 after the ear arithmetic firewall: HE2 = L 7.6, wb 1.85, taper (halvren 0.45, 1.10, 0.07), lobe 0.17, proj 27,
+# tilt 21, sweep 0.9, concha 0.80, trag 0.29, helix 0.29 -- every domain at t 0.25-0.8 of Marchfolk -> Vael: measured one-alpha R2 0.87, design R2 0.87)
 HV_BASE = dict(L=7.6, wb=1.85, taper=("halvren", 0.45, 1.10, 0.07), lobe=0.17, proj=27, tilt=21, sweep=0.9, thick=0.29,
                ah=0.27, crura=1.0, concha=0.80, crus=0.15, trag=0.29, atrag=0.21, helix=(0.29, 0.30))
 _g = lambda **k: dict(HV_SKIN, **k)
@@ -94,16 +96,23 @@ CAND.update({
     # retained helix shoulder), mild backward tilt / sweep; base slightly broader than either parent family
     'HE1': dict(HV_BASE, L=6.3, wb=1.82, taper=("halvren", 0.58, 0.80, 0.12), lobe=0.19, proj=23, tilt=17, sweep=0.65, thick=0.31,
                 ah=0.29, concha=0.84, crus=0.16, trag=0.30, atrag=0.23, helix=(0.30, 0.30), geo=_g(phi0=30.0, tauA=10.0)),
-    # HE2 balanced mixed central: broad mixed base (wider than Marchfolk / Fenn / Aelari, narrower than Vael), human-leaning projection, tragus and lobe,
-    # moderate upper extension and restrained point out of a reduced helix shoulder, moderate backward angle / sweep
-    'HE2': dict(HV_BASE, geo=_g(phi0=33.0, tauA=12.0)),
-    # HE3 elf-forward mixed: long upper extension, earlier / sharper taper, stronger sweep and tilt; human-family lobe size, projection and concha depth retained
-    'HE3': dict(HV_BASE, L=8.7, wb=1.88, taper=("halvren", 0.34, 1.20, 0.03), lobe=0.18, proj=25, tilt=29, sweep=1.5, thick=0.28,
-                ah=0.26, concha=0.79, crus=0.14, trag=0.28, atrag=0.21, helix=(0.28, 0.29), geo=_g(phi0=34.0, tauA=12.0)),
-    # source-population influence diagnostics (internal validation only; not subraces): HE2 Halvren root / base / lobe kept, one elven direction trended
-    'HV-DFN': dict(HV_BASE, proj=40, tilt=25, sweep=1.35, taper=("halvren", 0.42, 1.05, 0.05), geo=_g(phi0=34.0, tauA=12.0)),     # Fenn: lateral projection + sweep
-    'HV-DAE': dict(HV_BASE, L=8.5, taper=("halvren", 0.33, 0.98, 0.04), tilt=26, proj=25, geo=_g(phi0=33.0, tauA=12.0)),          # Aelari: upward extension + long taper
-    'HV-DVA': dict(HV_BASE, wb=2.00, tilt=33, sweep=1.3, proj=31, taper=("halvren", 0.50, 1.30, 0.05), geo=_g(phi0=33.0, tauA=12.0)),  # Vael: broad base, backward, short taper
+    # HE2 balanced mixed central (HVEAR2): a MOSAIC rather than a midpoint -- human-family projection (23), vertical angle (16), deep concha / tragus / helix
+    # roll and a full human lobe; elven-family early, long upper extension with a restrained (shouldered) apex and Fenn / Aelari-class sweep; a broad base
+    # (Vael-class width, wider than Marchfolk / Fenn / Aelari); moderate overall length
+    'HE2': dict(HV_BASE, L=7.8, wb=2.00, taper=("halvren", 0.36, 1.10, 0.06), lobe=0.20, proj=23, tilt=16, sweep=1.4, thick=0.30,
+                ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=33.0, tauA=12.0)),
+    # HE3 elf-forward mixed (HVEAR2): long, early-tapering, sharper upper extension and the strongest sweep of the family; human-family projection, lobe,
+    # concha / tragus / helix retained
+    'HE3': dict(HV_BASE, L=8.8, wb=1.88, taper=("halvren", 0.30, 1.25, 0.02), lobe=0.20, proj=22, tilt=22, sweep=1.9, thick=0.29,
+                ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=34.0, tauA=12.0)),
+    # source-population influence diagnostics (internal validation only; not subraces): the HE2 mosaic with ONE elven direction trended; the Halvren human-family
+    # root / projection / lobe / concha relation is kept in each
+    'HV-DFN': dict(HV_BASE, L=7.8, wb=2.00, taper=("halvren", 0.36, 1.10, 0.06), lobe=0.20, proj=42, tilt=16, sweep=1.6, thick=0.30,                   # Fenn: lateral projection + sweep
+                   ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=34.0, tauA=12.0)),
+    'HV-DAE': dict(HV_BASE, L=8.8, wb=2.00, taper=("halvren", 0.28, 0.95, 0.03), lobe=0.20, proj=23, tilt=26, sweep=1.4, thick=0.30,                    # Aelari: upward extension + long taper
+                   ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=33.0, tauA=12.0)),
+    'HV-DVA': dict(HV_BASE, L=7.8, wb=2.10, taper=("halvren", 0.45, 1.30, 0.04), lobe=0.20, proj=23, tilt=34, sweep=1.5, thick=0.30,                    # Vael: broad base, backward, short taper
+                   ah=0.29, concha=0.86, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=33.0, tauA=12.0)),
     # human-family influence diagnostic: human root / base / projection / lobe / concha; non-human structure kept in the upper helix apex, tilt and sweep
     'HV-DHU': dict(HV_BASE, L=6.7, wb=1.76, taper=("halvren", 0.62, 0.75, 0.14), lobe=0.19, proj=22, tilt=16, sweep=0.6, thick=0.31,
                    ah=0.30, concha=0.85, crus=0.16, trag=0.30, atrag=0.24, helix=(0.30, 0.30), geo=_g(phi0=30.0, tauA=10.0)),

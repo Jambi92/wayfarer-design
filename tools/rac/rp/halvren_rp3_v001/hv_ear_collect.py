@@ -46,7 +46,8 @@ R['determinism_HE2'] = det
 R['face_topology_identical_HE_c1_c2'] = len({R['items']['%s %s' % (k, c)]['face_topology_sha256'] for k in ('HE1', 'HE2', 'HE3') for c in HEADS} | {R['items'][k]['face_topology_sha256'] for k in R['items'] if k.startswith('HV-D')}) == 1
 json.dump(R, open(EV + '/HV_ear_summary.json', 'w'), indent=1)
 items = ['MF:fam:%s/fam/%s_fam.npz:%s' % (HP, H1, H1), 'FN:branch:%s/ref/FN/build/%s_E2_branch.npz:%s' % (EW, H1, H1), 'AE:branch:%s/ref/FN/build/%s_AE-E2_branch.npz:%s' % (EW, H1, H1),
-         'VA:branch:%s/ref/RI3/build/%s_VA-E2-RI3_branch.npz:%s' % (EW, H1, H1)] + ['%s:branch:%s/he/build/%s_%s_branch.npz:%s' % (k, EW, H1, k, H1) for k in ('HE1', 'HE2', 'HE3', 'HV-DFN', 'HV-DAE', 'HV-DVA', 'HV-DHU')]
+         'VA:branch:%s/ref/RI3/build/%s_VA-E2-RI3_branch.npz:%s' % (EW, H1, H1)] + ['%s:branch:%s/he/build/%s_%s_branch.npz:%s' % (k, EW, H1, k, H1) for k in ('HE1', 'HE2', 'HE3', 'HV-DFN', 'HV-DAE', 'HV-DVA', 'HV-DHU')] \
+        + ['CTRL-%s:branch:%s/topo/%s/build/%s_HVT-%s_branch.npz:%s' % (k, EW, w, H1, k, H1) for k, w in (('HUM-R', 'FN'), ('HUM-S', 'RI3'), ('ELF-R', 'FN'), ('ELF-S', 'RI3'))]
 subprocess.run(['python3', os.path.dirname(os.path.abspath(__file__)) + '/hv_ear_domains.py', EV + '/HV_ear_domains.json'] + items, check=True)
 for lab, x in R['items'].items(): print(lab, 'TECH', x['technical_pass'], [g for g, v in x['gates'].items() if not v], 'one-auricle', x['one_auricle_metrics_pass'], 'outside identical', x['outside_identical'])
 print(json.dumps(TA, indent=0)[:3000]); print('det', det, 'topo identical', R['face_topology_identical_HE_c1_c2'])
