@@ -2,7 +2,20 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-29) — HALVREN CENTRAL MIXED BODY/FACE PASS (HB2 + HF2 recommended) — READY FOR PELVIS AUTHOR DECISION — awaiting ChatGPT review
+## LATEST (2026-10-29) — HALVREN CENTRAL ACCEPT (HB2 + HF2 + HP-B) + EAR ARCHITECTURE — HALVREN EAR TOPOLOGY NEEDS DEDICATED BRANCH — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-halvren-central-accept-ear-architecture-order.md`. Gate: `reviews/claude-rac-rp3-halvren-central-accept-ear-architecture-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_central_accept_ear/` (`hpb_validation/`, `ear/`, `sheets/`). Proposal: `reviews/claude-rac-rp3-halvren-ear-topology-branch-proposal.md`. Nothing frozen.
+- Sources: `hv_defs.py` PELVIS HP-B, tag suffix `-HPB`; `build_hb.sh HB2HF2-HPB` (also HB2HF1-HPB / HB2HF3-HPB diagnostic mosaic sources) -> reference-assets + manifest. Validation: `HV_WORK=/tmp/claude-0/rt/hv/hpe run_hveval.sh`, `hv_bf_technical.py hpe ...`, `hv_eval.py`, `hv_hpb_validation.py`.
+- Ears: `ear_branch_lib.py` Halvren block (HVEAR2 HE1/HE2/HE3, HV-DFN/DAE/DVA/DHU, HVT-* stress bounds, HE*-R rigid / HE*-V Vael RI3 audit variants; `VA_RI3_SKIN`, `HV_SKIN` = HR1 root geometry; `halvren` taper law); `ear_build.py` probe keys taper_ex (4-tuple safe) / taper_sh; `ear_sheet` now receives the candidate geometry (frozen ears dV 0). Runner `hv_ear.sh WORK FN|RI3 CAND HEAD` (EAR_CF = /tmp/claude-0/rt/hv/hpe); queue helper `/tmp/claude-0/rt/hv/ear/queue.sh LIST`; `hv_ear_summary.py`, `hv_ear_domains.py`, `hv_ear_audit.py`, `hv_ear_collect.py EVIDIR`, `hv_ear_probes.sh`, `hv_ear_probe_eval.py`, `hv_ear_sheets.py EVIDIR/ear EVIDIR/sheets`, `hv_ear_quick.py`.
+- Workspace `/tmp/claude-0/rt/hv/ear/{he,mos,ref,topo,x}` (he = HR1 realisations c1/c2 + probes; ref = frozen elf params on the Halvren head; topo = audit variants; x = rest-state exploration).
+
+**Key findings**
+- HP-B validated (69 / 69, no regression). HVEAR2 authored mosaic passes the design firewall but the shared topology realises every ear on one Marchfolk->elf line (Marchfolk params at median t 0.50-0.53); HE2 / HE3 measured R2 0.93; HE1 floor +25 % size; HR1 root clean on c1 only.
+
+**Next:** STOP for ChatGPT review (authorize the dedicated Halvren ear branch; then re-realise HVEAR2 and select the central HE).
+
+## (previous) 2026-10-29 — HALVREN CENTRAL MIXED BODY/FACE PASS (HB2 + HF2 recommended) — READY FOR PELVIS AUTHOR DECISION
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-halvren-body-face-source-order.md`. Gate: `reviews/claude-rac-rp3-halvren-body-face-source-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_body_face_source/`. Nothing frozen; ears locked; pelvis held.

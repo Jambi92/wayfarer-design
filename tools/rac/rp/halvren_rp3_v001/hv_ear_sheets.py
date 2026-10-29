@@ -83,7 +83,7 @@ for c, h in HEADS.items():
 for pn in sorted(PRB['probes']):
     p = '%s/he/probe/%s/%s_HE2_branch.npz' % (EW, pn, HEADS['c1'])
     if os.path.exists(p): R_('pr_' + pn, p, HEADS['c1'], ['etq'], px=420)
-TOPO = [('Marchfolk params', [('MF', mf('c1'), 'Marchfolk auricle'), ('HVT-HUM-R', '%s/topo/FN/build/%s_HVT-HUM-R_branch.npz' % (EW, HEADS['c1']), 'Fenn v002 rigid cuff'),
+TOPO = [('MF params', [('MF', mf('c1'), 'Marchfolk auricle'), ('HVT-HUM-R', '%s/topo/FN/build/%s_HVT-HUM-R_branch.npz' % (EW, HEADS['c1']), 'Fenn v002 rigid cuff'),
                                ('HVT-HUM-S', '%s/topo/RI3/build/%s_HVT-HUM-S_branch.npz' % (EW, HEADS['c1']), 'Vael RI3 root')])] + \
        [(k, [('%s-R' % k, '%s/topo/FN/build/%s_%s-R_branch.npz' % (EW, HEADS['c1'], k), 'Fenn v002 rigid cuff'), ('%s-V' % k, '%s/topo/RI3/build/%s_%s-V_branch.npz' % (EW, HEADS['c1'], k), 'Vael RI3 root'),
                  (k, he('c1', k), 'Halvren HR1 root')]) for k in HE]
@@ -110,10 +110,10 @@ def sheet(fname, title, rows, colw=420, note=None, lab_w=170, hl=None):
 SM = S['items']; cap = lambda c, k: '%s  T4 %d  min %.0f°  asp %.1f' % (LAB[k], SM['%s %s' % (k, c)]['T4'], SM['%s %s' % (k, c)]['min_angle'], SM['%s %s' % (k, c)]['aspect_max'])
 sheet('HVE_01_central_source_full_body.jpg', 'Central accepted source HB2 + HF2 + HP-B (versioned HVC1-HB2HF2-HPB / HVF178-HB2HF2-HPB) — neutral clay, true scale; family human auricle (pre-ear)',
       [(c, [img('body_' + c, v) for v in ('bfront', 'bprof', 'btq', 'brear')], ['front', 'profile', '3/4', 'rear']) for c in HEADS], colw=460,
-      note='\n'.join('%s: 69/69 D1-D6 | technical PASS | body material vs MF %d/31 | one-alpha blend best R2 %.2f (%s) | deterministic dV 0' % (i, V6['sources'][i]['technical']['validator'], V6['sources'][i]['body']['material_vs']['MF'][1],
+      note='\n'.join('%s: %d/69 D1-D6 | technical PASS | body material vs MF %d/31 | one-alpha blend best R2 %.2f (%s) | deterministic dV 0' % (i, V6['sources'][i]['technical']['validator'], V6['sources'][i]['body']['material_vs']['MF'][1],
                      V6['sources'][i]['body']['scalar_blend'][1]['best_r2'], V6['sources'][i]['body']['scalar_blend'][1]['best_pair']) for i in V6['sources']))
 BF = '/tmp/claude-0/rt/hv/bf_sheet_r'; bimg = lambda t, v: Image.open('%s/%s_%s.png' % (BF, t, v)).convert('RGB') if os.path.exists('%s/%s_%s.png' % (BF, t, v)) else Image.new('RGB', (480, 480), (255, 200, 200))
-sheet('HVE_02_pelvis_HPA_HPB_HPC.jpg', 'Pelvis HP-A | HP-B (SELECTED, red) | HP-C on HB2+HF2 — neutral clay, identical camera; HP-A / HP-C diagnostic variation references only',
+sheet('HVE_02_pelvis_HPA_HPB_HPC.jpg', 'Pelvis HP-A | HP-B SELECTED (red) | HP-C on HB2+HF2 — neutral clay; HP-A / HP-C = diagnostic refs',
       [('%s %s' % (c, v), [bimg('%s_%s' % (c, k), v) for k in ('HB2HF2', 'HP-B', 'HP-C')], ['HP-A human-family-dominant', 'HP-B mild mixed — SELECTED', 'HP-C stronger mixed'] if v == 'pelvis' else None) for c in HEADS for v in ('pelvis', 'pfront')],
       colw=420, hl=1, note='\n'.join('HP-B %s: pelvic vertical / crest vs MF %+.1f %% (vs FN %+.1f, AE %+.1f, VA %+.1f) | crest share vs MF %+.1f %% | AP depth vs MF %+.1f %% | leg share vs MF %+.2f %%' % (
           c, *[V6['sources'][i]['skeletal_proxy_t05']['pelvic_vertical_over_crest'][q] for q in ('vs_MF_pct', 'vs_FN_pct', 'vs_AE_pct', 'vs_VA_pct')], V6['sources'][i]['skeletal_proxy_t05']['crest_share']['vs_MF_pct'],
@@ -200,7 +200,7 @@ TA = S['topology_audit']['guarded']; TL = {'HVT-HUM-R': 'Marchfolk-proportion bo
 def tcap(t, lab):
     key = TL.get(t) or ('%s / %s' % (t.split('-')[0], {'R': 'Fenn v002 rigid cuff', 'V': 'Vael RI3 root geometry'}.get(t.split('-')[-1], 'Halvren HR1 root geometry')) if t != 'MF' else None)
     x = TA.get(key) if key else None
-    return lab if not x else '%s | %s | min %.0f° | mound %.2f' % (lab, 'clean' if x['technical_pass'] else 'FAIL ' + ','.join(x['failed']), x['min_angle'], x['anterior_cuff_mound_p90_cm'])
-sheet('HVE_26_topology_audit.jpg', 'TOPOLOGY AUDIT (§9 / §10 / §21) — 3/4 rear + root closeup, c1: one connectivity, three root geometries (rigid Fenn cuff = raised cuff mound; Vael RI3 = slivers / self-intersections at human-forward lengths; Halvren HR1)',
-      [('%s %s' % (row, v), [img('tp_' + t, v) for t, _, _ in its], [tcap(t, lab) for t, _, lab in its] if v == 'etqr' else None) for row, its in TOPO for v in ('etqr', 'root')], colw=360)
+    return lab if not x else '%s | %s | %.0f° | mound %.2f' % (lab.replace('Fenn v002 rigid cuff', 'rigid cuff').replace('Vael RI3 root', 'RI3 root').replace('Halvren HR1 root', 'HR1 root'), 'clean' if x['technical_pass'] else 'FAIL', x['min_angle'], x['anterior_cuff_mound_p90_cm'])
+sheet('HVE_26_topology_audit.jpg', 'TOPOLOGY AUDIT §9/§10/§21 (c1): one connectivity, three root geometries',
+      [('%s %s' % (row, v), [img('tp_' + t, v) for t, _, _ in its], [tcap(t, lab) for t, _, lab in its] if v == 'etqr' else None) for row, its in TOPO for v in ('etqr', 'root')], colw=420, lab_w=150)
 print('SHEETS_DONE', len(os.listdir(OUT)))

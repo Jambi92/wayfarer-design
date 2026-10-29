@@ -1,6 +1,14 @@
 # Character Design Status
 
-## HALVREN RP3 CENTRAL MIXED BODY/FACE PASS — READY FOR PELVIS AUTHOR DECISION — EARS LOCKED — NOT FROZEN (2026-10-29)
+## HALVREN RP3 CENTRAL BODY / FACE / PELVIS ACCEPTED (HB2 + HF2 + HP-B) — EAR TOPOLOGY NEEDS DEDICATED BRANCH — NOT FROZEN (2026-10-29)
+
+- **Gate:** `reviews/claude-rac-rp3-halvren-central-accept-ear-architecture-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_central_accept_ear/` (sheets HVE_01..26). Branch proposal (not executed): `reviews/claude-rac-rp3-halvren-ear-topology-branch-proposal.md`.
+- **Central source:** `HVC1-HB2HF2-HPB` / `HVF178-HB2HF2-HPB` (HB2 + HF2 + HP-B pelvis Y 1.02 + hip-horiz-decr 0.05), deterministic, manifest "accepted for ear work; not final". HP-B validation PASS: 69 / 69, no hip / leg regression, distinct from FN / AE / VA, one-alpha R2 0.69 / 0.73.
+- **Ear architecture HVEAR2** (domain mosaic, Halvren `halvren` taper law, HR1 root geometry; `ear_branch_lib.CAND`): authored domains pass the ear arithmetic firewall (one-alpha R2 <= 0.44); realised on the shared elf engineering topology they collapse to a Marchfolk -> elf blend (HE2 / HE3 R2 0.93) because Marchfolk parameters already measure at median t 0.50-0.53 on that topology; HE1 floor ~25 % larger than the Marchfolk auricle; HR1 clean on c1 only (c2 HE1-3 fail); rigid cuff = layered mound, Vael RI3 = human-forward slivers.
+- **No HE recommended yet;** HE2 = leading authored central geometry. Frozen Fenn / Aelari / Vael / v005 untouched (shared-code change verified dV 0).
+- **Next:** STOP for ChatGPT review — authorize the dedicated Halvren ear topology branch.
+
+## (previous) HALVREN RP3 CENTRAL MIXED BODY/FACE PASS — READY FOR PELVIS AUTHOR DECISION — EARS LOCKED — NOT FROZEN (2026-10-29)
 
 - **Gate:** `reviews/claude-rac-rp3-halvren-body-face-source-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_body_face_source/` (22 sheets).
 - **Source definition HVDEF1** (MPFB targets / bone scales only; one shared design on c1 / c2): body HB1 / HB2 / HB3, face HF1 / HF2 / HF3; pelvis held.
