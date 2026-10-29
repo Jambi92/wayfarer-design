@@ -1,0 +1,4385 @@
+{
+ "order": "reviews/chatgpt-rac-rp3-halvren-central-anchor-order.md (2026-10-29)",
+ "groups": {
+  "torso": [
+   "torso_share",
+   "thorax_depth_share",
+   "thorax_breadth_share",
+   "thorax_d_over_b",
+   "thoracic_vertical_share",
+   "waist_interval_over_torso"
+  ],
+  "shoulder / clavicle": [
+   "shoulder_joint_share",
+   "shoulder_breadth_share"
+  ],
+  "arm": [
+   "arm_share",
+   "forearm_over_upperarm",
+   "hand_over_arm"
+  ],
+  "leg": [
+   "leg_share",
+   "shin_over_thigh",
+   "shin_over_leg"
+  ],
+  "joint scale": [
+   "elbow_over_humerus",
+   "wrist_over_forearm",
+   "knee_over_femur",
+   "ankle_over_shin"
+  ],
+  "hand": [
+   "hand_share",
+   "palm_breadth_over_hand",
+   "finger_over_hand"
+  ],
+  "foot": [
+   "foot_share",
+   "foot_breadth_over_length"
+  ],
+  "head / neck": [
+   "neck_share",
+   "cranial_vertical_share",
+   "HH_share",
+   "neck_over_torso"
+  ],
+  "pelvis (skin)": [
+   "bitroch_over_crest",
+   "pelvic_depth_share",
+   "pelvic_vertical_share",
+   "crest_share"
+  ]
+ },
+ "configs": {
+  "c1": {
+   "bodies": {
+    "HV": "HVC1",
+    "MF": "MFM178",
+    "SG": "SGM178",
+    "SK": "SKM178",
+    "FN": "FNM178",
+    "AE": "AEM178",
+    "VA": "VAM178"
+   },
+   "stature": {
+    "HV": 177.7264251857996,
+    "MF": 178.01602171361446,
+    "SG": 177.9890899695456,
+    "SK": 178.00372290611267,
+    "FN": 178.00715634971857,
+    "AE": 177.9925232976675,
+    "VA": 177.9926147274673
+   },
+   "rows": {
+    "torso_share": {
+     "values": {
+      "HV": 0.27956,
+      "MF": 0.28245,
+      "SG": 0.27694,
+      "SK": 0.30357,
+      "FN": 0.27096,
+      "AE": 0.27774,
+      "VA": 0.28141
+     },
+     "human_baseline_pct": 1.95,
+     "HV_vs_pct": {
+      "MF": -1.02,
+      "SG": 0.94,
+      "SK": -7.91,
+      "FN": 3.17,
+      "AE": 0.65,
+      "VA": -0.66
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "AE"
+    },
+    "thorax_depth_share": {
+     "values": {
+      "HV": 0.13013,
+      "MF": 0.13109,
+      "SG": 0.1272,
+      "SK": 0.15302,
+      "FN": 0.12425,
+      "AE": 0.12288,
+      "VA": 0.13834
+     },
+     "human_baseline_pct": 2.96,
+     "HV_vs_pct": {
+      "MF": -0.73,
+      "SG": 2.3,
+      "SK": -14.96,
+      "FN": 4.74,
+      "AE": 5.9,
+      "VA": -5.93
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "thorax_breadth_share": {
+     "values": {
+      "HV": 0.18824,
+      "MF": 0.18848,
+      "SG": 0.18742,
+      "SK": 0.209,
+      "FN": 0.18189,
+      "AE": 0.17893,
+      "VA": 0.18243
+     },
+     "human_baseline_pct": 0.56,
+     "HV_vs_pct": {
+      "MF": -0.13,
+      "SG": 0.44,
+      "SK": -9.94,
+      "FN": 3.49,
+      "AE": 5.2,
+      "VA": 3.18
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "thorax_d_over_b": {
+     "values": {
+      "HV": 0.69133,
+      "MF": 0.69547,
+      "SG": 0.67871,
+      "SK": 0.73217,
+      "FN": 0.68309,
+      "AE": 0.68675,
+      "VA": 0.75828
+     },
+     "human_baseline_pct": 2.41,
+     "HV_vs_pct": {
+      "MF": -0.6,
+      "SG": 1.86,
+      "SK": -5.58,
+      "FN": 1.21,
+      "AE": 0.67,
+      "VA": -8.83
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "thoracic_vertical_share": {
+     "values": {
+      "HV": 0.1508,
+      "MF": 0.1527,
+      "SG": 0.14924,
+      "SK": 0.16645,
+      "FN": 0.1455,
+      "AE": 0.14596,
+      "VA": 0.14915
+     },
+     "human_baseline_pct": 2.26,
+     "HV_vs_pct": {
+      "MF": -1.25,
+      "SG": 1.04,
+      "SK": -9.4,
+      "FN": 3.64,
+      "AE": 3.31,
+      "VA": 1.11
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "SG"
+    },
+    "waist_interval_over_torso": {
+     "values": {
+      "HV": 0.26419,
+      "MF": 0.26475,
+      "SG": 0.26372,
+      "SK": 0.26769,
+      "FN": 0.26235,
+      "AE": 0.2697,
+      "VA": 0.2659
+     },
+     "human_baseline_pct": 0.39,
+     "HV_vs_pct": {
+      "MF": -0.21,
+      "SG": 0.18,
+      "SK": -1.31,
+      "FN": 0.7,
+      "AE": -2.04,
+      "VA": -0.64
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "SG"
+    },
+    "shoulder_joint_share": {
+     "values": {
+      "HV": 0.21138,
+      "MF": 0.21167,
+      "SG": 0.21046,
+      "SK": 0.23751,
+      "FN": 0.20321,
+      "AE": 0.20111,
+      "VA": 0.20433
+     },
+     "human_baseline_pct": 0.57,
+     "HV_vs_pct": {
+      "MF": -0.14,
+      "SG": 0.44,
+      "SK": -11.0,
+      "FN": 4.02,
+      "AE": 5.11,
+      "VA": 3.45
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "shoulder_breadth_share": {
+     "values": {
+      "HV": 0.29813,
+      "MF": 0.29858,
+      "SG": 0.29679,
+      "SK": 0.32279,
+      "FN": 0.28031,
+      "AE": 0.28516,
+      "VA": 0.29029
+     },
+     "human_baseline_pct": 0.6,
+     "HV_vs_pct": {
+      "MF": -0.15,
+      "SG": 0.45,
+      "SK": -7.64,
+      "FN": 6.36,
+      "AE": 4.55,
+      "VA": 2.7
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "arm_share": {
+     "values": {
+      "HV": 0.41321,
+      "MF": 0.40769,
+      "SG": 0.41778,
+      "SK": 0.39829,
+      "FN": 0.42908,
+      "AE": 0.41547,
+      "VA": 0.41127
+     },
+     "human_baseline_pct": 2.48,
+     "HV_vs_pct": {
+      "MF": 1.35,
+      "SG": -1.09,
+      "SK": 3.75,
+      "FN": -3.7,
+      "AE": -0.54,
+      "VA": 0.47
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "forearm_over_upperarm": {
+     "values": {
+      "HV": 1.06903,
+      "MF": 1.03689,
+      "SG": 1.09216,
+      "SK": 1.0803,
+      "FN": 1.09731,
+      "AE": 1.07065,
+      "VA": 1.05027
+     },
+     "human_baseline_pct": 5.33,
+     "HV_vs_pct": {
+      "MF": 3.1,
+      "SG": -2.12,
+      "SK": -1.04,
+      "FN": -2.58,
+      "AE": -0.15,
+      "VA": 1.79
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "AE"
+    },
+    "hand_over_arm": {
+     "values": {
+      "HV": 0.27656,
+      "MF": 0.27507,
+      "SG": 0.2817,
+      "SK": 0.30341,
+      "FN": 0.2804,
+      "AE": 0.28207,
+      "VA": 0.28043
+     },
+     "human_baseline_pct": 2.41,
+     "HV_vs_pct": {
+      "MF": 0.54,
+      "SG": -1.82,
+      "SK": -8.85,
+      "FN": -1.37,
+      "AE": -1.95,
+      "VA": -1.38
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "MF"
+    },
+    "leg_share": {
+     "values": {
+      "HV": 0.53812,
+      "MF": 0.53457,
+      "SG": 0.54175,
+      "SK": 0.50782,
+      "FN": 0.54812,
+      "AE": 0.53571,
+      "VA": 0.53511
+     },
+     "human_baseline_pct": 1.34,
+     "HV_vs_pct": {
+      "MF": 0.66,
+      "SG": -0.67,
+      "SK": 5.97,
+      "FN": -1.82,
+      "AE": 0.45,
+      "VA": 0.56
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "AE"
+    },
+    "shin_over_thigh": {
+     "values": {
+      "HV": 1.0682,
+      "MF": 1.04133,
+      "SG": 1.04131,
+      "SK": 1.21586,
+      "FN": 1.12979,
+      "AE": 1.10423,
+      "VA": 1.07012
+     },
+     "human_baseline_pct": 0.0,
+     "HV_vs_pct": {
+      "MF": 2.58,
+      "SG": 2.58,
+      "SK": -12.14,
+      "FN": -5.45,
+      "AE": -3.26,
+      "VA": -0.18
+     },
+     "HV_material_vs": {
+      "MF": true,
+      "SG": true,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "shin_over_leg": {
+     "values": {
+      "HV": 0.51649,
+      "MF": 0.51012,
+      "SG": 0.51012,
+      "SK": 0.54871,
+      "FN": 0.53047,
+      "AE": 0.52477,
+      "VA": 0.51694
+     },
+     "human_baseline_pct": 0.0,
+     "HV_vs_pct": {
+      "MF": 1.25,
+      "SG": 1.25,
+      "SK": -5.87,
+      "FN": -2.64,
+      "AE": -1.58,
+      "VA": -0.09
+     },
+     "HV_material_vs": {
+      "MF": true,
+      "SG": true,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "elbow_over_humerus": {
+     "values": {
+      "HV": 0.34619,
+      "MF": 0.34454,
+      "SG": 0.3473,
+      "SK": 0.4028,
+      "FN": 0.32152,
+      "AE": 0.33993,
+      "VA": 0.34524
+     },
+     "human_baseline_pct": 0.8,
+     "HV_vs_pct": {
+      "MF": 0.48,
+      "SG": -0.32,
+      "SK": -14.05,
+      "FN": 7.68,
+      "AE": 1.84,
+      "VA": 0.28
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "wrist_over_forearm": {
+     "values": {
+      "HV": 0.20249,
+      "MF": 0.21137,
+      "SG": 0.20421,
+      "SK": 0.28543,
+      "FN": 0.1878,
+      "AE": 0.20425,
+      "VA": 0.20525
+     },
+     "human_baseline_pct": 3.39,
+     "HV_vs_pct": {
+      "MF": -4.2,
+      "SG": -0.84,
+      "SK": -29.06,
+      "FN": 7.82,
+      "AE": -0.86,
+      "VA": -1.34
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "SG"
+    },
+    "knee_over_femur": {
+     "values": {
+      "HV": 0.2915,
+      "MF": 0.2851,
+      "SG": 0.27959,
+      "SK": 0.41075,
+      "FN": 0.26776,
+      "AE": 0.27949,
+      "VA": 0.28751
+     },
+     "human_baseline_pct": 1.93,
+     "HV_vs_pct": {
+      "MF": 2.25,
+      "SG": 4.26,
+      "SK": -29.03,
+      "FN": 8.87,
+      "AE": 4.3,
+      "VA": 1.39
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": true,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "ankle_over_shin": {
+     "values": {
+      "HV": 0.3377,
+      "MF": 0.34811,
+      "SG": 0.33987,
+      "SK": 0.38411,
+      "FN": 0.3294,
+      "AE": 0.3403,
+      "VA": 0.34502
+     },
+     "human_baseline_pct": 2.37,
+     "HV_vs_pct": {
+      "MF": -2.99,
+      "SG": -0.64,
+      "SK": -12.08,
+      "FN": 2.52,
+      "AE": -0.77,
+      "VA": -2.12
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "SG"
+    },
+    "hand_share": {
+     "values": {
+      "HV": 0.11428,
+      "MF": 0.11214,
+      "SG": 0.11769,
+      "SK": 0.12085,
+      "FN": 0.12031,
+      "AE": 0.11719,
+      "VA": 0.11533
+     },
+     "human_baseline_pct": 4.95,
+     "HV_vs_pct": {
+      "MF": 1.9,
+      "SG": -2.9,
+      "SK": -5.43,
+      "FN": -5.02,
+      "AE": -2.49,
+      "VA": -0.91
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "palm_breadth_over_hand": {
+     "values": {
+      "HV": 0.42881,
+      "MF": 0.43791,
+      "SG": 0.41845,
+      "SK": 0.43595,
+      "FN": 0.41202,
+      "AE": 0.43585,
+      "VA": 0.44593
+     },
+     "human_baseline_pct": 4.44,
+     "HV_vs_pct": {
+      "MF": -2.08,
+      "SG": 2.47,
+      "SK": -1.64,
+      "FN": 4.07,
+      "AE": -1.62,
+      "VA": -3.84
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "AE"
+    },
+    "finger_over_hand": {
+     "values": {
+      "HV": 0.44763,
+      "MF": 0.43585,
+      "SG": 0.45898,
+      "SK": 0.43626,
+      "FN": 0.46844,
+      "AE": 0.43537,
+      "VA": 0.43593
+     },
+     "human_baseline_pct": 5.31,
+     "HV_vs_pct": {
+      "MF": 2.7,
+      "SG": -2.47,
+      "SK": 2.61,
+      "FN": -4.44,
+      "AE": 2.82,
+      "VA": 2.68
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "SG"
+    },
+    "foot_share": {
+     "values": {
+      "HV": 0.14836,
+      "MF": 0.14913,
+      "SG": 0.1478,
+      "SK": 0.16091,
+      "FN": 0.15486,
+      "AE": 0.15252,
+      "VA": 0.15069
+     },
+     "human_baseline_pct": 0.89,
+     "HV_vs_pct": {
+      "MF": -0.52,
+      "SG": 0.38,
+      "SK": -7.8,
+      "FN": -4.19,
+      "AE": -2.72,
+      "VA": -1.55
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "SG"
+    },
+    "foot_breadth_over_length": {
+     "values": {
+      "HV": 0.3751,
+      "MF": 0.37431,
+      "SG": 0.37424,
+      "SK": 0.3708,
+      "FN": 0.33121,
+      "AE": 0.35224,
+      "VA": 0.404
+     },
+     "human_baseline_pct": 0.02,
+     "HV_vs_pct": {
+      "MF": 0.21,
+      "SG": 0.23,
+      "SK": 1.16,
+      "FN": 13.25,
+      "AE": 6.49,
+      "VA": -7.15
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "neck_share": {
+     "values": {
+      "HV": 0.05426,
+      "MF": 0.05436,
+      "SG": 0.054,
+      "SK": 0.0554,
+      "FN": 0.05297,
+      "AE": 0.0564,
+      "VA": 0.05439
+     },
+     "human_baseline_pct": 0.67,
+     "HV_vs_pct": {
+      "MF": -0.19,
+      "SG": 0.49,
+      "SK": -2.06,
+      "FN": 2.45,
+      "AE": -3.79,
+      "VA": -0.23
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "MF"
+    },
+    "cranial_vertical_share": {
+     "values": {
+      "HV": 0.06231,
+      "MF": 0.06241,
+      "SG": 0.06203,
+      "SK": 0.0635,
+      "FN": 0.06308,
+      "AE": 0.06437,
+      "VA": 0.06395
+     },
+     "human_baseline_pct": 0.62,
+     "HV_vs_pct": {
+      "MF": -0.16,
+      "SG": 0.46,
+      "SK": -1.88,
+      "FN": -1.21,
+      "AE": -3.2,
+      "VA": -2.56
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "HH_share": {
+     "values": {
+      "HV": 0.12873,
+      "MF": 0.12893,
+      "SG": 0.12815,
+      "SK": 0.13113,
+      "FN": 0.12875,
+      "AE": 0.13445,
+      "VA": 0.12939
+     },
+     "human_baseline_pct": 0.6,
+     "HV_vs_pct": {
+      "MF": -0.15,
+      "SG": 0.45,
+      "SK": -1.82,
+      "FN": -0.01,
+      "AE": -4.25,
+      "VA": -0.51
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "FN"
+    },
+    "neck_over_torso": {
+     "values": {
+      "HV": 0.19411,
+      "MF": 0.19247,
+      "SG": 0.19498,
+      "SK": 0.18251,
+      "FN": 0.19548,
+      "AE": 0.20307,
+      "VA": 0.19328
+     },
+     "human_baseline_pct": 1.3,
+     "HV_vs_pct": {
+      "MF": 0.85,
+      "SG": -0.45,
+      "SK": 6.36,
+      "FN": -0.7,
+      "AE": -4.42,
+      "VA": 0.43
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "bitroch_over_crest": {
+     "values": {
+      "HV": 1.16247,
+      "MF": 1.16242,
+      "SG": 1.16253,
+      "SK": 1.20676,
+      "FN": 1.17771,
+      "AE": 1.17898,
+      "VA": 1.18629
+     },
+     "human_baseline_pct": 0.01,
+     "HV_vs_pct": {
+      "MF": 0.01,
+      "SG": -0.01,
+      "SK": -3.67,
+      "FN": -1.29,
+      "AE": -1.4,
+      "VA": -2.01
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "SG"
+    },
+    "pelvic_depth_share": {
+     "values": {
+      "HV": 0.12722,
+      "MF": 0.12741,
+      "SG": 0.12666,
+      "SK": 0.13328,
+      "FN": 0.12477,
+      "AE": 0.12466,
+      "VA": 0.13059
+     },
+     "human_baseline_pct": 0.59,
+     "HV_vs_pct": {
+      "MF": -0.14,
+      "SG": 0.45,
+      "SK": -4.54,
+      "FN": 1.97,
+      "AE": 2.05,
+      "VA": -2.58
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "pelvic_vertical_share": {
+     "values": {
+      "HV": 0.0549,
+      "MF": 0.05498,
+      "SG": 0.05467,
+      "SK": 0.05586,
+      "FN": 0.05437,
+      "AE": 0.05687,
+      "VA": 0.05744
+     },
+     "human_baseline_pct": 0.56,
+     "HV_vs_pct": {
+      "MF": -0.13,
+      "SG": 0.44,
+      "SK": -1.71,
+      "FN": 0.98,
+      "AE": -3.46,
+      "VA": -4.41
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "crest_share": {
+     "values": {
+      "HV": 0.16374,
+      "MF": 0.164,
+      "SG": 0.16299,
+      "SK": 0.17243,
+      "FN": 0.15946,
+      "AE": 0.15228,
+      "VA": 0.16314
+     },
+     "human_baseline_pct": 0.61,
+     "HV_vs_pct": {
+      "MF": -0.16,
+      "SG": 0.46,
+      "SK": -5.04,
+      "FN": 2.68,
+      "AE": 7.53,
+      "VA": 0.37
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "MF"
+    }
+   },
+   "source_protection": {
+    "MF": {
+     "material_metrics": 2,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 2,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     },
+     "rms_pct": 1.53
+    },
+    "SG": {
+     "material_metrics": 3,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 2,
+      "joint scale": 1,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     },
+     "rms_pct": 1.51
+    },
+    "SK": {
+     "material_metrics": 26,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 6,
+      "shoulder / clavicle": 2,
+      "arm": 1,
+      "leg": 3,
+      "joint scale": 4,
+      "hand": 0,
+      "foot": 2,
+      "head / neck": 4,
+      "pelvis (skin)": 4
+     },
+     "rms_pct": 10.23
+    },
+    "FN": {
+     "material_metrics": 14,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 1,
+      "shoulder / clavicle": 2,
+      "arm": 0,
+      "leg": 2,
+      "joint scale": 3,
+      "hand": 0,
+      "foot": 2,
+      "head / neck": 1,
+      "pelvis (skin)": 3
+     },
+     "rms_pct": 4.61
+    },
+    "AE": {
+     "material_metrics": 18,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 2,
+      "shoulder / clavicle": 2,
+      "arm": 0,
+      "leg": 2,
+      "joint scale": 2,
+      "hand": 0,
+      "foot": 2,
+      "head / neck": 4,
+      "pelvis (skin)": 4
+     },
+     "rms_pct": 3.45
+    },
+    "VA": {
+     "material_metrics": 10,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 3,
+      "shoulder / clavicle": 2,
+      "arm": 0,
+      "leg": 0,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 1,
+      "head / neck": 1,
+      "pelvis (skin)": 3
+     },
+     "rms_pct": 2.96
+    }
+   },
+   "arithmetic_average_audit": {
+    "MF-FN": {
+     "metrics_with_material_gap": 18,
+     "t": {
+      "torso_share": 0.252,
+      "thorax_breadth_share": 0.038,
+      "thoracic_vertical_share": 0.264,
+      "shoulder_joint_share": 0.034,
+      "shoulder_breadth_share": 0.024,
+      "arm_share": 0.258,
+      "shin_over_thigh": 0.304,
+      "shin_over_leg": 0.313,
+      "elbow_over_humerus": -0.072,
+      "wrist_over_forearm": 0.377,
+      "knee_over_femur": -0.369,
+      "ankle_over_shin": 0.557,
+      "foot_share": -0.134,
+      "foot_breadth_over_length": -0.018,
+      "neck_share": 0.072,
+      "bitroch_over_crest": 0.004,
+      "pelvic_depth_share": 0.069,
+      "crest_share": 0.057
+     },
+     "t_by_group": {
+      "torso": [
+       0.25,
+       0.04,
+       0.26
+      ],
+      "shoulder / clavicle": [
+       0.03,
+       0.02
+      ],
+      "arm": [
+       0.26
+      ],
+      "leg": [
+       0.3,
+       0.31
+      ],
+      "joint scale": [
+       -0.07,
+       0.38,
+       -0.37,
+       0.56
+      ],
+      "hand": [],
+      "foot": [
+       -0.13,
+       -0.02
+      ],
+      "head / neck": [
+       0.07
+      ],
+      "pelvis (skin)": [
+       0.0,
+       0.07,
+       0.06
+      ]
+     },
+     "t_median": 0.063,
+     "t_iqr": [
+      0.009,
+      0.263
+     ],
+     "near_midpoint_0p35_0p65": 2,
+     "near_human_end_abs_t_le_0p15": 10,
+     "outside_pair_t_lt0_or_gt1": 4,
+     "scalar_blend_fit": {
+      "alpha": 0.143,
+      "r2": 0.282,
+      "residual_rms_pct": 1.339
+     },
+     "groups_with_t_in_0p35_0p65": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 0,
+      "joint scale": 2,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     }
+    },
+    "MF-AE": {
+     "metrics_with_material_gap": 17,
+     "t": {
+      "thorax_depth_share": 0.116,
+      "thorax_breadth_share": 0.026,
+      "waist_interval_over_torso": -0.112,
+      "shoulder_joint_share": 0.027,
+      "shoulder_breadth_share": 0.033,
+      "shin_over_thigh": 0.427,
+      "shin_over_leg": 0.435,
+      "foot_share": -0.227,
+      "foot_breadth_over_length": -0.036,
+      "neck_share": -0.05,
+      "cranial_vertical_share": -0.05,
+      "HH_share": -0.035,
+      "neck_over_torso": 0.154,
+      "bitroch_over_crest": 0.004,
+      "pelvic_depth_share": 0.067,
+      "pelvic_vertical_share": -0.038,
+      "crest_share": 0.022
+     },
+     "t_by_group": {
+      "torso": [
+       0.12,
+       0.03,
+       -0.11
+      ],
+      "shoulder / clavicle": [
+       0.03,
+       0.03
+      ],
+      "arm": [],
+      "leg": [
+       0.43,
+       0.43
+      ],
+      "joint scale": [],
+      "hand": [],
+      "foot": [
+       -0.23,
+       -0.04
+      ],
+      "head / neck": [
+       -0.05,
+       -0.05,
+       -0.03,
+       0.15
+      ],
+      "pelvis (skin)": [
+       0.0,
+       0.07,
+       -0.04,
+       0.02
+      ]
+     },
+     "t_median": 0.022,
+     "t_iqr": [
+      -0.038,
+      0.067
+     ],
+     "near_midpoint_0p35_0p65": 2,
+     "near_human_end_abs_t_le_0p15": 13,
+     "outside_pair_t_lt0_or_gt1": 7,
+     "scalar_blend_fit": {
+      "alpha": 0.079,
+      "r2": 0.21,
+      "residual_rms_pct": 0.682
+     },
+     "groups_with_t_in_0p35_0p65": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 2,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     }
+    },
+    "MF-VA": {
+     "metrics_with_material_gap": 11,
+     "t": {
+      "thorax_breadth_share": 0.041,
+      "thorax_d_over_b": -0.066,
+      "shoulder_joint_share": 0.039,
+      "shoulder_breadth_share": 0.053,
+      "shin_over_thigh": 0.933,
+      "shin_over_leg": 0.934,
+      "foot_breadth_over_length": 0.027,
+      "cranial_vertical_share": -0.064,
+      "bitroch_over_crest": 0.002,
+      "pelvic_depth_share": -0.058,
+      "pelvic_vertical_share": -0.029
+     },
+     "t_by_group": {
+      "torso": [
+       0.04,
+       -0.07
+      ],
+      "shoulder / clavicle": [
+       0.04,
+       0.05
+      ],
+      "arm": [],
+      "leg": [
+       0.93,
+       0.93
+      ],
+      "joint scale": [],
+      "hand": [],
+      "foot": [
+       0.03
+      ],
+      "head / neck": [
+       -0.06
+      ],
+      "pelvis (skin)": [
+       0.0,
+       -0.06,
+       -0.03
+      ]
+     },
+     "t_median": 0.027,
+     "t_iqr": [
+      -0.043,
+      0.047
+     ],
+     "near_midpoint_0p35_0p65": 0,
+     "near_human_end_abs_t_le_0p15": 9,
+     "outside_pair_t_lt0_or_gt1": 4,
+     "scalar_blend_fit": {
+      "alpha": 0.023,
+      "r2": 0.013,
+      "residual_rms_pct": 0.885
+     },
+     "groups_with_t_in_0p35_0p65": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 0,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     }
+    },
+    "SG-FN": {
+     "metrics_with_material_gap": 15,
+     "t": {
+      "thorax_breadth_share": -0.148,
+      "shoulder_joint_share": -0.128,
+      "shoulder_breadth_share": -0.081,
+      "shin_over_thigh": 0.304,
+      "shin_over_leg": 0.313,
+      "elbow_over_humerus": 0.043,
+      "wrist_over_forearm": 0.104,
+      "knee_over_femur": -1.006,
+      "foot_share": 0.079,
+      "foot_breadth_over_length": -0.02,
+      "neck_share": -0.256,
+      "cranial_vertical_share": 0.272,
+      "bitroch_over_crest": -0.004,
+      "pelvic_depth_share": -0.3,
+      "crest_share": -0.213
+     },
+     "t_by_group": {
+      "torso": [
+       -0.15
+      ],
+      "shoulder / clavicle": [
+       -0.13,
+       -0.08
+      ],
+      "arm": [],
+      "leg": [
+       0.3,
+       0.31
+      ],
+      "joint scale": [
+       0.04,
+       0.1,
+       -1.01
+      ],
+      "hand": [],
+      "foot": [
+       0.08,
+       -0.02
+      ],
+      "head / neck": [
+       -0.26,
+       0.27
+      ],
+      "pelvis (skin)": [
+       -0.0,
+       -0.3,
+       -0.21
+      ]
+     },
+     "t_median": -0.02,
+     "t_iqr": [
+      -0.18,
+      0.092
+     ],
+     "near_midpoint_0p35_0p65": 0,
+     "near_human_end_abs_t_le_0p15": 8,
+     "outside_pair_t_lt0_or_gt1": 9,
+     "scalar_blend_fit": {
+      "alpha": 0.022,
+      "r2": 0.008,
+      "residual_rms_pct": 1.381
+     },
+     "groups_with_t_in_0p35_0p65": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 0,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     }
+    },
+    "SK-VA": {
+     "metrics_with_material_gap": 23,
+     "t": {
+      "torso_share": 1.083,
+      "thorax_depth_share": 1.558,
+      "thorax_breadth_share": 0.782,
+      "thoracic_vertical_share": 0.905,
+      "shoulder_joint_share": 0.787,
+      "shoulder_breadth_share": 0.759,
+      "hand_over_arm": 1.168,
+      "leg_share": 1.11,
+      "shin_over_thigh": 1.013,
+      "shin_over_leg": 1.014,
+      "elbow_over_humerus": 0.983,
+      "wrist_over_forearm": 1.034,
+      "knee_over_femur": 0.968,
+      "ankle_over_shin": 1.187,
+      "foot_share": 1.228,
+      "foot_breadth_over_length": 0.129,
+      "neck_share": 1.124,
+      "HH_share": 1.378,
+      "neck_over_torso": 1.077,
+      "bitroch_over_crest": 2.163,
+      "pelvic_depth_share": 2.255,
+      "pelvic_vertical_share": -0.607,
+      "crest_share": 0.935
+     },
+     "t_by_group": {
+      "torso": [
+       1.08,
+       1.56,
+       0.78,
+       0.9
+      ],
+      "shoulder / clavicle": [
+       0.79,
+       0.76
+      ],
+      "arm": [
+       1.17
+      ],
+      "leg": [
+       1.11,
+       1.01,
+       1.01
+      ],
+      "joint scale": [
+       0.98,
+       1.03,
+       0.97,
+       1.19
+      ],
+      "hand": [],
+      "foot": [
+       1.23,
+       0.13
+      ],
+      "head / neck": [
+       1.12,
+       1.38,
+       1.08
+      ],
+      "pelvis (skin)": [
+       2.16,
+       2.26,
+       -0.61,
+       0.94
+      ]
+     },
+     "t_median": 1.034,
+     "t_iqr": [
+      0.92,
+      1.178
+     ],
+     "near_midpoint_0p35_0p65": 0,
+     "near_human_end_abs_t_le_0p15": 1,
+     "outside_pair_t_lt0_or_gt1": 15,
+     "scalar_blend_fit": {
+      "alpha": 0.972,
+      "r2": 0.952,
+      "residual_rms_pct": 2.57
+     },
+     "groups_with_t_in_0p35_0p65": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 0,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     }
+    }
+   },
+   "nearest_source_count": {
+    "AE": 4,
+    "MF": 12,
+    "SG": 7,
+    "VA": 7,
+    "FN": 1
+   }
+  },
+  "c2": {
+   "bodies": {
+    "HV": "HVF178",
+    "MF": "MFF178",
+    "SG": "SGF178",
+    "SK": "SKF178",
+    "FN": "FNF178",
+    "AE": "AEF178",
+    "VA": "VAF178"
+   },
+   "stature": {
+    "HV": 178.01133728027344,
+    "MF": 177.9905853420496,
+    "SG": 178.00128173083067,
+    "SK": 178.00532537698746,
+    "FN": 177.98664855211973,
+    "AE": 178.01838683336973,
+    "VA": 178.00111386179924
+   },
+   "rows": {
+    "torso_share": {
+     "values": {
+      "HV": 0.28187,
+      "MF": 0.28481,
+      "SG": 0.27931,
+      "SK": 0.30591,
+      "FN": 0.27334,
+      "AE": 0.28015,
+      "VA": 0.28389
+     },
+     "human_baseline_pct": 1.93,
+     "HV_vs_pct": {
+      "MF": -1.03,
+      "SG": 0.92,
+      "SK": -7.86,
+      "FN": 3.12,
+      "AE": 0.61,
+      "VA": -0.71
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "AE"
+    },
+    "thorax_depth_share": {
+     "values": {
+      "HV": 0.12212,
+      "MF": 0.12313,
+      "SG": 0.11842,
+      "SK": 0.14752,
+      "FN": 0.11502,
+      "AE": 0.11427,
+      "VA": 0.13122
+     },
+     "human_baseline_pct": 3.83,
+     "HV_vs_pct": {
+      "MF": -0.83,
+      "SG": 3.12,
+      "SK": -17.22,
+      "FN": 6.17,
+      "AE": 6.87,
+      "VA": -6.94
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "MF"
+    },
+    "thorax_breadth_share": {
+     "values": {
+      "HV": 0.16871,
+      "MF": 0.16905,
+      "SG": 0.1717,
+      "SK": 0.18978,
+      "FN": 0.16596,
+      "AE": 0.15969,
+      "VA": 0.16356
+     },
+     "human_baseline_pct": 1.57,
+     "HV_vs_pct": {
+      "MF": -0.2,
+      "SG": -1.74,
+      "SK": -11.1,
+      "FN": 1.66,
+      "AE": 5.65,
+      "VA": 3.15
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "thorax_d_over_b": {
+     "values": {
+      "HV": 0.72381,
+      "MF": 0.72837,
+      "SG": 0.68968,
+      "SK": 0.77736,
+      "FN": 0.69305,
+      "AE": 0.71557,
+      "VA": 0.80225
+     },
+     "human_baseline_pct": 5.31,
+     "HV_vs_pct": {
+      "MF": -0.63,
+      "SG": 4.95,
+      "SK": -6.89,
+      "FN": 4.44,
+      "AE": 1.15,
+      "VA": -9.78
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "MF"
+    },
+    "thoracic_vertical_share": {
+     "values": {
+      "HV": 0.13608,
+      "MF": 0.13803,
+      "SG": 0.13458,
+      "SK": 0.15176,
+      "FN": 0.13083,
+      "AE": 0.13282,
+      "VA": 0.1347
+     },
+     "human_baseline_pct": 2.5,
+     "HV_vs_pct": {
+      "MF": -1.41,
+      "SG": 1.12,
+      "SK": -10.33,
+      "FN": 4.02,
+      "AE": 2.46,
+      "VA": 1.02
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "waist_interval_over_torso": {
+     "values": {
+      "HV": 0.3368,
+      "MF": 0.33645,
+      "SG": 0.33685,
+      "SK": 0.33446,
+      "FN": 0.33701,
+      "AE": 0.33883,
+      "VA": 0.33797
+     },
+     "human_baseline_pct": 0.12,
+     "HV_vs_pct": {
+      "MF": 0.1,
+      "SG": -0.02,
+      "SK": 0.7,
+      "FN": -0.06,
+      "AE": -0.6,
+      "VA": -0.35
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "SG"
+    },
+    "shoulder_joint_share": {
+     "values": {
+      "HV": 0.18732,
+      "MF": 0.18772,
+      "SG": 0.18653,
+      "SK": 0.21348,
+      "FN": 0.1793,
+      "AE": 0.17645,
+      "VA": 0.18149
+     },
+     "human_baseline_pct": 0.64,
+     "HV_vs_pct": {
+      "MF": -0.21,
+      "SG": 0.43,
+      "SK": -12.25,
+      "FN": 4.48,
+      "AE": 6.16,
+      "VA": 3.21
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "shoulder_breadth_share": {
+     "values": {
+      "HV": 0.27083,
+      "MF": 0.27137,
+      "SG": 0.26974,
+      "SK": 0.29759,
+      "FN": 0.26041,
+      "AE": 0.25776,
+      "VA": 0.26434
+     },
+     "human_baseline_pct": 0.6,
+     "HV_vs_pct": {
+      "MF": -0.2,
+      "SG": 0.4,
+      "SK": -8.99,
+      "FN": 4.0,
+      "AE": 5.07,
+      "VA": 2.46
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "arm_share": {
+     "values": {
+      "HV": 0.39128,
+      "MF": 0.38576,
+      "SG": 0.39582,
+      "SK": 0.37656,
+      "FN": 0.40687,
+      "AE": 0.39191,
+      "VA": 0.38955
+     },
+     "human_baseline_pct": 2.61,
+     "HV_vs_pct": {
+      "MF": 1.43,
+      "SG": -1.15,
+      "SK": 3.91,
+      "FN": -3.83,
+      "AE": -0.16,
+      "VA": 0.44
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "AE"
+    },
+    "forearm_over_upperarm": {
+     "values": {
+      "HV": 0.91715,
+      "MF": 0.88758,
+      "SG": 0.93903,
+      "SK": 0.91695,
+      "FN": 0.94728,
+      "AE": 0.93686,
+      "VA": 0.89894
+     },
+     "human_baseline_pct": 5.8,
+     "HV_vs_pct": {
+      "MF": 3.33,
+      "SG": -2.33,
+      "SK": 0.02,
+      "FN": -3.18,
+      "AE": -2.1,
+      "VA": 2.03
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "SK"
+    },
+    "hand_over_arm": {
+     "values": {
+      "HV": 0.26907,
+      "MF": 0.26735,
+      "SG": 0.27475,
+      "SK": 0.29693,
+      "FN": 0.27377,
+      "AE": 0.27337,
+      "VA": 0.27312
+     },
+     "human_baseline_pct": 2.77,
+     "HV_vs_pct": {
+      "MF": 0.64,
+      "SG": -2.07,
+      "SK": -9.38,
+      "FN": -1.72,
+      "AE": -1.57,
+      "VA": -1.48
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "MF"
+    },
+    "leg_share": {
+     "values": {
+      "HV": 0.52983,
+      "MF": 0.52614,
+      "SG": 0.53329,
+      "SK": 0.49951,
+      "FN": 0.53962,
+      "AE": 0.52795,
+      "VA": 0.52643
+     },
+     "human_baseline_pct": 1.36,
+     "HV_vs_pct": {
+      "MF": 0.7,
+      "SG": -0.65,
+      "SK": 6.07,
+      "FN": -1.81,
+      "AE": 0.35,
+      "VA": 0.65
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "AE"
+    },
+    "shin_over_thigh": {
+     "values": {
+      "HV": 0.9507,
+      "MF": 0.92683,
+      "SG": 0.92863,
+      "SK": 1.076,
+      "FN": 1.01079,
+      "AE": 0.96417,
+      "VA": 0.95071
+     },
+     "human_baseline_pct": 0.19,
+     "HV_vs_pct": {
+      "MF": 2.58,
+      "SG": 2.38,
+      "SK": -11.65,
+      "FN": -5.94,
+      "AE": -1.4,
+      "VA": -0.0
+     },
+     "HV_material_vs": {
+      "MF": true,
+      "SG": true,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "shin_over_leg": {
+     "values": {
+      "HV": 0.48736,
+      "MF": 0.48101,
+      "SG": 0.4815,
+      "SK": 0.5183,
+      "FN": 0.50268,
+      "AE": 0.49088,
+      "VA": 0.48737
+     },
+     "human_baseline_pct": 0.1,
+     "HV_vs_pct": {
+      "MF": 1.32,
+      "SG": 1.22,
+      "SK": -5.97,
+      "FN": -3.05,
+      "AE": -0.72,
+      "VA": -0.0
+     },
+     "HV_material_vs": {
+      "MF": true,
+      "SG": true,
+      "SK": true,
+      "FN": true,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "elbow_over_humerus": {
+     "values": {
+      "HV": 0.30128,
+      "MF": 0.3006,
+      "SG": 0.30189,
+      "SK": 0.35216,
+      "FN": 0.27968,
+      "AE": 0.29401,
+      "VA": 0.30164
+     },
+     "human_baseline_pct": 0.43,
+     "HV_vs_pct": {
+      "MF": 0.22,
+      "SG": -0.2,
+      "SK": -14.45,
+      "FN": 7.72,
+      "AE": 2.47,
+      "VA": -0.12
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "wrist_over_forearm": {
+     "values": {
+      "HV": 0.22123,
+      "MF": 0.2317,
+      "SG": 0.22292,
+      "SK": 0.29751,
+      "FN": 0.19169,
+      "AE": 0.22151,
+      "VA": 0.22711
+     },
+     "human_baseline_pct": 3.79,
+     "HV_vs_pct": {
+      "MF": -4.52,
+      "SG": -0.76,
+      "SK": -25.64,
+      "FN": 15.41,
+      "AE": -0.12,
+      "VA": -2.59
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "AE"
+    },
+    "knee_over_femur": {
+     "values": {
+      "HV": 0.26691,
+      "MF": 0.26628,
+      "SG": 0.25433,
+      "SK": 0.37012,
+      "FN": 0.23868,
+      "AE": 0.24831,
+      "VA": 0.26843
+     },
+     "human_baseline_pct": 4.49,
+     "HV_vs_pct": {
+      "MF": 0.24,
+      "SG": 4.95,
+      "SK": -27.89,
+      "FN": 11.83,
+      "AE": 7.49,
+      "VA": -0.56
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "MF"
+    },
+    "ankle_over_shin": {
+     "values": {
+      "HV": 0.2719,
+      "MF": 0.28251,
+      "SG": 0.27532,
+      "SK": 0.32634,
+      "FN": 0.25971,
+      "AE": 0.26882,
+      "VA": 0.27962
+     },
+     "human_baseline_pct": 2.55,
+     "HV_vs_pct": {
+      "MF": -3.76,
+      "SG": -1.24,
+      "SK": -16.68,
+      "FN": 4.69,
+      "AE": 1.14,
+      "VA": -2.76
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "AE"
+    },
+    "hand_share": {
+     "values": {
+      "HV": 0.10528,
+      "MF": 0.10313,
+      "SG": 0.10875,
+      "SK": 0.11181,
+      "FN": 0.11139,
+      "AE": 0.10713,
+      "VA": 0.10639
+     },
+     "human_baseline_pct": 5.45,
+     "HV_vs_pct": {
+      "MF": 2.08,
+      "SG": -3.19,
+      "SK": -5.84,
+      "FN": -5.48,
+      "AE": -1.73,
+      "VA": -1.05
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "palm_breadth_over_hand": {
+     "values": {
+      "HV": 0.42753,
+      "MF": 0.43757,
+      "SG": 0.41618,
+      "SK": 0.43508,
+      "FN": 0.40914,
+      "AE": 0.43551,
+      "VA": 0.44582
+     },
+     "human_baseline_pct": 4.89,
+     "HV_vs_pct": {
+      "MF": -2.29,
+      "SG": 2.73,
+      "SK": -1.74,
+      "FN": 4.49,
+      "AE": -1.83,
+      "VA": -4.1
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "SK"
+    },
+    "finger_over_hand": {
+     "values": {
+      "HV": 0.45304,
+      "MF": 0.44012,
+      "SG": 0.4653,
+      "SK": 0.43998,
+      "FN": 0.47552,
+      "AE": 0.43927,
+      "VA": 0.43999
+     },
+     "human_baseline_pct": 5.72,
+     "HV_vs_pct": {
+      "MF": 2.93,
+      "SG": -2.64,
+      "SK": 2.97,
+      "FN": -4.73,
+      "AE": 3.13,
+      "VA": 2.96
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": false,
+      "FN": false,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "SG"
+    },
+    "foot_share": {
+     "values": {
+      "HV": 0.13371,
+      "MF": 0.13434,
+      "SG": 0.13303,
+      "SK": 0.14555,
+      "FN": 0.14086,
+      "AE": 0.13627,
+      "VA": 0.13615
+     },
+     "human_baseline_pct": 0.97,
+     "HV_vs_pct": {
+      "MF": -0.47,
+      "SG": 0.5,
+      "SK": -8.14,
+      "FN": -5.08,
+      "AE": -1.88,
+      "VA": -1.8
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": false,
+      "VA": false
+     },
+     "nearest": "MF"
+    },
+    "foot_breadth_over_length": {
+     "values": {
+      "HV": 0.41604,
+      "MF": 0.41523,
+      "SG": 0.41575,
+      "SK": 0.40745,
+      "FN": 0.36646,
+      "AE": 0.38969,
+      "VA": 0.44376
+     },
+     "human_baseline_pct": 0.13,
+     "HV_vs_pct": {
+      "MF": 0.19,
+      "SG": 0.07,
+      "SK": 2.11,
+      "FN": 13.53,
+      "AE": 6.76,
+      "VA": -6.25
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "SG"
+    },
+    "neck_share": {
+     "values": {
+      "HV": 0.06191,
+      "MF": 0.06203,
+      "SG": 0.06167,
+      "SK": 0.06304,
+      "FN": 0.06064,
+      "AE": 0.06352,
+      "VA": 0.06208
+     },
+     "human_baseline_pct": 0.58,
+     "HV_vs_pct": {
+      "MF": -0.19,
+      "SG": 0.39,
+      "SK": -1.79,
+      "FN": 2.08,
+      "AE": -2.54,
+      "VA": -0.28
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "MF"
+    },
+    "cranial_vertical_share": {
+     "values": {
+      "HV": 0.06275,
+      "MF": 0.06288,
+      "SG": 0.0625,
+      "SK": 0.06393,
+      "FN": 0.06357,
+      "AE": 0.06475,
+      "VA": 0.06445
+     },
+     "human_baseline_pct": 0.6,
+     "HV_vs_pct": {
+      "MF": -0.2,
+      "SG": 0.4,
+      "SK": -1.84,
+      "FN": -1.28,
+      "AE": -3.09,
+      "VA": -2.63
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": true,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "HH_share": {
+     "values": {
+      "HV": 0.12415,
+      "MF": 0.1244,
+      "SG": 0.12365,
+      "SK": 0.12653,
+      "FN": 0.12426,
+      "AE": 0.12967,
+      "VA": 0.12493
+     },
+     "human_baseline_pct": 0.61,
+     "HV_vs_pct": {
+      "MF": -0.2,
+      "SG": 0.41,
+      "SK": -1.88,
+      "FN": -0.09,
+      "AE": -4.26,
+      "VA": -0.62
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "FN"
+    },
+    "neck_over_torso": {
+     "values": {
+      "HV": 0.21963,
+      "MF": 0.21778,
+      "SG": 0.22079,
+      "SK": 0.20606,
+      "FN": 0.22186,
+      "AE": 0.22673,
+      "VA": 0.21868
+     },
+     "human_baseline_pct": 1.38,
+     "HV_vs_pct": {
+      "MF": 0.85,
+      "SG": -0.52,
+      "SK": 6.59,
+      "FN": -1.01,
+      "AE": -3.13,
+      "VA": 0.44
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "VA"
+    },
+    "bitroch_over_crest": {
+     "values": {
+      "HV": 1.33487,
+      "MF": 1.3347,
+      "SG": 1.33523,
+      "SK": 1.29555,
+      "FN": 1.32784,
+      "AE": 1.34702,
+      "VA": 1.3705
+     },
+     "human_baseline_pct": 0.04,
+     "HV_vs_pct": {
+      "MF": 0.01,
+      "SG": -0.03,
+      "SK": 3.03,
+      "FN": 0.53,
+      "AE": -0.9,
+      "VA": -2.6
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "pelvic_depth_share": {
+     "values": {
+      "HV": 0.1277,
+      "MF": 0.12796,
+      "SG": 0.1272,
+      "SK": 0.13399,
+      "FN": 0.12817,
+      "AE": 0.12849,
+      "VA": 0.13123
+     },
+     "human_baseline_pct": 0.59,
+     "HV_vs_pct": {
+      "MF": -0.2,
+      "SG": 0.4,
+      "SK": -4.69,
+      "FN": -0.36,
+      "AE": -0.61,
+      "VA": -2.69
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": false,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "pelvic_vertical_share": {
+     "values": {
+      "HV": 0.05085,
+      "MF": 0.05096,
+      "SG": 0.05065,
+      "SK": 0.05183,
+      "FN": 0.0504,
+      "AE": 0.05241,
+      "VA": 0.05325
+     },
+     "human_baseline_pct": 0.61,
+     "HV_vs_pct": {
+      "MF": -0.2,
+      "SG": 0.41,
+      "SK": -1.89,
+      "FN": 0.91,
+      "AE": -2.97,
+      "VA": -4.49
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": true,
+      "VA": true
+     },
+     "nearest": "MF"
+    },
+    "crest_share": {
+     "values": {
+      "HV": 0.15675,
+      "MF": 0.15704,
+      "SG": 0.15616,
+      "SK": 0.17542,
+      "FN": 0.1555,
+      "AE": 0.14766,
+      "VA": 0.15531
+     },
+     "human_baseline_pct": 0.56,
+     "HV_vs_pct": {
+      "MF": -0.19,
+      "SG": 0.38,
+      "SK": -10.64,
+      "FN": 0.8,
+      "AE": 6.15,
+      "VA": 0.92
+     },
+     "HV_material_vs": {
+      "MF": false,
+      "SG": false,
+      "SK": true,
+      "FN": false,
+      "AE": true,
+      "VA": false
+     },
+     "nearest": "MF"
+    }
+   },
+   "source_protection": {
+    "MF": {
+     "material_metrics": 2,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 2,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     },
+     "rms_pct": 1.61
+    },
+    "SG": {
+     "material_metrics": 2,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 2,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     },
+     "rms_pct": 1.89
+    },
+    "SK": {
+     "material_metrics": 24,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 4,
+      "shoulder / clavicle": 2,
+      "arm": 1,
+      "leg": 3,
+      "joint scale": 4,
+      "hand": 0,
+      "foot": 2,
+      "head / neck": 4,
+      "pelvis (skin)": 4
+     },
+     "rms_pct": 10.5
+    },
+    "FN": {
+     "material_metrics": 11,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 0,
+      "shoulder / clavicle": 2,
+      "arm": 0,
+      "leg": 2,
+      "joint scale": 3,
+      "hand": 0,
+      "foot": 2,
+      "head / neck": 2,
+      "pelvis (skin)": 0
+     },
+     "rms_pct": 5.53
+    },
+    "AE": {
+     "material_metrics": 12,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 1,
+      "shoulder / clavicle": 2,
+      "arm": 0,
+      "leg": 1,
+      "joint scale": 1,
+      "hand": 0,
+      "foot": 1,
+      "head / neck": 4,
+      "pelvis (skin)": 2
+     },
+     "rms_pct": 3.51
+    },
+    "VA": {
+     "material_metrics": 8,
+     "of": 31,
+     "groups_with_material": {
+      "torso": 1,
+      "shoulder / clavicle": 2,
+      "arm": 0,
+      "leg": 0,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 1,
+      "head / neck": 1,
+      "pelvis (skin)": 3
+     },
+     "rms_pct": 3.14
+    }
+   },
+   "arithmetic_average_audit": {
+    "MF-FN": {
+     "metrics_with_material_gap": 14,
+     "t": {
+      "torso_share": 0.257,
+      "thoracic_vertical_share": 0.27,
+      "shoulder_joint_share": 0.047,
+      "shoulder_breadth_share": 0.05,
+      "arm_share": 0.262,
+      "shin_over_thigh": 0.284,
+      "shin_over_leg": 0.293,
+      "elbow_over_humerus": -0.032,
+      "wrist_over_forearm": 0.262,
+      "knee_over_femur": -0.023,
+      "ankle_over_shin": 0.465,
+      "foot_share": -0.098,
+      "foot_breadth_over_length": -0.017,
+      "neck_share": 0.087
+     },
+     "t_by_group": {
+      "torso": [
+       0.26,
+       0.27
+      ],
+      "shoulder / clavicle": [
+       0.05,
+       0.05
+      ],
+      "arm": [
+       0.26
+      ],
+      "leg": [
+       0.28,
+       0.29
+      ],
+      "joint scale": [
+       -0.03,
+       0.26,
+       -0.02,
+       0.47
+      ],
+      "hand": [],
+      "foot": [
+       -0.1,
+       -0.02
+      ],
+      "head / neck": [
+       0.09
+      ],
+      "pelvis (skin)": []
+     },
+     "t_median": 0.172,
+     "t_iqr": [
+      -0.001,
+      0.268
+     ],
+     "near_midpoint_0p35_0p65": 1,
+     "near_human_end_abs_t_le_0p15": 7,
+     "outside_pair_t_lt0_or_gt1": 4,
+     "scalar_blend_fit": {
+      "alpha": 0.168,
+      "r2": 0.52,
+      "residual_rms_pct": 1.289
+     },
+     "groups_with_t_in_0p35_0p65": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 0,
+      "joint scale": 1,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     }
+    },
+    "MF-AE": {
+     "metrics_with_material_gap": 13,
+     "t": {
+      "thorax_breadth_share": 0.036,
+      "shoulder_joint_share": 0.035,
+      "shoulder_breadth_share": 0.04,
+      "shin_over_thigh": 0.639,
+      "shin_over_leg": 0.644,
+      "elbow_over_humerus": -0.102,
+      "foot_breadth_over_length": -0.032,
+      "neck_share": -0.08,
+      "cranial_vertical_share": -0.067,
+      "HH_share": -0.048,
+      "neck_over_torso": 0.207,
+      "pelvic_vertical_share": -0.072,
+      "crest_share": 0.032
+     },
+     "t_by_group": {
+      "torso": [
+       0.04
+      ],
+      "shoulder / clavicle": [
+       0.04,
+       0.04
+      ],
+      "arm": [],
+      "leg": [
+       0.64,
+       0.64
+      ],
+      "joint scale": [
+       -0.1
+      ],
+      "hand": [],
+      "foot": [
+       -0.03
+      ],
+      "head / neck": [
+       -0.08,
+       -0.07,
+       -0.05,
+       0.21
+      ],
+      "pelvis (skin)": [
+       -0.07,
+       0.03
+      ]
+     },
+     "t_median": 0.032,
+     "t_iqr": [
+      -0.067,
+      0.04
+     ],
+     "near_midpoint_0p35_0p65": 2,
+     "near_human_end_abs_t_le_0p15": 10,
+     "outside_pair_t_lt0_or_gt1": 6,
+     "scalar_blend_fit": {
+      "alpha": 0.068,
+      "r2": 0.121,
+      "residual_rms_pct": 0.802
+     },
+     "groups_with_t_in_0p35_0p65": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 2,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     }
+    },
+    "MF-VA": {
+     "metrics_with_material_gap": 10,
+     "t": {
+      "thorax_breadth_share": 0.062,
+      "shoulder_joint_share": 0.064,
+      "shoulder_breadth_share": 0.077,
+      "shin_over_thigh": 1.0,
+      "shin_over_leg": 1.0,
+      "foot_breadth_over_length": 0.028,
+      "cranial_vertical_share": -0.08,
+      "bitroch_over_crest": 0.005,
+      "pelvic_depth_share": -0.078,
+      "pelvic_vertical_share": -0.045
+     },
+     "t_by_group": {
+      "torso": [
+       0.06
+      ],
+      "shoulder / clavicle": [
+       0.06,
+       0.08
+      ],
+      "arm": [],
+      "leg": [
+       1.0,
+       1.0
+      ],
+      "joint scale": [],
+      "hand": [],
+      "foot": [
+       0.03
+      ],
+      "head / neck": [
+       -0.08
+      ],
+      "pelvis (skin)": [
+       0.0,
+       -0.08,
+       -0.05
+      ]
+     },
+     "t_median": 0.045,
+     "t_iqr": [
+      -0.033,
+      0.074
+     ],
+     "near_midpoint_0p35_0p65": 0,
+     "near_human_end_abs_t_le_0p15": 8,
+     "outside_pair_t_lt0_or_gt1": 3,
+     "scalar_blend_fit": {
+      "alpha": 0.078,
+      "r2": 0.088,
+      "residual_rms_pct": 0.889
+     },
+     "groups_with_t_in_0p35_0p65": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 0,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     }
+    },
+    "SG-FN": {
+     "metrics_with_material_gap": 12,
+     "t": {
+      "thorax_breadth_share": 0.521,
+      "shoulder_joint_share": -0.111,
+      "shoulder_breadth_share": -0.116,
+      "shin_over_thigh": 0.269,
+      "shin_over_leg": 0.277,
+      "elbow_over_humerus": 0.028,
+      "wrist_over_forearm": 0.054,
+      "ankle_over_shin": 0.219,
+      "foot_share": 0.086,
+      "foot_breadth_over_length": -0.006,
+      "neck_share": -0.233,
+      "cranial_vertical_share": 0.235
+     },
+     "t_by_group": {
+      "torso": [
+       0.52
+      ],
+      "shoulder / clavicle": [
+       -0.11,
+       -0.12
+      ],
+      "arm": [],
+      "leg": [
+       0.27,
+       0.28
+      ],
+      "joint scale": [
+       0.03,
+       0.05,
+       0.22
+      ],
+      "hand": [],
+      "foot": [
+       0.09,
+       -0.01
+      ],
+      "head / neck": [
+       -0.23,
+       0.23
+      ],
+      "pelvis (skin)": []
+     },
+     "t_median": 0.07,
+     "t_iqr": [
+      -0.032,
+      0.243
+     ],
+     "near_midpoint_0p35_0p65": 1,
+     "near_human_end_abs_t_le_0p15": 6,
+     "outside_pair_t_lt0_or_gt1": 4,
+     "scalar_blend_fit": {
+      "alpha": 0.084,
+      "r2": 0.322,
+      "residual_rms_pct": 0.865
+     },
+     "groups_with_t_in_0p35_0p65": {
+      "torso": 1,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 0,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 0
+     }
+    },
+    "SK-VA": {
+     "metrics_with_material_gap": 24,
+     "t": {
+      "torso_share": 1.092,
+      "thorax_depth_share": 1.558,
+      "thorax_breadth_share": 0.803,
+      "thoracic_vertical_share": 0.919,
+      "waist_interval_over_torso": 0.666,
+      "shoulder_joint_share": 0.818,
+      "shoulder_breadth_share": 0.805,
+      "hand_over_arm": 1.17,
+      "leg_share": 1.126,
+      "shin_over_thigh": 1.0,
+      "shin_over_leg": 1.0,
+      "elbow_over_humerus": 1.007,
+      "wrist_over_forearm": 1.083,
+      "knee_over_femur": 1.015,
+      "ankle_over_shin": 1.165,
+      "foot_share": 1.261,
+      "foot_breadth_over_length": 0.237,
+      "neck_share": 1.183,
+      "HH_share": 1.486,
+      "neck_over_torso": 1.076,
+      "bitroch_over_crest": 0.525,
+      "pelvic_depth_share": 2.279,
+      "pelvic_vertical_share": -0.695,
+      "crest_share": 0.929
+     },
+     "t_by_group": {
+      "torso": [
+       1.09,
+       1.56,
+       0.8,
+       0.92,
+       0.67
+      ],
+      "shoulder / clavicle": [
+       0.82,
+       0.8
+      ],
+      "arm": [
+       1.17
+      ],
+      "leg": [
+       1.13,
+       1.0,
+       1.0
+      ],
+      "joint scale": [
+       1.01,
+       1.08,
+       1.01,
+       1.17
+      ],
+      "hand": [],
+      "foot": [
+       1.26,
+       0.24
+      ],
+      "head / neck": [
+       1.18,
+       1.49,
+       1.08
+      ],
+      "pelvis (skin)": [
+       0.52,
+       2.28,
+       -0.69,
+       0.93
+      ]
+     },
+     "t_median": 1.011,
+     "t_iqr": [
+      0.814,
+      1.166
+     ],
+     "near_midpoint_0p35_0p65": 1,
+     "near_human_end_abs_t_le_0p15": 0,
+     "outside_pair_t_lt0_or_gt1": 16,
+     "scalar_blend_fit": {
+      "alpha": 0.997,
+      "r2": 0.952,
+      "residual_rms_pct": 2.56
+     },
+     "groups_with_t_in_0p35_0p65": {
+      "torso": 0,
+      "shoulder / clavicle": 0,
+      "arm": 0,
+      "leg": 0,
+      "joint scale": 0,
+      "hand": 0,
+      "foot": 0,
+      "head / neck": 0,
+      "pelvis (skin)": 1
+     }
+    }
+   },
+   "nearest_source_count": {
+    "AE": 5,
+    "MF": 14,
+    "VA": 6,
+    "SG": 3,
+    "SK": 2,
+    "FN": 1
+   }
+  }
+ },
+ "notes": [
+  "Skarn comparators are SK / SKF208 records re-solved to 178 cm, below the accepted 183-229 cm Skarn envelope: diagnostic only (order \u00a79 \"where supported\")",
+  "material = |difference| >= 1 % and > 2x the human-human baseline |SG - MF| for that metric (the convention of the Vael gates)"
+ ],
+ "configuration_consistency": {
+  "rows": [
+   {
+    "key": "torso_share",
+    "d_HV": 0.00231,
+    "d_MF": 0.00236,
+    "d_SG": 0.00237,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "thorax_depth_share",
+    "d_HV": -0.00802,
+    "d_MF": -0.00795,
+    "d_SG": -0.00879,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "thorax_breadth_share",
+    "d_HV": -0.01952,
+    "d_MF": -0.01943,
+    "d_SG": -0.01572,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "thorax_d_over_b",
+    "d_HV": 0.03248,
+    "d_MF": 0.0329,
+    "d_SG": 0.01097,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "thoracic_vertical_share",
+    "d_HV": -0.01471,
+    "d_MF": -0.01467,
+    "d_SG": -0.01467,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "waist_interval_over_torso",
+    "d_HV": 0.07261,
+    "d_MF": 0.07171,
+    "d_SG": 0.07314,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "shoulder_joint_share",
+    "d_HV": -0.02406,
+    "d_MF": -0.02395,
+    "d_SG": -0.02393,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "shoulder_breadth_share",
+    "d_HV": -0.02731,
+    "d_MF": -0.0272,
+    "d_SG": -0.02705,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "arm_share",
+    "d_HV": -0.02193,
+    "d_MF": -0.02193,
+    "d_SG": -0.02197,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "forearm_over_upperarm",
+    "d_HV": -0.15189,
+    "d_MF": -0.14932,
+    "d_SG": -0.15312,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "hand_over_arm",
+    "d_HV": -0.00749,
+    "d_MF": -0.00772,
+    "d_SG": -0.00695,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "leg_share",
+    "d_HV": -0.00829,
+    "d_MF": -0.00843,
+    "d_SG": -0.00845,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "shin_over_thigh",
+    "d_HV": -0.1175,
+    "d_MF": -0.11451,
+    "d_SG": -0.11268,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "shin_over_leg",
+    "d_HV": -0.02912,
+    "d_MF": -0.02911,
+    "d_SG": -0.02862,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "elbow_over_humerus",
+    "d_HV": -0.04492,
+    "d_MF": -0.04393,
+    "d_SG": -0.0454,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "wrist_over_forearm",
+    "d_HV": 0.01874,
+    "d_MF": 0.02033,
+    "d_SG": 0.01872,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "knee_over_femur",
+    "d_HV": -0.02459,
+    "d_MF": -0.01882,
+    "d_SG": -0.02527,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "ankle_over_shin",
+    "d_HV": -0.06579,
+    "d_MF": -0.0656,
+    "d_SG": -0.06455,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "hand_share",
+    "d_HV": -0.009,
+    "d_MF": -0.00901,
+    "d_SG": -0.00894,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "palm_breadth_over_hand",
+    "d_HV": -0.00128,
+    "d_MF": -0.00034,
+    "d_SG": -0.00227,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "finger_over_hand",
+    "d_HV": 0.00541,
+    "d_MF": 0.00428,
+    "d_SG": 0.00632,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "foot_share",
+    "d_HV": -0.01466,
+    "d_MF": -0.01479,
+    "d_SG": -0.01477,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "foot_breadth_over_length",
+    "d_HV": 0.04094,
+    "d_MF": 0.04092,
+    "d_SG": 0.04151,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "neck_share",
+    "d_HV": 0.00764,
+    "d_MF": 0.00766,
+    "d_SG": 0.00767,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "cranial_vertical_share",
+    "d_HV": 0.00044,
+    "d_MF": 0.00046,
+    "d_SG": 0.00047,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "HH_share",
+    "d_HV": -0.00459,
+    "d_MF": -0.00452,
+    "d_SG": -0.00451,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "neck_over_torso",
+    "d_HV": 0.02553,
+    "d_MF": 0.02531,
+    "d_SG": 0.02581,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "bitroch_over_crest",
+    "d_HV": 0.17239,
+    "d_MF": 0.17229,
+    "d_SG": 0.1727,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "pelvic_depth_share",
+    "d_HV": 0.00048,
+    "d_MF": 0.00055,
+    "d_SG": 0.00054,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "pelvic_vertical_share",
+    "d_HV": -0.00405,
+    "d_MF": -0.00402,
+    "d_SG": -0.00402,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   },
+   {
+    "key": "crest_share",
+    "d_HV": -0.007,
+    "d_MF": -0.00696,
+    "d_SG": -0.00683,
+    "same_sign_as_MF": true,
+    "within_human_pattern": true
+   }
+  ],
+  "same_sign": 31,
+  "within_human_pattern": 31,
+  "of": 31
+ },
+ "shared_design": {
+  "torso_share": {
+   "c1_HV_minus_MF_pct": -1.02,
+   "c2_HV_minus_MF_pct": -1.03
+  },
+  "thorax_depth_share": {
+   "c1_HV_minus_MF_pct": -0.73,
+   "c2_HV_minus_MF_pct": -0.83
+  },
+  "thorax_breadth_share": {
+   "c1_HV_minus_MF_pct": -0.13,
+   "c2_HV_minus_MF_pct": -0.2
+  },
+  "thorax_d_over_b": {
+   "c1_HV_minus_MF_pct": -0.6,
+   "c2_HV_minus_MF_pct": -0.63
+  },
+  "thoracic_vertical_share": {
+   "c1_HV_minus_MF_pct": -1.25,
+   "c2_HV_minus_MF_pct": -1.41
+  },
+  "waist_interval_over_torso": {
+   "c1_HV_minus_MF_pct": -0.21,
+   "c2_HV_minus_MF_pct": 0.1
+  },
+  "shoulder_joint_share": {
+   "c1_HV_minus_MF_pct": -0.14,
+   "c2_HV_minus_MF_pct": -0.21
+  },
+  "shoulder_breadth_share": {
+   "c1_HV_minus_MF_pct": -0.15,
+   "c2_HV_minus_MF_pct": -0.2
+  },
+  "arm_share": {
+   "c1_HV_minus_MF_pct": 1.35,
+   "c2_HV_minus_MF_pct": 1.43
+  },
+  "forearm_over_upperarm": {
+   "c1_HV_minus_MF_pct": 3.1,
+   "c2_HV_minus_MF_pct": 3.33
+  },
+  "hand_over_arm": {
+   "c1_HV_minus_MF_pct": 0.54,
+   "c2_HV_minus_MF_pct": 0.64
+  },
+  "leg_share": {
+   "c1_HV_minus_MF_pct": 0.66,
+   "c2_HV_minus_MF_pct": 0.7
+  },
+  "shin_over_thigh": {
+   "c1_HV_minus_MF_pct": 2.58,
+   "c2_HV_minus_MF_pct": 2.58
+  },
+  "shin_over_leg": {
+   "c1_HV_minus_MF_pct": 1.25,
+   "c2_HV_minus_MF_pct": 1.32
+  },
+  "elbow_over_humerus": {
+   "c1_HV_minus_MF_pct": 0.48,
+   "c2_HV_minus_MF_pct": 0.22
+  },
+  "wrist_over_forearm": {
+   "c1_HV_minus_MF_pct": -4.2,
+   "c2_HV_minus_MF_pct": -4.52
+  },
+  "knee_over_femur": {
+   "c1_HV_minus_MF_pct": 2.25,
+   "c2_HV_minus_MF_pct": 0.24
+  },
+  "ankle_over_shin": {
+   "c1_HV_minus_MF_pct": -2.99,
+   "c2_HV_minus_MF_pct": -3.76
+  },
+  "hand_share": {
+   "c1_HV_minus_MF_pct": 1.9,
+   "c2_HV_minus_MF_pct": 2.08
+  },
+  "palm_breadth_over_hand": {
+   "c1_HV_minus_MF_pct": -2.08,
+   "c2_HV_minus_MF_pct": -2.29
+  },
+  "finger_over_hand": {
+   "c1_HV_minus_MF_pct": 2.7,
+   "c2_HV_minus_MF_pct": 2.93
+  },
+  "foot_share": {
+   "c1_HV_minus_MF_pct": -0.52,
+   "c2_HV_minus_MF_pct": -0.47
+  },
+  "foot_breadth_over_length": {
+   "c1_HV_minus_MF_pct": 0.21,
+   "c2_HV_minus_MF_pct": 0.19
+  },
+  "neck_share": {
+   "c1_HV_minus_MF_pct": -0.19,
+   "c2_HV_minus_MF_pct": -0.19
+  },
+  "cranial_vertical_share": {
+   "c1_HV_minus_MF_pct": -0.16,
+   "c2_HV_minus_MF_pct": -0.2
+  },
+  "HH_share": {
+   "c1_HV_minus_MF_pct": -0.15,
+   "c2_HV_minus_MF_pct": -0.2
+  },
+  "neck_over_torso": {
+   "c1_HV_minus_MF_pct": 0.85,
+   "c2_HV_minus_MF_pct": 0.85
+  },
+  "bitroch_over_crest": {
+   "c1_HV_minus_MF_pct": 0.01,
+   "c2_HV_minus_MF_pct": 0.01
+  },
+  "pelvic_depth_share": {
+   "c1_HV_minus_MF_pct": -0.14,
+   "c2_HV_minus_MF_pct": -0.2
+  },
+  "pelvic_vertical_share": {
+   "c1_HV_minus_MF_pct": -0.13,
+   "c2_HV_minus_MF_pct": -0.2
+  },
+  "crest_share": {
+   "c1_HV_minus_MF_pct": -0.16,
+   "c2_HV_minus_MF_pct": -0.19
+  }
+ },
+ "pelvis_report": {
+  "c1": [
+   {
+    "measure": "hip-joint height / stature",
+    "key": "leg_share",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.53812,
+       "MF": 0.53457,
+       "SG": 0.54175,
+       "SK": 0.50782,
+       "FN": 0.54812,
+       "AE": 0.53571,
+       "VA": 0.53511
+      },
+      "HV_vs_pct": {
+       "MF": 0.66,
+       "SG": -0.67,
+       "SK": 5.97,
+       "FN": -1.82,
+       "AE": 0.45,
+       "VA": 0.56
+      },
+      "nearest": "AE"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.53812,
+       "MF": 0.53457,
+       "SG": 0.54175,
+       "SK": 0.50782,
+       "FN": 0.54812,
+       "AE": 0.53571,
+       "VA": 0.53511
+      },
+      "HV_vs_pct": {
+       "MF": 0.66,
+       "SG": -0.67,
+       "SK": 5.97,
+       "FN": -1.82,
+       "AE": 0.45,
+       "VA": 0.56
+      },
+      "nearest": "AE"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.53812,
+       "MF": 0.53457,
+       "SG": 0.54175,
+       "SK": 0.50782,
+       "FN": 0.54812,
+       "AE": 0.53571,
+       "VA": 0.53511
+      },
+      "HV_vs_pct": {
+       "MF": 0.66,
+       "SG": -0.67,
+       "SK": 5.97,
+       "FN": -1.82,
+       "AE": 0.45,
+       "VA": 0.56
+      },
+      "nearest": "AE"
+     }
+    }
+   },
+   {
+    "measure": "bitrochanteric / crest",
+    "key": "bitroch_over_crest",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 1.10361,
+       "MF": 1.1036,
+       "SG": 1.1037,
+       "SK": 1.1078,
+       "FN": 1.10566,
+       "AE": 1.11054,
+       "VA": 1.11376
+      },
+      "HV_vs_pct": {
+       "MF": 0.0,
+       "SG": -0.01,
+       "SK": -0.38,
+       "FN": -0.19,
+       "AE": -0.62,
+       "VA": -0.91
+      },
+      "nearest": "MF"
+     },
+     "0.5": {
+      "values": {
+       "HV": 1.10733,
+       "MF": 1.10731,
+       "SG": 1.10744,
+       "SK": 1.11147,
+       "FN": 1.1095,
+       "AE": 1.11479,
+       "VA": 1.1178
+      },
+      "HV_vs_pct": {
+       "MF": 0.0,
+       "SG": -0.01,
+       "SK": -0.37,
+       "FN": -0.2,
+       "AE": -0.67,
+       "VA": -0.94
+      },
+      "nearest": "MF"
+     },
+     "1.0": {
+      "values": {
+       "HV": 1.11133,
+       "MF": 1.11129,
+       "SG": 1.11146,
+       "SK": 1.1154,
+       "FN": 1.11363,
+       "AE": 1.11938,
+       "VA": 1.12213
+      },
+      "HV_vs_pct": {
+       "MF": 0.0,
+       "SG": -0.01,
+       "SK": -0.37,
+       "FN": -0.21,
+       "AE": -0.72,
+       "VA": -0.96
+      },
+      "nearest": "MF"
+     }
+    }
+   },
+   {
+    "measure": "pelvic vertical contribution (pelvic vertical / stature)",
+    "key": "pelvic_vertical_share",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.05492,
+       "MF": 0.05509,
+       "SG": 0.05468,
+       "SK": 0.05591,
+       "FN": 0.05438,
+       "AE": 0.05684,
+       "VA": 0.05755
+      },
+      "HV_vs_pct": {
+       "MF": -0.3,
+       "SG": 0.44,
+       "SK": -1.76,
+       "FN": 1.01,
+       "AE": -3.36,
+       "VA": -4.57
+      },
+      "nearest": "MF"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.05492,
+       "MF": 0.05509,
+       "SG": 0.05468,
+       "SK": 0.05591,
+       "FN": 0.05438,
+       "AE": 0.05684,
+       "VA": 0.05755
+      },
+      "HV_vs_pct": {
+       "MF": -0.3,
+       "SG": 0.44,
+       "SK": -1.76,
+       "FN": 1.01,
+       "AE": -3.36,
+       "VA": -4.57
+      },
+      "nearest": "MF"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.05492,
+       "MF": 0.05509,
+       "SG": 0.05468,
+       "SK": 0.05591,
+       "FN": 0.05438,
+       "AE": 0.05684,
+       "VA": 0.05755
+      },
+      "HV_vs_pct": {
+       "MF": -0.3,
+       "SG": 0.44,
+       "SK": -1.76,
+       "FN": 1.01,
+       "AE": -3.36,
+       "VA": -4.57
+      },
+      "nearest": "MF"
+     }
+    }
+   },
+   {
+    "measure": "pelvic vertical / crest",
+    "key": "pelvic_vertical_over_crest",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.32953,
+       "MF": 0.32952,
+       "SG": 0.32962,
+       "SK": 0.31858,
+       "FN": 0.33049,
+       "AE": 0.36437,
+       "VA": 0.34175
+      },
+      "HV_vs_pct": {
+       "MF": 0.0,
+       "SG": -0.03,
+       "SK": 3.44,
+       "FN": -0.29,
+       "AE": -9.56,
+       "VA": -3.58
+      },
+      "nearest": "MF"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.34136,
+       "MF": 0.34131,
+       "SG": 0.34151,
+       "SK": 0.32942,
+       "FN": 0.34251,
+       "AE": 0.37838,
+       "VA": 0.35388
+      },
+      "HV_vs_pct": {
+       "MF": 0.01,
+       "SG": -0.05,
+       "SK": 3.62,
+       "FN": -0.34,
+       "AE": -9.79,
+       "VA": -3.54
+      },
+      "nearest": "MF"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.35407,
+       "MF": 0.35398,
+       "SG": 0.35429,
+       "SK": 0.34103,
+       "FN": 0.35545,
+       "AE": 0.39351,
+       "VA": 0.36691
+      },
+      "HV_vs_pct": {
+       "MF": 0.02,
+       "SG": -0.06,
+       "SK": 3.82,
+       "FN": -0.39,
+       "AE": -10.02,
+       "VA": -3.5
+      },
+      "nearest": "MF"
+     }
+    }
+   },
+   {
+    "measure": "AP depth / stature",
+    "key": "pelvic_depth_share",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.09498,
+       "MF": 0.09527,
+       "SG": 0.09447,
+       "SK": 0.10096,
+       "FN": 0.09548,
+       "AE": 0.09511,
+       "VA": 0.09782
+      },
+      "HV_vs_pct": {
+       "MF": -0.3,
+       "SG": 0.54,
+       "SK": -5.93,
+       "FN": -0.53,
+       "AE": -0.14,
+       "VA": -2.9
+      },
+      "nearest": "AE"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.0892,
+       "MF": 0.08949,
+       "SG": 0.08869,
+       "SK": 0.09519,
+       "FN": 0.08971,
+       "AE": 0.08934,
+       "VA": 0.09204
+      },
+      "HV_vs_pct": {
+       "MF": -0.32,
+       "SG": 0.58,
+       "SK": -6.29,
+       "FN": -0.56,
+       "AE": -0.15,
+       "VA": -3.09
+      },
+      "nearest": "AE"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.08343,
+       "MF": 0.08372,
+       "SG": 0.08291,
+       "SK": 0.08941,
+       "FN": 0.08393,
+       "AE": 0.08356,
+       "VA": 0.08627
+      },
+      "HV_vs_pct": {
+       "MF": -0.35,
+       "SG": 0.62,
+       "SK": -6.69,
+       "FN": -0.6,
+       "AE": -0.16,
+       "VA": -3.29
+      },
+      "nearest": "AE"
+     }
+    }
+   },
+   {
+    "measure": "waist interval / torso",
+    "key": "waist_interval_over_torso",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.26411,
+       "MF": 0.26429,
+       "SG": 0.26365,
+       "SK": 0.26752,
+       "FN": 0.26232,
+       "AE": 0.26965,
+       "VA": 0.26543
+      },
+      "HV_vs_pct": {
+       "MF": -0.07,
+       "SG": 0.18,
+       "SK": -1.28,
+       "FN": 0.68,
+       "AE": -2.05,
+       "VA": -0.5
+      },
+      "nearest": "MF"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.26411,
+       "MF": 0.26429,
+       "SG": 0.26365,
+       "SK": 0.26752,
+       "FN": 0.26232,
+       "AE": 0.26965,
+       "VA": 0.26543
+      },
+      "HV_vs_pct": {
+       "MF": -0.07,
+       "SG": 0.18,
+       "SK": -1.28,
+       "FN": 0.68,
+       "AE": -2.05,
+       "VA": -0.5
+      },
+      "nearest": "MF"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.26411,
+       "MF": 0.26429,
+       "SG": 0.26365,
+       "SK": 0.26752,
+       "FN": 0.26232,
+       "AE": 0.26965,
+       "VA": 0.26543
+      },
+      "HV_vs_pct": {
+       "MF": -0.07,
+       "SG": 0.18,
+       "SK": -1.28,
+       "FN": 0.68,
+       "AE": -2.05,
+       "VA": -0.5
+      },
+      "nearest": "MF"
+     }
+    }
+   },
+   {
+    "measure": "hip-joint scale proxy (proximal femur / stature)",
+    "key": "hip_joint_scale_share",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.03024,
+       "MF": 0.03033,
+       "SG": 0.0301,
+       "SK": 0.03227,
+       "FN": 0.02884,
+       "AE": 0.02835,
+       "VA": 0.03056
+      },
+      "HV_vs_pct": {
+       "MF": -0.3,
+       "SG": 0.48,
+       "SK": -6.3,
+       "FN": 4.87,
+       "AE": 6.66,
+       "VA": -1.03
+      },
+      "nearest": "MF"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.02735,
+       "MF": 0.02745,
+       "SG": 0.02721,
+       "SK": 0.02939,
+       "FN": 0.02595,
+       "AE": 0.02547,
+       "VA": 0.02767
+      },
+      "HV_vs_pct": {
+       "MF": -0.33,
+       "SG": 0.53,
+       "SK": -6.92,
+       "FN": 5.41,
+       "AE": 7.41,
+       "VA": -1.14
+      },
+      "nearest": "MF"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.02447,
+       "MF": 0.02456,
+       "SG": 0.02432,
+       "SK": 0.0265,
+       "FN": 0.02306,
+       "AE": 0.02258,
+       "VA": 0.02478
+      },
+      "HV_vs_pct": {
+       "MF": -0.37,
+       "SG": 0.6,
+       "SK": -7.67,
+       "FN": 6.09,
+       "AE": 8.36,
+       "VA": -1.27
+      },
+      "nearest": "MF"
+     }
+    }
+   },
+   {
+    "measure": "crest breadth / stature",
+    "key": "crest_share",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.16668,
+       "MF": 0.16717,
+       "SG": 0.16589,
+       "SK": 0.17548,
+       "FN": 0.16453,
+       "AE": 0.15598,
+       "VA": 0.1684
+      },
+      "HV_vs_pct": {
+       "MF": -0.3,
+       "SG": 0.47,
+       "SK": -5.02,
+       "FN": 1.3,
+       "AE": 6.85,
+       "VA": -1.03
+      },
+      "nearest": "MF"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.1609,
+       "MF": 0.1614,
+       "SG": 0.16012,
+       "SK": 0.16971,
+       "FN": 0.15876,
+       "AE": 0.15021,
+       "VA": 0.16263
+      },
+      "HV_vs_pct": {
+       "MF": -0.31,
+       "SG": 0.49,
+       "SK": -5.19,
+       "FN": 1.35,
+       "AE": 7.12,
+       "VA": -1.06
+      },
+      "nearest": "MF"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.15512,
+       "MF": 0.15562,
+       "SG": 0.15434,
+       "SK": 0.16393,
+       "FN": 0.15298,
+       "AE": 0.14443,
+       "VA": 0.15685
+      },
+      "HV_vs_pct": {
+       "MF": -0.32,
+       "SG": 0.51,
+       "SK": -5.37,
+       "FN": 1.4,
+       "AE": 7.4,
+       "VA": -1.1
+      },
+      "nearest": "MF"
+     }
+    }
+   }
+  ],
+  "c2": [
+   {
+    "measure": "hip-joint height / stature",
+    "key": "leg_share",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.52983,
+       "MF": 0.52614,
+       "SG": 0.53329,
+       "SK": 0.49951,
+       "FN": 0.53962,
+       "AE": 0.52795,
+       "VA": 0.52643
+      },
+      "HV_vs_pct": {
+       "MF": 0.7,
+       "SG": -0.65,
+       "SK": 6.07,
+       "FN": -1.81,
+       "AE": 0.35,
+       "VA": 0.65
+      },
+      "nearest": "AE"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.52983,
+       "MF": 0.52614,
+       "SG": 0.53329,
+       "SK": 0.49951,
+       "FN": 0.53962,
+       "AE": 0.52795,
+       "VA": 0.52643
+      },
+      "HV_vs_pct": {
+       "MF": 0.7,
+       "SG": -0.65,
+       "SK": 6.07,
+       "FN": -1.81,
+       "AE": 0.35,
+       "VA": 0.65
+      },
+      "nearest": "AE"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.52983,
+       "MF": 0.52614,
+       "SG": 0.53329,
+       "SK": 0.49951,
+       "FN": 0.53962,
+       "AE": 0.52795,
+       "VA": 0.52643
+      },
+      "HV_vs_pct": {
+       "MF": 0.7,
+       "SG": -0.65,
+       "SK": 6.07,
+       "FN": -1.81,
+       "AE": 0.35,
+       "VA": 0.65
+      },
+      "nearest": "AE"
+     }
+    }
+   },
+   {
+    "measure": "bitrochanteric / crest",
+    "key": "bitroch_over_crest",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 1.0804,
+       "MF": 1.08048,
+       "SG": 1.08023,
+       "SK": 1.12158,
+       "FN": 1.07956,
+       "AE": 1.08599,
+       "VA": 1.09606
+      },
+      "HV_vs_pct": {
+       "MF": -0.01,
+       "SG": 0.02,
+       "SK": -3.67,
+       "FN": 0.08,
+       "AE": -0.51,
+       "VA": -1.43
+      },
+      "nearest": "MF"
+     },
+     "0.5": {
+      "values": {
+       "HV": 1.08343,
+       "MF": 1.0835,
+       "SG": 1.08326,
+       "SK": 1.12592,
+       "FN": 1.0826,
+       "AE": 1.08947,
+       "VA": 1.09966
+      },
+      "HV_vs_pct": {
+       "MF": -0.01,
+       "SG": 0.01,
+       "SK": -3.77,
+       "FN": 0.08,
+       "AE": -0.55,
+       "VA": -1.48
+      },
+      "nearest": "MF"
+     },
+     "1.0": {
+      "values": {
+       "HV": 1.08669,
+       "MF": 1.08676,
+       "SG": 1.08654,
+       "SK": 1.13058,
+       "FN": 1.08588,
+       "AE": 1.09324,
+       "VA": 1.10354
+      },
+      "HV_vs_pct": {
+       "MF": -0.01,
+       "SG": 0.01,
+       "SK": -3.88,
+       "FN": 0.08,
+       "AE": -0.6,
+       "VA": -1.53
+      },
+      "nearest": "MF"
+     }
+    }
+   },
+   {
+    "measure": "pelvic vertical contribution (pelvic vertical / stature)",
+    "key": "pelvic_vertical_share",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.05123,
+       "MF": 0.05133,
+       "SG": 0.05101,
+       "SK": 0.05224,
+       "FN": 0.05075,
+       "AE": 0.05274,
+       "VA": 0.05364
+      },
+      "HV_vs_pct": {
+       "MF": -0.21,
+       "SG": 0.42,
+       "SK": -1.93,
+       "FN": 0.94,
+       "AE": -2.86,
+       "VA": -4.5
+      },
+      "nearest": "MF"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.05123,
+       "MF": 0.05133,
+       "SG": 0.05101,
+       "SK": 0.05224,
+       "FN": 0.05075,
+       "AE": 0.05274,
+       "VA": 0.05364
+      },
+      "HV_vs_pct": {
+       "MF": -0.21,
+       "SG": 0.42,
+       "SK": -1.93,
+       "FN": 0.94,
+       "AE": -2.86,
+       "VA": -4.5
+      },
+      "nearest": "MF"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.05123,
+       "MF": 0.05133,
+       "SG": 0.05101,
+       "SK": 0.05224,
+       "FN": 0.05075,
+       "AE": 0.05274,
+       "VA": 0.05364
+      },
+      "HV_vs_pct": {
+       "MF": -0.21,
+       "SG": 0.42,
+       "SK": -1.93,
+       "FN": 0.94,
+       "AE": -2.86,
+       "VA": -4.5
+      },
+      "nearest": "MF"
+     }
+    }
+   },
+   {
+    "measure": "pelvic vertical / crest",
+    "key": "pelvic_vertical_over_crest",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.32195,
+       "MF": 0.32193,
+       "SG": 0.322,
+       "SK": 0.31142,
+       "FN": 0.3231,
+       "AE": 0.35528,
+       "VA": 0.33543
+      },
+      "HV_vs_pct": {
+       "MF": 0.01,
+       "SG": -0.01,
+       "SK": 3.38,
+       "FN": -0.35,
+       "AE": -9.38,
+       "VA": -4.02
+      },
+      "nearest": "MF"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.33408,
+       "MF": 0.33403,
+       "SG": 0.33418,
+       "SK": 0.32253,
+       "FN": 0.33543,
+       "AE": 0.36966,
+       "VA": 0.348
+      },
+      "HV_vs_pct": {
+       "MF": 0.01,
+       "SG": -0.03,
+       "SK": 3.58,
+       "FN": -0.4,
+       "AE": -9.63,
+       "VA": -4.0
+      },
+      "nearest": "MF"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.34715,
+       "MF": 0.34707,
+       "SG": 0.34732,
+       "SK": 0.33446,
+       "FN": 0.34875,
+       "AE": 0.38526,
+       "VA": 0.36155
+      },
+      "HV_vs_pct": {
+       "MF": 0.02,
+       "SG": -0.05,
+       "SK": 3.8,
+       "FN": -0.46,
+       "AE": -9.89,
+       "VA": -3.98
+      },
+      "nearest": "MF"
+     }
+    }
+   },
+   {
+    "measure": "AP depth / stature",
+    "key": "pelvic_depth_share",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.0871,
+       "MF": 0.08735,
+       "SG": 0.0866,
+       "SK": 0.09323,
+       "FN": 0.08721,
+       "AE": 0.08618,
+       "VA": 0.08978
+      },
+      "HV_vs_pct": {
+       "MF": -0.28,
+       "SG": 0.59,
+       "SK": -6.57,
+       "FN": -0.12,
+       "AE": 1.07,
+       "VA": -2.98
+      },
+      "nearest": "FN"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.08133,
+       "MF": 0.08158,
+       "SG": 0.08082,
+       "SK": 0.08745,
+       "FN": 0.08144,
+       "AE": 0.08041,
+       "VA": 0.084
+      },
+      "HV_vs_pct": {
+       "MF": -0.3,
+       "SG": 0.63,
+       "SK": -7.0,
+       "FN": -0.13,
+       "AE": 1.14,
+       "VA": -3.18
+      },
+      "nearest": "FN"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.07555,
+       "MF": 0.0758,
+       "SG": 0.07504,
+       "SK": 0.08168,
+       "FN": 0.07566,
+       "AE": 0.07463,
+       "VA": 0.07823
+      },
+      "HV_vs_pct": {
+       "MF": -0.33,
+       "SG": 0.68,
+       "SK": -7.5,
+       "FN": -0.14,
+       "AE": 1.23,
+       "VA": -3.42
+      },
+      "nearest": "FN"
+     }
+    }
+   },
+   {
+    "measure": "waist interval / torso",
+    "key": "waist_interval_over_torso",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.33627,
+       "MF": 0.33593,
+       "SG": 0.33633,
+       "SK": 0.33392,
+       "FN": 0.33651,
+       "AE": 0.33841,
+       "VA": 0.33743
+      },
+      "HV_vs_pct": {
+       "MF": 0.1,
+       "SG": -0.02,
+       "SK": 0.71,
+       "FN": -0.07,
+       "AE": -0.63,
+       "VA": -0.34
+      },
+      "nearest": "SG"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.33627,
+       "MF": 0.33593,
+       "SG": 0.33633,
+       "SK": 0.33392,
+       "FN": 0.33651,
+       "AE": 0.33841,
+       "VA": 0.33743
+      },
+      "HV_vs_pct": {
+       "MF": 0.1,
+       "SG": -0.02,
+       "SK": 0.71,
+       "FN": -0.07,
+       "AE": -0.63,
+       "VA": -0.34
+      },
+      "nearest": "SG"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.33627,
+       "MF": 0.33593,
+       "SG": 0.33633,
+       "SK": 0.33392,
+       "FN": 0.33651,
+       "AE": 0.33841,
+       "VA": 0.33743
+      },
+      "HV_vs_pct": {
+       "MF": 0.1,
+       "SG": -0.02,
+       "SK": 0.71,
+       "FN": -0.07,
+       "AE": -0.63,
+       "VA": -0.34
+      },
+      "nearest": "SG"
+     }
+    }
+   },
+   {
+    "measure": "hip-joint scale proxy (proximal femur / stature)",
+    "key": "hip_joint_scale_share",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.03439,
+       "MF": 0.02816,
+       "SG": 0.03423,
+       "SK": 0.0365,
+       "FN": 0.03289,
+       "AE": 0.03256,
+       "VA": 0.03461
+      },
+      "HV_vs_pct": {
+       "MF": 22.13,
+       "SG": 0.48,
+       "SK": -5.77,
+       "FN": 4.56,
+       "AE": 5.62,
+       "VA": -0.62
+      },
+      "nearest": "SG"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.03151,
+       "MF": 0.02527,
+       "SG": 0.03134,
+       "SK": 0.03361,
+       "FN": 0.03001,
+       "AE": 0.02968,
+       "VA": 0.03172
+      },
+      "HV_vs_pct": {
+       "MF": 24.66,
+       "SG": 0.52,
+       "SK": -6.26,
+       "FN": 5.0,
+       "AE": 6.17,
+       "VA": -0.68
+      },
+      "nearest": "SG"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.02862,
+       "MF": 0.02239,
+       "SG": 0.02846,
+       "SK": 0.03072,
+       "FN": 0.02712,
+       "AE": 0.02679,
+       "VA": 0.02883
+      },
+      "HV_vs_pct": {
+       "MF": 27.84,
+       "SG": 0.57,
+       "SK": -6.85,
+       "FN": 5.53,
+       "AE": 6.84,
+       "VA": -0.75
+      },
+      "nearest": "SG"
+     }
+    }
+   },
+   {
+    "measure": "crest breadth / stature",
+    "key": "crest_share",
+    "by_t": {
+     "0.0": {
+      "values": {
+       "HV": 0.15912,
+       "MF": 0.15946,
+       "SG": 0.15842,
+       "SK": 0.16773,
+       "FN": 0.15707,
+       "AE": 0.14844,
+       "VA": 0.15991
+      },
+      "HV_vs_pct": {
+       "MF": -0.21,
+       "SG": 0.44,
+       "SK": -5.14,
+       "FN": 1.3,
+       "AE": 7.19,
+       "VA": -0.5
+      },
+      "nearest": "MF"
+     },
+     "0.5": {
+      "values": {
+       "HV": 0.15334,
+       "MF": 0.15368,
+       "SG": 0.15265,
+       "SK": 0.16196,
+       "FN": 0.1513,
+       "AE": 0.14266,
+       "VA": 0.15414
+      },
+      "HV_vs_pct": {
+       "MF": -0.22,
+       "SG": 0.45,
+       "SK": -5.32,
+       "FN": 1.35,
+       "AE": 7.48,
+       "VA": -0.52
+      },
+      "nearest": "MF"
+     },
+     "1.0": {
+      "values": {
+       "HV": 0.14757,
+       "MF": 0.14791,
+       "SG": 0.14687,
+       "SK": 0.15618,
+       "FN": 0.14552,
+       "AE": 0.13689,
+       "VA": 0.14836
+      },
+      "HV_vs_pct": {
+       "MF": -0.23,
+       "SG": 0.47,
+       "SK": -5.52,
+       "FN": 1.4,
+       "AE": 7.8,
+       "VA": -0.54
+      },
+      "nearest": "MF"
+     }
+    }
+   }
+  ]
+ },
+ "pelvis_note": "REPORT ONLY: Halvren pelvic inheritance is OPEN (HALVREN_V1 Part 2 \u00a715-19); no rule is applied. HVC1 carries no pelvis-specific target (Marchfolk pelvis construction).",
+ "determinism": {
+  "HVF178_height_macro": [
+   0.637451171875,
+   0.637451171875
+  ],
+  "HVF178_second_resolve_max_abs_dV_cm": 0.0,
+  "HVF178_faces_identical": true,
+  "HVF178_stature_r6": [
+   178.01133692264557,
+   178.01133692264557
+  ],
+  "HVC1_record_rebuild_max_abs_dV_cm": 0.0,
+  "HVC1_faces_identical": true,
+  "cfg_differs_from_HVC1": [
+   "gender",
+   "id"
+  ],
+  "targets_identical_to_HVC1": true
+ },
+ "envelope": {
+  "central_cm": [
+   152,
+   213
+  ],
+  "HV152N_NAT": 151.99687218666077,
+  "HVC1": 177.7264251857996,
+  "HVF178": 178.01133728027344,
+  "HV213M": 213.01321411505342,
+  "inside": true
+ },
+ "native_integrity": {
+  "verts": 13380,
+  "quads": 13378,
+  "components": 1,
+  "boundary_edges": 0,
+  "nonmanifold_edges": 0,
+  "orientation_inconsistent_edges": 0,
+  "degenerate_faces": 0,
+  "coincident_vertex_pairs": 0,
+  "signed_volume_L": -61.107
+ }
+}

@@ -1,6 +1,13 @@
 # Character Design Status
 
-## VAEL RP3 — AUTHOR ACCEPTED / FROZEN (by record, 2026-10-29)
+## HALVREN RP3 CENTRAL ANCHOR — BODY + CRANIOFACIAL SOURCE WORK REQUIRED; PELVIS NEEDS AUTHOR DESIGN PASS — EARS LOCKED — NOT FROZEN (2026-10-29)
+
+- **Gate:** `reviews/claude-rac-rp3-halvren-central-anchor-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_central_anchor/` (15 sheets).
+- **Technical PASS:** new c2 central anchor `HVF178` (MF-F-R route + exactly the HVC1 body targets, 178.01 cm; second resolve dV 0; consistent with HVC1 31 / 31). v005 family candidates `HV_{M,F}_REF_RP3_bodyfam_v001`: exact topology, V = M @ hm08, **69 / 69** both, T-1/2/3/7, density, 0 new contact class, deformation within +2 flips of Marchfolk. On E: `Halvren/RP3/`, read back identical.
+- **Biology fails:** at 178 cm, ears hidden, the central anchor is effectively Marchfolk (2 / 31 body metrics differ materially; region RMS below the Sagekin–Marchfolk baseline). Not an arithmetic average: it sits at the human end of every human / elf pair. Face = the Marchfolk face (≤ 0.01 mm). Pelvis = stock Marchfolk (report only; Halvren pelvis is OPEN).
+- **Next:** STOP for ChatGPT review — accept HVF178; authorise bounded mixed body and craniofacial candidate passes and a pelvis design pass. Ears stay locked.
+
+## (previous) VAEL RP3 — AUTHOR ACCEPTED / FROZEN (by record, 2026-10-29)
 
 - **Closure:** `reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md`. Record: `reviews/rac-rp3-evidence/vael_rp3_final/VAEL_RP3_FREEZE.json` (promoted from the 4df3e0c candidate; status / carry-forward edits only). Report: `reviews/claude-rac-rp3-vael-final-freeze-report.md`.
 - **Frozen:** `VA_M_REF_RP3_v001.blend` (`42f0cebb…`) and `VA_F_REF_RP3_v001.blend` (`516b18e8…`) on E: `Vael/RP3/`; byte-identical, no rebuild or resave; verification-only re-read-back identical, validator 69 / 69 both.

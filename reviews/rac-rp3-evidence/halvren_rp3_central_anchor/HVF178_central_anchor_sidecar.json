@@ -1,0 +1,87 @@
+{
+ "id": "HVF178",
+ "race": "Halvren",
+ "role": "configuration-2 CENTRAL MIXED-EXPRESSION ANCHOR CANDIDATE (Halvren central-anchor order 2026-10-29 Part A; pending author acceptance); not a separate ancestry phenotype",
+ "construction": "tools/rac/w1/build_variant.py: base MF-F-R_build.json (accepted human-family configuration-2 route, as MF-F / SGF178 / VALF178) + overrides = exactly the HVC1 body targets + stature 178 (resolve_stature); cfg identical to HVC1 except gender (and id); no c2-specific Halvren package",
+ "mpfb": "MPFB 2.0.17 / Blender 5.2.2 LTS",
+ "cfg": {
+  "gender": 0.0,
+  "age_years": 35,
+  "age": 0.5769230769,
+  "muscle": 0.5,
+  "weight": 0.5,
+  "proportions": 0.5,
+  "stature": 178.0,
+  "targets": {
+   "measure-napetowaist-dist-decr": 0.1,
+   "measure-lowerarm-length-incr": 0.12,
+   "measure-lowerleg-height-incr": 0.12,
+   "torso-scale-depth-decr": 0.05,
+   "LR:hand-fingers-length-incr": 0.12,
+   "measure-wrist-circ-decr": 0.15,
+   "measure-ankle-circ-decr": 0.1
+  },
+  "id": "HVF178"
+ },
+ "height_macro": 0.637451171875,
+ "height_solve": {
+  "reachable": true,
+  "stature": 178.01133692264557,
+  "iters": 12
+ },
+ "pose": {
+  "arm_abduction_deg": 8.0,
+  "palm_twist_deg_l": -0.03,
+  "palm_residual_deg_l": 0.0,
+  "palm_twist_deg_r": 0.03,
+  "palm_residual_deg_r": -0.0
+ },
+ "stature_r6_cm": 178.01133692264557,
+ "r6": "reviews/reference-assets/r6/HVF178_r6.npz",
+ "r6_sha256": "c0e57bae09fd1040e1ae441341f01765dedf06cacd9a3a332b5b700fde9aa12f",
+ "build_sha256": "bc61f4e7ad59cbc07cea84a44d112ac87c6f86cebb0c181fbab240d3ace983ec",
+ "geometry_hash": "4b40027ffe1a952bc40800e4a2cdc623e064fc2d2a84d53ee8e6ecdc208a064b",
+ "rebuild_identity": {
+  "regen": {
+   "geometry_identical": true,
+   "max_abs_dV_cm": 0.0
+  },
+  "second_full_resolve": {
+   "HVF178_height_macro": [
+    0.637451171875,
+    0.637451171875
+   ],
+   "HVF178_second_resolve_max_abs_dV_cm": 0.0,
+   "HVF178_faces_identical": true,
+   "HVF178_stature_r6": [
+    178.01133692264557,
+    178.01133692264557
+   ],
+   "HVC1_record_rebuild_max_abs_dV_cm": 0.0,
+   "HVC1_faces_identical": true,
+   "cfg_differs_from_HVC1": [
+    "gender",
+    "id"
+   ],
+   "targets_identical_to_HVC1": true
+  }
+ },
+ "envelope": {
+  "central_cm": [
+   152,
+   213
+  ],
+  "HV152N_NAT": 151.99687218666077,
+  "HVC1": 177.7264251857996,
+  "HVF178": 178.01133728027344,
+  "HV213M": 213.01321411505342,
+  "inside": true
+ },
+ "configuration_consistency": {
+  "same_sign": 31,
+  "within_human_pattern": 31,
+  "of": 31
+ },
+ "ear_limitation": "carries the MPFB human auricle; not Halvren ear anatomy (order \u00a76)",
+ "existing_local_c2_build": "none found (order \u00a73; no HVF* record in reviews/reference-assets before construction)"
+}

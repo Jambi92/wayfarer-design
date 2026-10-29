@@ -2,7 +2,21 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-29) — VAEL RP3 — AUTHOR ACCEPTED / FROZEN (by record) — awaiting ChatGPT review
+## LATEST (2026-10-29) — HALVREN CENTRAL ANCHOR — BODY + CRANIOFACIAL SOURCE WORK REQUIRED, PELVIS NEEDS AUTHOR DESIGN PASS — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-halvren-central-anchor-order.md`. Gate: `reviews/claude-rac-rp3-halvren-central-anchor-gate.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_central_anchor/`. Nothing frozen; ears not built.
+- Tools `tools/rac/rp/halvren_rp3_v001/`: `build_hv_partA.sh` (HVF178 + 178 cm Vael / Skarn comparators; MF / SG / FN / AE copied from Vael Part A), `skp_hv.sh`, `hv_partA.py` (six-source metrics, midpoint audit, pelvis report), `hv_hidden_ear.py`, `run_hv_prod.sh` + `hv_manifest.py`, `hv_sheets.py`. Part B ran `aelari_rp3_v001/run_aeeval.sh` with `AE_WORK=/tmp/claude-0/rt/hv AE_C1=HVC1 AE_C2=HVF178`.
+- Workspace `/tmp/claude-0/rt/hv` (`partA/{ref,build,build2,cmp,skp,regen}`, `src`, `fam`, `val`, `def`, `ov`, `prod`, `sheet_r`).
+- `HVF178` added to `reviews/reference-assets` (r6 / build / meas; manifest CANDIDATE). E: `Halvren/RP3/` (bodyfam blends, maps, sidecars, manifest); read-back identical.
+
+**Key findings**
+- Technical gates pass (69 / 69 both; exact v005; 0 new contact class).
+- The central body is Marchfolk with slightly longer forearm / lower leg / fingers; face = Marchfolk; pelvis = Marchfolk. Not an average, not a patchwork.
+
+**Next:** STOP for ChatGPT review (author decisions in the gate §8).
+
+## (previous) 2026-10-29 — VAEL RP3 — AUTHOR ACCEPTED / FROZEN (by record)
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-vael-final-author-acceptance-freeze-closure-order.md`. No geometry work: verification-only re-stage of the E: copies (byte-identical, `va_freeze_verify.py` re-read-back identical to the recorded read-back, 69 / 69 both), then `va_freeze_promote.py` promoted `VAEL_RP3_FREEZE_CANDIDATE.json` → `VAEL_RP3_FREEZE.json` (status / carry-forward edits only).
