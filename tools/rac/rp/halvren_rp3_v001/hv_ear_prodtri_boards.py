@@ -46,28 +46,16 @@ for k in EARS:
     for f in FL:
         r = rows[int(f)]; cq[f] = [0.95, 0.15, 0.1] if r['folded'] else [0.98, 0.6, 0.15]
         ct[2 * f:2 * f + 2] = [0.2, 0.45, 0.95] if int(f) in flip else FOLDC(r['fold_chosen_deg']); ca[2 * f:2 * f + 2] = FOLDC(r['fold_alternate_deg'])
-    # camera per region: the most-folded flagged quad of the left ear that is visible along its own smooth normal (numpy ray cast against every
-    # triangle within 25 cm); the view looks straight down that normal
-    vn = np.zeros((len(V), 3)); tn = np.cross(V[T[:, 1]] - V[T[:, 0]], V[T[:, 2]] - V[T[:, 0]])
-    for kk in range(3): np.add.at(vn, T[:, kk], tn)
-    vn /= np.maximum(np.linalg.norm(vn, axis=1, keepdims=True), 1e-12)
-    def visible(o, d):
-        A0, B0, C0 = V[T[:, 0]], V[T[:, 1]], V[T[:, 2]]; sel = np.linalg.norm(A0 - o, axis=1) < 25; A0, B0, C0 = A0[sel], B0[sel], C0[sel]
-        e1, e2 = B0 - A0, C0 - A0; h_ = np.cross(d, e2); a_ = (e1 * h_).sum(1); ok = np.abs(a_) > 1e-12; f_ = 1 / np.where(ok, a_, 1); s_ = o - A0
-        u_ = f_ * (s_ * h_).sum(1); q_ = np.cross(s_, e1); v_ = f_ * (q_ @ d); t_ = f_ * (e2 * q_).sum(1)
-        return not (ok & (u_ >= 0) & (v_ >= 0) & (u_ + v_ <= 1) & (t_ > 0.02)).any()
-    vws = []
+    # per region: the most-folded flagged quad of the left ear; only the local submesh (faces within 1.8 cm) is rendered, so the cuff / root band
+    # behind the auricle is not occluded; the view looks down the area-weighted normal of the faces within 0.6 cm
+    wt = dict(WIRE_T='0.00008'); cen = V[Qq].mean(1); ctri = V[T].mean(1)
     for rg, names in (('cuff_root', ('cuff', 'root_junction')), ('lobe', ('lobe_junction',)), ('tip', ('upper_helix_tip',))):
-        cand = sorted([f for f in FL if reg[f] in names and fside[f] == 'l'], key=lambda f: -rows[int(f)]['fold_chosen_deg'])
-        cand += [f for f in range(len(Qq)) if reg[f] in names and fside[f] == 'l' and f not in set(FL)][:400]
-        pick = None
-        for f in cand:
-            cc = V[Qq[f]].mean(0); d = unit(vn[Qq[f]].sum(0))
-            if visible(cc + 0.01 * d, d): pick = (cc, d); break
-        cc, d = pick if pick else (V[Qq[cand[0]]].mean(0), unit(vn[Qq[cand[0]]].sum(0)))
-        vws.append((rg, d, cc, 0.9))
-    wt = dict(WIRE_T='0.00008')
-    job('A_%s_q' % k, V, Qq, cq, vws, wire=True, env=wt); job('A_%s_t' % k, V, T, ct, vws, wire=True, env=wt); job('A_%s_a' % k, V, Ta, ca, vws, wire=True, env=wt)
+        cand = sorted([f for f in FL if reg[f] in names and fside[f] == 'l'], key=lambda f: (-int(rows[int(f)]['folded']), -rows[int(f)]['fold_chosen_deg']))
+        tgt = cand[0] if cand else [f for f in range(len(Qq)) if reg[f] in names and fside[f] == 'l'][0]; cc = cen[tgt]
+        keep = (reg != '') if rg == 'tip' else np.ones(len(Qq), bool)          # tip: auricle only (no head faces in front of the helix)
+        nbq = np.nonzero((np.linalg.norm(cen - cc, axis=1) < 0.6) & keep)[0]; d = unit(fn[nbq].sum(0)); sq = np.nonzero((np.linalg.norm(cen - cc, axis=1) < 1.8) & keep)[0]
+        st = np.nonzero((np.linalg.norm(ctri - cc, axis=1) < 1.8) & np.repeat(keep, 2))[0]; vw = [(rg, d, cc, 0.95)]
+        job('A_%s_q_%s' % (k, rg), V, Qq[sq], cq[sq], vw, wire=True, env=wt); job('A_%s_t_%s' % (k, rg), V, T[st], ct[st], vw, wire=True, env=wt); job('A_%s_a_%s' % (k, rg), V, Ta[st], ca[st], vw, wire=True, env=wt)
 # ---------------- B / B2: shading on the baked triangles; B3 quads vs triangles vs rebuild
 for k in EARS:
     for c in ('c1', 'c2'):
@@ -79,6 +67,12 @@ for k in EARS:
             job('B3q_%s' % k, sz['V'], sz['Q'], None, v4, env=dict(RENDER_LIGHTING='MATCAP:check_reflection_horizontal.exr'))
             job('B3t_%s' % k, z['V'], z['Q'], None, v4, env=dict(RENDER_LIGHTING='MATCAP:check_reflection_horizontal.exr'))
             rb = RJ[(k, c)]['rebuild']['path']; job('B3r_%s' % k, np.load(rb)['V'], z['Q'], None, v4, env=dict(RENDER_LIGHTING='MATCAP:check_reflection_horizontal.exr'))
+REFS = {'FN': 'E2', 'AE': 'AE-E2', 'VA': 'VA-E2-RI3'}
+for k, kk in REFS.items():                                           # frozen production references, same lighting / cameras (baseline rows)
+    z = np.load('%s/%s_c1_tri.npz' % (PT, k), allow_pickle=True); sz = np.load('%s/ref/%s_%s_branch.npz' % (SN, H['c1'], kk)); C, rd = cams(H['c1'])
+    vw = [(n_, *C[n_]) for n_ in ('etq', 'side', 'rq', 'rr', 'lr', 'zf')] + [('tip', *tipcam(sz['V'].astype(float), sz['side'], sz['part'], rd))]
+    job('B_%s_c1' % k, z['V'], z['Q'], None, vw, env=dict(RENDER_LIGHTING='STUDIO:rim.sl', RENDER_SPEC='1'))
+    job('B2_%s_c1' % k, z['V'], z['Q'], None, vw, env=dict(RENDER_LIGHTING='MATCAP:check_reflection_horizontal.exr'))
 # ---------------- C: two worst poses
 PSE = os.path.join(SN, 'pose')
 def kabsch(A, B):
@@ -97,6 +91,7 @@ for k in EARS:
         job('D_%s_%s_src' % (k, c), z['V'], z['Q'], None, vw, env=dict(RENDER_LIGHTING='STUDIO:rim.sl', RENDER_SPEC='1'))
         for r_ in ('50', '25'):
             l = np.load('%s/%s_%s_lod%s.npz' % (PT, k, c, r_)); job('D_%s_%s_%s' % (k, c, r_), l['V'], l['Q'], None, vw, env=dict(RENDER_LIGHTING='STUDIO:rim.sl', RENDER_SPEC='1'))
+if os.environ.get('PT_ONLY'): jobs = [j for j in jobs if j[0][6].startswith(os.environ['PT_ONLY'])]   # re-render a subset (others reused from TMP)
 with ThreadPoolExecutor(3) as ex: list(ex.map(lambda j: subprocess.run(j[0], env=j[1], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL), jobs))
 # ---------------- compose
 def sheet(fn, title, rows, heads, colw=300, note=None, lab_w=130):
@@ -118,14 +113,15 @@ def acap(k):
     return 'flagged %d (folded %d) | fold chosen max %.0f deg | step-5 flips %d | crossings: fixed a-c %d, TRI-HV1 0' % (f['count'], f['folded'], f['fold_chosen_max'], len(iv['flipped_quads']), sum(iv['fixed_split_ac_crossings'].values()))
 rowsA = []
 for k in EARS:
-    rowsA.append(('%s c1' % k, [img('A_%s_%s' % (k, s_), rg) for rg in ('cuff_root', 'lobe', 'tip') for s_ in ('q', 't', 'a')], acap(k)))
+    rowsA.append(('%s c1' % k, [img('A_%s_%s_%s' % (k, s_, rg), rg) for rg in ('cuff_root', 'lobe', 'tip') for s_ in ('q', 't', 'a')], acap(k)))
 sheet('PT_A_triangulation_closeups.jpg', 'A. Triangulation closeups (c1, left ear): per region -- quads | baked TRI-HV1 triangles | alternate-diagonal diagnostic', rowsA,
       ['cuff/root quads', 'cuff/root TRI-HV1', 'cuff/root alternate', 'lobe quads', 'lobe TRI-HV1', 'lobe alternate', 'tip quads', 'tip TRI-HV1', 'tip alternate'], colw=230,
       note='quads: flagged quads red (folded) / orange (warped > 20 deg).  triangles: tint = fold across the diagonal (amber 20-60, orange 60-90, red > 90 deg); blue = diagonal flipped by step 5 (intersection validation).\nThe alternate panels show the other diagonal on every flagged quad: red there = the alternate would fold the surface (normal break / dent).')
 VB = ['etq', 'side', 'rq', 'rr', 'lr', 'zf', 'tip']; HB = ['front 3/4', 'strict side', 'true rear 3/4', 'direct rear', 'lower-rear 3/4', 'lower-root closeup', 'upper helix / tip']
-for fn, pre, title in (('PT_B_shading_grazing.jpg', 'B', 'B. Shading on the baked triangles -- grazing studio light (rim) + specular, smooth normals, no normal map'),
+for fn, pre, title in (('PT_B_shading_grazing.jpg', 'B', 'B. Shading on the baked triangles -- grazing studio light (rim) + specular, smooth normals, no normal map (frozen Fenn / Aelari / Vael below, same rule)'),
                        ('PT_B2_shading_zebra.jpg', 'B2', 'B2. Shading on the baked triangles -- reflection-stripe matcap (zebra): a stripe break = a normal break')):
-    sheet(fn, title, [('%s %s' % (k, c), [img('%s_%s_%s' % (pre, k, c), v) for v in VB], None) for k in EARS for c in ('c1', 'c2')], HB, colw=260)
+    sheet(fn, title, [('%s %s' % (k, c), [img('%s_%s_%s' % (pre, k, c), v) for v in VB], None) for k in EARS for c in ('c1', 'c2')] +
+          [('%s c1\n(frozen ref)' % k, [img('%s_%s_c1' % (pre, k), v) for v in VB], None) for k in ('FN', 'AE', 'VA')], HB, colw=260)
 diffs = {}
 rows3 = []
 for k in EARS:

@@ -1,0 +1,6113 @@
+{
+ "label": "FN_c1",
+ "head": "HVC1-HB2HF2-HPB",
+ "snapshot": "/tmp/claude-0/rt/hv/ear/prodsnap/ref/HVC1-HB2HF2-HPB_E2_branch.npz",
+ "snapshot_V_float32_sha256": "e13b2f010404149c653be8a64e617bece2260ebd3e580a2a13636080db3fbbdb",
+ "intersection_validation": {
+  "states": [
+   "rest",
+   "neck_flex30",
+   "neck_ext30",
+   "head_yaw_l45",
+   "head_yaw_r45",
+   "head_pitch_down20",
+   "head_pitch_up20",
+   "head_roll_l20",
+   "head_roll_r20"
+  ],
+  "fixed_split_ac_crossings": {},
+  "rule_steps1_4_crossings": {},
+  "flipped_quads": [],
+  "final_crossings": {},
+  "iterations": 1,
+  "note": "crossings = triangle pairs touching the branch that intersect and share no vertex (stricter than the quad audit, which ignores triangles of vertex-adjacent quads)",
+  "flipped_regions": []
+ },
+ "order_invariance_mismatched_quads": {
+  "shift1": 0,
+  "shift2": 0,
+  "shift3": 0,
+  "reversed": 0,
+  "note": "steps 1-4 (geometry-only) under cyclic shifts / reversed winding of every quad; step 5 visits quads in the frozen index order"
+ },
+ "triangulation": {
+  "rule": "TRI-HV1",
+  "quads": 58942,
+  "triangles": 117884,
+  "branch_quads": 3718,
+  "branch_split_A_ac": 1848,
+  "branch_split_B_bd": 1870,
+  "decided_by": {
+   "fold": 1757,
+   "other": 1961
+  },
+  "branch_tri_min_angle": 5.58,
+  "branch_tri_max_aspect": 9.48,
+  "triangles_sha256": "ffafdcdb8b0d1e6af98b74fad0935067a008cf8f64fff5ab7c47f8317f5abd57"
+ },
+ "flagged": {
+  "count": 218,
+  "folded": 16,
+  "warped_only": 202,
+  "by_region": {
+   "auricle_sheet": 132,
+   "cuff": 53,
+   "lobe_junction": 6,
+   "root_junction": 9,
+   "transition": 8,
+   "upper_helix_tip": 10
+  },
+  "fold_chosen_max": 176.39,
+  "fold_alternate_of_folded_min": 91.14,
+  "deviation_max_cm": 0.0975,
+  "min_angle_chosen_min": 5.58,
+  "normal_break_chosen_max": 176.07,
+  "imprint_max": 86.72,
+  "defect_flags": {
+   "normal_flip": 2,
+   "sliver": 0,
+   "ridge_or_dent": 10,
+   "shading_discontinuity": 49,
+   "imprint": 9
+  },
+  "quads": [
+   {
+    "quad": 21462,
+    "side": "-",
+    "region": "root_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     23926,
+     23933
+    ],
+    "alternate_diagonal": [
+     5442,
+     43428
+    ],
+    "fold_chosen_deg": 23.06,
+    "fold_alternate_deg": 30.99,
+    "surface_deviation_cm": 0.0312,
+    "deviation_over_edge": 0.12,
+    "min_angle_chosen": 24.65,
+    "min_angle_alternate": 17.76,
+    "aspect_chosen": 2.39,
+    "aspect_alternate": 3.09,
+    "normal_break_chosen_deg": 22.44,
+    "normal_break_alternate_deg": 28.47,
+    "vertex_normal_imprint_deg": 3.81,
+    "flags": []
+   },
+   {
+    "quad": 21463,
+    "side": "-",
+    "region": "transition",
+    "folded": false,
+    "chosen_diagonal": [
+     5462,
+     43428
+    ],
+    "alternate_diagonal": [
+     23933,
+     23968
+    ],
+    "fold_chosen_deg": 20.98,
+    "fold_alternate_deg": 27.76,
+    "surface_deviation_cm": 0.0313,
+    "deviation_over_edge": 0.12,
+    "min_angle_chosen": 27.79,
+    "min_angle_alternate": 20.19,
+    "aspect_chosen": 2.12,
+    "aspect_alternate": 2.68,
+    "normal_break_chosen_deg": 22.79,
+    "normal_break_alternate_deg": 33.71,
+    "vertex_normal_imprint_deg": 3.93,
+    "flags": []
+   },
+   {
+    "quad": 21477,
+    "side": "-",
+    "region": "transition",
+    "folded": false,
+    "chosen_diagonal": [
+     5468,
+     43432
+    ],
+    "alternate_diagonal": [
+     23921,
+     23961
+    ],
+    "fold_chosen_deg": 24.83,
+    "fold_alternate_deg": 26.3,
+    "surface_deviation_cm": 0.0332,
+    "deviation_over_edge": 0.151,
+    "min_angle_chosen": 35.91,
+    "min_angle_alternate": 33.4,
+    "aspect_chosen": 1.7,
+    "aspect_alternate": 1.82,
+    "normal_break_chosen_deg": 57.23,
+    "normal_break_alternate_deg": 49.95,
+    "vertex_normal_imprint_deg": 3.69,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 21586,
+    "side": "-",
+    "region": "transition",
+    "folded": false,
+    "chosen_diagonal": [
+     23921,
+     23976
+    ],
+    "alternate_diagonal": [
+     5468,
+     43460
+    ],
+    "fold_chosen_deg": 32.51,
+    "fold_alternate_deg": 38.06,
+    "surface_deviation_cm": 0.0468,
+    "deviation_over_edge": 0.207,
+    "min_angle_chosen": 37.08,
+    "min_angle_alternate": 30.63,
+    "aspect_chosen": 1.64,
+    "aspect_alternate": 1.94,
+    "normal_break_chosen_deg": 49.07,
+    "normal_break_alternate_deg": 43.51,
+    "vertex_normal_imprint_deg": 5.38,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 21587,
+    "side": "-",
+    "region": "root_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     23920,
+     23921
+    ],
+    "alternate_diagonal": [
+     5436,
+     43460
+    ],
+    "fold_chosen_deg": 28.94,
+    "fold_alternate_deg": 29.8,
+    "surface_deviation_cm": 0.0439,
+    "deviation_over_edge": 0.174,
+    "min_angle_chosen": 36.1,
+    "min_angle_alternate": 34.24,
+    "aspect_chosen": 1.69,
+    "aspect_alternate": 1.77,
+    "normal_break_chosen_deg": 30.5,
+    "normal_break_alternate_deg": 40.9,
+    "vertex_normal_imprint_deg": 4.19,
+    "flags": []
+   },
+   {
+    "quad": 21588,
+    "side": "-",
+    "region": "root_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     23920,
+     23953
+    ],
+    "alternate_diagonal": [
+     5452,
+     43460
+    ],
+    "fold_chosen_deg": 26.44,
+    "fold_alternate_deg": 31.64,
+    "surface_deviation_cm": 0.0428,
+    "deviation_over_edge": 0.17,
+    "min_angle_chosen": 39.95,
+    "min_angle_alternate": 31.84,
+    "aspect_chosen": 1.55,
+    "aspect_alternate": 1.89,
+    "normal_break_chosen_deg": 34.37,
+    "normal_break_alternate_deg": 28.1,
+    "vertex_normal_imprint_deg": 4.74,
+    "flags": []
+   },
+   {
+    "quad": 21589,
+    "side": "-",
+    "region": "transition",
+    "folded": false,
+    "chosen_diagonal": [
+     5466,
+     43460
+    ],
+    "alternate_diagonal": [
+     23953,
+     23976
+    ],
+    "fold_chosen_deg": 22.82,
+    "fold_alternate_deg": 27.04,
+    "surface_deviation_cm": 0.0368,
+    "deviation_over_edge": 0.149,
+    "min_angle_chosen": 39.72,
+    "min_angle_alternate": 31.47,
+    "aspect_chosen": 1.56,
+    "aspect_alternate": 1.84,
+    "normal_break_chosen_deg": 31.53,
+    "normal_break_alternate_deg": 26.9,
+    "vertex_normal_imprint_deg": 4.63,
+    "flags": []
+   },
+   {
+    "quad": 49323,
+    "side": "-",
+    "region": "transition",
+    "folded": false,
+    "chosen_diagonal": [
+     11769,
+     49851
+    ],
+    "alternate_diagonal": [
+     36440,
+     36475
+    ],
+    "fold_chosen_deg": 20.57,
+    "fold_alternate_deg": 28.04,
+    "surface_deviation_cm": 0.0314,
+    "deviation_over_edge": 0.12,
+    "min_angle_chosen": 28.58,
+    "min_angle_alternate": 20.03,
+    "aspect_chosen": 2.07,
+    "aspect_alternate": 2.67,
+    "normal_break_chosen_deg": 22.48,
+    "normal_break_alternate_deg": 33.65,
+    "vertex_normal_imprint_deg": 4.08,
+    "flags": []
+   },
+   {
+    "quad": 49324,
+    "side": "-",
+    "region": "root_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     36433,
+     36440
+    ],
+    "alternate_diagonal": [
+     11749,
+     49851
+    ],
+    "fold_chosen_deg": 23.56,
+    "fold_alternate_deg": 30.6,
+    "surface_deviation_cm": 0.0311,
+    "deviation_over_edge": 0.12,
+    "min_angle_chosen": 23.9,
+    "min_angle_alternate": 17.86,
+    "aspect_chosen": 2.45,
+    "aspect_alternate": 3.12,
+    "normal_break_chosen_deg": 22.53,
+    "normal_break_alternate_deg": 28.8,
+    "vertex_normal_imprint_deg": 3.63,
+    "flags": []
+   },
+   {
+    "quad": 49341,
+    "side": "-",
+    "region": "transition",
+    "folded": false,
+    "chosen_diagonal": [
+     11775,
+     49855
+    ],
+    "alternate_diagonal": [
+     36428,
+     36468
+    ],
+    "fold_chosen_deg": 25.45,
+    "fold_alternate_deg": 26.82,
+    "surface_deviation_cm": 0.0338,
+    "deviation_over_edge": 0.155,
+    "min_angle_chosen": 35.74,
+    "min_angle_alternate": 33.44,
+    "aspect_chosen": 1.71,
+    "aspect_alternate": 1.81,
+    "normal_break_chosen_deg": 57.8,
+    "normal_break_alternate_deg": 50.37,
+    "vertex_normal_imprint_deg": 3.72,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 49448,
+    "side": "-",
+    "region": "transition",
+    "folded": false,
+    "chosen_diagonal": [
+     36428,
+     36483
+    ],
+    "alternate_diagonal": [
+     11775,
+     49883
+    ],
+    "fold_chosen_deg": 32.95,
+    "fold_alternate_deg": 38.26,
+    "surface_deviation_cm": 0.0472,
+    "deviation_over_edge": 0.209,
+    "min_angle_chosen": 36.71,
+    "min_angle_alternate": 30.59,
+    "aspect_chosen": 1.65,
+    "aspect_alternate": 1.94,
+    "normal_break_chosen_deg": 49.4,
+    "normal_break_alternate_deg": 43.48,
+    "vertex_normal_imprint_deg": 5.37,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 49449,
+    "side": "-",
+    "region": "transition",
+    "folded": false,
+    "chosen_diagonal": [
+     11773,
+     49883
+    ],
+    "alternate_diagonal": [
+     36460,
+     36483
+    ],
+    "fold_chosen_deg": 22.91,
+    "fold_alternate_deg": 27.03,
+    "surface_deviation_cm": 0.0369,
+    "deviation_over_edge": 0.149,
+    "min_angle_chosen": 39.54,
+    "min_angle_alternate": 31.48,
+    "aspect_chosen": 1.57,
+    "aspect_alternate": 1.84,
+    "normal_break_chosen_deg": 31.51,
+    "normal_break_alternate_deg": 26.77,
+    "vertex_normal_imprint_deg": 4.62,
+    "flags": []
+   },
+   {
+    "quad": 49450,
+    "side": "-",
+    "region": "root_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     36427,
+     36460
+    ],
+    "alternate_diagonal": [
+     11759,
+     49883
+    ],
+    "fold_chosen_deg": 26.3,
+    "fold_alternate_deg": 31.56,
+    "surface_deviation_cm": 0.0427,
+    "deviation_over_edge": 0.169,
+    "min_angle_chosen": 40.0,
+    "min_angle_alternate": 31.81,
+    "aspect_chosen": 1.55,
+    "aspect_alternate": 1.89,
+    "normal_break_chosen_deg": 34.56,
+    "normal_break_alternate_deg": 28.25,
+    "vertex_normal_imprint_deg": 4.73,
+    "flags": []
+   },
+   {
+    "quad": 49451,
+    "side": "-",
+    "region": "root_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     36427,
+     36428
+    ],
+    "alternate_diagonal": [
+     11743,
+     49883
+    ],
+    "fold_chosen_deg": 28.7,
+    "fold_alternate_deg": 29.32,
+    "surface_deviation_cm": 0.0435,
+    "deviation_over_edge": 0.172,
+    "min_angle_chosen": 35.89,
+    "min_angle_alternate": 34.36,
+    "aspect_chosen": 1.7,
+    "aspect_alternate": 1.77,
+    "normal_break_chosen_deg": 29.07,
+    "normal_break_alternate_deg": 40.77,
+    "vertex_normal_imprint_deg": 4.17,
+    "flags": []
+   },
+   {
+    "quad": 55428,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": true,
+    "chosen_diagonal": [
+     55480,
+     55485
+    ],
+    "alternate_diagonal": [
+     55481,
+     55484
+    ],
+    "fold_chosen_deg": 10.35,
+    "fold_alternate_deg": 93.38,
+    "surface_deviation_cm": 0.0156,
+    "deviation_over_edge": 0.063,
+    "min_angle_chosen": 22.84,
+    "min_angle_alternate": 2.73,
+    "aspect_chosen": 2.57,
+    "aspect_alternate": 3.77,
+    "normal_break_chosen_deg": 16.33,
+    "normal_break_alternate_deg": 86.73,
+    "vertex_normal_imprint_deg": 42.03,
+    "flags": [
+     "imprint"
+    ]
+   },
+   {
+    "quad": 55430,
+    "side": "l",
+    "region": "lobe_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     55482,
+     55487
+    ],
+    "alternate_diagonal": [
+     55483,
+     55486
+    ],
+    "fold_chosen_deg": 20.15,
+    "fold_alternate_deg": 24.59,
+    "surface_deviation_cm": 0.0372,
+    "deviation_over_edge": 0.118,
+    "min_angle_chosen": 33.58,
+    "min_angle_alternate": 26.49,
+    "aspect_chosen": 1.81,
+    "aspect_alternate": 2.24,
+    "normal_break_chosen_deg": 11.11,
+    "normal_break_alternate_deg": 23.63,
+    "vertex_normal_imprint_deg": 4.2,
+    "flags": []
+   },
+   {
+    "quad": 55433,
+    "side": "l",
+    "region": "lobe_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     55486,
+     55491
+    ],
+    "alternate_diagonal": [
+     55487,
+     55490
+    ],
+    "fold_chosen_deg": 20.08,
+    "fold_alternate_deg": 27.05,
+    "surface_deviation_cm": 0.0193,
+    "deviation_over_edge": 0.069,
+    "min_angle_chosen": 11.5,
+    "min_angle_alternate": 7.74,
+    "aspect_chosen": 4.8,
+    "aspect_alternate": 5.92,
+    "normal_break_chosen_deg": 14.37,
+    "normal_break_alternate_deg": 26.91,
+    "vertex_normal_imprint_deg": 3.81,
+    "flags": []
+   },
+   {
+    "quad": 55438,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55493,
+     55498
+    ],
+    "alternate_diagonal": [
+     55494,
+     55497
+    ],
+    "fold_chosen_deg": 27.98,
+    "fold_alternate_deg": 38.34,
+    "surface_deviation_cm": 0.026,
+    "deviation_over_edge": 0.086,
+    "min_angle_chosen": 11.15,
+    "min_angle_alternate": 7.42,
+    "aspect_chosen": 4.76,
+    "aspect_alternate": 6.12,
+    "normal_break_chosen_deg": 25.18,
+    "normal_break_alternate_deg": 26.29,
+    "vertex_normal_imprint_deg": 4.28,
+    "flags": []
+   },
+   {
+    "quad": 55456,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55517,
+     55522
+    ],
+    "alternate_diagonal": [
+     55518,
+     55521
+    ],
+    "fold_chosen_deg": 27.41,
+    "fold_alternate_deg": 34.12,
+    "surface_deviation_cm": 0.0381,
+    "deviation_over_edge": 0.11,
+    "min_angle_chosen": 14.94,
+    "min_angle_alternate": 12.24,
+    "aspect_chosen": 3.71,
+    "aspect_alternate": 3.8,
+    "normal_break_chosen_deg": 39.38,
+    "normal_break_alternate_deg": 34.36,
+    "vertex_normal_imprint_deg": 5.1,
+    "flags": []
+   },
+   {
+    "quad": 55459,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55521,
+     55526
+    ],
+    "alternate_diagonal": [
+     55522,
+     55525
+    ],
+    "fold_chosen_deg": 36.5,
+    "fold_alternate_deg": 44.42,
+    "surface_deviation_cm": 0.0488,
+    "deviation_over_edge": 0.125,
+    "min_angle_chosen": 12.28,
+    "min_angle_alternate": 10.44,
+    "aspect_chosen": 4.28,
+    "aspect_alternate": 4.34,
+    "normal_break_chosen_deg": 49.08,
+    "normal_break_alternate_deg": 47.99,
+    "vertex_normal_imprint_deg": 5.74,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 55462,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55525,
+     55530
+    ],
+    "alternate_diagonal": [
+     55526,
+     55529
+    ],
+    "fold_chosen_deg": 32.96,
+    "fold_alternate_deg": 39.47,
+    "surface_deviation_cm": 0.0421,
+    "deviation_over_edge": 0.097,
+    "min_angle_chosen": 10.65,
+    "min_angle_alternate": 9.03,
+    "aspect_chosen": 4.79,
+    "aspect_alternate": 4.94,
+    "normal_break_chosen_deg": 43.93,
+    "normal_break_alternate_deg": 49.89,
+    "vertex_normal_imprint_deg": 4.21,
+    "flags": []
+   },
+   {
+    "quad": 55464,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55528,
+     55533
+    ],
+    "alternate_diagonal": [
+     55529,
+     55532
+    ],
+    "fold_chosen_deg": 32.74,
+    "fold_alternate_deg": 35.21,
+    "surface_deviation_cm": 0.0383,
+    "deviation_over_edge": 0.109,
+    "min_angle_chosen": 11.59,
+    "min_angle_alternate": 10.96,
+    "aspect_chosen": 4.97,
+    "aspect_alternate": 4.98,
+    "normal_break_chosen_deg": 31.16,
+    "normal_break_alternate_deg": 32.2,
+    "vertex_normal_imprint_deg": 3.43,
+    "flags": []
+   },
+   {
+    "quad": 55465,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55530,
+     55533
+    ],
+    "alternate_diagonal": [
+     55529,
+     55534
+    ],
+    "fold_chosen_deg": 27.36,
+    "fold_alternate_deg": 29.02,
+    "surface_deviation_cm": 0.0382,
+    "deviation_over_edge": 0.085,
+    "min_angle_chosen": 12.38,
+    "min_angle_alternate": 11.61,
+    "aspect_chosen": 4.65,
+    "aspect_alternate": 4.96,
+    "normal_break_chosen_deg": 42.27,
+    "normal_break_alternate_deg": 52.6,
+    "vertex_normal_imprint_deg": 1.95,
+    "flags": []
+   },
+   {
+    "quad": 55467,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55532,
+     55537
+    ],
+    "alternate_diagonal": [
+     55533,
+     55536
+    ],
+    "fold_chosen_deg": 21.43,
+    "fold_alternate_deg": 22.29,
+    "surface_deviation_cm": 0.024,
+    "deviation_over_edge": 0.065,
+    "min_angle_chosen": 10.99,
+    "min_angle_alternate": 10.62,
+    "aspect_chosen": 5.25,
+    "aspect_alternate": 5.28,
+    "normal_break_chosen_deg": 20.66,
+    "normal_break_alternate_deg": 24.7,
+    "vertex_normal_imprint_deg": 1.71,
+    "flags": []
+   },
+   {
+    "quad": 55468,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55533,
+     55538
+    ],
+    "alternate_diagonal": [
+     55534,
+     55537
+    ],
+    "fold_chosen_deg": 32.68,
+    "fold_alternate_deg": 33.49,
+    "surface_deviation_cm": 0.0415,
+    "deviation_over_edge": 0.098,
+    "min_angle_chosen": 12.11,
+    "min_angle_alternate": 11.76,
+    "aspect_chosen": 4.76,
+    "aspect_alternate": 4.89,
+    "normal_break_chosen_deg": 55.98,
+    "normal_break_alternate_deg": 48.32,
+    "vertex_normal_imprint_deg": 2.23,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 55473,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55540,
+     55545
+    ],
+    "alternate_diagonal": [
+     55541,
+     55544
+    ],
+    "fold_chosen_deg": 21.04,
+    "fold_alternate_deg": 22.82,
+    "surface_deviation_cm": 0.0242,
+    "deviation_over_edge": 0.067,
+    "min_angle_chosen": 12.03,
+    "min_angle_alternate": 10.88,
+    "aspect_chosen": 4.79,
+    "aspect_alternate": 5.28,
+    "normal_break_chosen_deg": 28.44,
+    "normal_break_alternate_deg": 18.3,
+    "vertex_normal_imprint_deg": 1.6,
+    "flags": []
+   },
+   {
+    "quad": 55475,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55543,
+     55546
+    ],
+    "alternate_diagonal": [
+     55542,
+     55547
+    ],
+    "fold_chosen_deg": 21.56,
+    "fold_alternate_deg": 21.89,
+    "surface_deviation_cm": 0.0326,
+    "deviation_over_edge": 0.073,
+    "min_angle_chosen": 13.92,
+    "min_angle_alternate": 13.63,
+    "aspect_chosen": 4.11,
+    "aspect_alternate": 4.23,
+    "normal_break_chosen_deg": 35.1,
+    "normal_break_alternate_deg": 34.78,
+    "vertex_normal_imprint_deg": 1.71,
+    "flags": []
+   },
+   {
+    "quad": 55476,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55544,
+     55549
+    ],
+    "alternate_diagonal": [
+     55545,
+     55548
+    ],
+    "fold_chosen_deg": 36.54,
+    "fold_alternate_deg": 38.62,
+    "surface_deviation_cm": 0.0439,
+    "deviation_over_edge": 0.129,
+    "min_angle_chosen": 13.2,
+    "min_angle_alternate": 11.96,
+    "aspect_chosen": 4.37,
+    "aspect_alternate": 4.83,
+    "normal_break_chosen_deg": 33.59,
+    "normal_break_alternate_deg": 37.65,
+    "vertex_normal_imprint_deg": 3.11,
+    "flags": []
+   },
+   {
+    "quad": 55478,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55546,
+     55551
+    ],
+    "alternate_diagonal": [
+     55547,
+     55550
+    ],
+    "fold_chosen_deg": 23.71,
+    "fold_alternate_deg": 24.39,
+    "surface_deviation_cm": 0.0362,
+    "deviation_over_edge": 0.088,
+    "min_angle_chosen": 15.23,
+    "min_angle_alternate": 14.96,
+    "aspect_chosen": 3.81,
+    "aspect_alternate": 3.74,
+    "normal_break_chosen_deg": 31.45,
+    "normal_break_alternate_deg": 33.41,
+    "vertex_normal_imprint_deg": 2.32,
+    "flags": []
+   },
+   {
+    "quad": 55479,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55548,
+     55553
+    ],
+    "alternate_diagonal": [
+     55549,
+     55552
+    ],
+    "fold_chosen_deg": 22.56,
+    "fold_alternate_deg": 22.7,
+    "surface_deviation_cm": 0.0244,
+    "deviation_over_edge": 0.08,
+    "min_angle_chosen": 13.87,
+    "min_angle_alternate": 13.61,
+    "aspect_chosen": 4.13,
+    "aspect_alternate": 4.23,
+    "normal_break_chosen_deg": 25.73,
+    "normal_break_alternate_deg": 28.03,
+    "vertex_normal_imprint_deg": 1.92,
+    "flags": []
+   },
+   {
+    "quad": 55481,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55550,
+     55555
+    ],
+    "alternate_diagonal": [
+     55551,
+     55554
+    ],
+    "fold_chosen_deg": 37.46,
+    "fold_alternate_deg": 42.38,
+    "surface_deviation_cm": 0.0585,
+    "deviation_over_edge": 0.158,
+    "min_angle_chosen": 17.02,
+    "min_angle_alternate": 15.53,
+    "aspect_chosen": 3.39,
+    "aspect_alternate": 3.4,
+    "normal_break_chosen_deg": 40.88,
+    "normal_break_alternate_deg": 31.06,
+    "vertex_normal_imprint_deg": 5.43,
+    "flags": []
+   },
+   {
+    "quad": 55482,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55553,
+     55556
+    ],
+    "alternate_diagonal": [
+     55552,
+     55557
+    ],
+    "fold_chosen_deg": 28.62,
+    "fold_alternate_deg": 30.62,
+    "surface_deviation_cm": 0.0318,
+    "deviation_over_edge": 0.11,
+    "min_angle_chosen": 14.98,
+    "min_angle_alternate": 14.06,
+    "aspect_chosen": 3.86,
+    "aspect_alternate": 4.01,
+    "normal_break_chosen_deg": 29.48,
+    "normal_break_alternate_deg": 30.79,
+    "vertex_normal_imprint_deg": 2.96,
+    "flags": []
+   },
+   {
+    "quad": 55483,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55553,
+     55558
+    ],
+    "alternate_diagonal": [
+     55554,
+     55557
+    ],
+    "fold_chosen_deg": 39.74,
+    "fold_alternate_deg": 46.02,
+    "surface_deviation_cm": 0.0494,
+    "deviation_over_edge": 0.162,
+    "min_angle_chosen": 17.5,
+    "min_angle_alternate": 15.41,
+    "aspect_chosen": 3.27,
+    "aspect_alternate": 3.49,
+    "normal_break_chosen_deg": 30.53,
+    "normal_break_alternate_deg": 60.93,
+    "vertex_normal_imprint_deg": 5.47,
+    "flags": []
+   },
+   {
+    "quad": 55484,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55554,
+     55559
+    ],
+    "alternate_diagonal": [
+     55555,
+     55558
+    ],
+    "fold_chosen_deg": 29.47,
+    "fold_alternate_deg": 36.85,
+    "surface_deviation_cm": 0.0414,
+    "deviation_over_edge": 0.129,
+    "min_angle_chosen": 19.51,
+    "min_angle_alternate": 15.26,
+    "aspect_chosen": 2.98,
+    "aspect_alternate": 3.71,
+    "normal_break_chosen_deg": 43.92,
+    "normal_break_alternate_deg": 43.22,
+    "vertex_normal_imprint_deg": 4.17,
+    "flags": []
+   },
+   {
+    "quad": 55485,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55557,
+     55560
+    ],
+    "alternate_diagonal": [
+     55556,
+     55561
+    ],
+    "fold_chosen_deg": 25.95,
+    "fold_alternate_deg": 29.35,
+    "surface_deviation_cm": 0.029,
+    "deviation_over_edge": 0.105,
+    "min_angle_chosen": 16.0,
+    "min_angle_alternate": 14.09,
+    "aspect_chosen": 3.63,
+    "aspect_alternate": 3.89,
+    "normal_break_chosen_deg": 26.12,
+    "normal_break_alternate_deg": 25.44,
+    "vertex_normal_imprint_deg": 3.11,
+    "flags": []
+   },
+   {
+    "quad": 55489,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55561,
+     55566
+    ],
+    "alternate_diagonal": [
+     55562,
+     55565
+    ],
+    "fold_chosen_deg": 28.35,
+    "fold_alternate_deg": 30.22,
+    "surface_deviation_cm": 0.034,
+    "deviation_over_edge": 0.127,
+    "min_angle_chosen": 18.53,
+    "min_angle_alternate": 17.02,
+    "aspect_chosen": 3.15,
+    "aspect_alternate": 3.41,
+    "normal_break_chosen_deg": 26.02,
+    "normal_break_alternate_deg": 36.01,
+    "vertex_normal_imprint_deg": 2.98,
+    "flags": []
+   },
+   {
+    "quad": 55597,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55681,
+     55692
+    ],
+    "alternate_diagonal": [
+     55680,
+     55693
+    ],
+    "fold_chosen_deg": 21.99,
+    "fold_alternate_deg": 26.75,
+    "surface_deviation_cm": 0.0241,
+    "deviation_over_edge": 0.147,
+    "min_angle_chosen": 44.5,
+    "min_angle_alternate": 35.06,
+    "aspect_chosen": 1.4,
+    "aspect_alternate": 1.71,
+    "normal_break_chosen_deg": 17.0,
+    "normal_break_alternate_deg": 20.44,
+    "vertex_normal_imprint_deg": 3.77,
+    "flags": []
+   },
+   {
+    "quad": 55598,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55682,
+     55693
+    ],
+    "alternate_diagonal": [
+     55681,
+     55694
+    ],
+    "fold_chosen_deg": 24.72,
+    "fold_alternate_deg": 31.89,
+    "surface_deviation_cm": 0.0288,
+    "deviation_over_edge": 0.168,
+    "min_angle_chosen": 44.04,
+    "min_angle_alternate": 32.02,
+    "aspect_chosen": 1.4,
+    "aspect_alternate": 1.84,
+    "normal_break_chosen_deg": 24.37,
+    "normal_break_alternate_deg": 28.16,
+    "vertex_normal_imprint_deg": 4.62,
+    "flags": []
+   },
+   {
+    "quad": 55601,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55685,
+     55696
+    ],
+    "alternate_diagonal": [
+     55684,
+     55697
+    ],
+    "fold_chosen_deg": 22.55,
+    "fold_alternate_deg": 22.73,
+    "surface_deviation_cm": 0.0231,
+    "deviation_over_edge": 0.136,
+    "min_angle_chosen": 37.11,
+    "min_angle_alternate": 36.99,
+    "aspect_chosen": 1.65,
+    "aspect_alternate": 1.66,
+    "normal_break_chosen_deg": 19.03,
+    "normal_break_alternate_deg": 24.33,
+    "vertex_normal_imprint_deg": 3.13,
+    "flags": []
+   },
+   {
+    "quad": 55608,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55519,
+     55692
+    ],
+    "alternate_diagonal": [
+     55515,
+     55704
+    ],
+    "fold_chosen_deg": 23.64,
+    "fold_alternate_deg": 29.69,
+    "surface_deviation_cm": 0.0259,
+    "deviation_over_edge": 0.159,
+    "min_angle_chosen": 42.92,
+    "min_angle_alternate": 32.44,
+    "aspect_chosen": 1.43,
+    "aspect_alternate": 1.8,
+    "normal_break_chosen_deg": 16.26,
+    "normal_break_alternate_deg": 24.66,
+    "vertex_normal_imprint_deg": 4.64,
+    "flags": []
+   },
+   {
+    "quad": 55609,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55693,
+     55704
+    ],
+    "alternate_diagonal": [
+     55692,
+     55705
+    ],
+    "fold_chosen_deg": 25.13,
+    "fold_alternate_deg": 35.28,
+    "surface_deviation_cm": 0.0316,
+    "deviation_over_edge": 0.176,
+    "min_angle_chosen": 47.3,
+    "min_angle_alternate": 29.42,
+    "aspect_chosen": 1.31,
+    "aspect_alternate": 1.89,
+    "normal_break_chosen_deg": 17.73,
+    "normal_break_alternate_deg": 25.6,
+    "vertex_normal_imprint_deg": 6.02,
+    "flags": []
+   },
+   {
+    "quad": 55612,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55695,
+     55708
+    ],
+    "alternate_diagonal": [
+     55696,
+     55707
+    ],
+    "fold_chosen_deg": 22.2,
+    "fold_alternate_deg": 23.09,
+    "surface_deviation_cm": 0.0228,
+    "deviation_over_edge": 0.13,
+    "min_angle_chosen": 33.61,
+    "min_angle_alternate": 31.82,
+    "aspect_chosen": 1.8,
+    "aspect_alternate": 1.89,
+    "normal_break_chosen_deg": 35.02,
+    "normal_break_alternate_deg": 30.45,
+    "vertex_normal_imprint_deg": 3.11,
+    "flags": []
+   },
+   {
+    "quad": 55613,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55696,
+     55709
+    ],
+    "alternate_diagonal": [
+     55697,
+     55708
+    ],
+    "fold_chosen_deg": 21.31,
+    "fold_alternate_deg": 22.91,
+    "surface_deviation_cm": 0.0235,
+    "deviation_over_edge": 0.134,
+    "min_angle_chosen": 40.5,
+    "min_angle_alternate": 36.35,
+    "aspect_chosen": 1.54,
+    "aspect_alternate": 1.68,
+    "normal_break_chosen_deg": 24.77,
+    "normal_break_alternate_deg": 19.95,
+    "vertex_normal_imprint_deg": 3.06,
+    "flags": []
+   },
+   {
+    "quad": 55643,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55726,
+     55739
+    ],
+    "alternate_diagonal": [
+     55727,
+     55738
+    ],
+    "fold_chosen_deg": 24.15,
+    "fold_alternate_deg": 25.37,
+    "surface_deviation_cm": 0.0243,
+    "deviation_over_edge": 0.153,
+    "min_angle_chosen": 44.92,
+    "min_angle_alternate": 42.33,
+    "aspect_chosen": 1.41,
+    "aspect_alternate": 1.48,
+    "normal_break_chosen_deg": 28.31,
+    "normal_break_alternate_deg": 31.69,
+    "vertex_normal_imprint_deg": 3.44,
+    "flags": []
+   },
+   {
+    "quad": 55654,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55737,
+     55750
+    ],
+    "alternate_diagonal": [
+     55738,
+     55749
+    ],
+    "fold_chosen_deg": 22.55,
+    "fold_alternate_deg": 23.5,
+    "surface_deviation_cm": 0.0219,
+    "deviation_over_edge": 0.142,
+    "min_angle_chosen": 43.33,
+    "min_angle_alternate": 41.23,
+    "aspect_chosen": 1.45,
+    "aspect_alternate": 1.51,
+    "normal_break_chosen_deg": 21.84,
+    "normal_break_alternate_deg": 15.73,
+    "vertex_normal_imprint_deg": 3.14,
+    "flags": []
+   },
+   {
+    "quad": 55666,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55750,
+     55761
+    ],
+    "alternate_diagonal": [
+     55749,
+     55762
+    ],
+    "fold_chosen_deg": 21.3,
+    "fold_alternate_deg": 22.01,
+    "surface_deviation_cm": 0.0215,
+    "deviation_over_edge": 0.133,
+    "min_angle_chosen": 42.57,
+    "min_angle_alternate": 40.43,
+    "aspect_chosen": 1.48,
+    "aspect_alternate": 1.54,
+    "normal_break_chosen_deg": 19.5,
+    "normal_break_alternate_deg": 22.86,
+    "vertex_normal_imprint_deg": 3.01,
+    "flags": []
+   },
+   {
+    "quad": 55793,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55876,
+     55889
+    ],
+    "alternate_diagonal": [
+     55877,
+     55888
+    ],
+    "fold_chosen_deg": 23.57,
+    "fold_alternate_deg": 46.02,
+    "surface_deviation_cm": 0.0304,
+    "deviation_over_edge": 0.183,
+    "min_angle_chosen": 47.87,
+    "min_angle_alternate": 25.6,
+    "aspect_chosen": 1.27,
+    "aspect_alternate": 1.94,
+    "normal_break_chosen_deg": 21.93,
+    "normal_break_alternate_deg": 47.03,
+    "vertex_normal_imprint_deg": 8.37,
+    "flags": []
+   },
+   {
+    "quad": 55795,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55878,
+     55891
+    ],
+    "alternate_diagonal": [
+     55879,
+     55890
+    ],
+    "fold_chosen_deg": 27.65,
+    "fold_alternate_deg": 53.98,
+    "surface_deviation_cm": 0.0373,
+    "deviation_over_edge": 0.212,
+    "min_angle_chosen": 44.71,
+    "min_angle_alternate": 23.89,
+    "aspect_chosen": 1.37,
+    "aspect_alternate": 1.98,
+    "normal_break_chosen_deg": 29.23,
+    "normal_break_alternate_deg": 48.74,
+    "vertex_normal_imprint_deg": 11.02,
+    "flags": []
+   },
+   {
+    "quad": 55806,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55889,
+     55902
+    ],
+    "alternate_diagonal": [
+     55890,
+     55901
+    ],
+    "fold_chosen_deg": 24.71,
+    "fold_alternate_deg": 51.54,
+    "surface_deviation_cm": 0.0358,
+    "deviation_over_edge": 0.187,
+    "min_angle_chosen": 41.38,
+    "min_angle_alternate": 21.99,
+    "aspect_chosen": 1.51,
+    "aspect_alternate": 2.15,
+    "normal_break_chosen_deg": 23.47,
+    "normal_break_alternate_deg": 33.98,
+    "vertex_normal_imprint_deg": 11.41,
+    "flags": []
+   },
+   {
+    "quad": 55814,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55897,
+     55910
+    ],
+    "alternate_diagonal": [
+     55898,
+     55909
+    ],
+    "fold_chosen_deg": 23.32,
+    "fold_alternate_deg": 39.37,
+    "surface_deviation_cm": 0.0319,
+    "deviation_over_edge": 0.174,
+    "min_angle_chosen": 52.58,
+    "min_angle_alternate": 26.66,
+    "aspect_chosen": 1.16,
+    "aspect_alternate": 1.84,
+    "normal_break_chosen_deg": 34.42,
+    "normal_break_alternate_deg": 34.29,
+    "vertex_normal_imprint_deg": 7.98,
+    "flags": []
+   },
+   {
+    "quad": 55816,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55899,
+     55912
+    ],
+    "alternate_diagonal": [
+     55900,
+     55911
+    ],
+    "fold_chosen_deg": 20.7,
+    "fold_alternate_deg": 39.35,
+    "surface_deviation_cm": 0.0263,
+    "deviation_over_edge": 0.158,
+    "min_angle_chosen": 49.11,
+    "min_angle_alternate": 24.99,
+    "aspect_chosen": 1.26,
+    "aspect_alternate": 2.0,
+    "normal_break_chosen_deg": 21.23,
+    "normal_break_alternate_deg": 31.22,
+    "vertex_normal_imprint_deg": 7.09,
+    "flags": []
+   },
+   {
+    "quad": 55825,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55908,
+     55921
+    ],
+    "alternate_diagonal": [
+     55909,
+     55920
+    ],
+    "fold_chosen_deg": 29.15,
+    "fold_alternate_deg": 39.34,
+    "surface_deviation_cm": 0.0386,
+    "deviation_over_edge": 0.193,
+    "min_angle_chosen": 41.36,
+    "min_angle_alternate": 28.86,
+    "aspect_chosen": 1.47,
+    "aspect_alternate": 2.04,
+    "normal_break_chosen_deg": 33.35,
+    "normal_break_alternate_deg": 26.48,
+    "vertex_normal_imprint_deg": 6.28,
+    "flags": []
+   },
+   {
+    "quad": 55826,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55909,
+     55922
+    ],
+    "alternate_diagonal": [
+     55910,
+     55921
+    ],
+    "fold_chosen_deg": 51.91,
+    "fold_alternate_deg": 69.2,
+    "surface_deviation_cm": 0.0709,
+    "deviation_over_edge": 0.363,
+    "min_angle_chosen": 47.38,
+    "min_angle_alternate": 33.56,
+    "aspect_chosen": 1.25,
+    "aspect_alternate": 1.76,
+    "normal_break_chosen_deg": 36.88,
+    "normal_break_alternate_deg": 50.48,
+    "vertex_normal_imprint_deg": 10.79,
+    "flags": []
+   },
+   {
+    "quad": 55827,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55910,
+     55923
+    ],
+    "alternate_diagonal": [
+     55911,
+     55922
+    ],
+    "fold_chosen_deg": 32.06,
+    "fold_alternate_deg": 45.79,
+    "surface_deviation_cm": 0.0427,
+    "deviation_over_edge": 0.215,
+    "min_angle_chosen": 39.88,
+    "min_angle_alternate": 27.22,
+    "aspect_chosen": 1.54,
+    "aspect_alternate": 1.95,
+    "normal_break_chosen_deg": 37.67,
+    "normal_break_alternate_deg": 47.6,
+    "vertex_normal_imprint_deg": 8.4,
+    "flags": []
+   },
+   {
+    "quad": 55829,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55912,
+     55925
+    ],
+    "alternate_diagonal": [
+     55913,
+     55924
+    ],
+    "fold_chosen_deg": 33.74,
+    "fold_alternate_deg": 64.17,
+    "surface_deviation_cm": 0.047,
+    "deviation_over_edge": 0.252,
+    "min_angle_chosen": 41.05,
+    "min_angle_alternate": 22.49,
+    "aspect_chosen": 1.49,
+    "aspect_alternate": 2.09,
+    "normal_break_chosen_deg": 30.59,
+    "normal_break_alternate_deg": 56.25,
+    "vertex_normal_imprint_deg": 14.11,
+    "flags": []
+   },
+   {
+    "quad": 55836,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55591,
+     55932
+    ],
+    "alternate_diagonal": [
+     55595,
+     55920
+    ],
+    "fold_chosen_deg": 27.89,
+    "fold_alternate_deg": 31.41,
+    "surface_deviation_cm": 0.024,
+    "deviation_over_edge": 0.163,
+    "min_angle_chosen": 38.36,
+    "min_angle_alternate": 32.04,
+    "aspect_chosen": 1.59,
+    "aspect_alternate": 1.86,
+    "normal_break_chosen_deg": 33.76,
+    "normal_break_alternate_deg": 23.3,
+    "vertex_normal_imprint_deg": 5.73,
+    "flags": []
+   },
+   {
+    "quad": 55860,
+    "side": "l",
+    "region": "lobe_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     55957,
+     55971
+    ],
+    "alternate_diagonal": [
+     55958,
+     55970
+    ],
+    "fold_chosen_deg": 21.79,
+    "fold_alternate_deg": 25.82,
+    "surface_deviation_cm": 0.0269,
+    "deviation_over_edge": 0.144,
+    "min_angle_chosen": 45.16,
+    "min_angle_alternate": 36.2,
+    "aspect_chosen": 1.4,
+    "aspect_alternate": 1.68,
+    "normal_break_chosen_deg": 19.94,
+    "normal_break_alternate_deg": 31.75,
+    "vertex_normal_imprint_deg": 3.83,
+    "flags": []
+   },
+   {
+    "quad": 55933,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56037,
+     56049
+    ],
+    "alternate_diagonal": [
+     56036,
+     56050
+    ],
+    "fold_chosen_deg": 21.47,
+    "fold_alternate_deg": 26.93,
+    "surface_deviation_cm": 0.0246,
+    "deviation_over_edge": 0.146,
+    "min_angle_chosen": 46.88,
+    "min_angle_alternate": 35.6,
+    "aspect_chosen": 1.33,
+    "aspect_alternate": 1.68,
+    "normal_break_chosen_deg": 16.86,
+    "normal_break_alternate_deg": 18.51,
+    "vertex_normal_imprint_deg": 3.84,
+    "flags": []
+   },
+   {
+    "quad": 55944,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56049,
+     56061
+    ],
+    "alternate_diagonal": [
+     56048,
+     56062
+    ],
+    "fold_chosen_deg": 23.18,
+    "fold_alternate_deg": 30.17,
+    "surface_deviation_cm": 0.0265,
+    "deviation_over_edge": 0.159,
+    "min_angle_chosen": 45.17,
+    "min_angle_alternate": 32.68,
+    "aspect_chosen": 1.35,
+    "aspect_alternate": 1.77,
+    "normal_break_chosen_deg": 25.9,
+    "normal_break_alternate_deg": 26.84,
+    "vertex_normal_imprint_deg": 4.78,
+    "flags": []
+   },
+   {
+    "quad": 56131,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56250,
+     56264
+    ],
+    "alternate_diagonal": [
+     56251,
+     56263
+    ],
+    "fold_chosen_deg": 25.95,
+    "fold_alternate_deg": 50.61,
+    "surface_deviation_cm": 0.0347,
+    "deviation_over_edge": 0.199,
+    "min_angle_chosen": 45.72,
+    "min_angle_alternate": 24.12,
+    "aspect_chosen": 1.34,
+    "aspect_alternate": 1.96,
+    "normal_break_chosen_deg": 28.17,
+    "normal_break_alternate_deg": 47.25,
+    "vertex_normal_imprint_deg": 10.18,
+    "flags": []
+   },
+   {
+    "quad": 56162,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56284,
+     56298
+    ],
+    "alternate_diagonal": [
+     56285,
+     56297
+    ],
+    "fold_chosen_deg": 35.12,
+    "fold_alternate_deg": 49.84,
+    "surface_deviation_cm": 0.0491,
+    "deviation_over_edge": 0.252,
+    "min_angle_chosen": 52.52,
+    "min_angle_alternate": 33.8,
+    "aspect_chosen": 1.18,
+    "aspect_alternate": 1.73,
+    "normal_break_chosen_deg": 23.79,
+    "normal_break_alternate_deg": 32.94,
+    "vertex_normal_imprint_deg": 7.56,
+    "flags": []
+   },
+   {
+    "quad": 56163,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56285,
+     56299
+    ],
+    "alternate_diagonal": [
+     56286,
+     56298
+    ],
+    "fold_chosen_deg": 26.78,
+    "fold_alternate_deg": 39.64,
+    "surface_deviation_cm": 0.0363,
+    "deviation_over_edge": 0.192,
+    "min_angle_chosen": 49.65,
+    "min_angle_alternate": 31.01,
+    "aspect_chosen": 1.2,
+    "aspect_alternate": 1.77,
+    "normal_break_chosen_deg": 25.52,
+    "normal_break_alternate_deg": 38.28,
+    "vertex_normal_imprint_deg": 6.72,
+    "flags": []
+   },
+   {
+    "quad": 56174,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56297,
+     56311
+    ],
+    "alternate_diagonal": [
+     56298,
+     56310
+    ],
+    "fold_chosen_deg": 25.63,
+    "fold_alternate_deg": 29.17,
+    "surface_deviation_cm": 0.0317,
+    "deviation_over_edge": 0.162,
+    "min_angle_chosen": 37.69,
+    "min_angle_alternate": 32.98,
+    "aspect_chosen": 1.6,
+    "aspect_alternate": 1.77,
+    "normal_break_chosen_deg": 25.26,
+    "normal_break_alternate_deg": 21.62,
+    "vertex_normal_imprint_deg": 5.04,
+    "flags": []
+   },
+   {
+    "quad": 56177,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56300,
+     56314
+    ],
+    "alternate_diagonal": [
+     56301,
+     56313
+    ],
+    "fold_chosen_deg": 21.36,
+    "fold_alternate_deg": 36.4,
+    "surface_deviation_cm": 0.0295,
+    "deviation_over_edge": 0.157,
+    "min_angle_chosen": 50.56,
+    "min_angle_alternate": 24.38,
+    "aspect_chosen": 1.18,
+    "aspect_alternate": 2.08,
+    "normal_break_chosen_deg": 25.61,
+    "normal_break_alternate_deg": 41.55,
+    "vertex_normal_imprint_deg": 6.81,
+    "flags": []
+   },
+   {
+    "quad": 56184,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55932,
+     56321
+    ],
+    "alternate_diagonal": [
+     55595,
+     56322
+    ],
+    "fold_chosen_deg": 22.72,
+    "fold_alternate_deg": 49.3,
+    "surface_deviation_cm": 0.0327,
+    "deviation_over_edge": 0.16,
+    "min_angle_chosen": 35.14,
+    "min_angle_alternate": 19.31,
+    "aspect_chosen": 1.72,
+    "aspect_alternate": 2.59,
+    "normal_break_chosen_deg": 22.35,
+    "normal_break_alternate_deg": 40.86,
+    "vertex_normal_imprint_deg": 11.14,
+    "flags": []
+   },
+   {
+    "quad": 56185,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     55933,
+     56322
+    ],
+    "alternate_diagonal": [
+     55932,
+     56323
+    ],
+    "fold_chosen_deg": 21.75,
+    "fold_alternate_deg": 46.14,
+    "surface_deviation_cm": 0.0324,
+    "deviation_over_edge": 0.169,
+    "min_angle_chosen": 48.48,
+    "min_angle_alternate": 21.22,
+    "aspect_chosen": 1.3,
+    "aspect_alternate": 1.89,
+    "normal_break_chosen_deg": 16.76,
+    "normal_break_alternate_deg": 39.0,
+    "vertex_normal_imprint_deg": 11.23,
+    "flags": []
+   },
+   {
+    "quad": 56198,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56324,
+     56336
+    ],
+    "alternate_diagonal": [
+     56323,
+     56337
+    ],
+    "fold_chosen_deg": 30.27,
+    "fold_alternate_deg": 42.27,
+    "surface_deviation_cm": 0.0358,
+    "deviation_over_edge": 0.216,
+    "min_angle_chosen": 54.03,
+    "min_angle_alternate": 34.88,
+    "aspect_chosen": 1.17,
+    "aspect_alternate": 1.68,
+    "normal_break_chosen_deg": 20.35,
+    "normal_break_alternate_deg": 34.23,
+    "vertex_normal_imprint_deg": 6.71,
+    "flags": []
+   },
+   {
+    "quad": 56199,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56325,
+     56337
+    ],
+    "alternate_diagonal": [
+     56324,
+     56338
+    ],
+    "fold_chosen_deg": 22.04,
+    "fold_alternate_deg": 23.42,
+    "surface_deviation_cm": 0.0193,
+    "deviation_over_edge": 0.136,
+    "min_angle_chosen": 36.73,
+    "min_angle_alternate": 33.34,
+    "aspect_chosen": 1.67,
+    "aspect_alternate": 1.81,
+    "normal_break_chosen_deg": 22.21,
+    "normal_break_alternate_deg": 27.85,
+    "vertex_normal_imprint_deg": 3.48,
+    "flags": []
+   },
+   {
+    "quad": 56200,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56326,
+     56338
+    ],
+    "alternate_diagonal": [
+     56325,
+     56339
+    ],
+    "fold_chosen_deg": 20.41,
+    "fold_alternate_deg": 25.65,
+    "surface_deviation_cm": 0.0176,
+    "deviation_over_edge": 0.137,
+    "min_angle_chosen": 46.04,
+    "min_angle_alternate": 32.96,
+    "aspect_chosen": 1.38,
+    "aspect_alternate": 1.8,
+    "normal_break_chosen_deg": 33.86,
+    "normal_break_alternate_deg": 26.99,
+    "vertex_normal_imprint_deg": 3.83,
+    "flags": []
+   },
+   {
+    "quad": 56209,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56336,
+     56348
+    ],
+    "alternate_diagonal": [
+     56335,
+     56349
+    ],
+    "fold_chosen_deg": 37.91,
+    "fold_alternate_deg": 51.48,
+    "surface_deviation_cm": 0.0485,
+    "deviation_over_edge": 0.266,
+    "min_angle_chosen": 50.86,
+    "min_angle_alternate": 34.14,
+    "aspect_chosen": 1.23,
+    "aspect_alternate": 1.75,
+    "normal_break_chosen_deg": 31.14,
+    "normal_break_alternate_deg": 46.71,
+    "vertex_normal_imprint_deg": 8.02,
+    "flags": []
+   },
+   {
+    "quad": 56210,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56337,
+     56349
+    ],
+    "alternate_diagonal": [
+     56336,
+     56350
+    ],
+    "fold_chosen_deg": 39.89,
+    "fold_alternate_deg": 56.57,
+    "surface_deviation_cm": 0.0523,
+    "deviation_over_edge": 0.277,
+    "min_angle_chosen": 51.75,
+    "min_angle_alternate": 30.77,
+    "aspect_chosen": 1.23,
+    "aspect_alternate": 1.89,
+    "normal_break_chosen_deg": 30.06,
+    "normal_break_alternate_deg": 48.52,
+    "vertex_normal_imprint_deg": 9.64,
+    "flags": []
+   },
+   {
+    "quad": 56222,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56349,
+     56359
+    ],
+    "alternate_diagonal": [
+     56348,
+     56360
+    ],
+    "fold_chosen_deg": 39.02,
+    "fold_alternate_deg": 42.62,
+    "surface_deviation_cm": 0.0457,
+    "deviation_over_edge": 0.252,
+    "min_angle_chosen": 44.68,
+    "min_angle_alternate": 40.32,
+    "aspect_chosen": 1.41,
+    "aspect_alternate": 1.53,
+    "normal_break_chosen_deg": 37.62,
+    "normal_break_alternate_deg": 47.0,
+    "vertex_normal_imprint_deg": 6.62,
+    "flags": []
+   },
+   {
+    "quad": 56233,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56360,
+     56372
+    ],
+    "alternate_diagonal": [
+     56361,
+     56371
+    ],
+    "fold_chosen_deg": 32.25,
+    "fold_alternate_deg": 32.77,
+    "surface_deviation_cm": 0.0348,
+    "deviation_over_edge": 0.202,
+    "min_angle_chosen": 44.97,
+    "min_angle_alternate": 43.92,
+    "aspect_chosen": 1.41,
+    "aspect_alternate": 1.44,
+    "normal_break_chosen_deg": 25.14,
+    "normal_break_alternate_deg": 27.52,
+    "vertex_normal_imprint_deg": 4.26,
+    "flags": []
+   },
+   {
+    "quad": 56236,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56364,
+     56374
+    ],
+    "alternate_diagonal": [
+     56363,
+     56375
+    ],
+    "fold_chosen_deg": 24.84,
+    "fold_alternate_deg": 26.83,
+    "surface_deviation_cm": 0.0224,
+    "deviation_over_edge": 0.154,
+    "min_angle_chosen": 41.54,
+    "min_angle_alternate": 36.13,
+    "aspect_chosen": 1.5,
+    "aspect_alternate": 1.7,
+    "normal_break_chosen_deg": 33.13,
+    "normal_break_alternate_deg": 33.78,
+    "vertex_normal_imprint_deg": 4.03,
+    "flags": []
+   },
+   {
+    "quad": 56280,
+    "side": "l",
+    "region": "upper_helix_tip",
+    "folded": false,
+    "chosen_diagonal": [
+     56417,
+     56480
+    ],
+    "alternate_diagonal": [
+     56418,
+     56479
+    ],
+    "fold_chosen_deg": 28.45,
+    "fold_alternate_deg": 35.36,
+    "surface_deviation_cm": 0.0199,
+    "deviation_over_edge": 0.144,
+    "min_angle_chosen": 24.44,
+    "min_angle_alternate": 20.34,
+    "aspect_chosen": 2.34,
+    "aspect_alternate": 2.34,
+    "normal_break_chosen_deg": 38.94,
+    "normal_break_alternate_deg": 36.06,
+    "vertex_normal_imprint_deg": 9.73,
+    "flags": []
+   },
+   {
+    "quad": 56317,
+    "side": "l",
+    "region": "upper_helix_tip",
+    "folded": false,
+    "chosen_diagonal": [
+     56454,
+     56484
+    ],
+    "alternate_diagonal": [
+     56455,
+     56483
+    ],
+    "fold_chosen_deg": 34.87,
+    "fold_alternate_deg": 43.71,
+    "surface_deviation_cm": 0.0375,
+    "deviation_over_edge": 0.145,
+    "min_angle_chosen": 15.49,
+    "min_angle_alternate": 19.79,
+    "aspect_chosen": 3.73,
+    "aspect_alternate": 2.42,
+    "normal_break_chosen_deg": 61.55,
+    "normal_break_alternate_deg": 51.45,
+    "vertex_normal_imprint_deg": 13.19,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 56331,
+    "side": "l",
+    "region": "upper_helix_tip",
+    "folded": false,
+    "chosen_diagonal": [
+     56472,
+     56474
+    ],
+    "alternate_diagonal": [
+     56473,
+     56485
+    ],
+    "fold_chosen_deg": 28.82,
+    "fold_alternate_deg": 32.82,
+    "surface_deviation_cm": 0.0138,
+    "deviation_over_edge": 0.14,
+    "min_angle_chosen": 31.79,
+    "min_angle_alternate": 18.47,
+    "aspect_chosen": 1.84,
+    "aspect_alternate": 3.09,
+    "normal_break_chosen_deg": 27.18,
+    "normal_break_alternate_deg": 25.35,
+    "vertex_normal_imprint_deg": 6.69,
+    "flags": []
+   },
+   {
+    "quad": 56333,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56310,
+     56487
+    ],
+    "alternate_diagonal": [
+     56309,
+     56488
+    ],
+    "fold_chosen_deg": 23.3,
+    "fold_alternate_deg": 49.94,
+    "surface_deviation_cm": 0.036,
+    "deviation_over_edge": 0.18,
+    "min_angle_chosen": 47.11,
+    "min_angle_alternate": 20.69,
+    "aspect_chosen": 1.34,
+    "aspect_alternate": 1.93,
+    "normal_break_chosen_deg": 17.36,
+    "normal_break_alternate_deg": 41.24,
+    "vertex_normal_imprint_deg": 12.18,
+    "flags": []
+   },
+   {
+    "quad": 56346,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56489,
+     56501
+    ],
+    "alternate_diagonal": [
+     56488,
+     56502
+    ],
+    "fold_chosen_deg": 28.23,
+    "fold_alternate_deg": 42.46,
+    "surface_deviation_cm": 0.0361,
+    "deviation_over_edge": 0.206,
+    "min_angle_chosen": 54.63,
+    "min_angle_alternate": 32.71,
+    "aspect_chosen": 1.13,
+    "aspect_alternate": 1.75,
+    "normal_break_chosen_deg": 19.06,
+    "normal_break_alternate_deg": 33.06,
+    "vertex_normal_imprint_deg": 6.97,
+    "flags": []
+   },
+   {
+    "quad": 56347,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56490,
+     56502
+    ],
+    "alternate_diagonal": [
+     56489,
+     56503
+    ],
+    "fold_chosen_deg": 20.53,
+    "fold_alternate_deg": 23.48,
+    "surface_deviation_cm": 0.0195,
+    "deviation_over_edge": 0.131,
+    "min_angle_chosen": 39.11,
+    "min_angle_alternate": 32.0,
+    "aspect_chosen": 1.59,
+    "aspect_alternate": 1.85,
+    "normal_break_chosen_deg": 21.76,
+    "normal_break_alternate_deg": 27.74,
+    "vertex_normal_imprint_deg": 3.66,
+    "flags": []
+   },
+   {
+    "quad": 56357,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56501,
+     56513
+    ],
+    "alternate_diagonal": [
+     56500,
+     56514
+    ],
+    "fold_chosen_deg": 35.53,
+    "fold_alternate_deg": 52.04,
+    "surface_deviation_cm": 0.0492,
+    "deviation_over_edge": 0.255,
+    "min_angle_chosen": 51.92,
+    "min_angle_alternate": 32.11,
+    "aspect_chosen": 1.18,
+    "aspect_alternate": 1.81,
+    "normal_break_chosen_deg": 29.33,
+    "normal_break_alternate_deg": 44.44,
+    "vertex_normal_imprint_deg": 8.39,
+    "flags": []
+   },
+   {
+    "quad": 56358,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56502,
+     56514
+    ],
+    "alternate_diagonal": [
+     56501,
+     56515
+    ],
+    "fold_chosen_deg": 34.76,
+    "fold_alternate_deg": 52.95,
+    "surface_deviation_cm": 0.0486,
+    "deviation_over_edge": 0.25,
+    "min_angle_chosen": 53.78,
+    "min_angle_alternate": 29.62,
+    "aspect_chosen": 1.14,
+    "aspect_alternate": 1.86,
+    "normal_break_chosen_deg": 27.61,
+    "normal_break_alternate_deg": 43.67,
+    "vertex_normal_imprint_deg": 9.18,
+    "flags": []
+   },
+   {
+    "quad": 56361,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56505,
+     56641
+    ],
+    "alternate_diagonal": [
+     56504,
+     56516
+    ],
+    "fold_chosen_deg": 27.29,
+    "fold_alternate_deg": 60.64,
+    "surface_deviation_cm": 0.0288,
+    "deviation_over_edge": 0.2,
+    "min_angle_chosen": 47.67,
+    "min_angle_alternate": 18.44,
+    "aspect_chosen": 1.34,
+    "aspect_alternate": 1.92,
+    "normal_break_chosen_deg": 37.74,
+    "normal_break_alternate_deg": 46.92,
+    "vertex_normal_imprint_deg": 18.44,
+    "flags": []
+   },
+   {
+    "quad": 56370,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56514,
+     56524
+    ],
+    "alternate_diagonal": [
+     56513,
+     56525
+    ],
+    "fold_chosen_deg": 36.25,
+    "fold_alternate_deg": 42.71,
+    "surface_deviation_cm": 0.046,
+    "deviation_over_edge": 0.241,
+    "min_angle_chosen": 45.52,
+    "min_angle_alternate": 37.18,
+    "aspect_chosen": 1.37,
+    "aspect_alternate": 1.62,
+    "normal_break_chosen_deg": 36.74,
+    "normal_break_alternate_deg": 46.28,
+    "vertex_normal_imprint_deg": 6.87,
+    "flags": []
+   },
+   {
+    "quad": 56381,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56526,
+     56536
+    ],
+    "alternate_diagonal": [
+     56525,
+     56537
+    ],
+    "fold_chosen_deg": 27.63,
+    "fold_alternate_deg": 28.68,
+    "surface_deviation_cm": 0.0308,
+    "deviation_over_edge": 0.174,
+    "min_angle_chosen": 45.07,
+    "min_angle_alternate": 43.11,
+    "aspect_chosen": 1.41,
+    "aspect_alternate": 1.46,
+    "normal_break_chosen_deg": 26.01,
+    "normal_break_alternate_deg": 24.26,
+    "vertex_normal_imprint_deg": 3.89,
+    "flags": []
+   },
+   {
+    "quad": 56384,
+    "side": "l",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     56529,
+     56539
+    ],
+    "alternate_diagonal": [
+     56528,
+     56540
+    ],
+    "fold_chosen_deg": 24.84,
+    "fold_alternate_deg": 26.83,
+    "surface_deviation_cm": 0.0224,
+    "deviation_over_edge": 0.154,
+    "min_angle_chosen": 41.54,
+    "min_angle_alternate": 36.13,
+    "aspect_chosen": 1.5,
+    "aspect_alternate": 1.7,
+    "normal_break_chosen_deg": 33.13,
+    "normal_break_alternate_deg": 33.78,
+    "vertex_normal_imprint_deg": 4.03,
+    "flags": []
+   },
+   {
+    "quad": 56428,
+    "side": "l",
+    "region": "upper_helix_tip",
+    "folded": false,
+    "chosen_diagonal": [
+     56582,
+     56645
+    ],
+    "alternate_diagonal": [
+     56583,
+     56644
+    ],
+    "fold_chosen_deg": 28.45,
+    "fold_alternate_deg": 35.36,
+    "surface_deviation_cm": 0.0199,
+    "deviation_over_edge": 0.144,
+    "min_angle_chosen": 24.44,
+    "min_angle_alternate": 20.34,
+    "aspect_chosen": 2.34,
+    "aspect_alternate": 2.34,
+    "normal_break_chosen_deg": 38.19,
+    "normal_break_alternate_deg": 33.28,
+    "vertex_normal_imprint_deg": 9.73,
+    "flags": []
+   },
+   {
+    "quad": 56465,
+    "side": "l",
+    "region": "upper_helix_tip",
+    "folded": false,
+    "chosen_diagonal": [
+     56619,
+     56649
+    ],
+    "alternate_diagonal": [
+     56620,
+     56648
+    ],
+    "fold_chosen_deg": 30.34,
+    "fold_alternate_deg": 37.72,
+    "surface_deviation_cm": 0.0306,
+    "deviation_over_edge": 0.143,
+    "min_angle_chosen": 20.16,
+    "min_angle_alternate": 20.33,
+    "aspect_chosen": 2.83,
+    "aspect_alternate": 2.34,
+    "normal_break_chosen_deg": 52.32,
+    "normal_break_alternate_deg": 42.95,
+    "vertex_normal_imprint_deg": 10.94,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 56854,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     56943,
+     57004
+    ],
+    "alternate_diagonal": [
+     56942,
+     57005
+    ],
+    "fold_chosen_deg": 38.41,
+    "fold_alternate_deg": 68.27,
+    "surface_deviation_cm": 0.0251,
+    "deviation_over_edge": 0.276,
+    "min_angle_chosen": 43.0,
+    "min_angle_alternate": 21.27,
+    "aspect_chosen": 1.45,
+    "aspect_alternate": 2.26,
+    "normal_break_chosen_deg": 34.4,
+    "normal_break_alternate_deg": 73.19,
+    "vertex_normal_imprint_deg": 15.38,
+    "flags": []
+   },
+   {
+    "quad": 56855,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     56944,
+     57005
+    ],
+    "alternate_diagonal": [
+     56943,
+     57006
+    ],
+    "fold_chosen_deg": 25.25,
+    "fold_alternate_deg": 27.05,
+    "surface_deviation_cm": 0.0184,
+    "deviation_over_edge": 0.078,
+    "min_angle_chosen": 9.36,
+    "min_angle_alternate": 9.96,
+    "aspect_chosen": 6.07,
+    "aspect_alternate": 5.08,
+    "normal_break_chosen_deg": 27.39,
+    "normal_break_alternate_deg": 28.93,
+    "vertex_normal_imprint_deg": 3.94,
+    "flags": []
+   },
+   {
+    "quad": 56956,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57042,
+     57105
+    ],
+    "alternate_diagonal": [
+     57041,
+     57106
+    ],
+    "fold_chosen_deg": 23.01,
+    "fold_alternate_deg": 23.47,
+    "surface_deviation_cm": 0.026,
+    "deviation_over_edge": 0.137,
+    "min_angle_chosen": 32.87,
+    "min_angle_alternate": 31.7,
+    "aspect_chosen": 1.84,
+    "aspect_alternate": 1.9,
+    "normal_break_chosen_deg": 23.15,
+    "normal_break_alternate_deg": 20.99,
+    "vertex_normal_imprint_deg": 3.38,
+    "flags": []
+   },
+   {
+    "quad": 56986,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57070,
+     57137
+    ],
+    "alternate_diagonal": [
+     57071,
+     57136
+    ],
+    "fold_chosen_deg": 27.62,
+    "fold_alternate_deg": 33.72,
+    "surface_deviation_cm": 0.0434,
+    "deviation_over_edge": 0.132,
+    "min_angle_chosen": 22.69,
+    "min_angle_alternate": 17.56,
+    "aspect_chosen": 2.59,
+    "aspect_alternate": 3.31,
+    "normal_break_chosen_deg": 79.72,
+    "normal_break_alternate_deg": 56.24,
+    "vertex_normal_imprint_deg": 4.64,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 56988,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57073,
+     57138
+    ],
+    "alternate_diagonal": [
+     57072,
+     57139
+    ],
+    "fold_chosen_deg": 28.4,
+    "fold_alternate_deg": 32.23,
+    "surface_deviation_cm": 0.0284,
+    "deviation_over_edge": 0.17,
+    "min_angle_chosen": 31.37,
+    "min_angle_alternate": 28.83,
+    "aspect_chosen": 1.92,
+    "aspect_alternate": 1.93,
+    "normal_break_chosen_deg": 37.36,
+    "normal_break_alternate_deg": 54.26,
+    "vertex_normal_imprint_deg": 7.43,
+    "flags": []
+   },
+   {
+    "quad": 57022,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57106,
+     57173
+    ],
+    "alternate_diagonal": [
+     57105,
+     57174
+    ],
+    "fold_chosen_deg": 30.37,
+    "fold_alternate_deg": 44.95,
+    "surface_deviation_cm": 0.0332,
+    "deviation_over_edge": 0.185,
+    "min_angle_chosen": 31.99,
+    "min_angle_alternate": 21.33,
+    "aspect_chosen": 1.88,
+    "aspect_alternate": 2.41,
+    "normal_break_chosen_deg": 62.1,
+    "normal_break_alternate_deg": 91.72,
+    "vertex_normal_imprint_deg": 7.74,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57023,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57107,
+     57174
+    ],
+    "alternate_diagonal": [
+     57106,
+     57175
+    ],
+    "fold_chosen_deg": 41.42,
+    "fold_alternate_deg": 58.21,
+    "surface_deviation_cm": 0.0256,
+    "deviation_over_edge": 0.212,
+    "min_angle_chosen": 21.13,
+    "min_angle_alternate": 15.67,
+    "aspect_chosen": 2.75,
+    "aspect_alternate": 3.08,
+    "normal_break_chosen_deg": 60.5,
+    "normal_break_alternate_deg": 67.6,
+    "vertex_normal_imprint_deg": 17.06,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57037,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57118,
+     57191
+    ],
+    "alternate_diagonal": [
+     57119,
+     57190
+    ],
+    "fold_chosen_deg": 39.13,
+    "fold_alternate_deg": 43.82,
+    "surface_deviation_cm": 0.0162,
+    "deviation_over_edge": 0.126,
+    "min_angle_chosen": 11.12,
+    "min_angle_alternate": 8.93,
+    "aspect_chosen": 5.18,
+    "aspect_alternate": 6.35,
+    "normal_break_chosen_deg": 43.48,
+    "normal_break_alternate_deg": 43.58,
+    "vertex_normal_imprint_deg": 4.75,
+    "flags": []
+   },
+   {
+    "quad": 57038,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57119,
+     57192
+    ],
+    "alternate_diagonal": [
+     57120,
+     57191
+    ],
+    "fold_chosen_deg": 24.57,
+    "fold_alternate_deg": 30.95,
+    "surface_deviation_cm": 0.0151,
+    "deviation_over_edge": 0.1,
+    "min_angle_chosen": 17.57,
+    "min_angle_alternate": 13.61,
+    "aspect_chosen": 3.31,
+    "aspect_alternate": 4.12,
+    "normal_break_chosen_deg": 26.25,
+    "normal_break_alternate_deg": 27.97,
+    "vertex_normal_imprint_deg": 3.4,
+    "flags": []
+   },
+   {
+    "quad": 57053,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57135,
+     57206
+    ],
+    "alternate_diagonal": [
+     57136,
+     57205
+    ],
+    "fold_chosen_deg": 21.29,
+    "fold_alternate_deg": 25.77,
+    "surface_deviation_cm": 0.0267,
+    "deviation_over_edge": 0.136,
+    "min_angle_chosen": 43.46,
+    "min_angle_alternate": 30.83,
+    "aspect_chosen": 1.45,
+    "aspect_alternate": 1.9,
+    "normal_break_chosen_deg": 24.18,
+    "normal_break_alternate_deg": 22.04,
+    "vertex_normal_imprint_deg": 3.91,
+    "flags": []
+   },
+   {
+    "quad": 57054,
+    "side": "l",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     57137,
+     57206
+    ],
+    "alternate_diagonal": [
+     57136,
+     57207
+    ],
+    "fold_chosen_deg": 124.01,
+    "fold_alternate_deg": 130.76,
+    "surface_deviation_cm": 0.0975,
+    "deviation_over_edge": 0.281,
+    "min_angle_chosen": 9.5,
+    "min_angle_alternate": 10.74,
+    "aspect_chosen": 5.33,
+    "aspect_alternate": 5.13,
+    "normal_break_chosen_deg": 139.87,
+    "normal_break_alternate_deg": 133.13,
+    "vertex_normal_imprint_deg": 9.86,
+    "flags": [
+     "ridge_or_dent",
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57055,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57137,
+     57208
+    ],
+    "alternate_diagonal": [
+     57138,
+     57207
+    ],
+    "fold_chosen_deg": 60.74,
+    "fold_alternate_deg": 61.93,
+    "surface_deviation_cm": 0.0503,
+    "deviation_over_edge": 0.279,
+    "min_angle_chosen": 21.38,
+    "min_angle_alternate": 21.15,
+    "aspect_chosen": 2.72,
+    "aspect_alternate": 2.77,
+    "normal_break_chosen_deg": 62.59,
+    "normal_break_alternate_deg": 97.7,
+    "vertex_normal_imprint_deg": 6.92,
+    "flags": [
+     "ridge_or_dent",
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57056,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57139,
+     57208
+    ],
+    "alternate_diagonal": [
+     57138,
+     57209
+    ],
+    "fold_chosen_deg": 34.64,
+    "fold_alternate_deg": 42.18,
+    "surface_deviation_cm": 0.0252,
+    "deviation_over_edge": 0.213,
+    "min_angle_chosen": 36.28,
+    "min_angle_alternate": 31.36,
+    "aspect_chosen": 1.63,
+    "aspect_alternate": 1.74,
+    "normal_break_chosen_deg": 47.59,
+    "normal_break_alternate_deg": 65.2,
+    "vertex_normal_imprint_deg": 9.49,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57057,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57209,
+     57211
+    ],
+    "alternate_diagonal": [
+     57139,
+     57210
+    ],
+    "fold_chosen_deg": 36.51,
+    "fold_alternate_deg": 47.75,
+    "surface_deviation_cm": 0.0224,
+    "deviation_over_edge": 0.223,
+    "min_angle_chosen": 45.21,
+    "min_angle_alternate": 25.1,
+    "aspect_chosen": 1.41,
+    "aspect_alternate": 2.16,
+    "normal_break_chosen_deg": 76.04,
+    "normal_break_alternate_deg": 60.27,
+    "vertex_normal_imprint_deg": 10.29,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57085,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     56217,
+     57167
+    ],
+    "alternate_diagonal": [
+     56204,
+     57168
+    ],
+    "fold_chosen_deg": 26.01,
+    "fold_alternate_deg": 40.5,
+    "surface_deviation_cm": 0.0264,
+    "deviation_over_edge": 0.154,
+    "min_angle_chosen": 27.33,
+    "min_angle_alternate": 15.55,
+    "aspect_chosen": 2.18,
+    "aspect_alternate": 3.05,
+    "normal_break_chosen_deg": 55.83,
+    "normal_break_alternate_deg": 87.75,
+    "vertex_normal_imprint_deg": 10.73,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57087,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     56230,
+     57170
+    ],
+    "alternate_diagonal": [
+     56243,
+     57169
+    ],
+    "fold_chosen_deg": 30.16,
+    "fold_alternate_deg": 32.22,
+    "surface_deviation_cm": 0.0311,
+    "deviation_over_edge": 0.165,
+    "min_angle_chosen": 26.56,
+    "min_angle_alternate": 24.85,
+    "aspect_chosen": 2.22,
+    "aspect_alternate": 2.36,
+    "normal_break_chosen_deg": 42.33,
+    "normal_break_alternate_deg": 63.3,
+    "vertex_normal_imprint_deg": 5.53,
+    "flags": []
+   },
+   {
+    "quad": 57090,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     56282,
+     57172
+    ],
+    "alternate_diagonal": [
+     56269,
+     57173
+    ],
+    "fold_chosen_deg": 38.8,
+    "fold_alternate_deg": 67.84,
+    "surface_deviation_cm": 0.0627,
+    "deviation_over_edge": 0.277,
+    "min_angle_chosen": 46.37,
+    "min_angle_alternate": 23.22,
+    "aspect_chosen": 1.3,
+    "aspect_alternate": 1.98,
+    "normal_break_chosen_deg": 51.92,
+    "normal_break_alternate_deg": 56.42,
+    "vertex_normal_imprint_deg": 17.29,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57092,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     56308,
+     57174
+    ],
+    "alternate_diagonal": [
+     56911,
+     57173
+    ],
+    "fold_chosen_deg": 31.74,
+    "fold_alternate_deg": 41.8,
+    "surface_deviation_cm": 0.0339,
+    "deviation_over_edge": 0.182,
+    "min_angle_chosen": 32.06,
+    "min_angle_alternate": 18.78,
+    "aspect_chosen": 1.88,
+    "aspect_alternate": 2.73,
+    "normal_break_chosen_deg": 76.03,
+    "normal_break_alternate_deg": 92.08,
+    "vertex_normal_imprint_deg": 9.37,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57093,
+    "side": "l",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     56910,
+     57174
+    ],
+    "alternate_diagonal": [
+     56909,
+     56911
+    ],
+    "fold_chosen_deg": 49.2,
+    "fold_alternate_deg": 91.14,
+    "surface_deviation_cm": 0.0399,
+    "deviation_over_edge": 0.253,
+    "min_angle_chosen": 23.39,
+    "min_angle_alternate": 22.5,
+    "aspect_chosen": 2.35,
+    "aspect_alternate": 1.85,
+    "normal_break_chosen_deg": 82.02,
+    "normal_break_alternate_deg": 92.97,
+    "vertex_normal_imprint_deg": 31.71,
+    "flags": [
+     "shading_discontinuity",
+     "imprint"
+    ]
+   },
+   {
+    "quad": 57094,
+    "side": "l",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     56909,
+     57175
+    ],
+    "alternate_diagonal": [
+     55595,
+     57174
+    ],
+    "fold_chosen_deg": 126.84,
+    "fold_alternate_deg": 138.27,
+    "surface_deviation_cm": 0.0504,
+    "deviation_over_edge": 0.289,
+    "min_angle_chosen": 11.32,
+    "min_angle_alternate": 10.17,
+    "aspect_chosen": 4.62,
+    "aspect_alternate": 5.54,
+    "normal_break_chosen_deg": 102.32,
+    "normal_break_alternate_deg": 127.05,
+    "vertex_normal_imprint_deg": 7.35,
+    "flags": [
+     "ridge_or_dent",
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57095,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     55594,
+     57175
+    ],
+    "alternate_diagonal": [
+     55595,
+     57176
+    ],
+    "fold_chosen_deg": 50.73,
+    "fold_alternate_deg": 59.53,
+    "surface_deviation_cm": 0.039,
+    "deviation_over_edge": 0.23,
+    "min_angle_chosen": 28.84,
+    "min_angle_alternate": 19.35,
+    "aspect_chosen": 1.99,
+    "aspect_alternate": 3.02,
+    "normal_break_chosen_deg": 68.29,
+    "normal_break_alternate_deg": 56.66,
+    "vertex_normal_imprint_deg": 11.29,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57096,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     55594,
+     57177
+    ],
+    "alternate_diagonal": [
+     55593,
+     57176
+    ],
+    "fold_chosen_deg": 22.64,
+    "fold_alternate_deg": 29.31,
+    "surface_deviation_cm": 0.0138,
+    "deviation_over_edge": 0.124,
+    "min_angle_chosen": 24.51,
+    "min_angle_alternate": 22.01,
+    "aspect_chosen": 2.41,
+    "aspect_alternate": 2.18,
+    "normal_break_chosen_deg": 27.2,
+    "normal_break_alternate_deg": 35.93,
+    "vertex_normal_imprint_deg": 8.02,
+    "flags": []
+   },
+   {
+    "quad": 57109,
+    "side": "l",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     55548,
+     57190
+    ],
+    "alternate_diagonal": [
+     57189,
+     57191
+    ],
+    "fold_chosen_deg": 57.14,
+    "fold_alternate_deg": 116.23,
+    "surface_deviation_cm": 0.0247,
+    "deviation_over_edge": 0.16,
+    "min_angle_chosen": 8.64,
+    "min_angle_alternate": 8.79,
+    "aspect_chosen": 5.94,
+    "aspect_alternate": 5.28,
+    "normal_break_chosen_deg": 61.76,
+    "normal_break_alternate_deg": 109.82,
+    "vertex_normal_imprint_deg": 43.06,
+    "flags": [
+     "shading_discontinuity",
+     "imprint"
+    ]
+   },
+   {
+    "quad": 57127,
+    "side": "l",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     55482,
+     57207
+    ],
+    "alternate_diagonal": [
+     55481,
+     55483
+    ],
+    "fold_chosen_deg": 13.37,
+    "fold_alternate_deg": 97.85,
+    "surface_deviation_cm": 0.0344,
+    "deviation_over_edge": 0.089,
+    "min_angle_chosen": 27.85,
+    "min_angle_alternate": 5.54,
+    "aspect_chosen": 1.85,
+    "aspect_alternate": 2.08,
+    "normal_break_chosen_deg": 61.63,
+    "normal_break_alternate_deg": 105.43,
+    "vertex_normal_imprint_deg": 42.69,
+    "flags": [
+     "shading_discontinuity",
+     "imprint"
+    ]
+   },
+   {
+    "quad": 57128,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     56651,
+     57207
+    ],
+    "alternate_diagonal": [
+     55483,
+     57208
+    ],
+    "fold_chosen_deg": 65.01,
+    "fold_alternate_deg": 70.73,
+    "surface_deviation_cm": 0.0415,
+    "deviation_over_edge": 0.138,
+    "min_angle_chosen": 5.82,
+    "min_angle_alternate": 7.71,
+    "aspect_chosen": 9.48,
+    "aspect_alternate": 6.76,
+    "normal_break_chosen_deg": 54.86,
+    "normal_break_alternate_deg": 86.91,
+    "vertex_normal_imprint_deg": 10.54,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57129,
+    "side": "l",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     56652,
+     57208
+    ],
+    "alternate_diagonal": [
+     56651,
+     57209
+    ],
+    "fold_chosen_deg": 103.4,
+    "fold_alternate_deg": 109.32,
+    "surface_deviation_cm": 0.0439,
+    "deviation_over_edge": 0.225,
+    "min_angle_chosen": 7.57,
+    "min_angle_alternate": 9.61,
+    "aspect_chosen": 6.27,
+    "aspect_alternate": 5.25,
+    "normal_break_chosen_deg": 88.73,
+    "normal_break_alternate_deg": 118.18,
+    "vertex_normal_imprint_deg": 8.56,
+    "flags": [
+     "ridge_or_dent",
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57130,
+    "side": "l",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     56653,
+     57209
+    ],
+    "alternate_diagonal": [
+     56652,
+     57210
+    ],
+    "fold_chosen_deg": 90.34,
+    "fold_alternate_deg": 100.42,
+    "surface_deviation_cm": 0.0421,
+    "deviation_over_edge": 0.265,
+    "min_angle_chosen": 11.07,
+    "min_angle_alternate": 11.22,
+    "aspect_chosen": 4.7,
+    "aspect_alternate": 4.69,
+    "normal_break_chosen_deg": 76.44,
+    "normal_break_alternate_deg": 116.69,
+    "vertex_normal_imprint_deg": 8.33,
+    "flags": [
+     "ridge_or_dent",
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57131,
+    "side": "l",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     56653,
+     57211
+    ],
+    "alternate_diagonal": [
+     55944,
+     57210
+    ],
+    "fold_chosen_deg": 42.2,
+    "fold_alternate_deg": 42.29,
+    "surface_deviation_cm": 0.0193,
+    "deviation_over_edge": 0.143,
+    "min_angle_chosen": 14.53,
+    "min_angle_alternate": 13.44,
+    "aspect_chosen": 3.6,
+    "aspect_alternate": 4.2,
+    "normal_break_chosen_deg": 59.44,
+    "normal_break_alternate_deg": 56.41,
+    "vertex_normal_imprint_deg": 4.99,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57139,
+    "side": "l",
+    "region": "root_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     11747,
+     56919
+    ],
+    "alternate_diagonal": [
+     36425,
+     56918
+    ],
+    "fold_chosen_deg": 24.01,
+    "fold_alternate_deg": 29.52,
+    "surface_deviation_cm": 0.0238,
+    "deviation_over_edge": 0.129,
+    "min_angle_chosen": 22.66,
+    "min_angle_alternate": 20.52,
+    "aspect_chosen": 2.57,
+    "aspect_alternate": 2.45,
+    "normal_break_chosen_deg": 23.89,
+    "normal_break_alternate_deg": 47.48,
+    "vertex_normal_imprint_deg": 7.51,
+    "flags": []
+   },
+   {
+    "quad": 57140,
+    "side": "l",
+    "region": "root_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     36425,
+     56920
+    ],
+    "alternate_diagonal": [
+     11742,
+     56919
+    ],
+    "fold_chosen_deg": 24.35,
+    "fold_alternate_deg": 26.63,
+    "surface_deviation_cm": 0.0242,
+    "deviation_over_edge": 0.13,
+    "min_angle_chosen": 25.67,
+    "min_angle_alternate": 20.3,
+    "aspect_chosen": 2.28,
+    "aspect_alternate": 2.85,
+    "normal_break_chosen_deg": 40.17,
+    "normal_break_alternate_deg": 28.58,
+    "vertex_normal_imprint_deg": 4.65,
+    "flags": []
+   },
+   {
+    "quad": 57164,
+    "side": "l",
+    "region": "root_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     11746,
+     56943
+    ],
+    "alternate_diagonal": [
+     56942,
+     56944
+    ],
+    "fold_chosen_deg": 33.85,
+    "fold_alternate_deg": 33.67,
+    "surface_deviation_cm": 0.0217,
+    "deviation_over_edge": 0.076,
+    "min_angle_chosen": 8.74,
+    "min_angle_alternate": 8.46,
+    "aspect_chosen": 5.38,
+    "aspect_alternate": 6.06,
+    "normal_break_chosen_deg": 32.09,
+    "normal_break_alternate_deg": 34.71,
+    "vertex_normal_imprint_deg": 2.85,
+    "flags": []
+   },
+   {
+    "quad": 57185,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": true,
+    "chosen_diagonal": [
+     57212,
+     57217
+    ],
+    "alternate_diagonal": [
+     57213,
+     57216
+    ],
+    "fold_chosen_deg": 10.35,
+    "fold_alternate_deg": 93.38,
+    "surface_deviation_cm": 0.0156,
+    "deviation_over_edge": 0.063,
+    "min_angle_chosen": 22.84,
+    "min_angle_alternate": 2.73,
+    "aspect_chosen": 2.57,
+    "aspect_alternate": 3.77,
+    "normal_break_chosen_deg": 21.94,
+    "normal_break_alternate_deg": 87.66,
+    "vertex_normal_imprint_deg": 42.13,
+    "flags": [
+     "imprint"
+    ]
+   },
+   {
+    "quad": 57187,
+    "side": "r",
+    "region": "lobe_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     57214,
+     57219
+    ],
+    "alternate_diagonal": [
+     57215,
+     57218
+    ],
+    "fold_chosen_deg": 20.15,
+    "fold_alternate_deg": 24.59,
+    "surface_deviation_cm": 0.0372,
+    "deviation_over_edge": 0.118,
+    "min_angle_chosen": 33.58,
+    "min_angle_alternate": 26.49,
+    "aspect_chosen": 1.81,
+    "aspect_alternate": 2.24,
+    "normal_break_chosen_deg": 17.31,
+    "normal_break_alternate_deg": 25.24,
+    "vertex_normal_imprint_deg": 4.25,
+    "flags": []
+   },
+   {
+    "quad": 57190,
+    "side": "r",
+    "region": "lobe_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     57218,
+     57223
+    ],
+    "alternate_diagonal": [
+     57219,
+     57222
+    ],
+    "fold_chosen_deg": 20.08,
+    "fold_alternate_deg": 27.05,
+    "surface_deviation_cm": 0.0193,
+    "deviation_over_edge": 0.069,
+    "min_angle_chosen": 11.5,
+    "min_angle_alternate": 7.74,
+    "aspect_chosen": 4.8,
+    "aspect_alternate": 5.92,
+    "normal_break_chosen_deg": 14.37,
+    "normal_break_alternate_deg": 26.91,
+    "vertex_normal_imprint_deg": 3.81,
+    "flags": []
+   },
+   {
+    "quad": 57195,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57225,
+     57230
+    ],
+    "alternate_diagonal": [
+     57226,
+     57229
+    ],
+    "fold_chosen_deg": 27.98,
+    "fold_alternate_deg": 38.34,
+    "surface_deviation_cm": 0.026,
+    "deviation_over_edge": 0.086,
+    "min_angle_chosen": 11.15,
+    "min_angle_alternate": 7.42,
+    "aspect_chosen": 4.76,
+    "aspect_alternate": 6.12,
+    "normal_break_chosen_deg": 25.18,
+    "normal_break_alternate_deg": 26.29,
+    "vertex_normal_imprint_deg": 4.28,
+    "flags": []
+   },
+   {
+    "quad": 57213,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57249,
+     57254
+    ],
+    "alternate_diagonal": [
+     57250,
+     57253
+    ],
+    "fold_chosen_deg": 27.41,
+    "fold_alternate_deg": 34.12,
+    "surface_deviation_cm": 0.0381,
+    "deviation_over_edge": 0.11,
+    "min_angle_chosen": 14.94,
+    "min_angle_alternate": 12.24,
+    "aspect_chosen": 3.71,
+    "aspect_alternate": 3.8,
+    "normal_break_chosen_deg": 39.38,
+    "normal_break_alternate_deg": 34.36,
+    "vertex_normal_imprint_deg": 5.1,
+    "flags": []
+   },
+   {
+    "quad": 57216,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57253,
+     57258
+    ],
+    "alternate_diagonal": [
+     57254,
+     57257
+    ],
+    "fold_chosen_deg": 36.5,
+    "fold_alternate_deg": 44.42,
+    "surface_deviation_cm": 0.0488,
+    "deviation_over_edge": 0.125,
+    "min_angle_chosen": 12.28,
+    "min_angle_alternate": 10.44,
+    "aspect_chosen": 4.28,
+    "aspect_alternate": 4.34,
+    "normal_break_chosen_deg": 49.08,
+    "normal_break_alternate_deg": 47.99,
+    "vertex_normal_imprint_deg": 5.74,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57219,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57257,
+     57262
+    ],
+    "alternate_diagonal": [
+     57258,
+     57261
+    ],
+    "fold_chosen_deg": 32.96,
+    "fold_alternate_deg": 39.47,
+    "surface_deviation_cm": 0.0421,
+    "deviation_over_edge": 0.097,
+    "min_angle_chosen": 10.65,
+    "min_angle_alternate": 9.03,
+    "aspect_chosen": 4.79,
+    "aspect_alternate": 4.94,
+    "normal_break_chosen_deg": 43.93,
+    "normal_break_alternate_deg": 49.89,
+    "vertex_normal_imprint_deg": 4.21,
+    "flags": []
+   },
+   {
+    "quad": 57221,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57260,
+     57265
+    ],
+    "alternate_diagonal": [
+     57261,
+     57264
+    ],
+    "fold_chosen_deg": 32.74,
+    "fold_alternate_deg": 35.21,
+    "surface_deviation_cm": 0.0383,
+    "deviation_over_edge": 0.109,
+    "min_angle_chosen": 11.59,
+    "min_angle_alternate": 10.96,
+    "aspect_chosen": 4.97,
+    "aspect_alternate": 4.98,
+    "normal_break_chosen_deg": 31.15,
+    "normal_break_alternate_deg": 31.63,
+    "vertex_normal_imprint_deg": 3.43,
+    "flags": []
+   },
+   {
+    "quad": 57222,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57262,
+     57265
+    ],
+    "alternate_diagonal": [
+     57261,
+     57266
+    ],
+    "fold_chosen_deg": 27.36,
+    "fold_alternate_deg": 29.02,
+    "surface_deviation_cm": 0.0382,
+    "deviation_over_edge": 0.085,
+    "min_angle_chosen": 12.38,
+    "min_angle_alternate": 11.61,
+    "aspect_chosen": 4.65,
+    "aspect_alternate": 4.96,
+    "normal_break_chosen_deg": 42.27,
+    "normal_break_alternate_deg": 52.6,
+    "vertex_normal_imprint_deg": 1.95,
+    "flags": []
+   },
+   {
+    "quad": 57224,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57264,
+     57269
+    ],
+    "alternate_diagonal": [
+     57265,
+     57268
+    ],
+    "fold_chosen_deg": 21.43,
+    "fold_alternate_deg": 22.29,
+    "surface_deviation_cm": 0.024,
+    "deviation_over_edge": 0.065,
+    "min_angle_chosen": 10.99,
+    "min_angle_alternate": 10.62,
+    "aspect_chosen": 5.25,
+    "aspect_alternate": 5.28,
+    "normal_break_chosen_deg": 20.12,
+    "normal_break_alternate_deg": 24.7,
+    "vertex_normal_imprint_deg": 1.71,
+    "flags": []
+   },
+   {
+    "quad": 57225,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57265,
+     57270
+    ],
+    "alternate_diagonal": [
+     57266,
+     57269
+    ],
+    "fold_chosen_deg": 32.68,
+    "fold_alternate_deg": 33.49,
+    "surface_deviation_cm": 0.0415,
+    "deviation_over_edge": 0.098,
+    "min_angle_chosen": 12.11,
+    "min_angle_alternate": 11.76,
+    "aspect_chosen": 4.76,
+    "aspect_alternate": 4.89,
+    "normal_break_chosen_deg": 55.98,
+    "normal_break_alternate_deg": 48.32,
+    "vertex_normal_imprint_deg": 2.23,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 57230,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57272,
+     57277
+    ],
+    "alternate_diagonal": [
+     57273,
+     57276
+    ],
+    "fold_chosen_deg": 21.04,
+    "fold_alternate_deg": 22.82,
+    "surface_deviation_cm": 0.0242,
+    "deviation_over_edge": 0.067,
+    "min_angle_chosen": 12.03,
+    "min_angle_alternate": 10.88,
+    "aspect_chosen": 4.79,
+    "aspect_alternate": 5.28,
+    "normal_break_chosen_deg": 28.44,
+    "normal_break_alternate_deg": 19.02,
+    "vertex_normal_imprint_deg": 1.6,
+    "flags": []
+   },
+   {
+    "quad": 57232,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57275,
+     57278
+    ],
+    "alternate_diagonal": [
+     57274,
+     57279
+    ],
+    "fold_chosen_deg": 21.56,
+    "fold_alternate_deg": 21.89,
+    "surface_deviation_cm": 0.0326,
+    "deviation_over_edge": 0.073,
+    "min_angle_chosen": 13.92,
+    "min_angle_alternate": 13.63,
+    "aspect_chosen": 4.11,
+    "aspect_alternate": 4.23,
+    "normal_break_chosen_deg": 35.1,
+    "normal_break_alternate_deg": 34.78,
+    "vertex_normal_imprint_deg": 1.71,
+    "flags": []
+   },
+   {
+    "quad": 57233,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57276,
+     57281
+    ],
+    "alternate_diagonal": [
+     57277,
+     57280
+    ],
+    "fold_chosen_deg": 36.54,
+    "fold_alternate_deg": 38.62,
+    "surface_deviation_cm": 0.0439,
+    "deviation_over_edge": 0.129,
+    "min_angle_chosen": 13.2,
+    "min_angle_alternate": 11.96,
+    "aspect_chosen": 4.37,
+    "aspect_alternate": 4.83,
+    "normal_break_chosen_deg": 34.33,
+    "normal_break_alternate_deg": 37.56,
+    "vertex_normal_imprint_deg": 3.11,
+    "flags": []
+   },
+   {
+    "quad": 57235,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57278,
+     57283
+    ],
+    "alternate_diagonal": [
+     57279,
+     57282
+    ],
+    "fold_chosen_deg": 23.71,
+    "fold_alternate_deg": 24.39,
+    "surface_deviation_cm": 0.0362,
+    "deviation_over_edge": 0.088,
+    "min_angle_chosen": 15.23,
+    "min_angle_alternate": 14.96,
+    "aspect_chosen": 3.81,
+    "aspect_alternate": 3.74,
+    "normal_break_chosen_deg": 31.45,
+    "normal_break_alternate_deg": 33.41,
+    "vertex_normal_imprint_deg": 2.32,
+    "flags": []
+   },
+   {
+    "quad": 57236,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57280,
+     57285
+    ],
+    "alternate_diagonal": [
+     57281,
+     57284
+    ],
+    "fold_chosen_deg": 22.56,
+    "fold_alternate_deg": 22.7,
+    "surface_deviation_cm": 0.0244,
+    "deviation_over_edge": 0.08,
+    "min_angle_chosen": 13.87,
+    "min_angle_alternate": 13.61,
+    "aspect_chosen": 4.13,
+    "aspect_alternate": 4.23,
+    "normal_break_chosen_deg": 25.73,
+    "normal_break_alternate_deg": 28.03,
+    "vertex_normal_imprint_deg": 1.92,
+    "flags": []
+   },
+   {
+    "quad": 57238,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57282,
+     57287
+    ],
+    "alternate_diagonal": [
+     57283,
+     57286
+    ],
+    "fold_chosen_deg": 37.46,
+    "fold_alternate_deg": 42.38,
+    "surface_deviation_cm": 0.0585,
+    "deviation_over_edge": 0.158,
+    "min_angle_chosen": 17.02,
+    "min_angle_alternate": 15.53,
+    "aspect_chosen": 3.39,
+    "aspect_alternate": 3.4,
+    "normal_break_chosen_deg": 40.88,
+    "normal_break_alternate_deg": 31.06,
+    "vertex_normal_imprint_deg": 5.43,
+    "flags": []
+   },
+   {
+    "quad": 57239,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57285,
+     57288
+    ],
+    "alternate_diagonal": [
+     57284,
+     57289
+    ],
+    "fold_chosen_deg": 28.62,
+    "fold_alternate_deg": 30.62,
+    "surface_deviation_cm": 0.0318,
+    "deviation_over_edge": 0.11,
+    "min_angle_chosen": 14.98,
+    "min_angle_alternate": 14.06,
+    "aspect_chosen": 3.86,
+    "aspect_alternate": 4.01,
+    "normal_break_chosen_deg": 29.48,
+    "normal_break_alternate_deg": 30.46,
+    "vertex_normal_imprint_deg": 2.96,
+    "flags": []
+   },
+   {
+    "quad": 57240,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57285,
+     57290
+    ],
+    "alternate_diagonal": [
+     57286,
+     57289
+    ],
+    "fold_chosen_deg": 39.74,
+    "fold_alternate_deg": 46.02,
+    "surface_deviation_cm": 0.0494,
+    "deviation_over_edge": 0.162,
+    "min_angle_chosen": 17.5,
+    "min_angle_alternate": 15.41,
+    "aspect_chosen": 3.27,
+    "aspect_alternate": 3.49,
+    "normal_break_chosen_deg": 30.53,
+    "normal_break_alternate_deg": 60.93,
+    "vertex_normal_imprint_deg": 5.47,
+    "flags": []
+   },
+   {
+    "quad": 57241,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57286,
+     57291
+    ],
+    "alternate_diagonal": [
+     57287,
+     57290
+    ],
+    "fold_chosen_deg": 29.47,
+    "fold_alternate_deg": 36.85,
+    "surface_deviation_cm": 0.0414,
+    "deviation_over_edge": 0.129,
+    "min_angle_chosen": 19.51,
+    "min_angle_alternate": 15.26,
+    "aspect_chosen": 2.98,
+    "aspect_alternate": 3.71,
+    "normal_break_chosen_deg": 43.92,
+    "normal_break_alternate_deg": 43.22,
+    "vertex_normal_imprint_deg": 4.17,
+    "flags": []
+   },
+   {
+    "quad": 57242,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57289,
+     57292
+    ],
+    "alternate_diagonal": [
+     57288,
+     57293
+    ],
+    "fold_chosen_deg": 25.95,
+    "fold_alternate_deg": 29.35,
+    "surface_deviation_cm": 0.029,
+    "deviation_over_edge": 0.105,
+    "min_angle_chosen": 16.0,
+    "min_angle_alternate": 14.09,
+    "aspect_chosen": 3.63,
+    "aspect_alternate": 3.89,
+    "normal_break_chosen_deg": 26.12,
+    "normal_break_alternate_deg": 26.25,
+    "vertex_normal_imprint_deg": 3.1,
+    "flags": []
+   },
+   {
+    "quad": 57246,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57293,
+     57298
+    ],
+    "alternate_diagonal": [
+     57294,
+     57297
+    ],
+    "fold_chosen_deg": 28.35,
+    "fold_alternate_deg": 30.22,
+    "surface_deviation_cm": 0.034,
+    "deviation_over_edge": 0.127,
+    "min_angle_chosen": 18.53,
+    "min_angle_alternate": 17.02,
+    "aspect_chosen": 3.15,
+    "aspect_alternate": 3.41,
+    "normal_break_chosen_deg": 26.02,
+    "normal_break_alternate_deg": 36.01,
+    "vertex_normal_imprint_deg": 2.98,
+    "flags": []
+   },
+   {
+    "quad": 57354,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57413,
+     57424
+    ],
+    "alternate_diagonal": [
+     57412,
+     57425
+    ],
+    "fold_chosen_deg": 21.99,
+    "fold_alternate_deg": 26.75,
+    "surface_deviation_cm": 0.0241,
+    "deviation_over_edge": 0.147,
+    "min_angle_chosen": 44.5,
+    "min_angle_alternate": 35.06,
+    "aspect_chosen": 1.4,
+    "aspect_alternate": 1.71,
+    "normal_break_chosen_deg": 17.0,
+    "normal_break_alternate_deg": 20.44,
+    "vertex_normal_imprint_deg": 3.77,
+    "flags": []
+   },
+   {
+    "quad": 57355,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57414,
+     57425
+    ],
+    "alternate_diagonal": [
+     57413,
+     57426
+    ],
+    "fold_chosen_deg": 24.72,
+    "fold_alternate_deg": 31.89,
+    "surface_deviation_cm": 0.0288,
+    "deviation_over_edge": 0.168,
+    "min_angle_chosen": 44.04,
+    "min_angle_alternate": 32.02,
+    "aspect_chosen": 1.4,
+    "aspect_alternate": 1.84,
+    "normal_break_chosen_deg": 24.37,
+    "normal_break_alternate_deg": 28.16,
+    "vertex_normal_imprint_deg": 4.62,
+    "flags": []
+   },
+   {
+    "quad": 57358,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57417,
+     57428
+    ],
+    "alternate_diagonal": [
+     57416,
+     57429
+    ],
+    "fold_chosen_deg": 22.55,
+    "fold_alternate_deg": 22.73,
+    "surface_deviation_cm": 0.0231,
+    "deviation_over_edge": 0.136,
+    "min_angle_chosen": 37.11,
+    "min_angle_alternate": 36.99,
+    "aspect_chosen": 1.65,
+    "aspect_alternate": 1.66,
+    "normal_break_chosen_deg": 19.03,
+    "normal_break_alternate_deg": 24.33,
+    "vertex_normal_imprint_deg": 3.13,
+    "flags": []
+   },
+   {
+    "quad": 57365,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57251,
+     57424
+    ],
+    "alternate_diagonal": [
+     57247,
+     57436
+    ],
+    "fold_chosen_deg": 23.64,
+    "fold_alternate_deg": 29.69,
+    "surface_deviation_cm": 0.0259,
+    "deviation_over_edge": 0.159,
+    "min_angle_chosen": 42.92,
+    "min_angle_alternate": 32.44,
+    "aspect_chosen": 1.43,
+    "aspect_alternate": 1.8,
+    "normal_break_chosen_deg": 16.26,
+    "normal_break_alternate_deg": 24.66,
+    "vertex_normal_imprint_deg": 4.64,
+    "flags": []
+   },
+   {
+    "quad": 57366,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57425,
+     57436
+    ],
+    "alternate_diagonal": [
+     57424,
+     57437
+    ],
+    "fold_chosen_deg": 25.13,
+    "fold_alternate_deg": 35.28,
+    "surface_deviation_cm": 0.0316,
+    "deviation_over_edge": 0.176,
+    "min_angle_chosen": 47.3,
+    "min_angle_alternate": 29.42,
+    "aspect_chosen": 1.31,
+    "aspect_alternate": 1.89,
+    "normal_break_chosen_deg": 17.73,
+    "normal_break_alternate_deg": 25.6,
+    "vertex_normal_imprint_deg": 6.02,
+    "flags": []
+   },
+   {
+    "quad": 57369,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57427,
+     57440
+    ],
+    "alternate_diagonal": [
+     57428,
+     57439
+    ],
+    "fold_chosen_deg": 22.2,
+    "fold_alternate_deg": 23.09,
+    "surface_deviation_cm": 0.0228,
+    "deviation_over_edge": 0.13,
+    "min_angle_chosen": 33.61,
+    "min_angle_alternate": 31.82,
+    "aspect_chosen": 1.8,
+    "aspect_alternate": 1.89,
+    "normal_break_chosen_deg": 35.02,
+    "normal_break_alternate_deg": 30.45,
+    "vertex_normal_imprint_deg": 3.11,
+    "flags": []
+   },
+   {
+    "quad": 57370,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57428,
+     57441
+    ],
+    "alternate_diagonal": [
+     57429,
+     57440
+    ],
+    "fold_chosen_deg": 21.31,
+    "fold_alternate_deg": 22.91,
+    "surface_deviation_cm": 0.0235,
+    "deviation_over_edge": 0.134,
+    "min_angle_chosen": 40.5,
+    "min_angle_alternate": 36.35,
+    "aspect_chosen": 1.54,
+    "aspect_alternate": 1.68,
+    "normal_break_chosen_deg": 24.77,
+    "normal_break_alternate_deg": 19.95,
+    "vertex_normal_imprint_deg": 3.06,
+    "flags": []
+   },
+   {
+    "quad": 57400,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57458,
+     57471
+    ],
+    "alternate_diagonal": [
+     57459,
+     57470
+    ],
+    "fold_chosen_deg": 24.15,
+    "fold_alternate_deg": 25.37,
+    "surface_deviation_cm": 0.0243,
+    "deviation_over_edge": 0.153,
+    "min_angle_chosen": 44.92,
+    "min_angle_alternate": 42.33,
+    "aspect_chosen": 1.41,
+    "aspect_alternate": 1.48,
+    "normal_break_chosen_deg": 28.31,
+    "normal_break_alternate_deg": 31.69,
+    "vertex_normal_imprint_deg": 3.44,
+    "flags": []
+   },
+   {
+    "quad": 57411,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57469,
+     57482
+    ],
+    "alternate_diagonal": [
+     57470,
+     57481
+    ],
+    "fold_chosen_deg": 22.55,
+    "fold_alternate_deg": 23.5,
+    "surface_deviation_cm": 0.0219,
+    "deviation_over_edge": 0.142,
+    "min_angle_chosen": 43.33,
+    "min_angle_alternate": 41.23,
+    "aspect_chosen": 1.45,
+    "aspect_alternate": 1.51,
+    "normal_break_chosen_deg": 21.84,
+    "normal_break_alternate_deg": 15.73,
+    "vertex_normal_imprint_deg": 3.14,
+    "flags": []
+   },
+   {
+    "quad": 57423,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57482,
+     57493
+    ],
+    "alternate_diagonal": [
+     57481,
+     57494
+    ],
+    "fold_chosen_deg": 21.3,
+    "fold_alternate_deg": 22.01,
+    "surface_deviation_cm": 0.0215,
+    "deviation_over_edge": 0.133,
+    "min_angle_chosen": 42.57,
+    "min_angle_alternate": 40.43,
+    "aspect_chosen": 1.48,
+    "aspect_alternate": 1.54,
+    "normal_break_chosen_deg": 19.5,
+    "normal_break_alternate_deg": 22.86,
+    "vertex_normal_imprint_deg": 3.01,
+    "flags": []
+   },
+   {
+    "quad": 57550,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57608,
+     57621
+    ],
+    "alternate_diagonal": [
+     57609,
+     57620
+    ],
+    "fold_chosen_deg": 23.57,
+    "fold_alternate_deg": 46.02,
+    "surface_deviation_cm": 0.0304,
+    "deviation_over_edge": 0.183,
+    "min_angle_chosen": 47.87,
+    "min_angle_alternate": 25.6,
+    "aspect_chosen": 1.27,
+    "aspect_alternate": 1.94,
+    "normal_break_chosen_deg": 21.93,
+    "normal_break_alternate_deg": 47.03,
+    "vertex_normal_imprint_deg": 8.37,
+    "flags": []
+   },
+   {
+    "quad": 57552,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57610,
+     57623
+    ],
+    "alternate_diagonal": [
+     57611,
+     57622
+    ],
+    "fold_chosen_deg": 27.65,
+    "fold_alternate_deg": 53.98,
+    "surface_deviation_cm": 0.0373,
+    "deviation_over_edge": 0.212,
+    "min_angle_chosen": 44.71,
+    "min_angle_alternate": 23.89,
+    "aspect_chosen": 1.37,
+    "aspect_alternate": 1.98,
+    "normal_break_chosen_deg": 29.23,
+    "normal_break_alternate_deg": 48.74,
+    "vertex_normal_imprint_deg": 11.02,
+    "flags": []
+   },
+   {
+    "quad": 57563,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57621,
+     57634
+    ],
+    "alternate_diagonal": [
+     57622,
+     57633
+    ],
+    "fold_chosen_deg": 24.71,
+    "fold_alternate_deg": 51.54,
+    "surface_deviation_cm": 0.0358,
+    "deviation_over_edge": 0.187,
+    "min_angle_chosen": 41.38,
+    "min_angle_alternate": 21.99,
+    "aspect_chosen": 1.51,
+    "aspect_alternate": 2.15,
+    "normal_break_chosen_deg": 23.47,
+    "normal_break_alternate_deg": 33.98,
+    "vertex_normal_imprint_deg": 11.41,
+    "flags": []
+   },
+   {
+    "quad": 57571,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57629,
+     57642
+    ],
+    "alternate_diagonal": [
+     57630,
+     57641
+    ],
+    "fold_chosen_deg": 23.32,
+    "fold_alternate_deg": 39.37,
+    "surface_deviation_cm": 0.0319,
+    "deviation_over_edge": 0.174,
+    "min_angle_chosen": 52.58,
+    "min_angle_alternate": 26.66,
+    "aspect_chosen": 1.16,
+    "aspect_alternate": 1.84,
+    "normal_break_chosen_deg": 34.42,
+    "normal_break_alternate_deg": 34.29,
+    "vertex_normal_imprint_deg": 7.98,
+    "flags": []
+   },
+   {
+    "quad": 57573,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57631,
+     57644
+    ],
+    "alternate_diagonal": [
+     57632,
+     57643
+    ],
+    "fold_chosen_deg": 20.7,
+    "fold_alternate_deg": 39.35,
+    "surface_deviation_cm": 0.0263,
+    "deviation_over_edge": 0.158,
+    "min_angle_chosen": 49.11,
+    "min_angle_alternate": 24.99,
+    "aspect_chosen": 1.26,
+    "aspect_alternate": 2.0,
+    "normal_break_chosen_deg": 21.23,
+    "normal_break_alternate_deg": 31.22,
+    "vertex_normal_imprint_deg": 7.09,
+    "flags": []
+   },
+   {
+    "quad": 57582,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57640,
+     57653
+    ],
+    "alternate_diagonal": [
+     57641,
+     57652
+    ],
+    "fold_chosen_deg": 29.15,
+    "fold_alternate_deg": 39.34,
+    "surface_deviation_cm": 0.0386,
+    "deviation_over_edge": 0.193,
+    "min_angle_chosen": 41.36,
+    "min_angle_alternate": 28.86,
+    "aspect_chosen": 1.47,
+    "aspect_alternate": 2.04,
+    "normal_break_chosen_deg": 33.35,
+    "normal_break_alternate_deg": 26.48,
+    "vertex_normal_imprint_deg": 6.28,
+    "flags": []
+   },
+   {
+    "quad": 57583,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57641,
+     57654
+    ],
+    "alternate_diagonal": [
+     57642,
+     57653
+    ],
+    "fold_chosen_deg": 51.91,
+    "fold_alternate_deg": 69.2,
+    "surface_deviation_cm": 0.0709,
+    "deviation_over_edge": 0.363,
+    "min_angle_chosen": 47.38,
+    "min_angle_alternate": 33.56,
+    "aspect_chosen": 1.25,
+    "aspect_alternate": 1.76,
+    "normal_break_chosen_deg": 36.88,
+    "normal_break_alternate_deg": 50.48,
+    "vertex_normal_imprint_deg": 10.79,
+    "flags": []
+   },
+   {
+    "quad": 57584,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57642,
+     57655
+    ],
+    "alternate_diagonal": [
+     57643,
+     57654
+    ],
+    "fold_chosen_deg": 32.06,
+    "fold_alternate_deg": 45.79,
+    "surface_deviation_cm": 0.0427,
+    "deviation_over_edge": 0.215,
+    "min_angle_chosen": 39.88,
+    "min_angle_alternate": 27.22,
+    "aspect_chosen": 1.54,
+    "aspect_alternate": 1.95,
+    "normal_break_chosen_deg": 37.67,
+    "normal_break_alternate_deg": 47.6,
+    "vertex_normal_imprint_deg": 8.4,
+    "flags": []
+   },
+   {
+    "quad": 57586,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57644,
+     57657
+    ],
+    "alternate_diagonal": [
+     57645,
+     57656
+    ],
+    "fold_chosen_deg": 33.74,
+    "fold_alternate_deg": 64.17,
+    "surface_deviation_cm": 0.047,
+    "deviation_over_edge": 0.252,
+    "min_angle_chosen": 41.05,
+    "min_angle_alternate": 22.49,
+    "aspect_chosen": 1.49,
+    "aspect_alternate": 2.09,
+    "normal_break_chosen_deg": 30.59,
+    "normal_break_alternate_deg": 56.25,
+    "vertex_normal_imprint_deg": 14.11,
+    "flags": []
+   },
+   {
+    "quad": 57593,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57323,
+     57664
+    ],
+    "alternate_diagonal": [
+     57327,
+     57652
+    ],
+    "fold_chosen_deg": 27.89,
+    "fold_alternate_deg": 31.41,
+    "surface_deviation_cm": 0.024,
+    "deviation_over_edge": 0.163,
+    "min_angle_chosen": 38.36,
+    "min_angle_alternate": 32.04,
+    "aspect_chosen": 1.59,
+    "aspect_alternate": 1.86,
+    "normal_break_chosen_deg": 33.76,
+    "normal_break_alternate_deg": 23.3,
+    "vertex_normal_imprint_deg": 5.73,
+    "flags": []
+   },
+   {
+    "quad": 57617,
+    "side": "r",
+    "region": "lobe_junction",
+    "folded": false,
+    "chosen_diagonal": [
+     57689,
+     57703
+    ],
+    "alternate_diagonal": [
+     57690,
+     57702
+    ],
+    "fold_chosen_deg": 21.79,
+    "fold_alternate_deg": 25.82,
+    "surface_deviation_cm": 0.0269,
+    "deviation_over_edge": 0.144,
+    "min_angle_chosen": 45.16,
+    "min_angle_alternate": 36.2,
+    "aspect_chosen": 1.4,
+    "aspect_alternate": 1.68,
+    "normal_break_chosen_deg": 18.8,
+    "normal_break_alternate_deg": 27.04,
+    "vertex_normal_imprint_deg": 3.8,
+    "flags": []
+   },
+   {
+    "quad": 57690,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57769,
+     57781
+    ],
+    "alternate_diagonal": [
+     57768,
+     57782
+    ],
+    "fold_chosen_deg": 21.47,
+    "fold_alternate_deg": 26.93,
+    "surface_deviation_cm": 0.0246,
+    "deviation_over_edge": 0.146,
+    "min_angle_chosen": 46.88,
+    "min_angle_alternate": 35.6,
+    "aspect_chosen": 1.33,
+    "aspect_alternate": 1.68,
+    "normal_break_chosen_deg": 16.86,
+    "normal_break_alternate_deg": 18.51,
+    "vertex_normal_imprint_deg": 3.84,
+    "flags": []
+   },
+   {
+    "quad": 57701,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57781,
+     57793
+    ],
+    "alternate_diagonal": [
+     57780,
+     57794
+    ],
+    "fold_chosen_deg": 23.18,
+    "fold_alternate_deg": 30.17,
+    "surface_deviation_cm": 0.0265,
+    "deviation_over_edge": 0.159,
+    "min_angle_chosen": 45.17,
+    "min_angle_alternate": 32.68,
+    "aspect_chosen": 1.35,
+    "aspect_alternate": 1.77,
+    "normal_break_chosen_deg": 26.0,
+    "normal_break_alternate_deg": 24.63,
+    "vertex_normal_imprint_deg": 4.78,
+    "flags": []
+   },
+   {
+    "quad": 57888,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57982,
+     57996
+    ],
+    "alternate_diagonal": [
+     57983,
+     57995
+    ],
+    "fold_chosen_deg": 25.95,
+    "fold_alternate_deg": 50.61,
+    "surface_deviation_cm": 0.0347,
+    "deviation_over_edge": 0.199,
+    "min_angle_chosen": 45.72,
+    "min_angle_alternate": 24.12,
+    "aspect_chosen": 1.34,
+    "aspect_alternate": 1.96,
+    "normal_break_chosen_deg": 28.17,
+    "normal_break_alternate_deg": 47.25,
+    "vertex_normal_imprint_deg": 10.18,
+    "flags": []
+   },
+   {
+    "quad": 57919,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58016,
+     58030
+    ],
+    "alternate_diagonal": [
+     58017,
+     58029
+    ],
+    "fold_chosen_deg": 35.12,
+    "fold_alternate_deg": 49.84,
+    "surface_deviation_cm": 0.0491,
+    "deviation_over_edge": 0.252,
+    "min_angle_chosen": 52.52,
+    "min_angle_alternate": 33.8,
+    "aspect_chosen": 1.18,
+    "aspect_alternate": 1.73,
+    "normal_break_chosen_deg": 23.79,
+    "normal_break_alternate_deg": 32.94,
+    "vertex_normal_imprint_deg": 7.56,
+    "flags": []
+   },
+   {
+    "quad": 57920,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58017,
+     58031
+    ],
+    "alternate_diagonal": [
+     58018,
+     58030
+    ],
+    "fold_chosen_deg": 26.78,
+    "fold_alternate_deg": 39.64,
+    "surface_deviation_cm": 0.0363,
+    "deviation_over_edge": 0.192,
+    "min_angle_chosen": 49.65,
+    "min_angle_alternate": 31.01,
+    "aspect_chosen": 1.2,
+    "aspect_alternate": 1.77,
+    "normal_break_chosen_deg": 25.52,
+    "normal_break_alternate_deg": 38.28,
+    "vertex_normal_imprint_deg": 6.72,
+    "flags": []
+   },
+   {
+    "quad": 57931,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58029,
+     58043
+    ],
+    "alternate_diagonal": [
+     58030,
+     58042
+    ],
+    "fold_chosen_deg": 25.63,
+    "fold_alternate_deg": 29.17,
+    "surface_deviation_cm": 0.0317,
+    "deviation_over_edge": 0.162,
+    "min_angle_chosen": 37.69,
+    "min_angle_alternate": 32.98,
+    "aspect_chosen": 1.6,
+    "aspect_alternate": 1.77,
+    "normal_break_chosen_deg": 25.26,
+    "normal_break_alternate_deg": 21.62,
+    "vertex_normal_imprint_deg": 5.04,
+    "flags": []
+   },
+   {
+    "quad": 57934,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58032,
+     58046
+    ],
+    "alternate_diagonal": [
+     58033,
+     58045
+    ],
+    "fold_chosen_deg": 21.36,
+    "fold_alternate_deg": 36.4,
+    "surface_deviation_cm": 0.0295,
+    "deviation_over_edge": 0.157,
+    "min_angle_chosen": 50.56,
+    "min_angle_alternate": 24.38,
+    "aspect_chosen": 1.18,
+    "aspect_alternate": 2.08,
+    "normal_break_chosen_deg": 25.61,
+    "normal_break_alternate_deg": 41.55,
+    "vertex_normal_imprint_deg": 6.81,
+    "flags": []
+   },
+   {
+    "quad": 57941,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57664,
+     58053
+    ],
+    "alternate_diagonal": [
+     57327,
+     58054
+    ],
+    "fold_chosen_deg": 22.72,
+    "fold_alternate_deg": 49.3,
+    "surface_deviation_cm": 0.0327,
+    "deviation_over_edge": 0.16,
+    "min_angle_chosen": 35.14,
+    "min_angle_alternate": 19.31,
+    "aspect_chosen": 1.72,
+    "aspect_alternate": 2.59,
+    "normal_break_chosen_deg": 22.35,
+    "normal_break_alternate_deg": 40.86,
+    "vertex_normal_imprint_deg": 11.14,
+    "flags": []
+   },
+   {
+    "quad": 57942,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     57665,
+     58054
+    ],
+    "alternate_diagonal": [
+     57664,
+     58055
+    ],
+    "fold_chosen_deg": 21.75,
+    "fold_alternate_deg": 46.14,
+    "surface_deviation_cm": 0.0324,
+    "deviation_over_edge": 0.169,
+    "min_angle_chosen": 48.48,
+    "min_angle_alternate": 21.22,
+    "aspect_chosen": 1.3,
+    "aspect_alternate": 1.89,
+    "normal_break_chosen_deg": 16.76,
+    "normal_break_alternate_deg": 39.0,
+    "vertex_normal_imprint_deg": 11.23,
+    "flags": []
+   },
+   {
+    "quad": 57955,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58056,
+     58068
+    ],
+    "alternate_diagonal": [
+     58055,
+     58069
+    ],
+    "fold_chosen_deg": 30.27,
+    "fold_alternate_deg": 42.27,
+    "surface_deviation_cm": 0.0358,
+    "deviation_over_edge": 0.216,
+    "min_angle_chosen": 54.03,
+    "min_angle_alternate": 34.88,
+    "aspect_chosen": 1.17,
+    "aspect_alternate": 1.68,
+    "normal_break_chosen_deg": 20.35,
+    "normal_break_alternate_deg": 34.23,
+    "vertex_normal_imprint_deg": 6.71,
+    "flags": []
+   },
+   {
+    "quad": 57956,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58057,
+     58069
+    ],
+    "alternate_diagonal": [
+     58056,
+     58070
+    ],
+    "fold_chosen_deg": 22.04,
+    "fold_alternate_deg": 23.42,
+    "surface_deviation_cm": 0.0193,
+    "deviation_over_edge": 0.136,
+    "min_angle_chosen": 36.73,
+    "min_angle_alternate": 33.34,
+    "aspect_chosen": 1.67,
+    "aspect_alternate": 1.81,
+    "normal_break_chosen_deg": 22.21,
+    "normal_break_alternate_deg": 27.85,
+    "vertex_normal_imprint_deg": 3.48,
+    "flags": []
+   },
+   {
+    "quad": 57957,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58058,
+     58070
+    ],
+    "alternate_diagonal": [
+     58057,
+     58071
+    ],
+    "fold_chosen_deg": 20.41,
+    "fold_alternate_deg": 25.65,
+    "surface_deviation_cm": 0.0176,
+    "deviation_over_edge": 0.137,
+    "min_angle_chosen": 46.04,
+    "min_angle_alternate": 32.96,
+    "aspect_chosen": 1.38,
+    "aspect_alternate": 1.8,
+    "normal_break_chosen_deg": 33.86,
+    "normal_break_alternate_deg": 26.99,
+    "vertex_normal_imprint_deg": 3.83,
+    "flags": []
+   },
+   {
+    "quad": 57966,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58068,
+     58080
+    ],
+    "alternate_diagonal": [
+     58067,
+     58081
+    ],
+    "fold_chosen_deg": 37.91,
+    "fold_alternate_deg": 51.48,
+    "surface_deviation_cm": 0.0485,
+    "deviation_over_edge": 0.266,
+    "min_angle_chosen": 50.86,
+    "min_angle_alternate": 34.14,
+    "aspect_chosen": 1.23,
+    "aspect_alternate": 1.75,
+    "normal_break_chosen_deg": 31.14,
+    "normal_break_alternate_deg": 46.71,
+    "vertex_normal_imprint_deg": 8.02,
+    "flags": []
+   },
+   {
+    "quad": 57967,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58069,
+     58081
+    ],
+    "alternate_diagonal": [
+     58068,
+     58082
+    ],
+    "fold_chosen_deg": 39.89,
+    "fold_alternate_deg": 56.57,
+    "surface_deviation_cm": 0.0523,
+    "deviation_over_edge": 0.277,
+    "min_angle_chosen": 51.75,
+    "min_angle_alternate": 30.77,
+    "aspect_chosen": 1.23,
+    "aspect_alternate": 1.89,
+    "normal_break_chosen_deg": 30.06,
+    "normal_break_alternate_deg": 48.52,
+    "vertex_normal_imprint_deg": 9.64,
+    "flags": []
+   },
+   {
+    "quad": 57979,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58081,
+     58091
+    ],
+    "alternate_diagonal": [
+     58080,
+     58092
+    ],
+    "fold_chosen_deg": 39.02,
+    "fold_alternate_deg": 42.62,
+    "surface_deviation_cm": 0.0457,
+    "deviation_over_edge": 0.252,
+    "min_angle_chosen": 44.68,
+    "min_angle_alternate": 40.32,
+    "aspect_chosen": 1.41,
+    "aspect_alternate": 1.53,
+    "normal_break_chosen_deg": 37.62,
+    "normal_break_alternate_deg": 47.0,
+    "vertex_normal_imprint_deg": 6.62,
+    "flags": []
+   },
+   {
+    "quad": 57990,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58092,
+     58104
+    ],
+    "alternate_diagonal": [
+     58093,
+     58103
+    ],
+    "fold_chosen_deg": 32.25,
+    "fold_alternate_deg": 32.77,
+    "surface_deviation_cm": 0.0348,
+    "deviation_over_edge": 0.202,
+    "min_angle_chosen": 44.97,
+    "min_angle_alternate": 43.92,
+    "aspect_chosen": 1.41,
+    "aspect_alternate": 1.44,
+    "normal_break_chosen_deg": 25.14,
+    "normal_break_alternate_deg": 27.52,
+    "vertex_normal_imprint_deg": 4.26,
+    "flags": []
+   },
+   {
+    "quad": 57993,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58096,
+     58106
+    ],
+    "alternate_diagonal": [
+     58095,
+     58107
+    ],
+    "fold_chosen_deg": 24.84,
+    "fold_alternate_deg": 26.83,
+    "surface_deviation_cm": 0.0224,
+    "deviation_over_edge": 0.154,
+    "min_angle_chosen": 41.54,
+    "min_angle_alternate": 36.13,
+    "aspect_chosen": 1.5,
+    "aspect_alternate": 1.7,
+    "normal_break_chosen_deg": 33.13,
+    "normal_break_alternate_deg": 33.78,
+    "vertex_normal_imprint_deg": 4.03,
+    "flags": []
+   },
+   {
+    "quad": 58037,
+    "side": "r",
+    "region": "upper_helix_tip",
+    "folded": false,
+    "chosen_diagonal": [
+     58149,
+     58212
+    ],
+    "alternate_diagonal": [
+     58150,
+     58211
+    ],
+    "fold_chosen_deg": 28.45,
+    "fold_alternate_deg": 35.36,
+    "surface_deviation_cm": 0.0199,
+    "deviation_over_edge": 0.144,
+    "min_angle_chosen": 24.44,
+    "min_angle_alternate": 20.34,
+    "aspect_chosen": 2.34,
+    "aspect_alternate": 2.34,
+    "normal_break_chosen_deg": 38.94,
+    "normal_break_alternate_deg": 36.06,
+    "vertex_normal_imprint_deg": 9.73,
+    "flags": []
+   },
+   {
+    "quad": 58074,
+    "side": "r",
+    "region": "upper_helix_tip",
+    "folded": false,
+    "chosen_diagonal": [
+     58186,
+     58216
+    ],
+    "alternate_diagonal": [
+     58187,
+     58215
+    ],
+    "fold_chosen_deg": 34.87,
+    "fold_alternate_deg": 43.71,
+    "surface_deviation_cm": 0.0375,
+    "deviation_over_edge": 0.145,
+    "min_angle_chosen": 15.49,
+    "min_angle_alternate": 19.79,
+    "aspect_chosen": 3.73,
+    "aspect_alternate": 2.42,
+    "normal_break_chosen_deg": 61.55,
+    "normal_break_alternate_deg": 51.45,
+    "vertex_normal_imprint_deg": 13.19,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58088,
+    "side": "r",
+    "region": "upper_helix_tip",
+    "folded": false,
+    "chosen_diagonal": [
+     58204,
+     58206
+    ],
+    "alternate_diagonal": [
+     58205,
+     58217
+    ],
+    "fold_chosen_deg": 28.82,
+    "fold_alternate_deg": 32.82,
+    "surface_deviation_cm": 0.0138,
+    "deviation_over_edge": 0.14,
+    "min_angle_chosen": 31.79,
+    "min_angle_alternate": 18.47,
+    "aspect_chosen": 1.84,
+    "aspect_alternate": 3.09,
+    "normal_break_chosen_deg": 27.18,
+    "normal_break_alternate_deg": 25.35,
+    "vertex_normal_imprint_deg": 6.69,
+    "flags": []
+   },
+   {
+    "quad": 58090,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58042,
+     58219
+    ],
+    "alternate_diagonal": [
+     58041,
+     58220
+    ],
+    "fold_chosen_deg": 23.3,
+    "fold_alternate_deg": 49.94,
+    "surface_deviation_cm": 0.036,
+    "deviation_over_edge": 0.18,
+    "min_angle_chosen": 47.11,
+    "min_angle_alternate": 20.69,
+    "aspect_chosen": 1.34,
+    "aspect_alternate": 1.93,
+    "normal_break_chosen_deg": 17.36,
+    "normal_break_alternate_deg": 41.24,
+    "vertex_normal_imprint_deg": 12.18,
+    "flags": []
+   },
+   {
+    "quad": 58103,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58221,
+     58233
+    ],
+    "alternate_diagonal": [
+     58220,
+     58234
+    ],
+    "fold_chosen_deg": 28.23,
+    "fold_alternate_deg": 42.46,
+    "surface_deviation_cm": 0.0361,
+    "deviation_over_edge": 0.206,
+    "min_angle_chosen": 54.63,
+    "min_angle_alternate": 32.71,
+    "aspect_chosen": 1.13,
+    "aspect_alternate": 1.75,
+    "normal_break_chosen_deg": 19.06,
+    "normal_break_alternate_deg": 33.06,
+    "vertex_normal_imprint_deg": 6.97,
+    "flags": []
+   },
+   {
+    "quad": 58104,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58222,
+     58234
+    ],
+    "alternate_diagonal": [
+     58221,
+     58235
+    ],
+    "fold_chosen_deg": 20.53,
+    "fold_alternate_deg": 23.48,
+    "surface_deviation_cm": 0.0195,
+    "deviation_over_edge": 0.131,
+    "min_angle_chosen": 39.11,
+    "min_angle_alternate": 32.0,
+    "aspect_chosen": 1.59,
+    "aspect_alternate": 1.85,
+    "normal_break_chosen_deg": 21.76,
+    "normal_break_alternate_deg": 27.74,
+    "vertex_normal_imprint_deg": 3.66,
+    "flags": []
+   },
+   {
+    "quad": 58114,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58233,
+     58245
+    ],
+    "alternate_diagonal": [
+     58232,
+     58246
+    ],
+    "fold_chosen_deg": 35.53,
+    "fold_alternate_deg": 52.04,
+    "surface_deviation_cm": 0.0492,
+    "deviation_over_edge": 0.255,
+    "min_angle_chosen": 51.92,
+    "min_angle_alternate": 32.11,
+    "aspect_chosen": 1.18,
+    "aspect_alternate": 1.81,
+    "normal_break_chosen_deg": 29.33,
+    "normal_break_alternate_deg": 44.44,
+    "vertex_normal_imprint_deg": 8.39,
+    "flags": []
+   },
+   {
+    "quad": 58115,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58234,
+     58246
+    ],
+    "alternate_diagonal": [
+     58233,
+     58247
+    ],
+    "fold_chosen_deg": 34.76,
+    "fold_alternate_deg": 52.95,
+    "surface_deviation_cm": 0.0486,
+    "deviation_over_edge": 0.25,
+    "min_angle_chosen": 53.78,
+    "min_angle_alternate": 29.62,
+    "aspect_chosen": 1.14,
+    "aspect_alternate": 1.86,
+    "normal_break_chosen_deg": 27.61,
+    "normal_break_alternate_deg": 43.67,
+    "vertex_normal_imprint_deg": 9.18,
+    "flags": []
+   },
+   {
+    "quad": 58118,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58237,
+     58373
+    ],
+    "alternate_diagonal": [
+     58236,
+     58248
+    ],
+    "fold_chosen_deg": 27.29,
+    "fold_alternate_deg": 60.64,
+    "surface_deviation_cm": 0.0288,
+    "deviation_over_edge": 0.2,
+    "min_angle_chosen": 47.67,
+    "min_angle_alternate": 18.44,
+    "aspect_chosen": 1.34,
+    "aspect_alternate": 1.92,
+    "normal_break_chosen_deg": 37.74,
+    "normal_break_alternate_deg": 46.92,
+    "vertex_normal_imprint_deg": 18.44,
+    "flags": []
+   },
+   {
+    "quad": 58127,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58246,
+     58256
+    ],
+    "alternate_diagonal": [
+     58245,
+     58257
+    ],
+    "fold_chosen_deg": 36.25,
+    "fold_alternate_deg": 42.71,
+    "surface_deviation_cm": 0.046,
+    "deviation_over_edge": 0.241,
+    "min_angle_chosen": 45.52,
+    "min_angle_alternate": 37.18,
+    "aspect_chosen": 1.37,
+    "aspect_alternate": 1.62,
+    "normal_break_chosen_deg": 36.74,
+    "normal_break_alternate_deg": 46.28,
+    "vertex_normal_imprint_deg": 6.87,
+    "flags": []
+   },
+   {
+    "quad": 58138,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58258,
+     58268
+    ],
+    "alternate_diagonal": [
+     58257,
+     58269
+    ],
+    "fold_chosen_deg": 27.63,
+    "fold_alternate_deg": 28.68,
+    "surface_deviation_cm": 0.0308,
+    "deviation_over_edge": 0.174,
+    "min_angle_chosen": 45.07,
+    "min_angle_alternate": 43.11,
+    "aspect_chosen": 1.41,
+    "aspect_alternate": 1.46,
+    "normal_break_chosen_deg": 26.01,
+    "normal_break_alternate_deg": 24.26,
+    "vertex_normal_imprint_deg": 3.89,
+    "flags": []
+   },
+   {
+    "quad": 58141,
+    "side": "r",
+    "region": "auricle_sheet",
+    "folded": false,
+    "chosen_diagonal": [
+     58261,
+     58271
+    ],
+    "alternate_diagonal": [
+     58260,
+     58272
+    ],
+    "fold_chosen_deg": 24.84,
+    "fold_alternate_deg": 26.83,
+    "surface_deviation_cm": 0.0224,
+    "deviation_over_edge": 0.154,
+    "min_angle_chosen": 41.54,
+    "min_angle_alternate": 36.13,
+    "aspect_chosen": 1.5,
+    "aspect_alternate": 1.7,
+    "normal_break_chosen_deg": 33.13,
+    "normal_break_alternate_deg": 33.78,
+    "vertex_normal_imprint_deg": 4.03,
+    "flags": []
+   },
+   {
+    "quad": 58185,
+    "side": "r",
+    "region": "upper_helix_tip",
+    "folded": false,
+    "chosen_diagonal": [
+     58314,
+     58377
+    ],
+    "alternate_diagonal": [
+     58315,
+     58376
+    ],
+    "fold_chosen_deg": 28.45,
+    "fold_alternate_deg": 35.36,
+    "surface_deviation_cm": 0.0199,
+    "deviation_over_edge": 0.144,
+    "min_angle_chosen": 24.44,
+    "min_angle_alternate": 20.34,
+    "aspect_chosen": 2.34,
+    "aspect_alternate": 2.34,
+    "normal_break_chosen_deg": 38.19,
+    "normal_break_alternate_deg": 33.28,
+    "vertex_normal_imprint_deg": 9.73,
+    "flags": []
+   },
+   {
+    "quad": 58222,
+    "side": "r",
+    "region": "upper_helix_tip",
+    "folded": false,
+    "chosen_diagonal": [
+     58351,
+     58381
+    ],
+    "alternate_diagonal": [
+     58352,
+     58380
+    ],
+    "fold_chosen_deg": 30.34,
+    "fold_alternate_deg": 37.72,
+    "surface_deviation_cm": 0.0306,
+    "deviation_over_edge": 0.143,
+    "min_angle_chosen": 20.16,
+    "min_angle_alternate": 20.33,
+    "aspect_chosen": 2.83,
+    "aspect_alternate": 2.34,
+    "normal_break_chosen_deg": 52.32,
+    "normal_break_alternate_deg": 42.95,
+    "vertex_normal_imprint_deg": 10.94,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58607,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58714,
+     58716
+    ],
+    "alternate_diagonal": [
+     58668,
+     58715
+    ],
+    "fold_chosen_deg": 20.24,
+    "fold_alternate_deg": 20.64,
+    "surface_deviation_cm": 0.0089,
+    "deviation_over_edge": 0.086,
+    "min_angle_chosen": 18.38,
+    "min_angle_alternate": 15.92,
+    "aspect_chosen": 2.98,
+    "aspect_alternate": 3.63,
+    "normal_break_chosen_deg": 17.14,
+    "normal_break_alternate_deg": 15.45,
+    "vertex_normal_imprint_deg": 3.3,
+    "flags": []
+   },
+   {
+    "quad": 58611,
+    "side": "r",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     58670,
+     58721
+    ],
+    "alternate_diagonal": [
+     58671,
+     58720
+    ],
+    "fold_chosen_deg": 171.43,
+    "fold_alternate_deg": 172.22,
+    "surface_deviation_cm": 0.0653,
+    "deviation_over_edge": 0.393,
+    "min_angle_chosen": 13.57,
+    "min_angle_alternate": 15.46,
+    "aspect_chosen": 3.95,
+    "aspect_alternate": 3.74,
+    "normal_break_chosen_deg": 175.39,
+    "normal_break_alternate_deg": 173.71,
+    "vertex_normal_imprint_deg": 29.21,
+    "flags": [
+     "normal_flip",
+     "ridge_or_dent",
+     "shading_discontinuity",
+     "imprint"
+    ]
+   },
+   {
+    "quad": 58612,
+    "side": "r",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     58671,
+     58722
+    ],
+    "alternate_diagonal": [
+     58672,
+     58721
+    ],
+    "fold_chosen_deg": 176.39,
+    "fold_alternate_deg": 176.22,
+    "surface_deviation_cm": 0.0693,
+    "deviation_over_edge": 0.419,
+    "min_angle_chosen": 19.33,
+    "min_angle_alternate": 16.7,
+    "aspect_chosen": 3.0,
+    "aspect_alternate": 3.3,
+    "normal_break_chosen_deg": 176.07,
+    "normal_break_alternate_deg": 175.32,
+    "vertex_normal_imprint_deg": 25.46,
+    "flags": [
+     "normal_flip",
+     "ridge_or_dent",
+     "shading_discontinuity",
+     "imprint"
+    ]
+   },
+   {
+    "quad": 58757,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58815,
+     58940
+    ],
+    "alternate_diagonal": [
+     58814,
+     58941
+    ],
+    "fold_chosen_deg": 32.67,
+    "fold_alternate_deg": 34.44,
+    "surface_deviation_cm": 0.0276,
+    "deviation_over_edge": 0.146,
+    "min_angle_chosen": 22.87,
+    "min_angle_alternate": 20.24,
+    "aspect_chosen": 2.4,
+    "aspect_alternate": 2.89,
+    "normal_break_chosen_deg": 21.98,
+    "normal_break_alternate_deg": 39.23,
+    "vertex_normal_imprint_deg": 5.4,
+    "flags": []
+   },
+   {
+    "quad": 58759,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58816,
+     58943
+    ],
+    "alternate_diagonal": [
+     58815,
+     58876
+    ],
+    "fold_chosen_deg": 41.0,
+    "fold_alternate_deg": 54.19,
+    "surface_deviation_cm": 0.0482,
+    "deviation_over_edge": 0.263,
+    "min_angle_chosen": 38.0,
+    "min_angle_alternate": 24.35,
+    "aspect_chosen": 1.6,
+    "aspect_alternate": 2.35,
+    "normal_break_chosen_deg": 41.76,
+    "normal_break_alternate_deg": 37.57,
+    "vertex_normal_imprint_deg": 8.56,
+    "flags": []
+   },
+   {
+    "quad": 58760,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58816,
+     58877
+    ],
+    "alternate_diagonal": [
+     58817,
+     58876
+    ],
+    "fold_chosen_deg": 44.87,
+    "fold_alternate_deg": 58.53,
+    "surface_deviation_cm": 0.0209,
+    "deviation_over_edge": 0.185,
+    "min_angle_chosen": 17.48,
+    "min_angle_alternate": 14.27,
+    "aspect_chosen": 3.25,
+    "aspect_alternate": 3.32,
+    "normal_break_chosen_deg": 41.39,
+    "normal_break_alternate_deg": 65.27,
+    "vertex_normal_imprint_deg": 18.42,
+    "flags": []
+   },
+   {
+    "quad": 58762,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58818,
+     58879
+    ],
+    "alternate_diagonal": [
+     58817,
+     58880
+    ],
+    "fold_chosen_deg": 41.54,
+    "fold_alternate_deg": 50.9,
+    "surface_deviation_cm": 0.0302,
+    "deviation_over_edge": 0.159,
+    "min_angle_chosen": 12.75,
+    "min_angle_alternate": 12.88,
+    "aspect_chosen": 4.37,
+    "aspect_alternate": 3.6,
+    "normal_break_chosen_deg": 82.32,
+    "normal_break_alternate_deg": 77.25,
+    "vertex_normal_imprint_deg": 10.48,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58763,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58818,
+     58881
+    ],
+    "alternate_diagonal": [
+     58819,
+     58880
+    ],
+    "fold_chosen_deg": 44.16,
+    "fold_alternate_deg": 43.74,
+    "surface_deviation_cm": 0.0419,
+    "deviation_over_edge": 0.134,
+    "min_angle_chosen": 10.78,
+    "min_angle_alternate": 10.41,
+    "aspect_chosen": 5.23,
+    "aspect_alternate": 5.53,
+    "normal_break_chosen_deg": 52.31,
+    "normal_break_alternate_deg": 49.92,
+    "vertex_normal_imprint_deg": 3.84,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58764,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58820,
+     58881
+    ],
+    "alternate_diagonal": [
+     58819,
+     58882
+    ],
+    "fold_chosen_deg": 23.5,
+    "fold_alternate_deg": 34.07,
+    "surface_deviation_cm": 0.0262,
+    "deviation_over_edge": 0.11,
+    "min_angle_chosen": 18.06,
+    "min_angle_alternate": 10.85,
+    "aspect_chosen": 3.22,
+    "aspect_alternate": 4.33,
+    "normal_break_chosen_deg": 20.61,
+    "normal_break_alternate_deg": 37.37,
+    "vertex_normal_imprint_deg": 6.29,
+    "flags": []
+   },
+   {
+    "quad": 58795,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58849,
+     58914
+    ],
+    "alternate_diagonal": [
+     58850,
+     58913
+    ],
+    "fold_chosen_deg": 42.2,
+    "fold_alternate_deg": 59.44,
+    "surface_deviation_cm": 0.033,
+    "deviation_over_edge": 0.245,
+    "min_angle_chosen": 33.53,
+    "min_angle_alternate": 24.79,
+    "aspect_chosen": 1.81,
+    "aspect_alternate": 1.95,
+    "normal_break_chosen_deg": 57.46,
+    "normal_break_alternate_deg": 91.89,
+    "vertex_normal_imprint_deg": 18.55,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58796,
+    "side": "r",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     58851,
+     58914
+    ],
+    "alternate_diagonal": [
+     58850,
+     58915
+    ],
+    "fold_chosen_deg": 92.22,
+    "fold_alternate_deg": 98.25,
+    "surface_deviation_cm": 0.0804,
+    "deviation_over_edge": 0.351,
+    "min_angle_chosen": 17.25,
+    "min_angle_alternate": 14.92,
+    "aspect_chosen": 3.35,
+    "aspect_alternate": 3.86,
+    "normal_break_chosen_deg": 131.49,
+    "normal_break_alternate_deg": 77.48,
+    "vertex_normal_imprint_deg": 7.55,
+    "flags": [
+     "ridge_or_dent",
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58797,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58852,
+     58915
+    ],
+    "alternate_diagonal": [
+     58851,
+     58916
+    ],
+    "fold_chosen_deg": 20.54,
+    "fold_alternate_deg": 24.11,
+    "surface_deviation_cm": 0.025,
+    "deviation_over_edge": 0.106,
+    "min_angle_chosen": 25.36,
+    "min_angle_alternate": 21.25,
+    "aspect_chosen": 2.33,
+    "aspect_alternate": 2.75,
+    "normal_break_chosen_deg": 57.88,
+    "normal_break_alternate_deg": 61.2,
+    "vertex_normal_imprint_deg": 3.69,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58820,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58875,
+     58938
+    ],
+    "alternate_diagonal": [
+     58812,
+     58937
+    ],
+    "fold_chosen_deg": 21.83,
+    "fold_alternate_deg": 23.07,
+    "surface_deviation_cm": 0.0121,
+    "deviation_over_edge": 0.109,
+    "min_angle_chosen": 20.74,
+    "min_angle_alternate": 18.26,
+    "aspect_chosen": 2.79,
+    "aspect_alternate": 3.12,
+    "normal_break_chosen_deg": 26.9,
+    "normal_break_alternate_deg": 15.62,
+    "vertex_normal_imprint_deg": 3.85,
+    "flags": []
+   },
+   {
+    "quad": 58821,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57676,
+     58877
+    ],
+    "alternate_diagonal": [
+     58385,
+     58876
+    ],
+    "fold_chosen_deg": 29.5,
+    "fold_alternate_deg": 35.63,
+    "surface_deviation_cm": 0.0117,
+    "deviation_over_edge": 0.08,
+    "min_angle_chosen": 9.98,
+    "min_angle_alternate": 8.08,
+    "aspect_chosen": 5.51,
+    "aspect_alternate": 6.29,
+    "normal_break_chosen_deg": 43.03,
+    "normal_break_alternate_deg": 74.42,
+    "vertex_normal_imprint_deg": 2.77,
+    "flags": []
+   },
+   {
+    "quad": 58822,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58385,
+     58878
+    ],
+    "alternate_diagonal": [
+     58384,
+     58877
+    ],
+    "fold_chosen_deg": 37.1,
+    "fold_alternate_deg": 46.62,
+    "surface_deviation_cm": 0.0143,
+    "deviation_over_edge": 0.093,
+    "min_angle_chosen": 10.15,
+    "min_angle_alternate": 8.08,
+    "aspect_chosen": 5.23,
+    "aspect_alternate": 6.11,
+    "normal_break_chosen_deg": 48.44,
+    "normal_break_alternate_deg": 72.69,
+    "vertex_normal_imprint_deg": 3.94,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58823,
+    "side": "r",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     58384,
+     58879
+    ],
+    "alternate_diagonal": [
+     58383,
+     58878
+    ],
+    "fold_chosen_deg": 100.64,
+    "fold_alternate_deg": 110.22,
+    "surface_deviation_cm": 0.0437,
+    "deviation_over_edge": 0.217,
+    "min_angle_chosen": 7.27,
+    "min_angle_alternate": 9.61,
+    "aspect_chosen": 6.38,
+    "aspect_alternate": 5.2,
+    "normal_break_chosen_deg": 84.95,
+    "normal_break_alternate_deg": 113.01,
+    "vertex_normal_imprint_deg": 10.84,
+    "flags": [
+     "ridge_or_dent",
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58824,
+    "side": "r",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     58383,
+     58880
+    ],
+    "alternate_diagonal": [
+     57215,
+     58879
+    ],
+    "fold_chosen_deg": 90.93,
+    "fold_alternate_deg": 95.09,
+    "surface_deviation_cm": 0.0483,
+    "deviation_over_edge": 0.166,
+    "min_angle_chosen": 5.58,
+    "min_angle_alternate": 7.81,
+    "aspect_chosen": 9.39,
+    "aspect_alternate": 6.82,
+    "normal_break_chosen_deg": 71.96,
+    "normal_break_alternate_deg": 115.06,
+    "vertex_normal_imprint_deg": 9.56,
+    "flags": [
+     "ridge_or_dent",
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58857,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57325,
+     58913
+    ],
+    "alternate_diagonal": [
+     57326,
+     58912
+    ],
+    "fold_chosen_deg": 33.7,
+    "fold_alternate_deg": 51.43,
+    "surface_deviation_cm": 0.032,
+    "deviation_over_edge": 0.23,
+    "min_angle_chosen": 37.61,
+    "min_angle_alternate": 23.1,
+    "aspect_chosen": 1.6,
+    "aspect_alternate": 2.14,
+    "normal_break_chosen_deg": 45.72,
+    "normal_break_alternate_deg": 36.75,
+    "vertex_normal_imprint_deg": 11.31,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58859,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58642,
+     58913
+    ],
+    "alternate_diagonal": [
+     58641,
+     58914
+    ],
+    "fold_chosen_deg": 25.55,
+    "fold_alternate_deg": 38.38,
+    "surface_deviation_cm": 0.024,
+    "deviation_over_edge": 0.143,
+    "min_angle_chosen": 28.1,
+    "min_angle_alternate": 18.42,
+    "aspect_chosen": 2.11,
+    "aspect_alternate": 2.75,
+    "normal_break_chosen_deg": 49.29,
+    "normal_break_alternate_deg": 68.43,
+    "vertex_normal_imprint_deg": 6.08,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58860,
+    "side": "r",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     58643,
+     58914
+    ],
+    "alternate_diagonal": [
+     58040,
+     58642
+    ],
+    "fold_chosen_deg": 45.38,
+    "fold_alternate_deg": 105.55,
+    "surface_deviation_cm": 0.0409,
+    "deviation_over_edge": 0.25,
+    "min_angle_chosen": 26.9,
+    "min_angle_alternate": 22.5,
+    "aspect_chosen": 2.18,
+    "aspect_alternate": 1.85,
+    "normal_break_chosen_deg": 64.13,
+    "normal_break_alternate_deg": 111.25,
+    "vertex_normal_imprint_deg": 40.92,
+    "flags": [
+     "shading_discontinuity",
+     "imprint"
+    ]
+   },
+   {
+    "quad": 58861,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58040,
+     58915
+    ],
+    "alternate_diagonal": [
+     58027,
+     58914
+    ],
+    "fold_chosen_deg": 51.05,
+    "fold_alternate_deg": 54.45,
+    "surface_deviation_cm": 0.0651,
+    "deviation_over_edge": 0.251,
+    "min_angle_chosen": 22.23,
+    "min_angle_alternate": 27.72,
+    "aspect_chosen": 2.62,
+    "aspect_alternate": 2.02,
+    "normal_break_chosen_deg": 110.39,
+    "normal_break_alternate_deg": 87.46,
+    "vertex_normal_imprint_deg": 13.45,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58862,
+    "side": "r",
+    "region": "cuff",
+    "folded": true,
+    "chosen_diagonal": [
+     58014,
+     58915
+    ],
+    "alternate_diagonal": [
+     58001,
+     58027
+    ],
+    "fold_chosen_deg": 1.34,
+    "fold_alternate_deg": 174.0,
+    "surface_deviation_cm": 0.0187,
+    "deviation_over_edge": 0.073,
+    "min_angle_chosen": 32.74,
+    "min_angle_alternate": 5.91,
+    "aspect_chosen": 1.84,
+    "aspect_alternate": 2.0,
+    "normal_break_chosen_deg": 58.72,
+    "normal_break_alternate_deg": 166.27,
+    "vertex_normal_imprint_deg": 86.72,
+    "flags": [
+     "shading_discontinuity",
+     "imprint"
+    ]
+   },
+   {
+    "quad": 58863,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     58001,
+     58916
+    ],
+    "alternate_diagonal": [
+     57988,
+     58915
+    ],
+    "fold_chosen_deg": 33.83,
+    "fold_alternate_deg": 57.37,
+    "surface_deviation_cm": 0.0652,
+    "deviation_over_edge": 0.227,
+    "min_angle_chosen": 35.5,
+    "min_angle_alternate": 18.19,
+    "aspect_chosen": 1.7,
+    "aspect_alternate": 2.52,
+    "normal_break_chosen_deg": 46.25,
+    "normal_break_alternate_deg": 57.14,
+    "vertex_normal_imprint_deg": 13.33,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58865,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57975,
+     58918
+    ],
+    "alternate_diagonal": [
+     57962,
+     58917
+    ],
+    "fold_chosen_deg": 26.98,
+    "fold_alternate_deg": 31.57,
+    "surface_deviation_cm": 0.0323,
+    "deviation_over_edge": 0.16,
+    "min_angle_chosen": 29.14,
+    "min_angle_alternate": 23.56,
+    "aspect_chosen": 2.05,
+    "aspect_alternate": 2.43,
+    "normal_break_chosen_deg": 60.82,
+    "normal_break_alternate_deg": 42.72,
+    "vertex_normal_imprint_deg": 4.9,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   },
+   {
+    "quad": 58867,
+    "side": "r",
+    "region": "cuff",
+    "folded": false,
+    "chosen_diagonal": [
+     57949,
+     58920
+    ],
+    "alternate_diagonal": [
+     57936,
+     58919
+    ],
+    "fold_chosen_deg": 30.14,
+    "fold_alternate_deg": 46.76,
+    "surface_deviation_cm": 0.0308,
+    "deviation_over_edge": 0.178,
+    "min_angle_chosen": 27.02,
+    "min_angle_alternate": 15.68,
+    "aspect_chosen": 2.2,
+    "aspect_alternate": 3.02,
+    "normal_break_chosen_deg": 64.64,
+    "normal_break_alternate_deg": 101.88,
+    "vertex_normal_imprint_deg": 14.93,
+    "flags": [
+     "shading_discontinuity"
+    ]
+   }
+  ]
+ },
+ "normals_tangents": {
+  "normals": "smooth angle-weighted vertex normals on the baked triangles (Blender corner normals; no sharp edges / one smoothing group)",
+  "blender_vs_numpy_vertex_normal_max_deg_branch": 0.0392,
+  "tangents": "MikkTSpace (Blender calc_tangents) on a production-like Smart UV Project unwrap (66 deg islands; the final production UV is outside this gate); spread / sign measured among the loops of a vertex that share one UV (seams excluded)",
+  "degenerate_or_nan_tangents_branch": 0,
+  "tangent_spread_per_vertex_max_deg_branch": 24.43,
+  "tangent_spread_per_vertex_max_deg_flagged": 2.45,
+  "bitangent_sign_mixed_vertices_branch": 0,
+  "bitangent_sign_mixed_vertices_flagged": 0,
+  "quad_vs_baked_triangle_vertex_normal_max_deg_branch": 78.07
+ },
+ "importer_retriangulation_if_exported_as_quads": {
+  "FIXED": {
+   "branch_quads_differing": 1870,
+   "flagged_quads_differing": 113,
+   "flagged_max_surface_change_cm": 0.0975,
+   "flagged_differing_into_folded_split": 7
+  },
+  "BEAUTY": {
+   "branch_quads_differing": 35,
+   "flagged_quads_differing": 10,
+   "flagged_max_surface_change_cm": 0.0975,
+   "flagged_differing_into_folded_split": 5
+  },
+  "SHORT_EDGE": {
+   "branch_quads_differing": 75,
+   "flagged_quads_differing": 18,
+   "flagged_max_surface_change_cm": 0.0651,
+   "flagged_differing_into_folded_split": 4
+  }
+ },
+ "export_fbx": {
+  "file_bytes": 7219244,
+  "vertices_equal": true,
+  "max_abs_dV_cm": 8.396455037029682e-06,
+  "triangles_identical": true,
+  "loop_order_identical": true,
+  "normal_max_deg_branch": 0.0265,
+  "tangent_recomputed_max_deg_branch": 0.0001,
+  "bitangent_sign_identical": true,
+  "ear_region_boundary_or_nonmanifold_edges": 0
+ },
+ "mirroring": {
+  "sheet_quad_pairs": 1396,
+  "diagonal_choice_mismatched": 0,
+  "mismatched_among_flagged": 0,
+  "cuff": "per-side canonical transitions (Fenn / Vael cuff canon): not a mirror pair"
+ },
+ "rest_contacts_touching_branch_on_baked_triangles": 0,
+ "poses": {
+  "neck_flex30": {
+   "new_contacts": 0,
+   "new_contact_pairs": [],
+   "triangle_inversions": 0,
+   "vertex_normal_flips": 0,
+   "root_band_triangle_inversions": 0,
+   "folded_across_baked_diagonal_rest": 9,
+   "folded_across_baked_diagonal_pose": 9,
+   "folded_quads_audit_metric_rest": 16,
+   "folded_quads_audit_metric_pose": 16,
+   "flagged_max_fold_change_deg": 0.742,
+   "flagged_max_local_normal_change_deg": 0.555,
+   "branch_max_local_normal_change_deg": 0.959,
+   "rule_reevaluated_at_pose_would_change_diagonal_branch": 16,
+   "baked_diagonal_changes": 0
+  },
+  "neck_ext30": {
+   "new_contacts": 0,
+   "new_contact_pairs": [],
+   "triangle_inversions": 0,
+   "vertex_normal_flips": 0,
+   "root_band_triangle_inversions": 0,
+   "folded_across_baked_diagonal_rest": 9,
+   "folded_across_baked_diagonal_pose": 8,
+   "folded_quads_audit_metric_rest": 16,
+   "folded_quads_audit_metric_pose": 16,
+   "flagged_max_fold_change_deg": 1.025,
+   "flagged_max_local_normal_change_deg": 0.774,
+   "branch_max_local_normal_change_deg": 1.005,
+   "rule_reevaluated_at_pose_would_change_diagonal_branch": 25,
+   "baked_diagonal_changes": 0
+  },
+  "head_yaw_l45": {
+   "new_contacts": 0,
+   "new_contact_pairs": [],
+   "triangle_inversions": 0,
+   "vertex_normal_flips": 0,
+   "root_band_triangle_inversions": 0,
+   "folded_across_baked_diagonal_rest": 9,
+   "folded_across_baked_diagonal_pose": 7,
+   "folded_quads_audit_metric_rest": 16,
+   "folded_quads_audit_metric_pose": 16,
+   "flagged_max_fold_change_deg": 15.995,
+   "flagged_max_local_normal_change_deg": 14.29,
+   "branch_max_local_normal_change_deg": 14.29,
+   "rule_reevaluated_at_pose_would_change_diagonal_branch": 107,
+   "baked_diagonal_changes": 0
+  },
+  "head_yaw_r45": {
+   "new_contacts": 0,
+   "new_contact_pairs": [],
+   "triangle_inversions": 0,
+   "vertex_normal_flips": 0,
+   "root_band_triangle_inversions": 0,
+   "folded_across_baked_diagonal_rest": 9,
+   "folded_across_baked_diagonal_pose": 8,
+   "folded_quads_audit_metric_rest": 16,
+   "folded_quads_audit_metric_pose": 17,
+   "flagged_max_fold_change_deg": 13.512,
+   "flagged_max_local_normal_change_deg": 12.105,
+   "branch_max_local_normal_change_deg": 12.105,
+   "rule_reevaluated_at_pose_would_change_diagonal_branch": 102,
+   "baked_diagonal_changes": 0
+  },
+  "head_pitch_down20": {
+   "new_contacts": 0,
+   "new_contact_pairs": [],
+   "triangle_inversions": 0,
+   "vertex_normal_flips": 0,
+   "root_band_triangle_inversions": 0,
+   "folded_across_baked_diagonal_rest": 9,
+   "folded_across_baked_diagonal_pose": 9,
+   "folded_quads_audit_metric_rest": 16,
+   "folded_quads_audit_metric_pose": 16,
+   "flagged_max_fold_change_deg": 0.96,
+   "flagged_max_local_normal_change_deg": 0.728,
+   "branch_max_local_normal_change_deg": 1.296,
+   "rule_reevaluated_at_pose_would_change_diagonal_branch": 24,
+   "baked_diagonal_changes": 0
+  },
+  "head_pitch_up20": {
+   "new_contacts": 0,
+   "new_contact_pairs": [],
+   "triangle_inversions": 0,
+   "vertex_normal_flips": 0,
+   "root_band_triangle_inversions": 0,
+   "folded_across_baked_diagonal_rest": 9,
+   "folded_across_baked_diagonal_pose": 8,
+   "folded_quads_audit_metric_rest": 16,
+   "folded_quads_audit_metric_pose": 16,
+   "flagged_max_fold_change_deg": 1.417,
+   "flagged_max_local_normal_change_deg": 1.077,
+   "branch_max_local_normal_change_deg": 1.354,
+   "rule_reevaluated_at_pose_would_change_diagonal_branch": 31,
+   "baked_diagonal_changes": 0
+  },
+  "head_roll_l20": {
+   "new_contacts": 0,
+   "new_contact_pairs": [],
+   "triangle_inversions": 0,
+   "vertex_normal_flips": 0,
+   "root_band_triangle_inversions": 0,
+   "folded_across_baked_diagonal_rest": 9,
+   "folded_across_baked_diagonal_pose": 7,
+   "folded_quads_audit_metric_rest": 16,
+   "folded_quads_audit_metric_pose": 16,
+   "flagged_max_fold_change_deg": 3.246,
+   "flagged_max_local_normal_change_deg": 2.554,
+   "branch_max_local_normal_change_deg": 5.201,
+   "rule_reevaluated_at_pose_would_change_diagonal_branch": 61,
+   "baked_diagonal_changes": 0
+  },
+  "head_roll_r20": {
+   "new_contacts": 0,
+   "new_contact_pairs": [],
+   "triangle_inversions": 0,
+   "vertex_normal_flips": 0,
+   "root_band_triangle_inversions": 0,
+   "folded_across_baked_diagonal_rest": 9,
+   "folded_across_baked_diagonal_pose": 9,
+   "folded_quads_audit_metric_rest": 16,
+   "folded_quads_audit_metric_pose": 16,
+   "flagged_max_fold_change_deg": 3.321,
+   "flagged_max_local_normal_change_deg": 2.629,
+   "branch_max_local_normal_change_deg": 5.195,
+   "rule_reevaluated_at_pose_would_change_diagonal_branch": 65,
+   "baked_diagonal_changes": 0
+  }
+ },
+ "worst_two_poses": [
+  "head_yaw_l45",
+  "head_yaw_r45"
+ ],
+ "lod": {
+  "protected": {
+   "0.5": {
+    "faces": 58942,
+    "ear_region_nonmanifold_edges": 0,
+    "ear_region_zero_area_triangles": 0,
+    "ear_region_self_intersection_pairs": 0,
+    "ear_max_drift_source_to_lod_cm": 0.0093,
+    "ear_p99_drift_source_to_lod_cm": 0.006,
+    "ear_max_drift_lod_to_source_cm": 0.0089,
+    "root_region_max_drift_cm": 0.0,
+    "flagged_max_drift_cm": 0.0302,
+    "flagged_normal_deviation_max_deg": 79.48,
+    "flagged_normal_deviation_p95_deg": 40.44,
+    "flagged_regions_lod_normal_over_60deg": 5
+   },
+   "0.25": {
+    "faces": 29470,
+    "ear_region_nonmanifold_edges": 0,
+    "ear_region_zero_area_triangles": 0,
+    "ear_region_self_intersection_pairs": 0,
+    "ear_max_drift_source_to_lod_cm": 0.0299,
+    "ear_p99_drift_source_to_lod_cm": 0.0181,
+    "ear_max_drift_lod_to_source_cm": 0.0263,
+    "root_region_max_drift_cm": 0.0,
+    "flagged_max_drift_cm": 0.0342,
+    "flagged_normal_deviation_max_deg": 79.48,
+    "flagged_normal_deviation_p95_deg": 40.44,
+    "flagged_regions_lod_normal_over_60deg": 5
+   }
+  },
+  "unconstrained": {
+   "0.5": {
+    "faces": 58942,
+    "ear_region_nonmanifold_edges": 0,
+    "ear_region_zero_area_triangles": 0,
+    "ear_region_self_intersection_pairs": 0,
+    "ear_max_drift_source_to_lod_cm": 0.0095,
+    "ear_p99_drift_source_to_lod_cm": 0.0063,
+    "ear_max_drift_lod_to_source_cm": 0.0089,
+    "root_region_max_drift_cm": 0.0095,
+    "flagged_max_drift_cm": 0.0302,
+    "flagged_normal_deviation_max_deg": 79.69,
+    "flagged_normal_deviation_p95_deg": 40.75,
+    "flagged_regions_lod_normal_over_60deg": 4
+   },
+   "0.25": {
+    "faces": 29470,
+    "ear_region_nonmanifold_edges": 0,
+    "ear_region_zero_area_triangles": 0,
+    "ear_region_self_intersection_pairs": 0,
+    "ear_max_drift_source_to_lod_cm": 0.0552,
+    "ear_p99_drift_source_to_lod_cm": 0.0187,
+    "ear_max_drift_lod_to_source_cm": 0.0263,
+    "root_region_max_drift_cm": 0.0215,
+    "flagged_max_drift_cm": 0.0342,
+    "flagged_normal_deviation_max_deg": 69.11,
+    "flagged_normal_deviation_p95_deg": 37.97,
+    "flagged_regions_lod_normal_over_60deg": 2
+   }
+  },
+  "rule": "LOD-HV1: Decimate collapse, vertex-group weight 0 on cuff + transition + one ring (protected root junction)",
+  "protected_vertices": 1046,
+  "source_ear_region_self_intersection_pairs": 0
+ }
+}
