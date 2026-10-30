@@ -1,6 +1,14 @@
 # Character Design Status
 
-## HALVREN RP3 EAR FAMILY — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30)
+## HALVREN RP3 WHOLE-CHARACTER FINAL CONSOLIDATION — HALVREN RP3 WHOLE-CHARACTER FINAL FREEZE RECOMMENDED (not frozen) (2026-10-30)
+
+- **Report:** `reviews/claude-rac-rp3-halvren-final-whole-character-consolidation-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_final_whole/` (candidate record `HALVREN_RP3_FREEZE_CANDIDATE.json`, gates, boards A-E, blind identity review).
+- **Candidates:** `HV_M_REF_RP3_v001` (c1, HVC1-HB2HF2-HPB, geometry `133f22ee...`) / `HV_F_REF_RP3_v001` (c2, HVF178-HB2HF2-HPB, `ca90812f...`) = HB2 + HF2 + HP-B + HE2 HVEAR3 / HR2 with TRI-HV1 (attribute + sidecar); E:/.../production/Halvren/RP3/ (11 files read back byte-identical). Embedded status "CANDIDATE ... NOT frozen".
+- **Gates:** clean rebuild dV 0 (r6, family, HE2 V / Q, TRI-HV1 = frozen); validator 69 / 69 both (also from read-back geometry); integrity / density / face rings / contact / L-R / stature pass; body / face / pelvis = accepted (no regression), outside branch + HR2 zone dV 0; deformation final - family new flips / self-x 0 on 18 poses; frozen MF / FN / AE / VA untouched (repo + E: 29 / 29).
+- **Author attention:** blind identity reviewer overall FAIL on Q6 = frozen HE2 surface residuals (identical to the frozen ear; not reopenable under the order); hidden-ear read subtle (nearest MF) = accepted source read.
+- **Next:** STOP for ChatGPT review (whole-character freeze decision; freeze-by-record proposed, not executed).
+
+## (previous) HALVREN RP3 EAR FAMILY — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30)
 
 - **Freeze record:** `reviews/rac-rp3-evidence/halvren_rp3_final/HALVREN_EAR_FAMILY_RP3_FREEZE.json`. Closure report: `reviews/claude-rac-rp3-halvren-ear-family-freeze-closure-report.md`. Freeze-by-record of the production-gate state (2fa0c6e); no geometry change.
 - **Frozen:** HE1 HVEAR4 = human-forward production bound (L 5.6, ~Marchfolk +10-13 %); HE2 HVEAR3 = central production ear; HE3 HVEAR4 = elf-forward production bound (L 8.2); HR2 = frozen root architecture; c1 / c2 realizations (one shared quad connectivity).

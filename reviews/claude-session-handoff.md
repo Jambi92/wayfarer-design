@@ -2,7 +2,20 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — HALVREN RP3 EAR FAMILY — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN — awaiting ChatGPT review
+## LATEST (2026-10-30) — HALVREN RP3 WHOLE-CHARACTER FINAL CONSOLIDATION — FREEZE RECOMMENDED (not frozen) — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-halvren-final-whole-character-consolidation-freeze-readiness-order.md` (fd22665). Report: `reviews/claude-rac-rp3-halvren-final-whole-character-consolidation-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_final_whole/` (`HALVREN_RP3_FREEZE_CANDIDATE.json`, `HALVREN_FINAL_gates.json`, deformation summary, HR2-zone localisation, frozen-reference read-back, immutable hashes, blind identity review, boards `sheets/HVFINAL_A..E`).
+- Tools (`halvren_rp3_v001`): `run_hvfinal.sh` (clean rebuild into `$HV_FINAL`), `run_hvfinal_eval.sh`, `run_hvfinal_prod.sh` + `hv_make_prod.py` (fn_make_prod + TRI-HV1 attribute / sidecar), `hv_tri_readback.py` (bpy), `hv_final_gates.py`, `hv_final_sheets.py WORK OUT` (skips already-rendered views; FORCE=1 to redo); `hv_hidden_ear.py` takes `HV_HE_OV` / `HV_HE_C1` / `HV_HE_C2` overrides.
+- Workspace `/tmp/claude-0/rt/hv/final/{src, full, fam, ear/build, def, he, prod, prod2, readback_local, readback2, readback_pc, tri, sheets_r}`; production copies `/mnt/user-data/outputs/halvren_final/` -> E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Halvren/RP3/.
+
+**Key findings**
+- Everything rebuilds exactly (r6, family, HE2 V / Q, TRI-HV1 = frozen); 69 / 69 both; body / face / pelvis = accepted; only the frozen branch + HR2 zone (214 / 220 head-skin vertices <= 0.47 cm) differ from the family. Unmasked anatomy T1 / T2 flag = HR2 zone (PASS with zone excluded).
+- Blind identity: Q1 / Q3 / Q4 PASS, Q2 / Q5 BORDERLINE (subtle, = accepted source), Q6 FAIL on frozen HE2 surface residuals (reviewer confirmed identical to the frozen-ear boards). Raised for author attention.
+
+**Next:** STOP for ChatGPT review (author decision on the whole-character freeze-by-record).
+
+## (previous) 2026-10-30 — HALVREN RP3 EAR FAMILY — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN — awaiting ChatGPT review
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-halvren-ear-family-final-author-acceptance-freeze-closure-order.md` (fa305d3). Record-only closure: `reviews/rac-rp3-evidence/halvren_rp3_final/HALVREN_EAR_FAMILY_RP3_FREEZE.json` (+ `baked/` TRI-HV1 diagonals), report `reviews/claude-rac-rp3-halvren-ear-family-freeze-closure-report.md`. Tool: `hv_ear_family_freeze_record.py OUTDIR` (read-back + re-derivation + immutable re-hash).
