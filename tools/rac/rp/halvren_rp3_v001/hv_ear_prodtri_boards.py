@@ -148,5 +148,5 @@ for k in EARS:
                           P_['0.5']['ear_max_drift_source_to_lod_cm'], P_['0.5']['root_region_max_drift_cm'], P_['0.5']['ear_region_self_intersection_pairs'], P_['0.25']['ear_max_drift_source_to_lod_cm'],
                           P_['0.25']['root_region_max_drift_cm'], P_['0.25']['ear_region_self_intersection_pairs'], P_['0.25']['ear_region_nonmanifold_edges'] + P_['0.5']['ear_region_nonmanifold_edges'],
                           P_['0.25']['ear_region_zero_area_triangles'] + P_['0.5']['ear_region_zero_area_triangles'], U_['0.25']['ear_region_self_intersection_pairs'])))
-sheet('PT_D_lod.jpg', 'D. LOD on the baked triangles -- LOD-HV1 (Decimate collapse, cuff / transition / junction ring protected): source | 50 % | 25 %', rowsD, ['source side', 'source rear 3/4', '50 % side', '50 % rear 3/4', '25 % side', '25 % rear 3/4'], colw=250)
+sheet('PT_D_lod.jpg', 'D. LOD on the baked triangles -- LOD-HV1 (Decimate collapse; cuff / transition / junction ring protected, lobe zone weighted): source | 50 % | 25 %', rowsD, ['source side', 'source rear 3/4', '50 % side', '50 % rear 3/4', '25 % side', '25 % rear 3/4'], colw=250)
 print('BOARDS_DONE', sorted(os.listdir(OUT)))

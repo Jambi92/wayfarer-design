@@ -304,13 +304,16 @@ def inbox(P_): return np.any([((P_ >= l_) & (P_ <= h_)).all(-1) for l_, h_ in BO
 LODS = {}
 rootv = np.unique(Q[loopm & br].ravel()); flc = (V[Q[FL]].mean(1) / 100) if len(FL) else np.zeros((0, 3)); nfl = unit(VN[Q[FL]].sum(1)) if len(FL) else np.zeros((0, 3))
 # LOD-HV1 (production LOD constraint, source untouched): Decimate collapse with a vertex-group weight 0 on the cuff + transition band and its one-ring
-# (root junction protected; the auricle sheet and the head decimate normally). 'unconstrained' = the closure prodcheck setting, kept for comparison.
+# (root junction protected) and 0.35 on the lobe zone (sheet below 30 % of the ear height; avoids a 25 % lobe-neck pinch); the rest of the sheet and the head decimate normally. 'unconstrained' = the closure prodcheck setting, kept for comparison.
 prot = np.isin(part, ['cuff', 'transition']); _m = prot[Q].any(1); _nb = np.zeros(nV, bool); _nb[Q[_m].ravel()] = True; prot |= _nb
+lobez = (hn < 0.30) & ~np.isnan(hn); LW = np.ones(nV); LW[lobez] = 0.35; LW[prot] = 0.0   # + lobe zone (auricle sheet below 30 % of the ear height) at weight 0.35
 SMART = False
 for mode, ratio in (('protected', 0.5), ('protected', 0.25), ('unconstrained', 0.5), ('unconstrained', 0.25)):
     ob = mkmesh(V, T); md = ob.modifiers.new('dec', 'DECIMATE'); md.ratio = ratio
     if mode == 'protected':
-        vg = ob.vertex_groups.new(name='lod'); vg.add(np.nonzero(~prot)[0].tolist(), 1.0, 'REPLACE'); vg.add(np.nonzero(prot)[0].tolist(), 0.0, 'REPLACE'); md.vertex_group = 'lod'; md.vertex_group_factor = 1.0
+        vg = ob.vertex_groups.new(name='lod')
+        for val in np.unique(LW): vg.add(np.nonzero(LW == val)[0].tolist(), float(val), 'REPLACE')
+        md.vertex_group = 'lod'; md.vertex_group_factor = 1.0
     dg = bpy.context.evaluated_depsgraph_get(); m2 = ob.evaluated_get(dg).to_mesh()
     P = np.array([v.co[:] for v in m2.vertices]) * 100; F = np.array([list(p.vertices) for p in m2.polygons], dtype=object)
     Ft = np.array([f for f in F if len(f) == 3], np.int64); inb = inbox(P)
@@ -332,7 +335,7 @@ for mode, ratio in (('protected', 0.5), ('protected', 0.25), ('unconstrained', 0
                             flagged_regions_lod_normal_over_60deg=int((ndev > 60).sum()))
     np.savez_compressed('%s/%s_lod%02d%s.npz' % (OUT, LAB, int(ratio * 100), '' if mode == 'protected' else 'U'), V=P.astype(np.float32), Q=Ft)
     m2 = None
-R['lod'] = dict(LODS, rule='LOD-HV1: Decimate collapse, vertex-group weight 0 on cuff + transition + one ring (protected root junction)', protected_vertices=int(prot.sum()))
+R['lod'] = dict(LODS, rule='LOD-HV1: Decimate collapse, vertex-group weight 0 on cuff + transition + one ring (protected root junction), 0.35 on the lobe zone (auricle sheet below 30 % of the ear height), 1 elsewhere', protected_vertices=int(prot.sum()), lobe_zone_vertices=int((lobez & ~prot).sum()))
 # baseline: source self-intersections on the baked triangles in the same ear boxes
 bS = BVHTree.FromPolygons((V / 100).tolist(), T[srcT].tolist(), all_triangles=True, epsilon=0.0)
 R['lod']['source_ear_region_self_intersection_pairs'] = sum(1 for i, j in bS.overlap(bS) if not (set(T[srcT][i]) & set(T[srcT][j])) and inbox(V[T[srcT][i]]).any())
