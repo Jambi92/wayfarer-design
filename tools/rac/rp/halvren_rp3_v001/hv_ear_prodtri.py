@@ -319,10 +319,11 @@ for mode, ratio in (('protected', 0.5), ('protected', 0.25), ('unconstrained', 0
     reg = np.nonzero(inb[Ft].any(1))[0]; b2 = BVHTree.FromPolygons((P / 100).tolist(), Ft[reg].tolist(), all_triangles=True, epsilon=0.0)
     sx = sum(1 for i, j in b2.overlap(b2) if not (set(Ft[reg][i]) & set(Ft[reg][j])))
     d_lod_to_src = np.array([(bvh_src.find_nearest(p / 100)[3] or 0) * 100 for p in P[inb]])
-    def to_lod(pts): return np.array([b2.find_nearest(p)[3] * 100 for p in pts])
+    bfull = BVHTree.FromPolygons((P / 100).tolist(), Ft.tolist(), all_triangles=True, epsilon=0.0)
+    def to_lod(pts): return np.array([bfull.find_nearest(p)[3] * 100 for p in pts])
     d_src_to_lod = to_lod(V[brv] / 100); d_root = to_lod(V[rootv] / 100)
     if len(FL):
-        hits = [b2.find_nearest(p) for p in flc]; d_fl = np.array([h_[3] * 100 for h_ in hits]); ndev = np.array([deg(np.dot(unit(np.array(h_[1])), nfl[i])) for i, h_ in enumerate(hits)])
+        hits = [bfull.find_nearest(p) for p in flc]; d_fl = np.array([h_[3] * 100 for h_ in hits]); ndev = np.array([deg(np.dot(unit(np.array(h_[1])), nfl[i])) for i, h_ in enumerate(hits)])
     else: d_fl = ndev = np.zeros(1)
     LODS.setdefault(mode, {})[str(ratio)] = dict(faces=len(F), ear_region_nonmanifold_edges=int(nm), ear_region_zero_area_triangles=za, ear_region_self_intersection_pairs=int(sx),
                             ear_max_drift_source_to_lod_cm=round(float(d_src_to_lod.max()), 4), ear_p99_drift_source_to_lod_cm=round(float(np.percentile(d_src_to_lod, 99)), 4),
