@@ -19,6 +19,12 @@ if os.environ.get('RENDER_REVEAL', '0') == '1':      # optional volume-revealing
     sh.show_cavity = True; sh.cavity_type = 'BOTH'; sh.cavity_ridge_factor = 1.3; sh.cavity_valley_factor = 1.6; sh.curvature_ridge_factor = 1.2; sh.curvature_valley_factor = 1.4
     if os.environ.get('RENDER_SHADOWS', '0') == '1':   # + optional cast shadows (fixed light direction)
         sh.show_shadows = True; sh.shadow_intensity = 0.5; sc.display.light_direction = (0.45, -0.35, 0.82); sc.display.shadow_shift = 0.25
+if os.environ.get('RENDER_LIGHTING'):              # optional inspection lighting (inert by default): STUDIO:<name>[:rotz_deg] grazing studio light, MATCAP:<name> reflection matcap;
+    lt = os.environ['RENDER_LIGHTING'].split(':')    # RENDER_SPEC=1 adds the specular highlight
+    if lt[0] == 'MATCAP': sh.light = 'MATCAP'; sh.studio_light = lt[1]
+    else:
+        sh.light = 'STUDIO'; sh.studio_light = lt[1]; sh.use_world_space_lighting = len(lt) > 2; sh.studiolight_rotate_z = float(lt[2]) * np.pi / 180 if len(lt) > 2 else 0.0
+    sh.show_specular_highlight = os.environ.get('RENDER_SPEC', '0') == '1'
 if WIRE:
     w = ob.copy(); w.data = ob.data.copy(); sc.collection.objects.link(w); md = w.modifiers.new('wf', 'WIREFRAME'); md.thickness = float(os.environ.get('WIRE_T', '0.0005')); md.use_replace = True
     wc = w.data.color_attributes['c']; wc.data.foreach_set('color', np.tile([0.1, 0.1, 0.14, 1.0], len(wc.data)).astype(np.float32))
