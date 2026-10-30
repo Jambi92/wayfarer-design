@@ -2,7 +2,21 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — HALVREN RP3 WHOLE CHARACTER — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN — awaiting ChatGPT review
+## LATEST (2026-10-30) — RAC RP4 DURRIM COMPACT-BRANCH PILOT — NEEDS REVISION — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp4-durrim-compact-branch-pilot-order.md` (609c557). Gate: `reviews/claude-rac-rp4-durrim-compact-branch-gate.md`. Evidence: `reviews/rac-rp4-evidence/durrim/`.
+- Tools `tools/rac/rp/durrim_rp4_v001/`: `du_regen.py` (regen.py + native short-adult route; needed for *-NAT records), `run_a.sh` / `run_parta.sh` / `du_partA.py` (Part A), `run_b.sh` (unbranched v005 Standard v1 pipeline), `du_density.py` (§8 sub-zone density + validator digit stations + face rings), `du_branch.py define|apply` (index-defined ring insertion as linear map rows), `du_sheets.py`.
+- Workspace `/tmp/claude-0/rt/du/{src, nat (DUF137C / MF137 / MFF137 / MF152 / MFF152 native builds), full + skp (Part A meas / skeletal proxy), fam, audit, val, dens, def, br (prototype + validators), brA, sheets_r}`. Bodies run with /home/claude/stc/bin/python3 (bpy).
+
+**Key findings**
+- DUF137C-NAT (MF-F-R base macro 0.60596 + DU137C targets + pelvis [1, 0.9, 1.04], 137.000 cm) passes Part A; second rebuild identical.
+- v005 fails thumb_mcp (D1 closed-ring fallback: Durrim's large hand puts the MCP rings outside the stature-scaled 3.0 s radius) on all Durrim bodies; c1 137 / 152 also fail the neck station (pole pair 5299 / 11904 in the crease band; pole offset / h -0.20 / +0.14).
+- Trisecting the two MCP strips gives 4-6 rings (69 / 69 except neck) but 100-105 quads > 4:1 aspect; midpoint-only fails 122 cm.
+
+**Next:** STOP for ChatGPT review: revision order for a two-direction thumb densification and a ruling on the neck (jaw-neck pole relocation branch vs carry-forward).
+
+## (previous) 2026-10-30 — HALVREN RP3 WHOLE CHARACTER — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN — awaiting ChatGPT review
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-halvren-whole-character-final-author-acceptance-freeze-closure-order.md` (f62eb1e). Record-only closure: `reviews/rac-rp3-evidence/halvren_rp3_final_whole/HALVREN_RP3_FREEZE.json` (promoted from the e93f90c candidate; copy at E:/.../production/Halvren/RP3/HALVREN_RP3_FREEZE.json), verification `HALVREN_RP3_freeze_closure_readback.json`, report `reviews/claude-rac-rp3-halvren-whole-character-freeze-closure-report.md`.

@@ -1,5 +1,12 @@
 # Character Design Status
 
+## RAC RP4 DURRIM COMPACT-BRANCH PILOT — DURRIM RP4 COMPACT BRANCH NEEDS REVISION (2026-10-30)
+
+- **Gate:** `reviews/claude-rac-rp4-durrim-compact-branch-gate.md`. Evidence: `reviews/rac-rp4-evidence/durrim/` (Part A, regen, unbranched v005 diagnosis, branch prototype, boards DU_A / B / N / G).
+- **Passed:** DU137C / DU122C / DU152C regenerate exactly; new c2 anchor DUF137C-NAT = DURRIM CONFIG-2 CENTRAL REFERENCE PASS — READY FOR RP4 (19 / 19 Durrim directions on c1 and c2; DU-P4 intact); v005 zone densities within the §8 ceilings; T1 / T2 / T3 / T7, contact, deformation clean.
+- **Blockers:** (1) thumb MCP fails the validator on every unbranched Durrim body; the ring-insertion prototype fixes the count but adds 100-105 quads over the T-4 4:1 aspect target (not accepted; needs a two-direction densification). (2) c1 137 / 152 neck FAIL_CREASE_POLE from the v005 submandibular 5-pole pair 5299 / 11904 (outside the authorized branch zones -> stopped per order §7; no deformation symptom).
+- **Not done:** no production candidates, no freeze. **Next:** STOP for ChatGPT review (revision order / ruling on the neck).
+
 ## HALVREN RP3 WHOLE CHARACTER — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30)
 
 - **Freeze record:** `reviews/rac-rp3-evidence/halvren_rp3_final_whole/HALVREN_RP3_FREEZE.json` (freeze-by-record of the e93f90c candidate; copy beside the production files on E:). Closure report: `reviews/claude-rac-rp3-halvren-whole-character-freeze-closure-report.md`.
