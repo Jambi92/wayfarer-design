@@ -120,7 +120,12 @@ CAND.update({
     # crumpled the anterior root): a human-family upper ear -- rounder, later, blunt corner instead of a point (taper start 0.58, extension 0.80, shoulder
     # 0.14), broader (wb 2.15) -- with a moderately rolled human-family helix (rim 0.34 x 0.32) and a softer antihelix (0.22); folded scapha quads relaxed
     # by the Halvren repair stage 4 (sheet_fold_fix)
-    'HE1': dict(HV_BASE, L=5.6, wb=2.15, taper=("halvren", 0.58, 0.80, 0.14), lobe=0.19, proj=16, tilt=12, sweep=0.65, thick=0.31,
+    # + blind review round 3 (still 'a shrunken, tip-cut HE2'; faceted top corner, lumpy upper rim): HE1 takes a human-family OUTLINE -- an upright, rounded
+    # egg-shaped upper ear with only a soft Halvren apex (taper start 0.52, extension 0.70, shoulder 0.06; tilt 9, sweep 0.45) -- and a fully rolled human
+    # helix rim (0.42 x 0.40), smooth now that stage 4 relaxes the folded scapha quads; length / base / concha / lobe unchanged
+    'HE1': dict(HV_BASE, L=5.6, wb=2.15, taper=("halvren", 0.52, 0.70, 0.06), lobe=0.19, proj=16, tilt=9, sweep=0.45, thick=0.31,
+                ah=0.22, concha=1.00, crus=0.16, trag=0.30, atrag=0.23, helix=(0.42, 0.40), geo=_g(phi0=30.0, tauA=10.0, clear=-0.58, sheet_fold_fix=1.0)),
+    'HE1-R3': dict(HV_BASE, L=5.6, wb=2.15, taper=("halvren", 0.58, 0.80, 0.14), lobe=0.19, proj=16, tilt=12, sweep=0.65, thick=0.31,      # the round-3 HE1 (before)
                 ah=0.22, concha=1.00, crus=0.16, trag=0.30, atrag=0.23, helix=(0.34, 0.32), geo=_g(phi0=30.0, tauA=10.0, clear=-0.58, sheet_fold_fix=1.0)),
     # HE2 balanced mixed central -- HVEAR3 REALIZATION-CALIBRATED (HE2 closure order): HVEAR2 authored HE2 (L 7.8, wb 2.00, taper (0.36, 1.10, 0.06), proj 23,
     # tilt 16, sweep 1.4, concha 0.86) realized as a near-linear Marchfolk -> Aelari / Vael ear (measured one-alpha R2 0.93 / 0.80) because the W1 human-family
