@@ -1,6 +1,13 @@
 # Character Design Status
 
-## RAC RP4 PIPKIN — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (2026-10-30, NOT frozen)
+## PIPKIN RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30, by record)
+
+- **Freeze:** `PK_M_REF_RP4_v001`, `PK_F_REF_RP4_v001`, `MPFB_PIPKIN_COMPACT_BRANCH_v001`, c1 source `PK-NAT`, c2 technical anchor `PKF107-NAT` (bounds `PK91-NAT` / `PK122-NAT`). Record `reviews/rac-rp4-evidence/pipkin/final/PIPKIN_RP4_FREEZE.json` (promoted from the e38a59d candidate; all reviewed hashes preserved and re-verified by fresh Blender read-back). Closure report `reviews/claude-rac-rp4-pipkin-freeze-closure-report.md`.
+- 58,162 V / 58,160 Q, identical c1 / c2 topology `a11b8831…`. No geometry changed during freeze closure; production files not resaved.
+- Validator dual record: raw 65 / 65 / 69 / 67 (PK91 / PK107 c1 / PK107 c2 / PK122) -> author-adjusted 69 / 69 on all four via the scoped Pipkin toe exception (preserved as validator history; global D4 unchanged).
+- Pipkin is closed. `MPFB_PIPKIN_COMPACT_BRANCH_v001` is Pipkin-only, not a universal compact-race branch. **Cogling is next** (independent diagnosis), NOT started. Not started: Cogling, Saurin, rig finalization, creator, engine integration.
+
+### (superseded) RAC RP4 PIPKIN — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (2026-10-30)
 
 - **Gate:** `reviews/claude-rac-rp4-pipkin-final-production-gate.md` (order 68ba8e5). Evidence `reviews/rac-rp4-evidence/pipkin/final/`; record `PIPKIN_RP4_FREEZE_CANDIDATE.json`.
 - **Candidates:** `PK_M_REF_RP4_v001` (c1 PK-NAT) / `PK_F_REF_RP4_v001` (c2 PKF107-NAT) on `MPFB_PIPKIN_COMPACT_BRANCH_v001`; 58,162 V / 58,160 Q, identical face topology `a11b8831…`; read-back clean.

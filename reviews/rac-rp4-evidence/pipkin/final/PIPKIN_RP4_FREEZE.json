@@ -1,0 +1,339 @@
+{
+ "record": "PIPKIN_RP4_FREEZE",
+ "status": "PIPKIN RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record). Authoritative over the embedded \"CANDIDATE / NOT FROZEN\" status strings inside the production files.",
+ "date": "2026-10-30",
+ "order": "reviews/chatgpt-rac-rp4-pipkin-final-author-acceptance-freeze-closure-order.md (695e2ba)",
+ "ruling": {
+  "text": "PIPKIN RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FREEZE APPROVED",
+  "commit": "695e2baa",
+  "date": "2026-10-30"
+ },
+ "promoted_from": {
+  "file": "reviews/rac-rp4-evidence/pipkin/final/PIPKIN_RP4_FREEZE_CANDIDATE.json",
+  "sha256": "ddb407494b6ddc6e08f72b43ca3b36762b31f3f10ea3c4975bf8292ebf2da2cd",
+  "reviewed_commit": "e38a59d9257f8ee3b4ecba0f5805f430d1f85548"
+ },
+ "frozen": [
+  "PK_M_REF_RP4_v001",
+  "PK_F_REF_RP4_v001",
+  "MPFB_PIPKIN_COMPACT_BRANCH_v001",
+  "c1 central source PK-NAT",
+  "c2 technical production anchor PKF107-NAT",
+  "accepted bounds PK91-NAT / PK122-NAT"
+ ],
+ "reviewed_hashes": {
+  "PK_M_file": "554f1a743b6b1c51c70392ce699ac91d31163699a23ee8034fbd646a31ba6826",
+  "PK_M_geometry": "1af7d3a818abd8d301234caad03d43c72fa014c50927b977aeb087ef7bd16a5c",
+  "PK_F_file": "e64406bb1ca4ac677a86e98ac34b08ec24c334d7fcfc2e7961878f161b5969d3",
+  "PK_F_geometry": "fd208db6f6bfe98c0226b8d623fe681c5e7ff3a05f603d964a9a500bc65897e5",
+  "face_topology_c1_c2": "a11b8831506519db8ae17ba466540a0cd71faa5d82ca501f53c1fc1d5e3b76dc",
+  "branch_definition": "ff16400f0ea131bc6709a88427e75c9c5b554545c8d3abe29b48ab93a9572e70",
+  "branch_map": "2e116576935275ce6ca41565b1cfb444899c63eb9cebdb429dd39c0686aaf7b0"
+ },
+ "closure_verification": {
+  "all_reviewed_hashes_match": true,
+  "blender_readback": "reviews/rac-rp4-evidence/pipkin/final/PIPKIN_RP4_freeze_closure_readback.json",
+  "immutables": "58 / 58 unchanged vs e38a59d9 (reviews/rac-rp4-evidence/pipkin/final/immutable_hashes_freeze_closure.txt)",
+  "geometry_changed": false,
+  "files_resaved": false
+ },
+ "final_counts": {
+  "vertices": 58162,
+  "quads": 58160,
+  "quads_pct": 100.0,
+  "identical_c1_c2_topology": true
+ },
+ "branch": {
+  "name": "MPFB_PIPKIN_COMPACT_BRANCH_v001",
+  "definition": "reviews/rac-rp4-evidence/pipkin/branch/MPFB_PIPKIN_COMPACT_BRANCH_v001.json",
+  "sha256": "ff16400f0ea131bc6709a88427e75c9c5b554545c8d3abe29b48ab93a9572e70",
+  "parent": "MPFB Family Base v005",
+  "content": "thumb MCP two-direction compact support only; no neck reroute; no foot branch; no Durrim-specific placement",
+  "verts": 58162,
+  "quads": 58160,
+  "identical_topology_all_bodies": true,
+  "face_topology_hash": "a11b8831506519db8ae17ba466540a0cd71faa5d82ca501f53c1fc1d5e3b76dc"
+ },
+ "lineage": {
+  "c1": "PK-NAT (accepted W1e)",
+  "c2": "PKF107-NAT (technical c2 anchor, order 25f7ba0 §4: MF-F-R base macro + exact PK-NAT targets / bone scales / girth beta 1.0, 107.000 cm, rebuild identical)",
+  "bounds": "PK91-NAT / PK122-NAT (accepted W2H)"
+ },
+ "candidates": {
+  "PK_M_REF_RP4_v001": {
+   "source": "PK-NAT",
+   "source_r6": "reviews/reference-assets/r6/PK-NAT_r6.npz (accepted W1e c1 central)",
+   "source_r6_sha256": "7b0504e85d479310d152b84dcde8c34818aa74144754166fc34a5cf9e4779174",
+   "file": "reviews/rac-rp4-evidence/pipkin/final/production/PK_M_REF_RP4_v001.blend",
+   "file_sha256": "554f1a743b6b1c51c70392ce699ac91d31163699a23ee8034fbd646a31ba6826",
+   "geometry_hash": "1af7d3a818abd8d301234caad03d43c72fa014c50927b977aeb087ef7bd16a5c",
+   "face_topology_hash": "a11b8831506519db8ae17ba466540a0cd71faa5d82ca501f53c1fc1d5e3b76dc",
+   "verts": 58162,
+   "quads": 58160,
+   "branch_map": "reviews/rac-rp4-evidence/pipkin/final/production/PK_M_REF_RP4_v001_branch_map.npz",
+   "branch_map_sha256": "2e116576935275ce6ca41565b1cfb444899c63eb9cebdb429dd39c0686aaf7b0",
+   "landmarks": "reviews/rac-rp4-evidence/pipkin/final/production/PK_M_REF_RP4_v001_landmarks.json",
+   "landmarks_sha256": "de99dddedb687ce5f2d146b2e68b5c4deb5f3696ee4bc506fd568e54c36b5108",
+   "readback": {
+    "geometry_hash": "1af7d3a818abd8d301234caad03d43c72fa014c50927b977aeb087ef7bd16a5c",
+    "faces_equal_candidate": true,
+    "max_abs_diff_m": 5.960464477539063e-08,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "quads_pct": 100.0,
+    "normals_outward": true,
+    "uv_layers": [
+     "UVMap"
+    ]
+   },
+   "embedded_status": "PIPKIN RP4 PRODUCTION REFERENCE CANDIDATE (MPFB_PIPKIN_COMPACT_BRANCH_v001, 2026-10-30) - CANDIDATE / NOT FROZEN; freeze only by author acceptance record"
+  },
+  "PK_F_REF_RP4_v001": {
+   "source": "PKF107-NAT",
+   "source_r6": "reviews/rac-rp4-evidence/pipkin/partA/PKF107-NAT_r6.npz (c2 technical production anchor; Pipkin sex anatomy OPEN)",
+   "source_r6_sha256": "889b0f8dfcf5db111427b30b2acef547edb6a28512af304cae719ef7edef64d9",
+   "file": "reviews/rac-rp4-evidence/pipkin/final/production/PK_F_REF_RP4_v001.blend",
+   "file_sha256": "e64406bb1ca4ac677a86e98ac34b08ec24c334d7fcfc2e7961878f161b5969d3",
+   "geometry_hash": "fd208db6f6bfe98c0226b8d623fe681c5e7ff3a05f603d964a9a500bc65897e5",
+   "face_topology_hash": "a11b8831506519db8ae17ba466540a0cd71faa5d82ca501f53c1fc1d5e3b76dc",
+   "verts": 58162,
+   "quads": 58160,
+   "branch_map": "reviews/rac-rp4-evidence/pipkin/final/production/PK_F_REF_RP4_v001_branch_map.npz",
+   "branch_map_sha256": "2e116576935275ce6ca41565b1cfb444899c63eb9cebdb429dd39c0686aaf7b0",
+   "landmarks": "reviews/rac-rp4-evidence/pipkin/final/production/PK_F_REF_RP4_v001_landmarks.json",
+   "landmarks_sha256": "d73d943eac78fa395bfcb798d183fd558575ab113354f32d8a7e23a05695d132",
+   "readback": {
+    "geometry_hash": "fd208db6f6bfe98c0226b8d623fe681c5e7ff3a05f603d964a9a500bc65897e5",
+    "faces_equal_candidate": true,
+    "max_abs_diff_m": 5.960464477539063e-08,
+    "components": 1,
+    "boundary_edges": 0,
+    "nonmanifold_edges": 0,
+    "nonmanifold_vertices": 0,
+    "degenerate_faces": 0,
+    "quads_pct": 100.0,
+    "normals_outward": true,
+    "uv_layers": [
+     "UVMap"
+    ]
+   },
+   "embedded_status": "PIPKIN RP4 PRODUCTION REFERENCE CANDIDATE (MPFB_PIPKIN_COMPACT_BRANCH_v001, 2026-10-30) - CANDIDATE / NOT FROZEN; freeze only by author acceptance record"
+  }
+ },
+ "validator": {
+  "raw_authoritative": {
+   "PK91-NAT": {
+    "file": "reviews/rac-rp4-evidence/pipkin/final/validator_raw/PK91-NAT_pkb_validator_v2_D1-D6.json",
+    "firm": 65,
+    "fail": [
+     "toe3_j1_l",
+     "toe3_j1_r",
+     "toe4_j1_l",
+     "toe4_j1_r"
+    ]
+   },
+   "PK-NAT": {
+    "file": "reviews/rac-rp4-evidence/pipkin/final/validator_raw/PK-NAT_pkb_validator_v2_D1-D6.json",
+    "firm": 65,
+    "fail": [
+     "toe3_j1_l",
+     "toe3_j1_r",
+     "toe4_j1_l",
+     "toe4_j1_r"
+    ]
+   },
+   "PKF107-NAT": {
+    "file": "reviews/rac-rp4-evidence/pipkin/final/validator_raw/PKF107-NAT_pkb_validator_v2_D1-D6.json",
+    "firm": 69,
+    "fail": []
+   },
+   "PK122-NAT": {
+    "file": "reviews/rac-rp4-evidence/pipkin/final/validator_raw/PK122-NAT_pkb_validator_v2_D1-D6.json",
+    "firm": 67,
+    "fail": [
+     "toe3_j1_l",
+     "toe3_j1_r"
+    ]
+   }
+  },
+  "author_adjusted": {
+   "PK91-NAT": {
+    "firm": 69,
+    "exception_applied": [
+     "toe3_j1_l",
+     "toe3_j1_r",
+     "toe4_j1_l",
+     "toe4_j1_r"
+    ],
+    "remaining_fail": []
+   },
+   "PK-NAT": {
+    "firm": 69,
+    "exception_applied": [
+     "toe3_j1_l",
+     "toe3_j1_r",
+     "toe4_j1_l",
+     "toe4_j1_r"
+    ],
+    "remaining_fail": []
+   },
+   "PKF107-NAT": {
+    "firm": 69,
+    "exception_applied": [],
+    "remaining_fail": []
+   },
+   "PK122-NAT": {
+    "firm": 69,
+    "exception_applied": [
+     "toe3_j1_l",
+     "toe3_j1_r"
+    ],
+    "remaining_fail": []
+   }
+  },
+  "toe_exception_record": "reviews/rac-rp4-evidence/pipkin/final/PIPKIN_toe_exception_validator_summary.json",
+  "exception_status_label": "PASS_PIPKIN_TOE_PROBE_GEOMETRY_EXCEPTION",
+  "toe_exception": {
+   "status": "PASS_PIPKIN_TOE_PROBE_GEOMETRY_EXCEPTION",
+   "bodies": [
+    "PK91-NAT",
+    "PK-NAT",
+    "PK122-NAT"
+   ],
+   "stations": [
+    "toe3_j1_l",
+    "toe3_j1_r",
+    "toe4_j1_l",
+    "toe4_j1_r"
+   ],
+   "condition": "raw FAIL_LOOPS / closed_ring_fallback / no crease poles AND size-consistent toe-probe diagnostic passes",
+   "global_D4_changed": false,
+   "applies_to_cogling": false,
+   "foot_topology_added": false,
+   "summary_raw": "PK91 65/69, PK107 c1 65/69, PK107 c2 69/69, PK122 67/69",
+   "summary_adjusted": "PK91 69/69, PK107 c1 69/69, PK107 c2 69/69, PK122 69/69",
+   "permanent_dual_record": true
+  }
+ },
+ "T_gates": {
+  "PK91-NAT": {
+   "T1_T2": true,
+   "T3": true,
+   "T4_branch_faces_gt4": 0,
+   "T5_validator_adjusted": "69/69",
+   "T6_max_landmark_drift_mm": 0.1034,
+   "T7": true,
+   "stature_diff_mm": -0.22733,
+   "body_dev_p95_max_mm": [
+    0.1081,
+    0.917
+   ],
+   "contact_new_pairs": 0,
+   "integrity": {
+    "components": 1,
+    "boundary_edges": 0
+   }
+  },
+  "PK-NAT": {
+   "T1_T2": true,
+   "T3": true,
+   "T4_branch_faces_gt4": 0,
+   "T5_validator_adjusted": "69/69",
+   "T6_max_landmark_drift_mm": 0.1166,
+   "T7": true,
+   "stature_diff_mm": -0.26621,
+   "body_dev_p95_max_mm": [
+    0.1257,
+    1.0788
+   ],
+   "contact_new_pairs": 0,
+   "integrity": {
+    "components": 1,
+    "boundary_edges": 0
+   }
+  },
+  "PKF107-NAT": {
+   "T1_T2": true,
+   "T3": true,
+   "T4_branch_faces_gt4": 0,
+   "T5_validator_adjusted": "69/69",
+   "T6_max_landmark_drift_mm": 0.1169,
+   "T7": true,
+   "stature_diff_mm": 4e-05,
+   "body_dev_p95_max_mm": [
+    0.1055,
+    1.2022
+   ],
+   "contact_new_pairs": 0,
+   "integrity": {
+    "components": 1,
+    "boundary_edges": 0
+   }
+  },
+  "PK122-NAT": {
+   "T1_T2": true,
+   "T3": true,
+   "T4_branch_faces_gt4": 0,
+   "T5_validator_adjusted": "69/69",
+   "T6_max_landmark_drift_mm": 0.1277,
+   "T7": true,
+   "stature_diff_mm": -0.30248,
+   "body_dev_p95_max_mm": [
+    0.1428,
+    1.2303
+   ],
+   "contact_new_pairs": 0,
+   "integrity": {
+    "components": 1,
+    "boundary_edges": 0
+   }
+  }
+ },
+ "deformation": {
+  "summary": "reviews/rac-rp4-evidence/pipkin/final/PIPKIN_final_deformation_summary.json",
+  "c1": "18 / 18 poses identical to v005",
+  "c2": "17 / 18 identical; thumb_opposition 54 vs 44 self-contact pairs, all 54 matched to the existing v005 thumb-palm contact (0 unmatched, same class)",
+  "boundary": "PK91 / PK122: 11 key poses identical to v005"
+ },
+ "firewalls": {
+  "pipkin_vs_durrim_122": "16 / 16",
+  "adult_vs_child": {
+   "PK-NAT_vs_CHILD6": "17 / 19",
+   "PKF107-NAT_vs_CHILD6": "18 / 19",
+   "PK91-NAT_vs_CHILD3": "19 / 19"
+  },
+  "marchfolk_normalized": {
+   "c1_107": 7,
+   "c2_107": 7,
+   "c1_91": 7,
+   "c1_122": 6,
+   "of": 7,
+   "see": "PK_partA.json"
+  },
+  "cogling_context": {
+   "PK91_vs_CGJ7_91": "11 / 11",
+   "PK107_vs_CG107": "11 / 11"
+  },
+  "c2_anchor": "PIPKIN CONFIG-2 CENTRAL REFERENCE PASS — READY FOR PRODUCTION DIAGNOSIS"
+ },
+ "accepted_non_blocking_notes": [
+  "c1 toe3/toe4 j1 raw validator failures are a documented D4 probe-geometry artifact covered by the Pipkin-specific exception",
+  "global D4 remains unchanged",
+  "the exception does not apply automatically to Cogling",
+  "Pipkin/Durrim, Pipkin/Marchfolk and Pipkin/Cogling separation may remain subtle in neutral clay because the distinction is anatomical rather than caricatured",
+  "PKF107-NAT remains a technical c2 anchor only; Pipkin sex-related anatomy remains OPEN",
+  "c2 thumb-opposition extra contact pairs are same-class finer-face counts of an existing v005 contact, with 0 unmatched contacts"
+ ],
+ "scope_notes": [
+  "MPFB_PIPKIN_COMPACT_BRANCH_v001 is accepted for Pipkin; it is NOT a universal compact-race branch",
+  "Cogling must be diagnosed independently; Pipkin thumb placement, branch dimensions, toe exception and source-anatomy assumptions are not propagated without a separate Cogling gate",
+  "Pipkin is closed; Cogling is next but not started"
+ ],
+ "production_files": {
+  "repo": "reviews/rac-rp4-evidence/pipkin/final/production/",
+  "pc_target": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Pipkin/RP4/ (copy when the PC is linked)"
+ }
+}

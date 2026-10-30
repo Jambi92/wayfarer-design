@@ -2,7 +2,14 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — RAC RP4 PIPKIN — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (not frozen) — awaiting ChatGPT review
+## LATEST (2026-10-30) — PIPKIN RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record) — awaiting ChatGPT review
+
+- Order 695e2ba (record-only freeze closure). `reviews/rac-rp4-evidence/pipkin/final/PIPKIN_RP4_FREEZE.json` promoted from the e38a59d candidate; fresh read-back `PIPKIN_RP4_freeze_closure_readback.json` = reviewed hashes; immutables `immutable_hashes_freeze_closure.txt` 58 / 58 unchanged vs e38a59d. Report `reviews/claude-rac-rp4-pipkin-freeze-closure-report.md`.
+- Canon `specs/pipkin/PIPKIN_V1.md` RP4 block, STATUS, carry-forward register (no new ID), reference-assets manifest updated. No geometry change; production files not resaved.
+- Production files still to copy to `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Pipkin/RP4/` when the PC is linked (needs folder grant on RaceBodies/production in that session).
+- **Next:** STOP for ChatGPT review. Cogling is next (independent diagnosis; nothing inherited from Pipkin without its own gate) — NOT started.
+
+## (previous) 2026-10-30 — RAC RP4 PIPKIN — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (not frozen)
 
 - Order 68ba8e5 (toe exception approved). Gate `reviews/claude-rac-rp4-pipkin-final-production-gate.md`; evidence `reviews/rac-rp4-evidence/pipkin/final/` (production blends + sidecars + read-back, raw validators, `PIPKIN_toe_exception_validator_summary.json`, anatomy / contact / density / deformation, boards PKF_C..G, `immutable_hashes_final.txt`, `PIPKIN_RP4_FREEZE_CANDIDATE.json`).
 - Tools: `run_pk_final.sh` (fresh realizations -> `pk_make_prod.py` -> freeze_check read-back -> `pk_toe_exception.py`), `pk_final_sheets.py`. Workspace `/tmp/claude-0/rt/pk/final/`.

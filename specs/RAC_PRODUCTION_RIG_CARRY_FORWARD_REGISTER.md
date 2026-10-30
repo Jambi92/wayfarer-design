@@ -57,6 +57,10 @@ Carried unchanged into the whole-character freeze (`reviews/chatgpt-rac-rp3-halv
 |---|---|---|---|---|
 | HALVREN-CF-EAR-TRI-LOD-1 | HE1 HVEAR4 / HE2 HVEAR3 / HE3 HVEAR4, c1 (`HVC1-HB2HF2-HPB`) and c2 (`HVF178-HB2HF2-HPB`) | Production surface = baked TRI-HV1 triangles (per-quad diagonals incl. the step-5 crossing-resolution flips). Import normals / MikkTSpace tangents instead of letting the importer re-triangulate (a quad export would re-choose 10–242 flagged diagonals, up to 0.18 cm surface change). LODs with LOD-HV1 (root band protected, lobe zone weighted). One engine-side UE5 smoke test at first integration: exact imported triangle count / topology, no importer re-triangulation, normals / tangents intact, root seam intact, source / LOD silhouettes matching the approved evidence. | **ENGINE-INTEGRATION CARRY-FORWARD**, UE5 / rig integration stage. Not a geometry blocker; does not keep the family unfrozen (author ruling 2026-10-30). | `reviews/rac-rp3-evidence/halvren_rp3_final/HALVREN_EAR_FAMILY_RP3_FREEZE.json`; `reviews/claude-rac-rp3-halvren-ear-production-gate-report.md`; `reviews/rac-rp3-evidence/halvren_rp3_ear_production_gate/` |
 
+## Pipkin RP4 (FROZEN by record 2026-10-30, `PIPKIN_RP4_FREEZE.json`)
+
+No Pipkin carry-forward ID. The scoped toe-station validator exception (`PASS_PIPKIN_TOE_PROBE_GEOMETRY_EXCEPTION`) is frozen validator history, not a rig item. Accepted non-blocking notes (author ruling): subtle Pipkin / Durrim / Marchfolk / Cogling separation in neutral clay; PKF107-NAT technical c2 anchor only; c2 thumb-opposition extra pairs = same-class existing v005 contact (0 unmatched). Record: `reviews/rac-rp4-evidence/pipkin/final/PIPKIN_RP4_FREEZE.json`.
+
 ## Durrim RP4 (FROZEN by record 2026-10-30, `DURRIM_RP4_FREEZE.json`)
 
 No Durrim carry-forward ID. Accepted non-blocking notes (author ruling, not rig items): two jaw–neck quads slightly outside the preferred T-4 angle range (deformation-clean); narrow but passing c2 thumb / hip diagnostic clearance in the R-6 stance; subtle 152 cm Durrim / Marchfolk visual distinction (source anatomy accepted). Record: `reviews/rac-rp4-evidence/durrim/v002/DURRIM_RP4_FREEZE.json`.
