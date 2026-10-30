@@ -1,5 +1,12 @@
 # Character Design Status
 
+## RAC RP4 COGLING INDEPENDENT COMPACT DIAGNOSIS — COGLING RP4 REQUIRES AUTHOR DECISION (2026-10-30)
+
+- **Gate:** `reviews/claude-rac-rp4-cogling-compact-diagnosis-gate.md` (order 9424c72). Evidence `reviews/rac-rp4-evidence/cogling/`; tools `tools/rac/rp/cogling_rp4_v001/`.
+- **Passed:** CGJ7 / CG76H-NAT / CG107-NAT regenerate exactly; new c2 anchor CGF91-NAT = COGLING CONFIG-2 CENTRAL REFERENCE PASS (CGJ7 targets / bone scales / head factor; one recorded c2 crest / thorax narrower-core reading). Cogling-specific `MPFB_COGLING_COMPACT_BRANCH_v001` (thumb MCP only; Pipkin-identical engineering face list, Cogling-solved placement; no neck / hip / toe / face topology) fixes every thumb; c2 69 / 69; 0 quads > 4:1; contact / deformation no new class; Pipkin overlap 14 / 14 at 91 and 107, Durrim context 11 / 11, adult vs child 17-18 / 19, Marchfolk normalized 11 / 11, hidden-identity firewalls hold; immutables 69 / 69.
+- **Author decision:** (1) c1 toe3_j1 / toe4_j1 MTP failures (raw 65 / 69 on 76 / 91 / 107) = the Pipkin D4 probe double-scaling class (size-consistent probe 0 failures) -- Pipkin exception NOT applied; options A (Cogling exception, recommended) / B / C / D; (2) 76 cm T-7 fixed 3 px / cm silhouette IoU 0.9931 (v005 and branch alike; scale-consistent 0.998); (3) confirm the c2 reading.
+- No production candidates, nothing frozen. Saurin / rig / creator / UE5 not started.
+
 ## PIPKIN RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30, by record)
 
 - **Freeze:** `PK_M_REF_RP4_v001`, `PK_F_REF_RP4_v001`, `MPFB_PIPKIN_COMPACT_BRANCH_v001`, c1 source `PK-NAT`, c2 technical anchor `PKF107-NAT` (bounds `PK91-NAT` / `PK122-NAT`). Record `reviews/rac-rp4-evidence/pipkin/final/PIPKIN_RP4_FREEZE.json` (promoted from the e38a59d candidate; all reviewed hashes preserved and re-verified by fresh Blender read-back). Closure report `reviews/claude-rac-rp4-pipkin-freeze-closure-report.md`.

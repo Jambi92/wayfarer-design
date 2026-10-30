@@ -2,7 +2,14 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — PIPKIN RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record) — awaiting ChatGPT review
+## LATEST (2026-10-30) — RAC RP4 COGLING COMPACT DIAGNOSIS — COGLING RP4 REQUIRES AUTHOR DECISION — awaiting ChatGPT review
+
+- Order 9424c72. Gate `reviews/claude-rac-rp4-cogling-compact-diagnosis-gate.md`; evidence `reviews/rac-rp4-evidence/cogling/` (partA / regen / unbranched / inheritance incl. `CG_toe_author_decision_package.json` / branch / branch_gates / firewalls / sheets A-I / immutable_hashes.txt).
+- Workspace `/tmp/claude-0/rt/cg/` (src, nat, fam, v1/cb, def, br). Pipeline: `run_cg_parta.sh` -> `cg_partA.py` -> `run_cg_b.sh` -> `run_cg_inh.sh` -> `cg_thumb_relax.py` (in cg/br, warm = Pipkin relax) -> `cg_branch_v001.py build` -> `run_cg_v1.sh DEF ids` -> `run_cg_def.sh` -> `cg_gates_sum.py` / `cg_def_sum.py` / `cg_firewalls.py` / `cg_sheets.py`.
+- Cogling-only tool notes: `cg_landmarks.py` scales the lip-slit / TMJ windows by head size (absolute-cm windows miss the ~12 cm head); `cg_native_c2.py` copies the CGJ7 head factor (native_short head_HH quick check misreads the c2 head).
+- On rulings: create CG_M_REF_RP4_v001 (CGJ7) / CG_F_REF_RP4_v001 (CGF91-NAT) on `MPFB_COGLING_COMPACT_BRANCH_v001` (sha `75ed801f…`) via a Cogling copy of `pk_make_prod.py` + freeze_check read-back, exception record as `pk_toe_exception.py`.
+
+## (previous) 2026-10-30 — PIPKIN RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record)
 
 - Order 695e2ba (record-only freeze closure). `reviews/rac-rp4-evidence/pipkin/final/PIPKIN_RP4_FREEZE.json` promoted from the e38a59d candidate; fresh read-back `PIPKIN_RP4_freeze_closure_readback.json` = reviewed hashes; immutables `immutable_hashes_freeze_closure.txt` 58 / 58 unchanged vs e38a59d. Report `reviews/claude-rac-rp4-pipkin-freeze-closure-report.md`.
 - Canon `specs/pipkin/PIPKIN_V1.md` RP4 block, STATUS, carry-forward register (no new ID), reference-assets manifest updated. No geometry change; production files not resaved.
