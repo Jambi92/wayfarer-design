@@ -519,3 +519,66 @@ Do not:
 - begin hair / clothing / materials.
 
 Complete this revision / closure pass and **STOP FOR CHATGPT REVIEW**.
+
+
+---
+
+# FINAL AUTHOR ACCEPTANCE / FREEZE CLOSURE (2026-10-30)
+
+ChatGPT / author review of Claude commit `d92e677ca7d36cba4533ae5b53a6991e3a412cbd` is complete.
+
+**Final ruling: DURRIM RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FREEZE APPROVED.**
+
+This supersedes the earlier STOP-for-review state in this order.
+
+## Freeze exactly
+- `DU_M_REF_RP4_v001`
+- `DU_F_REF_RP4_v001`
+- `MPFB_COMPACT_BRANCH_v002`
+- c1 source `DU137C-NAT`
+- c2 technical anchor `DUF137C-NAT`
+
+No geometry or topology changes are authorized.
+
+Promote:
+`reviews/rac-rp4-evidence/durrim/v002/DURRIM_RP4_FREEZE_CANDIDATE.json`
+
+to:
+`reviews/rac-rp4-evidence/durrim/v002/DURRIM_RP4_FREEZE.json`
+
+Preserve all reviewed hashes exactly, including:
+- DU_M file `556793330ea0997a5a03a748d63f8b69664014932a2e0028ebdf78537a30cf15`
+- DU_M geometry `a6ff9218c9e6c53ba15d7b586383a46c2a5d72cbd81913536e15de9c3fd93586`
+- DU_F file `797b06d7376ef9b4dcefe31e2c2790c240c78c4954cb05d52ecd758dec1bad9d`
+- DU_F geometry `7354b28d8836d9d45ac9d6d6bf38d3db3af8b6ff6d0d62fe2c11f5e8c8036514`
+- compact branch definition hash `aef4a30b60d736b77af0fa1f0c7f422dcac17b089b84a64ea446842dac15a9da`
+
+Record final branch counts:
+- 58,138 vertices
+- 58,136 quads
+- identical c1/c2 topology
+- 69/69 on DU122C, DU137C, DU152C, and DUF137C
+
+Record these as accepted non-blocking notes:
+1. two local jaw-neck quads remain slightly outside the preferred T-4 angle range but are deformation-clean and have no >4:1 aspect failure;
+2. the c2 thumb/hip diagnostic clearance is narrow but passing;
+3. the 152 cm Durrim/Marchfolk visual distinction is intentionally subtle and the underlying W2H/W2H1 source anatomy remains author accepted.
+
+Update:
+- `specs/STATUS.md`
+- `specs/durrim/DURRIM_V1.md`
+- `reviews/claude-session-handoff.md`
+- any normal freeze index/manifest used by the project
+
+Final status text:
+
+**DURRIM RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN**
+
+Also record:
+- Durrim is the completed RP4 compact-branch pilot;
+- `MPFB_COMPACT_BRANCH_v002` is accepted for Durrim, but is **not** yet a universal compact-race topology;
+- Pipkin is next and must be diagnosed independently before inheriting branch elements.
+
+Do not begin Pipkin, Cogling, Saurin, rig finalization, creator implementation, or engine integration in this closure step.
+
+Complete only the freeze-by-record promotion and status/canon/handoff bookkeeping, then **STOP FOR CHATGPT REVIEW**.
