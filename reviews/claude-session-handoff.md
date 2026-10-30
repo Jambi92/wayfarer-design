@@ -2,7 +2,13 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — RAC RP4 DURRIM COMPACT-BRANCH PILOT — NEEDS REVISION — awaiting ChatGPT review
+## LATEST (2026-10-30) — RP4 DURRIM COMPACT-BRANCH REVISION (v002) — IN PROGRESS (handoff; not for review)
+
+- Order: `reviews/chatgpt-rac-rp4-durrim-compact-branch-revision-closure-order.md` (8080f9f). Thumb MCP two-direction densification + jaw-neck 5-pole reroute, then the full RP4 gate.
+- **Design notes / plan / workspace rebuild steps: `reviews/claude-rac-rp4-durrim-v002-design-notes.md`** (measured ring / window / segment constraints; feasible thumb layout with transition templates; the isolated-pole fact for the neck and the planned move-up-2-rows + compensating 3/5 pair).
+- Nothing built for v002 yet; previous gate state unchanged (NEEDS REVISION, 372fe20).
+
+## (previous) 2026-10-30 — RAC RP4 DURRIM COMPACT-BRANCH PILOT — NEEDS REVISION — awaiting ChatGPT review
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp4-durrim-compact-branch-pilot-order.md` (609c557). Gate: `reviews/claude-rac-rp4-durrim-compact-branch-gate.md`. Evidence: `reviews/rac-rp4-evidence/durrim/`.
