@@ -1,6 +1,16 @@
 # Character Design Status
 
-## HALVREN RP3 HE2 ROOT VISUAL INTEGRATION — APPROVED, READY FOR CHATGPT / AUTHOR FREEZE REVIEW (not frozen) (2026-10-29)
+## HALVREN RP3 EAR FAMILY CLOSURE — HALVREN EAR FAMILY FREEZE RECOMMENDED (HE2 + HR2 frozen by record; HE1 / HE3 not frozen) (2026-10-29)
+
+- **Report:** `reviews/claude-rac-rp3-halvren-ear-family-closure-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_ear_family_closure/` (boards HVF_A..F, record, prodcheck, folded-quad audit, 98 trials, five blind reviews).
+- **HE2 + HR2:** freeze recorded (`HALVREN_HE2_HR2_FREEZE.json`); final-code rebuild dV 0.
+- **HE3 HVEAR4:** cross-domain recombination (elf-forward length / elevation / sharp tip on a broad, full-shouldered human-family helix, low projection, blade rim; `lift_top` 0.55) -> firewall R2 0.88 -> 0.64 / 0.61 / 0.27 (c2 0.59 / 0.58 / 0.31); clean c1 / c2, 8 poses, one auricle. Cause of 0.88: HR2 removed the HR1 root-line residual against Fenn.
+- **HE1:** HE1 SIZE FLOOR ACCEPTED AS CANONICAL FAMILY BOUND at the revised floor L 5.6 (~ Marchfolk +10-13 %, was +27 %) on the shared path (repair stage 3); Path B human-scale scaffold tested, worse. HE1 = human-family outline (upright, rounded, soft apex, rolled helix); R2 0.22 / 0.17 / 0.12.
+- **Repair path:** `hv_cuff_repair.py` stages 3 (symmetric sheet stretch), 4 (folded sheet quads), 5 (cuff creases); 4 / 5 only on `sheet_fold_fix` ears (HE1 / HE3).
+- **Family:** composite HE1 0.46 < HE2 0.65 < HE3 0.85, non-lockstep; blind reviews 4 and 5 PASS (residual taste note: HE3 vs HE2 mainly height / tip). Frozen refs 16 / 16, Fenn / Aelari / Vael dV 0.
+- **Next:** STOP for ChatGPT review — family freeze decision.
+
+## (previous) HALVREN RP3 HE2 ROOT VISUAL INTEGRATION — APPROVED, READY FOR CHATGPT / AUTHOR FREEZE REVIEW (not frozen) (2026-10-29)
 
 - **Report:** `reviews/claude-rac-rp3-halvren-he2-root-visual-integration-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_he2_root_visual/` (boards HE2RV_A..G, record, prodcheck, sections, 98 trials, blind review).
 - **Diagnosis:** HR1 mounted the auricle on the v005 MPFB human-ear pedestal (root loop up to 0.93 cm posterior / 1.16 cm inferior above the head) with a 25-32 deg crease along the loop -> second contour behind the pinna; the old lobe base lifted a cuff tab beside the free lobe -> lower fork.

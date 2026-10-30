@@ -33,7 +33,17 @@
 
 ## FINAL DISPOSITION
 
-__DISPOSITION__
+**HALVREN EAR FAMILY FREEZE RECOMMENDED**
+
+- **HE2 + HR2:** freeze recorded (`HALVREN_HE2_HR2_FREEZE.json`); HE2 rebuilt with the final code reads back dV 0.
+- **HE3 (HVEAR4):** firewall R² **0.64 / 0.61 / 0.27** (MF ↔ Fenn / Aelari / Vael; c2 0.59 / 0.58 / 0.31), down from 0.88. Still the elf-forward extreme (composite 0.85). Clean on c1 / c2, 8 poses clean, one auricle on HR2.
+- **HE1:** **HE1 SIZE FLOOR ACCEPTED AS CANONICAL FAMILY BOUND** at the revised floor **L 5.6 ≈ Marchfolk +10–13 %** (was +27 %), on the shared production path. No dedicated human-scale scaffold is required: Path B was tested and is worse.
+  - HE1 now has a human-family outline: upright, rounded, soft apex, rolled helix.
+  - Firewall R² 0.22 / 0.17 / 0.12.
+- **Family:** HE1 0.46 < HE2 0.65 < HE3 0.85, non-lockstep (outline and rim type change; projection / backward angle non-monotone).
+- **Frozen references:** 16 / 16 hashes unchanged; Fenn / Aelari / Vael rebuild dV 0.
+- **Author-facing visual review:** two consecutive independent blind reviews return **FINAL FAMILY LINEUP: PASS** (rounds 4 and 5, after three failing rounds that drove the HE3 rim / interior, the sheet-fold / cuff-crease repairs and the HE1 outline).
+- **Residual author-taste item (not a gate):** HE3 separates from HE2 mainly by height and tip (round 5: BORDERLINE). Further separation was tested and is limited by the shared sheet, the HR2 head clearance and the firewall (§3, review log).
 
 ## 1. HE2 + HR2 freeze recorded (§1)
 
@@ -233,7 +243,16 @@ Rest-state sweep on c1 (`HE1_size_trials`):
   - helix fullness: HE3 is fuller than any elf, close to HE2.
 - **Shared:** one topology, one HR2 root path, one base / lobe language.
 
-__VISUAL__
+**Author-facing visual review (`blind_family_review.md`).** Five fresh independent reviewers each saw only the boards and the order's role definitions, never this report.
+
+| Round | Verdict | Drove |
+|---|---|---|
+| 1 | FAIL — "one ear at three sizes" | HE1 human upper ear / rim; HE3 blade rim + stronger interior; symmetric stage 3 |
+| 2 | BORDERLINE → FAIL — crinkles / crease lines | stage 4 (folded sheet quads: HE1 34 → 5–8, HE3 18 → 6) |
+| — (own audit) | dark speck before the HE1 c2 tragus (cuff edge creased 162°) | stage 5 (cuff creases > 120°, crossing- and fold-safe) |
+| 3 | FAIL — HE1 "shrunken, tip-cut HE2"; rough upper rim | HE1 human-family outline (upright, rounded, soft apex, rolled helix) |
+| 4 | **PASS** | HE1 rim-to-lobe polish (lobe gate 0.24) |
+| 5 | **PASS** | HE2 reference rows added to board B |
 
 ## 8. Immutable references
 
@@ -271,7 +290,18 @@ __VISUAL__
 
 ## 10. Family-level closure rule (§11)
 
-__GATES__
+| # | Condition | Result |
+|---|---|---|
+| 1 | HE2 + HR2 freeze recorded and unchanged | **PASS** — record + read-back dV 0, V hashes equal |
+| 2 | HE3 firewall < 0.80 on all three pairs | **PASS** — 0.64 / 0.61 / 0.27 (c2 0.59 / 0.58 / 0.31) |
+| 3 | HE3 remains the elf-forward extreme | **PASS** — composite 0.85 (top), longest / most elevated / sharpest; reviewers 4 / 5 PASS |
+| 4 | HE3 c1 / c2 deformation and HR2 visual gates | **PASS** — 8 poses clean both, one auricle (board B) |
+| 5 | HE1 size-floor disposition explicitly resolved | **PASS** — HE1 SIZE FLOOR ACCEPTED AS CANONICAL FAMILY BOUND at L 5.6 (≈ +10–13 %) |
+| 6 | HE1 a valid human-forward member | **PASS** — firewall 0.22, composite 0.46, clean c1 / c2, reviewers 4 / 5 PASS |
+| 7 | Coherent but non-lockstep family | **PASS** — ordered composite; outline / rim type change; non-monotone domains |
+| 8 | Frozen non-Halvren references untouched | **PASS** — 16 / 16 hashes; Fenn / Aelari / Vael dV 0 |
+| 9 | Character-creator implications documented | **PASS** — §9 |
+| 10 | Final family lineup passes author-facing visual review | **PASS** — blind rounds 4 and 5 (residual taste note on HE3 vs HE2 recorded) |
 
 **Shared polish carry-forwards (non-blocking; present on the frozen HE2 too, so not HE1 / HE3 defects):**
 - **Crumpled cuff band / back-sheet Z-kink.** On the skull-facing back (lower-rear 3/4, direct rear), the RI3 cuff band plus the HR2 back-sheet Z-kink recorded in the HR2 report. Identical on HE2 (rear comparison in the review log). Folded cuff / transition quads: Fenn 14, Aelari 10, Vael 8, HE2 8–17, HE1 19–23, HE3 14–22 (`folded_cuff_quads_audit.json`).

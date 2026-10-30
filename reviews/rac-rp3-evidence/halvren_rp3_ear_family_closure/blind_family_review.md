@@ -28,5 +28,23 @@ Verdict: **FAIL** — "HE1 still reads as a shrunken, tip-cut HE2 rather than a 
 
 Own check: the HE3 back-side crumple is the shared RI3 cuff band and the HR2 back-sheet Z-kink, identical on the frozen HE2 (rear comparison HE2 / HE3 / HE1 / Fenn) -- a shared HR2 polish item already recorded as non-blocking, not an HE3 defect. Action taken on HE1 (6 + 6 rest trials, `he1u` in the record): a human-family OUTLINE -- upright (tilt 12 -> 9, sweep 0.65 -> 0.45), rounded egg-shaped upper ear with only a soft Halvren apex (taper 0.58 / 0.80 / 0.14 -> 0.52 / 0.70 / 0.06) -- and a fully rolled human helix (0.34 x 0.32 -> 0.42 x 0.40), smooth with stage 4.
 
-## Round 4 — on the final HVEAR4 family (fresh reviewer, same brief)
-__ROUND4__
+## Round 4 — HE1 human outline (fresh reviewer, same brief)
+
+Verdict: **FINAL FAMILY LINEUP: PASS.**
+- HE3: elf-forward PASS; distinct from HE2 PASS (narrowly: the longer, sharper tip separates it; lower half / interior shared); not a disguised elf ear PASS; one auricle c1 / c2 PASS.
+- HE1: human-forward and distinct from Marchfolk PASS ("rounded, upright outline with a soft tip reads as a human-leaning, slightly pointed ear"); distinct from HE2 PASS ("blunt, rounded, upright top vs HE2's leaning pointed tip"; the L 5.6 size-only column does look like a shrunken HE2).
+- Family: PASS — "the shape changes up the series: rounded HE1, pointed HE2, tall narrow HE3. This is a change of shape, not one ear scaled up."
+- Defects: HE1 rim-to-lobe notch sharper than HE2's (BORDERLINE); HE1 small rolled tab at the top of the rim from behind (BORDERLINE); HE1 interior denser (minor); HE3 cuff crumple / root crease not worse than HE2; no specks, spikes or holes.
+
+Action taken: rim-to-lobe polish (6 rest trials `he1v`): lobe gate 0.19 -> 0.24 with helix roll 0.38 (V3) gives a continuous back rim; the rear top "tab" is the upper crus edge, which HE2 shares in form, left as is.
+
+## Round 5 — final HVEAR4 family (fresh reviewer, same brief)
+
+Verdict: **FINAL FAMILY LINEUP: PASS.**
+- HE3: elf-forward PASS; distinct from HE2 BORDERLINE ("tip clearly higher and narrower, upper blade longer, but interior / lobe / root / front edge the same: reads as HE2 stretched upward"); not a disguised elf ear PASS; one auricle c1 / c2 PASS.
+- HE1: human-forward and distinct from Marchfolk PASS; distinct from HE2 PASS ("the outline itself is different: rounded crown vs HE2's pointed leaf").
+- Family: PASS (mild caveat: the HE2 -> HE3 step is mostly height).
+- Defects: shared ragged concha front edge / streaks (HE2 the same under normal shading); shared cuff zig-zag (no worse than HE2); HE1 lower-third rim kink now no worse than HE2's; faint skin crease under the HE1 lobe and a tiny nick below the HE3 apex (minor, zoom only); no spikes, holes or specks.
+
+Action taken: board B gained the frozen HE2 c1 / c2 under the same cavity shading (reviewer request) so the shared root / cuff marks can be compared directly. The HE3-vs-HE2 separation is at the limit recorded since round 1: 18 HE3 outline trials that separated it further (narrower lower body, stronger backward lean of the tip, other outlines) either self-intersected on the HR2 head, re-aligned with an elf line (R2 0.73-0.88) or stayed at normalized-silhouette IoU >= 0.83 with HE2. Recorded as the one residual author-taste item (not a gate).
+

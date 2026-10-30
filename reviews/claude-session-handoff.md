@@ -2,7 +2,22 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-29) — HALVREN HE2 ROOT VISUAL INTEGRATION — APPROVED, READY FOR FREEZE REVIEW — awaiting ChatGPT review
+## LATEST (2026-10-29) — HALVREN EAR FAMILY CLOSURE — HALVREN EAR FAMILY FREEZE RECOMMENDED — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-halvren-ear-family-closure-after-hr2-order.md` (94eabf1). Report: `reviews/claude-rac-rp3-halvren-ear-family-closure-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_ear_family_closure/`. HE2 + HR2 frozen by record; HE1 / HE3 HVEAR4 recommended, not frozen.
+- Library: `ear_branch_lib.py` HE1 / HE3 HVEAR4 (`sheet_fold_fix` geo flag), before-states `HE1-HVEAR3`, `HE3-HVEAR3`, `HE1-R3`, test body `HE1-HS`; `ear_build.py` probe keys `clear`, `helix_h`, `helix_w`.
+- Halvren repair `hv_cuff_repair.py`: stage 3 symmetric sheet stretch (aspect > 9.8), stage 4 folded sheet quads, stage 5 cuff creases > 120 deg (corner / aspect / no-new-crossing / no-new-fold guards); 4 / 5 only with `sheet_fold_fix`.
+- Tools: `hv_ear_family_closure.py EVIDIR` (record), `hv_ear_family_boards.py EVIDIR OUT` (boards A-F); prodcheck `hv_ear_prodcheck.py` with `/home/claude/stc/bin/python3` (bpy).
+- Workspace `/tmp/claude-0/rt/hv/ear/{fam6 (final guarded HE1-3 c1/c2), hr2f (ee0e98c family incl. HE3-before / HE1-HVEAR3), he1L53, he1L56, he3c-e, he1s, he1t, he1u, he1v (trials), ref (frozen elves)}`.
+
+**Key findings**
+- HE3 0.88 came from HR2 removing the HR1 root-line residual vs Fenn; HVEAR4 recombination -> 0.64 / 0.61 / 0.27. HE1 floor was 4-20 cavum quads over aspect 10, fixed by stage 3 -> L 5.6 (+10-13 %); Path B scaffold worse. Visible crinkles = folded sheet quads (stage 4); HE1 c2 speck = creased cuff edge (stage 5). Blind reviews: FAIL, BORDERLINE, FAIL, PASS, PASS.
+- Shared polish carry-forwards (also on frozen HE2): cuff band crumple / back-sheet Z-kink, stamped interior relief, lobe-base crease.
+
+**Next:** STOP for ChatGPT review (family freeze decision).
+
+## (previous) 2026-10-29 — HALVREN HE2 ROOT VISUAL INTEGRATION — APPROVED, READY FOR FREEZE REVIEW — awaiting ChatGPT review
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-halvren-ear-root-visual-integration-correction-order.md` (651d7f5). Report: `reviews/claude-rac-rp3-halvren-he2-root-visual-integration-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_he2_root_visual/`. Nothing frozen.

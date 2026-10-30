@@ -1,7 +1,7 @@
 # hv_ear_family_boards.py EVIDIR OUTDIR : Halvren ear family closure order §9 boards (identical cameras = left root frame of the common HB2+HF2+HP-B head per
 # configuration, matched scale, neutral clay; B with volume-revealing cavity shading):
 #   A  HE3 firewall board (c1 common head): Marchfolk | HE1 | HE2 frozen | HE3 before | HE3 corrected | frozen Fenn | Aelari | Vael -- front 3/4, side, true rear 3/4
-#   B  HE3 HR2 root gate, corrected HE3 c1 / c2: strict side | true rear 3/4 | direct rear | lower-rear 3/4 (+ Board-E 3/4)
+#   B  HE3 HR2 root gate, corrected HE3 c1 / c2: strict side | true rear 3/4 | direct rear | lower-rear 3/4 (+ Board-E 3/4); frozen HE2 rows for reference
 #   C  HE3 body context HB2 + HF2 + HP-B: front | front 3/4 | rear 3/4 (c1 / c2)
 #   D  HE1 size-floor board (c1): Marchfolk | HE1 HVEAR3 L 6.3 (old floor) | HE2 frozen | HE1 L 5.3 (edge test) | HE1 L 5.6 (recommended) -- front, side,
 #      front 3/4, rear 3/4
@@ -30,7 +30,7 @@ tag = lambda k: k.replace(' ', '_').replace('.', '')
 VG = ['etq', 'elat', 'rq', 'front', 'tqf', 'tqr', 'aq']
 jobs = [(QK.run(tag(k) + '_g', p, H[c], VG, 600), os.environ) for k, (p, c) in IT.items()]
 REV = dict(os.environ, RENDER_REVEAL='1')
-for k in ('HE3', 'HE3 c2', 'HE3 before'): p, c = IT[k]; jobs.append((QK.run(tag(k) + '_rv', p, H[c], ['side', 'aq', 'rq', 'rr', 'lr', 'zf'], 600), REV))
+for k in ('HE3', 'HE3 c2', 'HE3 before', 'HE2', 'HE2 c2'): p, c = IT[k]; jobs.append((QK.run(tag(k) + '_rv', p, H[c], ['side', 'aq', 'rq', 'rr', 'lr', 'zf'], 600), REV))
 with ThreadPoolExecutor(2) as ex: list(ex.map(lambda j: subprocess.run(j[0], env=j[1], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL), jobs))
 def img(t, v):
     p = os.path.join(TMP, '%s_%s.png' % (t, v)); return Image.open(p).convert('RGB') if os.path.exists(p) else Image.new('RGB', (600, 600), (255, 200, 200))
@@ -59,9 +59,11 @@ sheet('HVF_A_HE3_firewall.jpg', 'A. HE3 firewall board -- common Halvren head (c
       % (FW['HE3']['pairs']['MF-FN']['r2'], FW['HE3']['pairs']['MF-AE']['r2'], FW['HE3']['pairs']['MF-VA']['r2'], CO['HE1'], CO['HE2'], CO['HE3']))
 SI = R['silhouette']; sc = lambda k: 'pedestal p90 post %.2f / inf %.2f cm | loop crease %.0f / %.0f deg' % tuple([SI[k]['pedestal_vs_true_head'][s]['p90_cm'] for s in ('posterior', 'inferior')] + [SI[k]['loop_crease_deg'][s]['mean'] for s in ('posterior', 'inferior')])
 TE = R['technical']; tc = lambda k: 'min %.1f deg | aspect %.2f | selfx %d | 8 poses %s | guard %d' % (TE[k]['min_angle'], TE[k]['aspect_max'], TE[k]['branch_selfx'], 'clean' if TE[k]['poses_clean'] else 'FAIL', TE[k]['guard_iterations'])
-sheet('HVF_B_HE3_HR2_root_gate.jpg', 'B. HE3 corrected -- HR2 root gate, c1 / c2, revealing cavity shading: strict side | true rear 3/4 | direct rear | lower-rear 3/4 | Board-E 3/4 | lower root ant.',
+sheet('HVF_B_HE3_HR2_root_gate.jpg', 'B. HE3 corrected -- HR2 root gate, c1 / c2 (+ frozen HE2 under the same shading for reference), revealing cavity shading: strict side | true rear 3/4 | direct rear | lower-rear 3/4 | Board-E 3/4 | lower root ant.',
       [('HE3\nc1', [img('HE3_rv', v) for v in ('side', 'rq', 'rr', 'lr', 'aq', 'zf')], [sc('HE3 c1'), None, tc('HE3 c1'), None, None, None]),
-       ('HE3\nc2', [img('HE3_c2_rv', v) for v in ('side', 'rq', 'rr', 'lr', 'aq', 'zf')], [sc('HE3 c2'), None, tc('HE3 c2'), None, None, None])], colw=360,
+       ('HE3\nc2', [img('HE3_c2_rv', v) for v in ('side', 'rq', 'rr', 'lr', 'aq', 'zf')], [sc('HE3 c2'), None, tc('HE3 c2'), None, None, None]),
+       ('HE2\nfrozen\nc1 (ref)', [img('HE2_rv', v) for v in ('side', 'rq', 'rr', 'lr', 'aq', 'zf')], [sc('HE2 c1') if 'HE2 c1' in SI else None, None, tc('HE2 c1'), None, None, None]),
+       ('HE2\nfrozen\nc2 (ref)', [img('HE2_c2_rv', v) for v in ('side', 'rq', 'rr', 'lr', 'aq', 'zf')], [sc('HE2 c2') if 'HE2 c2' in SI else None, None, tc('HE2 c2'), None, None, None])], colw=360,
       heads=['strict side', 'true rear 3/4', 'direct rear', 'lower-rear 3/4', 'Board-E 3/4 (etqr)', 'lower root, anterior'])
 sheet('HVF_C_HE3_body_context.jpg', 'C. HE3 corrected in body / face context -- HB2 + HF2 + HP-B: front | front 3/4 | rear 3/4',
       [('c1', [img('HE3_g', v) for v in ('front', 'tqf', 'tqr')], None), ('c2', [img('HE3_c2_g', v) for v in ('front', 'tqf', 'tqr')], None)], colw=480, heads=['front', 'front 3/4', 'rear 3/4'])
