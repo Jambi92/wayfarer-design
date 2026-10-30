@@ -1,6 +1,13 @@
 # Character Design Status
 
-## RAC RP4 COGLING INDEPENDENT COMPACT DIAGNOSIS — COGLING RP4 REQUIRES AUTHOR DECISION (2026-10-30)
+## RAC RP4 COGLING — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (2026-10-30, NOT frozen)
+
+- **Gate:** `reviews/claude-rac-rp4-cogling-final-production-gate.md` (order f58dbd9). Evidence `reviews/rac-rp4-evidence/cogling/final/`; record `COGLING_RP4_FREEZE_CANDIDATE.json`.
+- **Candidates:** `CG_M_REF_RP4_v001` (c1 CGJ7) / `CG_F_REF_RP4_v001` (c2 CGF91-NAT) on `MPFB_COGLING_COMPACT_BRANCH_v001` (`75ed801f…`); 58,162 V / 58,160 Q, identical face topology `a11b8831…`; read-back clean.
+- **Validator:** raw kept (76 / 91 c1 / 107: 65 / 69; c2 69 / 69); author-approved `PASS_COGLING_TOE_PROBE_GEOMETRY_EXCEPTION` (toe3 / toe4 j1 only) -> adjusted 69 / 69 on all four. **T-7:** 76 cm raw 0.9931 kept; `PASS_COGLING_T7_SMALL_BODY_SAMPLING_EXCEPTION` (scale-consistent 0.998); others ordinary PASS. c2 crest / thorax residual accepted.
+- T-1…T-7, firewalls, deformation (no new class) and immutables (74 / 74) pass. Nothing frozen; Saurin / rig / creator / UE5 not started.
+
+### (superseded) RAC RP4 COGLING INDEPENDENT COMPACT DIAGNOSIS — COGLING RP4 REQUIRES AUTHOR DECISION (2026-10-30)
 
 - **Gate:** `reviews/claude-rac-rp4-cogling-compact-diagnosis-gate.md` (order 9424c72). Evidence `reviews/rac-rp4-evidence/cogling/`; tools `tools/rac/rp/cogling_rp4_v001/`.
 - **Passed:** CGJ7 / CG76H-NAT / CG107-NAT regenerate exactly; new c2 anchor CGF91-NAT = COGLING CONFIG-2 CENTRAL REFERENCE PASS (CGJ7 targets / bone scales / head factor; one recorded c2 crest / thorax narrower-core reading). Cogling-specific `MPFB_COGLING_COMPACT_BRANCH_v001` (thumb MCP only; Pipkin-identical engineering face list, Cogling-solved placement; no neck / hip / toe / face topology) fixes every thumb; c2 69 / 69; 0 quads > 4:1; contact / deformation no new class; Pipkin overlap 14 / 14 at 91 and 107, Durrim context 11 / 11, adult vs child 17-18 / 19, Marchfolk normalized 11 / 11, hidden-identity firewalls hold; immutables 69 / 69.

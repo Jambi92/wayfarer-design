@@ -2,7 +2,13 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — RAC RP4 COGLING COMPACT DIAGNOSIS — COGLING RP4 REQUIRES AUTHOR DECISION — awaiting ChatGPT review
+## LATEST (2026-10-30) — RAC RP4 COGLING — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (not frozen) — awaiting ChatGPT review
+
+- Order f58dbd9 (toe + 76 cm T-7 exceptions approved, c2 residual accepted). Gate `reviews/claude-rac-rp4-cogling-final-production-gate.md`; evidence `reviews/rac-rp4-evidence/cogling/final/` (production blends + sidecars + read-back, validator_raw, `COGLING_toe_exception_validator_summary.json`, `COGLING_T7_record.json`, `CG_final_gates.json`, deformation, boards CGF_*, `immutable_hashes_final.txt`, `COGLING_RP4_FREEZE_CANDIDATE.json`).
+- Tools: `run_cg_final.sh` (fresh realizations -> `cg_make_prod.py` -> freeze_check -> `cg_toe_exception.py` -> `cg_t7_scaled.py`), `cg_t7_record.py`, `cg_gates_sum.py final`, `run_cg_def.sh cb final`, `cg_def_sum.py`, `cg_final_record.py`, `CBDIR=final cg_sheets.py`. Workspace `/tmp/claude-0/rt/cg/final/`.
+- On freeze approval: promote the candidate -> `COGLING_RP4_FREEZE.json` (hashes preserved, record-only), canon `specs/cogling/COGLING_V1.md`, STATUS, manifest, register; copy production files to `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Cogling/RP4/`.
+
+## (previous) 2026-10-30 — RAC RP4 COGLING COMPACT DIAGNOSIS — COGLING RP4 REQUIRES AUTHOR DECISION
 
 - Order 9424c72. Gate `reviews/claude-rac-rp4-cogling-compact-diagnosis-gate.md`; evidence `reviews/rac-rp4-evidence/cogling/` (partA / regen / unbranched / inheritance incl. `CG_toe_author_decision_package.json` / branch / branch_gates / firewalls / sheets A-I / immutable_hashes.txt).
 - Workspace `/tmp/claude-0/rt/cg/` (src, nat, fam, v1/cb, def, br). Pipeline: `run_cg_parta.sh` -> `cg_partA.py` -> `run_cg_b.sh` -> `run_cg_inh.sh` -> `cg_thumb_relax.py` (in cg/br, warm = Pipkin relax) -> `cg_branch_v001.py build` -> `run_cg_v1.sh DEF ids` -> `run_cg_def.sh` -> `cg_gates_sum.py` / `cg_def_sum.py` / `cg_firewalls.py` / `cg_sheets.py`.
