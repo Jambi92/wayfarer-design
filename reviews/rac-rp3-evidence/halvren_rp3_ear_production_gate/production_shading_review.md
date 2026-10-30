@@ -13,4 +13,12 @@ Verdict: **PRODUCTION SHADING: FAIL** — "LOD artifact: dark V-notch pinch at t
 Action taken: LOD-HV1 extended with a lobe-zone weight (auricle sheet below 30 % of the ear height decimated at weight 0.35, root band still protected). On HE1 c1 25 % the lobe notch is gone and the lobe matches the source (rear 3/4 and lower-rear comparison), with 0 self-intersections. The full audit and board D were regenerated.
 
 ## Round 2 — final boards (fresh reviewer, same brief)
-__ROUND2__
+
+Verdict: **PRODUCTION SHADING: PASS** — "no new production shading defect in HE1-HE3; category (a), defects introduced by triangulation: none found."
+- Upper helix / tip: zig-zag zebra stripes in the scapha below the tip (strongest on HE1) and a slightly faceted apex; FN / AE / VA show the same; board A ties the bands to rows of long thin warped quads in the quad source, chosen and alternate diagonals shade the same -> pre-existing relief, close-up only.
+- Cuff / root band: the folded sawtooth ring at the cuff seam is in the quad source and sits in the posterior crease; no ripple or zig-zag in any shaded view.
+- Lobe base: the V point inside the helix in lower-rear 3/4 is sculpt (FN has a similar notch); quads vs triangles differ on ~1 % of pixels spread evenly, rebuild 0.
+- Gameplay distance (front 3/4, side): clean.
+- Pose stress: no pop, collapse or inversion in 24 cells.
+- LOD: silhouettes, upper helix, lobe and root rim hold at 50 / 25 %; mild soft facet ripples in the head skin behind the root at 25 % = normal LOD loss at its use distance (watch item if the 25 % switch distance is short).
+

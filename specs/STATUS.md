@@ -1,6 +1,14 @@
 # Character Design Status
 
-## HALVREN RP3 EAR FAMILY CLOSURE — HALVREN EAR FAMILY FREEZE RECOMMENDED (HE2 + HR2 frozen by record; HE1 / HE3 not frozen) (2026-10-29)
+## HALVREN RP3 EAR FAMILY FINAL PRODUCTION GATE — HALVREN EAR FAMILY FINAL PRODUCTION FREEZE RECOMMENDED (not frozen) (2026-10-30)
+
+- **Report:** `reviews/claude-rac-rp3-halvren-ear-production-gate-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_ear_production_gate/` (pre / post hashes, per-mesh records, baked diagonals, boards PT_A..D, two blind shading reviews).
+- **Validation only:** approved HE1 / HE2 / HE3 c1 / c2 re-hash identical; no vertex / connectivity edit.
+- **TRI-HV1** (baked production triangulation): minimum-fold diagonal + deterministic tie-breaks + intersection validation over rest and 8 poses (5 cuff flips); order-invariant, rebuild-identical; 0 crossings (fixed a-c split had up to 5 on HE2).
+- **Poses** 0 contacts / inversions / flips / root inversions; **LOD-HV1** (root band protected, lobe zone weighted) 0 non-manifold / zero-area / self-x at 50 / 25 %, drift <= 0.04 cm; **FBX** exact; sheet diagonals mirrored; MikkTSpace deterministic. Shading blind review round 2 PASS (round 1 LOD lobe pinch fixed). Residual folded quads = frozen-elf class, accepted.
+- **Next:** STOP for ChatGPT review — final production freeze decision.
+
+## (previous) HALVREN RP3 EAR FAMILY CLOSURE — HALVREN EAR FAMILY FREEZE RECOMMENDED (HE2 + HR2 frozen by record; HE1 / HE3 not frozen) (2026-10-29)
 
 - **Report:** `reviews/claude-rac-rp3-halvren-ear-family-closure-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_ear_family_closure/` (boards HVF_A..F, record, prodcheck, folded-quad audit, 98 trials, five blind reviews).
 - **HE2 + HR2:** freeze recorded (`HALVREN_HE2_HR2_FREEZE.json`); final-code rebuild dV 0.

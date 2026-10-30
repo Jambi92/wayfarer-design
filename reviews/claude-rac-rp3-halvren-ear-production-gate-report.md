@@ -21,7 +21,23 @@
 
 ## FINAL DISPOSITION
 
-__DISPOSITION__
+**HALVREN EAR FAMILY FINAL PRODUCTION FREEZE RECOMMENDED**
+
+- **Approved shapes untouched:** validation only. The six approved meshes re-hash identical after every test.
+- **Production triangulation TRI-HV1:**
+  - minimum-fold diagonal, with deterministic tie-breaks;
+  - plus an intersection validation over rest and the 8 poses, which flips 5 cuff diagonals in total;
+  - baked into the asset.
+  - It is deterministic, order-invariant and rebuild-identical.
+  - Baked surface: 0 crossings at rest and in all poses. The naïve fixed split had up to 5 rest crossings on the frozen HE2.
+- **Shading:**
+  - smooth normals and MikkTSpace tangents are deterministic, with no degenerate tangents;
+  - two independent blind reviews; round 2 is PASS: "defects introduced by triangulation: none found".
+- **Poses:** 0 contacts, 0 triangle inversions, 0 normal flips, 0 root inversions, 0 diagonal changes on HE1 / HE2 / HE3 × c1 / c2.
+- **LOD (LOD-HV1, protected root band and weighted lobe zone):** 0 non-manifold, 0 zero-area, 0 self-intersections at 50 / 25 %; drift ≤ 0.04 cm; root drift 0.
+- **FBX round trip:** exact triangles, normals within 0.03°, tangents identical. Sheet diagonals are mirrored left / right; no root seam opens.
+- **Residual folded quads accepted:** the same class as the frozen Fenn / Aelari / Vael ears, and safe under every production test.
+- **Downstream requirement:** export the baked triangles (`baked/`), not quads. Any importer re-triangulation would change 10–16 to 196–242 flagged quads.
 
 ## 1. Approved shapes untouched (§1, §3)
 
@@ -97,7 +113,7 @@ Triangles keep the quad winding.
   - B: grazing rim light + specular;
   - B2: reflection-stripe matcap;
   - each with seven views per ear and configuration (front 3/4, strict side, true rear 3/4, direct rear, lower-rear 3/4, lower-root closeup, upper helix / tip), plus the frozen Fenn / Aelari / Vael rows under the same rule and light.
-- **Visual verdict:** __SHADING__
+- **Visual verdict:** independent blind review round 2 PASS, after round 1 found only a LOD lobe pinch, which is now fixed (`production_shading_review.md`). At front 3/4 / side the surfaces are clean. Tip striations, the lobe V point and the folded cuff seam are pre-existing in the quads and shared with Fenn / Aelari / Vael; they are not triangulation defects.
 
 ## 4. Pose stability on the baked triangles (§6)
 
@@ -174,15 +190,20 @@ A UE import of `baked/` triangles with "import normals and tangents" should repr
 |---|---|
 | triangulation deterministic | **PASS** — TRI-HV1, order-invariant, rebuild byte-identical |
 | chosen diagonal stable | **PASS** — baked; 0 diagonal changes in 8 poses × 6 meshes |
-| shading clean | __SHADING_GATE__ |
+| shading clean | **PASS** — blind review round 2; quads vs triangles about 1 % of pixels, spread evenly; rebuild 0 |
 | deformation clean | **PASS** — 0 contacts / inversions / flips / root inversions on the triangles |
 | LODs clean | **PASS** with LOD-HV1 — 0 non-manifold / zero-area / self-intersection at 50 / 25 %, drift ≤ 0.04 cm |
 | export / reload stable | **PASS** — FBX exact; tangents deterministic; mirrored diagonals |
-| no visible artifact at gameplay / close distance | __VISIBLE__ |
+| no visible artifact at gameplay / close distance | **PASS** — none at gameplay distance; the close-up tip / lobe relief is pre-existing and shared with the frozen references |
 
 **Local corrections made:** none to the mesh. Rule-level fixes only:
 - TRI-HV1 step 5 (5 cuff diagonals flipped across HE1 c2 / HE2 c1 / HE2 c2);
-- LOD-HV1 protection.
+- LOD-HV1 protection and lobe weight.
+
+**Watch items (not blockers):**
+- the 25 % LOD shows mild soft facets in the head skin behind the root, which is normal LOD loss; check if the 25 % switch distance is short;
+- HE1 c2 has a small pre-tragal nub on the head, in the approved quads and counted as relief;
+- the production UV and an engine-side UE import of `baked/` are still to be done at integration.
 
 **Folded quads accepted, not chased to zero.** The residual folded / warped quads (HE 12–30 folded per mesh) are the same class as the frozen Fenn / Aelari / Vael ears (10–16 folded). They triangulate deterministically, stay intersection-free, deform cleanly, LOD cleanly with LOD-HV1, and round-trip exactly.
 

@@ -2,7 +2,20 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-29) — HALVREN EAR FAMILY CLOSURE — HALVREN EAR FAMILY FREEZE RECOMMENDED — awaiting ChatGPT review
+## LATEST (2026-10-30) — HALVREN EAR FAMILY FINAL PRODUCTION GATE — FINAL PRODUCTION FREEZE RECOMMENDED — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-halvren-ear-final-production-triangulation-gate-order.md` (a656750). Report: `reviews/claude-rac-rp3-halvren-ear-production-gate-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_ear_production_gate/`. Nothing frozen; no mesh edit.
+- Tools (`halvren_rp3_v001`): `hv_ear_prodtri.py` (bpy: TRI-HV1 bake + flagged-quad table, normals / MikkTSpace, poses on triangles, LOD-HV1, FBX round trip, importer re-triangulation, mirroring), `hv_ear_prodtri_boards.py PT SNAP OUT` (`PT_ONLY=<tag prefix>` re-renders a subset), `hv_ear_prodtri_collect.py`. `render_attr.py` opt-in `RENDER_LIGHTING` / `RENDER_SPEC`.
+- Workspace `/tmp/claude-0/rt/hv/ear/{prodsnap (snapshot + ref + pose), prodtri (per-mesh outputs, jobs.txt, rerun2.sh), lodlobe}`.
+
+**Key findings**
+- The quad audit ignores crossings between triangles of vertex-adjacent quads; on baked triangles the twisted cuff quads cross (HE2 c1: 5 at rest with the a-c split). TRI-HV1 step 5 removes them (5 flips in total). Exporting quads would let the importer re-triangulate 10-242 flagged quads, so export baked triangles.
+- Unconstrained 25 % decimation crosses back sheet / cuff (also on frozen Vael); LOD-HV1 protects the root band and weights the lobe zone (round-1 lobe pinch).
+
+**Next:** STOP for ChatGPT review (final production freeze decision).
+
+## (previous) 2026-10-29 — HALVREN EAR FAMILY CLOSURE — HALVREN EAR FAMILY FREEZE RECOMMENDED — awaiting ChatGPT review
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-halvren-ear-family-closure-after-hr2-order.md` (94eabf1). Report: `reviews/claude-rac-rp3-halvren-ear-family-closure-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_ear_family_closure/`. HE2 + HR2 frozen by record; HE1 / HE3 HVEAR4 recommended, not frozen.
