@@ -12,7 +12,7 @@
    "branch_selfx": 0,
    "min_angle": 12.7,
    "aspect_max": 9.453,
-   "T4": 498,
+   "T4": 521,
    "density_pct": 0.101,
    "root_valence": {
     "l": {
@@ -80,7 +80,7 @@
    "faces_sha": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
    "length_over_HH_measure": 0.243,
    "repair": {
-    "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 10 (junction fixed)",
+    "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 9.8 (junction fixed, symmetric); stage 4 (sheet_fold_fix) symmetric umbrella relaxation of folded sheet quads; stage 5 (sheet_fold_fix) per-vertex pattern search on cuff edges creased > 120 deg",
     "log": [
      {
       "stage3": {
@@ -100,6 +100,20 @@
        "steps": 2,
        "symmetric": true,
        "max_move_cm": 0.2283
+      }
+     },
+     {
+      "stage5_cuff_creases": {
+       "threshold_deg": 120.0,
+       "creased_edges_before": 10,
+       "creased_edges_after": 3,
+       "worst_dihedral_before": 159.7,
+       "worst_dihedral_after": 135.0,
+       "vertices": 92,
+       "sweeps": 10,
+       "folded_cuff_band_before": 21,
+       "folded_cuff_band_after": 17,
+       "max_move_cm": 0.104
       }
      }
     ]
@@ -197,9 +211,9 @@
    "degenerate": 0,
    "outward": true,
    "branch_selfx": 0,
-   "min_angle": 13.0,
-   "aspect_max": 9.009,
-   "T4": 225,
+   "min_angle": 13.8,
+   "aspect_max": 9.915,
+   "T4": 255,
    "density_pct": 0.106,
    "root_valence": {
     "l": {
@@ -210,7 +224,7 @@
     }
    },
    "root_valence_ok": true,
-   "mound_p90_cm": -0.023,
+   "mound_p90_cm": -0.022,
    "junction_cm": -0.341,
    "clearance_min_cm": 0.2,
    "poses": {
@@ -260,33 +274,63 @@
     {
      "iteration": 0,
      "guarded_faces_before": 0,
-     "new_problem_faces": 9
+     "new_problem_faces": 3
     },
     {
      "iteration": 1,
-     "guarded_faces_before": 9,
+     "guarded_faces_before": 3,
+     "new_problem_faces": 7
+    },
+    {
+     "iteration": 2,
+     "guarded_faces_before": 10,
      "new_problem_faces": 0
     }
    ],
-   "guard_iterations": 1,
+   "guard_iterations": 2,
    "faces_sha": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
    "length_over_HH_measure": 0.361,
    "repair": {
-    "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 10 (junction fixed)",
+    "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 9.8 (junction fixed, symmetric); stage 4 (sheet_fold_fix) symmetric umbrella relaxation of folded sheet quads; stage 5 (sheet_fold_fix) per-vertex pattern search on cuff edges creased > 120 deg",
     "log": [
      {
       "iteration": 0,
       "bad_faces": [
+       56933,
        57091,
        57092,
-       58702,
-       58759,
-       58923
+       58702
       ],
-      "moved_vertices": 43,
-      "steps": 5,
-      "worst_after_deg": 14.87,
-      "max_move_cm": 0.0587
+      "moved_vertices": 38,
+      "steps": 22,
+      "worst_after_deg": 10.9,
+      "max_move_cm": 0.0653
+     },
+     {
+      "iteration": 1,
+      "bad_faces": [
+       56933,
+       56934
+      ],
+      "moved_vertices": 16,
+      "steps": 0,
+      "worst_after_deg": 10.9,
+      "max_move_cm": 0.0
+     },
+     {
+      "stage2": {
+       "vertices": [
+        57018,
+        57019,
+        57020,
+        57021,
+        57022,
+        57023
+       ],
+       "sweeps": 2,
+       "worst_after_deg": 12.87,
+       "worst_aspect_after": 7.65
+      }
      },
      {
       "stage4_sheet_folds": {
@@ -295,6 +339,20 @@
        "steps": 1,
        "symmetric": true,
        "max_move_cm": 0.1109
+      }
+     },
+     {
+      "stage5_cuff_creases": {
+       "threshold_deg": 120.0,
+       "creased_edges_before": 9,
+       "creased_edges_after": 0,
+       "worst_dihedral_before": 156.7,
+       "worst_dihedral_after": 119.7,
+       "vertices": 108,
+       "sweeps": 10,
+       "folded_cuff_band_before": 24,
+       "folded_cuff_band_after": 22,
+       "max_move_cm": 0.1115
       }
      }
     ]
@@ -741,8 +799,8 @@
    "outward": true,
    "branch_selfx": 0,
    "min_angle": 12.7,
-   "aspect_max": 9.453,
-   "T4": 502,
+   "aspect_max": 9.846,
+   "T4": 521,
    "density_pct": 0.098,
    "root_valence": {
     "l": {
@@ -810,7 +868,7 @@
    "faces_sha": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
    "length_over_HH_measure": 0.243,
    "repair": {
-    "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 10 (junction fixed)",
+    "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 9.8 (junction fixed, symmetric); stage 4 (sheet_fold_fix) symmetric umbrella relaxation of folded sheet quads; stage 5 (sheet_fold_fix) per-vertex pattern search on cuff edges creased > 120 deg",
     "log": [
      {
       "stage3": {
@@ -830,6 +888,20 @@
        "steps": 2,
        "symmetric": true,
        "max_move_cm": 0.2089
+      }
+     },
+     {
+      "stage5_cuff_creases": {
+       "threshold_deg": 120.0,
+       "creased_edges_before": 12,
+       "creased_edges_after": 0,
+       "worst_dihedral_before": 162.2,
+       "worst_dihedral_after": 115.7,
+       "vertices": 97,
+       "sweeps": 9,
+       "folded_cuff_band_before": 22,
+       "folded_cuff_band_after": 22,
+       "max_move_cm": 0.1099
       }
      }
     ]
@@ -927,9 +999,9 @@
    "degenerate": 0,
    "outward": true,
    "branch_selfx": 0,
-   "min_angle": 12.1,
+   "min_angle": 12.8,
    "aspect_max": 9.009,
-   "T4": 220,
+   "T4": 245,
    "density_pct": 0.103,
    "root_valence": {
     "l": {
@@ -997,7 +1069,7 @@
    "faces_sha": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
    "length_over_HH_measure": 0.361,
    "repair": {
-    "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 10 (junction fixed)",
+    "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 9.8 (junction fixed, symmetric); stage 4 (sheet_fold_fix) symmetric umbrella relaxation of folded sheet quads; stage 5 (sheet_fold_fix) per-vertex pattern search on cuff edges creased > 120 deg",
     "log": [
      {
       "iteration": 0,
@@ -1030,6 +1102,20 @@
        "steps": 1,
        "symmetric": true,
        "max_move_cm": 0.1068
+      }
+     },
+     {
+      "stage5_cuff_creases": {
+       "threshold_deg": 120.0,
+       "creased_edges_before": 10,
+       "creased_edges_after": 0,
+       "worst_dihedral_before": 161.0,
+       "worst_dihedral_after": 102.6,
+       "vertices": 130,
+       "sweeps": 8,
+       "folded_cuff_band_before": 19,
+       "folded_cuff_band_after": 14,
+       "max_move_cm": 0.0969
       }
      }
     ]
@@ -1411,7 +1497,7 @@
     },
     "superior": {
      "p90_cm": 0.075,
-     "max_cm": 0.121
+     "max_cm": 0.102
     },
     "anterior": {
      "p90_cm": 0.171,
@@ -1492,44 +1578,44 @@
   "HE3 c1": {
    "pedestal_vs_true_head": {
     "posterior": {
-     "p90_cm": 0.391,
-     "max_cm": 0.534
+     "p90_cm": 0.381,
+     "max_cm": 0.538
     },
     "superior": {
-     "p90_cm": 0.068,
-     "max_cm": 0.123
+     "p90_cm": 0.067,
+     "max_cm": 0.131
     },
     "anterior": {
-     "p90_cm": 0.195,
-     "max_cm": 0.212
+     "p90_cm": 0.199,
+     "max_cm": 0.217
     },
     "inferior": {
-     "p90_cm": 0.405,
-     "max_cm": 0.502
+     "p90_cm": 0.409,
+     "max_cm": 0.503
     }
    },
    "loop_crease_deg": {
     "posterior": {
-     "mean": 15.9,
-     "max": 63.9
+     "mean": 10.1,
+     "max": 27.3
     },
     "superior": {
      "mean": 2.4,
      "max": 5.9
     },
     "anterior": {
-     "mean": 1.9,
-     "max": 3.3
+     "mean": 1.8,
+     "max": 2.9
     },
     "inferior": {
-     "mean": 5.8,
-     "max": 8.6
+     "mean": 6.2,
+     "max": 8.7
     }
    },
    "inferior_fork": {
     "lobe_low_cm": -3.477,
-    "raised_cuff_low_cm": 0.115,
-    "raised_cuff_tab_height_cm": 0.159
+    "raised_cuff_low_cm": 0.113,
+    "raised_cuff_tab_height_cm": 0.163
    }
   },
   "HE3-before c1": {
@@ -1586,8 +1672,8 @@
      "max_cm": 0.085
     },
     "anterior": {
-     "p90_cm": 0.155,
-     "max_cm": 0.195
+     "p90_cm": 0.178,
+     "max_cm": 0.197
     },
     "inferior": {
      "p90_cm": 0.21,
@@ -1604,12 +1690,12 @@
      "max": 4.9
     },
     "anterior": {
-     "mean": 3.1,
-     "max": 9.6
+     "mean": 4.0,
+     "max": 18.9
     },
     "inferior": {
-     "mean": 6.7,
-     "max": 9.5
+     "mean": 6.8,
+     "max": 11.5
     }
    },
    "inferior_fork": {
@@ -1676,14 +1762,14 @@
      "max_cm": 0.202
     },
     "inferior": {
-     "p90_cm": 0.273,
+     "p90_cm": 0.272,
      "max_cm": 0.365
     }
    },
    "loop_crease_deg": {
     "posterior": {
-     "mean": 8.6,
-     "max": 10.5
+     "mean": 10.8,
+     "max": 20.8
     },
     "superior": {
      "mean": 2.8,
@@ -1694,8 +1780,8 @@
      "max": 3.3
     },
     "inferior": {
-     "mean": 6.8,
-     "max": 9.7
+     "mean": 8.2,
+     "max": 27.0
     }
    },
    "inferior_fork": {
@@ -1870,7 +1956,7 @@
     "backward_angle_deg": 15.1216,
     "tip_angle_deg": 108.2287,
     "lobe_fraction": 0.0281,
-    "root_line_deg": -5.4647,
+    "root_line_deg": -5.4623,
     "concha_depth_over_L": 0.1844,
     "tragus_height_frac": 0.2582,
     "helix_fullness": 0.7458
@@ -1883,7 +1969,7 @@
     "backward_angle_deg": 0.522,
     "tip_angle_deg": 0.231,
     "lobe_fraction": -0.253,
-    "root_line_deg": 1.368,
+    "root_line_deg": 1.367,
     "concha_depth_over_L": 1.371,
     "tragus_height_frac": 1.886,
     "helix_fullness": -0.575
@@ -1926,9 +2012,9 @@
     "backward_angle_deg": 14.1981,
     "tip_angle_deg": 64.0127,
     "lobe_fraction": 0.0719,
-    "root_line_deg": 8.4059,
-    "concha_depth_over_L": 0.1941,
-    "tragus_height_frac": 0.2904,
+    "root_line_deg": 8.3017,
+    "concha_depth_over_L": 0.1967,
+    "tragus_height_frac": 0.2908,
     "helix_fullness": 0.7371
    },
    "t": {
@@ -1939,9 +2025,9 @@
     "backward_angle_deg": 0.476,
     "tip_angle_deg": 0.897,
     "lobe_fraction": 0.364,
-    "root_line_deg": -3.441,
-    "concha_depth_over_L": 1.212,
-    "tragus_height_frac": 1.468,
+    "root_line_deg": -3.405,
+    "concha_depth_over_L": 1.17,
+    "tragus_height_frac": 1.463,
     "helix_fullness": -0.472
    }
   },
@@ -2061,12 +2147,12 @@
    "values": {
     "length_over_HH": 0.3805,
     "width_over_length": 0.3427,
-    "projection_deg": 19.0616,
+    "projection_deg": 19.0595,
     "upward_ext_over_HH": 0.1202,
     "backward_angle_deg": 14.1981,
     "tip_angle_deg": 64.0127,
     "lobe_fraction": 0.0569,
-    "root_line_deg": -0.8151,
+    "root_line_deg": -0.6288,
     "concha_depth_over_L": 0.1677,
     "tragus_height_frac": 0.2768,
     "helix_fullness": 0.7393
@@ -2079,7 +2165,7 @@
     "backward_angle_deg": 0.476,
     "tip_angle_deg": 0.897,
     "lobe_fraction": 0.153,
-    "root_line_deg": -0.244,
+    "root_line_deg": -0.309,
     "concha_depth_over_L": 1.646,
     "tragus_height_frac": 1.645,
     "helix_fullness": -0.498
@@ -2094,7 +2180,7 @@
     "backward_angle_deg": 11.8524,
     "tip_angle_deg": 108.2287,
     "lobe_fraction": 0.0212,
-    "root_line_deg": -12.1591,
+    "root_line_deg": -12.1689,
     "concha_depth_over_L": 0.1802,
     "tragus_height_frac": 0.2617,
     "helix_fullness": 0.7394
@@ -2107,7 +2193,7 @@
     "backward_angle_deg": 0.357,
     "tip_angle_deg": 0.231,
     "lobe_fraction": -0.349,
-    "root_line_deg": 3.689,
+    "root_line_deg": 3.692,
     "concha_depth_over_L": 1.441,
     "tragus_height_frac": 1.84,
     "helix_fullness": -0.499
@@ -2219,8 +2305,8 @@
    "pairs": {
     "MF-FN": {
      "n": 11,
-     "r2": 0.641,
-     "alpha": 0.752,
+     "r2": 0.643,
+     "alpha": 0.75,
      "passes": true,
      "driving_domains": [
       "width_over_length",
@@ -2231,8 +2317,8 @@
     },
     "MF-AE": {
      "n": 10,
-     "r2": 0.614,
-     "alpha": 0.689,
+     "r2": 0.612,
+     "alpha": 0.685,
      "passes": true,
      "driving_domains": [
       "upward_ext_over_HH",
@@ -2243,19 +2329,19 @@
     },
     "MF-VA": {
      "n": 11,
-     "r2": 0.271,
-     "alpha": 0.562,
+     "r2": 0.272,
+     "alpha": 0.559,
      "passes": true,
      "driving_domains": [
       "tip_angle_deg",
       "length_over_HH",
       "upward_ext_over_HH",
-      "concha_depth_over_L"
+      "width_over_length"
      ]
     }
    },
    "best_pair": "MF-FN",
-   "best_r2": 0.641,
+   "best_r2": 0.643,
    "passes": true,
    "distinct_domains_vs": {
     "MF": 11,
@@ -2493,8 +2579,8 @@
     },
     "MF-VA": {
      "n": 11,
-     "r2": 0.315,
-     "alpha": 0.628,
+     "r2": 0.314,
+     "alpha": 0.627,
      "passes": true,
      "driving_domains": [
       "tip_angle_deg",
@@ -2570,8 +2656,8 @@
   "HE3": {
    "MF-FN": {
     "n": 11,
-    "r2": 0.641,
-    "alpha": 0.752,
+    "r2": 0.643,
+    "alpha": 0.75,
     "domains": {
      "length_over_HH": {
       "y_sd": 2.3,
@@ -2583,64 +2669,64 @@
      "width_over_length": {
       "y_sd": -3.01,
       "elf_dx_sd": -2.6,
-      "fit": -1.96,
-      "residual": -1.05,
-      "fit_share": 0.139
+      "fit": -1.95,
+      "residual": -1.06,
+      "fit_share": 0.14
      },
      "projection_deg": {
       "y_sd": 0.79,
       "elf_dx_sd": 2.75,
-      "fit": 2.07,
-      "residual": -1.28,
+      "fit": 2.06,
+      "residual": -1.27,
       "fit_share": 0.039
      },
      "upward_ext_over_HH": {
       "y_sd": 2.97,
       "elf_dx_sd": 2.09,
       "fit": 1.57,
-      "residual": 1.39,
-      "fit_share": 0.11
+      "residual": 1.4,
+      "fit_share": 0.111
      },
      "backward_angle_deg": {
       "y_sd": 1.06,
       "elf_dx_sd": 1.83,
-      "fit": 1.38,
+      "fit": 1.37,
       "residual": -0.32,
-      "fit_share": 0.034
+      "fit_share": 0.035
      },
      "tip_angle_deg": {
       "y_sd": -2.05,
       "elf_dx_sd": -2.43,
-      "fit": -1.83,
-      "residual": -0.22,
-      "fit_share": 0.088
+      "fit": -1.82,
+      "residual": -0.23,
+      "fit_share": 0.089
      },
      "lobe_fraction": {
       "y_sd": 0.78,
       "elf_dx_sd": 1.72,
-      "fit": 1.3,
+      "fit": 1.29,
       "residual": -0.51,
       "fit_share": 0.024
      },
      "root_line_deg": {
-      "y_sd": 1.21,
+      "y_sd": 1.19,
       "elf_dx_sd": 0.54,
       "fit": 0.41,
-      "residual": 0.8,
+      "residual": 0.79,
       "fit_share": 0.012
      },
      "concha_depth_over_L": {
-      "y_sd": -2.04,
+      "y_sd": -1.97,
       "elf_dx_sd": -0.9,
-      "fit": -0.68,
-      "residual": -1.37,
+      "fit": -0.67,
+      "residual": -1.3,
       "fit_share": 0.032
      },
      "tragus_height_frac": {
-      "y_sd": -2.44,
+      "y_sd": -2.43,
       "elf_dx_sd": -2.79,
       "fit": -2.1,
-      "residual": -0.34,
+      "residual": -0.33,
       "fit_share": 0.121
      },
      "helix_fullness": {
@@ -2660,76 +2746,76 @@
    },
    "MF-AE": {
     "n": 10,
-    "r2": 0.614,
-    "alpha": 0.689,
+    "r2": 0.612,
+    "alpha": 0.685,
     "domains": {
      "length_over_HH": {
       "y_sd": 2.3,
       "elf_dx_sd": 2.72,
-      "fit": 1.88,
-      "residual": 0.43,
-      "fit_share": 0.105
+      "fit": 1.87,
+      "residual": 0.44,
+      "fit_share": 0.106
      },
      "width_over_length": {
       "y_sd": -3.01,
       "elf_dx_sd": -2.02,
-      "fit": -1.39,
-      "residual": -1.62,
+      "fit": -1.38,
+      "residual": -1.63,
       "fit_share": 0.102
      },
      "projection_deg": {
       "y_sd": 0.79,
       "elf_dx_sd": 1.44,
       "fit": 0.99,
-      "residual": -0.2,
+      "residual": -0.19,
       "fit_share": 0.019
      },
      "upward_ext_over_HH": {
       "y_sd": 2.97,
       "elf_dx_sd": 2.63,
-      "fit": 1.81,
-      "residual": 1.16,
+      "fit": 1.8,
+      "residual": 1.17,
       "fit_share": 0.131
      },
      "backward_angle_deg": {
       "y_sd": 1.06,
       "elf_dx_sd": 2.23,
-      "fit": 1.54,
-      "residual": -0.48,
+      "fit": 1.53,
+      "residual": -0.47,
       "fit_share": 0.04
      },
      "tip_angle_deg": {
       "y_sd": -2.05,
       "elf_dx_sd": -2.38,
-      "fit": -1.64,
-      "residual": -0.41,
+      "fit": -1.63,
+      "residual": -0.42,
       "fit_share": 0.082
      },
      "lobe_fraction": {
       "y_sd": 0.78,
       "elf_dx_sd": 2.73,
-      "fit": 1.88,
-      "residual": -1.09,
+      "fit": 1.87,
+      "residual": -1.08,
       "fit_share": 0.036
      },
      "concha_depth_over_L": {
-      "y_sd": -2.04,
+      "y_sd": -1.97,
       "elf_dx_sd": -2.76,
-      "fit": -1.9,
-      "residual": -0.14,
-      "fit_share": 0.095
+      "fit": -1.89,
+      "residual": -0.08,
+      "fit_share": 0.092
      },
      "tragus_height_frac": {
-      "y_sd": -2.44,
+      "y_sd": -2.43,
       "elf_dx_sd": -1.15,
       "fit": -0.79,
-      "residual": -1.65,
+      "residual": -1.64,
       "fit_share": 0.047
      },
      "helix_fullness": {
       "y_sd": 1.08,
       "elf_dx_sd": -2.36,
-      "fit": -1.63,
+      "fit": -1.62,
       "residual": 2.7,
       "fit_share": -0.043
      }
@@ -2743,8 +2829,8 @@
    },
    "MF-VA": {
     "n": 11,
-    "r2": 0.271,
-    "alpha": 0.562,
+    "r2": 0.272,
+    "alpha": 0.559,
     "domains": {
      "length_over_HH": {
       "y_sd": 2.3,
@@ -2758,13 +2844,13 @@
       "elf_dx_sd": -0.94,
       "fit": -0.53,
       "residual": -2.48,
-      "fit_share": 0.037
+      "fit_share": 0.038
      },
      "projection_deg": {
       "y_sd": 0.79,
       "elf_dx_sd": 1.93,
       "fit": 1.08,
-      "residual": -0.29,
+      "residual": -0.28,
       "fit_share": 0.02
      },
      "upward_ext_over_HH": {
@@ -2779,38 +2865,38 @@
       "elf_dx_sd": 2.6,
       "fit": 1.46,
       "residual": -0.4,
-      "fit_share": 0.036
+      "fit_share": 0.037
      },
      "tip_angle_deg": {
       "y_sd": -2.05,
       "elf_dx_sd": -2.04,
-      "fit": -1.15,
-      "residual": -0.9,
-      "fit_share": 0.055
+      "fit": -1.14,
+      "residual": -0.91,
+      "fit_share": 0.056
      },
      "lobe_fraction": {
       "y_sd": 0.78,
       "elf_dx_sd": 2.0,
       "fit": 1.12,
-      "residual": -0.34,
+      "residual": -0.33,
       "fit_share": 0.021
      },
      "root_line_deg": {
-      "y_sd": 1.21,
+      "y_sd": 1.19,
       "elf_dx_sd": -1.96,
       "fit": -1.1,
-      "residual": 2.31,
+      "residual": 2.29,
       "fit_share": -0.031
      },
      "concha_depth_over_L": {
-      "y_sd": -2.04,
+      "y_sd": -1.97,
       "elf_dx_sd": -1.39,
       "fit": -0.78,
-      "residual": -1.26,
-      "fit_share": 0.038
+      "residual": -1.19,
+      "fit_share": 0.036
      },
      "tragus_height_frac": {
-      "y_sd": -2.44,
+      "y_sd": -2.43,
       "elf_dx_sd": -1.04,
       "fit": -0.58,
       "residual": -1.85,
@@ -2820,7 +2906,7 @@
       "y_sd": 1.08,
       "elf_dx_sd": -2.44,
       "fit": -1.37,
-      "residual": 2.45,
+      "residual": 2.44,
       "fit_share": -0.035
      }
     },
@@ -2828,7 +2914,7 @@
      "tip_angle_deg",
      "length_over_HH",
      "upward_ext_over_HH",
-     "concha_depth_over_L"
+     "width_over_length"
     ]
    }
   },
@@ -3137,7 +3223,7 @@
   "composite_elfward": {
    "HE1": 0.442,
    "HE2": 0.653,
-   "HE3": 0.855,
+   "HE3": 0.85,
    "HE3-before": 0.969,
    "HE1-HVEAR3": 0.537,
    "HE1-L5.3": 0.343,
@@ -3145,7 +3231,6 @@
   },
   "order_ok": true,
   "non_monotone_domains": [
-   "concha_depth_over_L",
    "helix_fullness"
   ],
   "HE1_length_vs_MF_pct": {
