@@ -1,0 +1,55 @@
+{
+ "order": "reviews/chatgpt-rac-rp5-saurin-unique-topology-pilot-order.md (53976fb) \u00a73",
+ "status": "WORK IN PROGRESS -- source integrity step only; no gate decision yet",
+ "source_location": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/out (staged read-only; canonical files not modified)",
+ "file_hashes": {
+  "saurin_w2_final_base.npz": {
+   "expected": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee",
+   "read": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee",
+   "match": true
+  },
+  "saurin_w2_final_surface_delta.npz": {
+   "expected": "f32286c4759b7c8a1cbeb1afa3727cf19a19624c1708b0715e4ab88ed57a7f63",
+   "read": "f32286c4759b7c8a1cbeb1afa3727cf19a19624c1708b0715e4ab88ed57a7f63",
+   "match": true
+  },
+  "rebuild_w2_final.py": {
+   "expected": "2a96c00f5e765701f04860c5eaa5d36a8944e38dd2230ee4a327cc0dae461747",
+   "read": "2a96c00f5e765701f04860c5eaa5d36a8944e38dd2230ee4a327cc0dae461747",
+   "match": true
+  },
+  "saurin_w2_seeds.npy": {
+   "expected": "a1d07b8d7001241a2079271686b9e5a91b773b988763c5af9c5f8a92aefe6b05",
+   "read": "a1d07b8d7001241a2079271686b9e5a91b773b988763c5af9c5f8a92aefe6b05",
+   "match": true
+  },
+  "saurin_w2_SA-F188_realization.npz": {
+   "expected": "8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187",
+   "read": "8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187",
+   "match": true
+  }
+ },
+ "seeds_count": 130949,
+ "base_array_hashes": {
+  "vertices": "b50a3d4b9cf1ffbc28551a3a8258b84ac9047b31ddb8bfd7cf07bb98f0317700",
+  "faces": "ae4fb0a943feb299269607ea84218e6c33fbd98e965ddaa4bb772daef67fcdab",
+  "vertices_match": true,
+  "faces_match": true
+ },
+ "rebuild": {
+  "route": "rebuild_w2_final.py (igl.upsample + float16 surface delta)",
+  "stdout": "final surface: 4496934 verts 8993864 tris; height 187.86 cm",
+  "matches_W2I6_record": true,
+  "surfaced_vertex_sha256": "7a1b3daa38fdc28b5b2b13938fe9ae251309d19c0ac66fad87b2f8914238e032",
+  "surfaced_face_sha256": "8ff1ed9342f71dcc2ce63adae186f2a79feefbc8f7b8a1040f1ac76eab9b1a20",
+  "W2I6_recorded_float16_tolerance_cm": 6.23166561126709e-05,
+  "max_abs_surface_delta_cm": 0.1661376953125
+ },
+ "SA_F188": {
+  "vertex_sha256": "d8504343f135b869e92de0a62c1f951330f4a27908a47e7c0299f067a044bfaf",
+  "face_list_identical_to_SA_M188_base": true,
+  "height_cm": 187.8802490234375
+ },
+ "W2_unchanged_since_W2I6": "all five canonical hashes and the base array hashes equal the W2I6 / W3B1 records (reviews/rac-w2i6-sa-evidence/verify6.json, reviews/rac-w3b1-sa-evidence/canon_hash_check.json)",
+ "architecture_note": "SA-F188 shares the exact SA-M188 base face list (1,124,235 V / 2,248,466 tris): c1 and c2 are in dense vertex correspondence, so one production cage authored on c1 can be carried to c2 by barycentric transfer -- strong evidence for a shared c1/c2 topology (to be tested under T-1/T-2)."
+}

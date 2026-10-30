@@ -2,7 +2,24 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — COGLING RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record) — awaiting ChatGPT review
+## LATEST (2026-10-30) — RP5 SAURIN UNIQUE-TOPOLOGY PILOT — IN PROGRESS (session handoff; no gate decision yet)
+
+**Order:** `reviews/chatgpt-rac-rp5-saurin-unique-topology-pilot-order.md` (53976fb). Return = `reviews/claude-rac-rp5-saurin-unique-topology-pilot-gate.md` + evidence, then STOP FOR CHATGPT REVIEW.
+
+**Done so far (§3 source integrity):** `reviews/rac-rp5-evidence/saurin/SAURIN_RP5_source_integrity.json`.
+- Canonical W2I6 files staged read-only from the PC `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/out` (folder grant on `E:/UnrealProjects/Wayfarer 5.8/RaceBodies` given this session; a new session must request it again). All five canonical hashes, the base vertex / face array hashes and the 130,949 seeds match; the rebuild reproduces the W2I6 record (4,496,934 V / 8,993,864 tris, 187.86 cm).
+- **Key architecture fact:** SA-F188 has the exact SA-M188 base face list (1,124,235 V / 2,248,466 tris), so c1 / c2 are in dense vertex correspondence. One cage authored on c1 can be carried to c2 by barycentric transfer on the shared base (test under T-1 / T-2).
+- Workspace `/tmp/claude-0/rt/sa/src/` holds the staged files + `SA-M188_surfaced.npz` (rebuilt). Workspaces are ephemeral: re-stage in a new session.
+- `saurin_w2_regfields.npz` (238 MB) is not in `out/` (README says "not copied here"); locate it if region labels are needed (it may be in `RaceBodies/source` or `sculpt`).
+
+**Remaining plan (order §4-§25):**
+1. Landmarks on the canonical source (§15): read prior Saurin landmark / measurement code under `tools/rac/w1` (W2I / W3B drivers: `w2i*_drivers`, `rmot05*`) and the W2I6 / W3B / W3B1 measurement records for the identity metrics (§17).
+2. Thigh art-debt diagnosis (§6): locate the medial / posterior thigh marks on SA-M188 / SA-F188 (W2I4 sector transitions, Rodin tear); boards and a timing recommendation only.
+3. Cage architecture (§8-§9): an authored ring-graph quad cage (axial / limb / digit / tail ring chains + designed junction patches at the shoulder, hip, hand, foot, head / rostrum / display root), projected to the unsurfaced base; QuadriFlow only as a diagnostic scaffold. Tail: >= 4 root rings + 16-chain landmarks.
+4. c1 -> c2 transfer, T-1..T-7 (tail included in T-7), density (§13), Saurin loop audit (§14; not the MPFB 69-station validator), scale-surface comparison (§10 / §18), PD-1..PD-4 ownership (§5 / §20), diagnostic deformation (§19), boards A-L, immutables.
+5. Likely outcome: SAURIN RP5 REQUIRES AUTHOR DECISION or NEEDS REVISION unless the full cage passes. Be honest; no freeze.
+
+## (previous) 2026-10-30 — COGLING RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record)
 
 - Order 3007aba (record-only freeze closure). `reviews/rac-rp4-evidence/cogling/final/COGLING_RP4_FREEZE.json` promoted from the c800205 candidate; fresh read-back `COGLING_RP4_freeze_closure_readback.json` = reviewed hashes; immutables `immutable_hashes_freeze_closure.txt` 93 / 93 unchanged vs c800205e. Report `reviews/claude-rac-rp4-cogling-freeze-closure-report.md`.
 - Canon `specs/cogling/COGLING_V1.md` RP4 block, STATUS, carry-forward register (no new ID), reference-assets manifest updated. No geometry change; production files not resaved.
