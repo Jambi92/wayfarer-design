@@ -18,5 +18,15 @@ Verdict: **BORDERLINE, leaning FAIL** — "the family now reads as three differe
 
 Diagnosis: the crinkles / crease lines are FOLDED auricle-sheet quads (the two triangle splits of a quad disagree in orientation: HE1 34, HE3 18 on c1; HE2 frozen 4). Action taken: Halvren repair stage 4 (gated by the HE1 / HE3 `sheet_fold_fix` flag, HE2 untouched): symmetric umbrella relaxation of folded sheet quads, kept only while the fold count drops and every quad keeps corner >= 12 deg / aspect < 10 (HE1 34 -> 5, HE3 18 -> 6; moves <= 0.23 cm; silhouettes unchanged). Own audit of the rebuilt boards then found a dark speck in front of the tragus on HE1 c2 (a cuff edge creased 162 deg); stage 5 (same gate) relaxes cuff edges creased > 120 deg by a per-vertex pattern search with corner / aspect and a local no-new-crossing guard.
 
-## Round 3 — on the final HVEAR4 family
-__ROUND3__
+## Round 3 — after stages 4 / 5 (HE1 still the round-2 body)
+
+Verdict: **FAIL** — "HE1 still reads as a shrunken, tip-cut HE2 rather than a human-leaning ear, and its upper rim / top corner are rougher than HE2's; HE3 acceptable."
+- HE3: elf-forward PASS; distinct from HE2 BORDERLINE (taller / sharper tip, shares tilt / interior / lobe base); not a disguised elf ear PASS; one auricle c1 / c2 PASS.
+- HE1: human-forward BORDERLINE; distinct from HE2 BORDERLINE leaning FAIL (only size + a blunted angular top).
+- Family: ordered, but at head scale mostly a height ramp (BORDERLINE).
+- Defects: HE1 wavy upper rim, faceted top corner, back-rim kink; HE3 crumpled cuff band / zig-zag crease on the skull-facing back (lower-rear 3/4) and a wavy seam (direct rear).
+
+Own check: the HE3 back-side crumple is the shared RI3 cuff band and the HR2 back-sheet Z-kink, identical on the frozen HE2 (rear comparison HE2 / HE3 / HE1 / Fenn) -- a shared HR2 polish item already recorded as non-blocking, not an HE3 defect. Action taken on HE1 (6 + 6 rest trials, `he1u` in the record): a human-family OUTLINE -- upright (tilt 12 -> 9, sweep 0.65 -> 0.45), rounded egg-shaped upper ear with only a soft Halvren apex (taper 0.58 / 0.80 / 0.14 -> 0.52 / 0.70 / 0.06) -- and a fully rolled human helix (0.34 x 0.32 -> 0.42 x 0.40), smooth with stage 4.
+
+## Round 4 — on the final HVEAR4 family (fresh reviewer, same brief)
+__ROUND4__
