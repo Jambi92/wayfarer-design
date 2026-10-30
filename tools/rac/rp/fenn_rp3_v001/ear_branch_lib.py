@@ -110,8 +110,18 @@ CAND.update({
     # + c2 robustness (HE2 closure order): the narrow late-tapering HVEAR2 HE1 body (wb 1.82, start 0.58 / ex 0.80, concha 0.84 seat -0.50) put the rim / back of
     # the short lobe onto the cuff on the c2 head (22 branch self-intersections); HE1 now shares the calibrated HE2 auricle body (wb 2.00, concha 1.00, seat -0.58)
     # and keeps its own human-forward identity: short (L 6.3), later / blunter shouldered apex (start 0.54, ex 0.85, sh 0.12), mild sweep 0.65
-    'HE1': dict(HV_BASE, L=6.3, wb=2.00, taper=("halvren", 0.54, 0.85, 0.12), lobe=0.19, proj=16, tilt=12, sweep=0.65, thick=0.31,
+    'HE1-HVEAR3': dict(HV_BASE, L=6.3, wb=2.00, taper=("halvren", 0.54, 0.85, 0.12), lobe=0.19, proj=16, tilt=12, sweep=0.65, thick=0.31,
                 ah=0.29, concha=1.00, crus=0.16, trag=0.30, atrag=0.23, helix=(0.30, 0.30), geo=_g(phi0=30.0, tauA=10.0, clear=-0.58)),
+    # HE1 HVEAR4 (ear family closure order §7-§8): the HVEAR3 L 6.3 'floor' was 4-20 anterior-cavum sheet quads crossing aspect 10, not a structural limit
+    # of the shared sheet; with HR2 and the stage-3 sheet stretch repair (hv_cuff_repair.py) the shared topology is clean down to L 5.6 on c1 / c2 (L 5.3 sits
+    # exactly at aspect 10.00 -- the edge). At L 6.3 HE1 read almost as a scaled HE2 (+23 % Marchfolk length); HVEAR4 HE1 = the same human-forward body
+    # at L 5.6 (measured length ~ +10 % Marchfolk), everything else unchanged.
+    # + non-lockstep identity (blind family reviews: at 5.6 it still read as a scaled HE2; a 0.42 rolled rim / 0.36 tragus wrinkled the small upper ear and
+    # crumpled the anterior root): a human-family upper ear -- rounder, later, blunt corner instead of a point (taper start 0.58, extension 0.80, shoulder
+    # 0.14), broader (wb 2.15) -- with a moderately rolled human-family helix (rim 0.34 x 0.32) and a softer antihelix (0.22); folded scapha quads relaxed
+    # by the Halvren repair stage 4 (sheet_fold_fix)
+    'HE1': dict(HV_BASE, L=5.6, wb=2.15, taper=("halvren", 0.58, 0.80, 0.14), lobe=0.19, proj=16, tilt=12, sweep=0.65, thick=0.31,
+                ah=0.22, concha=1.00, crus=0.16, trag=0.30, atrag=0.23, helix=(0.34, 0.32), geo=_g(phi0=30.0, tauA=10.0, clear=-0.58, sheet_fold_fix=1.0)),
     # HE2 balanced mixed central -- HVEAR3 REALIZATION-CALIBRATED (HE2 closure order): HVEAR2 authored HE2 (L 7.8, wb 2.00, taper (0.36, 1.10, 0.06), proj 23,
     # tilt 16, sweep 1.4, concha 0.86) realized as a near-linear Marchfolk -> Aelari / Vael ear (measured one-alpha R2 0.93 / 0.80) because the W1 human-family
     # parameter values do not land on the measured Marchfolk auricle and the upper-ear controls are coupled (gate §2 diagnosis). The calibrated set targets the
@@ -125,8 +135,18 @@ CAND.update({
     # c2 robustness: the 0.35 cm upward placement (which kept the measured firewall at R2 0.78) puts the back sheet onto the cuff on the c2 head (29 back / cuff
     # self-intersections, aspect 22); without it HE3 is clean on c1 / c2 at projection 26 / root flare 38 but realizes close to the Marchfolk -> Aelari line
     # (measured R2 ~0.87) -- FLAGGED in the closure report (elf-forward bound; outside the HE2 freeze)
-    'HE3': dict(HV_BASE, L=8.2, wb=1.95, taper=("halvren", 0.42, 1.05, 0.10), lobe=0.20, proj=26, tilt=14, sweep=1.5, thick=0.29,
+    'HE3-HVEAR3': dict(HV_BASE, L=8.2, wb=1.95, taper=("halvren", 0.42, 1.05, 0.10), lobe=0.20, proj=26, tilt=14, sweep=1.5, thick=0.29,
                 ah=0.29, concha=1.00, crus=0.16, trag=0.31, atrag=0.23, helix=(0.31, 0.30), geo=_g(phi0=38.0, tauA=12.0, clear=-0.58, sulcus_h=-1.0)),
+    # HE3 HVEAR4 (ear family closure order after HR2): HVEAR3 HE3 on HR2 realized nearest the Marchfolk -> Fenn line (measured one-alpha R2 0.88: its long,
+    # sharp, swept, projecting, narrow-shouldered auricle lined up length / upward extension / tip / width / tragus / helix fullness with Fenn, and HR2's
+    # vertical anterior root line removed the one domain that had broken the Fenn fit). HVEAR4 keeps the elf-forward extreme (length 8.2, the longest elevated
+    # upper extension of the family, sharp point) and recombines it with Halvren human-family traits that do NOT track any elf line: a broad base (wb 2.10)
+    # and a full-shouldered helix (taper start 0.50, shoulder 0.15) under the sharp point, low projection (20) and moderate sweep / tilt (1.0 / 12); the top of
+    # the attachment is lifted 0.55 cm (lift_top) so the fuller upper helix clears the HR2-seated head on c2. HR2 root as HE1 / HE2 (sulcus off, as HVEAR3 HE3).
+    # + non-lockstep identity (blind family reviews): elven-derived RIM / INTERIOR on the Halvren body -- a thin, crisp helix (0.22 x 0.20) with a strong
+    # antihelix (0.40), more crura (1.5) and crus (0.22), a longer-drawn upper blade (taper extension 1.25) and a smaller lobe (0.15) than HE2 (non-monotone)
+    'HE3': dict(HV_BASE, L=8.2, wb=2.10, taper=("halvren", 0.50, 1.25, 0.15), lobe=0.15, proj=20, tilt=12, sweep=1.0, thick=0.29,
+                ah=0.40, crura=1.5, concha=1.00, crus=0.22, trag=0.31, atrag=0.23, helix=(0.22, 0.20), geo=_g(phi0=38.0, tauA=12.0, clear=-0.58, sulcus_h=-1.0, lift_top=0.55, sheet_fold_fix=1.0)),
     # (root visual integration order: HE3 takes HR2 WITHOUT the postauricular-sulcus sheet drop -- on the long, more projecting HE3 back sheet it pushes the
     # back sheet into the cuff, 86-113 branch self-intersections; root lowering / seat / lobe edge / wide fairing as HE2)
     # source-population influence diagnostics (internal validation only; not subraces): the HE2 mosaic with ONE elven direction trended; the Halvren human-family
@@ -151,7 +171,10 @@ CAND['HVT-HUM-H'] = dict(CAND['HVT-HUM-R'], geo=_g1()); CAND['HVT-ELF-H'] = dict
 # root / cuff derivative exploration on the human-forward bound (topology audit §10): skin-cuff variants of HVT-HUM-S
 CAND.update({'HVX-HUM-C1': dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN, cuff_skin_corner=0.9)), 'HVX-HUM-C2': dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN, clear=-0.15)),
              'HVX-HUM-C3': dict(CAND['HVT-HUM-R'], geo=dict(VA_RI3_SKIN, clear=-0.15, cuff_skin_corner=0.9, lift_lobe=0.6))})
-for _k in ('HE1', 'HE2', 'HE3'):                  # topology audit: the same HE geometry on the rigid Fenn v002 cuff (-R; root geo phi0 / tauA kept) and on the Vael RI3 root geometry (-V)
+# HE1 size-floor investigation (ear family closure order §7): HE1 bodies at reduced length for the floor sweep / the human-scale layout-metric test
+# (EAR_LAYOUT_METRIC=HE1-HS optimises the SAME sheet connectivity's vertex positions in this human-scale metric instead of the E2 elf metric)
+CAND['HE1-HS'] = dict(CAND['HE1-HVEAR3'], L=5.4)
+for _k in ('HE1', 'HE2', 'HE3', 'HE1-HVEAR3', 'HE3-HVEAR3'):    # topology audit: the same HE geometry on the rigid Fenn v002 cuff (-R; root geo phi0 / tauA kept) and on the Vael RI3 root geometry (-V)
     CAND[_k + '-R'] = dict(CAND[_k], geo={q: v for q, v in CAND[_k]['geo'].items() if q in ('phi0', 'tauA')})
     CAND[_k + '-V'] = dict(CAND[_k], geo=dict(VA_RI3_SKIN, **{q: v for q, v in CAND[_k]['geo'].items() if q in ('phi0', 'tauA')}))   # the same HE on the exact Vael RI3 root geometry
     CAND[_k + '-HR1'] = dict(CAND[_k], geo={q: v for q, v in CAND[_k]['geo'].items() if q not in HV_ROOT2 or q == 'lift_lobe'}); CAND[_k + '-HR1']['geo']['lift_lobe'] = HV_SKIN['lift_lobe']   # HR1 (before)

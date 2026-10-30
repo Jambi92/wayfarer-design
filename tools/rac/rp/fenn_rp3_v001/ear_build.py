@@ -23,9 +23,11 @@ for k, v in PROBE.items():                          # geometry-only readiness pr
     if k in geo: geo[k] = float(v)
     elif k == 'taper_ex': p['taper'] = tuple(p['taper'][:2]) + (float(v),) + tuple(p['taper'][3:])   # (Halvren 4-tuple law keeps its shoulder)
     elif k == 'taper_sh': p['taper'] = tuple(p['taper'][:3]) + (float(v),)
+    elif k == 'helix_h': p['helix'] = (float(v), tuple(p['helix'])[1])                                 # Halvren family closure: rim roll height / width
+    elif k == 'helix_w': p['helix'] = (tuple(p['helix'])[0], float(v))
     elif k == 'taper_st': p['taper'] = (p['taper'][0], float(v)) + tuple(p['taper'][2:])                 # Halvren order: taper start
     elif k in ('place_db', 'place_du', 'phi0', 'tauA', 'd_r', 'lift_lobe', 'lift_top', 'sulcus_h', 'sulcus_r', 'root_lower', 'root_lower_cap', 'root_lower_cap_inf',
-               'root_lower_smooth', 'root_lower_ring', 'root_lower_fall', 'root_lower_fall_own', 'fair_rings'): geo[k] = float(v)       # Halvren geometry controls (inert unless set)
+               'root_lower_smooth', 'root_lower_ring', 'root_lower_fall', 'root_lower_fall_own', 'fair_rings', 'clear'): geo[k] = float(v)       # Halvren geometry controls (inert unless set)
     else: p[k] = float(v)
 # Halvren HR2 ROOT-RING LOWERING (root visual integration order; geo 'root_lower' >= 0, inert otherwise -- every frozen ear is unchanged): the v005 ear-zone
 # root loop is the base of the MPFB human auricle and stands up to 0.55 cm (posterior) / 1.1 cm (inferior, the old human lobe base) above the surrounding head,
