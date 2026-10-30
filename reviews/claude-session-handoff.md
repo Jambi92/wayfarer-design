@@ -2,7 +2,13 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — RP4 DURRIM v002 REVISION / CLOSURE — DURRIM RP4 COMPACT BRANCH PASS — READY FOR AUTHOR ACCEPTANCE / FREEZE — awaiting ChatGPT review
+## LATEST (2026-10-30) — DURRIM RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (record-only closure) — awaiting ChatGPT review
+
+- Ruling a6b59b5 (final section of `reviews/chatgpt-rac-rp4-durrim-compact-branch-revision-closure-order.md`). `DURRIM_RP4_FREEZE.json` promoted from the d92e677 candidate (hashes preserved); fresh Blender read-back of the committed blends = reviewed geometry hashes, shared face topology `fafdf4cc…`; immutables 26 / 26 unchanged. Canon `specs/durrim/DURRIM_V1.md` RP4 block, STATUS, carry-forward register (no new ID), reference-assets manifest `also` entry. Report `reviews/claude-rac-rp4-durrim-freeze-closure-report.md`. No geometry change.
+- Pending outside the repo: copy `reviews/rac-rp4-evidence/durrim/v002/production/*` (+ the freeze record) to `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Durrim/RP4/` when the PC is linked.
+- **Next:** STOP for ChatGPT review. Pipkin is next (independent diagnosis; do not inherit v002 elements without it). Not started: Pipkin, Cogling, Saurin, rig, creator, engine.
+
+## (previous) 2026-10-30 — RP4 DURRIM v002 REVISION / CLOSURE — PASS (superseded: frozen)
 
 **What was done**
 - Order 8080f9f. Report `reviews/claude-rac-rp4-durrim-v002-closure-report.md`; evidence `reviews/rac-rp4-evidence/durrim/v002/` (branch def, validators, audits, anatomy, contact, density, deformation, production candidates + read-back, boards DU2_A..H, gates / determinism / immutables, freeze candidate record).

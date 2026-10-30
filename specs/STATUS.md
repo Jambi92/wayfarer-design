@@ -1,6 +1,12 @@
 # Character Design Status
 
-## RAC RP4 DURRIM COMPACT-BRANCH v002 REVISION / CLOSURE — DURRIM RP4 COMPACT BRANCH PASS — READY FOR AUTHOR ACCEPTANCE / FREEZE (2026-10-30)
+## DURRIM RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30, by record)
+
+- **Freeze:** `DU_M_REF_RP4_v001`, `DU_F_REF_RP4_v001`, `MPFB_COMPACT_BRANCH_v002`, c1 source `DU137C-NAT`, c2 anchor `DUF137C-NAT`. Record `reviews/rac-rp4-evidence/durrim/v002/DURRIM_RP4_FREEZE.json` (promoted from the candidate; all reviewed hashes preserved and re-verified). Closure report `reviews/claude-rac-rp4-durrim-freeze-closure-report.md`.
+- 58,138 V / 58,136 Q, identical c1 / c2 topology; 69 / 69 on DU122C / DU137C / DU152C / DUF137C.
+- Durrim is the completed RP4 compact-branch pilot. `MPFB_COMPACT_BRANCH_v002` is accepted for Durrim only, not as a universal compact-race topology. **Pipkin is next** and must be diagnosed independently before inheriting branch elements. Not started: Pipkin, Cogling, Saurin, rig finalization, creator, engine integration.
+
+### (superseded) RAC RP4 DURRIM COMPACT-BRANCH v002 REVISION / CLOSURE — READY FOR AUTHOR ACCEPTANCE / FREEZE (2026-10-30)
 
 - **Report:** `reviews/claude-rac-rp4-durrim-v002-closure-report.md` (order 8080f9f). Evidence: `reviews/rac-rp4-evidence/durrim/v002/`; tools `tools/rac/rp/durrim_rp4_v002/`.
 - **MPFB_COMPACT_BRANCH_v002:** thumb MCP two-direction densification (fine band Z..C, fans only in full-height P->Z / C->D, c2-hip-slab columns unsplit) + jaw-neck reroute (4 edge rotations / side: pole moved + one 3/5 pair; no vertex added). One face list and one S on every body; 58,138 V / 58,136 Q.
