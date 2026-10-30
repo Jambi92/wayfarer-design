@@ -131,8 +131,11 @@ sheet('PT_C_pose_stress.jpg', 'C. Pose stress on the baked triangles -- the two 
 rowsD = []
 for k in EARS:
     for c in ('c1', 'c2'):
-        L = RJ[(k, c)]['lod']
+        L = RJ[(k, c)]['lod']; P_, U_ = L['protected'], L['unconstrained']
         rowsD.append(('%s %s' % (k, c), [img('D_%s_%s_%s' % (k, c, r_), v) for r_ in ('src', '50', '25') for v in ('side', 'rq')],
-                      'LOD50 drift %.3f cm, root %.3f | LOD25 drift %.3f cm, root %.3f | non-manifold / zero-area 0 / 0' % (L['0.5']['ear_max_drift_source_to_lod_cm'], L['0.5']['root_region_max_drift_cm'], L['0.25']['ear_max_drift_source_to_lod_cm'], L['0.25']['root_region_max_drift_cm'])))
-sheet('PT_D_lod.jpg', 'D. LOD on the baked triangles (Decimate collapse, as the closure prodcheck): source | 50 % | 25 %', rowsD, ['source side', 'source rear 3/4', '50 % side', '50 % rear 3/4', '25 % side', '25 % rear 3/4'], colw=250)
+                      'LOD-HV1 50 %%: drift %.3f cm, root %.3f, self-x %d | 25 %%: drift %.3f, root %.3f, self-x %d | non-manifold / zero-area %d / %d (unconstrained 25 %% self-x %d)' % (
+                          P_['0.5']['ear_max_drift_source_to_lod_cm'], P_['0.5']['root_region_max_drift_cm'], P_['0.5']['ear_region_self_intersection_pairs'], P_['0.25']['ear_max_drift_source_to_lod_cm'],
+                          P_['0.25']['root_region_max_drift_cm'], P_['0.25']['ear_region_self_intersection_pairs'], P_['0.25']['ear_region_nonmanifold_edges'] + P_['0.5']['ear_region_nonmanifold_edges'],
+                          P_['0.25']['ear_region_zero_area_triangles'] + P_['0.5']['ear_region_zero_area_triangles'], U_['0.25']['ear_region_self_intersection_pairs'])))
+sheet('PT_D_lod.jpg', 'D. LOD on the baked triangles -- LOD-HV1 (Decimate collapse, cuff / transition / junction ring protected): source | 50 % | 25 %', rowsD, ['source side', 'source rear 3/4', '50 % side', '50 % rear 3/4', '25 % side', '25 % rear 3/4'], colw=250)
 print('BOARDS_DONE', sorted(os.listdir(OUT)))
