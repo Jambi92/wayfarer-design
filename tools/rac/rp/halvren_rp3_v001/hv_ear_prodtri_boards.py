@@ -46,13 +46,28 @@ for k in EARS:
     for f in FL:
         r = rows[int(f)]; cq[f] = [0.95, 0.15, 0.1] if r['folded'] else [0.98, 0.6, 0.15]
         ct[2 * f:2 * f + 2] = [0.2, 0.45, 0.95] if int(f) in flip else FOLDC(r['fold_chosen_deg']); ca[2 * f:2 * f + 2] = FOLDC(r['fold_alternate_deg'])
+    # camera per region: the most-folded flagged quad of the left ear that is visible along its own smooth normal (numpy ray cast against every
+    # triangle within 25 cm); the view looks straight down that normal
+    vn = np.zeros((len(V), 3)); tn = np.cross(V[T[:, 1]] - V[T[:, 0]], V[T[:, 2]] - V[T[:, 0]])
+    for kk in range(3): np.add.at(vn, T[:, kk], tn)
+    vn /= np.maximum(np.linalg.norm(vn, axis=1, keepdims=True), 1e-12)
+    def visible(o, d):
+        A0, B0, C0 = V[T[:, 0]], V[T[:, 1]], V[T[:, 2]]; sel = np.linalg.norm(A0 - o, axis=1) < 25; A0, B0, C0 = A0[sel], B0[sel], C0[sel]
+        e1, e2 = B0 - A0, C0 - A0; h_ = np.cross(d, e2); a_ = (e1 * h_).sum(1); ok = np.abs(a_) > 1e-12; f_ = 1 / np.where(ok, a_, 1); s_ = o - A0
+        u_ = f_ * (s_ * h_).sum(1); q_ = np.cross(s_, e1); v_ = f_ * (q_ @ d); t_ = f_ * (e2 * q_).sum(1)
+        return not (ok & (u_ >= 0) & (v_ >= 0) & (u_ + v_ <= 1) & (t_ > 0.02)).any()
     vws = []
     for rg, names in (('cuff_root', ('cuff', 'root_junction')), ('lobe', ('lobe_junction',)), ('tip', ('upper_helix_tip',))):
-        cand = [f for f in FL if reg[f] in names and fside[f] == 'l'] or [f for f in range(len(Qq)) if reg[f] in names and fside[f] == 'l']
-        w = max(cand, key=lambda f: rows[int(f)]['fold_chosen_deg'] if int(f) in rows else 0); cc = V[Qq[w]].mean(0)
-        nb = [f for f in range(len(Qq)) if reg[f] and fside[f] == 'l' and np.linalg.norm(V[Qq[f]].mean(0) - cc) < 1.0]; d = unit(fn[nb].sum(0)) if nb else np.array([1.0, 0, 0])
-        vws.append((rg, d, cc, 1.1))
-    job('A_%s_q' % k, V, Qq, cq, vws, wire=True); job('A_%s_t' % k, V, T, ct, vws, wire=True); job('A_%s_a' % k, V, Ta, ca, vws, wire=True)
+        cand = sorted([f for f in FL if reg[f] in names and fside[f] == 'l'], key=lambda f: -rows[int(f)]['fold_chosen_deg'])
+        cand += [f for f in range(len(Qq)) if reg[f] in names and fside[f] == 'l' and f not in set(FL)][:400]
+        pick = None
+        for f in cand:
+            cc = V[Qq[f]].mean(0); d = unit(vn[Qq[f]].sum(0))
+            if visible(cc + 0.01 * d, d): pick = (cc, d); break
+        cc, d = pick if pick else (V[Qq[cand[0]]].mean(0), unit(vn[Qq[cand[0]]].sum(0)))
+        vws.append((rg, d, cc, 0.9))
+    wt = dict(WIRE_T='0.00008')
+    job('A_%s_q' % k, V, Qq, cq, vws, wire=True, env=wt); job('A_%s_t' % k, V, T, ct, vws, wire=True, env=wt); job('A_%s_a' % k, V, Ta, ca, vws, wire=True, env=wt)
 # ---------------- B / B2: shading on the baked triangles; B3 quads vs triangles vs rebuild
 for k in EARS:
     for c in ('c1', 'c2'):
@@ -126,7 +141,7 @@ for k in EARS:
         ps = RJ[(k, c)]['worst_two_poses']; P = RJ[(k, c)]['poses']
         rowsC.append(('%s %s' % (k, c), [img('C_%s_%s_%s' % (k, c, pn), v) for pn in ps for v in ('etq', 'lr')],
                       ' | '.join('%s: inversions %d, contacts %d, flagged max normal change %.1f deg' % (pn, P[pn]['triangle_inversions'], P[pn]['new_contacts'], P[pn]['flagged_max_local_normal_change_deg']) for pn in ps)))
-sheet('PT_C_pose_stress.jpg', 'C. Pose stress on the baked triangles -- the two worst poses per ear (by inversions, then flagged-quad normal change); flagged quads tinted orange', rowsC,
+sheet('PT_C_pose_stress.jpg', 'C. Pose stress, baked triangles: two worst poses per ear; flagged quads orange', rowsC,
       ['worst pose: front 3/4', 'worst pose: lower-rear 3/4', '2nd pose: front 3/4', '2nd pose: lower-rear 3/4'], colw=280)
 rowsD = []
 for k in EARS:
