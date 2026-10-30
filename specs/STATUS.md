@@ -1,6 +1,13 @@
 # Character Design Status
 
-## RAC RP4 PIPKIN INDEPENDENT COMPACT DIAGNOSIS — PIPKIN RP4 REQUIRES AUTHOR DECISION (2026-10-30)
+## RAC RP4 PIPKIN — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (2026-10-30, NOT frozen)
+
+- **Gate:** `reviews/claude-rac-rp4-pipkin-final-production-gate.md` (order 68ba8e5). Evidence `reviews/rac-rp4-evidence/pipkin/final/`; record `PIPKIN_RP4_FREEZE_CANDIDATE.json`.
+- **Candidates:** `PK_M_REF_RP4_v001` (c1 PK-NAT) / `PK_F_REF_RP4_v001` (c2 PKF107-NAT) on `MPFB_PIPKIN_COMPACT_BRANCH_v001`; 58,162 V / 58,160 Q, identical face topology `a11b8831…`; read-back clean.
+- **Validator:** raw kept (PK91 65, PK107 65, PKF107 69, PK122 67 / 69); author-approved Pipkin toe-station exception (`PASS_PIPKIN_TOE_PROBE_GEOMETRY_EXCEPTION`, toe3 / toe4 j1 only) -> adjusted 69 / 69 on all four.
+- T-1…T-7, firewalls (PK122 vs DU122 16 / 16; adult vs child; Marchfolk; Cogling 11 / 11), deformation (no new class) and immutables (46 / 46) pass. Nothing frozen; Cogling / Saurin / rig / creator / UE5 not started.
+
+### (superseded) RAC RP4 PIPKIN INDEPENDENT COMPACT DIAGNOSIS — PIPKIN RP4 REQUIRES AUTHOR DECISION (2026-10-30)
 
 - **Gate:** `reviews/claude-rac-rp4-pipkin-compact-diagnosis-gate.md` (order 25f7ba0). Evidence `reviews/rac-rp4-evidence/pipkin/`; tools `tools/rac/rp/pipkin_rp4_v001/`.
 - **Passed:** PK91 / PK107 / PK122 regenerate exactly; new c2 anchor PKF107-NAT = PIPKIN CONFIG-2 CENTRAL REFERENCE PASS (RM-SR-01 7 / 7 c1 and c2). Pipkin-specific `MPFB_PIPKIN_COMPACT_BRANCH_v001` (thumb MCP only; Durrim concept, Pipkin placement; no neck reroute, no hip sector) fixes the thumb on every body; c2 **69 / 69**; T-1/2/3/6/7, contact, deformation clean; PK122 vs DU122 16 / 16, adult vs child 17-19 / 19, Cogling 11 / 11, Marchfolk normalized pass.

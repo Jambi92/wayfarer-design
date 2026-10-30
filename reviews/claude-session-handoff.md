@@ -2,7 +2,14 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — RAC RP4 PIPKIN COMPACT DIAGNOSIS — PIPKIN RP4 REQUIRES AUTHOR DECISION (toe MTP validator geometry) — awaiting ChatGPT review
+## LATEST (2026-10-30) — RAC RP4 PIPKIN — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (not frozen) — awaiting ChatGPT review
+
+- Order 68ba8e5 (toe exception approved). Gate `reviews/claude-rac-rp4-pipkin-final-production-gate.md`; evidence `reviews/rac-rp4-evidence/pipkin/final/` (production blends + sidecars + read-back, raw validators, `PIPKIN_toe_exception_validator_summary.json`, anatomy / contact / density / deformation, boards PKF_C..G, `immutable_hashes_final.txt`, `PIPKIN_RP4_FREEZE_CANDIDATE.json`).
+- Tools: `run_pk_final.sh` (fresh realizations -> `pk_make_prod.py` -> freeze_check read-back -> `pk_toe_exception.py`), `pk_final_sheets.py`. Workspace `/tmp/claude-0/rt/pk/final/`.
+- On freeze approval: promote `PIPKIN_RP4_FREEZE_CANDIDATE.json` -> `PIPKIN_RP4_FREEZE.json` (hashes preserved), canon `specs/pipkin/PIPKIN_V1.md`, STATUS, manifest, register; copy production files to `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Pipkin/RP4/` (needs a folder grant on RaceBodies/production in that session).
+- **Next:** STOP for ChatGPT review (freeze decision).
+
+## (previous) 2026-10-30 — RAC RP4 PIPKIN COMPACT DIAGNOSIS — PIPKIN RP4 REQUIRES AUTHOR DECISION (toe MTP validator geometry) — awaiting ChatGPT review
 
 **What was done**
 - Order 25f7ba0. Gate `reviews/claude-rac-rp4-pipkin-compact-diagnosis-gate.md`; evidence `reviews/rac-rp4-evidence/pipkin/`.
