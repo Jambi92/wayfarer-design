@@ -10,10 +10,10 @@
    "degenerate": 0,
    "outward": true,
    "branch_selfx": 0,
-   "min_angle": 12.8,
-   "aspect_max": 9.516,
-   "T4": 487,
-   "density_pct": 0.102,
+   "min_angle": 12.4,
+   "aspect_max": 9.785,
+   "T4": 461,
+   "density_pct": 0.101,
    "root_valence": {
     "l": {
      "4": 52
@@ -24,8 +24,8 @@
    },
    "root_valence_ok": true,
    "mound_p90_cm": -0.011,
-   "junction_cm": -0.257,
-   "clearance_min_cm": 0.21,
+   "junction_cm": -0.244,
+   "clearance_min_cm": 0.23,
    "poses": {
     "neck_flex30": {
      "contacts": 0,
@@ -78,42 +78,52 @@
    ],
    "guard_iterations": 0,
    "faces_sha": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
-   "length_over_HH_measure": 0.247,
+   "length_over_HH_measure": 0.249,
    "repair": {
     "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 9.8 (junction fixed, symmetric); stage 4 (sheet_fold_fix) symmetric umbrella relaxation of folded sheet quads; stage 5 (sheet_fold_fix) per-vertex pattern search on cuff edges creased > 120 deg",
     "log": [
      {
+      "iteration": 0,
+      "bad_faces": [
+       58890
+      ],
+      "moved_vertices": 9,
+      "steps": 10,
+      "worst_after_deg": 16.82,
+      "max_move_cm": 0.0292
+     },
+     {
       "stage3": {
-       "bad_faces": 20,
+       "bad_faces": 21,
        "vertex_pairs": 21,
        "symmetric": true,
        "sweeps": 2,
-       "worst_aspect_after": 9.7,
-       "worst_corner_after": 12.75,
-       "max_move_cm": 0.0845
+       "worst_aspect_after": 10.33,
+       "worst_corner_after": 15.24,
+       "max_move_cm": 0.0847
       }
      },
      {
       "stage4_sheet_folds": {
-       "folded_before": 22,
-       "folded_after": 6,
-       "steps": 2,
+       "folded_before": 28,
+       "folded_after": 7,
+       "steps": 1,
        "symmetric": true,
-       "max_move_cm": 0.2182
+       "max_move_cm": 0.2268
       }
      },
      {
       "stage5_cuff_creases": {
        "threshold_deg": 120.0,
-       "creased_edges_before": 10,
-       "creased_edges_after": 3,
-       "worst_dihedral_before": 149.0,
-       "worst_dihedral_after": 137.2,
-       "vertices": 107,
-       "sweeps": 13,
-       "folded_cuff_band_before": 29,
-       "folded_cuff_band_after": 24,
-       "max_move_cm": 0.1061
+       "creased_edges_before": 7,
+       "creased_edges_after": 1,
+       "worst_dihedral_before": 150.3,
+       "worst_dihedral_after": 139.9,
+       "vertices": 60,
+       "sweeps": 15,
+       "folded_cuff_band_before": 26,
+       "folded_cuff_band_after": 23,
+       "max_move_cm": 0.1141
       }
      }
     ]
@@ -798,10 +808,10 @@
    "degenerate": 0,
    "outward": true,
    "branch_selfx": 0,
-   "min_angle": 12.2,
-   "aspect_max": 9.46,
-   "T4": 490,
-   "density_pct": 0.099,
+   "min_angle": 12.7,
+   "aspect_max": 9.555,
+   "T4": 461,
+   "density_pct": 0.097,
    "root_valence": {
     "l": {
      "4": 52
@@ -812,8 +822,8 @@
    },
    "root_valence_ok": true,
    "mound_p90_cm": -0.017,
-   "junction_cm": -0.367,
-   "clearance_min_cm": 0.15,
+   "junction_cm": -0.354,
+   "clearance_min_cm": 0.18,
    "poses": {
     "neck_flex30": {
      "contacts": 0,
@@ -866,7 +876,7 @@
    ],
    "guard_iterations": 0,
    "faces_sha": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
-   "length_over_HH_measure": 0.247,
+   "length_over_HH_measure": 0.249,
    "repair": {
     "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 9.8 (junction fixed, symmetric); stage 4 (sheet_fold_fix) symmetric umbrella relaxation of folded sheet quads; stage 5 (sheet_fold_fix) per-vertex pattern search on cuff edges creased > 120 deg",
     "log": [
@@ -876,32 +886,32 @@
        "vertex_pairs": 21,
        "symmetric": true,
        "sweeps": 2,
-       "worst_aspect_after": 9.7,
-       "worst_corner_after": 14.69,
-       "max_move_cm": 0.0818
+       "worst_aspect_after": 9.73,
+       "worst_corner_after": 15.19,
+       "max_move_cm": 0.0817
       }
      },
      {
       "stage4_sheet_folds": {
-       "folded_before": 20,
-       "folded_after": 6,
-       "steps": 2,
+       "folded_before": 24,
+       "folded_after": 8,
+       "steps": 1,
        "symmetric": true,
-       "max_move_cm": 0.2189
+       "max_move_cm": 0.2185
       }
      },
      {
       "stage5_cuff_creases": {
        "threshold_deg": 120.0,
-       "creased_edges_before": 16,
+       "creased_edges_before": 13,
        "creased_edges_after": 0,
-       "worst_dihedral_before": 164.2,
-       "worst_dihedral_after": 116.9,
-       "vertices": 124,
-       "sweeps": 15,
+       "worst_dihedral_before": 151.4,
+       "worst_dihedral_after": 116.4,
+       "vertices": 94,
+       "sweeps": 7,
        "folded_cuff_band_before": 19,
-       "folded_cuff_band_after": 17,
-       "max_move_cm": 0.3553
+       "folded_cuff_band_after": 19,
+       "max_move_cm": 0.1011
       }
      }
     ]
@@ -1493,43 +1503,43 @@
    "pedestal_vs_true_head": {
     "posterior": {
      "p90_cm": 0.211,
-     "max_cm": 0.346
+     "max_cm": 0.345
     },
     "superior": {
-     "p90_cm": 0.076,
-     "max_cm": 0.102
+     "p90_cm": 0.075,
+     "max_cm": 0.096
     },
     "anterior": {
-     "p90_cm": 0.171,
-     "max_cm": 0.207
+     "p90_cm": 0.165,
+     "max_cm": 0.2
     },
     "inferior": {
-     "p90_cm": 0.291,
-     "max_cm": 0.378
+     "p90_cm": 0.294,
+     "max_cm": 0.389
     }
    },
    "loop_crease_deg": {
     "posterior": {
      "mean": 6.0,
-     "max": 7.4
+     "max": 7.1
     },
     "superior": {
      "mean": 2.2,
-     "max": 4.5
+     "max": 4.4
     },
     "anterior": {
-     "mean": 2.0,
-     "max": 4.2
+     "mean": 3.9,
+     "max": 26.5
     },
     "inferior": {
-     "mean": 6.1,
-     "max": 8.9
+     "mean": 6.0,
+     "max": 9.2
     }
    },
    "inferior_fork": {
-    "lobe_low_cm": -2.359,
-    "raised_cuff_low_cm": 0.445,
-    "raised_cuff_tab_height_cm": 0.197
+    "lobe_low_cm": -2.368,
+    "raised_cuff_low_cm": 0.428,
+    "raised_cuff_tab_height_cm": 0.192
    }
   },
   "HE2 c1": {
@@ -1664,44 +1674,44 @@
   "HE1 c2": {
    "pedestal_vs_true_head": {
     "posterior": {
-     "p90_cm": 0.119,
-     "max_cm": 0.209
+     "p90_cm": 0.117,
+     "max_cm": 0.222
     },
     "superior": {
      "p90_cm": 0.08,
-     "max_cm": 0.093
+     "max_cm": 0.099
     },
     "anterior": {
-     "p90_cm": 0.163,
-     "max_cm": 0.193
+     "p90_cm": 0.174,
+     "max_cm": 0.2
     },
     "inferior": {
-     "p90_cm": 0.21,
-     "max_cm": 0.27
+     "p90_cm": 0.223,
+     "max_cm": 0.281
     }
    },
    "loop_crease_deg": {
     "posterior": {
-     "mean": 7.6,
+     "mean": 7.3,
      "max": 9.0
     },
     "superior": {
      "mean": 2.0,
-     "max": 4.9
+     "max": 4.7
     },
     "anterior": {
-     "mean": 6.0,
-     "max": 18.3
+     "mean": 3.9,
+     "max": 19.5
     },
     "inferior": {
-     "mean": 6.1,
-     "max": 9.4
+     "mean": 7.1,
+     "max": 10.5
     }
    },
    "inferior_fork": {
-    "lobe_low_cm": -2.272,
-    "raised_cuff_low_cm": 0.4,
-    "raised_cuff_tab_height_cm": 0.152
+    "lobe_low_cm": -2.28,
+    "raised_cuff_low_cm": 0.391,
+    "raised_cuff_tab_height_cm": 0.154
    }
   },
   "HE2 c2": {
@@ -1949,30 +1959,30 @@
   },
   "HE1": {
    "values": {
-    "length_over_HH": 0.2698,
-    "width_over_length": 0.4999,
-    "projection_deg": 19.8276,
-    "upward_ext_over_HH": 0.0659,
-    "backward_angle_deg": 9.4106,
-    "tip_angle_deg": 106.9261,
-    "lobe_fraction": 0.0299,
-    "root_line_deg": -7.4108,
-    "concha_depth_over_L": 0.187,
-    "tragus_height_frac": 0.2623,
-    "helix_fullness": 0.779
+    "length_over_HH": 0.2709,
+    "width_over_length": 0.4982,
+    "projection_deg": 18.6846,
+    "upward_ext_over_HH": 0.0657,
+    "backward_angle_deg": 10.5965,
+    "tip_angle_deg": 106.2612,
+    "lobe_fraction": 0.0308,
+    "root_line_deg": -9.3235,
+    "concha_depth_over_L": 0.1817,
+    "tragus_height_frac": 0.2522,
+    "helix_fullness": 0.7688
    },
    "t": {
-    "length_over_HH": 0.227,
-    "width_over_length": 0.341,
-    "projection_deg": 0.392,
-    "upward_ext_over_HH": 0.731,
-    "backward_angle_deg": 0.234,
-    "tip_angle_deg": 0.25,
-    "lobe_fraction": -0.226,
-    "root_line_deg": 2.043,
-    "concha_depth_over_L": 1.33,
-    "tragus_height_frac": 1.833,
-    "helix_fullness": -0.967
+    "length_over_HH": 0.235,
+    "width_over_length": 0.355,
+    "projection_deg": 0.359,
+    "upward_ext_over_HH": 0.728,
+    "backward_angle_deg": 0.294,
+    "tip_angle_deg": 0.26,
+    "lobe_fraction": -0.214,
+    "root_line_deg": 2.706,
+    "concha_depth_over_L": 1.416,
+    "tragus_height_frac": 1.964,
+    "helix_fullness": -0.846
    }
   },
   "HE2": {
@@ -2173,30 +2183,30 @@
   },
   "HE1 c2": {
    "values": {
-    "length_over_HH": 0.2698,
-    "width_over_length": 0.4999,
-    "projection_deg": 20.1564,
-    "upward_ext_over_HH": 0.0681,
-    "backward_angle_deg": 9.4106,
-    "tip_angle_deg": 106.9261,
-    "lobe_fraction": 0.0224,
-    "root_line_deg": -11.0116,
-    "concha_depth_over_L": 0.1776,
-    "tragus_height_frac": 0.2471,
-    "helix_fullness": 0.753
+    "length_over_HH": 0.2709,
+    "width_over_length": 0.4982,
+    "projection_deg": 19.1868,
+    "upward_ext_over_HH": 0.0678,
+    "backward_angle_deg": 10.5965,
+    "tip_angle_deg": 106.2612,
+    "lobe_fraction": 0.0157,
+    "root_line_deg": -9.086,
+    "concha_depth_over_L": 0.1812,
+    "tragus_height_frac": 0.2585,
+    "helix_fullness": 0.735
    },
    "t": {
-    "length_over_HH": 0.227,
-    "width_over_length": 0.341,
-    "projection_deg": 0.402,
-    "upward_ext_over_HH": 0.762,
-    "backward_angle_deg": 0.234,
-    "tip_angle_deg": 0.25,
-    "lobe_fraction": -0.332,
-    "root_line_deg": 3.291,
-    "concha_depth_over_L": 1.484,
-    "tragus_height_frac": 2.03,
-    "helix_fullness": -0.659
+    "length_over_HH": 0.235,
+    "width_over_length": 0.355,
+    "projection_deg": 0.373,
+    "upward_ext_over_HH": 0.759,
+    "backward_angle_deg": 0.294,
+    "tip_angle_deg": 0.26,
+    "lobe_fraction": -0.427,
+    "root_line_deg": 2.624,
+    "concha_depth_over_L": 1.425,
+    "tragus_height_frac": 1.882,
+    "helix_fullness": -0.447
    }
   }
  },
@@ -2205,50 +2215,50 @@
    "pairs": {
     "MF-FN": {
      "n": 11,
-     "r2": 0.194,
-     "alpha": 0.31,
+     "r2": 0.22,
+     "alpha": 0.339,
      "passes": true,
      "driving_domains": [
       "tragus_height_frac",
       "upward_ext_over_HH",
-      "projection_deg",
-      "concha_depth_over_L"
+      "concha_depth_over_L",
+      "projection_deg"
      ]
     },
     "MF-AE": {
      "n": 10,
-     "r2": 0.14,
-     "alpha": 0.248,
+     "r2": 0.172,
+     "alpha": 0.28,
      "passes": true,
      "driving_domains": [
       "concha_depth_over_L",
-      "upward_ext_over_HH",
       "tragus_height_frac",
-      "tip_angle_deg"
+      "upward_ext_over_HH",
+      "backward_angle_deg"
      ]
     },
     "MF-VA": {
      "n": 11,
-     "r2": 0.082,
-     "alpha": 0.231,
+     "r2": 0.117,
+     "alpha": 0.284,
      "passes": true,
      "driving_domains": [
       "tragus_height_frac",
       "concha_depth_over_L",
-      "upward_ext_over_HH",
-      "projection_deg"
+      "root_line_deg",
+      "backward_angle_deg"
      ]
     }
    },
    "best_pair": "MF-FN",
-   "best_r2": 0.194,
+   "best_r2": 0.22,
    "passes": true,
    "distinct_domains_vs": {
-    "MF": 9,
+    "MF": 10,
     "FN": 10,
-    "AE": 11,
+    "AE": 10,
     "VA": 9,
-    "HE2": 9
+    "HE2": 7
    }
   },
   "HE2": {
@@ -2605,47 +2615,47 @@
    "pairs": {
     "MF-FN": {
      "n": 11,
-     "r2": 0.234,
-     "alpha": 0.354,
+     "r2": 0.275,
+     "alpha": 0.359,
      "passes": true,
      "driving_domains": [
       "tragus_height_frac",
       "upward_ext_over_HH",
-      "projection_deg",
-      "concha_depth_over_L"
+      "concha_depth_over_L",
+      "projection_deg"
      ]
     },
     "MF-AE": {
      "n": 10,
-     "r2": 0.184,
-     "alpha": 0.292,
+     "r2": 0.219,
+     "alpha": 0.299,
      "passes": true,
      "driving_domains": [
       "concha_depth_over_L",
       "upward_ext_over_HH",
       "tragus_height_frac",
-      "tip_angle_deg"
+      "backward_angle_deg"
      ]
     },
     "MF-VA": {
      "n": 11,
-     "r2": 0.137,
-     "alpha": 0.311,
+     "r2": 0.164,
+     "alpha": 0.318,
      "passes": true,
      "driving_domains": [
-      "tragus_height_frac",
       "concha_depth_over_L",
+      "tragus_height_frac",
       "root_line_deg",
-      "upward_ext_over_HH"
+      "backward_angle_deg"
      ]
     }
    },
    "best_pair": "MF-FN",
-   "best_r2": 0.234,
+   "best_r2": 0.275,
    "passes": true,
    "distinct_domains_vs": {
-    "MF": 10,
-    "FN": 11,
+    "MF": 11,
+    "FN": 10,
     "AE": 10,
     "VA": 9,
     "HE2": 8
@@ -3221,7 +3231,7 @@
    "helix_fullness"
   ],
   "composite_elfward": {
-   "HE1": 0.415,
+   "HE1": 0.455,
    "HE2": 0.653,
    "HE3": 0.85,
    "HE3-before": 0.969,
@@ -3235,7 +3245,7 @@
    "backward_angle_deg"
   ],
   "HE1_length_vs_MF_pct": {
-   "HE1": 12.4,
+   "HE1": 12.8,
    "HE1-HVEAR3": 23.4,
    "HE1-L5.3": 4.9,
    "HE1-L5.6size": 10.4,
@@ -4995,9 +5005,123 @@
    },
    "length_over_HH": 0.2721,
    "composite": 0.451
+  },
+  {
+   "name": "V0",
+   "probe": "clear=-0.58",
+   "tech": {
+    "min_angle": 12.8,
+    "aspect": 9.52,
+    "selfx": 0,
+    "T4": 487,
+    "clear": 0.21,
+    "clean": true
+   },
+   "firewall": {
+    "MF-FN": 0.194,
+    "MF-AE": 0.14,
+    "MF-VA": 0.082
+   },
+   "length_over_HH": 0.2698,
+   "composite": 0.414
+  },
+  {
+   "name": "V1",
+   "probe": "lobe=0.24",
+   "tech": {
+    "min_angle": 13.5,
+    "aspect": 9.6,
+    "selfx": 0,
+    "T4": 468,
+    "clear": 0.23,
+    "clean": true
+   },
+   "firewall": {
+    "MF-FN": 0.229,
+    "MF-AE": 0.177,
+    "MF-VA": 0.123
+   },
+   "length_over_HH": 0.2714,
+   "composite": 0.462
+  },
+  {
+   "name": "V2",
+   "probe": "helix_h=0.38,helix_w=0.40",
+   "tech": {
+    "min_angle": 12.3,
+    "aspect": 9.51,
+    "selfx": 0,
+    "T4": 491,
+    "clear": 0.21,
+    "clean": true
+   },
+   "firewall": {
+    "MF-FN": 0.184,
+    "MF-AE": 0.137,
+    "MF-VA": 0.077
+   },
+   "length_over_HH": 0.2694,
+   "composite": 0.416
+  },
+  {
+   "name": "V3",
+   "probe": "lobe=0.24,helix_h=0.38",
+   "tech": {
+    "min_angle": 12.4,
+    "aspect": 9.79,
+    "selfx": 0,
+    "T4": 461,
+    "clear": 0.23,
+    "clean": true
+   },
+   "firewall": {
+    "MF-FN": 0.22,
+    "MF-AE": 0.172,
+    "MF-VA": 0.117
+   },
+   "length_over_HH": 0.2709,
+   "composite": 0.455
+  },
+  {
+   "name": "V4",
+   "probe": "lobe=0.24,helix_h=0.38,helix_w=0.34",
+   "tech": {
+    "min_angle": 12.4,
+    "aspect": 9.6,
+    "selfx": 0,
+    "T4": 450,
+    "clear": 0.23,
+    "clean": true
+   },
+   "firewall": {
+    "MF-FN": 0.221,
+    "MF-AE": 0.176,
+    "MF-VA": 0.12
+   },
+   "length_over_HH": 0.2709,
+   "composite": 0.454
+  },
+  {
+   "name": "V5",
+   "probe": "lobe=0.27,helix_h=0.40",
+   "tech": {
+    "min_angle": 12.4,
+    "aspect": 9.87,
+    "selfx": 0,
+    "T4": 467,
+    "clear": 0.24,
+    "clean": true
+   },
+   "firewall": {
+    "MF-FN": 0.283,
+    "MF-AE": 0.23,
+    "MF-VA": 0.169
+   },
+   "length_over_HH": 0.2722,
+   "composite": 0.504
   }
  ],
- "HE1_size_trials_note": "L*: shared E2-metric layout (no sheet stretch repair at trial time); H*: human-scale layout metric EAR_LAYOUT_METRIC=HE1-HS (same connectivity); C*: length-scaled concha seat; stage-3 sheet stretch repair applied afterwards to copies RL50 / RL53 / RL56 (aspect 9.99 / 9.97 / 9.94); guarded builds HE1-L5.6size and HE1-L5.3 (HVEAR3 body, edge) in technical; he3d / k* / n* = family-identity trials after the blind review; he1u T* / U* = HE1 human-outline trials after blind review round 3 (U3 selected)",
+ "HE1_size_trials_note": "L*: shared E2-metric layout (no sheet stretch repair at trial time); H*: human-scale layout metric EAR_LAYOUT_METRIC=HE1-HS (same connectivity); C*: length-scaled concha seat; stage-3 sheet stretch repair applied afterwards to copies RL50 / RL53 / RL56 (aspect 9.99 / 9.97 / 9.94); guarded builds HE1-L5.6size and HE1-L5.3 (HVEAR3 body, edge) in technical; he3d / k* / n* = family-identity trials after the blind review; he1u T* / U* = HE1 human-outline trials after blind review round 3 (U3 selected); he1v V* = round-4 rim-to-lobe polish (V3 selected: lobe 0.24, helix roll 0.38)",
  "determinism": {
   "HE1 c1": {
    "max_abs_dV_cm": 0.0,
