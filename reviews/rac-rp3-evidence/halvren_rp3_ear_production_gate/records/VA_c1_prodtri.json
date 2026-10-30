@@ -7223,7 +7223,7 @@
   }
  },
  "export_fbx": {
-  "file_bytes": 7237180,
+  "file_bytes": 7237196,
   "vertices_equal": true,
   "max_abs_dV_cm": 8.396455037029682e-06,
   "triangles_identical": true,
@@ -7382,7 +7382,7 @@
     "ear_region_zero_area_triangles": 0,
     "ear_region_self_intersection_pairs": 0,
     "ear_max_drift_source_to_lod_cm": 0.0119,
-    "ear_p99_drift_source_to_lod_cm": 0.0064,
+    "ear_p99_drift_source_to_lod_cm": 0.006,
     "ear_max_drift_lod_to_source_cm": 0.0096,
     "root_region_max_drift_cm": 0.0,
     "flagged_max_drift_cm": 0.0344,
@@ -7400,7 +7400,7 @@
     "ear_max_drift_lod_to_source_cm": 0.0282,
     "root_region_max_drift_cm": 0.0,
     "flagged_max_drift_cm": 0.0354,
-    "flagged_normal_deviation_max_deg": 116.83,
+    "flagged_normal_deviation_max_deg": 112.51,
     "flagged_normal_deviation_p95_deg": 38.44,
     "flagged_regions_lod_normal_over_60deg": 2
    }
@@ -7435,8 +7435,9 @@
     "flagged_regions_lod_normal_over_60deg": 5
    }
   },
-  "rule": "LOD-HV1: Decimate collapse, vertex-group weight 0 on cuff + transition + one ring (protected root junction)",
+  "rule": "LOD-HV1: Decimate collapse, vertex-group weight 0 on cuff + transition + one ring (protected root junction), 0.35 on the lobe zone (auricle sheet below 30 % of the ear height), 1 elsewhere",
   "protected_vertices": 1178,
+  "lobe_zone_vertices": 624,
   "source_ear_region_self_intersection_pairs": 0
  }
 }

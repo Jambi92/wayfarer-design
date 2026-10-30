@@ -11445,7 +11445,7 @@
   }
  },
  "export_fbx": {
-  "file_bytes": 7238316,
+  "file_bytes": 7238444,
   "vertices_equal": true,
   "max_abs_dV_cm": 8.396455037029682e-06,
   "triangles_identical": true,
@@ -11604,7 +11604,7 @@
     "ear_region_zero_area_triangles": 0,
     "ear_region_self_intersection_pairs": 0,
     "ear_max_drift_source_to_lod_cm": 0.0095,
-    "ear_p99_drift_source_to_lod_cm": 0.0067,
+    "ear_p99_drift_source_to_lod_cm": 0.0057,
     "ear_max_drift_lod_to_source_cm": 0.0089,
     "root_region_max_drift_cm": 0.0,
     "flagged_max_drift_cm": 0.0547,
@@ -11617,13 +11617,13 @@
     "ear_region_nonmanifold_edges": 0,
     "ear_region_zero_area_triangles": 0,
     "ear_region_self_intersection_pairs": 0,
-    "ear_max_drift_source_to_lod_cm": 0.0277,
-    "ear_p99_drift_source_to_lod_cm": 0.0192,
-    "ear_max_drift_lod_to_source_cm": 0.0271,
+    "ear_max_drift_source_to_lod_cm": 0.0391,
+    "ear_p99_drift_source_to_lod_cm": 0.0206,
+    "ear_max_drift_lod_to_source_cm": 0.0315,
     "root_region_max_drift_cm": 0.0,
     "flagged_max_drift_cm": 0.05,
     "flagged_normal_deviation_max_deg": 125.93,
-    "flagged_normal_deviation_p95_deg": 49.56,
+    "flagged_normal_deviation_p95_deg": 49.54,
     "flagged_regions_lod_normal_over_60deg": 11
    }
   },
@@ -11657,8 +11657,9 @@
     "flagged_regions_lod_normal_over_60deg": 8
    }
   },
-  "rule": "LOD-HV1: Decimate collapse, vertex-group weight 0 on cuff + transition + one ring (protected root junction)",
+  "rule": "LOD-HV1: Decimate collapse, vertex-group weight 0 on cuff + transition + one ring (protected root junction), 0.35 on the lobe zone (auricle sheet below 30 % of the ear height), 1 elsewhere",
   "protected_vertices": 1178,
+  "lobe_zone_vertices": 880,
   "source_ear_region_self_intersection_pairs": 0
  }
 }

@@ -118,22 +118,26 @@ Posed positions: the 8 head / neck poses, regenerated from the snapshot (identic
 
 ## 5. LOD (§7)
 
-**LOD-HV1 (production LOD constraint; the source mesh is untouched):** Decimate collapse of the baked triangles with a vertex-group weight 0 on the cuff + transition band and its one-ring. The root junction is protected; the auricle sheet and the head decimate normally.
+**LOD-HV1 (production LOD constraint; the source mesh is untouched):** Decimate collapse of the baked triangles with vertex-group weights:
+- 0 on the cuff + transition band and its one-ring (root junction protected);
+- 0.35 on the lobe zone (auricle sheet below 30 % of the ear height);
+- 1 elsewhere (the rest of the sheet and the head decimate normally).
 
 | | 50 %: self-x / drift / root drift | 25 %: self-x / drift / root drift | unconstrained 25 %: self-x / drift |
 |---|---|---|---|
-| HE1 c1 | 0 / 0.010 / 0 cm | 0 / 0.038 / 0 cm | **10** / 0.072 |
+| HE1 c1 | 0 / 0.011 / 0 cm | 0 / 0.038 / 0 cm | **10** / 0.072 |
 | HE1 c2 | 0 / 0.009 / 0 | 0 / 0.037 / 0 | 0 / 0.039 |
-| HE2 c1 | 0 / 0.010 / 0 | 0 / 0.028 / 0 | **4** / 0.058 |
-| HE2 c2 | 0 / 0.008 / 0 | 0 / 0.027 / 0 | **2** / 0.032 |
-| HE3 c1 | 0 / 0.011 / 0 | 0 / 0.039 / 0 | 0 / 0.039 |
+| HE2 c1 | 0 / 0.010 / 0 | 0 / 0.039 / 0 | **4** / 0.058 |
+| HE2 c2 | 0 / 0.007 / 0 | 0 / 0.027 / 0 | **2** / 0.032 |
+| HE3 c1 | 0 / 0.008 / 0 | 0 / 0.039 / 0 | 0 / 0.039 |
 | HE3 c2 | 0 / 0.008 / 0 | 0 / 0.037 / 0 | **2** / 0.039 |
-| Fenn / Aelari / Vael c1 | 0 / 0.009–0.012 / 0 | 0 / 0.030–0.032 / 0 | 0 / 0 / **4** (Vael) |
+| Fenn / Aelari / Vael c1 | 0 / 0.009–0.012 / 0 | 0 / 0.029–0.032 / 0 | 0 / 0 / **4** (Vael) |
 
 - Every row: 0 non-manifold edges and 0 zero-area triangles in the ear region.
 - **Drift:** the max distance from source branch vertices to the LOD surface (silhouette / Hausdorff).
 - **Folded-quad regions:** max drift ≤ 0.056 cm. A few LOD faces at twisted cuff quads deviate > 60° from the source's ill-defined normal there (HE 1–11, elves 2–5); no visible change on board D.
 - **Why the constraint.** The unconstrained (closure prodcheck) decimation lets the narrow gap between the back of the auricle and the cuff collapse at 25 %, giving back / rim ↔ cuff crossings. This also happens on the frozen Vael ear, so it is a property of the shared cuff, not of HE1–3. LOD-HV1 removes it on every ear and also reduces drift.
+- **Why the lobe weight.** Blind shading review round 1 found a V-notch pinch at the top of the HE1 c1 lobe at 25 % (root-only protection). The lobe-zone weight removes it: the lobe matches the source, with no other change (`production_shading_review.md`).
 
 ## 6. Export / reload and Unreal-style import sanity (§8)
 
