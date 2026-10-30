@@ -1,5 +1,12 @@
 # Character Design Status
 
+## RAC RP4 PIPKIN INDEPENDENT COMPACT DIAGNOSIS — PIPKIN RP4 REQUIRES AUTHOR DECISION (2026-10-30)
+
+- **Gate:** `reviews/claude-rac-rp4-pipkin-compact-diagnosis-gate.md` (order 25f7ba0). Evidence `reviews/rac-rp4-evidence/pipkin/`; tools `tools/rac/rp/pipkin_rp4_v001/`.
+- **Passed:** PK91 / PK107 / PK122 regenerate exactly; new c2 anchor PKF107-NAT = PIPKIN CONFIG-2 CENTRAL REFERENCE PASS (RM-SR-01 7 / 7 c1 and c2). Pipkin-specific `MPFB_PIPKIN_COMPACT_BRANCH_v001` (thumb MCP only; Durrim concept, Pipkin placement; no neck reroute, no hip sector) fixes the thumb on every body; c2 **69 / 69**; T-1/2/3/6/7, contact, deformation clean; PK122 vs DU122 16 / 16, adult vs child 17-19 / 19, Cogling 11 / 11, Marchfolk normalized pass.
+- **Author decision:** c1 `toe3_j1` / `toe4_j1` MTP stations fail the unchanged validator (c1 65 / 69, 91 65 / 69, 122 67 / 69) from D4 double-scaling of the toe probe radius (validator geometry: a size-consistent probe passes all 0 failures; the same correction would newly fail frozen Durrim toe1_j1). Options A (recorded Pipkin exception, recommended) / B (D4 amendment) / C (foot patch).
+- No production candidates, no freeze. Cogling / Saurin / rig / creator / UE5 not started.
+
 ## DURRIM RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30, by record)
 
 - **Freeze:** `DU_M_REF_RP4_v001`, `DU_F_REF_RP4_v001`, `MPFB_COMPACT_BRANCH_v002`, c1 source `DU137C-NAT`, c2 anchor `DUF137C-NAT`. Record `reviews/rac-rp4-evidence/durrim/v002/DURRIM_RP4_FREEZE.json` (promoted from the candidate; all reviewed hashes preserved and re-verified). Closure report `reviews/claude-rac-rp4-durrim-freeze-closure-report.md`.

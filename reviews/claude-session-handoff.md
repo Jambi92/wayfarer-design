@@ -2,7 +2,21 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — DURRIM RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (record-only closure) — awaiting ChatGPT review
+## LATEST (2026-10-30) — RAC RP4 PIPKIN COMPACT DIAGNOSIS — PIPKIN RP4 REQUIRES AUTHOR DECISION (toe MTP validator geometry) — awaiting ChatGPT review
+
+**What was done**
+- Order 25f7ba0. Gate `reviews/claude-rac-rp4-pipkin-compact-diagnosis-gate.md`; evidence `reviews/rac-rp4-evidence/pipkin/`.
+- Tools `tools/rac/rp/pipkin_rp4_v001/`: `run_pk_parta.sh` + `pk_partA.py` (c2 anchor validation, normalized MF comparator rule), `run_pk_b.sh` (unbranched v005), `ring_probe.py`, `toe_station_diag.py` (diagnostic size-consistent toe probe; validator unchanged), `pk_thumb_patch.py` (copy of the Durrim patch, no unsplit sector), `pk_thumb_relax.py` (joint relaxation on Pipkin bodies), `pk_branch_v001.py build|apply`, `run_pk_v1.sh` (per-body gates / `def`), `pk_firewalls.py`, `pk_sheets.py`.
+- Workspace `/tmp/claude-0/rt/pk/{src,nat,full,skp,fam,audit,val,dens,def,inh,br,v1,child,sheets}`. Rebuild: du_regen for PK91 / PK-NAT / PK122 (builds in reference-assets) + native_short for `partA/PKF107.cfg.json`; then run_pk_parta.sh, run_pk_b.sh, pk_branch_v001.py build, run_pk_v1.sh.
+
+**Key findings**
+- Thumb MCP: real topology gap on c1 (1-2 rings); Durrim v002 concept works but its placement breaks Pipkin c2 (crease pole) -> re-solved placement on Pipkin bodies; all thumbs PASS, c2 69 / 69.
+- Toe3 / toe4 j1 (c1): band probes merge; D4 scales the toe-spacing term of the probe radius twice (probe 22 % smaller relative to body than MF). Size-consistent probe: 0 failures on Pipkin, but newly fails frozen Durrim toe1_j1 -> author decision (A exception / B D4 amendment / C foot patch).
+- Quick validator checks without D6 give false hip failures: always confirm with validator_v2.py --d6-native.
+
+**Next:** STOP for ChatGPT review (toe decision). On option A: write `PK_M/F_REF_RP4_v001` from `MPFB_PIPKIN_COMPACT_BRANCH_v001` (production writer = durrim_rp4_v002/du_make_prod.py pattern) + freeze candidate.
+
+## (previous) 2026-10-30 — DURRIM RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (record-only closure) — awaiting ChatGPT review
 
 - Ruling a6b59b5 (final section of `reviews/chatgpt-rac-rp4-durrim-compact-branch-revision-closure-order.md`). `DURRIM_RP4_FREEZE.json` promoted from the d92e677 candidate (hashes preserved); fresh Blender read-back of the committed blends = reviewed geometry hashes, shared face topology `fafdf4cc…`; immutables 26 / 26 unchanged. Canon `specs/durrim/DURRIM_V1.md` RP4 block, STATUS, carry-forward register (no new ID), reference-assets manifest `also` entry. Report `reviews/claude-rac-rp4-durrim-freeze-closure-report.md`. No geometry change.
 - PC copy DONE (2026-10-30 12:13): 9 files (both blends, sidecars, branch maps, landmarks, `DURRIM_RP4_FREEZE.json`) at `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Durrim/RP4/`, read back byte-identical to the repo (blend sha256 `55679333…` / `797b06d7…`). This session needed a folder grant on `RaceBodies/production` (the PC was linked; no folders were connected by default).

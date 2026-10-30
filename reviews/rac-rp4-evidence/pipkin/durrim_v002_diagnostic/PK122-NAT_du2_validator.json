@@ -1,0 +1,8434 @@
+{
+ "validator": "RAC \u00a77 validator v2 (D1 + D3 accepted 85b7c1c; D4 stature-normalised station geometry accepted a18371c; D5 interdigital endpoint validity accepted 33a2dfe; D6 foreign-segment endpoint accepted d921903)",
+ "D5_applied": true,
+ "D6_applied": true,
+ "station_scale": 0.7044452620294301,
+ "reference_stature_cm": 173.143,
+ "stature_cm": 121.96976600356162,
+ "anatomical_ring_radius_cm": {
+  "thumb_mcp": 2.1133357860882906
+ },
+ "summary": {
+  "legacy_firm_fail": [
+   "hip_l",
+   "hip_r",
+   "pinky_mcp_l",
+   "pinky_mcp_r",
+   "thumb_mcp_l",
+   "toe1_j1_l",
+   "toe1_j1_r",
+   "toe1_j2_r",
+   "toe3_j1_l",
+   "toe3_j1_r"
+  ],
+  "D1_firm_fail": [
+   "toe3_j1_l",
+   "toe3_j1_r"
+  ],
+  "D1_D3_firm_fail": [
+   "toe3_j1_l",
+   "toe3_j1_r"
+  ],
+  "D1_strict_fail": [
+   "middle_mcp_l",
+   "middle_mcp_r",
+   "ring_mcp_l",
+   "ring_mcp_r",
+   "thumb_mcp_l",
+   "thumb_mcp_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe3_j1_l",
+   "toe3_j1_r"
+  ],
+  "D1_D3_strict_fail": [
+   "middle_mcp_l",
+   "middle_mcp_r",
+   "ring_mcp_l",
+   "ring_mcp_r",
+   "thumb_mcp_l",
+   "thumb_mcp_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe3_j1_l",
+   "toe3_j1_r"
+  ],
+  "D1_fallback_passes": {
+   "pinky_mcp_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+   "hip_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe1_j1_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "pinky_mcp_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "hip_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe1_j1_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe1_j2_r": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "D1_D3_non_plain": {
+   "pinky_mcp_l": "PASS_FALLBACK_DEFINED_SIDES",
+   "thumb_mcp_l": "PASS_FALLBACK_CLOSED_RING",
+   "hip_l": "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED",
+   "toe1_j1_l": "PASS_FALLBACK_DEFINED_SIDES+D5_INTERDIGITAL_UNDEFINED",
+   "toe3_j1_l": "FAIL_LOOPS",
+   "pinky_mcp_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "hip_r": "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED",
+   "toe1_j1_r": "PASS_FALLBACK_DEFINED_SIDES+D5_INTERDIGITAL_UNDEFINED",
+   "toe1_j2_r": "PASS_FALLBACK_DEFINED_SIDES",
+   "toe3_j1_r": "FAIL_LOOPS"
+  },
+  "margin_zero": [
+   "hip_l",
+   "hip_r",
+   "toe1_j1_l",
+   "toe1_j1_r",
+   "toe2_j1_l",
+   "toe2_j1_r",
+   "toe2_j2_l",
+   "toe2_j2_r",
+   "toe4_j1_l",
+   "toe4_j1_r"
+  ],
+  "firm_pass_count": 67,
+  "stations": 69
+ },
+ "stations": {
+  "neck": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.9247,
+      1.3602
+     ],
+     "endpoint_dominant_bone": [
+      "head",
+      "head"
+     ],
+     "endpoint_dominant_weight": [
+      1.0,
+      1.0
+     ],
+     "endpoints": [
+      15024,
+      697
+     ],
+     "loops": 10,
+     "path": [
+      697,
+      15042,
+      3719,
+      15046,
+      699,
+      15045,
+      40610,
+      15013,
+      40616,
+      15026,
+      40611,
+      15024
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.9247,
+      1.3602
+     ],
+     "endpoint_dominant_bone": [
+      "head",
+      "head"
+     ],
+     "endpoint_dominant_weight": [
+      1.0,
+      1.0
+     ],
+     "endpoints": [
+      28503,
+      7422
+     ],
+     "loops": 10,
+     "path": [
+      7422,
+      28516,
+      10387,
+      28520,
+      7424,
+      28519,
+      47232,
+      28493,
+      47238,
+      28505,
+      47233,
+      28503
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0358,
+      0.2255
+     ],
+     "endpoint_dominant_bone": [
+      "head",
+      "head"
+     ],
+     "endpoint_dominant_weight": [
+      0.998,
+      1.0
+     ],
+     "endpoints": [
+      14995,
+      15060
+     ],
+     "loops": 4,
+     "path": [
+      15060,
+      710,
+      15033,
+      693,
+      14995
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.3386,
+      0.0038
+     ],
+     "endpoint_dominant_bone": [
+      "head",
+      "head"
+     ],
+     "endpoint_dominant_weight": [
+      1.0,
+      1.0
+     ],
+     "endpoints": [
+      625,
+      14724
+     ],
+     "loops": 20,
+     "path": [
+      14724,
+      40501,
+      14727,
+      555,
+      14726,
+      556,
+      14690,
+      539,
+      14673,
+      531,
+      14672,
+      532,
+      14676,
+      5359,
+      14678,
+      533,
+      14658,
+      525,
+      14655,
+      524,
+      14656,
+      528,
+      14666,
+      3730,
+      14662,
+      526,
+      14660,
+      527,
+      14664,
+      3709,
+      14669,
+      529,
+      14668,
+      546,
+      14705,
+      40506,
+      14743,
+      40519,
+      14781,
+      40538,
+      14819,
+      598,
+      14823,
+      615,
+      14860,
+      621,
+      14872,
+      620,
+      14869,
+      619,
+      14870,
+      625
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 8,
+   "closed_rings_anatomical": 8,
+   "loops_legacy": 8,
+   "loops_v2": 8,
+   "margin": 4,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3188,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "shoulder_l": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      5.3226,
+      5.2249
+     ],
+     "endpoint_dominant_bone": [
+      "upperarm_l",
+      "upperarm_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.827,
+      0.997
+     ],
+     "endpoints": [
+      30432,
+      48129
+     ],
+     "loops": 6,
+     "path": [
+      48129,
+      30503,
+      48087,
+      30483,
+      8318,
+      30464,
+      8309,
+      30438,
+      48070,
+      30435,
+      48072,
+      30432
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.6863,
+      1.5743
+     ],
+     "endpoint_dominant_bone": [
+      "upperarm_l",
+      "upperarm_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.681,
+      0.73
+     ],
+     "endpoints": [
+      48039,
+      30497
+     ],
+     "loops": 9,
+     "path": [
+      30497,
+      8325,
+      30119,
+      8133,
+      30023,
+      8097,
+      30024,
+      8350,
+      30533,
+      8351,
+      30098,
+      8122,
+      29905,
+      8051,
+      29899,
+      8050,
+      29902,
+      10423,
+      29898,
+      8049,
+      29892,
+      8048,
+      29893,
+      8058,
+      29924,
+      47832,
+      30126,
+      47903,
+      29926,
+      48113,
+      30297,
+      48039
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.5455,
+      3.9364
+     ],
+     "endpoint_dominant_bone": [
+      "upperarm_l",
+      "upperarm_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.65,
+      0.926
+     ],
+     "endpoints": [
+      29950,
+      48080
+     ],
+     "loops": 13,
+     "path": [
+      48080,
+      30054,
+      47854,
+      30050,
+      50161,
+      34716,
+      10427,
+      30113,
+      8130,
+      30111,
+      8129,
+      30009,
+      8093,
+      30011,
+      8347,
+      30091,
+      8119,
+      29894,
+      8048,
+      29893,
+      8058,
+      29924,
+      8068,
+      29948,
+      8140,
+      29950
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.7218,
+      3.1753
+     ],
+     "endpoint_dominant_bone": [
+      "upperarm_l",
+      "upperarm_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.619,
+      0.92
+     ],
+     "endpoints": [
+      30294,
+      30439
+     ],
+     "loops": 10,
+     "path": [
+      30439,
+      8341,
+      30523,
+      8343,
+      30415,
+      8288,
+      30388,
+      8278,
+      30380,
+      8274,
+      30294
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 9,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 6,
+   "loops_v2": 9,
+   "margin": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.609,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "elbow_l": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.2875,
+      1.4034
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_l",
+      "lowerarm_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.56,
+      0.753
+     ],
+     "endpoints": [
+      10523,
+      34849
+     ],
+     "loops": 3,
+     "path": [
+      34849,
+      10524,
+      34848,
+      10523
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.273,
+      0.0525
+     ],
+     "endpoint_dominant_bone": [
+      "spine_02",
+      "spine_02"
+     ],
+     "endpoint_dominant_weight": [
+      0.767,
+      0.597
+     ],
+     "endpoints": [
+      35091,
+      10704
+     ],
+     "D6_undefined": true,
+     "loops": 5,
+     "path": [
+      10704,
+      35153,
+      10782,
+      35117,
+      10690,
+      35091
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      3.8815,
+      3.1278
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_l",
+      "lowerarm_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.969,
+      0.993
+     ],
+     "endpoints": [
+      34068,
+      49713
+     ],
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1066,
+      0.3024
+     ],
+     "endpoint_dominant_bone": [
+      "upperarm_l",
+      "lowerarm_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.576,
+      0.845
+     ],
+     "endpoints": [
+      10025,
+      49705
+     ],
+     "loops": 5,
+     "path": [
+      49705,
+      34026,
+      10059,
+      33991,
+      10042,
+      33955,
+      10025
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [
+    "-p"
+   ],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.5186,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "wrist_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1426,
+      0.3411
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_l",
+      "hand_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.795,
+      0.607
+     ],
+     "endpoints": [
+      50396,
+      34621
+     ],
+     "loops": 5,
+     "path": [
+      34621,
+      50379,
+      34906,
+      50406,
+      34405,
+      50396
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1281,
+      0.0555
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_l",
+      "hand_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.801,
+      0.556
+     ],
+     "endpoints": [
+      34345,
+      34390
+     ],
+     "loops": 4,
+     "path": [
+      34390,
+      50394,
+      34872,
+      49849,
+      34345
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.7973,
+      1.0436
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_l",
+      "hand_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.689,
+      0.638
+     ],
+     "endpoints": [
+      10552,
+      10223
+     ],
+     "loops": 2,
+     "path": [
+      10223,
+      34381,
+      10558,
+      34885,
+      10559,
+      34886,
+      10562,
+      34889,
+      10565,
+      34879,
+      10553,
+      34877,
+      10552
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.0841,
+      0.8295
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_l",
+      "lowerarm_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.786,
+      0.62
+     ],
+     "endpoints": [
+      49840,
+      34384
+     ],
+     "loops": 3,
+     "path": [
+      34384,
+      50385,
+      34874,
+      49840
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 10,
+   "closed_rings_anatomical": 10,
+   "loops_legacy": 10,
+   "loops_v2": 10,
+   "margin": 7,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3262,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8992,
+      0.6144
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0362,
+      0.0758
+     ],
+     "loops": 5,
+     "path": [
+      31100,
+      8607,
+      31099,
+      9772,
+      33452,
+      9803
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1456,
+      0.0641
+     ],
+     "loops": 4,
+     "path": [
+      31006,
+      49494,
+      33442,
+      50235,
+      33508
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.0088,
+      0.5718
+     ],
+     "loops": 6,
+     "path": [
+      48387,
+      31101,
+      8608,
+      31102,
+      9929,
+      33802,
+      9924,
+      33803,
+      9933,
+      33801,
+      49188,
+      31018,
+      49501
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1962,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7751,
+      0.6934
+     ],
+     "loops": 3,
+     "path": [
+      49206,
+      30970,
+      8663,
+      31250,
+      8658
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0021,
+      0.0774
+     ],
+     "loops": 6,
+     "path": [
+      31205,
+      8643,
+      31190,
+      8638,
+      31097,
+      8606,
+      31098
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2104,
+      0.2191
+     ],
+     "loops": 6,
+     "path": [
+      31204,
+      48433,
+      31191,
+      48363,
+      30977,
+      48367,
+      31267
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.2643,
+      0.6424
+     ],
+     "loops": 10,
+     "path": [
+      8569,
+      30973,
+      8605,
+      31095,
+      8664,
+      31205,
+      8643,
+      31190,
+      8638,
+      31097,
+      8606,
+      31098,
+      8668,
+      31266
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 6,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 6,
+   "margin": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.147,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6999,
+      0.6385
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0964,
+      0.0794
+     ],
+     "loops": 8,
+     "path": [
+      31145,
+      48411,
+      31430,
+      48508,
+      31225,
+      48448,
+      31306,
+      48437,
+      31289
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1837,
+      0.2498
+     ],
+     "loops": 8,
+     "path": [
+      31146,
+      48385,
+      31428,
+      48503,
+      31213,
+      48450,
+      31301,
+      48439,
+      31281
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2394,
+      0.3015
+     ],
+     "loops": 8,
+     "path": [
+      8626,
+      31158,
+      8752,
+      31227,
+      8649,
+      31226,
+      8692,
+      31297,
+      8684
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 8,
+   "band_loops_defined": 8,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.11,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.798,
+      0.8595
+     ],
+     "loops": 6,
+     "path": [
+      31479,
+      49584,
+      33823,
+      49227,
+      31486,
+      49550,
+      33464,
+      9905
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0795,
+      0.0995
+     ],
+     "loops": 4,
+     "path": [
+      8799,
+      31573,
+      9778,
+      33465,
+      9809
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1034,
+      0.0593
+     ],
+     "loops": 5,
+     "path": [
+      48736,
+      31955,
+      49514,
+      33472,
+      50216,
+      33473,
+      9813
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1604,
+      0.2117
+     ],
+     "loops": 5,
+     "path": [
+      8770,
+      31487,
+      9777,
+      33463,
+      9808,
+      33527
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    9500,
+    9539
+   ],
+   "within2_own_digit": [
+    9500
+   ],
+   "within2_adjacent_digit": [
+    9539
+   ],
+   "local_loop_cm": 0.2455,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.4237,
+      0.5267
+     ],
+     "loops": 4,
+     "path": [
+      31729,
+      48605,
+      31672,
+      48513,
+      31464,
+      9497,
+      31460
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0335,
+      0.0569
+     ],
+     "loops": 5,
+     "path": [
+      48598,
+      31663,
+      48514,
+      31457,
+      48522,
+      31740
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7112,
+      0.6436
+     ],
+     "loops": 3,
+     "path": [
+      8854,
+      31733,
+      9516,
+      33175,
+      9511,
+      33176
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1233,
+      0.1084
+     ],
+     "loops": 5,
+     "path": [
+      49249,
+      31670,
+      49225,
+      31460,
+      49231,
+      31752
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 5,
+   "closed_rings": 2,
+   "closed_rings_anatomical": 2,
+   "loops_legacy": 3,
+   "loops_v2": 5,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1614,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.5607,
+      0.7189
+     ],
+     "loops": 13,
+     "path": [
+      49259,
+      31875,
+      8928,
+      31874,
+      8932,
+      31563,
+      8794,
+      31546,
+      8788,
+      31547,
+      8809,
+      31605,
+      8888,
+      31631,
+      8818,
+      31632,
+      8944,
+      31701
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0684,
+      0.0785
+     ],
+     "loops": 8,
+     "path": [
+      31619,
+      48597,
+      31904,
+      48694,
+      31699,
+      48634,
+      31780,
+      48623,
+      31763
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2093,
+      0.2395
+     ],
+     "loops": 7,
+     "path": [
+      48571,
+      31902,
+      48689,
+      31687,
+      48636,
+      31775,
+      48625,
+      31755
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0759,
+      0.1176
+     ],
+     "loops": 7,
+     "path": [
+      48570,
+      31905,
+      48688,
+      31702,
+      49255,
+      31785,
+      49253,
+      31772
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1084,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9191,
+      0.8412
+     ],
+     "loops": 7,
+     "path": [
+      9015,
+      32120,
+      9020,
+      32049,
+      8992,
+      31970,
+      49582,
+      33840,
+      48736,
+      31955,
+      49514
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0716,
+      0.0516
+     ],
+     "loops": 4,
+     "path": [
+      8991,
+      32047,
+      9784,
+      33478,
+      9815
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0697,
+      0.1613
+     ],
+     "loops": 5,
+     "path": [
+      31955,
+      49514,
+      33472,
+      50216,
+      33473,
+      9813,
+      33539
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1647,
+      0.0816
+     ],
+     "loops": 4,
+     "path": [
+      31486,
+      49550,
+      33464,
+      50222,
+      33730,
+      50221,
+      33606
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    9538
+   ],
+   "within2_own_digit": [
+    9538
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2095,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7496,
+      0.585
+     ],
+     "loops": 1,
+     "path": [
+      33193,
+      49282,
+      31920,
+      9047,
+      32208
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.042,
+      0.0251
+     ],
+     "loops": 7,
+     "path": [
+      9048,
+      32153,
+      9027,
+      32138,
+      9022,
+      32045,
+      8990,
+      32046
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.2174,
+      0.5842
+     ],
+     "loops": 9,
+     "path": [
+      48788,
+      31916,
+      48774,
+      33193,
+      49282,
+      31920,
+      9047,
+      32208,
+      9048,
+      32153,
+      48775,
+      32152,
+      48805,
+      32139,
+      48735,
+      31927,
+      48739,
+      32215
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1041,
+      0.1149
+     ],
+     "loops": 8,
+     "path": [
+      9047,
+      32198,
+      9042,
+      32143,
+      9024,
+      31932,
+      8955,
+      31933,
+      9059,
+      32226
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 7,
+   "closed_rings": 8,
+   "closed_rings_anatomical": 8,
+   "loops_legacy": 8,
+   "loops_v2": 8,
+   "margin": 6,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1189,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6907,
+      0.719
+     ],
+     "loops": 9,
+     "path": [
+      8980,
+      32021,
+      9001,
+      32079,
+      9080,
+      32105,
+      9010,
+      32106,
+      9136,
+      32175
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0806,
+      0.0436
+     ],
+     "loops": 7,
+     "path": [
+      48757,
+      32376,
+      48875,
+      32161,
+      48822,
+      32249,
+      48811,
+      32229
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1164,
+      0.1213
+     ],
+     "loops": 7,
+     "path": [
+      49284,
+      32377,
+      49299,
+      32164,
+      48818,
+      32250,
+      48807,
+      32231,
+      9062
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1091,
+      0.1773
+     ],
+     "loops": 7,
+     "path": [
+      48783,
+      32378,
+      48880,
+      32173,
+      48820,
+      32254,
+      48809,
+      32237
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1119,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9191,
+      0.8192
+     ],
+     "loops": 7,
+     "path": [
+      33259,
+      49326,
+      32596,
+      49318,
+      32427,
+      49606,
+      33831,
+      57448,
+      49303,
+      32436
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0704,
+      0.024
+     ],
+     "loops": 7,
+     "path": [
+      49607,
+      33845,
+      57445,
+      48922,
+      32429,
+      49492,
+      33485,
+      49867
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9959,
+      0.2018
+     ],
+     "loops": 0,
+     "path": [
+      57438,
+      57437,
+      57439,
+      57445,
+      57435,
+      57434,
+      57436,
+      57448
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0307,
+      0.07
+     ],
+     "loops": 6,
+     "path": [
+      8963,
+      31964,
+      9156,
+      32442,
+      9578,
+      32430,
+      9153,
+      32429,
+      9183,
+      32433,
+      9154,
+      32435,
+      9789,
+      33490,
+      9820
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 0,
+   "band_loops_defined": 6,
+   "closed_rings": 2,
+   "closed_rings_anatomical": 2,
+   "loops_legacy": 2,
+   "loops_v2": 6,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1476,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "pinky_ip1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6945,
+      0.6617
+     ],
+     "loops": 5,
+     "path": [
+      9254,
+      32399,
+      9145,
+      32397,
+      9181,
+      32393,
+      48973,
+      32682,
+      48953
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0467,
+      0.045
+     ],
+     "loops": 6,
+     "path": [
+      48961,
+      32626,
+      48991,
+      32613,
+      48921,
+      32401,
+      48925
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7686,
+      0.186
+     ],
+     "loops": 5,
+     "path": [
+      48962,
+      32667,
+      48961,
+      32627,
+      48953,
+      32672,
+      49319,
+      33260,
+      48955,
+      32676,
+      48964,
+      32633,
+      49478,
+      32634,
+      49483,
+      32616,
+      49473,
+      32462
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0343,
+      0.0536
+     ],
+     "loops": 22,
+     "path": [
+      49319,
+      32672,
+      48953,
+      32627,
+      48961,
+      32667,
+      48962,
+      33262,
+      49321,
+      32670,
+      48978,
+      32628,
+      9220,
+      32630,
+      9247,
+      32449,
+      9158,
+      32448,
+      9242,
+      32603,
+      9210,
+      32468,
+      9165,
+      32470,
+      9976,
+      57456,
+      32467,
+      9164,
+      31980,
+      8968,
+      31981,
+      49595,
+      33834,
+      49431,
+      31984
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 6,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1175,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_ip2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7728,
+      0.674
+     ],
+     "loops": 9,
+     "path": [
+      32511,
+      49045,
+      32504,
+      49053,
+      32525,
+      9185,
+      32476,
+      9167,
+      32477,
+      9190,
+      32544,
+      9276,
+      32588,
+      9205
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0684,
+      0.058
+     ],
+     "loops": 8,
+     "path": [
+      32568,
+      48943,
+      32849,
+      49061,
+      32635,
+      49008,
+      32723,
+      48997,
+      32703
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1845,
+      0.2266
+     ],
+     "loops": 8,
+     "path": [
+      33265,
+      9611,
+      33269,
+      9593,
+      33268,
+      9603,
+      33272,
+      9601,
+      33235
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1706,
+      0.1523
+     ],
+     "loops": 7,
+     "path": [
+      32580,
+      9328,
+      32649,
+      9225,
+      32648,
+      9268,
+      32719,
+      9260
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1115,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "thumb_mcp_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9634,
+      0.2636
+     ],
+     "loops": 2,
+     "path": [
+      49933,
+      34530,
+      49932,
+      34537,
+      49940,
+      34536,
+      49941,
+      57865,
+      57864,
+      57863
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.0403,
+      0.9438
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.0669,
+      0.2833
+     ],
+     "loops": 5,
+     "path": [
+      34529,
+      10293,
+      34528,
+      10294,
+      34525,
+      10292,
+      34526,
+      49934,
+      34545,
+      57933,
+      57932,
+      49963
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9764,
+      0.6893
+     ],
+     "loops": 6,
+     "path": [
+      49936,
+      57949,
+      10304,
+      57957,
+      34546,
+      57959,
+      57958,
+      49942,
+      33598
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [],
+   "band_loops_legacy": 2,
+   "band_loops_defined": null,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 2,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    34547,
+    34548,
+    34550,
+    50252,
+    50372
+   ],
+   "within2_own_digit": [
+    34547,
+    34548,
+    34550,
+    50252,
+    50372
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2023,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS_FALLBACK_CLOSED_RING",
+   "status_D1_D3": "PASS_FALLBACK_CLOSED_RING"
+  },
+  "thumb_ip_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2886,
+      0.2084
+     ],
+     "loops": 7,
+     "path": [
+      32974,
+      9398,
+      33018,
+      9390,
+      32871,
+      9337,
+      32870,
+      9384
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1821,
+      0.1095
+     ],
+     "loops": 6,
+     "path": [
+      33039,
+      49125,
+      33024,
+      49072,
+      32866,
+      49118,
+      33011
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0969,
+      0.0987
+     ],
+     "loops": 6,
+     "path": [
+      33034,
+      49127,
+      33016,
+      49091,
+      32869,
+      49122,
+      33005
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8743,
+      0.7091
+     ],
+     "loops": 1,
+     "path": [
+      32978,
+      49181,
+      32975,
+      49177,
+      32973
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 6,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "margin": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1819,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "hip_l": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3431,
+      0.2918
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_l",
+      "lowerarm_l"
+     ],
+     "endpoint_dominant_weight": [
+      1.0,
+      0.989
+     ],
+     "endpoints": [
+      50334,
+      34856
+     ],
+     "D6_undefined": true,
+     "loops": 4,
+     "path": [
+      34856,
+      10531,
+      34855,
+      10530,
+      34854,
+      50334
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.541,
+      1.434
+     ],
+     "endpoint_dominant_bone": [
+      "thigh_l",
+      "thigh_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.459,
+      0.703
+     ],
+     "endpoints": [
+      50773,
+      35585
+     ],
+     "loops": 5,
+     "path": [
+      35585,
+      50783,
+      35584,
+      50778,
+      35572,
+      57735,
+      50773
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      6.9599,
+      7.3971
+     ],
+     "endpoint_dominant_bone": [
+      "pelvis",
+      "thigh_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.633,
+      0.73
+     ],
+     "endpoints": [
+      50728,
+      50939
+     ],
+     "loops": 7,
+     "path": [
+      50939,
+      35505,
+      50938,
+      35503,
+      50740,
+      35487,
+      50735,
+      35471,
+      50728
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.7764,
+      2.6996
+     ],
+     "endpoint_dominant_bone": [
+      "pelvis",
+      "thigh_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.518,
+      0.635
+     ],
+     "endpoints": [
+      10912,
+      50782
+     ],
+     "loops": 6,
+     "path": [
+      50782,
+      35583,
+      50777,
+      35571,
+      57732,
+      50772,
+      35559,
+      10912
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [
+    "+p"
+   ],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 5,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 5,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.9022,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED"
+  },
+  "knee_l": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      2.9436,
+      1.7777
+     ],
+     "endpoint_dominant_bone": [
+      "thigh_l",
+      "thigh_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.702,
+      0.608
+     ],
+     "endpoints": [
+      11253,
+      54523
+     ],
+     "loops": 2,
+     "path": [
+      54523,
+      51083,
+      36253,
+      11253
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      4.869,
+      2.9881
+     ],
+     "endpoint_dominant_bone": [
+      "calf_l",
+      "thigh_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.851,
+      0.516
+     ],
+     "endpoints": [
+      53332,
+      11268
+     ],
+     "loops": 2,
+     "path": [
+      11268,
+      54580,
+      36285,
+      51106,
+      36271,
+      51099,
+      36287,
+      52976,
+      36293,
+      51109,
+      36294,
+      51097,
+      39608,
+      53371,
+      36297,
+      52977,
+      36300,
+      53332
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      2.5718,
+      1.5673
+     ],
+     "endpoint_dominant_bone": [
+      "thigh_l",
+      "thigh_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.733,
+      0.595
+     ],
+     "endpoints": [
+      54444,
+      54525
+     ],
+     "loops": 5,
+     "path": [
+      54525,
+      54551,
+      54538,
+      54537,
+      54515,
+      54514,
+      54516,
+      54528,
+      54529,
+      36250,
+      11251,
+      54484,
+      36211,
+      54445,
+      54443,
+      54444
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      5.574,
+      4.9509
+     ],
+     "endpoint_dominant_bone": [
+      "calf_l",
+      "calf_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.86,
+      0.978
+     ],
+     "endpoints": [
+      36326,
+      11311
+     ],
+     "loops": 2,
+     "path": [
+      11311,
+      36370,
+      11310,
+      36364,
+      11307,
+      54701,
+      36326
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 17,
+   "closed_rings_anatomical": 17,
+   "loops_legacy": 17,
+   "loops_v2": 17,
+   "margin": 13,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4805,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ankle_l": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1927,
+      1.1843
+     ],
+     "endpoint_dominant_bone": [
+      "calf_l",
+      "foot_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.564,
+      0.929
+     ],
+     "endpoints": [
+      12942,
+      39528
+     ],
+     "loops": 4,
+     "path": [
+      39528,
+      53312,
+      39522,
+      53313,
+      39525,
+      12942
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      2.8517,
+      4.1667
+     ],
+     "endpoint_dominant_bone": [
+      "calf_l",
+      "foot_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.712,
+      0.998
+     ],
+     "endpoints": [
+      39558,
+      52464
+     ],
+     "loops": 14,
+     "path": [
+      52464,
+      39454,
+      52281,
+      38424,
+      52313,
+      39461,
+      12925,
+      39483,
+      12924,
+      39474,
+      12921,
+      39473,
+      12923,
+      39477,
+      12922,
+      39480,
+      55453,
+      12975,
+      55413,
+      39558
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.6931,
+      3.3425
+     ],
+     "endpoint_dominant_bone": [
+      "calf_l",
+      "foot_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.724,
+      1.0
+     ],
+     "endpoints": [
+      39587,
+      12909
+     ],
+     "loops": 13,
+     "path": [
+      12909,
+      39454,
+      12953,
+      39546,
+      12952,
+      39543,
+      12951,
+      39544,
+      12954,
+      39547,
+      12955,
+      39549,
+      55455,
+      12976,
+      39581,
+      12984,
+      39576,
+      12971,
+      39575,
+      12980,
+      39587
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.4812,
+      2.3597
+     ],
+     "endpoint_dominant_bone": [
+      "calf_l",
+      "foot_l"
+     ],
+     "endpoint_dominant_weight": [
+      0.639,
+      0.868
+     ],
+     "endpoints": [
+      39532,
+      39286
+     ],
+     "loops": 3,
+     "path": [
+      39286,
+      12988,
+      39493,
+      12928,
+      39492,
+      12959,
+      39555,
+      52556,
+      39480,
+      52573,
+      39550,
+      52566,
+      39549,
+      52568,
+      39532
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4444,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe1_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1329,
+      0.1323
+     ],
+     "loops": 2,
+     "path": [
+      12779,
+      57507,
+      39148
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9106,
+      0.9512
+     ],
+     "loops": 1,
+     "path": [
+      12389,
+      38302
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3869,
+      0.2373
+     ],
+     "D5_undefined": true,
+     "loops": 1,
+     "path": [
+      57504,
+      57513,
+      53020
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.2827,
+      0.3942
+     ],
+     "D5_undefined": true,
+     "loops": 5,
+     "path": [
+      38455,
+      12467,
+      38317,
+      12395,
+      38293,
+      52276,
+      38275,
+      53020,
+      39148,
+      12778,
+      38301,
+      12389
+     ]
+    }
+   ],
+   "D5_undefined_sides": [
+    "+q",
+    "-q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p"
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 1,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3147,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES+D5_INTERDIGITAL_UNDEFINED"
+  },
+  "toe1_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1074,
+      0.1356
+     ],
+     "loops": 5,
+     "path": [
+      53022,
+      36816,
+      52731,
+      36839,
+      53017,
+      36828
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7402,
+      0.915
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0562,
+      0.089
+     ],
+     "loops": 5,
+     "path": [
+      11534,
+      36817,
+      11543,
+      36832,
+      11539,
+      36754
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0418,
+      0.0747
+     ],
+     "loops": 18,
+     "path": [
+      52292,
+      38344,
+      52876,
+      38358,
+      52877,
+      38380,
+      52878,
+      38402,
+      52881,
+      38440,
+      57560,
+      52882,
+      38466,
+      52883,
+      38306,
+      52884,
+      57512,
+      38283,
+      52885,
+      38261,
+      52727,
+      36767,
+      11572,
+      36755,
+      11517,
+      36754,
+      52729,
+      39152,
+      53018,
+      36758,
+      51315
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 5,
+   "band_loops_defined": 5,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "margin": 3,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2038,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1572,
+      0.0246
+     ],
+     "loops": 3,
+     "path": [
+      13121,
+      38439,
+      57808,
+      57558
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8287,
+      0.7654
+     ],
+     "loops": 11,
+     "path": [
+      52882,
+      57560,
+      38440,
+      12456,
+      38414,
+      52308,
+      38400,
+      52798,
+      39756,
+      52448,
+      38397,
+      52303,
+      38434,
+      12457,
+      57540,
+      38456,
+      12468,
+      38480,
+      12597
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.24,
+      0.0256
+     ],
+     "loops": 2,
+     "path": [
+      57538,
+      52311,
+      38435
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.5922,
+      0.1597
+     ],
+     "D5_undefined": true,
+     "merged": true
+    }
+   ],
+   "D5_undefined_sides": [
+    "-q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    57538,
+    57550,
+    57820,
+    57821
+   ],
+   "within2_own_digit": [
+    57538,
+    57550,
+    57820,
+    57821
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.193,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0615,
+      0.1043
+     ],
+     "loops": 2,
+     "path": [
+      39743,
+      13109,
+      39741
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.5708,
+      0.5654
+     ],
+     "loops": 6,
+     "path": [
+      12414,
+      38370,
+      12424,
+      38392,
+      12434,
+      38399,
+      12429,
+      38401,
+      13122,
+      38398,
+      12428,
+      38396
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.023,
+      0.0159
+     ],
+     "loops": 5,
+     "path": [
+      36818,
+      51337,
+      36842,
+      51336,
+      36833,
+      51333
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0792,
+      0.0734
+     ],
+     "loops": 3,
+     "path": [
+      38626,
+      12532,
+      38625,
+      12542
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1917,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0724,
+      0.0044
+     ],
+     "loops": 3,
+     "path": [
+      13071,
+      39693,
+      13070,
+      39694
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8152,
+      0.9048
+     ],
+     "loops": 3,
+     "path": [
+      36925,
+      11585,
+      36933,
+      11580
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.079,
+      0.0051
+     ],
+     "loops": 3,
+     "path": [
+      36996,
+      51357,
+      37056,
+      52774
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0731,
+      0.1518
+     ],
+     "loops": 9,
+     "path": [
+      52839,
+      38596,
+      52334,
+      38507,
+      12478,
+      38482,
+      12471,
+      38483,
+      12486,
+      38522,
+      12482
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 2,
+   "closed_rings_anatomical": 2,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1332,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1618,
+      0.0818
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.5695,
+      0.9602
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2171,
+      0.0728
+     ],
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3575,
+      0.0546
+     ],
+     "D5_undefined": true,
+     "merged": true
+    }
+   ],
+   "D5_undefined_sides": [
+    "-q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [],
+   "band_loops_legacy": 0,
+   "band_loops_defined": null,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 0,
+   "loops_v2": 0,
+   "margin": -2,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1967,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": false,
+   "strict_D1_D3": false,
+   "status_D1": "FAIL_LOOPS",
+   "status_D1_D3": "FAIL_LOOPS"
+  },
+  "toe3_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0201,
+      0.078
+     ],
+     "loops": 3,
+     "path": [
+      39760,
+      13127,
+      39735,
+      13102
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.5658,
+      0.8456
+     ],
+     "loops": 1,
+     "path": [
+      38678,
+      52824,
+      38692,
+      12567
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0852,
+      0.0756
+     ],
+     "loops": 2,
+     "path": [
+      38371,
+      12425,
+      38393
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0923,
+      0.214
+     ],
+     "no_path": true
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 2,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1637,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0754,
+      0.0127
+     ],
+     "loops": 6,
+     "path": [
+      39717,
+      13089,
+      39716,
+      13088,
+      39123,
+      12755,
+      39124
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7931,
+      0.6827
+     ],
+     "loops": 6,
+     "path": [
+      37050,
+      52789,
+      38421,
+      52862,
+      38332,
+      52861,
+      38361,
+      12415,
+      38352
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.086,
+      0.0445
+     ],
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1196,
+      0.1249
+     ],
+     "loops": 4,
+     "path": [
+      52331,
+      38524,
+      52333,
+      38577,
+      52952
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1102,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2232,
+      0.0175
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6826,
+      0.6683
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.229,
+      0.0478
+     ],
+     "loops": 2,
+     "path": [
+      38987,
+      52415,
+      39020,
+      52421
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.288,
+      0.0344
+     ],
+     "D5_undefined": true,
+     "merged": true
+    }
+   ],
+   "D5_undefined_sides": [
+    "-q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2019,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0877,
+      0.0147
+     ],
+     "loops": 4,
+     "path": [
+      39718,
+      13091,
+      39720,
+      13092,
+      39721
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8032,
+      0.5075
+     ],
+     "loops": 7,
+     "path": [
+      12687,
+      38982,
+      12697,
+      39004,
+      12717,
+      39038,
+      12727,
+      38770,
+      12598
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0803,
+      0.0288
+     ],
+     "loops": 8,
+     "path": [
+      52411,
+      38911,
+      52921,
+      39718,
+      52443,
+      38915,
+      52410,
+      38934,
+      52657,
+      38948,
+      52658,
+      38970,
+      52944,
+      38992,
+      52913,
+      39026,
+      52912,
+      39049,
+      52911,
+      38761
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0452,
+      0.1993
+     ],
+     "loops": 5,
+     "path": [
+      13266,
+      39934,
+      13222,
+      39933,
+      13232,
+      39964
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1475,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0481,
+      0.0303
+     ],
+     "loops": 6,
+     "path": [
+      13103,
+      39736,
+      13104,
+      39738,
+      13105,
+      39739,
+      13148
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.4655,
+      0.7593
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0244,
+      0.033
+     ],
+     "loops": 5,
+     "path": [
+      52373,
+      38810,
+      52377,
+      38870,
+      52939,
+      39012
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0864,
+      0.1018
+     ],
+     "loops": 4,
+     "path": [
+      38814,
+      52387,
+      38867,
+      12648,
+      38895,
+      12707
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1104,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j1_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.079,
+      0.0309
+     ],
+     "loops": 3,
+     "path": [
+      39774,
+      13144,
+      57649,
+      39775
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6965,
+      0.5877
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.107,
+      0.0749
+     ],
+     "loops": 3,
+     "path": [
+      52427,
+      39093,
+      57635,
+      52428,
+      39104
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6275,
+      0.207
+     ],
+     "loops": 4,
+     "path": [
+      57646,
+      57647,
+      57650,
+      57649,
+      57648,
+      57636,
+      57635,
+      57634,
+      39095,
+      52438,
+      39111
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1984,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j2_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0086,
+      0.0349
+     ],
+     "loops": 4,
+     "path": [
+      40038,
+      13278,
+      40039,
+      13284,
+      39780
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6608,
+      0.7458
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0245,
+      0.1354
+     ],
+     "loops": 13,
+     "path": [
+      38983,
+      52659,
+      38975,
+      12694,
+      38997,
+      12714,
+      39031,
+      12724,
+      39053,
+      12753,
+      39106,
+      57639,
+      12745,
+      39086,
+      12737,
+      39087,
+      53252,
+      39066,
+      53251,
+      39082,
+      53249,
+      39780,
+      53250,
+      39085,
+      53254
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.2584,
+      0.2966
+     ],
+     "D5_undefined": true,
+     "loops": 4,
+     "path": [
+      13242,
+      39986,
+      13252,
+      39082,
+      12735
+     ]
+    }
+   ],
+   "D5_undefined_sides": [
+    "-q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1317,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j3_l": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0738,
+      0.0177
+     ],
+     "loops": 9,
+     "path": [
+      40042,
+      13282,
+      40044,
+      13283,
+      40045,
+      13293,
+      40037,
+      13276,
+      39935,
+      53163,
+      39965
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7039,
+      0.4858
+     ],
+     "loops": 6,
+     "path": [
+      12674,
+      38953,
+      12684,
+      38975,
+      12694,
+      38995,
+      12698
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0856,
+      0.0286
+     ],
+     "loops": 10,
+     "path": [
+      53109,
+      39828,
+      53117,
+      39888,
+      53219,
+      40021,
+      53161,
+      39928,
+      53159,
+      39960,
+      53153
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0364,
+      0.0911
+     ],
+     "loops": 8,
+     "path": [
+      53131,
+      39885,
+      53218,
+      40025,
+      53146,
+      39932,
+      53158,
+      39952,
+      13237,
+      39978
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 8,
+   "closed_rings": 12,
+   "closed_rings_anatomical": 12,
+   "loops_legacy": 12,
+   "loops_v2": 12,
+   "margin": 10,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1097,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "shoulder_r": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.6862,
+      1.5743
+     ],
+     "endpoint_dominant_bone": [
+      "upperarm_r",
+      "upperarm_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.681,
+      0.73
+     ],
+     "endpoints": [
+      41420,
+      17190
+     ],
+     "loops": 9,
+     "path": [
+      17190,
+      1653,
+      16764,
+      1445,
+      16668,
+      1409,
+      16669,
+      1678,
+      17226,
+      1679,
+      16743,
+      1434,
+      16537,
+      1359,
+      16531,
+      1358,
+      16534,
+      3756,
+      16530,
+      1357,
+      16524,
+      1356,
+      16525,
+      1366,
+      16556,
+      41211,
+      16771,
+      41282,
+      16558,
+      41494,
+      16971,
+      41420
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      5.3302,
+      5.3316
+     ],
+     "endpoint_dominant_bone": [
+      "upperarm_r",
+      "upperarm_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.857,
+      0.999
+     ],
+     "endpoints": [
+      41453,
+      17198
+     ],
+     "loops": 6,
+     "path": [
+      17198,
+      1657,
+      17178,
+      1647,
+      17176,
+      1646,
+      17157,
+      1637,
+      17131,
+      41451,
+      17128,
+      41453
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.5455,
+      3.9364
+     ],
+     "endpoint_dominant_bone": [
+      "upperarm_r",
+      "upperarm_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.65,
+      0.926
+     ],
+     "endpoints": [
+      16582,
+      41461
+     ],
+     "loops": 13,
+     "path": [
+      41461,
+      16699,
+      41233,
+      16695,
+      43543,
+      21424,
+      3760,
+      16758,
+      1442,
+      16756,
+      1441,
+      16654,
+      1405,
+      16656,
+      1675,
+      16736,
+      1431,
+      16526,
+      1356,
+      16525,
+      1366,
+      16556,
+      1376,
+      16580,
+      1452,
+      16582
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.7217,
+      3.1755
+     ],
+     "endpoint_dominant_bone": [
+      "upperarm_r",
+      "upperarm_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.619,
+      0.919
+     ],
+     "endpoints": [
+      16968,
+      17132
+     ],
+     "loops": 10,
+     "path": [
+      17132,
+      1669,
+      17216,
+      1671,
+      17108,
+      1616,
+      17081,
+      1606,
+      17073,
+      1602,
+      16968
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 9,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 6,
+   "loops_v2": 9,
+   "margin": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.609,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "elbow_r": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.273,
+      0.0525
+     ],
+     "endpoint_dominant_bone": [
+      "spine_02",
+      "spine_02"
+     ],
+     "endpoint_dominant_weight": [
+      0.767,
+      0.597
+     ],
+     "endpoints": [
+      21825,
+      4048
+     ],
+     "D6_undefined": true,
+     "loops": 5,
+     "path": [
+      4048,
+      21894,
+      4139,
+      21854,
+      4033,
+      21825
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.2875,
+      1.4034
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_r",
+      "lowerarm_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.56,
+      0.753
+     ],
+     "endpoints": [
+      3858,
+      21562
+     ],
+     "loops": 3,
+     "path": [
+      21562,
+      3859,
+      21561,
+      3858
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      4.1234,
+      4.2982
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_r",
+      "lowerarm_r"
+     ],
+     "endpoint_dominant_weight": [
+      1.0,
+      1.0
+     ],
+     "endpoints": [
+      20759,
+      43109
+     ],
+     "loops": 2,
+     "path": [
+      43109,
+      20795,
+      3420,
+      20759
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1066,
+      0.3024
+     ],
+     "endpoint_dominant_bone": [
+      "upperarm_r",
+      "lowerarm_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.576,
+      0.845
+     ],
+     "endpoints": [
+      3357,
+      43086
+     ],
+     "loops": 5,
+     "path": [
+      43086,
+      20731,
+      3391,
+      20696,
+      3374,
+      20660,
+      3357
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [
+    "+p"
+   ],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 3,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.5186,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "wrist_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1277,
+      0.0555
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_r",
+      "hand_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.803,
+      0.558
+     ],
+     "endpoints": [
+      21050,
+      21095
+     ],
+     "loops": 4,
+     "path": [
+      21095,
+      43776,
+      21585,
+      43230,
+      21050
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1422,
+      0.3407
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_r",
+      "hand_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.798,
+      0.609
+     ],
+     "endpoints": [
+      43778,
+      21326
+     ],
+     "loops": 5,
+     "path": [
+      21326,
+      43761,
+      21619,
+      43788,
+      21110,
+      43778
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.7973,
+      1.0434
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_r",
+      "hand_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.689,
+      0.636
+     ],
+     "endpoints": [
+      3887,
+      3555
+     ],
+     "loops": 2,
+     "path": [
+      3555,
+      21086,
+      3893,
+      21598,
+      3894,
+      21599,
+      3897,
+      21602,
+      3900,
+      21592,
+      3888,
+      21590,
+      3887
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.084,
+      0.8289
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_r",
+      "lowerarm_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.785,
+      0.625
+     ],
+     "endpoints": [
+      43221,
+      21089
+     ],
+     "loops": 3,
+     "path": [
+      21089,
+      43767,
+      21587,
+      43221
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 10,
+   "closed_rings_anatomical": 10,
+   "loops_legacy": 10,
+   "loops_v2": 10,
+   "margin": 7,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3261,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0362,
+      0.0758
+     ],
+     "loops": 5,
+     "path": [
+      17805,
+      1939,
+      17804,
+      3104,
+      20157,
+      3135
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6178,
+      0.7707
+     ],
+     "loops": 9,
+     "path": [
+      19825,
+      2795,
+      19826,
+      3266,
+      19819,
+      2792,
+      19820,
+      3577,
+      20316,
+      3174
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1456,
+      0.0641
+     ],
+     "loops": 4,
+     "path": [
+      17711,
+      42875,
+      20147,
+      43617,
+      20213
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9153,
+      0.5718
+     ],
+     "loops": 6,
+     "path": [
+      41768,
+      17806,
+      1940,
+      17807,
+      3261,
+      20507,
+      3256,
+      20508,
+      3265,
+      19822,
+      2793,
+      19821
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1962,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0021,
+      0.0774
+     ],
+     "loops": 6,
+     "path": [
+      17910,
+      1975,
+      17895,
+      1970,
+      17802,
+      1938,
+      17803
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.544,
+      0.5945
+     ],
+     "loops": 3,
+     "path": [
+      17966,
+      42586,
+      17956,
+      42592,
+      17900,
+      41793
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2104,
+      0.2191
+     ],
+     "loops": 6,
+     "path": [
+      17909,
+      41814,
+      17896,
+      41744,
+      17682,
+      41748,
+      17972
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.2643,
+      0.3532
+     ],
+     "loops": 5,
+     "path": [
+      41793,
+      17894,
+      41709,
+      17686,
+      41717,
+      17971
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 6,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 6,
+   "margin": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.147,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "index_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0964,
+      0.0794
+     ],
+     "loops": 8,
+     "path": [
+      17850,
+      41792,
+      18135,
+      41889,
+      17930,
+      41829,
+      18011,
+      41818,
+      17994
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6999,
+      0.6385
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1837,
+      0.2498
+     ],
+     "loops": 8,
+     "path": [
+      17851,
+      41766,
+      18133,
+      41884,
+      17918,
+      41831,
+      18006,
+      41820,
+      17986
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2394,
+      0.3015
+     ],
+     "loops": 8,
+     "path": [
+      1958,
+      17863,
+      2084,
+      17932,
+      1981,
+      17931,
+      2024,
+      18002,
+      2016
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 8,
+   "band_loops_defined": 8,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.11,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0795,
+      0.0995
+     ],
+     "loops": 4,
+     "path": [
+      2131,
+      18278,
+      3110,
+      20170,
+      3141
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6213,
+      0.8595
+     ],
+     "loops": 6,
+     "path": [
+      18184,
+      2100,
+      18185,
+      3304,
+      18193,
+      2102,
+      18192,
+      3109
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1034,
+      0.0593
+     ],
+     "loops": 5,
+     "path": [
+      42117,
+      18660,
+      42895,
+      20177,
+      43598,
+      20178,
+      3145
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1604,
+      0.2117
+     ],
+     "loops": 5,
+     "path": [
+      2102,
+      18192,
+      3109,
+      20168,
+      3140,
+      20232
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    2832,
+    2871
+   ],
+   "within2_own_digit": [
+    2832
+   ],
+   "within2_adjacent_digit": [
+    2871
+   ],
+   "local_loop_cm": 0.2455,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0335,
+      0.0569
+     ],
+     "loops": 5,
+     "path": [
+      41979,
+      18368,
+      41895,
+      18162,
+      41903,
+      18445
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.5155,
+      0.2993
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7388,
+      0.6436
+     ],
+     "loops": 3,
+     "path": [
+      2186,
+      18438,
+      2848,
+      18440,
+      42624,
+      18430,
+      42630
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1233,
+      0.1084
+     ],
+     "loops": 5,
+     "path": [
+      42630,
+      18375,
+      42606,
+      18165,
+      42612,
+      18457
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 5,
+   "closed_rings": 2,
+   "closed_rings_anatomical": 2,
+   "loops_legacy": 3,
+   "loops_v2": 5,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1614,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "middle_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0684,
+      0.0785
+     ],
+     "loops": 8,
+     "path": [
+      18324,
+      41978,
+      18609,
+      42075,
+      18404,
+      42015,
+      18485,
+      42004,
+      18468
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.5607,
+      0.7625
+     ],
+     "loops": 14,
+     "path": [
+      19894,
+      42067,
+      18579,
+      2264,
+      18268,
+      2126,
+      18251,
+      2120,
+      18252,
+      2141,
+      18310,
+      2220,
+      18336,
+      2150,
+      18337,
+      2276,
+      18406
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2093,
+      0.2395
+     ],
+     "loops": 7,
+     "path": [
+      41952,
+      18607,
+      42070,
+      18392,
+      42017,
+      18480,
+      42006,
+      18460
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0759,
+      0.1176
+     ],
+     "loops": 7,
+     "path": [
+      41951,
+      18610,
+      42069,
+      18407,
+      42636,
+      18490,
+      42634,
+      18477
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1084,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0716,
+      0.0516
+     ],
+     "loops": 4,
+     "path": [
+      2323,
+      18752,
+      3116,
+      20183,
+      3147
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9191,
+      0.7813
+     ],
+     "loops": 7,
+     "path": [
+      18825,
+      2352,
+      18754,
+      2324,
+      18675,
+      42963,
+      20545,
+      42117,
+      18660,
+      42895
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0697,
+      0.1613
+     ],
+     "loops": 5,
+     "path": [
+      18660,
+      42895,
+      20177,
+      43598,
+      20178,
+      3145,
+      20244
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1647,
+      0.0816
+     ],
+     "loops": 4,
+     "path": [
+      18191,
+      42931,
+      20169,
+      43604,
+      20435,
+      43603,
+      20311
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    2870
+   ],
+   "within2_own_digit": [
+    2870
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2095,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.042,
+      0.0251
+     ],
+     "loops": 7,
+     "path": [
+      2380,
+      18858,
+      2359,
+      18843,
+      2354,
+      18750,
+      2322,
+      18751
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7496,
+      0.7035
+     ],
+     "loops": 2,
+     "path": [
+      18624,
+      42168,
+      18913
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.2174,
+      0.6958
+     ],
+     "loops": 10,
+     "path": [
+      18624,
+      42168,
+      18913,
+      2380,
+      18858,
+      42156,
+      18857,
+      42186,
+      18844,
+      42116,
+      18632,
+      42120,
+      18920
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1041,
+      0.1149
+     ],
+     "loops": 8,
+     "path": [
+      2379,
+      18903,
+      2374,
+      18848,
+      2356,
+      18637,
+      2287,
+      18638,
+      2391,
+      18931
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 7,
+   "closed_rings": 8,
+   "closed_rings_anatomical": 8,
+   "loops_legacy": 8,
+   "loops_v2": 8,
+   "margin": 6,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1189,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ring_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0806,
+      0.0436
+     ],
+     "loops": 7,
+     "path": [
+      42138,
+      19081,
+      42256,
+      18866,
+      42203,
+      18954,
+      42192,
+      18934
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7732,
+      0.7546
+     ],
+     "loops": 9,
+     "path": [
+      18725,
+      2312,
+      18724,
+      42113,
+      18783,
+      42133,
+      18970,
+      42105,
+      18798,
+      42164
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1164,
+      0.1213
+     ],
+     "loops": 7,
+     "path": [
+      42665,
+      19082,
+      42680,
+      18869,
+      42199,
+      18955,
+      42188,
+      18936,
+      2394
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1091,
+      0.1773
+     ],
+     "loops": 7,
+     "path": [
+      42164,
+      19083,
+      42261,
+      18878,
+      42201,
+      18959,
+      42190,
+      18942
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 9,
+   "closed_rings_anatomical": 9,
+   "loops_legacy": 9,
+   "loops_v2": 9,
+   "margin": 7,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1119,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0704,
+      0.024
+     ],
+     "loops": 7,
+     "path": [
+      42988,
+      20550,
+      57473,
+      42303,
+      19134,
+      42873,
+      20190,
+      43248
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7269,
+      0.9427
+     ],
+     "loops": 11,
+     "path": [
+      2514,
+      19225,
+      2576,
+      19312,
+      2544,
+      19228,
+      2516,
+      19229,
+      3300,
+      57462,
+      19227,
+      2515
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.9959,
+      0.2018
+     ],
+     "loops": 0,
+     "path": [
+      57465,
+      57466,
+      57467,
+      57473,
+      57462,
+      57463,
+      57464,
+      57476
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0307,
+      0.07
+     ],
+     "loops": 6,
+     "path": [
+      2295,
+      18669,
+      2488,
+      19147,
+      2910,
+      19135,
+      2485,
+      19134,
+      2515,
+      19138,
+      2486,
+      19140,
+      3121,
+      20195,
+      3152
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 0,
+   "band_loops_defined": 6,
+   "closed_rings": 2,
+   "closed_rings_anatomical": 2,
+   "loops_legacy": 2,
+   "loops_v2": 6,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1476,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "pinky_ip1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0467,
+      0.045
+     ],
+     "loops": 6,
+     "path": [
+      42342,
+      19331,
+      42372,
+      19318,
+      42302,
+      19106,
+      42306
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7422,
+      0.7522
+     ],
+     "loops": 7,
+     "path": [
+      19428,
+      42378,
+      19408,
+      42304,
+      19102,
+      2513,
+      19098,
+      2476,
+      19099,
+      2571,
+      19377
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.809,
+      0.186
+     ],
+     "loops": 1,
+     "path": [
+      42343,
+      19374,
+      2564,
+      19373,
+      2572,
+      19387,
+      2571
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0343,
+      0.0536
+     ],
+     "loops": 22,
+     "path": [
+      42700,
+      19377,
+      42334,
+      19332,
+      42342,
+      19372,
+      42343,
+      19967,
+      42702,
+      19375,
+      42359,
+      19333,
+      2552,
+      19335,
+      2579,
+      19154,
+      2490,
+      19153,
+      2574,
+      19308,
+      2542,
+      19173,
+      2497,
+      19175,
+      3308,
+      57483,
+      19172,
+      2496,
+      18685,
+      2300,
+      18686,
+      42976,
+      20539,
+      42812,
+      18689
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 6,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 9,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1175,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "pinky_ip2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0684,
+      0.058
+     ],
+     "loops": 8,
+     "path": [
+      19273,
+      42324,
+      19554,
+      42442,
+      19340,
+      42389,
+      19428,
+      42378,
+      19408
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7719,
+      0.4646
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1845,
+      0.2266
+     ],
+     "loops": 8,
+     "path": [
+      19970,
+      2943,
+      19974,
+      2925,
+      19973,
+      2935,
+      19977,
+      2933,
+      19940
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1706,
+      0.1524
+     ],
+     "loops": 7,
+     "path": [
+      19285,
+      2660,
+      19354,
+      2557,
+      19353,
+      2600,
+      19424,
+      2592
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 7,
+   "band_loops_defined": 7,
+   "closed_rings": 11,
+   "closed_rings_anatomical": 11,
+   "loops_legacy": 11,
+   "loops_v2": 11,
+   "margin": 9,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1115,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "thumb_mcp_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.1031,
+      0.6919
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.5728,
+      0.2636
+     ],
+     "loops": 5,
+     "path": [
+      43314,
+      21235,
+      43313,
+      21242,
+      43321,
+      58081,
+      3638,
+      58073,
+      58072,
+      58071,
+      58070,
+      58069,
+      58068
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3648,
+      0.2833
+     ],
+     "loops": 8,
+     "path": [
+      21234,
+      3625,
+      21233,
+      3626,
+      21230,
+      3624,
+      21231,
+      3631,
+      21227,
+      43318,
+      58009,
+      58008,
+      58007,
+      58006,
+      58005,
+      58004,
+      20394
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.1622,
+      0.9898
+     ],
+     "loops": 9,
+     "path": [
+      3628,
+      21241,
+      3638,
+      58075,
+      58080,
+      58079,
+      58078,
+      58077,
+      58076,
+      20423,
+      43749
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [],
+   "band_loops_legacy": 5,
+   "band_loops_defined": null,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 5,
+   "loops_v2": 4,
+   "margin": 1,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    21252,
+    21255
+   ],
+   "within2_own_digit": [
+    21252,
+    21255
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1968,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "thumb_ip_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1821,
+      0.1095
+     ],
+     "loops": 6,
+     "path": [
+      19744,
+      42506,
+      19729,
+      42453,
+      19571,
+      42499,
+      19716
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2886,
+      0.2084
+     ],
+     "loops": 7,
+     "path": [
+      19679,
+      2730,
+      19723,
+      2722,
+      19576,
+      2669,
+      19575,
+      2716
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0969,
+      0.0987
+     ],
+     "loops": 6,
+     "path": [
+      19739,
+      42508,
+      19721,
+      42472,
+      19574,
+      42503,
+      19710
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8235,
+      0.6459
+     ],
+     "loops": 13,
+     "path": [
+      2782,
+      19690,
+      2709,
+      19689,
+      2736,
+      19736,
+      2728,
+      19573,
+      2668,
+      19572,
+      2719,
+      19717,
+      3588,
+      21161
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 6,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "margin": 4,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1814,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "hip_r": {
+   "required": 5,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.5412,
+      1.434
+     ],
+     "endpoint_dominant_bone": [
+      "thigh_r",
+      "thigh_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.46,
+      0.703
+     ],
+     "endpoints": [
+      44109,
+      22404
+     ],
+     "loops": 5,
+     "path": [
+      22404,
+      44119,
+      22403,
+      44114,
+      22391,
+      57693,
+      44109
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3431,
+      0.2918
+     ],
+     "endpoint_dominant_bone": [
+      "lowerarm_r",
+      "lowerarm_r"
+     ],
+     "endpoint_dominant_weight": [
+      1.0,
+      0.989
+     ],
+     "endpoints": [
+      43716,
+      21569
+     ],
+     "D6_undefined": true,
+     "loops": 4,
+     "path": [
+      21569,
+      3866,
+      21568,
+      3865,
+      21567,
+      43716
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      7.5775,
+      7.5439
+     ],
+     "endpoint_dominant_bone": [
+      "thigh_r",
+      "thigh_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.796,
+      0.96
+     ],
+     "endpoints": [
+      22331,
+      55692
+     ],
+     "loops": 12,
+     "path": [
+      55692,
+      4454,
+      55637,
+      22680,
+      55598,
+      4435,
+      55572,
+      22612,
+      55531,
+      4401,
+      55489,
+      22332,
+      4261,
+      22331
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.776,
+      2.7007
+     ],
+     "endpoint_dominant_bone": [
+      "pelvis",
+      "thigh_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.523,
+      0.629
+     ],
+     "endpoints": [
+      4282,
+      44118
+     ],
+     "loops": 6,
+     "path": [
+      44118,
+      22402,
+      44113,
+      22390,
+      57690,
+      44108,
+      22378,
+      4282
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [
+    "-p"
+   ],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 5,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 5,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.9024,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES+D6_FOREIGN_SEGMENT_UNDEFINED"
+  },
+  "knee_r": {
+   "required": 4,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      4.9232,
+      2.9879
+     ],
+     "endpoint_dominant_bone": [
+      "calf_r",
+      "thigh_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.681,
+      0.552
+     ],
+     "endpoints": [
+      23118,
+      4650
+     ],
+     "loops": 0,
+     "path": [
+      4650,
+      23138,
+      4652,
+      23142,
+      4653,
+      23144,
+      4658,
+      23135,
+      4648,
+      23134,
+      4649,
+      23131,
+      4646,
+      23130,
+      4647,
+      23127,
+      4644,
+      23126,
+      4645,
+      23119,
+      4641,
+      23118
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      2.9438,
+      1.778
+     ],
+     "endpoint_dominant_bone": [
+      "thigh_r",
+      "thigh_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.747,
+      0.659
+     ],
+     "endpoints": [
+      4635,
+      56484
+     ],
+     "loops": 2,
+     "path": [
+      56484,
+      44384,
+      23107,
+      4635
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      2.5715,
+      1.5669
+     ],
+     "endpoint_dominant_bone": [
+      "thigh_r",
+      "thigh_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.76,
+      0.636
+     ],
+     "endpoints": [
+      56403,
+      56485
+     ],
+     "loops": 5,
+     "path": [
+      56485,
+      56511,
+      56498,
+      56497,
+      56474,
+      56475,
+      56476,
+      56488,
+      56489,
+      23104,
+      4633,
+      56445,
+      23065,
+      56405,
+      56404,
+      56403
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      5.5953,
+      5.183
+     ],
+     "endpoint_dominant_bone": [
+      "calf_r",
+      "calf_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.914,
+      0.964
+     ],
+     "endpoints": [
+      56638,
+      23233
+     ],
+     "loops": 3,
+     "path": [
+      23233,
+      56676,
+      4696,
+      56655,
+      56654,
+      56653,
+      56664,
+      56652,
+      56651,
+      56639,
+      56638
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "+q"
+   ],
+   "band_loops_legacy": 0,
+   "band_loops_defined": 2,
+   "closed_rings": 17,
+   "closed_rings_anatomical": 17,
+   "loops_legacy": 17,
+   "loops_v2": 17,
+   "margin": 13,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4805,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "ankle_r": {
+   "required": 3,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      2.8426,
+      4.1667
+     ],
+     "endpoint_dominant_bone": [
+      "calf_r",
+      "foot_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.823,
+      0.998
+     ],
+     "endpoints": [
+      26460,
+      45738
+     ],
+     "loops": 14,
+     "path": [
+      45738,
+      26356,
+      45558,
+      25326,
+      45588,
+      26363,
+      6328,
+      26385,
+      6327,
+      26376,
+      6324,
+      26375,
+      6326,
+      26379,
+      6325,
+      26382,
+      57413,
+      6378,
+      57373,
+      26460
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1928,
+      1.1842
+     ],
+     "endpoint_dominant_bone": [
+      "calf_r",
+      "foot_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.568,
+      0.931
+     ],
+     "endpoints": [
+      6345,
+      26430
+     ],
+     "loops": 4,
+     "path": [
+      26430,
+      46585,
+      26424,
+      46586,
+      26427,
+      6345
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.69,
+      3.9601
+     ],
+     "endpoint_dominant_bone": [
+      "calf_r",
+      "foot_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.806,
+      1.0
+     ],
+     "endpoints": [
+      26489,
+      26369
+     ],
+     "loops": 18,
+     "path": [
+      26369,
+      45963,
+      26359,
+      45964,
+      26152,
+      45961,
+      26365,
+      45965,
+      26342,
+      45988,
+      26349,
+      45987,
+      26354,
+      6311,
+      26350,
+      6310,
+      26351,
+      6321,
+      26370,
+      6339,
+      26411,
+      6340,
+      26414,
+      6341,
+      26417,
+      6342,
+      26407,
+      6338,
+      26409,
+      57428,
+      6383,
+      26489
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      1.4769,
+      2.3597
+     ],
+     "endpoint_dominant_bone": [
+      "calf_r",
+      "foot_r"
+     ],
+     "endpoint_dominant_weight": [
+      0.691,
+      0.932
+     ],
+     "endpoints": [
+      26434,
+      45796
+     ],
+     "loops": 4,
+     "path": [
+      45796,
+      26188,
+      6391,
+      26395,
+      6331,
+      26394,
+      6362,
+      26457,
+      45829,
+      26382,
+      45846,
+      26452,
+      45839,
+      26451,
+      45841,
+      26434
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-p",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 6,
+   "closed_rings_anatomical": 6,
+   "loops_legacy": 6,
+   "loops_v2": 6,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.4443,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe1_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1329,
+      0.1323
+     ],
+     "loops": 2,
+     "path": [
+      6182,
+      57531,
+      26050
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      1.2036,
+      0.8493
+     ],
+     "loops": 2,
+     "path": [
+      25177,
+      46293,
+      25200,
+      46358
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.2827,
+      0.3942
+     ],
+     "D5_undefined": true,
+     "loops": 5,
+     "path": [
+      25357,
+      5870,
+      25219,
+      5798,
+      25195,
+      45553,
+      25177,
+      46293,
+      26050,
+      6181,
+      25203,
+      5792
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3869,
+      0.2373
+     ],
+     "D5_undefined": true,
+     "loops": 1,
+     "path": [
+      57529,
+      57537,
+      46293
+     ]
+    }
+   ],
+   "D5_undefined_sides": [
+    "+q",
+    "-q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p"
+   ],
+   "band_loops_legacy": 1,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 1,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.3147,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES+D5_INTERDIGITAL_UNDEFINED"
+  },
+  "toe1_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1074,
+      0.1356
+     ],
+     "loops": 5,
+     "path": [
+      46295,
+      23670,
+      46004,
+      23693,
+      46290,
+      23682
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7706,
+      0.842
+     ],
+     "loops": 0,
+     "path": [
+      23608,
+      44605,
+      23774
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0418,
+      0.0747
+     ],
+     "loops": 18,
+     "path": [
+      45569,
+      25246,
+      46149,
+      25260,
+      46150,
+      25282,
+      46151,
+      25304,
+      46154,
+      25342,
+      57584,
+      46155,
+      25368,
+      46156,
+      25208,
+      46157,
+      57536,
+      25185,
+      46158,
+      25163,
+      46000,
+      23621,
+      4954,
+      23609,
+      4899,
+      23608,
+      46002,
+      26054,
+      46291,
+      23612,
+      44587
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0562,
+      0.089
+     ],
+     "loops": 5,
+     "path": [
+      4916,
+      23671,
+      4925,
+      23686,
+      4921,
+      23608
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 0,
+   "band_loops_defined": 5,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 0,
+   "loops_v2": 5,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2038,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS_FALLBACK_DEFINED_SIDES",
+   "status_D1_D3": "PASS_FALLBACK_DEFINED_SIDES"
+  },
+  "toe2_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1572,
+      0.0246
+     ],
+     "loops": 3,
+     "path": [
+      6525,
+      25341,
+      57826,
+      57582
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.736,
+      0.7434
+     ],
+     "merged": true
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.5922,
+      0.1597
+     ],
+     "D5_undefined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.24,
+      0.0256
+     ],
+     "loops": 2,
+     "path": [
+      57562,
+      45586,
+      25337
+     ]
+    }
+   ],
+   "D5_undefined_sides": [
+    "+q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_all_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [
+    57562,
+    57573,
+    57838,
+    57839
+   ],
+   "within2_own_digit": [
+    57562,
+    57573,
+    57838,
+    57839
+   ],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.193,
+   "firm_legacy": true,
+   "strict_legacy": false,
+   "firm_D1": true,
+   "strict_D1": false,
+   "firm_D1_D3": true,
+   "strict_D1_D3": false,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0615,
+      0.1043
+     ],
+     "loops": 2,
+     "path": [
+      26647,
+      6513,
+      26645
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6271,
+      0.495
+     ],
+     "loops": 4,
+     "path": [
+      25254,
+      45564,
+      25276,
+      46132,
+      25298,
+      5831
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0792,
+      0.0734
+     ],
+     "loops": 3,
+     "path": [
+      25528,
+      5935,
+      25527,
+      5945
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.023,
+      0.0159
+     ],
+     "loops": 5,
+     "path": [
+      23672,
+      44609,
+      23696,
+      44608,
+      23687,
+      44605
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1917,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe2_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0724,
+      0.0044
+     ],
+     "loops": 3,
+     "path": [
+      6475,
+      26597,
+      6474,
+      26598
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6648,
+      0.584
+     ],
+     "loops": 4,
+     "path": [
+      23860,
+      5031,
+      23930,
+      5030,
+      23931
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0731,
+      0.1518
+     ],
+     "loops": 9,
+     "path": [
+      46112,
+      25498,
+      45609,
+      25409,
+      5881,
+      25384,
+      5874,
+      25385,
+      5889,
+      25424,
+      5885
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.079,
+      0.0051
+     ],
+     "loops": 3,
+     "path": [
+      23850,
+      44629,
+      23910,
+      46047
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 3,
+   "closed_rings": 2,
+   "closed_rings_anatomical": 2,
+   "loops_legacy": 3,
+   "loops_v2": 3,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.133,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1615,
+      0.0818
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7524,
+      0.6834
+     ],
+     "loops": 1,
+     "path": [
+      25940,
+      45700
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.3575,
+      0.0546
+     ],
+     "D5_undefined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2168,
+      0.073
+     ],
+     "merged": true
+    }
+   ],
+   "D5_undefined_sides": [
+    "+q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [],
+   "band_loops_legacy": 1,
+   "band_loops_defined": null,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 1,
+   "loops_v2": 0,
+   "margin": -2,
+   "loop_mode": "closed_ring_fallback",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1968,
+   "firm_legacy": false,
+   "strict_legacy": false,
+   "firm_D1": false,
+   "strict_D1": false,
+   "firm_D1_D3": false,
+   "strict_D1_D3": false,
+   "status_D1": "FAIL_LOOPS",
+   "status_D1_D3": "FAIL_LOOPS"
+  },
+  "toe3_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0201,
+      0.078
+     ],
+     "loops": 3,
+     "path": [
+      26664,
+      6531,
+      26639,
+      6506
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.4204,
+      0.8456
+     ],
+     "loops": 0,
+     "path": [
+      25580,
+      46232,
+      26633,
+      46317,
+      25577,
+      46231,
+      25595
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0923,
+      0.214
+     ],
+     "no_path": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0852,
+      0.0756
+     ],
+     "loops": 2,
+     "path": [
+      25273,
+      5828,
+      25295
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 0,
+   "band_loops_defined": 2,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1641,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe3_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0754,
+      0.0127
+     ],
+     "loops": 6,
+     "path": [
+      26621,
+      6493,
+      26620,
+      6492,
+      26025,
+      6158,
+      26026
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.644,
+      0.5286
+     ],
+     "loops": 7,
+     "path": [
+      5915,
+      25503,
+      5920,
+      25506,
+      5982,
+      25549,
+      5941,
+      25548,
+      45632
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.1196,
+      0.1249
+     ],
+     "loops": 4,
+     "path": [
+      45606,
+      25426,
+      45608,
+      25479,
+      46225
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.086,
+      0.0445
+     ],
+     "no_path": true
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1102,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.2232,
+      0.0175
+     ],
+     "merged": true
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.7445,
+      0.8043
+     ],
+     "loops": 3,
+     "path": [
+      57667,
+      26004,
+      45895,
+      26010
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.288,
+      0.0344
+     ],
+     "D5_undefined": true,
+     "merged": true
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.229,
+      0.0478
+     ],
+     "loops": 2,
+     "path": [
+      25889,
+      45690,
+      25922,
+      45696
+     ]
+    }
+   ],
+   "D5_undefined_sides": [
+    "+q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 2,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 2,
+   "margin": 0,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.2018,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0877,
+      0.0147
+     ],
+     "loops": 4,
+     "path": [
+      26622,
+      6495,
+      26624,
+      6496,
+      26625
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8188,
+      0.388
+     ],
+     "loops": 7,
+     "path": [
+      6081,
+      25863,
+      6091,
+      25866,
+      6084,
+      25868,
+      6496,
+      25871,
+      6085,
+      25869,
+      46218,
+      25891,
+      45694,
+      25925,
+      45700
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0452,
+      0.1993
+     ],
+     "loops": 5,
+     "path": [
+      6670,
+      26838,
+      6626,
+      26837,
+      6636,
+      26868
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0802,
+      0.0288
+     ],
+     "loops": 8,
+     "path": [
+      45686,
+      25813,
+      46194,
+      26622,
+      45718,
+      25817,
+      45685,
+      25836,
+      45930,
+      25850,
+      45931,
+      25872,
+      46217,
+      25894,
+      46186,
+      25928,
+      46185,
+      25951,
+      46184,
+      25663
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1475,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe4_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0481,
+      0.0303
+     ],
+     "loops": 6,
+     "path": [
+      6507,
+      26640,
+      6508,
+      26642,
+      6509,
+      26643,
+      6552
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6368,
+      0.7521
+     ],
+     "loops": 3,
+     "path": [
+      46195,
+      25814,
+      6064,
+      25812,
+      45686,
+      25844
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0864,
+      0.1018
+     ],
+     "loops": 4,
+     "path": [
+      25716,
+      45662,
+      25769,
+      6051,
+      25797,
+      6110
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0244,
+      0.033
+     ],
+     "loops": 5,
+     "path": [
+      45648,
+      25712,
+      45652,
+      25772,
+      46212,
+      25914
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 3,
+   "band_loops_defined": 4,
+   "closed_rings": 4,
+   "closed_rings_anatomical": 4,
+   "loops_legacy": 4,
+   "loops_v2": 4,
+   "margin": 2,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1105,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j1_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0791,
+      0.0309
+     ],
+     "loops": 3,
+     "path": [
+      26678,
+      6548,
+      57668,
+      26679
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.4443,
+      0.7941
+     ],
+     "loops": 2,
+     "path": [
+      26010,
+      6154,
+      26020,
+      6700,
+      26022
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.8239,
+      0.207
+     ],
+     "loops": 5,
+     "path": [
+      57666,
+      57667,
+      57670,
+      57668,
+      57669,
+      57656,
+      57654,
+      45703,
+      26012,
+      46569,
+      26014
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.107,
+      0.0749
+     ],
+     "loops": 3,
+     "path": [
+      45702,
+      25995,
+      57654,
+      45703,
+      26006
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 2,
+   "band_loops_defined": 3,
+   "closed_rings": 0,
+   "closed_rings_anatomical": 0,
+   "loops_legacy": 2,
+   "loops_v2": 3,
+   "margin": 1,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1984,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j2_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0086,
+      0.0349
+     ],
+     "loops": 4,
+     "path": [
+      26942,
+      6682,
+      26943,
+      6688,
+      26684
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.6727,
+      0.7117
+     ],
+     "loops": 4,
+     "path": [
+      25983,
+      6553,
+      25986,
+      45897,
+      26007,
+      57669
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.2584,
+      0.2966
+     ],
+     "D5_undefined": true,
+     "loops": 4,
+     "path": [
+      6646,
+      26890,
+      6656,
+      25984,
+      6138
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0245,
+      0.1354
+     ],
+     "loops": 13,
+     "path": [
+      25885,
+      45932,
+      25877,
+      6097,
+      25899,
+      6117,
+      25933,
+      6127,
+      25955,
+      6156,
+      26008,
+      57658,
+      6148,
+      25988,
+      6140,
+      25989,
+      46525,
+      25968,
+      46524,
+      25984,
+      46522,
+      26684,
+      46523,
+      25987,
+      46527
+     ]
+    }
+   ],
+   "D5_undefined_sides": [
+    "+q"
+   ],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "-q"
+   ],
+   "band_loops_legacy": 4,
+   "band_loops_defined": 4,
+   "closed_rings": 5,
+   "closed_rings_anatomical": 5,
+   "loops_legacy": 5,
+   "loops_v2": 5,
+   "margin": 3,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1317,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  },
+  "toe5_j3_r": {
+   "required": 2,
+   "sides": [
+    {
+     "side": "+p",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0738,
+      0.0148
+     ],
+     "loops": 9,
+     "path": [
+      26946,
+      6686,
+      26948,
+      6687,
+      26949,
+      6697,
+      26941,
+      6680,
+      26839,
+      46436,
+      26869
+     ]
+    },
+    {
+     "side": "-p",
+     "defined": false,
+     "endpoint_offset_cm": [
+      0.4959,
+      0.521
+     ],
+     "loops": 6,
+     "path": [
+      46447,
+      26859,
+      6632,
+      26858,
+      6642,
+      26883,
+      6652,
+      26905
+     ]
+    },
+    {
+     "side": "+q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0364,
+      0.0905
+     ],
+     "loops": 8,
+     "path": [
+      46404,
+      26789,
+      46491,
+      26929,
+      46419,
+      26836,
+      46431,
+      26856,
+      6641,
+      26882
+     ]
+    },
+    {
+     "side": "-q",
+     "defined": true,
+     "endpoint_offset_cm": [
+      0.0856,
+      0.0286
+     ],
+     "loops": 10,
+     "path": [
+      46382,
+      26732,
+      46390,
+      26792,
+      46492,
+      26925,
+      46434,
+      26832,
+      46432,
+      26864,
+      46426
+     ]
+    }
+   ],
+   "D5_undefined_sides": [],
+   "D6_undefined_sides": [],
+   "valid_sides": [
+    "+p",
+    "+q",
+    "-q"
+   ],
+   "band_loops_legacy": 6,
+   "band_loops_defined": 8,
+   "closed_rings": 12,
+   "closed_rings_anatomical": 12,
+   "loops_legacy": 12,
+   "loops_v2": 12,
+   "margin": 10,
+   "loop_mode": "band_defined_sides",
+   "crease_poles": [],
+   "crease_poles_own_digit": [],
+   "crease_poles_adjacent_digit": [],
+   "within2_poles": [],
+   "within2_own_digit": [],
+   "within2_adjacent_digit": [],
+   "local_loop_cm": 0.1101,
+   "firm_legacy": true,
+   "strict_legacy": true,
+   "firm_D1": true,
+   "strict_D1": true,
+   "firm_D1_D3": true,
+   "strict_D1_D3": true,
+   "status_D1": "PASS",
+   "status_D1_D3": "PASS"
+  }
+ }
+}

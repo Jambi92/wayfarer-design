@@ -1,0 +1,865 @@
+{
+ "verdict": "PIPKIN CONFIG-2 CENTRAL REFERENCE PASS \u2014 READY FOR PRODUCTION DIAGNOSIS",
+ "order": "reviews/chatgpt-rac-rp4-pipkin-independent-compact-diagnosis-order.md (25f7ba0) \u00a74",
+ "c2_build": {
+  "id": "PKF107-NAT",
+  "cfg": {
+   "gender": 0.0,
+   "age_years": 35,
+   "age": 0.5769230769,
+   "muscle": 0.5,
+   "weight": 0.5,
+   "proportions": 0.5,
+   "stature": 107.0,
+   "targets": {
+    "measure-napetowaist-dist-decr": 0.4,
+    "hip-scale-horiz-incr": 0.25,
+    "hip-scale-vert-incr": 0.3,
+    "hip-scale-depth-incr": 0.15,
+    "torso-scale-horiz-decr": 0.05,
+    "measure-wrist-circ-decr": 0.15,
+    "LR:foot-scale-incr": 0.1
+   },
+   "id": "PKF107",
+   "girth_beta": 1.0,
+   "bone_scales": {
+    "pelvis": [
+     1.0,
+     1.06,
+     1.0
+    ],
+    "spine_01": [
+     1.0,
+     0.9,
+     1.0
+    ]
+   },
+   "base_height_macro": 0.60595703125,
+   "note": "RP4 Pipkin c2 technical anchor (order 25f7ba0 \u00a74): MPFB configuration-2 base macro (MF-F-R 0.60595703125) + the exact PK-NAT central targets, bone scales and girth_beta; native short-adult route at 107 cm; no Pipkin sex-related shift"
+  },
+  "height_macro": 0.60595703125,
+  "native_factors": {
+   "len": 0.6165260284489354,
+   "girth": 0.6165260284489354,
+   "hand": 0.6655430169337798,
+   "foot": 0.6341085683510819,
+   "head": 0.7168532758795241
+  },
+  "betas": {
+   "head": 0.6882680342431542,
+   "girth": 0.6539816840579419,
+   "hand": 0.8418236669606132,
+   "foot": 0.9418600922738067
+  },
+  "stature_r6": 106.99986517429352,
+  "iters": 1,
+  "pose": {
+   "arm_abduction_deg": 8.0,
+   "palm_twist_deg_l": 0.03,
+   "palm_residual_deg_l": -0.0,
+   "palm_twist_deg_r": -0.03,
+   "palm_residual_deg_r": 0.0
+  }
+ },
+ "stature_cm": {
+  "PK-NAT": 107.0,
+  "PKF107-NAT": 107.0,
+  "PK91-NAT": 91.0,
+  "PK122-NAT": 122.0,
+  "MF-M-R": 173.143,
+  "MF-F-R": 172.991,
+  "MF107-NAT": 106.999,
+  "MFF107-NAT": 106.999
+ },
+ "determinism": {
+  "second_rebuild_geometry_identical": true,
+  "max_abs_dV_cm": 0.0
+ },
+ "directions": [
+  {
+   "reading": "central trunk (torso) share < MF (T-2)",
+   "key": "torso_share",
+   "layer": "skin",
+   "canon": "<",
+   "report_only": false,
+   "c1_107_vs_MF_pct": -3.87,
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": -3.91,
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": -4.43,
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": -3.44,
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "skeletal pelvic vertical / stature >= MF (PK-P3, PV-D10)",
+   "key": "pelvic_vertical_share",
+   "layer": "skel",
+   "canon": ">=",
+   "report_only": false,
+   "c1_107_vs_MF_pct": [
+    5.34,
+    5.34,
+    5.34
+   ],
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": [
+    5.22,
+    5.22,
+    5.22
+   ],
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": [
+    4.73,
+    4.73,
+    4.73
+   ],
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": [
+    5.82,
+    5.82,
+    5.82
+   ],
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "pelvic vertical / thoracic vertical > MF (PK-P3)",
+   "key": "pelvic_vertical_over_thoracic_vertical",
+   "layer": "skel",
+   "canon": ">",
+   "report_only": false,
+   "c1_107_vs_MF_pct": [
+    10.45,
+    10.45,
+    10.45
+   ],
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": [
+    10.83,
+    10.83,
+    10.83
+   ],
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": [
+    10.45,
+    10.45,
+    10.45
+   ],
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": [
+    10.45,
+    10.45,
+    10.45
+   ],
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "crest / thoracic breadth > MF (PK-P5)",
+   "key": "pelvis_over_thorax_breadth",
+   "layer": "skel",
+   "canon": ">",
+   "report_only": false,
+   "c1_107_vs_MF_pct": [
+    6.34,
+    6.57,
+    6.81
+   ],
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": [
+    10.79,
+    11.18,
+    11.59
+   ],
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": [
+    6.34,
+    6.57,
+    6.82
+   ],
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": [
+    6.34,
+    6.57,
+    6.81
+   ],
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "pelvic AP / thoracic depth > MF (PK-P4)",
+   "key": "pelvic_depth_over_thorax_depth",
+   "layer": "skel",
+   "canon": ">",
+   "report_only": false,
+   "c1_107_vs_MF_pct": [
+    4.37,
+    4.66,
+    5.0
+   ],
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": [
+    6.05,
+    6.5,
+    7.01
+   ],
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": [
+    3.91,
+    4.18,
+    4.48
+   ],
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": [
+    5.71,
+    6.08,
+    6.51
+   ],
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "waist interval / torso < MF (PV-D15)",
+   "key": "waist_interval_over_torso",
+   "layer": "skin",
+   "canon": "<",
+   "report_only": false,
+   "c1_107_vs_MF_pct": -5.54,
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": -3.35,
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": -5.54,
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": -5.54,
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "leg share <= MF (PK-P2a; 122 cm MARGINAL accepted AD-G10)",
+   "key": "leg_share",
+   "layer": "skin",
+   "canon": "<=",
+   "report_only": false,
+   "c1_107_vs_MF_pct": -0.17,
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": -0.13,
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": -0.67,
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": 0.22,
+   "c1_122_holds": false,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "arm share (report)",
+   "key": "arm_share",
+   "layer": "skin",
+   "canon": "R",
+   "report_only": true,
+   "c1_107_vs_MF_pct": 1.84,
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": 1.8,
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": 2.05,
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": 1.67,
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "thorax breadth / stature (report)",
+   "key": "thorax_breadth_share",
+   "layer": "skel",
+   "canon": "R",
+   "report_only": true,
+   "c1_107_vs_MF_pct": [
+    -1.33,
+    -1.37,
+    -1.42
+   ],
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": [
+    2.51,
+    2.6,
+    2.71
+   ],
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": [
+    -1.9,
+    -1.96,
+    -2.04
+   ],
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": [
+    -0.88,
+    -0.91,
+    -0.94
+   ],
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "thorax depth / stature (report)",
+   "key": "thorax_depth_share",
+   "layer": "skel",
+   "canon": "R",
+   "report_only": true,
+   "c1_107_vs_MF_pct": [
+    1.74,
+    1.83,
+    1.93
+   ],
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": [
+    1.03,
+    1.08,
+    1.14
+   ],
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": [
+    1.6,
+    1.68,
+    1.77
+   ],
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": [
+    0.85,
+    0.9,
+    0.95
+   ],
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "femoral shaft / femur (report)",
+   "key": "shaft_b_over_femur",
+   "layer": "skel",
+   "canon": "R",
+   "report_only": true,
+   "c1_107_vs_MF_pct": [
+    6.78,
+    7.3,
+    7.92
+   ],
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": [
+    5.51,
+    5.93,
+    6.44
+   ],
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": [
+    6.78,
+    7.26,
+    7.82
+   ],
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": [
+    6.78,
+    7.34,
+    8.01
+   ],
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "wrist / forearm (report)",
+   "key": "wrist_over_forearm",
+   "layer": "skin",
+   "canon": "R",
+   "report_only": true,
+   "c1_107_vs_MF_pct": 13.01,
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": 16.17,
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": 25.78,
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": 6.48,
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "knee / femur (report)",
+   "key": "knee_over_femur",
+   "layer": "skin",
+   "canon": "R",
+   "report_only": true,
+   "c1_107_vs_MF_pct": -4.65,
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": -3.31,
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": 0.31,
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": -5.22,
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "ankle / shin (report)",
+   "key": "ankle_over_shin",
+   "layer": "skin",
+   "canon": "R",
+   "report_only": true,
+   "c1_107_vs_MF_pct": 6.36,
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": 8.16,
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": 16.82,
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": 5.56,
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "hand share (report)",
+   "key": "hand_share",
+   "layer": "skin",
+   "canon": "R",
+   "report_only": true,
+   "c1_107_vs_MF_pct": 7.59,
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": 7.6,
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": 9.84,
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": 5.78,
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "foot share (report)",
+   "key": "foot_share",
+   "layer": "skin",
+   "canon": "R",
+   "report_only": true,
+   "c1_107_vs_MF_pct": 5.29,
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": 5.67,
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": 5.7,
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": 4.94,
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  },
+  {
+   "reading": "head share HH / stature (report; allometry only)",
+   "key": "HH_share",
+   "layer": "skin",
+   "canon": "R",
+   "report_only": true,
+   "c1_107_vs_MF_pct": 16.47,
+   "c1_107_holds": true,
+   "c2_107_vs_MF_pct": 15.82,
+   "c2_107_holds": true,
+   "c1_91_vs_MF_pct": 22.3,
+   "c1_91_holds": true,
+   "c1_122_vs_MF_pct": 12.22,
+   "c1_122_holds": true,
+   "c2_matches_c1": true
+  }
+ ],
+ "sex_consistency": [
+  {
+   "reading": "central trunk (torso) share < MF (T-2)",
+   "key": "torso_share",
+   "pipkin_c2_over_c1_pct": 0.84,
+   "marchfolk_c2_over_c1_pct": 0.54,
+   "difference_pct": 0.3,
+   "consistent": true,
+   "report_only": false
+  },
+  {
+   "reading": "skeletal pelvic vertical / stature >= MF (PK-P3, PV-D10)",
+   "key": "pelvic_vertical_share",
+   "pipkin_c2_over_c1_pct": [
+    -6.89,
+    -6.89,
+    -6.89
+   ],
+   "marchfolk_c2_over_c1_pct": [
+    -6.2,
+    -6.2,
+    -6.2
+   ],
+   "difference_pct": [
+    -0.69,
+    -0.69,
+    -0.69
+   ],
+   "consistent": true,
+   "report_only": false
+  },
+  {
+   "reading": "pelvic vertical / thoracic vertical > MF (PK-P3)",
+   "key": "pelvic_vertical_over_thoracic_vertical",
+   "pipkin_c2_over_c1_pct": [
+    3.52,
+    3.52,
+    3.52
+   ],
+   "marchfolk_c2_over_c1_pct": [
+    4.73,
+    4.73,
+    4.73
+   ],
+   "difference_pct": [
+    -1.21,
+    -1.21,
+    -1.21
+   ],
+   "consistent": true,
+   "report_only": false
+  },
+  {
+   "reading": "crest / thoracic breadth > MF (PK-P5)",
+   "key": "pelvis_over_thorax_breadth",
+   "pipkin_c2_over_c1_pct": [
+    9.76,
+    10.12,
+    10.52
+   ],
+   "marchfolk_c2_over_c1_pct": [
+    13.36,
+    13.81,
+    14.3
+   ],
+   "difference_pct": [
+    -3.6,
+    -3.69,
+    -3.78
+   ],
+   "consistent": false,
+   "report_only": false
+  },
+  {
+   "reading": "pelvic AP / thoracic depth > MF (PK-P4)",
+   "key": "pelvic_depth_over_thorax_depth",
+   "pipkin_c2_over_c1_pct": [
+    -7.52,
+    -7.98,
+    -8.5
+   ],
+   "marchfolk_c2_over_c1_pct": [
+    -6.77,
+    -7.15,
+    -7.58
+   ],
+   "difference_pct": [
+    -0.75,
+    -0.83,
+    -0.92
+   ],
+   "consistent": true,
+   "report_only": false
+  },
+  {
+   "reading": "waist interval / torso < MF (PV-D15)",
+   "key": "waist_interval_over_torso",
+   "pipkin_c2_over_c1_pct": 30.97,
+   "marchfolk_c2_over_c1_pct": 28.61,
+   "difference_pct": 2.36,
+   "consistent": false,
+   "report_only": false
+  },
+  {
+   "reading": "leg share <= MF (PK-P2a; 122 cm MARGINAL accepted AD-G10)",
+   "key": "leg_share",
+   "pipkin_c2_over_c1_pct": -1.63,
+   "marchfolk_c2_over_c1_pct": -1.53,
+   "difference_pct": -0.1,
+   "consistent": true,
+   "report_only": false
+  },
+  {
+   "reading": "arm share (report)",
+   "key": "arm_share",
+   "pipkin_c2_over_c1_pct": -5.6,
+   "marchfolk_c2_over_c1_pct": -5.51,
+   "difference_pct": -0.09,
+   "consistent": true,
+   "report_only": true
+  },
+  {
+   "reading": "thorax breadth / stature (report)",
+   "key": "thorax_breadth_share",
+   "pipkin_c2_over_c1_pct": [
+    -5.82,
+    -6.03,
+    -6.26
+   ],
+   "marchfolk_c2_over_c1_pct": [
+    -8.96,
+    -9.23,
+    -9.53
+   ],
+   "difference_pct": [
+    3.14,
+    3.2,
+    3.27
+   ],
+   "consistent": false,
+   "report_only": true
+  },
+  {
+   "reading": "thorax depth / stature (report)",
+   "key": "thorax_depth_share",
+   "pipkin_c2_over_c1_pct": [
+    -0.17,
+    -0.17,
+    -0.18
+   ],
+   "marchfolk_c2_over_c1_pct": [
+    -0.42,
+    -0.43,
+    -0.45
+   ],
+   "difference_pct": [
+    0.25,
+    0.26,
+    0.27
+   ],
+   "consistent": true,
+   "report_only": true
+  },
+  {
+   "reading": "femoral shaft / femur (report)",
+   "key": "shaft_b_over_femur",
+   "pipkin_c2_over_c1_pct": [
+    -5.62,
+    -5.79,
+    -6.0
+   ],
+   "marchfolk_c2_over_c1_pct": [
+    -4.41,
+    -4.48,
+    -4.55
+   ],
+   "difference_pct": [
+    -1.21,
+    -1.31,
+    -1.45
+   ],
+   "consistent": true,
+   "report_only": true
+  },
+  {
+   "reading": "wrist / forearm (report)",
+   "key": "wrist_over_forearm",
+   "pipkin_c2_over_c1_pct": 12.62,
+   "marchfolk_c2_over_c1_pct": 11.32,
+   "difference_pct": 1.3,
+   "consistent": true,
+   "report_only": true
+  },
+  {
+   "reading": "knee / femur (report)",
+   "key": "knee_over_femur",
+   "pipkin_c2_over_c1_pct": -8.32,
+   "marchfolk_c2_over_c1_pct": -8.4,
+   "difference_pct": 0.08,
+   "consistent": true,
+   "report_only": true
+  },
+  {
+   "reading": "ankle / shin (report)",
+   "key": "ankle_over_shin",
+   "pipkin_c2_over_c1_pct": -17.84,
+   "marchfolk_c2_over_c1_pct": -23.11,
+   "difference_pct": 5.27,
+   "consistent": false,
+   "report_only": true
+  },
+  {
+   "reading": "hand share (report)",
+   "key": "hand_share",
+   "pipkin_c2_over_c1_pct": -8.21,
+   "marchfolk_c2_over_c1_pct": -8.13,
+   "difference_pct": -0.08,
+   "consistent": true,
+   "report_only": true
+  },
+  {
+   "reading": "foot share (report)",
+   "key": "foot_share",
+   "pipkin_c2_over_c1_pct": -9.85,
+   "marchfolk_c2_over_c1_pct": -10.14,
+   "difference_pct": 0.29,
+   "consistent": true,
+   "report_only": true
+  },
+  {
+   "reading": "head share HH / stature (report; allometry only)",
+   "key": "HH_share",
+   "pipkin_c2_over_c1_pct": -4.03,
+   "marchfolk_c2_over_c1_pct": -4.41,
+   "difference_pct": 0.38,
+   "consistent": true,
+   "report_only": true
+  }
+ ],
+ "envelope_context": [
+  {
+   "reading": "central trunk (torso) share < MF (T-2)",
+   "PK91": 0.27083,
+   "PK107": 0.2724,
+   "PK122": 0.27364,
+   "PKF107": 0.27469,
+   "PKF107_within_c1_bounds": true
+  },
+  {
+   "reading": "skeletal pelvic vertical / stature >= MF (PK-P3, PV-D10)",
+   "PK91": 0.05814,
+   "PK107": 0.05847,
+   "PK122": 0.05874,
+   "PKF107": 0.05445,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "pelvic vertical / thoracic vertical > MF (PK-P3)",
+   "PK91": 0.39926,
+   "PK107": 0.39926,
+   "PK122": 0.39926,
+   "PKF107": 0.41333,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "crest / thoracic breadth > MF (PK-P5)",
+   "PK91": 1.05931,
+   "PK107": 1.05931,
+   "PK122": 1.05931,
+   "PKF107": 1.16269,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "pelvic AP / thoracic depth > MF (PK-P4)",
+   "PK91": 0.84966,
+   "PK107": 0.85338,
+   "PK122": 0.86435,
+   "PKF107": 0.78918,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "waist interval / torso < MF (PV-D15)",
+   "PK91": 0.24771,
+   "PK107": 0.24771,
+   "PK122": 0.24771,
+   "PKF107": 0.32442,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "leg share <= MF (PK-P2a; 122 cm MARGINAL accepted AD-G10)",
+   "PK91": 0.52854,
+   "PK107": 0.53118,
+   "PK122": 0.53324,
+   "PKF107": 0.52253,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "arm share (report)",
+   "PK91": 0.41552,
+   "PK107": 0.41469,
+   "PK122": 0.41398,
+   "PKF107": 0.39146,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "thorax breadth / stature (report)",
+   "PK91": 0.16563,
+   "PK107": 0.16659,
+   "PK122": 0.16735,
+   "PKF107": 0.1569,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "thorax depth / stature (report)",
+   "PK91": 0.11863,
+   "PK107": 0.1188,
+   "PK122": 0.11776,
+   "PKF107": 0.1186,
+   "PKF107_within_c1_bounds": true
+  },
+  {
+   "reading": "femoral shaft / femur (report)",
+   "PK91": 0.3381,
+   "PK107": 0.3381,
+   "PK122": 0.3381,
+   "PKF107": 0.31909,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "wrist / forearm (report)",
+   "PK91": 0.26609,
+   "PK107": 0.23907,
+   "PK122": 0.22527,
+   "PKF107": 0.26924,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "knee / femur (report)",
+   "PK91": 0.29047,
+   "PK107": 0.2761,
+   "PK122": 0.27444,
+   "PKF107": 0.25313,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "ankle / shin (report)",
+   "PK91": 0.40351,
+   "PK107": 0.3674,
+   "PK122": 0.36461,
+   "PKF107": 0.30187,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "hand share (report)",
+   "PK91": 0.12356,
+   "PK107": 0.12103,
+   "PK122": 0.11899,
+   "PKF107": 0.11109,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "foot share (report)",
+   "PK91": 0.15752,
+   "PK107": 0.1569,
+   "PK122": 0.15638,
+   "PKF107": 0.14145,
+   "PKF107_within_c1_bounds": false
+  },
+  {
+   "reading": "head share HH / stature (report; allometry only)",
+   "PK91": 0.15903,
+   "PK107": 0.15144,
+   "PK122": 0.14592,
+   "PKF107": 0.14533,
+   "PKF107_within_c1_bounds": true
+  }
+ ],
+ "summary": {
+  "compared": 7,
+  "c1_107_hold": 7,
+  "c2_107_hold": 7,
+  "c2_matches_c1": 7,
+  "c1_91_hold": 7,
+  "c1_122_hold": 6,
+  "c1_failures": [],
+  "c2_failures": [],
+  "f91": [],
+  "f122": [
+   "leg share <= MF (PK-P2a; 122 cm MARGINAL accepted AD-G10)"
+  ],
+  "sex_consistent": 13,
+  "sex_compared": 17,
+  "sex_inconsistent": [
+   "crest / thoracic breadth > MF (PK-P5)",
+   "waist interval / torso < MF (PV-D15)",
+   "thorax breadth / stature (report)",
+   "ankle / shin (report)"
+  ],
+  "c2_within_c1_bounds": 3
+ },
+ "comparators": "normalized MF-M-R / MF-F-R (W2H rule); route-matched MF107 / MFF107 (native_short.py, no targets) for sex consistency only; diagnostic, not reference assets"
+}
