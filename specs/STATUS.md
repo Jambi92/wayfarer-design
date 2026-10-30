@@ -1,5 +1,13 @@
 # Character Design Status
 
+## RAC RP4 DURRIM COMPACT-BRANCH v002 REVISION / CLOSURE — DURRIM RP4 COMPACT BRANCH PASS — READY FOR AUTHOR ACCEPTANCE / FREEZE (2026-10-30)
+
+- **Report:** `reviews/claude-rac-rp4-durrim-v002-closure-report.md` (order 8080f9f). Evidence: `reviews/rac-rp4-evidence/durrim/v002/`; tools `tools/rac/rp/durrim_rp4_v002/`.
+- **MPFB_COMPACT_BRANCH_v002:** thumb MCP two-direction densification (fine band Z..C, fans only in full-height P->Z / C->D, c2-hip-slab columns unsplit) + jaw-neck reroute (4 edge rotations / side: pole moved + one 3/5 pair; no vertex added). One face list and one S on every body; 58,138 V / 58,136 Q.
+- **Gates:** 69 / 69 on DU122C / DU137C / DU152C / DUF137C (and MF152 diagnostic); thumb_mcp PASS; neck poles >= 1 h above band; T-1/T-2/T-3/T-7 PASS, T-6 <= 0.0008 mm; branch quads > 4:1 = 0 (v001: 100-105); deformation no new class; immutables 26 / 26 unchanged.
+- **Candidates (NOT frozen):** DU_M_REF_RP4_v001 / DU_F_REF_RP4_v001 + `DURRIM_RP4_FREEZE_CANDIDATE.json`.
+- **Author attention:** blind reader did not see Durrim 152 as distinct from Marchfolk 152 (source anatomy, unchanged by v002); 2 neck quads at 43-45 / 135° (submandibular ridge); c2 hip-station margin of the thumb pole is thin (pr/Rp 1.002).
+
 ## RAC RP4 DURRIM COMPACT-BRANCH PILOT — DURRIM RP4 COMPACT BRANCH NEEDS REVISION (2026-10-30)
 
 - **Gate:** `reviews/claude-rac-rp4-durrim-compact-branch-gate.md`. Evidence: `reviews/rac-rp4-evidence/durrim/` (Part A, regen, unbranched v005 diagnosis, branch prototype, boards DU_A / B / N / G).

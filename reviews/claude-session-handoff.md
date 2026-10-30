@@ -2,11 +2,20 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — RP4 DURRIM COMPACT-BRANCH REVISION (v002) — IN PROGRESS (handoff; not for review)
+## LATEST (2026-10-30) — RP4 DURRIM v002 REVISION / CLOSURE — DURRIM RP4 COMPACT BRANCH PASS — READY FOR AUTHOR ACCEPTANCE / FREEZE — awaiting ChatGPT review
 
-- Order: `reviews/chatgpt-rac-rp4-durrim-compact-branch-revision-closure-order.md` (8080f9f). Thumb MCP two-direction densification + jaw-neck 5-pole reroute, then the full RP4 gate.
-- **Design notes / plan / workspace rebuild steps: `reviews/claude-rac-rp4-durrim-v002-design-notes.md`** (measured ring / window / segment constraints; feasible thumb layout with transition templates; the isolated-pole fact for the neck and the planned move-up-2-rows + compensating 3/5 pair).
-- Nothing built for v002 yet; previous gate state unchanged (NEEDS REVISION, 372fe20).
+**What was done**
+- Order 8080f9f. Report `reviews/claude-rac-rp4-durrim-v002-closure-report.md`; evidence `reviews/rac-rp4-evidence/durrim/v002/` (branch def, validators, audits, anatomy, contact, density, deformation, production candidates + read-back, boards DU2_A..H, gates / determinism / immutables, freeze candidate record).
+- Tools `tools/rac/rp/durrim_rp4_v002/`: `run_ws.sh` (cloud workspace rebuild: bpy 5.2.2 venv + MPFB 2.0.17 checkout, regen, `propagate_core.py` = propagate.py from the committed v005 core, no PC needed), `compact_branch_v002.py build|apply`, `thumb_patch.py`, `neck_reroute.py`, `param_relax.py` (joint multi-body on-surface relaxation), `run_v2.sh` (per-body gates), `run_v1cmp.sh`, `du2_gates.py`, `run_v2_prod.sh` + `du_make_prod.py`, `du2_sheets.py`, `du2_immutables.py`; `search/` = the scripts that found the definition (BFS, relaxations).
+- Cloud setup notes: pip bpy==5.2.2 into /home/claude/bpyenv (wrapper /home/claude/stc/bin/python3), git clone makehumancommunity/mpfb2 @ v2.0.17 symlinked to ~/.config/blender/5.2/extensions/user_default/mpfb; pip trimesh rtree libigl shapely. Background jobs only advance while a tool call is active: wait with blocking `tail --pid`, not Monitor.
+
+**Key findings**
+- All 5 bodies 69 / 69. c2 hip_l/r first failed: c2 R-6 hand hangs in the hip station pole cylinder (validator geometry; no validator change) -> slab columns left 11-12 / right 0-1 left unsplit + Z_14 / Z_19 held >= 55 % toward A (pr/Rp 1.002-1.003).
+- Neck: 2 quads at 43-45 / 135° folded across the submandibular ridge (documented residual).
+- Blind review: adult / no-crutch / same-population PASS; 152 cm Durrim vs Marchfolk not read as distinct (source anatomy; v002 render-identical to v005 apart from sub-pixel edges).
+- Production .blend files are committed (E: not reachable from this session); copy to E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Durrim/RP4/ when the PC is linked.
+
+**Next:** STOP for ChatGPT review (author acceptance / freeze decision). No Pipkin / Cogling / Saurin, rig, UE5.
 
 ## (previous) 2026-10-30 — RAC RP4 DURRIM COMPACT-BRANCH PILOT — NEEDS REVISION — awaiting ChatGPT review
 
