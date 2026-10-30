@@ -6,7 +6,7 @@ Purpose: if a conversation runs out of room, a new Claude conversation reads thi
 
 - Order 695e2ba (record-only freeze closure). `reviews/rac-rp4-evidence/pipkin/final/PIPKIN_RP4_FREEZE.json` promoted from the e38a59d candidate; fresh read-back `PIPKIN_RP4_freeze_closure_readback.json` = reviewed hashes; immutables `immutable_hashes_freeze_closure.txt` 58 / 58 unchanged vs e38a59d. Report `reviews/claude-rac-rp4-pipkin-freeze-closure-report.md`.
 - Canon `specs/pipkin/PIPKIN_V1.md` RP4 block, STATUS, carry-forward register (no new ID), reference-assets manifest updated. No geometry change; production files not resaved.
-- Production files still to copy to `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Pipkin/RP4/` when the PC is linked (needs folder grant on RaceBodies/production in that session).
+- Production files + `PIPKIN_RP4_FREEZE.json` copied to `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Pipkin/RP4/` (11 files).
 - **Next:** STOP for ChatGPT review. Cogling is next (independent diagnosis; nothing inherited from Pipkin without its own gate) — NOT started.
 
 ## (previous) 2026-10-30 — RAC RP4 PIPKIN — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (not frozen)

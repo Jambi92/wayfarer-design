@@ -101,7 +101,7 @@ No frozen race changed.
 - **`reviews/reference-assets/manifest.json`:** a Pipkin RP4 production entry.
 - **`reviews/claude-session-handoff.md`:** a LATEST entry.
 
-The PC copy to `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Pipkin/RP4/` happens when the PC is linked.
+The production files and the freeze record were copied to `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Pipkin/RP4/` (11 files).
 
 ## 8. STOP
 
