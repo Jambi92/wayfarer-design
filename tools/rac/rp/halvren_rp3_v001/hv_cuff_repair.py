@@ -118,7 +118,7 @@ if float(rec.get('geo', {}).get('sheet_fold_fix', 0)) > 0:
 # stage 5 (same gate): CREASED cuff edges -- an edge between two cuff quads whose normals differ by > 120 deg reads as a dark speck / notch at the root (e.g. the
 # pre-tragal cuff of the short HE1 on c2). Per-vertex axis pattern search (3D, steps 0.2 / 0.1 / 0.05 of the local edge length) on the cuff / transition / head
 # vertices of those quads + their 1-ring, minimising the worst dihedral around the vertex; a move is admissible only if every quad around it keeps a corner >= 12 deg
-# and aspect < 10 and no new triangle crossing appears within 1.5 cm. The cuff transitions are canonical PER SIDE (Fenn / Vael cuff canon), so each side is treated on its own.
+# and aspect < 10 and no new triangle crossing appears within 1.5 cm and no quad around it becomes folded. The cuff transitions are canonical PER SIDE (Fenn / Vael cuff canon), so each side is treated on its own.
 if float(rec.get('geo', {}).get('sheet_fold_fix', 0)) > 0:
     EF = {}
     for fi, q in enumerate(Q):
@@ -157,9 +157,9 @@ if float(rec.get('geo', {}).get('sheet_fold_fix', 0)) > 0:
         moved = False
         for v in mv5:
             A = np.array(sorted({f for w in Q[vf[v]].ravel() for f in vf[int(w)]}))
-            ti, tj = pairs(v); x0 = crossings(V, ti, tj)
+            ti, tj = pairs(v); x0 = crossings(V, ti, tj); fo0 = len(folded(V, A))
             def obj(X):
-                dd, _ = dih(X, A); return dd.max() if (corners(X, Q[A]).min() >= 12.0 and aspect(X, Q[A]).max() < 10.0 and crossings(X, ti, tj) <= x0) else 1e9
+                dd, _ = dih(X, A); return dd.max() if (corners(X, Q[A]).min() >= 12.0 and aspect(X, Q[A]).max() < 10.0 and crossings(X, ti, tj) <= x0 and len(folded(X, A)) <= fo0) else 1e9
             cur = obj(V); L = np.mean([np.linalg.norm(V[int(w)] - V[v]) for w in Q[vf[v]].ravel() if int(w) != v]); best = (cur, None)
             for st in (0.2, 0.1, 0.05):
                 for dv in np.vstack([np.eye(3), -np.eye(3)]):
@@ -169,7 +169,7 @@ if float(rec.get('geo', {}).get('sheet_fold_fix', 0)) > 0:
         if not moved: break
     d5b, _ = dih(V, cfa)
     log.append(dict(stage5_cuff_creases=dict(threshold_deg=TH5, creased_edges_before=len(bad5), creased_edges_after=int((d5b > TH5).sum()), worst_dihedral_before=round(float(d5.max()), 1), worst_dihedral_after=round(float(d5b.max()), 1),
-                                              vertices=len(mv5), sweeps=sw5 + 1, max_move_cm=round(float(np.linalg.norm(V - V05, axis=1).max()), 4))))
+                                              vertices=len(mv5), sweeps=sw5 + 1, folded_cuff_band_before=len(folded(V05, cfa)), folded_cuff_band_after=len(folded(V, cfa)), max_move_cm=round(float(np.linalg.norm(V - V05, axis=1).max()), 4))))
 z['V'] = V.astype(z['V'].dtype); np.savez_compressed(P, **z) if False else np.savez(P, **z)
 rec['hv_cuff_repair'] = dict(rule='tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 9.8 (junction fixed, symmetric); stage 4 (sheet_fold_fix) symmetric umbrella relaxation of folded sheet quads; stage 5 (sheet_fold_fix) per-vertex pattern search on cuff edges creased > 120 deg', log=log)
 json.dump(rec, open(P.replace('.npz', '.json'), 'w'), indent=1)

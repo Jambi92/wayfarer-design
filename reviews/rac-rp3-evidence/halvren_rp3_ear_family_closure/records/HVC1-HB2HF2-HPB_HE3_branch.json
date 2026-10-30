@@ -7,10 +7,10 @@
   "taper": [
    "halvren",
    0.5,
-   1.15,
+   1.25,
    0.15
   ],
-  "lobe": 0.2,
+  "lobe": 0.15,
   "proj": 20,
   "tilt": 12,
   "sweep": 1.0,
@@ -22,8 +22,8 @@
   "trag": 0.31,
   "atrag": 0.23,
   "helix": [
-   0.18,
-   0.16
+   0.22,
+   0.2
   ]
  },
  "geo": {
@@ -52,7 +52,8 @@
   "root_lower_fall": 1.0,
   "root_lower_fall_own": 1.0,
   "sulcus_h": -1.0,
-  "fair_rings": 1.0
+  "fair_rings": 1.0,
+  "sheet_fold_fix": 1.0
  },
  "HH_cm": 23.302291870117188,
  "head_scale": 1.035197328747987,
@@ -68,12 +69,12 @@
  "sides": {
   "l": {
    "place_offset_cm": [
-    -0.34942003011453,
-    -0.0012971237875477049
+    -0.34437349953869023,
+    0.04874808093894037
    ],
-   "place_score": 0.3644142129870927,
-   "min_margin_cm": 0.3031224526935695,
-   "h0_cm": -0.24077383963816773,
+   "place_score": 0.36169640882002874,
+   "min_margin_cm": 0.31622878575290553,
+   "h0_cm": -0.2473469816651051,
    "scale": 1.035197328747987,
    "canon": {
     "cuff": {
@@ -6933,7 +6934,7 @@
      ]
     }
    },
-   "junction_mean_height_cm": 0.07055763141981279,
+   "junction_mean_height_cm": 0.05536453011952638,
    "root_loop_v005": [
     12320,
     38181,
@@ -7013,12 +7014,12 @@
   },
   "r": {
    "place_offset_cm": [
-    -0.34942003011452955,
-    -0.0012971237875417096
+    -0.3443734995386898,
+    0.048748080938946364
    ],
-   "place_score": 0.3644142129870961,
-   "min_margin_cm": 0.30312245269357213,
-   "h0_cm": -0.24077383963781374,
+   "place_score": 0.36169640882002313,
+   "min_margin_cm": 0.31622878575290814,
+   "h0_cm": -0.2473469816642216,
    "scale": 1.035197328747987,
    "canon": {
     "cuff": {
@@ -13876,7 +13877,7 @@
      ]
     }
    },
-   "junction_mean_height_cm": 0.07055763142019496,
+   "junction_mean_height_cm": 0.0553645301204583,
    "root_loop_v005": [
     5723,
     25082,
@@ -13961,17 +13962,17 @@
   "cuff_skin": {
    "l": {
     "fillet_cm": 0.46583879793659416,
-    "junction_height_mean_cm": 0.03304055579213903,
-    "junction_height_max_cm": 0.5061968454919075,
+    "junction_height_mean_cm": 0.01964583570377388,
+    "junction_height_max_cm": 0.42064061501863254,
     "cuff_vertices": 366,
-    "pulled_vertices": 126
+    "pulled_vertices": 124
    },
    "r": {
     "fillet_cm": 0.46583879793659416,
-    "junction_height_mean_cm": 0.03304055579191794,
-    "junction_height_max_cm": 0.5061968454926239,
+    "junction_height_mean_cm": 0.01964583570403846,
+    "junction_height_max_cm": 0.4206406150187622,
     "cuff_vertices": 366,
-    "pulled_vertices": 126
+    "pulled_vertices": 125
    },
    "data_weight": 0.2
   },
@@ -13980,25 +13981,25 @@
    "extra_vertices": 194
   },
   "transition_ring_displacement_cm": {
-   "mean": 0.16133342536066775,
-   "p95": 0.3293970993832414,
-   "max": 0.35640986765769267
+   "mean": 0.16133579170070908,
+   "p95": 0.3327030597930119,
+   "max": 0.3601472829212886
   },
   "unknowns": 1028,
-  "deform_guard_faces": 3,
-  "deform_guard_vertices": 21,
+  "deform_guard_faces": 13,
+  "deform_guard_vertices": 89,
   "quality3d": [
    {
-    "E0": 279333.02804804256,
-    "E1": 19830.688542172218,
-    "nit": 184,
-    "msg": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
-    "free": 813,
-    "faces": 1043,
-    "disp_max_cm": 0.19138681643364305,
-    "disp_mean_cm": 0.029860337435964477,
-    "normal_dev_max_cm": 0.030549807552594576,
-    "transition_disp_max_cm": 0.008197199690895957,
+    "E0": 221649.25862851893,
+    "E1": 18585.5966190352,
+    "nit": 600,
+    "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "free": 745,
+    "faces": 973,
+    "disp_max_cm": 0.20614213779935278,
+    "disp_mean_cm": 0.04500397229805924,
+    "normal_dev_max_cm": 0.025801235978611472,
+    "transition_disp_max_cm": 0.007714518711918673,
     "params": {
      "lo": 55.0,
      "hi": 125.0,
@@ -14011,101 +14012,118 @@
      "kc": 200000.0,
      "amax": 6.0,
      "ka": 1000.0,
-     "contact_pairs": 773,
+     "contact_pairs": 806,
      "root_pairs": 104,
      "kr": 500.0,
      "th_cap": 64.0
     },
     "cycle": 0,
-    "contacts": 21,
-    "side_pairs": 773,
-    "proximity_pairs": 773,
-    "frozen": 21
+    "contacts": 31,
+    "side_pairs": 806,
+    "proximity_pairs": 806,
+    "frozen": 89
    },
    {
-    "E0": 279333.02804804256,
-    "E1": 23091.642397950076,
-    "nit": 93,
-    "msg": "ABNORMAL: ",
-    "free": 813,
-    "faces": 1043,
-    "disp_max_cm": 0.16386567544485478,
-    "disp_mean_cm": 0.027594967679352787,
-    "normal_dev_max_cm": 0.03151989632436811,
-    "transition_disp_max_cm": 0.008205078147984598,
+    "E0": 221649.25862851893,
+    "E1": 20121.41465762583,
+    "nit": 600,
+    "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "free": 745,
+    "faces": 973,
+    "disp_max_cm": 0.20602261285464835,
+    "disp_mean_cm": 0.04577349312985158,
+    "normal_dev_max_cm": 0.03161537491580027,
+    "transition_disp_max_cm": 0.007714332808009679,
     "cycle": 1,
-    "contacts": 18,
-    "side_pairs": 887,
-    "proximity_pairs": 773,
-    "frozen": 21
+    "contacts": 9,
+    "side_pairs": 972,
+    "proximity_pairs": 806,
+    "frozen": 89
    },
    {
-    "E0": 279333.02804804256,
-    "E1": 20518.644316140064,
+    "E0": 221649.25862851893,
+    "E1": 19981.54780539331,
     "nit": 600,
     "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
-    "free": 813,
-    "faces": 1043,
-    "disp_max_cm": 0.20615421801952516,
-    "disp_mean_cm": 0.04565527940738296,
-    "normal_dev_max_cm": 0.030243024175886587,
-    "transition_disp_max_cm": 0.008141261428677668,
+    "free": 745,
+    "faces": 973,
+    "disp_max_cm": 0.20592815087377037,
+    "disp_mean_cm": 0.04541241568216059,
+    "normal_dev_max_cm": 0.03164429383817134,
+    "transition_disp_max_cm": 0.007714407446200082,
     "cycle": 2,
-    "contacts": 11,
-    "side_pairs": 924,
-    "proximity_pairs": 773,
-    "frozen": 21
+    "contacts": 8,
+    "side_pairs": 981,
+    "proximity_pairs": 806,
+    "frozen": 89
    },
    {
-    "E0": 279333.02804804256,
-    "E1": 20192.099688975904,
+    "E0": 221649.25862851893,
+    "E1": 19981.54780539331,
     "nit": 600,
     "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
-    "free": 813,
-    "faces": 1043,
-    "disp_max_cm": 0.2064325524942867,
-    "disp_mean_cm": 0.045973367190020716,
-    "normal_dev_max_cm": 0.030220611963495302,
-    "transition_disp_max_cm": 0.008141328128054565,
+    "free": 745,
+    "faces": 973,
+    "disp_max_cm": 0.20592815087377037,
+    "disp_mean_cm": 0.04541241568216059,
+    "normal_dev_max_cm": 0.03164429383817134,
+    "transition_disp_max_cm": 0.007714407446200082,
     "cycle": 3,
-    "contacts": 10,
-    "side_pairs": 932,
-    "proximity_pairs": 773,
-    "frozen": 21
+    "contacts": 8,
+    "side_pairs": 981,
+    "proximity_pairs": 806,
+    "frozen": 89
    },
    {
-    "E0": 239590.8251725214,
-    "E1": 26635.828571140006,
+    "E0": 200434.67257249908,
+    "E1": 21805.807476710874,
     "nit": 600,
     "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
-    "free": 775,
-    "faces": 1016,
-    "disp_max_cm": 0.21641367073879636,
-    "disp_mean_cm": 0.044392265617057926,
-    "normal_dev_max_cm": 0.02498056041391409,
-    "transition_disp_max_cm": 0.008141420807938643,
+    "free": 721,
+    "faces": 957,
+    "disp_max_cm": 0.20614026412720104,
+    "disp_mean_cm": 0.04278056189847714,
+    "normal_dev_max_cm": 0.03158032399175336,
+    "transition_disp_max_cm": 0.007713911590786447,
     "cycle": 4,
     "contacts": 2,
-    "side_pairs": 932,
-    "proximity_pairs": 773,
-    "frozen": 59
+    "side_pairs": 981,
+    "proximity_pairs": 806,
+    "frozen": 113
    },
    {
-    "E0": 232491.74118942322,
-    "E1": 25205.195832148725,
+    "E0": 194210.91784184193,
+    "E1": 27397.848004954496,
+    "nit": 149,
+    "msg": "ABNORMAL: ",
+    "free": 709,
+    "faces": 952,
+    "disp_max_cm": 0.20844636751109621,
+    "disp_mean_cm": 0.027253072409141134,
+    "normal_dev_max_cm": 0.034810262804281136,
+    "transition_disp_max_cm": 0.007707898800534317,
+    "cycle": 5,
+    "contacts": 4,
+    "side_pairs": 986,
+    "proximity_pairs": 806,
+    "frozen": 125
+   },
+   {
+    "E0": 173457.21330411,
+    "E1": 26926.575714345436,
     "nit": 600,
     "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
-    "free": 772,
-    "faces": 1013,
-    "disp_max_cm": 0.20478554463957874,
-    "disp_mean_cm": 0.04536742391443913,
-    "normal_dev_max_cm": 0.02497627548772484,
-    "transition_disp_max_cm": 0.008141354241869667,
-    "cycle": 5,
+    "free": 690,
+    "faces": 939,
+    "disp_max_cm": 0.2061931343989976,
+    "disp_mean_cm": 0.04255776731925838,
+    "normal_dev_max_cm": 0.03572827432249865,
+    "transition_disp_max_cm": 0.007714504064823018,
+    "cycle": 6,
     "contacts": 0,
-    "side_pairs": 945,
-    "proximity_pairs": 773,
-    "frozen": 62
+    "side_pairs": 1008,
+    "proximity_pairs": 806,
+    "frozen": 144
    }
   ],
   "aspect_repair": {
@@ -14116,19 +14134,19 @@
   "untangle": {
    "rounds": 10,
    "pairs": [
+    28,
+    28,
     30,
-    27,
-    27,
-    19,
-    7,
-    2,
+    23,
+    10,
+    4,
     2,
     2,
     2,
     2,
     0
    ],
-   "initial_contacts": 30,
+   "initial_contacts": 28,
    "mode": "contacts",
    "aspect_gt7": [
     0,
@@ -14176,19 +14194,41 @@
   }
  },
  "hv_cuff_repair": {
-  "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 10 (junction fixed)",
+  "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 9.8 (junction fixed, symmetric); stage 4 (sheet_fold_fix) symmetric umbrella relaxation of folded sheet quads; stage 5 (sheet_fold_fix) per-vertex pattern search on cuff edges creased > 120 deg",
   "log": [
    {
     "iteration": 0,
     "bad_faces": [
-     56933,
      57091,
+     57092,
+     58702,
      58759
     ],
-    "moved_vertices": 35,
+    "moved_vertices": 34,
     "steps": 6,
-    "worst_after_deg": 15.42,
-    "max_move_cm": 0.0516
+    "worst_after_deg": 15.1,
+    "max_move_cm": 0.0514
+   },
+   {
+    "stage4_sheet_folds": {
+     "folded_before": 18,
+     "folded_after": 6,
+     "steps": 1,
+     "symmetric": true,
+     "max_move_cm": 0.1109
+    }
+   },
+   {
+    "stage5_cuff_creases": {
+     "threshold_deg": 120.0,
+     "creased_edges_before": 9,
+     "creased_edges_after": 0,
+     "worst_dihedral_before": 156.7,
+     "worst_dihedral_after": 119.7,
+     "vertices": 127,
+     "sweeps": 10,
+     "max_move_cm": 0.1119
+    }
    }
   ]
  }

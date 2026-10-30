@@ -3,12 +3,12 @@
  "cand": "HE1",
  "params": {
   "L": 5.6,
-  "wb": 2.2,
+  "wb": 2.15,
   "taper": [
    "halvren",
-   0.66,
-   0.7,
-   0.15
+   0.58,
+   0.8,
+   0.14
   ],
   "lobe": 0.19,
   "proj": 16,
@@ -19,11 +19,11 @@
   "crura": 1.0,
   "concha": 1.0,
   "crus": 0.16,
-  "trag": 0.36,
-  "atrag": 0.28,
+  "trag": 0.3,
+  "atrag": 0.23,
   "helix": [
-   0.42,
-   0.4
+   0.34,
+   0.32
   ]
  },
  "geo": {
@@ -52,7 +52,8 @@
   "root_lower_fall": 1.0,
   "root_lower_fall_own": 1.0,
   "sulcus_h": 0.15,
-  "fair_rings": 1.0
+  "fair_rings": 1.0,
+  "sheet_fold_fix": 1.0
  },
  "HH_cm": 22.44390869140625,
  "head_scale": 0.9970639134343069,
@@ -68,12 +69,12 @@
  "sides": {
   "l": {
    "place_offset_cm": [
-    -0.6598027074360204,
-    0.17809546980930224
+    -0.6547543136209195,
+    0.1774187613791347
    ],
-   "place_score": 0.632362088188659,
-   "min_margin_cm": 0.5745468692660949,
-   "h0_cm": -0.25506037672902715,
+   "place_score": 0.6341785567333097,
+   "min_margin_cm": 0.5878623810985142,
+   "h0_cm": -0.24839501080767667,
    "scale": 0.9970639134343069,
    "canon": {
     "cuff": {
@@ -6933,7 +6934,7 @@
      ]
     }
    },
-   "junction_mean_height_cm": -0.09428364659218738,
+   "junction_mean_height_cm": -0.09249469538877585,
    "root_loop_v005": [
     12320,
     38181,
@@ -7013,12 +7014,12 @@
   },
   "r": {
    "place_offset_cm": [
-    -0.65980270743602,
-    0.17809546980930435
+    -0.6547543136209192,
+    0.17741876137913679
    ],
-   "place_score": 0.6323620881886591,
-   "min_margin_cm": 0.5745468692660902,
-   "h0_cm": -0.2550603767308417,
+   "place_score": 0.6341785567333083,
+   "min_margin_cm": 0.5878623810985093,
+   "h0_cm": -0.24839501080952375,
    "scale": 0.9970639134343069,
    "canon": {
     "cuff": {
@@ -13876,7 +13877,7 @@
      ]
     }
    },
-   "junction_mean_height_cm": -0.094283646592072,
+   "junction_mean_height_cm": -0.092494695388598,
    "root_loop_v005": [
     5723,
     25082,
@@ -13961,15 +13962,15 @@
   "cuff_skin": {
    "l": {
     "fillet_cm": 0.44867876104543813,
-    "junction_height_mean_cm": -0.1511138662103735,
-    "junction_height_max_cm": 0.19904831950418866,
+    "junction_height_mean_cm": -0.14736601912336939,
+    "junction_height_max_cm": 0.20341637955657504,
     "cuff_vertices": 366,
-    "pulled_vertices": 95
+    "pulled_vertices": 96
    },
    "r": {
     "fillet_cm": 0.44867876104543813,
-    "junction_height_mean_cm": -0.15111386621210468,
-    "junction_height_max_cm": 0.19904831950151272,
+    "junction_height_mean_cm": -0.1473660191250825,
+    "junction_height_max_cm": 0.2034163795548829,
     "cuff_vertices": 366,
     "pulled_vertices": 100
    },
@@ -13980,25 +13981,25 @@
    "extra_vertices": 194
   },
   "transition_ring_displacement_cm": {
-   "mean": 0.1763355797896567,
-   "p95": 0.35166018085798867,
-   "max": 0.3847942841099913
+   "mean": 0.17626771135425642,
+   "p95": 0.351453986060478,
+   "max": 0.3827263093415569
   },
   "unknowns": 1028,
   "deform_guard_faces": 0,
   "deform_guard_vertices": 0,
   "quality3d": [
    {
-    "E0": 231498.16503520973,
-    "E1": 21759.88876757141,
+    "E0": 220119.97934312778,
+    "E1": 22259.806320450265,
     "nit": 600,
     "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
     "free": 834,
     "faces": 1058,
-    "disp_max_cm": 0.22162440029580946,
-    "disp_mean_cm": 0.048526160436766205,
-    "normal_dev_max_cm": 0.0354943048500872,
-    "transition_disp_max_cm": 0.012771104095098228,
+    "disp_max_cm": 0.2247370085069471,
+    "disp_mean_cm": 0.04663522983610227,
+    "normal_dev_max_cm": 0.03841452853299613,
+    "transition_disp_max_cm": 0.012689077342803978,
     "params": {
      "lo": 55.0,
      "hi": 125.0,
@@ -14011,33 +14012,101 @@
      "kc": 200000.0,
      "amax": 6.0,
      "ka": 1000.0,
-     "contact_pairs": 850,
+     "contact_pairs": 843,
      "root_pairs": 104,
      "kr": 500.0,
      "th_cap": 64.0
     },
     "cycle": 0,
-    "contacts": 0,
-    "side_pairs": 850,
-    "proximity_pairs": 850,
+    "contacts": 5,
+    "side_pairs": 843,
+    "proximity_pairs": 843,
     "frozen": 0
+   },
+   {
+    "E0": 220119.97934312778,
+    "E1": 22391.25716593605,
+    "nit": 600,
+    "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "free": 834,
+    "faces": 1058,
+    "disp_max_cm": 0.2253625740141228,
+    "disp_mean_cm": 0.04777677087782784,
+    "normal_dev_max_cm": 0.03725164485166353,
+    "transition_disp_max_cm": 0.012688788504424306,
+    "cycle": 1,
+    "contacts": 1,
+    "side_pairs": 864,
+    "proximity_pairs": 843,
+    "frozen": 0
+   },
+   {
+    "E0": 220119.97934312778,
+    "E1": 22391.25716593605,
+    "nit": 600,
+    "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "free": 834,
+    "faces": 1058,
+    "disp_max_cm": 0.2253625740141228,
+    "disp_mean_cm": 0.04777677087782784,
+    "normal_dev_max_cm": 0.03725164485166353,
+    "transition_disp_max_cm": 0.012688788504424306,
+    "cycle": 2,
+    "contacts": 1,
+    "side_pairs": 864,
+    "proximity_pairs": 843,
+    "frozen": 0
+   },
+   {
+    "E0": 220119.97934312778,
+    "E1": 22391.25716593605,
+    "nit": 600,
+    "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "free": 834,
+    "faces": 1058,
+    "disp_max_cm": 0.2253625740141228,
+    "disp_mean_cm": 0.04777677087782784,
+    "normal_dev_max_cm": 0.03725164485166353,
+    "transition_disp_max_cm": 0.012688788504424306,
+    "cycle": 3,
+    "contacts": 1,
+    "side_pairs": 864,
+    "proximity_pairs": 843,
+    "frozen": 0
+   },
+   {
+    "E0": 219461.01867425785,
+    "E1": 22726.06344910205,
+    "nit": 600,
+    "msg": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "free": 828,
+    "faces": 1053,
+    "disp_max_cm": 0.2449133497446894,
+    "disp_mean_cm": 0.04766489066359333,
+    "normal_dev_max_cm": 0.03844910927464082,
+    "transition_disp_max_cm": 0.012688945294844229,
+    "cycle": 4,
+    "contacts": 0,
+    "side_pairs": 864,
+    "proximity_pairs": 843,
+    "frozen": 6
    }
   ],
   "aspect_repair": {
    "rounds": 30,
-   "faces_before": 30,
-   "faces_after": 30
+   "faces_before": 18,
+   "faces_after": 18
   },
   "untangle": {
    "rounds": 4,
    "pairs": [
-    24,
-    17,
+    30,
+    21,
     12,
     9,
     0
    ],
-   "initial_contacts": 24,
+   "initial_contacts": 30,
    "mode": "contacts",
    "aspect_gt7": [
     0,
@@ -14050,19 +14119,19 @@
   "sulcus": {
    "l": {
     "junction_back_height_before_cm": {
-     "mean": 0.06107425280219567,
-     "max": 0.39696554825681407
+     "mean": 0.0563979614807013,
+     "max": 0.37791597449391606
     },
-    "moved_vertices": 142,
-    "max_drop_cm": 0.24696554825681408
+    "moved_vertices": 143,
+    "max_drop_cm": 0.22791597449391607
    },
    "r": {
     "junction_back_height_before_cm": {
-     "mean": 0.06107425280196435,
-     "max": 0.39696554825672326
+     "mean": 0.05639796148048747,
+     "max": 0.37791597449368813
     },
-    "moved_vertices": 142,
-    "max_drop_cm": 0.24696554825672326
+    "moved_vertices": 143,
+    "max_drop_cm": 0.22791597449368814
    }
   },
   "root_lower": {
@@ -14097,17 +14166,38 @@
   }
  },
  "hv_cuff_repair": {
-  "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 10 (junction fixed)",
+  "rule": "tangential umbrella relaxation of cuff vertices of quads with a corner < 12 deg (+ cuff 1-ring), accepted while the worst corner improves; stage 2 per-vertex tangential pattern search if any remain; stage 3 the same on auricle-sheet quads with aspect > 9.8 (junction fixed, symmetric); stage 4 (sheet_fold_fix) symmetric umbrella relaxation of folded sheet quads; stage 5 (sheet_fold_fix) per-vertex pattern search on cuff edges creased > 120 deg",
   "log": [
    {
     "stage3": {
-     "bad_faces": 30,
-     "vertex_pairs": 34,
+     "bad_faces": 16,
+     "vertex_pairs": 17,
      "symmetric": true,
-     "sweeps": 3,
-     "worst_aspect_after": 9.77,
-     "worst_corner_after": 12.09,
-     "max_move_cm": 0.0992
+     "sweeps": 2,
+     "worst_aspect_after": 9.65,
+     "worst_corner_after": 12.45,
+     "max_move_cm": 0.0817
+    }
+   },
+   {
+    "stage4_sheet_folds": {
+     "folded_before": 34,
+     "folded_after": 6,
+     "steps": 2,
+     "symmetric": true,
+     "max_move_cm": 0.2089
+    }
+   },
+   {
+    "stage5_cuff_creases": {
+     "threshold_deg": 120.0,
+     "creased_edges_before": 12,
+     "creased_edges_after": 0,
+     "worst_dihedral_before": 162.2,
+     "worst_dihedral_after": 115.7,
+     "vertices": 97,
+     "sweeps": 9,
+     "max_move_cm": 0.1099
     }
    }
   ]
