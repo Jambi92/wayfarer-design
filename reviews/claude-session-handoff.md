@@ -2,7 +2,14 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — RAC RP4 COGLING — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (not frozen) — awaiting ChatGPT review
+## LATEST (2026-10-30) — COGLING RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record) — awaiting ChatGPT review
+
+- Order 3007aba (record-only freeze closure). `reviews/rac-rp4-evidence/cogling/final/COGLING_RP4_FREEZE.json` promoted from the c800205 candidate; fresh read-back `COGLING_RP4_freeze_closure_readback.json` = reviewed hashes; immutables `immutable_hashes_freeze_closure.txt` 93 / 93 unchanged vs c800205e. Report `reviews/claude-rac-rp4-cogling-freeze-closure-report.md`.
+- Canon `specs/cogling/COGLING_V1.md` RP4 block, STATUS, carry-forward register (no new ID), reference-assets manifest updated. No geometry change; production files not resaved.
+- Production package (13 files) copied to `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Cogling/RP4/`, byte identity verified (`COGLING_RP4_pc_copy_sha256.txt`).
+- **Next:** STOP for ChatGPT review. Saurin is next -- NOT started.
+
+## (previous) 2026-10-30 — RAC RP4 COGLING — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (not frozen)
 
 - Order f58dbd9 (toe + 76 cm T-7 exceptions approved, c2 residual accepted). Gate `reviews/claude-rac-rp4-cogling-final-production-gate.md`; evidence `reviews/rac-rp4-evidence/cogling/final/` (production blends + sidecars + read-back, validator_raw, `COGLING_toe_exception_validator_summary.json`, `COGLING_T7_record.json`, `CG_final_gates.json`, deformation, boards CGF_*, `immutable_hashes_final.txt`, `COGLING_RP4_FREEZE_CANDIDATE.json`).
 - Tools: `run_cg_final.sh` (fresh realizations -> `cg_make_prod.py` -> freeze_check -> `cg_toe_exception.py` -> `cg_t7_scaled.py`), `cg_t7_record.py`, `cg_gates_sum.py final`, `run_cg_def.sh cb final`, `cg_def_sum.py`, `cg_final_record.py`, `CBDIR=final cg_sheets.py`. Workspace `/tmp/claude-0/rt/cg/final/`.

@@ -1,6 +1,13 @@
 # Character Design Status
 
-## RAC RP4 COGLING — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (2026-10-30, NOT frozen)
+## COGLING RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30, by record)
+
+- **Freeze:** `CG_M_REF_RP4_v001`, `CG_F_REF_RP4_v001`, `MPFB_COGLING_COMPACT_BRANCH_v001`, c1 source `CGJ7`, c2 technical anchor `CGF91-NAT`, canonical min `CG76H-NAT`, max `CG107-NAT`. Record `reviews/rac-rp4-evidence/cogling/final/COGLING_RP4_FREEZE.json` (promoted from the c800205 candidate; all reviewed hashes preserved and re-verified by fresh Blender read-back). Closure report `reviews/claude-rac-rp4-cogling-freeze-closure-report.md`.
+- 58,162 V / 58,160 Q, identical c1 / c2 topology `a11b8831…`. No geometry changed during freeze closure; production files not resaved.
+- Raw and adjusted validator histories preserved (raw 65 / 65 / 69 / 65 -> adjusted 69 / 69 x4, scoped Cogling toe exception); raw and adjusted 76 cm T-7 preserved (0.9931 raw, scale-consistent PASS); c2 narrower-core ratio residual preserved as accepted.
+- Cogling is closed. `MPFB_COGLING_COMPACT_BRANCH_v001` is Cogling-only, not a universal compact-race branch. **Saurin is next**, NOT started. Not started: Saurin, rig finalization, creator, engine integration.
+
+### (superseded) RAC RP4 COGLING — FINAL PRODUCTION PASS — READY FOR AUTHOR FREEZE (2026-10-30, NOT frozen)
 
 - **Gate:** `reviews/claude-rac-rp4-cogling-final-production-gate.md` (order f58dbd9). Evidence `reviews/rac-rp4-evidence/cogling/final/`; record `COGLING_RP4_FREEZE_CANDIDATE.json`.
 - **Candidates:** `CG_M_REF_RP4_v001` (c1 CGJ7) / `CG_F_REF_RP4_v001` (c2 CGF91-NAT) on `MPFB_COGLING_COMPACT_BRANCH_v001` (`75ed801f…`); 58,162 V / 58,160 Q, identical face topology `a11b8831…`; read-back clean.
