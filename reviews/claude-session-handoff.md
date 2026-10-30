@@ -2,7 +2,18 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-30) — HALVREN RP3 WHOLE-CHARACTER FINAL CONSOLIDATION — FREEZE RECOMMENDED (not frozen) — awaiting ChatGPT review
+## LATEST (2026-10-30) — HALVREN RP3 WHOLE CHARACTER — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN — awaiting ChatGPT review
+
+**What was done**
+- Order: `reviews/chatgpt-rac-rp3-halvren-whole-character-final-author-acceptance-freeze-closure-order.md` (f62eb1e). Record-only closure: `reviews/rac-rp3-evidence/halvren_rp3_final_whole/HALVREN_RP3_FREEZE.json` (promoted from the e93f90c candidate; copy at E:/.../production/Halvren/RP3/HALVREN_RP3_FREEZE.json), verification `HALVREN_RP3_freeze_closure_readback.json`, report `reviews/claude-rac-rp3-halvren-whole-character-freeze-closure-report.md`.
+- Canon: `specs/halvren/HALVREN_V1.md` RP3 FINAL STATUS block; `specs/STATUS.md`; `specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md` Halvren heading (no new ID).
+
+**Key findings**
+- 11 / 11 production files byte-identical (mtimes unchanged; TRI-HV1 triangles re-derived from the read-back sidecars = frozen, int64 hash convention); frozen MF / FN / AE / VA 29 / 29; repo immutables 22 / 22; HB2 / HF2 / HP-B source records untouched since added.
+
+**Next:** STOP for ChatGPT review. Halvren RP3 is closed; no further Halvren geometry work authorized.
+
+## (previous) 2026-10-30 — HALVREN RP3 WHOLE-CHARACTER FINAL CONSOLIDATION — FREEZE RECOMMENDED (superseded: frozen) — awaiting ChatGPT review
 
 **What was done**
 - Order: `reviews/chatgpt-rac-rp3-halvren-final-whole-character-consolidation-freeze-readiness-order.md` (fd22665). Report: `reviews/claude-rac-rp3-halvren-final-whole-character-consolidation-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_final_whole/` (`HALVREN_RP3_FREEZE_CANDIDATE.json`, `HALVREN_FINAL_gates.json`, deformation summary, HR2-zone localisation, frozen-reference read-back, immutable hashes, blind identity review, boards `sheets/HVFINAL_A..E`).

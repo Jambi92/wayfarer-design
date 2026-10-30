@@ -1,0 +1,207 @@
+{
+ "record": "HALVREN RP3 WHOLE CHARACTER — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN",
+ "date": "2026-10-30",
+ "authority": "reviews/chatgpt-rac-rp3-halvren-whole-character-final-author-acceptance-freeze-closure-order.md (f62eb1e; author ruling: FINAL WHOLE-CHARACTER PRODUCTION FREEZE APPROVED; reviewed commit e93f90c)",
+ "freeze_method": "freeze-by-record of the reviewed candidate (e93f90c): no rebuild, no blend re-save, no sidecar rewrite, no geometry / topology / diagonal / LOD change. This record is authoritative over the embedded / sidecar \"CANDIDATE ... NOT frozen\" strings (Fenn / Aelari / Vael precedent).",
+ "candidate_record": {
+  "path": "reviews/rac-rp3-evidence/halvren_rp3_final_whole/HALVREN_RP3_FREEZE_CANDIDATE.json",
+  "sha256": "89c27f6cd307945a74bddd615b86ed9d169765100fca3f7e14434d574aae0fa3",
+  "commit": "e93f90cde863ebab31a5d5a588f8a1a9d357b94a"
+ },
+ "composition": "HB2 + HF2 + HP-B + HE2 HVEAR3 / HR2 with TRI-HV1 and LOD-HV1; c1 = HV_M_REF_RP3_v001 (HVC1-HB2HF2-HPB), c2 = HV_F_REF_RP3_v001 (HVF178-HB2HF2-HPB); no third central reference",
+ "family_base": {
+  "record": "MPFB_FAMILY_BASE_v005_FREEZE.json",
+  "record_sha256": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+  "blend_sha256": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+  "hm08_map_sha256": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+  "unchanged": true
+ },
+ "ear_family": {
+  "record": "reviews/rac-rp3-evidence/halvren_rp3_final/HALVREN_EAR_FAMILY_RP3_FREEZE.json",
+  "record_sha256": "0f3a324dcccd84876f4f026e3be6260115b5dc52ef6286073c7902887ae07961",
+  "he2_hr2_record": "reviews/rac-rp3-evidence/halvren_rp3_ear_family_closure/HALVREN_HE2_HR2_FREEZE.json",
+  "he2_hr2_record_sha256": "cbb9af4ef230afd492c4218d63b4e7af568aa7b2c9eba459bff14fd2d99ce0a5",
+  "central_ear": "HE2 HVEAR3 + HR2 (V float32 c1 b88da857..., c2 eb18b3c7...; Q 9629e171...)",
+  "bounds_not_used": "HE1 / HE3 remain creator / family bounds",
+  "status": "already FINAL PRODUCTION FROZEN"
+ },
+ "references": {
+  "HV_M_REF_RP3_v001": {
+   "configuration": "c1",
+   "source": "HVC1-HB2HF2-HPB",
+   "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Halvren/RP3/HV_M_REF_RP3_v001.blend",
+   "systems": {
+    "body": "HB2",
+    "face": "HF2",
+    "pelvis": "HP-B",
+    "ear": "HE2 HVEAR3",
+    "root": "HR2",
+    "triangulation": "TRI-HV1",
+    "lod": "LOD-HV1"
+   },
+   "blend_sha256": "4a360bc83f9cd09ce859cd2ae2ff448e81b5f2a0545a60e2b458c2073b7342f8",
+   "sidecar": "HV_M_REF_RP3_v001.json",
+   "sidecar_sha256": "589c2d9edfa086a2c7d090acf1b101649be4479760be4263ed1276ac11aacd82",
+   "branch_map": "HV_M_REF_RP3_v001_branch_map.npz",
+   "branch_map_sha256": "d0785b4a38438970b8349282094a317dc72143b58a87d4e6439bb55c2d616179",
+   "landmarks": "HV_M_REF_RP3_v001_landmarks.json",
+   "landmarks_sha256": "bc03ef766594464d2a180adb0a5a5c5ac74ba4dea8c9f7e0100eaa980de84890",
+   "tri_hv1_sidecar": "HV_M_REF_RP3_v001_TRI-HV1.npz",
+   "tri_hv1_sidecar_sha256": "92c81c4f44cbb7216f51a4ad4864f9859b5bc3a4db901238951a10df467d0c3f",
+   "tri_hv1_triangles_sha256": "9e18beb9e91bca76eb4fee52478c291a7477c8d8839e570550e71110ae9762ed",
+   "tri_hv1_face_attribute": "TRI_HV1_diagonal (INT, FACE)",
+   "geometry_hash": "133f22ee4a15eb949881755a0a62b84f938fef032aca5b461ba2034320a39d66",
+   "face_topology_hash": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
+   "verts": 59076,
+   "quads": 59074,
+   "lineage": {
+    "build_record": "reviews/reference-assets/builds/HVC1-HB2HF2-HPB_build.json",
+    "build_sha256": "ea4be40547c7d3ee75d3f2049eae9cee94727380fe1b49d4063350f9ac662493",
+    "r6": "reviews/reference-assets/r6/HVC1-HB2HF2-HPB_r6.npz",
+    "r6_sha256": "3ae231a861369de9d61a1196b269d8b17630a1ce15b53edadf82bb395f710ba8",
+    "r6_geometry_hash": "5d4a94297281454b02072b2bde91429d04584bb1d80fe38a90dcbf8b3fe08d46",
+    "family_base": "MPFB Family Base v005 (MPFB_FAMILY_BASE_v005_FREEZE.json 2d555a5e...)",
+    "family_realization_sha256": "1af3076656dd1b7943384e4ed6fa846ece5377a93b30650daa6e5bc68b6e6e25",
+    "ear": "HE2 HVEAR3 + HR2 (HALVREN_EAR_FAMILY_RP3_FREEZE.json; HE2 V float32 b88da8570535, Q 9629e1711b76)",
+    "triangulation": "TRI-HV1 (frozen 9e18beb9e91b)",
+    "systems": {
+     "body": "HB2",
+     "face": "HF2",
+     "pelvis": "HP-B",
+     "ear": "HE2 HVEAR3 / HR2"
+    }
+   },
+   "files": {
+    "HV_M_REF_RP3_v001.blend": "4a360bc83f9cd09ce859cd2ae2ff448e81b5f2a0545a60e2b458c2073b7342f8",
+    "HV_M_REF_RP3_v001.json": "589c2d9edfa086a2c7d090acf1b101649be4479760be4263ed1276ac11aacd82",
+    "HV_M_REF_RP3_v001_TRI-HV1.npz": "92c81c4f44cbb7216f51a4ad4864f9859b5bc3a4db901238951a10df467d0c3f",
+    "HV_M_REF_RP3_v001_branch_map.npz": "d0785b4a38438970b8349282094a317dc72143b58a87d4e6439bb55c2d616179",
+    "HV_M_REF_RP3_v001_landmarks.json": "bc03ef766594464d2a180adb0a5a5c5ac74ba4dea8c9f7e0100eaa980de84890"
+   }
+  },
+  "HV_F_REF_RP3_v001": {
+   "configuration": "c2",
+   "source": "HVF178-HB2HF2-HPB",
+   "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Halvren/RP3/HV_F_REF_RP3_v001.blend",
+   "systems": {
+    "body": "HB2",
+    "face": "HF2",
+    "pelvis": "HP-B",
+    "ear": "HE2 HVEAR3",
+    "root": "HR2",
+    "triangulation": "TRI-HV1",
+    "lod": "LOD-HV1"
+   },
+   "blend_sha256": "0e830248dffbabfa803839c8d3dc9567d349a1d1f588813c93c49ce60d62b9fa",
+   "sidecar": "HV_F_REF_RP3_v001.json",
+   "sidecar_sha256": "7b22e2f8fcad40fe2b913508eeebf18b981df85f143d9ec5818e04cc3c0b86cc",
+   "branch_map": "HV_F_REF_RP3_v001_branch_map.npz",
+   "branch_map_sha256": "1e8e82e004fdebd5960ed3f39d3935c2d47918e65cb8800cf91714044499ade6",
+   "landmarks": "HV_F_REF_RP3_v001_landmarks.json",
+   "landmarks_sha256": "e4ead6736cda9fbdd9b9715df2493c519632aaa7815558b74bb3479466c4029b",
+   "tri_hv1_sidecar": "HV_F_REF_RP3_v001_TRI-HV1.npz",
+   "tri_hv1_sidecar_sha256": "f01d2d9494717780ea271c993d48c88ca185d2282b326f2fc784a5e3e4a6812c",
+   "tri_hv1_triangles_sha256": "db0bbcdc4e71532d69367702e251e241f6577408e206b8403194e2d1914285a8",
+   "tri_hv1_face_attribute": "TRI_HV1_diagonal (INT, FACE)",
+   "geometry_hash": "ca90812f80e6d40fd0ca02f587e68921cd4f6d5e7900b4538c8cefc4e56e1a20",
+   "face_topology_hash": "f8367ab09385d218559b6d3cac52ed159a9249cf12d91807e93e3b095d9ac297",
+   "verts": 59076,
+   "quads": 59074,
+   "lineage": {
+    "build_record": "reviews/reference-assets/builds/HVF178-HB2HF2-HPB_build.json",
+    "build_sha256": "827b656859c0133191c43963c5b934d99cb7aaf5a6099c818b6e63a8a5c23400",
+    "r6": "reviews/reference-assets/r6/HVF178-HB2HF2-HPB_r6.npz",
+    "r6_sha256": "fc47ba4bf38a807f2e5f6d18826f47c2e9051752b76b27deda3cc13645b4c329",
+    "r6_geometry_hash": "b9d1d1bda46d6ceba4f06ff7e8986bebea00096c7e232eaa456cf617ad852ff7",
+    "family_base": "MPFB Family Base v005 (MPFB_FAMILY_BASE_v005_FREEZE.json 2d555a5e...)",
+    "family_realization_sha256": "562c13bfc4a8c45190b492bfdf24d110e016da36fee3d6f895f1e8d74db0ed08",
+    "ear": "HE2 HVEAR3 + HR2 (HALVREN_EAR_FAMILY_RP3_FREEZE.json; HE2 V float32 eb18b3c7feaa, Q 9629e1711b76)",
+    "triangulation": "TRI-HV1 (frozen db0bbcdc4e71)",
+    "systems": {
+     "body": "HB2",
+     "face": "HF2",
+     "pelvis": "HP-B",
+     "ear": "HE2 HVEAR3 / HR2"
+    }
+   },
+   "files": {
+    "HV_F_REF_RP3_v001.blend": "0e830248dffbabfa803839c8d3dc9567d349a1d1f588813c93c49ce60d62b9fa",
+    "HV_F_REF_RP3_v001.json": "7b22e2f8fcad40fe2b913508eeebf18b981df85f143d9ec5818e04cc3c0b86cc",
+    "HV_F_REF_RP3_v001_TRI-HV1.npz": "f01d2d9494717780ea271c993d48c88ca185d2282b326f2fc784a5e3e4a6812c",
+    "HV_F_REF_RP3_v001_branch_map.npz": "1e8e82e004fdebd5960ed3f39d3935c2d47918e65cb8800cf91714044499ade6",
+    "HV_F_REF_RP3_v001_landmarks.json": "e4ead6736cda9fbdd9b9715df2493c519632aaa7815558b74bb3479466c4029b"
+   }
+  }
+ },
+ "production_location": {
+  "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Halvren/RP3/",
+  "manifest": "HALVREN_RP3_final_reference_manifest.json",
+  "manifest_sha256": "1dbe037c4be7f4b4b86caec0bb7673f2a89bebdddce14ccb18d0634dc5f40001",
+  "files_verified": 11,
+  "byte_identical_to_candidate": true,
+  "freeze_record_copy": "HALVREN_RP3_FREEZE.json (metadata-only file beside the frozen blends, as Fenn / Aelari)"
+ },
+ "production_contract": {
+  "triangulation": "TRI-HV1 mandatory baked triangulation (face attribute TRI_HV1_diagonal + NAME_TRI-HV1.npz); export the baked triangles; never export ear quads for importer-side triangulation",
+  "lod": "LOD-HV1 mandatory (protected root band, weighted lobe zone)",
+  "normals_tangents": "smooth normals on the baked triangles; MikkTSpace-compatible tangents; preserve / import, never regenerate in a way that changes the frozen surface",
+  "ear_skinning": "ear branch effectively rigid to the head / skull at final skinning (as VAEL-CF-EARROOT-1)"
+ },
+ "accepted_residuals": [
+  "frozen HE2 surface relief residuals (stamped interior relief, concha / scapha relief)",
+  "cuff band / back-sheet crumple (Z-kink)",
+  "HR2 lobe-base crease",
+  "residual folded / warped quads accepted under TRI-HV1 (frozen Fenn / Aelari / Vael class)",
+  "subtle hidden-ear read (accepted HB2 + HF2 + HP-B source read)",
+  "MPFB expression-unit blink lid-closure self-intersections / surprise flips (rig / expression stage)",
+  "HR2 root-zone anatomy-mask exception (214 / 220 head-skin vertices <= 0.47 cm from the branch; T1 / T2 / T3 / T7 PASS with the zone excluded)",
+  "normal 25 % LOD skin softening behind the root"
+ ],
+ "carry_forward": [
+  {
+   "id": "HALVREN-CF-EAR-TRI-LOD-1",
+   "stage": "first UE5 integration",
+   "item": "verify exact triangle count / topology; no importer re-triangulation; normals / tangents intact; root seam intact; LOD-HV1 silhouettes match",
+   "blocking": false,
+   "register": "specs/RAC_PRODUCTION_RIG_CARRY_FORWARD_REGISTER.md"
+  },
+  {
+   "id": "(Halvren canon) ear-root skinning",
+   "stage": "production rigging",
+   "item": "bind the ear branch rigidly to the head at final skinning (same requirement as the frozen ear family)",
+   "blocking": false
+  },
+  {
+   "id": "(expression stage)",
+   "stage": "rig / expression",
+   "item": "MPFB expression-unit lid-closure / expression-flip class carried as a rig / expression-stage issue, not a source-geometry blocker",
+   "blocking": false
+  }
+ ],
+ "gates": {
+  "rebuild": "regen dV 0, full record rebuild = committed r6 (dV 0), family = accepted (byte-identical), HE2 = frozen V / Q, TRI-HV1 = frozen",
+  "validator": "69 / 69 firm both (= family); read-back geometry 69 / 69",
+  "integrity": "59,076 V / 59,074 quads, 1 component, 0 boundary / non-manifold / degenerate",
+  "regression": "body / face = accepted HPB_eval; skeletal proxy = accepted HP-B; outside the frozen HE2 branch + HR2 zone dV = 0",
+  "deformation": "final - family new flips / self-intersections 0 on all 18 poses; ear readiness 0",
+  "identity": "blind review: Q1 PASS, Q3 PASS, Q4 PASS (weak), Q2 / Q5 BORDERLINE (accepted subtle source read), Q6 FAIL on frozen HE2 surface residuals (not new / not worse than the frozen ear)",
+  "immutable": "all frozen references unchanged (repo + E: production read-back 29 / 29)"
+ },
+ "identity_review": {
+  "record": "reviews/rac-rp3-evidence/halvren_rp3_final_whole/blind_identity_review.md",
+  "summary": "blind review: Q1 PASS, Q3 PASS, Q4 PASS (weak), Q2 / Q5 BORDERLINE (accepted subtle source read), Q6 FAIL on frozen HE2 surface residuals (not new / not worse than the frozen ear)",
+  "author_ruling": "accepted"
+ },
+ "immutable_verification": {
+  "record": "reviews/rac-rp3-evidence/halvren_rp3_final_whole/HALVREN_RP3_freeze_closure_readback.json",
+  "production_halvren": "11 / 11 byte-identical + TRI-HV1 triangles re-derived = frozen",
+  "frozen_races_on_E": "29 / 29 unchanged (Marchfolk v005 M / F, MPFB v005 freeze, Fenn / Aelari / Vael blends, sidecars, branch maps, landmarks, Fenn / Aelari freeze copies)",
+  "repo": "22 / 22 unchanged (ear-family closure list, ear-family freeze, HE2 + HR2 freeze, baked TRI-HV1 files)",
+  "accepted_sources": "HB2 / HF2 / HP-B build records, r6 sources, HPB_eval c1 / c2, HV_HPB_validation, HV_hpb_technical, bf candidate manifest: unchanged since e93f90c and never modified since added",
+  "all_verified": true
+ },
+ "freezes": [
+  "HV_M_REF_RP3_v001 / HV_F_REF_RP3_v001 as the final Halvren RP3 whole-character production references"
+ ],
+ "not_done": "no geometry / topology / sidecar / blend change; no UE5, creator, hair / clothing / materials; no other race"
+}

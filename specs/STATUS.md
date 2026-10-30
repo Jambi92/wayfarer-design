@@ -1,6 +1,15 @@
 # Character Design Status
 
-## HALVREN RP3 WHOLE-CHARACTER FINAL CONSOLIDATION — HALVREN RP3 WHOLE-CHARACTER FINAL FREEZE RECOMMENDED (not frozen) (2026-10-30)
+## HALVREN RP3 WHOLE CHARACTER — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30)
+
+- **Freeze record:** `reviews/rac-rp3-evidence/halvren_rp3_final_whole/HALVREN_RP3_FREEZE.json` (freeze-by-record of the e93f90c candidate; copy beside the production files on E:). Closure report: `reviews/claude-rac-rp3-halvren-whole-character-freeze-closure-report.md`.
+- **Final references:** `HV_M_REF_RP3_v001` (c1, HVC1-HB2HF2-HPB, geometry `133f22ee...`) and `HV_F_REF_RP3_v001` (c2, HVF178-HB2HF2-HPB, `ca90812f...`); composition HB2 + HF2 + HP-B + HE2 HVEAR3 / HR2. The ear family was already frozen.
+- **Production rules:** TRI-HV1 (c1 `9e18beb9...`, c2 `db0bbcdc...`) and LOD-HV1 stay mandatory; normals / tangents imported; ear rigid to the head at skinning.
+- **No geometry change in the closure:** the 11 production files on E: re-hash byte-identical to the candidate; frozen Marchfolk / Fenn / Aelari / Vael 29 / 29, repo immutables 22 / 22, HB2 / HF2 / HP-B source records unchanged.
+- **Carry-forwards:** HALVREN-CF-EAR-TRI-LOD-1, ear-root rigid skinning, expression-stage lid-closure / flip class.
+- **Next:** STOP for ChatGPT review.
+
+## (previous) HALVREN RP3 WHOLE-CHARACTER FINAL CONSOLIDATION — HALVREN RP3 WHOLE-CHARACTER FINAL FREEZE RECOMMENDED (superseded: frozen 2026-10-30) (2026-10-30)
 
 - **Report:** `reviews/claude-rac-rp3-halvren-final-whole-character-consolidation-report.md`. Evidence: `reviews/rac-rp3-evidence/halvren_rp3_final_whole/` (candidate record `HALVREN_RP3_FREEZE_CANDIDATE.json`, gates, boards A-E, blind identity review).
 - **Candidates:** `HV_M_REF_RP3_v001` (c1, HVC1-HB2HF2-HPB, geometry `133f22ee...`) / `HV_F_REF_RP3_v001` (c2, HVF178-HB2HF2-HPB, `ca90812f...`) = HB2 + HF2 + HP-B + HE2 HVEAR3 / HR2 with TRI-HV1 (attribute + sidecar); E:/.../production/Halvren/RP3/ (11 files read back byte-identical). Embedded status "CANDIDATE ... NOT frozen".

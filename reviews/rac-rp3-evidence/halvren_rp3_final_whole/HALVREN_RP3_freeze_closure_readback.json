@@ -1,0 +1,396 @@
+{
+ "record": "Halvren RP3 whole-character freeze closure -- production read-back and immutable-reference re-verification (2026-10-30)",
+ "production": {
+  "HV_M_REF_RP3_v001.blend": {
+   "candidate": "4a360bc83f9cd09ce859cd2ae2ff448e81b5f2a0545a60e2b458c2073b7342f8",
+   "readback": "4a360bc83f9cd09ce859cd2ae2ff448e81b5f2a0545a60e2b458c2073b7342f8",
+   "identical": true
+  },
+  "HV_M_REF_RP3_v001.json": {
+   "candidate": "589c2d9edfa086a2c7d090acf1b101649be4479760be4263ed1276ac11aacd82",
+   "readback": "589c2d9edfa086a2c7d090acf1b101649be4479760be4263ed1276ac11aacd82",
+   "identical": true
+  },
+  "HV_M_REF_RP3_v001_TRI-HV1.npz": {
+   "candidate": "92c81c4f44cbb7216f51a4ad4864f9859b5bc3a4db901238951a10df467d0c3f",
+   "readback": "92c81c4f44cbb7216f51a4ad4864f9859b5bc3a4db901238951a10df467d0c3f",
+   "identical": true
+  },
+  "HV_M_REF_RP3_v001_branch_map.npz": {
+   "candidate": "d0785b4a38438970b8349282094a317dc72143b58a87d4e6439bb55c2d616179",
+   "readback": "d0785b4a38438970b8349282094a317dc72143b58a87d4e6439bb55c2d616179",
+   "identical": true
+  },
+  "HV_M_REF_RP3_v001_landmarks.json": {
+   "candidate": "bc03ef766594464d2a180adb0a5a5c5ac74ba4dea8c9f7e0100eaa980de84890",
+   "readback": "bc03ef766594464d2a180adb0a5a5c5ac74ba4dea8c9f7e0100eaa980de84890",
+   "identical": true
+  },
+  "HV_M_REF_RP3_v001_TRI-HV1 triangles": {
+   "frozen": "9e18beb9e91bca76eb4fee52478c291a7477c8d8839e570550e71110ae9762ed",
+   "recomputed_from_readback_sidecar": "9e18beb9e91bca76eb4fee52478c291a7477c8d8839e570550e71110ae9762ed",
+   "stored": "9e18beb9e91bca76eb4fee52478c291a7477c8d8839e570550e71110ae9762ed",
+   "identical": true,
+   "hash_convention": "sha256 of the int64 (2 x quads, 3) triangle array (hv_make_prod.py / frozen record convention)"
+  },
+  "HV_F_REF_RP3_v001.blend": {
+   "candidate": "0e830248dffbabfa803839c8d3dc9567d349a1d1f588813c93c49ce60d62b9fa",
+   "readback": "0e830248dffbabfa803839c8d3dc9567d349a1d1f588813c93c49ce60d62b9fa",
+   "identical": true
+  },
+  "HV_F_REF_RP3_v001.json": {
+   "candidate": "7b22e2f8fcad40fe2b913508eeebf18b981df85f143d9ec5818e04cc3c0b86cc",
+   "readback": "7b22e2f8fcad40fe2b913508eeebf18b981df85f143d9ec5818e04cc3c0b86cc",
+   "identical": true
+  },
+  "HV_F_REF_RP3_v001_TRI-HV1.npz": {
+   "candidate": "f01d2d9494717780ea271c993d48c88ca185d2282b326f2fc784a5e3e4a6812c",
+   "readback": "f01d2d9494717780ea271c993d48c88ca185d2282b326f2fc784a5e3e4a6812c",
+   "identical": true
+  },
+  "HV_F_REF_RP3_v001_branch_map.npz": {
+   "candidate": "1e8e82e004fdebd5960ed3f39d3935c2d47918e65cb8800cf91714044499ade6",
+   "readback": "1e8e82e004fdebd5960ed3f39d3935c2d47918e65cb8800cf91714044499ade6",
+   "identical": true
+  },
+  "HV_F_REF_RP3_v001_landmarks.json": {
+   "candidate": "e4ead6736cda9fbdd9b9715df2493c519632aaa7815558b74bb3479466c4029b",
+   "readback": "e4ead6736cda9fbdd9b9715df2493c519632aaa7815558b74bb3479466c4029b",
+   "identical": true
+  },
+  "HV_F_REF_RP3_v001_TRI-HV1 triangles": {
+   "frozen": "db0bbcdc4e71532d69367702e251e241f6577408e206b8403194e2d1914285a8",
+   "recomputed_from_readback_sidecar": "db0bbcdc4e71532d69367702e251e241f6577408e206b8403194e2d1914285a8",
+   "stored": "db0bbcdc4e71532d69367702e251e241f6577408e206b8403194e2d1914285a8",
+   "identical": true,
+   "hash_convention": "sha256 of the int64 (2 x quads, 3) triangle array (hv_make_prod.py / frozen record convention)"
+  },
+  "HALVREN_RP3_final_reference_manifest.json": {
+   "candidate": "1dbe037c4be7f4b4b86caec0bb7673f2a89bebdddce14ccb18d0634dc5f40001",
+   "readback": "1dbe037c4be7f4b4b86caec0bb7673f2a89bebdddce14ccb18d0634dc5f40001",
+   "identical": true
+  }
+ },
+ "frozen_races": {
+  "Fenn/RP3/FN_M_REF_RP3_v001.blend": {
+   "recorded": "3f7f17783ad59d5fff9c139ccd64d312ccb4c7295fe58a365229ef4b72d8633c",
+   "readback": "3f7f17783ad59d5fff9c139ccd64d312ccb4c7295fe58a365229ef4b72d8633c",
+   "unchanged": true
+  },
+  "Fenn/RP3/FN_M_REF_RP3_v001.json": {
+   "recorded": "8e14c02348506c1c95607397d1fc1d44bfa328499e22c0034087059f867e22e0",
+   "readback": "8e14c02348506c1c95607397d1fc1d44bfa328499e22c0034087059f867e22e0",
+   "unchanged": true
+  },
+  "Fenn/RP3/FN_M_REF_RP3_v001_branch_map.npz": {
+   "recorded": "5d8b783c63db90363718ee2eb99b873df911826d97ff5199a1d21a0797c94171",
+   "readback": "5d8b783c63db90363718ee2eb99b873df911826d97ff5199a1d21a0797c94171",
+   "unchanged": true
+  },
+  "Fenn/RP3/FN_M_REF_RP3_v001_landmarks.json": {
+   "recorded": "a5b013ddac05e1a70edccebdc747019422b0aaaa8a4d2f1ddd6d712fcdaee203",
+   "readback": "a5b013ddac05e1a70edccebdc747019422b0aaaa8a4d2f1ddd6d712fcdaee203",
+   "unchanged": true
+  },
+  "Fenn/RP3/FN_F_REF_RP3_v001.blend": {
+   "recorded": "14c1cf81bec30ed7656e81a2b6ce1b7cd4bbdfad18aa372642a1a9dd48cd9f6e",
+   "readback": "14c1cf81bec30ed7656e81a2b6ce1b7cd4bbdfad18aa372642a1a9dd48cd9f6e",
+   "unchanged": true
+  },
+  "Fenn/RP3/FN_F_REF_RP3_v001.json": {
+   "recorded": "514cc3366376f087eda086a4a559df4e7787743f79bd7da5a2c3a73bf676626f",
+   "readback": "514cc3366376f087eda086a4a559df4e7787743f79bd7da5a2c3a73bf676626f",
+   "unchanged": true
+  },
+  "Fenn/RP3/FN_F_REF_RP3_v001_branch_map.npz": {
+   "recorded": "c03cb673c0b8c92e3cc91a12ab3a8b6c604b8a6199a04e42f7a47922183e35c7",
+   "readback": "c03cb673c0b8c92e3cc91a12ab3a8b6c604b8a6199a04e42f7a47922183e35c7",
+   "unchanged": true
+  },
+  "Fenn/RP3/FN_F_REF_RP3_v001_landmarks.json": {
+   "recorded": "4d6fd7e79821bdfd03c55fe286c96f09ed95377cc89cdcf4b888e89bed7f2f73",
+   "readback": "4d6fd7e79821bdfd03c55fe286c96f09ed95377cc89cdcf4b888e89bed7f2f73",
+   "unchanged": true
+  },
+  "Fenn/RP3/FENN_RP3_FREEZE.json": {
+   "repo": "0bafdfb416eac50f8026145a48316bcbad69494e6361ba6222159b75c1f4c153",
+   "readback": "0bafdfb416eac50f8026145a48316bcbad69494e6361ba6222159b75c1f4c153",
+   "unchanged": true
+  },
+  "Aelari/RP3/AE_M_REF_RP3_v001.blend": {
+   "recorded": "b4bcf9ee124985dad476c7794b828d44ee6fc99ebeab75c6150626214f640414",
+   "readback": "b4bcf9ee124985dad476c7794b828d44ee6fc99ebeab75c6150626214f640414",
+   "unchanged": true
+  },
+  "Aelari/RP3/AE_M_REF_RP3_v001.json": {
+   "recorded": "680bd549ffb2ac30890b8cd737a3f1b008e6ed0ccbaee3f42028c7b7d84cd3f1",
+   "readback": "680bd549ffb2ac30890b8cd737a3f1b008e6ed0ccbaee3f42028c7b7d84cd3f1",
+   "unchanged": true
+  },
+  "Aelari/RP3/AE_M_REF_RP3_v001_branch_map.npz": {
+   "recorded": "a90aa2018c90526ef659619b0298114948e4b43ed8cec1250efb6c89aa4af63d",
+   "readback": "a90aa2018c90526ef659619b0298114948e4b43ed8cec1250efb6c89aa4af63d",
+   "unchanged": true
+  },
+  "Aelari/RP3/AE_M_REF_RP3_v001_landmarks.json": {
+   "recorded": "e6fe232c74efcec7125843ce622815a7c1862d7f8576309dbd117a4b7b09fb1f",
+   "readback": "e6fe232c74efcec7125843ce622815a7c1862d7f8576309dbd117a4b7b09fb1f",
+   "unchanged": true
+  },
+  "Aelari/RP3/AE_F_REF_RP3_v001.blend": {
+   "recorded": "505f340573b573c7b09bed547112b555925bc975ea7f0249ec191365fae1175c",
+   "readback": "505f340573b573c7b09bed547112b555925bc975ea7f0249ec191365fae1175c",
+   "unchanged": true
+  },
+  "Aelari/RP3/AE_F_REF_RP3_v001.json": {
+   "recorded": "af82a48107f33b7ebd37591f49cd1e4b9d2a5c17a505ec46c39f430af0072e07",
+   "readback": "af82a48107f33b7ebd37591f49cd1e4b9d2a5c17a505ec46c39f430af0072e07",
+   "unchanged": true
+  },
+  "Aelari/RP3/AE_F_REF_RP3_v001_branch_map.npz": {
+   "recorded": "72357e186023637cff906a7cb0ff56a5a38b3d0e5844f26f1e6b2633e1048009",
+   "readback": "72357e186023637cff906a7cb0ff56a5a38b3d0e5844f26f1e6b2633e1048009",
+   "unchanged": true
+  },
+  "Aelari/RP3/AE_F_REF_RP3_v001_landmarks.json": {
+   "recorded": "14cefd65c03464a9cf80d3a3b9d507b1a8e82f9dc65b9b4627b69d451983fe3b",
+   "readback": "14cefd65c03464a9cf80d3a3b9d507b1a8e82f9dc65b9b4627b69d451983fe3b",
+   "unchanged": true
+  },
+  "Aelari/RP3/AELARI_RP3_FREEZE.json": {
+   "repo": "bccd7865af3538dc8b47cbacf246af149a1a8658813a2e1bbeee5bec46cb426a",
+   "readback": "bccd7865af3538dc8b47cbacf246af149a1a8658813a2e1bbeee5bec46cb426a",
+   "unchanged": true
+  },
+  "Vael/RP3/VA_M_REF_RP3_v001.blend": {
+   "recorded": "42f0cebbf9588bb9acc7fd7746ff804f84fa104cf2d672285372375af2de855b",
+   "readback": "42f0cebbf9588bb9acc7fd7746ff804f84fa104cf2d672285372375af2de855b",
+   "unchanged": true
+  },
+  "Vael/RP3/VA_M_REF_RP3_v001.json": {
+   "recorded": "2c9f74cb00f742ac894fcc14915bf558c60e59bb0d6f7e39a02331944ed0339c",
+   "readback": "2c9f74cb00f742ac894fcc14915bf558c60e59bb0d6f7e39a02331944ed0339c",
+   "unchanged": true
+  },
+  "Vael/RP3/VA_M_REF_RP3_v001_branch_map.npz": {
+   "recorded": "147eeefe52efaf684938f93fee5f47ba70d3a18872e8847efebcd726923bec18",
+   "readback": "147eeefe52efaf684938f93fee5f47ba70d3a18872e8847efebcd726923bec18",
+   "unchanged": true
+  },
+  "Vael/RP3/VA_M_REF_RP3_v001_landmarks.json": {
+   "recorded": "982245a0021e026184bd1a55e1ec2a0d683f461d2b24e01e689bb6a635167041",
+   "readback": "982245a0021e026184bd1a55e1ec2a0d683f461d2b24e01e689bb6a635167041",
+   "unchanged": true
+  },
+  "Vael/RP3/VA_F_REF_RP3_v001.blend": {
+   "recorded": "516b18e8933a2d33f62cf51472408d9588af2c23179ff7b2f5119775dd75bc3a",
+   "readback": "516b18e8933a2d33f62cf51472408d9588af2c23179ff7b2f5119775dd75bc3a",
+   "unchanged": true
+  },
+  "Vael/RP3/VA_F_REF_RP3_v001.json": {
+   "recorded": "c10c439912e3208b4ce91bab4fa330f5c62ce922d98b905275b1b20ab31f6a79",
+   "readback": "c10c439912e3208b4ce91bab4fa330f5c62ce922d98b905275b1b20ab31f6a79",
+   "unchanged": true
+  },
+  "Vael/RP3/VA_F_REF_RP3_v001_branch_map.npz": {
+   "recorded": "b6c8395a93fa698483194af3bc9b28cd68cf9c5a3c05689808dc763aef87d41c",
+   "readback": "b6c8395a93fa698483194af3bc9b28cd68cf9c5a3c05689808dc763aef87d41c",
+   "unchanged": true
+  },
+  "Vael/RP3/VA_F_REF_RP3_v001_landmarks.json": {
+   "recorded": "a9c1cbfe00587f1ff74fe6236bffa7710cbc75798c6cf377f9ade2cdc24114a6",
+   "readback": "a9c1cbfe00587f1ff74fe6236bffa7710cbc75798c6cf377f9ade2cdc24114a6",
+   "unchanged": true
+  },
+  "Marchfolk/RP3/MF_M_REF_RP3_retopo_v005.blend": {
+   "reference": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+   "readback": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+   "unchanged": true
+  },
+  "Marchfolk/RP3/MPFB_FAMILY_BASE_v005_FREEZE.json": {
+   "reference": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+   "readback": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+   "unchanged": true
+  },
+  "Marchfolk/RP3/MF_F_REF_RP3_retopo_v005.blend": {
+   "readback": "f2f2f9dc4bb15ef2ba48f64d1198297f29605a10fee347aac94e12e89e4db75d",
+   "recorded_in_v005_freeze": true,
+   "unchanged": true
+  }
+ },
+ "repo": {
+  "/mnt/user-data/outputs/rp5/MF_M_REF_RP3_retopo_v005.blend": {
+   "recorded": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+   "now": "e560386cf041368568a79a3395343e95bedcbde5386bcd22ecc3288286a19a92",
+   "unchanged": true
+  },
+  "/mnt/user-data/outputs/rp5/MF_M_REF_RP3_retopo_v005_hm08_map.npz": {
+   "recorded": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "now": "e690fbafb53adc27dfd4e4203ef06878ab37694e2cc9c3eb6257bf2eaefe463d",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/mpfb_family_base_v005_freeze/MPFB_FAMILY_BASE_v005_FREEZE.json": {
+   "recorded": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+   "now": "2d555a5e6b22bd065eecb69cb36f093a205e497b6bc6919dbaca39c586de78ea",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/fenn_rp3_freeze/FENN_RP3_FREEZE.json": {
+   "recorded": "0bafdfb416eac50f8026145a48316bcbad69494e6361ba6222159b75c1f4c153",
+   "now": "0bafdfb416eac50f8026145a48316bcbad69494e6361ba6222159b75c1f4c153",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/aelari_rp3_freeze/AELARI_RP3_FREEZE.json": {
+   "recorded": "bccd7865af3538dc8b47cbacf246af149a1a8658813a2e1bbeee5bec46cb426a",
+   "now": "bccd7865af3538dc8b47cbacf246af149a1a8658813a2e1bbeee5bec46cb426a",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/vael_rp3_final/VAEL_RP3_FREEZE.json": {
+   "recorded": "d14c8611cee977b803c16f971c244d0fe4beef631cd0716846733cdc9d1fbb71",
+   "now": "d14c8611cee977b803c16f971c244d0fe4beef631cd0716846733cdc9d1fbb71",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/fenn_ear_v002/topology/FENN_EAR_BRANCH_CUFF_CANON_v002.json": {
+   "recorded": "2f1c1ed637566c04d931b5050fc38d82d796aba984d79aff887ccb78af255d8e",
+   "now": "2f1c1ed637566c04d931b5050fc38d82d796aba984d79aff887ccb78af255d8e",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/fenn_ear_v002/topology/FENN_EAR_BRANCH_TOPOLOGY_v002.json": {
+   "recorded": "e8d6e91a249220794d296f7c6a317085cae87cb470cbec7f9b4f6dedf63decc7",
+   "now": "e8d6e91a249220794d296f7c6a317085cae87cb470cbec7f9b4f6dedf63decc7",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/fenn_ear_v002/topology/FENN_EAR_BRANCH_TOPOLOGY_v002.npz": {
+   "recorded": "85a53c81c0f2c9bf0f307571d93ab74e118981ff55e6432acd0143d1218101bf",
+   "now": "85a53c81c0f2c9bf0f307571d93ab74e118981ff55e6432acd0143d1218101bf",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/vael_rp3_ear_root_integration/topology/VAEL_EAR_BRANCH_TOPOLOGY_v002.json": {
+   "recorded": "5b654f2f8b645708e9dae8fde9798888dbdfdb397efb17dec58044943d940305",
+   "now": "5b654f2f8b645708e9dae8fde9798888dbdfdb397efb17dec58044943d940305",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/vael_rp3_ear_root_integration/topology/VAEL_EAR_BRANCH_TOPOLOGY_v002.npz": {
+   "recorded": "5b2d9507e0d781babf965fea3baf1e04471a891bd82794853427ec9028600f41",
+   "now": "5b2d9507e0d781babf965fea3baf1e04471a891bd82794853427ec9028600f41",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/vael_rp3_ear_root_integration/topology/VAEL_EAR_CUFF_CANON_v001.json": {
+   "recorded": "1a0b070b42e84846d1b7beebfd153fec8d1ddf4e5a1d2ecc54a0d4351549a779",
+   "now": "1a0b070b42e84846d1b7beebfd153fec8d1ddf4e5a1d2ecc54a0d4351549a779",
+   "unchanged": true
+  },
+  "reviews/reference-assets/r6/HVC1-HB2HF2-HPB_r6.npz": {
+   "recorded": "3ae231a861369de9d61a1196b269d8b17630a1ce15b53edadf82bb395f710ba8",
+   "now": "3ae231a861369de9d61a1196b269d8b17630a1ce15b53edadf82bb395f710ba8",
+   "unchanged": true
+  },
+  "reviews/reference-assets/r6/HVF178-HB2HF2-HPB_r6.npz": {
+   "recorded": "fc47ba4bf38a807f2e5f6d18826f47c2e9051752b76b27deda3cc13645b4c329",
+   "now": "fc47ba4bf38a807f2e5f6d18826f47c2e9051752b76b27deda3cc13645b4c329",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_final/HALVREN_EAR_FAMILY_RP3_FREEZE.json": {
+   "recorded": "0f3a324dcccd84876f4f026e3be6260115b5dc52ef6286073c7902887ae07961",
+   "now": "0f3a324dcccd84876f4f026e3be6260115b5dc52ef6286073c7902887ae07961",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_ear_family_closure/HALVREN_HE2_HR2_FREEZE.json": {
+   "recorded": "cbb9af4ef230afd492c4218d63b4e7af568aa7b2c9eba459bff14fd2d99ce0a5",
+   "now": "cbb9af4ef230afd492c4218d63b4e7af568aa7b2c9eba459bff14fd2d99ce0a5",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_final/baked/HE1_c1_TRI-HV1.npz": {
+   "recorded": "61892528241ff2c7066f61944ebc39366757175adcae8ec1268e53328186371b",
+   "now": "61892528241ff2c7066f61944ebc39366757175adcae8ec1268e53328186371b",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_final/baked/HE1_c2_TRI-HV1.npz": {
+   "recorded": "2d613cb2948a1d8786b53252270f0282227ba41789ba936f80c44a09ed1909c4",
+   "now": "2d613cb2948a1d8786b53252270f0282227ba41789ba936f80c44a09ed1909c4",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_final/baked/HE2_c1_TRI-HV1.npz": {
+   "recorded": "022bb47995924a11db8b0db7721f5f98f543a2fd7ff621c4f8b81f62ecf14c93",
+   "now": "022bb47995924a11db8b0db7721f5f98f543a2fd7ff621c4f8b81f62ecf14c93",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_final/baked/HE2_c2_TRI-HV1.npz": {
+   "recorded": "f3ad77251e92d076af777609515cf07701bd4facea25180950a43a1ea62c3f35",
+   "now": "f3ad77251e92d076af777609515cf07701bd4facea25180950a43a1ea62c3f35",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_final/baked/HE3_c1_TRI-HV1.npz": {
+   "recorded": "5e3e5ccb703f65ddd86ab0470efcaf18b53db3c6aba5c4808424ee4f48c24998",
+   "now": "5e3e5ccb703f65ddd86ab0470efcaf18b53db3c6aba5c4808424ee4f48c24998",
+   "unchanged": true
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_final/baked/HE3_c2_TRI-HV1.npz": {
+   "recorded": "6b18882d8560691d962efff758de0cf665d46e5d4dc4ef8330c690946a5a1e3f",
+   "now": "6b18882d8560691d962efff758de0cf665d46e5d4dc4ef8330c690946a5a1e3f",
+   "unchanged": true
+  }
+ },
+ "accepted_sources": {
+  "reviews/reference-assets/builds/HVC1-HB2HF2-HPB_build.json": {
+   "sha256": "ea4be40547c7d3ee75d3f2049eae9cee94727380fe1b49d4063350f9ac662493",
+   "unchanged_since_reviewed_commit": true,
+   "added_in": "1242cae",
+   "commits_touching": 1
+  },
+  "reviews/reference-assets/builds/HVF178-HB2HF2-HPB_build.json": {
+   "sha256": "827b656859c0133191c43963c5b934d99cb7aaf5a6099c818b6e63a8a5c23400",
+   "unchanged_since_reviewed_commit": true,
+   "added_in": "1242cae",
+   "commits_touching": 1
+  },
+  "reviews/reference-assets/r6/HVC1-HB2HF2-HPB_r6.npz": {
+   "sha256": "3ae231a861369de9d61a1196b269d8b17630a1ce15b53edadf82bb395f710ba8",
+   "unchanged_since_reviewed_commit": true,
+   "added_in": "1242cae",
+   "commits_touching": 1
+  },
+  "reviews/reference-assets/r6/HVF178-HB2HF2-HPB_r6.npz": {
+   "sha256": "fc47ba4bf38a807f2e5f6d18826f47c2e9051752b76b27deda3cc13645b4c329",
+   "unchanged_since_reviewed_commit": true,
+   "added_in": "1242cae",
+   "commits_touching": 1
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_central_accept_ear/hpb_validation/HPB_eval_c1.json": {
+   "sha256": "96e117378519871862770180c936894cc8933d30acb4222bb31ad108bfaee011",
+   "unchanged_since_reviewed_commit": true,
+   "added_in": "1242cae",
+   "commits_touching": 1
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_central_accept_ear/hpb_validation/HPB_eval_c2.json": {
+   "sha256": "f504dc87bd6d91ad12d794448833c774a3de8a18410d2f367daddc8684e3bcd9",
+   "unchanged_since_reviewed_commit": true,
+   "added_in": "1242cae",
+   "commits_touching": 1
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_central_accept_ear/hpb_validation/HV_HPB_validation.json": {
+   "sha256": "a4ffae9351581be3745c69717ff8d2cf67e16c2a53b4cfc09c5d5055c758a40a",
+   "unchanged_since_reviewed_commit": true,
+   "added_in": "1242cae",
+   "commits_touching": 1
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_central_accept_ear/hpb_validation/HV_hpb_technical.json": {
+   "sha256": "c7f5ff6743b485e168a124419ba40d1e6ecd716b72824ddf5c69d1db7e37bd16",
+   "unchanged_since_reviewed_commit": true,
+   "added_in": "1242cae",
+   "commits_touching": 1
+  },
+  "reviews/rac-rp3-evidence/halvren_rp3_body_face_source/HALVREN_RP3_bf_candidate_manifest.json": {
+   "sha256": "954481c5a1da62a56674fb285a967f39c9cbc9f9a9f4f5d271c0537d5dfe2a7d",
+   "unchanged_since_reviewed_commit": true,
+   "added_in": "f663543",
+   "commits_touching": 1
+  }
+ },
+ "all_verified": true,
+ "freeze_record_copy": {
+  "path": "E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Halvren/RP3/HALVREN_RP3_FREEZE.json",
+  "sha256": "89417681dc25aceb507b769e2fa6a957beeb7d789c6f630984c7423125ef2c95",
+  "readback_identical": true,
+  "production_files_mtime_unchanged": "all 11 frozen files keep their candidate-write mtimes (1793369982120 .. 1793369987070 ms) after the record copy"
+ }
+}
