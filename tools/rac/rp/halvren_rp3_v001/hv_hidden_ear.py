@@ -14,6 +14,8 @@ CFG = {'c1': dict(HV=('HVC1', PA + '/ref/HVC1'), MF=('MFM178', PA + '/cmp/MFM178
                   AE=('AEM178', PA + '/cmp/AEM178'), VA=('VAM178', PA + '/cmp/VAM178')),
        'c2': dict(HV=('HVF178', PA + '/build/HVF178'), MF=('MFF178', PA + '/cmp/MFF178'), SG=('SGF178', PA + '/cmp/SGF178'), SK=('SKF178', PA + '/cmp/SKF178'), FN=('FNF178', PA + '/cmp/FNF178'),
                   AE=('AEF178', PA + '/cmp/AEF178'), VA=('VAF178', PA + '/cmp/VAF178'))}
+for _c in ('c1', 'c2'):                                            # optional override of the Halvren item (final consolidation: HV_HE_C1 / HV_HE_C2 = id:prefix)
+    if os.environ.get('HV_HE_' + _c.upper()): CFG[_c]['HV'] = tuple(os.environ['HV_HE_' + _c.upper()].split(':', 1))
 SRC = ('MF', 'SG', 'SK', 'FN', 'AE', 'VA'); HUM = ('MF', 'SG'); ELF = ('FN', 'AE', 'VA')
 nz = np.load('/tmp/claude-0/rt/fn/src/FNL4_native.npz'); Q = np.asarray(nz['Q']); nV = len(nz['src_index']); bones = [str(b) for b in nz['bones']]
 A = sp.coo_matrix((np.ones(4 * len(Q)), (Q[:, :4].ravel(), np.roll(Q, -1, 1).ravel())), shape=(nV, nV)).tocsr(); A = ((A + A.T) > 0).astype(float); deg = np.asarray(A.sum(1)).ravel()
