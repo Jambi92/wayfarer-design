@@ -2,6 +2,16 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-10-31) — NEW ORDER f0a2b96: `reviews/chatgpt-rac-rp5-saurin-full-cage-refinement-closure-order.md` — NOT STARTED
+
+Refinement / closure of the WIP cage (f7bbe0b; architecture approved, do not restart; thigh art-pass CLOSED; tail module untouched). Work list, in order:
+T-1 / T-2 max-error cluster table (>3 mm / >1.5 mm) + bounded fixes (axilla + shoulder-neck, snout, hands, feet, perineum, body quads ahead of the
+tail root); T-4 cluster table + cleanup (no collapsed edges, aspect <= 4 outside explicit tip zones; 2:1 palm / forefoot rows); deformation ownership
+decomposition (cage vs source vs improved diagnostic weights vs topology-only fold test, per pose; c2 for the sensitive poses); semantic map (incl.
+claw caps, 2:1 rows); identity metrics on the cage (c1 / c2); creator-support states (W3B bodies chain); layered scale-detail prototype; PD table;
+final boards A-P; immutables; pilot .blend files only if every gate passes; gate `reviews/claude-rac-rp5-saurin-full-authored-cage-gate.md`. Protect T-3 / T-5 / T-6 / T-7.
+Workspace rebuild notes and tools: see the section below.
+
 ## LATEST (2026-10-30) — RP5 SAURIN FULL AUTHORED CAGE (order ad9cb85) — IN PROGRESS (session handoff; no gate yet, nothing to review)
 
 **Order:** `reviews/chatgpt-rac-rp5-saurin-full-authored-cage-order.md` (ad9cb85). Return = `reviews/claude-rac-rp5-saurin-full-authored-cage-gate.md` + evidence, then STOP FOR CHATGPT REVIEW. Not frozen; canonical W2I6 untouched.
