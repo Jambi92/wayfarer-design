@@ -54,7 +54,11 @@ if __name__ == '__main__':
     groups = {}
     for v in range(nvf): groups.setdefault(home[v], []).append(v)
     sub_cache = {}
-    nbq = {q: set(QQ[q].indices.tolist()) for q in range(nq)}
+    QQ2 = (QQ @ QQ).tocsr() if os.environ.get('NB2') else QQ
+    nbq = {q: set(QQ2[q].indices.tolist()) for q in range(nq)}
+    if os.environ.get('NB3_LABELS'):                                                   # wider projection neighbourhood (3 coarse rings) in the named regions (axillary vault)
+        QQ3 = (QQ2 @ QQ).tocsr(); labs = set(os.environ['NB3_LABELS'].split(',')); ql = np.array(d['qlab'])
+        for q in np.nonzero(np.isin(ql, list(labs)))[0]: nbq[q] = set(QQ3[q].indices.tolist())
     def project(P):
         """closest point on the full surface; vertices whose hit lies outside the source region of their own coarse quad's neighbourhood are re-projected
         onto that region only (no jumps across finger / toe / lip gaps)"""
@@ -65,7 +69,9 @@ if __name__ == '__main__':
             if q not in sub_cache: sub_cache[q] = np.nonzero(np.isin(fq, list(nbq[q])))[0]
             _, _, c2 = igl.point_mesh_squared_distance(P[vs], V, F[sub_cache[q]]); out[vs] = c2
         return out
-    Vf[~pin] = project(Vf)[~pin]
+    if os.environ.get('INIT'):
+        z0 = np.load(os.environ['INIT']); assert len(z0['Q']) == len(Qf) + len(TM['Q']); Vf = z0['V'][:nvf].copy(); print('warm start', os.environ['INIT'], flush=True)
+    else: Vf[~pin] = project(Vf)[~pin]
     for j, p in target.items(): Vf[j] = p
     Eq = np.unique(np.sort(np.r_[Qf[:, [0, 1]], Qf[:, [1, 2]], Qf[:, [2, 3]], Qf[:, [3, 0]]], 1), axis=0)
     Ad = sp.coo_matrix((np.ones(2 * len(Eq)), (np.r_[Eq[:, 0], Eq[:, 1]], np.r_[Eq[:, 1], Eq[:, 0]])), shape=(nvf, nvf)).tocsr(); deg = np.asarray(Ad.sum(1)).ravel()
@@ -80,9 +86,15 @@ if __name__ == '__main__':
             tv = TT[ti_[far]]; dv = V[samp[far]] - cp_[far]
             for k in range(3): np.add.at(acc, tv[:, k], dv); np.add.at(cnt, tv[:, k], 1)
         D_ = np.where(cnt[:, None] > 0, acc / np.maximum(cnt, 1)[:, None], 0)
-        N = np.nan_to_num(igl.per_vertex_normals(Vf, TT)); L = (Ad @ Vf) / deg[:, None] - Vf; L -= (L * N).sum(1)[:, None] * N
-        wl = np.where(cnt > 0, 0.12, 0.45)[:, None]                               # pulled vertices smooth less (lets the cage enter crevices)
-        Vt = Vf + wl * L + 0.8 * D_; Vt = np.where(np.isfinite(Vt), Vt, Vf); Vt = project(Vt); ok = ~pin & np.isfinite(Vt).all(1); Vf[ok] = Vt[ok]
+        N = np.nan_to_num(igl.per_vertex_normals(Vf, TT))
+        if os.environ.get('CENTROID'):                                                 # average of the adjacent quad centroids (shape-improving, CC-like)
+            qc = Vf[Qf].mean(1); acc_c = np.zeros_like(Vf); np.add.at(acc_c, Qf.ravel(), np.repeat(qc, 4, 0)); cq = np.bincount(Qf.ravel(), minlength=nvf)
+            L = acc_c / np.maximum(cq, 1)[:, None] - Vf
+        else: L = (Ad @ Vf) / deg[:, None] - Vf
+        L -= (L * N).sum(1)[:, None] * N
+        wl = np.where(cnt > 0, float(os.environ.get('WPULL', 0.12)), 0.45)[:, None]
+        if it >= int(os.environ.get('RELAX', 60)) - int(os.environ.get('FINAL_Q', 0)): wl = np.full((nvf, 1), 0.3)        # final quality phase (shape-improving smoothing everywhere)                               # pulled vertices smooth less (lets the cage enter crevices)
+        Vt = Vf + wl * L + float(os.environ.get('DSTEP', 0.8)) * D_; Vt = np.where(np.isfinite(Vt), Vt, Vf); Vt = project(Vt); ok = ~pin & np.isfinite(Vt).all(1); Vf[ok] = Vt[ok]
         if it % 10 == 0: print('relax', it, 'far samples', int(far.sum()), 'max %.1f mm' % (np.sqrt(d2[ti_ < len(TT)].max()) * 10), flush=True)
     # attach the accepted tail module (unchanged): module vertex i of ring 0 -> fine boundary vertex bl[i]
     mV, mQ = TM['V'], TM['Q']; mmap = np.r_[bl, nvf + np.arange(len(mV) - 128)]

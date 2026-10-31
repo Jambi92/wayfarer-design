@@ -1,0 +1,39 @@
+{
+ "seeds_sha256": "a1d07b8d7001241a2079271686b9e5a91b773b988763c5af9c5f8a92aefe6b05",
+ "canonical_surfaced_float32_sha256": "7a1b3daa38fdc28b5b2b13938fe9ae251309d19c0ac66fad87b2f8914238e032",
+ "canonical_surfaced_verts": 4496934,
+ "detail_surface_verts": 1720482,
+ "deviation_canonical_to_detail_mm": {
+  "median": 0.068,
+  "p95": 0.4512,
+  "p99": 0.7589,
+  "max": 8.4024
+ },
+ "by_region_p95_mm": {
+  "arm_xneg": 0.5459,
+  "arm_xpos": 0.5274,
+  "foot_xneg": 0.2346,
+  "foot_xpos": 0.2293,
+  "hand_xneg": 0.1773,
+  "hand_xpos": 0.1795,
+  "head": 0.1804,
+  "leg_xneg": 0.4225,
+  "leg_xpos": 0.438,
+  "neck": 0.3669,
+  "tail": 0.4463,
+  "torso": 0.4981
+ },
+ "relief_amplitude_transported_mm": {
+  "mean": 0.2545,
+  "max": 1.6848
+ },
+ "relief_amplitude_canonical_mm": {
+  "mean": 0.2997,
+  "max": 1.7006
+ },
+ "representation": {
+  "geometry": "cage = structural / macro anatomy, silhouette, field boundaries (no scale geometry)",
+  "displacement_or_normal": "scale relief (<= 1.7 mm) = displacement / normal layer regenerated from the seed realization; field boundaries continuous by construction (the delta is interpolated, never re-seeded on the cage)"
+ },
+ "joints_note": "joint regions carry the canonical relief unchanged (transport is per-point); PD-1 governs re-realization on deformed / creator states"
+}

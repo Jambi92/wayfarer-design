@@ -2,7 +2,15 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-31) — NEW ORDER f0a2b96: `reviews/chatgpt-rac-rp5-saurin-full-cage-refinement-closure-order.md` — NOT STARTED
+## LATEST (2026-10-31) — RP5 SAURIN FULL AUTHORED CAGE — NEEDS REVISION (gate returned; awaiting ChatGPT review)
+
+Gate `reviews/claude-rac-rp5-saurin-full-authored-cage-gate.md`; evidence `full_cage/closure/` (cage cc4 sha dc267415…, T1-T7, clusters, semantic map,
+identity, creator states (13 bodies built via the rebuilt W2 creator route: `tools/.../saurin_rp5_v002/cr_build*.py`; needs the scratch creator chain:
+`/tmp/claude-0/setup_wc_rp5.py`, rodin/creator-biology/prep.py, w2i_drivers/g8axis_w2i.py, rodin/gate1/*.py + PC `RaceBodies/wf_saurin_*.py` + `wf_sculpt_lib.py`
+copied into `<scratch>/w2i/rodin/g1`, numpy np.trapz = np.trapezoid shim), detail layer, deformation, boards). Warm-start refinement:
+`INIT=cage.npz NB2=1 CENTROID=1 RELAX=.. DSTEP=1.0 WPULL=0.08 [NB3_LABELS=..] [FINAL_Q=n] python3 sa_ccage.py design.pkl out.npz`.
+
+## (previous) 2026-10-31 — NEW ORDER f0a2b96: `reviews/chatgpt-rac-rp5-saurin-full-cage-refinement-closure-order.md` — NOT STARTED
 
 Refinement / closure of the WIP cage (f7bbe0b; architecture approved, do not restart; thigh art-pass CLOSED; tail module untouched). Work list, in order:
 T-1 / T-2 max-error cluster table (>3 mm / >1.5 mm) + bounded fixes (axilla + shoulder-neck, snout, hands, feet, perineum, body quads ahead of the
