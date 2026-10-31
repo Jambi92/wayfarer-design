@@ -1,0 +1,42 @@
+{
+ "order": "53976fb \u00a77",
+ "status": "PILOT / NOT FROZEN \u2014 derived working source record",
+ "derived_working_source": "SA_RP5_WORK_v000 = canonical W2I6 base arrays (saurin_w2_final_base.npz) for SA-M188 and saurin_w2_SA-F188_realization.npz for SA-F188, loaded read-only from staged copies; no geometry operation applied (identity derivation)",
+ "operations": [
+  {
+   "op": "stage read-only copy",
+   "from": "PC E:/UnrealProjects/Wayfarer 5.8/RaceBodies/out",
+   "to": "cloud workspace",
+   "geometry_change": false
+  },
+  {
+   "op": "units",
+   "detail": "source arrays are cm; analysis in cm; Blender export (future) = x0.01 m",
+   "geometry_change": false
+  },
+  {
+   "op": "frame",
+   "detail": "analysis axes x = subject left/right (source +X), f = forward, u = up (source Z); source frame used unchanged, no rotation / translation / mirroring",
+   "geometry_change": false
+  },
+  {
+   "op": "surfaced c1 rebuild for comparison only",
+   "detail": "rebuild_w2_final.py route (igl.upsample + float16 normal delta), 4,496,934 V, reproduces W2I6 record",
+   "geometry_change": false
+  }
+ ],
+ "asymmetry": "preserved (no symmetrization)",
+ "welds": "none",
+ "surface": "one continuous closed body surface (base mesh as canonical)",
+ "pending_derivations": [
+  "thigh art-pass (medial/posterior band u 66\u201384) \u2014 proposed as SA_RP5_WORK_v001 BEFORE retopology, awaiting author approval (not performed)"
+ ],
+ "canonical_hashes_verified": {
+  "saurin_w2_final_base.npz": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee",
+  "saurin_w2_SA-F188_realization.npz": "8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187"
+ },
+ "pilot_artifacts": {
+  "tail_module/SA_tail_module.npz": "559565cc28a89db67c559c6db899cee51af0e349614fcb466255a6b35156baab",
+  "tail_module/SA_tail_module.json": "cb0153dac8beef1ba67055028b88479c2b634317be1594d8ac72bd88cf9fc2e1"
+ }
+}

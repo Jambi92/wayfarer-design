@@ -1,0 +1,368 @@
+{
+ "cage": "scaffold_120k.npz",
+ "tag": "scaffold_diag",
+ "mode": "full body",
+ "cage_verts": 84602,
+ "cage_quads": 84600,
+ "cage_tris": 0,
+ "SA-M188": {
+  "T1_body": {
+   "median_mm": 0.0705,
+   "p95_mm": 0.6291,
+   "max_mm": 72.5099
+  },
+  "T2": {
+   "head": {
+    "median_mm": 0.0825,
+    "p95_mm": 0.8907,
+    "max_mm": 8.081
+   },
+   "hands": {
+    "median_mm": 0.367,
+    "p95_mm": 1.5333,
+    "max_mm": 11.4398
+   },
+   "feet": {
+    "median_mm": 0.1161,
+    "p95_mm": 1.4353,
+    "max_mm": 9.4068
+   },
+   "tail_root": {
+    "median_mm": 0.0593,
+    "p95_mm": 0.2033,
+    "max_mm": 0.7679
+   },
+   "tail_stations": {
+    "median_mm": 0.0907,
+    "p95_mm": 3.5861,
+    "max_mm": 72.5099
+   }
+  },
+  "T1_pass": false,
+  "T2_pass": {
+   "head": false,
+   "hands": false,
+   "feet": false,
+   "tail_root": true,
+   "tail_stations": false
+  },
+  "tail_tip_exempt_zone": {
+   "radius_cm": 2.0,
+   "median_mm": 0.2253,
+   "p95_mm": 0.8537,
+   "max_mm": 1.1172
+  },
+  "T3": {
+   "stature_source_cm": 187.88,
+   "stature_cage_cm": 187.861,
+   "stature_diff_mm": -0.192,
+   "bbox_diff_mm": [
+    6.295,
+    0.9,
+    0.004,
+    -6.603,
+    -1.911,
+    -0.187
+   ]
+  },
+  "T3_pass": false,
+  "T4": {
+   "quads": 84600,
+   "angle_outside_45_135": 2399,
+   "angle_outside_pct": 2.836,
+   "aspect_gt4": 1935,
+   "aspect_p99": 5.635,
+   "aspect_max": 176.138
+  },
+  "T5_density_pct_of_stature": {
+   "head": {
+    "mean": 0.283,
+    "p95": 0.3694,
+    "max": 0.7365,
+    "ceiling": 0.25,
+    "mean_within": false
+   },
+   "neck": {
+    "mean": 0.2958,
+    "p95": 0.3939,
+    "max": 0.9696,
+    "ceiling": 0.6,
+    "mean_within": true
+   },
+   "trunk_pelvis": {
+    "mean": 0.3061,
+    "p95": 0.4004,
+    "max": 0.6854,
+    "ceiling": 0.6,
+    "mean_within": true
+   },
+   "arms": {
+    "mean": 0.3273,
+    "p95": 0.4994,
+    "max": 1.3073,
+    "ceiling": 0.6,
+    "mean_within": true
+   },
+   "legs": {
+    "mean": 0.3198,
+    "p95": 0.5092,
+    "max": 2.4676,
+    "ceiling": 0.6,
+    "mean_within": true
+   },
+   "hands": {
+    "mean": 0.3214,
+    "p95": 0.47,
+    "max": 1.0153,
+    "ceiling": 0.3,
+    "mean_within": false
+   },
+   "feet": {
+    "mean": 0.2987,
+    "p95": 0.435,
+    "max": 1.5057,
+    "ceiling": 0.3,
+    "mean_within": true
+   },
+   "tail": {
+    "mean": 0.3861,
+    "p95": 0.7675,
+    "max": 8.7861,
+    "ceiling": 0.6,
+    "mean_within": true
+   }
+  },
+  "T6_surface_landmarks_mm": {
+   "tail_tip": 2.1471,
+   "crown": 0.2634,
+   "rostrum_tip": 0.1432,
+   "mouth_corner_xpos": 0.0049,
+   "mouth_corner_xneg": 0.0338,
+   "hand_tip1_xneg": 0.5712,
+   "hand_tip2_xneg": 0.3847,
+   "hand_tip3_xneg": 2.2393,
+   "hand_tip4_xneg": 0.3456,
+   "hand_tip5_xneg": 2.8074,
+   "toe_tip1_xneg": 4.8119,
+   "toe_tip2_xneg": 0.7456,
+   "toe_tip3_xneg": 0.1867,
+   "toe_tip4_xneg": 0.0749,
+   "toe_tip5_xneg": 0.2083,
+   "hand_tip1_xpos": 0.6711,
+   "hand_tip2_xpos": 2.4575,
+   "hand_tip3_xpos": 0.2542,
+   "hand_tip4_xpos": 0.4668,
+   "hand_tip5_xpos": 0.4602,
+   "toe_tip1_xpos": 2.3729,
+   "toe_tip2_xpos": 2.5566,
+   "toe_tip3_xpos": 0.6537,
+   "toe_tip4_xpos": 4.2471,
+   "toe_tip5_xpos": 0.792
+  },
+  "T6_max_mm": 4.8119,
+  "T6_over_1mm": [
+   "tail_tip",
+   "hand_tip3_xneg",
+   "hand_tip5_xneg",
+   "toe_tip1_xneg",
+   "hand_tip2_xpos",
+   "toe_tip1_xpos",
+   "toe_tip2_xpos",
+   "toe_tip4_xpos"
+  ],
+  "T6_pass": false,
+  "T7_with_tail": {
+   "front": 0.993362,
+   "rear": 0.993362,
+   "profile_left": 0.985,
+   "profile_right": 0.984917,
+   "q3_front_left": 0.993469,
+   "q3_front_right": 0.992901
+  },
+  "T7_pass": false,
+  "T7_no_tail_diagnostic": {
+   "front": 0.995387,
+   "profile_left": 0.9951
+  }
+ },
+ "SA-F188": {
+  "T1_body": {
+   "median_mm": 0.071,
+   "p95_mm": 0.6231,
+   "max_mm": 72.2467
+  },
+  "T2": {
+   "head": {
+    "median_mm": 0.0825,
+    "p95_mm": 0.8915,
+    "max_mm": 8.0878
+   },
+   "hands": {
+    "median_mm": 0.3625,
+    "p95_mm": 1.5144,
+    "max_mm": 11.2992
+   },
+   "feet": {
+    "median_mm": 0.1147,
+    "p95_mm": 1.4177,
+    "max_mm": 9.2912
+   },
+   "tail_root": {
+    "median_mm": 0.0611,
+    "p95_mm": 0.2095,
+    "max_mm": 0.7575
+   },
+   "tail_stations": {
+    "median_mm": 0.091,
+    "p95_mm": 3.5613,
+    "max_mm": 72.2467
+   }
+  },
+  "T1_pass": false,
+  "T2_pass": {
+   "head": false,
+   "hands": false,
+   "feet": false,
+   "tail_root": true,
+   "tail_stations": false
+  },
+  "tail_tip_exempt_zone": {
+   "radius_cm": 2.0,
+   "median_mm": 0.2225,
+   "p95_mm": 0.8432,
+   "max_mm": 1.1035
+  },
+  "T3": {
+   "stature_source_cm": 187.88,
+   "stature_cage_cm": 187.861,
+   "stature_diff_mm": -0.192,
+   "bbox_diff_mm": [
+    6.218,
+    0.888,
+    0.004,
+    -6.522,
+    -1.887,
+    -0.187
+   ]
+  },
+  "T3_pass": false,
+  "T4": {
+   "quads": 84600,
+   "angle_outside_45_135": 2411,
+   "angle_outside_pct": 2.85,
+   "aspect_gt4": 1897,
+   "aspect_p99": 5.59,
+   "aspect_max": 176.138
+  },
+  "T5_density_pct_of_stature": {
+   "head": {
+    "mean": 0.2833,
+    "p95": 0.3701,
+    "max": 0.7377,
+    "ceiling": 0.25,
+    "mean_within": false
+   },
+   "neck": {
+    "mean": 0.2928,
+    "p95": 0.3907,
+    "max": 0.9726,
+    "ceiling": 0.6,
+    "mean_within": true
+   },
+   "trunk_pelvis": {
+    "mean": 0.3152,
+    "p95": 0.4091,
+    "max": 0.7043,
+    "ceiling": 0.6,
+    "mean_within": true
+   },
+   "arms": {
+    "mean": 0.3254,
+    "p95": 0.4932,
+    "max": 1.2903,
+    "ceiling": 0.6,
+    "mean_within": true
+   },
+   "legs": {
+    "mean": 0.3164,
+    "p95": 0.5034,
+    "max": 2.4377,
+    "ceiling": 0.6,
+    "mean_within": true
+   },
+   "hands": {
+    "mean": 0.3174,
+    "p95": 0.4642,
+    "max": 1.0028,
+    "ceiling": 0.3,
+    "mean_within": false
+   },
+   "feet": {
+    "mean": 0.295,
+    "p95": 0.4297,
+    "max": 1.4872,
+    "ceiling": 0.3,
+    "mean_within": true
+   },
+   "tail": {
+    "mean": 0.3855,
+    "p95": 0.7639,
+    "max": 8.6791,
+    "ceiling": 0.6,
+    "mean_within": true
+   }
+  },
+  "T6_surface_landmarks_mm": {
+   "tail_tip": 2.1202,
+   "crown": 0.2633,
+   "rostrum_tip": 0.1431,
+   "mouth_corner_xpos": 0.005,
+   "mouth_corner_xneg": 0.0341,
+   "hand_tip1_xneg": 0.5638,
+   "hand_tip2_xneg": 0.3804,
+   "hand_tip3_xneg": 2.2116,
+   "hand_tip4_xneg": 0.3415,
+   "hand_tip5_xneg": 2.7731,
+   "toe_tip1_xneg": 4.7529,
+   "toe_tip2_xneg": 0.7367,
+   "toe_tip3_xneg": 0.1849,
+   "toe_tip4_xneg": 0.0741,
+   "toe_tip5_xneg": 0.2059,
+   "hand_tip1_xpos": 0.6631,
+   "hand_tip2_xpos": 2.427,
+   "hand_tip3_xpos": 0.2511,
+   "hand_tip4_xpos": 0.4612,
+   "hand_tip5_xpos": 0.4544,
+   "toe_tip1_xpos": 2.3438,
+   "toe_tip2_xpos": 2.5253,
+   "toe_tip3_xpos": 0.6456,
+   "toe_tip4_xpos": 4.1949,
+   "toe_tip5_xpos": 0.783
+  },
+  "T6_max_mm": 4.7529,
+  "T6_over_1mm": [
+   "tail_tip",
+   "hand_tip3_xneg",
+   "hand_tip5_xneg",
+   "toe_tip1_xneg",
+   "hand_tip2_xpos",
+   "toe_tip1_xpos",
+   "toe_tip2_xpos",
+   "toe_tip4_xpos"
+  ],
+  "T6_pass": false,
+  "T7_with_tail": {
+   "front": 0.992636,
+   "rear": 0.992602,
+   "profile_left": 0.984901,
+   "profile_right": 0.984818,
+   "q3_front_left": 0.993699,
+   "q3_front_right": 0.992883
+  },
+  "T7_pass": false,
+  "T7_no_tail_diagnostic": {
+   "front": 0.994737,
+   "profile_left": 0.99439
+  }
+ }
+}

@@ -1,6 +1,13 @@
 # Character Design Status
 
-## COGLING RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30, by record)
+## RAC RP5 SAURIN UNIQUE-TOPOLOGY PILOT — REQUIRES AUTHOR DECISION (2026-10-30, NOT frozen)
+
+- **Gate:** `reviews/claude-rac-rp5-saurin-unique-topology-pilot-gate.md` (order 53976fb). Evidence `reviews/rac-rp5-evidence/saurin/`.
+- Canonical W2I6 sources verified; SA-F188 shares the SA-M188 base face list (dense c1/c2 correspondence). Authored tail + tail-root module (15,691 V / 15,626 Q, 100 % quads) passes T-1/T-2 on c1 and c2 with identical topology; QuadriFlow scaffold proves an automatic remesher unsuitable.
+- Author to rule on: authored ring/relax module method for the remaining systems; layered surface representation (cage = base, scale relief = derived layer); thigh art-pass BEFORE retopology. Full-body cage NOT yet authored. Immutables 228 / 228.
+- Nothing frozen. Rig, creator, UE5, later races not started.
+
+### (previous) COGLING RP4 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-10-30, by record)
 
 - **Freeze:** `CG_M_REF_RP4_v001`, `CG_F_REF_RP4_v001`, `MPFB_COGLING_COMPACT_BRANCH_v001`, c1 source `CGJ7`, c2 technical anchor `CGF91-NAT`, canonical min `CG76H-NAT`, max `CG107-NAT`. Record `reviews/rac-rp4-evidence/cogling/final/COGLING_RP4_FREEZE.json` (promoted from the c800205 candidate; all reviewed hashes preserved and re-verified by fresh Blender read-back). Closure report `reviews/claude-rac-rp4-cogling-freeze-closure-report.md`.
 - 58,162 V / 58,160 Q, identical c1 / c2 topology `a11b8831…`. No geometry changed during freeze closure; production files not resaved.

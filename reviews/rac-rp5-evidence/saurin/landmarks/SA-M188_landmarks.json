@@ -1,0 +1,715 @@
+{
+ "tail_root_section_area_cm2": 877.73,
+ "frame": "analysis cm: x right (subject left = -x? see contract map), f forward, u up; canonical W2I6 SA-M188 base",
+ "tail_length_centreline_cm": 132.2,
+ "region_counts": {
+  "arm_xneg": 128952,
+  "arm_xpos": 120892,
+  "foot_xneg": 28662,
+  "foot_xpos": 28669,
+  "hand_xneg": 13276,
+  "hand_xpos": 13283,
+  "head": 52686,
+  "leg_xneg": 127377,
+  "leg_xpos": 136598,
+  "neck": 49342,
+  "tail": 255389,
+  "torso": 169109
+ },
+ "landmarks": {
+  "glenohumeral_xneg": {
+   "p_cm": [
+    -20.5453,
+    -7.1173,
+    145.8671
+   ],
+   "method": "section",
+   "note": "shoulder section centroid, normal = upper-arm axis (seed g7geo ARM.S)",
+   "axis": [
+    -0.42223,
+    0.16505,
+    -0.89133
+   ]
+  },
+  "elbow_xneg": {
+   "p_cm": [
+    -32.4677,
+    -2.4568,
+    120.6988
+   ],
+   "method": "section",
+   "note": "elbow section centroid, normal = bisector upper arm / forearm",
+   "axis": [
+    -0.16988,
+    0.4273,
+    -0.88801
+   ]
+  },
+  "wrist_xneg": {
+   "p_cm": [
+    -36.8278,
+    8.5105,
+    97.9071
+   ],
+   "method": "section",
+   "note": "wrist section centroid",
+   "axis": [
+    -0.16988,
+    0.4273,
+    -0.88801
+   ]
+  },
+  "hip_xneg": {
+   "p_cm": [
+    -13.0,
+    3.5,
+    86.0
+   ],
+   "method": "canon",
+   "note": "accepted construction hip centre (g7geo LEG.H; inside the closed W2 surface, 5.9 cm deep); a hip-joint section is ill-posed at the groin"
+  },
+  "knee_xneg": {
+   "p_cm": [
+    -18.076,
+    2.9821,
+    62.1058
+   ],
+   "method": "section",
+   "note": "knee section centroid, normal = bisector thigh / shank",
+   "axis": [
+    -0.15511,
+    -0.04085,
+    -0.98705
+   ]
+  },
+  "ankle_xneg": {
+   "p_cm": [
+    -26.3341,
+    0.8071,
+    9.5562
+   ],
+   "method": "section",
+   "note": "ankle section centroid (normal = shank axis)",
+   "axis": [
+    -0.15511,
+    -0.04085,
+    -0.98705
+   ]
+  },
+  "glenohumeral_xpos": {
+   "p_cm": [
+    17.6622,
+    -5.7316,
+    145.264
+   ],
+   "method": "section",
+   "note": "shoulder section centroid, normal = upper-arm axis (seed g7geo ARM.S)",
+   "axis": [
+    0.46317,
+    0.15705,
+    -0.87224
+   ]
+  },
+  "elbow_xpos": {
+   "p_cm": [
+    30.7419,
+    -1.2965,
+    120.6323
+   ],
+   "method": "section",
+   "note": "elbow section centroid, normal = bisector upper arm / forearm",
+   "axis": [
+    0.1752,
+    0.42364,
+    -0.88873
+   ]
+  },
+  "wrist_xpos": {
+   "p_cm": [
+    35.2216,
+    9.5355,
+    97.9084
+   ],
+   "method": "section",
+   "note": "wrist section centroid",
+   "axis": [
+    0.1752,
+    0.42364,
+    -0.88873
+   ]
+  },
+  "hip_xpos": {
+   "p_cm": [
+    13.0,
+    3.5,
+    86.0
+   ],
+   "method": "canon",
+   "note": "accepted construction hip centre (g7geo LEG.H; inside the closed W2 surface, 5.9 cm deep); a hip-joint section is ill-posed at the groin"
+  },
+  "knee_xpos": {
+   "p_cm": [
+    14.6921,
+    2.9177,
+    61.9379
+   ],
+   "method": "section",
+   "note": "knee section centroid, normal = bisector thigh / shank",
+   "axis": [
+    0.12814,
+    -0.01536,
+    -0.99164
+   ]
+  },
+  "ankle_xpos": {
+   "p_cm": [
+    21.4594,
+    2.1066,
+    9.5679
+   ],
+   "method": "section",
+   "note": "ankle section centroid (normal = shank axis)",
+   "axis": [
+    0.12814,
+    -0.01536,
+    -0.99164
+   ]
+  },
+  "pelvis_root": {
+   "p_cm": [
+    0.0,
+    3.5,
+    86.0
+   ],
+   "method": "derived",
+   "note": "mid-point of the hip centres"
+  },
+  "tail_root_dorsal": {
+   "p_cm": [
+    0.0,
+    -8.5657,
+    128.5
+   ],
+   "method": "section",
+   "note": "midsagittal posterior outline: most anterior point between u 110-145 (lumbar concavity, back -> tail dorsal line)"
+  },
+  "tail_root_ventral": {
+   "p_cm": [
+    0.0,
+    -13.3805,
+    96.3207
+   ],
+   "method": "section",
+   "note": "midline ventral outline at the posterior thigh surface f (perineal junction: the tail underside leaves the thighs)"
+  },
+  "tail_root_centre": {
+   "p_cm": [
+    -1.2267,
+    -10.5894,
+    114.9968
+   ],
+   "method": "section",
+   "note": "centroid of the root-plane section (plane through tail_root_dorsal / tail_root_ventral, sagittal normal); root section area 877.73 cm2",
+   "axis": [
+    0.0,
+    -0.98899,
+    0.14797
+   ]
+  },
+  "tail_chain_01": {
+   "p_cm": [
+    -0.5738,
+    -16.4523,
+    109.9296
+   ],
+   "method": "section",
+   "note": "1/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_02": {
+   "p_cm": [
+    0.079,
+    -22.3152,
+    104.8624
+   ],
+   "method": "section",
+   "note": "2/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_03": {
+   "p_cm": [
+    0.1902,
+    -29.1338,
+    101.7846
+   ],
+   "method": "section",
+   "note": "3/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_04": {
+   "p_cm": [
+    0.0654,
+    -36.2126,
+    98.7724
+   ],
+   "method": "section",
+   "note": "4/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_05": {
+   "p_cm": [
+    0.3611,
+    -43.5371,
+    96.4909
+   ],
+   "method": "section",
+   "note": "5/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_06": {
+   "p_cm": [
+    0.2886,
+    -49.8296,
+    93.4416
+   ],
+   "method": "section",
+   "note": "6/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_07": {
+   "p_cm": [
+    0.2651,
+    -57.1309,
+    91.1358
+   ],
+   "method": "section",
+   "note": "7/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_08": {
+   "p_cm": [
+    0.0021,
+    -64.6099,
+    89.8867
+   ],
+   "method": "section",
+   "note": "8/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_09": {
+   "p_cm": [
+    0.0349,
+    -71.5133,
+    87.0562
+   ],
+   "method": "section",
+   "note": "9/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_10": {
+   "p_cm": [
+    -0.0616,
+    -79.1221,
+    86.0071
+   ],
+   "method": "section",
+   "note": "10/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_11": {
+   "p_cm": [
+    -0.315,
+    -86.7711,
+    85.5644
+   ],
+   "method": "section",
+   "note": "11/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_12": {
+   "p_cm": [
+    -0.2394,
+    -94.4641,
+    84.8766
+   ],
+   "method": "section",
+   "note": "12/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_13": {
+   "p_cm": [
+    -0.2032,
+    -102.1331,
+    84.4214
+   ],
+   "method": "section",
+   "note": "13/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_14": {
+   "p_cm": [
+    -0.0656,
+    -109.8251,
+    85.1782
+   ],
+   "method": "section",
+   "note": "14/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_15": {
+   "p_cm": [
+    0.1956,
+    -117.4681,
+    86.5143
+   ],
+   "method": "section",
+   "note": "15/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_chain_16": {
+   "p_cm": [
+    0.5248,
+    -124.9732,
+    88.4519
+   ],
+   "method": "section",
+   "note": "16/17 equal-arc point of the tail section-centroid centreline"
+  },
+  "tail_tip": {
+   "p_cm": [
+    1.1913,
+    -132.3282,
+    90.8014
+   ],
+   "method": "extremal",
+   "note": "most posterior surface vertex"
+  },
+  "spine_lower_axial_91": {
+   "p_cm": [
+    -0.2042,
+    -8.2949,
+    91.0
+   ],
+   "method": "section",
+   "note": "horizontal trunk section centroid at u = 91 cm (lower axial trunk stations as W2I I91 / I123)"
+  },
+  "spine_lower_axial_107": {
+   "p_cm": [
+    -0.8709,
+    0.4934,
+    107.0
+   ],
+   "method": "section",
+   "note": "horizontal trunk section centroid at u = 107 cm (lower axial trunk stations as W2I I91 / I123)"
+  },
+  "spine_lower_axial_123": {
+   "p_cm": [
+    -0.7534,
+    -0.378,
+    123.0
+   ],
+   "method": "section",
+   "note": "horizontal trunk section centroid at u = 123 cm (lower axial trunk stations as W2I I91 / I123)"
+  },
+  "spine_mid_138": {
+   "p_cm": [
+    -0.9351,
+    -1.7285,
+    138.0
+   ],
+   "method": "section",
+   "note": "horizontal trunk section centroid at u = 138 cm (lower axial trunk stations as W2I I91 / I123)"
+  },
+  "spine_upper_150": {
+   "p_cm": [
+    0.7495,
+    -2.2216,
+    150.0
+   ],
+   "method": "section",
+   "note": "horizontal trunk section centroid at u = 150 cm (lower axial trunk stations as W2I I91 / I123)"
+  },
+  "neck_min_section": {
+   "p_cm": [
+    -0.0627,
+    -3.345,
+    171.5
+   ],
+   "method": "section",
+   "note": "minimum-radius horizontal neck section between u 150 and 172 cm"
+  },
+  "neck_base": {
+   "p_cm": [
+    0.2284,
+    8.0468,
+    156.0
+   ],
+   "method": "section",
+   "note": "horizontal section centroid at the shoulder line (u 156)"
+  },
+  "head_pivot": {
+   "p_cm": [
+    0.0,
+    1.08,
+    180.772
+   ],
+   "method": "canon",
+   "note": "TS6 skull frame occipital pivot (head-local (0, -2, 2))"
+  },
+  "crown": {
+   "p_cm": [
+    -0.0006,
+    -0.8,
+    187.8815
+   ],
+   "method": "extremal",
+   "note": "highest surface vertex"
+  },
+  "rostrum_tip": {
+   "p_cm": [
+    0.0017,
+    20.6847,
+    177.8011
+   ],
+   "method": "extremal",
+   "note": "most anterior head vertex (u > 170)"
+  },
+  "eye_xpos": {
+   "p_cm": [
+    3.564,
+    10.314,
+    183.472
+   ],
+   "method": "canon",
+   "note": "w3b_head.py EYE centre (canonical orbit), head frame -> world"
+  },
+  "jaw_hinge_xpos": {
+   "p_cm": [
+    5.184,
+    2.268,
+    178.936
+   ],
+   "method": "canon",
+   "note": "w3b_head.py quadrate hinge centre, head frame -> world"
+  },
+  "eye_xneg": {
+   "p_cm": [
+    -3.564,
+    10.314,
+    183.472
+   ],
+   "method": "canon",
+   "note": "w3b_head.py EYE centre (canonical orbit), head frame -> world"
+  },
+  "jaw_hinge_xneg": {
+   "p_cm": [
+    -5.184,
+    2.268,
+    178.936
+   ],
+   "method": "canon",
+   "note": "w3b_head.py quadrate hinge centre, head frame -> world"
+  },
+  "mouth_corner_xpos": {
+   "p_cm": [
+    6.3591,
+    0.1561,
+    176.9464
+   ],
+   "method": "extremal",
+   "note": "posterior-most vertex of the oral-line slit (non-adjacent pairs < 1.2 mm)"
+  },
+  "mouth_corner_xneg": {
+   "p_cm": [
+    -6.152,
+    0.0136,
+    177.8746
+   ],
+   "method": "extremal",
+   "note": "posterior-most vertex of the oral-line slit (non-adjacent pairs < 1.2 mm)"
+  },
+  "hand_tip1_xneg": {
+   "p_cm": [
+    -43.8365,
+    12.3042,
+    83.8454
+   ],
+   "method": "extremal",
+   "note": "k-th farthest (>= 1.2 cm apart) hand vertex along the wrist->hand axis (claw tips; ordering by reach, digit identity in the cage pass)"
+  },
+  "hand_tip2_xneg": {
+   "p_cm": [
+    -42.71,
+    12.3861,
+    84.2575
+   ],
+   "method": "extremal",
+   "note": "k-th farthest (>= 1.2 cm apart) hand vertex along the wrist->hand axis (claw tips; ordering by reach, digit identity in the cage pass)"
+  },
+  "hand_tip3_xneg": {
+   "p_cm": [
+    -44.1328,
+    14.5795,
+    85.217
+   ],
+   "method": "extremal",
+   "note": "k-th farthest (>= 1.2 cm apart) hand vertex along the wrist->hand axis (claw tips; ordering by reach, digit identity in the cage pass)"
+  },
+  "hand_tip4_xneg": {
+   "p_cm": [
+    -43.4298,
+    11.267,
+    84.4267
+   ],
+   "method": "extremal",
+   "note": "k-th farthest (>= 1.2 cm apart) hand vertex along the wrist->hand axis (claw tips; ordering by reach, digit identity in the cage pass)"
+  },
+  "hand_tip5_xneg": {
+   "p_cm": [
+    -45.157,
+    9.2016,
+    84.1478
+   ],
+   "method": "extremal",
+   "note": "k-th farthest (>= 1.2 cm apart) hand vertex along the wrist->hand axis (claw tips; ordering by reach, digit identity in the cage pass)"
+  },
+  "toe_tip1_xneg": {
+   "p_cm": [
+    -29.2538,
+    27.7937,
+    0.2616
+   ],
+   "method": "extremal",
+   "note": "k-th most anterior (>= 1.2 cm apart) foot vertex (toe-claw tips)"
+  },
+  "toe_tip2_xneg": {
+   "p_cm": [
+    -29.2586,
+    27.1088,
+    1.3095
+   ],
+   "method": "extremal",
+   "note": "k-th most anterior (>= 1.2 cm apart) foot vertex (toe-claw tips)"
+  },
+  "toe_tip3_xneg": {
+   "p_cm": [
+    -28.8042,
+    26.6191,
+    0.2525
+   ],
+   "method": "extremal",
+   "note": "k-th most anterior (>= 1.2 cm apart) foot vertex (toe-claw tips)"
+  },
+  "toe_tip4_xneg": {
+   "p_cm": [
+    -29.9248,
+    26.1869,
+    0.7073
+   ],
+   "method": "extremal",
+   "note": "k-th most anterior (>= 1.2 cm apart) foot vertex (toe-claw tips)"
+  },
+  "toe_tip5_xneg": {
+   "p_cm": [
+    -28.3721,
+    26.2394,
+    1.4107
+   ],
+   "method": "extremal",
+   "note": "k-th most anterior (>= 1.2 cm apart) foot vertex (toe-claw tips)"
+  },
+  "ball_line_xneg": {
+   "p_cm": [
+    -21.9472,
+    13.8867,
+    0.036
+   ],
+   "method": "derived",
+   "note": "plantar vertex 13 cm anterior of the ankle (metatarsal-head band, foot.py MET heads 12-14 cm)"
+  },
+  "hand_tip1_xpos": {
+   "p_cm": [
+    42.0284,
+    13.1392,
+    83.839
+   ],
+   "method": "extremal",
+   "note": "k-th farthest (>= 1.2 cm apart) hand vertex along the wrist->hand axis (claw tips; ordering by reach, digit identity in the cage pass)"
+  },
+  "hand_tip2_xpos": {
+   "p_cm": [
+    43.0158,
+    13.2312,
+    84.5442
+   ],
+   "method": "extremal",
+   "note": "k-th farthest (>= 1.2 cm apart) hand vertex along the wrist->hand axis (claw tips; ordering by reach, digit identity in the cage pass)"
+  },
+  "hand_tip3_xpos": {
+   "p_cm": [
+    40.9531,
+    12.848,
+    84.3213
+   ],
+   "method": "extremal",
+   "note": "k-th farthest (>= 1.2 cm apart) hand vertex along the wrist->hand axis (claw tips; ordering by reach, digit identity in the cage pass)"
+  },
+  "hand_tip4_xpos": {
+   "p_cm": [
+    42.4415,
+    15.5701,
+    85.2167
+   ],
+   "method": "extremal",
+   "note": "k-th farthest (>= 1.2 cm apart) hand vertex along the wrist->hand axis (claw tips; ordering by reach, digit identity in the cage pass)"
+  },
+  "hand_tip5_xpos": {
+   "p_cm": [
+    41.532,
+    13.8015,
+    84.7917
+   ],
+   "method": "extremal",
+   "note": "k-th farthest (>= 1.2 cm apart) hand vertex along the wrist->hand axis (claw tips; ordering by reach, digit identity in the cage pass)"
+  },
+  "toe_tip1_xpos": {
+   "p_cm": [
+    24.4444,
+    29.1477,
+    0.2667
+   ],
+   "method": "extremal",
+   "note": "k-th most anterior (>= 1.2 cm apart) foot vertex (toe-claw tips)"
+  },
+  "toe_tip2_xpos": {
+   "p_cm": [
+    24.3073,
+    28.4622,
+    1.3461
+   ],
+   "method": "extremal",
+   "note": "k-th most anterior (>= 1.2 cm apart) foot vertex (toe-claw tips)"
+  },
+  "toe_tip3_xpos": {
+   "p_cm": [
+    24.8063,
+    28.0026,
+    0.2756
+   ],
+   "method": "extremal",
+   "note": "k-th most anterior (>= 1.2 cm apart) foot vertex (toe-claw tips)"
+  },
+  "toe_tip4_xpos": {
+   "p_cm": [
+    23.5927,
+    27.7847,
+    0.6084
+   ],
+   "method": "extremal",
+   "note": "k-th most anterior (>= 1.2 cm apart) foot vertex (toe-claw tips)"
+  },
+  "toe_tip5_xpos": {
+   "p_cm": [
+    25.0699,
+    27.5136,
+    1.4025
+   ],
+   "method": "extremal",
+   "note": "k-th most anterior (>= 1.2 cm apart) foot vertex (toe-claw tips)"
+  },
+  "ball_line_xpos": {
+   "p_cm": [
+    17.2065,
+    15.2049,
+    0.0328
+   ],
+   "method": "derived",
+   "note": "plantar vertex 13 cm anterior of the ankle (metatarsal-head band, foot.py MET heads 12-14 cm)"
+  }
+ }
+}
