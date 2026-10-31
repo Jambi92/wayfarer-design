@@ -53,7 +53,8 @@ def trunk_ring(name, u, cols=range(NT), ucol=None):
     return ['%s_%d' % (name, k) for k in cols]
 TU = dict(T0=164.0, T1=157.0, T2=150.0, T3=139.5, T4=134.0, T5=129.0)
 rings = {}
-for nm, u in TU.items(): rings[nm] = trunk_ring(nm, u)
+T3U = {k: 143.8 for k in (2, 3, 4, 5, 6)}; T3U.update({k: 140.2 for k in (10, 11, 12, 13, 14)})      # hole bottom row just below each axilla apex (left 144.5, right 140.5)
+for nm, u in TU.items(): rings[nm] = trunk_ring(nm, u, ucol=T3U if nm == 'T3' else None)
 # pelvis rings P0..P4: dorsal columns 6..10 lie on the tail module root ring (module index 0 = dorsal top, increasing towards -x):
 TAILIDX = {('P0', 6): 112, ('P0', 7): 120, ('P0', 8): 0, ('P0', 9): 8, ('P0', 10): 16, ('P1', 10): 24, ('P2', 10): 32, ('P3', 10): 40,
            ('P4', 10): 48, ('P4', 9): 56, ('P4', 8): 64, ('P4', 7): 72, ('P4', 6): 80, ('P3', 6): 88, ('P2', 6): 96, ('P1', 6): 104}
@@ -152,8 +153,9 @@ def leg(sg):
     else: r0 = ['P4_%d' % k for k in (0, 15, 14, 13, 12, 11, 10, 9, 8)] + ['crotch']        # same anatomical order: ant-med ... lateral ... post-med, medial
     lat = np.array([sg, 0, 0.0]); ant = np.array([0, 1.0, 0])
     tA = unit(K - H); tB = unit(A - K)
-    stations = [('L1', H + 0.20 * (K - H), tA), ('L2', H + 0.47 * (K - H), tA), ('L3', H + 0.74 * (K - H), tA), ('Kn1', H + 0.90 * (K - H), unit(tA + 0.3 * tB)),
-                ('Kn2', K, unit(tA + tB)), ('Kn3', K + 0.08 * (A - K), unit(0.3 * tA + tB)), ('S1', K + 0.38 * (A - K), tB), ('S2', K + 0.66 * (A - K), tB), ('S3', K + 0.86 * (A - K), tB)]
+    stations = [('L%d' % (i + 1), H + t * (K - H), tA) for i, t in enumerate((0.16, 0.32, 0.48, 0.63, 0.77))] + \
+               [('Kn1', H + 0.90 * (K - H), unit(tA + 0.3 * tB)), ('Kn2', K, unit(tA + tB)), ('Kn3', K + 0.07 * (A - K), unit(0.3 * tA + tB))] + \
+               [('S%d' % (i + 1), K + t * (A - K), tB) for i, t in enumerate(np.linspace(0.15, 0.86, 11))]          # ring spacing ~ column width (square coarse quads)
     # ring-0 corner angles around the thigh axis (anterior = 0, towards lateral = +90)
     c1, n1 = stations[0][1], stations[0][2]
     a0 = unit(ant - (ant @ n1) * n1); a9 = unit(lat - (lat @ n1) * n1 - (lat @ a0) * a0)
@@ -161,7 +163,7 @@ def leg(sg):
     uni = ang0[0] + np.arange(NL) * 36.0 * np.sign(ang0[3] - ang0[0])
     prev = r0; names = {}
     for i, (nm, c, n) in enumerate(stations):
-        blend = min(1.0, 0.35 + 0.18 * i); ang = (1 - blend) * ang0 + blend * uni
+        blend = min(1.0, 0.35 + 0.12 * i); ang = (1 - blend) * ang0 + blend * uni
         pts, lp = plane_ring(c, n, ang, ant, lat, rad=30)
         cur = []
         for k, p in enumerate(pts): cur.append(D.v('%s_%s_%d' % (nm, s, k), p))
@@ -179,11 +181,18 @@ def arm(sg):
     r0 = ['T1_%d' % c3, 'T1_%d' % c4, 'T1_%d' % c5, 'T2_%d' % c5, 'T3_%d' % c5, 'T3_%d' % c4, 'T3_%d' % c3, 'T2_%d' % c3]
     S, E, Wr = LM['glenohumeral_' + s], LM['elbow_' + s], LM['wrist_' + s]
     lat = np.array([sg, 0, 0.0]); post = np.array([0, -1.0, 0]); tA = unit(E - S); tB = unit(Wr - E)
-    st = [('A1', S + 0.45 * (E - S), tA), ('A2', S + 0.68 * (E - S), tA), ('El1', S + 0.86 * (E - S), unit(tA + 0.4 * tB)), ('El2', E, unit(tA + tB)),
-          ('El3', E + 0.13 * (Wr - E), unit(0.4 * tA + tB)), ('Fa1', E + 0.45 * (Wr - E), tB), ('Fa2', E + 0.78 * (Wr - E), tB), ('Wr', Wr, tB)]
+    st = [('A%d' % i, S + t * (E - S), tA) for i, t in enumerate((0.22, 0.36, 0.50, 0.63, 0.75))] + \
+         [('El1', S + 0.87 * (E - S), unit(tA + 0.4 * tB)), ('El2', E, unit(tA + tB)), ('El3', E + 0.12 * (Wr - E), unit(0.4 * tA + tB))] + \
+         [('Fa%d' % (i + 1), E + t * (Wr - E), tB) for i, t in enumerate(np.linspace(0.25, 0.86, 6))] + [('Wr', Wr, tB)]
     prev = r0
+    c1_, n1_ = st[0][1], st[0][2]; e1 = unit(lat - (lat @ n1_) * n1_); e2 = unit(post - (post @ n1_) * n1_ - (post @ e1) * e1)
+    H = np.array([D.C[D.idx[x]] for x in r0]); ha = np.degrees(np.unwrap(np.arctan2((H - c1_) @ e2, (H - c1_) @ e1)))
+    if ha[-1] < ha[0]: ha = -ha
+    ha = ha[0] + np.cumsum(np.r_[0, np.clip(np.diff(ha), 20, 70)]); ha = ha[0] + (ha - ha[0]) * 315.0 / max(ha[-1] - ha[0], 1e-6)   # monotone, 8 spread fans
+    if np.degrees(np.arctan2((H[1] - c1_) @ e2, (H[1] - c1_) @ e1)) * 0 == 0 and (np.unwrap(np.arctan2((H - c1_) @ e2, (H - c1_) @ e1))[-1] - np.unwrap(np.arctan2((H - c1_) @ e2, (H - c1_) @ e1))[0]) < 0: e2 = -e2
     for i, (nm, c, n) in enumerate(st):
-        pts, lp = plane_ring(c, n, ARM_ANG, lat, post, rad=20)
+        bl = min(1.0, i / 4.0); ang = list((1 - bl) * ha + bl * (ha[0] + np.arange(8) * 45.0))
+        pts, lp = plane_ring(c, n, ang, e1, e2 if (e2 @ post) > 0 else e2, rad=20)
         cur = []
         for k, p in enumerate(pts): D.v('%s_%s_%d' % (nm, s, k), p); cur.append('%s_%s_%d' % (nm, s, k))
         D.ring_arcs(cur, lp['P'])
@@ -346,7 +355,7 @@ def foot(sg):
     for t in tips: zero |= np.linalg.norm(V - V[t], axis=1) < 0.4
     phi = GEO.harmonic(region, zero, region & (V[:, 2] > uS3 + 0.5))
     lat = np.array([sg, 0, 0.0]); asup = unit(np.array([0, 1.0, 1.0])); prev = S3
-    levels = (0.82, 0.62, 0.42, 0.25)
+    levels = (0.84, 0.72, 0.60, 0.42, 0.25)
     for i, lev in enumerate(levels):
         L = [l for l in GEO.iso_loops(phi, lev, region & np.isfinite(phi)) if l['closed']]; lp = max(L, key=lambda l: GEO.loop_len(l['P']))
         c, n = loop_frame(lp['P'])
@@ -355,7 +364,7 @@ def foot(sg):
         pts = loop_ring(lp, c, n, list(ang), asup, lat); cur = []
         for k, p in enumerate(pts): D.v('Fd%d_%s_%d' % (i, s, k), p); cur.append('Fd%d_%s_%d' % (i, s, k))
         D.ring_arcs(cur, lp['P'])
-        D.band(prev, cur, 'ankle' if i < 2 else 'foot'); prev = cur
+        D.band(prev, cur, 'ankle' if i < 3 else 'foot'); prev = cur
     # toes
     up = np.array([0, 0, 1.0]); med = -lat; trows = []; Kn = []
     for i, t in enumerate(tips):
@@ -434,8 +443,10 @@ def head():
         names.append(cur)
     # eyes: hole corners = 8 points of the orbit rim loop; orbit rings = geodesic iso-loops from the eye-pit floor
     holes = {}
-    for sg, cols in ((1, [5, 6, 7]), (-1, [11, 10, 9])):
+    for sg in (1, -1):
         s_ = 'xpos' if sg > 0 else 'xneg'; bot = eye_bot[sg]
+        cand = range(5, 8) if sg > 0 else range(9, 12); cc_ = min(cand, key=lambda k: np.linalg.norm(D.C[D.idx[names[ie][k]]] - V[bot]))
+        cols = [cc_ - 1, cc_, cc_ + 1] if sg > 0 else [cc_ + 1, cc_, cc_ - 1]
         sub = region & (np.linalg.norm(V - V[bot], axis=1) < 4.0); dg = GEO.geodesic_from(np.arange(NV) == bot, sub)
         hole_names = [names[ie - 1][cols[0]], names[ie - 1][cols[1]], names[ie - 1][cols[2]], names[ie][cols[2]], names[ie + 1][cols[2]], names[ie + 1][cols[1]], names[ie + 1][cols[0]], names[ie][cols[0]]]
         ax = unit(GEO.VN[bot] * 0 + np.mean(GEO.VN[GEO.KD.query_ball_point(V[bot], 2.5)], 0))
@@ -444,11 +455,8 @@ def head():
         if not (np.all(np.diff(ang) > 0) or np.all(np.diff(ang) < 0)): print('WARNING eye hole default order not monotonic', s_, np.round(ang), flush=True)
         def rim(d):
             L = [l for l in GEO.iso_loops(dg, d, sub & np.isfinite(dg)) if l['closed']]; return max(L, key=lambda l: GEO.loop_len(l['P']))
-        lp = rim(2.7); P = lp['P']; ang = ang if ang[1] > ang[0] else -ang; e2 = e2 if True else e2
-        ang = ang[0] + np.arange(8) * 45.0                                         # orbit rings: uniform 45 deg fans (phase = hole corner 0)
-        pts = arc_place(P, V[bot], ax, list(ang), e1, e2 if (np.degrees(np.unwrap(np.arctan2((dflt - V[bot]) @ e2, (dflt - V[bot]) @ e1)))[1] > np.degrees(np.unwrap(np.arctan2((dflt - V[bot]) @ e2, (dflt - V[bot]) @ e1)))[0]) else -e2)
-        for k, h in enumerate(hole_names): D.C[D.idx[h]] = pts[k]
-        D.ring_arcs(hole_names, P); esg = e2 if (np.degrees(np.unwrap(np.arctan2((dflt - V[bot]) @ e2, (dflt - V[bot]) @ e1)))[1] > np.degrees(np.unwrap(np.arctan2((dflt - V[bot]) @ e2, (dflt - V[bot]) @ e1)))[0]) else -e2
+        if ang[-1] < ang[0]: ang = -ang; e2 = -e2
+        ang = ang[0] + np.arange(8) * 45.0; esg = e2                               # orbit rings: 45 deg fans phased on the hole corner 0 (hole = the head-ring corners)
         D.v('%s_eye_c' % s_, V[bot]); D.pins['eye_floor_' + s_] = V[bot]
         prev = hole_names
         for i, d in enumerate((1.8, 0.9)):
@@ -470,14 +478,10 @@ def head():
         D.band(allr[r], allr[r + 1], lab, skip=skip)
     # front cap (6 x 2): top row cols 5..11, bottom row cols 13..3, middle row = the lip crease across the snout front (mouth slit)
     last = names[-1]; Lp = D.C[D.idx[last[4]]]; Rp = D.C[D.idx[last[12]]]; capmask = mask & (phi < lv_ring[-1])
-    mids = []
-    for j in range(1, 6):
-        x = Lp[0] + (Rp[0] - Lp[0]) * j / 6.0; Ls = [l for l in GEO.section_loops(np.array([x, 15, 177.0]), (1, 0, 0), rad=15) if l['closed']]
-        P = np.vstack([l['P'] for l in Ls]); P = P[capmask[GEO.snap(P)]]; P = P[(P[:, 2] > 174.5) & (P[:, 2] < 179.8)]
-        # crease: most concave point of the front profile (largest f deficit vs the chord of its neighbours, sorted by u)
-        P = P[np.argsort(P[:, 2])]; fz = np.array([np.max(P[np.abs(P[:, 2] - u) < 0.15, 1]) for u in P[:, 2]]); uu = P[:, 2]
-        k = 6; defi = np.array([0.5 * (fz[max(i - k, 0)] + fz[min(i + k, len(fz) - 1)]) - fz[i] for i in range(len(fz))])
-        i = int(np.argmax(defi)); q = np.array([x, fz[i], uu[i]]); mids.append(V[GEO.snap(q)]); D.v('mouth_m%d' % j, mids[-1])
+    import sa_layout as _LY
+    pth = V[_LY.local_path(GEO.snap(Lp), GEO.snap(Rp), np.zeros(NV, bool), factor=1.3, margin=1)]          # lip line across the snout front (col 4 -> col 12)
+    sl = np.r_[0, np.cumsum(np.linalg.norm(np.diff(pth, axis=0), axis=1))]
+    for j in range(1, 6): D.v('mouth_m%d' % j, pth[np.searchsorted(sl, sl[-1] * j / 6.0)])
     top = [last[k] for k in range(5, 12)]; mid = [last[4]] + ['mouth_m%d' % j for j in range(1, 6)] + [last[12]]; bot = [last[k % 16] for k in (3, 2, 1, 0, 15, 14, 13)]
     for j in range(6): D.q(mid[j], mid[j + 1], top[j + 1], top[j], 'rostrum_cap'); D.q(bot[j], bot[j + 1], mid[j + 1], mid[j], 'rostrum_cap')
     D.pins['rostrum_tip'] = LM['rostrum_tip']

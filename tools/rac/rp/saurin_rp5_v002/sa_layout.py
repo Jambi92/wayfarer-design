@@ -200,7 +200,7 @@ class Layout:
                 P = self.arcs[e]; p = follow(P, ra, rb, bl)
             else:
                 p = local_path(ra, rb, bl, plane=self.hint.get(e, {}).get('plane'), allow=self._allow)
-                if p is None: p = local_path(ra, rb, bl, plane=self.hint.get(e, {}).get('plane'), fallback=False, factor=2.0, margin=3.0)
+                if p is None: p = local_path(ra, rb, bl, plane=self.hint.get(e, {}).get('plane'), fallback=True)
             if p is None: return None
             return np.r_[a, p, b]
         arc_ok = 0; arc_fail = []
