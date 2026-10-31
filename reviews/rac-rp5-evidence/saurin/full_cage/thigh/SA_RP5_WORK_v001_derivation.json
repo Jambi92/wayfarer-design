@@ -1,0 +1,28 @@
+{
+ "name": "SA_RP5_WORK_v001",
+ "status": "DERIVED PRODUCTION WORKING SOURCE (not canon; canonical W2I6 untouched)",
+ "order": "reviews/chatgpt-rac-rp5-saurin-full-authored-cage-order.md (ad9cb85) \u00a72-\u00a73, \u00a722",
+ "derivation": "SA_RP5_WORK_v000 (identity derivation of the canonical W2I6 base arrays) + sa_thigh_v001.py (deterministic bounded medial / posterior thigh art-pass)",
+ "canonical_inputs": {
+  "saurin_w2_final_base.npz": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee",
+  "saurin_w2_SA-F188_realization.npz": "8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187"
+ },
+ "canonical_array_sha256": {
+  "v_M": "b50a3d4b9cf1ffbc28551a3a8258b84ac9047b31ddb8bfd7cf07bb98f0317700",
+  "v_F": "d8504343f135b869e92de0a62c1f951330f4a27908a47e7c0299f067a044bfaf",
+  "f": "ae4fb0a943feb299269607ea84218e6c33fbd98e965ddaa4bb772daef67fcdab"
+ },
+ "working_array_sha256": {
+  "v_M": "27e5ed287e21c0bd0d25c9d963702cb6532c12d7c3797271c9064ac538f74e1c",
+  "v_F": "4c5bc624a485555b357039388b4b54bc3b63963aca5cc45fc2b35ff445b5602e",
+  "f": "ae4fb0a943feb299269607ea84218e6c33fbd98e965ddaa4bb772daef67fcdab"
+ },
+ "faces_identical_to_canonical": true,
+ "changed_vertex_set": {
+  "count": 46097,
+  "same_for_SA_M188_and_SA_F188": true,
+  "sha256": "43b75b852a0e71988faae328d379f86026a386de0afc7030a01b03ee27879798",
+  "file": "SA_RP5_WORK_v001_delta.npz (idx + new positions for both bodies; every other vertex = canonical)"
+ },
+ "rebuild": "v_X = canonical v_X; v_X[idx] = delta v_X  (or rerun tools/rac/rp/saurin_rp5_v002/sa_thigh_v001.py SRC LM OUT: deterministic, reproduces these hashes)"
+}
