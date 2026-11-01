@@ -18,15 +18,17 @@ creator chain), then:
 4. Post chain used for the revision cage: `sa_qopt.py` (IT 8-12, TZONE 1.3, MP 64, CHUNK 150) -> `sa_vault.py` vault_spec / nostril_spec (revision/) ->
    `sa_qopt.py` -> `sa_gopt.py` x n (STEPS 250 LR .0015 A_T 3.1 AW 100 VW 200 RING 3) -> `sa_foldcensus.py` + `sa_eval2.py`.
 
-**Open problem (the only blocker to PASS):** fold census outside tips must be 0 inverted / 0 bow-tie / 0 concave in deformation zones. Current cages:
-revision t2 661 / ~240 / ~250; Option-B cold builds b1 / b2 ~1,500 / ~500 / ~500 (palm, webs, forefoot, ankle). Density alone did not help.
-Tried and NOT adopted: harmonic patch untangle, flattened-disk untangle, Coons re-grid, nearest-partition re-sampling, coarse insets of webs (much worse),
-forefoot 2:1 proximal (worse), web insets, NOPULL (shape-only) relaxation in dense regions (no change), geodesic-path + flood + Tutte block mapping
-`sa_handmap.py` (304 / 392 blocks mapped, census worse). Suspicion to verify FIRST next session: the census may over-count in the narrow web slots
-(inverted = quad normal vs the nearest source face at the quad centroid -- in a slot the centroid can be nearest to the OPPOSITE wall; bow-tie uses the
-diagonal-cross normal, unreliable for strongly bent quads). Re-derive the census per quad from its own host faces (barycentric hosts of its 4 corners)
-and render web close-ups from inside the slots before more remeshing. Renders: the long straight lines in the workbench wire renders are render
-artifacts (no cage edge > 4.6 cm).
+**Open problem (the only blocker to PASS) — status 2026-10-31 ~22:00:**
+- Census now measured robustly (`sa_foldcensus.py`: reference normal = source normal at the quad's own corner hosts; inverted = >= 3 of 4 corner
+  triangles against it; bow-tie / dart in that plane). Folds are REAL (not slot artefacts).
+- WORKING METHOD: `sa_handmap.py design_p3.pkl design_b1.pkl cage_b1.npz OUT` (per authored hand / foot block: geodesic sides on the source,
+  flood region bounded by the vertex paths, Tutte map to the square, fine 17 x 17 grid lifted through it, seam relaxation). Inside mapped blocks inversions
+  went 78 -> 0. 365 / 412 blocks map; failures (paths cross 16, region chi != 1 ~20, flood leaks 7, no geodesic 4) are mostly WEB blocks and the toe-1
+  base: the two digit-side geodesics of a web block both run into the crotch and touch, pinching the region. Foot map: `optionb_wip/foot_fold_map_hm3.png`.
+- Next: give web blocks sides that cannot meet at the crotch (e.g. route each digit-side path on its own digit wall: Dijkstra restricted to source
+  vertices whose normal faces away from the neighbouring digit, or split the web block into its 4 Option-B sub-blocks with the crotch line as an explicit
+  shared side found as the slot's deepest geodesic), then rerun; then `sa_qopt` / `sa_gopt` (convexity) on residual seams; then the vault / nostril patches.
+
 Remaining after the census closes: thumb residual, deformation 4-step rerun (all poses incl. wrist flex / ext, knees, mid-tail), PD-2 (0 cage-owned flips),
 head creator states rerun, detail c1 / c2 / creator, direct identity, semantic map (HOPS 20, wr2 / an2 2:1 tags), boards A-P (hand / foot web close-ups),
 immutables, then pilot .blend (`sa_pilot_export.py`) and the PASS gate.

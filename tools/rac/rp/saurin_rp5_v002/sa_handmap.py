@@ -17,7 +17,7 @@ for _ in range(3): Vf, Qf, src = CC.cc(Vf, Qf, src)
 z = dict(np.load(CG)); Q = z['Q']; nqf = len(Qf); assert np.array_equal(Q[:nqf], Qf); fiv = z['tri'].copy(); bcv = z['bc'].copy(); V = (bcv[:, :, None] * G.V[G.F[fiv]]).sum(1); nv = len(V)
 pin = np.zeros(nv, bool); pin[int(z['n_body']):] = True; pin[z['tail_ring']] = True; pin[z['pinned']] = True
 HAND = {'palm', 'finger', 'finger_web', 'finger_cap', 'thumb', 'thumb_cap'}; FOOT = {'ankle', 'foot', 'forefoot', 'toe', 'toe_web', 'toe_cap'}
-SKIP = set(os.environ.get('SKIP_LABELS', 'finger_cap,thumb_cap,toe_cap').split(','))
+SKIP = set(os.environ.get('SKIP_LABELS', '').split(','))
 qlP = list(dp['qlab']); nmP = list(dp['name']); QP = np.array(dp['Q'])
 blocks = [q for q, l in enumerate(qlP) if l in HAND | FOOT and l not in SKIP]
 # source graph with edge lengths
@@ -39,6 +39,16 @@ def geopath(a, b):
     p = [loc[sb]]
     while p[-1] != loc[sa]: p.append(pred[p[-1]])
     p = sub[np.array(p[::-1])]; paths[key] = p if key[0] == a else p[::-1]; return p
+def geopath_avoid(a, b, avoid):
+    sa, sb = snapv(V[a]), snapv(V[b]); c = 0.5 * (G.V[sa] + G.V[sb]); r = 0.75 * np.linalg.norm(G.V[sa] - G.V[sb]) + 1.0
+    sub = np.array([x for x in kdS.query_ball_point(c, r) if x not in avoid], int); loc = -np.ones(len(G.V), int); loc[sub] = np.arange(len(sub))
+    if loc[sa] < 0 or loc[sb] < 0: return None
+    dist, pred = dijkstra(GW[sub][:, sub], indices=loc[sa], return_predecessors=True)
+    if not np.isfinite(dist[loc[sb]]): return None
+    p = [loc[sb]]
+    while p[-1] != loc[sa]: p.append(pred[p[-1]])
+    return sub[np.array(p[::-1])]
+used_edges = set()
 def chain_fine(qs, ca, cb):
     """the fine cage vertex chain between fine corners ca -> cb along the block border (16 hops)"""
     fq = np.nonzero(np.isin(src, qs))[0]; ec = collections.Counter((min(x, y), max(x, y)) for f in fq for x, y in zip(Qf[f], np.roll(Qf[f], -1)))
@@ -70,9 +80,30 @@ for qp in blocks:
     gp = [geopath(cf[k], cf[(k + 1) % 4]) for k in range(4)]
     if any(p is None for p in gp): WHY['no geodesic'] += 1; continue
     bar = np.concatenate(gp); bset = set(bar.tolist())
-    if len(bset) != len(bar) - 4: WHY['paths cross'] += 1; continue
+    if len(bset) != len(bar) - 4:
+        # re-route the block's not-yet-shared sides so they avoid the vertices of its other sides (cached shared sides are kept)
+        fixed_k = [k for k in range(4) if (min(cf[k], cf[(k + 1) % 4]), max(cf[k], cf[(k + 1) % 4])) in used_edges]
+        for k in [k for k in range(4) if k not in fixed_k]:
+            others = set(np.concatenate([gp[j] for j in range(4) if j != k]).tolist()) - {snapv(V[cf[k]]), snapv(V[cf[(k + 1) % 4]])}
+            pk = geopath_avoid(cf[k], cf[(k + 1) % 4], others)
+            if pk is not None: gp[k] = pk
+        bar = np.concatenate(gp); bset = set(bar.tolist())
+        if len(bset) != len(bar) - 4: WHY['paths cross'] += 1; continue
+        for k in range(4): paths[(min(cf[k], cf[(k + 1) % 4]), max(cf[k], cf[(k + 1) % 4]))] = gp[k] if cf[k] < cf[(k + 1) % 4] else gp[k][::-1]
     # seed: source vertex nearest the block centre fine vertex (face point), not on the barrier; flood bounded by the paths
-    cen_f = ixB['subf_%d' % qp]; seed = snapv(V[cen_f])
+    # seed: middle of the geodesic between the midpoints of two opposite sides, avoiding the barrier (robust when the old grid is crumpled)
+    m0 = gp[0][len(gp[0]) // 2]; m2 = gp[2][len(gp[2]) // 2]
+    sub_ = np.array([x for x in kdS.query_ball_point(0.5 * (G.V[m0] + G.V[m2]), 0.75 * np.linalg.norm(G.V[m0] - G.V[m2]) + 1.0) if x not in bset or x in (m0, m2)], int)
+    loc_ = -np.ones(len(G.V), int); loc_[sub_] = np.arange(len(sub_)); seed = None
+    if loc_[m0] >= 0 and loc_[m2] >= 0:
+        dist_, pred_ = dijkstra(GW[sub_][:, sub_], indices=loc_[m0], return_predecessors=True)
+        if np.isfinite(dist_[loc_[m2]]):
+            pp = [loc_[m2]]
+            while pp[-1] != loc_[m0]: pp.append(pred_[pp[-1]])
+            pp = sub_[np.array(pp[::-1])]; inner_ = [x for x in pp if x not in bset]
+            if inner_: seed = int(inner_[len(inner_) // 2])
+    if seed is None:
+        cen_f = ixB['subf_%d' % qp]; seed = snapv(V[cen_f])
     if seed in bset: WHY['seed on barrier'] += 1; continue
     lim = 4.0 * max(np.linalg.norm(V[cf[0]] - V[cf[2]]), np.linalg.norm(V[cf[1]] - V[cf[3]])) + 1.0
     cand = np.array(kdS.query_ball_point(G.V[seed], lim), int); inball = np.zeros(len(G.V), bool); inball[cand] = True
@@ -129,7 +160,22 @@ for qp in blocks:
         if not found: ok = False; break
     if not ok: WHY['grid point outside map'] += 1; continue
     for v_ in newf: fiv[v_] = newf[v_]; bcv[v_] = newb[v_]; moved[v_] = True
+    for k in range(4): used_edges.add((min(cf[k], cf[(k + 1) % 4]), max(cf[k], cf[(k + 1) % 4])))
     acc += 1
 V = (bcv[:, :, None] * G.V[G.F[fiv]]).sum(1)
+# seam relaxation: unmapped vertices (2:1 transitions, unmapped blocks) within SEAM rings of the mapped region -> tangential umbrella + sheet-consistent
+# re-projection, mapped vertices fixed
+T_ = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; Ec = np.unique(np.sort(np.r_[Q[:, [0, 1]], Q[:, [1, 2]], Q[:, [2, 3]], Q[:, [3, 0]]], 1), axis=0)
+Ac = sp.coo_matrix((np.ones(2 * len(Ec)), (np.r_[Ec[:, 0], Ec[:, 1]], np.r_[Ec[:, 1], Ec[:, 0]])), shape=(nv, nv)).tocsr(); degc = np.asarray(Ac.sum(1)).ravel()
+zoneB = moved.copy()
+for _ in range(int(os.environ.get('SEAM', 4))): zoneB |= (Ac @ zoneB.astype(float)) > 0
+fr = np.nonzero(zoneB & ~moved & ~pin)[0]; ab = igl.AABB(); ab.init(G.V, G.F)
+for it in range(40):
+    N_ = np.nan_to_num(igl.per_vertex_normals(V, T_)); L_ = (Ac @ V) / degc[:, None] - V; L_ -= (L_ * N_).sum(1)[:, None] * N_
+    P_ = V[fr] + 0.4 * L_[fr]; _, ff_, cp_ = ab.squared_distance(G.V, G.F, P_); wr_ = (FN[ff_] * N_[fr]).sum(1) < 0.2
+    if wr_.any(): _, _, cp2 = ab.squared_distance(G.V, G.F, P_[wr_] - 0.1 * N_[fr][wr_]); cp_[wr_] = cp2
+    V[fr] = cp_
+fi2, bc2, _ = G.embed(V[fr]); fiv[fr] = fi2; bcv[fr] = bc2
+print('seam vertices relaxed', len(fr))
 print('blocks', len(blocks), 'parameterised', acc, dict(WHY), 'vertices placed', int(moved.sum()))
 z['V'] = V; z['tri'] = fiv; z['bc'] = bcv; np.savez_compressed(OUT, **z)

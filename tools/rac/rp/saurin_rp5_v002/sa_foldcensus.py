@@ -6,10 +6,15 @@ import sys, os, json, pickle, collections, numpy as np, igl
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import sa_geo as G
 CG, DS, OUT = sys.argv[1:4]; z = np.load(CG); Q = z['Q']; V = (z['bc'][:, :, None] * G.V[G.F[z['tri']]]).sum(1); ql = z['qlab'].astype(str); qc = z['qcoarse']
 d = pickle.load(open(DS, 'rb')); nm = d['name']; DQ = np.array(d['Q'])
-FN = igl.per_face_normals(G.V, G.F, np.array([0, 0, 1.0])); P4 = V[Q]; n = np.cross(P4[:, 2] - P4[:, 0], P4[:, 3] - P4[:, 1])
-_, fi, _ = igl.point_mesh_squared_distance(P4.mean(1), G.V, G.F); inv = (n * FN[fi]).sum(1) < 0
-nn = n / (np.linalg.norm(n, axis=1, keepdims=True) + 1e-12); u1 = np.roll(P4, 1, 1) - P4; u2 = np.roll(P4, -1, 1) - P4
-sgall = (np.cross(u2, u1) * nn[:, None]).sum(2) / (np.linalg.norm(u1, axis=2) * np.linalg.norm(u2, axis=2) + 1e-12); nneg = (sgall < 0.05).sum(1)
+FN = igl.per_face_normals(G.V, G.F, np.array([0, 0, 1.0])); P4 = V[Q]
+# reference normal = the working-source normal at the quad's OWN corners (their barycentric host faces), never the nearest face to an off-surface centroid
+# (in a narrow web slot the centroid can be nearest to the opposite wall)
+nref = FN[z['tri'][Q]].sum(1); nref /= np.linalg.norm(nref, axis=1, keepdims=True) + 1e-12
+tri_n = [np.cross(P4[:, b] - P4[:, a], P4[:, c] - P4[:, a]) for a, b, c in ((0, 1, 2), (0, 2, 3), (0, 1, 3), (1, 2, 3))]
+inv = np.stack([(t * nref).sum(1) < 0 for t in tri_n], 1).sum(1) >= 3                # inverted: at least 3 of the 4 corner triangles face against the surface
+u1 = np.roll(P4, 1, 1) - P4; u2 = np.roll(P4, -1, 1) - P4
+sgall = (np.cross(u2, u1) * nref[:, None]).sum(2) / (np.linalg.norm(u1, axis=2) * np.linalg.norm(u2, axis=2) + 1e-12); nneg = (sgall < 0.05).sum(1)
+nneg = np.where(inv, 0, nneg)                                                         # (an inverted quad is counted once, as inverted)
 bow = nneg >= 2; conc = nneg == 1                                                   # bow-tie (self-crossing: >= 2 reflex / degenerate corners) vs dart (1)
 T = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; NV_ = np.nan_to_num(igl.per_vertex_normals(V, T)); vdis = (FN[z['tri']] * NV_).sum(1) < 0.2
 TIP = np.isin(ql, ['finger_cap', 'thumb_cap', 'toe_cap']); TAIL = ql == 'tail'
