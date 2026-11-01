@@ -69,6 +69,17 @@ if __name__ == '__main__':
             if q not in sub_cache: sub_cache[q] = np.nonzero(np.isin(fq, list(nbq[q])))[0]
             _, _, c2 = igl.point_mesh_squared_distance(P[vs], V, F[sub_cache[q]]); out[vs] = c2
         return out
+    _ab = igl.AABB(); _ab.init(V, F)
+    def project_ray(P, Nn, reach=0.6):
+        """normal-ray projection (shrink-wrap 'project along normal'): the nearest surface hit along +-N within reach; injective on concave creases where
+        closest-point projection bunches vertices onto the crease line (the fold mechanism of webs / 2:1 rows / orbit corners); fallback = restricted closest point"""
+        out = project(P); best = np.full(len(P), np.inf)
+        for sgn_ in (1.0, -1.0):
+            o = P - sgn_ * reach * Nn; dr = sgn_ * Nn
+            fid, t, _ = _ab.intersect_ray_first(V, F, o, dr)
+            ok_ = (fid >= 0) & (t >= 0) & (t <= 2 * reach); dist = np.abs(t - reach)
+            upd = ok_ & (dist < best); hit = o + t[:, None] * dr; out[upd] = hit[upd]; best[upd] = dist[upd]
+        return out
     if os.environ.get('INIT'):
         z0 = np.load(os.environ['INIT']); assert len(z0['Q']) == len(Qf) + len(TM['Q']); Vf = z0['V'][:nvf].copy(); print('warm start', os.environ['INIT'], flush=True)
     else:
@@ -95,7 +106,7 @@ if __name__ == '__main__':
         L -= (L * N).sum(1)[:, None] * N
         wl = np.where(cnt > 0, float(os.environ.get('WPULL', 0.12)), 0.45)[:, None]
         if it >= int(os.environ.get('RELAX', 60)) - int(os.environ.get('FINAL_Q', 0)): wl = np.full((nvf, 1), 0.3)        # final quality phase (shape-improving smoothing everywhere)                               # pulled vertices smooth less (lets the cage enter crevices)
-        Vt = Vf + wl * L + float(os.environ.get('DSTEP', 0.8)) * D_; Vt = np.where(np.isfinite(Vt), Vt, Vf); Vt = project(Vt - (float(os.environ.get('INSET_PROJ', 0)) if it >= 5 else 0.0) * N); ok = ~pin & np.isfinite(Vt).all(1); Vf[ok] = Vt[ok]   # sheet-consistent reprojection (queried INSET_PROJ cm inside along the cage normal) once the cage lies on the surface
+        Vt = Vf + wl * L + float(os.environ.get('DSTEP', 0.8)) * D_; Vt = np.where(np.isfinite(Vt), Vt, Vf); Vt = project_ray(Vt, N) if (os.environ.get('RAYPROJ') and it >= 5) else project(Vt); ok = ~pin & np.isfinite(Vt).all(1); Vf[ok] = Vt[ok]   # sheet-consistent reprojection (queried INSET_PROJ cm inside along the cage normal) once the cage lies on the surface
         if it % 10 == 0: print('relax', it, 'far samples', int(far.sum()), 'max %.1f mm' % (np.sqrt(d2[ti_ < len(TT)].max()) * 10), flush=True)
     # attach the accepted tail module (unchanged): module vertex i of ring 0 -> fine boundary vertex bl[i]
     mV, mQ = TM['V'], TM['Q']; mmap = np.r_[bl, nvf + np.arange(len(mV) - 128)]

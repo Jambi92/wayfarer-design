@@ -312,12 +312,28 @@ def hand(sg):
         pts = loop_ring(lp, c, n, ARM_ANG, np.array([sg, 0, 0.0]), np.array([0, -1.0, 0])); R_ = []
         for k, p in enumerate(pts): D.v('%s_%s_%d' % (name, s, k), p); R_.append('%s_%s_%d' % (name, s, k))
         D.ring_arcs(R_, lp['P']); return R_
-    H0b = palm_ring('H0b', 0.25); H1 = palm_ring('H1', 0.62)
+    def palm_ring16(name, target, K16):
+        # RP5 targeted revision: 16-corner mid-palm ring whose corners sit at the knuckle-ring corners' angles (straight H1 -> knuckle band); the palm
+        # 2:1 reduction moves ONE RING PROXIMAL (H0b 8 -> H1 16) so the 2:1 quads no longer span the long, curved metacarpal-to-knuckle zone
+        best = None
+        for lv in np.linspace(0.95, 0.05, 91):
+            L = [l for l in GEO.iso_loops(phh, lv, region & np.isfinite(phh)) if l['closed']]
+            if not L: continue
+            lp = max(L, key=lambda l: GEO.loop_len(l['P'])); fr = (lp['P'].mean(0) - Wr) @ ax / hl
+            if best is None or abs(fr - target) < best[0]: best = (abs(fr - target), lp)
+        lp = best[1]; c, n = loop_frame(lp['P'])
+        if n @ ax < 0: n = -n
+        r0 = np.array([sg, 0, 0.0]); r9 = np.array([0, -1.0, 0]); e1_ = unit(r0 - (r0 @ n) * n); e2_ = unit(r9 - (r9 @ n) * n - (r9 @ e1_) * e1_)
+        KP = np.array([D.C[D.idx[x]] for x in K16]); angs = list(np.degrees(np.arctan2((KP - c) @ e2_, (KP - c) @ e1_)))
+        pts = loop_ring(lp, c, n, angs, r0, r9); R_ = []
+        for k, p in enumerate(pts): D.v('%s_%s_%d' % (name, s, k), p); R_.append('%s_%s_%d' % (name, s, k))
+        D.ring_arcs(R_, lp['P']); return R_
+    H0b = palm_ring('H0b', 0.25); H1 = palm_ring16('H1', 0.62, Kn)
     # thumb hole: the H0-H1 quad nearest the thumb's proximal axis point
     dtt, mtt, trows = digit_loops(thumb, region, dmax=7.0)
     tb = trows[-1][2]['P'].mean(0); cen = [np.mean([D.C[D.idx[H0[k]]], D.C[D.idx[H0[(k + 1) % 8]]], D.C[D.idx[H0b[k]]], D.C[D.idx[H0b[(k + 1) % 8]]]], 0) for k in range(8)]
     kt = int(np.argmin([np.linalg.norm(c - tb) for c in cen]))
-    D.band(H0, H0b, 'palm', skip=[kt]); D.band(H0b, H1, 'palm')                    # thumb hole in the proximal palm band (H1 keeps valence <= 6 for the 2:1 row)
+    D.band(H0, H0b, 'palm', skip=[kt]); two_to_one(H1, H0b, 'palm', '%s_pt' % s)   # thumb hole in the proximal palm band; palm 2:1 now H0b (8) -> H1 (16)
     thumb_r0 = [H0[kt], H0[(kt + 1) % 8], H0b[(kt + 1) % 8], H0b[kt]]
     # thumb tube: ring corners matched to the hole order by angle around the thumb axis
     c, n = loop_frame(trows[-1][2]['P'])
@@ -352,7 +368,7 @@ def hand(sg):
     for i, (t, rows) in enumerate(zip(fingers, drows)):
         digit_tube('%s_f%d' % (s, i + 1), t, rows, ['%s_f%d_%s' % (s, i + 1, x) for x in ('DR', 'DU', 'PU', 'PR')], dor, rad, 'finger')
     # palm -> knuckle ring: 2:1 transition (H1 8 -> K 16), K rotated so that K[0] (f1 DR) sits over H1[0] (dorsal-radial)
-    two_to_one(Kn, H1, 'palm', '%s_pt' % s)
+    D.band(H1, Kn, 'palm')                                                           # regular 16 -> 16 band to the knuckle ring
     D.loops['knuckle_' + s] = Kn
     return dict(fingers=fingers, thumb=thumb, thumb_quad=kt)
 HANDS = {sg: hand(sg) for sg in (1, -1)}
@@ -468,11 +484,12 @@ def head():
         def rim(d):
             L = [l for l in GEO.iso_loops(dg, d, sub & np.isfinite(dg)) if l['closed']]; return max(L, key=lambda l: GEO.loop_len(l['P']))
         if ang[-1] < ang[0]: ang = -ang; e2 = -e2
-        ang = ang[0] + np.arange(8) * 45.0; esg = e2                               # orbit rings: 45 deg fans phased on the hole corner 0 (hole = the head-ring corners)
+        ang_h = ang.copy(); ang_u = ang[0] + np.arange(8) * 45.0; esg = e2          # RP5 targeted revision: RADIUS-MATCHED orbit fans -- the rim ring takes the hole
+        ANGS = [list(0.67 * ang_h + 0.33 * ang_u), list(0.33 * ang_h + 0.67 * ang_u)]  # corners' own angles (no skewed hole -> rim band), relaxing to 45 deg fans at the floor
         D.v('%s_eye_c' % s_, V[bot]); D.pins['eye_floor_' + s_] = V[bot]
         prev = hole_names
         for i, d in enumerate((1.8, 0.9)):
-            lp = rim(d); P = lp['P']; cur = []; pts = arc_place(P, V[bot], ax, list(ang), e1, esg)
+            lp = rim(d); P = lp['P']; cur = []; pts = arc_place(P, V[bot], ax, ANGS[i], e1, esg)
             for k in range(8): nm = '%s_orb%d_%d' % (s_, i, k); D.v(nm, pts[k]); cur.append(nm)
             D.ring_arcs(cur, P)
             D.band(prev, cur, 'orbit'); prev = cur
