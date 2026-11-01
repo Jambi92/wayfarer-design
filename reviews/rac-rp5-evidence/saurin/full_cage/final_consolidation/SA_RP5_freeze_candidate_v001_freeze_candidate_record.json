@@ -1,0 +1,144 @@
+{
+ "record": "Saurin RP5 freeze-candidate record",
+ "race": "Saurin",
+ "stage": "RP5",
+ "architecture": "Option B local hand / foot density",
+ "status": "FREEZE CANDIDATE / NOT FROZEN",
+ "source_approval_commit": "2ee75ae1845a223f3c8b8b9a5abfa10608f06b27",
+ "approval_gate": "reviews/claude-rac-rp5-saurin-full-authored-cage-gate.md",
+ "consolidation_order": "reviews/chatgpt-rac-rp5-saurin-final-consolidation-freeze-readiness-order.md (cd87d9c)",
+ "generated_utc": "2026-11-01T13:33:46+00:00",
+ "generated_at_repo_commit": "cd87d9ceae8bf383be082bc7d9a72c3b6158c773",
+ "cage_sha256": "ca1c635c1c3c234cc675c2471a31cf9646f95b597c0896b93486cd2b57f99839",
+ "approved_cage_sha256": "5a1f7a011cf9f65360f3bc0737501f46cdf51fa6f0b00344ddc1f4c6956ee413",
+ "topology_sha256": "255645a12a8dc59ae8dace55dcf2af2b196a4f5a799fdf425b394b831ffb2d49",
+ "male_candidate_sha256": "a37cc37723f1a25fed3320c972341883c05e7df30c4f6f44d112746c86880a07",
+ "female_candidate_sha256": "fd5dad4f3cc5ba598ba0f2198f062c8845f17f1317e948399398bc8e5c6403d7",
+ "semantic_map_sha256": "6a4b462df03a62d1038d2ff219c5a4692975df3f80cf4faa6913767fc1ac32df",
+ "semantic_face_sha256": "f750f30e8ecdd841d32c68f4c180af4bf3cd1d47379f71f6e78dc780efbae099",
+ "barycentric_map_sha256": "d845c5b1b98989c5896ee666156535000a72c6c29bd13df9fa0a302ea7ec1b8e",
+ "accepted_tail_module_sha256": "559565cc28a89db67c559c6db899cee51af0e349614fcb466255a6b35156baab",
+ "canonical_immutables": "229 / 229 unchanged",
+ "clean_rebuild": "PASS",
+ "accepted_residuals": {
+  "T4_angle_register": "SA_RP5_freeze_candidate_v001_T4_angle_residuals_ACCEPTED.csv",
+  "T6": "max 1.03 mm (c1) / 1.02 mm (c2), PASS under the established tool rule"
+ },
+ "gates": {
+  "T1": {
+   "SA-M188": {
+    "max_mm": 2.4353,
+    "p95_mm": 0.4342,
+    "median_mm": 0.0604,
+    "passed": true
+   },
+   "SA-F188": {
+    "max_mm": 2.3958,
+    "p95_mm": 0.4329,
+    "median_mm": 0.0607,
+    "passed": true
+   }
+  },
+  "T2": {
+   "SA-M188": {
+    "max_mm": {
+     "head": 1.3178,
+     "hands": 1.1731,
+     "feet": 1.1457,
+     "tail_root": 0.9813,
+     "tail_stations": 1.1822
+    },
+    "passed": true
+   },
+   "SA-F188": {
+    "max_mm": {
+     "head": 1.3189,
+     "hands": 1.1587,
+     "feet": 1.1316,
+     "tail_root": 0.9925,
+     "tail_stations": 1.2157
+    },
+    "passed": true
+   }
+  },
+  "T3": {
+   "SA-M188": true,
+   "SA-F188": true
+  },
+  "T4_quality": {
+   "SA-M188": {
+    "quads": 190946,
+    "angle_outside_45_135": 325,
+    "angle_outside_pct": 0.17,
+    "aspect_gt4": 13,
+    "aspect_p99": 2.94,
+    "aspect_max": 5.426
+   },
+   "SA-F188": {
+    "quads": 190946,
+    "angle_outside_45_135": 442,
+    "angle_outside_pct": 0.231,
+    "aspect_gt4": 13,
+    "aspect_p99": 2.934,
+    "aspect_max": 5.426
+   }
+  },
+  "T5": {
+   "SA-M188": true,
+   "SA-F188": true
+  },
+  "T6": {
+   "SA-M188": {
+    "max_mm": 1.0317,
+    "passed": true,
+    "accepted_residual": "approx 1.03 / 1.02 mm, PASS under the established tool rule, below the 1.5 mm ceiling"
+   },
+   "SA-F188": {
+    "max_mm": 1.0187,
+    "passed": true,
+    "accepted_residual": "approx 1.03 / 1.02 mm, PASS under the established tool rule, below the 1.5 mm ceiling"
+   }
+  },
+  "T7": {
+   "SA-M188": true,
+   "SA-F188": true
+  },
+  "fold_census": {
+   "inverted_non_tip": 0,
+   "bowtie_non_tip": 0,
+   "concave_non_tip": 0,
+   "concave_deformation_critical": 0
+  },
+  "aspect_gt4_outside_tip_tail_exemptions": 0,
+  "deformation": {
+   "poses": 34,
+   "topology_classified": 0,
+   "topology_only_flips": 0
+  },
+  "PD2": {
+   "states": 19,
+   "cage_owned_flips": 0
+  },
+  "accepted_angle_residuals": {
+   "c1_SA-M188": {
+    "quads": 65,
+    "pct": 0.034,
+    "severity": {
+     "mild (<= 5 deg outside)": 59,
+     "strong (> 10 deg)": 4,
+     "moderate (5-10 deg)": 2
+    }
+   },
+   "c2_SA-F188": {
+    "quads": 166,
+    "pct": 0.087,
+    "severity": {
+     "mild (<= 5 deg outside)": 160,
+     "strong (> 10 deg)": 4,
+     "moderate (5-10 deg)": 2
+    }
+   }
+  }
+ },
+ "production_copy": "PRODUCTION COPY DEFERRED \u2014 NO UNAMBIGUOUS APPROVED DESTINATION"
+}

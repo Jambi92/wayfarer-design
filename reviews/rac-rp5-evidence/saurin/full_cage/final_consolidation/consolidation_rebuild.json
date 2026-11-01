@@ -1,0 +1,156 @@
+{
+ "order": "reviews/chatgpt-rac-rp5-saurin-final-consolidation-freeze-readiness-order.md (cd87d9c)",
+ "approved_commit": "2ee75ae1845a223f3c8b8b9a5abfa10608f06b27",
+ "repo_commit": "cd87d9ceae8bf383be082bc7d9a72c3b6158c773",
+ "tool": "/home/claude/wayfarer-design/tools/rac/rp/saurin_rp5_v002/sa_consolidate.py",
+ "checks": {
+  "canonical input saurin_w2_final_base.npz": {
+   "ok": true,
+   "sha256": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee",
+   "recorded": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee"
+  },
+  "canonical input saurin_w2_SA-F188_realization.npz": {
+   "ok": true,
+   "sha256": "8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187",
+   "recorded": "8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187"
+  },
+  "canonical arrays": {
+   "ok": true
+  },
+  "working source rebuilt (canonical + committed thigh delta)": {
+   "ok": true,
+   "arrays": {
+    "v_M": "27e5ed287e21c0bd0d25c9d963702cb6532c12d7c3797271c9064ac538f74e1c",
+    "v_F": "4c5bc624a485555b357039388b4b54bc3b63963aca5cc45fc2b35ff445b5602e",
+    "f": "ae4fb0a943feb299269607ea84218e6c33fbd98e965ddaa4bb772daef67fcdab"
+   },
+   "staged_file_sha": "796cc195fdd9ae011e182c45346831d1fd33b7bdee983b63b71877adc43f4be0"
+  },
+  "accepted tail module file": {
+   "ok": true,
+   "sha256": "559565cc28a89db67c559c6db899cee51af0e349614fcb466255a6b35156baab"
+  },
+  "c1 geometry rebuilt == approved V": {
+   "ok": true,
+   "max_abs_diff_cm": 0.0
+  },
+  "tail module block == accepted module (approved and rebuilt)": {
+   "ok": true,
+   "rebuilt_cm": 1.7053025658242404e-13,
+   "approved_cm": 1.7053025658242404e-13
+  },
+  "tail module faces": {
+   "ok": true,
+   "module_quads": 15626
+  },
+  "counts": {
+   "ok": true,
+   "verts": 190948,
+   "quads": 190946
+  },
+  "closed 2-manifold, consistently oriented, chi 2, 100 % quads": {
+   "ok": true,
+   "chi": 2
+  },
+  "all vertices used, no degenerate quad": {
+   "ok": true
+  },
+  "topology hash": {
+   "ok": true,
+   "topology_sha256": "255645a12a8dc59ae8dace55dcf2af2b196a4f5a799fdf425b394b831ffb2d49"
+  },
+  "c1 / c2 share face list and vertex order (one Q, one embedding)": {
+   "ok": true,
+   "c1_c2_max_vertex_offset_cm": 2.8694786225410573
+  },
+  "candidate npz re-read == approved arrays (bit-identical, all 10 arrays)": {
+   "ok": true,
+   "candidate_sha256": "ca1c635c1c3c234cc675c2471a31cf9646f95b597c0896b93486cd2b57f99839"
+  },
+  "candidate c1 / c2 geometry == rebuild": {
+   "ok": true
+  },
+  "barycentric map == candidate embedding": {
+   "ok": true
+  }
+ },
+ "clean_workspace": {
+  "path": "/tmp/claude-0/rp5clean",
+  "files": {
+   "cr_MUHI.npy": "666b1035c59701b8cf8fdae551695c737686f69ba9d451fbdef8bf31978b6b52",
+   "cr_LT90.npy": "9068ed4b6f15ae7629c787fcd855ffe06617fbb490cb762e9675b66b338af33d",
+   "cr_M168.npy": "7f3196e0ee439aac88e67b5c2e3e4459699e653dfe109653d77593b310d088f9",
+   "cr_ORB+3.npy": "cda3256ce87d7f5d5f5fa6120cdd28d650ae7b574124dcad7e7c875909c58807",
+   "cr_T55.npy": "f228e076b5fb7d62cc1ed12808ee35d1e71d2ea404529dd87f05f8a03bc6aa6d",
+   "cr_RDG1.30.npy": "2740d985d0cfdc3a7b69ca335c37463f5e39d6090440fc0add72083af53b9b6d",
+   "cr_MIN.npy": "5e5ea90d818744a6932c975ab7d56f54769db4766e265120f173cd3c8169bee3",
+   "cr_BRD.npy": "e300af8d47d72cdda8a9d11a5c6b3d3cbab07bc37fb05b0424434ff98a874f33",
+   "cr_DSP-HIGH.npy": "faba33346faf3de045ed877efad2a9419534ad14b3d6c8c7631ed038782fe59c",
+   "cr_B-T80.npy": "cc6f9d2fa949fed87413cd76f63eb038f160598efd18eb0598b0eee81798d4b7",
+   "cr_MUFAHI.npy": "a32378702bf669663d93cd6c59a400f5fc3eaf33d8a4b30e31e9647c65170fe9",
+   "cr_RDG0.90.npy": "99aa86474f671ecba2d07476bfbcdcbfac982148e2b500f03783535f25ae70ac",
+   "cr_M208-B.npy": "b34188cc83a24a63ffead9e87ec9201f1e6d74fb4a889100ac71a402630f2ffb",
+   "cr_ORB-8.npy": "b355ac5d07dbdc49c306083ecd827f77f4c6aa42bdaa5c1826c6a43c3f1cb718",
+   "cr_NAR.npy": "2837faa199a7d9694daa844246f6431f5fb43389993978450178f80f8c821a97",
+   "cr_FAHI.npy": "3ebe05ffecb6e4786164d55ee416f33348c23afae97e01e54184cad587596fb2",
+   "cr_DSP-LOW.npy": "2999c6c29db6c51ba06490efd4770bdec0d8b29774178fa9c39201372f8bc95d",
+   "cr_F-N.npy": "036bd2a8d21620059d6dd3d68a08928f2f1fb5db80df630246e724a9bdb6482a",
+   "cr_T80.npy": "4b098ef00bf8ae723543bdadec5ab831c0f585b66c524eedc295707d71cca26f",
+   "src/saurin_w2_final_base.npz": "f86ae800a4ef60c7b78ca466433290b7c10e80654df9a02026abb7762353fdee",
+   "src/saurin_w2_final_surface_delta.npz": "f32286c4759b7c8a1cbeb1afa3727cf19a19624c1708b0715e4ab88ed57a7f63",
+   "src/saurin_w2_seeds.npy": "a1d07b8d7001241a2079271686b9e5a91b773b988763c5af9c5f8a92aefe6b05",
+   "src/saurin_w2_SA-F188_realization.npz": "8019420a9ee5c45731698c15fa6a11047bf5e7c1a6cc547b3d52d2716c1fc187",
+   "lm/SA-M188_landmarks.json": "29a21120a10cadf1f47266c52e22d0ed5cbcc20f9b383d95ae8aad2a69c66120",
+   "lm/SA-M188_regions.npz": "6908ae318127e75af6893a67c18bcfe0fff5b399452a70a3825e4f5b66a9744d",
+   "work/SA_RP5_WORK_v001.npz": "796cc195fdd9ae011e182c45346831d1fd33b7bdee983b63b71877adc43f4be0",
+   "tail/SA_tail_module.json": "cb0153dac8beef1ba67055028b88479c2b634317be1594d8ac72bd88cf9fc2e1",
+   "tail/SA_tail_module.npz": "559565cc28a89db67c559c6db899cee51af0e349614fcb466255a6b35156baab"
+  },
+  "creator_states": {
+   "cr_B-T80.npy": "cc6f9d2fa949fed87413cd76f63eb038f160598efd18eb0598b0eee81798d4b7",
+   "cr_BRD.npy": "e300af8d47d72cdda8a9d11a5c6b3d3cbab07bc37fb05b0424434ff98a874f33",
+   "cr_DSP-HIGH.npy": "faba33346faf3de045ed877efad2a9419534ad14b3d6c8c7631ed038782fe59c",
+   "cr_DSP-LOW.npy": "2999c6c29db6c51ba06490efd4770bdec0d8b29774178fa9c39201372f8bc95d",
+   "cr_F-N.npy": "036bd2a8d21620059d6dd3d68a08928f2f1fb5db80df630246e724a9bdb6482a",
+   "cr_FAHI.npy": "3ebe05ffecb6e4786164d55ee416f33348c23afae97e01e54184cad587596fb2",
+   "cr_LT90.npy": "9068ed4b6f15ae7629c787fcd855ffe06617fbb490cb762e9675b66b338af33d",
+   "cr_M168.npy": "7f3196e0ee439aac88e67b5c2e3e4459699e653dfe109653d77593b310d088f9",
+   "cr_M208-B.npy": "b34188cc83a24a63ffead9e87ec9201f1e6d74fb4a889100ac71a402630f2ffb",
+   "cr_MIN.npy": "5e5ea90d818744a6932c975ab7d56f54769db4766e265120f173cd3c8169bee3",
+   "cr_MUFAHI.npy": "a32378702bf669663d93cd6c59a400f5fc3eaf33d8a4b30e31e9647c65170fe9",
+   "cr_MUHI.npy": "666b1035c59701b8cf8fdae551695c737686f69ba9d451fbdef8bf31978b6b52",
+   "cr_NAR.npy": "2837faa199a7d9694daa844246f6431f5fb43389993978450178f80f8c821a97",
+   "cr_ORB+3.npy": "cda3256ce87d7f5d5f5fa6120cdd28d650ae7b574124dcad7e7c875909c58807",
+   "cr_ORB-8.npy": "b355ac5d07dbdc49c306083ecd827f77f4c6aa42bdaa5c1826c6a43c3f1cb718",
+   "cr_RDG0.90.npy": "99aa86474f671ecba2d07476bfbcdcbfac982148e2b500f03783535f25ae70ac",
+   "cr_RDG1.30.npy": "2740d985d0cfdc3a7b69ca335c37463f5e39d6090440fc0add72083af53b9b6d",
+   "cr_T55.npy": "f228e076b5fb7d62cc1ed12808ee35d1e71d2ea404529dd87f05f8a03bc6aa6d",
+   "cr_T80.npy": "4b098ef00bf8ae723543bdadec5ab831c0f585b66c524eedc295707d71cca26f"
+  }
+ },
+ "approved": {
+  "file": "/tmp/claude-0/approved_2ee75ae.npz",
+  "sha256": "5a1f7a011cf9f65360f3bc0737501f46cdf51fa6f0b00344ddc1f4c6956ee413",
+  "arrays": [
+   "Q",
+   "V",
+   "bc",
+   "n_body",
+   "part",
+   "pinned",
+   "qcoarse",
+   "qlab",
+   "tail_ring",
+   "tri"
+  ]
+ },
+ "candidate": {
+  "npz": "SA_RP5_full_cage_freeze_candidate_v001.npz",
+  "sha256": "ca1c635c1c3c234cc675c2471a31cf9646f95b597c0896b93486cd2b57f99839",
+  "barycentric_map": "d845c5b1b98989c5896ee666156535000a72c6c29bd13df9fa0a302ea7ec1b8e",
+  "topology_sha256": "255645a12a8dc59ae8dace55dcf2af2b196a4f5a799fdf425b394b831ffb2d49",
+  "c1_geometry_sha256": "172bc5554316de0a06f8be75228a24125baf2fa3729ca281a02704fce869a89d",
+  "c2_geometry_sha256": "2d8b77ffd1cc4bc73782d03b24c12858c009b23caa1a87b46ff035d4178bdc45"
+ },
+ "verdict": "PASS"
+}

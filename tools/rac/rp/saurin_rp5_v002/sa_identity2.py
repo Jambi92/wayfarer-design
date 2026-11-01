@@ -10,7 +10,7 @@
 #   H. display root: cage fit (median / p95 / max) over the display-root quads' source patch.
 import sys, os, json, pickle, numpy as np, igl
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import sa_geo as G
-CG, DS, OUT = sys.argv[1:4]; W = '/tmp/claude-0/rt/sa'
+CG, DS, OUT = sys.argv[1:4]; W = os.environ.get('SA_W', '/tmp/claude-0/rt/sa')
 src = open('/home/claude/wayfarer-design/tools/rac/rp/saurin_rp5_v001/sa_identity.py').read().split("LMm = {k: v['p_cm']")[0].replace("OUT = sys.argv[1]; ", "")
 src = src.replace("VM = b['v'].astype(float); F = b['f'].astype(np.int64); VF = np.load(W + '/src/saurin_w2_SA-F188_realization.npz')['v'].astype(float)",
                   "F = b['f'].astype(np.int64); _w = np.load(W + '/work/SA_RP5_WORK_v001.npz'); VM = _w['v_M'].astype(float); VF = _w['v_F'].astype(float)")

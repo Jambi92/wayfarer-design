@@ -8,7 +8,7 @@
 import sys, os, json, hashlib, numpy as np, igl
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import sa_geo as G, sa_ccage as CC
 from scipy.spatial import cKDTree
-CG, OUT = sys.argv[1:3]; W = '/tmp/claude-0/rt/sa'
+CG, OUT = sys.argv[1:3]; W = os.environ.get('SA_W', '/tmp/claude-0/rt/sa')
 b = np.load(W + '/src/saurin_w2_final_base.npz'); V0 = b['v'].astype(float); F0 = b['f'].astype(np.int64)
 dz = np.load(W + '/src/saurin_w2_final_surface_delta.npz')['d'].astype(float); Vu0, Fu = igl.upsample(V0, F0); rel = (dz * igl.per_vertex_normals(Vu0, Fu)).sum(1)
 seed_sha = hashlib.sha256(open(W + '/src/saurin_w2_seeds.npy', 'rb').read()).hexdigest()
