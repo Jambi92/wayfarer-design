@@ -20,6 +20,9 @@ nc = np.array([0, 2, 166.0]); NECK = [('front', (0, 1, -0.25), nc, 30), ('side',
 rc = g('tail_root_centre'); ROOT = [('side', (1, 0, 0.1), rc + [0, -6, 0], 42), ('rear', (0.2, -1, 0.3), rc + [0, -6, 0], 42), ('under', (0.2, -0.3, -1), rc + [0, -6, 0], 42)]
 tc = 0.5 * (g('tail_root_centre') + g('tail_tip')); TAIL = [('side', (1, 0, 0.05), tc, 150), ('top', (0.05, 0, 1), tc, 150), ('rear', (0.3, -1, 0.3), tc, 150)]
 jobs = []
+import resource
+def mem(t): print('[mem] %s %.2f GB' % (t, resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1e6), flush=True)
+mem('start')
 def J(tag, V, F_, col, views, wire=True, px=900, title=''): jobs.append((tag, V, F_, col, views, wire, px, title))
 # A thigh art-pass: canonical base vs SA_RP5_WORK_v001, difference heat
 b0 = np.load(W + '/src/saurin_w2_final_base.npz')['v'].astype(float); dth = np.linalg.norm(G.V - b0, axis=1) * 10
@@ -38,14 +41,20 @@ for s, sg in (('xpos', 1), ('xneg', -1)):
 J('H_root', VM, Q, None, ROOT, True, 900, 'H pelvis / sacrum / tail root (module ring 0 = cage tail hole)'); J('J_tail', VM, Q, None, TAIL, True, 1000, 'J tail (accepted module, unchanged)')
 J('K_c1', VM, Q, None, BODY[:3], True, 900, 'K c1 SA-M188'); J('K_c2', VF, Q, None, BODY[:3], True, 900, 'K c2 SA-F188 (same face list / vertex order)')
 J('K_c1c2_diff', VF, Q, heat(np.linalg.norm(VF - VM, axis=1), 0, 3.0), BODY[:3], False, 900, 'K |c2 - c1| per vertex 0 .. 3 cm')
+mem('# L deviation heat')
 # L deviation heat: per cage vertex the max distance of the source vertices it covers (nearest-vertex assignment)
 d = np.sqrt(igl.point_mesh_squared_distance(G.V, VM, T)[0]) * 10; _, near = __import__('scipy.spatial', fromlist=['cKDTree']).cKDTree(VM).query(G.V); dv = np.zeros(nv); np.maximum.at(dv, near, d)
 J('L_dev_body', VM, Q, heat(dv, 0, 3.0), BODY, False, 1000, 'L T-1 deviation source -> cage, per cage vertex: 0 (blue) .. 3 mm (red)')
 J('L_dev_head', VM, Q, heat(dv, 0, 1.5), HEAD, False, 900, 'L T-2 head deviation 0 .. 1.5 mm')
 el = np.zeros(nv); np.maximum.at(el, E[:, 0], np.linalg.norm(VM[E[:, 0]] - VM[E[:, 1]], axis=1)); J('M_density', VM, Q, heat(el, 0, 1.13), BODY, False, 900, 'M density: longest incident edge 0 .. 11 mm')
+mem('# N layered detail')
 # N layered detail (head / hand close-ups): cage + 2 CC levels + transported canonical relief vs canonical surfaced
 dz = np.load(W + '/src/saurin_w2_final_surface_delta.npz')['d'].astype(float); Vu0, Fu = igl.upsample(b0, F); rel = (dz * igl.per_vertex_normals(Vu0, Fu)).sum(1)
-Vc0 = (bc[:, :, None] * b0[F[fi]]).sum(1); Vs, Qs, _ = CC.cc(Vc0, Q, np.arange(len(Q))); Vs, Qs, _ = CC.cc(Vs, Qs, np.arange(len(Qs)))
+Vc0 = (bc[:, :, None] * b0[F[fi]]).sum(1)
+_NC = [(hc, 16), (g('wrist_xpos') + [5, 2, -8.0], 14), (np.array([14, -5, 125.0]), 26)]                 # memory: subdivide only the close-up neighbourhoods
+_qm = np.zeros(len(Q), bool)
+for _c, _h in _NC: _qm |= np.linalg.norm(Vc0[Q].mean(1) - _c, axis=1) < 1.5 * _h
+_uv, _inv = np.unique(Q[_qm], return_inverse=True); Vs, Qs, _ = CC.cc(Vc0[_uv], _inv.reshape(-1, 4), np.arange(_qm.sum())); Vs, Qs, _ = CC.cc(Vs, Qs, np.arange(len(Qs)))
 _, ti, cp = igl.point_mesh_squared_distance(Vs, b0, F); kids = Fu.reshape(len(F), 4, 3)[ti]; Nu = igl.per_vertex_normals(Vu0, Fu)
 w_ = 1.0 / (np.linalg.norm(Vu0[kids].reshape(len(cp), 12, 3) - cp[:, None], axis=2) + 1e-4); rr = (w_ * rel[kids.reshape(len(cp), 12)]).sum(1) / w_.sum(1)
 nn = (w_[:, :, None] * Nu[kids.reshape(len(cp), 12)]).sum(1); nn /= np.linalg.norm(nn, axis=1, keepdims=True); Dsurf = cp + rr[:, None] * nn
@@ -54,6 +63,7 @@ for nm_, cen, vw, h in (('head', hc, (0.8, 0.8, 0.2), 16), ('hand', g('wrist_xpo
     mU = np.linalg.norm(Vu0 - cen, axis=1) < 1.2 * h; Fd = Fu[mU[Fu].all(1)]
     J('N_detail_' + nm_, Dsurf, Qd, None, [('cage_detail', vw, cen, h)], False, 900, 'N layered detail %s: cage-derived detail surface' % nm_)
     J('N_canon_' + nm_, Vu0 + dz, Fd, None, [('canonical', vw, cen, h)], False, 900, 'N canonical surfaced organism %s' % nm_)
+mem('# O worst deformation')
 # O worst deformation poses with ownership labels
 src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sa_deform4.py')).read().split('res = {}')[0]
 ns = {'__file__': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sa_deform4.py')}; sys.argv = ['x', CG, DS, '/dev/null']; exec(compile(src, 'd4', 'exec'), ns)
@@ -63,6 +73,10 @@ for pn in worst:
     Tp = ns['pose'](ns['POSES'][pn]); P3 = ns['skin'](ns['Vc'], ns['W3'], Tp); c3 = ns['relcos'](ns['n0c'], ns['qn'](P3), ns['W3'], Q, Tp)
     col = np.tile(GREY, (nv, 1)); col[Q[c3 < 0].ravel()] = [0.9, 0.15, 0.1]; cen = P3[Q[c3 < 0].ravel()].mean(0) if (c3 < 0).any() else P3.mean(0)
     lab_ = D4.get(pn, {}).get('classification', ''); J('O_' + pn, P3, Q, col, [('a', (0.7, 0.7, 0.2), cen, 40), ('b', (-0.7, -0.7, 0.2), cen, 40)], True, 900, 'O %s (improved diagnostic weights; red = folded quads) -- %s' % (pn, lab_))
+for _k in list(ns.keys()):
+    if _k not in ('__builtins__',): ns[_k] = None
+del ns; import gc; gc.collect()
+mem('# P creator-support')
 # P creator-support states
 CR = json.load(open(os.path.join(os.path.dirname(CG), 'creator_final.json'))) if os.path.exists(os.path.join(os.path.dirname(CG), 'creator_final.json')) else {}
 for st in ['NAR', 'BRD', 'MUFAHI', 'T80', 'M168', 'M208-B', 'ORB-8', 'ORB+3', 'RDG1.30', 'DSP-HIGH']:
@@ -70,8 +84,10 @@ for st in ['NAR', 'BRD', 'MUFAHI', 'T80', 'M168', 'M208-B', 'ORB-8', 'ORB+3', 'R
     if not os.path.exists(p): continue
     VB = np.load(p).astype(float); Pc = (bc[:, :, None] * VB[F[fi]]).sum(1); head = st.startswith(('ORB', 'RDG', 'DSP'))
     vw = HEAD[:2] if head else BODY[:2]; J('P_' + st, Pc, Q, None, vw, True, 900, 'P creator state %s -- %s' % (st, CR.get(st, {}).get('verdict', '')))
+mem('for j in jobs: R.job')
 for j in jobs: R.job(j[0], j[1], j[2], j[3], j[4], wire=j[5], px=j[6])
-R.run()
+mem('R.run()')
+R.run(int(os.environ.get('RPAR', 1)))
 def strip(tag, views, title):
     ims = [R.img(tag, v[0]).resize((520, 520)) for v in views]; W_ = 520 * len(ims); M = Image.new('RGB', (max(W_, 1040), 560), 'white'); ImageDraw.Draw(M).text((10, 8), title + '   |   ' + LBL, fill=(0, 0, 0))
     for i, im in enumerate(ims): M.paste(im, (520 * i, 40))

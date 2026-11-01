@@ -2,6 +2,14 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-01 ~05:30) — ORDER 50ef121 — PASS GATE SUBMITTED (awaiting ChatGPT / author review)
+
+Gate `reviews/claude-rac-rp5-saurin-full-authored-cage-gate.md` = SAURIN RP5 FULL AUTHORED CAGE PASS. Evidence `reviews/rac-rp5-evidence/saurin/full_cage/optionb_final/`
+(cage sha 5a1f7a01…, merged design pkl, T1-T7, fold census 0/0/0, angle register, audit renders, deformation, PD-2, detail, identity, semantic map, boards A-P,
+pilot .blend M/F + read-back, immutables 229/229). Final cage = t2 body + Option B hands/feet (sa_graft) -> sa_xparam / sa_gsmooth passes (see entry below).
+Closure chain script pattern: /tmp/claude-0/rt/sa/cage3/closure.sh (foldcensus, eval2, angle_residuals, audit_renders, fc_semantic, identity2, deform4, pd2, detail2),
+then sa_boards_final (run ALONE: ~5 GB RAM), sa_immutables, sa_pilot_export with /home/claude/stc/bin/python3 (bpy 5.2.2). Next: wait for the review.
+
 ## LATEST (2026-11-01 ~01:30) — ORDER 50ef121 (continue Option B until PASS) — IN PROGRESS, INTERNAL ONLY
 
 Working dir `/tmp/claude-0/rt/sa/cage3` (ephemeral). Current lineage (all tools in `tools/rac/rp/saurin_rp5_v002/`):
