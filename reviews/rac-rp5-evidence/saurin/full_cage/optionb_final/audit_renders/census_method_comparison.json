@@ -1,0 +1,129 @@
+{
+ "cage": "cand_final.npz",
+ "method": {
+  "new": "host-aware: reference normal = area-weighted normals of the 4 corners' barycentric host faces; corners projected to that tangent plane; bow-tie = opposite edges cross (segment test); inverted = simple polygon with signed area < -1e-6 * mean edge^2; concave = simple positive polygon with a signed turn < -0.02 (corner > ~181 deg)",
+  "old": "inverted = diagonal-cross quad normal opposite to the normal of the source face nearest to the quad centroid; concave/bow-tie = min signed corner sine about that normal < 0.05"
+ },
+ "tolerances": {
+  "area_rel": 1e-06,
+  "turn": -0.02
+ },
+ "structures": {
+  "finger web": {
+   "quads": 1536,
+   "new": {
+    "ok": 1536
+   },
+   "old": {
+    "ok": 1536
+   },
+   "changed": {},
+   "old_false_positives": 0,
+   "old_false_negatives": 0
+  },
+  "toe web": {
+   "quads": 2048,
+   "new": {
+    "ok": 2048
+   },
+   "old": {
+    "ok": 2048
+   },
+   "changed": {},
+   "old_false_positives": 0,
+   "old_false_negatives": 0
+  },
+  "palm 2:1 row": {
+   "quads": 6144,
+   "new": {
+    "ok": 6144
+   },
+   "old": {
+    "ok": 6144
+   },
+   "changed": {},
+   "old_false_positives": 0,
+   "old_false_negatives": 0
+  },
+  "forefoot 2:1 row": {
+   "quads": 7680,
+   "new": {
+    "ok": 7680
+   },
+   "old": {
+    "ok": 7680
+   },
+   "changed": {},
+   "old_false_positives": 0,
+   "old_false_negatives": 0
+  },
+  "thumb base": {
+   "quads": 2112,
+   "new": {
+    "ok": 2112
+   },
+   "old": {
+    "ok": 2109,
+    "inverted": 3
+   },
+   "changed": {
+    "inverted -> ok": 3
+   },
+   "old_false_positives": 3,
+   "old_false_negatives": 0
+  },
+  "orbit fan": {
+   "quads": 2048,
+   "new": {
+    "ok": 2048
+   },
+   "old": {
+    "ok": 2048
+   },
+   "changed": {},
+   "old_false_positives": 0,
+   "old_false_negatives": 0
+  },
+  "wrist 2:1 ring": {
+   "quads": 2048,
+   "new": {
+    "ok": 2048
+   },
+   "old": {
+    "ok": 2048
+   },
+   "changed": {},
+   "old_false_positives": 0,
+   "old_false_negatives": 0
+  },
+  "ankle 2:1 ring": {
+   "quads": 2560,
+   "new": {
+    "ok": 2560
+   },
+   "old": {
+    "ok": 2560
+   },
+   "changed": {},
+   "old_false_positives": 0,
+   "old_false_negatives": 0
+  },
+  "all non-tip": {
+   "quads": 170200,
+   "new": {
+    "ok": 170200
+   },
+   "old": {
+    "ok": 170194,
+    "inverted": 4,
+    "concave/bow-tie": 2
+   },
+   "changed": {
+    "inverted -> ok": 4,
+    "concave/bow-tie -> ok": 2
+   },
+   "old_false_positives": 6,
+   "old_false_negatives": 0
+  }
+ }
+}

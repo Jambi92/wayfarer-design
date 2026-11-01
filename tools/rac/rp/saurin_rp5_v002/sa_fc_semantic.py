@@ -21,7 +21,7 @@ def chain(a, b):
     return p[::-1]
 rings = {}
 for n in nm:
-    m = re.match(r'^(.*)_(\d+)$', n)
+    m = re.match(r'^(.*)_(\d+)$', n) if not n.startswith('sub') else None          # Option B sub-corners (sub_*, subf_*) are not authored rings
     if m: rings.setdefault(m.group(1), []).append((int(m.group(2)), n))
 def sem(r):
     rules = [(r'^T[0-2]$', 'trunk flex ring (upper thorax / shoulder rows)'), (r'^T3$', 'shoulder / axilla row'), (r'^T[45]$', 'trunk flex ring'), (r'^P[0-3]$', 'lower axial ring (tail-root hole rows)'),

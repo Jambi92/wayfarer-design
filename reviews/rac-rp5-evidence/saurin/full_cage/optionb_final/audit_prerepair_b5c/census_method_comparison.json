@@ -1,0 +1,221 @@
+{
+ "cage": "cage_b5c.npz",
+ "method": {
+  "new": "host-aware: reference normal = area-weighted normals of the 4 corners' barycentric host faces; corners projected to that tangent plane; bow-tie = opposite edges cross (segment test); inverted = simple polygon with signed area < -1e-6 * mean edge^2; concave = simple positive polygon with a signed turn < -0.02 (corner > ~181 deg)",
+  "old": "inverted = diagonal-cross quad normal opposite to the normal of the source face nearest to the quad centroid; concave/bow-tie = min signed corner sine about that normal < 0.05"
+ },
+ "tolerances": {
+  "area_rel": 1e-06,
+  "turn": -0.02
+ },
+ "structures": {
+  "finger web": {
+   "quads": 1536,
+   "new": {
+    "ok": 1362,
+    "concave": 35,
+    "inverted": 99,
+    "bow-tie": 40
+   },
+   "old": {
+    "ok": 1339,
+    "concave/bow-tie": 79,
+    "inverted": 118
+   },
+   "changed": {
+    "ok -> inverted": 4,
+    "ok -> bow-tie": 4,
+    "inverted -> bow-tie": 22,
+    "concave/bow-tie -> ok": 30,
+    "inverted -> ok": 1
+   },
+   "old_false_positives": 31,
+   "old_false_negatives": 8
+  },
+  "toe web": {
+   "quads": 2048,
+   "new": {
+    "ok": 1925,
+    "concave": 34,
+    "bow-tie": 45,
+    "inverted": 44
+   },
+   "old": {
+    "ok": 1901,
+    "concave/bow-tie": 77,
+    "inverted": 70
+   },
+   "changed": {
+    "inverted -> bow-tie": 26,
+    "concave/bow-tie -> ok": 25,
+    "inverted -> ok": 3,
+    "ok -> bow-tie": 1,
+    "ok -> inverted": 1,
+    "ok -> concave": 2,
+    "inverted -> concave": 1,
+    "concave/bow-tie -> inverted": 3
+   },
+   "old_false_positives": 28,
+   "old_false_negatives": 4
+  },
+  "palm 2:1 row": {
+   "quads": 6144,
+   "new": {
+    "ok": 6003,
+    "concave": 30,
+    "bow-tie": 36,
+    "inverted": 75
+   },
+   "old": {
+    "ok": 6003,
+    "concave/bow-tie": 51,
+    "inverted": 90
+   },
+   "changed": {
+    "concave/bow-tie -> ok": 9,
+    "inverted -> bow-tie": 17,
+    "inverted -> concave": 1,
+    "concave/bow-tie -> inverted": 1,
+    "ok -> concave": 2,
+    "ok -> bow-tie": 5,
+    "ok -> inverted": 2
+   },
+   "old_false_positives": 9,
+   "old_false_negatives": 9
+  },
+  "forefoot 2:1 row": {
+   "quads": 7680,
+   "new": {
+    "ok": 7294,
+    "concave": 78,
+    "inverted": 230,
+    "bow-tie": 78
+   },
+   "old": {
+    "ok": 7240,
+    "concave/bow-tie": 171,
+    "inverted": 269
+   },
+   "changed": {
+    "inverted -> bow-tie": 37,
+    "concave/bow-tie -> ok": 59,
+    "ok -> concave": 3,
+    "ok -> bow-tie": 3,
+    "ok -> inverted": 1,
+    "inverted -> ok": 2,
+    "inverted -> concave": 1
+   },
+   "old_false_positives": 61,
+   "old_false_negatives": 7
+  },
+  "thumb base": {
+   "quads": 2048,
+   "new": {
+    "ok": 1974,
+    "concave": 26,
+    "inverted": 37,
+    "bow-tie": 11
+   },
+   "old": {
+    "ok": 1976,
+    "concave/bow-tie": 29,
+    "inverted": 43
+   },
+   "changed": {
+    "ok -> bow-tie": 1,
+    "ok -> concave": 4,
+    "inverted -> bow-tie": 6,
+    "concave/bow-tie -> ok": 3
+   },
+   "old_false_positives": 3,
+   "old_false_negatives": 5
+  },
+  "orbit fan": {
+   "quads": 2048,
+   "new": {
+    "ok": 1939,
+    "inverted": 52,
+    "bow-tie": 29,
+    "concave": 28
+   },
+   "old": {
+    "ok": 1943,
+    "inverted": 67,
+    "concave/bow-tie": 38
+   },
+   "changed": {
+    "ok -> bow-tie": 5,
+    "ok -> concave": 7,
+    "inverted -> bow-tie": 18,
+    "ok -> inverted": 2,
+    "concave/bow-tie -> ok": 9,
+    "concave/bow-tie -> inverted": 3,
+    "inverted -> ok": 1,
+    "inverted -> concave": 1
+   },
+   "old_false_positives": 10,
+   "old_false_negatives": 14
+  },
+  "wrist 2:1 ring": {
+   "quads": 2048,
+   "new": {
+    "ok": 2041,
+    "bow-tie": 2,
+    "concave": 5
+   },
+   "old": {
+    "ok": 2037,
+    "concave/bow-tie": 10,
+    "inverted": 1
+   },
+   "changed": {
+    "concave/bow-tie -> ok": 4,
+    "inverted -> bow-tie": 1
+   },
+   "old_false_positives": 4,
+   "old_false_negatives": 0
+  },
+  "ankle 2:1 ring": {
+   "quads": 2560,
+   "new": {
+    "ok": 2559,
+    "concave": 1
+   },
+   "old": {
+    "ok": 2558,
+    "concave/bow-tie": 2
+   },
+   "changed": {
+    "concave/bow-tie -> ok": 1
+   },
+   "old_false_positives": 1,
+   "old_false_negatives": 0
+  },
+  "all non-tip": {
+   "quads": 169216,
+   "new": {
+    "ok": 167826,
+    "inverted": 685,
+    "concave": 360,
+    "bow-tie": 345
+   },
+   "old": {
+    "ok": 167674,
+    "inverted": 855,
+    "concave/bow-tie": 687
+   },
+   "changed": {
+    "ok -> inverted": 13,
+    "concave/bow-tie -> ok": 200,
+    "inverted -> bow-tie": 174,
+    "ok -> bow-tie": 22,
+    "ok -> concave": 25,
+    "inverted -> ok": 12,
+    "inverted -> concave": 5,
+    "concave/bow-tie -> inverted": 8
+   },
+   "old_false_positives": 212,
+   "old_false_negatives": 60
+  }
+ }
+}

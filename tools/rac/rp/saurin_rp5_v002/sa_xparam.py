@@ -142,7 +142,14 @@ def optimize_uv(UVc, lc, Ql, lp, inner, UVs, Tl, Pl, A0np=None):
         Ec = 0.0
         if WCOV > 0 and asg is not None:
             P = torch.tensor(Pfix).clone(); P[torch.tensor(ii)] = P3cur(Xt, f); A_ = P[asg[:, 0]]; B_ = P[asg[:, 1]]; C_ = P[asg[:, 2]]
-            nn = torch.cross(B_ - A_, C_ - A_, dim=1); nn = nn / (torch.linalg.norm(nn, dim=1, keepdim=True) + 1e-15); dpl = ((Sp - A_) * nn).sum(1).abs()
+            # correspondence distance: the sample's own map parameter inside its cage triangle (cage layout) -> barycentric point on the cage triangle
+            U = Ufix.clone(); U[torch.tensor(ii)] = Xt; ua = U[asg[:, 0]]; ub = U[asg[:, 1]]; uc = U[asg[:, 2]]; su_ = torch.tensor(SUV)
+            den = (ub[:, 0] - ua[:, 0]) * (uc[:, 1] - ua[:, 1]) - (uc[:, 0] - ua[:, 0]) * (ub[:, 1] - ua[:, 1])
+            den = torch.where(den.abs() < 1e-18, torch.full_like(den, 1e-18), den)
+            w1 = ((su_[:, 0] - ua[:, 0]) * (uc[:, 1] - ua[:, 1]) - (uc[:, 0] - ua[:, 0]) * (su_[:, 1] - ua[:, 1])) / den
+            w2 = ((ub[:, 0] - ua[:, 0]) * (su_[:, 1] - ua[:, 1]) - (su_[:, 0] - ua[:, 0]) * (ub[:, 1] - ua[:, 1])) / den
+            w1 = w1.clamp(0, 1); w2 = w2.clamp(0, 1); w0 = (1 - w1 - w2).clamp(0, 1)
+            cp_ = (w0[:, None] * A_ + w1[:, None] * B_ + w2[:, None] * C_) / (w0 + w1 + w2 + 1e-12)[:, None]; dpl = torch.linalg.norm(Sp - cp_, dim=1)
             Ec = WCOV * (torch.relu(dpl - 0.8 * thS_) / thS_).pow(2).sum()
         Eq_ = 0.0
         if AWT_ > 0 or ANW_ > 0:
@@ -152,7 +159,7 @@ def optimize_uv(UVc, lc, Ql, lp, inner, UVs, Tl, Pl, A0np=None):
     eps = 0.2 * float(sgn.abs().median()); WCOV = float(os.environ.get('WCOV', 0.0)); asg = None
     AWT_ = float(os.environ.get('AWT', 0.0)); ART_ = float(os.environ.get('ART', 3.5)); ANW_ = float(os.environ.get('ANW', 0.0)); ACS_ = np.cos(np.radians(float(os.environ.get('ANGT', 46.5))))
     if WCOV > 0:
-        rs = np.random.default_rng(0); S_ = rs.choice(len(Pl), min(4000, len(Pl)), replace=False); Sp = torch.tensor(Pl[S_]); SUV = UVs[S_]
+        rs = np.random.default_rng(0); S_ = rs.choice(len(Pl), min(int(os.environ.get('NSAMP', 8000)), len(Pl)), replace=False); Sp = torch.tensor(Pl[S_]); SUV = UVs[S_]
         thS_ = torch.tensor(np.where(np.isin(G.LAB[G.KD.query(Pl[S_])[1]], ['head', 'hand_xneg', 'hand_xpos', 'foot_xneg', 'foot_xpos', 'tail']), 0.13, 0.27))
         Tc = np.r_[Ql[:, [0, 1, 2]], Ql[:, [0, 2, 3]]]
     def P3cur(Xt, f):
@@ -179,7 +186,13 @@ def optimize_uv(UVc, lc, Ql, lp, inner, UVs, Tl, Pl, A0np=None):
         E0 = E.item() if E0 is None else E0; mn = float(sg_.min()); mnu = float(su_.min())
         eps = eps * (0.5 if mn < 0 else 0.1); epsu = epsu * (0.5 if mnu < 0 else 0.1)
         eps = max(eps, 1e-9); epsu = max(epsu, 1e-12)
-    if os.environ.get('VERB'): print('    opt: E', round(E0, 1), '->', round(E.item(), 1), 'min corner', mn, 'min uv', mnu)
+    if os.environ.get('VERB'):
+        print('    opt: E', round(E0, 1), '->', round(E.item(), 1), 'min corner', mn, 'min uv', mnu)
+        if WCOV > 0:
+            with torch.no_grad():
+                P = torch.tensor(Pfix).clone(); P[torch.tensor(ii)] = P3cur(Xt, f); A_ = P[asg[:, 0]]; B_ = P[asg[:, 1]]; C_ = P[asg[:, 2]]
+                nn = torch.cross(B_ - A_, C_ - A_, dim=1); nn = nn / (torch.linalg.norm(nn, dim=1, keepdim=True) + 1e-15); dpl = ((Sp - A_) * nn).sum(1).abs()
+                print('    (plane distance)', end=''); print('    cov samples', len(Sp), 'max plane dist / thr %.2f' % float((dpl / thS_).max()), 'n > 0.8 thr', int((dpl > 0.8 * thS_).sum()))
     UVo = UVc.copy(); UVo[ii] = Xt.detach().numpy(); return UVo
 def repair(qs, lp):
     """cross-parameterise one disk region; returns (new fi, new bc) for interior vertices or None"""
@@ -344,13 +357,14 @@ for rnd in range(int(os.environ.get('ROUNDS', 3))):
         fiv[vs] = f2; bcv[vs] = b2; V[vs] = (b2[:, :, None] * G.V[G.F[f2]]).sum(1)
         b1, a1 = census(ring)
         if os.environ.get('SCORE'):
-            c1_ = (coverage(sv_)[0] / thrS[sv_]).max() if 'cov' in os.environ.get('SEL', 'bad') else 0.0; c0x = c0_ if 'cov' in os.environ.get('SEL', 'bad') else 0.0
+            c1_ = (coverage(sv_)[0] / thrS[sv_]).max(); c0x = c0_
+            SASP = float(os.environ.get('SASP', 10))
             def angout(qq):
                 _P4 = V[Q[qq]]; _u1 = np.roll(_P4, 1, 1) - _P4; _u2 = np.roll(_P4, -1, 1) - _P4; _an = np.degrees(np.arccos(np.clip((_u1 * _u2).sum(2) / (np.linalg.norm(_u1, axis=2) * np.linalg.norm(_u2, axis=2) + 1e-12), -1, 1)))
                 return int(((_an.min(1) < 45) | (_an.max(1) > 135)).sum())
             V_new = V[vs].copy(); V[vs] = old[2]; ang0 = angout(ring); V[vs] = V_new; ang1 = angout(ring)
-            S0 = 1000 * b0.sum() + 100 * max(0.0, c0x - 1.0) + 10 * (a0 > 4).sum() + ang0; S1 = 1000 * b1.sum() + 100 * max(0.0, c1_ - 1.0) + 10 * (a1 > 4).sum() + ang1
-            okc = S1 < S0 and b1.sum() <= b0.sum() and c1_ <= max(c0x, 1.0) + 1e-6
+            S0 = 1000 * b0.sum() + 100 * max(0.0, c0x - 1.0) + SASP * (a0 > 4).sum() + ang0; S1 = 1000 * b1.sum() + 100 * max(0.0, c1_ - 1.0) + SASP * (a1 > 4).sum() + ang1
+            okc = S1 < S0 and b1.sum() <= b0.sum() and c1_ <= max(c0x, float(os.environ.get('COVLIM', 1.1))) + 1e-6
             if os.environ.get('VERB'): print('    score region', len(qs), 'bad %d->%d cov %.2f->%.2f asp %d->%d ang %d->%d' % (b0.sum(), b1.sum(), c0x, c1_, (a0 > 4).sum(), (a1 > 4).sum(), ang0, ang1), 'KEEP' if okc else 'reject')
             if okc: kept += 1; WHY['kept'] += 1
             else: fiv[vs], bcv[vs], V[vs] = old; WHY['rejected (score)'] += 1

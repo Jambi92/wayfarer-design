@@ -72,3 +72,28 @@ fi, bc, dist = G.embed(V)
 chi = len(V) - len(np.unique(e, axis=0)) + len(Qn)
 np.savez_compressed(OUT, V=V, Q=Qn, tri=fi, bc=bc, qlab=qlab, qcoarse=qcoarse, n_body=nbody, tail_ring=tail_ring, pinned=pinned, part=src)
 print('assembled', len(V), 'V', len(Qn), 'Q; closed, oriented, chi', chi, '| body-cage quads', int(keepb_q.sum()), 'Option B quads', int(ho.sum()), '| pins', len(pinned))
+# merged design (optional 5th / 6th args: BODY_DESIGN.pkl OUT_DESIGN.pkl): name list indexed by the assembled cage's vertex index (authored corners keep
+# their names; Option B corners override on the hands / feet), coarse quads of both designs mapped to the assembled indices (qcoarse: body-cage design
+# quad q -> q, Option B quad q -> nQ_body + q), head / loops from the body design + the Option B knuckle / toe loops.
+if len(sys.argv) > 6:
+    dT = pickle.load(open(sys.argv[5], 'rb')); nmT = list(dT['name']); nmB = list(d['name'])
+    names = [''] * len(V)
+    for j, n in enumerate(nmB):
+        if j < len(newidx_o) and newidx_o[j] >= 0 and newidx_o[j] < nbody: names[newidx_o[j]] = n
+    for i, n in enumerate(nmT):
+        if i < len(newidx_b) and newidx_b[i] >= 0 and newidx_b[i] < nbody and (names[newidx_b[i]] == '' or not np.isin(qlab, HF).any()): names[newidx_b[i]] = names[newidx_b[i]] or n
+    seen = {}
+    for i, n in enumerate(names):
+        if n and n in seen: names[i] = n + '__dup'
+        seen[n] = i
+    QT = np.array(dT['Q']); QB = np.array(d['Q'])
+    def mapq(Qd, mp): r = np.where(Qd < len(mp), mp[np.minimum(Qd, len(mp) - 1)], -1); return np.where(r < 0, 0, r)
+    DQm = np.vstack([mapq(QT, newidx_b), mapq(QB, newidx_o)]); dql = list(dT['qlab']) + list(d['qlab'])
+    loops = dict(dT['loops'])
+    for k, v in d['loops'].items():
+        if k.startswith('knuckle') or k.startswith('toe_ring'): loops[k] = v
+    md = dict(C=V[:max(i for i, n in enumerate(names) if n) + 1], Q=DQm, name=names, qlab=dql, head=dT['head'], loops=loops, pins=dT.get('pins', {}), hint=None, fixed=None, arcs=None,
+              note='merged design of the assembled cage: body = %s, hands / feet = Option B design' % os.path.basename(sys.argv[5]))
+    pickle.dump(md, open(sys.argv[6], 'wb'))
+    qcn = np.r_[b['qcoarse'][keepb_q], len(QT) + qco[ho]]; qcn = np.where(np.r_[b['qcoarse'][keepb_q], qco[ho]] < 0, -1, qcn)
+    zz = dict(np.load(OUT)); zz['qcoarse'] = qcn; np.savez_compressed(OUT, **zz); print('merged design', sys.argv[6], 'named corners', sum(1 for n in names if n))
