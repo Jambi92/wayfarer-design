@@ -1,4 +1,4 @@
-# sa_fc_semantic.py DESIGN.pkl CAGE.npz OUT.json : semantic topology map of the full cage (order ad9cb85 §13 / f0a2b96 §14). Every authored coarse ring /
+# sa_fc_semantic.py DESIGN.pkl CAGE.npz OUT.json [PATCH_SPEC.json ...] : semantic topology map of the full cage (order ad9cb85 §13 / f0a2b96 §14). Every authored coarse ring /
 # named loop is traced on the fine cage (coarse corners keep their indices through Catmull-Clark; each coarse edge = an 8-hop fine edge chain), labelled
 # by anatomy; per-face labels (coarse quad label, claw caps, 2:1 rows, display root) and the accepted tail module bands. Topology-only -> identical c1 / c2.
 import sys, re, json, pickle, hashlib, numpy as np, scipy.sparse as sp
@@ -8,7 +8,7 @@ E = np.unique(np.sort(np.r_[Q[:, [0, 1]], Q[:, [1, 2]], Q[:, [2, 3]], Q[:, [3, 0
 def chain(a, b):
     """fine vertex chain a -> b along the subdivided coarse edge (BFS, <= 8 hops); None if the corners are not coarse neighbours"""
     prev = {a: -1}; front = [a]
-    for _ in range(8):
+    for _ in range(int(__import__('os').environ.get('HOPS', 12))):
         nxt = []
         for u in front:
             for w in A.indices[A.indptr[u]:A.indptr[u + 1]]:
@@ -66,6 +66,17 @@ for i in np.nonzero(qc >= 0)[0][:0]: pass
 crn = np.array(d['Q']); has_x = np.array([any(re.search(r'_(pt|ft)_x\d', nm[c]) for c in q) for q in crn])
 face_sem = np.where(np.isin(qlab, ['finger_cap', 'thumb_cap', 'toe_cap']), 'claw cap', qlab)
 face_sem = np.where((qc >= 0) & has_x[np.maximum(qc, 0)], '2:1 reduction row', face_sem)
+# authored local patches added in the targeted revision (sa_vault): quads touching a body vertex created after the CC build (index >= NB0)
+NB0 = int(__import__('os').environ.get('NB0', 91969)); PATCH = []
+for f_ in sys.argv[4:]:
+    for P_ in json.load(open(f_)): PATCH.append((P_['name'], np.asarray(P_['centre'], float)))
+if PATCH:
+    Vv = z['V']; newq = np.nonzero(((Q >= NB0) & (Q < nb)).any(1))[0]; qcen = Vv[Q[newq]].mean(1)
+    nmP = np.array([n_ for n_, _ in PATCH]); cP = np.array([c_ for _, c_ in PATCH]); near = np.argmin(np.linalg.norm(qcen[:, None] - cP[None], axis=2), 1)
+    tagmap = {'axillary_vault': 'axillary vault patch (apex floor + 2 support rings)', 'nostril_pit': 'nostril pit ring', 'perineal': 'perineal / tail-underside support ring', 'tail_underside': 'perineal / tail-underside support ring'}
+    face_sem = face_sem.astype(object)
+    for q_, k_ in zip(newq, near): face_sem[q_] = next(v for kk, v in tagmap.items() if nmP[k_].startswith(kk))
+    face_sem = face_sem.astype(str)
 res = dict(order='ad9cb85 §13 / f0a2b96 §14', loops=out, face_semantic_counts={k: int(v) for k, v in zip(*np.unique(face_sem, return_counts=True))},
            face_semantic_sha256=hashlib.sha256('\n'.join(face_sem).encode()).hexdigest(), topology_sha256=hashlib.sha256(np.ascontiguousarray(Q).tobytes()).hexdigest(),
            c1_c2='one face list / vertex order / semantic map: realized on SA-M188 and SA-F188 by the same barycentric embedding')

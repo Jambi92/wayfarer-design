@@ -326,7 +326,19 @@ def hand(sg):
     hang = np.degrees(np.unwrap(np.arctan2((hole - c) @ e2, (hole - c) @ e1)))
     sgn = np.sign(np.sum(np.angle(np.exp(1j * np.radians(np.diff(np.r_[hang, hang[0]])))))) or 1.0
     hang = hang[0] + sgn * 90.0 * np.arange(4)                                     # thumb rings: 4 corners at 90 deg, phase / sense of the hole corners
-    prev = thumb_r0; dbase = trows[-1][0]
+    # RP5 targeted revision: the hole quad can be seen nearly edge-on along the thumb axis (its projected angular sense is ambiguous -> a 180 deg twist made
+    # the thumb tube inside-out). Sense / phase are now chosen by the untwisted correspondence: the first ring candidate (both senses, 4 phases) with the
+    # smallest summed 3-D distance to the hole corners.
+    dbase = trows[-1][0]; lev = 0.64 * dbase; j0 = int(np.argmin([abs(r[0] - lev) for r in trows])); lp0 = trows[j0][2]; c0, n0_ = loop_frame(lp0['P'])
+    if (V[thumb] - c0) @ n0_ < 0: n0_ = -n0_
+    best = None
+    for sg_ in (1.0, -1.0):
+        for sh in range(4):
+            hh = hang[0] + sg_ * 90.0 * ((np.arange(4) + sh) % 4); pts0 = loop_ring(lp0, c0, n0_, list(hh), e1, e2)
+            cost = sum(np.linalg.norm(np.asarray(p_) - h_) for p_, h_ in zip(pts0, hole))
+            if best is None or cost < best[0]: best = (cost, hh)
+    hang = best[1]
+    prev = thumb_r0
     for i, fr in enumerate((0.64, 0.33)):
         lev = fr * dbase; j = int(np.argmin([abs(r[0] - lev) for r in trows])); lp = trows[j][2]; cj, nj = loop_frame(lp['P'])
         if (V[thumb] - cj) @ nj < 0: nj = -nj

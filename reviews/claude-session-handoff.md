@@ -2,7 +2,30 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-31) — RP5 SAURIN FULL AUTHORED CAGE — NEEDS REVISION (gate returned; awaiting ChatGPT review)
+## LATEST (2026-10-31 evening) — ORDER 236dddc (Saurin RP5 targeted revision until internal PASS) — IN PROGRESS, INTERNAL ONLY (no gate submitted)
+
+Internal audit is still below PASS, so nothing is submitted (standing directive de3a185). Working state saved in
+`reviews/rac-rp5-evidence/saurin/full_cage/revision_wip/` (cage `SA_RP5_cage_wip_t1.npz`, coarse design with the thumb fix, patch specs).
+
+**Closed internally on the WIP cage (t1, 107,796 V):**
+- T-1 max 2.70 mm (axillary vault patch: `sa_vault.py` with depth-band placement into the source pocket, both sides), T-2 every zone max <= 1.43 mm
+  (nostril pit rings; tail-underside fixed by guarded optimisation), aspect > 4 outside tips 641 -> 0 (`sa_gopt.py` joint torch optimisation with coverage
+  barrier + per-vertex rollback; 2 symmetric hip-root edge loops `sa_loopcut.py` + manual mirror).
+- Head creator states built (`cr_head.py`: ORB-8 / ORB+3 via W3B level-set transfer, ridge m 0.90 / 1.30, display root LOW = minimal ridges, HIGH = crest 2.42 cm).
+- PD-2 source-side proof tool `sa_pd2.py`: FAHI / MUHI / MUFAHI cage flips sit over source folds (6,675 / 1,197 / 11,201 flipped base triangles).
+- 4-step deformation tool `sa_deform4.py` (semantic-masked weights, heat-diffused weights, smooth DQS field on cage + full-resolution source, fist /
+  grasp / opposition / toe flex-ext). Detail closure `sa_detail2.py` (c1 / c2 / NAR, no cage-induced discontinuity). Direct identity `sa_identity2.py`.
+  Boards A-P `sa_boards_final.py`, pilot export `sa_pilot_export.py` (bpy), immutables `sa_immutables.py` (229 / 229 unchanged) — written, run on the final cage only.
+
+**NEW DEFECT found by the internal audit (not caught by T-4 as defined):**
+- Both thumbs were built INSIDE-OUT (sa_design thumb ring sense ambiguous when the thumb hole is seen edge-on) -> fixed in `sa_design.py` (untwisted
+  correspondence by 3-D distance; coarse face list unchanged) and re-placed on the fine cage (`sa_thumbfix.py`): thumb inversions 790 -> 19.
+- ~650 folded / concave (dart, bow-tie) quads remain in single-row webs, palm / forefoot 2:1 rows and two orbit corners (present since cc4; measured with
+  signed corner sines and cage-vs-source normal agreement). Fine-level untanglers tried (`sa_untangle*.py`, `sa_regrid.py`, `sa_reparam.py`): low yield.
+- Next: upstream fix — per-coarse-quad parameterised sampling of the source partition in `sa_ccage.py` (instead of closest-point projection) and/or
+  coarse-level web / 2:1 redesign; then re-run the scripted post chain (vault, nostril, qopt, gopt), then the final evidence + gate.
+
+## (previous) 2026-10-31 — RP5 SAURIN FULL AUTHORED CAGE — NEEDS REVISION (gate returned; awaiting ChatGPT review)
 
 Gate `reviews/claude-rac-rp5-saurin-full-authored-cage-gate.md`; evidence `full_cage/closure/` (cage cc4 sha dc267415…, T1-T7, clusters, semantic map,
 identity, creator states (13 bodies built via the rebuilt W2 creator route: `tools/.../saurin_rp5_v002/cr_build*.py`; needs the scratch creator chain:
