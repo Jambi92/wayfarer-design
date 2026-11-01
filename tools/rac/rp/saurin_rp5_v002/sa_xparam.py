@@ -33,6 +33,7 @@ def census(qs):
     turn = np.stack([cr(xy[:, k] - xy[:, (k - 1) % 4], xy[:, (k + 1) % 4] - xy[:, k]) / (np.linalg.norm(xy[:, k] - xy[:, (k - 1) % 4], axis=1) * np.linalg.norm(xy[:, (k + 1) % 4] - xy[:, k], axis=1) + 1e-12) for k in range(4)], 1)
     conc = ~bow & ~inv & (turn.min(1) < -0.02)
     el = np.linalg.norm(P4 - np.roll(P4, -1, 1), axis=2); asp = el.max(1) / np.maximum(el.min(1), 1e-9)
+    if os.environ.get('DEGEN'): return inv | bow | conc | (el.min(1) < 0.02) | (asp > 20), asp
     return inv | bow | conc, asp
 # quad adjacency (shared vertex) for dilation / components
 nq = len(Q); VQ = sp.coo_matrix((np.ones(4 * nq), (Q.ravel(), np.repeat(np.arange(nq), 4))), shape=(nv, nq)).tocsr(); QQ = (VQ.T @ VQ).tocsr()
@@ -96,7 +97,7 @@ def region_disk(qset):
             if len(comp) < MAXQ: qset |= comp; grew = True
         if not grew: return None
     return None
-def optimize_uv(UVc, lc, Ql, lp, inner, UVs, Tl, Pl):
+def optimize_uv(UVc, lc, Ql, lp, inner, UVs, Tl, Pl, A0np=None):
     """quality optimisation of the cage region INSIDE the bijective source map: cage vertices move in the map's disk (border fixed); 3-D positions =
     the map's piecewise-affine lift. Energy per quad corner: MIPS (|a|^2 + |b|^2) / (2 s), s = signed corner area against the host-face normal (barrier:
     s -> 0 is infinite, so no fold / dart / bow-tie can appear), plus an area-balance term (A / A0 + A0 / A). Gradient steps with back-tracking that
@@ -129,7 +130,7 @@ def optimize_uv(UVc, lc, Ql, lp, inner, UVs, Tl, Pl):
         return P4, a, b, sgn
     X = UVc[ii].copy(); f = locate(X)
     with torch.no_grad(): P4, a, b, sgn = energy(torch.tensor(X), f)
-    A0 = torch.clamp((0.5 * (sgn[:, 0] + sgn[:, 2])).abs(), min=float(sgn.abs().median()) * 0.5)
+    A0 = torch.clamp((0.5 * (sgn[:, 0] + sgn[:, 2])).abs(), min=float(sgn.abs().median()) * 0.5) if A0np is None else torch.tensor(A0np)
     WA = float(os.environ.get('WAREA', 0.5)); WU = float(os.environ.get('WUV', 1e-3))
     U4idx = torch.tensor(Ql); Ufix = torch.tensor(UVc)
     def chi(s_, e_): return 0.5 * (s_ + torch.sqrt(s_ * s_ + e_ * e_))
@@ -138,13 +139,37 @@ def optimize_uv(UVc, lc, Ql, lp, inner, UVs, Tl, Pl):
         mips = ((a * a).sum(2) + (b * b).sum(2)) / (2 * chi(sgn, eps)); A = chi(0.5 * (sgn[:, 0] + sgn[:, 2]), eps)
         U = Ufix.clone(); U[torch.tensor(ii)] = Xt; U4 = U[U4idx]; au = torch.roll(U4, -1, 1) - U4; bu = torch.roll(U4, 1, 1) - U4; su = au[..., 0] * bu[..., 1] - au[..., 1] * bu[..., 0]
         mu = ((au * au).sum(2) + (bu * bu).sum(2)) / (2 * chi(su, epsu))
-        return mips.sum() + WA * (A / A0 + A0 / A).sum() + WU * mu.sum(), sgn, su
-    eps = 0.2 * float(sgn.abs().median()); 
+        Ec = 0.0
+        if WCOV > 0 and asg is not None:
+            P = torch.tensor(Pfix).clone(); P[torch.tensor(ii)] = P3cur(Xt, f); A_ = P[asg[:, 0]]; B_ = P[asg[:, 1]]; C_ = P[asg[:, 2]]
+            nn = torch.cross(B_ - A_, C_ - A_, dim=1); nn = nn / (torch.linalg.norm(nn, dim=1, keepdim=True) + 1e-15); dpl = ((Sp - A_) * nn).sum(1).abs()
+            Ec = WCOV * (torch.relu(dpl - 0.8 * thS_) / thS_).pow(2).sum()
+        Eq_ = 0.0
+        if AWT_ > 0 or ANW_ > 0:
+            el_ = torch.linalg.norm(a, dim=2); ratio_ = el_[:, :, None] / (el_[:, None, :] + 1e-12); Eq_ = AWT_ * torch.relu(ratio_ - ART_).pow(2).sum()
+            cs_ = (a * b).sum(2) / (torch.linalg.norm(a, dim=2) * torch.linalg.norm(b, dim=2) + 1e-12); Eq_ = Eq_ + ANW_ * torch.relu(cs_.abs() - ACS_).pow(2).sum()
+        return mips.sum() + WA * (A / A0 + A0 / A).sum() + WU * mu.sum() + Ec + Eq_, sgn, su
+    eps = 0.2 * float(sgn.abs().median()); WCOV = float(os.environ.get('WCOV', 0.0)); asg = None
+    AWT_ = float(os.environ.get('AWT', 0.0)); ART_ = float(os.environ.get('ART', 3.5)); ANW_ = float(os.environ.get('ANW', 0.0)); ACS_ = np.cos(np.radians(float(os.environ.get('ANGT', 46.5))))
+    if WCOV > 0:
+        rs = np.random.default_rng(0); S_ = rs.choice(len(Pl), min(4000, len(Pl)), replace=False); Sp = torch.tensor(Pl[S_]); SUV = UVs[S_]
+        thS_ = torch.tensor(np.where(np.isin(G.LAB[G.KD.query(Pl[S_])[1]], ['head', 'hand_xneg', 'hand_xpos', 'foot_xneg', 'foot_xpos', 'tail']), 0.13, 0.27))
+        Tc = np.r_[Ql[:, [0, 1, 2]], Ql[:, [0, 2, 3]]]
+    def P3cur(Xt, f):
+        Af = torch.tensor(Aff[f]); u0 = torch.tensor(U0[f]); p0 = torch.tensor(P0[f]); return p0 + (Af @ (Xt - u0)[:, :, None])[:, :, 0]
+    def assign(Xn):
+        Ux = UVc.copy(); Ux[ii] = Xn
+        try: tt = mtri.Triangulation(Ux[:, 0], Ux[:, 1], Tc).get_trifinder()(SUV[:, 0], SUV[:, 1])
+        except Exception: tt = -np.ones(len(SUV), int)
+        if (tt < 0).any():
+            cen = Ux[Tc].mean(1); tt[tt < 0] = cKDTree(cen).query(SUV[tt < 0])[1]
+        return torch.tensor(Tc[tt])
     with torch.no_grad():
         U4 = UVc[Ql]; au = np.roll(U4, -1, 1) - U4; bu = np.roll(U4, 1, 1) - U4; su0 = au[..., 0] * bu[..., 1] - au[..., 1] * bu[..., 0]
     epsu = 0.2 * float(np.median(np.abs(su0))); Xt = torch.tensor(X, requires_grad=True); E0 = None
     for outer in range(int(os.environ.get('OPT', 12))):
         f = locate(Xt.detach().numpy())
+        if WCOV > 0: asg = assign(Xt.detach().numpy())
         opt_ = torch.optim.LBFGS([Xt], lr=1, max_iter=40, line_search_fn='strong_wolfe', history_size=10)
         def closure():
             opt_.zero_grad(); E, _, _ = E_of(Xt, f, eps, epsu); E.backward(); return E
@@ -158,7 +183,7 @@ def optimize_uv(UVc, lc, Ql, lp, inner, UVs, Tl, Pl):
     UVo = UVc.copy(); UVo[ii] = Xt.detach().numpy(); return UVo
 def repair(qs, lp):
     """cross-parameterise one disk region; returns (new fi, new bc) for interior vertices or None"""
-    vreg = np.unique(Q[qs]); inner = np.setdiff1d(vreg, lp); inner = inner[~pin[inner]]
+    vreg = np.unique(Q[qs]); inner = np.setdiff1d(vreg, lp); inner = inner[~pin[inner] | (bool(os.environ.get('ALLOWPIN')) & (inner < int(z['n_body'])) & ~np.isin(inner, z['tail_ring']))]
     if len(inner) == 0: return None
     # local refined source patch
     c = V[vreg].mean(0); rad = np.linalg.norm(V[vreg] - c, axis=1).max() * 1.6 + 0.4
@@ -246,12 +271,22 @@ def repair(qs, lp):
         e = np.sort(np.stack([Ql, np.roll(Ql, -1, 1)], 2).reshape(-1, 2), 1); e = np.unique(e, axis=0)
         Wc = sp.coo_matrix((np.ones(2 * len(e)), (np.r_[e[:, 0], e[:, 1]], np.r_[e[:, 1], e[:, 0]])), shape=(len(vreg), len(vreg))).tocsr()
     pinned_in = np.nonzero(pin[vreg] & ~np.isin(vreg, lp))[0]
-    if len(pinned_in): return 'pinned vertex inside'
-    UVc = solve_disk(Wc, lc[np.array(lp)], np.c_[np.cos(2 * np.pi * cl[:-1] / Lc), np.sin(2 * np.pi * cl[:-1] / Lc)], len(vreg))
+    bidx_c = lc[np.array(lp)]; buv_c = np.c_[np.cos(2 * np.pi * cl[:-1] / Lc), np.sin(2 * np.pi * cl[:-1] / Lc)]
+    if len(pinned_in) and not os.environ.get('ALLOWPIN'):
+        # pinned interior vertices (eye floors, tips): fixed at the map parameter of their own source point
+        pv = vreg[pinned_in]; _, pf, pc = igl.point_mesh_squared_distance(V[pv], Pl, Tl); puv = []
+        for f_, c_ in zip(pf, pc):
+            A_ = Pl[Tl[f_]]; M_ = np.array([A_[1] - A_[0], A_[2] - A_[0]]).T; l_ = np.linalg.lstsq(M_, c_ - A_[0], rcond=None)[0]; w_ = np.r_[1 - l_.sum(), l_].clip(0); w_ /= w_.sum(); puv.append(w_ @ UVs[Tl[f_]])
+        bidx_c = np.r_[bidx_c, pinned_in]; buv_c = np.vstack([buv_c, np.array(puv)])
+    UVc = solve_disk(Wc, bidx_c, buv_c, len(vreg))
     # lift interior vertices through the source map
     import matplotlib.tri as mtri
     if int(os.environ.get('OPT', 200)) > 0:
-        UVc = optimize_uv(UVc, lc, Ql, np.array(lp), inner, UVs, Tl, Pl)
+        A0np = None
+        if os.environ.get('AREA_SRC'):                                 # target areas: the input cage's relative quad sizes, scaled to the source region area
+            P4_ = V[Q[qs]]; ai = 0.5 * np.linalg.norm(np.cross(P4_[:, 2] - P4_[:, 0], P4_[:, 3] - P4_[:, 1]), axis=1); ai = np.maximum(ai, 0.3 * np.median(ai))
+            asrc = 0.5 * np.linalg.norm(np.cross(Pl[Tl[:, 1]] - Pl[Tl[:, 0]], Pl[Tl[:, 2]] - Pl[Tl[:, 0]]), axis=1).sum(); A0np = ai * asrc / ai.sum()
+        UVc = optimize_uv(UVc, lc, Ql, np.array(lp), inner, UVs, Tl, Pl, A0np)
         if isinstance(UVc, str): return UVc
     tf = mtri.Triangulation(UVs[:, 0], UVs[:, 1], Tl).get_trifinder(); X = UVc[lc[inner]]; ff = tf(X[:, 0], X[:, 1]); out = {}
     for v, x, f in zip(inner, X, ff):
@@ -262,11 +297,23 @@ def repair(qs, lp):
         out[v] = w @ Pl[Tl[f]]
     vs = np.array(list(out)); P3 = np.array([out[v] for v in vs]); f2, b2, _ = G.embed(P3)
     return vs, f2, b2
+zoneS = np.isin(G.LAB, ['head', 'hand_xneg', 'hand_xpos', 'foot_xneg', 'foot_xpos', 'tail']); thrS = np.where(zoneS, 0.13, 0.27)
+TTall = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; tqall = np.r_[np.arange(nq), np.arange(nq)]
+def coverage(idx=None):
+    cg = igl.AABB(); cg.init(V, TTall); P_ = G.V if idx is None else G.V[idx]; d_, t_, _ = cg.squared_distance(V, TTall, P_); return np.sqrt(d_), tqall[t_]
 bad, asp = census(np.arange(nq)); m_ = ~TIP & ~TAIL; bad &= m_
 print('start: bad (inv | bow | conc) non-tip', int(bad.sum()), flush=True)
 for rnd in range(int(os.environ.get('ROUNDS', 3))):
     rings = [int(x) for x in os.environ.get('RSEQ', '').split(',')][rnd] if os.environ.get('RSEQ') else RINGS + rnd
+    if os.environ.get('DEGEN'):
+        _P4 = V[Q]; _el = np.linalg.norm(np.roll(_P4, -1, 1) - _P4, axis=2); bad = bad | (((_el.min(1) < 0.02) | (_el.max(1) / np.maximum(_el.min(1), 1e-12) > 20)) & m_)
     selq = bad | (((asp > float(os.environ.get('ASPT', 4.0))) & m_) if 'asp' in os.environ.get('SEL', 'bad') else False)
+    if 'ang' in os.environ.get('SEL', 'bad'):
+        _P4 = V[Q]; _u1 = np.roll(_P4, 1, 1) - _P4; _u2 = np.roll(_P4, -1, 1) - _P4; _an = np.degrees(np.arccos(np.clip((_u1 * _u2).sum(2) / (np.linalg.norm(_u1, axis=2) * np.linalg.norm(_u2, axis=2) + 1e-12), -1, 1)))
+        selq = selq | (((_an.min(1) < 45) | (_an.max(1) > 135)) & m_)
+    if 'cov' in os.environ.get('SEL', 'bad'):
+        dS_, qS_ = coverage(); farS = dS_ > 0.8 * thrS; selq = selq | (np.bincount(qS_[farS], minlength=nq) > 0) & ~TAIL
+        print('  coverage: source vertices above 0.8 thr', int(farS.sum()), 'max body %.2f zone %.2f mm' % (dS_[~zoneS].max() * 10, dS_[zoneS].max() * 10), flush=True)
     if os.environ.get('FOCUS'):
         fc_ = np.array([float(x) for x in os.environ['FOCUS'].split(',')]); selq = selq & (np.linalg.norm(V[Q].mean(1) - fc_[:3], axis=1) < fc_[3])
     bq = np.nonzero(selq)[0]; mask = np.zeros(nq, bool); mask[bq] = True
@@ -292,8 +339,28 @@ for rnd in range(int(os.environ.get('ROUNDS', 3))):
         vs, f2, b2 = res
         ring = np.unique(np.r_[qs, np.nonzero((QQ[qs].sum(0) > 0).A1)[0]]); ring = ring[m_[ring]]
         b0, a0 = census(ring); old = (fiv[vs].copy(), bcv[vs].copy(), V[vs].copy())
+        if 'cov' in os.environ.get('SEL', 'bad') or os.environ.get('SCORE'):
+            cc_ = V[Q[qs]].mean((0, 1)); rr_ = np.linalg.norm(V[Q[qs]].reshape(-1, 3) - cc_, axis=1).max() + 0.3; sv_ = np.array(G.KD.query_ball_point(cc_, rr_)); c0_ = (coverage(sv_)[0] / thrS[sv_]).max()
         fiv[vs] = f2; bcv[vs] = b2; V[vs] = (b2[:, :, None] * G.V[G.F[f2]]).sum(1)
         b1, a1 = census(ring)
+        if os.environ.get('SCORE'):
+            c1_ = (coverage(sv_)[0] / thrS[sv_]).max() if 'cov' in os.environ.get('SEL', 'bad') else 0.0; c0x = c0_ if 'cov' in os.environ.get('SEL', 'bad') else 0.0
+            def angout(qq):
+                _P4 = V[Q[qq]]; _u1 = np.roll(_P4, 1, 1) - _P4; _u2 = np.roll(_P4, -1, 1) - _P4; _an = np.degrees(np.arccos(np.clip((_u1 * _u2).sum(2) / (np.linalg.norm(_u1, axis=2) * np.linalg.norm(_u2, axis=2) + 1e-12), -1, 1)))
+                return int(((_an.min(1) < 45) | (_an.max(1) > 135)).sum())
+            V_new = V[vs].copy(); V[vs] = old[2]; ang0 = angout(ring); V[vs] = V_new; ang1 = angout(ring)
+            S0 = 1000 * b0.sum() + 100 * max(0.0, c0x - 1.0) + 10 * (a0 > 4).sum() + ang0; S1 = 1000 * b1.sum() + 100 * max(0.0, c1_ - 1.0) + 10 * (a1 > 4).sum() + ang1
+            okc = S1 < S0 and b1.sum() <= b0.sum() and c1_ <= max(c0x, 1.0) + 1e-6
+            if os.environ.get('VERB'): print('    score region', len(qs), 'bad %d->%d cov %.2f->%.2f asp %d->%d ang %d->%d' % (b0.sum(), b1.sum(), c0x, c1_, (a0 > 4).sum(), (a1 > 4).sum(), ang0, ang1), 'KEEP' if okc else 'reject')
+            if okc: kept += 1; WHY['kept'] += 1
+            else: fiv[vs], bcv[vs], V[vs] = old; WHY['rejected (score)'] += 1
+            continue
+        if 'cov' in os.environ.get('SEL', 'bad'):
+            c1_ = (coverage(sv_)[0] / thrS[sv_]).max(); okc = (b1.sum() <= b0.sum()) and (c1_ < c0_ - 1e-3 or (b1.sum() < b0.sum() and c1_ < max(c0_, 1.0) * 1.05))
+            if os.environ.get('VERB'): print('    cov region', len(qs), 'bad', int(b0.sum()), '->', int(b1.sum()), 'cover/thr %.2f -> %.2f' % (c0_, c1_), 'KEEP' if okc else 'reject')
+            if okc: kept += 1; WHY['kept'] += 1
+            else: fiv[vs], bcv[vs], V[vs] = old; WHY['rejected (coverage)'] += 1
+            continue
         if 'asp' in os.environ.get('SEL', 'bad'): good_ = (b1.sum() < b0.sum()) or (b1.sum() == b0.sum() and (a1 > 4).sum() < (a0 > 4).sum())
         else: good_ = b1.sum() < b0.sum() and (a1 > 4).sum() <= (a0 > 4).sum() + max(2, b0.sum() - b1.sum())
         if good_:

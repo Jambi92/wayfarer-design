@@ -2,6 +2,21 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-01 ~01:30) — ORDER 50ef121 (continue Option B until PASS) — IN PROGRESS, INTERNAL ONLY
+
+Working dir `/tmp/claude-0/rt/sa/cage3` (ephemeral). Current lineage (all tools in `tools/rac/rp/saurin_rp5_v002/`):
+1. Option B hands / feet: design p5 -> b5 (`sa_localsub.py`), cold build, `sa_handmap.py`, `sa_coonsfill.py` -> cage_b5c.
+2. `sa_xparam.py` (local cross-parameterisation: disk region around folded quads, refined source patch, border traced as a simple vertex loop, LEFT side
+   flooded, source = mean-value map, cage = Tutte map, in-map L-BFGS (MIPS + regularised barrier, optional coverage WCOV / aspect AWT / angle ANW /
+   source-area targets AREA_SRC, combined SCORE acceptance)) -> host-aware census 0 / 0 / 0 outside tip caps.
+3. `sa_ringsplit.py` (local closed digit rings through anisotropic quads), `sa_gsmooth.py` (global L-BFGS on the source: MIPS + census-frame barrier +
+   aspect / angle / coverage terms, fold + aspect roll-back) -> cage_g4 (hands / feet aspect ~0, folds 0).
+4. ASSEMBLY `sa_graft.py`: gated t2 cage (body, head, vault / nostril, hip loops, tail module) + Option B hands / feet from cage_g4, stitched on the
+   nearest t2 rings (wrist dil 1, ankle dil 9; 64 / 80 vertices) -> cage_A1 -> `sa_xparam` (DEGEN) -> A2 (census 0) -> `sa_xparam` SEL=bad,cov WCOV ->
+   A4 (T-1 body 2.56 mm) -> `sa_gsmooth` / `sa_xparam` SCORE -> A6 -> `sa_gsmooth` shear removal (LABELS hand/foot, INNER 200, TR 2) -> A7 / A8.
+   Open: head T-2 (nostril pits ~2.4-2.6 mm), angle residual (~600 quads, forefoot / palm shear), aspect ~50, then all closure reruns.
+Audit renders tool: `sa_audit_renders.py CAGE DESIGN OUTDIR` (old vs new census, outside / inside close-ups, samples).
+
 ## LATEST (2026-10-31 ~21:00) — ORDER fe3b98a (Option B / fold-census closure) — IN PROGRESS, INTERNAL ONLY — CONTINUE IN A NEW SESSION
 
 Order `reviews/chatgpt-rac-rp5-saurin-option-b-fold-census-closure-order.md`. No gate submitted (directive de3a185: only PASS / author decision / blocker).

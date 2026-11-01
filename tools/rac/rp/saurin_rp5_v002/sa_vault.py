@@ -38,7 +38,7 @@ for P in json.load(open(SPEC)):
         Pp = near[d[near] > 0.08]; ring_lv = {}
         outer = sorted({a for a, b in bd0}); mc = np.mean([V[v] for v in outer], 0); D = A - mc; D /= np.linalg.norm(D)
         sP = (G.V[Pp] - mc) @ D; smax = sP.max(); oP = (G.V[Pp] - mc) - sP[:, None] * D
-        lv = {}
+        lv = {}; used_pts = []; MINSEP = float(os.environ.get('MINSEP', 0.05))
         for k, tw in enumerate(twins_all, 1):
             for v in tw.values(): lv[v] = k / (len(twins_all) + 1.0)
         for v in {v for i in patch for v in Q[i]}:
@@ -47,7 +47,11 @@ for P in json.load(open(SPEC)):
             band = np.abs(sP - lam * smax) < 0.18 * smax
             if not band.any(): continue
             o = (V[v] - mc) - ((V[v] - mc) @ D) * D; tgt = o * (1 - 0.35 * lam)
-            j = np.argmin(np.linalg.norm(oP[band] - tgt, axis=1)); V[v] = G.V[Pp[band][j]].copy()
+            cand_ = Pp[band]; dd_ = np.linalg.norm(oP[band] - tgt, axis=1)
+            if used_pts:                                                     # distinct targets (no two patch vertices on one source point -> no collapsed edge)
+                du_ = np.min(np.linalg.norm(G.V[cand_][:, None] - np.array(used_pts)[None], axis=2), 1); dd_ = np.where(du_ < MINSEP, np.inf, dd_)
+            if not np.isfinite(dd_).any(): continue
+            j = int(np.argmin(dd_)); V[v] = G.V[cand_[j]].copy(); used_pts.append(V[v])
     if P.get('apex', False):
         iv = sorted({v for i in patch for v in Q[i]}); j = min(iv, key=lambda v: np.linalg.norm(V[v] - A)); V[j] = A.copy(); pinned.append(j)
     log.append((P['name'], int(apex), np.round(A, 2).tolist(), round(float(d[apex] * 10), 2), len(patch)))

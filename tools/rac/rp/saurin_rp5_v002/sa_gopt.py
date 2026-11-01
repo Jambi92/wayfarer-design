@@ -10,7 +10,9 @@ from scipy.sparse.csgraph import connected_components
 IN, OUT = sys.argv[1:3]; STEPS = int(os.environ.get('STEPS', 300)); RING = int(os.environ.get('RING', 4)); A_T = float(os.environ.get('A_T', 3.3)); LR = float(os.environ.get('LR', 0.004))
 torch.set_num_threads(1)
 z = dict(np.load(IN)); Q = z['Q']; V = (z['bc'][:, :, None] * G.V[G.F[z['tri']]]).sum(1); nv = len(V); nq = len(Q); nb = int(z['n_body']); ql = z['qlab'].astype(str)
-pin = np.zeros(nv, bool); pin[nb:] = True; pin[z['tail_ring']] = True; pin[z['pinned']] = True; TIP = np.isin(ql, ['finger_cap', 'thumb_cap', 'toe_cap', 'tail'])
+pin = np.zeros(nv, bool); pin[nb:] = True; pin[z['tail_ring']] = True; pin[z['pinned']] = True
+if os.environ.get('FREEZE_LABELS'): pin[np.unique(Q[np.isin(z['qlab'].astype(str), os.environ['FREEZE_LABELS'].split(','))])] = True
+TIP = np.isin(ql, ['finger_cap', 'thumb_cap', 'toe_cap', 'tail'])
 zone = np.isin(G.LAB, ['head', 'hand_xneg', 'hand_xpos', 'foot_xneg', 'foot_xpos', 'tail']); thr = np.where(zone, 0.13, 0.27)
 src = igl.AABB(); src.init(G.V, G.F); FNs = igl.per_face_normals(G.V, G.F, np.array([0, 0, 1.0])); T = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; tq = np.r_[np.arange(nq), np.arange(nq)]
 VQ = sp.coo_matrix((np.ones(4 * nq), (Q.ravel(), np.repeat(np.arange(nq), 4))), shape=(nv, nq)).tocsr(); QQ = (VQ.T @ VQ).tocsr()

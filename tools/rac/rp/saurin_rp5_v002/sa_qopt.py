@@ -11,7 +11,9 @@ IN, OUT = sys.argv[1:3]; IT = int(os.environ.get('IT', 30)); A_T = float(os.envi
 TZN = float(os.environ.get('TZONE', 1.35)) / 10; TBD = float(os.environ.get('TBODY', 2.7)) / 10; CH = int(os.environ.get('CHUNK', 60)); MP = int(os.environ.get('MP', 160))
 z = dict(np.load(IN)); Q = z['Q']; nb = int(z['n_body']); V = (z['bc'][:, :, None] * G.V[G.F[z['tri']]]).sum(1); nv = len(V); nq = len(Q)
 pin = np.zeros(nv, bool); pin[nb:] = True; pin[z['tail_ring']] = True; pin[z['pinned']] = True
-ql = z['qlab'].astype(str); TIP = np.isin(ql, ['finger_cap', 'thumb_cap', 'toe_cap', 'tail'])
+ql = z['qlab'].astype(str)
+if os.environ.get('FREEZE_LABELS'): pin[np.unique(Q[np.isin(ql, os.environ['FREEZE_LABELS'].split(','))])] = True       # e.g. the finished Option B hand / foot regions
+TIP = np.isin(ql, ['finger_cap', 'thumb_cap', 'toe_cap', 'tail'])
 T = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; tq = np.r_[np.arange(nq), np.arange(nq)]
 lab = G.LAB; zone = np.isin(lab, ['head', 'hand_xneg', 'hand_xpos', 'foot_xneg', 'foot_xpos', 'tail']); thr = np.where(zone, TZN, TBD)
 VQ = sp.coo_matrix((np.ones(4 * nq), (Q.ravel(), np.repeat(np.arange(nq), 4))), shape=(nv, nq)).tocsr(); MQ = int(np.diff(VQ.indptr).max())
