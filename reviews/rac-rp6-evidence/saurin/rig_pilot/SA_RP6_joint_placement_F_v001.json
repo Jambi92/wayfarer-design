@@ -1,0 +1,3980 @@
+{
+ "configuration": "c2 SA-F188",
+ "bones": {
+  "root": {
+   "parent": null,
+   "head": [
+    0,
+    0,
+    0
+   ],
+   "tail": [
+    0,
+    0,
+    10.0
+   ],
+   "deform": false,
+   "role": "control: world / root motion (non-deform, at the ground below the pelvis)",
+   "method": "fixed control"
+  },
+  "pelvis": {
+   "parent": "root",
+   "head": [
+    0.47805,
+    3.45698,
+    85.03055
+   ],
+   "tail": [
+    -0.90751,
+    0.48734,
+    106.15532
+   ],
+   "length_cm": 21.3774,
+   "deform": true,
+   "role": "axial",
+   "local_axes": {
+    "y_bone": [
+     -0.06481,
+     -0.13892,
+     0.98818
+    ],
+    "x": [
+     -0.99786,
+     0.0,
+     -0.06545
+    ],
+    "z": [
+     -0.00909,
+     0.9903,
+     0.13862
+    ]
+   },
+   "head_method": "landmark pelvis_root (derived, hip-joint level)",
+   "tail_method": "landmark spine_lower_axial_107 (section centroid)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "spine_01": {
+   "parent": "pelvis",
+   "head": [
+    -0.90751,
+    0.48734,
+    106.15532
+   ],
+   "tail": [
+    -0.74414,
+    -0.37335,
+    123.17774
+   ],
+   "length_cm": 17.0449,
+   "deform": true,
+   "role": "axial lumbar",
+   "local_axes": {
+    "y_bone": [
+     0.00958,
+     -0.0505,
+     0.99868
+    ],
+    "x": [
+     -0.99995,
+     0.0,
+     0.0096
+    ],
+    "z": [
+     0.00048,
+     0.99872,
+     0.05049
+    ]
+   },
+   "head_method": "landmark spine_lower_axial_107 (section centroid)",
+   "tail_method": "landmark spine_lower_axial_123 (section centroid)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "spine_02": {
+   "parent": "spine_01",
+   "head": [
+    -0.74414,
+    -0.37335,
+    123.17774
+   ],
+   "tail": [
+    -0.92361,
+    -1.70726,
+    138.50161
+   ],
+   "length_cm": 15.3829,
+   "deform": true,
+   "role": "axial abdominal",
+   "local_axes": {
+    "y_bone": [
+     -0.01167,
+     -0.08671,
+     0.99616
+    ],
+    "x": [
+     -0.99993,
+     0.0,
+     -0.01171
+    ],
+    "z": [
+     -0.00102,
+     0.99623,
+     0.08671
+    ]
+   },
+   "head_method": "landmark spine_lower_axial_123 (section centroid)",
+   "tail_method": "landmark spine_mid_138 (section centroid)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "spine_03": {
+   "parent": "spine_02",
+   "head": [
+    -0.92361,
+    -1.70726,
+    138.50161
+   ],
+   "tail": [
+    0.89688,
+    -2.14159,
+    150.2954
+   ],
+   "length_cm": 11.9414,
+   "deform": true,
+   "role": "axial thoracic",
+   "local_axes": {
+    "y_bone": [
+     0.15245,
+     -0.03637,
+     0.98764
+    ],
+    "x": [
+     -0.9883,
+     0.0,
+     0.15255
+    ],
+    "z": [
+     0.00555,
+     0.99934,
+     0.03595
+    ]
+   },
+   "head_method": "landmark spine_mid_138 (section centroid)",
+   "tail_method": "landmark spine_upper_150 (section centroid)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "spine_04": {
+   "parent": "spine_03",
+   "head": [
+    0.89688,
+    -2.14159,
+    150.2954
+   ],
+   "tail": [
+    0.2349,
+    7.95776,
+    156.23423
+   ],
+   "length_cm": 11.7348,
+   "deform": true,
+   "role": "axial upper thoracic",
+   "local_axes": {
+    "y_bone": [
+     -0.05641,
+     0.86063,
+     0.50609
+    ],
+    "x": [
+     0.99786,
+     0.06541,
+     -0.0
+    ],
+    "z": [
+     0.0331,
+     -0.505,
+     0.86248
+    ]
+   },
+   "head_method": "landmark spine_upper_150 (section centroid)",
+   "tail_method": "landmark neck_base (section centroid)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "neck_01": {
+   "parent": "spine_04",
+   "head": [
+    0.2349,
+    7.95776,
+    156.23423
+   ],
+   "tail": [
+    -0.06247,
+    -3.30987,
+    171.48182
+   ],
+   "length_cm": 18.9615,
+   "deform": true,
+   "role": "neck",
+   "local_axes": {
+    "y_bone": [
+     -0.01568,
+     -0.59424,
+     0.80414
+    ],
+    "x": [
+     -0.99965,
+     0.02638,
+     0.0
+    ],
+    "z": [
+     0.02121,
+     0.80386,
+     0.59445
+    ]
+   },
+   "head_method": "landmark neck_base (section centroid)",
+   "tail_method": "landmark neck_min_section (section centroid)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "neck_02": {
+   "parent": "neck_01",
+   "head": [
+    -0.06247,
+    -3.30987,
+    171.48182
+   ],
+   "tail": [
+    -0.0,
+    1.12032,
+    180.76598
+   ],
+   "length_cm": 10.2872,
+   "deform": true,
+   "role": "neck",
+   "local_axes": {
+    "y_bone": [
+     0.00607,
+     0.43065,
+     0.9025
+    ],
+    "x": [
+     -0.99998,
+     0.0,
+     0.00673
+    ],
+    "z": [
+     -0.0029,
+     0.90252,
+     -0.43064
+    ]
+   },
+   "head_method": "landmark neck_min_section (section centroid)",
+   "tail_method": "landmark head_pivot (canon)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "head": {
+   "parent": "neck_02",
+   "head": [
+    -0.0,
+    1.12032,
+    180.76598
+   ],
+   "tail": [
+    -0.0006,
+    -0.76127,
+    187.8815
+   ],
+   "length_cm": 7.3601,
+   "deform": true,
+   "role": "head (cranium + rostrum + display: one rigid deform unit)",
+   "local_axes": {
+    "y_bone": [
+     -8e-05,
+     -0.25565,
+     0.96677
+    ],
+    "x": [
+     -1.0,
+     0.0,
+     -8e-05
+    ],
+    "z": [
+     -2e-05,
+     0.96677,
+     0.25565
+    ]
+   },
+   "head_method": "landmark head_pivot (canon)",
+   "tail_method": "landmark crown (extremal)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "jaw": {
+   "parent": "head",
+   "head": [
+    -0.0,
+    2.30933,
+    178.92843
+   ],
+   "tail": [
+    0.0017,
+    20.74162,
+    176.29257
+   ],
+   "length_cm": 18.6198,
+   "deform": true,
+   "role": "jaw (mandible)",
+   "local_axes": {
+    "y_bone": [
+     9e-05,
+     0.98993,
+     -0.14156
+    ],
+    "x": [
+     1.0,
+     -9e-05,
+     0.0
+    ],
+    "z": [
+     1e-05,
+     0.14156,
+     0.98993
+    ]
+   },
+   "head_method": "mid-point of the canonical jaw hinges",
+   "tail_method": "rostrum tip - 1.5 cm (lower jaw line)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_01": {
+   "parent": "pelvis",
+   "head": [
+    -0.11623,
+    -14.2102,
+    105.04525
+   ],
+   "tail": [
+    -0.02618,
+    -25.95313,
+    102.2027
+   ],
+   "length_cm": 12.0824,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.00745,
+     -0.9719,
+     -0.23526
+    ],
+    "x": [
+     -0.99997,
+     -0.00767,
+     0.0
+    ],
+    "z": [
+     0.0018,
+     -0.23526,
+     0.97193
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 0 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 1 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_02": {
+   "parent": "tail_01",
+   "head": [
+    -0.02618,
+    -25.95313,
+    102.2027
+   ],
+   "tail": [
+    0.05762,
+    -36.72688,
+    98.2921
+   ],
+   "length_cm": 11.4618,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.00731,
+     -0.93997,
+     -0.34118
+    ],
+    "x": [
+     -0.99997,
+     -0.00778,
+     0.0
+    ],
+    "z": [
+     0.00265,
+     -0.34117,
+     0.94
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 1 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 2 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_03": {
+   "parent": "tail_02",
+   "head": [
+    0.05762,
+    -36.72688,
+    98.2921
+   ],
+   "tail": [
+    0.12347,
+    -46.94718,
+    94.18759
+   ],
+   "length_cm": 11.0139,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.00598,
+     -0.92795,
+     -0.37267
+    ],
+    "x": [
+     -0.99998,
+     -0.00644,
+     0.0
+    ],
+    "z": [
+     0.0024,
+     -0.37266,
+     0.92797
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 2 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 3 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_04": {
+   "parent": "tail_03",
+   "head": [
+    0.12347,
+    -46.94718,
+    94.18759
+   ],
+   "tail": [
+    0.10096,
+    -56.85428,
+    90.75372
+   ],
+   "length_cm": 10.4854,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     -0.00215,
+     -0.94485,
+     -0.32749
+    ],
+    "x": [
+     -1.0,
+     0.00227,
+     0.0
+    ],
+    "z": [
+     -0.00074,
+     -0.32749,
+     0.94485
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 3 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 4 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_05": {
+   "parent": "tail_04",
+   "head": [
+    0.10096,
+    -56.85428,
+    90.75372
+   ],
+   "tail": [
+    -0.00643,
+    -66.21618,
+    87.69073
+   ],
+   "length_cm": 9.8508,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     -0.0109,
+     -0.95037,
+     -0.31094
+    ],
+    "x": [
+     -0.99993,
+     0.01147,
+     0.0
+    ],
+    "z": [
+     -0.00357,
+     -0.31092,
+     0.95043
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 4 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 5 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_06": {
+   "parent": "tail_05",
+   "head": [
+    -0.00643,
+    -66.21618,
+    87.69073
+   ],
+   "tail": [
+    -0.10821,
+    -75.0278,
+    84.73083
+   ],
+   "length_cm": 9.296,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     -0.01095,
+     -0.94789,
+     -0.31841
+    ],
+    "x": [
+     -0.99993,
+     0.01155,
+     0.0
+    ],
+    "z": [
+     -0.00368,
+     -0.31838,
+     0.94795
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 5 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 6 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_07": {
+   "parent": "tail_06",
+   "head": [
+    -0.10821,
+    -75.0278,
+    84.73083
+   ],
+   "tail": [
+    -0.24573,
+    -83.62614,
+    84.52414
+   ],
+   "length_cm": 8.6019,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     -0.01599,
+     -0.99958,
+     -0.02403
+    ],
+    "x": [
+     -0.99987,
+     0.01599,
+     0.0
+    ],
+    "z": [
+     -0.00038,
+     -0.02403,
+     0.99971
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 6 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 7 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_08": {
+   "parent": "tail_07",
+   "head": [
+    -0.24573,
+    -83.62614,
+    84.52414
+   ],
+   "tail": [
+    -0.2607,
+    -91.5317,
+    83.98125
+   ],
+   "length_cm": 7.9242,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     -0.00189,
+     -0.99765,
+     -0.06851
+    ],
+    "x": [
+     -1.0,
+     0.00189,
+     0.0
+    ],
+    "z": [
+     -0.00013,
+     -0.06851,
+     0.99765
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 7 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 8 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_09": {
+   "parent": "tail_08",
+   "head": [
+    -0.2607,
+    -91.5317,
+    83.98125
+   ],
+   "tail": [
+    -0.20138,
+    -98.68362,
+    83.48711
+   ],
+   "length_cm": 7.1692,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.00827,
+     -0.99759,
+     -0.06893
+    ],
+    "x": [
+     -0.99997,
+     -0.00829,
+     0.0
+    ],
+    "z": [
+     0.00057,
+     -0.06892,
+     0.99762
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 8 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 9 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_10": {
+   "parent": "tail_09",
+   "head": [
+    -0.20138,
+    -98.68362,
+    83.48711
+   ],
+   "tail": [
+    -0.08507,
+    -105.11699,
+    83.66351
+   ],
+   "length_cm": 6.4368,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.01807,
+     -0.99946,
+     0.0274
+    ],
+    "x": [
+     -0.99984,
+     -0.01808,
+     0.0
+    ],
+    "z": [
+     -0.0005,
+     0.0274,
+     0.99962
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 9 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 10 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_11": {
+   "parent": "tail_10",
+   "head": [
+    -0.08507,
+    -105.11699,
+    83.66351
+   ],
+   "tail": [
+    0.07651,
+    -110.89042,
+    84.40698
+   ],
+   "length_cm": 5.8233,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.02775,
+     -0.99143,
+     0.12767
+    ],
+    "x": [
+     -0.99961,
+     -0.02798,
+     0.0
+    ],
+    "z": [
+     -0.00357,
+     0.12762,
+     0.99182
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 10 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 11 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_12": {
+   "parent": "tail_11",
+   "head": [
+    0.07651,
+    -110.89042,
+    84.40698
+   ],
+   "tail": [
+    0.22928,
+    -116.14124,
+    85.43701
+   ],
+   "length_cm": 5.3531,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.02854,
+     -0.9809,
+     0.19242
+    ],
+    "x": [
+     -0.99958,
+     -0.02908,
+     0.0
+    ],
+    "z": [
+     -0.0056,
+     0.19234,
+     0.98131
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 11 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 12 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_13": {
+   "parent": "tail_12",
+   "head": [
+    0.22928,
+    -116.14124,
+    85.43701
+   ],
+   "tail": [
+    0.39159,
+    -120.92995,
+    86.63436
+   ],
+   "length_cm": 4.9388,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.03286,
+     -0.96961,
+     0.24244
+    ],
+    "x": [
+     -0.99943,
+     -0.03387,
+     0.0
+    ],
+    "z": [
+     -0.00821,
+     0.2423,
+     0.97017
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 12 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 13 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_14": {
+   "parent": "tail_13",
+   "head": [
+    0.39159,
+    -120.92995,
+    86.63436
+   ],
+   "tail": [
+    0.57748,
+    -125.24765,
+    87.84529
+   ],
+   "length_cm": 4.4881,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.04142,
+     -0.96202,
+     0.26981
+    ],
+    "x": [
+     -0.99907,
+     -0.04301,
+     0.0
+    ],
+    "z": [
+     -0.01161,
+     0.26956,
+     0.96291
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 13 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 14 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_15": {
+   "parent": "tail_14",
+   "head": [
+    0.57748,
+    -125.24765,
+    87.84529
+   ],
+   "tail": [
+    0.75275,
+    -129.02164,
+    88.97034
+   ],
+   "length_cm": 3.942,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.04446,
+     -0.95738,
+     0.2854
+    ],
+    "x": [
+     -0.99892,
+     -0.04639,
+     0.0
+    ],
+    "z": [
+     -0.01324,
+     0.28509,
+     0.95841
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 14 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 15 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "tail_16": {
+   "parent": "tail_15",
+   "head": [
+    0.75275,
+    -129.02164,
+    88.97034
+   ],
+   "tail": [
+    0.86423,
+    -131.91925,
+    89.89622
+   ],
+   "length_cm": 3.044,
+   "deform": true,
+   "role": "tail",
+   "local_axes": {
+    "y_bone": [
+     0.03662,
+     -0.95191,
+     0.30417
+    ],
+    "x": [
+     -0.99926,
+     -0.03845,
+     0.0
+    ],
+    "z": [
+     -0.01169,
+     0.30394,
+     0.95262
+    ]
+   },
+   "head_method": "tail-module ring centroid line, graded knot 15 / 16",
+   "tail_method": "tail-module ring centroid line, graded knot 16 / 16",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "clavicle_l": {
+   "parent": "spine_04",
+   "head": [
+    4.02638,
+    4.96099,
+    153.90437
+   ],
+   "tail": [
+    17.46892,
+    -5.66393,
+    145.64395
+   ],
+   "length_cm": 19.0217,
+   "deform": true,
+   "role": "shoulder girdle",
+   "local_axes": {
+    "y_bone": [
+     0.70669,
+     -0.55857,
+     -0.43426
+    ],
+    "x": [
+     -0.62009,
+     -0.78453,
+     0.0
+    ],
+    "z": [
+     0.34069,
+     -0.26928,
+     0.90079
+    ]
+   },
+   "head_method": "neck_base + 22 %% toward glenohumeral (sterno-clavicular region)",
+   "tail_method": "landmark glenohumeral (section)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "upperarm_l": {
+   "parent": "clavicle_l",
+   "head": [
+    17.46892,
+    -5.66393,
+    145.64395
+   ],
+   "tail": [
+    30.35532,
+    -1.28919,
+    121.33426
+   ],
+   "length_cm": 27.8596,
+   "deform": true,
+   "role": "arm",
+   "local_axes": {
+    "y_bone": [
+     0.46255,
+     0.15703,
+     -0.87258
+    ],
+    "x": [
+     0.32147,
+     -0.94692,
+     0.0
+    ],
+    "z": [
+     0.82626,
+     0.2805,
+     0.48848
+    ]
+   },
+   "head_method": "landmark glenohumeral (section)",
+   "tail_method": "landmark elbow (section)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "forearm_l": {
+   "parent": "upperarm_l",
+   "head": [
+    30.35532,
+    -1.28919,
+    121.33426
+   ],
+   "tail": [
+    34.78871,
+    9.41831,
+    98.85371
+   ],
+   "length_cm": 25.2919,
+   "deform": true,
+   "role": "arm",
+   "local_axes": {
+    "y_bone": [
+     0.17529,
+     0.42336,
+     -0.88884
+    ],
+    "x": [
+     0.92393,
+     -0.38255,
+     0.0
+    ],
+    "z": [
+     0.34003,
+     0.82123,
+     0.45821
+    ]
+   },
+   "head_method": "landmark elbow (section)",
+   "tail_method": "landmark wrist (section)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "hand_l": {
+   "parent": "forearm_l",
+   "head": [
+    34.78871,
+    9.41831,
+    98.85371
+   ],
+   "tail": [
+    35.39421,
+    9.80997,
+    97.35321
+   ],
+   "length_cm": 1.6648,
+   "deform": true,
+   "role": "hand (carpus)",
+   "local_axes": {
+    "y_bone": [
+     0.36371,
+     0.23526,
+     -0.90131
+    ],
+    "x": [
+     0.92734,
+     -0.0,
+     0.37421
+    ],
+    "z": [
+     -0.08804,
+     0.97193,
+     0.21817
+    ]
+   },
+   "head_method": "landmark wrist (section)",
+   "tail_method": "wrist + 15 % toward the finger base ring (carpal)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "meta_1_l": {
+   "parent": "hand_l",
+   "head": [
+    35.43523,
+    10.16326,
+    97.4171
+   ],
+   "tail": [
+    39.09884,
+    14.38465,
+    89.2763
+   ],
+   "length_cm": 9.875,
+   "deform": true,
+   "role": "metacarpal (palm cupping)",
+   "local_axes": {
+    "y_bone": [
+     0.371,
+     0.42748,
+     -0.82439
+    ],
+    "x": [
+     0.75524,
+     -0.65545,
+     0.0
+    ],
+    "z": [
+     0.54034,
+     0.62261,
+     0.56602
+    ]
+   },
+   "head_method": "wrist + 15 % toward the finger base ring (carpal)",
+   "tail_method": "finger MCP base ring centroid (semantic loop xpos_f1_base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_1_01_l": {
+   "parent": "meta_1_l",
+   "head": [
+    39.09884,
+    14.38465,
+    89.2763
+   ],
+   "tail": [
+    40.4463,
+    14.9557,
+    87.67474
+   ],
+   "length_cm": 2.1695,
+   "deform": true,
+   "role": "finger proximal phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.62109,
+     0.26322,
+     -0.73822
+    ],
+    "x": [
+     0.3902,
+     -0.92073,
+     0.0
+    ],
+    "z": [
+     0.6797,
+     0.28805,
+     0.67456
+    ]
+   },
+   "head_method": "finger MCP base ring centroid (semantic loop xpos_f1_base)",
+   "tail_method": "finger ring r1 centroid (PIP)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_1_02_l": {
+   "parent": "finger_1_01_l",
+   "head": [
+    40.4463,
+    14.9557,
+    87.67474
+   ],
+   "tail": [
+    41.48161,
+    15.21829,
+    86.9633
+   ],
+   "length_cm": 1.2833,
+   "deform": true,
+   "role": "finger middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.80673,
+     0.20461,
+     -0.55437
+    ],
+    "x": [
+     0.24585,
+     -0.96931,
+     0.0
+    ],
+    "z": [
+     0.53735,
+     0.13629,
+     0.83227
+    ]
+   },
+   "head_method": "finger ring r1 centroid (PIP)",
+   "tail_method": "finger ring r2 centroid (DIP / claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_1_03_l": {
+   "parent": "finger_1_02_l",
+   "head": [
+    41.48161,
+    15.21829,
+    86.9633
+   ],
+   "tail": [
+    41.91989,
+    15.37874,
+    86.318
+   ],
+   "length_cm": 0.7964,
+   "deform": true,
+   "role": "finger distal phalanx + claw",
+   "local_axes": {
+    "y_bone": [
+     0.55033,
+     0.20148,
+     -0.81027
+    ],
+    "x": [
+     0.34379,
+     -0.93905,
+     0.0
+    ],
+    "z": [
+     0.76088,
+     0.27856,
+     0.58605
+    ]
+   },
+   "head_method": "finger ring r2 centroid (DIP / claw base)",
+   "tail_method": "nearest hand_tip landmark (claw tip)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "meta_2_l": {
+   "parent": "hand_l",
+   "head": [
+    35.39421,
+    9.80997,
+    97.35321
+   ],
+   "tail": [
+    38.82534,
+    12.02941,
+    88.85043
+   ],
+   "length_cm": 9.4338,
+   "deform": true,
+   "role": "metacarpal (palm cupping)",
+   "local_axes": {
+    "y_bone": [
+     0.36371,
+     0.23526,
+     -0.90131
+    ],
+    "x": [
+     0.92734,
+     -0.0,
+     0.37421
+    ],
+    "z": [
+     -0.08804,
+     0.97193,
+     0.21817
+    ]
+   },
+   "head_method": "wrist + 15 % toward the finger base ring (carpal)",
+   "tail_method": "finger MCP base ring centroid (semantic loop xpos_f2_base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_2_01_l": {
+   "parent": "meta_2_l",
+   "head": [
+    38.82534,
+    12.02941,
+    88.85043
+   ],
+   "tail": [
+    40.10107,
+    12.52642,
+    86.99587
+   ],
+   "length_cm": 2.3052,
+   "deform": true,
+   "role": "finger proximal phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.55342,
+     0.21561,
+     -0.80451
+    ],
+    "x": [
+     0.36302,
+     -0.93178,
+     0.0
+    ],
+    "z": [
+     0.74963,
+     0.29205,
+     0.59393
+    ]
+   },
+   "head_method": "finger MCP base ring centroid (semantic loop xpos_f2_base)",
+   "tail_method": "finger ring r1 centroid (PIP)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_2_02_l": {
+   "parent": "finger_2_01_l",
+   "head": [
+    40.10107,
+    12.52642,
+    86.99587
+   ],
+   "tail": [
+    41.12962,
+    12.8584,
+    85.86437
+   ],
+   "length_cm": 1.5647,
+   "deform": true,
+   "role": "finger middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.65733,
+     0.21216,
+     -0.72312
+    ],
+    "x": [
+     0.30716,
+     -0.95166,
+     0.0
+    ],
+    "z": [
+     0.68817,
+     0.22211,
+     0.69072
+    ]
+   },
+   "head_method": "finger ring r1 centroid (PIP)",
+   "tail_method": "finger ring r2 centroid (DIP / claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_2_03_l": {
+   "parent": "finger_2_02_l",
+   "head": [
+    41.12962,
+    12.8584,
+    85.86437
+   ],
+   "tail": [
+    41.02157,
+    13.63188,
+    85.89822
+   ],
+   "length_cm": 0.7817,
+   "deform": true,
+   "role": "finger distal phalanx + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.13822,
+     0.98945,
+     0.0433
+    ],
+    "x": [
+     0.99038,
+     0.13835,
+     -0.0
+    ],
+    "z": [
+     0.00599,
+     -0.04288,
+     0.99906
+    ]
+   },
+   "head_method": "finger ring r2 centroid (DIP / claw base)",
+   "tail_method": "nearest hand_tip landmark (claw tip)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "meta_3_l": {
+   "parent": "hand_l",
+   "head": [
+    35.36715,
+    9.39334,
+    97.42801
+   ],
+   "tail": [
+    38.64494,
+    9.25187,
+    89.34908
+   ],
+   "length_cm": 8.7197,
+   "deform": true,
+   "role": "metacarpal (palm cupping)",
+   "local_axes": {
+    "y_bone": [
+     0.37591,
+     -0.01622,
+     -0.92652
+    ],
+    "x": [
+     0.92664,
+     -0.0,
+     0.37596
+    ],
+    "z": [
+     0.0061,
+     0.99987,
+     -0.01503
+    ]
+   },
+   "head_method": "wrist + 15 % toward the finger base ring (carpal)",
+   "tail_method": "finger MCP base ring centroid (semantic loop xpos_f3_base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_3_01_l": {
+   "parent": "meta_3_l",
+   "head": [
+    38.64494,
+    9.25187,
+    89.34908
+   ],
+   "tail": [
+    40.96313,
+    9.75301,
+    86.73837
+   ],
+   "length_cm": 3.5272,
+   "deform": true,
+   "role": "finger proximal phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.65724,
+     0.14208,
+     -0.74017
+    ],
+    "x": [
+     0.2113,
+     -0.97742,
+     0.0
+    ],
+    "z": [
+     0.72346,
+     0.15639,
+     0.67242
+    ]
+   },
+   "head_method": "finger MCP base ring centroid (semantic loop xpos_f3_base)",
+   "tail_method": "finger ring r1 centroid (PIP)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_3_02_l": {
+   "parent": "finger_3_01_l",
+   "head": [
+    40.96313,
+    9.75301,
+    86.73837
+   ],
+   "tail": [
+    42.27202,
+    9.85086,
+    85.96522
+   ],
+   "length_cm": 1.5233,
+   "deform": true,
+   "role": "finger middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.85923,
+     0.06424,
+     -0.50754
+    ],
+    "x": [
+     0.07455,
+     -0.99722,
+     0.0
+    ],
+    "z": [
+     0.50613,
+     0.03784,
+     0.86163
+    ]
+   },
+   "head_method": "finger ring r1 centroid (PIP)",
+   "tail_method": "finger ring r2 centroid (DIP / claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_3_03_l": {
+   "parent": "finger_3_02_l",
+   "head": [
+    42.27202,
+    9.85086,
+    85.96522
+   ],
+   "tail": [
+    42.48713,
+    13.06859,
+    85.65376
+   ],
+   "length_cm": 3.2399,
+   "deform": true,
+   "role": "finger distal phalanx + claw",
+   "local_axes": {
+    "y_bone": [
+     0.06639,
+     0.99315,
+     -0.09613
+    ],
+    "x": [
+     0.99777,
+     -0.0667,
+     0.0
+    ],
+    "z": [
+     0.00641,
+     0.09592,
+     0.99537
+    ]
+   },
+   "head_method": "finger ring r2 centroid (DIP / claw base)",
+   "tail_method": "nearest hand_tip landmark (claw tip)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "meta_4_l": {
+   "parent": "hand_l",
+   "head": [
+    35.43249,
+    9.00933,
+    97.5228
+   ],
+   "tail": [
+    39.08055,
+    6.69181,
+    89.98103
+   ],
+   "length_cm": 8.6924,
+   "deform": true,
+   "role": "metacarpal (palm cupping)",
+   "local_axes": {
+    "y_bone": [
+     0.41968,
+     -0.26662,
+     -0.86763
+    ],
+    "x": [
+     -0.53622,
+     -0.84408,
+     0.0
+    ],
+    "z": [
+     0.73235,
+     -0.46524,
+     0.49721
+    ]
+   },
+   "head_method": "wrist + 15 % toward the finger base ring (carpal)",
+   "tail_method": "finger MCP base ring centroid (semantic loop xpos_f4_base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_4_01_l": {
+   "parent": "meta_4_l",
+   "head": [
+    39.08055,
+    6.69181,
+    89.98103
+   ],
+   "tail": [
+    40.64055,
+    6.77701,
+    88.89901
+   ],
+   "length_cm": 1.9004,
+   "deform": true,
+   "role": "finger proximal phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.82087,
+     0.04483,
+     -0.56936
+    ],
+    "x": [
+     0.05454,
+     -0.99851,
+     0.0
+    ],
+    "z": [
+     0.56851,
+     0.03105,
+     0.82209
+    ]
+   },
+   "head_method": "finger MCP base ring centroid (semantic loop xpos_f4_base)",
+   "tail_method": "finger ring r1 centroid (PIP)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_4_02_l": {
+   "parent": "finger_4_01_l",
+   "head": [
+    40.64055,
+    6.77701,
+    88.89901
+   ],
+   "tail": [
+    41.81289,
+    6.76221,
+    88.56111
+   ],
+   "length_cm": 1.2202,
+   "deform": true,
+   "role": "finger middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.96081,
+     -0.01213,
+     -0.27693
+    ],
+    "x": [
+     -0.01262,
+     -0.99992,
+     0.0
+    ],
+    "z": [
+     0.27691,
+     -0.0035,
+     0.96089
+    ]
+   },
+   "head_method": "finger ring r1 centroid (PIP)",
+   "tail_method": "finger ring r2 centroid (DIP / claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_4_03_l": {
+   "parent": "finger_4_02_l",
+   "head": [
+    41.81289,
+    6.76221,
+    88.56111
+   ],
+   "tail": [
+    40.44978,
+    12.6901,
+    85.4336
+   ],
+   "length_cm": 6.8395,
+   "deform": true,
+   "role": "finger distal phalanx + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.1993,
+     0.86671,
+     -0.45727
+    ],
+    "x": [
+     0.97457,
+     0.2241,
+     -0.0
+    ],
+    "z": [
+     -0.10247,
+     0.44564,
+     0.88933
+    ]
+   },
+   "head_method": "finger ring r2 centroid (DIP / claw base)",
+   "tail_method": "nearest hand_tip landmark (claw tip)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "thumb_01_l": {
+   "parent": "hand_l",
+   "head": [
+    33.38383,
+    12.01686,
+    97.50703
+   ],
+   "tail": [
+    33.11313,
+    11.4482,
+    95.93684
+   ],
+   "length_cm": 1.6918,
+   "deform": true,
+   "role": "thumb metacarpal (CMC)",
+   "local_axes": {
+    "y_bone": [
+     -0.16,
+     -0.33613,
+     -0.92813
+    ],
+    "x": [
+     0.98546,
+     0.0,
+     -0.16989
+    ],
+    "z": [
+     -0.0571,
+     0.94182,
+     -0.33124
+    ]
+   },
+   "head_method": "thumb ring r1 - (r2 - r1) (CMC region)",
+   "tail_method": "thumb ring r1 centroid (MCP)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "thumb_02_l": {
+   "parent": "thumb_01_l",
+   "head": [
+    33.11313,
+    11.4482,
+    95.93684
+   ],
+   "tail": [
+    32.84244,
+    10.87955,
+    94.36664
+   ],
+   "length_cm": 1.6918,
+   "deform": true,
+   "role": "thumb proximal",
+   "local_axes": {
+    "y_bone": [
+     -0.16,
+     -0.33613,
+     -0.92813
+    ],
+    "x": [
+     0.98546,
+     0.0,
+     -0.16989
+    ],
+    "z": [
+     -0.0571,
+     0.94182,
+     -0.33124
+    ]
+   },
+   "head_method": "thumb ring r1 centroid (MCP)",
+   "tail_method": "thumb ring r2 centroid (IP / claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "thumb_03_l": {
+   "parent": "thumb_02_l",
+   "head": [
+    32.84244,
+    10.87955,
+    94.36664
+   ],
+   "tail": [
+    40.44978,
+    12.6901,
+    85.4336
+   ],
+   "length_cm": 11.8722,
+   "deform": true,
+   "role": "thumb distal + claw",
+   "local_axes": {
+    "y_bone": [
+     0.64077,
+     0.1525,
+     -0.75243
+    ],
+    "x": [
+     0.23153,
+     -0.97283,
+     0.0
+    ],
+    "z": [
+     0.73199,
+     0.17421,
+     0.65867
+    ]
+   },
+   "head_method": "thumb ring r2 centroid (IP / claw base)",
+   "tail_method": "nearest hand_tip landmark (claw tip)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "thigh_l": {
+   "parent": "pelvis",
+   "head": [
+    13.31637,
+    3.45852,
+    85.02816
+   ],
+   "tail": [
+    14.98957,
+    2.88184,
+    61.17389
+   ],
+   "length_cm": 23.9198,
+   "deform": true,
+   "role": "leg",
+   "local_axes": {
+    "y_bone": [
+     0.06995,
+     -0.02411,
+     -0.99726
+    ],
+    "x": [
+     0.99755,
+     -0.0,
+     0.06997
+    ],
+    "z": [
+     0.00169,
+     0.99971,
+     -0.02405
+    ]
+   },
+   "head_method": "landmark hip (canon)",
+   "tail_method": "landmark knee (section)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "shin_l": {
+   "parent": "thigh_l",
+   "head": [
+    14.98957,
+    2.88184,
+    61.17389
+   ],
+   "tail": [
+    21.6737,
+    2.08071,
+    9.45031
+   ],
+   "length_cm": 52.1598,
+   "deform": true,
+   "role": "leg",
+   "local_axes": {
+    "y_bone": [
+     0.12815,
+     -0.01536,
+     -0.99164
+    ],
+    "x": [
+     0.99175,
+     -0.0,
+     0.12816
+    ],
+    "z": [
+     0.00197,
+     0.99988,
+     -0.01523
+    ]
+   },
+   "head_method": "landmark knee (section)",
+   "tail_method": "landmark ankle (section)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "foot_l": {
+   "parent": "shin_l",
+   "head": [
+    21.6737,
+    2.08071,
+    9.45031
+   ],
+   "tail": [
+    17.47308,
+    15.01803,
+    1.2324
+   ],
+   "length_cm": 15.8919,
+   "deform": true,
+   "role": "foot (tarsus / metatarsus)",
+   "local_axes": {
+    "y_bone": [
+     -0.26432,
+     0.81408,
+     -0.51711
+    ],
+    "x": [
+     0.95112,
+     0.30882,
+     -0.0
+    ],
+    "z": [
+     -0.15969,
+     0.49184,
+     0.85592
+    ]
+   },
+   "head_method": "landmark ankle (section)",
+   "tail_method": "ball_line landmark + 1.2 cm (MTP joint height above the ground contact)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_1_01_l": {
+   "parent": "foot_l",
+   "head": [
+    16.48348,
+    20.16891,
+    1.2843
+   ],
+   "tail": [
+    16.28047,
+    21.28207,
+    0.84456
+   ],
+   "length_cm": 1.214,
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)",
+   "local_axes": {
+    "y_bone": [
+     -0.16723,
+     0.91696,
+     -0.36223
+    ],
+    "x": [
+     0.98377,
+     0.17942,
+     -0.0
+    ],
+    "z": [
+     -0.06499,
+     0.35636,
+     0.93209
+    ]
+   },
+   "head_method": "toe MTP base ring centroid",
+   "tail_method": "toe ring r1 centroid",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_1_02_l": {
+   "parent": "toe_1_01_l",
+   "head": [
+    16.28047,
+    21.28207,
+    0.84456
+   ],
+   "tail": [
+    16.15235,
+    21.84104,
+    0.51623
+   ],
+   "length_cm": 0.6608,
+   "deform": true,
+   "role": "toe middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.19388,
+     0.84589,
+     -0.49687
+    ],
+    "x": [
+     0.97472,
+     0.22341,
+     -0.0
+    ],
+    "z": [
+     -0.11101,
+     0.48431,
+     0.86782
+    ]
+   },
+   "head_method": "toe ring r1 centroid",
+   "tail_method": "toe ring r2 centroid (claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_1_03_l": {
+   "parent": "toe_1_02_l",
+   "head": [
+    16.15235,
+    21.84104,
+    0.51623
+   ],
+   "tail": [
+    23.78079,
+    27.44322,
+    0.60092
+   ],
+   "length_cm": 9.4649,
+   "deform": true,
+   "role": "toe distal + claw",
+   "local_axes": {
+    "y_bone": [
+     0.80597,
+     0.59189,
+     0.00895
+    ],
+    "x": [
+     0.59191,
+     -0.806,
+     0.0
+    ],
+    "z": [
+     -0.00721,
+     -0.0053,
+     0.99996
+    ]
+   },
+   "head_method": "toe ring r2 centroid (claw base)",
+   "tail_method": "nearest toe_tip landmark",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_2_01_l": {
+   "parent": "foot_l",
+   "head": [
+    20.47271,
+    22.26542,
+    1.5017
+   ],
+   "tail": [
+    20.37002,
+    24.54524,
+    0.97269
+   ],
+   "length_cm": 2.3426,
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)",
+   "local_axes": {
+    "y_bone": [
+     -0.04383,
+     0.97318,
+     -0.22582
+    ],
+    "x": [
+     0.99899,
+     0.045,
+     -0.0
+    ],
+    "z": [
+     -0.01016,
+     0.22559,
+     0.97417
+    ]
+   },
+   "head_method": "toe MTP base ring centroid",
+   "tail_method": "toe ring r1 centroid",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_2_02_l": {
+   "parent": "toe_2_01_l",
+   "head": [
+    20.37002,
+    24.54524,
+    0.97269
+   ],
+   "tail": [
+    20.32555,
+    25.5829,
+    0.62015
+   ],
+   "length_cm": 1.0968,
+   "deform": true,
+   "role": "toe middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.04054,
+     0.94607,
+     -0.32142
+    ],
+    "x": [
+     0.99908,
+     0.04282,
+     -0.0
+    ],
+    "z": [
+     -0.01376,
+     0.32113,
+     0.94694
+    ]
+   },
+   "head_method": "toe ring r1 centroid",
+   "tail_method": "toe ring r2 centroid (claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_2_03_l": {
+   "parent": "toe_2_02_l",
+   "head": [
+    20.32555,
+    25.5829,
+    0.62015
+   ],
+   "tail": [
+    23.78079,
+    27.44322,
+    0.60092
+   ],
+   "length_cm": 3.9243,
+   "deform": true,
+   "role": "toe distal + claw",
+   "local_axes": {
+    "y_bone": [
+     0.88048,
+     0.47405,
+     -0.0049
+    ],
+    "x": [
+     0.47406,
+     -0.88049,
+     0.0
+    ],
+    "z": [
+     0.00431,
+     0.00232,
+     0.99999
+    ]
+   },
+   "head_method": "toe ring r2 centroid (claw base)",
+   "tail_method": "nearest toe_tip landmark",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_3_01_l": {
+   "parent": "foot_l",
+   "head": [
+    23.94424,
+    23.22614,
+    1.58356
+   ],
+   "tail": [
+    24.33969,
+    25.83992,
+    1.24365
+   ],
+   "length_cm": 2.6653,
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)",
+   "local_axes": {
+    "y_bone": [
+     0.14837,
+     0.98067,
+     -0.12753
+    ],
+    "x": [
+     0.98875,
+     -0.14959,
+     0.0
+    ],
+    "z": [
+     0.01908,
+     0.1261,
+     0.99183
+    ]
+   },
+   "head_method": "toe MTP base ring centroid",
+   "tail_method": "toe ring r1 centroid",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_3_02_l": {
+   "parent": "toe_3_01_l",
+   "head": [
+    24.33969,
+    25.83992,
+    1.24365
+   ],
+   "tail": [
+    24.48991,
+    27.39824,
+    0.86476
+   ],
+   "length_cm": 1.6107,
+   "deform": true,
+   "role": "toe middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.09326,
+     0.96746,
+     -0.23523
+    ],
+    "x": [
+     0.99539,
+     -0.09595,
+     0.0
+    ],
+    "z": [
+     0.02257,
+     0.23414,
+     0.97194
+    ]
+   },
+   "head_method": "toe ring r1 centroid",
+   "tail_method": "toe ring r2 centroid (claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_3_03_l": {
+   "parent": "toe_3_02_l",
+   "head": [
+    24.48991,
+    27.39824,
+    0.86476
+   ],
+   "tail": [
+    23.78079,
+    27.44322,
+    0.60092
+   ],
+   "length_cm": 0.7579,
+   "deform": true,
+   "role": "toe distal + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.93558,
+     0.05934,
+     -0.34809
+    ],
+    "x": [
+     0.0633,
+     0.99799,
+     -0.0
+    ],
+    "z": [
+     -0.3474,
+     0.02203,
+     0.93746
+    ]
+   },
+   "head_method": "toe ring r2 centroid (claw base)",
+   "tail_method": "nearest toe_tip landmark",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_4_01_l": {
+   "parent": "foot_l",
+   "head": [
+    27.57311,
+    21.24665,
+    1.64728
+   ],
+   "tail": [
+    28.134,
+    23.89368,
+    1.15264
+   ],
+   "length_cm": 2.7506,
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)",
+   "local_axes": {
+    "y_bone": [
+     0.20391,
+     0.96233,
+     -0.17983
+    ],
+    "x": [
+     0.97828,
+     -0.20729,
+     0.0
+    ],
+    "z": [
+     0.03728,
+     0.17592,
+     0.9837
+    ]
+   },
+   "head_method": "toe MTP base ring centroid",
+   "tail_method": "toe ring r1 centroid",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_4_02_l": {
+   "parent": "toe_4_01_l",
+   "head": [
+    28.134,
+    23.89368,
+    1.15264
+   ],
+   "tail": [
+    28.53381,
+    25.27501,
+    0.79192
+   ],
+   "length_cm": 1.4826,
+   "deform": true,
+   "role": "toe middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.26967,
+     0.93171,
+     -0.2433
+    ],
+    "x": [
+     0.96057,
+     -0.27802,
+     0.0
+    ],
+    "z": [
+     0.06764,
+     0.23371,
+     0.96995
+    ]
+   },
+   "head_method": "toe ring r1 centroid",
+   "tail_method": "toe ring r2 centroid (claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_4_03_l": {
+   "parent": "toe_4_02_l",
+   "head": [
+    28.53381,
+    25.27501,
+    0.79192
+   ],
+   "tail": [
+    25.23984,
+    27.17545,
+    1.38526
+   ],
+   "length_cm": 3.8489,
+   "deform": true,
+   "role": "toe distal + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.85582,
+     0.49376,
+     0.15416
+    ],
+    "x": [
+     0.49974,
+     0.86618,
+     -0.0
+    ],
+    "z": [
+     0.13353,
+     -0.07704,
+     0.98805
+    ]
+   },
+   "head_method": "toe ring r2 centroid (claw base)",
+   "tail_method": "nearest toe_tip landmark",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_5_01_l": {
+   "parent": "foot_l",
+   "head": [
+    30.20173,
+    18.33278,
+    1.59446
+   ],
+   "tail": [
+    31.23558,
+    19.92676,
+    1.0484
+   ],
+   "length_cm": 1.9768,
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)",
+   "local_axes": {
+    "y_bone": [
+     0.52299,
+     0.80634,
+     -0.27623
+    ],
+    "x": [
+     0.83898,
+     -0.54416,
+     0.0
+    ],
+    "z": [
+     0.15031,
+     0.23175,
+     0.96109
+    ]
+   },
+   "head_method": "toe MTP base ring centroid",
+   "tail_method": "toe ring r1 centroid",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_5_02_l": {
+   "parent": "toe_5_01_l",
+   "head": [
+    31.23558,
+    19.92676,
+    1.0484
+   ],
+   "tail": [
+    31.64052,
+    20.76629,
+    0.80529
+   ],
+   "length_cm": 0.9633,
+   "deform": true,
+   "role": "toe middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.42038,
+     0.87154,
+     -0.25238
+    ],
+    "x": [
+     0.9007,
+     -0.43444,
+     0.0
+    ],
+    "z": [
+     0.10965,
+     0.22732,
+     0.96763
+    ]
+   },
+   "head_method": "toe ring r1 centroid",
+   "tail_method": "toe ring r2 centroid (claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_5_03_l": {
+   "parent": "toe_5_02_l",
+   "head": [
+    31.64052,
+    20.76629,
+    0.80529
+   ],
+   "tail": [
+    25.23984,
+    27.17545,
+    1.38526
+   ],
+   "length_cm": 9.0765,
+   "deform": true,
+   "role": "toe distal + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.70519,
+     0.70613,
+     0.0639
+    ],
+    "x": [
+     0.70758,
+     0.70664,
+     -0.0
+    ],
+    "z": [
+     0.04515,
+     -0.04521,
+     0.99796
+    ]
+   },
+   "head_method": "toe ring r2 centroid (claw base)",
+   "tail_method": "nearest toe_tip landmark",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "clavicle_r": {
+   "parent": "spine_04",
+   "head": [
+    -4.27776,
+    4.66054,
+    154.03333
+   ],
+   "tail": [
+    -20.27719,
+    -7.02959,
+    146.23016
+   ],
+   "length_cm": 21.2963,
+   "deform": true,
+   "role": "shoulder girdle",
+   "local_axes": {
+    "y_bone": [
+     -0.75128,
+     -0.54893,
+     -0.36641
+    ],
+    "x": [
+     -0.58996,
+     0.80743,
+     0.0
+    ],
+    "z": [
+     -0.29585,
+     -0.21617,
+     0.93045
+    ]
+   },
+   "head_method": "neck_base + 22 %% toward glenohumeral (sterno-clavicular region)",
+   "tail_method": "landmark glenohumeral (section)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "upperarm_r": {
+   "parent": "clavicle_r",
+   "head": [
+    -20.27719,
+    -7.02959,
+    146.23016
+   ],
+   "tail": [
+    -32.05805,
+    -2.43618,
+    121.4039
+   ],
+   "length_cm": 27.8609,
+   "deform": true,
+   "role": "arm",
+   "local_axes": {
+    "y_bone": [
+     -0.42285,
+     0.16487,
+     -0.89108
+    ],
+    "x": [
+     0.36327,
+     0.93168,
+     -0.0
+    ],
+    "z": [
+     -0.8302,
+     0.3237,
+     0.45385
+    ]
+   },
+   "head_method": "landmark glenohumeral (section)",
+   "tail_method": "landmark elbow (section)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "forearm_r": {
+   "parent": "upperarm_r",
+   "head": [
+    -32.05805,
+    -2.43618,
+    121.4039
+   ],
+   "tail": [
+    -36.37518,
+    8.4059,
+    98.85243
+   ],
+   "length_cm": 25.3921,
+   "deform": true,
+   "role": "arm",
+   "local_axes": {
+    "y_bone": [
+     -0.17002,
+     0.42699,
+     -0.88813
+    ],
+    "x": [
+     0.92906,
+     0.36993,
+     -0.0
+    ],
+    "z": [
+     -0.32855,
+     0.82512,
+     0.45959
+    ]
+   },
+   "head_method": "landmark elbow (section)",
+   "tail_method": "landmark wrist (section)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "hand_r": {
+   "parent": "forearm_r",
+   "head": [
+    -36.37518,
+    8.4059,
+    98.85243
+   ],
+   "tail": [
+    -36.936,
+    8.78733,
+    97.40717
+   ],
+   "length_cm": 1.5965,
+   "deform": true,
+   "role": "hand (carpus)",
+   "local_axes": {
+    "y_bone": [
+     -0.35129,
+     0.23892,
+     -0.90527
+    ],
+    "x": [
+     0.93227,
+     0.0,
+     -0.36176
+    ],
+    "z": [
+     0.08643,
+     0.97104,
+     0.22273
+    ]
+   },
+   "head_method": "landmark wrist (section)",
+   "tail_method": "wrist + 15 % toward the finger base ring (carpal)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "meta_1_r": {
+   "parent": "hand_r",
+   "head": [
+    -37.00774,
+    9.15451,
+    97.42311
+   ],
+   "tail": [
+    -40.59223,
+    13.3966,
+    89.32368
+   ],
+   "length_cm": 9.8206,
+   "deform": true,
+   "role": "metacarpal (palm cupping)",
+   "local_axes": {
+    "y_bone": [
+     -0.365,
+     0.43196,
+     -0.82474
+    ],
+    "x": [
+     0.76383,
+     0.64542,
+     -0.0
+    ],
+    "z": [
+     -0.5323,
+     0.62996,
+     0.56552
+    ]
+   },
+   "head_method": "wrist + 15 % toward the finger base ring (carpal)",
+   "tail_method": "finger MCP base ring centroid (semantic loop xneg_f1_base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_1_01_r": {
+   "parent": "meta_1_r",
+   "head": [
+    -40.59223,
+    13.3966,
+    89.32368
+   ],
+   "tail": [
+    -42.09759,
+    14.03114,
+    87.55131
+   ],
+   "length_cm": 2.4104,
+   "deform": true,
+   "role": "finger proximal phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.62453,
+     0.26325,
+     -0.7353
+    ],
+    "x": [
+     0.38842,
+     0.92148,
+     -0.0
+    ],
+    "z": [
+     -0.67756,
+     0.28561,
+     0.67774
+    ]
+   },
+   "head_method": "finger MCP base ring centroid (semantic loop xneg_f1_base)",
+   "tail_method": "finger ring r1 centroid (PIP)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_1_02_r": {
+   "parent": "finger_1_01_r",
+   "head": [
+    -42.09759,
+    14.03114,
+    87.55131
+   ],
+   "tail": [
+    -43.13335,
+    14.30123,
+    86.92231
+   ],
+   "length_cm": 1.2415,
+   "deform": true,
+   "role": "finger middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.83426,
+     0.21755,
+     -0.50664
+    ],
+    "x": [
+     0.25234,
+     0.96764,
+     -0.0
+    ],
+    "z": [
+     -0.49024,
+     0.12784,
+     0.86216
+    ]
+   },
+   "head_method": "finger ring r1 centroid (PIP)",
+   "tail_method": "finger ring r2 centroid (DIP / claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_1_03_r": {
+   "parent": "finger_1_02_r",
+   "head": [
+    -43.13335,
+    14.30123,
+    86.92231
+   ],
+   "tail": [
+    -43.5904,
+    14.40032,
+    86.3183
+   ],
+   "length_cm": 0.7639,
+   "deform": true,
+   "role": "finger distal phalanx + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.59831,
+     0.1297,
+     -0.79069
+    ],
+    "x": [
+     0.21186,
+     0.9773,
+     -0.0
+    ],
+    "z": [
+     -0.77275,
+     0.16752,
+     0.61221
+    ]
+   },
+   "head_method": "finger ring r2 centroid (DIP / claw base)",
+   "tail_method": "nearest hand_tip landmark (claw tip)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "meta_2_r": {
+   "parent": "hand_r",
+   "head": [
+    -36.936,
+    8.78733,
+    97.40717
+   ],
+   "tail": [
+    -40.11401,
+    10.94875,
+    89.21738
+   ],
+   "length_cm": 9.0468,
+   "deform": true,
+   "role": "metacarpal (palm cupping)",
+   "local_axes": {
+    "y_bone": [
+     -0.35129,
+     0.23892,
+     -0.90527
+    ],
+    "x": [
+     0.93227,
+     0.0,
+     -0.36176
+    ],
+    "z": [
+     0.08643,
+     0.97104,
+     0.22273
+    ]
+   },
+   "head_method": "wrist + 15 % toward the finger base ring (carpal)",
+   "tail_method": "finger MCP base ring centroid (semantic loop xneg_f2_base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_2_01_r": {
+   "parent": "meta_2_r",
+   "head": [
+    -40.11401,
+    10.94875,
+    89.21738
+   ],
+   "tail": [
+    -41.16631,
+    11.36853,
+    87.62679
+   ],
+   "length_cm": 1.9528,
+   "deform": true,
+   "role": "finger proximal phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.53886,
+     0.21496,
+     -0.81451
+    ],
+    "x": [
+     0.37052,
+     0.92882,
+     -0.0
+    ],
+    "z": [
+     -0.75653,
+     0.30179,
+     0.58015
+    ]
+   },
+   "head_method": "finger MCP base ring centroid (semantic loop xneg_f2_base)",
+   "tail_method": "finger ring r1 centroid (PIP)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_2_02_r": {
+   "parent": "finger_2_01_r",
+   "head": [
+    -41.16631,
+    11.36853,
+    87.62679
+   ],
+   "tail": [
+    -42.21949,
+    11.71002,
+    86.29974
+   ],
+   "length_cm": 1.7283,
+   "deform": true,
+   "role": "finger middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.60939,
+     0.1976,
+     -0.76785
+    ],
+    "x": [
+     0.30844,
+     0.95124,
+     -0.0
+    ],
+    "z": [
+     -0.73042,
+     0.23684,
+     0.64063
+    ]
+   },
+   "head_method": "finger ring r1 centroid (PIP)",
+   "tail_method": "finger ring r2 centroid (DIP / claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_2_03_r": {
+   "parent": "finger_2_02_r",
+   "head": [
+    -42.21949,
+    11.71002,
+    86.29974
+   ],
+   "tail": [
+    -42.18509,
+    12.23387,
+    85.37059
+   ],
+   "length_cm": 1.0672,
+   "deform": true,
+   "role": "finger distal phalanx + claw",
+   "local_axes": {
+    "y_bone": [
+     0.03224,
+     0.49086,
+     -0.87064
+    ],
+    "x": [
+     0.99785,
+     -0.06554,
+     0.0
+    ],
+    "z": [
+     0.05706,
+     0.86877,
+     0.49192
+    ]
+   },
+   "head_method": "finger ring r2 centroid (DIP / claw base)",
+   "tail_method": "nearest hand_tip landmark (claw tip)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "meta_3_r": {
+   "parent": "hand_r",
+   "head": [
+    -36.9637,
+    8.386,
+    97.40225
+   ],
+   "tail": [
+    -40.29868,
+    8.27318,
+    89.1846
+   ],
+   "length_cm": 8.8693,
+   "deform": true,
+   "role": "metacarpal (palm cupping)",
+   "local_axes": {
+    "y_bone": [
+     -0.37601,
+     -0.01272,
+     -0.92653
+    ],
+    "x": [
+     0.9266,
+     0.0,
+     -0.37604
+    ],
+    "z": [
+     -0.00478,
+     0.99992,
+     -0.01179
+    ]
+   },
+   "head_method": "wrist + 15 % toward the finger base ring (carpal)",
+   "tail_method": "finger MCP base ring centroid (semantic loop xneg_f3_base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_3_01_r": {
+   "parent": "meta_3_r",
+   "head": [
+    -40.29868,
+    8.27318,
+    89.1846
+   ],
+   "tail": [
+    -42.50229,
+    8.76395,
+    86.73252
+   ],
+   "length_cm": 3.3331,
+   "deform": true,
+   "role": "finger proximal phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.66113,
+     0.14724,
+     -0.73568
+    ],
+    "x": [
+     0.21739,
+     0.97609,
+     -0.0
+    ],
+    "z": [
+     -0.71809,
+     0.15993,
+     0.67733
+    ]
+   },
+   "head_method": "finger MCP base ring centroid (semantic loop xneg_f3_base)",
+   "tail_method": "finger ring r1 centroid (PIP)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_3_02_r": {
+   "parent": "finger_3_01_r",
+   "head": [
+    -42.50229,
+    8.76395,
+    86.73252
+   ],
+   "tail": [
+    -43.83916,
+    8.87706,
+    85.92316
+   ],
+   "length_cm": 1.5669,
+   "deform": true,
+   "role": "finger middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.85321,
+     0.07219,
+     -0.51655
+    ],
+    "x": [
+     0.08431,
+     0.99644,
+     -0.0
+    ],
+    "z": [
+     -0.51471,
+     0.04355,
+     0.85626
+    ]
+   },
+   "head_method": "finger ring r1 centroid (PIP)",
+   "tail_method": "finger ring r2 centroid (DIP / claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_3_03_r": {
+   "parent": "finger_3_02_r",
+   "head": [
+    -43.83916,
+    8.87706,
+    85.92316
+   ],
+   "tail": [
+    -44.60201,
+    9.08851,
+    85.26224
+   ],
+   "length_cm": 1.0313,
+   "deform": true,
+   "role": "finger distal phalanx + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.73974,
+     0.20504,
+     -0.6409
+    ],
+    "x": [
+     0.26711,
+     0.96367,
+     -0.0
+    ],
+    "z": [
+     -0.61761,
+     0.17119,
+     0.76763
+    ]
+   },
+   "head_method": "finger ring r2 centroid (DIP / claw base)",
+   "tail_method": "nearest hand_tip landmark (claw tip)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "meta_4_r": {
+   "parent": "hand_r",
+   "head": [
+    -37.02399,
+    8.00118,
+    97.50802
+   ],
+   "tail": [
+    -40.70061,
+    5.70776,
+    89.8897
+   ],
+   "length_cm": 8.7645,
+   "deform": true,
+   "role": "metacarpal (palm cupping)",
+   "local_axes": {
+    "y_bone": [
+     -0.41949,
+     -0.26167,
+     -0.86923
+    ],
+    "x": [
+     -0.52926,
+     0.84846,
+     0.0
+    ],
+    "z": [
+     -0.73751,
+     -0.46004,
+     0.49441
+    ]
+   },
+   "head_method": "wrist + 15 % toward the finger base ring (carpal)",
+   "tail_method": "finger MCP base ring centroid (semantic loop xneg_f4_base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_4_01_r": {
+   "parent": "meta_4_r",
+   "head": [
+    -40.70061,
+    5.70776,
+    89.8897
+   ],
+   "tail": [
+    -42.26419,
+    5.79977,
+    88.84232
+   ],
+   "length_cm": 1.8842,
+   "deform": true,
+   "role": "finger proximal phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.82983,
+     0.04883,
+     -0.55587
+    ],
+    "x": [
+     0.05874,
+     0.99827,
+     -0.0
+    ],
+    "z": [
+     -0.55491,
+     0.03265,
+     0.83127
+    ]
+   },
+   "head_method": "finger MCP base ring centroid (semantic loop xneg_f4_base)",
+   "tail_method": "finger ring r1 centroid (PIP)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_4_02_r": {
+   "parent": "finger_4_01_r",
+   "head": [
+    -42.26419,
+    5.79977,
+    88.84232
+   ],
+   "tail": [
+    -43.39705,
+    5.78847,
+    88.53864
+   ],
+   "length_cm": 1.1729,
+   "deform": true,
+   "role": "finger middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.96585,
+     -0.00963,
+     -0.25891
+    ],
+    "x": [
+     -0.00997,
+     0.99995,
+     0.0
+    ],
+    "z": [
+     -0.2589,
+     -0.00258,
+     0.9659
+    ]
+   },
+   "head_method": "finger ring r1 centroid (PIP)",
+   "tail_method": "finger ring r2 centroid (DIP / claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "finger_4_03_r": {
+   "parent": "finger_4_02_r",
+   "head": [
+    -43.39705,
+    5.78847,
+    88.53864
+   ],
+   "tail": [
+    -44.60201,
+    9.08851,
+    85.26224
+   ],
+   "length_cm": 4.8039,
+   "deform": true,
+   "role": "finger distal phalanx + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.25083,
+     0.68696,
+     -0.68204
+    ],
+    "x": [
+     0.93934,
+     0.34299,
+     -0.0
+    ],
+    "z": [
+     -0.23393,
+     0.64066,
+     0.73132
+    ]
+   },
+   "head_method": "finger ring r2 centroid (DIP / claw base)",
+   "tail_method": "nearest hand_tip landmark (claw tip)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "thumb_01_r": {
+   "parent": "hand_r",
+   "head": [
+    -34.85184,
+    10.89313,
+    97.13332
+   ],
+   "tail": [
+    -34.58311,
+    10.37172,
+    95.70575
+   ],
+   "length_cm": 1.5434,
+   "deform": true,
+   "role": "thumb metacarpal (CMC)",
+   "local_axes": {
+    "y_bone": [
+     0.17411,
+     -0.33783,
+     -0.92496
+    ],
+    "x": [
+     0.98274,
+     -0.0,
+     0.18499
+    ],
+    "z": [
+     0.0625,
+     0.94121,
+     -0.332
+    ]
+   },
+   "head_method": "thumb ring r1 - (r2 - r1) (CMC region)",
+   "tail_method": "thumb ring r1 centroid (MCP)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "thumb_02_r": {
+   "parent": "thumb_01_r",
+   "head": [
+    -34.58311,
+    10.37172,
+    95.70575
+   ],
+   "tail": [
+    -34.31439,
+    9.85032,
+    94.27819
+   ],
+   "length_cm": 1.5434,
+   "deform": true,
+   "role": "thumb proximal",
+   "local_axes": {
+    "y_bone": [
+     0.17411,
+     -0.33783,
+     -0.92496
+    ],
+    "x": [
+     0.98274,
+     -0.0,
+     0.18499
+    ],
+    "z": [
+     0.0625,
+     0.94121,
+     -0.332
+    ]
+   },
+   "head_method": "thumb ring r1 centroid (MCP)",
+   "tail_method": "thumb ring r2 centroid (IP / claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "thumb_03_r": {
+   "parent": "thumb_02_r",
+   "head": [
+    -34.31439,
+    9.85032,
+    94.27819
+   ],
+   "tail": [
+    -42.18509,
+    12.23387,
+    85.37059
+   ],
+   "length_cm": 12.1233,
+   "deform": true,
+   "role": "thumb distal + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.64922,
+     0.19661,
+     -0.73475
+    ],
+    "x": [
+     0.28984,
+     0.95708,
+     -0.0
+    ],
+    "z": [
+     -0.70321,
+     0.21296,
+     0.67834
+    ]
+   },
+   "head_method": "thumb ring r2 centroid (IP / claw base)",
+   "tail_method": "nearest hand_tip landmark (claw tip)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "thigh_r": {
+   "parent": "pelvis",
+   "head": [
+    -13.31412,
+    3.45672,
+    85.02692
+   ],
+   "tail": [
+    -18.33186,
+    2.94544,
+    61.34252
+   ],
+   "length_cm": 24.2155,
+   "deform": true,
+   "role": "leg",
+   "local_axes": {
+    "y_bone": [
+     -0.20721,
+     -0.02111,
+     -0.97807
+    ],
+    "x": [
+     0.97829,
+     0.0,
+     -0.20726
+    ],
+    "z": [
+     -0.00438,
+     0.99978,
+     -0.02066
+    ]
+   },
+   "head_method": "landmark hip (canon)",
+   "tail_method": "landmark knee (section)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "shin_r": {
+   "parent": "thigh_r",
+   "head": [
+    -18.33186,
+    2.94544,
+    61.34252
+   ],
+   "tail": [
+    -26.48847,
+    0.79718,
+    9.43877
+   ],
+   "length_cm": 52.5846,
+   "deform": true,
+   "role": "leg",
+   "local_axes": {
+    "y_bone": [
+     -0.15511,
+     -0.04085,
+     -0.98705
+    ],
+    "x": [
+     0.98788,
+     0.0,
+     -0.15524
+    ],
+    "z": [
+     -0.00634,
+     0.99917,
+     -0.04036
+    ]
+   },
+   "head_method": "landmark knee (section)",
+   "tail_method": "landmark ankle (section)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "foot_r": {
+   "parent": "shin_r",
+   "head": [
+    -26.48847,
+    0.79718,
+    9.43877
+   ],
+   "tail": [
+    -22.15552,
+    13.71603,
+    1.23556
+   ],
+   "length_cm": 15.9048,
+   "deform": true,
+   "role": "foot (tarsus / metatarsus)",
+   "local_axes": {
+    "y_bone": [
+     0.27243,
+     0.81226,
+     -0.51577
+    ],
+    "x": [
+     0.94809,
+     -0.31799,
+     0.0
+    ],
+    "z": [
+     0.16401,
+     0.489,
+     0.85673
+    ]
+   },
+   "head_method": "landmark ankle (section)",
+   "tail_method": "ball_line landmark + 1.2 cm (MTP joint height above the ground contact)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_1_01_r": {
+   "parent": "foot_r",
+   "head": [
+    -21.1695,
+    18.55633,
+    1.36018
+   ],
+   "tail": [
+    -20.979,
+    19.71374,
+    0.86668
+   ],
+   "length_cm": 1.2726,
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)",
+   "local_axes": {
+    "y_bone": [
+     0.1497,
+     0.9095,
+     -0.3878
+    ],
+    "x": [
+     0.98672,
+     -0.1624,
+     0.0
+    ],
+    "z": [
+     0.06298,
+     0.38266,
+     0.92174
+    ]
+   },
+   "head_method": "toe MTP base ring centroid",
+   "tail_method": "toe ring r1 centroid",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_1_02_r": {
+   "parent": "toe_1_01_r",
+   "head": [
+    -20.979,
+    19.71374,
+    0.86668
+   ],
+   "tail": [
+    -20.80861,
+    20.26857,
+    0.47148
+   ],
+   "length_cm": 0.7022,
+   "deform": true,
+   "role": "toe middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     0.24267,
+     0.79016,
+     -0.56281
+    ],
+    "x": [
+     0.95594,
+     -0.29358,
+     0.0
+    ],
+    "z": [
+     0.16523,
+     0.53801,
+     0.82658
+    ]
+   },
+   "head_method": "toe ring r1 centroid",
+   "tail_method": "toe ring r2 centroid (claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_1_03_r": {
+   "parent": "toe_1_02_r",
+   "head": [
+    -20.80861,
+    20.26857,
+    0.47148
+   ],
+   "tail": [
+    -28.50145,
+    25.91691,
+    1.39336
+   ],
+   "length_cm": 9.5882,
+   "deform": true,
+   "role": "toe distal + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.80232,
+     0.58909,
+     0.09615
+    ],
+    "x": [
+     0.59184,
+     0.80606,
+     -0.0
+    ],
+    "z": [
+     0.0775,
+     -0.0569,
+     0.99537
+    ]
+   },
+   "head_method": "toe ring r2 centroid (claw base)",
+   "tail_method": "nearest toe_tip landmark",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_2_01_r": {
+   "parent": "foot_r",
+   "head": [
+    -25.21523,
+    21.04323,
+    1.50888
+   ],
+   "tail": [
+    -25.11759,
+    23.21661,
+    0.97867
+   ],
+   "length_cm": 2.2393,
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)",
+   "local_axes": {
+    "y_bone": [
+     0.0436,
+     0.97058,
+     -0.23678
+    ],
+    "x": [
+     0.99899,
+     -0.04488,
+     0.0
+    ],
+    "z": [
+     0.01063,
+     0.23654,
+     0.97156
+    ]
+   },
+   "head_method": "toe MTP base ring centroid",
+   "tail_method": "toe ring r1 centroid",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_2_02_r": {
+   "parent": "toe_2_01_r",
+   "head": [
+    -25.11759,
+    23.21661,
+    0.97867
+   ],
+   "tail": [
+    -25.13327,
+    24.23072,
+    0.64391
+   ],
+   "length_cm": 1.068,
+   "deform": true,
+   "role": "toe middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.01468,
+     0.9495,
+     -0.31343
+    ],
+    "x": [
+     0.99988,
+     0.01546,
+     -0.0
+    ],
+    "z": [
+     -0.00485,
+     0.31339,
+     0.94961
+    ]
+   },
+   "head_method": "toe ring r1 centroid",
+   "tail_method": "toe ring r2 centroid (claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_2_03_r": {
+   "parent": "toe_2_02_r",
+   "head": [
+    -25.13327,
+    24.23072,
+    0.64391
+   ],
+   "tail": [
+    -28.50145,
+    25.91691,
+    1.39336
+   ],
+   "length_cm": 3.8405,
+   "deform": true,
+   "role": "toe distal + claw",
+   "local_axes": {
+    "y_bone": [
+     -0.87701,
+     0.43905,
+     0.19514
+    ],
+    "x": [
+     0.44766,
+     0.8942,
+     -0.0
+    ],
+    "z": [
+     0.1745,
+     -0.08736,
+     0.98077
+    ]
+   },
+   "head_method": "toe ring r2 centroid (claw base)",
+   "tail_method": "nearest toe_tip landmark",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_3_01_r": {
+   "parent": "foot_r",
+   "head": [
+    -28.70942,
+    21.7893,
+    1.56941
+   ],
+   "tail": [
+    -29.1012,
+    24.52345,
+    1.18799
+   ],
+   "length_cm": 2.7883,
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)",
+   "local_axes": {
+    "y_bone": [
+     -0.14051,
+     0.98058,
+     -0.1368
+    ],
+    "x": [
+     0.98989,
+     0.14184,
+     -0.0
+    ],
+    "z": [
+     -0.0194,
+     0.13541,
+     0.9906
+    ]
+   },
+   "head_method": "toe MTP base ring centroid",
+   "tail_method": "toe ring r1 centroid",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_3_02_r": {
+   "parent": "toe_3_01_r",
+   "head": [
+    -29.1012,
+    24.52345,
+    1.18799
+   ],
+   "tail": [
+    -29.33224,
+    26.07906,
+    0.80105
+   ],
+   "length_cm": 1.6196,
+   "deform": true,
+   "role": "toe middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.14265,
+     0.96051,
+     -0.23891
+    ],
+    "x": [
+     0.98915,
+     0.14691,
+     -0.0
+    ],
+    "z": [
+     -0.0351,
+     0.23632,
+     0.97104
+    ]
+   },
+   "head_method": "toe ring r1 centroid",
+   "tail_method": "toe ring r2 centroid (claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_3_03_r": {
+   "parent": "toe_3_02_r",
+   "head": [
+    -29.33224,
+    26.07906,
+    0.80105
+   ],
+   "tail": [
+    -28.92824,
+    26.29195,
+    0.2494
+   ],
+   "length_cm": 0.7161,
+   "deform": true,
+   "role": "toe distal + claw",
+   "local_axes": {
+    "y_bone": [
+     0.56413,
+     0.29727,
+     -0.77032
+    ],
+    "x": [
+     0.46618,
+     -0.88469,
+     0.0
+    ],
+    "z": [
+     0.68149,
+     0.35911,
+     0.63766
+    ]
+   },
+   "head_method": "toe ring r2 centroid (claw base)",
+   "tail_method": "nearest toe_tip landmark",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_4_01_r": {
+   "parent": "foot_r",
+   "head": [
+    -32.30766,
+    19.9005,
+    1.66558
+   ],
+   "tail": [
+    -32.91622,
+    22.60514,
+    1.15393
+   ],
+   "length_cm": 2.8191,
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)",
+   "local_axes": {
+    "y_bone": [
+     -0.21587,
+     0.95941,
+     -0.1815
+    ],
+    "x": [
+     0.97561,
+     0.21952,
+     -0.0
+    ],
+    "z": [
+     -0.03984,
+     0.17707,
+     0.98339
+    ]
+   },
+   "head_method": "toe MTP base ring centroid",
+   "tail_method": "toe ring r1 centroid",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_4_02_r": {
+   "parent": "toe_4_01_r",
+   "head": [
+    -32.91622,
+    22.60514,
+    1.15393
+   ],
+   "tail": [
+    -33.26839,
+    23.95916,
+    0.78784
+   ],
+   "length_cm": 1.4462,
+   "deform": true,
+   "role": "toe middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.24352,
+     0.93628,
+     -0.25315
+    ],
+    "x": [
+     0.9678,
+     0.25172,
+     -0.0
+    ],
+    "z": [
+     -0.06372,
+     0.24499,
+     0.96743
+    ]
+   },
+   "head_method": "toe ring r1 centroid",
+   "tail_method": "toe ring r2 centroid (claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_4_03_r": {
+   "parent": "toe_4_02_r",
+   "head": [
+    -33.26839,
+    23.95916,
+    0.78784
+   ],
+   "tail": [
+    -30.03507,
+    25.86506,
+    0.69861
+   ],
+   "length_cm": 3.7543,
+   "deform": true,
+   "role": "toe distal + claw",
+   "local_axes": {
+    "y_bone": [
+     0.86123,
+     0.50766,
+     -0.02377
+    ],
+    "x": [
+     0.5078,
+     -0.86147,
+     0.0
+    ],
+    "z": [
+     0.02048,
+     0.01207,
+     0.99972
+    ]
+   },
+   "head_method": "toe ring r2 centroid (claw base)",
+   "tail_method": "nearest toe_tip landmark",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_5_01_r": {
+   "parent": "foot_r",
+   "head": [
+    -34.82966,
+    16.72341,
+    1.63042
+   ],
+   "tail": [
+    -35.95338,
+    18.43561,
+    1.07769
+   ],
+   "length_cm": 2.1213,
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)",
+   "local_axes": {
+    "y_bone": [
+     -0.52974,
+     0.80715,
+     -0.26056
+    ],
+    "x": [
+     0.83603,
+     0.54869,
+     -0.0
+    ],
+    "z": [
+     -0.14297,
+     0.21784,
+     0.96546
+    ]
+   },
+   "head_method": "toe MTP base ring centroid",
+   "tail_method": "toe ring r1 centroid",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_5_02_r": {
+   "parent": "toe_5_01_r",
+   "head": [
+    -35.95338,
+    18.43561,
+    1.07769
+   ],
+   "tail": [
+    -36.43052,
+    19.3261,
+    0.848
+   ],
+   "length_cm": 1.036,
+   "deform": true,
+   "role": "toe middle phalanx",
+   "local_axes": {
+    "y_bone": [
+     -0.46054,
+     0.85951,
+     -0.22169
+    ],
+    "x": [
+     0.88144,
+     0.47229,
+     -0.0
+    ],
+    "z": [
+     -0.1047,
+     0.19541,
+     0.97512
+    ]
+   },
+   "head_method": "toe ring r1 centroid",
+   "tail_method": "toe ring r2 centroid (claw base)",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  },
+  "toe_5_03_r": {
+   "parent": "toe_5_02_r",
+   "head": [
+    -36.43052,
+    19.3261,
+    0.848
+   ],
+   "tail": [
+    -30.03507,
+    25.86506,
+    0.69861
+   ],
+   "length_cm": 9.1478,
+   "deform": true,
+   "role": "toe distal + claw",
+   "local_axes": {
+    "y_bone": [
+     0.69913,
+     0.71481,
+     -0.01633
+    ],
+    "x": [
+     0.71491,
+     -0.69922,
+     0.0
+    ],
+    "z": [
+     0.01142,
+     0.01168,
+     0.99987
+    ]
+   },
+   "head_method": "toe ring r2 centroid (claw base)",
+   "tail_method": "nearest toe_tip landmark",
+   "configuration": "c2 SA-F188",
+   "c2_relation": "source"
+  }
+ }
+}

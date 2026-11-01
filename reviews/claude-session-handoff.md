@@ -2,6 +2,16 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-01 ~10:30) — ORDER a407015 (Saurin RP6 production rig / skin-weighting pilot) — IN PROGRESS, INTERNAL ONLY
+
+Tools `tools/rac/rp/saurin_rp6_v001/`: `sa6_common.py` (frozen RP5 loaders, frozen-hash guard; SA_W=/tmp/claude-0/rp5clean clean workspace from
+`sa_consolidate.py`), `sa6_skeleton.py` (108 bones / 107 deform, 16-segment graded tail from the count study, joints from landmarks + semantic loops, c2 by
+re-evaluation / affine transfer -> evidence `reviews/rac-rp6-evidence/saurin/rig_pilot/SA_RP6_skeleton_v001.json`, joint placements M / F),
+`sa6_weights.py CFG OUT` (semantic-masked capsule segmentation + region-scaled mesh diffusion, max 4 influences), `sa6_pose.py` (FK, LBS, exact RP5 34-pose
+suite re-targeted, RP5 relcos flip metric). First RP6 LBS run (c1): fist 1250 / grasp 692 flips (RP5 scaffold 2166 / 1054); open: jaw zone (734), toes,
+knee, hip, tail root, shoulder abd90 -> next: weight refinement + pose-driven corrective solver, then Blender files / audits / gates.
+Frozen RP5 re-hash at start: `rig_pilot/frozen_rp5_hashes_start.txt` (all unchanged).
+
 ## LATEST (2026-11-01 ~09:00) — ORDER 5a7d8cc — SAURIN RP5 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record)
 
 Record `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/SAURIN_RP5_FREEZE.json`; report `reviews/claude-rac-rp5-saurin-final-freeze-report.md`.

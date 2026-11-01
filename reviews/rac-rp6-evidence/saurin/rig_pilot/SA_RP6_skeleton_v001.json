@@ -1,0 +1,561 @@
+{
+ "name": "SA_RP6_skeleton_v001",
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "scope": "Saurin-specific production-rig pilot hierarchy; NOT a universal game skeleton",
+ "units": "cm, x right (+x = subject left = _l), y forward, z up",
+ "bones": {
+  "root": {
+   "parent": null,
+   "deform": false,
+   "role": "control: world / root motion (non-deform, at the ground below the pelvis)"
+  },
+  "pelvis": {
+   "parent": "root",
+   "deform": true,
+   "role": "axial"
+  },
+  "spine_01": {
+   "parent": "pelvis",
+   "deform": true,
+   "role": "axial lumbar"
+  },
+  "spine_02": {
+   "parent": "spine_01",
+   "deform": true,
+   "role": "axial abdominal"
+  },
+  "spine_03": {
+   "parent": "spine_02",
+   "deform": true,
+   "role": "axial thoracic"
+  },
+  "spine_04": {
+   "parent": "spine_03",
+   "deform": true,
+   "role": "axial upper thoracic"
+  },
+  "neck_01": {
+   "parent": "spine_04",
+   "deform": true,
+   "role": "neck"
+  },
+  "neck_02": {
+   "parent": "neck_01",
+   "deform": true,
+   "role": "neck"
+  },
+  "head": {
+   "parent": "neck_02",
+   "deform": true,
+   "role": "head (cranium + rostrum + display: one rigid deform unit)"
+  },
+  "jaw": {
+   "parent": "head",
+   "deform": true,
+   "role": "jaw (mandible)"
+  },
+  "tail_01": {
+   "parent": "pelvis",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_02": {
+   "parent": "tail_01",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_03": {
+   "parent": "tail_02",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_04": {
+   "parent": "tail_03",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_05": {
+   "parent": "tail_04",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_06": {
+   "parent": "tail_05",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_07": {
+   "parent": "tail_06",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_08": {
+   "parent": "tail_07",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_09": {
+   "parent": "tail_08",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_10": {
+   "parent": "tail_09",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_11": {
+   "parent": "tail_10",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_12": {
+   "parent": "tail_11",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_13": {
+   "parent": "tail_12",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_14": {
+   "parent": "tail_13",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_15": {
+   "parent": "tail_14",
+   "deform": true,
+   "role": "tail"
+  },
+  "tail_16": {
+   "parent": "tail_15",
+   "deform": true,
+   "role": "tail"
+  },
+  "clavicle_l": {
+   "parent": "spine_04",
+   "deform": true,
+   "role": "shoulder girdle"
+  },
+  "upperarm_l": {
+   "parent": "clavicle_l",
+   "deform": true,
+   "role": "arm"
+  },
+  "forearm_l": {
+   "parent": "upperarm_l",
+   "deform": true,
+   "role": "arm"
+  },
+  "hand_l": {
+   "parent": "forearm_l",
+   "deform": true,
+   "role": "hand (carpus)"
+  },
+  "meta_1_l": {
+   "parent": "hand_l",
+   "deform": true,
+   "role": "metacarpal (palm cupping)"
+  },
+  "finger_1_01_l": {
+   "parent": "meta_1_l",
+   "deform": true,
+   "role": "finger proximal phalanx"
+  },
+  "finger_1_02_l": {
+   "parent": "finger_1_01_l",
+   "deform": true,
+   "role": "finger middle phalanx"
+  },
+  "finger_1_03_l": {
+   "parent": "finger_1_02_l",
+   "deform": true,
+   "role": "finger distal phalanx + claw"
+  },
+  "meta_2_l": {
+   "parent": "hand_l",
+   "deform": true,
+   "role": "metacarpal (palm cupping)"
+  },
+  "finger_2_01_l": {
+   "parent": "meta_2_l",
+   "deform": true,
+   "role": "finger proximal phalanx"
+  },
+  "finger_2_02_l": {
+   "parent": "finger_2_01_l",
+   "deform": true,
+   "role": "finger middle phalanx"
+  },
+  "finger_2_03_l": {
+   "parent": "finger_2_02_l",
+   "deform": true,
+   "role": "finger distal phalanx + claw"
+  },
+  "meta_3_l": {
+   "parent": "hand_l",
+   "deform": true,
+   "role": "metacarpal (palm cupping)"
+  },
+  "finger_3_01_l": {
+   "parent": "meta_3_l",
+   "deform": true,
+   "role": "finger proximal phalanx"
+  },
+  "finger_3_02_l": {
+   "parent": "finger_3_01_l",
+   "deform": true,
+   "role": "finger middle phalanx"
+  },
+  "finger_3_03_l": {
+   "parent": "finger_3_02_l",
+   "deform": true,
+   "role": "finger distal phalanx + claw"
+  },
+  "meta_4_l": {
+   "parent": "hand_l",
+   "deform": true,
+   "role": "metacarpal (palm cupping)"
+  },
+  "finger_4_01_l": {
+   "parent": "meta_4_l",
+   "deform": true,
+   "role": "finger proximal phalanx"
+  },
+  "finger_4_02_l": {
+   "parent": "finger_4_01_l",
+   "deform": true,
+   "role": "finger middle phalanx"
+  },
+  "finger_4_03_l": {
+   "parent": "finger_4_02_l",
+   "deform": true,
+   "role": "finger distal phalanx + claw"
+  },
+  "thumb_01_l": {
+   "parent": "hand_l",
+   "deform": true,
+   "role": "thumb metacarpal (CMC)"
+  },
+  "thumb_02_l": {
+   "parent": "thumb_01_l",
+   "deform": true,
+   "role": "thumb proximal"
+  },
+  "thumb_03_l": {
+   "parent": "thumb_02_l",
+   "deform": true,
+   "role": "thumb distal + claw"
+  },
+  "thigh_l": {
+   "parent": "pelvis",
+   "deform": true,
+   "role": "leg"
+  },
+  "shin_l": {
+   "parent": "thigh_l",
+   "deform": true,
+   "role": "leg"
+  },
+  "foot_l": {
+   "parent": "shin_l",
+   "deform": true,
+   "role": "foot (tarsus / metatarsus)"
+  },
+  "toe_1_01_l": {
+   "parent": "foot_l",
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)"
+  },
+  "toe_1_02_l": {
+   "parent": "toe_1_01_l",
+   "deform": true,
+   "role": "toe middle phalanx"
+  },
+  "toe_1_03_l": {
+   "parent": "toe_1_02_l",
+   "deform": true,
+   "role": "toe distal + claw"
+  },
+  "toe_2_01_l": {
+   "parent": "foot_l",
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)"
+  },
+  "toe_2_02_l": {
+   "parent": "toe_2_01_l",
+   "deform": true,
+   "role": "toe middle phalanx"
+  },
+  "toe_2_03_l": {
+   "parent": "toe_2_02_l",
+   "deform": true,
+   "role": "toe distal + claw"
+  },
+  "toe_3_01_l": {
+   "parent": "foot_l",
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)"
+  },
+  "toe_3_02_l": {
+   "parent": "toe_3_01_l",
+   "deform": true,
+   "role": "toe middle phalanx"
+  },
+  "toe_3_03_l": {
+   "parent": "toe_3_02_l",
+   "deform": true,
+   "role": "toe distal + claw"
+  },
+  "toe_4_01_l": {
+   "parent": "foot_l",
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)"
+  },
+  "toe_4_02_l": {
+   "parent": "toe_4_01_l",
+   "deform": true,
+   "role": "toe middle phalanx"
+  },
+  "toe_4_03_l": {
+   "parent": "toe_4_02_l",
+   "deform": true,
+   "role": "toe distal + claw"
+  },
+  "toe_5_01_l": {
+   "parent": "foot_l",
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)"
+  },
+  "toe_5_02_l": {
+   "parent": "toe_5_01_l",
+   "deform": true,
+   "role": "toe middle phalanx"
+  },
+  "toe_5_03_l": {
+   "parent": "toe_5_02_l",
+   "deform": true,
+   "role": "toe distal + claw"
+  },
+  "clavicle_r": {
+   "parent": "spine_04",
+   "deform": true,
+   "role": "shoulder girdle"
+  },
+  "upperarm_r": {
+   "parent": "clavicle_r",
+   "deform": true,
+   "role": "arm"
+  },
+  "forearm_r": {
+   "parent": "upperarm_r",
+   "deform": true,
+   "role": "arm"
+  },
+  "hand_r": {
+   "parent": "forearm_r",
+   "deform": true,
+   "role": "hand (carpus)"
+  },
+  "meta_1_r": {
+   "parent": "hand_r",
+   "deform": true,
+   "role": "metacarpal (palm cupping)"
+  },
+  "finger_1_01_r": {
+   "parent": "meta_1_r",
+   "deform": true,
+   "role": "finger proximal phalanx"
+  },
+  "finger_1_02_r": {
+   "parent": "finger_1_01_r",
+   "deform": true,
+   "role": "finger middle phalanx"
+  },
+  "finger_1_03_r": {
+   "parent": "finger_1_02_r",
+   "deform": true,
+   "role": "finger distal phalanx + claw"
+  },
+  "meta_2_r": {
+   "parent": "hand_r",
+   "deform": true,
+   "role": "metacarpal (palm cupping)"
+  },
+  "finger_2_01_r": {
+   "parent": "meta_2_r",
+   "deform": true,
+   "role": "finger proximal phalanx"
+  },
+  "finger_2_02_r": {
+   "parent": "finger_2_01_r",
+   "deform": true,
+   "role": "finger middle phalanx"
+  },
+  "finger_2_03_r": {
+   "parent": "finger_2_02_r",
+   "deform": true,
+   "role": "finger distal phalanx + claw"
+  },
+  "meta_3_r": {
+   "parent": "hand_r",
+   "deform": true,
+   "role": "metacarpal (palm cupping)"
+  },
+  "finger_3_01_r": {
+   "parent": "meta_3_r",
+   "deform": true,
+   "role": "finger proximal phalanx"
+  },
+  "finger_3_02_r": {
+   "parent": "finger_3_01_r",
+   "deform": true,
+   "role": "finger middle phalanx"
+  },
+  "finger_3_03_r": {
+   "parent": "finger_3_02_r",
+   "deform": true,
+   "role": "finger distal phalanx + claw"
+  },
+  "meta_4_r": {
+   "parent": "hand_r",
+   "deform": true,
+   "role": "metacarpal (palm cupping)"
+  },
+  "finger_4_01_r": {
+   "parent": "meta_4_r",
+   "deform": true,
+   "role": "finger proximal phalanx"
+  },
+  "finger_4_02_r": {
+   "parent": "finger_4_01_r",
+   "deform": true,
+   "role": "finger middle phalanx"
+  },
+  "finger_4_03_r": {
+   "parent": "finger_4_02_r",
+   "deform": true,
+   "role": "finger distal phalanx + claw"
+  },
+  "thumb_01_r": {
+   "parent": "hand_r",
+   "deform": true,
+   "role": "thumb metacarpal (CMC)"
+  },
+  "thumb_02_r": {
+   "parent": "thumb_01_r",
+   "deform": true,
+   "role": "thumb proximal"
+  },
+  "thumb_03_r": {
+   "parent": "thumb_02_r",
+   "deform": true,
+   "role": "thumb distal + claw"
+  },
+  "thigh_r": {
+   "parent": "pelvis",
+   "deform": true,
+   "role": "leg"
+  },
+  "shin_r": {
+   "parent": "thigh_r",
+   "deform": true,
+   "role": "leg"
+  },
+  "foot_r": {
+   "parent": "shin_r",
+   "deform": true,
+   "role": "foot (tarsus / metatarsus)"
+  },
+  "toe_1_01_r": {
+   "parent": "foot_r",
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)"
+  },
+  "toe_1_02_r": {
+   "parent": "toe_1_01_r",
+   "deform": true,
+   "role": "toe middle phalanx"
+  },
+  "toe_1_03_r": {
+   "parent": "toe_1_02_r",
+   "deform": true,
+   "role": "toe distal + claw"
+  },
+  "toe_2_01_r": {
+   "parent": "foot_r",
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)"
+  },
+  "toe_2_02_r": {
+   "parent": "toe_2_01_r",
+   "deform": true,
+   "role": "toe middle phalanx"
+  },
+  "toe_2_03_r": {
+   "parent": "toe_2_02_r",
+   "deform": true,
+   "role": "toe distal + claw"
+  },
+  "toe_3_01_r": {
+   "parent": "foot_r",
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)"
+  },
+  "toe_3_02_r": {
+   "parent": "toe_3_01_r",
+   "deform": true,
+   "role": "toe middle phalanx"
+  },
+  "toe_3_03_r": {
+   "parent": "toe_3_02_r",
+   "deform": true,
+   "role": "toe distal + claw"
+  },
+  "toe_4_01_r": {
+   "parent": "foot_r",
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)"
+  },
+  "toe_4_02_r": {
+   "parent": "toe_4_01_r",
+   "deform": true,
+   "role": "toe middle phalanx"
+  },
+  "toe_4_03_r": {
+   "parent": "toe_4_02_r",
+   "deform": true,
+   "role": "toe distal + claw"
+  },
+  "toe_5_01_r": {
+   "parent": "foot_r",
+   "deform": true,
+   "role": "toe proximal phalanx (MTP)"
+  },
+  "toe_5_02_r": {
+   "parent": "toe_5_01_r",
+   "deform": true,
+   "role": "toe middle phalanx"
+  },
+  "toe_5_03_r": {
+   "parent": "toe_5_02_r",
+   "deform": true,
+   "role": "toe distal + claw"
+  }
+ },
+ "counts": {
+  "total": 108,
+  "deform": 107,
+  "tail": 16
+ },
+ "naming": "lowercase, _l = subject left (+x, xpos), _r = subject right (-x, xneg); stable; no circular constraints",
+ "notes": [
+  "jaw: single hinge bone; no independent moving rostrum (rostrum is part of head)",
+  "cranial display / eyes: rigid with head; no biological mobility added",
+  "no twist bones in the pilot baseline: the 34-pose suite has no forearm / upper-arm axial twist pose (added only if deformation evidence requires)",
+  "metacarpals are deform bones so palm cupping is distributed (fist / grasp)",
+  "root is the only control bone; all other bones deform"
+ ]
+}
