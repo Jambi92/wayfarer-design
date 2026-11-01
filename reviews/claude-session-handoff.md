@@ -2,19 +2,34 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-31 night, later) — ORDER fe3b98a (Option B / fold-census closure) — IN PROGRESS, INTERNAL ONLY
+## LATEST (2026-10-31 ~21:00) — ORDER fe3b98a (Option B / fold-census closure) — IN PROGRESS, INTERNAL ONLY — CONTINUE IN A NEW SESSION
 
-Order `reviews/chatgpt-rac-rp5-saurin-option-b-fold-census-closure-order.md`: Option B local hand / foot density, fold census authoritative in T-4
-(outside true tip caps: 0 inverted, 0 bow-tie, 0 concave deformation-critical), clean fist / grasp / opposition / toe flex-ext, 0 cage-owned creator flips.
-Work so far (cloud scratch `/tmp/claude-0/rt/sa/cage3/`):
-- `sa_localsub.py design_p3.pkl cage_p3.npz design_b1.pkl`: Option B coarse split (412 hand / foot coarse quads x4, 2:1 rings Fa6 8 -> Wr 16 and
-  S10 10 -> S11 20, tags `_wr2_x` / `_an2_x`); cold build `cage_b1` = 174,401 body V (189,962 Q incl. tail).
-- design_p3 = thumb ring-sense fix + palm 2:1 moved proximal (H0b 8 -> H1 16) + radius-matched orbit fans (`sa_design.py`).
-- Finding: density alone does not remove the web / palm / forefoot folds (b1 / b2 census ~1,500 inverted, ~490 bow-tie, ~500 concave, mostly the
-  web slots between nearly touching digits, palm / forefoot crease, plus long projection spikes up to 3.3 cm). Closest-point / ray projection collapses
-  rows into the slots. Next approach: per-web (and per crease patch) source parameterisation with a flood-filled region bounded by the patch's own
-  boundary chains (barrier) -> Tutte map to the square -> place the fine grid; same depth-band idea that fixed the axillary vault.
-- Tools added: `sa_localsub.py`, `sa_foldcensus.py` (inverted / bow-tie / concave split, deformation-critical set), NOPULL_LABELS + RAYPROJ in `sa_ccage.py`.
+Order `reviews/chatgpt-rac-rp5-saurin-option-b-fold-census-closure-order.md`. No gate submitted (directive de3a185: only PASS / author decision / blocker).
+Saved state: `reviews/rac-rp5-evidence/saurin/full_cage/optionb_wip/` (coarse designs p3 and Option-B b1, fold census jsons) and the gated revision
+cage `full_cage/revision/SA_RP5_full_cage_revision_t2.npz` (T-1 / T-2 / T-3 / T-5 / T-6 / T-7 PASS on c1 and c2).
+
+**Rebuild recipe (cloud scratch is ephemeral):** follow the setup section further below (stage RaceBodies/out, landmarks, tail module, libigl, bpy venv,
+creator chain), then:
+1. `python3 debug-style dump`: `sa_design.py` -> design pkl (see `/tmp/.../cage3/t3.py` pattern: import sa_design, pickle D.C, D.Q, D.name, D.qlab, hint, fixed, pins, loops, head, arcs).
+   `sa_design.py` now has: thumb ring-sense fix, palm 2:1 moved proximal (H0b 8 -> H1 16, straight H1 -> knuckle band), radius-matched orbit fans.
+2. Build: `RAYPROJ=1 NB2=1 CENTROID=1 DSTEP=1.0 WPULL=0.08 NB3_LABELS=shoulder RELAX=120 python3 sa_ccage.py design.pkl cage.npz` (~13 min).
+3. Option B: `sa_localsub.py design_p3.pkl cage_p3.npz design_b1.pkl` (hand / foot coarse quads x4, 2:1 at Fa6 -> Wr and S10 -> S11), rebuild with step 2
+   (174,401 body V; ~25 min).
+4. Post chain used for the revision cage: `sa_qopt.py` (IT 8-12, TZONE 1.3, MP 64, CHUNK 150) -> `sa_vault.py` vault_spec / nostril_spec (revision/) ->
+   `sa_qopt.py` -> `sa_gopt.py` x n (STEPS 250 LR .0015 A_T 3.1 AW 100 VW 200 RING 3) -> `sa_foldcensus.py` + `sa_eval2.py`.
+
+**Open problem (the only blocker to PASS):** fold census outside tips must be 0 inverted / 0 bow-tie / 0 concave in deformation zones. Current cages:
+revision t2 661 / ~240 / ~250; Option-B cold builds b1 / b2 ~1,500 / ~500 / ~500 (palm, webs, forefoot, ankle). Density alone did not help.
+Tried and NOT adopted: harmonic patch untangle, flattened-disk untangle, Coons re-grid, nearest-partition re-sampling, coarse insets of webs (much worse),
+forefoot 2:1 proximal (worse), web insets, NOPULL (shape-only) relaxation in dense regions (no change), geodesic-path + flood + Tutte block mapping
+`sa_handmap.py` (304 / 392 blocks mapped, census worse). Suspicion to verify FIRST next session: the census may over-count in the narrow web slots
+(inverted = quad normal vs the nearest source face at the quad centroid -- in a slot the centroid can be nearest to the OPPOSITE wall; bow-tie uses the
+diagonal-cross normal, unreliable for strongly bent quads). Re-derive the census per quad from its own host faces (barycentric hosts of its 4 corners)
+and render web close-ups from inside the slots before more remeshing. Renders: the long straight lines in the workbench wire renders are render
+artifacts (no cage edge > 4.6 cm).
+Remaining after the census closes: thumb residual, deformation 4-step rerun (all poses incl. wrist flex / ext, knees, mid-tail), PD-2 (0 cage-owned flips),
+head creator states rerun, detail c1 / c2 / creator, direct identity, semantic map (HOPS 20, wr2 / an2 2:1 tags), boards A-P (hand / foot web close-ups),
+immutables, then pilot .blend (`sa_pilot_export.py`) and the PASS gate.
 
 ## (previous) 2026-10-31 night — ORDER 236dddc — SUBMITTED: REQUIRES AUTHOR DECISION (hand / foot web topology on the approved architecture)
 
