@@ -164,7 +164,8 @@ def repair(qs, lp):
     c = V[vreg].mean(0); rad = np.linalg.norm(V[vreg] - c, axis=1).max() * 1.6 + 0.4
     fsel = np.nonzero(np.linalg.norm(G.V[G.F].mean(1) - c, axis=1) < rad)[0]
     Vs, Fs = G.V, G.F[fsel]; used = np.unique(Fs); loc = -np.ones(len(G.V), int); loc[used] = np.arange(len(used)); Ps = G.V[used]; Ts = loc[Fs]
-    if REFINE: Ps, Ts = igl.upsample(Ps, Ts, REFINE)
+    lev = int(max(1, min(REFINE, np.floor(np.log(float(os.environ.get('MAXT', 6e5)) / max(len(Ts), 1)) / np.log(4)))))
+    if REFINE: Ps, Ts = igl.upsample(Ps, Ts, lev)
     Es = igl.edges(Ts); el = np.linalg.norm(Ps[Es[:, 0]] - Ps[Es[:, 1]], axis=1); ns = len(Ps)
     GS = sp.coo_matrix((np.r_[el, el], (np.r_[Es[:, 0], Es[:, 1]], np.r_[Es[:, 1], Es[:, 0]])), shape=(ns, ns)).tocsr(); kd = cKDTree(Ps)
     bnd_s = np.zeros(ns, bool); bl_ = igl.boundary_facets(Ts); bl_ = bl_[0] if isinstance(bl_, tuple) else bl_; bnd_s[np.unique(np.asarray(bl_))] = True
@@ -265,7 +266,10 @@ bad, asp = census(np.arange(nq)); m_ = ~TIP & ~TAIL; bad &= m_
 print('start: bad (inv | bow | conc) non-tip', int(bad.sum()), flush=True)
 for rnd in range(int(os.environ.get('ROUNDS', 3))):
     rings = [int(x) for x in os.environ.get('RSEQ', '').split(',')][rnd] if os.environ.get('RSEQ') else RINGS + rnd
-    bq = np.nonzero(bad)[0]; mask = np.zeros(nq, bool); mask[bq] = True
+    selq = bad | (((asp > float(os.environ.get('ASPT', 4.0))) & m_) if 'asp' in os.environ.get('SEL', 'bad') else False)
+    if os.environ.get('FOCUS'):
+        fc_ = np.array([float(x) for x in os.environ['FOCUS'].split(',')]); selq = selq & (np.linalg.norm(V[Q].mean(1) - fc_[:3], axis=1) < fc_[3])
+    bq = np.nonzero(selq)[0]; mask = np.zeros(nq, bool); mask[bq] = True
     for _ in range(rings): mask |= (QQ @ mask.astype(float)) > 0
     mask &= ~TAIL
     sub = QQ[mask][:, mask]; ncomp, lab = connected_components(sub, directed=False); qidx = np.nonzero(mask)[0]
@@ -290,11 +294,13 @@ for rnd in range(int(os.environ.get('ROUNDS', 3))):
         b0, a0 = census(ring); old = (fiv[vs].copy(), bcv[vs].copy(), V[vs].copy())
         fiv[vs] = f2; bcv[vs] = b2; V[vs] = (b2[:, :, None] * G.V[G.F[f2]]).sum(1)
         b1, a1 = census(ring)
-        if b1.sum() < b0.sum() and (a1 > 4).sum() <= (a0 > 4).sum() + max(2, b0.sum() - b1.sum()):
+        if 'asp' in os.environ.get('SEL', 'bad'): good_ = (b1.sum() < b0.sum()) or (b1.sum() == b0.sum() and (a1 > 4).sum() < (a0 > 4).sum())
+        else: good_ = b1.sum() < b0.sum() and (a1 > 4).sum() <= (a0 > 4).sum() + max(2, b0.sum() - b1.sum())
+        if good_:
             kept += 1; WHY['kept'] += 1
         else:
             if os.environ.get('VERB'): print('  comp', ci, 'quads', len(qs), collections.Counter(ql[qs]).most_common(2), 'bad', int(b0.sum()), '->', int(b1.sum()), 'asp', int((a0 > 4).sum()), int((a1 > 4).sum()), np.round(V[Q[qs]].mean((0, 1)), 1))
-            fiv[vs], bcv[vs], V[vs] = old; WHY['no improvement %d->%d' % (b0.sum(), b1.sum()) if b1.sum() >= b0.sum() else 'aspect worse'] += 1
+            fiv[vs], bcv[vs], V[vs] = old; WHY['rejected bad %d->%d asp %d->%d' % (b0.sum(), b1.sum(), (a0 > 4).sum(), (a1 > 4).sum())] += 1
     bad, asp = census(np.arange(nq)); bad &= m_
     print('round', rnd, 'rings', rings, 'components', ncomp, 'kept', kept, 'bad now', int(bad.sum()), 'aspect>4 non-tip', int(((asp > 4) & m_).sum()), dict(WHY.most_common(12)), flush=True)
     z['V'] = V; z['tri'] = fiv; z['bc'] = bcv; np.savez_compressed(OUT, **z)
