@@ -257,6 +257,12 @@ def field_base(phi, region, tips, t, lv_top):
             lv = 0.85 * lv; L = [l for l in GEO.iso_loops(phi, lv, region & np.isfinite(phi)) if l['closed']]
             lp = min(L, key=lambda l: np.linalg.norm(l['P'].mean(0) - V[t]) + 0.3 * GEO.loop_len(l['P'])); return lv, lp
     raise RuntimeError('no separate base level')
+BASEF = float(os.environ.get('BASEF', 0.82))
+def shift_base(rows):
+    """RP5 Option B web closure: the digit base ring moves DISTALLY to the digit_loops row at BASEF x the field-base distance, so each web block owns the
+    lower digit walls instead of a pinched strip at the crotch (the web slots between nearly touching digits are deep and narrow)"""
+    if BASEF >= 0.999 or len(rows) < 3: return rows
+    t = BASEF * rows[-1][0]; j = int(np.argmin([abs(r[0] - t) for r in rows[:-1]])); return rows[:j + 1]
 def base_corners(rows, tipv, d_dir, r_dir):
     P = rows[-1][2]['P']; c, n = loop_frame(P)
     if (V[tipv] - c) @ n < 0: n = -n
@@ -264,6 +270,14 @@ def base_corners(rows, tipv, d_dir, r_dir):
 def two_to_one(fine, coarse, lab, tag):
     """authored all-quad 2:1 transition (fine ring 2N -> coarse ring N): per 4 fine edges / 2 coarse edges one interior corner x (valence 4)"""
     nf, nc = len(fine), len(coarse); assert nf == 2 * nc and nc % 2 == 0
+    # RP5 Option B: align the fine ring to the coarse ring before grouping (phase AND sense chosen by the least summed distance fine[2k] <-> coarse[k]);
+    # a mis-phased ring twisted the forefoot 2:1 blocks at the big-toe base (whole blocks inside-out, the same failure class as the thumb)
+    FP = np.array([D.C[D.idx[x]] for x in fine]); CP = np.array([D.C[D.idx[x]] for x in coarse]); best = None
+    for dirn in (1, -1):
+        for sh in range(nf):
+            idx = [(dirn * 2 * k + sh) % nf for k in range(nc)]; cost = np.linalg.norm(FP[idx] - CP, axis=1).sum()
+            if best is None or cost < best[0]: best = (cost, dirn, sh)
+    _, dirn, sh = best; fine = [fine[(dirn * i + sh) % nf] for i in range(nf)]
     for p in range(nc // 2):
         f = [fine[(4 * p + j) % nf] for j in range(5)]; cc = [coarse[(2 * p + j) % nc] for j in range(3)]
         import sa_layout as _LY
@@ -288,7 +302,7 @@ def hand(sg):
         dt, mask, rows = digit_loops(t, region); lvb, lpb = field_base(phh, region, list(fingers) + [thumb], t, 0.9)
         db = float(np.mean(dt[GEO.snap(lpb['P'])]))
         if db <= rows[-1][0] + 1.0: rows = [r for r in rows if r[0] < 0.92 * db] + [(db, GEO.loop_len(lpb['P']), lpb)]
-        drows.append(rows)                                                         # field base far beyond the geodesic web (digits in contact): geodesic base kept
+        drows.append(shift_base(rows))                                             # field base far beyond the geodesic web (digits in contact): geodesic base kept; base moved distally (BASEF)
     bases = [base_corners(rows, t, dor, rad) for rows, t in zip(drows, fingers)]
     K = []
     for i, (pts, c, n) in enumerate(bases):
@@ -397,7 +411,7 @@ def foot(sg):
     up = np.array([0, 0, 1.0]); med = -lat; trows = []; Kn = []
     for i, t in enumerate(tips):
         dt, _, rows = digit_loops(t, region, dmax=11.0); lvb, lpb = field_base(phi, region, tips, t, levels[-1] - 0.02)
-        db = float(np.mean(dt[GEO.snap(lpb['P'])])); rows = [r for r in rows if r[0] < 0.92 * db] + [(db, GEO.loop_len(lpb['P']), lpb)]; trows.append(rows)
+        db = float(np.mean(dt[GEO.snap(lpb['P'])])); rows = [r for r in rows if r[0] < 0.92 * db] + [(db, GEO.loop_len(lpb['P']), lpb)]; rows = shift_base(rows); trows.append(rows)
         pts, c, n = base_corners(rows, t, up, med)
         for k, nm in enumerate(('DM', 'DL', 'PL', 'PM')): D.v('%s_t%d_%s' % (s, i + 1, nm), pts[k])
         D.ring_arcs(['%s_t%d_%s' % (s, i + 1, nm) for nm in ('DM', 'DL', 'PL', 'PM')], rows[-1][2]['P'])
