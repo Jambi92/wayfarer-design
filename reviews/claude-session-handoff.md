@@ -25,9 +25,15 @@ creator chain), then:
   flood region bounded by the vertex paths, Tutte map to the square, fine 17 x 17 grid lifted through it, seam relaxation). Inside mapped blocks inversions
   went 78 -> 0. 365 / 412 blocks map; failures (paths cross 16, region chi != 1 ~20, flood leaks 7, no geodesic 4) are mostly WEB blocks and the toe-1
   base: the two digit-side geodesics of a web block both run into the crotch and touch, pinching the region. Foot map: `optionb_wip/foot_fold_map_hm3.png`.
-- Next: give web blocks sides that cannot meet at the crotch (e.g. route each digit-side path on its own digit wall: Dijkstra restricted to source
-  vertices whose normal faces away from the neighbouring digit, or split the web block into its 4 Option-B sub-blocks with the crotch line as an explicit
-  shared side found as the slot's deepest geodesic), then rerun; then `sa_qopt` / `sa_gopt` (convexity) on residual seams; then the vault / nostril patches.
+- 2026-10-31 late: GPT order 50ef121 (validate census, continue Option B until PASS). Census rebuilt host-aware (tangent plane of the quad's own host
+  faces; true segment-crossing bow-tie test; signed-area inversion; reflex-turn concavity, tol -0.02) -> folds confirmed REAL.
+- `sa_handmap.py` now: pre-routed web digit sides (Voronoi wall restriction WEBM), nearest-triangle fallback (UVTOL), mirrored-map rejection,
+  largest interior face component, per-quad `handmap_block_ok` saved. 365 / 412 blocks map fold-free; census hm8: 1,422 inverted / 453 bow-tie / 437
+  concave, almost all in the 47 failing blocks (all finger / toe webs, palm and forefoot blocks next to webs / 2:1 x-corners, toe-1 base).
+- DIAGNOSIS of the web failures: the source surface between the two digit-side paths of a web block is tiny and pinched (e.g. toe web t1-t2: 80 source
+  vertices, side paths 5-9 vertices) because the authored digit BASE rings sit right at the crotch (field base level). A 16 x 16 fine web grid cannot be laid
+  fold-free on it. Next step: move the digit base rings distally (finger / toe base corners from the digit_loops row at ~0.85 x base distance instead of the
+  field base) in `sa_design.py` so each web block owns the lower digit walls, rebuild p -> b (sa_localsub) -> handmap, then sa_gopt on seams.
 
 Remaining after the census closes: thumb residual, deformation 4-step rerun (all poses incl. wrist flex / ext, knees, mid-tail), PD-2 (0 cage-owned flips),
 head creator states rerun, detail c1 / c2 / creator, direct identity, semantic map (HOPS 20, wr2 / an2 2:1 tags), boards A-P (hand / foot web close-ups),

@@ -7,15 +7,23 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import sa_geo as
 CG, DS, OUT = sys.argv[1:4]; z = np.load(CG); Q = z['Q']; V = (z['bc'][:, :, None] * G.V[G.F[z['tri']]]).sum(1); ql = z['qlab'].astype(str); qc = z['qcoarse']
 d = pickle.load(open(DS, 'rb')); nm = d['name']; DQ = np.array(d['Q'])
 FN = igl.per_face_normals(G.V, G.F, np.array([0, 0, 1.0])); P4 = V[Q]
-# reference normal = the working-source normal at the quad's OWN corners (their barycentric host faces), never the nearest face to an off-surface centroid
-# (in a narrow web slot the centroid can be nearest to the opposite wall)
-nref = FN[z['tri'][Q]].sum(1); nref /= np.linalg.norm(nref, axis=1, keepdims=True) + 1e-12
-tri_n = [np.cross(P4[:, b] - P4[:, a], P4[:, c] - P4[:, a]) for a, b, c in ((0, 1, 2), (0, 2, 3), (0, 1, 3), (1, 2, 3))]
-inv = np.stack([(t * nref).sum(1) < 0 for t in tri_n], 1).sum(1) >= 3                # inverted: at least 3 of the 4 corner triangles face against the surface
-u1 = np.roll(P4, 1, 1) - P4; u2 = np.roll(P4, -1, 1) - P4
-sgall = (np.cross(u2, u1) * nref[:, None]).sum(2) / (np.linalg.norm(u1, axis=2) * np.linalg.norm(u2, axis=2) + 1e-12); nneg = (sgall < 0.05).sum(1)
-nneg = np.where(inv, 0, nneg)                                                         # (an inverted quad is counted once, as inverted)
-bow = nneg >= 2; conc = nneg == 1                                                   # bow-tie (self-crossing: >= 2 reflex / degenerate corners) vs dart (1)
+# HOST-AWARE census (order 50ef121 §1-§2). Reference frame of a quad = its OWN source correspondence: the area-weighted normals of the barycentric host
+# faces of its 4 corners (never the nearest face to an off-surface centroid -> no classification against the opposite wall of a web slot). Corners are
+# projected into that tangent plane (e1, e2 from the first edge). There:
+#   BOW-TIE  = opposite edges cross (true segment-intersection test, tol 1e-9 relative);
+#   INVERTED = simple polygon whose signed area is negative w.r.t. the host normal (orientation reversed against its own source patch);
+#   CONCAVE  = simple, positively oriented polygon with a reflex corner (signed turn < -0.02, i.e. a corner beyond ~181 deg).
+FA = igl.doublearea(G.V, G.F); nref = (FN[z['tri'][Q]] * FA[z['tri'][Q]][..., None]).sum(1); nref /= np.linalg.norm(nref, axis=1, keepdims=True) + 1e-12
+c0 = P4.mean(1); e1 = P4[:, 1] - P4[:, 0]; e1 -= (e1 * nref).sum(1)[:, None] * nref; e1 /= np.linalg.norm(e1, axis=1, keepdims=True) + 1e-12; e2 = np.cross(nref, e1)
+xy = np.stack([((P4 - c0[:, None]) * e1[:, None]).sum(2), ((P4 - c0[:, None]) * e2[:, None]).sum(2)], 2)
+def cr(a_, b_): return a_[..., 0] * b_[..., 1] - a_[..., 1] * b_[..., 0]
+def segx(p1, p2, p3, p4):
+    d1 = cr(p4 - p3, p1 - p3); d2 = cr(p4 - p3, p2 - p3); d3 = cr(p2 - p1, p3 - p1); d4 = cr(p2 - p1, p4 - p1); return (d1 * d2 < 0) & (d3 * d4 < 0)
+bowx = segx(xy[:, 0], xy[:, 1], xy[:, 2], xy[:, 3]) | segx(xy[:, 1], xy[:, 2], xy[:, 3], xy[:, 0])
+area = 0.5 * sum(cr(xy[:, k], xy[:, (k + 1) % 4]) for k in range(4)); scale = (np.linalg.norm(np.diff(np.r_['1', xy, xy[:, :1]], axis=1), axis=2) ** 2).mean(1)
+inv = ~bowx & (area < -1e-6 * scale)
+turn = np.stack([cr(xy[:, k] - xy[:, (k - 1) % 4], xy[:, (k + 1) % 4] - xy[:, k]) / (np.linalg.norm(xy[:, k] - xy[:, (k - 1) % 4], axis=1) * np.linalg.norm(xy[:, (k + 1) % 4] - xy[:, k], axis=1) + 1e-12) for k in range(4)], 1)
+bow = bowx; conc = ~bowx & ~inv & (turn.min(1) < -0.02)
 T = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; NV_ = np.nan_to_num(igl.per_vertex_normals(V, T)); vdis = (FN[z['tri']] * NV_).sum(1) < 0.2
 TIP = np.isin(ql, ['finger_cap', 'thumb_cap', 'toe_cap']); TAIL = ql == 'tail'
 def struct(q):

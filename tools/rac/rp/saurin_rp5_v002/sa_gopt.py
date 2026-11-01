@@ -14,9 +14,12 @@ pin = np.zeros(nv, bool); pin[nb:] = True; pin[z['tail_ring']] = True; pin[z['pi
 zone = np.isin(G.LAB, ['head', 'hand_xneg', 'hand_xpos', 'foot_xneg', 'foot_xpos', 'tail']); thr = np.where(zone, 0.13, 0.27)
 src = igl.AABB(); src.init(G.V, G.F); FNs = igl.per_face_normals(G.V, G.F, np.array([0, 0, 1.0])); T = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]]; tq = np.r_[np.arange(nq), np.arange(nq)]
 VQ = sp.coo_matrix((np.ones(4 * nq), (Q.ravel(), np.repeat(np.arange(nq), 4))), shape=(nv, nq)).tocsr(); QQ = (VQ.T @ VQ).tocsr()
-def concave(P):
-    P4 = P[Q]; n = np.cross(P4[:, 2] - P4[:, 0], P4[:, 3] - P4[:, 1]); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12; u1 = np.roll(P4, 1, 1) - P4; u2 = np.roll(P4, -1, 1) - P4
-    return ((np.cross(u2, u1) * n[:, None]).sum(2) / (np.linalg.norm(u1, axis=2) * np.linalg.norm(u2, axis=2) + 1e-12)).min(1) < 0.05
+FNh = igl.per_face_normals(G.V, G.F, np.array([0, 0, 1.0]))
+def concave(P, tri=None):
+    """host-aware fold flag (same test as sa_foldcensus): signed turns of the quad in the tangent plane of its corners' source host faces < 0.02"""
+    tri = z['tri'] if tri is None else tri; P4 = P[Q]; n = FNh[tri[Q]].sum(1); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12
+    u1 = P4 - np.roll(P4, 1, 1); u2 = np.roll(P4, -1, 1) - P4
+    return ((np.cross(u1, u2) * n[:, None]).sum(2) / (np.linalg.norm(u1, axis=2) * np.linalg.norm(u2, axis=2) + 1e-12)).min(1) < 0.02
 def metrics(P):
     P4 = P[Q]; sd = np.linalg.norm(np.roll(P4, -1, 1) - P4, axis=2); asp = sd.max(1) / np.maximum(sd.min(1), 1e-9)
     u1 = np.roll(P4, 1, 1) - P4; u2 = np.roll(P4, -1, 1) - P4; ang = np.degrees(np.arccos(np.clip((u1 * u2).sum(2) / (np.linalg.norm(u1, axis=2) * np.linalg.norm(u2, axis=2) + 1e-12), -1, 1)))

@@ -58,7 +58,34 @@ def chain_fine(qs, ca, cb):
     return adj, fq
 def arcparam(P):
     L = np.r_[0, np.cumsum(np.linalg.norm(np.diff(P, axis=0), axis=1))]; return L / max(L[-1], 1e-12)
-acc = 0; WHY = collections.Counter(); moved = np.zeros(nv, bool)
+def web_prepass(qp, cf, cnames):
+    if True:
+        # WEB blocks: a digit-side geodesic hugs the concave crotch crease (both sides would meet there and pinch the web). Each digit side is re-routed
+        # on ITS OWN digit wall: source vertices closer to the other digit's axis, or within WEBM cm of the bisector, are excluded.
+        import re as _re
+        dg = [(_re.match(r'(x(?:pos|neg)_(?:f\d|t\d))_', n_) or [None, None])[1] for n_ in cnames]
+        def axis(pref):
+            bs = np.mean([V[ixB[n_]] for n_ in nmB if n_.startswith(pref + '_') and _re.match(pref + r'_(D|P)[A-Z]$', n_)], 0)
+            tp = np.mean([V[ixB[n_]] for n_ in nmB if n_.startswith(pref + '_r2_')], 0); return bs, tp
+        def sdist(P_, a_, b_):
+            t_ = np.clip(((P_ - a_) @ (b_ - a_)) / ((b_ - a_) @ (b_ - a_)), 0, 1); return np.linalg.norm(P_ - (a_ + t_[:, None] * (b_ - a_)), axis=1)
+        digs = sorted({x for x in dg if x})
+        if len(digs) == 2:
+            AX = {pf: axis(pf) for pf in digs}
+            for k in range(4):
+                if dg[k] and dg[k] == dg[(k + 1) % 4]:
+                    own = dg[k]; oth = [x for x in digs if x != own][0]
+                    cc_ = 0.5 * (V[cf[k]] + V[cf[(k + 1) % 4]]); cand_ = np.array(kdS.query_ball_point(cc_, 0.75 * np.linalg.norm(V[cf[k]] - V[cf[(k + 1) % 4]]) + 1.0), int)
+                    d_own = sdist(G.V[cand_], *AX[own]); d_oth = sdist(G.V[cand_], *AX[oth])
+                    avoid = set(cand_[d_own > d_oth - float(os.environ.get('WEBM', 0.25))].tolist()) - {snapv(V[cf[k]]), snapv(V[cf[(k + 1) % 4]])}
+                    pk = geopath_avoid(cf[k], cf[(k + 1) % 4], avoid)
+                    if pk is not None:
+                        paths[(min(cf[k], cf[(k + 1) % 4]), max(cf[k], cf[(k + 1) % 4]))] = pk if cf[k] < cf[(k + 1) % 4] else pk[::-1]
+for qp_ in blocks:
+    if qlP[qp_] in ('finger_web', 'toe_web'):
+        cn_ = [nmP[i] for i in QP[qp_]]; web_prepass(qp_, [ixB[n_] for n_ in cn_], cn_)
+print('web digit-side paths pre-routed', flush=True)
+acc = 0; WHY = collections.Counter(); moved = np.zeros(nv, bool); FAILL = collections.Counter(); okblk = set()
 for qp in blocks:
     cnames = [nmP[i] for i in QP[qp]]; cf = [ixB[n] for n in cnames]                     # corner fine indices (coarse index = fine index)
     subs = sorted({src[i] for i in range(nqf) if False})                                   # (filled below)
@@ -79,6 +106,9 @@ for qp in blocks:
     sides = [loop[16 * k:16 * k + 17] if k < 3 else loop[48:] + [loop[0]] for k in range(4)]
     gp = [geopath(cf[k], cf[(k + 1) % 4]) for k in range(4)]
     if any(p is None for p in gp): WHY['no geodesic'] += 1; continue
+    def why(r):
+        WHY[r] += 1
+        if os.environ.get('LISTFAIL') and qlP[qp] in ('finger_web', 'toe_web'): print('WEBFAIL', qp, r)
     bar = np.concatenate(gp); bset = set(bar.tolist())
     if len(bset) != len(bar) - 4:
         # re-route the block's not-yet-shared sides so they avoid the vertices of its other sides (cached shared sides are kept)
@@ -88,7 +118,7 @@ for qp in blocks:
             pk = geopath_avoid(cf[k], cf[(k + 1) % 4], others)
             if pk is not None: gp[k] = pk
         bar = np.concatenate(gp); bset = set(bar.tolist())
-        if len(bset) != len(bar) - 4: WHY['paths cross'] += 1; continue
+        if len(bset) != len(bar) - 4: why('paths cross'); continue
         for k in range(4): paths[(min(cf[k], cf[(k + 1) % 4]), max(cf[k], cf[(k + 1) % 4]))] = gp[k] if cf[k] < cf[(k + 1) % 4] else gp[k][::-1]
     # seed: source vertex nearest the block centre fine vertex (face point), not on the barrier; flood bounded by the paths
     # seed: middle of the geodesic between the midpoints of two opposite sides, avoiding the barrier (robust when the old grid is crumpled)
@@ -104,7 +134,7 @@ for qp in blocks:
             if inner_: seed = int(inner_[len(inner_) // 2])
     if seed is None:
         cen_f = ixB['subf_%d' % qp]; seed = snapv(V[cen_f])
-    if seed in bset: WHY['seed on barrier'] += 1; continue
+    if seed in bset: why('seed on barrier'); continue
     lim = 4.0 * max(np.linalg.norm(V[cf[0]] - V[cf[2]]), np.linalg.norm(V[cf[1]] - V[cf[3]])) + 1.0
     cand = np.array(kdS.query_ball_point(G.V[seed], lim), int); inball = np.zeros(len(G.V), bool); inball[cand] = True
     region = {seed}; front = [seed]; leak = False
@@ -118,20 +148,32 @@ for qp in blocks:
             if leak: break
         if leak: break
         front = nxt
-    if leak: WHY['flood leaks (paths do not enclose)'] += 1; continue
-    rv = np.array(sorted(region | bset)); loc = -np.ones(len(G.V), int); loc[rv] = np.arange(len(rv))
-    Fm = np.nonzero((loc[G.F] >= 0).all(1))[0]; Fl = loc[G.F[Fm]]
+    if leak: why('flood leaks (paths do not enclose)'); continue
+    rv = np.array(sorted(region | bset)); loc = -np.ones(len(G.V), int); loc[rv] = np.arange(len(rv)); inreg = np.zeros(len(G.V), bool); inreg[list(region)] = True
+    Fm = np.nonzero((loc[G.F] >= 0).all(1))[0]
+    # keep the edge-connected face component that contains the flooded interior (drops barrier-only faces outside the paths)
+    TTm = igl.triangle_triangle_adjacency(G.F[Fm])[0]; comp = -np.ones(len(Fm), int); cid = 0
+    for f0 in range(len(Fm)):
+        if comp[f0] >= 0: continue
+        st = [f0]; comp[f0] = cid
+        while st:
+            f1 = st.pop()
+            for f2 in TTm[f1]:
+                if f2 >= 0 and comp[f2] < 0: comp[f2] = cid; st.append(f2)
+        cid += 1
+    score = np.bincount(comp, weights=inreg[G.F[Fm]].any(1).astype(float)); Fm = Fm[comp == np.argmax(score)]
+    used = np.unique(G.F[Fm]); rv = used; loc = -np.ones(len(G.V), int); loc[rv] = np.arange(len(rv)); Fl = loc[G.F[Fm]]
     chi = len(rv) - len(np.unique(np.sort(np.r_[Fl[:, [0, 1]], Fl[:, [1, 2]], Fl[:, [2, 0]]], 1), axis=0)) + len(Fl)
-    if chi != 1: WHY['region chi %d' % chi] += 1; continue
+    if chi != 1: why('region chi %d' % chi); continue
     uvb = {}
     for k, p in enumerate(gp):
         t = arcparam(G.V[p])
         for v_, s_ in zip(p, t): uvb[int(v_)] = [(s_, 0), (1, s_), (1 - s_, 1), (0, 1 - s_)][k]
-    isb = np.array([v_ in uvb for v_ in rv]); ii = np.nonzero(~isb)[0]; bi_ = np.nonzero(isb)[0]
+    isb = np.array([int(v_) in uvb for v_ in rv]); ii = np.nonzero(~isb)[0]; bi_ = np.nonzero(isb)[0]
     A = igl.adjacency_matrix(Fl).astype(float); deg = np.asarray(A.sum(1)).ravel(); Lm = (sp.diags(deg) - A).tocsr()
     UV = np.zeros((len(rv), 2)); UV[bi_] = np.array([uvb[int(rv[i])] for i in bi_])
     try: UV[ii] = np.stack([spl.spsolve(Lm[ii][:, ii].tocsc(), -(Lm[ii][:, bi_] @ UV[bi_, k])) for k in range(2)], 1)
-    except Exception: WHY['solve'] += 1; continue
+    except Exception: why('solve'); continue
     # fine grid parameters: regular 17 x 17 via a Tutte solve on the fine block (border sides at j/16)
     vsB = np.unique(Qf[fq]); uvg = {}
     for k, s_ in enumerate(sides):
@@ -157,11 +199,27 @@ for qp in blocks:
             if abs(np.linalg.det(Mt)) < 1e-16: continue
             l = np.linalg.solve(Mt, x - a_); wv = np.r_[1 - l.sum(), l]
             if wv.min() > -1e-6: newf[v_] = Fm[f]; newb[v_] = np.clip(wv, 0, 1) / np.clip(wv, 0, 1).sum(); found = True; break
-        if not found: ok = False; break
-    if not ok: WHY['grid point outside map'] += 1; continue
-    for v_ in newf: fiv[v_] = newf[v_]; bcv[v_] = newb[v_]; moved[v_] = True
+        if not found:                                                        # map does not reach this parameter (ragged region border): nearest map triangle, if close
+            best_ = None
+            for f in kd2.query(x, k=min(20, len(Fl)))[1]:
+                a_, b_, c_ = UV[Fl[f]]; Mt = np.array([b_ - a_, c_ - a_]).T
+                if abs(np.linalg.det(Mt)) < 1e-16: continue
+                l = np.linalg.solve(Mt, x - a_); wv = np.clip(np.r_[1 - l.sum(), l], 0, 1); wv /= wv.sum(); dd_ = np.linalg.norm(wv @ UV[Fl[f]] - x)
+                if best_ is None or dd_ < best_[0]: best_ = (dd_, f, wv)
+            if best_ is not None and best_[0] < float(os.environ.get('UVTOL', 0.06)): newf[v_] = Fm[best_[1]]; newb[v_] = best_[2]; found = True
+        if not found:
+            if os.environ.get('DBGB') and int(os.environ['DBGB']) == qp: print('DBG block', qp, 'region verts', len(rv), 'faces', len(Fl), 'path lens', [len(p_) for p_ in gp], 'uv bbox', UV.min(0).round(2), UV.max(0).round(2), 'missing x', np.round(x, 2), 'best', None if best_ is None else round(best_[0], 3), 'chi', chi, 'boundary loop len', len(igl.boundary_loop(Fl)), 'on paths', int(isb.sum()))
+            ok = False; break
+    if not ok: why('grid point outside map'); continue
+    # orientation check against the block's own source (flood on the wrong side / mirrored map -> reject)
+    f0_ = fiv.copy(); b0_ = bcv.copy()
+    for v_ in newf: fiv[v_] = newf[v_]; bcv[v_] = newb[v_]
+    Pb = (bcv[:, :, None] * G.V[G.F[fiv]]).sum(1); qq = Qf[fq]; P4b = Pb[qq]; nr = (FN[fiv[qq]]).sum(1)
+    ar = np.einsum('ij,ij->i', np.cross(P4b[:, 2] - P4b[:, 0], P4b[:, 3] - P4b[:, 1]), nr)
+    if (ar < 0).mean() > 0.02: fiv[:] = f0_; bcv[:] = b0_; why('mirrored / wrong-side map'); continue
+    for v_ in newf: moved[v_] = True
     for k in range(4): used_edges.add((min(cf[k], cf[(k + 1) % 4]), max(cf[k], cf[(k + 1) % 4])))
-    acc += 1
+    acc += 1; okblk.add(qp)
 V = (bcv[:, :, None] * G.V[G.F[fiv]]).sum(1)
 # seam relaxation: unmapped vertices (2:1 transitions, unmapped blocks) within SEAM rings of the mapped region -> tangential umbrella + sheet-consistent
 # re-projection, mapped vertices fixed
@@ -177,5 +235,12 @@ for it in range(40):
     V[fr] = cp_
 fi2, bc2, _ = G.embed(V[fr]); fiv[fr] = fi2; bcv[fr] = bc2
 print('seam vertices relaxed', len(fr))
-print('blocks', len(blocks), 'parameterised', acc, dict(WHY), 'vertices placed', int(moved.sum()))
-z['V'] = V; z['tri'] = fiv; z['bc'] = bcv; np.savez_compressed(OUT, **z)
+FAILL.update(qlP[q] for q in blocks if q not in okblk)
+for q in blocks:
+    if q not in okblk and os.environ.get('LISTFAIL'): print('FAIL', q, qlP[q], [nmP[i] for i in QP[q]], np.round(V[[ixB[nmP[i]] for i in QP[q]]].mean(0), 1).tolist())
+print('failed blocks by label', dict(FAILL)); print('blocks', len(blocks), 'parameterised', acc, dict(WHY), 'vertices placed', int(moved.sum()))
+qblk = -np.ones(len(Q), int)
+for qp in blocks:
+    sq = [i for i, q in enumerate(Qb) if ixB.get('subf_%d' % qp, -1) in q]
+    qblk[np.nonzero(np.isin(src, sq))[0]] = (1 if qp in okblk else 0)
+z['V'] = V; z['tri'] = fiv; z['bc'] = bcv; z['handmap_block_ok'] = qblk; np.savez_compressed(OUT, **z)
