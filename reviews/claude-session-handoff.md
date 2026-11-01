@@ -2,6 +2,14 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-01 ~09:00) — ORDER 5a7d8cc — SAURIN RP5 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record)
+
+Record `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/SAURIN_RP5_FREEZE.json`; report `reviews/claude-rac-rp5-saurin-final-freeze-report.md`.
+Final references = the reviewed b03bc83 binaries (SA_{M,F}_REF_RP5_freeze_candidate_v001.blend), byte-identical; production copy E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Saurin/RP5/
+(19 files, verified). STATUS / SAURIN_V1 §269 / reference manifest / rig carry-forward register updated. RP5 closed. Recommended next (NOT started, needs an order):
+Saurin RP6 production rig / skin-weighting pilot on the frozen topology. Do not reopen RP5 geometry.
+
+### (superseded) ORDER cd87d9c final consolidation — PASS submitted
 ## LATEST (2026-11-01 ~09:00) — ORDER cd87d9c (final consolidation / freeze readiness) — PASS SUBMITTED, awaiting final freeze review
 
 Report `reviews/claude-rac-rp5-saurin-final-consolidation-report.md`; package `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/` (freeze candidates v001,

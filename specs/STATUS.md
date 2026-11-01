@@ -1,6 +1,22 @@
 # Character Design Status
 
-## RAC RP5 SAURIN UNIQUE-TOPOLOGY PILOT — REQUIRES AUTHOR DECISION (2026-10-30, NOT frozen)
+## SAURIN RP5 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (2026-11-01, by record)
+
+- **Freeze:** final production references `SA_M_REF_RP5_freeze_candidate_v001.blend` (c1 SA-M188) and `SA_F_REF_RP5_freeze_candidate_v001.blend` (c2 SA-F188), cage `SA_RP5_full_cage_freeze_candidate_v001.npz`, barycentric map, semantic map / face-semantic array, accepted T-4 register, landmarks, sidecar. Record `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/SAURIN_RP5_FREEZE.json` (promoted from the b03bc83 candidate record; authoritative over the embedded "FREEZE CANDIDATE / NOT FROZEN" text — reviewed binaries kept byte-identical under their reviewed names). Report `reviews/claude-rac-rp5-saurin-final-freeze-report.md`.
+- 190,948 V / 190,946 Q, 100 % quads, one closed oriented manifold; c1 / c2 share the frozen topology `255645a1…`. **Option B local hand / foot density architecture is frozen**; the accepted tail module (`559565cc…`) is frozen as part of the RP5 composition. RP5 geometry is closed; no geometry changed during freeze closure.
+- T-1…T-7 PASS c1 / c2 (T-1 2.44 / 2.40 mm; T-2 ≤ 1.32 mm); host-aware fold census 0 / 0 / 0 / 0, aspect > 4 = 0, no collapsed edges; deformation 34 poses 0 TOPOLOGY; PD-2 19 states 0 cage-owned flips. Accepted production residuals: T-4 angle register 65 (c1) / 166 (c2) (raw evaluator 325 / 442 preserved as history only); T-6 1.0317 / 1.0187 mm (tool-rule PASS, < 1.5 mm ceiling). Final Blender read-back PASS; canonical W2I6 unchanged (229 / 229); prior frozen races unchanged.
+- Production copy: `E:/UnrealProjects/Wayfarer 5.8/RaceBodies/production/Saurin/RP5/` (19 files, byte identity verified).
+- Not included in RP5 / not started: rigging, skin weighting, UV / materials, LOD, creator implementation, UE5 integration, other races.
+
+### (superseded) SAURIN RP5 FINAL CONSOLIDATION PASS — READY FOR FINAL FREEZE REVIEW (2026-11-01)
+
+- Report `reviews/claude-rac-rp5-saurin-final-consolidation-report.md`; freeze candidates v001 in `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/` (commit b03bc83). Superseded by the freeze above.
+
+### (superseded) SAURIN RP5 FULL AUTHORED CAGE PASS — READY FOR CHATGPT / AUTHOR REVIEW (2026-11-01)
+
+- Gate `reviews/claude-rac-rp5-saurin-full-authored-cage-gate.md` (2ee75ae), Option B. Superseded by the freeze above.
+
+### (superseded) RAC RP5 SAURIN UNIQUE-TOPOLOGY PILOT — REQUIRES AUTHOR DECISION (2026-10-30, NOT frozen)
 
 - **Gate:** `reviews/claude-rac-rp5-saurin-unique-topology-pilot-gate.md` (order 53976fb). Evidence `reviews/rac-rp5-evidence/saurin/`.
 - Canonical W2I6 sources verified; SA-F188 shares the SA-M188 base face list (dense c1/c2 correspondence). Authored tail + tail-root module (15,691 V / 15,626 Q, 100 % quads) passes T-1/T-2 on c1 and c2 with identical topology; QuadriFlow scaffold proves an automatic remesher unsuitable.

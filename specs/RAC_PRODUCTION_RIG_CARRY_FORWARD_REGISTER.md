@@ -57,6 +57,15 @@ Carried unchanged into the whole-character freeze (`reviews/chatgpt-rac-rp3-halv
 |---|---|---|---|---|
 | HALVREN-CF-EAR-TRI-LOD-1 | HE1 HVEAR4 / HE2 HVEAR3 / HE3 HVEAR4, c1 (`HVC1-HB2HF2-HPB`) and c2 (`HVF178-HB2HF2-HPB`) | Production surface = baked TRI-HV1 triangles (per-quad diagonals incl. the step-5 crossing-resolution flips). Import normals / MikkTSpace tangents instead of letting the importer re-triangulate (a quad export would re-choose 10–242 flagged diagonals, up to 0.18 cm surface change). LODs with LOD-HV1 (root band protected, lobe zone weighted). One engine-side UE5 smoke test at first integration: exact imported triangle count / topology, no importer re-triangulation, normals / tangents intact, root seam intact, source / LOD silhouettes matching the approved evidence. | **ENGINE-INTEGRATION CARRY-FORWARD**, UE5 / rig integration stage. Not a geometry blocker; does not keep the family unfrozen (author ruling 2026-10-30). | `reviews/rac-rp3-evidence/halvren_rp3_final/HALVREN_EAR_FAMILY_RP3_FREEZE.json`; `reviews/claude-rac-rp3-halvren-ear-production-gate-report.md`; `reviews/rac-rp3-evidence/halvren_rp3_ear_production_gate/` |
 
+## Saurin RP5 (FROZEN by record 2026-11-01, `SAURIN_RP5_FREEZE.json`)
+
+No Saurin topology carry-forward ID: the 4-step deformation audit has 0 TOPOLOGY-classified poses and 0 topology-only flips (34 poses), and PD-2 has 0 cage-owned flips (19 states). Recorded for the rig / weighting stage (diagnostic scaffold, not exceptions):
+- **WEIGHTING / SCAFFOLD class flips under the temporary LBS scaffold:** fist (2,241 / 1,607 improved-weight flips xpos / xneg), grasp (897 / 412), thumb opposition, shoulder abduction 90°, tail-root vertical bend 25° — owned by the production rig / correctives, not by the frozen cage.
+- **Source-owned PD-2 flips:** high fat / high muscle / muscle + fat creator states fold the dense source (cage flips over source folds 98 / 25 / 169); owner = composition solver (SAURIN_V1 §267.5 PD-2).
+- **Open production dependencies:** SAURIN_V1 §267.5 PD-1 … PD-4 (relief transport, PD-2 deep-crease composition, seed-realization slivers, auricular unit generation).
+- Accepted non-blocking residuals (frozen evidence, not rig items): T-4 angle register 65 / 166; T-6 1.03 / 1.02 mm.
+- Evidence: `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/validation/SA_deformation_4step.json`, `.../SA_PD2_ownership.json`. Record: `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/SAURIN_RP5_FREEZE.json`.
+
 ## Cogling RP4 (FROZEN by record 2026-10-30, `COGLING_RP4_FREEZE.json`)
 
 No Cogling carry-forward ID. The scoped toe-station validator exception (`PASS_COGLING_TOE_PROBE_GEOMETRY_EXCEPTION`) and the 76 cm T-7 small-body sampling exception (`PASS_COGLING_T7_SMALL_BODY_SAMPLING_EXCEPTION`) are frozen validator history, not rig items. Accepted non-blocking notes (author ruling): CGF91-NAT c2 narrower-core ratio residual; Cogling sex-related anatomy OPEN; same-class thumb-opposition strain differences report-only. Record: `reviews/rac-rp4-evidence/cogling/final/COGLING_RP4_FREEZE.json`.

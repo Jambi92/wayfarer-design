@@ -1,6 +1,7 @@
 # Saurin Character Design v1.0
 
 **Status:** FIRST-PASS COMPLETE (October 4, 2026) — anatomical/surface convergence CLOSED (aff1b52); creator-biology validation CLOSED (Part 7); female / sex-related anatomy CLOSED (October 5, 2026, §263); **W2 reference canonical (RAC W2I6, October 9, 2026): the accepted W2I4 candidate (L1 + F2) — see Part 7 W2 reference update**  
+**RP5 production status:** **SAURIN RP5 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN** (November 1, 2026) — see §269  
 **Phase:** DESIGN ONLY — no UE5 implementation authorized
 
 Saurin are the thirteenth and final playable race first-pass design.
@@ -4431,3 +4432,16 @@ Orbit warp radii; level-set transfer, Newton / fairing settings; the W2 temporal
 
 **Convention.** r3 FPI = (FAL.f − eye-centre.f) ÷ HL under the accepted r3 / D-1 conventions (Saurin FAL = rostral tip; humanoid FAL = the more anterior of subnasale / A′). The Part 7 ↔ r3 conversion (+ 1.194 cm ÷ HL) applies only to the accepted Saurin eye / cranial geometry. Uncertainty (W3D): head pitch ±3° ≈ ±0.008–0.010, landmark ±0.001–0.002; margins are meaningful to hundredths only.
 
+
+
+## 269. RP5 production reference — FROZEN (November 1, 2026)
+
+**SAURIN RP5 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN** (order `reviews/chatgpt-rac-rp5-saurin-final-author-acceptance-freeze-closure-order.md`, 5a7d8cc; record `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/SAURIN_RP5_FREEZE.json`).
+
+- **Final production references:** `SA_M_REF_RP5_freeze_candidate_v001.blend` (c1, SA-M188) and `SA_F_REF_RP5_freeze_candidate_v001.blend` (c2, SA-F188), kept byte-identical under their reviewed filenames. The freeze record is authoritative over their embedded "FREEZE CANDIDATE / NOT FROZEN" text.
+- **Topology (frozen):** authored full cage, 190,948 V / 190,946 Q, 100 % quads, one closed oriented manifold; c1 and c2 share one face list and vertex order (sha256 `255645a1…`). Architecture: **Option B local hand / foot density** (1 -> 4 hand / foot split, fine 2:1 wrist / ankle rings), frozen.
+- **Tail:** the accepted tail module (`559565cc…`) is frozen as part of the RP5 composition.
+- **Source:** geometry = barycentric embedding on the canonical W2I6 face list, realised on SA_RP5_WORK_v001 (canonical + the derived thigh art-pass delta). Canonical W2I6 sources unchanged.
+- **Accepted production residuals:** T-4 angle register 65 (c1) / 166 (c2) quads (convex, oriented, aspect-bounded, deformation-clean; raw evaluator history preserved); T-6 1.0317 / 1.0187 mm (PASS under the tool rule, below the 1.5 mm ceiling).
+- **Gates:** T-1…T-7 PASS; fold census 0 / 0 / 0 / 0; aspect > 4 = 0; deformation 0 TOPOLOGY; PD-2 0 cage-owned flips; read-back PASS.
+- RP5 does not include rigging, skin weights, UV / materials, LOD, creator implementation or UE5 integration; each needs a separate order. PD-1 … PD-4 (§267.5) remain open dependencies of those later phases.
