@@ -21,7 +21,7 @@
 - male: `SA_M_REF_RP5_freeze_candidate_v001.blend`;
 - female: `SA_F_REF_RP5_freeze_candidate_v001.blend`.
 
-The freeze closure commit is recorded in the record field `freeze_closure_commit` and in the handoff.
+**Freeze closure commit:** `fc1d99025a4f861a65119a52a76471b4f1e28960` (recorded in the record field `freeze_closure_commit`).
 
 ## 2. Hashes (all equal the reviewed values; re-verified on disk and against git b03bc83)
 
