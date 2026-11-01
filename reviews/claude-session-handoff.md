@@ -11,6 +11,16 @@ re-evaluation / affine transfer -> evidence `reviews/rac-rp6-evidence/saurin/rig
 suite re-targeted, RP5 relcos flip metric). First RP6 LBS run (c1): fist 1250 / grasp 692 flips (RP5 scaffold 2166 / 1054); open: jaw zone (734), toes,
 knee, hip, tail root, shoulder abd90 -> next: weight refinement + pose-driven corrective solver, then Blender files / audits / gates.
 Frozen RP5 re-hash at start: `rig_pilot/frozen_rp5_hashes_start.txt` (all unchanged).
+UPDATE ~13:00: findings/fixes: (1) RP5 sagittal pose signs assume +y posterior (jaw_open_20 CLOSES, elbow/knee hyper-extend, hip/shoulder/neck extend,
+ankle_dorsi plantar-flexes) -> suite run twice: `suite('anat')` + exact literal (`*_rp5lit`); literal jaw closure = CONTACT-SETUP intrusion. (2) distal digit
+bones pointed at mismatched RP5 tip landmarks -> claw tip now from the digit's own component (`sa6_common.digit_components`). (3) weights: per-digit isolation,
+wrist-plane forearm/hand split, legs never on tail quads -> audit leak-free, no islands. New tools: `sa6_correctives.py` (families = bone+axis twist driver,
+hat samples, Poisson rotation-field solve + unfold + hinge contact plane + general contact), `sa6_fit.py CFG OUT.json` (pose set = anat + rp5lit + `sa6_gates`
+tail/hand/foot/jaw gates; fractions .25/.5/.75/1; ROUNDS env; INIT env to continue), `sa6_eval.py` (4-step ownership, topology smooth-map test, metrics,
+gate metrics; POSES env filter), `sa6_weight_audit.py`, `sa6_corrective_audit.py`, `sa6_pd2.py` (19 states, cr_*.npy in SA_W), `sa6_rigprep.py`,
+`sa6_blend_export.py` / `sa6_blend_readback.py` (bpy /home/claude/stc), `sa6_render.py`, `sa6_package.py`, `sa6_tail_study.py` (16 chosen).
+Work dir /tmp/claude-0/rp6 (W_M/F.npz, CF_M/F.json fits running ~2 h each; RUN ONE AT A TIME if memory tight: 7 GB). Blend size issue: each shape key = 2.3 MB
+raw (219 keys -> 531 MB .blend, 47 MB as .blend.xz) -> plan: commit .blend.xz containers (+ sha of the .blend), keep key count low.
 
 ## LATEST (2026-11-01 ~09:00) — ORDER 5a7d8cc — SAURIN RP5 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record)
 

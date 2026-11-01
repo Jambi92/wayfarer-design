@@ -51,7 +51,15 @@ class Rig:
         for j, dg in enumerate(degs, 1):
             bn = ('thumb_%02d_%s' % (j, t)) if thumb else ('finger_%d_%02d_%s' % (k, j, t)); a, c = self.H(bn), self.Tl(bn); out.append((bn, a, np.cross(c - a, pal), dg))
         return out
-    def suite(self):
+    def suite(self, kind='rp5'):
+        """kind='rp5': the EXACT RP5 sa_deform4 definitions (signs as written).  kind='anat': the same poses with the sagittal signs set to the anatomical
+        direction (+y = anterior): the RP5 literal sagittal signs move the jaw closed, the neck / lower axial into extension, the shoulder / hip into extension,
+        the elbow / knee into hyper-extension and the ankle into plantar-flexion (RP5 assumed +y posterior).  Non-sagittal poses are identical in both."""
+        P = self.suite_rp5()
+        if kind == 'rp5': return P
+        flip = ('jaw_open_20', 'neck_flex_30', 'lower_axial_flex_25', 'shoulder_flex60', 'elbow_90', 'elbow_130', 'hip_flex70', 'knee_90', 'ankle_dorsi20')
+        return {k: ([(b, p, a, -d) for b, p, a, d in v] if k.startswith(flip) else v) for k, v in P.items()}
+    def suite_rp5(self):
         POSES = {'jaw_open_20': [('jaw', self.H('jaw'), X, 20)], 'neck_flex_30': [('neck_01', self.H('neck_01'), X, 30)], 'neck_rot_40': [('neck_01', self.H('neck_01'), Z, 40)]}
         for s, sg in (('xpos', 1), ('xneg', -1)):
             t = C.side_tag(s); S, E_, Hh, K, A = self.H('upperarm_' + t), self.H('forearm_' + t), self.H('thigh_' + t), self.H('shin_' + t), self.H('foot_' + t)

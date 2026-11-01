@@ -45,12 +45,33 @@ for b in DB:
 tail_v = np.zeros(nv, bool); tail_v[np.unique(Q[ql == 'tail'])] = True
 for b in DB:
     if b.startswith('tail_') and int(b[5:]) > 3: OK[~tail_v, bi[b]] = False
+# legs never weight tail-quad vertices (tail root belongs to pelvis + tail chain)
+for b in DB:
+    if b.startswith(('thigh', 'shin', 'foot', 'toe')): OK[tail_v, bi[b]] = False
 # jaw: only below the mouth slit / lower head (vertices below the jaw bone line and in front of the hinge)
 H = np.array(P['jaw']['head']); Tj = np.array(P['jaw']['tail']); n_ = np.cross(Tj - H, [1.0, 0, 0]); n_ /= np.linalg.norm(n_)
 mouth = d['loops']['mouth_slit']; lip_z = np.interp(V[:, 1], np.sort(V[mouth, 1]), V[mouth, 2][np.argsort(V[mouth, 1])])
 headv = VL[:, [qli[q] for q in ('head', 'rostrum_cap', 'neck') if q in qli]].any(1) & (V[:, 2] > np.array(P['neck_02']['head'])[2])
 jawzone = headv & (V[:, 1] > H[1] - 1.5) & (V[:, 2] < lip_z + 0.05) & (V[:, 2] < H[2] + 0.5)
 OK[:, bi['jaw']] &= jawzone
+# per-digit isolation: each digit (its authored digit quads + its claw cap = one mesh component) may only take its OWN digit chain (+ its metacarpal /
+# the foot / hand); phalanx bones 02-03 never leave their own digit; 01 may also take the web / forefoot / palm rows. Removes cross-digit capsule capture
+# where adjacent digit tips converge.
+digit_of = np.full(nv, -1); dkey = []
+for (s_, pre, k), comp in sorted(C.digit_components().items()):
+    digit_of[comp] = len(dkey); dkey.append(((('toe_%d_' % k) if pre == 't' else ('thumb_' if pre == 'th' else 'finger_%d_' % k)), ('l' if s_ == 'xpos' else 'r'), k, pre))
+def bone_digit(b):
+    for i, (stem, t, k, pre) in enumerate(dkey):
+        if b.startswith(stem) and b.endswith('_' + t): return i
+    return -1
+bdig = np.array([bone_digit(b) for b in DB])
+for i, b in enumerate(DB):
+    if bdig[i] >= 0:
+        own = digit_of == bdig[i]; other = (digit_of >= 0) & ~own; OK[other, i] = False
+        if not b.split('_')[-2] == '01' and not b.startswith('thumb_01'): OK[~own, i] = False
+    elif b.startswith('meta'):
+        k = int(b.split('_')[1]); t = b.split('_')[-1]
+        own = [j for j, kk in enumerate(dkey) if kk[3] == 'f' and kk[2] == k and kk[1] == t]; OK[(digit_of >= 0) & ~np.isin(digit_of, own), i] = False
 OK[~OK.any(1)] = True
 # capsule distances
 D = np.full((nv, len(DB)), 1e6)
@@ -58,6 +79,12 @@ for b in DB:
     a = np.array(P[b]['head']); c = np.array(P[b]['tail']); m = OK[:, bi[b]]
     tt = np.clip(((V[m] - a) @ (c - a)) / max((c - a) @ (c - a), 1e-9), 0, 1); D[m, bi[b]] = np.linalg.norm(V[m] - (a + tt[:, None] * (c - a)), axis=1)
 prim = D.argmin(1)
+# wrist: forearm / hand split by the wrist plane (normal = forearm direction through the wrist joint) on every wrist / palm / thumb-base vertex the two
+# bones compete for -> the carpal (hand) band is one closed ring (no forearm-to-metacarpal direct contact, no hand-weight islands)
+for t in ('l', 'r'):
+    fa, hb = bi['forearm_' + t], bi['hand_' + t]; wp = np.array(P['hand_' + t]['head']); nd = wp - np.array(P['forearm_' + t]['head']); nd /= np.linalg.norm(nd)
+    lab_w = VL[:, [qli[q] for q in ('wrist',) if q in qli]].any(1) & OK[:, fa] & OK[:, hb]; dist_ = (V - wp) @ nd
+    prim[lab_w & (dist_ < 0)] = fa; prim[lab_w & (dist_ >= 0) & np.isin(prim, [fa])] = hb
 # jaw zone: vertices of the lower jaw take the jaw (head otherwise) -- primary forced by the mouth line, not by capsule distance
 prim[jawzone & (V[:, 2] < lip_z - 0.02)] = bi['jaw']
 W = np.zeros((nv, len(DB)), np.float32); W[np.arange(nv), prim] = 1.0

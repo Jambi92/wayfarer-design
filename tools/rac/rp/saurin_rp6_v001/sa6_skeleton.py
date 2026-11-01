@@ -3,10 +3,9 @@
 #   Joint sources (c1): the frozen RP5 landmark package + section / loop centroids of the frozen semantic rings (finger / thumb / toe r1-r2, base rings, wrist,
 #   knuckle, tail module rings). c2: the SAME definitions re-evaluated on the c2 realisation (loop / ring centroids directly; landmark-defined joints transferred
 #   through local affine coordinates over their 48 nearest c1 cage vertices -> identical vertices on c2 = shared topology).
-#   Writes SA_RP6_skeleton_v001.json (hierarchy, roles, deform flags, method, pose axes) + SA_RP6_joint_placement_{M,F}_v001.json + SA_RP6_tail_count_study.json.
+#   Writes SA_RP6_skeleton_v001.json (hierarchy, roles, deform flags, method, pose axes) + SA_RP6_joint_placement_{M,F}_v001.json (the tail-count study is sa6_tail_study.py).
 import sys, os, json, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import sa6_common as C
-OUT = sys.argv[1] if len(sys.argv) > 1 else C.EV6; os.makedirs(OUT, exist_ok=True)
 d = C.load(); LM = d['LM']; V1, V2 = d['V1'], d['V2']; loops = d['loops']; NM = d['names']
 from scipy.spatial import cKDTree
 kd1 = cKDTree(V1)
@@ -15,6 +14,11 @@ def transfer(p, V):
     p = np.asarray(p, float); _, ix = kd1.query(p, 48); A = np.vstack([V1[ix].T, np.ones(len(ix))]); w = np.linalg.lstsq(A, np.r_[p, 1.0], rcond=None)[0]
     return w @ V[ix]
 def lcen(name, V): return V[loops[name]].mean(0)
+CLAW = "claw tip = the vertex of the digit's OWN authored digit + claw-cap component farthest along the base-ring -> r2-ring direction (topology-identified; the RP5 tip landmarks are not digit-matched)"
+def clawtip(V, s_, pre, k):
+    comp = C.digit_components()[(s_, pre, k)]; base = V[loops['%s_th_r1' % s_ if pre == 'th' else '%s_%s%d_base' % (s_, pre, k)]].mean(0)
+    r2 = V[loops['%s_th_r2' % s_ if pre == 'th' else '%s_%s%d_r2' % (s_, pre, k)]].mean(0); u = (r2 - base) / np.linalg.norm(r2 - base)
+    return V[comp[np.argmax((V[comp] - base) @ u)]]
 TAILN = 16
 def build(V, cfg):
     J = {}; M = {}
@@ -41,17 +45,15 @@ def build(V, cfg):
             put('meta_%d_%s_h' % (k, t), lm('wrist_' + s_) + 0.15 * (lcen('%s_f%d_base' % (s_, k), V) - lm('wrist_' + s_)), 'wrist + 15 % toward the finger base ring (carpal)')
             put('finger_%d_01_%s_h' % (k, t), lcen('%s_f%d_base' % (s_, k), V), 'finger MCP base ring centroid (semantic loop %s_f%d_base)' % (s_, k))
             put('finger_%d_02_%s_h' % (k, t), lcen('%s_f%d_r1' % (s_, k), V), 'finger ring r1 centroid (PIP)'); put('finger_%d_03_%s_h' % (k, t), lcen('%s_f%d_r2' % (s_, k), V), 'finger ring r2 centroid (DIP / claw base)')
-            tips = np.array([lm('hand_tip%d_' % j + s_) for j in range(1, 6)]); tp = tips[np.argmin(np.linalg.norm(tips - J['finger_%d_03_%s_h' % (k, t)], axis=1))]
-            put('finger_%d_03_%s_t' % (k, t), tp, 'nearest hand_tip landmark (claw tip)')
-        r1 = lcen('%s_th_r1' % s_, V); r2 = lcen('%s_th_r2' % s_, V); tips = np.array([lm('hand_tip%d_' % j + s_) for j in range(1, 6)]); tp = tips[np.argmin(np.linalg.norm(tips - r2, axis=1))]
+            put('finger_%d_03_%s_t' % (k, t), clawtip(V, s_, 'f', k), CLAW)
+        r1 = lcen('%s_th_r1' % s_, V); r2 = lcen('%s_th_r2' % s_, V); tp = clawtip(V, s_, 'th', 0)
         put('thumb_01_%s_h' % t, r1 - 1.0 * (r2 - r1), 'thumb ring r1 - (r2 - r1) (CMC region)'); put('thumb_02_%s_h' % t, r1, 'thumb ring r1 centroid (MCP)'); put('thumb_03_%s_h' % t, r2, 'thumb ring r2 centroid (IP / claw base)')
-        put('thumb_03_%s_t' % t, tp, 'nearest hand_tip landmark (claw tip)')
+        put('thumb_03_%s_t' % t, tp, CLAW)
         put('thigh_%s_h' % t, lm('hip_' + s_), 'landmark hip (canon)'); put('shin_%s_h' % t, lm('knee_' + s_), 'landmark knee (section)'); put('foot_%s_h' % t, lm('ankle_' + s_), 'landmark ankle (section)')
         put('ball_%s_h' % t, lm('ball_line_' + s_) + np.array([0, 0, 1.2]), 'ball_line landmark + 1.2 cm (MTP joint height above the ground contact)')
-        ttips = np.array([lm('toe_tip%d_' % j + s_) for j in range(1, 6)])
         for k in range(1, 6):
             put('toe_%d_01_%s_h' % (k, t), lcen('%s_t%d_base' % (s_, k), V), 'toe MTP base ring centroid'); put('toe_%d_02_%s_h' % (k, t), lcen('%s_t%d_r1' % (s_, k), V), 'toe ring r1 centroid')
-            put('toe_%d_03_%s_h' % (k, t), lcen('%s_t%d_r2' % (s_, k), V), 'toe ring r2 centroid (claw base)'); put('toe_%d_03_%s_t' % (k, t), ttips[np.argmin(np.linalg.norm(ttips - J['toe_%d_03_%s_h' % (k, t)], axis=1))], 'nearest toe_tip landmark')
+            put('toe_%d_03_%s_h' % (k, t), lcen('%s_t%d_r2' % (s_, k), V), 'toe ring r2 centroid (claw base)'); put('toe_%d_03_%s_t' % (k, t), clawtip(V, s_, 't', k), CLAW)
     return J, M
 def bones(J):
     """hierarchy: name -> (parent, head key, tail key, deform, role)"""
@@ -79,18 +81,20 @@ def bones(J):
             B['toe_%d_02_%s' % (k, t)] = ('toe_%d_01_%s' % (k, t), 'toe_%d_02_%s_h' % (k, t), 'toe_%d_03_%s_h' % (k, t), True, 'toe middle phalanx')
             B['toe_%d_03_%s' % (k, t)] = ('toe_%d_02_%s' % (k, t), 'toe_%d_03_%s_h' % (k, t), 'toe_%d_03_%s_t' % (k, t), True, 'toe distal + claw')
     return B
+def rec(J, M, cfg, B=None):
+    B = B or bones(J)
+    out = {}
+    for b, (par, h, tl, dfm, role) in B.items():
+        if h is None: out[b] = dict(parent=None, head=[0, 0, 0], tail=[0, 0, 10.0], deform=False, role=role, method='fixed control'); continue
+        hv, tv = J[h], J[tl]; y = (tv - hv) / np.linalg.norm(tv - hv)
+        up = np.array([0, 0, 1.0]) if abs(y[2]) < 0.9 else np.array([0, 1.0, 0]); x = np.cross(y, up); x /= np.linalg.norm(x); zax = np.cross(x, y)
+        out[b] = dict(parent=par, head=np.round(hv, 5).tolist(), tail=np.round(tv, 5).tolist(), length_cm=round(float(np.linalg.norm(tv - hv)), 4), deform=dfm, role=role,
+                      local_axes=dict(y_bone=np.round(y, 5).tolist(), x=np.round(x, 5).tolist(), z=np.round(zax, 5).tolist()), head_method=M[h], tail_method=M[tl],
+                      configuration=cfg, c2_relation='same definition re-evaluated on this configuration' if not cfg.startswith('c1') else 'source (c1)')
+    return out
 if __name__ == '__main__':
+    OUT = sys.argv[1] if len(sys.argv) > 1 else C.EV6; os.makedirs(OUT, exist_ok=True)
     J1, M1 = build(V1, 'c1'); J2, M2 = build(V2, 'c2'); B = bones(J1)
-    def rec(J, M, cfg):
-        out = {}
-        for b, (par, h, tl, dfm, role) in B.items():
-            if h is None: out[b] = dict(parent=None, head=[0, 0, 0], tail=[0, 0, 10.0], deform=False, role=role, method='fixed control'); continue
-            hv, tv = J[h], J[tl]; y = (tv - hv) / np.linalg.norm(tv - hv)
-            up = np.array([0, 0, 1.0]) if abs(y[2]) < 0.9 else np.array([0, 1.0, 0]); x = np.cross(y, up); x /= np.linalg.norm(x); zax = np.cross(x, y)
-            out[b] = dict(parent=par, head=np.round(hv, 5).tolist(), tail=np.round(tv, 5).tolist(), length_cm=round(float(np.linalg.norm(tv - hv)), 4), deform=dfm, role=role,
-                          local_axes=dict(y_bone=np.round(y, 5).tolist(), x=np.round(x, 5).tolist(), z=np.round(zax, 5).tolist()), head_method=M[h], tail_method=M[tl],
-                          configuration=cfg, c2_relation='same definition re-evaluated on c2' if cfg == 'c2' else 'source')
-        return out
     P1 = rec(J1, M1, 'c1 SA-M188'); P2 = rec(J2, M2, 'c2 SA-F188')
     skel = dict(name='SA_RP6_skeleton_v001', status='RP6 RIG PILOT / NOT FROZEN', scope='Saurin-specific production-rig pilot hierarchy; NOT a universal game skeleton',
                 units='cm, x right (+x = subject left = _l), y forward, z up', bones={b: dict(parent=v[0], deform=v[3], role=v[4]) for b, v in B.items()},

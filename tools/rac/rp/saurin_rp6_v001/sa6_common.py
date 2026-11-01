@@ -31,3 +31,22 @@ def load():
                   loops=loops, LM=LM, names=names, tail_rings=trings, n_body=nb, tail_ring=z['tail_ring'])
     return _cache
 def side_tag(s): return 'l' if s == 'xpos' else 'r'
+_dig = {}
+def digit_components():
+    """per digit: the vertices of its own authored digit quads + its claw cap (one mesh component per digit of the {finger|toe|thumb, claw cap} quad set),
+    identified by the nearest base ring (fingers / toes: <side>_<f|t>k_base; thumb: <side>_th_r1).  Topology-only (c1 positions only used to name the
+    components; identical on c2).  -> {(side, 'f'|'t'|'th', k): vertex index array}"""
+    if _dig: return _dig
+    import scipy.sparse as sp
+    from scipy.sparse.csgraph import connected_components
+    d = load(); Q = d['Q']; fs = d['face_sem']; V = d['V1']; nv = len(V)
+    for lab, pre, ks in (('toe', 't', range(1, 6)), ('finger', 'f', range(1, 5)), ('thumb', 'th', [0])):
+        qm = np.isin(fs, (lab, 'claw cap')); qq = Q[qm]; fq = fs[qm]; rr = np.repeat(np.arange(len(qq)), 4)
+        Aq = sp.coo_matrix((np.ones(len(rr)), (rr, qq.ravel())), shape=(len(qq), nv)).tocsr(); nc, lq = connected_components(Aq @ Aq.T)
+        comps = [np.unique(qq[lq == c]) for c in range(nc) if (lq == c).sum() > 300 and (fq[lq == c] == lab).any()]
+        for s_ in ('xpos', 'xneg'):
+            for k in ks:
+                lp = ('%s_th_r1' % s_) if pre == 'th' else ('%s_%s%d_base' % (s_, pre, k)); cen = V[d['loops'][lp]].mean(0)
+                dist = [np.linalg.norm(V[c] - cen, axis=1).min() for c in comps]; j = int(np.argmin(dist)); assert dist[j] < 3.0, (lp, dist[j])
+                _dig[(s_, pre, k)] = comps[j]
+    return _dig
