@@ -8,7 +8,7 @@ E = np.unique(np.sort(np.r_[Q[:, [0, 1]], Q[:, [1, 2]], Q[:, [2, 3]], Q[:, [3, 0
 def chain(a, b):
     """fine vertex chain a -> b along the subdivided coarse edge (BFS, <= 8 hops); None if the corners are not coarse neighbours"""
     prev = {a: -1}; front = [a]
-    for _ in range(int(__import__('os').environ.get('HOPS', 12))):
+    for _ in range(int(__import__('os').environ.get('HOPS', 20))):
         nxt = []
         for u in front:
             for w in A.indices[A.indptr[u]:A.indptr[u + 1]]:
@@ -63,7 +63,7 @@ for i, (a, n) in enumerate(zip(rs, rn)):
     if i % 10 == 0 or i < 11: out.append(dict(name='tail_ring_%03d' % i, semantic='tail root ring' if i < 11 else 'tail chain band ring', closed=True, fine_vertices=mm[a:a + n].tolist()))
 qlab = z['qlab'].astype(str).copy(); qc = z['qcoarse']
 for i in np.nonzero(qc >= 0)[0][:0]: pass
-crn = np.array(d['Q']); has_x = np.array([any(re.search(r'_(pt|ft)_x\d', nm[c]) for c in q) for q in crn])
+crn = np.array(d['Q']); has_x = np.array([any(re.search(r'_(pt|ft|wr2|an2)_x\d', nm[c]) for c in q) for q in crn])
 face_sem = np.where(np.isin(qlab, ['finger_cap', 'thumb_cap', 'toe_cap']), 'claw cap', qlab)
 face_sem = np.where((qc >= 0) & has_x[np.maximum(qc, 0)], '2:1 reduction row', face_sem)
 # authored local patches added in the targeted revision (sa_vault): quads touching a body vertex created after the CC build (index >= NB0)

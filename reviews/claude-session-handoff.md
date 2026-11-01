@@ -2,7 +2,21 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-10-31 night) — ORDER 236dddc — SUBMITTED: REQUIRES AUTHOR DECISION (hand / foot web topology on the approved architecture)
+## LATEST (2026-10-31 night, later) — ORDER fe3b98a (Option B / fold-census closure) — IN PROGRESS, INTERNAL ONLY
+
+Order `reviews/chatgpt-rac-rp5-saurin-option-b-fold-census-closure-order.md`: Option B local hand / foot density, fold census authoritative in T-4
+(outside true tip caps: 0 inverted, 0 bow-tie, 0 concave deformation-critical), clean fist / grasp / opposition / toe flex-ext, 0 cage-owned creator flips.
+Work so far (cloud scratch `/tmp/claude-0/rt/sa/cage3/`):
+- `sa_localsub.py design_p3.pkl cage_p3.npz design_b1.pkl`: Option B coarse split (412 hand / foot coarse quads x4, 2:1 rings Fa6 8 -> Wr 16 and
+  S10 10 -> S11 20, tags `_wr2_x` / `_an2_x`); cold build `cage_b1` = 174,401 body V (189,962 Q incl. tail).
+- design_p3 = thumb ring-sense fix + palm 2:1 moved proximal (H0b 8 -> H1 16) + radius-matched orbit fans (`sa_design.py`).
+- Finding: density alone does not remove the web / palm / forefoot folds (b1 / b2 census ~1,500 inverted, ~490 bow-tie, ~500 concave, mostly the
+  web slots between nearly touching digits, palm / forefoot crease, plus long projection spikes up to 3.3 cm). Closest-point / ray projection collapses
+  rows into the slots. Next approach: per-web (and per crease patch) source parameterisation with a flood-filled region bounded by the patch's own
+  boundary chains (barrier) -> Tutte map to the square -> place the fine grid; same depth-band idea that fixed the axillary vault.
+- Tools added: `sa_localsub.py`, `sa_foldcensus.py` (inverted / bow-tie / concave split, deformation-critical set), NOPULL_LABELS + RAYPROJ in `sa_ccage.py`.
+
+## (previous) 2026-10-31 night — ORDER 236dddc — SUBMITTED: REQUIRES AUTHOR DECISION (hand / foot web topology on the approved architecture)
 
 Gate `reviews/claude-rac-rp5-saurin-full-authored-cage-gate.md`; evidence `reviews/rac-rp5-evidence/saurin/full_cage/revision/` (cage t2 sha cdbbd24d…).
 - Internally PASSING on t2: T-1 (2.66 mm), T-2 every zone (<= 1.41 mm), T-3, T-5, T-6, T-7; immutables 229 / 229.

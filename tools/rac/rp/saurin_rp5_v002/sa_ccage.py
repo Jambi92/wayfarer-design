@@ -98,6 +98,9 @@ if __name__ == '__main__':
             tv = TT[ti_[far]]; dv = V[samp[far]] - cp_[far]
             for k in range(3): np.add.at(acc, tv[:, k], dv); np.add.at(cnt, tv[:, k], 1)
         D_ = np.where(cnt[:, None] > 0, acc / np.maximum(cnt, 1)[:, None], 0)
+        if os.environ.get('NOPULL_LABELS'):                                          # Option B dense regions: no coverage pull (density alone carries T-2), shape-only relaxation
+            if it == 0: _np = np.isin(np.array(d['qlab'])[home], os.environ['NOPULL_LABELS'].split(','))
+            D_[_np] = 0; cnt[_np] = 0
         N = np.nan_to_num(igl.per_vertex_normals(Vf, TT))
         if os.environ.get('CENTROID'):                                                 # average of the adjacent quad centroids (shape-improving, CC-like)
             qc = Vf[Qf].mean(1); acc_c = np.zeros_like(Vf); np.add.at(acc_c, Qf.ravel(), np.repeat(qc, 4, 0)); cq = np.bincount(Qf.ravel(), minlength=nvf)
