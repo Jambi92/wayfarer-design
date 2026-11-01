@@ -2,6 +2,13 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-01 ~09:00) — ORDER cd87d9c (final consolidation / freeze readiness) — PASS SUBMITTED, awaiting final freeze review
+
+Report `reviews/claude-rac-rp5-saurin-final-consolidation-report.md`; package `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/` (freeze candidates v001,
+FREEZE CANDIDATE / NOT FROZEN), committed in b03bc833ec16305369e692700521f70681b94986. Clean workspace recipe: `sa_consolidate.py APPROVED.npz /tmp/claude-0/rp5clean OUT` (needs staged canonical
+src + cr_*.npy in /tmp/claude-0/rt/sa), validation chain with SA_W=/tmp/claude-0/rp5clean, `sa_freeze_candidate_export.py` / `_readback.py` (bpy /home/claude/stc),
+`sa_package.py`, `sa_verify_package.py`. Production copy deferred (no approved destination). Do NOT freeze without explicit authorization.
+
 ## LATEST (2026-11-01 ~05:30) — ORDER 50ef121 — PASS GATE SUBMITTED (awaiting ChatGPT / author review)
 
 Gate `reviews/claude-rac-rp5-saurin-full-authored-cage-gate.md` = SAURIN RP5 FULL AUTHORED CAGE PASS. Evidence `reviews/rac-rp5-evidence/saurin/full_cage/optionb_final/`

@@ -137,6 +137,6 @@ The audit ran as a fresh process, using only the files on disk and the git objec
 
 **Not done, as instructed:** no freeze or freeze authorisation, no geometry / canon / biology / tail / architecture change, and no rig, UV, LOD, creator, UE5 or other-race work.
 
-The commit that contains the freeze candidates is recorded in the submission commit message and the handoff.
+**Commit containing the freeze candidates:** `b03bc833ec16305369e692700521f70681b94986`.
 
 STOP FOR CHATGPT / AUTHOR REVIEW AND EXPLICIT FREEZE AUTHORIZATION.
