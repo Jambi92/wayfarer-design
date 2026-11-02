@@ -34,6 +34,18 @@ for cfg, wf, cf in (('M', WM, CM), ('F', WF, CFF)):
                              farthest_affected_vertex_from_pivot_cm=round(float(np.linalg.norm(R.V[sig] - piv, axis=1).max()) if len(sig) else 0.0, 2),
                              reason='removes the LBS fold / interpenetration of the owning pose(s) at this joint angle (Poisson rotation-field solve + local unfold + contact projection, frozen-mesh derived)',
                              ue_implementation='morph target driven by the same joint-angle curve (Pose Driver / Control Rig curve); no helper bone required'))
+    for pj in js.get('pose_keys', []):
+        pk = Cr.PK[pj['pose']]; mag = np.linalg.norm(pk['d'], axis=1); sig = pk['idx'][mag > 1e-4]; vl = np.zeros(R.nv, bool); vl[sig] = True; labs = sorted({str(x) for x in R.ql[vl[R.Q].any(1)]})
+        ow = []
+        for pn, spec in PS.items():
+            w_ = Cr.pk_weight(R.pose(spec), pk)
+            if w_ > 1e-6: ow.append((pn, round(float(w_), 3)))
+        recs.append(dict(name=pj['name'], family='pose key', driver_bone=[d_['bone'] for d_ in pj['drivers']], driver='product over %s of tent(twist; 0 -> sample -> 2 x sample), samples %s' % ([d_['bone'] for d_ in pj['drivers']], [round(d_['sample_deg'], 2) for d_ in pj['drivers']]),
+                         sample_deg=[d_['sample_deg'] for d_ in pj['drivers']], activation_interval_deg='each driving joint in (0, 2 x sample); exactly 0 if any driving joint is at rest', owning_poses=ow[:40], n_owning_poses=len(ow),
+                         vertices=int(len(pk['idx'])), vertices_gt_1um=int(len(sig)), regions=labs, max_rest_displacement_cm=round(float(mag.max()) if len(mag) else 0.0, 4), mean_rest_displacement_cm=round(float(mag.mean()) if len(mag) else 0.0, 4),
+                         farthest_affected_vertex_from_pivot_cm=round(float(min(np.linalg.norm(R.V[sig] - R.H(d_['bone']), axis=1).max() for d_ in pj['drivers'])) if len(sig) else 0.0, 2),
+                         reason='pose-space key for %s: two poses share these joint angles but need different local shapes (separable family keys oscillate)' % pj['pose'],
+                         ue_implementation='morph target driven by a Pose Driver (RBF / pose reader) on the listed joints'))
     fams[cfg] = {fj['bone'] + '|' + ','.join('%.3f' % a for a in fj['axis_parent_frame']): [k['sample_deg'] for k in fj['keys']] for fj in js['families']}
     out['configurations'][cfg] = dict(families=len(js['families']), keys=len(recs), rest_stance_active_keys=rest_active, rest_stance_max_displacement_cm=float(np.abs(d0).max()),
                                       max_rest_displacement_cm=max(r['max_rest_displacement_cm'] for r in recs) if recs else 0.0, farthest_affected_from_pivot_cm=max(r['farthest_affected_vertex_from_pivot_cm'] for r in recs) if recs else 0.0,

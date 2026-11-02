@@ -23,8 +23,8 @@ def gate_poses(R):
         curl = lambda a: sum([R.digit_flex(s, k, a) for k in range(1, 5)], [])
         G['hand_open_' + s] = curl((-15, 0, 0)) + R.digit_flex(s, 0, (-10, 0, 0), True)
         G['hand_relaxed_curl_' + s] = curl((25, 30, 20)) + R.digit_flex(s, 0, (10, 10, 5), True)
-        G['hand_broad_grasp_' + s] = curl((20, 30, 15)) + [('thumb_01_' + t, R.H('thumb_01_' + t), R.Tl('hand_' + t) - R.H('hand_' + t), -sg * 30)] + R.digit_flex(s, 0, (10, 10, 5), True)
         tips = np.array([R.Tl('finger_%d_03_%s' % (k, t)) for k in range(1, 5)] + [R.Tl('thumb_03_' + t)]); hl = tips.mean(0) - R.H('hand_' + t)
+        G['hand_broad_grasp_' + s] = curl((20, 30, 15)) + [('thumb_01_' + t, R.H('thumb_01_' + t), hl, -sg * 30)] + R.digit_flex(s, 0, (10, 10, 5), True)   # thumb: partial opposition
         opp = [('thumb_01_' + t, R.H('thumb_01_' + t), hl, -sg * 50)] + R.digit_flex(s, 0, (30, 25, 20), True)
         for k in range(1, 5): G['hand_opposition_f%d_%s' % (k, s)] = opp + R.digit_flex(s, k, (75, 95, 60))      # target finger fully curled toward the thumb
         mid = 0.5 * (R.H('finger_2_01_' + t) + R.H('finger_3_01_' + t))

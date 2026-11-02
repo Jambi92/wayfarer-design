@@ -37,8 +37,7 @@ def draw(ax, R, P, view, centre=None, rad=None, qcol=None, title='', flips=None,
 def posed(cfg, spec, corr=True):
     R = RIG[cfg]; T = R.pose(spec); d = COR[cfg].delta(T) if corr else 0 * R.V; P = R.skin(T, R.V + d); fl = np.nonzero(R.relcos(P, T) < 0)[0]
     Ft = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64)
-    w0 = igl.fast_winding_number(R.V, Ft, R.V - 1e-3 * igl.per_vertex_normals(R.V, Ft)); w = igl.fast_winding_number(P, Ft, P - 1e-3 * igl.per_vertex_normals(P, Ft))
-    return R, T, P, fl, (w > 1.5) & (w0 < 1.5), d
+    return R, T, P, fl, FT.penetration(R, P, Ft, FT.wn_out(R.V, Ft)), d
 def fig_pairs(name, items, ncol=None):
     """items: list of (cfg, pose_spec_name_or_None, view, centre_fn, rad, kwargs) -> one row per item pair"""
     n = len(items); ncol = ncol or min(n, 4); nrow = (n + ncol - 1) // ncol

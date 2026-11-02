@@ -21,6 +21,12 @@ gate metrics; POSES env filter), `sa6_weight_audit.py`, `sa6_corrective_audit.py
 `sa6_blend_export.py` / `sa6_blend_readback.py` (bpy /home/claude/stc), `sa6_render.py`, `sa6_package.py`, `sa6_tail_study.py` (16 chosen).
 Work dir /tmp/claude-0/rp6 (W_M/F.npz, CF_M/F.json fits running ~2 h each; RUN ONE AT A TIME if memory tight: 7 GB). Blend size issue: each shape key = 2.3 MB
 raw (219 keys -> 531 MB .blend, 47 MB as .blend.xz) -> plan: commit .blend.xz containers (+ sha of the .blend), keep key count low.
+UPDATE ~17:30: xz -9 -T1 -> ~8.7 MB per .blend (191 keys). Fit v2 (snap 4 deg, cascade, weight-ownership, pose keys PK_ROUND=2) converged
+(0 folds / 0 pen / 0 topology on all 98 + literal jaw = CONTACT); Blender drivers = twist custom props ob['tw###'] + short simple expressions
+(256-char limit!), mesh NOT parented (scale compounding); Blender-vs-evaluator <= 4 um. Penetration = sa6_fit.penetration (inward 0.2 mm, wn>1.5).
+Topology co-location = 1 cm + quad footprint (RP5 PD-2 rule). Found: Poisson correctives moved rigid parts (rostrum 0.9 cm) -> v3 = LOCAL solves +
+rigid vertices pinned (refit running /tmp/claude-0/rp6/CF_M/F.json; v2 kept in /tmp/claude-0/rp6/v2). Then: eval M,F (sequential, 3.5 GB each),
+corrective audit, pd2, blend export+xz+readback, renders, package, report.
 
 ## LATEST (2026-11-01 ~09:00) — ORDER 5a7d8cc — SAURIN RP5 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record)
 

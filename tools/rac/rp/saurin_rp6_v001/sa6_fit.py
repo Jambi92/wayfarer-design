@@ -23,46 +23,72 @@ def entries(R, spec, T):
         f = dict(bone=b, axis=np.asarray(ax, float) / np.linalg.norm(ax)); x = CC.Correctives(R).driver(T, f) if False else None
         out.append((b, np.asarray(piv, float), np.asarray(ax, float) / np.linalg.norm(ax)))
     return out
-def penetration(R, P, F, w0):
-    n = igl.per_vertex_normals(P, F); w = igl.fast_winding_number(P, F, P - 1e-3 * n); return (w > 1.5) & (w0 < 1.5)
-def solve_one(R, C, S, spec, F, w0, log):
+PEN_TOL = 0.02     # cm: a vertex interpenetrates when the point PEN_TOL INSIDE its own surface also lies inside another part of the body (generalised winding
+                   # number > 1.5) -> penetration depth >= 0.2 mm; shallower overlaps count as touching contact.  Vertices already in that state at rest excluded.
+def wn_out(P, F): return igl.fast_winding_number(P, F, P - PEN_TOL * igl.per_vertex_normals(P, F))
+def penetration(R, P, F, w0): return (wn_out(P, F) > 1.5) & (w0 < 1.5)
+def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
     T = R.pose(spec); d = C.delta(T); Pc = R.skin(T, R.V + d); fl = np.nonzero(R.relcos(Pc, T) < 0)[0]
     pen = penetration(R, Pc, F, w0)
     if not len(fl) and not pen.any(): return 0, 0, 0
-    Ps, I, M = S.solve(T, Pc, fl, iters=1, ring=12, spread_tol=1e-4)
-    ent = entries(R, spec, T); ncont = 0
-    if len(ent) == 1 and R.par[ent[0][0]] and penetration(R, Ps, F, w0).any():
-        Ps, ncont = S.contact_plane(T, Ps, ent[0][0], ent[0][1])
-    Ps, f2 = S.unfold(T, Ps, R.relcos)
-    for _ in range(6):                                   # general contact (any remaining interpenetration), then re-relax
-        pen = penetration(R, Ps, F, w0)
-        if not pen.any(): break
-        Ps, n_ = S.contact_general(Ps, pen); ncont += n_; Ps, f2 = S.unfold(T, Ps, R.relcos)
+    pen0 = int(pen.sum())
+    ent = entries(R, spec, T); best = None
+    # solver cascade (first variant that ends fold- and penetration-free wins; else the one with the fewest folds + penetrations)
+    # LOCAL first (the folds / contacts + a few rings; everything else stays exactly LBS -> no anatomy drift), widening only when needed
+    for ring, plane, rounds in ((3, False, 40), (6, False, 40), (12, False, 40), (6, True, 40), (12, True, 80), (24, False, 80), (24, True, 80)):
+        if plane and not (len(ent) == 1 and R.par[ent[0][0]]): continue
+        Ps, I, M = S.solve(T, Pc, fl, iters=1, ring=ring, spread_tol=1e-4, local=True, seed=pen); ncont = 0
+        if plane and penetration(R, Ps, F, w0).any(): Ps, ncont = S.contact_plane(T, Ps, ent[0][0], ent[0][1])
+        Ps, f2 = S.unfold(T, Ps, R.relcos, rounds=rounds)
+        for _ in range(6):                               # general contact (any remaining interpenetration), then re-relax
+            pen = penetration(R, Ps, F, w0)
+            if not pen.any(): break
+            Ps, n_ = S.contact_general(Ps, pen); ncont += n_; Ps, f2 = S.unfold(T, Ps, R.relcos, rounds=rounds)
+        npen = int(penetration(R, Ps, F, w0).sum()); score = (len(f2) + npen, float(np.abs(Ps - Pc).sum()))
+        if best is None or score < best[0]: best = (score, Ps, f2, ncont)
+        if score[0] == 0: break
+    _, Ps, f2, ncont = best
     dmask = np.linalg.norm(Ps - Pc, axis=1) > 1e-7; I = np.nonzero(dmask)[0]
     Wb = R.W; Rb = np.stack([T[b][0] for b in R.DB]); M = np.einsum('vb,bij->vij', Wb[I], Rb)
     dd = np.linalg.solve(M, (Ps[I] - Pc[I])[:, :, None])[:, :, 0]
-    # assign to the nearest driving pivot (rest space)
+    # assign each corrected vertex to a driving joint: the most distal driving bone whose subtree carries weight (> 0.05) at the vertex (the joint whose motion
+    # deforms it); vertices weighted by no driving subtree -> the nearest driving pivot (rest space)
     piv = np.stack([e[1] for e in ent]); own = np.linalg.norm(R.V[I][:, None] - piv[None], axis=2).argmin(1)
+    depth = lambda b: 0 if R.par[b] is None else 1 + depth(R.par[b])
+    for j in sorted(range(len(ent)), key=lambda j: depth(ent[j][0])):          # proximal first, distal overwrites
+        sw = R.W[I][:, [R.bi[b] for b in R.sub(ent[j][0]) if b in R.bi]].sum(1); own[sw > 0.05] = j
+    if pose_key:                                         # Gauss-Seidel conflict: residual -> a pose key driven by the joints that deform these vertices (<= 3)
+        sc = []
+        for j, (b, pv, ax) in enumerate(ent):
+            key, axf = C.resolve(b, ax); x = C.driver(T, dict(bone=b, axis=axf))
+            if abs(x) < 0.5: continue
+            sw = R.W[I][:, [R.bi[bb] for bb in R.sub(b) if bb in R.bi]].sum(1); sc.append(((sw * np.linalg.norm(dd, axis=1)).sum(), b, axf, x))
+        sc = sorted(sc, key=lambda t: -t[0])[:3]
+        if sc: C.add_pose_key(pose_key, [(b, a, x) for _, b, a, x in sc], I, dd); return len(fl) + pen0, len(f2), ncont
     for j, (b, pv, ax) in enumerate(ent):
         m = own == j
         if not m.any(): continue
-        f = dict(bone=b, axis=ax); x = C.driver(T, f)
+        key, axf = C.resolve(b, ax); x = C.driver(T, dict(bone=b, axis=axf))
         if abs(x) < 0.5: continue
-        C.add(CC.fam_key(b, ax), b, ax, pv, x, I[m], dd[m])
-    return len(fl), len(f2), ncont
+        C.add(key, b, axf, pv, x, I[m], dd[m])
+    return len(fl) + pen0, len(f2), ncont                 # folds + interpenetrating vertices entering the solve
 if __name__ == '__main__':
     cfg, out = sys.argv[1:3]; wf = sys.argv[3] if len(sys.argv) > 3 else '/tmp/claude-0/rp6/W_%s.npz' % cfg
     R = SP.Rig(cfg, wf); C = CC.Correctives.load(R, os.environ['INIT']) if os.environ.get('INIT') else CC.Correctives(R); S = CC.Solver(R); PS = pose_set(R)
-    F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); n0 = igl.per_vertex_normals(R.V, F); w0 = igl.fast_winding_number(R.V, F, R.V - 1e-3 * n0)
+    F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = wn_out(R.V, F)
+    if os.environ.get('POSE_SUBSTR'): PS = {k: v for k, v in PS.items() if any(x in k for x in os.environ['POSE_SUBSTR'].split(','))}
     order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k])))
     log = []
     for rnd in range(int(os.environ.get('ROUNDS', 3))):
         tot = 0
         for pn in order:
-            for fr in (0.25, 0.5, 0.75, 1.0):
-                spec = [(b, p, a, d * fr) for b, p, a, d in PS[pn]]; t = time.time(); a, b, c = solve_one(R, C, S, spec, F, w0, log); tot += a
-                if a or b: print('round %d %-30s x%.2f flips before %4d after-solve %4d contact %4d  %.1fs' % (rnd, pn, fr, a, b, c, time.time() - t), flush=True)
+            for fr in (1.0, 0.5, 0.75, 0.25):           # full and half first; quarter fractions only get their own sample if interpolation leaves a fold
+                spec = [(b, p, a, d * fr) for b, p, a, d in PS[pn]]; t = time.time()
+                pk = ('%s@%.2f' % (pn, fr)) if (rnd >= int(os.environ.get('PK_ROUND', 2)) or '%s@%.2f' % (pn, fr) in C.PK) else None   # stubborn after the first rounds
+                a, b, c = solve_one(R, C, S, spec, F, w0, log, pose_key=pk); tot += a
+                if a or b: print('round %d %-30s x%.2f flips+pen before %4d after-solve %4d contact %4d  %.1fs' % (rnd, pn, fr, a, b, c, time.time() - t), flush=True)
                 log.append(dict(round=rnd, pose=pn, frac=fr, flips_before=a, flips_after_solve=b, contact_projected=c))
         print('round', rnd, 'total flips entering', tot, flush=True)
+        C.save(out, dict(status='RP6 RIG PILOT / NOT FROZEN (partial: after round %d)' % rnd, config=cfg, weights=os.path.basename(wf), fit_log=log))
         if tot == 0: break
     C.save(out, dict(status='RP6 RIG PILOT / NOT FROZEN', config=cfg, weights=os.path.basename(wf), method=open(CC.__file__).read().split('import')[0], fit_log=log))

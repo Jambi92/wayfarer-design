@@ -16,7 +16,7 @@ bpy.ops.wm.open_mainfile(filepath=rp5); m5 = [o for o in bpy.data.objects if o.t
 assert hashlib.sha256(open(rp5, 'rb').read()).hexdigest() == h5 == C.FROZEN[os.path.basename(rp5)]
 bpy.ops.wm.open_mainfile(filepath=BL)
 objs = {o.name: o for o in bpy.data.objects}; mesh = [o for o in objs.values() if o.type == 'MESH']; arms = [o for o in objs.values() if o.type == 'ARMATURE']
-res['objects'] = {n: dict(type=o.type, parent=o.parent.name if o.parent else None, location=list(o.location), rotation=list(o.rotation_euler), scale=list(o.scale),
+res['objects'] = {n: dict(type=o.type, parent=o.parent.name if o.parent else None, twist_properties=sorted(k for k in o.keys() if k.startswith('tw')).__len__(), location=list(o.location), rotation=list(o.rotation_euler), scale=list(o.scale),
                           modifiers=[(m.name, m.type) for m in o.modifiers], constraints=len(o.constraints)) for n, o in objs.items()}
 assert len(mesh) == 1 and len(arms) == 1 and len(objs) == 2; ob = mesh[0]; arm = arms[0]; me = ob.data
 res['external'] = dict(images=len(bpy.data.images), libraries=len(bpy.data.libraries), materials=len(bpy.data.materials), node_groups=len(bpy.data.node_groups), texts=len(bpy.data.texts),
@@ -52,7 +52,10 @@ for f in cj['families']:
     for k in f['keys']:
         kb = kbs[k['name']]; a = np.zeros(nv * 3, np.float32); kb.data.foreach_get('co', a); a = a.reshape(-1, 3); dlt = np.zeros((nv, 3)); dlt[cz[k['name'] + '_idx']] = cz[k['name'] + '_d']
         mk = max(mk, float(np.abs((a.astype(float) - basis.astype(float)) - dlt).max())); nk += 1
-drv = me.shape_keys.animation_data.drivers if me.shape_keys.animation_data else []
+for pk in cj.get('pose_keys', []):
+    kb = kbs[pk['name']]; a = np.zeros(nv * 3, np.float32); kb.data.foreach_get('co', a); a = a.reshape(-1, 3); dlt = np.zeros((nv, 3)); dlt[cz[pk['name'] + '_idx']] = cz[pk['name'] + '_d']
+    mk = max(mk, float(np.abs((a.astype(float) - basis.astype(float)) - dlt).max())); nk += 1
+drv = list(me.shape_keys.animation_data.drivers if me.shape_keys.animation_data else []) + list(ob.animation_data.drivers if ob.animation_data else [])
 bpy.context.scene.frame_set(1); dg = bpy.context.evaluated_depsgraph_get(); dg.update()
 vals = [kb.value for kb in kbs[1:]]
 res['shape_keys'] = dict(count=len(kbs) - 1, expected=nk, basis_equal_neutral=bool(np.array_equal(basis, co)), delta_max_abs_vs_npz_cm=mk,

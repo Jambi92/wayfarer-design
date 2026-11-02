@@ -1,0 +1,55 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "configuration": "M",
+ "method": "# sa6_rigprep.py CFG WEIGHTS.npz CORRECTIVES.json : RP6 reference / rig-prep stance record + round trip (order a407015 \u00a74).\n#   Reference stance = the frozen RP5 neutral (anatomy truth; armature rest).  Rig-prep stance = generated ONLY through the armature: each upper arm raised in\n#   its own abduction plane (axis = (-z) x arm direction, through the glenohumeral head) from its reference angle to 45 deg from vertical (the conventional\n#   A-pose); elbows, hands, digits, legs, tail, neck / head unchanged (reference values recorded).  Writes SA_RP6_rig_prep_<CFG>_v001.json.\n#   Round trips:  (a) reference -> rig-prep -> reference through the armature (bone transforms back to identity): exact by construction of LBS\n#   (posed = sum w (R v + t) with R = I, t = 0 and every corrective driver at 0 -> the bound frozen mesh, bit-identical);\n#   (b) RE-BIND round trip (production check: the rig-prep mesh bound with the same weights and returned through the inverse bone matrices with LBS\n#   blending, i.e. sum w T_b^-1 (P_prep)): reports the LBS-inverse residual (not zero: an LBS blend of inverses is not the inverse of the blend);\n#   (c) exact per-vertex inverse v = M_v^-1 (P_prep - sum w t) - d_corrective: residual = numerical precision.\n",
+ "reference_stance": "frozen RP5 neutral = armature rest",
+ "rig_prep_stance": {
+  "upperarm_l": {
+   "reference_angle_from_vertical_deg": 29.28,
+   "rig_prep_angle_deg": 45.0,
+   "rotation_deg": 15.72,
+   "axis_world": [
+    0.321124,
+    -0.947037,
+    0.0
+   ]
+  },
+  "upperarm_r": {
+   "reference_angle_from_vertical_deg": 26.958,
+   "rig_prep_angle_deg": 45.0,
+   "rotation_deg": 18.042,
+   "axis_world": [
+    0.364075,
+    0.93137,
+    0.0
+   ]
+  }
+ },
+ "elbow": "unchanged (reference)",
+ "hands": "unchanged (reference orientation)",
+ "tail": "neutral (reference)",
+ "head_neck": "no offset",
+ "basis_quaternions_wxyz": {
+  "upperarm_l": [
+   0.9906047900171154,
+   0.13675580424602007,
+   3.4460338562779234e-07,
+   2.2808149997929966e-07
+  ],
+  "upperarm_r": [
+   0.9876316158270978,
+   0.15679219182955623,
+   9.354835740174076e-08,
+   1.751689993704824e-07
+  ]
+ },
+ "rig_prep_flips": 0,
+ "rig_prep_active_corrective_keys": 2,
+ "round_trip_a_armature": "exact (identity transforms, all drivers 0)",
+ "round_trip_b_rebind_lbs_inverse": {
+  "max_cm": 0.98913,
+  "p99_cm": 0.33368,
+  "n_moved": 122921
+ },
+ "round_trip_c_exact_inverse_max_cm": 8.533911106286719e-14
+}
