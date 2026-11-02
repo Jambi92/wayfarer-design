@@ -37,7 +37,8 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
     T = R.pose(spec); d = C.delta(T); Pc = R.skin(T, R.V + d); fl = np.nonzero(R.relcos(Pc, T) < 0)[0]
     vol_pose = any(e[0] in VOL_BONES or e[0].rsplit('_', 1)[0] in VOL_BONES for e in spec)
     pen = penetration(R, Pc, F, w0); dV = (S.body_volume(Pc) - S.V0) if vol_pose else 0.0
-    if not len(fl) and not pen.any() and abs(dV) <= VOL_TRIG: return 0, 0, 0
+    ntear = int(S.tear_edges(Pc)[0].sum())
+    if not len(fl) and not pen.any() and abs(dV) <= VOL_TRIG and not ntear: return 0, 0, 0
     Pc0 = Pc
     pen0 = int(pen.sum())
     ent = entries(R, spec, T)
@@ -48,7 +49,7 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
     def cascade(P0):
         """LOCAL fold / contact cascade from the start shape P0: first variant that ends fold- and penetration-free wins, else the fewest folds + pen."""
         f0 = np.nonzero(R.relcos(P0, T) < 0)[0]; p0 = penetration(R, P0, F, w0)
-        if not len(f0) and not p0.any(): return ((0, 0.0), P0, np.zeros(0, int), 0)
+        if not len(f0) and not p0.any() and not S.tear_edges(P0)[0].any(): return ((0, 0.0), P0, np.zeros(0, int), 0)
         casc = sorted(CASC, key=lambda c_: (not c_[3], not c_[1])) if (p0.any() and hinge) else CASC   # contact poses: hinge contact plane first
         best = None
         for ring, plane, rounds, pin in casc:
@@ -60,21 +61,39 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
                 pq = penetration(R, Ps, F, w0)
                 if not pq.any(): break
                 Ps, n_ = S.contact_general(Ps, pq); ncont += n_; Ps, f2 = S.unfold(T, Ps, R.relcos, rounds=rounds, pin_rigid=pin)
-            npen = int(penetration(R, Ps, F, w0).sum()); score = (len(f2) + npen, float(np.abs(Ps - P0).sum()))
+            for _ in range(3):                                # tension tears (weight seams / contact projection): seeded local ARAP, then re-check contact
+                if not S.tear_edges(Ps)[0].any(): break
+                Ps = S.tear_fix(T, Ps, R.relcos, ring=ring if ring >= 12 else 12)
+                pq = penetration(R, Ps, F, w0)
+                if pq.any(): Ps, n_ = S.contact_general(Ps, pq); ncont += n_; Ps, _ = S.unfold(T, Ps, R.relcos, rounds=rounds, pin_rigid=pin)
+            f2 = np.nonzero(R.relcos(Ps, T) < 0)[0]
+            npen = int(penetration(R, Ps, F, w0).sum()); nt = int(S.tear_edges(Ps)[0].sum()); score = (len(f2) + npen + nt, float(np.abs(Ps - P0).sum()))
             if best is None or score < best[0]: best = (score, Ps, f2, ncont)
             if score[0] == 0: break
         return best
     def polish(Ps):
-        """volume polish on a clean result: broad bulge (+ unfold), else the concentrated volume_fix; largest clean step of 1, 3/4, 1/2, 1/4."""
-        if abs(S.body_volume(Ps) - S.V0) <= VOL_TOL: return Ps
+        """volume polish on a clean result: up to 3 cycles of broad self-masking bulge -> (small tear fix if the bulge tore an edge) -> unfold;
+        a cycle is kept only when it stays fold- / penetration-free with no more tear edges; else the line-searched concentrated volume_fix."""
         def bad(P_):
-            m = np.zeros(R.nv, bool); m[R.Q[R.relcos(P_, T) < 0].ravel()] = True; return m | penetration(R, P_, F, w0)
-        Pv, nb = S.bulge_safe(T, Ps, S.V0, bad)
-        if nb: Pv, _ = S.unfold(T, Pv, R.relcos)
-        if (R.relcos(Pv, T) < 0).any() or penetration(R, Pv, F, w0).any(): Pv, _ = S.volume_fix(T, Ps, S.V0, tol=VOL_TOL / 4)
+            m = np.zeros(R.nv, bool); m[R.Q[R.relcos(P_, T) < 0].ravel()] = True; return m | penetration(R, P_, F, w0) | S.tear_verts(P_)
+        def clean(P_, ref): return not (R.relcos(P_, T) < 0).any() and not penetration(R, P_, F, w0).any() and S.tear_edges(P_)[0].sum() <= S.tear_edges(ref)[0].sum()
+        fails = 0
+        for k in range(8):
+            if abs(S.body_volume(Ps) - S.V0) <= VOL_TOL: return Ps
+            ct, sm = ((0.85, 150), (0.7, 300), (0.55, 500))[min(fails, 2)]      # escalate: allow the bulge closer to the crease, broader field
+            Pv, nb = S.bulge_safe(T, Ps, S.V0, bad, smooth=sm, crease_thr=ct)
+            if S.tear_edges(Pv)[0].sum() > S.tear_edges(Ps)[0].sum(): Pv = S.tear_fix(T, Pv, R.relcos, ring=6, iters=2)
+            if nb or (R.relcos(Pv, T) < 0).any(): Pv, _ = S.unfold(T, Pv, R.relcos)
+            if os.environ.get('PDEBUG'): print('   polish cycle: nb', nb, 'flips', int((R.relcos(Pv, T) < 0).sum()), 'pen', int(penetration(R, Pv, F, w0).sum()), 'tears', int(S.tear_edges(Pv)[0].sum()), 'vs', int(S.tear_edges(Ps)[0].sum()), 'dV %.0f -> %.0f' % (S.body_volume(Ps) - S.V0, S.body_volume(Pv) - S.V0), flush=True)
+            if clean(Pv, Ps) and abs(S.body_volume(Pv) - S.V0) < abs(S.body_volume(Ps) - S.V0) - 2.0: Ps = Pv
+            else:
+                fails += 1
+                if fails > 2: break
+        if abs(S.body_volume(Ps) - S.V0) <= VOL_TOL: return Ps
+        Pv, _ = S.volume_fix(T, Ps, S.V0, tol=VOL_TOL / 4)
         for sc in (1.0, 0.75, 0.5, 0.25):
             Pt = Ps + sc * (Pv - Ps)
-            if not (R.relcos(Pt, T) < 0).any() and not penetration(R, Pt, F, w0).any(): return Pt
+            if clean(Pt, Ps): return Pt
         return Ps
     def finish(c_):
         sc_, Ps, f2, ncont = c_
@@ -104,14 +123,14 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
             if abs(x) < 0.5: continue
             sw = R.W[I][:, [R.bi[bb] for bb in R.sub(b) if bb in R.bi]].sum(1); sc.append(((sw * np.linalg.norm(dd, axis=1)).sum(), b, axf, x))
         sc = sorted(sc, key=lambda t: -t[0])[:3]
-        if sc: C.add_pose_key(pose_key, [(b, a, x) for _, b, a, x in sc], I, dd); return len(fl) + pen0, len(f2), ncont
+        if sc: C.add_pose_key(pose_key, [(b, a, x) for _, b, a, x in sc], I, dd); return len(fl) + pen0 + ntear, len(f2), ncont
     for j, (b, pv, ax) in enumerate(ent):
         m = own == j
         if not m.any(): continue
         key, axf = C.resolve(b, ax); x = C.driver(T, dict(bone=b, axis=axf))
         if abs(x) < 0.5: continue
         C.add(key, b, axf, pv, x, I[m], dd[m])
-    return len(fl) + pen0, len(f2), ncont                 # folds + interpenetrating vertices entering the solve
+    return len(fl) + pen0 + ntear, len(f2), ncont         # folds + interpenetrating vertices + tear edges entering the solve
 if __name__ == '__main__':
     cfg, out = sys.argv[1:3]; wf = sys.argv[3] if len(sys.argv) > 3 else '/tmp/claude-0/rp6/W_%s.npz' % cfg
     R = SP.Rig(cfg, wf); C = CC.Correctives.load(R, os.environ['INIT']) if os.environ.get('INIT') else CC.Correctives(R); S = CC.Solver(R); S.V0 = S.body_volume(R.V); PS = pose_set(R)

@@ -18,11 +18,11 @@
 import sys, os, json, time, numpy as np, igl, scipy.sparse as sp
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_common as C, sa6_pose as SP, sa6_correctives as CC, sa6_fit as FT
-TH = dict(flips=0, volume_ratio=(0.80, 1.15), stretch=(0.5, 1.8), landmark_rigid_cm=0.05)
+TH = dict(tear_edges=0, tear_rule='edge > 2.5 x rest AND elongation > 0.75 cm', body_volume_cm3=100, flips=0, volume_ratio=(0.80, 1.15), stretch=(0.5, 1.8), landmark_rigid_cm=0.05)
 def main():
     cfg, wf, cf, out = sys.argv[1:5]; d = C.load(); R = SP.Rig(cfg, wf); Cr = CC.Correctives.load(R, cf); PS = FT.pose_set(R); PS['jaw_open_20_rp5lit'] = R.suite('rp5')['jaw_open_20']
     if os.environ.get('POSES'): PS = {k: v for k, v in PS.items() if k in os.environ['POSES'].split(',')}
-    Q = R.Q; F = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F)
+    Q = R.Q; F = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F); SV = CC.Solver(R)
     qa = 0.5 * np.linalg.norm(R.n0, axis=1)
     # dense source sample + interpolated weights
     DENSE = C.have_workspace()      # cage-only mode (clean workspace not staged): step 1 (dense source folds) and the topology smooth-map co-location test are PENDING
@@ -142,7 +142,9 @@ def main():
             dl, act = Cr.delta(T, True); P4 = R.skin(T, R.V + dl); f4 = np.nonzero(R.relcos(P4, T) < 0)[0]
             pen4 = FT.penetration(R, P4, F, w0)
             r['fractions']['%.2f' % fr] = dict(lbs_flips=int(len(f3)), corrected_flips=int(len(f4)), corrected_flip_quads=[(str(R.ql[q]), np.round(R.V[Q[q]].mean(0), 1).tolist()) for q in f4[:8]],
-                                               corrected_new_penetration_vertices=int(pen4.sum()), active_keys=int(sum(len(v[1]) > 0 for v in act.values())))
+                                               corrected_new_penetration_vertices=int(pen4.sum()), active_keys=int(sum(len(v[1]) > 0 for v in act.values())),
+                                               lbs_tear_edges=int(SV.tear_edges(P3)[0].sum()), corrected_tear_edges=int(SV.tear_edges(P4)[0].sum()),
+                                               corrected_max_elongation_cm=round(float(SV.tear_edges(P4)[1].max()), 3), lbs_max_elongation_cm=round(float(SV.tear_edges(P3)[1].max()), 3))
             if fr == 1.0:
                 pen3 = FT.penetration(R, P3, F, w0)
                 Pd = R.skin(T, Vs, Ws); fs = (relcos_s(Pd, T) < 0) if DENSE else np.zeros(len(Fs), bool)
@@ -175,7 +177,7 @@ def main():
                 r['landmarks'] = dict(max_all_cm=round(max(lmd.values()), 3), max_all_name=max(lmd, key=lmd.get), max_rigid_cm=round(max(rigid.values()), 4) if rigid else 0.0, n_rigid=len(rigid))
         base = pn.replace('_rp5lit', ''); o = old.get(base) if (pn.endswith('_rp5lit') or pn + '_rp5lit' not in PS) else None
         r['step2_rp5_scaffold'] = (dict(step1_cage_flips=o['step1_cage_flips'], step3_improved=o['step3_cage_flips_improved_weights'], classification=o['classification']) if (o and cfg == 'M') else 'n/a (the RP5 scaffold baseline exists for c1 with the RP5-literal signs only; see the _rp5lit variant)')
-        fx = r['fractions']; worst4 = max(v['corrected_flips'] for v in fx.values()); worst3 = max(v['lbs_flips'] for v in fx.values()); pen = max(v['corrected_new_penetration_vertices'] for v in fx.values())
+        fx = r['fractions']; r['corrected_tear_edges_max'] = max(v['corrected_tear_edges'] for v in fx.values()); worst4 = max(v['corrected_flips'] for v in fx.values()); worst3 = max(v['lbs_flips'] for v in fx.values()); pen = max(v['corrected_new_penetration_vertices'] for v in fx.values())
         src = r['step1_source_flip_area_permille'] > 0 and r['step1_source_flip_area_permille'] >= r['step3_lbs_flip_area_permille']
         if pn in FT.NONREAL: cls = 'NOT RIG-REALISABLE (literal RP5 pivot 9-10 cm off the tail_01 joint; diagnostic only, not fitted)'
         elif pn == 'jaw_open_20_rp5lit': cls = 'CONTACT-SETUP (RP5-literal +20 deg closes the closed mouth: lower jaw driven into the upper rostrum; not a deformation pose)'

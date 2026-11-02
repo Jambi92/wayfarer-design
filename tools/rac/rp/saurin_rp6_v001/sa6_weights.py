@@ -94,6 +94,17 @@ for t in ('l', 'r'):
     prim[lab_w & (dist_ < 0)] = fa; prim[lab_w & (dist_ >= 0) & np.isin(prim, [fa])] = hb
 # jaw zone: vertices of the lower jaw take the jaw (head otherwise) -- primary forced by the mouth line, not by capsule distance
 prim[jawzone & (V[:, 2] < lip_z - 0.02)] = bi['jaw']
+# TAIL-ROOT PELVIS BAND (RP6 v002): the tail quads met the thigh (ventro-lateral) and spine_01 (dorsal) weights edge-to-edge -> LBS tore the seam
+# (hip_flex70 16 cm, tail_twist 8 cm, trunk_twist 6 cm edge elongation).  Every non-tail vertex within TR_BAND quad rings of the tail quads becomes
+# PELVIS-primary, and tail_01 may diffuse into that band: tail -> pelvis -> thigh / spine hand-off instead of a hard step.
+import scipy.sparse as _sp
+_E = np.unique(np.sort(np.r_[Q[:, [0, 1]], Q[:, [1, 2]], Q[:, [2, 3]], Q[:, [3, 0]]], 1), axis=0)
+_A = _sp.coo_matrix((np.ones(2 * len(_E)), (np.r_[_E[:, 0], _E[:, 1]], np.r_[_E[:, 1], _E[:, 0]])), shape=(nv, nv)).tocsr()
+_tq = np.zeros(nv, bool); _tq[np.unique(Q[ql == 'tail'])] = True; band = _tq.copy()
+for _ in range(int(os.environ.get('TR_BAND', 10))): band = band | (_A @ band.astype(np.float32) > 0)
+band &= ~_tq
+band &= ~VL[:, [qli[q] for q in ('thigh', 'knee') if q in qli]].any(1) | (np.linalg.norm(V - np.array(P['tail_01']['head']), axis=1) < 25)
+prim[band] = bi['pelvis']; OK[band, bi['pelvis']] = True; OK[band, bi['tail_01']] = True
 W = np.zeros((nv, len(DB)), np.float32); W[np.arange(nv), prim] = 1.0
 # diffusion passes
 E = np.unique(np.sort(np.r_[Q[:, [0, 1]], Q[:, [1, 2]], Q[:, [2, 3]], Q[:, [3, 0]]], 1), axis=0)

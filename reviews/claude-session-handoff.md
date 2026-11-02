@@ -2,6 +2,13 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## UPDATE (2026-11-02 ~17:00) — NEW DEFECT FOUND + FIXED IN CODE: weight-seam TEARING at the tail root (hidden by the fold metric)
+LBS edge elongation scan (experiments/seams.py): tail quads met thigh (ventral) and spine_01 (dorsal) weights edge-to-edge -> hip_flex70 16 cm, tail_twist 8 cm,
+trunk_twist 6 cm. Fix: sa6_weights TAIL-ROOT PELVIS BAND (TR_BAND=10 rings, pelvis-primary, tail_01 may diffuse in) -> LBS 2-4.5 cm; correctives remove the rest:
+Solver.tear_edges / tear_fix (seeded local ARAP), tear count in cascade score + trigger, polish = up to 8 escalating bulge cycles (crease thr .85/.7/.55,
+smooth 150/300/500). Eval gates: tear edges (>2.5x rest AND >0.75 cm) = 0, |dV| <= 100 cm3, folds / pen 0, rigid landmarks / head <= 0.05 cm.
+Old fits archived /tmp/claude-0/rp6/v2_pre_band; FRESH fits running (runfit.sh, ROUNDS=6; resume = copy CF_c.json/.npz to CF_c_init.*).
+
 ## UPDATE (2026-11-02 ~14:00) — RP6 fits v2 (volume path) converged c1/c2; eval: 0 folds / 0 pen on all realisable poses, |dV| <= 51 cm3
 Failing own audit only on rigidity: jaw corrective moved the upper head 2.76 cm (jaw_open_32), fist/grasp_xneg claw-tip landmark 0.15 cm, literal lower_axial
 tail_root_centre 1.26 cm -> Solver.protect (head-rigid unit + rigid claw caps + rigid landmark vertices + 2 rings) never moved by any corrective; fit strips

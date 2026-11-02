@@ -120,6 +120,21 @@ class Solver:
         m_ = lmv & self.rigid
         for _ in range(2): m_ = m_ | (self.A1 @ m_.astype(np.float32) > 0)
         self.protect |= m_ & self.rigid
+    TEAR_RATIO, TEAR_CM = 2.5, 0.75
+    def tear_edges(self, P):
+        """tension tears: quad edges stretched beyond TEAR_RATIO x rest AND by more than TEAR_CM (weight-seam / contact-projection artifacts)"""
+        if not hasattr(self, '_E1'):
+            Q = self.r.Q; self._E1 = np.unique(np.sort(np.r_[Q[:, [0, 1]], Q[:, [1, 2]], Q[:, [2, 3]], Q[:, [3, 0]]], 1), axis=0)
+            self._L0 = np.linalg.norm(self.r.V[self._E1[:, 0]] - self.r.V[self._E1[:, 1]], axis=1)
+        L = np.linalg.norm(P[self._E1[:, 0]] - P[self._E1[:, 1]], axis=1); return (L > self.TEAR_RATIO * self._L0) & (L - self._L0 > self.TEAR_CM), L - self._L0
+    def tear_verts(self, P):
+        m, _ = self.tear_edges(P); v = np.zeros(self.r.nv, bool); v[self._E1[m].ravel()] = True; return v
+    def tear_fix(self, T, P, relcos, ring=12, iters=4):
+        """local ARAP seeded on the tearing edges' vertices (rigid / protected pinned) + unfold: restores rest edge lengths across a torn seam"""
+        tv = self.tear_verts(P)
+        if not tv.any(): return P
+        self.pin = True; Ps, _, _ = self.solve(T, P, np.zeros(0, int), iters=iters, ring=ring, spread_tol=1e-4, local=True, seed=tv)
+        Ps, _ = self.unfold(T, Ps, relcos); return Ps
     def dilate(self, m, k):
         for _ in range(k): m = m | (self.A1 @ m.astype(np.float32) > 0)
         return m
@@ -271,7 +286,7 @@ class Solver:
             if nb == 0: return Pt, 0
             mask |= self.dilate(b, grow)
         return best[1], best[0]
-    def bulge(self, T, P, V0, smooth=150, iters=6, tol=5.0, exclude=None):
+    def bulge(self, T, P, V0, smooth=150, iters=6, tol=5.0, exclude=None, crease_thr=0.85):
         """RP6 v002 volume corrective (replaces the concentrated volume_fix as first choice): restores the closed-body volume by a BROAD, smooth flesh
         bulge around the joint -- weight = blend-zone smoothstep(rotation spread) x (1 - crease), crease = surface compressed below 85 %% area (the
         fold itself is never pushed), the weight field Laplacian-smoothed `smooth` times (no local spikes), rigid / jaw / digit vertices 0; direction =
@@ -289,7 +304,7 @@ class Solver:
             a_ = np.zeros(r.nv); qa = 0.5 * np.linalg.norm(np.cross(P_[Q[:, 2]] - P_[Q[:, 0]], P_[Q[:, 3]] - P_[Q[:, 1]]), axis=1)
             for k in range(4): np.add.at(a_, Q[:, k], qa / 4)
             return a_
-        crease = np.clip((0.85 - varea(P) / np.maximum(varea(r.V), 1e-12)) / 0.25, 0, 1)
+        crease = np.clip((crease_thr - varea(P) / np.maximum(varea(r.V), 1e-12)) / 0.25, 0, 1)
         for _ in range(5): crease = 0.5 * crease + 0.5 * (self.A1 @ crease) / deg
         g = wv * (1 - crease)
         for _ in range(smooth): g = 0.5 * g + 0.5 * (self.A1 @ g) / deg
