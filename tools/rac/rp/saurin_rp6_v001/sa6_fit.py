@@ -26,6 +26,7 @@ def entries(R, spec, T):
 VOL_TOL = 20.0     # cm3: target of the volume-preservation corrective (|dV| <= VOL_TOL / 4 after the fix)
 VOL_ACCEPT = 60.0  # cm3: the volume path's result is accepted when the closed-body |dV| <= VOL_ACCEPT (audit gate = 100 cm3 per pose)
 NONREAL = ('tail_root_lateral_30_rp5lit', 'tail_root_vertical_25_rp5lit', 'tail_twist_30_rp5lit')
+LOC_RING = int(os.environ.get('LOC_RING', 8))
 VOL_TRIG = 60.0    # cm3: |dV| above which the volume corrective is (re)solved (hysteresis: fold / contact fixes may lose a little volume afterwards)
 VOL_BONES = {'clavicle', 'upperarm', 'forearm', 'hand', 'thigh', 'shin', 'foot', 'pelvis', 'spine_01', 'spine_02', 'spine_03', 'spine_04', 'neck_01', 'neck_02'} | {'tail_%02d' % k for k in range(1, 17)}
 #   tissue-volume joints only: the jaw opens a cavity (the closed mesh volume legitimately changes), digits are below the volume tolerance
@@ -42,6 +43,20 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
     Pc0 = Pc
     pen0 = int(pen.sum())
     ent = entries(R, spec, T)
+    # LOCALITY (RP6 v002): this pose's corrective may move only (a) the blend zone of its driving joints (vertices weighted both inside and outside the
+    # driving bone's subtree) dilated LOC_RING quad rings, and (b) contact sites (vertices interpenetrating at the incoming state or the DQS start)
+    # dilated 4 rings.  Everything else is pinned for this solve (added to the protected set) -> no anatomy drift far from the joint.
+    bz = np.zeros(R.nv, bool)
+    for b_, _, _ in ent:
+        ws_ = R.W[:, [R.bi[x] for x in R.sub(b_) if x in R.bi]].sum(1); bz |= (ws_ > 1e-3) & (ws_ < 1 - 1e-3)
+    allowed = S.dilate(bz, LOC_RING) | S.dilate(pen | penetration(R, R.dqs(T, R.V + d), F, w0), 4)
+    base_protect = S.protect; S.protect = base_protect | ~allowed
+    try:
+        return _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc, fl, pen, dV, vol_pose, ntear, ent, pose_key)
+    finally:
+        S.protect = base_protect
+def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntear, ent, pose_key):
+    pen0 = int(pen.sum())
     hinge = len(ent) == 1 and R.par[ent[0][0]] is not None
     # (ring, contact plane, unfold rounds, pin rigid): local + rigid parts pinned first; rigid vertices are released only when the pinned variants fail
     CASC = [(3, False, 40, True), (6, False, 40, True), (12, False, 40, True), (6, True, 40, True), (12, True, 80, True),
