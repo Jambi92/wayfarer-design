@@ -72,6 +72,13 @@ for i, b in enumerate(DB):
     elif b.startswith('meta'):
         k = int(b.split('_')[1]); t = b.split('_')[-1]
         own = [j for j, kk in enumerate(dkey) if kk[3] == 'f' and kk[2] == k and kk[1] == t]; OK[(digit_of >= 0) & ~np.isin(digit_of, own), i] = False
+# shoulder: the arm / girdle blend must not be confined to the narrow authored 'shoulder' band (LBS pinch at abduction): the upper arm may also weight
+# trunk / neck vertices within SH_R x its length of the glenohumeral joint, the clavicle may weight upper-arm vertices within SH_C x the upper-arm length
+for t in ('l', 'r'):
+    g = np.array(P['upperarm_' + t]['head']); La = P['upperarm_' + t]['length_cm']; side = (xs > 0) if t == 'l' else (xs < 0)
+    near = np.linalg.norm(V - g, axis=1); trunkv = VL[:, [qli[q] for q in ('trunk', 'neck') if q in qli]].any(1); armv = VL[:, [qli[q] for q in ('upper_arm',) if q in qli]].any(1)
+    OK[side & trunkv & (near < float(os.environ.get('SH_R', 0.45)) * La), bi['upperarm_' + t]] = True
+    OK[side & armv & (near < float(os.environ.get('SH_C', 0.35)) * La), bi['clavicle_' + t]] = True
 OK[~OK.any(1)] = True
 # capsule distances
 D = np.full((nv, len(DB)), 1e6)

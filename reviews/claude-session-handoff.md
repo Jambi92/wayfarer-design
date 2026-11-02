@@ -27,6 +27,15 @@ UPDATE ~17:30: xz -9 -T1 -> ~8.7 MB per .blend (191 keys). Fit v2 (snap 4 deg, c
 Topology co-location = 1 cm + quad footprint (RP5 PD-2 rule). Found: Poisson correctives moved rigid parts (rostrum 0.9 cm) -> v3 = LOCAL solves +
 rigid vertices pinned (refit running /tmp/claude-0/rp6/CF_M/F.json; v2 kept in /tmp/claude-0/rp6/v2). Then: eval M,F (sequential, 3.5 GB each),
 corrective audit, pd2, blend export+xz+readback, renders, package, report.
+UPDATE ~22:30 (STILL INTERNAL, NOT SUBMITTED): v3 (local + rigid-pinned correctives, /tmp/claude-0/rp6/v3/{W,CF}_*) evaluated on c1: 0 folds / 0 pen /
+0 topology for all 98 poses + gates, head/rostrum/eyes rigid error 0. BUT quality audit found real rig-owned deformation-quality defects (not folds):
+closed-body volume loss under LBS (+ correctives): shoulder_abd90 -700..-1000 cm3 (visible top-of-shoulder pinch / groove), neck_rot_40 -840,
+trunk_twist_30 -490, hip_flex70 -500, tail_root_lateral -580 (body 134,915 cm3). Tried: normal-direction volume corrective (pushes into creases ->
+pen/flips, rejected by line search), rest-normal variant (flips). Shoulder weight broadening env SH_R/SH_C in sa6_weights (0.45/0.35 now; SH_R=1.0
+gives abd90 dV -19 but flex60 -794). NEXT: weight quality pass BEFORE more corrective fitting: (1) shoulder SH_R/SH_C tune vs abd45/abd90/flex60
+both sides, (2) neck / trunk twist distribution (broader axial blending or twist split), (3) then volume thresholds; then refit (sa6_fit, ~1.5 h each
+M/F in parallel; per-8-pose partial saves; INIT resume), runA.sh (eval M,F + corrective audit), runB.sh (rigprep, blend export + xz -9 + readback,
+pd2), sa6_render.py, sa6_package.py, report. Literal RP5 jaw_open_20 = CONTACT intrusion (topology test now footprint rule -> 0).
 
 ## LATEST (2026-11-01 ~09:00) — ORDER 5a7d8cc — SAURIN RP5 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record)
 

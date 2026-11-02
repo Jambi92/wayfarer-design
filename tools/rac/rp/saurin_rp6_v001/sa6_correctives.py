@@ -120,7 +120,7 @@ class Solver:
         if seed is not None: fm |= seed
         reg |= self.dilate(fm, 2)
         reg = self.dilate(reg, ring)
-        if local:                                     # rigid vertices (one bone >= 0.999) stay exactly rigid unless they carry a fold / contact themselves
+        if getattr(self, 'pin', True):                # rigid vertices (one bone >= 0.999) stay exactly rigid unless they carry a fold / contact themselves
             reg &= ~(self.rigid & ~self.dilate(fm, 1))
         bnd = self.dilate(reg, 1) & ~reg
         I = np.nonzero(reg)[0]; B = np.nonzero(bnd)[0]; gi = -np.ones(r.nv, np.int64); gi[I] = np.arange(len(I))
@@ -187,7 +187,7 @@ class Solver:
         a = flex & (wc > 0.5) & (s > -eps); b = flex & (wc <= 0.5) & (s < eps)
         P = P.copy(); P[a] -= (s[a] + eps)[:, None] * n; P[b] -= (s[b] - eps)[:, None] * n
         return P, int(a.sum() + b.sum())
-    def contact_general(self, P, pen, rex=2.0, eps=0.05, k=400):
+    def contact_general(self, P, pen, rex=2.0, eps=0.05, k=200):
         """general contact corrective (digit-palm, digit-digit, any non-hinge contact): every vertex found inside another part of the posed body is
         moved onto the surface it penetrates (+eps outward), using the nearest posed quad of a different body part (REST position > rex cm away, or
         another digit), never the vertex's own neighbourhood.  Both contacting sides are treated -> they meet on a shared contact surface."""
@@ -204,5 +204,45 @@ class Solver:
         n = np.cross(P[Q[q, 2]] - P[Q[q, 0]], P[Q[q, 3]] - P[Q[q, 1]]); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12
         s = ((P[idx] - cq[q]) * n).sum(1); mv = ok & (s < eps); P = P.copy(); P[idx[mv]] += ((eps - s[mv]))[:, None] * n[mv]
         return P, int(mv.sum())
+    def body_volume(self, P):
+        Q = self.r.Q; a, b, c, d = (P[Q[:, k]] for k in range(4)); return (np.einsum('ij,ij->i', a, np.cross(b, c)) + np.einsum('ij,ij->i', a, np.cross(c, d))).sum() / 6
+    def volume_fix(self, T, P, V0, iters=4, tol=1.0):
+        """bounded volume-preservation corrective: the closed-body volume lost (or gained) by the deformation is restored inside the joints' blend zones
+        only (vertices whose bone blend is non-rigid; weight = the normalised rotation spread, so the correction fades to 0 at the rigid parts), by a
+        displacement along the posed vertex normals: dP = alpha * w_v * n_v with alpha = -dV / sum(w_v A_v) (first-order exact), iterated."""
+        r = self.r; W = r.W; Rb = np.stack([T[b][0] for b in r.DB]); M = W @ Rb.reshape(len(r.DB), 9); M = M.reshape(-1, 3, 3)
+        spread = np.zeros(r.nv)
+        for j in range(len(r.DB)):
+            m_ = W[:, j] > 0
+            if m_.any(): spread[m_] += W[m_, j] * np.linalg.norm(Rb[j][None] - M[m_], axis=(1, 2))
+        if spread.max() < 1e-6: return P, 0.0
+        wv = np.clip(spread / max(np.percentile(spread[spread > 1e-6], 95), 1e-9), 0, 1); wv[self.rigid] = 0; wv = 3 * wv ** 2 - 2 * wv ** 3
+        excl = [r.bi[b] for b in r.DB if b == 'jaw' or b.startswith(('finger', 'thumb', 'toe', 'meta'))]
+        wv[W[:, excl].sum(1) > 0] = 0                      # never inflate the mouth / jaw or the digits
+        Q_ = r.Q
+        def varea(P_):
+            a_ = np.zeros(r.nv); qa = 0.5 * np.linalg.norm(np.cross(P_[Q_[:, 2]] - P_[Q_[:, 0]], P_[Q_[:, 3]] - P_[Q_[:, 1]]), axis=1)
+            for k in range(4): np.add.at(a_, Q_[:, k], qa / 4)
+            return a_
+        comp = np.clip(1.0 - varea(P) / np.maximum(varea(r.V), 1e-12), 0, 1)   # tissue bulges where the surface is compressed, not where it stretches
+        deg1 = np.asarray(self.A1.sum(1)).ravel()
+        for _ in range(10): comp = 0.5 * comp + 0.5 * (self.A1 @ comp) / deg1
+        wv = wv * np.clip(comp / max(comp[wv > 0].max() if (wv > 0).any() else 1, 1e-9), 0, 1)
+        P = P.copy(); Q = r.Q; dV0 = self.body_volume(P) - V0
+        U_, _, Vt_ = np.linalg.svd(M); Mr = U_ @ Vt_                                             # polar rotation of the blend
+        n_rest = np.zeros_like(r.V)
+        for k in range(4): np.add.at(n_rest, Q[:, k], np.cross(r.V[Q[:, (k + 1) % 4]] - r.V[Q[:, k]], r.V[Q[:, (k + 3) % 4]] - r.V[Q[:, k]]))
+        for _ in range(iters):
+            dV = self.body_volume(P) - V0
+            if abs(dV) < tol: break
+            n = np.zeros_like(P)
+            for k in range(4): np.add.at(n, Q[:, k], np.cross(P[Q[:, (k + 1) % 4]] - P[Q[:, k]], P[Q[:, (k + 3) % 4]] - P[Q[:, k]]) / 2)
+            A = np.linalg.norm(n, axis=1) / 4                                                   # vertex area (posed)
+            n = np.einsum('vij,vj->vi', Mr, n_rest)                                              # push along the REST outward normal carried by the blended
+            n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12                                # rotation (not the crease normal: no push into the opposite wall)
+            den = (wv * A * 4).sum()
+            if den < 1e-9: break
+            P += (-dV / den) * wv[:, None] * n
+        return P, float(dV0)
     def rest_delta(self, Pstar, Pcur, I, M):
         return I, np.linalg.solve(M[I], (Pstar[I] - Pcur[I])[:, :, None])[:, :, 0]

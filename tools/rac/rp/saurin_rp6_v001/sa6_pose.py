@@ -39,7 +39,11 @@ class Rig:
     def blendR(self, T, W=None):
         W = self.W if W is None else W; Rb = np.stack([T[b][0] for b in self.DB]); return np.einsum('vb,bij->vij', W, Rb)
     def relcos(self, Pp, T, W=None):
-        W = self.W if W is None else W; dom = W[self.Q].mean(1).argmax(1); Rq = np.stack([T[self.DB[b]][0] for b in range(len(self.DB))])[dom]
+        if W is None:
+            if not hasattr(self, '_dom'): self._dom = sum(self.W[self.Q[:, k]] for k in range(4)).argmax(1)       # dominant bone per quad (cached)
+            W = self.W; dom = self._dom
+        else: dom = W[self.Q].mean(1).argmax(1)
+        Rq = np.stack([T[self.DB[b]][0] for b in range(len(self.DB))])[dom]
         n0r = np.einsum('qij,qj->qi', Rq, self.n0); n1 = self.qn(Pp); return (n0r * n1).sum(1) / (np.linalg.norm(n0r, axis=1) * np.linalg.norm(n1, axis=1) + 1e-12)
     # ---- the RP5 34-pose suite, re-targeted (sa_deform4.py) ----
     def palm_normal(self, s):

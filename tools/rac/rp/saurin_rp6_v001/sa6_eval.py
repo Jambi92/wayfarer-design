@@ -100,6 +100,11 @@ def main():
             th = np.degrees(np.arccos(np.clip((dv[1:] * dv[:-1]).sum(1), -1, 1))); win = np.array([th[max(0, k - 5):k + 6].mean() for k in range(len(th))])
             cen0 = np.array([R.V[rg].mean(0) for rg in rings]); dv0 = np.diff(cen0, axis=0); dv0 /= np.linalg.norm(dv0, axis=1, keepdims=True); th0 = np.degrees(np.arccos(np.clip((dv0[1:] * dv0[:-1]).sum(1), -1, 1)))
             ar = np.array([ring_area(P4, rg) for rg in rings[:-3]]) / A0[:-3]; ar3 = np.array([ring_area(P3, rg) for rg in rings[:-3]]) / A0[:-3]
+            dth = np.abs(th - th0); dwin = np.array([dth[max(0, k - 5):k + 6].mean() for k in range(len(dth))])
+            cen3 = np.array([P3[rg].mean(0) for rg in rings]); dv3 = np.diff(cen3, axis=0); dv3 /= np.linalg.norm(dv3, axis=1, keepdims=True); th3 = np.degrees(np.arccos(np.clip((dv3[1:] * dv3[:-1]).sum(1), -1, 1)))
+            g['tail_curvature'] = dict(delta_turning_deg_max=round(float(dth.max()), 3), delta_turning_ring=int(dth.argmax()), delta_kink_ratio_max=round(float((dth / np.maximum(dwin, 0.05))[dth > 0.2].max()) if (dth > 0.2).any() else 1.0, 3),
+                                       delta_turning_deg_max_lbs=round(float(np.abs(th3 - th0).max()), 3),
+                                       note='per-ring centreline turning minus the neutral turning (the neutral tail-root junction already turns %.1f deg)' % th0[0])
             g['tail'] = dict(segments=16, ring_area_ratio_min=round(float(ar.min()), 4), ring_area_ratio_max=round(float(ar.max()), 4), ring_area_ratio_min_lbs=round(float(ar3.min()), 4),
                              worst_ring=int(ar.argmin()), turning_deg_max=round(float(th.max()), 3), turning_deg_max_neutral=round(float(th0.max()), 3),
                              kink_ratio_max=round(float((th / np.maximum(win, 0.05))[th > 0.2].max()) if (th > 0.2).any() else 1.0, 3), total_turning_deg=round(float(th.sum()), 2))
@@ -139,6 +144,8 @@ def main():
             if fr == 1.0:
                 pen3 = FT.penetration(R, P3, F, w0)
                 Pd = R.skin(T, Vs, Ws); fs = relcos_s(Pd, T) < 0
+                def bvol(P): a, b, c, d = (P[Q[:, k]] for k in range(4)); return (np.einsum('ij,ij->i', a, np.cross(b, c)) + np.einsum('ij,ij->i', a, np.cross(c, d))).sum() / 6
+                r['body_volume_change_cm3'] = dict(rest=round(float(bvol(R.V)), 1), lbs=round(float(bvol(P3) - bvol(R.V)), 2), corrected=round(float(bvol(P4) - bvol(R.V)), 2))
                 r.update(step1_source_flips_sampled=int(fs.sum()), step1_source_flip_area_permille=round(float(1000 * sa_[fs].sum() / sa_.sum()), 4),
                          step3_lbs_flips=int(len(f3)), step3_lbs_flip_area_permille=round(float(1000 * qa[f3].sum() / qa.sum()), 4), step3_lbs_new_penetration_vertices=int(pen3.sum()),
                          penetration_centroid=np.round(P4[pen4].mean(0), 1).tolist() if pen4.any() else None)

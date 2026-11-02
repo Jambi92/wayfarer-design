@@ -59,7 +59,10 @@ def audit(cfg, wf, d):
                 others = [stem % (k, j) + t for k in range(1, n + 1) if k not in near for j in (1, 2, 3)]; mk = np.zeros(nv, bool); mk[vv] = True; worst = max(worst, wsum(mk, others))
             L['%s_%s_non_adjacent_digit_weight_max' % (lab, t)] = worst
         arm = ['upperarm_' + t, 'forearm_' + t, 'hand_' + t] + [b for b in DB if b.endswith('_' + t) and b.startswith(('meta', 'finger', 'thumb'))]
-        L['axilla_trunk_wall_arm_weight_max_' + t] = wsum(verts(['trunk'], t), arm)
+        Pp_ = json.load(open(C.EV6 + '/SA_RP6_joint_placement_%s_v001.json' % cfg))['bones']; g_ = np.array(Pp_['upperarm_' + t]['head']); La_ = Pp_['upperarm_' + t]['length_cm']
+        beyond = np.linalg.norm(V - g_, axis=1) > 0.45 * La_          # outside the deliberate shoulder blend zone (sa6_weights SH_R)
+        L['axilla_trunk_wall_arm_weight_max_' + t] = wsum(verts(['trunk'], t) & beyond, arm)
+        L['shoulder_blend_zone_trunk_vertices_with_upperarm_weight_' + t] = int((verts(['trunk', 'neck'], t) & ~beyond & (W[:, bi['upperarm_' + t]] > 0)).sum())
         L['axilla_arm_vertices_spine_weight_max_' + t] = wsum(verts(['upper_arm', 'elbow'], t), ['spine_01', 'spine_02', 'spine_03', 'spine_04', 'pelvis'])
         leg = ['thigh_' + t, 'shin_' + t, 'foot_' + t] + [b for b in DB if b.startswith('toe') and b.endswith('_' + t)]
         L['groin_opposite_leg_weight_max_' + t] = wsum(verts(['hip', 'thigh', 'knee', 'pelvis'], o), leg)
@@ -73,6 +76,7 @@ def audit(cfg, wf, d):
     L['throat_neck_vertices_jaw_weight_max'] = wsum(verts(['neck', 'trunk']), ['jaw'])
     L['jaw_weighted_vertices'] = int((W[:, bi['jaw']] > 0).sum())
     out['leakage'] = L; out['leakage_pass'] = all(v == 0 for k, v in L.items() if k.endswith(('_max',)) or '_max_' in k)
+    out['shoulder_blend_note'] = 'the upper arm deliberately weights trunk / neck vertices within 0.45 x its length of the glenohumeral joint (and the clavicle the proximal upper arm within 0.35 x) to avoid the LBS shoulder pinch; the leakage test checks the trunk wall beyond that zone'
     return out, W
 if __name__ == '__main__':
     d = C.load(); OUT, WM, WF = sys.argv[1:4]
