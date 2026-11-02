@@ -104,7 +104,9 @@ _tq = np.zeros(nv, bool); _tq[np.unique(Q[ql == 'tail'])] = True; band = _tq.cop
 for _ in range(int(os.environ.get('TR_BAND', 10))): band = band | (_A @ band.astype(np.float32) > 0)
 band &= ~_tq
 band &= ~VL[:, [qli[q] for q in ('thigh', 'knee') if q in qli]].any(1) | (np.linalg.norm(V - np.array(P['tail_01']['head']), axis=1) < 25)
-prim[band] = bi['pelvis']; OK[band, bi['pelvis']] = True; OK[band, bi['tail_01']] = True
+prim[band] = bi['pelvis']; OK[band, bi['pelvis']] = True
+_leg = VL[:, [qli[q] for q in ('thigh', 'knee', 'shin') if q in qli]].any(1)
+OK[band & ~_leg, bi['tail_01']] = True                       # tail never weights leg-labelled vertices (groin leakage rule)
 W = np.zeros((nv, len(DB)), np.float32); W[np.arange(nv), prim] = 1.0
 # diffusion passes
 E = np.unique(np.sort(np.r_[Q[:, [0, 1]], Q[:, [1, 2]], Q[:, [2, 3]], Q[:, [3, 0]]], 1), axis=0)
