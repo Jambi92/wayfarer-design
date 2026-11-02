@@ -28,7 +28,10 @@ def build(V, cfg):
     put('pelvis_h', lm('pelvis_root'), 'landmark pelvis_root (derived, hip-joint level)')
     for k, nm_ in (('spine_lower_axial_107', 'spine_01_h'), ('spine_lower_axial_123', 'spine_02_h'), ('spine_mid_138', 'spine_03_h'), ('spine_upper_150', 'spine_04_h')):
         put(nm_, lm(k), 'landmark %s (section centroid)' % k)
-    put('neck_01_h', lm('neck_base'), 'landmark neck_base (section centroid)'); put('neck_02_h', lm('neck_min_section'), 'landmark neck_min_section (section centroid)')
+    # neck_01 joint = centroid of the authored neck / trunk seam ring (frozen quad labels; topology-defined, identical vertex set on c2).  The RP5 'neck_base'
+    # landmark lies at the FRONT of the neck base (throat surface, ~3.7 cm inside the anterior wall): flexion about it stretched the whole nape (+3.6 L LBS).
+    nk = np.zeros(len(V), bool); nk[d['Q'][d['qlab'] == 'neck'].ravel()] = True; tk = np.zeros(len(V), bool); tk[d['Q'][np.isin(d['qlab'], ('trunk', 'shoulder'))].ravel()] = True
+    put('neck_01_h', V[nk & tk].mean(0), 'centroid of the neck / trunk seam ring (frozen quad labels) -- RP6 v002 fix: RP5 neck_base landmark is anterior'); put('neck_02_h', lm('neck_min_section'), 'landmark neck_min_section (section centroid)')
     put('head_h', lm('head_pivot'), 'landmark head_pivot (canon)'); put('head_t', lm('crown'), 'landmark crown (extremal)')
     put('jaw_h', 0.5 * (lm('jaw_hinge_xpos') + lm('jaw_hinge_xneg')), 'mid-point of the canonical jaw hinges'); put('jaw_t', lm('rostrum_tip') - np.array([0, 0, 1.5]), 'rostrum tip - 1.5 cm (lower jaw line)')
     # tail: 16 deform segments, graded spacing (equal increments of integral ds / sqrt(r)) on the tail-module ring centroid line; root = tail-root ring centroid
@@ -36,10 +39,16 @@ def build(V, cfg):
     s = np.r_[0, np.cumsum(np.linalg.norm(np.diff(cen, axis=0), axis=1))]; g = np.r_[0, np.cumsum(np.diff(s) / np.sqrt(0.5 * (rad[1:] + rad[:-1])))]
     kn = np.interp(np.linspace(0, g[-1], TAILN + 1), g, s); P = np.array([np.interp(kn, s, cen[:, k]) for k in range(3)]).T
     for i in range(TAILN + 1): put('tail_%02d_h' % (i + 1) if i < TAILN else 'tail_%02d_t' % TAILN, P[i], 'tail-module ring centroid line, graded knot %d / %d' % (i, TAILN))
+    # glenohumeral joint (RP6 v002): the RP5 landmarks sit at different depths inside their shoulders (left 0.5 cm, right 2.1 cm posterior of the
+    # shoulder-ring centroid) -> one bilateral rule: shoulder_ring0 centroid + the MEAN landmark offset of both sides (lateral component mirrored).
+    ring = lambda s_: V[loops['shoulder_ring0_' + s_]].mean(0); mirr = lambda s_: np.array([1.0 if s_ == 'xpos' else -1.0, 1, 1])
+    gh_off = 0.5 * ((lm('glenohumeral_xpos') - ring('xpos')) * mirr('xpos') + (lm('glenohumeral_xneg') - ring('xneg')) * mirr('xneg'))
+    gh = lambda s_: ring(s_) + gh_off * mirr(s_)
+    GHM = 'shoulder_ring0 centroid + bilateral mean glenohumeral-landmark offset (lateral mirrored)'
     for s_ in ('xpos', 'xneg'):
         t = C.side_tag(s_)
-        put('clavicle_%s_h' % t, lm('neck_base') + 0.22 * (lm('glenohumeral_' + s_) - lm('neck_base')) - np.array([0, 4.0, 0]) * 0, 'neck_base + 22 %% toward glenohumeral (sterno-clavicular region)')
-        put('upperarm_%s_h' % t, lm('glenohumeral_' + s_), 'landmark glenohumeral (section)'); put('forearm_%s_h' % t, lm('elbow_' + s_), 'landmark elbow (section)')
+        put('clavicle_%s_h' % t, lm('neck_base') + 0.22 * (gh(s_) - lm('neck_base')) - np.array([0, 4.0, 0]) * 0, 'neck_base + 22 %% toward glenohumeral (sterno-clavicular region)')
+        put('upperarm_%s_h' % t, gh(s_), GHM); put('forearm_%s_h' % t, lm('elbow_' + s_), 'landmark elbow (section)')
         put('hand_%s_h' % t, lm('wrist_' + s_), 'landmark wrist (section)')
         for k in range(1, 5):
             put('meta_%d_%s_h' % (k, t), lm('wrist_' + s_) + 0.15 * (lcen('%s_f%d_base' % (s_, k), V) - lm('wrist_' + s_)), 'wrist + 15 % toward the finger base ring (carpal)')

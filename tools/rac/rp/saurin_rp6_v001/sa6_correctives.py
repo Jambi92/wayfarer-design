@@ -244,5 +244,51 @@ class Solver:
             if den < 1e-9: break
             P += (-dV / den) * wv[:, None] * n
         return P, float(dV0)
+    def bulge_safe(self, T, P, V0, bad, rounds=8, grow=3, **kw):
+        """bulge with self-masking: after each trial the vertices of quads it newly folded / made interpenetrate (bad(P) -> vertex mask) are dilated
+        `grow` rings and removed from the bulge field; the volume is re-solved on what remains.  Returns the first clean trial (or the cleanest)."""
+        mask = np.zeros(self.r.nv, bool); bad0 = bad(P); best = None
+        for k in range(rounds):
+            Pt = self.bulge(T, P, V0, exclude=mask, **kw); b = bad(Pt) & ~bad0; nb = int(b.sum())
+            if best is None or nb < best[0]: best = (nb, Pt)
+            if nb == 0: return Pt, 0
+            mask |= self.dilate(b, grow)
+        return best[1], best[0]
+    def bulge(self, T, P, V0, smooth=150, iters=6, tol=5.0, exclude=None):
+        """RP6 v002 volume corrective (replaces the concentrated volume_fix as first choice): restores the closed-body volume by a BROAD, smooth flesh
+        bulge around the joint -- weight = blend-zone smoothstep(rotation spread) x (1 - crease), crease = surface compressed below 85 %% area (the
+        fold itself is never pushed), the weight field Laplacian-smoothed `smooth` times (no local spikes), rigid / jaw / digit vertices 0; direction =
+        rest outward normal carried by the blend's polar rotation; magnitude by a secant solve on the exact closed volume."""
+        r = self.r; W = r.W; Rb = np.stack([T[b][0] for b in r.DB]); M = (W @ Rb.reshape(len(r.DB), 9)).reshape(-1, 3, 3)
+        spread = np.zeros(r.nv)
+        for j in range(len(r.DB)):
+            m_ = W[:, j] > 0
+            if m_.any(): spread[m_] += W[m_, j] * np.linalg.norm(Rb[j][None] - M[m_], axis=(1, 2))
+        if spread.max() < 1e-6: return P
+        wv = np.clip(spread / max(np.percentile(spread[spread > 1e-6], 95), 1e-9), 0, 1); wv = 3 * wv ** 2 - 2 * wv ** 3
+        excl = W[:, [r.bi[b] for b in r.DB if b == 'jaw' or b.startswith(('finger', 'thumb', 'toe', 'meta'))]].sum(1) > 0; wv[excl] = 0
+        Q = r.Q; deg = np.asarray(self.A1.sum(1)).ravel()
+        def varea(P_):
+            a_ = np.zeros(r.nv); qa = 0.5 * np.linalg.norm(np.cross(P_[Q[:, 2]] - P_[Q[:, 0]], P_[Q[:, 3]] - P_[Q[:, 1]]), axis=1)
+            for k in range(4): np.add.at(a_, Q[:, k], qa / 4)
+            return a_
+        crease = np.clip((0.85 - varea(P) / np.maximum(varea(r.V), 1e-12)) / 0.25, 0, 1)
+        for _ in range(5): crease = 0.5 * crease + 0.5 * (self.A1 @ crease) / deg
+        g = wv * (1 - crease)
+        for _ in range(smooth): g = 0.5 * g + 0.5 * (self.A1 @ g) / deg
+        g[self.rigid | excl] = 0
+        if exclude is not None: g[exclude] = 0
+        U_, _, Vt_ = np.linalg.svd(M); Mr = U_ @ Vt_
+        n = np.zeros_like(r.V)
+        for k in range(4): np.add.at(n, Q[:, k], np.cross(r.V[Q[:, (k + 1) % 4]] - r.V[Q[:, k]], r.V[Q[:, (k + 3) % 4]] - r.V[Q[:, k]]))
+        n = np.einsum('vij,vj->vi', Mr, n); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12; dirn = g[:, None] * n
+        P = P.copy()
+        for _ in range(iters):
+            dV = self.body_volume(P) - V0
+            if abs(dV) < tol: break
+            dd = (self.body_volume(P + 1e-3 * dirn) - self.body_volume(P)) / 1e-3
+            if abs(dd) < 1e-9: break
+            P += (-dV / dd) * dirn
+        return P
     def rest_delta(self, Pstar, Pcur, I, M):
         return I, np.linalg.solve(M[I], (Pstar[I] - Pcur[I])[:, :, None])[:, :, 0]

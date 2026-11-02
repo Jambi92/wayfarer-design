@@ -36,6 +36,19 @@ class Rig:
             if not m.any(): continue
             R0, t0 = T[b]; out[m] += W[m, i:i + 1] * (P[m] @ R0.T + t0)
         return out
+    def dqs(self, T, P=None, W=None):
+        """dual-quaternion skinning of P (rest + shape keys) -- used ONLY as a corrective TARGET generator (the shipped deformation stays LBS + baked
+        correctives, UE-native): DQS keeps the blend-zone volume under twist / swing where LBS collapses toward the chord."""
+        from scipy.spatial.transform import Rotation as Rot
+        P = self.V if P is None else P; W = self.W if W is None else W
+        def qm(a, b):
+            w1, x1, y1, z1 = np.moveaxis(a, -1, 0); w2, x2, y2, z2 = np.moveaxis(b, -1, 0)
+            return np.stack([w1 * w2 - x1 * x2 - y1 * y2 - z1 * z2, w1 * x2 + x1 * w2 + y1 * z2 - z1 * y2, w1 * y2 - x1 * z2 + y1 * w2 + z1 * x2, w1 * z2 + x1 * y2 - y1 * x2 + z1 * w2], -1)
+        q = np.array([np.roll(Rot.from_matrix(T[b][0]).as_quat(), 1) for b in self.DB]); t = np.array([T[b][1] for b in self.DB]); dq = 0.5 * qm(np.c_[np.zeros(len(t)), t], q)
+        dom = W.argmax(1); sg = np.sign((q[None] * q[dom][:, None]).sum(-1)); sg[sg == 0] = 1; Wq = W * sg
+        b0 = Wq @ q; be = Wq @ dq; n = np.linalg.norm(b0, axis=1, keepdims=True); b0 /= n; be /= n
+        w, v = b0[:, 0:1], b0[:, 1:]; we, ve = be[:, 0:1], be[:, 1:]
+        return P + 2 * np.cross(v, np.cross(v, P) + w * P) + 2 * (w * ve - we * v + np.cross(v, ve))
     def blendR(self, T, W=None):
         W = self.W if W is None else W; Rb = np.stack([T[b][0] for b in self.DB]); return np.einsum('vb,bij->vij', W, Rb)
     def relcos(self, Pp, T, W=None):
@@ -62,7 +75,13 @@ class Rig:
         P = self.suite_rp5()
         if kind == 'rp5': return P
         flip = ('jaw_open_20', 'neck_flex_30', 'lower_axial_flex_25', 'shoulder_flex60', 'elbow_90', 'elbow_130', 'hip_flex70', 'knee_90', 'ankle_dorsi20')
-        return {k: ([(b, p, a, -d) for b, p, a, d in v] if k.startswith(flip) else v) for k, v in P.items()}
+        out = {k: ([(b, p, a, -d) for b, p, a, d in v] if k.startswith(flip) else v) for k, v in P.items()}
+        # tail-root poses: RP5 pivots them about the landmark tail_root_centre, 9-10 cm above / in front of the rig's tail_01 joint (tail-root ring
+        # centroid).  A bone can only rotate about its own head, so the rig-realisable pose rotates tail_01 about its head (same axis / angle); the
+        # literal RP5 pivot implies an extra 4-11 cm translation of the whole tail into the pelvis (-3.8 L) and is kept only in the rp5lit record.
+        for k in ('tail_root_lateral_30', 'tail_root_vertical_25', 'tail_twist_30'):
+            out[k] = [(b, self.H(b), a, d) for b, p, a, d in out[k]]
+        return out
     def suite_rp5(self):
         POSES = {'jaw_open_20': [('jaw', self.H('jaw'), X, 20)], 'neck_flex_30': [('neck_01', self.H('neck_01'), X, 30)], 'neck_rot_40': [('neck_01', self.H('neck_01'), Z, 40)]}
         for s, sg in (('xpos', 1), ('xneg', -1)):

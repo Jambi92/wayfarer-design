@@ -9,7 +9,7 @@ def pose_set(R, gates=True):
     import sa6_gates as GT
     A = R.suite('anat'); L = R.suite('rp5'); P = dict(A)
     for k, v in L.items():
-        if v != A[k] if not isinstance(v, list) else any(e[3] != f[3] for e, f in zip(v, A[k])):
+        if any(e[3] != f[3] or np.abs(np.asarray(e[1], float) - np.asarray(f[1], float)).max() > 1e-9 for e, f in zip(v, A[k])):
             if k != 'jaw_open_20': P[k + '_rp5lit'] = v
     if gates: P.update({'gate:' + k: v for k, v in GT.gate_poses(R).items()})
     return P
@@ -24,6 +24,7 @@ def entries(R, spec, T):
         out.append((b, np.asarray(piv, float), np.asarray(ax, float) / np.linalg.norm(ax)))
     return out
 VOL_TOL = 20.0     # cm3: target of the volume-preservation corrective (|dV| <= VOL_TOL / 4 after the fix)
+VOL_ACCEPT = 60.0  # cm3: the volume path's result is accepted when the closed-body |dV| <= VOL_ACCEPT (audit gate = 100 cm3 per pose)
 VOL_TRIG = 60.0    # cm3: |dV| above which the volume corrective is (re)solved (hysteresis: fold / contact fixes may lose a little volume afterwards)
 VOL_BONES = {'clavicle', 'upperarm', 'forearm', 'hand', 'thigh', 'shin', 'foot', 'pelvis', 'spine_01', 'spine_02', 'spine_03', 'spine_04', 'neck_01', 'neck_02'} | {'tail_%02d' % k for k in range(1, 17)}
 #   tissue-volume joints only: the jaw opens a cavity (the closed mesh volume legitimately changes), digits are below the volume tolerance
@@ -38,35 +39,53 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
     if not len(fl) and not pen.any() and abs(dV) <= VOL_TRIG: return 0, 0, 0
     Pc0 = Pc
     pen0 = int(pen.sum())
-    ent = entries(R, spec, T); best = None
-    if not len(fl) and not pen.any(): best = ((0, 0.0), Pc, np.zeros(0, int), 0)
-    # solver cascade (first variant that ends fold- and penetration-free wins; else the one with the fewest folds + penetrations)
-    # LOCAL first (the folds / contacts + a few rings; everything else stays exactly LBS -> no anatomy drift), widening only when needed
+    ent = entries(R, spec, T)
     hinge = len(ent) == 1 and R.par[ent[0][0]] is not None
     # (ring, contact plane, unfold rounds, pin rigid): local + rigid parts pinned first; rigid vertices are released only when the pinned variants fail
-    casc = [(3, False, 40, True), (6, False, 40, True), (12, False, 40, True), (6, True, 40, True), (12, True, 80, True),
+    CASC = [(3, False, 40, True), (6, False, 40, True), (12, False, 40, True), (6, True, 40, True), (12, True, 80, True),
             (6, False, 40, False), (12, False, 80, False), (12, True, 80, False), (24, False, 80, False), (24, True, 80, False)]
-    if pen0 and hinge: casc = sorted(casc, key=lambda c_: (not c_[3], not c_[1]))      # contact poses: hinge contact plane first (within each pin level)
-    for ring, plane, rounds, pin in (casc if best is None else []):
-        if plane and not (len(ent) == 1 and R.par[ent[0][0]]): continue
-        S.pin = pin; Ps, I, M = S.solve(T, Pc, fl, iters=1, ring=ring, spread_tol=1e-4, local=True, seed=pen); ncont = 0
-        if plane and penetration(R, Ps, F, w0).any(): Ps, ncont = S.contact_plane(T, Ps, ent[0][0], ent[0][1])
-        Ps, f2 = S.unfold(T, Ps, R.relcos, rounds=rounds, pin_rigid=pin)
-        for _ in range(4 if (pen0 or plane) else 0):     # general contact (any remaining interpenetration), then re-relax
-            pen = penetration(R, Ps, F, w0)
-            if not pen.any(): break
-            Ps, n_ = S.contact_general(Ps, pen); ncont += n_; Ps, f2 = S.unfold(T, Ps, R.relcos, rounds=rounds, pin_rigid=pin)
-        npen = int(penetration(R, Ps, F, w0).sum()) if (pen0 or plane or not len(f2)) else 0; score = (len(f2) + npen, float(np.abs(Ps - Pc).sum()))
-        if best is None or score < best[0]: best = (score, Ps, f2, ncont)
-        if score[0] == 0: break
-    _, Ps, f2, ncont = best
-    if vol_pose and not len(f2):                         # volume-preservation corrective LAST (blend zones only): the largest step fraction that keeps the
-        dVs = S.body_volume(Ps) - S.V0                   # result fold- and penetration-free (line search 1, 3/4, 1/2, 1/4)
-        if abs(dVs) > VOL_TOL:
-            Pv, _ = S.volume_fix(T, Ps, S.V0, tol=VOL_TOL / 4)
-            for sc in (1.0, 0.75, 0.5, 0.25):
-                Pt = Ps + sc * (Pv - Ps)
-                if not (R.relcos(Pt, T) < 0).any() and not penetration(R, Pt, F, w0).any(): Ps = Pt; break
+    def cascade(P0):
+        """LOCAL fold / contact cascade from the start shape P0: first variant that ends fold- and penetration-free wins, else the fewest folds + pen."""
+        f0 = np.nonzero(R.relcos(P0, T) < 0)[0]; p0 = penetration(R, P0, F, w0)
+        if not len(f0) and not p0.any(): return ((0, 0.0), P0, np.zeros(0, int), 0)
+        casc = sorted(CASC, key=lambda c_: (not c_[3], not c_[1])) if (p0.any() and hinge) else CASC   # contact poses: hinge contact plane first
+        best = None
+        for ring, plane, rounds, pin in casc:
+            if plane and not hinge: continue
+            S.pin = pin; Ps, I, M = S.solve(T, P0, f0, iters=1, ring=ring, spread_tol=1e-4, local=True, seed=p0); ncont = 0
+            if plane and penetration(R, Ps, F, w0).any(): Ps, ncont = S.contact_plane(T, Ps, ent[0][0], ent[0][1])
+            Ps, f2 = S.unfold(T, Ps, R.relcos, rounds=rounds, pin_rigid=pin)
+            for _ in range(4 if (p0.any() or plane) else 0):     # general contact (any remaining interpenetration), then re-relax
+                pq = penetration(R, Ps, F, w0)
+                if not pq.any(): break
+                Ps, n_ = S.contact_general(Ps, pq); ncont += n_; Ps, f2 = S.unfold(T, Ps, R.relcos, rounds=rounds, pin_rigid=pin)
+            npen = int(penetration(R, Ps, F, w0).sum()); score = (len(f2) + npen, float(np.abs(Ps - P0).sum()))
+            if best is None or score < best[0]: best = (score, Ps, f2, ncont)
+            if score[0] == 0: break
+        return best
+    def polish(Ps):
+        """volume polish on a clean result: broad bulge (+ unfold), else the concentrated volume_fix; largest clean step of 1, 3/4, 1/2, 1/4."""
+        if abs(S.body_volume(Ps) - S.V0) <= VOL_TOL: return Ps
+        def bad(P_):
+            m = np.zeros(R.nv, bool); m[R.Q[R.relcos(P_, T) < 0].ravel()] = True; return m | penetration(R, P_, F, w0)
+        Pv, nb = S.bulge_safe(T, Ps, S.V0, bad)
+        if nb: Pv, _ = S.unfold(T, Pv, R.relcos)
+        if (R.relcos(Pv, T) < 0).any() or penetration(R, Pv, F, w0).any(): Pv, _ = S.volume_fix(T, Ps, S.V0, tol=VOL_TOL / 4)
+        for sc in (1.0, 0.75, 0.5, 0.25):
+            Pt = Ps + sc * (Pv - Ps)
+            if not (R.relcos(Pt, T) < 0).any() and not penetration(R, Pt, F, w0).any(): return Pt
+        return Ps
+    cands = [cascade(Pc)]
+    if vol_pose and abs(dV) > VOL_TRIG / 3 and os.environ.get('VOLPATH', '1') == '1':
+        # RP6 v002 VOLUME START: DQS of (rest + current correctives) + broad crease-avoiding bulge -> the same local cascade from there
+        cands.append(cascade(S.bulge(T, R.dqs(T, R.V + d), S.V0)))
+    out = []
+    for c_ in cands:
+        if c_ is None: continue
+        sc_, Ps, f2, ncont = c_
+        if vol_pose and sc_[0] == 0: Ps = polish(Ps)
+        out.append(((sc_[0], max(0.0, abs(S.body_volume(Ps) - S.V0) - VOL_ACCEPT) if vol_pose else 0.0, sc_[1]), Ps, f2, ncont))
+    _, Ps, f2, ncont = min(out, key=lambda o: o[0])
     Pc = Pc0                                             # the stored corrective = everything relative to the incoming state
     dmask = np.linalg.norm(Ps - Pc, axis=1) > 1e-7; I = np.nonzero(dmask)[0]
     Wb = R.W; Rb = np.stack([T[b][0] for b in R.DB]); M = np.einsum('vb,bij->vij', Wb[I], Rb)

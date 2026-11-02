@@ -173,68 +173,68 @@
     150.0
    ],
    "tail": [
-    0.2284,
-    8.0468,
-    156.0
+    -0.04195,
+    -5.58253,
+    162.58537
    ],
-   "length_cm": 11.9043,
+   "length_cm": 13.0504,
    "deform": true,
    "role": "axial upper thoracic",
    "local_axes": {
     "y_bone": [
-     -0.04377,
-     0.86258,
-     0.50402
+     -0.06065,
+     -0.25753,
+     0.96436
     ],
     "x": [
-     0.99871,
-     0.05068,
-     -0.0
+     -0.99803,
+     0.0,
+     -0.06276
     ],
     "z": [
-     0.02555,
-     -0.50337,
-     0.86369
+     -0.01616,
+     0.96627,
+     0.25703
     ]
    },
    "head_method": "landmark spine_upper_150 (section centroid)",
-   "tail_method": "landmark neck_base (section centroid)",
+   "tail_method": "centroid of the neck / trunk seam ring (frozen quad labels) -- RP6 v002 fix: RP5 neck_base landmark is anterior",
    "configuration": "c1 SA-M188",
    "c2_relation": "source (c1)"
   },
   "neck_01": {
    "parent": "spine_04",
    "head": [
-    0.2284,
-    8.0468,
-    156.0
+    -0.04195,
+    -5.58253,
+    162.58537
    ],
    "tail": [
     -0.0627,
     -3.345,
     171.5
    ],
-   "length_cm": 19.2382,
+   "length_cm": 9.1912,
    "deform": true,
    "role": "neck",
    "local_axes": {
     "y_bone": [
-     -0.01513,
-     -0.59215,
-     0.80569
+     -0.00226,
+     0.24344,
+     0.96991
     ],
     "x": [
-     -0.99967,
-     0.02555,
-     0.0
+     -1.0,
+     0.0,
+     -0.00233
     ],
     "z": [
-     0.02058,
-     0.80543,
-     0.59234
+     0.00057,
+     0.96992,
+     -0.24344
     ]
    },
-   "head_method": "landmark neck_base (section centroid)",
+   "head_method": "centroid of the neck / trunk seam ring (frozen quad labels) -- RP6 v002 fix: RP5 neck_base landmark is anterior",
    "tail_method": "landmark neck_min_section (section centroid)",
    "configuration": "c1 SA-M188",
    "c2_relation": "source (c1)"
@@ -945,73 +945,73 @@
   "clavicle_l": {
    "parent": "spine_04",
    "head": [
-    4.06384,
-    5.01555,
-    153.63808
+    4.2037,
+    4.8376,
+    153.83049
    ],
    "tail": [
-    17.6622,
-    -5.7316,
-    145.264
+    18.29794,
+    -6.54046,
+    146.13859
    ],
-   "length_cm": 19.2495,
+   "length_cm": 19.6793,
    "deform": true,
    "role": "shoulder girdle",
    "local_axes": {
     "y_bone": [
-     0.70643,
-     -0.55831,
-     -0.43503
+     0.7162,
+     -0.57818,
+     -0.39086
     ],
     "x": [
-     -0.62006,
-     -0.78456,
+     -0.62814,
+     -0.7781,
      0.0
     ],
     "z": [
-     0.34131,
-     -0.26974,
-     0.90042
+     0.30413,
+     -0.24552,
+     0.92045
     ]
    },
    "head_method": "neck_base + 22 %% toward glenohumeral (sterno-clavicular region)",
-   "tail_method": "landmark glenohumeral (section)",
+   "tail_method": "shoulder_ring0 centroid + bilateral mean glenohumeral-landmark offset (lateral mirrored)",
    "configuration": "c1 SA-M188",
    "c2_relation": "source (c1)"
   },
   "upperarm_l": {
    "parent": "clavicle_l",
    "head": [
-    17.6622,
-    -5.7316,
-    145.264
+    18.29794,
+    -6.54046,
+    146.13859
    ],
    "tail": [
     30.7419,
     -1.2965,
     120.6323
    ],
-   "length_cm": 28.2395,
+   "length_cm": 28.8604,
    "deform": true,
    "role": "arm",
    "local_axes": {
     "y_bone": [
-     0.46317,
-     0.15705,
-     -0.87224
+     0.43118,
+     0.1817,
+     -0.88378
     ],
     "x": [
-     0.32112,
-     -0.94704,
+     0.38833,
+     -0.92152,
      0.0
     ],
     "z": [
-     0.82605,
-     0.2801,
-     0.48907
+     0.81442,
+     0.3432,
+     0.4679
     ]
    },
-   "head_method": "landmark glenohumeral (section)",
+   "head_method": "shoulder_ring0 centroid + bilateral mean glenohumeral-landmark offset (lateral mirrored)",
    "tail_method": "landmark elbow (section)",
    "configuration": "c1 SA-M188",
    "c2_relation": "source (c1)"
@@ -2462,73 +2462,73 @@
   "clavicle_r": {
    "parent": "spine_04",
    "head": [
-    -4.34181,
-    4.7107,
-    153.77076
+    -4.20195,
+    4.88865,
+    153.57835
    ],
    "tail": [
-    -20.5453,
-    -7.1173,
-    145.8671
+    -19.90956,
+    -6.30844,
+    144.99251
    ],
-   "length_cm": 21.5621,
+   "length_cm": 21.1145,
    "deform": true,
    "role": "shoulder girdle",
    "local_axes": {
     "y_bone": [
-     -0.75148,
-     -0.54856,
-     -0.36655
+     -0.74393,
+     -0.5303,
+     -0.40663
     ],
     "x": [
-     -0.58959,
-     0.8077,
+     -0.58046,
+     0.81429,
      0.0
     ],
     "z": [
-     -0.29607,
-     -0.21612,
-     0.9304
+     -0.33112,
+     -0.23603,
+     0.91359
     ]
    },
    "head_method": "neck_base + 22 %% toward glenohumeral (sterno-clavicular region)",
-   "tail_method": "landmark glenohumeral (section)",
+   "tail_method": "shoulder_ring0 centroid + bilateral mean glenohumeral-landmark offset (lateral mirrored)",
    "configuration": "c1 SA-M188",
    "c2_relation": "source (c1)"
   },
   "upperarm_r": {
    "parent": "clavicle_r",
    "head": [
-    -20.5453,
-    -7.1173,
-    145.8671
+    -19.90956,
+    -6.30844,
+    144.99251
    ],
    "tail": [
     -32.4677,
     -2.4568,
     120.6988
    ],
-   "length_cm": 28.2366,
+   "length_cm": 27.6175,
    "deform": true,
    "role": "arm",
    "local_axes": {
     "y_bone": [
-     -0.42223,
-     0.16505,
-     -0.89134
+     -0.45472,
+     0.13946,
+     -0.87965
     ],
     "x": [
-     0.36408,
-     0.93137,
+     0.29322,
+     0.95604,
      -0.0
     ],
     "z": [
-     -0.83016,
-     0.32451,
-     0.45334
+     -0.84098,
+     0.25793,
+     0.47562
     ]
    },
-   "head_method": "landmark glenohumeral (section)",
+   "head_method": "shoulder_ring0 centroid + bilateral mean glenohumeral-landmark offset (lateral mirrored)",
    "tail_method": "landmark elbow (section)",
    "configuration": "c1 SA-M188",
    "c2_relation": "source (c1)"

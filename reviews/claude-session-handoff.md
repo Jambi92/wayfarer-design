@@ -2,6 +2,20 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-02 ~06:30) — ORDER a407015 RP6 SAURIN RIG PILOT — VOLUME FIX IN PROGRESS (INTERNAL, NOT SUBMITTED)
+
+New session could NOT stage E:/ (folder grant blocked) -> `sa6_common.load()` now has a CAGE-ONLY mode: c1 = frozen npz V, c2 = vertex array read from the
+frozen SA_F_REF_RP5 .blend via bpy (readback err < 1e-5 cm; cached /tmp/claude-0/rp6/blend_co_*.npy). Still needs the clean workspace for: sa6_eval dense
+sample (SA_RP5_WORK_v001 dense source) and sa6_pd2 (cr_*.npy creator states) -> those two still need E:/UnrealProjects/Wayfarer 5.8/RaceBodies staged.
+ROOT CAUSES of the volume defects (found 2026-11-02): (1) neck_01 joint = RP5 'neck_base' landmark = ANTERIOR neck surface (y +8 in a -20..+12 section) ->
+now centroid of the neck/trunk seam ring (flex +3.6 L -> -0.76 L LBS). (2) tail-root poses pivot about LM tail_root_centre 9-10 cm above the rig joint
+(not rig-realisable) -> anat suite now pivots tail_01 about its own head (literal kept as *_rp5lit); -3.8 L -> +159 cm3. (3) right glenohumeral landmark
+2.1 cm posterior vs left 0.5 cm -> bilateral rule: shoulder_ring0 centroid + mean mirrored landmark offset. (4) corrective fitter: new VOLUME START
+(DQS target of rest+correctives + broad crease-avoiding `Solver.bulge`) run through the same local cascade, then `polish` with self-masking
+`bulge_safe`; candidates ranked (folds+pen, |dV| beyond VOL_ACCEPT=60). Single-pose c1 tests: all failing poses now |dV| <= 5 cm3, 0 flips, 0 pen.
+Audit volume gate proposed: |closed-body dV| <= 100 cm3 per pose (jaw / digits exempt). NEXT: full screen (experiments/screen.py), then sa6_fit M/F,
+eval (needs dense source -> stage E: or adapt), corrective audit, blend export + readback, renders, package, report.
+
 ## LATEST (2026-11-01 ~10:30) — ORDER a407015 (Saurin RP6 production rig / skin-weighting pilot) — IN PROGRESS, INTERNAL ONLY
 
 Tools `tools/rac/rp/saurin_rp6_v001/`: `sa6_common.py` (frozen RP5 loaders, frozen-hash guard; SA_W=/tmp/claude-0/rp5clean clean workspace from

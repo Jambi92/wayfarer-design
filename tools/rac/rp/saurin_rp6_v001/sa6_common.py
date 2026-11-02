@@ -11,15 +11,29 @@ TOPO = '255645a12a8dc59ae8dace55dcf2af2b196a4f5a799fdf425b394b831ffb2d49'
 def sha(p): return hashlib.sha256(open(p, 'rb').read()).hexdigest()
 def check_frozen():
     for f, h in FROZEN.items(): assert sha(FZ + '/' + f) == h, 'frozen RP5 file changed: ' + f
+def have_workspace(): return os.path.exists(W + '/work/SA_RP5_WORK_v001.npz')
+def frozen_blend_coords(c):
+    """vertex array (cm, object space) of the frozen SA_<c>_REF_RP5 .blend; cached as npy keyed by the frozen file sha (extracted with bpy 5.2.2)."""
+    f = 'SA_%s_REF_RP5_freeze_candidate_v001.blend' % c; cp = '/tmp/claude-0/rp6/blend_co_%s_%s.npy' % (c, FROZEN[f][:12])
+    if not os.path.exists(cp):
+        import subprocess; os.makedirs(os.path.dirname(cp), exist_ok=True)
+        code = ("import bpy,numpy as np;bpy.ops.wm.open_mainfile(filepath=%r);me=[o for o in bpy.data.objects if o.type=='MESH'][0].data;"
+                "a=np.zeros(len(me.vertices)*3,np.float32);me.vertices.foreach_get('co',a);np.save(%r,a.reshape(-1,3))") % (FZ + '/' + f, cp)
+        subprocess.run(['/home/claude/stc/bin/python3', '-c', code], check=True, capture_output=True)
+    return np.load(cp)
 _cache = {}
 def load():
     """-> dict(Q, V1, V2, qlab, face_sem, names(per vertex), loops{name: fine vertex list}, LM{name: c1 point}, tail_rings[(idx array)], n_body, tail_ring)"""
     if _cache: return _cache
     check_frozen()
     z = np.load(FZ + '/SA_RP5_full_cage_freeze_candidate_v001.npz'); Q = z['Q'].astype(np.int64); assert hashlib.sha256(np.ascontiguousarray(Q).tobytes()).hexdigest() == TOPO
-    w = np.load(W + '/work/SA_RP5_WORK_v001.npz'); F = w['f'].astype(np.int64)
-    V1 = (z['bc'][:, :, None] * w['v_M'].astype(float)[F[z['tri']]]).sum(1); V2 = (z['bc'][:, :, None] * w['v_F'].astype(float)[F[z['tri']]]).sum(1)
-    assert np.abs(V1 - z['V']).max() < 1e-9
+    if os.path.exists(W + '/work/SA_RP5_WORK_v001.npz'):
+        w = np.load(W + '/work/SA_RP5_WORK_v001.npz'); F = w['f'].astype(np.int64)
+        V1 = (z['bc'][:, :, None] * w['v_M'].astype(float)[F[z['tri']]]).sum(1); V2 = (z['bc'][:, :, None] * w['v_F'].astype(float)[F[z['tri']]]).sum(1)
+        assert np.abs(V1 - z['V']).max() < 1e-9
+    else:   # cage-only mode (clean workspace not staged): c1 = frozen npz V; c2 = the frozen SA-F188 .blend vertex array (float32 cm, readback err < 1e-5 cm)
+        V1 = z['V'].astype(float); V2 = frozen_blend_coords('F').astype(float)
+        assert np.abs(frozen_blend_coords('M') - V1).max() < 1e-5
     sem = json.load(open(FZ + '/SA_RP5_freeze_candidate_v001_semantic_map.json')); loops = {l['name']: np.array(l['fine_vertices']) for l in sem['loops']}
     LM = {k: np.array(v['p_cm'], float) for k, v in json.load(open(FZ + '/SA_RP5_freeze_candidate_v001_landmarks_SA-M188.json'))['landmarks'].items()}
     d = pickle.load(open(R + '/reviews/rac-rp5-evidence/saurin/full_cage/optionb_final/SA_coarse_cage_design_optionb_final.pkl', 'rb'))
