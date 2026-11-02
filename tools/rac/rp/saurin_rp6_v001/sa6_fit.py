@@ -37,7 +37,7 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
     T = R.pose(spec); d = C.delta(T); Pc = R.skin(T, R.V + d); fl = np.nonzero(R.relcos(Pc, T) < 0)[0]
     vol_pose = any(e[0] in VOL_BONES or e[0].rsplit('_', 1)[0] in VOL_BONES for e in spec)
     pen = penetration(R, Pc, F, w0); dV = (S.body_volume(Pc) - S.V0) if vol_pose else 0.0
-    ntear = int(S.tear_edges(Pc)[0].sum())
+    ntear = int(S.tear_edges(Pc)[0].sum()) + int(abs(dV) > VOL_TRIG)       # a volume miss also counts as an open defect (convergence = a fully clean round)
     if not len(fl) and not pen.any() and abs(dV) <= VOL_TRIG and not ntear: return 0, 0, 0
     Pc0 = Pc
     pen0 = int(pen.sum())
