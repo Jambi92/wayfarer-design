@@ -177,16 +177,17 @@ def main():
         r['step2_rp5_scaffold'] = (dict(step1_cage_flips=o['step1_cage_flips'], step3_improved=o['step3_cage_flips_improved_weights'], classification=o['classification']) if (o and cfg == 'M') else 'n/a (the RP5 scaffold baseline exists for c1 with the RP5-literal signs only; see the _rp5lit variant)')
         fx = r['fractions']; worst4 = max(v['corrected_flips'] for v in fx.values()); worst3 = max(v['lbs_flips'] for v in fx.values()); pen = max(v['corrected_new_penetration_vertices'] for v in fx.values())
         src = r['step1_source_flip_area_permille'] > 0 and r['step1_source_flip_area_permille'] >= r['step3_lbs_flip_area_permille']
-        if pn == 'jaw_open_20_rp5lit': cls = 'CONTACT-SETUP (RP5-literal +20 deg closes the closed mouth: lower jaw driven into the upper rostrum; not a deformation pose)'
+        if pn in FT.NONREAL: cls = 'NOT RIG-REALISABLE (literal RP5 pivot 9-10 cm off the tail_01 joint; diagnostic only, not fitted)'
+        elif pn == 'jaw_open_20_rp5lit': cls = 'CONTACT-SETUP (RP5-literal +20 deg closes the closed mouth: lower jaw driven into the upper rostrum; not a deformation pose)'
         elif worst4 and r['topology_only_flips'] is None: cls = 'RIG-WEIGHTING (UNRESOLVED) [topology co-location test PENDING: dense source not staged]'
         elif worst4 and r['topology_only_flips']: cls = 'TOPOLOGY'
         elif worst4: cls = 'RIG-WEIGHTING (UNRESOLVED)'
         elif worst3: cls = 'RIG-WEIGHTING (resolved by correctives)'
         else: cls = 'CLEAN'
-        if pen and pn != 'jaw_open_20_rp5lit': cls += ' + CONTACT-SETUP (tissue contact: %d new penetration vertices)' % pen
+        if pen and pn != 'jaw_open_20_rp5lit' and pn not in FT.NONREAL: cls += ' + CONTACT-SETUP (tissue contact: %d new penetration vertices)' % pen
         if src: cls += ' + SOURCE-POSE (dense source folds at >= the LBS cage rate)'
         if not DENSE: r['dense_source_steps'] = 'PENDING (clean workspace / dense SA_RP5_WORK_v001 not staged in this session): step1 source flips and topology co-location not evaluated'
-        r['classification'] = cls; r['rig_owned_folds_after_correctives'] = int(worst4) if pn != 'jaw_open_20_rp5lit' else 0; res[pn] = r
+        r['classification'] = cls; r['rig_owned_folds_after_correctives'] = int(worst4) if (pn != 'jaw_open_20_rp5lit' and pn not in FT.NONREAL) else 0; res[pn] = r
         print('%-30s LBS %4d corr %3d pen %4d src %.3f/%.3f topo %s dV %s | %s  %.0fs' % (pn, worst3, worst4, pen, r['step1_source_flip_area_permille'], r['step3_lbs_flip_area_permille'], r['topology_only_flips'], r['body_volume_change_cm3']['corrected'], cls[:60], time.time() - t0), flush=True)
     json.dump(dict(status='RP6 RIG PILOT / NOT FROZEN', dense_source_staged=bool(DENSE), config=cfg, weights=os.path.basename(wf), correctives=os.path.basename(cf), thresholds=TH, method=open(__file__).read().split('import')[0], poses=res), open(out, 'w'), indent=1)
 if __name__ == '__main__': main()

@@ -25,6 +25,7 @@ def entries(R, spec, T):
     return out
 VOL_TOL = 20.0     # cm3: target of the volume-preservation corrective (|dV| <= VOL_TOL / 4 after the fix)
 VOL_ACCEPT = 60.0  # cm3: the volume path's result is accepted when the closed-body |dV| <= VOL_ACCEPT (audit gate = 100 cm3 per pose)
+NONREAL = ('tail_root_lateral_30_rp5lit', 'tail_root_vertical_25_rp5lit', 'tail_twist_30_rp5lit')
 VOL_TRIG = 60.0    # cm3: |dV| above which the volume corrective is (re)solved (hysteresis: fold / contact fixes may lose a little volume afterwards)
 VOL_BONES = {'clavicle', 'upperarm', 'forearm', 'hand', 'thigh', 'shin', 'foot', 'pelvis', 'spine_01', 'spine_02', 'spine_03', 'spine_04', 'neck_01', 'neck_02'} | {'tail_%02d' % k for k in range(1, 17)}
 #   tissue-volume joints only: the jaw opens a cavity (the closed mesh volume legitimately changes), digits are below the volume tolerance
@@ -75,17 +76,17 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
             Pt = Ps + sc * (Pv - Ps)
             if not (R.relcos(Pt, T) < 0).any() and not penetration(R, Pt, F, w0).any(): return Pt
         return Ps
-    cands = [cascade(Pc)]
-    if vol_pose and abs(dV) > VOL_TRIG / 3 and os.environ.get('VOLPATH', '1') == '1':
-        # RP6 v002 VOLUME START: DQS of (rest + current correctives) + broad crease-avoiding bulge -> the same local cascade from there
-        cands.append(cascade(S.bulge(T, R.dqs(T, R.V + d), S.V0)))
-    out = []
-    for c_ in cands:
-        if c_ is None: continue
+    def finish(c_):
         sc_, Ps, f2, ncont = c_
         if vol_pose and sc_[0] == 0: Ps = polish(Ps)
-        out.append(((sc_[0], max(0.0, abs(S.body_volume(Ps) - S.V0) - VOL_ACCEPT) if vol_pose else 0.0, sc_[1]), Ps, f2, ncont))
+        return ((sc_[0], max(0.0, abs(S.body_volume(Ps) - S.V0) - VOL_ACCEPT) if vol_pose else 0.0, sc_[1]), Ps, f2, ncont)
+    out = [finish(cascade(Pc))]
+    if vol_pose and out[0][0][:2] != (0, 0.0) and abs(dV) > VOL_TRIG / 3 and os.environ.get('VOLPATH', '1') == '1':
+        # RP6 v002 VOLUME START (only when the LBS start misses the clean + volume target): DQS of (rest + current correctives) + broad
+        # crease-avoiding bulge -> the same local cascade from there
+        out.append(finish(cascade(S.bulge(T, R.dqs(T, R.V + d), S.V0))))
     _, Ps, f2, ncont = min(out, key=lambda o: o[0])
+    Ps = Ps.copy(); Ps[S.protect] = Pc0[S.protect]          # hard guard: protected vertices carry no corrective
     Pc = Pc0                                             # the stored corrective = everything relative to the incoming state
     dmask = np.linalg.norm(Ps - Pc, axis=1) > 1e-7; I = np.nonzero(dmask)[0]
     Wb = R.W; Rb = np.stack([T[b][0] for b in R.DB]); M = np.einsum('vb,bij->vij', Wb[I], Rb)
@@ -114,7 +115,13 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
 if __name__ == '__main__':
     cfg, out = sys.argv[1:3]; wf = sys.argv[3] if len(sys.argv) > 3 else '/tmp/claude-0/rp6/W_%s.npz' % cfg
     R = SP.Rig(cfg, wf); C = CC.Correctives.load(R, os.environ['INIT']) if os.environ.get('INIT') else CC.Correctives(R); S = CC.Solver(R); S.V0 = S.body_volume(R.V); PS = pose_set(R)
+    for f in C.F.values():                                 # protected vertices never carry a corrective (also strips older fits)
+        f['D'] = [(i_[~S.protect[i_]], d_[~S.protect[i_]]) for i_, d_ in f['D']]
+    for pk in C.PK.values(): k_ = ~S.protect[pk['idx']]; pk['idx'] = pk['idx'][k_]; pk['d'] = pk['d'][k_]
     F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = wn_out(R.V, F)
+    # literal-RP5 tail-root poses pivot 9-10 cm off the tail_01 joint: not producible by bone rotation (same driver angle as the realisable pose,
+    # different shape -> no corrective can serve both).  Fitted set = realisable poses only; the literal ones stay in sa6_eval as diagnostics.
+    PS = {k: v for k, v in PS.items() if k not in NONREAL}
     if os.environ.get('POSE_SUBSTR'): PS = {k: v for k, v in PS.items() if any(x in k for x in os.environ['POSE_SUBSTR'].split(','))}
     order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k])))
     log = []

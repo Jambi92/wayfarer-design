@@ -106,6 +106,20 @@ class Solver:
         Qe = np.unique(np.sort(np.r_[Q[:, [0, 1]], Q[:, [1, 2]], Q[:, [2, 3]], Q[:, [3, 0]]], 1), axis=0)
         self.A1 = sp.coo_matrix((np.ones(2 * len(Qe)), (np.r_[Qe[:, 0], Qe[:, 1]], np.r_[Qe[:, 1], Qe[:, 0]])), shape=(nv, nv)).tocsr()
         self.rigid = rig.W.max(1) > 0.999
+        # PROTECTED set (RP6 v002): never moved by any corrective -- (a) the rigid head unit (head weight >= 0.999: cranium, rostrum, eyes, display),
+        # (b) rigid claw caps, (c) every rigid landmark vertex + 2 quad rings (rigid part only): measurement anchors of the frozen anatomy.
+        # Contacts against these parts are resolved on the soft side only.
+        import sa6_common as _C
+        lab = np.zeros(nv, bool); lab[Q[np.isin(rig.ql, ('claw cap',))].ravel()] = True
+        lmv = np.zeros(nv, bool)
+        for p_ in rig.LM.values(): lmv[int(np.argmin(np.linalg.norm(rig.V - np.asarray(p_), axis=1)))] = True if rig.cfg == 'M' else False
+        if rig.cfg != 'M':
+            import sa6_skeleton as _SK
+            for p_ in rig.LM.values(): lmv[int(np.argmin(np.linalg.norm(rig.V - _SK.transfer(p_, rig.V), axis=1)))] = True
+        self.protect = (rig.W[:, rig.bi['head']] > 0.999) | (lab & self.rigid)
+        m_ = lmv & self.rigid
+        for _ in range(2): m_ = m_ | (self.A1 @ m_.astype(np.float32) > 0)
+        self.protect |= m_ & self.rigid
     def dilate(self, m, k):
         for _ in range(k): m = m | (self.A1 @ m.astype(np.float32) > 0)
         return m
@@ -122,6 +136,7 @@ class Solver:
         reg = self.dilate(reg, ring)
         if getattr(self, 'pin', True):                # rigid vertices (one bone >= 0.999) stay exactly rigid unless they carry a fold / contact themselves
             reg &= ~(self.rigid & ~self.dilate(fm, 1))
+        reg &= ~self.protect                          # protected vertices are boundary (held at the current state)
         bnd = self.dilate(reg, 1) & ~reg
         I = np.nonzero(reg)[0]; B = np.nonzero(bnd)[0]; gi = -np.ones(r.nv, np.int64); gi[I] = np.arange(len(I))
         sel = reg[self.E[:, 0]] | reg[self.E[:, 1]]; E = self.E[sel]
@@ -165,6 +180,7 @@ class Solver:
             if not len(fl): return P, fl
             m0 = np.zeros(r.nv, bool); m0[r.Q[fl].ravel()] = True; m = self.dilate(m0, g)
             if pin_rigid: m &= ~(self.rigid & ~m0)
+            m &= ~self.protect
             idx = np.nonzero(m)[0]
             for _ in range(it):
                 avg = (self.A1 @ P) / deg[:, None]; P[idx] = (1 - lam) * P[idx] + lam * avg[idx]
@@ -185,6 +201,7 @@ class Solver:
         x = P - piv; s = x @ n; lim = 0.5 * min(np.linalg.norm(r.Tl(p) - r.H(p)), np.linalg.norm(r.Tl(bone) - r.H(bone)))
         flex = (x @ inner > 0) & (np.linalg.norm(x, axis=1) < lim)
         a = flex & (wc > 0.5) & (s > -eps); b = flex & (wc <= 0.5) & (s < eps)
+        a &= ~self.protect; b &= ~self.protect
         P = P.copy(); P[a] -= (s[a] + eps)[:, None] * n; P[b] -= (s[b] - eps)[:, None] * n
         return P, int(a.sum() + b.sum())
     def contact_general(self, P, pen, rex=2.0, eps=0.05, k=200):
@@ -202,7 +219,7 @@ class Solver:
         far = (np.linalg.norm(rc[ii] - r.V[idx][:, None], axis=2) > rex) | ((pq != pv) & ((pq >= 0) | (pv >= 0)))   # another body part: far at rest, or another digit
         ok = far.any(1); first = far.argmax(1); q = ii[np.arange(len(idx)), first]
         n = np.cross(P[Q[q, 2]] - P[Q[q, 0]], P[Q[q, 3]] - P[Q[q, 1]]); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12
-        s = ((P[idx] - cq[q]) * n).sum(1); mv = ok & (s < eps); P = P.copy(); P[idx[mv]] += ((eps - s[mv]))[:, None] * n[mv]
+        s = ((P[idx] - cq[q]) * n).sum(1); mv = ok & (s < eps) & ~self.protect[idx]; P = P.copy(); P[idx[mv]] += ((eps - s[mv]))[:, None] * n[mv]
         return P, int(mv.sum())
     def body_volume(self, P):
         Q = self.r.Q; a, b, c, d = (P[Q[:, k]] for k in range(4)); return (np.einsum('ij,ij->i', a, np.cross(b, c)) + np.einsum('ij,ij->i', a, np.cross(c, d))).sum() / 6
@@ -216,7 +233,7 @@ class Solver:
             m_ = W[:, j] > 0
             if m_.any(): spread[m_] += W[m_, j] * np.linalg.norm(Rb[j][None] - M[m_], axis=(1, 2))
         if spread.max() < 1e-6: return P, 0.0
-        wv = np.clip(spread / max(np.percentile(spread[spread > 1e-6], 95), 1e-9), 0, 1); wv[self.rigid] = 0; wv = 3 * wv ** 2 - 2 * wv ** 3
+        wv = np.clip(spread / max(np.percentile(spread[spread > 1e-6], 95), 1e-9), 0, 1); wv[self.rigid | self.protect] = 0; wv = 3 * wv ** 2 - 2 * wv ** 3
         excl = [r.bi[b] for b in r.DB if b == 'jaw' or b.startswith(('finger', 'thumb', 'toe', 'meta'))]
         wv[W[:, excl].sum(1) > 0] = 0                      # never inflate the mouth / jaw or the digits
         Q_ = r.Q
@@ -276,7 +293,7 @@ class Solver:
         for _ in range(5): crease = 0.5 * crease + 0.5 * (self.A1 @ crease) / deg
         g = wv * (1 - crease)
         for _ in range(smooth): g = 0.5 * g + 0.5 * (self.A1 @ g) / deg
-        g[self.rigid | excl] = 0
+        g[self.rigid | excl | self.protect] = 0
         if exclude is not None: g[exclude] = 0
         U_, _, Vt_ = np.linalg.svd(M); Mr = U_ @ Vt_
         n = np.zeros_like(r.V)

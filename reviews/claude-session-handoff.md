@@ -2,6 +2,12 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## UPDATE (2026-11-02 ~14:00) — RP6 fits v2 (volume path) converged c1/c2; eval: 0 folds / 0 pen on all realisable poses, |dV| <= 51 cm3
+Failing own audit only on rigidity: jaw corrective moved the upper head 2.76 cm (jaw_open_32), fist/grasp_xneg claw-tip landmark 0.15 cm, literal lower_axial
+tail_root_centre 1.26 cm -> Solver.protect (head-rigid unit + rigid claw caps + rigid landmark vertices + 2 rings) never moved by any corrective; fit strips
+protected deltas from INIT. Literal RP5 tail-root poses (FT.NONREAL) not fitted (not rig-realisable), eval-only diagnostics. Refit running from
+/tmp/claude-0/rp6/CF_*_v1conv (runfit.sh CFG, INIT=CF_*_init, ROUNDS env). Then eval -> audits -> Blender -> renders -> package -> report.
+
 ## LATEST (2026-11-02 ~06:30) — ORDER a407015 RP6 SAURIN RIG PILOT — VOLUME FIX IN PROGRESS (INTERNAL, NOT SUBMITTED)
 
 New session could NOT stage E:/ (folder grant blocked) -> `sa6_common.load()` now has a CAGE-ONLY mode: c1 = frozen npz V, c2 = vertex array read from the
