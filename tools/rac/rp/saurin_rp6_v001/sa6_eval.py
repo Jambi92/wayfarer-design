@@ -25,7 +25,9 @@ def main():
     Q = R.Q; F = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F)
     qa = 0.5 * np.linalg.norm(R.n0, axis=1)
     # dense source sample + interpolated weights
-    w = np.load(C.W + '/work/SA_RP5_WORK_v001.npz'); Vd = (w['v_M'] if cfg == 'M' else w['v_F']).astype(float); Fd = w['f'].astype(np.int64)
+    DENSE = C.have_workspace()      # cage-only mode (clean workspace not staged): step 1 (dense source folds) and the topology smooth-map co-location test are PENDING
+    if DENSE: w = np.load(C.W + '/work/SA_RP5_WORK_v001.npz'); Vd = (w['v_M'] if cfg == 'M' else w['v_F']).astype(float); Fd = w['f'].astype(np.int64)
+    else: Vd = R.V.copy(); Fd = F.copy()                                       # placeholders only (never reported as source results)
     rng = np.random.default_rng(0); Fs = Fd[rng.random(len(Fd)) < 0.25]; us = np.unique(Fs); mp = -np.ones(len(Vd), np.int64); mp[us] = np.arange(len(us)); Fs = mp[Fs]; Vs = Vd[us]
     _, ti, cp = igl.point_mesh_squared_distance(Vs, R.V, F); a, b, c = R.V[F[ti, 0]], R.V[F[ti, 1]], R.V[F[ti, 2]]
     v0 = b - a; v1 = c - a; v2 = cp - a; d00 = (v0 * v0).sum(1); d01 = (v0 * v1).sum(1); d11 = (v1 * v1).sum(1); d20 = (v2 * v0).sum(1); d21 = (v2 * v1).sum(1); dn = d00 * d11 - d01 * d01
@@ -143,13 +145,13 @@ def main():
                                                corrected_new_penetration_vertices=int(pen4.sum()), active_keys=int(sum(len(v[1]) > 0 for v in act.values())))
             if fr == 1.0:
                 pen3 = FT.penetration(R, P3, F, w0)
-                Pd = R.skin(T, Vs, Ws); fs = relcos_s(Pd, T) < 0
+                Pd = R.skin(T, Vs, Ws); fs = (relcos_s(Pd, T) < 0) if DENSE else np.zeros(len(Fs), bool)
                 def bvol(P): a, b, c, d = (P[Q[:, k]] for k in range(4)); return (np.einsum('ij,ij->i', a, np.cross(b, c)) + np.einsum('ij,ij->i', a, np.cross(c, d))).sum() / 6
                 r['body_volume_change_cm3'] = dict(rest=round(float(bvol(R.V)), 1), lbs=round(float(bvol(P3) - bvol(R.V)), 2), corrected=round(float(bvol(P4) - bvol(R.V)), 2))
                 r.update(step1_source_flips_sampled=int(fs.sum()), step1_source_flip_area_permille=round(float(1000 * sa_[fs].sum() / sa_.sum()), 4),
                          step3_lbs_flips=int(len(f3)), step3_lbs_flip_area_permille=round(float(1000 * qa[f3].sum() / qa.sum()), 4), step3_lbs_new_penetration_vertices=int(pen3.sum()),
                          penetration_centroid=np.round(P4[pen4].mean(0), 1).tolist() if pen4.any() else None)
-                tt, n4, wh, nc4, fl1 = topo_test(T) if len(f3) else (0, 0, [], 0, 0); r.update(topology_only_flips=tt, smooth_map_cage_flips=n4, topology_quads=wh, smooth_map_folds_inside_contact_volume=nc4, smooth_map_folds_beyond_flat_1cm_of_source_folds=fl1)
+                tt, n4, wh, nc4, fl1 = (topo_test(T) if DENSE else (None, None, [], None, None)) if len(f3) else (0, 0, [], 0, 0); r.update(topology_only_flips=tt, smooth_map_cage_flips=n4, topology_quads=wh, smooth_map_folds_inside_contact_volume=nc4, smooth_map_folds_beyond_flat_1cm_of_source_folds=fl1)
                 # metrics on the joint patches
                 mets = {}
                 for b_, pv, ax in ent:
@@ -176,13 +178,15 @@ def main():
         fx = r['fractions']; worst4 = max(v['corrected_flips'] for v in fx.values()); worst3 = max(v['lbs_flips'] for v in fx.values()); pen = max(v['corrected_new_penetration_vertices'] for v in fx.values())
         src = r['step1_source_flip_area_permille'] > 0 and r['step1_source_flip_area_permille'] >= r['step3_lbs_flip_area_permille']
         if pn == 'jaw_open_20_rp5lit': cls = 'CONTACT-SETUP (RP5-literal +20 deg closes the closed mouth: lower jaw driven into the upper rostrum; not a deformation pose)'
+        elif worst4 and r['topology_only_flips'] is None: cls = 'RIG-WEIGHTING (UNRESOLVED) [topology co-location test PENDING: dense source not staged]'
         elif worst4 and r['topology_only_flips']: cls = 'TOPOLOGY'
         elif worst4: cls = 'RIG-WEIGHTING (UNRESOLVED)'
         elif worst3: cls = 'RIG-WEIGHTING (resolved by correctives)'
         else: cls = 'CLEAN'
         if pen and pn != 'jaw_open_20_rp5lit': cls += ' + CONTACT-SETUP (tissue contact: %d new penetration vertices)' % pen
         if src: cls += ' + SOURCE-POSE (dense source folds at >= the LBS cage rate)'
+        if not DENSE: r['dense_source_steps'] = 'PENDING (clean workspace / dense SA_RP5_WORK_v001 not staged in this session): step1 source flips and topology co-location not evaluated'
         r['classification'] = cls; r['rig_owned_folds_after_correctives'] = int(worst4) if pn != 'jaw_open_20_rp5lit' else 0; res[pn] = r
-        print('%-30s LBS %4d corr %3d pen %4d src %.3f/%.3f topo %d | %s  %.0fs' % (pn, worst3, worst4, pen, r['step1_source_flip_area_permille'], r['step3_lbs_flip_area_permille'], r['topology_only_flips'], cls[:60], time.time() - t0), flush=True)
-    json.dump(dict(status='RP6 RIG PILOT / NOT FROZEN', config=cfg, weights=os.path.basename(wf), correctives=os.path.basename(cf), thresholds=TH, method=open(__file__).read().split('import')[0], poses=res), open(out, 'w'), indent=1)
+        print('%-30s LBS %4d corr %3d pen %4d src %.3f/%.3f topo %s dV %s | %s  %.0fs' % (pn, worst3, worst4, pen, r['step1_source_flip_area_permille'], r['step3_lbs_flip_area_permille'], r['topology_only_flips'], r['body_volume_change_cm3']['corrected'], cls[:60], time.time() - t0), flush=True)
+    json.dump(dict(status='RP6 RIG PILOT / NOT FROZEN', dense_source_staged=bool(DENSE), config=cfg, weights=os.path.basename(wf), correctives=os.path.basename(cf), thresholds=TH, method=open(__file__).read().split('import')[0], poses=res), open(out, 'w'), indent=1)
 if __name__ == '__main__': main()
