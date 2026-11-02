@@ -44,12 +44,15 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
     pen0 = int(pen.sum())
     ent = entries(R, spec, T)
     # LOCALITY (RP6 v002): this pose's corrective may move only (a) the blend zone of its driving joints (vertices weighted both inside and outside the
-    # driving bone's subtree) dilated LOC_RING quad rings, and (b) contact sites (vertices interpenetrating at the incoming state or the DQS start)
+    # driving bone's subtree) dilated LOC_RING quad rings, (a2) the flesh of the two segments the joint connects (dominant bone = the driving bone or
+    # its parent), and (b) contact sites (vertices interpenetrating at the incoming state or the DQS start)
     # dilated 4 rings.  Everything else is pinned for this solve (added to the protected set) -> no anatomy drift far from the joint.
     bz = np.zeros(R.nv, bool)
     for b_, _, _ in ent:
         ws_ = R.W[:, [R.bi[x] for x in R.sub(b_) if x in R.bi]].sum(1); bz |= (ws_ > 1e-3) & (ws_ < 1 - 1e-3)
-    allowed = S.dilate(bz, LOC_RING) | S.dilate(pen | penetration(R, R.dqs(T, R.V + d), F, w0), 4)
+    dom = np.array(R.DB)[R.W.argmax(1)]; seg = np.zeros(R.nv, bool)
+    for b_, _, _ in ent: seg |= np.isin(dom, [b_] + ([R.par[b_]] if R.par[b_] in R.bi else []))     # flesh of the two segments the joint connects
+    allowed = S.dilate(bz, LOC_RING) | seg | S.dilate(pen | penetration(R, R.dqs(T, R.V + d), F, w0), 4)
     base_protect = S.protect; S.protect = base_protect | ~allowed
     try:
         return _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc, fl, pen, dV, vol_pose, ntear, ent, pose_key)
