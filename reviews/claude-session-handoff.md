@@ -36,6 +36,18 @@ gives abd90 dV -19 but flex60 -794). NEXT: weight quality pass BEFORE more corre
 both sides, (2) neck / trunk twist distribution (broader axial blending or twist split), (3) then volume thresholds; then refit (sa6_fit, ~1.5 h each
 M/F in parallel; per-8-pose partial saves; INIT resume), runA.sh (eval M,F + corrective audit), runB.sh (rigprep, blend export + xz -9 + readback,
 pd2), sa6_render.py, sa6_package.py, report. Literal RP5 jaw_open_20 = CONTACT intrusion (topology test now footprint rule -> 0).
+LBS closed-volume survey (c1, t30.py in /tmp/claude-0/rp6): neck_flex_30 +3591 cm3 (back-of-neck hump), tail_root_vertical_25 -3806 (root collapse),
+neck_rot_40 -838, shoulder_abd90 -711, hip_flex70 -505..-755, trunk_twist -494, lower_axial_flex +1081 (mesh closed, orientation consistent; values real).
+Global IT_BODY=600 does not help (mixed). Normal-push volume correctives collide in creases. Candidate next design (allowed by order §8):
+helper / distribution deform bones at thick joints (neck base, tail root, shoulder, hip) driven by a fixed fraction of the joint rotation
+(copy-rotation influence 0.5, bakeable for UE) -> the blend zone gets an intermediate rigid frame -> volume kept; then refit correctives.
+Prototype (/tmp/claude-0/rp6/t31.py, crude weight split w_H = 2 min(a, 1-a)): dV hip_flex70 -505 -> +20, neck_rot_40 -838 -> -91, shoulder_flex60
+-229 -> -62, shoulder_abd90 -711 -> -468, but NEW flips at the helper seams (needs smooth helper weights, e.g. diffuse w_H) and no gain at
+tail_root_vertical (-3.8 L: thick root; needs distribution along the root rings) / neck_flex (+2.8 L). Treat as ordinary rig work, keep iterating.
+RESUME CHECKLIST for a new chat: (1) rebuild SA_W=/tmp/claude-0/rp5clean if missing (RP5 sa_consolidate recipe above); (2) regenerate weights
+`python3 tools/rac/rp/saurin_rp6_v001/sa6_weights.py M|F OUT.npz` (SH_R/SH_C env); (3) implement helper/distribution bones (skeleton + sa6_pose
+helper transforms + Blender Copy Rotation constraint + weights) and re-survey LBS dV/flips; (4) refit correctives, eval, audits, Blender, renders,
+package, report (scripts listed above). Frozen RP5 untouched; nothing submitted for RP6 yet.
 
 ## LATEST (2026-11-01 ~09:00) — ORDER 5a7d8cc — SAURIN RP5 — AUTHOR ACCEPTED / FINAL PRODUCTION FROZEN (by record)
 
