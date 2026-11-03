@@ -286,7 +286,7 @@ class Solver:
             if nb == 0: return Pt, 0
             mask |= self.dilate(b, grow)
         return best[1], best[0]
-    def bulge(self, T, P, V0, smooth=150, iters=6, tol=5.0, exclude=None, crease_thr=0.85, tension=None, taper=0):
+    def bulge(self, T, P, V0, smooth=150, iters=6, tol=5.0, exclude=None, crease_thr=0.85, tension=None, taper=0, soft_exclude=False):
         """RP6 v002 volume corrective (replaces the concentrated volume_fix as first choice): restores the closed-body volume by a BROAD, smooth flesh
         bulge around the joint -- weight = blend-zone smoothstep(rotation spread) x (1 - crease), crease = surface compressed below 85 %% area (the
         fold itself is never pushed), the weight field Laplacian-smoothed `smooth` times (no local spikes), rigid / jaw / digit vertices 0; direction =
@@ -312,11 +312,12 @@ class Solver:
             np.maximum.at(vr, self._E1[:, 0], rat); np.maximum.at(vr, self._E1[:, 1], rat); tw = np.clip((tension - vr) / 0.4, 0, 1)
             for _ in range(5): tw = 0.5 * tw + 0.5 * (self.A1 @ tw) / deg
             g = g * tw
+        if exclude is not None and soft_exclude: g[exclude] = 0      # closure v002: excluded band zeroed BEFORE smoothing too (no step at its border)
         for _ in range(smooth): g = 0.5 * g + 0.5 * (self.A1 @ g) / deg
         g[self.rigid | excl | self.protect] = 0
         if exclude is not None: g[exclude] = 0
         if taper:                  # RP6 v003: fade the field to 0 over `taper` rings toward pinned vertices (rigid landmarks at the olecranon / patella
-            pin = self.rigid | excl | self.protect; ring_ = pin.copy(); fall = np.ones(r.nv)   # sit on the most stretched skin: an abrupt pin tears)
+            pin = self.rigid | excl | self.protect | (exclude if (exclude is not None and soft_exclude) else False); ring_ = pin.copy(); fall = np.ones(r.nv)   # sit on the most stretched skin: an abrupt pin tears)
             for k in range(1, taper + 1):
                 nxt = self.dilate(ring_, 1); fall[nxt & ~ring_] = k / (taper + 1.0); ring_ = nxt
             g = g * fall
@@ -325,6 +326,31 @@ class Solver:
         for k in range(4): np.add.at(n, Q[:, k], np.cross(r.V[Q[:, (k + 1) % 4]] - r.V[Q[:, k]], r.V[Q[:, (k + 3) % 4]] - r.V[Q[:, k]]))
         n = np.einsum('vij,vj->vi', Mr, n); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12; dirn = g[:, None] * n
         P = P.copy()
+        for _ in range(iters):
+            dV = self.body_volume(P) - V0
+            if abs(dV) < tol: break
+            dd = (self.body_volume(P + 1e-3 * dirn) - self.body_volume(P)) / 1e-3
+            if abs(dd) < 1e-9: break
+            P += (-dV / dd) * dirn
+        return P
+    def segment_bulge(self, T, P, V0, seg, clear=6.0, smooth=60, iters=8, tol=5.0):
+        """RP6 closure v002 volume corrective for CONTACT-LIMITED poses (heavy creator states at deep flexion: resolving the biceps / forearm contact
+        removes the overlap volume): broad flesh bulge over the whole two segments the joint connects (seg mask, single-bone flesh included -- only the
+        PROTECTED landmark set stays fixed), excluding every vertex closer than `clear` cm to another body part (no push back into contact), the field
+        Laplacian-smoothed inside the allowed set; direction = posed vertex normal; magnitude by the same secant solve on the exact closed volume."""
+        from scipy.spatial import cKDTree
+        r = self.r; Q = r.Q; deg = np.asarray(self.A1.sum(1)).ravel(); dom = r.W.argmax(1)
+        near = np.full(r.nv, np.inf)
+        for b in np.unique(dom[seg]):
+            own = seg & (dom == b); oth = ~own
+            if own.any() and oth.any(): near[own] = cKDTree(P[oth & ~self.dilate(own, 2)]).query(P[own])[0]
+        keep = seg & (near > clear) & ~self.protect
+        if not keep.any(): return P
+        g = keep.astype(float)
+        for _ in range(smooth): g = 0.5 * g + 0.5 * (self.A1 @ g) / deg; g[~keep] = 0
+        n = np.zeros_like(P)
+        for k in range(4): np.add.at(n, Q[:, k], np.cross(P[Q[:, (k + 1) % 4]] - P[Q[:, k]], P[Q[:, (k + 3) % 4]] - P[Q[:, k]]))
+        n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12; dirn = g[:, None] * n; P = P.copy()
         for _ in range(iters):
             dV = self.body_volume(P) - V0
             if abs(dV) < tol: break

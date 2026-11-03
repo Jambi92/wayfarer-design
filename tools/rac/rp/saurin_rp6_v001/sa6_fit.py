@@ -124,6 +124,14 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
                 fails += 1
                 if fails > 5: break
         if abs(S.body_volume(Ps) - S.V0) <= VOL_TOL: return Ps
+        if os.environ.get('SEGBULGE', '0') == '1':      # RP6 closure v002 (creator-state layers): contact-limited poses -> segment flesh bulge
+            dom_ = np.array(R.DB)[R.W.argmax(1)]; seg_ = np.zeros(R.nv, bool)
+            for b_, _, _ in ent: seg_ |= np.isin(dom_, [b_] + ([R.par[b_]] if R.par[b_] in R.bi else []))
+            for cl in (6.0, 8.0, 5.0, 4.0):
+                for sm_ in (60, 20, 150):
+                    Pv = S.segment_bulge(T, Ps, S.V0, seg_ & ~S.protect, clear=cl, smooth=sm_); Pv, _ = S.unfold(T, Pv, R.relcos)
+                    if os.environ.get('PDEBUG'): print('   segment bulge clear %.0f sm %d dV %.0f -> %.0f clean %s' % (cl, sm_, S.body_volume(Ps) - S.V0, S.body_volume(Pv) - S.V0, clean(Pv, Ps)), flush=True)
+                    if clean(Pv, Ps) and abs(S.body_volume(Pv) - S.V0) <= VOL_TOL: return Pv
         Pv, _ = S.volume_fix(T, Ps, S.V0, tol=VOL_TOL / 4)
         for sc in (1.0, 0.75, 0.5, 0.25):
             Pt = Ps + sc * (Pv - Ps)
