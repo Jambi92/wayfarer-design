@@ -24,14 +24,22 @@ if __name__ == '__main__':
         t0 = time.time(); R, cfg = state_rig(nm); Cs = CC.Correctives.load(R, WD + '/CF_%s.json' % cfg); S = CC.Solver(R); S.V0 = S.body_volume(R.V)
         F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F); PS = R.suite('anat')
         order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k]))); log = []
-        for rnd in range(ROUNDS):
-            tot = 0
-            for pn in order:
-                for fr in FRACS:
+        ck = OD + '/ckpt/CF_ckpt_%s.json' % nm; os.makedirs(OD + '/ckpt', exist_ok=True); r0, i0, tot0 = 0, 0, 0
+        if os.path.exists(ck):                              # resume after a killed run (checkpoint written after every pose solve)
+            m = json.load(open(ck)); Cs = CC.Correctives.load(R, ck); log = m['fit_log']; r0, i0, tot0 = m['ck_round'], m['ck_next'], m['ck_tot']
+            print(nm, 'resume round', r0, 'item', i0, flush=True)
+        items = [(pn, fr) for pn in order for fr in FRACS]
+        for rnd in range(r0, ROUNDS):
+            tot = tot0 if rnd == r0 else 0
+            for ii, (pn, fr) in enumerate(items):
+                if rnd == r0 and ii < i0: continue
+                if True:
                     spec = [(b, p, a, dg * fr) for b, p, a, dg in PS[pn]]; t = time.time()
                     a, b, c = FT.solve_one(R, Cs, S, spec, F, w0, log, pose_key=('%s@%.2f' % (pn, fr)) if rnd >= 1 else None); tot += a
                     if a or b: print('%s round %d %-24s x%.2f before %4d after %4d  %.1fs' % (nm, rnd, pn, fr, a, b, time.time() - t), flush=True)
                     log.append(dict(round=rnd, pose=pn, frac=fr, flips_before=a, flips_after_solve=b))
+                    if a or b: Cs.save(ck, dict(state=nm, fit_log=log, ck_round=rnd, ck_next=ii + 1, ck_tot=tot))
+                    else: json.dump(dict(json.load(open(ck)), fit_log=log, ck_round=rnd, ck_next=ii + 1, ck_tot=tot), open(ck, 'w')) if os.path.exists(ck) else None
             print(nm, 'round', rnd, 'total entering', tot, flush=True)
             if tot == 0: break
         Cs.save(OD + '/CF_state_%s.json' % nm, dict(status='RP6 RIG PILOT / NOT FROZEN', state=nm, base_config=cfg, base_correctives='CF_%s.json' % cfg,
