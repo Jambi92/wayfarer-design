@@ -2,6 +2,15 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## UPDATE (2026-11-02 ~18:40) — LOCALITY added; fresh locality fits running
+v3 fit (no locality) passed every gate (98 poses c1/c2: 0 folds/pen/tears, |dV| <= 30, rigid ok; archived /tmp/claude-0/rp6/v3_gatepass_nolocality)
+BUT correctives drifted far from their joint (hip_flex moved tail_02 / spine / opposite thigh up to 8 cm). sa6_fit now pins, per pose, everything outside:
+driving joints' blend zone + LOC_RING(8) rings | flesh of the two connected segments (dominant bone = driving bone or its parent; thigh also tail_01 =
+caudofemoral coupling) | contact + tear sites + CONTACT_RING(10). Polish escalation 14 cycles / 6 fails. Single-pose tests pass (hip 0 cm3, elbow 5 cm3).
+Container restarts often: experiments/runfit.sh auto-resumes from the last saved CF (copy to /tmp/claude-0/rp6/). Weights = TR_BAND 10 + leg-safe (W_*_v3).
+Remaining after fits: eval + gates (experiments/gates.py), corrective audit, rigprep, blend export/readback, renders, package, report. PD-2 + dense
+ownership need E:/ staged (user asked to click Add folder).
+
 ## UPDATE (2026-11-02 ~17:00) — NEW DEFECT FOUND + FIXED IN CODE: weight-seam TEARING at the tail root (hidden by the fold metric)
 LBS edge elongation scan (experiments/seams.py): tail quads met thigh (ventral) and spine_01 (dorsal) weights edge-to-edge -> hip_flex70 16 cm, tail_twist 8 cm,
 trunk_twist 6 cm. Fix: sa6_weights TAIL-ROOT PELVIS BAND (TR_BAND=10 rings, pelvis-primary, tail_01 may diffuse in) -> LBS 2-4.5 cm; correctives remove the rest:
