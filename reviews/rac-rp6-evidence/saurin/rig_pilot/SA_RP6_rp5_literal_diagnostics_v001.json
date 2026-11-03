@@ -1,0 +1,1971 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "name": "SA_RP6_rp5_literal_diagnostics_v001",
+ "frame": "+X subject left, +Y anterior, +Z up (cm)",
+ "reasons": {
+  "sagittal_sign": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+  "tail_pivot": "RP5 tail-root poses rotate about a pivot ~10 cm off the RP6 tail_01 joint (archived sa_deform4 pivot); a bone rotation cannot reproduce an off-joint pivot (same driver angle, different shape).  Production gate = same axis and angle about the tail_01 joint."
+ },
+ "configurations": {
+  "c1": {
+   "ankle_dorsi20_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "foot_r",
+      "pivot_cm": [
+       -26.3341,
+       0.8071,
+       9.5562
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -20.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "foot_r",
+      "pivot_cm": [
+       -26.3341,
+       0.8071,
+       9.5562
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 20.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 11,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -5.83
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 113,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 17.58
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "ankle_dorsi20_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "foot_l",
+      "pivot_cm": [
+       21.4594,
+       2.1066,
+       9.5679
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -20.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "foot_l",
+      "pivot_cm": [
+       21.4594,
+       2.1066,
+       9.5679
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 20.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 1,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -0.99
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 152,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 2.57
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "elbow_130_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "forearm_r",
+      "pivot_cm": [
+       -32.4677,
+       -2.4568,
+       120.6988
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -130.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "forearm_r",
+      "pivot_cm": [
+       -32.4677,
+       -2.4568,
+       120.6988
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 130.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 29,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.35
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 110,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.03
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "elbow_130_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "forearm_l",
+      "pivot_cm": [
+       30.7419,
+       -1.2965,
+       120.6323
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -130.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "forearm_l",
+      "pivot_cm": [
+       30.7419,
+       -1.2965,
+       120.6323
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 130.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 27,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.58
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 89,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 1.99
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "elbow_90_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "forearm_r",
+      "pivot_cm": [
+       -32.4677,
+       -2.4568,
+       120.6988
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -90.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "forearm_r",
+      "pivot_cm": [
+       -32.4677,
+       -2.4568,
+       120.6988
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 90.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CLEAN + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 14.5
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 65,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.61
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "elbow_90_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "forearm_l",
+      "pivot_cm": [
+       30.7419,
+       -1.2965,
+       120.6323
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -90.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "forearm_l",
+      "pivot_cm": [
+       30.7419,
+       -1.2965,
+       120.6323
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 90.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 22.37
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 36,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.31
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "hip_flex70_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "thigh_r",
+      "pivot_cm": [
+       -13.0,
+       3.5,
+       86.0
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -70.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "thigh_r",
+      "pivot_cm": [
+       -13.0,
+       3.5,
+       86.0
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 70.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 96,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.01
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 29,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 1.28
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "hip_flex70_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "thigh_l",
+      "pivot_cm": [
+       13.0,
+       3.5,
+       86.0
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -70.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "thigh_l",
+      "pivot_cm": [
+       13.0,
+       3.5,
+       86.0
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 70.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 123,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.0
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 26,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.0
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "jaw_open_20_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "jaw",
+      "pivot_cm": [
+       0.0,
+       2.268,
+       178.936
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 20.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "jaw",
+      "pivot_cm": [
+       0.0,
+       2.268,
+       178.936
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -20.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CONTACT-SETUP (RP5-literal +20 deg closes the closed mouth: lower jaw driven into the upper rostrum; not a deformation pose)",
+     "lbs_flips": 734,
+     "corrected_flips": 734,
+     "corrected_new_penetration": 1121,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -245.54
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 119,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 234.31
+    },
+    "role": "DIAGNOSTIC (not gated)"
+   },
+   "knee_90_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "shin_r",
+      "pivot_cm": [
+       -18.076,
+       2.9821,
+       62.1058
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 90.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "shin_r",
+      "pivot_cm": [
+       -18.076,
+       2.9821,
+       62.1058
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -90.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 137,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.21
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 102,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.02
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "knee_90_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "shin_l",
+      "pivot_cm": [
+       14.6921,
+       2.9177,
+       61.9379
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 90.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "shin_l",
+      "pivot_cm": [
+       14.6921,
+       2.9177,
+       61.9379
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -90.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 177,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.14
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 257,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.08
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "lower_axial_flex_25_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "spine_01",
+      "pivot_cm": [
+       -0.8709,
+       0.4934,
+       107.0
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 25.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "spine_01",
+      "pivot_cm": [
+       -0.8709,
+       0.4934,
+       107.0
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -25.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 2,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.04
+    },
+    "rp6_production_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.0
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "neck_flex_30_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "neck_01",
+      "pivot_cm": [
+       -0.042,
+       -5.5825,
+       162.5854
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 30.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "neck_01",
+      "pivot_cm": [
+       -0.042,
+       -5.5825,
+       162.5854
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -30.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 1.51
+    },
+    "rp6_production_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.0
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "shoulder_flex60_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "upperarm_r",
+      "pivot_cm": [
+       -19.9096,
+       -6.3084,
+       144.9925
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -60.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "upperarm_r",
+      "pivot_cm": [
+       -19.9096,
+       -6.3084,
+       144.9925
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 60.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CLEAN + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 3.57
+    },
+    "rp6_production_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 1.92
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "shoulder_flex60_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "upperarm_l",
+      "pivot_cm": [
+       18.2979,
+       -6.5405,
+       146.1386
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -60.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "upperarm_l",
+      "pivot_cm": [
+       18.2979,
+       -6.5405,
+       146.1386
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 60.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CLEAN + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.56
+    },
+    "rp6_production_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 2.89
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "tail_root_lateral_30_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -1.2267,
+       -10.5894,
+       114.9968
+      ],
+      "axis": [
+       0.0,
+       0.0,
+       1.0
+      ],
+      "deg": 30.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -0.1154,
+       -14.3756,
+       105.5887
+      ],
+      "axis": [
+       0.0,
+       0.0,
+       1.0
+      ],
+      "deg": 30.0
+     }
+    ],
+    "difference": "tail_pivot",
+    "reason": "RP5 tail-root poses rotate about a pivot ~10 cm off the RP6 tail_01 joint (archived sa_deform4 pivot); a bone rotation cannot reproduce an off-joint pivot (same driver angle, different shape).  Production gate = same axis and angle about the tail_01 joint.",
+    "rp5_literal_result": {
+     "classification": "NOT RIG-REALISABLE (literal RP5 pivot 9-10 cm off the tail_01 joint; diagnostic only, not fitted) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 126,
+     "corrected_flips": 1,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -545.21
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 108,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 2.48
+    },
+    "role": "DIAGNOSTIC (not gated)",
+    "pivot_offset_cm": 10.202,
+    "pivot_offset_vector_cm": [
+     -1.111,
+     3.786,
+     9.408
+    ],
+    "induced_translation_cm": 2.043,
+    "same_axis_and_angle": true
+   },
+   "tail_root_vertical_25_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -1.2267,
+       -10.5894,
+       114.9968
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 25.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -0.1154,
+       -14.3756,
+       105.5887
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 25.0
+     }
+    ],
+    "difference": "tail_pivot",
+    "reason": "RP5 tail-root poses rotate about a pivot ~10 cm off the RP6 tail_01 joint (archived sa_deform4 pivot); a bone rotation cannot reproduce an off-joint pivot (same driver angle, different shape).  Production gate = same axis and angle about the tail_01 joint.",
+    "rp5_literal_result": {
+     "classification": "NOT RIG-REALISABLE (literal RP5 pivot 9-10 cm off the tail_01 joint; diagnostic only, not fitted) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 203,
+     "corrected_flips": 155,
+     "corrected_new_penetration": 110,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -3951.37
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 47,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 5.04
+    },
+    "role": "DIAGNOSTIC (not gated)",
+    "pivot_offset_cm": 10.202,
+    "pivot_offset_vector_cm": [
+     -1.111,
+     3.786,
+     9.408
+    ],
+    "induced_translation_cm": 4.39,
+    "same_axis_and_angle": true
+   },
+   "tail_twist_30_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -1.2267,
+       -10.5894,
+       114.9968
+      ],
+      "axis": [
+       0.042566,
+       -0.844107,
+       -0.534482
+      ],
+      "deg": 30.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -0.1154,
+       -14.3756,
+       105.5887
+      ],
+      "axis": [
+       0.042566,
+       -0.844107,
+       -0.534482
+      ],
+      "deg": 30.0
+     }
+    ],
+    "difference": "tail_pivot",
+    "reason": "RP5 tail-root poses rotate about a pivot ~10 cm off the RP6 tail_01 joint (archived sa_deform4 pivot); a bone rotation cannot reproduce an off-joint pivot (same driver angle, different shape).  Production gate = same axis and angle about the tail_01 joint.",
+    "rp5_literal_result": {
+     "classification": "NOT RIG-REALISABLE (literal RP5 pivot 9-10 cm off the tail_01 joint; diagnostic only, not fitted) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 13,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 15,
+     "body_volume_change_cm3": 181.8
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 31,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 8.11
+    },
+    "role": "DIAGNOSTIC (not gated)",
+    "pivot_offset_cm": 10.202,
+    "pivot_offset_vector_cm": [
+     -1.111,
+     3.786,
+     9.408
+    ],
+    "induced_translation_cm": 3.091,
+    "same_axis_and_angle": true
+   }
+  },
+  "c2": {
+   "ankle_dorsi20_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "foot_r",
+      "pivot_cm": [
+       -26.4885,
+       0.7972,
+       9.4388
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -20.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "foot_r",
+      "pivot_cm": [
+       -26.4885,
+       0.7972,
+       9.4388
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 20.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 6,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -6.1
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 114,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 3.33
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "ankle_dorsi20_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "foot_l",
+      "pivot_cm": [
+       21.6737,
+       2.0807,
+       9.4503
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -20.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "foot_l",
+      "pivot_cm": [
+       21.6737,
+       2.0807,
+       9.4503
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 20.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 5,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -1.77
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 152,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 2.18
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "elbow_130_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "forearm_r",
+      "pivot_cm": [
+       -32.058,
+       -2.4362,
+       121.4039
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -130.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "forearm_r",
+      "pivot_cm": [
+       -32.058,
+       -2.4362,
+       121.4039
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 130.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 28,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 4.93
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 110,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -3.15
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "elbow_130_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "forearm_l",
+      "pivot_cm": [
+       30.3553,
+       -1.2892,
+       121.3343
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -130.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "forearm_l",
+      "pivot_cm": [
+       30.3553,
+       -1.2892,
+       121.3343
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 130.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 25,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 1.09
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 89,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 4.61
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "elbow_90_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "forearm_r",
+      "pivot_cm": [
+       -32.058,
+       -2.4362,
+       121.4039
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -90.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "forearm_r",
+      "pivot_cm": [
+       -32.058,
+       -2.4362,
+       121.4039
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 90.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CLEAN + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 16.71
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 64,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 3.77
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "elbow_90_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "forearm_l",
+      "pivot_cm": [
+       30.3553,
+       -1.2892,
+       121.3343
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -90.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "forearm_l",
+      "pivot_cm": [
+       30.3553,
+       -1.2892,
+       121.3343
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 90.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CLEAN + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 29.1
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 34,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.25
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "hip_flex70_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "thigh_r",
+      "pivot_cm": [
+       -13.3141,
+       3.4567,
+       85.0269
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -70.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "thigh_r",
+      "pivot_cm": [
+       -13.3141,
+       3.4567,
+       85.0269
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 70.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 93,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.0
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 36,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.35
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "hip_flex70_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "thigh_l",
+      "pivot_cm": [
+       13.3164,
+       3.4585,
+       85.0282
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -70.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "thigh_l",
+      "pivot_cm": [
+       13.3164,
+       3.4585,
+       85.0282
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 70.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 124,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.0
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 30,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.0
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "jaw_open_20_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "jaw",
+      "pivot_cm": [
+       -0.0,
+       2.3093,
+       178.9284
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 20.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "jaw",
+      "pivot_cm": [
+       -0.0,
+       2.3093,
+       178.9284
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -20.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CONTACT-SETUP (RP5-literal +20 deg closes the closed mouth: lower jaw driven into the upper rostrum; not a deformation pose)",
+     "lbs_flips": 734,
+     "corrected_flips": 734,
+     "corrected_new_penetration": 1121,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -246.31
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 118,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 234.97
+    },
+    "role": "DIAGNOSTIC (not gated)"
+   },
+   "knee_90_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "shin_r",
+      "pivot_cm": [
+       -18.3319,
+       2.9454,
+       61.3425
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 90.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "shin_r",
+      "pivot_cm": [
+       -18.3319,
+       2.9454,
+       61.3425
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -90.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 137,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.2
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 102,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.02
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "knee_90_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "shin_l",
+      "pivot_cm": [
+       14.9896,
+       2.8818,
+       61.1739
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 90.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "shin_l",
+      "pivot_cm": [
+       14.9896,
+       2.8818,
+       61.1739
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -90.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 177,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.77
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 257,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.07
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "lower_axial_flex_25_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "spine_01",
+      "pivot_cm": [
+       -0.9075,
+       0.4873,
+       106.1553
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 25.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "spine_01",
+      "pivot_cm": [
+       -0.9075,
+       0.4873,
+       106.1553
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -25.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 1,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.37
+    },
+    "rp6_production_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.0
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "neck_flex_30_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "neck_01",
+      "pivot_cm": [
+       -0.0414,
+       -5.5139,
+       162.7029
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 30.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "neck_01",
+      "pivot_cm": [
+       -0.0414,
+       -5.5139,
+       162.7029
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -30.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 2.15
+    },
+    "rp6_production_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.0
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "shoulder_flex60_xneg_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "upperarm_r",
+      "pivot_cm": [
+       -19.715,
+       -6.2274,
+       145.3709
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -60.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "upperarm_r",
+      "pivot_cm": [
+       -19.715,
+       -6.2274,
+       145.3709
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 60.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CLEAN + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 3.0
+    },
+    "rp6_production_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 2.0
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "shoulder_flex60_xpos_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "upperarm_l",
+      "pivot_cm": [
+       18.0312,
+       -6.4661,
+       146.5032
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": -60.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "upperarm_l",
+      "pivot_cm": [
+       18.0312,
+       -6.4661,
+       146.5032
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 60.0
+     }
+    ],
+    "difference": "sagittal_sign",
+    "reason": "RP5 sa_deform4 sagittal definitions assume +Y posterior; in the frozen frame +Y is anterior (rostrum at +Y), so the literal sign extends instead of flexing (neck_flex, lower_axial_flex, shoulder_flex, hip_flex), hyper-extends (elbow_*, knee_90), plantar-flexes (ankle_dorsi20) and CLOSES the jaw (jaw_open_20).  Production gate = same axis and amplitude with the anatomical sign.",
+    "rp5_literal_result": {
+     "classification": "CLEAN + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 0.57
+    },
+    "rp6_production_result": {
+     "classification": "CLEAN",
+     "lbs_flips": 0,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 1.8
+    },
+    "role": "evaluated + gated with the production variant"
+   },
+   "tail_root_lateral_30_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -1.2182,
+       -10.4593,
+       114.6822
+      ],
+      "axis": [
+       0.0,
+       0.0,
+       1.0
+      ],
+      "deg": 30.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -0.1162,
+       -14.2102,
+       105.0452
+      ],
+      "axis": [
+       0.0,
+       0.0,
+       1.0
+      ],
+      "deg": 30.0
+     }
+    ],
+    "difference": "tail_pivot",
+    "reason": "RP5 tail-root poses rotate about a pivot ~10 cm off the RP6 tail_01 joint (archived sa_deform4 pivot); a bone rotation cannot reproduce an off-joint pivot (same driver angle, different shape).  Production gate = same axis and angle about the tail_01 joint.",
+    "rp5_literal_result": {
+     "classification": "NOT RIG-REALISABLE (literal RP5 pivot 9-10 cm off the tail_01 joint; diagnostic only, not fitted) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 126,
+     "corrected_flips": 2,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -571.02
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 104,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 2.68
+    },
+    "role": "DIAGNOSTIC (not gated)",
+    "pivot_offset_cm": 10.4,
+    "pivot_offset_vector_cm": [
+     -1.102,
+     3.751,
+     9.637
+    ],
+    "induced_translation_cm": 2.024,
+    "same_axis_and_angle": true
+   },
+   "tail_root_vertical_25_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -1.2182,
+       -10.4593,
+       114.6822
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 25.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -0.1162,
+       -14.2102,
+       105.0452
+      ],
+      "axis": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "deg": 25.0
+     }
+    ],
+    "difference": "tail_pivot",
+    "reason": "RP5 tail-root poses rotate about a pivot ~10 cm off the RP6 tail_01 joint (archived sa_deform4 pivot); a bone rotation cannot reproduce an off-joint pivot (same driver angle, different shape).  Production gate = same axis and angle about the tail_01 joint.",
+    "rp5_literal_result": {
+     "classification": "NOT RIG-REALISABLE (literal RP5 pivot 9-10 cm off the tail_01 joint; diagnostic only, not fitted)",
+     "lbs_flips": 213,
+     "corrected_flips": 177,
+     "corrected_new_penetration": 167,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": -4169.82
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives)",
+     "lbs_flips": 41,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 6.28
+    },
+    "role": "DIAGNOSTIC (not gated)",
+    "pivot_offset_cm": 10.4,
+    "pivot_offset_vector_cm": [
+     -1.102,
+     3.751,
+     9.637
+    ],
+    "induced_translation_cm": 4.476,
+    "same_axis_and_angle": true
+   },
+   "tail_twist_30_rp5lit": {
+    "rp5_literal": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -1.2182,
+       -10.4593,
+       114.6822
+      ],
+      "axis": [
+       0.041924,
+       -0.836029,
+       -0.547082
+      ],
+      "deg": 30.0
+     }
+    ],
+    "rp6_production": [
+     {
+      "bone": "tail_01",
+      "pivot_cm": [
+       -0.1162,
+       -14.2102,
+       105.0452
+      ],
+      "axis": [
+       0.041924,
+       -0.836029,
+       -0.547082
+      ],
+      "deg": 30.0
+     }
+    ],
+    "difference": "tail_pivot",
+    "reason": "RP5 tail-root poses rotate about a pivot ~10 cm off the RP6 tail_01 joint (archived sa_deform4 pivot); a bone rotation cannot reproduce an off-joint pivot (same driver angle, different shape).  Production gate = same axis and angle about the tail_01 joint.",
+    "rp5_literal_result": {
+     "classification": "NOT RIG-REALISABLE (literal RP5 pivot 9-10 cm off the tail_01 joint; diagnostic only, not fitted)",
+     "lbs_flips": 9,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 2,
+     "body_volume_change_cm3": 192.86
+    },
+    "rp6_production_result": {
+     "classification": "RIG-WEIGHTING (resolved by correctives) + SOURCE-POSE (dense source folds at >= the LBS cage rate)",
+     "lbs_flips": 31,
+     "corrected_flips": 0,
+     "corrected_new_penetration": 0,
+     "corrected_tear_edges": 0,
+     "body_volume_change_cm3": 10.63
+    },
+    "role": "DIAGNOSTIC (not gated)",
+    "pivot_offset_cm": 10.4,
+    "pivot_offset_vector_cm": [
+     -1.102,
+     3.751,
+     9.637
+    ],
+    "induced_translation_cm": 3.135,
+    "same_axis_and_angle": true
+   }
+  }
+ }
+}
