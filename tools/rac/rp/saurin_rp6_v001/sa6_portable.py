@@ -2,7 +2,7 @@
 #   No dense arrays leave the session: the cage-level rest bodies are realised HERE from the verified clean workspace (cr_<STATE>.npy through the frozen
 #   barycentric embedding, exactly as sa6_pd2_fit.state_rig does) and shipped as data/cage_V/{V1,V2,S_<STATE>}.npy (, float64, cage vertex order).
 #   Bundle = tools (sa6_*.py), the read-only frozen RP5 files the loaders need (hash-listed), RP6 joint placements, production weights + correctives,
-#   resumable checkpoints, a driver (run_fits.py) and a Windows launcher (RUN_FITS.bat).  bundle_manifest.json lists every file with SHA-256.
+#   resumable checkpoints, a driver (run_fits.py) and a Windows launcher (START_FITS.bat; installs a private Python 3.13 with uv, wheel shipped alongside).  bundle_manifest.json lists every file with SHA-256.
 import sys, os, json, glob, shutil, hashlib, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_common as C
@@ -28,7 +28,7 @@ for k, v in cv.items(): np.save(OUT + '/data/cage_V/%s.npy' % k, v)
 if CK:
     for f in glob.glob(CK + '/CF_ckpt_*'): shutil.copy(f, OUT + '/out/ckpt/')
     for f in glob.glob(os.path.dirname(CK.rstrip('/')) + '/CF_state_*'): shutil.copy(f, OUT + '/out/')   # states already finished
-shutil.copy(TD + '/portable/run_fits.py', OUT + '/run_fits.py'); shutil.copy(TD + '/portable/RUN_FITS.bat', OUT + '/RUN_FITS.bat')
+shutil.copy(TD + '/portable/run_fits.py', OUT + '/run_fits.py'); shutil.copy(TD + '/portable/START_FITS.bat', OUT + '/START_FITS.bat')
 man = dict(status='RP6 RIG PILOT / NOT FROZEN', purpose='creator-state corrective layer fits (sa6_pd2_fit.py) off-session', states=states,
            source_workspace_hashes={os.path.basename(p): C.sha(p) for p in sorted(glob.glob(C.W + '/cr_*.npy'))}, files={})
 for root, _, fs in os.walk(OUT):
