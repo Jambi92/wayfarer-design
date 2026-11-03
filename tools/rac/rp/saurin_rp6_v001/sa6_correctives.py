@@ -286,7 +286,7 @@ class Solver:
             if nb == 0: return Pt, 0
             mask |= self.dilate(b, grow)
         return best[1], best[0]
-    def bulge(self, T, P, V0, smooth=150, iters=6, tol=5.0, exclude=None, crease_thr=0.85):
+    def bulge(self, T, P, V0, smooth=150, iters=6, tol=5.0, exclude=None, crease_thr=0.85, tension=None, taper=0):
         """RP6 v002 volume corrective (replaces the concentrated volume_fix as first choice): restores the closed-body volume by a BROAD, smooth flesh
         bulge around the joint -- weight = blend-zone smoothstep(rotation spread) x (1 - crease), crease = surface compressed below 85 %% area (the
         fold itself is never pushed), the weight field Laplacian-smoothed `smooth` times (no local spikes), rigid / jaw / digit vertices 0; direction =
@@ -307,9 +307,19 @@ class Solver:
         crease = np.clip((crease_thr - varea(P) / np.maximum(varea(r.V), 1e-12)) / 0.25, 0, 1)
         for _ in range(5): crease = 0.5 * crease + 0.5 * (self.A1 @ crease) / deg
         g = wv * (1 - crease)
+        if tension is not None:    # RP6 v003: skin already under high tension (edges stretched toward the tear limit) is not pushed further outward
+            self.tear_edges(P); rat = np.linalg.norm(P[self._E1[:, 0]] - P[self._E1[:, 1]], axis=1) / np.maximum(self._L0, 1e-9); vr = np.zeros(r.nv)
+            np.maximum.at(vr, self._E1[:, 0], rat); np.maximum.at(vr, self._E1[:, 1], rat); tw = np.clip((tension - vr) / 0.4, 0, 1)
+            for _ in range(5): tw = 0.5 * tw + 0.5 * (self.A1 @ tw) / deg
+            g = g * tw
         for _ in range(smooth): g = 0.5 * g + 0.5 * (self.A1 @ g) / deg
         g[self.rigid | excl | self.protect] = 0
         if exclude is not None: g[exclude] = 0
+        if taper:                  # RP6 v003: fade the field to 0 over `taper` rings toward pinned vertices (rigid landmarks at the olecranon / patella
+            pin = self.rigid | excl | self.protect; ring_ = pin.copy(); fall = np.ones(r.nv)   # sit on the most stretched skin: an abrupt pin tears)
+            for k in range(1, taper + 1):
+                nxt = self.dilate(ring_, 1); fall[nxt & ~ring_] = k / (taper + 1.0); ring_ = nxt
+            g = g * fall
         U_, _, Vt_ = np.linalg.svd(M); Mr = U_ @ Vt_
         n = np.zeros_like(r.V)
         for k in range(4): np.add.at(n, Q[:, k], np.cross(r.V[Q[:, (k + 1) % 4]] - r.V[Q[:, k]], r.V[Q[:, (k + 3) % 4]] - r.V[Q[:, k]]))
