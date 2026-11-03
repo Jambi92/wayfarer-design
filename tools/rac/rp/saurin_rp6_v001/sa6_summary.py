@@ -10,7 +10,7 @@ for pn in ev['M']:
     print('| %s | %s | %d | %d | %d | %d | %d | %d | %s | %s |' % (pn, s2s, worst(a, 'lbs_flips'), worst(a, 'corrected_flips'), worst(a, 'corrected_new_penetration_vertices'), worst(b, 'lbs_flips'), worst(b, 'corrected_flips'),
                                                           worst(b, 'corrected_new_penetration_vertices'), a['classification'][:70], b['classification'][:70]))
     for x in (a, b):
-        tot['rig'] += x['rig_owned_folds_after_correctives']; tot['topo'] += 'TOPOLOGY' in x['classification'].split('+')[0]; tot['topo_only'] += x['topology_only_flips']
+        tot['rig'] += (x['rig_owned_folds_after_correctives'] or 0); tot['topo'] += 'TOPOLOGY' in x['classification'].split('+')[0]; tot['topo_only'] += (x['topology_only_flips'] or 0)
         tot['pen'] += 0 if pn == 'jaw_open_20_rp5lit' else worst(x, 'corrected_new_penetration_vertices')
 print('\nTOTALS', tot)
 # metrics ranges

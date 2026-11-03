@@ -2,6 +2,15 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-03 ~00:30) — ORDER a407015 RP6 — ALL RIG GATES PASS c1/c2; PASS line HELD on PD-2 / dense-source (E: files)
+- Report: reviews/claude-rac-rp6-saurin-rig-pilot-report.md. Evidence + manifest + renders + .blend.xz: reviews/rac-rp6-evidence/saurin/rig_pilot/.
+- Both configs: 98 gated poses, 0 folds / 0 pen / 0 tears, max |dV| 44.5 / 44.7 cm3, rigid 0.000; weight audit leak pass; corrective audit rest-active 0;
+  Blender readback 0.00039 / 0.00016 cm, 0 flips; neutral err 8e-6 cm; 8/8 frozen RP5 hashes OK.
+- Final fixes this round: locality (sa6_fit solve_one) + self-masked PARTIAL bulge in polish (closed c2 elbow_130_xneg -124 -> -3 cm3).
+- Work dir /tmp/claude-0/rp6 (W_*, CF_*, ev_*, wa, ca, rb_*, pd2=PENDING, renders/). Archive of pre-elbow c2 fit: v5_F_pre_elbow/.
+- ONLY REMAINING: attach E: clean workspace (SA_RP5_WORK_v001.npz + 19 cr_<STATE>.npy) -> run sa6_pd2.py OUT W_M CF_M, re-run sa6_eval (dense mode auto),
+  re-run sa6_package; if clean issue the §26 PASS line and STOP for ChatGPT review. Do NOT start UV/LOD/creator/UE5/other races.
+
 ## UPDATE (2026-11-02 ~18:40) — LOCALITY added; fresh locality fits running
 v3 fit (no locality) passed every gate (98 poses c1/c2: 0 folds/pen/tears, |dV| <= 30, rigid ok; archived /tmp/claude-0/rp6/v3_gatepass_nolocality)
 BUT correctives drifted far from their joint (hip_flex moved tail_02 / spine / opposite thigh up to 8 cm). sa6_fit now pins, per pose, everything outside:
