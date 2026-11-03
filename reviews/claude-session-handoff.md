@@ -2,6 +2,12 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-03 ~04:40) — NEW ORDER: reviews/chatgpt-rac-rp6-saurin-validation-closure-order.md (58aa486c) — BLOCKED on E: access
+- Step 1 needs E:/UnrealProjects/Wayfarer 5.8/RaceBodies attached (folder exists; device_request_folder_access denied by the auto-mode classifier, 4th time). Tyler must add it via "Add folder" in the desktop app.
+- Prep done for §3: RP5-literal tail pivots sit 10.20 cm (c1) / 10.40 cm (c2) off the tail_01 joint, same axis + angle as production; induced translation
+  c1 lateral_30 2.04, vertical_25 4.39, twist_30 3.09 cm; c2 2.02 / 4.48 / 3.14 cm.
+- Then: stage + hash-verify workspace (clean_workspace.files in consolidation_rebuild.json, 28 files incl. 19 cr_*.npy), SA_W=staged path, run sa6_pd2 + sa6_eval M/F, package, Blender re-verify, PASS line.
+
 ## LATEST (2026-11-03 ~00:30) — ORDER a407015 RP6 — ALL RIG GATES PASS c1/c2; PASS line HELD on PD-2 / dense-source (E: files)
 - Report: reviews/claude-rac-rp6-saurin-rig-pilot-report.md. Evidence + manifest + renders + .blend.xz: reviews/rac-rp6-evidence/saurin/rig_pilot/.
 - Both configs: 98 gated poses, 0 folds / 0 pen / 0 tears, max |dV| 44.5 / 44.7 cm3, rigid 0.000; weight audit leak pass; corrective audit rest-active 0;
