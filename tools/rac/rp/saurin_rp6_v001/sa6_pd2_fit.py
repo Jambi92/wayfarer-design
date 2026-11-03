@@ -11,10 +11,12 @@ import sys, os, json, time, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_common as C, sa6_pose as SP, sa6_correctives as CC, sa6_skeleton as SK, sa6_fit as FT
 WD = os.environ.get('RP6_WD', '/tmp/claude-0/rp6'); ROUNDS = int(os.environ.get('ROUNDS', 4)); FRACS = (1.0, 0.5)
-d = C.load(); z = np.load(C.FZ + '/SA_RP5_full_cage_freeze_candidate_v001.npz'); w = np.load(C.W + '/work/SA_RP5_WORK_v001.npz'); Fd = w['f'].astype(np.int64)
+d = C.load(); z = np.load(C.FZ + '/SA_RP5_full_cage_freeze_candidate_v001.npz'); w = None if C.PORTABLE else np.load(C.W + '/work/SA_RP5_WORK_v001.npz'); Fd = None if C.PORTABLE else w['f'].astype(np.int64)
 def base_cfg(nm): return 'F' if nm.startswith('F-') else 'M'
 def state_rig(nm):
-    cfg = base_cfg(nm); VB = np.load(C.W + '/cr_%s.npy' % nm).astype(float); Vs = (z['bc'][:, :, None] * VB[Fd[z['tri']]]).sum(1)
+    cfg = base_cfg(nm)
+    if C.PORTABLE: Vs = np.load(C.W + '/cage_V/S_%s.npy' % nm)
+    else: VB = np.load(C.W + '/cr_%s.npy' % nm).astype(float); Vs = (z['bc'][:, :, None] * VB[Fd[z['tri']]]).sum(1)
     J, M = SK.build(Vs, 'state'); Pst = SK.rec(J, M, 'creator state ' + nm)
     R = SP.Rig(cfg, WD + '/W_%s.npz' % cfg); R.V = Vs; R.P = Pst; R.n0 = R.qn(Vs); R.cfg = 'state'
     return R, cfg
