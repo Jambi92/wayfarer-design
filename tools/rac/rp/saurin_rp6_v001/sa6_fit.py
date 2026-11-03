@@ -27,6 +27,7 @@ VOL_TOL = 20.0     # cm3: target of the volume-preservation corrective (|dV| <= 
 VOL_ACCEPT = 60.0  # cm3: the volume path's result is accepted when the closed-body |dV| <= VOL_ACCEPT (audit gate = 100 cm3 per pose)
 NONREAL = ('tail_root_lateral_30_rp5lit', 'tail_root_vertical_25_rp5lit', 'tail_twist_30_rp5lit')
 LOC_RING = int(os.environ.get('LOC_RING', 8))
+CONTACT_RING = int(os.environ.get('CONTACT_RING', 10))
 VOL_TRIG = 60.0    # cm3: |dV| above which the volume corrective is (re)solved (hysteresis: fold / contact fixes may lose a little volume afterwards)
 VOL_BONES = {'clavicle', 'upperarm', 'forearm', 'hand', 'thigh', 'shin', 'foot', 'pelvis', 'spine_01', 'spine_02', 'spine_03', 'spine_04', 'neck_01', 'neck_02'} | {'tail_%02d' % k for k in range(1, 17)}
 #   tissue-volume joints only: the jaw opens a cavity (the closed mesh volume legitimately changes), digits are below the volume tolerance
@@ -51,8 +52,10 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
     for b_, _, _ in ent:
         ws_ = R.W[:, [R.bi[x] for x in R.sub(b_) if x in R.bi]].sum(1); bz |= (ws_ > 1e-3) & (ws_ < 1 - 1e-3)
     dom = np.array(R.DB)[R.W.argmax(1)]; seg = np.zeros(R.nv, bool)
-    for b_, _, _ in ent: seg |= np.isin(dom, [b_] + ([R.par[b_]] if R.par[b_] in R.bi else []))     # flesh of the two segments the joint connects
-    allowed = S.dilate(bz, LOC_RING) | seg | S.dilate(pen | penetration(R, R.dqs(T, R.V + d), F, w0), 4)
+    for b_, _, _ in ent:
+        seg |= np.isin(dom, [b_] + ([R.par[b_]] if R.par[b_] in R.bi else []))                   # flesh of the two segments the joint connects
+        if b_.startswith('thigh'): seg |= dom == 'tail_01'          # caudofemoral coupling: hip motion deforms the tail-root segment (tail_01 only)
+    allowed = S.dilate(bz, LOC_RING) | seg | S.dilate(pen | penetration(R, R.dqs(T, R.V + d), F, w0) | S.tear_verts(Pc), CONTACT_RING)   # contact and tear sites (local defects)
     base_protect = S.protect; S.protect = base_protect | ~allowed
     try:
         return _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc, fl, pen, dV, vol_pose, ntear, ent, pose_key)
@@ -96,9 +99,9 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
             m = np.zeros(R.nv, bool); m[R.Q[R.relcos(P_, T) < 0].ravel()] = True; return m | penetration(R, P_, F, w0) | S.tear_verts(P_)
         def clean(P_, ref): return not (R.relcos(P_, T) < 0).any() and not penetration(R, P_, F, w0).any() and S.tear_edges(P_)[0].sum() <= S.tear_edges(ref)[0].sum()
         fails = 0
-        for k in range(8):
+        for k in range(14):
             if abs(S.body_volume(Ps) - S.V0) <= VOL_TOL: return Ps
-            ct, sm = ((0.85, 150), (0.7, 300), (0.55, 500))[min(fails, 2)]      # escalate: allow the bulge closer to the crease, broader field
+            ct, sm = ((0.85, 150), (0.7, 300), (0.55, 500), (0.45, 500), (0.35, 800), (0.25, 800))[min(fails, 5)]      # escalate: allow the bulge closer to the crease, broader field
             Pv, nb = S.bulge_safe(T, Ps, S.V0, bad, smooth=sm, crease_thr=ct)
             if S.tear_edges(Pv)[0].sum() > S.tear_edges(Ps)[0].sum(): Pv = S.tear_fix(T, Pv, R.relcos, ring=6, iters=2)
             if nb or (R.relcos(Pv, T) < 0).any(): Pv, _ = S.unfold(T, Pv, R.relcos)
@@ -106,7 +109,7 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
             if clean(Pv, Ps) and abs(S.body_volume(Pv) - S.V0) < abs(S.body_volume(Ps) - S.V0) - 2.0: Ps = Pv
             else:
                 fails += 1
-                if fails > 2: break
+                if fails > 5: break
         if abs(S.body_volume(Ps) - S.V0) <= VOL_TOL: return Ps
         Pv, _ = S.volume_fix(T, Ps, S.V0, tol=VOL_TOL / 4)
         for sc in (1.0, 0.75, 0.5, 0.25):
