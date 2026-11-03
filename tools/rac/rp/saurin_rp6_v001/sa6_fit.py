@@ -102,6 +102,15 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
         for k in range(14):
             if abs(S.body_volume(Ps) - S.V0) <= VOL_TOL: return Ps
             ct, sm = ((0.85, 150), (0.7, 300), (0.55, 500), (0.45, 500), (0.35, 800), (0.25, 800))[min(fails, 5)]      # escalate: allow the bulge closer to the crease, broader field
+            # PARTIAL BROAD BULGE (RP6 v003): the unmasked broad bulge scaled back along its own direction -- a clean partial restore that reaches the
+            # acceptance band beats a fully restored but spiky self-masked field (masking concentrates the field near the crease)
+            Pb = S.bulge(T, Ps, S.V0, smooth=sm, crease_thr=ct); hit = None
+            for s_ in (1.0, 0.9, 0.8, 0.7, 0.6, 0.5):
+                Pt = Ps + s_ * (Pb - Ps)
+                if clean(Pt, Ps) and abs(S.body_volume(Pt) - S.V0) < abs(S.body_volume(Ps) - S.V0) - 2.0: hit = Pt; break
+            if hit is not None:
+                if os.environ.get('PDEBUG'): print('   polish partial bulge s=%.1f dV %.0f -> %.0f' % (s_, S.body_volume(Ps) - S.V0, S.body_volume(hit) - S.V0), flush=True)
+                Ps = hit; continue
             Pv, nb = S.bulge_safe(T, Ps, S.V0, bad, smooth=sm, crease_thr=ct)
             if S.tear_edges(Pv)[0].sum() > S.tear_edges(Ps)[0].sum(): Pv = S.tear_fix(T, Pv, R.relcos, ring=6, iters=2)
             if nb or (R.relcos(Pv, T) < 0).any(): Pv, _ = S.unfold(T, Pv, R.relcos)
