@@ -35,8 +35,12 @@ for cfg in 'MF':                                           # base-configuration 
 res = dict(status='RP6 RIG PILOT / NOT FROZEN', method=open(__file__).read().split('import')[0], dense_source_staged=C.have_workspace(), base_reference_flips=ref,
            rp5_ownership_audit='reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/validation/SA_PD2_ownership.json', states={})
 rp5 = json.load(open(C.R + '/reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/validation/SA_PD2_ownership.json'))
+ONLY = [x for x in os.environ.get('PD2_STATES', '').split(',') if x]   # optional subset; results merge into an existing OUT
+if ONLY and os.path.exists(OUT): res['states'] = json.load(open(OUT))['states']
 for path in sorted(glob.glob(C.W + '/cr_*.npy')):
-    nm = os.path.basename(path)[3:-4]; t0 = time.time(); VB = np.load(path).astype(float); nB = fn(VB); aB = np.linalg.norm(nB, axis=1)
+    nm = os.path.basename(path)[3:-4]
+    if ONLY and nm not in ONLY: continue
+    t0 = time.time(); VB = np.load(path).astype(float); nB = fn(VB); aB = np.linalg.norm(nB, axis=1)
     sflip = (nR * nB).sum(1) / (aR * aB + 1e-20) < 0; scol = aB < 0.05 * aR; bad = sflip | scol; Vs = (z['bc'][:, :, None] * VB[F[z['tri']]]).sum(1)
     q0 = np.cross(P0[d['Q'][:, 2]] - P0[d['Q'][:, 0]], P0[d['Q'][:, 3]] - P0[d['Q'][:, 1]]); q1 = np.cross(Vs[d['Q'][:, 2]] - Vs[d['Q'][:, 0]], Vs[d['Q'][:, 3]] - Vs[d['Q'][:, 1]])
     nflip = np.nonzero((q0 * q1).sum(1) < 0)[0]
