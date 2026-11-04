@@ -36,7 +36,7 @@ json.dump(aud, open(EV + '/SA_RP6_deformation_audit_v001.json', 'w'), indent=1)
 for c in 'MF':
     src = WD + '/SA_%s_REF_RP6_rigpilot_v001.blend.xz' % c
     if os.path.exists(src): shutil.copyfile(src, EV + '/SA_%s_REF_RP6_rigpilot_v001.blend.xz' % c)
-files = sorted(f for f in os.listdir(EV) if os.path.isfile(os.path.join(EV, f)) and f != 'SA_RP6_rig_manifest_v001.json')
+files = sorted(os.path.relpath(os.path.join(r, f), EV) for r, ds, fs in os.walk(EV) for f in fs if not os.path.relpath(r, EV).startswith('wip') and f != 'SA_RP6_rig_manifest_v001.json')   # incl. renders/
 man = dict(status=ST, name='SA_RP6_rig_manifest_v001', race='Saurin', stage='RP6 production rig / skin-weighting pilot', order='reviews/chatgpt-rac-rp6-saurin-production-rig-skin-weighting-pilot-order.md (a407015)',
            frozen_inputs={k: v for k, v in C.FROZEN.items()} | {'topology_sha256': C.TOPO}, tools='tools/rac/rp/saurin_rp6_v001/', files={f: dict(sha256=sha(os.path.join(EV, f)), bytes=os.path.getsize(os.path.join(EV, f))) for f in files},
            blend_files={c: dict(container='SA_%s_REF_RP6_rigpilot_v001.blend.xz' % c, blend_sha256=json.load(open(WD + '/rb_%s.json' % c))['sha256'], blend_bytes=os.path.getsize(WD + '/SA_%s_REF_RP6_rigpilot_v001.blend' % c) if os.path.exists(WD + '/SA_%s_REF_RP6_rigpilot_v001.blend' % c) else None) for c in 'MF'})
