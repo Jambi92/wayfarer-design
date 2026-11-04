@@ -35,14 +35,23 @@ def comp_mask(nm, R):
     pts = np.r_[VB[Fd[bad]].mean(1) if bad.any() else np.zeros((0, 3)), R.V[Q[nfl]].mean(1) if nfl.any() else np.zeros((0, 3))]
     return cKDTree(pts).query(R.V[R.Q].mean(1))[0] <= 1.0 if len(pts) else np.zeros(len(R.Q), bool)
 def mask_composition(R, comp):
-    """COMPOSITION MASK (RP6 closure v002): quads folded by the pre-rig composition are not rig defects and cannot be repaired by a corrective (the
-    neutral body itself is folded there); the fit ignores their orientation so the solver does not trade volume / neighbouring quads chasing them.
-    The PD-2 audit evaluates WITHOUT this mask (they are reported as COMPOSITION/PD-2 there, every other fold stays rig-owned)."""
+    """COMPOSITION MASK (RP6 closure v002): a fold or a self-contact that the pre-rig composition ALREADY produces in a pose (present at the start of
+    the solve: LBS + current correctives, on quads / vertices of the composition-folded zone) is not a rig defect and cannot be repaired by a
+    corrective (the neutral body itself is folded there).  The fit ignores exactly those -- set per pose by start_pose() -- so the solver neither trades
+    volume / neighbouring quads chasing them nor is blocked by them; anything NEW (also inside the composition zone) still counts.  The PD-2 audit
+    evaluates WITHOUT any mask."""
+    R._comp = comp; R._compv = np.zeros(R.nv, bool); R._compv[R.Q[comp].ravel()] = True
+    R._allow_q = np.zeros(len(R.Q), bool); R._allow_v = np.zeros(R.nv, bool)
     if not comp.any(): return R
-    orig = R.relcos; R.relcos = lambda P, T, W=None: np.where(comp, 1.0, orig(P, T, W))
-    cv = np.zeros(R.nv, bool); cv[R.Q[comp].ravel()] = True      # contact AT a composition fold (the folded flesh self-intersects) is composition-owned too
-    pen0 = FT.penetration; FT.penetration = lambda R_, P, F, w0: pen0(R_, P, F, w0) & ~cv
+    orig = R.relcos; R._relcos_raw = orig; R.relcos = lambda P, T, W=None: np.where(R._allow_q, 1.0, orig(P, T, W))
+    if not hasattr(FT, '_pen_raw'): FT._pen_raw = FT.penetration
+    FT.penetration = lambda R_, P, F, w0: FT._pen_raw(R_, P, F, w0) & ~getattr(R_, '_allow_v', np.zeros(len(P), bool))
     return R
+def start_pose(R, Cs, spec, F, w0):
+    """per-pose allowance: composition-zone folds / contacts already present at the start of this solve"""
+    if not getattr(R, '_comp', np.zeros(1, bool)).any(): return
+    T = R.pose(spec); P = R.skin(T, R.V + Cs.delta(T))
+    R._allow_q = R._comp & (R._relcos_raw(P, T) < 0); R._allow_v = R._compv & FT._pen_raw(R, P, F, w0)
 if __name__ == '__main__':
     STATES, OD = sys.argv[1].split(','), sys.argv[2]; os.makedirs(OD, exist_ok=True)
     for nm in STATES:
@@ -60,7 +69,7 @@ if __name__ == '__main__':
             for ii, (pn, fr) in enumerate(items):
                 if rnd == r0 and ii < i0: continue
                 if True:
-                    spec = [(b, p, a, dg * fr) for b, p, a, dg in PS[pn]]; t = time.time()
+                    spec = [(b, p, a, dg * fr) for b, p, a, dg in PS[pn]]; t = time.time(); start_pose(R, Cs, spec, F, w0)
                     a, b, c = FT.solve_one(R, Cs, S, spec, F, w0, log, pose_key=('%s@%.2f' % (pn, fr)) if rnd >= 1 else None); tot += a
                     if a or b: print('%s round %d %-24s x%.2f before %4d after %4d  %.1fs' % (nm, rnd, pn, fr, a, b, time.time() - t), flush=True)
                     log.append(dict(round=rnd, pose=pn, frac=fr, flips_before=a, flips_after_solve=b))
