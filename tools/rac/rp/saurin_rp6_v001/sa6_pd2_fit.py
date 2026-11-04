@@ -39,7 +39,10 @@ def mask_composition(R, comp):
     neutral body itself is folded there); the fit ignores their orientation so the solver does not trade volume / neighbouring quads chasing them.
     The PD-2 audit evaluates WITHOUT this mask (they are reported as COMPOSITION/PD-2 there, every other fold stays rig-owned)."""
     if not comp.any(): return R
-    orig = R.relcos; R.relcos = lambda P, T, W=None: np.where(comp, 1.0, orig(P, T, W)); return R
+    orig = R.relcos; R.relcos = lambda P, T, W=None: np.where(comp, 1.0, orig(P, T, W))
+    cv = np.zeros(R.nv, bool); cv[R.Q[comp].ravel()] = True      # contact AT a composition fold (the folded flesh self-intersects) is composition-owned too
+    pen0 = FT.penetration; FT.penetration = lambda R_, P, F, w0: pen0(R_, P, F, w0) & ~cv
+    return R
 if __name__ == '__main__':
     STATES, OD = sys.argv[1].split(','), sys.argv[2]; os.makedirs(OD, exist_ok=True)
     for nm in STATES:
