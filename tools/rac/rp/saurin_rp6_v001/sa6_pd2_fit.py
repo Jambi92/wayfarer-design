@@ -35,8 +35,8 @@ def comp_mask(nm, R):
     pts = np.r_[VB[Fd[bad]].mean(1) if bad.any() else np.zeros((0, 3)), R.V[Q[nfl]].mean(1) if nfl.any() else np.zeros((0, 3))]
     return cKDTree(pts).query(R.V[R.Q].mean(1))[0] <= 1.0 if len(pts) else np.zeros(len(R.Q), bool)
 def mask_composition(R, comp):
-    """COMPOSITION MASK (RP6 closure v002): a fold or a self-contact that the pre-rig composition ALREADY produces in a pose (present at the start of
-    the solve: LBS + current correctives, on quads / vertices of the composition-folded zone) is not a rig defect and cannot be repaired by a
+    """COMPOSITION MASK (RP6 closure v002): a fold or a self-contact that the pre-rig composition ALREADY produces in a pose (present under plain LBS
+    of the pose, on quads / vertices of the composition-folded zone) is not a rig defect and cannot be repaired by a
     corrective (the neutral body itself is folded there).  The fit ignores exactly those -- set per pose by start_pose() -- so the solver neither trades
     volume / neighbouring quads chasing them nor is blocked by them; anything NEW (also inside the composition zone) still counts.  The PD-2 audit
     evaluates WITHOUT any mask."""
@@ -48,9 +48,9 @@ def mask_composition(R, comp):
     FT.penetration = lambda R_, P, F, w0: FT._pen_raw(R_, P, F, w0) & ~getattr(R_, '_allow_v', np.zeros(len(P), bool))
     return R
 def start_pose(R, Cs, spec, F, w0, S=None):
-    """per-pose allowance: composition-zone folds / contacts / stretched edges already present at the start of this solve"""
+    """per-pose allowance: composition-zone folds / contacts / stretched edges that plain LBS of this pose already shows (never ones the correctives make)"""
     if not getattr(R, '_comp', np.zeros(1, bool)).any(): return
-    T = R.pose(spec); P = R.skin(T, R.V + Cs.delta(T))
+    T = R.pose(spec); P = R.skin(T)        # the reference is plain LBS of the pose (strict rule, = PD-2 audit): defects the composition shows
     R._allow_q = R._comp & (R._relcos_raw(P, T) < 0); R._allow_v = R._compv & FT._pen_raw(R, P, F, w0)
     if S is not None:
         if not hasattr(S, '_tear_raw'):

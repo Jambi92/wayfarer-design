@@ -7,7 +7,8 @@
 #     configuration's production weights (c1 for SA-M* states, c2 for SA-F* states; one weight set per base configuration, carried by topology); correctives
 #     = base set + the per-state creator-state corrective layer (sa6_pd2_fit.py, LAYERDIR/CF_state_<STATE>.json) when present.  The full anatomical
 #     34-pose suite at full angle; per pose three columns: LBS only / base correctives / base + state layer (production).
-#   Ownership per pose (production column): a folded quad within 1 cm of a pre-rig source fold or a neutral cage flip of the state = COMPOSITION/PD-2
+#   Ownership per pose (production column): a folded quad within 1 cm of a pre-rig source fold or a neutral cage flip of the state AND already folded under
+#   plain LBS (closure v002 strict rule: a defect the correctives created or moved is never composition-owned) = COMPOSITION/PD-2
 #     (screening signal; every such pose is also re-checked against the base column and LBS so a worsened defect is visible), else RIG-OWNED.  New
 #     interpenetration and tears are always rig-owned unless they sit on a pre-rig fold.  Closed-body |dV| <= 100 cm3 (jaw poses exempt) as for c1 / c2.
 #   REGRESSION = rig-owned defect on the state in a pose where the base configuration is clean.
@@ -62,7 +63,11 @@ for path in sorted(glob.glob(C.W + '/cr_*.npy')):
             if kd is None or not len(idx_pts): return np.zeros(len(idx_pts), bool)
             return kd.query(idx_pts)[0] <= 1.0
         cf = near(Vs[R.Q[pr['f']]].mean(1)) if len(pr['f']) else np.zeros(0, bool); cp_ = near(Vs[pr['pen']]); ct = near(Vs[pr['tears']].mean(1)) if len(pr['tears']) else np.zeros(0, bool)
-        bf = o['base']['f']; bcomp = near(Vs[R.Q[bf]].mean(1)) if len(bf) else np.zeros(0, bool)
+        # closure v002 (strict): a defect is composition-owned only if it sits at a pre-rig fold AND plain LBS already shows it there (else the
+        # correctives created / worsened it -> rig-owned)
+        lb = o['lbs']; cf &= np.isin(pr['f'], lb['f']); cp_ &= np.isin(pr['pen'], lb['pen'])
+        if len(pr['tears']): lt = {tuple(e) for e in np.sort(lb['tears'], 1)}; ct &= np.array([tuple(e) in lt for e in np.sort(pr['tears'], 1)])
+        bf = o['base']['f']; bcomp = (near(Vs[R.Q[bf]].mean(1)) & np.isin(bf, lb['f'])) if len(bf) else np.zeros(0, bool)
         row = dict(lbs_flips=int(len(o['lbs']['f'])), base_flips=int(len(bf)), base_rig_flips=int((~bcomp).sum()),
                    flips=int(len(pr['f'])), composition_pd2=int(cf.sum()), rig_owned=int((~cf).sum()), new_penetration=int(len(pr['pen'])), rig_penetration=int((~cp_).sum()),
                    tears=int(len(pr['tears'])), rig_tears=int((~ct).sum()), dV_cm3=round(float(pr['dV']), 2), volume_ok=bool(abs(pr['dV']) <= 100),
