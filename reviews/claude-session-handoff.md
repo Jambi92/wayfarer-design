@@ -2,6 +2,21 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-04) — CLOSURE ORDER 58aa486c DONE — RP6 PASS line issued; STOP for ChatGPT / author review
+- Report: reviews/claude-rac-rp6-saurin-validation-closure-report.md. Evidence: reviews/rac-rp6-evidence/saurin/rig_pilot/ (manifest 58 files verified,
+  .blend.xz decompress to recorded sha/bytes). Status RP6 RIG PILOT / NOT FROZEN.
+- Inputs: 5/5 W2I6 canonical (E: RaceBodies/out, read-only), clean workspace reproduced in scratch (/tmp/claude-0/rp5clean) 28/28 == consolidation_rebuild
+  clean_workspace.files; provenance SA_RP6_clean_workspace_provenance_v001.json; frozen RP5 8/8 + check_frozen before/after.
+- Dense-source: dense_source_staged true c1/c2, topology-only 0, 98 gated poses each FAILS 0 (max |dV| 44.5 / 44.7).
+- PD-2: 19/19 states 0 rig-owned folds/contact/tears/volume, 0 regressions, 0 cage/topology-owned; composition-owned FAHI 70 / MUHI 3 / MUFAHI 135
+  (strict rule: at pre-rig fold AND present under LBS; creator-inverted quads; fold self-intersection). pd2 json = /tmp/claude-0/rp6/pd2_final.json.
+- DESIGN ADDITION for review: creator-state corrective layer (sa6_pd2_fit.py; SA_RP6_creator_layers_v001.*; corrective = base + layer_state, blended by
+  creator weights). Layer-only solver extensions env-gated: COMP_MASK, SEGBULGE (segment / extended segment flesh bulge). Base c1/c2 correctives unchanged.
+- Layers fitted on Tyler's PC: E:/UnrealProjects/Wayfarer 5.8/RaceBodies/SaurinRP6_fits (portable bundle, private Python via uv, START_FITS*.bat;
+  outputs out/, out_v2/, out_v3/, out_v4/). Local copies /tmp/claude-0/rp6/pd2fit (final 19).
+- Fresh Blender read-back (bpy 5.2.2, new processes): neutral == frozen RP5, drivers 245/246 valid, rest 0, posed vs evaluator <= 0.00039 cm, 0 flips.
+- NEXT: wait for ChatGPT / author review. Do NOT start UV / LOD / creator / UE5 / other races.
+
 ## LATEST (2026-11-03 ~04:40) — NEW ORDER: reviews/chatgpt-rac-rp6-saurin-validation-closure-order.md (58aa486c) — BLOCKED on E: access
 - Step 1 needs E:/UnrealProjects/Wayfarer 5.8/RaceBodies attached (folder exists; device_request_folder_access denied by the auto-mode classifier, 4th time). Tyler must add it via "Add folder" in the desktop app.
 - Prep done for §3: RP5-literal tail pivots sit 10.20 cm (c1) / 10.40 cm (c2) off the tail_01 joint, same axis + angle as production; induced translation
