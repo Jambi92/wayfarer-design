@@ -12,6 +12,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_common as C, sa6_pose as SP, sa6_correctives as CC, sa6_skeleton as SK, sa6_fit as FT
 WD = os.environ.get('RP6_WD', '/tmp/claude-0/rp6'); ROUNDS = int(os.environ.get('ROUNDS', 4)); FRACS = (1.0, 0.5)
 d = C.load(); z = np.load(C.FZ + '/SA_RP5_full_cage_freeze_candidate_v001.npz'); w = None if C.PORTABLE else np.load(C.W + '/work/SA_RP5_WORK_v001.npz'); Fd = None if C.PORTABLE else w['f'].astype(np.int64)
+def _canon_cage():
+    if C.PORTABLE: return np.load(C.W + '/cage_V/P0.npy') if os.path.exists(C.W + '/cage_V/P0.npy') else np.load(C.W + '/cage_V/V1.npy')
+    VR = np.load(C.W + '/src/saurin_w2_final_base.npz'); VR = VR[[k for k in VR.files if VR[k].shape == w['v_M'].shape][0]].astype(float)
+    return (z['bc'][:, :, None] * VR[Fd[z['tri']]]).sum(1)
+V1C = _canon_cage()          # the frozen cage realised on the CANONICAL base (= the RP5 PD-2 neutral-cage-flip reference)
 def base_cfg(nm): return 'F' if nm.startswith('F-') else 'M'
 def state_rig(nm):
     cfg = base_cfg(nm)
@@ -19,6 +24,10 @@ def state_rig(nm):
     else: VB = np.load(C.W + '/cr_%s.npy' % nm).astype(float); Vs = (z['bc'][:, :, None] * VB[Fd[z['tri']]]).sum(1)
     J, M = SK.build(Vs, 'state'); Pst = SK.rec(J, M, 'creator state ' + nm)
     R = SP.Rig(cfg, WD + '/W_%s.npz' % cfg); R.V = Vs; R.P = Pst; R.n0 = R.qn(Vs); R.cfg = 'state'
+    # closure v003: quads that the creator composition INVERTS in the neutral (normal flipped vs the canonical base cage = RP5 'neutral cage flips')
+    # have no valid rest orientation: their posed orientation is composition-owned in every pose (neither 'folding' nor 'straightening' them is a
+    # rig result).  Recorded here; the PD-2 audit assigns them to COMPOSITION/PD-2 and the layer fit ignores them.
+    nC = R.qn(V1C); R.rest_inverted = (nC * R.n0).sum(1) < 0
     return R, cfg
 def comp_mask(nm, R):
     """quads owned by the PRE-RIG composition (same rule as the sa6_pd2 ownership screen): rest quad centroid within 1 cm of a dense-source fold
@@ -42,16 +51,16 @@ def mask_composition(R, comp):
     evaluates WITHOUT any mask."""
     R._comp = comp; R._compv = np.zeros(R.nv, bool); R._compv[R.Q[comp].ravel()] = True
     R._allow_q = np.zeros(len(R.Q), bool); R._allow_v = np.zeros(R.nv, bool)
-    if not comp.any(): return R
+    if not (comp.any() or R.rest_inverted.any()): return R
     orig = R.relcos; R._relcos_raw = orig; R.relcos = lambda P, T, W=None: np.where(R._allow_q, 1.0, orig(P, T, W))
     if not hasattr(FT, '_pen_raw'): FT._pen_raw = FT.penetration
     FT.penetration = lambda R_, P, F, w0: FT._pen_raw(R_, P, F, w0) & ~getattr(R_, '_allow_v', np.zeros(len(P), bool))
     return R
 def start_pose(R, Cs, spec, F, w0, S=None):
     """per-pose allowance: composition-zone folds / contacts / stretched edges that plain LBS of this pose already shows (never ones the correctives make)"""
-    if not getattr(R, '_comp', np.zeros(1, bool)).any(): return
+    if not (getattr(R, '_comp', np.zeros(1, bool)).any() or R.rest_inverted.any()): return
     T = R.pose(spec); P = R.skin(T)        # the reference is plain LBS of the pose (strict rule, = PD-2 audit): defects the composition shows
-    R._allow_q = R._comp & (R._relcos_raw(P, T) < 0); R._allow_v = R._compv & FT._pen_raw(R, P, F, w0)
+    R._allow_q = (R._comp & (R._relcos_raw(P, T) < 0)) | R.rest_inverted; R._allow_v = R._compv & FT._pen_raw(R, P, F, w0)
     if S is not None:
         if not hasattr(S, '_tear_raw'):
             S._tear_raw = S.tear_edges; S._allow_e = None

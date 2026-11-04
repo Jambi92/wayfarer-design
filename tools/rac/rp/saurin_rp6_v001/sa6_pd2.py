@@ -65,9 +65,10 @@ for path in sorted(glob.glob(C.W + '/cr_*.npy')):
         cf = near(Vs[R.Q[pr['f']]].mean(1)) if len(pr['f']) else np.zeros(0, bool); cp_ = near(Vs[pr['pen']]); ct = near(Vs[pr['tears']].mean(1)) if len(pr['tears']) else np.zeros(0, bool)
         # closure v002 (strict): a defect is composition-owned only if it sits at a pre-rig fold AND plain LBS already shows it there (else the
         # correctives created / worsened it -> rig-owned)
-        lb = o['lbs']; cf &= np.isin(pr['f'], lb['f']); cp_ &= np.isin(pr['pen'], lb['pen'])
+        lb = o['lbs']; cf = (cf & np.isin(pr['f'], lb['f'])) | R.rest_inverted[pr['f']];   # creator-inverted neutral quads: always composition (closure v003)
+        cp_ &= np.isin(pr['pen'], lb['pen'])
         if len(pr['tears']): lt = {tuple(e) for e in np.sort(lb['tears'], 1)}; ct &= np.array([tuple(e) in lt for e in np.sort(pr['tears'], 1)])
-        bf = o['base']['f']; bcomp = (near(Vs[R.Q[bf]].mean(1)) & np.isin(bf, lb['f'])) if len(bf) else np.zeros(0, bool)
+        bf = o['base']['f']; bcomp = ((near(Vs[R.Q[bf]].mean(1)) & np.isin(bf, lb['f'])) | R.rest_inverted[bf]) if len(bf) else np.zeros(0, bool)
         row = dict(lbs_flips=int(len(o['lbs']['f'])), base_flips=int(len(bf)), base_rig_flips=int((~bcomp).sum()),
                    flips=int(len(pr['f'])), composition_pd2=int(cf.sum()), rig_owned=int((~cf).sum()), new_penetration=int(len(pr['pen'])), rig_penetration=int((~cp_).sum()),
                    tears=int(len(pr['tears'])), rig_tears=int((~ct).sum()), dV_cm3=round(float(pr['dV']), 2), volume_ok=bool(abs(pr['dV']) <= 100),
