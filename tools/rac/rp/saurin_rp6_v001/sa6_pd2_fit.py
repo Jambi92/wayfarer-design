@@ -47,16 +47,24 @@ def mask_composition(R, comp):
     if not hasattr(FT, '_pen_raw'): FT._pen_raw = FT.penetration
     FT.penetration = lambda R_, P, F, w0: FT._pen_raw(R_, P, F, w0) & ~getattr(R_, '_allow_v', np.zeros(len(P), bool))
     return R
-def start_pose(R, Cs, spec, F, w0):
-    """per-pose allowance: composition-zone folds / contacts already present at the start of this solve"""
+def start_pose(R, Cs, spec, F, w0, S=None):
+    """per-pose allowance: composition-zone folds / contacts / stretched edges already present at the start of this solve"""
     if not getattr(R, '_comp', np.zeros(1, bool)).any(): return
     T = R.pose(spec); P = R.skin(T, R.V + Cs.delta(T))
     R._allow_q = R._comp & (R._relcos_raw(P, T) < 0); R._allow_v = R._compv & FT._pen_raw(R, P, F, w0)
+    if S is not None:
+        if not hasattr(S, '_tear_raw'):
+            S._tear_raw = S.tear_edges; S._allow_e = None
+            def te(P_, S=S):
+                m, dl = S._tear_raw(P_); return (m & ~S._allow_e if S._allow_e is not None else m), dl
+            S.tear_edges = te
+        m0, _ = S._tear_raw(P); S._allow_e = m0 & R._compv[S._E1].all(1)
 if __name__ == '__main__':
     STATES, OD = sys.argv[1].split(','), sys.argv[2]; os.makedirs(OD, exist_ok=True)
     for nm in STATES:
         t0 = time.time(); R, cfg = state_rig(nm); comp = comp_mask(nm, R) if os.environ.get('COMP_MASK', '1') == '1' else np.zeros(len(R.Q), bool); mask_composition(R, comp)
-        print(nm, 'composition-masked quads', int(comp.sum()), flush=True); Cs = CC.Correctives.load(R, WD + '/CF_%s.json' % cfg); S = CC.Solver(R); S.V0 = S.body_volume(R.V)
+        print(nm, 'composition-masked quads', int(comp.sum()), flush=True); ini = os.environ.get('INIT_LAYER', '') and os.path.join(os.environ['INIT_LAYER'], 'CF_state_%s.json' % nm)   # refine an earlier layer
+        Cs = CC.Correctives.load(R, ini if ini and os.path.exists(ini) else WD + '/CF_%s.json' % cfg); print(nm, 'start from', ini if ini and os.path.exists(ini) else 'base', flush=True); S = CC.Solver(R); S.V0 = S.body_volume(R.V)
         F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F); PS = R.suite('anat')
         order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k]))); log = []
         ck = OD + '/ckpt/CF_ckpt_%s.json' % nm; os.makedirs(OD + '/ckpt', exist_ok=True); r0, i0, tot0 = 0, 0, 0
@@ -69,7 +77,7 @@ if __name__ == '__main__':
             for ii, (pn, fr) in enumerate(items):
                 if rnd == r0 and ii < i0: continue
                 if True:
-                    spec = [(b, p, a, dg * fr) for b, p, a, dg in PS[pn]]; t = time.time(); start_pose(R, Cs, spec, F, w0)
+                    spec = [(b, p, a, dg * fr) for b, p, a, dg in PS[pn]]; t = time.time(); start_pose(R, Cs, spec, F, w0, S)
                     a, b, c = FT.solve_one(R, Cs, S, spec, F, w0, log, pose_key=('%s@%.2f' % (pn, fr)) if rnd >= 1 else None); tot += a
                     if a or b: print('%s round %d %-24s x%.2f before %4d after %4d  %.1fs' % (nm, rnd, pn, fr, a, b, time.time() - t), flush=True)
                     log.append(dict(round=rnd, pose=pn, frac=fr, flips_before=a, flips_after_solve=b))
