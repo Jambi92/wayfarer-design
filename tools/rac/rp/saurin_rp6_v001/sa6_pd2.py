@@ -11,8 +11,10 @@
 #   plain LBS (closure v002 strict rule: a defect the correctives created or moved is never composition-owned) = COMPOSITION/PD-2
 #     (screening signal; every such pose is also re-checked against the base column and LBS so a worsened defect is visible), else RIG-OWNED.  New
 #     interpenetration and tears are always rig-owned unless they sit on a pre-rig fold.  Closed-body |dV| <= 100 cm3 (jaw poses exempt) as for c1 / c2.
+#   Creator-inverted neutral quads (RP5 neutral cage flips) are composition in every pose; a contact vertex inside the composition-folded zone that only
+#   intersects that same folded flesh is the fold's own self-intersection (composition).
 #   REGRESSION = rig-owned defect on the state in a pose where the base configuration is clean.
-import sys, os, json, glob, time, numpy as np
+import sys, os, json, glob, time, numpy as np, igl
 from scipy.spatial import cKDTree
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_common as C, sa6_pose as SP, sa6_correctives as CC, sa6_skeleton as SK, sa6_fit as FT, sa6_pd2_fit as PF
@@ -47,6 +49,7 @@ for path in sorted(glob.glob(C.W + '/cr_*.npy')):
     nflip = np.nonzero((q0 * q1).sum(1) < 0)[0]
     pts = np.r_[VB[F[bad]].mean(1) if bad.any() else np.zeros((0, 3)), Vs[d['Q'][nflip]].mean(1) if len(nflip) else np.zeros((0, 3))]; kd = cKDTree(pts) if len(pts) else None
     R, cfg = PF.state_rig(nm); S = CC.Solver(R); S.V0 = S.body_volume(R.V); Ft = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, Ft)
+    compq = PF.comp_mask(nm, R); compv = np.zeros(R.nv, bool); compv[R.Q[compq].ravel()] = True
     Cb = CC.Correctives.load(R, WD + '/CF_%s.json' % cfg); lf = (LD + '/CF_state_%s.json' % nm) if LD else None
     Cp = CC.Correctives.load(R, lf) if lf and os.path.exists(lf) else Cb
     r5 = rp5[nm]
@@ -67,6 +70,12 @@ for path in sorted(glob.glob(C.W + '/cr_*.npy')):
         # correctives created / worsened it -> rig-owned)
         lb = o['lbs']; cf = (cf & np.isin(pr['f'], lb['f'])) | R.rest_inverted[pr['f']];   # creator-inverted neutral quads: always composition (closure v003)
         cp_ &= np.isin(pr['pen'], lb['pen'])
+        if (~cp_).any() and compq.any():
+            # closure v004: a contact vertex INSIDE the composition-folded zone whose only intersected surface is that same folded flesh (no
+            # penetration once the composition-zone quads are left out of the winding test) is the fold's own self-intersection -> composition
+            rp = pr['pen'][~cp_]; Fn = np.r_[R.Q[~compq][:, [0, 1, 2]], R.Q[~compq][:, [0, 2, 3]]].astype(np.int64)
+            Pq = pr['P'][rp] - FT.PEN_TOL * igl.per_vertex_normals(pr['P'], Ft)[rp]
+            own = compv[rp] & (igl.fast_winding_number(pr['P'], Fn, Pq) < 1.5); cp_[np.nonzero(~cp_)[0][own]] = True
         if len(pr['tears']): lt = {tuple(e) for e in np.sort(lb['tears'], 1)}; ct &= np.array([tuple(e) in lt for e in np.sort(pr['tears'], 1)])
         bf = o['base']['f']; bcomp = ((near(Vs[R.Q[bf]].mean(1)) & np.isin(bf, lb['f'])) | R.rest_inverted[bf]) if len(bf) else np.zeros(0, bool)
         row = dict(lbs_flips=int(len(o['lbs']['f'])), base_flips=int(len(bf)), base_rig_flips=int((~bcomp).sum()),
