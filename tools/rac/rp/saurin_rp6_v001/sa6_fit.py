@@ -132,6 +132,21 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
                     Pv = S.segment_bulge(T, Ps, S.V0, seg_ & ~S.protect, clear=cl, smooth=sm_); Pv, _ = S.unfold(T, Pv, R.relcos)
                     if os.environ.get('PDEBUG'): print('   segment bulge clear %.0f sm %d dV %.0f -> %.0f clean %s' % (cl, sm_, S.body_volume(Ps) - S.V0, S.body_volume(Pv) - S.V0, clean(Pv, Ps)), flush=True)
                     if clean(Pv, Ps) and abs(S.body_volume(Pv) - S.V0) <= VOL_TOL: return Pv
+            # extended segment bulge (closure v004, heaviest states): the driving segment, its parent, children and siblings carry the volume;
+            # each cycle = bulge -> unfold -> contact projection -> unfold -> tear fix
+            nb_ = set()
+            for b_, _, _ in ent:
+                p_ = R.par[b_]; nb_ |= {b_} | ({p_} if p_ in R.bi else set()) | {x for x in R.bi if R.par.get(x) in (b_, p_)}
+            segx = np.isin(dom_, sorted(nb_)) & ~S.protect
+            for cl, sm_ in ((8.0, 400), (6.0, 800), (6.0, 400)):
+                Pv = Ps.copy()
+                for _ in range(4):
+                    Pv = S.segment_bulge(T, Pv, S.V0, segx, clear=cl, smooth=sm_); Pv, _ = S.unfold(T, Pv, R.relcos)
+                    pq_ = penetration(R, Pv, F, w0)
+                    if pq_.any(): Pv, _ = S.contact_general(Pv, pq_); Pv, _ = S.unfold(T, Pv, R.relcos)
+                    if S.tear_edges(Pv)[0].any(): Pv = S.tear_fix(T, Pv, R.relcos, ring=12)
+                if os.environ.get('PDEBUG'): print('   extended segment bulge clear %.0f sm %d dV %.0f -> %.0f clean %s' % (cl, sm_, S.body_volume(Ps) - S.V0, S.body_volume(Pv) - S.V0, clean(Pv, Ps)), flush=True)
+                if clean(Pv, Ps) and abs(S.body_volume(Pv) - S.V0) <= VOL_TOL: return Pv
         Pv, _ = S.volume_fix(T, Ps, S.V0, tol=VOL_TOL / 4)
         for sc in (1.0, 0.75, 0.5, 0.25):
             Pt = Ps + sc * (Pv - Ps)

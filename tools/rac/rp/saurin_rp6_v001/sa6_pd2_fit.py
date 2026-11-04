@@ -7,7 +7,7 @@
 #   Runtime interface (documented in SA_RP6_PD1_PD2_interfaces_v001.md): corrective(state, pose) = base corrective(pose) + layer_state(pose); between
 #   accepted states the creator blends the layers with the creator weights (same convex weights as the creator morphs).  Output per state:
 #   OUTDIR/CF_state_<STATE>.json/.npz (full corrective set = base + layer; the layer = difference to the base set).
-import sys, os, json, time, numpy as np
+import sys, os, json, time, numpy as np, igl
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_common as C, sa6_pose as SP, sa6_correctives as CC, sa6_skeleton as SK, sa6_fit as FT
 WD = os.environ.get('RP6_WD', '/tmp/claude-0/rp6'); ROUNDS = int(os.environ.get('ROUNDS', 4)); FRACS = (1.0, 0.5)
@@ -54,7 +54,13 @@ def mask_composition(R, comp):
     if not (comp.any() or R.rest_inverted.any()): return R
     orig = R.relcos; R._relcos_raw = orig; R.relcos = lambda P, T, W=None: np.where(R._allow_q, 1.0, orig(P, T, W))
     if not hasattr(FT, '_pen_raw'): FT._pen_raw = FT.penetration
-    FT.penetration = lambda R_, P, F, w0: FT._pen_raw(R_, P, F, w0) & ~getattr(R_, '_allow_v', np.zeros(len(P), bool))
+    Fn = np.r_[R.Q[~comp][:, [0, 1, 2]], R.Q[~comp][:, [0, 2, 3]]].astype(np.int64)
+    def pen(R_, P, F, w0):
+        m = FT._pen_raw(R_, P, F, w0) & ~getattr(R_, '_allow_v', np.zeros(len(P), bool)); c = np.nonzero(m & getattr(R_, '_compv', np.zeros(len(P), bool)))[0]
+        if len(c):     # contact inside the composition zone that only meets composition-folded flesh = the fold's own self-intersection (= PD-2 audit rule)
+            q = P[c] - FT.PEN_TOL * igl.per_vertex_normals(P, F)[c]; m[c[igl.fast_winding_number(P, Fn, q) < 1.5]] = False
+        return m
+    FT.penetration = pen
     return R
 def start_pose(R, Cs, spec, F, w0, S=None):
     """per-pose allowance: composition-zone folds / contacts / stretched edges that plain LBS of this pose already shows (never ones the correctives make)"""
