@@ -22,12 +22,15 @@ ST = 'RP6 RIG PILOT / NOT FROZEN'; FRACS = (0.25, 0.5, 0.75, 1.0)
 M_EXT = ['MUHI', 'FAHI', 'MUFAHI', 'NAR', 'BRD', 'T80', 'LT90', 'M208-B']     # base -> extreme paths on c1
 TWO = [('MUHI', 'FAHI'), ('NAR', 'BRD'), ('FAHI', 'MUFAHI'), ('T55', 'T80')]    # between-state paths, two active layers
 T3 = (0.25, 0.5, 0.75)
+HELD = ['MUHI', 'FAHI', 'MUFAHI', 'T80', 'M208-B']                             # paths whose v003 node carries creator keys
 STATES = ['B-T80', 'BRD', 'DSP-HIGH', 'DSP-LOW', 'F-N', 'FAHI', 'LT90', 'M168', 'M208-B', 'MIN', 'MUFAHI', 'MUHI', 'NAR', 'ORB+3', 'ORB-8', 'RDG0.90', 'RDG1.30', 'T55', 'T80']
 def bodies():
     b = {'BASE_c1': dict(cfg='M', w={}, kind='control: base c1 (zero state influence)'), 'BASE_c2': dict(cfg='F', w={}, kind='control: base c2 (zero state influence)')}
     for s in STATES: b['END_' + s] = dict(cfg=H.state_cfg(s), w={s: 1.0}, kind='endpoint: accepted state at unit influence')
     for s in M_EXT:
         for t in T3: b['c1-%s@%.2f' % (s, t)] = dict(cfg='M', w={s: t}, kind='base -> extreme', path='c1 -> ' + s, t=t)
+    for s in HELD:      # held-out weights between the creator-key knots (layer v003 nodes at 0.50): 0.375 / 0.625
+        for t in (0.375, 0.625): b['c1-%s@%.3f' % (s, t)] = dict(cfg='M', w={s: t}, kind='base -> extreme, held-out weight (between creator-key knots)', path='c1 -> ' + s, t=t)
     for t in T3: b['c2-F-N@%.2f' % t] = dict(cfg='F', w={'F-N': t}, kind='base -> state (c2)', path='c2 -> F-N', t=t)
     for x, y in TWO:
         for t in T3: b['%s-%s@%.2f' % (x, y, t)] = dict(cfg='M', w={x: 1 - t, y: t}, kind='between states (two active layers)', path=x + ' -> ' + y, t=t)
@@ -45,9 +48,11 @@ def precompute(OUT):
     def VBof(n):
         if n not in dense: dense[n] = (w['v_M'] if n == 'M' else w['v_F'] if n == 'F' else np.load(C.W + '/cr_%s.npy' % n)).astype(float)
         return dense[n]
-    man = {}
+    man = {}; jp = os.path.join(OUT, 'bodies.json'); old = json.load(open(jp))['bodies'] if os.path.exists(jp) else {}
     for nm, b in bodies().items():
         f = os.path.join(OUT, nm + '.npz')
+        if os.path.exists(f) and os.environ.get('KEEP', '1') == '1' and nm in old:
+            man[nm] = old[nm]; continue
         VB = VBof(b['cfg']) * (1.0 - sum(b['w'].values()))
         for s, ws in b['w'].items(): VB = VB + ws * VBof(s)
         nB = fn(VB); aB = np.linalg.norm(nB, axis=1); sflip = (nR * nB).sum(1) / (aR * aB + 1e-20) < 0; scol = aB < 0.05 * aR; bad = sflip | scol
