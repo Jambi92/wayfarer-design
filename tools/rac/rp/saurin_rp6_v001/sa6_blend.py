@@ -37,7 +37,7 @@ def bodies():
     b['MIX1'] = dict(cfg='M', w={'MUHI': 0.4, 'FAHI': 0.3, 'BRD': 0.3}, kind='mixed: three active layers (broad + muscle + fat)')
     b['MIX2'] = dict(cfg='M', w={'NAR': 0.3, 'FAHI': 0.3, 'T80': 0.3}, kind='mixed: three active layers + base 0.1 (narrow + fat + long tail)')
     return b
-def precompute(OUT):
+def precompute(OUT, B=None):
     import sa6_pd2_fit as PF
     os.makedirs(OUT, exist_ok=True); d = C.load(); z = PF.z; w = PF.w; F = PF.Fd
     VR = np.load(C.W + '/src/saurin_w2_final_base.npz'); VR = VR[[k for k in VR.files if VR[k].shape == w['v_M'].shape][0]].astype(float)
@@ -49,7 +49,7 @@ def precompute(OUT):
         if n not in dense: dense[n] = (w['v_M'] if n == 'M' else w['v_F'] if n == 'F' else np.load(C.W + '/cr_%s.npy' % n)).astype(float)
         return dense[n]
     man = {}; jp = os.path.join(OUT, 'bodies.json'); old = json.load(open(jp))['bodies'] if os.path.exists(jp) else {}
-    for nm, b in bodies().items():
+    for nm, b in (B or bodies()).items():
         f = os.path.join(OUT, nm + '.npz')
         if os.path.exists(f) and os.environ.get('KEEP', '1') == '1' and nm in old:
             man[nm] = old[nm]; continue
