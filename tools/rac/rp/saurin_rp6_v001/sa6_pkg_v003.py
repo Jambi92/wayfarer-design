@@ -48,7 +48,7 @@ for p in sorted(glob.glob(LD + '/CF_state_*.json')):
         if not kj['converged']: raise SystemExit('node fit not converged: ' + q)
         kz = np.load(q.replace('.json', '.npz')); sk = dict(reused=0, changed=0, new=0); bkeys_save = bkeys[c]; bkeys[c] = {}   # creator keys never reference base keys
         kf, kp = pack(kj, kz, c, 'K_%s@%.2f__' % (nm, kj['node_weight']), sk); bkeys[c] = bkeys_save
-        ent['creator_keys'].append(dict(node_weight=kj['node_weight'], body=kj['body'], converged=kj['converged'], source_sha256=C.sha(q.replace('.json', '.npz')),
+        ent['creator_keys'].append(dict(node_weight=kj['node_weight'], body=kj['body'], converged=kj['converged'], composite=kj.get('composite', []), source_sha256=C.sha(q.replace('.json', '.npz')),
                                         n_keys=sk['new'], families=kf, pose_keys=kp))
     lay['states'][nm] = ent; stats[nm] = (st, [k['node_weight'] for k in ent['creator_keys']])
 np.savez_compressed(C.EV6 + '/SA_RP6_creator_layers_%s.npz' % VER, **{k: (v.astype(np.int32) if k.endswith('_idx') else v.astype(np.float32)) for k, v in arr.items()})

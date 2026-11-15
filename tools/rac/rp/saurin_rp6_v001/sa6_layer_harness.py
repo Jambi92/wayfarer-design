@@ -55,12 +55,22 @@ def hats(knots, w):
     return out
 class StateLayer:
     """a creator-state corrective set S (unit influence) + optional creator keys [(w_n, K_n)]"""
-    def __init__(self, S, keys=()): self.S = S; self.keys = sorted(keys, key=lambda x: x[0]); self.F = S.F; self.PK = S.PK; self.r = S.r
+    def __init__(self, S, keys=(), comps=None):
+        self.S = S; self.keys = sorted(keys, key=lambda x: x[0]); self.F = S.F; self.PK = S.PK; self.r = S.r
+        self.kd = {n: (K, (comps or {}).get(n, [])) for n, K in self.keys}
     def delta(self, T): return self.S.delta(T)
+    def key_delta(self, T, n, memo):
+        """effective delta of the knot at creator weight n: its own set + its composite references (layer v005: a knot added between existing knots
+        carries sum_j c_j K_j of the knots it was initialised from)"""
+        if n not in memo:
+            K, comp = self.kd[n]; d = K.delta(T)
+            for c in comp: d = d + c['coef'] * self.key_delta(T, c['node_weight'], memo)
+            memo[n] = d
+        return memo[n]
     def delta_w(self, T, w):
-        d = self.S.delta(T)
+        d = self.S.delta(T); memo = {}
         for (n, K), h in zip(self.keys, hats([k[0] for k in self.keys], w)):
-            if h: d = d + h * K.delta(T)
+            if h: d = d + h * self.key_delta(T, n, memo)
         return d
 def load_state(rig, nm):
     L = _js(LAYERS); s = L['states'][nm]; cfg = s['base_config']
@@ -69,7 +79,7 @@ def load_state(rig, nm):
         if k['source'] == 'base': return zb[k['base_key'] + '_idx'].astype(np.int64), zb[k['base_key'] + '_d'].astype(np.float64)
         return zl[k['array'] + '_idx'].astype(np.int64), zl[k['array'] + '_d'].astype(np.float64)
     ck = [(k['node_weight'], _set(rig, k['families'], k['pose_keys'], arr)) for k in s.get('creator_keys', [])]
-    return StateLayer(_set(rig, s['families'], s['pose_keys'], arr), ck), cfg
+    return StateLayer(_set(rig, s['families'], s['pose_keys'], arr), ck, {k['node_weight']: k.get('composite', []) for k in s.get('creator_keys', [])}), cfg
 def state_cfg(nm): return _js(LAYERS)['states'][nm]['base_config']
 class Blend:
     """production corrective of a creator body: base set B + convex blend of contributing state sets (see module header)"""

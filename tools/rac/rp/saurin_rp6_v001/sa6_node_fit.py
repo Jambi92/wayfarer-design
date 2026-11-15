@@ -17,9 +17,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_correctives as CC, sa6_fit as FT, sa6_pd2_fit as PF, sa6_layer_harness as H, sa6_blend as BL
 ROUNDS = int(os.environ.get('ROUNDS', 4)); FRACS = (1.0, 0.75, 0.5, 0.25)
 class NodeProxy:
-    """the corrective set the solver sees on the node body: production = (1 - w) B + w S + w K; increments are written to K scaled by 1 / w"""
-    def __init__(self, B, S, K, w): self.B, self.S, self.K, self.w = B, S, K, w; self.r = K.r; self.F = K.F; self.PK = K.PK
-    def delta(self, T): return (1 - self.w) * self.B.delta(T) + self.w * (self.S.delta(T) + self.K.delta(T))
+    """the corrective set the solver sees on the node body: production = (1 - w) B + w (S + E + K); increments are written to K scaled by 1 / w.
+    E = the creator keys already packaged for this state, interpolated at w (COMPOSITE knot, layer v005: a knot added between existing knots starts from
+    what the interpolation already gives there, so neighbouring knots stay consistent and the interpolation between them stays continuous); E = 0 for a
+    first-generation knot."""
+    def __init__(self, B, S, K, w, E=None): self.B, self.S, self.K, self.w, self.E = B, S, K, w, E; self.r = K.r; self.F = K.F; self.PK = K.PK
+    def delta(self, T):
+        d = self.S.delta(T) + self.K.delta(T)
+        if self.E is not None: d = d + self.E(T)
+        return (1 - self.w) * self.B.delta(T) + self.w * d
     def driver(self, T, f): return self.K.driver(T, f)
     def resolve(self, bone, axis, tol_deg=30.0): return self.K.resolve(bone, axis, tol_deg)
     def add(self, key, bone, axis, pivot, x, idx, dd): self.K.add(key, bone, axis, pivot, x, idx, dd / self.w)
@@ -54,7 +60,14 @@ if __name__ == '__main__':
     assert b['w'] == {st: w}, (bn, b['w'])
     t0 = time.time(); R, z = BL.rig_of(bn, b, BD); R.rest_inverted = z['rest_inverted']; PF.mask_composition(R, z['comp'])
     B = H.load_base(R, b['cfg']); S = CC.Correctives.load(R, os.path.join(LD, 'CF_state_%s.json' % st)); ck = OD + '/ckpt/CK_%s.json' % node
-    K = CC.Correctives.load(R, ck) if os.path.exists(ck) else CC.Correctives(R); P = NodeProxy(B, S, K, w)
+    K = CC.Correctives.load(R, ck) if os.path.exists(ck) else CC.Correctives(R); E = None; comp = []
+    if os.environ.get('COMPOSITE_FROM'):          # composite knot: the existing knots of this state in that layer package, at their hat weights at w
+        os.environ['RP6_LAYERS'] = os.environ['COMPOSITE_FROM']; H.LAYERS = os.environ['COMPOSITE_FROM']; SL, _ = H.load_state(R, st)
+        hs = H.hats([k[0] for k in SL.keys], w); comp = [dict(node_weight=n, coef=h) for (n, _), h in zip(SL.keys, hs) if h]
+        assert all(abs(c['node_weight'] - w) > 1e-9 for c in comp), 'knot already exists'
+        refs = [(h, Kn) for (n, Kn), h in zip(SL.keys, hs) if h]; E = lambda T: sum(h * Kn.delta(T) for h, Kn in refs)
+        print(node, 'composite knot from', os.environ['COMPOSITE_FROM'], comp, flush=True)
+    P = NodeProxy(B, S, K, w, E)
     Sv = CC.Solver(R); Sv.V0 = Sv.body_volume(R.V); Sv.protect = Sv.protect | BL.rigid_ids(b['cfg'])   # + the base configuration's rigid ids (rigid gate set)
     F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F); PS = R.suite('anat')
     order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k]))); log, r0, i0, tot0 = [], 0, 0, 0
@@ -81,5 +94,5 @@ if __name__ == '__main__':
         if tot == 0: break
     K.save(OD + '/CK_%s.json' % node, dict(status='RP6 RIG PILOT / NOT FROZEN', node=node, state=st, node_weight=w, body=bn, base_config=b['cfg'], state_layer='CF_state_%s.json' % st,
                                           semantics='creator key: S(T, w) = S(T) + h(w) K(T); stored at state scale (production contribution at the node = w * K)',
-                                          fit_log=log, converged=bool(tot == 0), empty=bool(not K.F and not K.PK)))
+                                          composite=comp, fit_log=log, converged=bool(tot == 0), empty=bool(not K.F and not K.PK)))
     print(node, 'DONE converged', tot == 0, 'families', len(K.F), 'pose keys', len(K.PK), '%.0fs' % (time.time() - t0), flush=True)
