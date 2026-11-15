@@ -12,7 +12,7 @@
 #   blend + w_n K (h = 1 there); every increment dd the standard solver (sa6_fit.solve_one, unchanged gates / locality / composition mask = sa6_pd2_fit rules)
 #   asks for is stored in K as dd / w_n.  B and S_i are not changed.  Angle fractions 1.0 / 0.75 / 0.5 / 0.25, 4 rounds, pose keys from round 1, resumable.
 #   NODE = <STATE>@<w> (the body 'c1-<STATE>@<w>' or 'c2-<STATE>@<w>' must exist in BODYDIR).  Output OUTDIR/CK_<STATE>@<w>.json/.npz.
-import sys, os, json, time, numpy as np
+import sys, os, json, time, copy, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_correctives as CC, sa6_fit as FT, sa6_pd2_fit as PF, sa6_layer_harness as H, sa6_blend as BL
 ROUNDS = int(os.environ.get('ROUNDS', 4)); FRACS = (1.0, 0.75, 0.5, 0.25)
@@ -24,6 +24,27 @@ class NodeProxy:
     def resolve(self, bone, axis, tol_deg=30.0): return self.K.resolve(bone, axis, tol_deg)
     def add(self, key, bone, axis, pivot, x, idx, dd): self.K.add(key, bone, axis, pivot, x, idx, dd / self.w)
     def add_pose_key(self, name, drivers, idx, dd): self.K.add_pose_key(name, drivers, idx, dd / self.w)
+def defects(R, P, Sv, spec, F, w0):
+    """open defects of the node production at one pose, as the solver counts them: folds (composition-masked) + penetrating vertices + tear edges + volume miss"""
+    T = R.pose(spec); Pc = R.skin(T, R.V + P.delta(T)); vol = any(e[0] in FT.VOL_BONES or e[0].rsplit('_', 1)[0] in FT.VOL_BONES for e in spec)
+    return int((R.relcos(Pc, T) < 0).sum()) + int(FT.penetration(R, Pc, F, w0).sum()) + int(Sv.tear_edges(Pc)[0].sum()) + int(vol and abs(Sv.body_volume(Pc) - Sv.V0) > FT.VOL_TRIG)
+def fade(R, P, Sv, spec, F, w0, rig):
+    """local fade fallback (see sa6_node_fade.py): remove the production corrective around the remaining folds (falloff over k rings) when that alone clears
+    the pose without new contact / tears / volume miss; the change is stored in K as a sample of the driving family"""
+    T = R.pose(spec); d = P.delta(T); Pc = R.skin(T, R.V + d); fl = np.nonzero(R.relcos(Pc, T) < 0)[0]
+    if not len(fl): return False
+    p0, t0 = int(FT.penetration(R, Pc, F, w0).sum()), int(Sv.tear_edges(Pc)[0].sum()); seed = np.zeros(R.nv, bool); seed[R.Q[fl].ravel()] = True
+    for k in (1, 2, 3, 4, 6):
+        rings = [seed]
+        for _ in range(k): rings.append(Sv.dilate(rings[-1], 1))
+        f = np.zeros(R.nv)
+        for j, m in enumerate(rings): f[m & (f == 0)] = 1.0 - j / (k + 1.0)
+        f[rig] = 0.0; dn = d * (1 - f[:, None]); Pn = R.skin(T, R.V + dn)
+        if (R.relcos(Pn, T) < 0).any() or FT.penetration(R, Pn, F, w0).sum() > p0 or Sv.tear_edges(Pn)[0].sum() > t0 or abs(Sv.body_volume(Pn) - Sv.V0) > FT.VOL_ACCEPT: continue
+        I = np.nonzero(np.abs(dn - d).sum(1) > 1e-9)[0]; bone, pv, ax = FT.entries(R, spec, T)[0]; key, axf = P.resolve(bone, ax); x = P.driver(T, dict(bone=bone, axis=axf))
+        if abs(x) < 0.5: return False
+        P.add(key, bone, axf, pv, x, I, (dn - d)[I]); return k
+    return False
 if __name__ == '__main__':
     node, BD, LD, OD = sys.argv[1:5]; st, ws = node.rsplit('@', 1); w = float(ws); os.makedirs(OD + '/ckpt', exist_ok=True)
     bm = json.load(open(os.path.join(BD, 'bodies.json')))['bodies']; bn = [k for k in ('c1-' + node, 'c2-' + node) if k in bm][0]; b = bm[bn]
@@ -42,7 +63,14 @@ if __name__ == '__main__':
         for ii, (pn, fr) in enumerate(items):
             if rnd == r0 and ii < i0: continue
             spec = [(bb, p, a, dg * fr) for bb, p, a, dg in PS[pn]]; t = time.time(); PF.start_pose(R, P, spec, F, w0, Sv)
+            n0 = defects(R, P, Sv, spec, F, w0); snap = copy.deepcopy((K.F, K.PK)) if n0 else None
             a, c, _ = FT.solve_one(R, P, Sv, spec, F, w0, log, pose_key=('%s@%.2f' % (pn, fr)) if rnd >= 1 else None); tot += a
+            if n0:      # GUARD (layer v003): a solve that leaves this pose worse than it found it is reverted; remaining folds -> local fade fallback
+                n1 = defects(R, P, Sv, spec, F, w0)
+                if n1 > n0: K.F.clear(); K.F.update(snap[0]); K.PK.clear(); K.PK.update(snap[1]); log.append(dict(round=rnd, pose=pn, frac=fr, reverted=[n0, n1])); n1 = n0
+                if n1:
+                    k_ = fade(R, P, Sv, spec, F, w0, Sv.protect); c = defects(R, P, Sv, spec, F, w0) if k_ else n1
+                    log.append(dict(round=rnd, pose=pn, frac=fr, fade_ring=k_, after=c)) if k_ else None
             if a or c: print('%s round %d %-24s x%.2f before %4d after %4d  %.1fs' % (node, rnd, pn, fr, a, c, time.time() - t), flush=True)
             log.append(dict(round=rnd, pose=pn, frac=fr, flips_before=a, flips_after_solve=c))
             K.save(ck, dict(node=node, fit_log=log, ck_round=rnd, ck_next=ii + 1, ck_tot=tot)) if (a or c or ii % 16 == 15) else None
