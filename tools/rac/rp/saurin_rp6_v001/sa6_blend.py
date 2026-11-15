@@ -62,6 +62,7 @@ def precompute(OUT, B=None):
         np.savez(f, Vs=Vs, pts=pts, comp=comp, rest_inverted=nflip)
         man[nm] = dict(b, source_flipped=int(sflip.sum()), source_collapsed=int(scol.sum()), neutral_cage_flips=int(nflip.sum()), composition_quads=int(comp.sum()), sha256=C.sha(f))
         print(nm, b['cfg'], b['w'], 'src', int(sflip.sum()), int(scol.sum()), 'cage', int(nflip.sum()), 'comp', int(comp.sum()), flush=True)
+    if B: man = dict(old, **man)        # adding bodies to an existing body set keeps the others
     json.dump(dict(status=ST, name='SA_RP6_blend_bodies_v001', method=open(__file__).read().split('import os')[0], bodies=man), open(os.path.join(OUT, 'bodies.json'), 'w'), indent=1)
 def rig_of(nm, b, BD):
     z = np.load(os.path.join(BD, nm + '.npz')); Vs = z['Vs']; cfg = b['cfg']
