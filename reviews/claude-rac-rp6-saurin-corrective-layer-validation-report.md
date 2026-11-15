@@ -119,20 +119,20 @@ Rig defects per body (folds / tears) over the scanned poses × 4 fractions:
 
 | w | MUHI | FAHI | MUFAHI | T80 | M208-B | F-N |
 |---|---|---|---|---|---|---|
-| 0.0625 | 0 | 0 | **1** | 0 | SCAN_M208_0625 | SCAN_FN_0625 |
-| 0.125 | 0 | 0 | 0 | 0 | SCAN_M208_125 | SCAN_FN_125 |
-| 0.1875 | 0 | 0 | 0 | **1 t** | SCAN_M208_1875 | SCAN_FN_1875 |
-| 0.3125 | **1** | **2** | **8** | **1 t** | SCAN_M208_3125 | SCAN_FN_3125 |
-| 0.375 | **1** | **5** | **3** | **1 t** | SCAN_M208_375 | SCAN_FN_375 |
-| 0.4375 | **1** | **4** | **5** | 0 | SCAN_M208_4375 | SCAN_FN_4375 |
-| 0.5625 | 0 | **2** | **6** | 0 | SCAN_M208_5625 | SCAN_FN_5625 |
-| 0.625 | **2** | **5** | **13** | 0 | SCAN_M208_625 | SCAN_FN_625 |
-| 0.6875 | **1** | **14** | **9** | 0 | SCAN_M208_6875 | SCAN_FN_6875 |
-| 0.8125 | 0 | **18** | **20** | 0 | SCAN_M208_8125 | SCAN_FN_8125 |
-| 0.875 | **2** | **12** | **22** | 0 | SCAN_M208_875 | SCAN_FN_875 |
-| 0.9375 | 0 | **19** | **19** | 0 | SCAN_M208_9375 | SCAN_FN_9375 |
+| 0.0625 | 0 | 0 | **1** | 0 | 0 | 0 |
+| 0.125 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 0.1875 | 0 | 0 | 0 | **1 t** | 0 | 0 |
+| 0.3125 | **1** | **2** | **8** | **1 t** | 0 | 0 |
+| 0.375 | **1** | **5** | **3** | **1 t** | 0 | 0 |
+| 0.4375 | **1** | **4** | **5** | 0 | 0 | 0 |
+| 0.5625 | 0 | **2** | **6** | 0 | 0 | 0 |
+| 0.625 | **2** | **5** | **13** | 0 | 0 | 0 |
+| 0.6875 | **1** | **14** | **9** | 0 | 0 | 0 |
+| 0.8125 | 0 | **18** | **20** | 0 | 0 | 0 |
+| 0.875 | **2** | **12** | **22** | 0 | 0 | 0 |
+| 0.9375 | 0 | **19** | **19** | 0 | 0 | 0 |
 
-The knots at 0.25 / 0.50 / 0.75 and the endpoint at 1.0 are clean on every path, as shown above.
+The knots at 0.25 / 0.50 / 0.75 and the endpoint at 1.0 are clean on every path, as shown above. M208-B (knots .25 / .5 / .75) and F-N (knots .25 / .5) are clean at every scanned weight on their failure-prone poses (M208-B: elbow 90 / 130, shoulder abd 45 / 90; F-N: elbow 90 / 130). Their full-suite held-out runs were not done because the other paths need a decision first.
 
 ## 5. Diagnosis
 

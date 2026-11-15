@@ -2,6 +2,18 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-15) — CORRECTIVE LAYER VALIDATION ORDER 3e76b509 — NOT PASS, ESCALATED for author decision (Tyler chose "report to ChatGPT")
+- Report: reviews/claude-rac-rp6-saurin-corrective-layer-validation-report.md. Evidence: reviews/rac-rp6-evidence/saurin/rig_pilot/layer_validation/
+  (eval_layers_v002/v003/v004, scan_v004, identities v001/v004, blend bodies, margin, renders). Packages: SA_RP6_correctives_v002.json,
+  SA_RP6_creator_layers_v002/v003/v004.*. Status RP6 RIG PILOT / NOT FROZEN.
+- Passes: package rebuild + all identities exact (v004); 21 endpoints/controls clean at 25/50/75/100 % (state layers refit at 4 fractions, pd2fit_v2);
+  linear blend clean on NAR / BRD / LT90 / NAR-BRD; every fitted creator-key knot clean.
+- Fails: held-out weights between knots on MUHI / FAHI / MUFAHI / T80 (dense 1/16 scan: MUFAHI fails already at 0.0625 = 94 % base; FAHI / MUFAHI 12-22
+  folds near w 0.8-0.94, crease-edge ownership flicker). M208-B and F-N clean on the scan subset. Diagnosis: fixed rest-space offsets are body-specific.
+- Options in report §6: A bake per body at creator commit (existing solver), B presets / validated paths only, C body-relative deltas, D margin refit.
+- Scratch (may be lost): /tmp/claude-0/rp6 (pd2fit_v2, nodes, nodes2, nodes3 = v005 composite knots MUHI .375/.625/.875, FAHI .375; scan_v004; blend_bodies).
+- NEXT: wait for ChatGPT / author decision. Do not continue densification.
+
 ## LATEST (2026-11-04) — CLOSURE ORDER 58aa486c DONE — RP6 PASS line issued; STOP for ChatGPT / author review
 - Report: reviews/claude-rac-rp6-saurin-validation-closure-report.md. Evidence: reviews/rac-rp6-evidence/saurin/rig_pilot/ (manifest 58 files verified,
   .blend.xz decompress to recorded sha/bytes). Status RP6 RIG PILOT / NOT FROZEN.
