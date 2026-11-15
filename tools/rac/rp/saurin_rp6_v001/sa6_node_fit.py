@@ -29,21 +29,24 @@ def defects(R, P, Sv, spec, F, w0):
     T = R.pose(spec); Pc = R.skin(T, R.V + P.delta(T)); vol = any(e[0] in FT.VOL_BONES or e[0].rsplit('_', 1)[0] in FT.VOL_BONES for e in spec)
     return int((R.relcos(Pc, T) < 0).sum()) + int(FT.penetration(R, Pc, F, w0).sum()) + int(Sv.tear_edges(Pc)[0].sum()) + int(vol and abs(Sv.body_volume(Pc) - Sv.V0) > FT.VOL_TRIG)
 def fade(R, P, Sv, spec, F, w0, rig):
-    """local fade fallback (see sa6_node_fade.py): remove the production corrective around the remaining folds (falloff over k rings) when that alone clears
-    the pose without new contact / tears / volume miss; the change is stored in K as a sample of the driving family"""
-    T = R.pose(spec); d = P.delta(T); Pc = R.skin(T, R.V + d); fl = np.nonzero(R.relcos(Pc, T) < 0)[0]
-    if not len(fl): return False
-    p0, t0 = int(FT.penetration(R, Pc, F, w0).sum()), int(Sv.tear_edges(Pc)[0].sum()); seed = np.zeros(R.nv, bool); seed[R.Q[fl].ravel()] = True
-    for k in (1, 2, 3, 4, 6):
-        rings = [seed]
-        for _ in range(k): rings.append(Sv.dilate(rings[-1], 1))
-        f = np.zeros(R.nv)
-        for j, m in enumerate(rings): f[m & (f == 0)] = 1.0 - j / (k + 1.0)
-        f[rig] = 0.0; dn = d * (1 - f[:, None]); Pn = R.skin(T, R.V + dn)
-        if (R.relcos(Pn, T) < 0).any() or FT.penetration(R, Pn, F, w0).sum() > p0 or Sv.tear_edges(Pn)[0].sum() > t0 or abs(Sv.body_volume(Pn) - Sv.V0) > FT.VOL_ACCEPT: continue
-        I = np.nonzero(np.abs(dn - d).sum(1) > 1e-9)[0]; bone, pv, ax = FT.entries(R, spec, T)[0]; key, axf = P.resolve(bone, ax); x = P.driver(T, dict(bone=bone, axis=axf))
-        if abs(x) < 0.5: return False
-        P.add(key, bone, axf, pv, x, I, (dn - d)[I]); return k
+    """local fade fallback (see sa6_node_fade.py): the production corrective is faded out around the remaining folds (falloff over k quad rings,
+    k = 1 .. 16) -- starting from the current production d, or from the creator blend without this node's key d0 (when the node key itself has made the
+    pose worse); the first candidate with no fold, no new contact / tear and |dV| <= VOL_ACCEPT is kept and stored in K as a sample of the driving family"""
+    T = R.pose(spec); d = P.delta(T); d0 = (1 - P.w) * P.B.delta(T) + P.w * P.S.delta(T); Pc = R.skin(T, R.V + d)
+    if not (R.relcos(Pc, T) < 0).any(): return False
+    p0, t0 = int(FT.penetration(R, Pc, F, w0).sum()), int(Sv.tear_edges(Pc)[0].sum())
+    for base in (d, d0):
+        Pb = R.skin(T, R.V + base); seed = np.zeros(R.nv, bool); seed[R.Q[np.nonzero((R.relcos(Pb, T) < 0) | (R.relcos(Pc, T) < 0))[0]].ravel()] = True
+        for k in (1, 2, 3, 4, 6, 8, 12, 16):
+            rings = [seed]
+            for _ in range(k): rings.append(Sv.dilate(rings[-1], 1))
+            f = np.zeros(R.nv)
+            for j, m in enumerate(rings): f[m & (f == 0)] = 1.0 - j / (k + 1.0)
+            f[rig] = 0.0; dn = base * (1 - f[:, None]); Pn = R.skin(T, R.V + dn)
+            if (R.relcos(Pn, T) < 0).any() or FT.penetration(R, Pn, F, w0).sum() > p0 or Sv.tear_edges(Pn)[0].sum() > t0 or abs(Sv.body_volume(Pn) - Sv.V0) > FT.VOL_ACCEPT: continue
+            I = np.nonzero(np.abs(dn - d).sum(1) > 1e-9)[0]; bone, pv, ax = FT.entries(R, spec, T)[0]; key, axf = P.resolve(bone, ax); x = P.driver(T, dict(bone=bone, axis=axf))
+            if abs(x) < 0.5: return False
+            P.add(key, bone, axf, pv, x, I, (dn - d)[I]); return k
     return False
 if __name__ == '__main__':
     node, BD, LD, OD = sys.argv[1:5]; st, ws = node.rsplit('@', 1); w = float(ws); os.makedirs(OD + '/ckpt', exist_ok=True)
