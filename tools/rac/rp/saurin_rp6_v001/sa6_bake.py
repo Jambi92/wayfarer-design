@@ -9,12 +9,20 @@
 #         base configuration, body + package hashes), the package it was initialised from, timings and peak memory.
 #   eval: reopens the artifact FROM DISK and runs sa6_blend.evaluate with the 'bake' column (columns lbs | base | packaged blend | bake; gates on bake,
 #         closure ownership rules unchanged) -> OUTDIR/EV_<NAME>.json.
-import sys, os, json, time, copy, resource, hashlib, numpy as np
+import sys, os, json, time, copy, hashlib, platform, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
 import sa6_common as C, sa6_correctives as CC, sa6_fit as FT, sa6_pd2_fit as PF, sa6_layer_harness as H, sa6_blend as BL, sa6_node_fit as NF
-ROUNDS = int(os.environ.get('ROUNDS', 4)); FRACS = (1.0, 0.75, 0.5, 0.25)
-def peak_mb(): return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
+ROUNDS = int(os.environ.get('ROUNDS', 8));   # early exit on the first clean round; 8 allows Gauss-Seidel trades between fractions to settle
+FRACS = (1.0, 0.75, 0.5, 0.25)
+def peak_mb():
+    """peak resident memory of this process (MB): getrusage on Linux, PeakWorkingSetSize on Windows"""
+    try:
+        import resource; return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0
+    except ImportError:
+        import ctypes, ctypes.wintypes as wt
+        class PMC(ctypes.Structure): _fields_ = [('cb', wt.DWORD), ('PageFaultCount', wt.DWORD)] + [(n, ctypes.c_size_t) for n in ('PeakWorkingSetSize', 'WorkingSetSize', 'QuotaPeakPagedPoolUsage', 'QuotaPagedPoolUsage', 'QuotaPeakNonPagedPoolUsage', 'QuotaNonPagedPoolUsage', 'PagefileUsage', 'PeakPagefileUsage')]
+        c = PMC(); c.cb = ctypes.sizeof(PMC); ctypes.windll.psapi.GetProcessMemoryInfo(ctypes.windll.kernel32.GetCurrentProcess(), ctypes.byref(c), c.cb); return c.PeakWorkingSetSize / 2 ** 20
 class BakeProxy:
     """what the solver sees on the exact body: packaged blend + K; increments go to K unscaled.  (w / B / S / E attributes = the interface the
     sa6_node_fit fade fallback uses: its 'start from the blend' candidate is the packaged blend itself)"""
@@ -35,6 +43,13 @@ if __name__ == '__main__':
             nm, r['clean'], t['rig_flips'], t['rig_pen'], t['rig_tears'], t['vol_fail'], t['rigid_max_cm'], t['blend_rig'], t['comp'], r['neutral_max_displacement_cm'],
             r['seconds_eval'], r['peak_mb_eval']), flush=True)
         sys.exit(0)
+    if os.path.exists(art) and os.environ.get('RETRY') == '1':      # retry of an unconverged bake: continue from the artifact for ROUNDS more rounds
+        j = json.load(open(art))
+        if not j.get('converged', True):
+            os.makedirs(OD + '/retried', exist_ok=True); import shutil
+            for ext in ('.json', '.npz'): shutil.copy(art.replace('.json', ext), os.path.join(OD, 'ckpt', 'BK_%s%s' % (nm, ext))); shutil.move(art.replace('.json', ext), os.path.join(OD, 'retried', 'BK_%s%s' % (nm, ext)))
+            c = json.load(open(os.path.join(OD, 'ckpt', 'BK_%s.json' % nm))); c.update(ck_round=0, ck_next=0, ck_tot=0, ck_fit_seconds=j['timing']['fit_s']); json.dump(c, open(os.path.join(OD, 'ckpt', 'BK_%s.json' % nm), 'w'))
+            print(nm, 'RETRY from unconverged artifact', flush=True)
     t0 = time.time(); R, z = BL.rig_of(nm, b, BD); R.rest_inverted = z['rest_inverted']; PF.mask_composition(R, z['comp'])
     Bc = H.load_base(R, b['cfg']); P0 = H.Blend(Bc, [(w, H.load_state(R, s)[0]) for s, w in b['w'].items()]); ck = OD + '/ckpt/BK_%s.json' % nm
     K = CC.Correctives.load(R, ck) if os.path.exists(ck) else CC.Correctives(R); P = BakeProxy(P0, K); t_setup = time.time() - t0
@@ -70,7 +85,7 @@ if __name__ == '__main__':
                      base='SA_RP6_correctives_v002.json', base_arrays_sha256={c: C.sha(os.path.join(H.PKG, 'SA_RP6_correctives_%s_v001.npz' % c)) for c in 'MF'}),
                      semantics='baked(T) = packaged blend(T) + K(T); K = pose-driven corrective set on this exact body (0 at neutral)',
                      converged=bool(tot == 0), rounds_entering=n_entering, fit_log=log,
-                     timing=dict(setup_s=round(t_setup, 1), fit_s=round(t_fit, 1), peak_mb=round(peak_mb(), 1), host=os.uname().nodename, cpus_used=1,
+                     timing=dict(setup_s=round(t_setup, 1), fit_s=round(t_fit, 1), peak_mb=round(peak_mb(), 1), host=platform.node(), cpu=platform.processor(), os=platform.platform(), cpus_used=1,
                                  threads=os.environ.get('OMP_NUM_THREADS'))))
     t_write = time.time() - t2
     j = json.load(open(art)); j['timing']['write_s'] = round(t_write, 2); json.dump(j, open(art, 'w'), indent=1)
