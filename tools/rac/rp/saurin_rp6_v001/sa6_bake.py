@@ -22,7 +22,8 @@ def peak_mb():
     except ImportError:
         import ctypes, ctypes.wintypes as wt
         class PMC(ctypes.Structure): _fields_ = [('cb', wt.DWORD), ('PageFaultCount', wt.DWORD)] + [(n, ctypes.c_size_t) for n in ('PeakWorkingSetSize', 'WorkingSetSize', 'QuotaPeakPagedPoolUsage', 'QuotaPagedPoolUsage', 'QuotaPeakNonPagedPoolUsage', 'QuotaNonPagedPoolUsage', 'PagefileUsage', 'PeakPagefileUsage')]
-        c = PMC(); c.cb = ctypes.sizeof(PMC); ctypes.windll.psapi.GetProcessMemoryInfo(ctypes.windll.kernel32.GetCurrentProcess(), ctypes.byref(c), c.cb); return c.PeakWorkingSetSize / 2 ** 20
+        k = ctypes.windll.kernel32; k.GetCurrentProcess.restype = wt.HANDLE; f = ctypes.windll.psapi.GetProcessMemoryInfo; f.argtypes = [wt.HANDLE, ctypes.POINTER(PMC), wt.DWORD]
+        c = PMC(); c.cb = ctypes.sizeof(PMC); f(k.GetCurrentProcess(), ctypes.byref(c), c.cb); return c.PeakWorkingSetSize / 2 ** 20
 class BakeProxy:
     """what the solver sees on the exact body: packaged blend + K; increments go to K unscaled.  (w / B / S / E attributes = the interface the
     sa6_node_fit fade fallback uses: its 'start from the blend' candidate is the packaged blend itself)"""
