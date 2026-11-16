@@ -41,9 +41,10 @@ class Correctives:
             act['PK:' + name] = (w, [(0, w)] if w > 0 else [])
         return (d, act) if detail else d
     def pk_weight(self, T, pk):
-        w = 1.0
-        for b, ax, s in pk['drivers']:
-            x = self.driver(T, dict(bone=b, axis=ax)); w *= max(0.0, 1.0 - abs(x - s) / abs(s))
+        """product of per-joint tents; default tent(0 -> s -> 2s); a key with 'width' (per-driver degrees, per-body bake keys) uses tent(s - w -> s -> s + w)"""
+        w = 1.0; wd = pk.get('width')
+        for j, (b, ax, s) in enumerate(pk['drivers']):
+            x = self.driver(T, dict(bone=b, axis=ax)); w *= max(0.0, 1.0 - abs(x - s) / (abs(wd[j]) if wd else abs(s)))
             if w == 0: break
         return w
     def add_pose_key(self, name, drivers, idx, dd):
@@ -84,7 +85,7 @@ class Correctives:
         out['pose_keys'] = []
         for j, (name, pk) in enumerate(sorted(self.PK.items())):
             nm = 'PK%03d_%s' % (j, name.replace(':', '_').replace(' ', '_')); arrays[nm + '_idx'] = pk['idx'].astype(np.int32); arrays[nm + '_d'] = pk['d'].astype(np.float32)
-            out['pose_keys'].append(dict(name=nm, pose=name, drivers=[dict(bone=b, axis_parent_frame=a, sample_deg=s_) for b, a, s_ in pk['drivers']], n_vertices=int(len(pk['idx'])),
+            out['pose_keys'].append(dict(name=nm, pose=name, drivers=[dict(bone=b, axis_parent_frame=a, sample_deg=s_, **({'width_deg': pk['width'][i]} if pk.get('width') else {})) for i, (b, a, s_) in enumerate(pk['drivers'])], n_vertices=int(len(pk['idx'])),
                                          max_delta_cm=float(np.linalg.norm(pk['d'], axis=1).max()) if len(pk['idx']) else 0.0))
         np.savez_compressed(path.replace('.json', '.npz'), **arrays); json.dump(out, open(path, 'w'), indent=1)
     @classmethod
@@ -96,6 +97,7 @@ class Correctives:
                             D=[(z[k['name'] + '_idx'].astype(np.int64), z[k['name'] + '_d'].astype(np.float64)) for k in f['keys']])
         for pk in js.get('pose_keys', []):
             c.PK[pk['pose']] = dict(drivers=[(d_['bone'], d_['axis_parent_frame'], d_['sample_deg']) for d_ in pk['drivers']], idx=z[pk['name'] + '_idx'].astype(np.int64), d=z[pk['name'] + '_d'].astype(np.float64), name=pk['name'])
+            if all('width_deg' in d_ for d_ in pk['drivers']): c.PK[pk['pose']]['width'] = [d_['width_deg'] for d_ in pk['drivers']]
         return c
 # ---------------- solver ----------------
 class Solver:

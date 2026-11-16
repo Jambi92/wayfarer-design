@@ -32,7 +32,13 @@ class BakeProxy:
     def driver(self, T, f): return self.K.driver(T, f)
     def resolve(self, bone, axis, tol_deg=30.0): return self.K.resolve(bone, axis, tol_deg)
     def add(self, key, bone, axis, pivot, x, idx, dd): self.K.add(key, bone, axis, pivot, x, idx, dd)
-    def add_pose_key(self, name, drivers, idx, dd): self.K.add_pose_key(name, drivers, idx, dd)
+    def add_pose_key(self, name, drivers, idx, dd):
+        """bake pose keys are per angle fraction ('pose@0.75'): their tents span exactly to the neighbouring fraction samples (width = 0.25 of the pose's full
+        angle per driver), so the keys of one pose at 25 / 50 / 75 / 100 % interpolate like hat samples instead of overlapping (an overlapping 0 -> s -> 2s tent
+        made the 75 % and 100 % fixes of hip_flex70 undo each other round after round)"""
+        new = name not in self.K.PK; self.K.add_pose_key(name, drivers, idx, dd)
+        if new and os.environ.get('BAKE_PK_TENT', 'fraction') == 'fraction' and '@' in name:
+            fr = float(name.rsplit('@', 1)[1]); self.K.PK[name]['width'] = [abs(s_) * 0.25 / fr for _, _, s_ in self.K.PK[name]['drivers']]
 def body_sha(BD, nm): return hashlib.sha256(np.ascontiguousarray(np.load(os.path.join(BD, nm + '.npz'))['Vs']).tobytes()).hexdigest()
 if __name__ == '__main__':
     mode, nm, BD, OD = sys.argv[1:5]; os.makedirs(OD + '/ckpt', exist_ok=True); b = json.load(open(os.path.join(BD, 'bodies.json')))['bodies'][nm]
