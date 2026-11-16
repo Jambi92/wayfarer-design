@@ -111,7 +111,7 @@ def evaluate(nm, b, BD, fracs=FRACS, poses=None, bake=None):
                                 tears=int(len(c['tears'])), rig_tears=int((~ct).sum()), dV_cm3=round(float(c['dV']), 2), volume_ok=bool(abs(c['dV']) <= 100),
                                 regions=sorted({str(R.ql[q_]) for q_ in c['f'][~cf]})[:6] if len(c['f']) else [])
             rig = float(np.linalg.norm(o[G]['dl'][prot], axis=1).max()) if prot.any() else 0.0; row[G]['rigid_max_cm'] = round(rig, 5)
-            res['poses'][pn]['%.2f' % fr] = row; pr = row[G]
+            res['poses'][pn][('%.2f' % fr) if round(fr, 2) == fr else ('%.5f' % fr)] = row; pr = row[G]
             tot['rig_flips'] += pr['rig_flips']; tot['rig_pen'] += pr['rig_pen']; tot['rig_tears'] += pr['rig_tears']; tot['vol_fail'] += int(not pr['volume_ok']); tot['comp'] += pr['composition']
             tot['base_rig'] += row['base']['rig_flips'] + row['base']['rig_pen'] + row['base']['rig_tears'] + int(not row['base']['volume_ok']); tot['lbs_rig'] += row['lbs']['rig_flips']
             tot['rigid_max_cm'] = max(tot['rigid_max_cm'], rig)
