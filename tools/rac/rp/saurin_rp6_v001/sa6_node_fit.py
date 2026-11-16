@@ -53,7 +53,25 @@ def fade(R, P, Sv, spec, F, w0, rig):
             I = np.nonzero(np.abs(dn - d).sum(1) > 1e-9)[0]; bone, pv, ax = FT.entries(R, spec, T)[0]; key, axf = P.resolve(bone, ax); x = P.driver(T, dict(bone=bone, axis=axf))
             if abs(x) < 0.5: return False
             P.add(key, bone, axf, pv, x, I, (dn - d)[I]); return k
-    return False
+    # last resort (per-body bake, crease-edge quads): bounded local search on the remaining folds' vertices + 1 ring (deterministic seed, |change| <= 1 cm,
+    # target relcos >= 0.05 on the neighbourhood); accepted only with no fold, no new contact / tear, |dV| <= VOL_ACCEPT; stored like the fade
+    Pc = R.skin(T, R.V + d); f0 = np.nonzero(R.relcos(Pc, T) < 0)[0]
+    if len(f0) > 6: return False
+    seed = np.zeros(R.nv, bool); seed[R.Q[f0].ravel()] = True; m = Sv.dilate(seed, 1) & ~rig; vs = np.nonzero(m)[0]
+    loc = np.nonzero(np.isin(R.Q, np.nonzero(Sv.dilate(m, 1))[0]).any(1))[0]
+    def obj(dl): Pq = R.skin(T, R.V + dl); rc = R.relcos(Pq, T); return np.minimum(rc[loc] - 0.05, 0).sum(), int((rc < 0).sum())
+    rng = np.random.default_rng(0); best = d.copy(); bo = obj(best)
+    for _ in range(3000):
+        cand = best.copy(); j = rng.choice(vs, size=min(3, len(vs)), replace=False); cand[j] += rng.normal(0, 0.15, (len(j), 3))
+        if np.abs(cand - d).max() > 1.0: continue
+        o = obj(cand)
+        if o[0] > bo[0]: best, bo = cand, o
+        if bo[1] == 0 and bo[0] >= -1e-9: break
+    Pn = R.skin(T, R.V + best)
+    if bo[1] or FT.penetration(R, Pn, F, w0).sum() > p0 or Sv.tear_edges(Pn)[0].sum() > t0 or abs(Sv.body_volume(Pn) - Sv.V0) > FT.VOL_ACCEPT: return False
+    I = np.nonzero(np.abs(best - d).sum(1) > 1e-9)[0]; bone, pv, ax = FT.entries(R, spec, T)[0]; key, axf = P.resolve(bone, ax); x = P.driver(T, dict(bone=bone, axis=axf))
+    if abs(x) < 0.5: return False
+    P.add(key, bone, axf, pv, x, I, (best - d)[I]); return 'local'
 if __name__ == '__main__':
     node, BD, LD, OD = sys.argv[1:5]; st, ws = node.rsplit('@', 1); w = float(ws); os.makedirs(OD + '/ckpt', exist_ok=True)
     bm = json.load(open(os.path.join(BD, 'bodies.json')))['bodies']; bn = [k for k in ('c1-' + node, 'c2-' + node) if k in bm][0]; b = bm[bn]
