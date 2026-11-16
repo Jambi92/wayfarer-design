@@ -14,7 +14,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
 import sa6_common as C, sa6_correctives as CC, sa6_fit as FT, sa6_pd2_fit as PF, sa6_layer_harness as H, sa6_blend as BL, sa6_node_fit as NF
 ROUNDS = int(os.environ.get('ROUNDS', 8));   # early exit on the first clean round; 8 allows Gauss-Seidel trades between fractions to settle
-FRACS = (1.0, 0.75, 0.5, 0.25)
+FRACS = tuple(float(x) for x in os.environ.get('BAKE_FRACS', '1.0,0.75,0.5,0.25').split(','))   # bake angle fractions (uniform spacing)
+STEP = min(abs(a - b) for a in FRACS + (0.0,) for b in FRACS + (0.0,) if a != b)
 def peak_mb():
     """peak resident memory of this process (MB): getrusage on Linux, PeakWorkingSetSize on Windows"""
     try:
@@ -38,7 +39,7 @@ class BakeProxy:
         made the 75 % and 100 % fixes of hip_flex70 undo each other round after round)"""
         new = name not in self.K.PK; self.K.add_pose_key(name, drivers, idx, dd)
         if new and os.environ.get('BAKE_PK_TENT', 'fraction') == 'fraction' and '@' in name:
-            fr = float(name.rsplit('@', 1)[1]); self.K.PK[name]['width'] = [abs(s_) * 0.25 / fr for _, _, s_ in self.K.PK[name]['drivers']]
+            fr = float(name.rsplit('@', 1)[1]); self.K.PK[name]['width'] = [abs(s_) * STEP / fr for _, _, s_ in self.K.PK[name]['drivers']]
 def body_sha(BD, nm): return hashlib.sha256(np.ascontiguousarray(np.load(os.path.join(BD, nm + '.npz'))['Vs']).tobytes()).hexdigest()
 if __name__ == '__main__':
     mode, nm, BD, OD = sys.argv[1:5]; os.makedirs(OD + '/ckpt', exist_ok=True); b = json.load(open(os.path.join(BD, 'bodies.json')))['bodies'][nm]
@@ -72,7 +73,7 @@ if __name__ == '__main__':
             if rnd == r0 and ii < i0: continue
             spec = [(bb, p, a, dg * fr) for bb, p, a, dg in PS[pn]]; t = time.time(); PF.start_pose(R, P, spec, F, w0, Sv)
             n0 = NF.defects(R, P, Sv, spec, F, w0); snap = copy.deepcopy((K.F, K.PK)) if n0 else None
-            a, c, _ = FT.solve_one(R, P, Sv, spec, F, w0, log, pose_key=('%s@%.2f' % (pn, fr)) if rnd >= 1 else None); tot += a
+            a, c, _ = FT.solve_one(R, P, Sv, spec, F, w0, log, pose_key=('%s@%.3f' % (pn, fr)) if rnd >= 1 else None); tot += a
             if n0:
                 n1 = NF.defects(R, P, Sv, spec, F, w0)
                 if n1 > n0: K.F.clear(); K.F.update(snap[0]); K.PK.clear(); K.PK.update(snap[1]); log.append(dict(round=rnd, pose=pn, frac=fr, reverted=[n0, n1])); n1 = n0
@@ -91,7 +92,7 @@ if __name__ == '__main__':
                      body_vs_sha256=body_sha(BD, nm), body_json_sha256=b.get('sha256'), initialised_from=dict(layers=H.LAYERS, layers_sha256=C.sha(pk),
                      base='SA_RP6_correctives_v002.json', base_arrays_sha256={c: C.sha(os.path.join(H.PKG, 'SA_RP6_correctives_%s_v001.npz' % c)) for c in 'MF'}),
                      semantics='baked(T) = packaged blend(T) + K(T); K = pose-driven corrective set on this exact body (0 at neutral)',
-                     converged=bool(tot == 0), rounds_entering=n_entering, fit_log=log,
+                     converged=bool(tot == 0), bake_fracs=list(FRACS), rounds_entering=n_entering, fit_log=log,
                      timing=dict(setup_s=round(t_setup, 1), fit_s=round(t_fit, 1), peak_mb=round(peak_mb(), 1), host=platform.node(), cpu=platform.processor(), os=platform.platform(), cpus_used=1,
                                  threads=os.environ.get('OMP_NUM_THREADS'))))
     t_write = time.time() - t2
