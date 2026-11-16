@@ -74,14 +74,17 @@ def rigid_ids(cfg):
     every creator body by topology (the same set the base fit protects and the c1 / c2 rigidity gate checks)"""
     if cfg not in _RID: _RID[cfg] = CC.Solver(SP.Rig(cfg, os.path.join(H.PKG, 'SA_RP6_weights_%s_v001.npz' % cfg))).protect
     return _RID[cfg]
-def evaluate(nm, b, BD, fracs=FRACS, poses=None):
+def evaluate(nm, b, BD, fracs=FRACS, poses=None, bake=None):
+    """bake: path of a per-body bake artifact (sa6_bake.py, K set): adds column 'bake' = packaged blend + K, re-opened from disk; the gates then apply to it"""
     t0 = time.time(); R, z = rig_of(nm, b, BD); S = CC.Solver(R); S.V0 = S.body_volume(R.V)
     Ft = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, Ft)
     Bc = H.load_base(R, b['cfg']); Ss = [(ws, H.load_state(R, s)[0]) for s, ws in b['w'].items()]; Pc = H.Blend(Bc, Ss)
+    Kb = CC.Correctives.load(R, bake) if bake else None; G = 'bake' if bake else 'prod'; TAGS = ('lbs', 'base', 'prod') + (('bake',) if bake else ())
     pts = z['pts']; kd = cKDTree(pts) if len(pts) else None; inv = z['rest_inverted']; compq = z['comp']; compv = np.zeros(R.nv, bool); compv[R.Q[compq].ravel()] = True
     Fn = np.r_[R.Q[~compq][:, [0, 1, 2]], R.Q[~compq][:, [0, 2, 3]]].astype(np.int64)
     def near(X): return (kd.query(X)[0] <= 1.0) if (kd is not None and len(X)) else np.zeros(len(X), bool)
     T0 = R.pose([]); neutral = dict(base=float(np.abs(Bc.delta(T0)).max()), states={s: float(np.abs(c.delta(T0)).max()) for (s, _), (_, c) in zip(b['w'].items(), Ss)}, blend=float(np.abs(Pc.delta(T0)).max()))
+    if bake: neutral['bake'] = float(np.abs(Pc.delta(T0) + Kb.delta(T0)).max())
     prot = rigid_ids(b['cfg']); res = dict(name=nm, status=ST, body=b, neutral_max_displacement_cm=neutral, poses={}); tot = dict(rig_flips=0, rig_pen=0, rig_tears=0, vol_fail=0, comp=0, base_rig=0, lbs_rig=0, rigid_max_cm=0.0)
     suite = R.suite('anat')
     for pn, spec in suite.items():
@@ -89,12 +92,13 @@ def evaluate(nm, b, BD, fracs=FRACS, poses=None):
         vol = not any('jaw' in e[0] for e in spec); res['poses'][pn] = {}
         for fr in fracs:
             T = R.pose([(bb, p, a, dg * fr) for bb, p, a, dg in spec]); o = {}
-            for tag, dl in (('lbs', None), ('base', Bc.delta(T)), ('prod', Pc.delta(T))):
+            dP = Pc.delta(T); cols = [('lbs', None), ('base', Bc.delta(T)), ('prod', dP)] + ([('bake', dP + Kb.delta(T))] if bake else [])
+            for tag, dl in cols:
                 P = R.skin(T) if dl is None else R.skin(T, R.V + dl)
                 f = np.nonzero(R.relcos(P, T) < 0)[0]; pen = np.nonzero(FT.penetration(R, P, Ft, w0))[0]; te = S.tear_edges(P)[0]
                 o[tag] = dict(P=P, f=f, pen=pen, tears=S._E1[te], dV=(S.body_volume(P) - S.V0) if vol else 0.0, dl=dl)
             lb = o['lbs']; row = {}
-            for tag in ('lbs', 'base', 'prod'):
+            for tag in TAGS:
                 c = o[tag]
                 cf = (near(R.V[R.Q[c['f']]].mean(1)) & np.isin(c['f'], lb['f'])) | inv[c['f']] if len(c['f']) else np.zeros(0, bool)
                 cp = near(R.V[c['pen']]) & np.isin(c['pen'], lb['pen'])
@@ -106,12 +110,13 @@ def evaluate(nm, b, BD, fracs=FRACS, poses=None):
                 row[tag] = dict(flips=int(len(c['f'])), composition=int(cf.sum()), rig_flips=int((~cf).sum()), new_pen=int(len(c['pen'])), rig_pen=int((~cp).sum()),
                                 tears=int(len(c['tears'])), rig_tears=int((~ct).sum()), dV_cm3=round(float(c['dV']), 2), volume_ok=bool(abs(c['dV']) <= 100),
                                 regions=sorted({str(R.ql[q_]) for q_ in c['f'][~cf]})[:6] if len(c['f']) else [])
-            rig = float(np.linalg.norm(o['prod']['dl'][prot], axis=1).max()) if prot.any() else 0.0; row['prod']['rigid_max_cm'] = round(rig, 5)
-            res['poses'][pn]['%.2f' % fr] = row; pr = row['prod']
+            rig = float(np.linalg.norm(o[G]['dl'][prot], axis=1).max()) if prot.any() else 0.0; row[G]['rigid_max_cm'] = round(rig, 5)
+            res['poses'][pn]['%.2f' % fr] = row; pr = row[G]
             tot['rig_flips'] += pr['rig_flips']; tot['rig_pen'] += pr['rig_pen']; tot['rig_tears'] += pr['rig_tears']; tot['vol_fail'] += int(not pr['volume_ok']); tot['comp'] += pr['composition']
             tot['base_rig'] += row['base']['rig_flips'] + row['base']['rig_pen'] + row['base']['rig_tears'] + int(not row['base']['volume_ok']); tot['lbs_rig'] += row['lbs']['rig_flips']
             tot['rigid_max_cm'] = max(tot['rigid_max_cm'], rig)
-    res['totals'] = tot; res['clean'] = not (tot['rig_flips'] or tot['rig_pen'] or tot['rig_tears'] or tot['vol_fail'] or tot['rigid_max_cm'] > 0.05 or max([neutral['base'], neutral['blend']] + list(neutral['states'].values())) > 0)
+    if bake: tot['blend_rig'] = sum(r['prod']['rig_flips'] + r['prod']['rig_pen'] + r['prod']['rig_tears'] + int(not r['prod']['volume_ok']) for v in res['poses'].values() for r in v.values())
+    res['gated_column'] = G; res['totals'] = tot; res['clean'] = not (tot['rig_flips'] or tot['rig_pen'] or tot['rig_tears'] or tot['vol_fail'] or tot['rigid_max_cm'] > 0.05 or max([neutral['base'], neutral['blend'], neutral.get('bake', 0.0)] + list(neutral['states'].values())) > 0)
     res['seconds'] = round(time.time() - t0, 1); return res
 if __name__ == '__main__':
     if sys.argv[1] == 'bodies': precompute(sys.argv[2])
