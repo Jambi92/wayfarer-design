@@ -69,6 +69,11 @@ if __name__ == '__main__':
     if os.path.exists(ck):
         m = json.load(open(ck)); log, r0, i0, tot0, el0 = m['fit_log'], m['ck_round'], m['ck_next'], m['ck_tot'], m.get('ck_fit_seconds', 0.0); print(nm, 'resume round', r0, 'item', i0, flush=True)
     EXTRA = json.load(open(os.environ['BAKE_EXTRA'])) if os.environ.get('BAKE_EXTRA') else {}   # adaptive samples {pose: [fractions]} (from a sweep)
+    if any(k.startswith('gate:') for k in EXTRA):      # special-gate poses (sa6_gates, 'gate:<name>') that failed on this body join the fit set at all fractions
+        import sa6_gates as GT; GP = GT.gate_poses(R)
+        for k in EXTRA:
+            if k.startswith('gate:'): PS[k] = GP[k[5:]]
+        order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k])))
     items = [(pn, fr) for pn in order for fr in sorted(set(FRACS) | set(EXTRA.get(pn, [])), reverse=True)]
     for pn in order:
         fs = sorted(set(FRACS) | set(EXTRA.get(pn, [])) | {0.0})

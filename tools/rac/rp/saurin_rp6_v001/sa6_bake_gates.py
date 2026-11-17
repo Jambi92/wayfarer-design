@@ -12,7 +12,7 @@ os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
 import sa6_common as C, sa6_correctives as CC, sa6_fit as FT, sa6_layer_harness as H, sa6_blend as BL, sa6_gates as GT
 from scipy.spatial import cKDTree
 from sa6_bake import peak_mb
-FRACS = (1.0, 0.75, 0.5, 0.25)
+FRACS = tuple(float(x) for x in os.environ.get('GATES_FRACS', '1.0,0.75,0.5,0.25').split(','))   # GATES_FRACS: dense between-sample check of a gate pose
 def run(nm, BD, AD):
     t0 = time.time(); b = json.load(open(os.path.join(BD, 'bodies.json')))['bodies'][nm]; art = os.path.join(AD, 'BK_%s.json' % nm)
     R, z = BL.rig_of(nm, b, BD); S = CC.Solver(R); S.V0 = S.body_volume(R.V); Q = R.Q
@@ -77,8 +77,8 @@ def run(nm, BD, AD):
                                 tears=int(len(c['tears'])), rig_tears=int((~ct).sum()), dV_cm3=round(float(c['dV']), 2), volume_ok=bool(abs(c['dV']) <= 100),
                                 regions=sorted({str(R.ql[q_]) for q_ in c['f'][~cf]})[:6] if len(c['f']) else [])
             rig = float(np.linalg.norm(o['bake']['dl'][prot], axis=1).max()) if prot.any() else 0.0; row['bake']['rigid_max_cm'] = round(rig, 5)
-            if fr == 1.0: row['metrics'] = dict(lbs=metrics(pn, T, o['lbs']['P']), bake=metrics(pn, T, o['bake']['P']))
-            res['poses'][pn]['%.2f' % fr] = row; pr = row['bake']
+            if abs(fr - 1.0) < 1e-9: row['metrics'] = dict(lbs=metrics(pn, T, o['lbs']['P']), bake=metrics(pn, T, o['bake']['P']))
+            res['poses'][pn][('%.2f' % fr) if round(fr, 2) == fr else ('%.4f' % fr)] = row; pr = row['bake']
             tot['rig_flips'] += pr['rig_flips']; tot['rig_pen'] += pr['rig_pen']; tot['rig_tears'] += pr['rig_tears']; tot['vol_fail'] += int(not pr['volume_ok']); tot['comp'] += pr['composition']
             tot['lbs_rig'] += row['lbs']['rig_flips']; tot['rigid_max_cm'] = max(tot['rigid_max_cm'], rig)
         tot['poses_with_K'] += int(kpose > 0); tot['k_max_cm'] = max(tot['k_max_cm'], kpose)
