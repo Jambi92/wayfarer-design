@@ -24,7 +24,10 @@ dense = kp + ([pn for pn in RISK if pn in suite and pn not in kp] if SET in ('ri
 poses = dense + ([pn for pn in suite if pn not in dense] if SET == 'all' else [])
 FAM = list(K.F.values()) + [f for st in [P0.B] + [s_ for _, s_ in P0.S] for f in getattr(st, 'F', {}).values()]
 out = dict(status='RP6 RIG PILOT / NOT FROZEN', name=nm, artifact=os.path.basename(art), sweep_set=SET, step_dense=0.025, step_other=STEP_O, poses={}, return_sweep='identical by construction (stateless evaluator)')
+PART = os.path.join(OD, 'SW_%s.partial.json' % nm)                     # per-pose checkpoint: a killed sweep resumes at the next pose
+if os.path.exists(PART): out['poses'].update(json.load(open(PART))['poses'])
 for pn in poses:
+    if pn in out['poses']: continue
     spec = suite[pn]; T1 = R.pose(spec); fr = set(np.round(np.arange(0, 1.0001, 0.025 if pn in dense else STEP_O), 4))
     for f in FAM:
         if not any(e[0] == f['bone'] for e in spec): continue
@@ -51,6 +54,7 @@ for pn in poses:
     out['poses'][pn] = dict(n_samples=len(fr), gate_failures=[dict(frac=k_, **{x: v[x] for x in ('rig_flips', 'rig_pen', 'rig_tears', 'volume_ok', 'dV_cm3', 'regions')}) for k_, v in bad],
                             rigid_max_cm=max(v['bake'].get('rigid_max_cm', 0) for v in r['poses'][pn].values()), rate_max_cm_per_deg=float(mx[0]), rate_median_cm_per_deg=med,
                             rate_ratio=float(mx[0] / med) if med > 0 else 0.0, rate_max_at=[float(mx[1]), float(mx[2])])
+    json.dump(out, open(PART, 'w'))
     print(nm, pn, len(fr), 'samples, gate failures', len(bad), 'rate max %.4f median %.4f cm/deg' % (mx[0], med), flush=True)
 out['clean'] = all(not v['gate_failures'] and v['rigid_max_cm'] <= 0.05 for v in out['poses'].values())
-json.dump(out, open(os.path.join(OD, 'SW_%s.json' % nm), 'w'), indent=1); print(nm, 'SWEEP clean', out['clean'], 'poses', len(poses), flush=True)
+json.dump(out, open(os.path.join(OD, 'SW_%s.json' % nm), 'w'), indent=1); os.path.exists(PART) and os.remove(PART); print(nm, 'SWEEP clean', out['clean'], 'poses', len(poses), flush=True)
