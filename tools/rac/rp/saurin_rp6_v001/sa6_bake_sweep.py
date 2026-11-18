@@ -24,9 +24,11 @@ dense = kp + ([pn for pn in RISK if pn in suite and pn not in kp] if SET in ('ri
 poses = dense + ([pn for pn in suite if pn not in dense] if SET == 'all' else [])
 FAM = list(K.F.values()) + [f for st in [P0.B] + [s_ for _, s_ in P0.S] for f in getattr(st, 'F', {}).values()]
 out = dict(status='RP6 RIG PILOT / NOT FROZEN', name=nm, artifact=os.path.basename(art), sweep_set=SET, step_dense=0.025, step_other=STEP_O, poses={}, return_sweep='identical by construction (stateless evaluator)')
-PART = os.path.join(OD, 'SW_%s.partial.json' % nm)                     # per-pose checkpoint: a killed sweep resumes at the next pose
+SH = os.environ.get('SWEEP_SHARD')   # 'i/n': this process sweeps poses[i::n] only (poses are independent); sa6_bake_sweep_merge.py joins the shards into SW_<NAME>.json
+si, sn = (int(x) for x in SH.split('/')) if SH else (0, 1); tag = '.s%dof%d' % (si, sn) if SH else ''
+PART = os.path.join(OD, 'SW_%s%s.partial.json' % (nm, tag))           # per-pose checkpoint: a killed sweep resumes at the next pose
 if os.path.exists(PART): out['poses'].update(json.load(open(PART))['poses'])
-for pn in poses:
+for pn in poses[si::sn]:
     if pn in out['poses']: continue
     spec = suite[pn]; T1 = R.pose(spec); fr = set(np.round(np.arange(0, 1.0001, 0.025 if pn in dense else STEP_O), 4))
     for f in FAM:
@@ -56,5 +58,8 @@ for pn in poses:
                             rate_ratio=float(mx[0] / med) if med > 0 else 0.0, rate_max_at=[float(mx[1]), float(mx[2])])
     json.dump(out, open(PART, 'w'))
     print(nm, pn, len(fr), 'samples, gate failures', len(bad), 'rate max %.4f median %.4f cm/deg' % (mx[0], med), flush=True)
+if SH:
+    out['shard'] = SH; out['shard_poses'] = poses[si::sn]; out['all_poses'] = poses
+    json.dump(out, open(os.path.join(OD, 'SW_%s%s.json' % (nm, tag)), 'w')); os.path.exists(PART) and os.remove(PART); print(nm, 'shard', SH, 'done', flush=True); sys.exit(0)
 out['clean'] = all(not v['gate_failures'] and v['rigid_max_cm'] <= 0.05 for v in out['poses'].values())
 json.dump(out, open(os.path.join(OD, 'SW_%s.json' % nm), 'w'), indent=1); os.path.exists(PART) and os.remove(PART); print(nm, 'SWEEP clean', out['clean'], 'poses', len(poses), flush=True)
