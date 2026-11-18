@@ -51,13 +51,17 @@ def run(nm, BD, AD):
     T0 = R.pose([]); neutral = float(np.abs(Pc.delta(T0) + Kb.delta(T0)).max())
     GP = GT.gate_poses(R); res = dict(name=nm, status='RP6 RIG PILOT / NOT FROZEN', artifact=os.path.abspath(art), artifact_sha256=C.sha(art), gate_set='sa6_gates.gate_poses (50 poses)',
                                       fractions=list(FRACS), neutral_bake_max_displacement_cm=neutral, poses={})
-    tot = dict(rig_flips=0, rig_pen=0, rig_tears=0, vol_fail=0, comp=0, lbs_rig=0, rigid_max_cm=0.0, poses_with_K=0, k_max_cm=0.0)
     only = os.environ.get('GATES_ONLY'); only = only.split(',') if only else None
+    ck = os.environ.get('GATES_CKPT')   # per-pose checkpoint: a run cut off part-way resumes at the next pose (same artifact hash + fractions required)
+    if ck and os.path.exists(ck):
+        old = json.load(open(ck))
+        if old.get('artifact_sha256') == res['artifact_sha256'] and old.get('fractions') == res['fractions']: res['poses'] = old['poses']; res['resumed_poses'] = len(old['poses'])
     for pn, spec in GP.items():
         if only and pn not in only: continue
-        vflag = not any('jaw' in e[0] for e in spec); res['poses'][pn] = {}; kpose = 0.0
+        if pn in res['poses']: continue
+        vflag = not any('jaw' in e[0] for e in spec); res['poses'][pn] = {}
         for fr in FRACS:
-            T = R.pose([(bb, p, a, dg * fr) for bb, p, a, dg in spec]); dP = Pc.delta(T); dK = Kb.delta(T); km = float(np.abs(dK).max()); kpose = max(kpose, km)
+            T = R.pose([(bb, p, a, dg * fr) for bb, p, a, dg in spec]); dP = Pc.delta(T); dK = Kb.delta(T); km = float(np.abs(dK).max())
             cols = [('lbs', None), ('bake', dP + dK)] + ([('prod', dP)] if km > 0 else []); o = {}
             for tag, dl in cols:
                 P = R.skin(T) if dl is None else R.skin(T, R.V + dl)
@@ -78,10 +82,14 @@ def run(nm, BD, AD):
                                 regions=sorted({str(R.ql[q_]) for q_ in c['f'][~cf]})[:6] if len(c['f']) else [])
             rig = float(np.linalg.norm(o['bake']['dl'][prot], axis=1).max()) if prot.any() else 0.0; row['bake']['rigid_max_cm'] = round(rig, 5)
             if abs(fr - 1.0) < 1e-9: row['metrics'] = dict(lbs=metrics(pn, T, o['lbs']['P']), bake=metrics(pn, T, o['bake']['P']))
-            res['poses'][pn][('%.2f' % fr) if round(fr, 2) == fr else ('%.4f' % fr)] = row; pr = row['bake']
-            tot['rig_flips'] += pr['rig_flips']; tot['rig_pen'] += pr['rig_pen']; tot['rig_tears'] += pr['rig_tears']; tot['vol_fail'] += int(not pr['volume_ok']); tot['comp'] += pr['composition']
-            tot['lbs_rig'] += row['lbs']['rig_flips']; tot['rigid_max_cm'] = max(tot['rigid_max_cm'], rig)
-        tot['poses_with_K'] += int(kpose > 0); tot['k_max_cm'] = max(tot['k_max_cm'], kpose)
+            res['poses'][pn][('%.2f' % fr) if round(fr, 2) == fr else ('%.4f' % fr)] = row
+        if ck: json.dump(res, open(ck + '.tmp', 'w')); os.replace(ck + '.tmp', ck)
+    tot = dict(rig_flips=0, rig_pen=0, rig_tears=0, vol_fail=0, comp=0, lbs_rig=0, rigid_max_cm=0.0, poses_with_K=0, k_max_cm=0.0)
+    for pn, rows in res['poses'].items():   # totals from the saved rows, so a resumed run totals exactly like an uninterrupted one
+        for row in rows.values():
+            pr = row['bake']; tot['rig_flips'] += pr['rig_flips']; tot['rig_pen'] += pr['rig_pen']; tot['rig_tears'] += pr['rig_tears']; tot['vol_fail'] += int(not pr['volume_ok'])
+            tot['comp'] += pr['composition']; tot['lbs_rig'] += row['lbs']['rig_flips']; tot['rigid_max_cm'] = max(tot['rigid_max_cm'], pr['rigid_max_cm'])
+        kp = max(r['k_max_cm'] for r in rows.values()); tot['poses_with_K'] += int(kp > 0); tot['k_max_cm'] = max(tot['k_max_cm'], kp)
     res['totals'] = tot; res['clean'] = not (tot['rig_flips'] or tot['rig_pen'] or tot['rig_tears'] or tot['vol_fail'] or tot['rigid_max_cm'] > 0.05 or neutral > 0)
     res['seconds'] = round(time.time() - t0, 1); res['peak_mb'] = round(peak_mb(), 1); return res
 if __name__ == '__main__':
