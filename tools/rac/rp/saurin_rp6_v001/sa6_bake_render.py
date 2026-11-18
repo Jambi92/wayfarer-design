@@ -1,4 +1,4 @@
-# sa6_bake_render.py OUTDIR BODYDIR:NAME:ARTDIR:POSE:FRAC [...] : close-up evidence for the per-body bake feasibility benchmark (order a13cae71).
+# sa6_bake_render.py OUTDIR BODYDIR:NAME:ARTDIR:POSE:FRAC [...] (POSE may be gate.<special-gate pose>) : close-up evidence for the per-body bake feasibility benchmark (order a13cae71).
 #   Per case three panels at the same view, centred on the defects: plain LBS | packaged blend (RP6_LAYERS, default v004) | baked = packaged blend + K
 #   (K reopened from ARTDIR/BK_<NAME>.json/.npz).  Fraction in the file name is per mille; suffix = artifact directory (it0 / it1 ...).
 #   Orange marks on the baked panel = tear-edge vertices + contact not present under LBS, UNFILTERED (the evaluator's ownership rules may assign them
@@ -18,7 +18,7 @@ for case in sys.argv[2:]:
     BD, nm, AD, pn, fr = case.split(':'); fr = float(fr); b = json.load(open(os.path.join(BD, 'bodies.json')))['bodies'][nm]
     R, z = BL.rig_of(nm, b, BD); Sv = CC.Solver(R); F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F)
     Bc = H.load_base(R, b['cfg']); P = H.Blend(Bc, [(w, H.load_state(R, s)[0]) for s, w in b['w'].items()]); K = CC.Correctives.load(R, os.path.join(AD, 'BK_%s.json' % nm))
-    T = R.pose([(bb, p, a, dg * fr) for bb, p, a, dg in R.suite('anat')[pn]]); pts = z['pts']; kd = cKDTree(pts) if len(pts) else None; inv = z['rest_inverted']
+    spec = __import__('sa6_gates').gate_poses(R)[pn[5:]] if pn.startswith('gate.') else R.suite('anat')[pn]; T = R.pose([(bb, p, a, dg * fr) for bb, p, a, dg in spec]); pts = z['pts']; kd = cKDTree(pts) if len(pts) else None; inv = z['rest_inverted']
     cols = []
     for tag, dl in (('plain LBS', None), ('packaged blend v004', P.delta(T)), ('baked (blend + K)', P.delta(T) + K.delta(T))):
         Pp = R.skin(T) if dl is None else R.skin(T, R.V + dl); f = np.nonzero(R.relcos(Pp, T) < 0)[0]; cols.append((tag, Pp, f))
@@ -34,7 +34,7 @@ for case in sys.argv[2:]:
     pf = own(cols[1][2])   # nothing left on the bake: centre on the packaged blend's defects
     if not len(rf) and len(pf): ctr = cols[1][1][R.Q[pf]].mean((0, 1))
     lat = ctr - Pp.mean(0); lat[2] = 0; view = (np.sign(lat[0]) or 1.0, 0.35, 0.25) if abs(lat[0]) > abs(lat[1]) else (0.25, np.sign(lat[1]) or 1.0, 0.25)
-    rad = 40.0 if pn.startswith('tail') else 22.0
+    rad = 40.0 if pn.replace('gate.', '').startswith('tail') else 22.0
     fig, ax = plt.subplots(1, 3, figsize=(13, 4.6))
     for a_, (tag, Pq, f) in zip(ax, cols):
         o = own(f); draw(a_, R, Pq, view, ctr, rad, flips=o, pen=mark if tag.startswith('baked') else None,

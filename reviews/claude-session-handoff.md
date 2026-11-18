@@ -2,6 +2,23 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
+## LATEST (2026-11-18) — PER-BODY BAKE FEASIBILITY ORDER a13cae71 DONE — FEASIBLE on the benchmark (with adaptive refits); STOP for ChatGPT / author review
+- Report: reviews/claude-rac-rp6-saurin-per-body-bake-feasibility-report.md. Evidence: reviews/rac-rp6-evidence/saurin/rig_pilot/bake_feasibility/
+  (SA_RP6_bake_results_v001.json with every sha256, SA_RP6_bake_timings_v001.json PC vs cloud OFF_PC, artifacts/<body>/ final BK/EV/SW + pre_gate_refit/,
+  special_gates/ GT + dense, controls/ SW). Evidence commit: see `git log -- reviews/claude-rac-rp6-saurin-per-body-bake-feasibility-report.md`. Status RP6 RIG PILOT / NOT FROZEN.
+- Result: all 18 bodies (baked = packaged blend v004 + K) clean on 34 poses x 4 fractions, full between-sample sweep, 50 special gates x 4; neutral 0, rigid <= 0.0011 cm.
+  Only 5/18 clean straight from the 4-fraction fit: 2 pass-1 redos, 10 between-angle refits, 5 special-gate refits (gate:<pose> in BAKE_EXTRA; failures were all in
+  the packaged blend, K = 0 there) + dense gate check 0.025-0.975 clean.
+- Controls (PC, 4x4 shards, 54 min): BASE_c1/c2, END_FAHI/MUFAHI clean at gated fractions but FAIL between them in the shipped v004 layer.
+- Open items for review: tail kink criterion (pilot "<= 2.51" exceeded by the pilot's own audit 3.07 and by LBS on blends, max 3.28 — not caused by the bake);
+  rate-ratio spike 7.6 on elbow_130_xneg comes from the packaged blend, ungated.
+- Tools added: sa6_bake_gates.py (GATES_ONLY/GATES_FRACS/GATES_CKPT), BAKE_EXTRA gate: poses, SWEEP_SHARD + sa6_bake_sweep_merge.py. Runners: pc_bake/ (incl. controls/),
+  cloud_bake/ (README). PC: E:/UnrealProjects/Wayfarer 5.8/RaceBodies/SaurinRP6_bake (passes 1-3), SaurinRP6_ctrl (controls).
+- Working rule from Tyler: use his PC fully for long compute (parallel shards, 16 threads; no chat permission asks); checkpoint everything; never drop QC for speed.
+- DECISION NEEDED (report §10): adopt per-body bake at creator commit? sweep/gate standard + budget; is unbaked v004 acceptable given its between-angle and
+  special-gate failures; restate the tail-kink criterion.
+- NEXT: wait for ChatGPT / author review. Do not start new work on RP6.
+
 ## LATEST (2026-11-15) — CORRECTIVE LAYER VALIDATION ORDER 3e76b509 — NOT PASS, ESCALATED for author decision (Tyler chose "report to ChatGPT")
 - Report: reviews/claude-rac-rp6-saurin-corrective-layer-validation-report.md. Evidence: reviews/rac-rp6-evidence/saurin/rig_pilot/layer_validation/
   (eval_layers_v002/v003/v004, scan_v004, identities v001/v004, blend bodies, margin, renders). Packages: SA_RP6_correctives_v002.json,
