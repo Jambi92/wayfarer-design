@@ -5,10 +5,13 @@
 #   Row 2: per-junction turning (deg) for each column, the neutral turning (inherited curvature) dashed, and the deformation-introduced turning |th - th0|.
 #   Row 3: motion strip around the frame: the baked (else packaged) centreline at FRAC-0.1, FRAC-0.05, FRAC, FRAC+0.05 (side view, coloured by local turning).
 import sys, os, json, numpy as np, matplotlib
+from matplotlib.collections import PolyCollection, LineCollection
 matplotlib.use('Agg'); import matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
-import sa6_common as C, sa6_correctives as CC, sa6_layer_harness as H, sa6_blend as BL, sa6_gates as GT
+import sa6_common as C, sa6_correctives as CC, sa6_layer_harness as H, sa6_blend as BL, sa6_gates as GT, ast
+src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sa6_render.py')).read()   # shaded mesh = sa6_render.draw, extracted (not re-implemented)
+exec(compile(ast.Module([n for n in ast.parse(src).body if isinstance(n, ast.FunctionDef) and n.name in ('view_basis', 'draw')], []), 'sa6_render', 'exec'))
 OD = sys.argv[1]; os.makedirs(OD, exist_ok=True); rings = C.load()['tail_rings']
 def cen(P): return np.array([P[rg].mean(0) for rg in rings])
 def turning(P):
@@ -44,4 +47,13 @@ for case in sys.argv[2:]:
         ax = fig.add_subplot(3, 4, 9 + j); P = posed(f, last); c = cen(P); th = turning(P)
         ax.scatter(c[1:-1, 1], c[1:-1, 2], c=th, s=4, cmap='viridis', vmin=0, vmax=6); ax.plot(c[:, 1], c[:, 2], 'k-', lw=0.3); ax.set_aspect('equal'); ax.set_xticks([]); ax.set_yticks([])
         ax.set_title('%s @%.1f%%  kink %.3f  max turn %.2f deg' % (last, f * 100, kink(th)[0], th.max()), fontsize=8)
-    plt.tight_layout(); fo = os.path.join(OD, 'TR_%s_%s_%04d.png' % (nm.replace('@', '_').replace('.', 'p'), pn, round(fr * 1000))); plt.savefig(fo, dpi=100); plt.close(fig); print('wrote', fo, flush=True)
+    plt.tight_layout(); fo0 = os.path.join(OD, 'TR_%s_%s_%04d.png' % (nm.replace('@', '_').replace('.', 'p'), pn, round(fr * 1000))); plt.savefig(fo0, dpi=100); plt.close(fig)
+    # shaded mesh of the tail at the junction where the deformation concentrates turning most (max over columns of (th - win) - (th0 - win0)), lateral + dorsal views
+    def win_(t): return np.array([t[max(0, k - 5):k + 6].mean() for k in range(len(t))])
+    e0 = th0 - win_(th0); kj = max(((int(((turning(P) - win_(turning(P))) - e0).argmax()), float(((turning(P) - win_(turning(P))) - e0).max())) for tag, P, _, _ in cols[1:]), key=lambda x: x[1])[0]
+    fig, ax = plt.subplots(2, len(cols), figsize=(4.4 * len(cols), 8.4))
+    for j, (tag, P, col, ls) in enumerate(cols):
+        ctr = P[rings[kj + 1]].mean(0); th = turning(P); ex = float(((th - win_(th)) - e0)[kj])
+        for i, view in enumerate(((1.0, 0.12, 0.1), (0.05, 0.1, 1.0))):
+            draw(ax[i, j], R, P, view, ctr, 22.0, title='%s %s @%.0f%%\n%s  ring %d: turning %.2f deg, concentration %+.2f deg vs neutral' % (nm, pn, fr * 100, tag, kj + 1, th[kj], ex) if i == 0 else '%s (dorsal view)' % tag)
+    plt.tight_layout(); fo = os.path.join(OD, 'TM_%s_%s_%04d.png' % (nm.replace('@', '_').replace('.', 'p'), pn, round(fr * 1000))); plt.savefig(fo, dpi=100); plt.close(fig); print('wrote', fo, flush=True)
