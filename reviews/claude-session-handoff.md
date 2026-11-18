@@ -5,7 +5,7 @@ Purpose: if a conversation runs out of room, a new Claude conversation reads thi
 ## LATEST (2026-11-18) — PER-BODY BAKE FEASIBILITY ORDER a13cae71 DONE — FEASIBLE on the benchmark (with adaptive refits); STOP for ChatGPT / author review
 - Report: reviews/claude-rac-rp6-saurin-per-body-bake-feasibility-report.md. Evidence: reviews/rac-rp6-evidence/saurin/rig_pilot/bake_feasibility/
   (SA_RP6_bake_results_v001.json with every sha256, SA_RP6_bake_timings_v001.json PC vs cloud OFF_PC, artifacts/<body>/ final BK/EV/SW + pre_gate_refit/,
-  special_gates/ GT + dense, controls/ SW). Evidence commit: see `git log -- reviews/claude-rac-rp6-saurin-per-body-bake-feasibility-report.md`. Status RP6 RIG PILOT / NOT FROZEN.
+  special_gates/ GT + dense, controls/ SW). Evidence commit: e2de557b. Status RP6 RIG PILOT / NOT FROZEN.
 - Result: all 18 bodies (baked = packaged blend v004 + K) clean on 34 poses x 4 fractions, full between-sample sweep, 50 special gates x 4; neutral 0, rigid <= 0.0011 cm.
   Only 5/18 clean straight from the 4-fraction fit: 2 pass-1 redos, 10 between-angle refits, 5 special-gate refits (gate:<pose> in BAKE_EXTRA; failures were all in
   the packaged blend, K = 0 there) + dense gate check 0.025-0.975 clean.
