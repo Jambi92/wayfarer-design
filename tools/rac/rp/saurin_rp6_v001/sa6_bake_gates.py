@@ -1,4 +1,4 @@
-# sa6_bake_gates.py NAME BODYDIR ARTDIR [OUTDIR] : RP6 special gates (sa6_gates.gate_poses: tail / hand / foot-toe / jaw-head, 50 poses) on a per-body bake
+# sa6_bake_gates.py NAME BODYDIR ARTDIR [OUTDIR] (env GATES_ONLY, GATES_FRACS, GATES_TRANSITIONS=1, GATES_SHARD=i/n, GATES_CKPT) : RP6 special gates (sa6_gates.gate_poses: tail / hand / foot-toe / jaw-head, 50 poses) on a per-body bake
 #   (per-body bake feasibility order a13cae71 §2 "rerun the applicable special gates").
 #   The artifact ARTDIR/BK_<NAME>.json is reopened from disk.  Every gate pose at 25 / 50 / 75 / 100 % is gated with the SAME ownership rules and thresholds as
 #   sa6_blend.evaluate (closure rules: rig-owned folds / contact / tears, |dV| <= 100 cm3 with jaw poses exempt, protected rigid set <= 0.05 cm) on the
@@ -56,11 +56,29 @@ def run(nm, BD, AD):
     if ck and os.path.exists(ck):
         old = json.load(open(ck))
         if old.get('artifact_sha256') == res['artifact_sha256'] and old.get('fractions') == res['fractions']: res['poses'] = old['poses']; res['resumed_poses'] = len(old['poses'])
-    for pn, spec in GP.items():
-        if only and pn not in only: continue
+    SH = os.environ.get('GATES_SHARD'); si, sn = (int(x) for x in SH.split('/')) if SH else (0, 1)   # 'i/n': this process gates poses[i::n] (sa6_bake_gates_merge.py joins)
+    TR = os.environ.get('GATES_TRANSITIONS') == '1'; res['transitions'] = TR   # + samples 0.25 deg either side of every K / packaged-blend family sample and K pose-key centre / tent edge
+    FAM = list(Kb.F.values()) + [f for st in [Pc.B] + [s_ for _, s_ in Pc.S] for f in getattr(st, 'F', {}).values()]
+    sel = [pn for pn in GP if not (only and pn not in only)]; res['shard'] = SH; res['shard_poses'] = sel[si::sn]; res['all_poses'] = sel
+    for pn in sel[si::sn]:
+        spec = GP[pn]
         if pn in res['poses']: continue
-        vflag = not any('jaw' in e[0] for e in spec); res['poses'][pn] = {}
-        for fr in FRACS:
+        vflag = not any('jaw' in e[0] for e in spec); res['poses'][pn] = {}; fset = set(FRACS)
+        if TR:
+            T1 = R.pose(spec)
+            for f in FAM:
+                if not any(e[0] == f['bone'] for e in spec): continue
+                x1 = Kb.driver(T1, f)
+                if abs(x1) < 1e-6: continue
+                for s_ in f['samples']:
+                    for e in (-0.25, 0.25): fset.add(round((s_ + e * np.sign(x1)) / x1, 5))
+            for k, pk in Kb.PK.items():
+                if k.rsplit('@', 1)[0] not in (pn, 'gate:' + pn): continue
+                x1 = Kb.driver(T1, dict(bone=pk['drivers'][0][0], axis=pk['drivers'][0][1])); s_ = pk['drivers'][0][2]; w = (pk.get('width') or [abs(s_)])[0]
+                if abs(x1) < 1e-6: continue
+                for c in (s_ - w, s_, s_ + w):
+                    for e in (-0.25, 0.25): fset.add(round((c + e * np.sign(x1)) / x1, 5))
+        for fr in sorted((f for f in fset if 0 < f <= 1), reverse=True):
             T = R.pose([(bb, p, a, dg * fr) for bb, p, a, dg in spec]); dP = Pc.delta(T); dK = Kb.delta(T); km = float(np.abs(dK).max())
             cols = [('lbs', None), ('bake', dP + dK)] + ([('prod', dP)] if km > 0 else []); o = {}
             for tag, dl in cols:
@@ -82,7 +100,7 @@ def run(nm, BD, AD):
                                 regions=sorted({str(R.ql[q_]) for q_ in c['f'][~cf]})[:6] if len(c['f']) else [])
             rig = float(np.linalg.norm(o['bake']['dl'][prot], axis=1).max()) if prot.any() else 0.0; row['bake']['rigid_max_cm'] = round(rig, 5)
             if abs(fr - 1.0) < 1e-9: row['metrics'] = dict(lbs=metrics(pn, T, o['lbs']['P']), bake=metrics(pn, T, o['bake']['P']))
-            res['poses'][pn][('%.2f' % fr) if round(fr, 2) == fr else ('%.4f' % fr)] = row
+            res['poses'][pn][('%.2f' % fr) if round(fr, 2) == fr else ('%.4f' % fr) if round(fr, 4) == fr else ('%.5f' % fr)] = row
         if ck: json.dump(res, open(ck + '.tmp', 'w')); os.replace(ck + '.tmp', ck)
     tot = dict(rig_flips=0, rig_pen=0, rig_tears=0, vol_fail=0, comp=0, lbs_rig=0, rigid_max_cm=0.0, poses_with_K=0, k_max_cm=0.0)
     for pn, rows in res['poses'].items():   # totals from the saved rows, so a resumed run totals exactly like an uninterrupted one
@@ -94,6 +112,9 @@ def run(nm, BD, AD):
     res['seconds'] = round(time.time() - t0, 1); res['peak_mb'] = round(peak_mb(), 1); return res
 if __name__ == '__main__':
     nm, BD, AD = sys.argv[1:4]; OD = sys.argv[4] if len(sys.argv) > 4 else AD; os.makedirs(OD, exist_ok=True)
-    r = run(nm, BD, AD); json.dump(r, open(os.path.join(OD, 'GT_%s.json' % nm), 'w'), indent=1); t = r['totals']
+    SH = os.environ.get('GATES_SHARD'); tag = '.s%sof%s' % tuple(SH.split('/')) if SH else ''
+    r = run(nm, BD, AD); json.dump(r, open(os.path.join(OD, 'GT_%s%s.json' % (nm, tag)), 'w'), indent=1); t = r['totals']
+    ck = os.environ.get('GATES_CKPT')
+    if ck and os.path.exists(ck): os.remove(ck)
     print('%-26s gates clean %s | rig flips %d pen %d tears %d volfail %d rigid %.4f | comp %d | K active on %d poses (max %.4f cm) | %.0fs %.0f MB' % (
         nm, r['clean'], t['rig_flips'], t['rig_pen'], t['rig_tears'], t['vol_fail'], t['rigid_max_cm'], t['comp'], t['poses_with_K'], t['k_max_cm'], r['seconds'], r['peak_mb']), flush=True)

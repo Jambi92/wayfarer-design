@@ -1,0 +1,103 @@
+# sa6_bake_full.py NAME BODYDIR UNBAKED_ARTDIR OUTDIR [MAXIT=3] [SHARDS=4] : offline per-body bake with the FULL validation suite from the first pass
+#   (offline bake validation order 8e3b7b4d §1-2).  Portable (Windows / Linux), every stage resumable (skipped when its output exists; shards checkpoint per pose).
+#   OUTDIR/unbaked/  the same suite on the unbaked body (UNBAKED_ARTDIR/BK_<NAME>: empty K, so baked == packaged blend v004): reproduces the known failures.
+#   OUTDIR/it<k>/    k = 0: fit from the packaged blend v004 on the exact body (sa6_bake.py fit, 34 poses x 25/50/75/100 %).  k >= 1: adaptive refit from it<k-1>
+#                    with every failing (pose, fraction) of it<k-1> as an extra fit sample (anatomical poses by name, special gates as 'gate:<pose>'; BAKE_EXTRA).
+#                    Each iteration reopens its artifact from disk and runs:
+#                      EV  34 anatomical poses x 4 fractions + neutral (sa6_bake.py eval)
+#                      GT  50 special gates x 4 fractions + neutral (sa6_bake_gates.py, sharded)
+#                      SW  full-suite sweep: 0.025 on heavy-joint + K poses, 0.125 elsewhere, +-0.25 deg at every bake and packaged-blend transition (sharded)
+#                      GS  every special-gate pose that ever entered the fit: 0.025 grid + +-0.25 deg at its transitions (sa6_bake_gates.py GATES_TRANSITIONS, sharded)
+#                    Stop when all four are clean, or after MAXIT refits (remaining failures are reported exactly).
+#   Final: IN (RP5 / package integrity, sa6_bake_integrity.py), RL (RP5-literal diagnostics, EVAL_SUITE=rp5, not gates), BA (before / after at the same body,
+#   pose and fraction for every unbaked failure, sa6_bake_beforeafter.py).  Record -> OUTDIR/FULL_<NAME>.json (stages, wall seconds, rc, peak MB, retries).
+import sys, os, json, time, shutil, subprocess
+T = os.path.dirname(os.path.abspath(__file__)); PY = sys.executable
+nm, BD, UA, OD = sys.argv[1:5]; MAXIT = int(sys.argv[5]) if len(sys.argv) > 5 else 3; NSH = int(sys.argv[6]) if len(sys.argv) > 6 else 4
+os.makedirs(OD, exist_ok=True); RECF = os.path.join(OD, 'FULL_%s.json' % nm)
+rec = json.load(open(RECF)) if os.path.exists(RECF) else dict(name=nm, status='RP6 RIG PILOT / NOT FROZEN', shards=NSH, max_refits=MAXIT, stages=[], iterations=[])
+LOW = 0x00004000 if os.name == 'nt' else 0   # BELOW_NORMAL_PRIORITY_CLASS on Windows
+def save(): json.dump(rec, open(RECF + '.tmp', 'w'), indent=1); os.replace(RECF + '.tmp', RECF)
+def log(): return open(os.path.join(OD, 'log_%s.txt' % nm), 'a')
+def stage(name, d, out, cmds, merge=None):
+    """run cmds (list of (args, env)) in parallel unless d/out exists; then merge; one retry of the whole stage on a non-zero rc"""
+    if os.path.exists(os.path.join(d, out)): return
+    for attempt in (0, 1):
+        t = time.time(); L = log(); ps = [subprocess.Popen([PY] + a, env=dict(os.environ, **e), stdout=L, stderr=subprocess.STDOUT, creationflags=LOW) for a, e in cmds]
+        rcs = [p.wait() for p in ps]
+        if merge and not any(rcs): rcs.append(subprocess.call([PY] + merge, stdout=L, stderr=subprocess.STDOUT))
+        L.close(); ok = not any(rcs) and os.path.exists(os.path.join(d, out))
+        rec['stages'].append(dict(stage=name, dir=os.path.basename(d), processes=len(cmds), wall_s=round(time.time() - t, 1), rc=rcs, attempt=attempt, end=time.strftime('%Y-%m-%d %H:%M:%S')))
+        save()
+        if ok: return
+    raise SystemExit('stage %s failed twice in %s (see log)' % (name, d))
+def suite(d, art_dir, gate_sweep):
+    """EV, GT, SW (+ GS) of the artifact in art_dir, written to d"""
+    stage('gates', d, 'GT_%s.json' % nm, [([os.path.join(T, 'sa6_bake_gates.py'), nm, BD, art_dir, d], dict(GATES_SHARD='%d/%d' % (i, NSH), GATES_CKPT=os.path.join(d, 'GT_%s.s%dof%d.partial.json' % (nm, i, NSH))))
+                                          for i in range(NSH) if not os.path.exists(os.path.join(d, 'GT_%s.s%dof%d.json' % (nm, i, NSH)))], [os.path.join(T, 'sa6_bake_gates_merge.py'), nm, d, str(NSH)])
+    stage('sweep', d, 'SW_%s.json' % nm, [([os.path.join(T, 'sa6_bake_sweep.py'), nm, BD, art_dir, d], dict(SWEEP_SET='all', SWEEP_STEP_OTHER='0.125', SWEEP_SHARD='%d/%d' % (i, NSH)))
+                                          for i in range(NSH) if not os.path.exists(os.path.join(d, 'SW_%s.s%dof%d.json' % (nm, i, NSH)))], [os.path.join(T, 'sa6_bake_sweep_merge.py'), nm, d, str(NSH)])
+    if gate_sweep:
+        gd = os.path.join(d, 'gate_sweep'); os.makedirs(gd, exist_ok=True); n = min(NSH, len(gate_sweep))
+        grid = ','.join('%.3f' % (k * 0.025) for k in range(1, 41))
+        stage('gate_sweep', gd, 'GT_%s.json' % nm, [([os.path.join(T, 'sa6_bake_gates.py'), nm, BD, art_dir, gd], dict(GATES_ONLY=','.join(gate_sweep), GATES_FRACS=grid, GATES_TRANSITIONS='1',
+                                          GATES_SHARD='%d/%d' % (i, n), GATES_CKPT=os.path.join(gd, 'GT_%s.s%dof%d.partial.json' % (nm, i, n)))) for i in range(n)
+                                          if not os.path.exists(os.path.join(gd, 'GT_%s.s%dof%d.json' % (nm, i, n)))], [os.path.join(T, 'sa6_bake_gates_merge.py'), nm, gd, str(n)])
+def bad(row): return row['rig_flips'] or row['rig_pen'] or row['rig_tears'] or not row['volume_ok']
+def failures(d, gate_sweep):
+    """every failing (pose, fraction): anatomical poses by name, special gates as 'gate:<pose>'; plus non-sample failures (rigid / neutral)"""
+    f = {}; other = []
+    ev = json.load(open(os.path.join(d, 'EV_%s.json' % nm)))
+    for pn, rows in ev['poses'].items():
+        for fr, r in rows.items():
+            if bad(r['bake']): f.setdefault(pn, set()).add(round(float(fr), 5))
+            if r['bake'].get('rigid_max_cm', 0) > 0.05: other.append(('rigid', pn, fr))
+    nb = ev['neutral_max_displacement_cm'].get('bake', 0) if isinstance(ev['neutral_max_displacement_cm'], dict) else ev['neutral_max_displacement_cm']
+    if nb: other.append(('neutral', nb))
+    for g in [os.path.join(d, 'GT_%s.json' % nm)] + ([os.path.join(d, 'gate_sweep', 'GT_%s.json' % nm)] if gate_sweep else []):
+        gt = json.load(open(g))
+        for pn, rows in gt['poses'].items():
+            for fr, r in rows.items():
+                if bad(r['bake']): f.setdefault('gate:' + pn, set()).add(round(float(fr), 5))
+                if r['bake'].get('rigid_max_cm', 0) > 0.05: other.append(('rigid', 'gate:' + pn, fr))
+        if gt['neutral_bake_max_displacement_cm']: other.append(('neutral', gt['neutral_bake_max_displacement_cm']))
+    sw = json.load(open(os.path.join(d, 'SW_%s.json' % nm)))
+    for pn, v in sw['poses'].items():
+        for g in v['gate_failures']: f.setdefault(pn, set()).add(round(float(g['frac']), 5))
+        if v['rigid_max_cm'] > 0.05: other.append(('rigid', pn, 'sweep'))
+    return {k: sorted(v) for k, v in f.items()}, other
+# --- unbaked reference (same suite, same body) ---
+ud = os.path.join(OD, 'unbaked'); os.makedirs(ud, exist_ok=True)
+for ext in ('.json', '.npz'):
+    src = os.path.join(UA, 'BK_%s%s' % (nm, ext))
+    if not os.path.exists(os.path.join(ud, os.path.basename(src))): shutil.copy(src, ud)
+stage('eval', ud, 'EV_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'eval', nm, BD, ud], {})]); suite(ud, ud, [])
+uf, uo = failures(ud, []); rec['unbaked'] = dict(failures=uf, other=uo, n_failing_samples=sum(len(v) for v in uf.values())); save()
+# --- bake + adaptive refits ---
+extra = {}; gs = []
+for it in range(MAXIT + 1):
+    d = os.path.join(OD, 'it%d' % it); os.makedirs(d, exist_ok=True)
+    env = {} if it == 0 else dict(BAKE_INIT=os.path.join(OD, 'it%d' % (it - 1), 'BK_%s.json' % nm), BAKE_EXTRA=os.path.join(d, 'extra.json'))
+    if it: json.dump(extra, open(os.path.join(d, 'extra.json'), 'w'), indent=1)
+    stage('fit', d, 'BK_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'fit', nm, BD, d], env)])
+    stage('eval', d, 'EV_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'eval', nm, BD, d], {})])
+    suite(d, d, gs)
+    f, other = failures(d, gs); bk = json.load(open(os.path.join(d, 'BK_%s.json' % nm)))
+    row = dict(it=it, clean=not f and not other, failures=f, other=other, n_failing_samples=sum(len(v) for v in f.values()), extra_samples=sum(len(v) for v in extra.values()),
+               gate_sweep_poses=list(gs), families=len(bk.get('families', {})), pose_keys=len(bk.get('pose_keys', {})), converged=bk.get('converged'), fit_timing=bk.get('timing'))
+    rec['iterations'] = [r for r in rec['iterations'] if r['it'] != it] + [row]; save()
+    print(time.strftime('%H:%M'), nm, 'it', it, 'clean', row['clean'], 'failing samples', row['n_failing_samples'], {k: len(v) for k, v in f.items()}, other, flush=True)
+    if row['clean'] or it == MAXIT: break
+    for pn, fs in f.items(): extra[pn] = sorted(set(extra.get(pn, [])) | set(fs))
+    gs = sorted({k[5:] for k in extra if k.startswith('gate:')})
+fd = os.path.join(OD, 'it%d' % rec['iterations'][-1]['it'])
+rec['final'] = dict(iteration=rec['iterations'][-1]['it'], dir=os.path.basename(fd), clean=rec['iterations'][-1]['clean'], remaining=rec['iterations'][-1]['failures'] if not rec['iterations'][-1]['clean'] else {})
+# --- final: integrity, RP5-literal diagnostics, before / after ---
+stage('integrity', fd, 'IN_%s.json' % nm, [([os.path.join(T, 'sa6_bake_integrity.py'), nm, BD, fd, fd], {})])
+rl = os.path.join(fd, 'rp5lit'); os.makedirs(rl, exist_ok=True)
+for ext in ('.json', '.npz'):
+    if not os.path.exists(os.path.join(rl, 'BK_%s%s' % (nm, ext))): shutil.copy(os.path.join(fd, 'BK_%s%s' % (nm, ext)), rl)
+stage('rp5lit', rl, 'EV_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'eval', nm, BD, rl], dict(EVAL_SUITE='rp5'))])
+stage('before_after', fd, 'BA_%s.json' % nm, [([os.path.join(T, 'sa6_bake_beforeafter.py'), nm, BD, ud, fd], {})])
+rec['integrity_clean'] = json.load(open(os.path.join(fd, 'IN_%s.json' % nm)))['clean']; rec['done'] = time.strftime('%Y-%m-%d %H:%M:%S'); save()
+print(time.strftime('%H:%M'), nm, 'FULL done: final it%d clean %s integrity %s' % (rec['final']['iteration'], rec['final']['clean'], rec['integrity_clean']), flush=True)

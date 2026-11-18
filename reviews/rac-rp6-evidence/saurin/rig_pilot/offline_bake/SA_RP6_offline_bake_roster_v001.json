@@ -1,0 +1,98 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "order": "reviews/chatgpt-rac-rp6-saurin-offline-bake-validation-order.md (8e3b7b4d)",
+ "recorded_utc": "2026-11-18T12:02:04Z",
+ "recorded_before_fitting": true,
+ "roster_authority": {
+  "approved_shipping_preset_roster": "NOT FOUND: no author-designated Saurin shipping preset roster exists in the repository (searched register/, reviews/, docs/ and the RP6 evidence for shipping / designated / approved preset rosters on 2026-11-18). FLAGGED for the author.",
+  "applied": "order 8e3b7b4d \u00a71 fallback: both base configurations + FAHI and MUFAHI (unit-influence accepted endpoints) as regression controls. Controls carry no shipping designation."
+ },
+ "bodies": [
+  {
+   "name": "BASE_c1",
+   "role": "base configuration c1 SA-M188 (shipping base per order 8e3b7b4d \u00a71)",
+   "recipe": {
+    "base_config": "M",
+    "state_weights": {},
+    "kind": "control: base c1 (zero state influence)"
+   },
+   "base": "c1 SA-M188",
+   "body_file_sha256": "f79dd9d2ff5d148a3413f057005591ad8d298e821214ebf7b8f37d83bde4950f",
+   "neutral_vertices_sha256": "172bc5554316de0a06f8be75228a24125baf2fa3729ca281a02704fce869a89d",
+   "pre_rig": {
+    "source_flipped": 1,
+    "source_collapsed": 0,
+    "neutral_cage_flips": 0,
+    "composition_quads": 7
+   }
+  },
+  {
+   "name": "BASE_c2",
+   "role": "base configuration c2 SA-F188 (shipping base per order 8e3b7b4d \u00a71)",
+   "recipe": {
+    "base_config": "F",
+    "state_weights": {},
+    "kind": "control: base c2 (zero state influence)"
+   },
+   "base": "c2 SA-F188",
+   "body_file_sha256": "0a8e8a8ddb29a9dd9d6196e191bc6311b5473f176ed8046b48e54dac6740ef77",
+   "neutral_vertices_sha256": "2d8b77ffd1cc4bc73782d03b24c12858c009b23caa1a87b46ff035d4178bdc45",
+   "pre_rig": {
+    "source_flipped": 1,
+    "source_collapsed": 0,
+    "neutral_cage_flips": 0,
+    "composition_quads": 7
+   }
+  },
+  {
+   "name": "END_FAHI",
+   "role": "regression control for the known endpoint failures (fallback roster; NO shipping designation)",
+   "recipe": {
+    "base_config": "M",
+    "state_weights": {
+     "FAHI": 1.0
+    },
+    "kind": "endpoint: accepted state at unit influence"
+   },
+   "base": "c1 SA-M188",
+   "body_file_sha256": "cfd4d76700b4e2ac3f1c08089c9efe65de2068b4295576d60a9d565eae23774f",
+   "neutral_vertices_sha256": "b7b7e98e6b4a6be34523c8a174d631062ffa27f74629e3ba64cc3a5bb721eba6",
+   "pre_rig": {
+    "source_flipped": 6675,
+    "source_collapsed": 282,
+    "neutral_cage_flips": 98,
+    "composition_quads": 787
+   }
+  },
+  {
+   "name": "END_MUFAHI",
+   "role": "regression control for the known endpoint failures (fallback roster; NO shipping designation)",
+   "recipe": {
+    "base_config": "M",
+    "state_weights": {
+     "MUFAHI": 1.0
+    },
+    "kind": "endpoint: accepted state at unit influence"
+   },
+   "base": "c1 SA-M188",
+   "body_file_sha256": "c4a9c82e3b790731debda80a81cfab409b8f2a907fc76ff32bce530ef4455eb0",
+   "neutral_vertices_sha256": "e7c59057225f86bc3c77440a5ce364dffc9763a2df46a723fbcd72be35adb0da",
+   "pre_rig": {
+    "source_flipped": 11201,
+    "source_collapsed": 629,
+    "neutral_cage_flips": 169,
+    "composition_quads": 1728
+   }
+  }
+ ],
+ "body_source": {
+  "file": "SA_RP6_blend_bodies_v001 bodies.json (layer validation order 3e76b509)",
+  "sha256": "e13b49ebf9ecdbcdfff03f495b158741b1c6161e77a36d42f971c70de081a519",
+  "method": "sa6_blend.py bodies: dense convex body blend on the canonical W2I6 face list, frozen embedding, joints re-derived on the body, base-configuration weights"
+ },
+ "initialisation": {
+  "package": "SA_RP6_creator_layers_v004.json",
+  "sha256": "95fb5d6baf9bc6a9e99d444af7738db73da2028faf53daba56864ef14fe333c1"
+ },
+ "rp5_workspace": "verified clean RP5 workspace (closure order 58aa486c; SA_W), frozen package hashes rechecked per body by sa6_bake_integrity.py"
+}

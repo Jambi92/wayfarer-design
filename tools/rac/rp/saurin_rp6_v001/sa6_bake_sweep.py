@@ -11,7 +11,9 @@
 import sys, os, json, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
-import sa6_blend as BL, sa6_layer_harness as H, sa6_correctives as CC
+import sa6_blend as BL, sa6_layer_harness as H, sa6_correctives as CC, time
+from sa6_bake import peak_mb
+t_start = time.time()
 nm, BD, AD, OD = sys.argv[1:5]; os.makedirs(OD, exist_ok=True); art = os.path.join(AD, 'BK_%s.json' % nm)
 b = json.load(open(os.path.join(BD, 'bodies.json')))['bodies'][nm]; R, z = BL.rig_of(nm, b, BD); K = CC.Correctives.load(R, art)
 P0 = H.Blend(H.load_base(R, b['cfg']), [(w, H.load_state(R, s)[0]) for s, w in b['w'].items()]); suite = R.suite('anat')
@@ -59,7 +61,7 @@ for pn in poses[si::sn]:
     json.dump(out, open(PART, 'w'))
     print(nm, pn, len(fr), 'samples, gate failures', len(bad), 'rate max %.4f median %.4f cm/deg' % (mx[0], med), flush=True)
 if SH:
-    out['shard'] = SH; out['shard_poses'] = poses[si::sn]; out['all_poses'] = poses
+    out['shard'] = SH; out['shard_poses'] = poses[si::sn]; out['all_poses'] = poses; out['seconds'] = round(time.time() - t_start, 1); out['peak_mb'] = round(peak_mb(), 1)
     json.dump(out, open(os.path.join(OD, 'SW_%s%s.json' % (nm, tag)), 'w')); os.path.exists(PART) and os.remove(PART); print(nm, 'shard', SH, 'done', flush=True); sys.exit(0)
-out['clean'] = all(not v['gate_failures'] and v['rigid_max_cm'] <= 0.05 for v in out['poses'].values())
+out['clean'] = all(not v['gate_failures'] and v['rigid_max_cm'] <= 0.05 for v in out['poses'].values()); out['seconds'] = round(time.time() - t_start, 1); out['peak_mb'] = round(peak_mb(), 1)
 json.dump(out, open(os.path.join(OD, 'SW_%s.json' % nm), 'w'), indent=1); os.path.exists(PART) and os.remove(PART); print(nm, 'SWEEP clean', out['clean'], 'poses', len(poses), flush=True)

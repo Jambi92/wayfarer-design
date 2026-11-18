@@ -10,7 +10,8 @@ rows = {}
 for s in sh:
     for pn, v in s['poses'].items(): assert pn not in rows, 'pose in two shards: ' + pn; rows[pn] = v
 assert set(rows) == set(allp), 'missing poses: %s' % sorted(set(allp) - set(rows))
-out = {k: v for k, v in sh[0].items() if k not in ('poses', 'shard', 'shard_poses', 'all_poses')}
+out = {k: v for k, v in sh[0].items() if k not in ('poses', 'shard', 'shard_poses', 'all_poses', 'seconds', 'peak_mb')}
+out['seconds_per_shard'] = [s.get('seconds') for s in sh]; out['peak_mb'] = max((s.get('peak_mb') or 0) for s in sh)
 out['poses'] = {pn: rows[pn] for pn in allp}; out['sharded'] = '%d shards (SWEEP_SHARD), merged by sa6_bake_sweep_merge.py' % n
 out['clean'] = all(not v['gate_failures'] and v['rigid_max_cm'] <= 0.05 for v in out['poses'].values())
 json.dump(out, open(os.path.join(OD, 'SW_%s.json' % nm), 'w'), indent=1)

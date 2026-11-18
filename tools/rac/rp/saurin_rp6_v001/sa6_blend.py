@@ -86,7 +86,7 @@ def evaluate(nm, b, BD, fracs=FRACS, poses=None, bake=None):
     T0 = R.pose([]); neutral = dict(base=float(np.abs(Bc.delta(T0)).max()), states={s: float(np.abs(c.delta(T0)).max()) for (s, _), (_, c) in zip(b['w'].items(), Ss)}, blend=float(np.abs(Pc.delta(T0)).max()))
     if bake: neutral['bake'] = float(np.abs(Pc.delta(T0) + Kb.delta(T0)).max())
     prot = rigid_ids(b['cfg']); res = dict(name=nm, status=ST, body=b, neutral_max_displacement_cm=neutral, poses={}); tot = dict(rig_flips=0, rig_pen=0, rig_tears=0, vol_fail=0, comp=0, base_rig=0, lbs_rig=0, rigid_max_cm=0.0)
-    suite = R.suite('anat')
+    suite = R.suite(os.environ.get('EVAL_SUITE', 'anat'))   # EVAL_SUITE=rp5: the RP5-literal definitions (diagnostics only; gates are defined on 'anat')
     for pn, spec in suite.items():
         if poses and pn not in poses: continue
         vol = not any('jaw' in e[0] for e in spec); res['poses'][pn] = {}
