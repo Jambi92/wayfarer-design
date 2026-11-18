@@ -60,6 +60,19 @@ if __name__ == '__main__':
             c = json.load(open(os.path.join(OD, 'ckpt', 'BK_%s.json' % nm))); c.update(ck_round=0, ck_next=0, ck_tot=0, ck_fit_seconds=j['timing']['fit_s']); json.dump(c, open(os.path.join(OD, 'ckpt', 'BK_%s.json' % nm), 'w'))
             print(nm, 'RETRY from unconverged artifact', flush=True)
     t0 = time.time(); R, z = BL.rig_of(nm, b, BD); R.rest_inverted = z['rest_inverted']; PF.mask_composition(R, z['comp'])
+    if os.environ.get('BAKE_GATE_ALIGNED_ALLOW') == '1':
+        # Fit allowance aligned to the gate's ownership rule (sa6_blend.evaluate): a composition-zone fold / contact that plain LBS of the pose shows is ignored by
+        # the fit ONLY if it also lies within 1.0 cm of a pre-rig defect point (the evaluator's 'near' test); elsewhere it is a rig defect the fit must repair.
+        # The default allowance (composition zone & LBS) is wider than the gate, so a contact 1.0-1.5 cm from the pre-rig points could pass the fit and fail
+        # the gate (END_MUFAHI trunk_twist_30 vertex 4524 at 1.40 cm, offline bake order 8e3b7b4d).  Gates unchanged; the fit only becomes stricter.
+        from scipy.spatial import cKDTree
+        _kd = cKDTree(z['pts']) if len(z['pts']) else None
+        _nv = (_kd.query(R.V)[0] <= 1.0) if _kd is not None else np.zeros(R.nv, bool); _nq = (_kd.query(R.V[R.Q].mean(1))[0] <= 1.0) if _kd is not None else np.zeros(len(R.Q), bool)
+        _sp = PF.start_pose
+        def _start_pose(R_, Cs, spec, F_, w0_, S=None):
+            _sp(R_, Cs, spec, F_, w0_, S)
+            if hasattr(R_, '_allow_v'): R_._allow_v = R_._allow_v & _nv; R_._allow_q = (R_._allow_q & _nq) | R_.rest_inverted
+        PF.start_pose = _start_pose
     Bc = H.load_base(R, b['cfg']); P0 = H.Blend(Bc, [(w, H.load_state(R, s)[0]) for s, w in b['w'].items()]); ck = OD + '/ckpt/BK_%s.json' % nm
     ini = os.environ.get('BAKE_INIT', '')      # adaptive pass: start from an earlier artifact of this body (its keys kept, refined)
     K = CC.Correctives.load(R, ck) if os.path.exists(ck) else (CC.Correctives.load(R, ini) if ini else CC.Correctives(R)); P = BakeProxy(P0, K); t_setup = time.time() - t0
