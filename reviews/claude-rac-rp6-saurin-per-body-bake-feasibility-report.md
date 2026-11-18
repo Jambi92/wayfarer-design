@@ -187,9 +187,9 @@ The other renders are pass-3 between-angle cases.
 **Tail kink ratio: 2.26–3.28. This one needs a decision.**
 - The rig-pilot report states kink ≤ 2.51. The pilot's own audit file reaches 3.07 on `tail_down_60` (c1 and c2), so that bound was never met as written.
 - On the blended bodies, 96 of 198 tail rows exceed 2.51, and 9 exceed 3.07.
-- In all 9 rows above 3.07, LBS exceeds 3.07 as well. On 8 of them the bake adds nothing to the tail. On the ninth (BK-X3 `tail_combined`) the bake slightly *lowers* the kink: 3.284 against LBS 3.324.
+- In all 9 rows above 3.07, LBS exceeds 3.07 as well, and the bake adds nothing to the tail (K = 0 on all 9), so baked equals the packaged blend there. *(Corrected 2026-11-18: an earlier version of this line credited the bake with lowering BK-X3 `tail_combined`. The packaged blend lowers it: 3.284 against LBS 3.324. On T80 `tail_combined` the packaged blend raises it: 3.28 against LBS 3.249.)*
 - Kink is therefore a property of the skinning or the body geometry, not of the bake. It is recorded and not used as a pass/fail gate here.
-- Where K is active on a tail pose, it raises kink above LBS by at most 0.035 (FAHI@0.625 `tail_down_60`: 2.945 against 2.91).
+- On tail poses where K is active, baked kink exceeds LBS by at most 0.035 (FAHI@0.625 `tail_down_60`: 2.945 against 2.91). That comparison mixes the packaged blend with K, and K there is at most 0.00008 cm, so the difference comes from the packaged blend, not the bake. *(Corrected 2026-11-18.)* The offline-bake order's calibration (`claude-rac-rp6-saurin-offline-bake-validation-report.md`) separates the two.
 
 ## 7. Controls and endpoint recheck (PC)
 
