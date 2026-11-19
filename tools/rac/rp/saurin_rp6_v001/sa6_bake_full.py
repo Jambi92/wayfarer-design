@@ -100,7 +100,7 @@ if os.environ.get('BAKE_SEED_EXTRA'):
 for it in range(MAXIT + 1):
     d = os.path.join(OD, 'it%d' % it); os.makedirs(d, exist_ok=True)
     env = {} if it == 0 else dict(BAKE_INIT=os.path.join(OD, 'it%d' % (it - 1), 'BK_%s.json' % nm), BAKE_EXTRA=os.path.join(d, 'extra.json'))
-    if it: json.dump(extra, open(os.path.join(d, 'extra.json'), 'w'), indent=1)
+    if it and not os.path.exists(os.path.join(d, 'BK_%s.json' % nm)): json.dump(extra, open(os.path.join(d, 'extra.json'), 'w'), indent=1)   # a resumed iteration keeps its record
     stage('fit', d, 'BK_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'fit', nm, BD, d], env)])
     stage('eval', d, 'EV_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'eval', nm, BD, d], {})])
     suite(d, d, gs)
