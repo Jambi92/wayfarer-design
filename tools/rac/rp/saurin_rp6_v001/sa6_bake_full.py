@@ -9,6 +9,9 @@
 #                      SW  full-suite sweep: 0.025 on heavy-joint + K poses, 0.125 elsewhere, +-0.25 deg at every bake and packaged-blend transition (sharded)
 #                      GS  every special-gate pose that ever entered the fit: 0.025 grid + +-0.25 deg at its transitions (sa6_bake_gates.py GATES_TRANSITIONS, sharded)
 #                      MO  motion: every anatomical pose played on a 1/240 grid + transitions, frame excursion vs max(0.50 cm, packaged blend) (sharded)
+#                      DS  (BAKE_DENSE=1, run only once every stage above is clean) dense between-sample audit, sa6_bake_dense.py: the sweep's dense pose set
+#                          on a 0.0025 grid; its failing fractions are refit samples like any other (added after pass 2: END_MUFAHI leaked between 0.025 samples)
+#                    BAKE_SEED_EXTRA=<json>: extra fit samples merged in before the first refit (e.g. a dense audit of an earlier run).
 #                    Stop when all are clean, or after MAXIT refits (remaining failures are reported exactly).
 #   Final: IN (RP5 / package integrity, sa6_bake_integrity.py), RL (RP5-literal diagnostics, EVAL_SUITE=rp5, not gates), BA (before / after at the same body,
 #   pose and fraction for every unbaked failure, sa6_bake_beforeafter.py).  Record -> OUTDIR/FULL_<NAME>.json (stages, wall seconds, rc, peak MB, retries).
@@ -17,6 +20,7 @@ T = os.path.dirname(os.path.abspath(__file__)); PY = sys.executable
 nm, BD, UA, OD = sys.argv[1:5]; MAXIT = int(sys.argv[5]) if len(sys.argv) > 5 else 3; NSH = int(sys.argv[6]) if len(sys.argv) > 6 else 4
 os.makedirs(OD, exist_ok=True); RECF = os.path.join(OD, 'FULL_%s.json' % nm)
 rec = json.load(open(RECF)) if os.path.exists(RECF) else dict(name=nm, status='RP6 RIG PILOT / NOT FROZEN', shards=NSH, max_refits=MAXIT, stages=[], iterations=[])
+DENSE = os.environ.get('BAKE_DENSE', '0') == '1'      # DS stage (sa6_bake_dense.py), off by default so pass-2 runs reproduce exactly
 MOTION = os.environ.get('BAKE_MOTION', '1') == '1'   # MO stage (sa6_bake_motion.py): frame-excursion motion gate, added after the first offline pass
 LOW = 0x00004000 if os.name == 'nt' else 0   # BELOW_NORMAL_PRIORITY_CLASS on Windows
 def save(): json.dump(rec, open(RECF + '.tmp', 'w'), indent=1); os.replace(RECF + '.tmp', RECF)
@@ -74,7 +78,14 @@ def failures(d, gate_sweep):
     if os.path.exists(mo):
         for pn, v in json.load(open(mo))['poses'].items():
             if not v['pass']: other.append(('motion', pn, v['bake']['frame_excursion_cm'], v['limit_cm']))
+    ds = os.path.join(d, 'DS_%s.json' % nm)
+    if os.path.exists(ds):
+        for pn, v in json.load(open(ds))['poses'].items():
+            for fr in v['bake_failing']: f.setdefault(pn, set()).add(round(float(fr), 5))
     return {k: sorted(v) for k, v in f.items()}, other
+def dense(d, art_dir):
+    stage('dense', d, 'DS_%s.json' % nm, [([os.path.join(T, 'sa6_bake_dense.py'), nm, BD, art_dir, d], dict(DENSE_SHARD='%d/%d' % (i, NSH))) for i in range(NSH)],
+          [os.path.join(T, 'sa6_bake_dense.py'), '--merge', nm, d])
 # --- unbaked reference (same suite, same body) ---
 ud = os.path.join(OD, 'unbaked'); os.makedirs(ud, exist_ok=True)
 for ext in ('.json', '.npz'):
@@ -84,6 +95,8 @@ stage('eval', ud, 'EV_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'eval', 
 uf, uo = failures(ud, []); rec['unbaked'] = dict(failures=uf, other=uo, n_failing_samples=sum(len(v) for v in uf.values())); save()
 # --- bake + adaptive refits ---
 extra = {}; gs = []
+if os.environ.get('BAKE_SEED_EXTRA'):
+    extra = {k: sorted(set(v)) for k, v in json.load(open(os.environ['BAKE_SEED_EXTRA'])).items()}; gs = sorted({k[5:] for k in extra if k.startswith('gate:')})
 for it in range(MAXIT + 1):
     d = os.path.join(OD, 'it%d' % it); os.makedirs(d, exist_ok=True)
     env = {} if it == 0 else dict(BAKE_INIT=os.path.join(OD, 'it%d' % (it - 1), 'BK_%s.json' % nm), BAKE_EXTRA=os.path.join(d, 'extra.json'))
@@ -91,7 +104,9 @@ for it in range(MAXIT + 1):
     stage('fit', d, 'BK_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'fit', nm, BD, d], env)])
     stage('eval', d, 'EV_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'eval', nm, BD, d], {})])
     suite(d, d, gs)
-    f, other = failures(d, gs); bk = json.load(open(os.path.join(d, 'BK_%s.json' % nm)))
+    f, other = failures(d, gs)
+    if DENSE and not f and not other: dense(d, d); f, other = failures(d, gs)
+    bk = json.load(open(os.path.join(d, 'BK_%s.json' % nm)))
     row = dict(it=it, clean=not f and not other, failures=f, other=other, n_failing_samples=sum(len(v) for v in f.values()), extra_samples=sum(len(v) for v in extra.values()),
                gate_sweep_poses=list(gs), families=len(bk.get('families', {})), pose_keys=len(bk.get('pose_keys', {})), converged=bk.get('converged'), fit_timing=bk.get('timing'))
     rec['iterations'] = [r for r in rec['iterations'] if r['it'] != it] + [row]; save()

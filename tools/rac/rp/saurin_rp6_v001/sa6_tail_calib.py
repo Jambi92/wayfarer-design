@@ -48,7 +48,11 @@ res = dict(status='RP6 RIG PILOT / NOT FROZEN', name=nm, artifact=(os.path.join(
            body_sha256=C.sha(os.path.join(BD, nm + '.npz')), definition='sa6_eval.gate_metrics tail kink (11-junction window, th > 0.2 deg), 181 frozen rings', fractions=FR,
            neutral=dict(turning_deg=[round(float(x), 4) for x in th0], kink_max=measure(R.V)[0]['kink_max'], turning_max_deg=round(float(th0.max()), 4)),
            joints={tb: boundary_ for tb, boundary_ in ((tb, int(np.linalg.norm(c0 - JH[tb], axis=1).argmin())) for tb in TB)}, poses={})
+if os.path.exists(OUT + '.partial'):                       # resume (container restarts): keep finished poses of the same artifact / body
+    _p = json.load(open(OUT + '.partial'))
+    if _p.get('artifact_sha256') == res['artifact_sha256'] and _p.get('body_sha256') == res['body_sha256']: res['poses'] = _p['poses']
 for pn in poses:
+    if pn in res['poses']: continue
     spec = GP[pn]; res['poses'][pn] = {}
     for col in ('lbs', 'prod') + (('bake',) if K else ()):
         rows = {}; worst = None; worst2 = None

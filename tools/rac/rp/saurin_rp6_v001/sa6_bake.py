@@ -20,6 +20,11 @@ STEP = min(abs(a - b) for a in FRACS + (0.0,) for b in FRACS + (0.0,) if a != b)
 # 0.025 or 0.25 deg apart, so their tents became 0.25-1.75 deg wide and a 0.2-1.8 cm key switched on inside one 30 fps frame (a pop in motion; offline bake
 # order 8e3b7b4d, END_FAHI / END_MUFAHI).  With a floor the key ramps over at least MINW x full angle; neighbouring keys may overlap (Gauss-Seidel rounds settle it).
 PK_MINW = float(os.environ.get('BAKE_PK_MINW', '0'))
+# BAKE_PEN_MARGIN (cm, default 0 = off): the FIT also treats a vertex as in contact when the point MARGIN OUTSIDE its surface lies inside the body (and did not
+# at rest) -- a clearance; gates unchanged (PEN_TOL 0.02 cm inside).  Without clearance, adjacent adaptive samples 0.25 deg apart
+# (END_MUFAHI trunk_twist_30 0.58333 / 0.59167, offline bake pass 2) ping-pong: each solve clears its own sample exactly and leaves the neighbour 1 vertex in.
+PEN_MARGIN = float(os.environ.get('BAKE_PEN_MARGIN', '0'))
+ONLY = set(x for x in os.environ.get('BAKE_ONLY_POSES', '').split(',') if x)     # experiments: restrict the fit to these poses (never set for a bake)
 def peak_mb():
     """peak resident memory of this process (MB): getrusage on Linux, PeakWorkingSetSize on Windows"""
     try:
@@ -82,6 +87,15 @@ if __name__ == '__main__':
     K = CC.Correctives.load(R, ck) if os.path.exists(ck) else (CC.Correctives.load(R, ini) if ini else CC.Correctives(R)); P = BakeProxy(P0, K); t_setup = time.time() - t0
     Sv = CC.Solver(R); Sv.V0 = Sv.body_volume(R.V); Sv.protect = Sv.protect | BL.rigid_ids(b['cfg'])
     F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F); PS = R.suite('anat')
+    if PEN_MARGIN:      # clearance: also a contact when the point MARGIN OUTSIDE the vertex lies inside the body (winding > 0.5) where it does not at rest
+        import igl
+        _raw = getattr(FT, '_pen_raw', FT.penetration)
+        def _out(P_, F_): return igl.fast_winding_number(P_, F_, P_ + PEN_MARGIN * igl.per_vertex_normals(P_, F_))
+        _w0m = _out(R.V, F)
+        def _pen_margin(R_, P_, F_, w0_): return _raw(R_, P_, F_, w0_) | ((_out(P_, F_) > 0.5) & (_w0m < 0.5))
+        if hasattr(FT, '_pen_raw'): FT._pen_raw = _pen_margin
+        else: FT.penetration = _pen_margin
+    if ONLY: PS = {k: v for k, v in PS.items() if k in ONLY}
     order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k]))); log, r0, i0, tot0, el0 = [], 0, 0, 0, 0.0
     if os.path.exists(ck):
         m = json.load(open(ck)); log, r0, i0, tot0, el0 = m['fit_log'], m['ck_round'], m['ck_next'], m['ck_tot'], m.get('ck_fit_seconds', 0.0); print(nm, 'resume round', r0, 'item', i0, flush=True)
@@ -91,6 +105,7 @@ if __name__ == '__main__':
         for k in EXTRA:
             if k.startswith('gate:'): PS[k] = GP[k[5:]]
         order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k])))
+    if ONLY: order = [k for k in order if k in ONLY]
     items = [(pn, fr) for pn in order for fr in sorted(set(FRACS) | set(EXTRA.get(pn, [])), reverse=True)]
     for pn in order:
         fs = sorted(set(FRACS) | set(EXTRA.get(pn, [])) | {0.0})
@@ -121,7 +136,7 @@ if __name__ == '__main__':
                      body_vs_sha256=body_sha(BD, nm), body_json_sha256=b.get('sha256'), initialised_from=dict(layers=H.LAYERS, layers_sha256=C.sha(pk),
                      base='SA_RP6_correctives_v002.json', base_arrays_sha256={c: C.sha(os.path.join(H.PKG, 'SA_RP6_correctives_%s_v001.npz' % c)) for c in 'MF'}),
                      semantics='baked(T) = packaged blend(T) + K(T); K = pose-driven corrective set on this exact body (0 at neutral)',
-                     converged=bool(tot == 0), bake_fracs=list(FRACS), adaptive_samples=EXTRA, initialised_from_artifact=ini or None, rounds_entering=n_entering, fit_log=log,
+                     converged=bool(tot == 0), bake_fracs=list(FRACS), pk_min_width=PK_MINW, pen_margin_cm=PEN_MARGIN, only_poses=sorted(ONLY) or None, adaptive_samples=EXTRA, initialised_from_artifact=ini or None, rounds_entering=n_entering, fit_log=log,
                      timing=dict(setup_s=round(t_setup, 1), fit_s=round(t_fit, 1), peak_mb=round(peak_mb(), 1), host=platform.node(), cpu=platform.processor(), os=platform.platform(), cpus_used=1,
                                  threads=os.environ.get('OMP_NUM_THREADS'))))
     t_write = time.time() - t2
