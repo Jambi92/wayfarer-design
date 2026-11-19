@@ -1,0 +1,28 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "name": "SA_RP6_control_END_MUFAHI",
+ "body": "END_MUFAHI",
+ "recipe": {
+  "base_config": "M",
+  "weights": {
+   "MUFAHI": 1.0
+  },
+  "kind": "endpoint: accepted state at unit influence",
+  "geometry": "sa6_blend dense convex body blend (bodies.json method), frozen barycentric cage embedding, RP6 joints recomputed on the body, base-config weights"
+ },
+ "initialised_from": {
+  "layers": "SA_RP6_creator_layers_v004.json",
+  "layers_sha256": "95fb5d6baf9bc6a9e99d444af7738db73da2028faf53daba56864ef14fe333c1",
+  "base": "SA_RP6_correctives_v002.json",
+  "base_arrays_sha256": {
+   "M": "9ed2428ebc8aeca225363d9098374db1fa42a7a6a8924bccfa6549c92d4aa78b",
+   "F": "3dda48178d4764e6f437b0fafea89cb8119bee612d3450871f96874b86d7e260"
+  }
+ },
+ "semantics": "CONTROL: empty K -> baked(T) == packaged blend v004(T) (base control / accepted endpoint unchanged)",
+ "converged": true,
+ "fit_log": [],
+ "families": [],
+ "pose_keys": [],
+ "recipe_note": "recipe metadata corrected from bodies.json before the control sweep (earlier copy carried the F-N@0.25 recipe by mistake; K is empty, geometry comes from bodies.json, so no result changes)"
+}
