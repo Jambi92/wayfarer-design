@@ -10,8 +10,12 @@
 #   REVISED 2026-11-19 (after END_FAHI pass 2): the comparison above ties the bake to the packaged blend at 1e-4 cm wherever the blend's own steady ramp is
 #   above 0.50 cm per frame (END_FAHI hip_flex70_xpos: blend 0.6183, bake 0.6198 at the same frame and vertex; the bake's own share is 0.002 cm, a K that is
 #   fading out).  So the bake's OWN excursion is also measured: 'k' = frame excursion of (bake rel - prod rel), i.e. of the posed corrective K alone.
-#   PASS if bake <= max(0.50 cm, prod)  OR  k <= 0.05 cm (the RP6 rigid-gate resolution: the bake adds under half a millimetre in any frame).
-#   'pass_original' keeps the first rule's verdict.
+#   The rule is also made LOCAL: the first rule compares two maxima that may sit at different vertices / frames (a bake pop at one place could hide behind a
+#   larger blend ramp elsewhere, and a blend ramp at one place ties the bake there at 1e-4 cm).  Revised gate, per frame pair (f, g) and per vertex v:
+#     e_bake(f, g, v) <= max(0.50 cm, e_prod(f, g, v) + 0.05 cm)       (0.05 cm = the RP6 rigid-gate resolution)
+#   i.e. above the 0.50 cm cap the bake may add at most half a millimetre to what the packaged blend itself does at that place and frame.
+#   Recorded: 'local' (worst excess over the allowance, with frame / vertex / region), 'k' (the bake's own excursion, bake rel - prod rel, diagnostic),
+#   'pass_original' (first rule).  'pass' = local rule.
 #   Stateless evaluator: reverse playback equals forward.  MOTION_SHARD='i/n' -> poses[i::n] (merge with --merge).  -> OUTDIR/MO_<NAME>.json
 import sys, os, json, time, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -35,8 +39,9 @@ SH = os.environ.get('MOTION_SHARD'); si, sn = (int(x) for x in SH.split('/')) if
 OUT = os.path.join(OD, 'MO_%s%s.json' % (nm, tag))
 out = json.load(open(OUT)) if os.path.exists(OUT) else dict(status='RP6 RIG PILOT / NOT FROZEN', name=nm, artifact=os.path.basename(art),
     gate=dict(measure='frame excursion: max_f max_{f<g<=f+1/30} max_v |rel(g)-rel(f)|, rel = corrected - plain LBS (posed), cm', frame='1/30 of the full angle',
-              grid='1/%d of the full angle + every driver transition' % GRID, pass_rule='bake <= max(%.2f cm, prod on the same pose) or k (bake - prod) <= %.2f cm' % (CAP, KCAP)), poses={})
-for pn in sorted(suite)[si::sn]:
+              grid='1/%d of the full angle + every driver transition' % GRID, pass_rule='per frame pair and vertex: bake <= max(%.2f cm, prod + %.2f cm); pass_original: max bake <= max(%.2f, max prod)' % (CAP, KCAP, CAP)), poses={})
+ONLY = [x for x in os.environ.get('MOTION_ONLY', '').split(',') if x]
+for pn in [p_ for p_ in sorted(suite) if not ONLY or p_ in ONLY][si::sn]:
     if pn in out['poses']: continue
     t0 = time.time(); spec = suite[pn]; T1 = R.pose(spec); full = max(abs(dg) for _, _, _, dg in spec); fr = set(np.round(np.arange(0, 1.0 + 1e-9, 1.0 / GRID), 6))
     for f in FAM:
@@ -64,8 +69,18 @@ for pn in sorted(suite)[si::sn]:
         res[c] = dict(frame_excursion_cm=round(best[0], 4), at=[float(FR[best[1]]), float(FR[best[2]])], at_deg=[round(float(FR[best[1]] * full), 2), round(float(FR[best[2]] * full), 2)],
                       vertex=v, region=str(R.ql[np.nonzero((R.Q == v).any(1))[0][0]]))
     lim = max(CAP, res['prod']['frame_excursion_cm']); res['limit_cm'] = round(lim, 4); res['pass_original'] = bool(res['bake']['frame_excursion_cm'] <= lim + 1e-6)
-    res['pass'] = res['pass_original'] or bool(res['k']['frame_excursion_cm'] <= KCAP + 1e-6)
+    Ab, Ap = rel['bake'], rel['prod']; worst = (-1e9, 0, 0, 0, 0.0, 0.0)
+    for i in range(len(FR)):
+        j = i + 1
+        while j < len(FR) and FR[j] - FR[i] <= FRAME + 1e-9:
+            eb = np.linalg.norm(Ab[j] - Ab[i], axis=1); ep = np.linalg.norm(Ap[j] - Ap[i], axis=1); x = eb - np.maximum(CAP, ep + KCAP); v = int(x.argmax())
+            if x[v] > worst[0]: worst = (float(x[v]), i, j, v, float(eb[v]), float(ep[v]))
+            j += 1
+    x, i, j, v, eb, ep = worst
+    res['local'] = dict(worst_excess_cm=round(x, 4), bake_cm=round(eb, 4), prod_cm=round(ep, 4), allowance_cm=round(max(CAP, ep + KCAP), 4), at=[float(FR[i]), float(FR[j])],
+                        at_deg=[round(float(FR[i] * full), 2), round(float(FR[j] * full), 2)], vertex=v, region=str(R.ql[np.nonzero((R.Q == v).any(1))[0][0]]))
+    res['pass'] = bool(x <= 1e-6)
     res['seconds'] = round(time.time() - t0, 1); out['poses'][pn] = res; json.dump(out, open(OUT, 'w'), indent=1)
-    print('%s %-24s %s prod %.3f bake %.3f k %.4f cm/frame (limit %.3f / k %.2f) K %.3f | %d samples %.0fs %.0f MB' % (nm, pn, 'PASS' if res['pass'] else 'FAIL', res['prod']['frame_excursion_cm'],
-          res['bake']['frame_excursion_cm'], res['k']['frame_excursion_cm'], lim, KCAP, kact, len(FR), res['seconds'], peak_mb()), flush=True)
+    print('%s %-24s %s prod %.3f bake %.3f k %.4f cm/frame (orig limit %.3f %s) local excess %.4f K %.3f | %d samples %.0fs %.0f MB' % (nm, pn, 'PASS' if res['pass'] else 'FAIL', res['prod']['frame_excursion_cm'],
+          res['bake']['frame_excursion_cm'], res['k']['frame_excursion_cm'], lim, 'pass' if res['pass_original'] else 'FAIL', res['local']['worst_excess_cm'], kact, len(FR), res['seconds'], peak_mb()), flush=True)
 out['seconds'] = round(time.time() - t_all, 1); out['peak_mb'] = round(peak_mb(), 1); json.dump(out, open(OUT, 'w'), indent=1)
