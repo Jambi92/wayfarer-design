@@ -1,0 +1,49 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "name": "END_MUFAHI",
+ "artifact": "BK_END_MUFAHI.json",
+ "gate": {
+  "measure": "frame excursion: max_f max_{f<g<=f+1/30} max_v |rel(g)-rel(f)|, rel = corrected - plain LBS (posed), cm",
+  "frame": "1/30 of the full angle",
+  "grid": "1/240 of the full angle + every driver transition",
+  "pass_rule": "bake <= max(0.50 cm, prod on the same pose)"
+ },
+ "poses": {
+  "lower_axial_flex_25": {
+   "n_samples": 241,
+   "full_deg": 25.0,
+   "k_max_cm": 2.44255,
+   "prod": {
+    "frame_excursion_cm": 0.3582,
+    "at": [
+     0.75,
+     0.783333
+    ],
+    "at_deg": [
+     18.75,
+     19.58
+    ],
+    "vertex": 33092,
+    "region": "pelvis"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.664,
+    "at": [
+     0.925,
+     0.95
+    ],
+    "at_deg": [
+     23.12,
+     23.75
+    ],
+    "vertex": 33087,
+    "region": "pelvis"
+   },
+   "limit_cm": 0.5,
+   "pass": false,
+   "seconds": 128.0
+  }
+ },
+ "seconds": 128.4,
+ "peak_mb": 1962.5
+}
