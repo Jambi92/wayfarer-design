@@ -5,7 +5,7 @@
 #   plain-LBS surface in posed space, for the packaged blend v004 ('prod') and, with ARTDIR, the baked artifact; plus the rest-space corrective rate and the
 #   vertex / region where each peaks.  A pop = a narrow spike of relative speed; a smooth ramp = a broad rise.  extra_travel_per_30fps_frame = peak relative
 #   speed x (full angle / 30), i.e. the corrective's own surface motion in one frame when the full move takes 1 s.  The neighbouring sweep metric
-#   (peak / median over the dense playback) is recorded too.  -> OUTDIR/MR_<NAME>_<POSE>.json + .png (curves + filmstrip of the joint region at the peak).
+#   (peak / median over the dense playback) is recorded too, and frame_window = the EXACT relative travel over one 30 fps frame (max over the mesh).  -> OUTDIR/MR_<NAME>_<POSE>.json + .png (curves + filmstrip of the joint region at the peak).
 import sys, os, json, numpy as np, matplotlib
 matplotlib.use('Agg'); import matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -24,8 +24,11 @@ def frame(f):
         d = dP + (K.delta(T) if c == 'bake' else 0); o[c] = (R.skin(T, R.V + d) - L, d)
     return L, o
 rv = {c: [] for c in cols}; rvv = {c: [] for c in cols}; cr = {c: [] for c in cols}; crv = {c: [] for c in cols}; prev = None
+W = max(1, int(round((full / 30.0) / deg))); hist = []; fw = {c: [] for c in cols}   # exact relative travel over one 30 fps frame window (W steps)
 for f in FR:
-    L, o = frame(f)
+    L, o = frame(f); hist.append({c: o[c][0] for c in cols}); hist = hist[-(W + 1):]
+    if len(hist) == W + 1:
+        for c in cols: fw[c].append(float(np.linalg.norm(hist[-1][c] - hist[0][c], axis=1).max()))
     if prev is not None:
         for c in cols:
             dv = np.linalg.norm(o[c][0] - prev[c][0], axis=1); dc = np.linalg.norm(o[c][1] - prev[c][1], axis=1)
@@ -40,6 +43,9 @@ for c in cols:
         relative_speed=dict(peak_cm_per_deg=round(float(a.max()), 5), at=[float(FR[k]), float(FR[k + 1])], at_deg=[round(float(FR[k] * full), 2), round(float(FR[k + 1] * full), 2)],
                             vertex=rvv[c][k], region=region(rvv[c][k]), median_cm_per_deg=round(med, 5), peak_over_median=round(float(a.max() / max(med, 1e-9)), 3),
                             extra_travel_per_30fps_frame_cm=round(float(a.max()) * full / 30.0, 4), note='30 fps frame = the full %.0f deg move in 1 s (%.2f deg / frame)' % (full, full / 30.0)),
+        frame_window=dict(steps=W, deg=round(W * deg, 4), max_relative_travel_cm=round(max(fw[c]) if fw[c] else float('nan'), 4),
+                          at=(float(FR[int(np.argmax(fw[c]))]) if fw[c] else None), median_relative_travel_cm=round(float(np.median(fw[c])) if fw[c] else float('nan'), 4),
+                          note='max over the mesh of |relative(f + one frame) - relative(f)|, exact, one frame = full angle / 30'),
         corrective_rate_peak=dict(value=round(float(q.max()), 5), at=[float(FR[kq]), float(FR[kq + 1])], vertex=crv[c][kq], region=region(crv[c][kq]), median=round(float(np.median(q)), 5)))
 json.dump(out, open(os.path.join(OD, 'MR_%s_%s.json' % (nm, pn)), 'w'), indent=1)
 c = cols[-1]; pk = out['columns'][c]['relative_speed']; vi = pk['vertex']; ks = int(np.searchsorted(FR, pk['at'][0]))

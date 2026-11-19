@@ -8,7 +8,8 @@
 #                      GT  50 special gates x 4 fractions + neutral (sa6_bake_gates.py, sharded)
 #                      SW  full-suite sweep: 0.025 on heavy-joint + K poses, 0.125 elsewhere, +-0.25 deg at every bake and packaged-blend transition (sharded)
 #                      GS  every special-gate pose that ever entered the fit: 0.025 grid + +-0.25 deg at its transitions (sa6_bake_gates.py GATES_TRANSITIONS, sharded)
-#                    Stop when all four are clean, or after MAXIT refits (remaining failures are reported exactly).
+#                      MO  motion: every anatomical pose played on a 1/240 grid + transitions, frame excursion vs max(0.50 cm, packaged blend) (sharded)
+#                    Stop when all are clean, or after MAXIT refits (remaining failures are reported exactly).
 #   Final: IN (RP5 / package integrity, sa6_bake_integrity.py), RL (RP5-literal diagnostics, EVAL_SUITE=rp5, not gates), BA (before / after at the same body,
 #   pose and fraction for every unbaked failure, sa6_bake_beforeafter.py).  Record -> OUTDIR/FULL_<NAME>.json (stages, wall seconds, rc, peak MB, retries).
 import sys, os, json, time, shutil, subprocess
@@ -16,6 +17,7 @@ T = os.path.dirname(os.path.abspath(__file__)); PY = sys.executable
 nm, BD, UA, OD = sys.argv[1:5]; MAXIT = int(sys.argv[5]) if len(sys.argv) > 5 else 3; NSH = int(sys.argv[6]) if len(sys.argv) > 6 else 4
 os.makedirs(OD, exist_ok=True); RECF = os.path.join(OD, 'FULL_%s.json' % nm)
 rec = json.load(open(RECF)) if os.path.exists(RECF) else dict(name=nm, status='RP6 RIG PILOT / NOT FROZEN', shards=NSH, max_refits=MAXIT, stages=[], iterations=[])
+MOTION = os.environ.get('BAKE_MOTION', '1') == '1'   # MO stage (sa6_bake_motion.py): frame-excursion motion gate, added after the first offline pass
 LOW = 0x00004000 if os.name == 'nt' else 0   # BELOW_NORMAL_PRIORITY_CLASS on Windows
 def save(): json.dump(rec, open(RECF + '.tmp', 'w'), indent=1); os.replace(RECF + '.tmp', RECF)
 def log(): return open(os.path.join(OD, 'log_%s.txt' % nm), 'a')
@@ -31,8 +33,8 @@ def stage(name, d, out, cmds, merge=None):
         save()
         if ok: return
     raise SystemExit('stage %s failed twice in %s (see log)' % (name, d))
-def suite(d, art_dir, gate_sweep):
-    """EV, GT, SW (+ GS) of the artifact in art_dir, written to d"""
+def suite(d, art_dir, gate_sweep, motion=True):
+    """EV, GT, SW (+ GS) (+ MO) of the artifact in art_dir, written to d"""
     stage('gates', d, 'GT_%s.json' % nm, [([os.path.join(T, 'sa6_bake_gates.py'), nm, BD, art_dir, d], dict(GATES_SHARD='%d/%d' % (i, NSH), GATES_CKPT=os.path.join(d, 'GT_%s.s%dof%d.partial.json' % (nm, i, NSH))))
                                           for i in range(NSH) if not os.path.exists(os.path.join(d, 'GT_%s.s%dof%d.json' % (nm, i, NSH)))], [os.path.join(T, 'sa6_bake_gates_merge.py'), nm, d, str(NSH)])
     stage('sweep', d, 'SW_%s.json' % nm, [([os.path.join(T, 'sa6_bake_sweep.py'), nm, BD, art_dir, d], dict(SWEEP_SET='all', SWEEP_STEP_OTHER='0.125', SWEEP_SHARD='%d/%d' % (i, NSH)))
@@ -43,6 +45,9 @@ def suite(d, art_dir, gate_sweep):
         stage('gate_sweep', gd, 'GT_%s.json' % nm, [([os.path.join(T, 'sa6_bake_gates.py'), nm, BD, art_dir, gd], dict(GATES_ONLY=','.join(gate_sweep), GATES_FRACS=grid, GATES_TRANSITIONS='1',
                                           GATES_SHARD='%d/%d' % (i, n), GATES_CKPT=os.path.join(gd, 'GT_%s.s%dof%d.partial.json' % (nm, i, n)))) for i in range(n)
                                           if not os.path.exists(os.path.join(gd, 'GT_%s.s%dof%d.json' % (nm, i, n)))], [os.path.join(T, 'sa6_bake_gates_merge.py'), nm, gd, str(n)])
+    if motion and MOTION:
+        stage('motion', d, 'MO_%s.json' % nm, [([os.path.join(T, 'sa6_bake_motion.py'), nm, BD, art_dir, d], dict(MOTION_SHARD='%d/%d' % (i, NSH))) for i in range(NSH)],
+              [os.path.join(T, 'sa6_bake_motion.py'), '--merge', nm, d])
 def bad(row): return row['rig_flips'] or row['rig_pen'] or row['rig_tears'] or not row['volume_ok']
 def failures(d, gate_sweep):
     """every failing (pose, fraction): anatomical poses by name, special gates as 'gate:<pose>'; plus non-sample failures (rigid / neutral)"""
@@ -65,13 +70,17 @@ def failures(d, gate_sweep):
     for pn, v in sw['poses'].items():
         for g in v['gate_failures']: f.setdefault(pn, set()).add(round(float(g['frac']), 5))
         if v['rigid_max_cm'] > 0.05: other.append(('rigid', pn, 'sweep'))
+    mo = os.path.join(d, 'MO_%s.json' % nm)      # motion pops are not fixed by more samples: reported as 'other' (the iteration is not clean)
+    if os.path.exists(mo):
+        for pn, v in json.load(open(mo))['poses'].items():
+            if not v['pass']: other.append(('motion', pn, v['bake']['frame_excursion_cm'], v['limit_cm']))
     return {k: sorted(v) for k, v in f.items()}, other
 # --- unbaked reference (same suite, same body) ---
 ud = os.path.join(OD, 'unbaked'); os.makedirs(ud, exist_ok=True)
 for ext in ('.json', '.npz'):
     src = os.path.join(UA, 'BK_%s%s' % (nm, ext))
     if not os.path.exists(os.path.join(ud, os.path.basename(src))): shutil.copy(src, ud)
-stage('eval', ud, 'EV_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'eval', nm, BD, ud], {})]); suite(ud, ud, [])
+stage('eval', ud, 'EV_%s.json' % nm, [([os.path.join(T, 'sa6_bake.py'), 'eval', nm, BD, ud], {})]); suite(ud, ud, [], motion=False)
 uf, uo = failures(ud, []); rec['unbaked'] = dict(failures=uf, other=uo, n_failing_samples=sum(len(v) for v in uf.values())); save()
 # --- bake + adaptive refits ---
 extra = {}; gs = []
@@ -87,7 +96,7 @@ for it in range(MAXIT + 1):
                gate_sweep_poses=list(gs), families=len(bk.get('families', {})), pose_keys=len(bk.get('pose_keys', {})), converged=bk.get('converged'), fit_timing=bk.get('timing'))
     rec['iterations'] = [r for r in rec['iterations'] if r['it'] != it] + [row]; save()
     print(time.strftime('%H:%M'), nm, 'it', it, 'clean', row['clean'], 'failing samples', row['n_failing_samples'], {k: len(v) for k, v in f.items()}, other, flush=True)
-    if row['clean'] or it == MAXIT: break
+    if row['clean'] or it == MAXIT or not f: break      # nothing a refit sample could address (e.g. only motion / rigid): stop and report
     for pn, fs in f.items(): extra[pn] = sorted(set(extra.get(pn, [])) | set(fs))
     gs = sorted({k[5:] for k in extra if k.startswith('gate:')})
 fd = os.path.join(OD, 'it%d' % rec['iterations'][-1]['it'])

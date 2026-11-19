@@ -16,6 +16,10 @@ import sa6_common as C, sa6_correctives as CC, sa6_fit as FT, sa6_pd2_fit as PF,
 ROUNDS = int(os.environ.get('ROUNDS', 8));   # early exit on the first clean round; 8 allows Gauss-Seidel trades between fractions to settle
 FRACS = tuple(float(x) for x in os.environ.get('BAKE_FRACS', '1.0,0.75,0.5,0.25').split(','))   # bake angle fractions (uniform spacing)
 STEP = min(abs(a - b) for a in FRACS + (0.0,) for b in FRACS + (0.0,) if a != b); GAPS = {}
+# BAKE_PK_MINW (fraction of the pose's full angle, default 0 = off): minimum half-width of a fraction pose-key tent.  Adaptive samples from the dense sweep sit
+# 0.025 or 0.25 deg apart, so their tents became 0.25-1.75 deg wide and a 0.2-1.8 cm key switched on inside one 30 fps frame (a pop in motion; offline bake
+# order 8e3b7b4d, END_FAHI / END_MUFAHI).  With a floor the key ramps over at least MINW x full angle; neighbouring keys may overlap (Gauss-Seidel rounds settle it).
+PK_MINW = float(os.environ.get('BAKE_PK_MINW', '0'))
 def peak_mb():
     """peak resident memory of this process (MB): getrusage on Linux, PeakWorkingSetSize on Windows"""
     try:
@@ -39,7 +43,7 @@ class BakeProxy:
         made the 75 % and 100 % fixes of hip_flex70 undo each other round after round)"""
         new = name not in self.K.PK; self.K.add_pose_key(name, drivers, idx, dd)
         if new and os.environ.get('BAKE_PK_TENT', 'fraction') == 'fraction' and '@' in name:
-            pn_, fr = name.rsplit('@', 1); fr = float(fr); gap = GAPS.get((pn_, round(fr, 4)), STEP)
+            pn_, fr = name.rsplit('@', 1); fr = float(fr); gap = max(GAPS.get((pn_, round(fr, 4)), STEP), PK_MINW)
             self.K.PK[name]['width'] = [abs(s_) * gap / fr for _, _, s_ in self.K.PK[name]['drivers']]
 def body_sha(BD, nm): return hashlib.sha256(np.ascontiguousarray(np.load(os.path.join(BD, nm + '.npz'))['Vs']).tobytes()).hexdigest()
 if __name__ == '__main__':
