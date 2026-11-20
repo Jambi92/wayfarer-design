@@ -1,0 +1,1210 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "name": "END_FAHI",
+ "artifact": "BK_END_FAHI.json",
+ "gate": {
+  "measure": "frame excursion: max_f max_{f<g<=f+1/30} max_v |rel(g)-rel(f)|, rel = corrected - plain LBS (posed), cm",
+  "frame": "1/30 of the full angle",
+  "grid": "1/240 of the full angle + every driver transition",
+  "pass_rule": "bake <= max(0.50 cm, prod on the same pose)"
+ },
+ "poses": {
+  "ankle_dorsi20_xneg": {
+   "n_samples": 241,
+   "full_deg": 20.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0198,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     0.67
+    ],
+    "vertex": 76799,
+    "region": "ankle"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0198,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     0.67
+    ],
+    "vertex": 76799,
+    "region": "ankle"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.2
+  },
+  "grasp_xneg": {
+   "n_samples": 241,
+   "full_deg": 50.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0174,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     48.33,
+     50.0
+    ],
+    "vertex": 82808,
+    "region": "finger"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0174,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     48.33,
+     50.0
+    ],
+    "vertex": 82808,
+    "region": "finger"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.9
+  },
+  "neck_flex_30": {
+   "n_samples": 241,
+   "full_deg": 30.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0172,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.0
+    ],
+    "vertex": 4028,
+    "region": "neck"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0172,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.0
+    ],
+    "vertex": 4028,
+    "region": "neck"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 144.1
+  },
+  "tail_root_lateral_30": {
+   "n_samples": 241,
+   "full_deg": 30.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0927,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.0
+    ],
+    "vertex": 21047,
+    "region": "pelvis"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0927,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.0
+    ],
+    "vertex": 21047,
+    "region": "pelvis"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 144.1
+  },
+  "toe_flex30_xpos": {
+   "n_samples": 241,
+   "full_deg": 30.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0636,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     29.0,
+     30.0
+    ],
+    "vertex": 116881,
+    "region": "forefoot"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0636,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     29.0,
+     30.0
+    ],
+    "vertex": 116881,
+    "region": "forefoot"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 101.3
+  },
+  "ankle_dorsi20_xpos": {
+   "n_samples": 241,
+   "full_deg": 20.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0206,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     0.67
+    ],
+    "vertex": 151038,
+    "region": "ankle"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0206,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     0.67
+    ],
+    "vertex": 151038,
+    "region": "ankle"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 144.1
+  },
+  "grasp_xpos": {
+   "n_samples": 241,
+   "full_deg": 50.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0153,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     48.33,
+     50.0
+    ],
+    "vertex": 155657,
+    "region": "finger"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0153,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     48.33,
+     50.0
+    ],
+    "vertex": 155657,
+    "region": "finger"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.8
+  },
+  "neck_rot_40": {
+   "n_samples": 241,
+   "full_deg": 40.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.1242,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     38.67,
+     40.0
+    ],
+    "vertex": 20026,
+    "region": "trunk"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.1242,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     38.67,
+     40.0
+    ],
+    "vertex": 20026,
+    "region": "trunk"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.4
+  },
+  "tail_root_vertical_25": {
+   "n_samples": 241,
+   "full_deg": 25.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0971,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     24.17,
+     25.0
+    ],
+    "vertex": 175503,
+    "region": "tail"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0971,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     24.17,
+     25.0
+    ],
+    "vertex": 175503,
+    "region": "tail"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.6
+  },
+  "trunk_twist_30": {
+   "n_samples": 241,
+   "full_deg": 30.0,
+   "k_max_cm": 0.54977,
+   "prod": {
+    "frame_excursion_cm": 0.2166,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     15.0,
+     16.0
+    ],
+    "vertex": 50226,
+    "region": "pelvis"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.2166,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     15.0,
+     16.0
+    ],
+    "vertex": 50226,
+    "region": "pelvis"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 101.5
+  },
+  "elbow_130_xneg": {
+   "n_samples": 242,
+   "full_deg": 130.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.3944,
+    "at": [
+     0.691667,
+     0.725
+    ],
+    "at_deg": [
+     89.92,
+     94.25
+    ],
+    "vertex": 18694,
+    "region": "elbow"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.3944,
+    "at": [
+     0.691667,
+     0.725
+    ],
+    "at_deg": [
+     89.92,
+     94.25
+    ],
+    "vertex": 18694,
+    "region": "elbow"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 145.4
+  },
+  "hip_flex70_xneg": {
+   "n_samples": 241,
+   "full_deg": 70.0,
+   "k_max_cm": 0.16433,
+   "prod": {
+    "frame_excursion_cm": 0.4216,
+    "at": [
+     0.466667,
+     0.5
+    ],
+    "at_deg": [
+     32.67,
+     35.0
+    ],
+    "vertex": 17382,
+    "region": "thigh"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.4216,
+    "at": [
+     0.466667,
+     0.5
+    ],
+    "at_deg": [
+     32.67,
+     35.0
+    ],
+    "vertex": 17382,
+    "region": "thigh"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 144.5
+  },
+  "shoulder_abd45_xneg": {
+   "n_samples": 241,
+   "full_deg": 45.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0421,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.5
+    ],
+    "vertex": 54745,
+    "region": "shoulder"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0421,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.5
+    ],
+    "vertex": 54745,
+    "region": "shoulder"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 144.0
+  },
+  "tail_twist_30": {
+   "n_samples": 242,
+   "full_deg": 30.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.194,
+    "at": [
+     0.504167,
+     0.5375
+    ],
+    "at_deg": [
+     15.13,
+     16.12
+    ],
+    "vertex": 16536,
+    "region": "pelvis"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.194,
+    "at": [
+     0.504167,
+     0.5375
+    ],
+    "at_deg": [
+     15.13,
+     16.12
+    ],
+    "vertex": 16536,
+    "region": "pelvis"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 144.5
+  },
+  "elbow_130_xpos": {
+   "n_samples": 242,
+   "full_deg": 130.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.2478,
+    "at": [
+     0.904167,
+     0.9375
+    ],
+    "at_deg": [
+     117.54,
+     121.88
+    ],
+    "vertex": 36402,
+    "region": "upper_arm"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.2478,
+    "at": [
+     0.904167,
+     0.9375
+    ],
+    "at_deg": [
+     117.54,
+     121.88
+    ],
+    "vertex": 36402,
+    "region": "upper_arm"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.7
+  },
+  "hip_flex70_xpos": {
+   "n_samples": 241,
+   "full_deg": 70.0,
+   "k_max_cm": 1.53984,
+   "prod": {
+    "frame_excursion_cm": 0.6183,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     67.67,
+     70.0
+    ],
+    "vertex": 41489,
+    "region": "hip"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.6198,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     67.67,
+     70.0
+    ],
+    "vertex": 41489,
+    "region": "hip"
+   },
+   "limit_cm": 0.6183,
+   "pass": false,
+   "seconds": 143.1
+  },
+  "shoulder_abd45_xpos": {
+   "n_samples": 241,
+   "full_deg": 45.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.042,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.5
+    ],
+    "vertex": 14514,
+    "region": "shoulder"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.042,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.5
+    ],
+    "vertex": 14514,
+    "region": "shoulder"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.2
+  },
+  "thumb_opposition_xneg": {
+   "n_samples": 241,
+   "full_deg": 50.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0168,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     48.33,
+     50.0
+    ],
+    "vertex": 125836,
+    "region": "thumb"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0168,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     48.33,
+     50.0
+    ],
+    "vertex": 125836,
+    "region": "thumb"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.4
+  },
+  "elbow_90_xneg": {
+   "n_samples": 241,
+   "full_deg": 90.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0646,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     3.0
+    ],
+    "vertex": 25425,
+    "region": "elbow"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0646,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     3.0
+    ],
+    "vertex": 25425,
+    "region": "elbow"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 142.9
+  },
+  "jaw_open_20": {
+   "n_samples": 241,
+   "full_deg": 20.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0395,
+    "at": [
+     0.529167,
+     0.5625
+    ],
+    "at_deg": [
+     10.58,
+     11.25
+    ],
+    "vertex": 26247,
+    "region": "head"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0395,
+    "at": [
+     0.529167,
+     0.5625
+    ],
+    "at_deg": [
+     10.58,
+     11.25
+    ],
+    "vertex": 26247,
+    "region": "head"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 144.0
+  },
+  "shoulder_abd90_xneg": {
+   "n_samples": 241,
+   "full_deg": 90.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.5312,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     87.0,
+     90.0
+    ],
+    "vertex": 37024,
+    "region": "upper_arm"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.5312,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     87.0,
+     90.0
+    ],
+    "vertex": 37024,
+    "region": "upper_arm"
+   },
+   "limit_cm": 0.5312,
+   "pass": true,
+   "seconds": 143.4
+  },
+  "thumb_opposition_xpos": {
+   "n_samples": 241,
+   "full_deg": 50.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.016,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     48.33,
+     50.0
+    ],
+    "vertex": 146962,
+    "region": "thumb"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.016,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     48.33,
+     50.0
+    ],
+    "vertex": 146962,
+    "region": "thumb"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.4
+  },
+  "elbow_90_xpos": {
+   "n_samples": 241,
+   "full_deg": 90.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0567,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     3.0
+    ],
+    "vertex": 44625,
+    "region": "elbow"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0567,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     3.0
+    ],
+    "vertex": 44625,
+    "region": "elbow"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.6
+  },
+  "knee_90_xneg": {
+   "n_samples": 241,
+   "full_deg": 90.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.2181,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     87.0,
+     90.0
+    ],
+    "vertex": 51524,
+    "region": "shin"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.2181,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     87.0,
+     90.0
+    ],
+    "vertex": 51524,
+    "region": "shin"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.7
+  },
+  "shoulder_abd90_xpos": {
+   "n_samples": 241,
+   "full_deg": 90.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.3141,
+    "at": [
+     0.954167,
+     0.9875
+    ],
+    "at_deg": [
+     85.88,
+     88.88
+    ],
+    "vertex": 51125,
+    "region": "trunk"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.3141,
+    "at": [
+     0.954167,
+     0.9875
+    ],
+    "at_deg": [
+     85.88,
+     88.88
+    ],
+    "vertex": 51125,
+    "region": "trunk"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.1
+  },
+  "toe_ext30_xneg": {
+   "n_samples": 241,
+   "full_deg": 30.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0606,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     29.0,
+     30.0
+    ],
+    "vertex": 138999,
+    "region": "forefoot"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0606,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     29.0,
+     30.0
+    ],
+    "vertex": 138999,
+    "region": "forefoot"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.6
+  },
+  "fist_xneg": {
+   "n_samples": 242,
+   "full_deg": 95.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0636,
+    "at": [
+     0.716667,
+     0.75
+    ],
+    "at_deg": [
+     68.08,
+     71.25
+    ],
+    "vertex": 119776,
+    "region": "palm"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0636,
+    "at": [
+     0.716667,
+     0.75
+    ],
+    "at_deg": [
+     68.08,
+     71.25
+    ],
+    "vertex": 119776,
+    "region": "palm"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 145.2
+  },
+  "knee_90_xpos": {
+   "n_samples": 241,
+   "full_deg": 90.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.3702,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     87.0,
+     90.0
+    ],
+    "vertex": 33961,
+    "region": "shin"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.3702,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     87.0,
+     90.0
+    ],
+    "vertex": 33961,
+    "region": "shin"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.9
+  },
+  "shoulder_flex60_xneg": {
+   "n_samples": 241,
+   "full_deg": 60.0,
+   "k_max_cm": 1.29191,
+   "prod": {
+    "frame_excursion_cm": 0.1402,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     30.0,
+     32.0
+    ],
+    "vertex": 49164,
+    "region": "trunk"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.1471,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     30.0,
+     32.0
+    ],
+    "vertex": 58,
+    "region": "trunk"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 144.1
+  },
+  "toe_ext30_xpos": {
+   "n_samples": 241,
+   "full_deg": 30.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.058,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     29.0,
+     30.0
+    ],
+    "vertex": 137180,
+    "region": "forefoot"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.058,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     29.0,
+     30.0
+    ],
+    "vertex": 137180,
+    "region": "forefoot"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.3
+  },
+  "fist_xpos": {
+   "n_samples": 242,
+   "full_deg": 95.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0701,
+    "at": [
+     0.716667,
+     0.75
+    ],
+    "at_deg": [
+     68.08,
+     71.25
+    ],
+    "vertex": 119664,
+    "region": "wrist"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0701,
+    "at": [
+     0.716667,
+     0.75
+    ],
+    "at_deg": [
+     68.08,
+     71.25
+    ],
+    "vertex": 119664,
+    "region": "wrist"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 144.2
+  },
+  "lower_axial_flex_25": {
+   "n_samples": 241,
+   "full_deg": 25.0,
+   "k_max_cm": 0.18083,
+   "prod": {
+    "frame_excursion_cm": 0.0801,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     12.5,
+     13.33
+    ],
+    "vertex": 32977,
+    "region": "pelvis"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0801,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     12.5,
+     13.33
+    ],
+    "vertex": 32977,
+    "region": "pelvis"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.8
+  },
+  "shoulder_flex60_xpos": {
+   "n_samples": 241,
+   "full_deg": 60.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0438,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     30.0,
+     32.0
+    ],
+    "vertex": 4199,
+    "region": "trunk"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0438,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     30.0,
+     32.0
+    ],
+    "vertex": 4199,
+    "region": "trunk"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.2
+  },
+  "toe_flex30_xneg": {
+   "n_samples": 241,
+   "full_deg": 30.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.0759,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     29.0,
+     30.0
+    ],
+    "vertex": 138992,
+    "region": "forefoot"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0759,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     29.0,
+     30.0
+    ],
+    "vertex": 138992,
+    "region": "forefoot"
+   },
+   "limit_cm": 0.5,
+   "pass": true,
+   "seconds": 143.3
+  }
+ },
+ "seconds": 677.0,
+ "peak_mb": 1918.4,
+ "clean": false,
+ "failing": [
+  "hip_flex70_xpos"
+ ],
+ "worst": {
+  "pose": "hip_flex70_xpos",
+  "n_samples": 241,
+  "full_deg": 70.0,
+  "k_max_cm": 1.53984,
+  "prod": {
+   "frame_excursion_cm": 0.6183,
+   "at": [
+    0.966667,
+    1.0
+   ],
+   "at_deg": [
+    67.67,
+    70.0
+   ],
+   "vertex": 41489,
+   "region": "hip"
+  },
+  "bake": {
+   "frame_excursion_cm": 0.6198,
+   "at": [
+    0.966667,
+    1.0
+   ],
+   "at_deg": [
+    67.67,
+    70.0
+   ],
+   "vertex": 41489,
+   "region": "hip"
+  },
+  "limit_cm": 0.6183,
+  "pass": false,
+  "seconds": 143.1
+ }
+}

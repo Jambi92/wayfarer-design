@@ -1,0 +1,6320 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "order": "8e3b7b4d",
+ "roster": {
+  "status": "RP6 RIG PILOT / NOT FROZEN",
+  "order": "reviews/chatgpt-rac-rp6-saurin-offline-bake-validation-order.md (8e3b7b4d)",
+  "recorded_utc": "2026-11-18T12:02:04Z",
+  "recorded_before_fitting": true,
+  "roster_authority": {
+   "approved_shipping_preset_roster": "NOT FOUND: no author-designated Saurin shipping preset roster exists in the repository (searched register/, reviews/, docs/ and the RP6 evidence for shipping / designated / approved preset rosters on 2026-11-18). FLAGGED for the author.",
+   "applied": "order 8e3b7b4d \u00a71 fallback: both base configurations + FAHI and MUFAHI (unit-influence accepted endpoints) as regression controls. Controls carry no shipping designation."
+  },
+  "bodies": [
+   {
+    "name": "BASE_c1",
+    "role": "base configuration c1 SA-M188 (shipping base per order 8e3b7b4d \u00a71)",
+    "recipe": {
+     "base_config": "M",
+     "state_weights": {},
+     "kind": "control: base c1 (zero state influence)"
+    },
+    "base": "c1 SA-M188",
+    "body_file_sha256": "f79dd9d2ff5d148a3413f057005591ad8d298e821214ebf7b8f37d83bde4950f",
+    "neutral_vertices_sha256": "172bc5554316de0a06f8be75228a24125baf2fa3729ca281a02704fce869a89d",
+    "pre_rig": {
+     "source_flipped": 1,
+     "source_collapsed": 0,
+     "neutral_cage_flips": 0,
+     "composition_quads": 7
+    }
+   },
+   {
+    "name": "BASE_c2",
+    "role": "base configuration c2 SA-F188 (shipping base per order 8e3b7b4d \u00a71)",
+    "recipe": {
+     "base_config": "F",
+     "state_weights": {},
+     "kind": "control: base c2 (zero state influence)"
+    },
+    "base": "c2 SA-F188",
+    "body_file_sha256": "0a8e8a8ddb29a9dd9d6196e191bc6311b5473f176ed8046b48e54dac6740ef77",
+    "neutral_vertices_sha256": "2d8b77ffd1cc4bc73782d03b24c12858c009b23caa1a87b46ff035d4178bdc45",
+    "pre_rig": {
+     "source_flipped": 1,
+     "source_collapsed": 0,
+     "neutral_cage_flips": 0,
+     "composition_quads": 7
+    }
+   },
+   {
+    "name": "END_FAHI",
+    "role": "regression control for the known endpoint failures (fallback roster; NO shipping designation)",
+    "recipe": {
+     "base_config": "M",
+     "state_weights": {
+      "FAHI": 1.0
+     },
+     "kind": "endpoint: accepted state at unit influence"
+    },
+    "base": "c1 SA-M188",
+    "body_file_sha256": "cfd4d76700b4e2ac3f1c08089c9efe65de2068b4295576d60a9d565eae23774f",
+    "neutral_vertices_sha256": "b7b7e98e6b4a6be34523c8a174d631062ffa27f74629e3ba64cc3a5bb721eba6",
+    "pre_rig": {
+     "source_flipped": 6675,
+     "source_collapsed": 282,
+     "neutral_cage_flips": 98,
+     "composition_quads": 787
+    }
+   },
+   {
+    "name": "END_MUFAHI",
+    "role": "regression control for the known endpoint failures (fallback roster; NO shipping designation)",
+    "recipe": {
+     "base_config": "M",
+     "state_weights": {
+      "MUFAHI": 1.0
+     },
+     "kind": "endpoint: accepted state at unit influence"
+    },
+    "base": "c1 SA-M188",
+    "body_file_sha256": "c4a9c82e3b790731debda80a81cfab409b8f2a907fc76ff32bce530ef4455eb0",
+    "neutral_vertices_sha256": "e7c59057225f86bc3c77440a5ce364dffc9763a2df46a723fbcd72be35adb0da",
+    "pre_rig": {
+     "source_flipped": 11201,
+     "source_collapsed": 629,
+     "neutral_cage_flips": 169,
+     "composition_quads": 1728
+    }
+   }
+  ],
+  "body_source": {
+   "file": "SA_RP6_blend_bodies_v001 bodies.json (layer validation order 3e76b509)",
+   "sha256": "e13b49ebf9ecdbcdfff03f495b158741b1c6161e77a36d42f971c70de081a519",
+   "method": "sa6_blend.py bodies: dense convex body blend on the canonical W2I6 face list, frozen embedding, joints re-derived on the body, base-configuration weights"
+  },
+  "initialisation": {
+   "package": "SA_RP6_creator_layers_v004.json",
+   "sha256": "95fb5d6baf9bc6a9e99d444af7738db73da2028faf53daba56864ef14fe333c1"
+  },
+  "rp5_workspace": "verified clean RP5 workspace (closure order 58aa486c; SA_W), frozen package hashes rechecked per body by sa6_bake_integrity.py"
+ },
+ "bodies": {
+  "BASE_c1": {
+   "run": "out_v2",
+   "run_description": "pass 2 (pose-key floor 1/8)",
+   "recipe": {
+    "base_config": "M",
+    "weights": {},
+    "kind": "control: base c1 (zero state influence)",
+    "geometry": "sa6_blend dense convex body blend (bodies.json method), frozen barycentric cage embedding, RP6 joints recomputed on the body, base-config weights"
+   },
+   "final": {
+    "iteration": 1,
+    "dir": "it1",
+    "clean": true,
+    "remaining": {}
+   },
+   "done": "2026-11-18 21:37:16",
+   "unbaked": {
+    "failures": {
+     "shoulder_abd90_xneg": [
+      0.50278
+     ]
+    },
+    "other": [],
+    "n_failing_samples": 1
+   },
+   "iterations": [
+    {
+     "it": 0,
+     "clean": false,
+     "n_failing_samples": 1,
+     "failures": {
+      "shoulder_abd90_xneg": [
+       0.50278
+      ]
+     },
+     "other": [],
+     "extra_samples": 0,
+     "gate_sweep_poses": [],
+     "families": 0,
+     "pose_keys": 0,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 0.3,
+      "fit_s": 448.9,
+      "peak_mb": 832.0,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.11
+     }
+    },
+    {
+     "it": 1,
+     "clean": true,
+     "n_failing_samples": 0,
+     "failures": {},
+     "other": [],
+     "extra_samples": 1,
+     "gate_sweep_poses": [],
+     "families": 1,
+     "pose_keys": 1,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 0.4,
+      "fit_s": 1333.4,
+      "peak_mb": 1213.2,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.06
+     }
+    }
+   ],
+   "final_gates": {
+    "eval": {
+     "clean": true,
+     "totals": {
+      "rig_flips": 0,
+      "rig_pen": 0,
+      "rig_tears": 0,
+      "vol_fail": 0,
+      "comp": 0,
+      "base_rig": 0,
+      "lbs_rig": 4796,
+      "rigid_max_cm": 0.0,
+      "blend_rig": 0
+     },
+     "neutral": {
+      "base": 0.0,
+      "states": {},
+      "blend": 0.0,
+      "bake": 0.0
+     }
+    },
+    "special_gates": {
+     "clean": true,
+     "totals": {
+      "rig_flips": 0,
+      "rig_pen": 0,
+      "rig_tears": 0,
+      "vol_fail": 0,
+      "comp": 0,
+      "lbs_rig": 5044,
+      "rigid_max_cm": 0.0,
+      "poses_with_K": 0,
+      "k_max_cm": 0.0
+     }
+    },
+    "sweep": {
+     "clean": true,
+     "poses": 34,
+     "samples": 728,
+     "rate_ratio_max": 7.556145812119093
+    },
+    "gate_sweep": null
+   },
+   "dense": {
+    "source": "out_dense/v2/BASE_c1/DS_BASE_c1.json",
+    "clean": true,
+    "step": 0.0025,
+    "samples": 4030,
+    "bake_failing": 0,
+    "bake_added": 0,
+    "prod_failing": 1,
+    "poses": 10,
+    "failing": {}
+   },
+   "motion": {
+    "source": "out_mo/v2L/BASE_c1/MO_BASE_c1.json",
+    "rule": "per frame pair and vertex: bake <= max(0.50 cm, prod + 0.05 cm); pass_original: max bake <= max(0.50, max prod)",
+    "clean": true,
+    "failing": [],
+    "poses": 34,
+    "failing_original_rule": [],
+    "tightest": {
+     "pose": "shoulder_abd90_xneg",
+     "worst_excess_cm": -0.05,
+     "bake_cm": 0.4533,
+     "prod_cm": 0.4533,
+     "allowance_cm": 0.5033,
+     "at": [
+      0.8,
+      0.833333
+     ],
+     "at_deg": [
+      72.0,
+      75.0
+     ],
+     "vertex": 45100,
+     "region": "upper_arm"
+    },
+    "max_bake": [
+     "shoulder_abd90_xneg",
+     0.5096,
+     0.5096
+    ],
+    "max_k": [
+     "shoulder_abd90_xneg",
+     0.1744,
+     [
+      87.0,
+      90.0
+     ],
+     "upper_arm"
+    ],
+    "per_pose": {
+     "ankle_dorsi20_xneg": {
+      "prod": 0.0198,
+      "bake": 0.0198,
+      "k": 0.0,
+      "local_excess": -0.4802,
+      "passed": true,
+      "passed_original": true
+     },
+     "grasp_xneg": {
+      "prod": 0.0174,
+      "bake": 0.0174,
+      "k": 0.0,
+      "local_excess": -0.4826,
+      "passed": true,
+      "passed_original": true
+     },
+     "neck_flex_30": {
+      "prod": 0.0172,
+      "bake": 0.0172,
+      "k": 0.0,
+      "local_excess": -0.4828,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_root_lateral_30": {
+      "prod": 0.0927,
+      "bake": 0.0927,
+      "k": 0.0,
+      "local_excess": -0.4073,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_flex30_xpos": {
+      "prod": 0.0636,
+      "bake": 0.0636,
+      "k": 0.0,
+      "local_excess": -0.4364,
+      "passed": true,
+      "passed_original": true
+     },
+     "ankle_dorsi20_xpos": {
+      "prod": 0.0206,
+      "bake": 0.0206,
+      "k": 0.0,
+      "local_excess": -0.4794,
+      "passed": true,
+      "passed_original": true
+     },
+     "grasp_xpos": {
+      "prod": 0.0153,
+      "bake": 0.0153,
+      "k": 0.0,
+      "local_excess": -0.4847,
+      "passed": true,
+      "passed_original": true
+     },
+     "neck_rot_40": {
+      "prod": 0.1239,
+      "bake": 0.1239,
+      "k": 0.0,
+      "local_excess": -0.3761,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_root_vertical_25": {
+      "prod": 0.1007,
+      "bake": 0.1007,
+      "k": 0.0,
+      "local_excess": -0.3993,
+      "passed": true,
+      "passed_original": true
+     },
+     "trunk_twist_30": {
+      "prod": 0.1028,
+      "bake": 0.1028,
+      "k": 0.0,
+      "local_excess": -0.3972,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_130_xneg": {
+      "prod": 0.3944,
+      "bake": 0.3944,
+      "k": 0.0,
+      "local_excess": -0.1056,
+      "passed": true,
+      "passed_original": true
+     },
+     "hip_flex70_xneg": {
+      "prod": 0.2382,
+      "bake": 0.2382,
+      "k": 0.0,
+      "local_excess": -0.2618,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd45_xneg": {
+      "prod": 0.0306,
+      "bake": 0.0327,
+      "k": 0.0298,
+      "local_excess": -0.4673,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_twist_30": {
+      "prod": 0.0943,
+      "bake": 0.0943,
+      "k": 0.0,
+      "local_excess": -0.4057,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_130_xpos": {
+      "prod": 0.2478,
+      "bake": 0.2478,
+      "k": 0.0,
+      "local_excess": -0.2522,
+      "passed": true,
+      "passed_original": true
+     },
+     "hip_flex70_xpos": {
+      "prod": 0.3378,
+      "bake": 0.3378,
+      "k": 0.0,
+      "local_excess": -0.1622,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd45_xpos": {
+      "prod": 0.0242,
+      "bake": 0.0242,
+      "k": 0.0,
+      "local_excess": -0.4758,
+      "passed": true,
+      "passed_original": true
+     },
+     "thumb_opposition_xneg": {
+      "prod": 0.0168,
+      "bake": 0.0168,
+      "k": 0.0,
+      "local_excess": -0.4832,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_90_xneg": {
+      "prod": 0.0646,
+      "bake": 0.0646,
+      "k": 0.0,
+      "local_excess": -0.4354,
+      "passed": true,
+      "passed_original": true
+     },
+     "jaw_open_20": {
+      "prod": 0.0395,
+      "bake": 0.0395,
+      "k": 0.0,
+      "local_excess": -0.4605,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd90_xneg": {
+      "prod": 0.5096,
+      "bake": 0.5096,
+      "k": 0.1744,
+      "local_excess": -0.05,
+      "passed": true,
+      "passed_original": true
+     },
+     "thumb_opposition_xpos": {
+      "prod": 0.016,
+      "bake": 0.016,
+      "k": 0.0,
+      "local_excess": -0.484,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_90_xpos": {
+      "prod": 0.0567,
+      "bake": 0.0567,
+      "k": 0.0,
+      "local_excess": -0.4433,
+      "passed": true,
+      "passed_original": true
+     },
+     "knee_90_xneg": {
+      "prod": 0.1948,
+      "bake": 0.1948,
+      "k": 0.0,
+      "local_excess": -0.3052,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd90_xpos": {
+      "prod": 0.3132,
+      "bake": 0.3132,
+      "k": 0.0,
+      "local_excess": -0.1868,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_ext30_xneg": {
+      "prod": 0.0606,
+      "bake": 0.0606,
+      "k": 0.0,
+      "local_excess": -0.4394,
+      "passed": true,
+      "passed_original": true
+     },
+     "fist_xneg": {
+      "prod": 0.0636,
+      "bake": 0.0636,
+      "k": 0.0,
+      "local_excess": -0.4364,
+      "passed": true,
+      "passed_original": true
+     },
+     "knee_90_xpos": {
+      "prod": 0.2928,
+      "bake": 0.2928,
+      "k": 0.0,
+      "local_excess": -0.2072,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_flex60_xneg": {
+      "prod": 0.0202,
+      "bake": 0.0202,
+      "k": 0.0,
+      "local_excess": -0.4798,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_ext30_xpos": {
+      "prod": 0.058,
+      "bake": 0.058,
+      "k": 0.0,
+      "local_excess": -0.442,
+      "passed": true,
+      "passed_original": true
+     },
+     "fist_xpos": {
+      "prod": 0.0701,
+      "bake": 0.0701,
+      "k": 0.0,
+      "local_excess": -0.4299,
+      "passed": true,
+      "passed_original": true
+     },
+     "lower_axial_flex_25": {
+      "prod": 0.0638,
+      "bake": 0.0638,
+      "k": 0.0,
+      "local_excess": -0.4362,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_flex60_xpos": {
+      "prod": 0.0184,
+      "bake": 0.0184,
+      "k": 0.0,
+      "local_excess": -0.4816,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_flex30_xneg": {
+      "prod": 0.0759,
+      "bake": 0.0759,
+      "k": 0.0,
+      "local_excess": -0.4241,
+      "passed": true,
+      "passed_original": true
+     }
+    }
+   },
+   "integrity": {
+    "clean": true,
+    "checks": {
+     "frozen_files": true,
+     "topology": true,
+     "semantic": true,
+     "geometry": true,
+     "neutral": true
+    },
+    "frozen_files": {
+     "SA_RP5_full_cage_freeze_candidate_v001.npz": "match",
+     "SA_M_REF_RP5_freeze_candidate_v001.blend": "match",
+     "SA_F_REF_RP5_freeze_candidate_v001.blend": "match",
+     "SA_RP5_freeze_candidate_v001_barycentric_map.npz": "match",
+     "SA_RP5_freeze_candidate_v001_semantic_map.json": "match",
+     "SA_RP5_freeze_candidate_v001_face_semantic.npy": "match",
+     "SA_RP5_freeze_candidate_v001_T4_angle_residuals_ACCEPTED.csv": "match",
+     "SA_RP5_freeze_candidate_v001_T4_angle_residuals_ACCEPTED.json": "match",
+     "SA_RP5_freeze_candidate_v001_landmarks_SA-M188.json": "match",
+     "SA_RP5_freeze_candidate_v001_sidecar.json": "match",
+     "SA_RP5_freeze_candidate_v001_freeze_candidate_record.json": "match"
+    },
+    "neutral": {
+     "max_corrective_cm": 0.0,
+     "baked_vs_plain_lbs_neutral_cm": 0.0,
+     "plain_lbs_neutral_vs_body_cm": 7.962318136378599e-06
+    },
+    "ranges": {
+     "anat": "f30b10da6d949382a6f7ea9bce04111e32cf88a7335b06e87ac8d86c351abd6f",
+     "special_gates": "836f242c5ab1594c989e0bc12964ffdbb68c66538c16ec33f93e99ebe44d5cb9",
+     "rp5_literal": "6c6118e2836cba4d064f7765ee182d2e3fb69854469d3b2bfe1ff7d3c9e38354"
+    }
+   },
+   "before_after": {
+    "n": 1,
+    "before_failing": 1,
+    "after_failing": 0,
+    "rows": [
+     {
+      "kind": "anatomical",
+      "pose": "shoulder_abd90_xneg",
+      "frac": 0.50278,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 1,
+       "rig_tears": 0,
+       "dV_cm3": 2.31,
+       "volume_ok": true,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 0.0,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     }
+    ]
+   },
+   "rp5_literal": {
+    "clean_under_gates": false,
+    "totals": {
+     "rig_flips": 1500,
+     "rig_pen": 3670,
+     "rig_tears": 15,
+     "vol_fail": 10,
+     "comp": 0,
+     "base_rig": 5195,
+     "lbs_rig": 5531,
+     "rigid_max_cm": 0.0,
+     "blend_rig": 5195
+    },
+    "note": "RP5-literal definitions are diagnostics (the pilot retains them as records; gates are on the anatomical suite)"
+   },
+   "artifact": {
+    "json_sha256": "8ba88348d2d6f037441f363aa4ef4f12ece84e73dbf8b8d6f629758573c6b2b9",
+    "npz_sha256": "0e6a0197f578f681c91f76afbf9415d36f6e732a83fa684e487ba9c771634cc9",
+    "families": 1,
+    "pose_keys": 1,
+    "pose_key_widths_deg": {
+     "shoulder_abd90_xneg@1.0000": 22.5
+    }
+   },
+   "stage_seconds": {
+    "fit": 1793.3,
+    "eval": 1235.3,
+    "gates": 582.7,
+    "sweep": 5102.1,
+    "motion": 5131.4,
+    "integrity": 1.6,
+    "rp5lit": 664.8,
+    "before_after": 20.5
+   },
+   "stages": [
+    {
+     "stage": "fit",
+     "dir": "it0",
+     "processes": 1,
+     "wall_s": 453.8,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 17:42:39"
+    },
+    {
+     "stage": "eval",
+     "dir": "it0",
+     "processes": 1,
+     "wall_s": 615.8,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 17:52:54"
+    },
+    {
+     "stage": "gates",
+     "dir": "it0",
+     "processes": 4,
+     "wall_s": 330.3,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 17:58:25"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it0",
+     "processes": 4,
+     "wall_s": 3044.1,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 18:49:09"
+    },
+    {
+     "stage": "motion",
+     "dir": "it0",
+     "processes": 4,
+     "wall_s": 2685.6,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 19:33:54"
+    },
+    {
+     "stage": "fit",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 1339.5,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 19:56:14"
+    },
+    {
+     "stage": "eval",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 619.5,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 20:06:33"
+    },
+    {
+     "stage": "gates",
+     "dir": "it1",
+     "processes": 4,
+     "wall_s": 252.4,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 20:10:46"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it1",
+     "processes": 4,
+     "wall_s": 2058.0,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 20:45:04"
+    },
+    {
+     "stage": "motion",
+     "dir": "it1",
+     "processes": 4,
+     "wall_s": 2445.8,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 21:25:49"
+    },
+    {
+     "stage": "integrity",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 1.6,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 21:25:51"
+    },
+    {
+     "stage": "rp5lit",
+     "dir": "rp5lit",
+     "processes": 1,
+     "wall_s": 664.8,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 21:36:56"
+    },
+    {
+     "stage": "before_after",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 20.5,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 21:37:16"
+    }
+   ]
+  },
+  "BASE_c2": {
+   "run": "out_v2",
+   "run_description": "pass 2 (pose-key floor 1/8)",
+   "recipe": {
+    "base_config": "F",
+    "weights": {},
+    "kind": "control: base c2 (zero state influence)",
+    "geometry": "sa6_blend dense convex body blend (bodies.json method), frozen barycentric cage embedding, RP6 joints recomputed on the body, base-config weights"
+   },
+   "final": {
+    "iteration": 1,
+    "dir": "it1",
+    "clean": true,
+    "remaining": {}
+   },
+   "done": "2026-11-18 21:38:35",
+   "unbaked": {
+    "failures": {
+     "elbow_130_xneg": [
+      0.875
+     ]
+    },
+    "other": [],
+    "n_failing_samples": 1
+   },
+   "iterations": [
+    {
+     "it": 0,
+     "clean": false,
+     "n_failing_samples": 1,
+     "failures": {
+      "elbow_130_xneg": [
+       0.875
+      ]
+     },
+     "other": [],
+     "extra_samples": 0,
+     "gate_sweep_poses": [],
+     "families": 0,
+     "pose_keys": 0,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 0.3,
+      "fit_s": 449.4,
+      "peak_mb": 832.6,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.05
+     }
+    },
+    {
+     "it": 1,
+     "clean": true,
+     "n_failing_samples": 0,
+     "failures": {},
+     "other": [],
+     "extra_samples": 1,
+     "gate_sweep_poses": [],
+     "families": 1,
+     "pose_keys": 2,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 0.4,
+      "fit_s": 1340.3,
+      "peak_mb": 1214.0,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.08
+     }
+    }
+   ],
+   "final_gates": {
+    "eval": {
+     "clean": true,
+     "totals": {
+      "rig_flips": 0,
+      "rig_pen": 0,
+      "rig_tears": 0,
+      "vol_fail": 0,
+      "comp": 0,
+      "base_rig": 0,
+      "lbs_rig": 4790,
+      "rigid_max_cm": 0.0,
+      "blend_rig": 0
+     },
+     "neutral": {
+      "base": 0.0,
+      "states": {},
+      "blend": 0.0,
+      "bake": 0.0
+     }
+    },
+    "special_gates": {
+     "clean": true,
+     "totals": {
+      "rig_flips": 0,
+      "rig_pen": 0,
+      "rig_tears": 0,
+      "vol_fail": 0,
+      "comp": 0,
+      "lbs_rig": 5018,
+      "rigid_max_cm": 0.0,
+      "poses_with_K": 0,
+      "k_max_cm": 0.0
+     }
+    },
+    "sweep": {
+     "clean": true,
+     "poses": 34,
+     "samples": 798,
+     "rate_ratio_max": 6.844918722407781
+    },
+    "gate_sweep": null
+   },
+   "dense": {
+    "source": "out_dense/v2/BASE_c2/DS_BASE_c2.json",
+    "clean": true,
+    "step": 0.0025,
+    "samples": 4840,
+    "bake_failing": 0,
+    "bake_added": 0,
+    "prod_failing": 69,
+    "poses": 12,
+    "failing": {}
+   },
+   "motion": {
+    "source": "out_mo/v2L/BASE_c2/MO_BASE_c2.json",
+    "rule": "per frame pair and vertex: bake <= max(0.50 cm, prod + 0.05 cm); pass_original: max bake <= max(0.50, max prod)",
+    "clean": true,
+    "failing": [],
+    "poses": 34,
+    "failing_original_rule": [],
+    "tightest": {
+     "pose": "elbow_130_xneg",
+     "worst_excess_cm": -0.0733,
+     "bake_cm": 0.4267,
+     "prod_cm": 0.4267,
+     "allowance_cm": 0.5,
+     "at": [
+      0.691667,
+      0.725
+     ],
+     "at_deg": [
+      89.92,
+      94.25
+     ],
+     "vertex": 18694,
+     "region": "elbow"
+    },
+    "max_bake": [
+     "elbow_130_xneg",
+     0.4267,
+     0.4267
+    ],
+    "max_k": [
+     "elbow_130_xneg",
+     0.1652,
+     [
+      124.04,
+      128.38
+     ],
+     "upper_arm"
+    ],
+    "per_pose": {
+     "ankle_dorsi20_xneg": {
+      "prod": 0.021,
+      "bake": 0.021,
+      "k": 0.0,
+      "local_excess": -0.479,
+      "passed": true,
+      "passed_original": true
+     },
+     "grasp_xneg": {
+      "prod": 0.0172,
+      "bake": 0.0172,
+      "k": 0.0,
+      "local_excess": -0.4828,
+      "passed": true,
+      "passed_original": true
+     },
+     "neck_flex_30": {
+      "prod": 0.0187,
+      "bake": 0.0187,
+      "k": 0.0,
+      "local_excess": -0.4813,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_root_lateral_30": {
+      "prod": 0.0917,
+      "bake": 0.0917,
+      "k": 0.0,
+      "local_excess": -0.4083,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_flex30_xpos": {
+      "prod": 0.0628,
+      "bake": 0.0628,
+      "k": 0.0,
+      "local_excess": -0.4372,
+      "passed": true,
+      "passed_original": true
+     },
+     "ankle_dorsi20_xpos": {
+      "prod": 0.0202,
+      "bake": 0.0202,
+      "k": 0.0,
+      "local_excess": -0.4798,
+      "passed": true,
+      "passed_original": true
+     },
+     "grasp_xpos": {
+      "prod": 0.0151,
+      "bake": 0.0151,
+      "k": 0.0,
+      "local_excess": -0.4849,
+      "passed": true,
+      "passed_original": true
+     },
+     "neck_rot_40": {
+      "prod": 0.1276,
+      "bake": 0.1276,
+      "k": 0.0,
+      "local_excess": -0.3724,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_root_vertical_25": {
+      "prod": 0.1087,
+      "bake": 0.1087,
+      "k": 0.0,
+      "local_excess": -0.3913,
+      "passed": true,
+      "passed_original": true
+     },
+     "trunk_twist_30": {
+      "prod": 0.1068,
+      "bake": 0.1068,
+      "k": 0.0,
+      "local_excess": -0.3932,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_130_xneg": {
+      "prod": 0.4267,
+      "bake": 0.4267,
+      "k": 0.1652,
+      "local_excess": -0.0733,
+      "passed": true,
+      "passed_original": true
+     },
+     "hip_flex70_xneg": {
+      "prod": 0.2646,
+      "bake": 0.2646,
+      "k": 0.0,
+      "local_excess": -0.2354,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd45_xneg": {
+      "prod": 0.033,
+      "bake": 0.033,
+      "k": 0.0,
+      "local_excess": -0.467,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_twist_30": {
+      "prod": 0.0961,
+      "bake": 0.0961,
+      "k": 0.0,
+      "local_excess": -0.4039,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_130_xpos": {
+      "prod": 0.335,
+      "bake": 0.335,
+      "k": 0.0,
+      "local_excess": -0.165,
+      "passed": true,
+      "passed_original": true
+     },
+     "hip_flex70_xpos": {
+      "prod": 0.3535,
+      "bake": 0.3535,
+      "k": 0.0,
+      "local_excess": -0.1465,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd45_xpos": {
+      "prod": 0.0177,
+      "bake": 0.0177,
+      "k": 0.0,
+      "local_excess": -0.4823,
+      "passed": true,
+      "passed_original": true
+     },
+     "thumb_opposition_xneg": {
+      "prod": 0.0166,
+      "bake": 0.0166,
+      "k": 0.0,
+      "local_excess": -0.4834,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_90_xneg": {
+      "prod": 0.0672,
+      "bake": 0.0672,
+      "k": 0.0271,
+      "local_excess": -0.4328,
+      "passed": true,
+      "passed_original": true
+     },
+     "jaw_open_20": {
+      "prod": 0.0398,
+      "bake": 0.0398,
+      "k": 0.0,
+      "local_excess": -0.4602,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd90_xneg": {
+      "prod": 0.3053,
+      "bake": 0.3053,
+      "k": 0.0,
+      "local_excess": -0.1947,
+      "passed": true,
+      "passed_original": true
+     },
+     "thumb_opposition_xpos": {
+      "prod": 0.0158,
+      "bake": 0.0158,
+      "k": 0.0,
+      "local_excess": -0.4842,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_90_xpos": {
+      "prod": 0.0552,
+      "bake": 0.0552,
+      "k": 0.0,
+      "local_excess": -0.4448,
+      "passed": true,
+      "passed_original": true
+     },
+     "knee_90_xneg": {
+      "prod": 0.1924,
+      "bake": 0.1924,
+      "k": 0.0,
+      "local_excess": -0.3076,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd90_xpos": {
+      "prod": 0.3187,
+      "bake": 0.3187,
+      "k": 0.0,
+      "local_excess": -0.1813,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_ext30_xneg": {
+      "prod": 0.0598,
+      "bake": 0.0598,
+      "k": 0.0,
+      "local_excess": -0.4402,
+      "passed": true,
+      "passed_original": true
+     },
+     "fist_xneg": {
+      "prod": 0.0628,
+      "bake": 0.0628,
+      "k": 0.0,
+      "local_excess": -0.4372,
+      "passed": true,
+      "passed_original": true
+     },
+     "knee_90_xpos": {
+      "prod": 0.2915,
+      "bake": 0.2915,
+      "k": 0.0,
+      "local_excess": -0.2085,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_flex60_xneg": {
+      "prod": 0.0201,
+      "bake": 0.0201,
+      "k": 0.0,
+      "local_excess": -0.4799,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_ext30_xpos": {
+      "prod": 0.0573,
+      "bake": 0.0573,
+      "k": 0.0,
+      "local_excess": -0.4427,
+      "passed": true,
+      "passed_original": true
+     },
+     "fist_xpos": {
+      "prod": 0.0692,
+      "bake": 0.0692,
+      "k": 0.0,
+      "local_excess": -0.4308,
+      "passed": true,
+      "passed_original": true
+     },
+     "lower_axial_flex_25": {
+      "prod": 0.068,
+      "bake": 0.068,
+      "k": 0.0,
+      "local_excess": -0.432,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_flex60_xpos": {
+      "prod": 0.0153,
+      "bake": 0.0153,
+      "k": 0.0,
+      "local_excess": -0.4847,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_flex30_xneg": {
+      "prod": 0.0749,
+      "bake": 0.0749,
+      "k": 0.0,
+      "local_excess": -0.4251,
+      "passed": true,
+      "passed_original": true
+     }
+    }
+   },
+   "integrity": {
+    "clean": true,
+    "checks": {
+     "frozen_files": true,
+     "topology": true,
+     "semantic": true,
+     "geometry": true,
+     "neutral": true
+    },
+    "frozen_files": {
+     "SA_RP5_full_cage_freeze_candidate_v001.npz": "match",
+     "SA_M_REF_RP5_freeze_candidate_v001.blend": "match",
+     "SA_F_REF_RP5_freeze_candidate_v001.blend": "match",
+     "SA_RP5_freeze_candidate_v001_barycentric_map.npz": "match",
+     "SA_RP5_freeze_candidate_v001_semantic_map.json": "match",
+     "SA_RP5_freeze_candidate_v001_face_semantic.npy": "match",
+     "SA_RP5_freeze_candidate_v001_T4_angle_residuals_ACCEPTED.csv": "match",
+     "SA_RP5_freeze_candidate_v001_T4_angle_residuals_ACCEPTED.json": "match",
+     "SA_RP5_freeze_candidate_v001_landmarks_SA-M188.json": "match",
+     "SA_RP5_freeze_candidate_v001_sidecar.json": "match",
+     "SA_RP5_freeze_candidate_v001_freeze_candidate_record.json": "match"
+    },
+    "neutral": {
+     "max_corrective_cm": 0.0,
+     "baked_vs_plain_lbs_neutral_cm": 0.0,
+     "plain_lbs_neutral_vs_body_cm": 7.921464202809148e-06
+    },
+    "ranges": {
+     "anat": "f30b10da6d949382a6f7ea9bce04111e32cf88a7335b06e87ac8d86c351abd6f",
+     "special_gates": "836f242c5ab1594c989e0bc12964ffdbb68c66538c16ec33f93e99ebe44d5cb9",
+     "rp5_literal": "6c6118e2836cba4d064f7765ee182d2e3fb69854469d3b2bfe1ff7d3c9e38354"
+    }
+   },
+   "before_after": {
+    "n": 1,
+    "before_failing": 1,
+    "after_failing": 0,
+    "rows": [
+     {
+      "kind": "anatomical",
+      "pose": "elbow_130_xneg",
+      "frac": 0.875,
+      "before": {
+       "rig_flips": 5,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 9.72,
+       "volume_ok": true,
+       "regions": [
+        "elbow"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 9.72,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 99,
+      "before_fails": true,
+      "after_fails": false
+     }
+    ]
+   },
+   "rp5_literal": {
+    "clean_under_gates": false,
+    "totals": {
+     "rig_flips": 1527,
+     "rig_pen": 3727,
+     "rig_tears": 2,
+     "vol_fail": 10,
+     "comp": 0,
+     "base_rig": 5266,
+     "lbs_rig": 5544,
+     "rigid_max_cm": 0.0,
+     "blend_rig": 5266
+    },
+    "note": "RP5-literal definitions are diagnostics (the pilot retains them as records; gates are on the anatomical suite)"
+   },
+   "artifact": {
+    "json_sha256": "acf789e3e93b253855d24206f5e443da3a16c9ee4184c4858d59eda449819b84",
+    "npz_sha256": "b4bd5980fefdb7ea8fb2ec35ba1245b5107127c29f18e543e97be418313f7b2c",
+    "families": 1,
+    "pose_keys": 2,
+    "pose_key_widths_deg": {
+     "elbow_130_xneg@1.0000": 16.25,
+     "elbow_90_xneg@1.0000": 22.5
+    }
+   },
+   "stage_seconds": {
+    "fit": 1803.2,
+    "eval": 1236.8,
+    "gates": 595.4000000000001,
+    "sweep": 5161.6,
+    "motion": 5101.5,
+    "integrity": 1.6,
+    "rp5lit": 692.0,
+    "before_after": 18.3
+   },
+   "stages": [
+    {
+     "stage": "fit",
+     "dir": "it0",
+     "processes": 1,
+     "wall_s": 454.8,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 17:42:40"
+    },
+    {
+     "stage": "eval",
+     "dir": "it0",
+     "processes": 1,
+     "wall_s": 614.3,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 17:52:54"
+    },
+    {
+     "stage": "gates",
+     "dir": "it0",
+     "processes": 4,
+     "wall_s": 334.6,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 17:58:28"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it0",
+     "processes": 4,
+     "wall_s": 3058.2,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 18:49:27"
+    },
+    {
+     "stage": "motion",
+     "dir": "it0",
+     "processes": 4,
+     "wall_s": 2686.3,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 19:34:13"
+    },
+    {
+     "stage": "fit",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 1348.4,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 19:56:41"
+    },
+    {
+     "stage": "eval",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 622.5,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 20:07:04"
+    },
+    {
+     "stage": "gates",
+     "dir": "it1",
+     "processes": 4,
+     "wall_s": 260.8,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 20:11:25"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it1",
+     "processes": 4,
+     "wall_s": 2103.4,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 20:46:28"
+    },
+    {
+     "stage": "motion",
+     "dir": "it1",
+     "processes": 4,
+     "wall_s": 2415.2,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 21:26:43"
+    },
+    {
+     "stage": "integrity",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 1.6,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 21:26:45"
+    },
+    {
+     "stage": "rp5lit",
+     "dir": "rp5lit",
+     "processes": 1,
+     "wall_s": 692.0,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 21:38:17"
+    },
+    {
+     "stage": "before_after",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 18.3,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-18 21:38:35"
+    }
+   ]
+  },
+  "END_FAHI": {
+   "run": "out_v2wd",
+   "run_description": "repair 2: w25 run (floor 1/4) continued with the dense audit",
+   "recipe": {
+    "base_config": "M",
+    "weights": {
+     "FAHI": 1.0
+    },
+    "kind": "endpoint: accepted state at unit influence",
+    "geometry": "sa6_blend dense convex body blend (bodies.json method), frozen barycentric cage embedding, RP6 joints recomputed on the body, base-config weights"
+   },
+   "final": {
+    "iteration": 3,
+    "dir": "it3",
+    "clean": true,
+    "remaining": {}
+   },
+   "done": "2026-11-20 07:32:31",
+   "unbaked": {
+    "failures": {
+     "shoulder_flex60_xneg": [
+      0.325,
+      0.35,
+      0.525,
+      0.55,
+      0.575,
+      0.6
+     ],
+     "hip_flex70_xpos": [
+      0.55,
+      0.575,
+      0.6,
+      0.625,
+      0.65,
+      0.675,
+      0.775,
+      0.8,
+      0.825,
+      0.85,
+      0.875,
+      0.9
+     ],
+     "hip_flex70_xneg": [
+      0.25357,
+      0.8,
+      0.825,
+      0.85,
+      0.875,
+      0.9
+     ],
+     "trunk_twist_30": [
+      0.575,
+      0.6
+     ],
+     "lower_axial_flex_25": [
+      0.625,
+      0.65,
+      0.8,
+      0.825,
+      0.85
+     ]
+    },
+    "other": [],
+    "n_failing_samples": 31
+   },
+   "iterations": [
+    {
+     "it": 0,
+     "clean": false,
+     "n_failing_samples": 31,
+     "failures": {
+      "shoulder_flex60_xneg": [
+       0.325,
+       0.35,
+       0.525,
+       0.55,
+       0.575,
+       0.6
+      ],
+      "hip_flex70_xpos": [
+       0.55,
+       0.575,
+       0.6,
+       0.625,
+       0.65,
+       0.675,
+       0.775,
+       0.8,
+       0.825,
+       0.85,
+       0.875,
+       0.9
+      ],
+      "hip_flex70_xneg": [
+       0.25357,
+       0.8,
+       0.825,
+       0.85,
+       0.875,
+       0.9
+      ],
+      "trunk_twist_30": [
+       0.575,
+       0.6
+      ],
+      "lower_axial_flex_25": [
+       0.625,
+       0.65,
+       0.8,
+       0.825,
+       0.85
+      ]
+     },
+     "other": [],
+     "extra_samples": 14,
+     "gate_sweep_poses": [],
+     "families": 0,
+     "pose_keys": 0,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 0.9,
+      "fit_s": 273.8,
+      "peak_mb": 852.6,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.04
+     }
+    },
+    {
+     "it": 1,
+     "clean": false,
+     "n_failing_samples": 1,
+     "failures": {
+      "hip_flex70_xpos": [
+       0.90357
+      ]
+     },
+     "other": [
+      [
+       "motion",
+       "hip_flex70_xpos",
+       0.6198,
+       0.6183
+      ]
+     ],
+     "extra_samples": 45,
+     "gate_sweep_poses": [],
+     "families": 5,
+     "pose_keys": 6,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 0.8,
+      "fit_s": 1170.8,
+      "peak_mb": 1236.8,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.06
+     }
+    },
+    {
+     "it": 2,
+     "clean": false,
+     "n_failing_samples": 14,
+     "failures": {
+      "hip_flex70_xpos": [
+       0.905,
+       0.9075,
+       0.91,
+       0.9125,
+       0.915,
+       0.9175
+      ],
+      "shoulder_abd45_xneg": [
+       0.98,
+       0.9825,
+       0.985
+      ],
+      "shoulder_abd90_xneg": [
+       0.49,
+       0.4925,
+       0.505,
+       0.5775,
+       0.58
+      ]
+     },
+     "other": [],
+     "extra_samples": 46,
+     "gate_sweep_poses": [],
+     "families": 5,
+     "pose_keys": 6,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 0.8,
+      "fit_s": 715.8,
+      "peak_mb": 1233.9,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.06
+     }
+    },
+    {
+     "it": 3,
+     "clean": true,
+     "n_failing_samples": 0,
+     "failures": {},
+     "other": [],
+     "extra_samples": 46,
+     "gate_sweep_poses": [],
+     "families": 6,
+     "pose_keys": 6,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 0.8,
+      "fit_s": 785.9,
+      "peak_mb": 1231.8,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.07
+     }
+    }
+   ],
+   "final_gates": {
+    "eval": {
+     "clean": true,
+     "totals": {
+      "rig_flips": 0,
+      "rig_pen": 0,
+      "rig_tears": 0,
+      "vol_fail": 0,
+      "comp": 178,
+      "base_rig": 888,
+      "lbs_rig": 4966,
+      "rigid_max_cm": 0.0,
+      "blend_rig": 0
+     },
+     "neutral": {
+      "base": 0.0,
+      "states": {
+       "FAHI": 0.0
+      },
+      "blend": 0.0,
+      "bake": 0.0
+     }
+    },
+    "special_gates": {
+     "clean": true,
+     "totals": {
+      "rig_flips": 0,
+      "rig_pen": 0,
+      "rig_tears": 0,
+      "vol_fail": 0,
+      "comp": 0,
+      "lbs_rig": 4910,
+      "rigid_max_cm": 0.0,
+      "poses_with_K": 0,
+      "k_max_cm": 0.0
+     }
+    },
+    "sweep": {
+     "clean": true,
+     "poses": 34,
+     "samples": 763,
+     "rate_ratio_max": 7.556145812119093
+    },
+    "gate_sweep": null
+   },
+   "dense": {
+    "source": "out_v2wd/END_FAHI/it3/DS_END_FAHI.json",
+    "clean": true,
+    "step": 0.0025,
+    "samples": 4053,
+    "bake_failing": 0,
+    "bake_added": 0,
+    "prod_failing": 328,
+    "poses": 10,
+    "failing": {}
+   },
+   "motion": {
+    "source": "out_v2wd/END_FAHI/it3/MO_END_FAHI.json",
+    "rule": "per frame pair and vertex: bake <= max(0.50 cm, prod + 0.05 cm); pass_original: max bake <= max(0.50, max prod)",
+    "clean": true,
+    "failing": [],
+    "poses": 34,
+    "failing_original_rule": [
+     "hip_flex70_xpos"
+    ],
+    "tightest": {
+     "pose": "hip_flex70_xpos",
+     "worst_excess_cm": -0.0296,
+     "bake_cm": 0.4807,
+     "prod_cm": 0.4602,
+     "allowance_cm": 0.5102,
+     "at": [
+      0.775,
+      0.808333
+     ],
+     "at_deg": [
+      54.25,
+      56.58
+     ],
+     "vertex": 21366,
+     "region": "hip"
+    },
+    "max_bake": [
+     "hip_flex70_xpos",
+     0.6198,
+     0.6183
+    ],
+    "max_k": [
+     "hip_flex70_xpos",
+     0.371,
+     [
+      54.54,
+      56.88
+     ],
+     "hip"
+    ],
+    "per_pose": {
+     "ankle_dorsi20_xneg": {
+      "prod": 0.0198,
+      "bake": 0.0198,
+      "k": 0.0,
+      "local_excess": -0.4802,
+      "passed": true,
+      "passed_original": true
+     },
+     "grasp_xneg": {
+      "prod": 0.0174,
+      "bake": 0.0174,
+      "k": 0.0,
+      "local_excess": -0.4826,
+      "passed": true,
+      "passed_original": true
+     },
+     "neck_flex_30": {
+      "prod": 0.0172,
+      "bake": 0.0172,
+      "k": 0.0,
+      "local_excess": -0.4828,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_root_lateral_30": {
+      "prod": 0.0927,
+      "bake": 0.0927,
+      "k": 0.0,
+      "local_excess": -0.4073,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_flex30_xpos": {
+      "prod": 0.0636,
+      "bake": 0.0636,
+      "k": 0.0,
+      "local_excess": -0.4364,
+      "passed": true,
+      "passed_original": true
+     },
+     "ankle_dorsi20_xpos": {
+      "prod": 0.0206,
+      "bake": 0.0206,
+      "k": 0.0,
+      "local_excess": -0.4794,
+      "passed": true,
+      "passed_original": true
+     },
+     "grasp_xpos": {
+      "prod": 0.0153,
+      "bake": 0.0153,
+      "k": 0.0,
+      "local_excess": -0.4847,
+      "passed": true,
+      "passed_original": true
+     },
+     "neck_rot_40": {
+      "prod": 0.1242,
+      "bake": 0.1242,
+      "k": 0.0,
+      "local_excess": -0.3758,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_root_vertical_25": {
+      "prod": 0.0971,
+      "bake": 0.0971,
+      "k": 0.0,
+      "local_excess": -0.4029,
+      "passed": true,
+      "passed_original": true
+     },
+     "trunk_twist_30": {
+      "prod": 0.2166,
+      "bake": 0.2166,
+      "k": 0.0337,
+      "local_excess": -0.2834,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_130_xneg": {
+      "prod": 0.3944,
+      "bake": 0.3944,
+      "k": 0.0,
+      "local_excess": -0.1056,
+      "passed": true,
+      "passed_original": true
+     },
+     "hip_flex70_xneg": {
+      "prod": 0.4216,
+      "bake": 0.4216,
+      "k": 0.0084,
+      "local_excess": -0.0784,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd45_xneg": {
+      "prod": 0.0421,
+      "bake": 0.0437,
+      "k": 0.0229,
+      "local_excess": -0.4563,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_twist_30": {
+      "prod": 0.194,
+      "bake": 0.194,
+      "k": 0.0,
+      "local_excess": -0.306,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_130_xpos": {
+      "prod": 0.2478,
+      "bake": 0.2478,
+      "k": 0.0,
+      "local_excess": -0.2522,
+      "passed": true,
+      "passed_original": true
+     },
+     "hip_flex70_xpos": {
+      "prod": 0.6183,
+      "bake": 0.6198,
+      "k": 0.371,
+      "local_excess": -0.0296,
+      "passed": true,
+      "passed_original": false
+     },
+     "shoulder_abd45_xpos": {
+      "prod": 0.042,
+      "bake": 0.042,
+      "k": 0.0,
+      "local_excess": -0.458,
+      "passed": true,
+      "passed_original": true
+     },
+     "thumb_opposition_xneg": {
+      "prod": 0.0168,
+      "bake": 0.0168,
+      "k": 0.0,
+      "local_excess": -0.4832,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_90_xneg": {
+      "prod": 0.0646,
+      "bake": 0.0646,
+      "k": 0.0,
+      "local_excess": -0.4354,
+      "passed": true,
+      "passed_original": true
+     },
+     "jaw_open_20": {
+      "prod": 0.0395,
+      "bake": 0.0395,
+      "k": 0.0,
+      "local_excess": -0.4605,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd90_xneg": {
+      "prod": 0.5312,
+      "bake": 0.5312,
+      "k": 0.0458,
+      "local_excess": -0.05,
+      "passed": true,
+      "passed_original": true
+     },
+     "thumb_opposition_xpos": {
+      "prod": 0.016,
+      "bake": 0.016,
+      "k": 0.0,
+      "local_excess": -0.484,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_90_xpos": {
+      "prod": 0.0567,
+      "bake": 0.0567,
+      "k": 0.0,
+      "local_excess": -0.4433,
+      "passed": true,
+      "passed_original": true
+     },
+     "knee_90_xneg": {
+      "prod": 0.2181,
+      "bake": 0.2181,
+      "k": 0.0,
+      "local_excess": -0.2819,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd90_xpos": {
+      "prod": 0.3141,
+      "bake": 0.3141,
+      "k": 0.0,
+      "local_excess": -0.1859,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_ext30_xneg": {
+      "prod": 0.0606,
+      "bake": 0.0606,
+      "k": 0.0,
+      "local_excess": -0.4394,
+      "passed": true,
+      "passed_original": true
+     },
+     "fist_xneg": {
+      "prod": 0.0636,
+      "bake": 0.0636,
+      "k": 0.0,
+      "local_excess": -0.4364,
+      "passed": true,
+      "passed_original": true
+     },
+     "knee_90_xpos": {
+      "prod": 0.3702,
+      "bake": 0.3702,
+      "k": 0.0,
+      "local_excess": -0.1298,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_flex60_xneg": {
+      "prod": 0.1402,
+      "bake": 0.1471,
+      "k": 0.082,
+      "local_excess": -0.3529,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_ext30_xpos": {
+      "prod": 0.058,
+      "bake": 0.058,
+      "k": 0.0,
+      "local_excess": -0.442,
+      "passed": true,
+      "passed_original": true
+     },
+     "fist_xpos": {
+      "prod": 0.0701,
+      "bake": 0.0701,
+      "k": 0.0,
+      "local_excess": -0.4299,
+      "passed": true,
+      "passed_original": true
+     },
+     "lower_axial_flex_25": {
+      "prod": 0.0801,
+      "bake": 0.0801,
+      "k": 0.0348,
+      "local_excess": -0.4199,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_flex60_xpos": {
+      "prod": 0.0438,
+      "bake": 0.0438,
+      "k": 0.0,
+      "local_excess": -0.4562,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_flex30_xneg": {
+      "prod": 0.0759,
+      "bake": 0.0759,
+      "k": 0.0,
+      "local_excess": -0.4241,
+      "passed": true,
+      "passed_original": true
+     }
+    }
+   },
+   "integrity": {
+    "clean": true,
+    "checks": {
+     "frozen_files": true,
+     "topology": true,
+     "semantic": true,
+     "geometry": true,
+     "neutral": true
+    },
+    "frozen_files": {
+     "SA_RP5_full_cage_freeze_candidate_v001.npz": "match",
+     "SA_M_REF_RP5_freeze_candidate_v001.blend": "match",
+     "SA_F_REF_RP5_freeze_candidate_v001.blend": "match",
+     "SA_RP5_freeze_candidate_v001_barycentric_map.npz": "match",
+     "SA_RP5_freeze_candidate_v001_semantic_map.json": "match",
+     "SA_RP5_freeze_candidate_v001_face_semantic.npy": "match",
+     "SA_RP5_freeze_candidate_v001_T4_angle_residuals_ACCEPTED.csv": "match",
+     "SA_RP5_freeze_candidate_v001_T4_angle_residuals_ACCEPTED.json": "match",
+     "SA_RP5_freeze_candidate_v001_landmarks_SA-M188.json": "match",
+     "SA_RP5_freeze_candidate_v001_sidecar.json": "match",
+     "SA_RP5_freeze_candidate_v001_freeze_candidate_record.json": "match"
+    },
+    "neutral": {
+     "max_corrective_cm": 0.0,
+     "baked_vs_plain_lbs_neutral_cm": 0.0,
+     "plain_lbs_neutral_vs_body_cm": 7.962318136378599e-06
+    },
+    "ranges": {
+     "anat": "f30b10da6d949382a6f7ea9bce04111e32cf88a7335b06e87ac8d86c351abd6f",
+     "special_gates": "836f242c5ab1594c989e0bc12964ffdbb68c66538c16ec33f93e99ebe44d5cb9",
+     "rp5_literal": "6c6118e2836cba4d064f7765ee182d2e3fb69854469d3b2bfe1ff7d3c9e38354"
+    }
+   },
+   "before_after": {
+    "n": 31,
+    "before_failing": 31,
+    "after_failing": 0,
+    "rows": [
+     {
+      "kind": "anatomical",
+      "pose": "shoulder_flex60_xneg",
+      "frac": 0.325,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 20.83,
+       "volume_ok": true,
+       "regions": [
+        "shoulder"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 13.06,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "shoulder_flex60_xneg",
+      "frac": 0.35,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 19.32,
+       "volume_ok": true,
+       "regions": [
+        "shoulder"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 10.96,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "shoulder_flex60_xneg",
+      "frac": 0.525,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 4.5,
+       "volume_ok": true,
+       "regions": [
+        "shoulder"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -7.36,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "shoulder_flex60_xneg",
+      "frac": 0.55,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 7.41,
+       "volume_ok": true,
+       "regions": [
+        "shoulder"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -4.73,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "shoulder_flex60_xneg",
+      "frac": 0.575,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 9.89,
+       "volume_ok": true,
+       "regions": [
+        "shoulder"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -2.47,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "shoulder_flex60_xneg",
+      "frac": 0.6,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 11.94,
+       "volume_ok": true,
+       "regions": [
+        "shoulder"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -0.59,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.55,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 20.19,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 2.21,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 2,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.575,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 26.41,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 8.09,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 5,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.6,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 30.09,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 11.49,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 6,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.625,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 31.26,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 12.43,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 7,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.65,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 29.91,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 10.92,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 9,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.675,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 26.09,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.38,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 12,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.775,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 1,
+       "rig_tears": 0,
+       "dV_cm3": 19.07,
+       "volume_ok": true,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -2.62,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 20,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.8,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 34.02,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 3.59,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 20,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.825,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 44.79,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.61,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 26,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.85,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 51.34,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 3.36,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 29,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.875,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 53.59,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -3.24,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 31,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.9,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 51.54,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -14.25,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 34,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.25357,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 1.12,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 1.51,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.8,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 11.12,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 11.72,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 13,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.825,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 14.44,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 15.05,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 15,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.85,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 16.34,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 16.94,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 19,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.875,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 16.84,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 17.44,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 21,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.9,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 15.99,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 16.6,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 23,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.575,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 10.07,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 11.17,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 2,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.6,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 11.97,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 13.13,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 2,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.625,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.48,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 6.05,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.65,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.28,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.92,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.8,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 3.75,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 4.25,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.825,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 4.93,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.39,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.85,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.66,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 6.07,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     }
+    ]
+   },
+   "rp5_literal": {
+    "clean_under_gates": false,
+    "totals": {
+     "rig_flips": 1744,
+     "rig_pen": 4048,
+     "rig_tears": 27,
+     "vol_fail": 14,
+     "comp": 69,
+     "base_rig": 5973,
+     "lbs_rig": 5694,
+     "rigid_max_cm": 0.0,
+     "blend_rig": 5833
+    },
+    "note": "RP5-literal definitions are diagnostics (the pilot retains them as records; gates are on the anatomical suite)"
+   },
+   "artifact": {
+    "json_sha256": "8bf951a2488a1ca4d3eaa1da8b4df56149720f38b30d951453c9756208ef190f",
+    "npz_sha256": "8cb7fd7302bfb5947e99d0ea74870b8506784b8e1465b9899c849cf9cc3da3e2",
+    "families": 6,
+    "pose_keys": 6,
+    "pose_key_widths_deg": {
+     "hip_flex70_xpos@0.9000": 17.5,
+     "hip_flex70_xpos@1.0000": 17.5,
+     "lower_axial_flex_25@0.5000": 6.25,
+     "lower_axial_flex_25@0.6500": 6.25,
+     "shoulder_flex60_xneg@0.7500": 15.0,
+     "shoulder_flex60_xneg@1.0000": 15.0
+    }
+   },
+   "stage_seconds": {
+    "fit": 2967.0,
+    "eval": 1757.3999999999999,
+    "gates": 589.6,
+    "sweep": 5021.9,
+    "motion": 3999.5999999999995,
+    "integrity": 4.0,
+    "rp5lit": 1578.6999999999998,
+    "before_after": 514.7,
+    "dense": 5552.3
+   },
+   "stages": [
+    {
+     "stage": "fit",
+     "dir": "it0",
+     "processes": 1,
+     "wall_s": 278.8,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 04:37:07"
+    },
+    {
+     "stage": "eval",
+     "dir": "it0",
+     "processes": 1,
+     "wall_s": 384.1,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 04:43:31"
+    },
+    {
+     "stage": "gates",
+     "dir": "it0",
+     "processes": 8,
+     "wall_s": 119.0,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 04:45:30"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it0",
+     "processes": 8,
+     "wall_s": 923.9,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 05:00:54"
+    },
+    {
+     "stage": "motion",
+     "dir": "it0",
+     "processes": 8,
+     "wall_s": 679.4,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 05:12:13"
+    },
+    {
+     "stage": "fit",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 1175.8,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 05:31:49"
+    },
+    {
+     "stage": "eval",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 385.6,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 05:38:15"
+    },
+    {
+     "stage": "gates",
+     "dir": "it1",
+     "processes": 8,
+     "wall_s": 119.1,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 05:40:14"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it1",
+     "processes": 8,
+     "wall_s": 989.2,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 05:56:43"
+    },
+    {
+     "stage": "motion",
+     "dir": "it1",
+     "processes": 8,
+     "wall_s": 677.8,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 06:08:01"
+    },
+    {
+     "stage": "fit",
+     "dir": "it2",
+     "processes": 1,
+     "wall_s": 720.7,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 06:20:01"
+    },
+    {
+     "stage": "eval",
+     "dir": "it2",
+     "processes": 1,
+     "wall_s": 601.9,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 06:30:03"
+    },
+    {
+     "stage": "gates",
+     "dir": "it2",
+     "processes": 8,
+     "wall_s": 238.8,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 06:34:02"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it2",
+     "processes": 8,
+     "wall_s": 2160.0,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 07:10:02"
+    },
+    {
+     "stage": "motion",
+     "dir": "it2",
+     "processes": 8,
+     "wall_s": 1718.7,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 07:38:41"
+    },
+    {
+     "stage": "integrity",
+     "dir": "it2",
+     "processes": 1,
+     "wall_s": 2.8,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 07:38:44"
+    },
+    {
+     "stage": "rp5lit",
+     "dir": "rp5lit",
+     "processes": 1,
+     "wall_s": 1183.3,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 07:58:27"
+    },
+    {
+     "stage": "before_after",
+     "dir": "it2",
+     "processes": 1,
+     "wall_s": 388.0,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 08:04:55"
+    },
+    {
+     "stage": "fit",
+     "dir": "it3",
+     "processes": 1,
+     "wall_s": 791.7,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 05:11:45"
+    },
+    {
+     "stage": "eval",
+     "dir": "it3",
+     "processes": 1,
+     "wall_s": 385.8,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 05:18:11"
+    },
+    {
+     "stage": "gates",
+     "dir": "it3",
+     "processes": 8,
+     "wall_s": 112.7,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 05:20:03"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it3",
+     "processes": 8,
+     "wall_s": 948.8,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 05:35:52"
+    },
+    {
+     "stage": "motion",
+     "dir": "it3",
+     "processes": 8,
+     "wall_s": 923.7,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 05:51:16"
+    },
+    {
+     "stage": "dense",
+     "dir": "it3",
+     "processes": 8,
+     "wall_s": 5552.3,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 07:23:48"
+    },
+    {
+     "stage": "integrity",
+     "dir": "it3",
+     "processes": 1,
+     "wall_s": 1.2,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 07:23:49"
+    },
+    {
+     "stage": "rp5lit",
+     "dir": "rp5lit",
+     "processes": 1,
+     "wall_s": 395.4,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 07:30:25"
+    },
+    {
+     "stage": "before_after",
+     "dir": "it3",
+     "processes": 1,
+     "wall_s": 126.7,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 07:32:31"
+    }
+   ]
+  },
+  "END_MUFAHI": {
+   "run": "out_v3",
+   "run_description": "repair 2: rebake from v004, floor 1/4, dense audit",
+   "recipe": {
+    "base_config": "M",
+    "weights": {
+     "MUFAHI": 1.0
+    },
+    "kind": "endpoint: accepted state at unit influence",
+    "geometry": "sa6_blend dense convex body blend (bodies.json method), frozen barycentric cage embedding, RP6 joints recomputed on the body, base-config weights"
+   },
+   "final": {
+    "iteration": 2,
+    "dir": "it2",
+    "clean": true,
+    "remaining": {}
+   },
+   "done": "2026-11-20 02:43:58",
+   "unbaked": {
+    "failures": {
+     "gate:tail_up_60": [
+      1.0
+     ],
+     "gate:tail_down_60": [
+      1.0
+     ],
+     "shoulder_abd90_xneg": [
+      0.875,
+      0.9,
+      0.925
+     ],
+     "hip_flex70_xpos": [
+      0.15,
+      0.175,
+      0.2,
+      0.525,
+      0.55,
+      0.575,
+      0.6,
+      0.625,
+      0.65
+     ],
+     "hip_flex70_xneg": [
+      0.325,
+      0.35,
+      0.375,
+      0.4,
+      0.425,
+      0.45,
+      0.55,
+      0.575,
+      0.6,
+      0.625,
+      0.65,
+      0.675,
+      0.7,
+      0.725,
+      0.925,
+      0.95,
+      0.975
+     ],
+     "trunk_twist_30": [
+      0.3,
+      0.325,
+      0.35,
+      0.375,
+      0.50833,
+      0.525,
+      0.55,
+      0.575,
+      0.6,
+      0.625,
+      0.75833,
+      0.775,
+      0.8,
+      0.825
+     ],
+     "lower_axial_flex_25": [
+      0.625,
+      0.65,
+      0.85,
+      0.875,
+      0.9,
+      0.925,
+      0.95,
+      0.975
+     ],
+     "elbow_130_xpos": [
+      0.875
+     ],
+     "elbow_130_xneg": [
+      0.75192,
+      0.875
+     ]
+    },
+    "other": [],
+    "n_failing_samples": 56
+   },
+   "iterations": [
+    {
+     "it": 0,
+     "clean": false,
+     "n_failing_samples": 56,
+     "failures": {
+      "gate:tail_up_60": [
+       1.0
+      ],
+      "gate:tail_down_60": [
+       1.0
+      ],
+      "shoulder_abd90_xneg": [
+       0.875,
+       0.9,
+       0.925
+      ],
+      "hip_flex70_xpos": [
+       0.15,
+       0.175,
+       0.2,
+       0.525,
+       0.55,
+       0.575,
+       0.6,
+       0.625,
+       0.65
+      ],
+      "hip_flex70_xneg": [
+       0.325,
+       0.35,
+       0.375,
+       0.4,
+       0.425,
+       0.45,
+       0.55,
+       0.575,
+       0.6,
+       0.625,
+       0.65,
+       0.675,
+       0.7,
+       0.725,
+       0.925,
+       0.95,
+       0.975
+      ],
+      "trunk_twist_30": [
+       0.3,
+       0.325,
+       0.35,
+       0.375,
+       0.50833,
+       0.525,
+       0.55,
+       0.575,
+       0.6,
+       0.625,
+       0.75833,
+       0.775,
+       0.8,
+       0.825
+      ],
+      "lower_axial_flex_25": [
+       0.625,
+       0.65,
+       0.85,
+       0.875,
+       0.9,
+       0.925,
+       0.95,
+       0.975
+      ],
+      "elbow_130_xpos": [
+       0.875
+      ],
+      "elbow_130_xneg": [
+       0.75192,
+       0.875
+      ]
+     },
+     "other": [],
+     "extra_samples": 11,
+     "gate_sweep_poses": [],
+     "families": 0,
+     "pose_keys": 0,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 2.3,
+      "fit_s": 768.6,
+      "peak_mb": 854.7,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.07
+     }
+    },
+    {
+     "it": 1,
+     "clean": false,
+     "n_failing_samples": 1,
+     "failures": {
+      "trunk_twist_30": [
+       0.83333
+      ]
+     },
+     "other": [],
+     "extra_samples": 67,
+     "gate_sweep_poses": [
+      "tail_down_60",
+      "tail_up_60"
+     ],
+     "families": 23,
+     "pose_keys": 10,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 2.2,
+      "fit_s": 3367.6,
+      "peak_mb": 1249.4,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.16
+     }
+    },
+    {
+     "it": 2,
+     "clean": true,
+     "n_failing_samples": 0,
+     "failures": {},
+     "other": [],
+     "extra_samples": 68,
+     "gate_sweep_poses": [
+      "tail_down_60",
+      "tail_up_60"
+     ],
+     "families": 23,
+     "pose_keys": 10,
+     "converged": true,
+     "fit_timing": {
+      "setup_s": 1.2,
+      "fit_s": 974.4,
+      "peak_mb": 1237.1,
+      "host": "TylersPC",
+      "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "os": "Windows-11-10.0.26300-SP0",
+      "cpus_used": 1,
+      "threads": "1",
+      "write_s": 0.15
+     }
+    }
+   ],
+   "final_gates": {
+    "eval": {
+     "clean": true,
+     "totals": {
+      "rig_flips": 0,
+      "rig_pen": 0,
+      "rig_tears": 0,
+      "vol_fail": 0,
+      "comp": 273,
+      "base_rig": 5157,
+      "lbs_rig": 5759,
+      "rigid_max_cm": 0.001311665242368931,
+      "blend_rig": 0
+     },
+     "neutral": {
+      "base": 0.0,
+      "states": {
+       "MUFAHI": 0.0
+      },
+      "blend": 0.0,
+      "bake": 0.0
+     }
+    },
+    "special_gates": {
+     "clean": true,
+     "totals": {
+      "rig_flips": 0,
+      "rig_pen": 0,
+      "rig_tears": 0,
+      "vol_fail": 0,
+      "comp": 0,
+      "lbs_rig": 4913,
+      "rigid_max_cm": 0.0,
+      "poses_with_K": 4,
+      "k_max_cm": 0.02135
+     }
+    },
+    "sweep": {
+     "clean": true,
+     "poses": 34,
+     "samples": 1012,
+     "rate_ratio_max": 3.7966171807480777
+    },
+    "gate_sweep": {
+     "clean": true,
+     "poses": [
+      "tail_up_60",
+      "tail_down_60"
+     ],
+     "samples": 82,
+     "totals": {
+      "rig_flips": 0,
+      "rig_pen": 0,
+      "rig_tears": 0,
+      "vol_fail": 0,
+      "comp": 0,
+      "lbs_rig": 0,
+      "rigid_max_cm": 0.0,
+      "poses_with_K": 2,
+      "k_max_cm": 0.02135
+     }
+    }
+   },
+   "dense": {
+    "source": "out_v3/END_MUFAHI/it2/DS_END_MUFAHI.json",
+    "clean": true,
+    "step": 0.0025,
+    "samples": 6898,
+    "bake_failing": 0,
+    "bake_added": 0,
+    "prod_failing": 664,
+    "poses": 17,
+    "failing": {}
+   },
+   "motion": {
+    "source": "out_v3/END_MUFAHI/it2/MO_END_MUFAHI.json",
+    "rule": "per frame pair and vertex: bake <= max(0.50 cm, prod + 0.05 cm); pass_original: max bake <= max(0.50, max prod)",
+    "clean": true,
+    "failing": [],
+    "poses": 34,
+    "failing_original_rule": [],
+    "tightest": {
+     "pose": "hip_flex70_xpos",
+     "worst_excess_cm": -0.043,
+     "bake_cm": 0.4629,
+     "prod_cm": 0.456,
+     "allowance_cm": 0.506,
+     "at": [
+      0.75,
+      0.783333
+     ],
+     "at_deg": [
+      52.5,
+      54.83
+     ],
+     "vertex": 48226,
+     "region": "pelvis"
+    },
+    "max_bake": [
+     "shoulder_abd90_xneg",
+     0.5558,
+     0.5558
+    ],
+    "max_k": [
+     "hip_flex70_xneg",
+     0.5074,
+     [
+      47.25,
+      49.58
+     ],
+     "pelvis"
+    ],
+    "per_pose": {
+     "ankle_dorsi20_xneg": {
+      "prod": 0.0198,
+      "bake": 0.0198,
+      "k": 0.0,
+      "local_excess": -0.4802,
+      "passed": true,
+      "passed_original": true
+     },
+     "grasp_xneg": {
+      "prod": 0.0174,
+      "bake": 0.0174,
+      "k": 0.0,
+      "local_excess": -0.4826,
+      "passed": true,
+      "passed_original": true
+     },
+     "neck_flex_30": {
+      "prod": 0.0703,
+      "bake": 0.0703,
+      "k": 0.0,
+      "local_excess": -0.4297,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_root_lateral_30": {
+      "prod": 0.0927,
+      "bake": 0.0927,
+      "k": 0.0,
+      "local_excess": -0.4073,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_flex30_xpos": {
+      "prod": 0.0636,
+      "bake": 0.0636,
+      "k": 0.0,
+      "local_excess": -0.4364,
+      "passed": true,
+      "passed_original": true
+     },
+     "ankle_dorsi20_xpos": {
+      "prod": 0.0206,
+      "bake": 0.0206,
+      "k": 0.0,
+      "local_excess": -0.4794,
+      "passed": true,
+      "passed_original": true
+     },
+     "grasp_xpos": {
+      "prod": 0.0153,
+      "bake": 0.0153,
+      "k": 0.0,
+      "local_excess": -0.4847,
+      "passed": true,
+      "passed_original": true
+     },
+     "neck_rot_40": {
+      "prod": 0.1435,
+      "bake": 0.1435,
+      "k": 0.0,
+      "local_excess": -0.3565,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_root_vertical_25": {
+      "prod": 0.0962,
+      "bake": 0.0945,
+      "k": 0.0031,
+      "local_excess": -0.4055,
+      "passed": true,
+      "passed_original": true
+     },
+     "trunk_twist_30": {
+      "prod": 0.1395,
+      "bake": 0.1539,
+      "k": 0.1118,
+      "local_excess": -0.3461,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_130_xneg": {
+      "prod": 0.3905,
+      "bake": 0.3905,
+      "k": 0.1528,
+      "local_excess": -0.1095,
+      "passed": true,
+      "passed_original": true
+     },
+     "hip_flex70_xneg": {
+      "prod": 0.3463,
+      "bake": 0.3408,
+      "k": 0.5074,
+      "local_excess": -0.1592,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd45_xneg": {
+      "prod": 0.0881,
+      "bake": 0.0881,
+      "k": 0.0176,
+      "local_excess": -0.4119,
+      "passed": true,
+      "passed_original": true
+     },
+     "tail_twist_30": {
+      "prod": 0.2034,
+      "bake": 0.2035,
+      "k": 0.0004,
+      "local_excess": -0.2965,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_130_xpos": {
+      "prod": 0.3623,
+      "bake": 0.3658,
+      "k": 0.2059,
+      "local_excess": -0.1342,
+      "passed": true,
+      "passed_original": true
+     },
+     "hip_flex70_xpos": {
+      "prod": 0.4809,
+      "bake": 0.4629,
+      "k": 0.352,
+      "local_excess": -0.043,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd45_xpos": {
+      "prod": 0.1433,
+      "bake": 0.1433,
+      "k": 0.0,
+      "local_excess": -0.3567,
+      "passed": true,
+      "passed_original": true
+     },
+     "thumb_opposition_xneg": {
+      "prod": 0.0168,
+      "bake": 0.0168,
+      "k": 0.0,
+      "local_excess": -0.4832,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_90_xneg": {
+      "prod": 0.1078,
+      "bake": 0.1095,
+      "k": 0.0523,
+      "local_excess": -0.3905,
+      "passed": true,
+      "passed_original": true
+     },
+     "jaw_open_20": {
+      "prod": 0.0395,
+      "bake": 0.0395,
+      "k": 0.0,
+      "local_excess": -0.4605,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd90_xneg": {
+      "prod": 0.5558,
+      "bake": 0.5558,
+      "k": 0.3662,
+      "local_excess": -0.05,
+      "passed": true,
+      "passed_original": true
+     },
+     "thumb_opposition_xpos": {
+      "prod": 0.016,
+      "bake": 0.016,
+      "k": 0.0,
+      "local_excess": -0.484,
+      "passed": true,
+      "passed_original": true
+     },
+     "elbow_90_xpos": {
+      "prod": 0.0914,
+      "bake": 0.0914,
+      "k": 0.0666,
+      "local_excess": -0.4086,
+      "passed": true,
+      "passed_original": true
+     },
+     "knee_90_xneg": {
+      "prod": 0.2581,
+      "bake": 0.2581,
+      "k": 0.0,
+      "local_excess": -0.2419,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_abd90_xpos": {
+      "prod": 0.4521,
+      "bake": 0.4521,
+      "k": 0.0,
+      "local_excess": -0.05,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_ext30_xneg": {
+      "prod": 0.0606,
+      "bake": 0.0606,
+      "k": 0.0,
+      "local_excess": -0.4394,
+      "passed": true,
+      "passed_original": true
+     },
+     "fist_xneg": {
+      "prod": 0.0636,
+      "bake": 0.0636,
+      "k": 0.0,
+      "local_excess": -0.4364,
+      "passed": true,
+      "passed_original": true
+     },
+     "knee_90_xpos": {
+      "prod": 0.2967,
+      "bake": 0.2967,
+      "k": 0.0,
+      "local_excess": -0.2033,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_flex60_xneg": {
+      "prod": 0.2091,
+      "bake": 0.2091,
+      "k": 0.0,
+      "local_excess": -0.2909,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_ext30_xpos": {
+      "prod": 0.058,
+      "bake": 0.058,
+      "k": 0.0,
+      "local_excess": -0.442,
+      "passed": true,
+      "passed_original": true
+     },
+     "fist_xpos": {
+      "prod": 0.0701,
+      "bake": 0.0701,
+      "k": 0.0,
+      "local_excess": -0.4299,
+      "passed": true,
+      "passed_original": true
+     },
+     "lower_axial_flex_25": {
+      "prod": 0.3582,
+      "bake": 0.197,
+      "k": 0.321,
+      "local_excess": -0.303,
+      "passed": true,
+      "passed_original": true
+     },
+     "shoulder_flex60_xpos": {
+      "prod": 0.1293,
+      "bake": 0.1293,
+      "k": 0.0,
+      "local_excess": -0.3707,
+      "passed": true,
+      "passed_original": true
+     },
+     "toe_flex30_xneg": {
+      "prod": 0.0759,
+      "bake": 0.0759,
+      "k": 0.0,
+      "local_excess": -0.4241,
+      "passed": true,
+      "passed_original": true
+     }
+    }
+   },
+   "integrity": {
+    "clean": true,
+    "checks": {
+     "frozen_files": true,
+     "topology": true,
+     "semantic": true,
+     "geometry": true,
+     "neutral": true
+    },
+    "frozen_files": {
+     "SA_RP5_full_cage_freeze_candidate_v001.npz": "match",
+     "SA_M_REF_RP5_freeze_candidate_v001.blend": "match",
+     "SA_F_REF_RP5_freeze_candidate_v001.blend": "match",
+     "SA_RP5_freeze_candidate_v001_barycentric_map.npz": "match",
+     "SA_RP5_freeze_candidate_v001_semantic_map.json": "match",
+     "SA_RP5_freeze_candidate_v001_face_semantic.npy": "match",
+     "SA_RP5_freeze_candidate_v001_T4_angle_residuals_ACCEPTED.csv": "match",
+     "SA_RP5_freeze_candidate_v001_T4_angle_residuals_ACCEPTED.json": "match",
+     "SA_RP5_freeze_candidate_v001_landmarks_SA-M188.json": "match",
+     "SA_RP5_freeze_candidate_v001_sidecar.json": "match",
+     "SA_RP5_freeze_candidate_v001_freeze_candidate_record.json": "match"
+    },
+    "neutral": {
+     "max_corrective_cm": 0.0,
+     "baked_vs_plain_lbs_neutral_cm": 0.0,
+     "plain_lbs_neutral_vs_body_cm": 7.962318136378599e-06
+    },
+    "ranges": {
+     "anat": "f30b10da6d949382a6f7ea9bce04111e32cf88a7335b06e87ac8d86c351abd6f",
+     "special_gates": "836f242c5ab1594c989e0bc12964ffdbb68c66538c16ec33f93e99ebe44d5cb9",
+     "rp5_literal": "6c6118e2836cba4d064f7765ee182d2e3fb69854469d3b2bfe1ff7d3c9e38354"
+    }
+   },
+   "before_after": {
+    "n": 56,
+    "before_failing": 56,
+    "after_failing": 0,
+    "rows": [
+     {
+      "kind": "anatomical",
+      "pose": "shoulder_abd90_xneg",
+      "frac": 0.875,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 1,
+       "rig_tears": 0,
+       "dV_cm3": 10.82,
+       "volume_ok": true,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 0.99,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 93,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "shoulder_abd90_xneg",
+      "frac": 0.9,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 1,
+       "rig_tears": 0,
+       "dV_cm3": 10.13,
+       "volume_ok": true,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 2.0,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 93,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "shoulder_abd90_xneg",
+      "frac": 0.925,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 1,
+       "rig_tears": 0,
+       "dV_cm3": 8.66,
+       "volume_ok": true,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 2.19,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 98,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.15,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 34.59,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 28.03,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.175,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 30.46,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 22.81,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.2,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 23.36,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 14.64,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.525,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 12.68,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -11.18,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 4,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.55,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 22.36,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -3.27,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 7,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.575,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 29.2,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 1.77,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 8,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.6,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 33.23,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 3.97,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 10,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.625,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 34.49,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 3.37,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 12,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xpos",
+      "frac": 0.65,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 33.0,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 0.01,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 15,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.325,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 18.34,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -0.47,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.35,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 21.01,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 0.7,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.375,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 21.93,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.95,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.4,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 21.1,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 9.27,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.425,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 18.51,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 10.64,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.45,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 14.13,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 10.03,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.55,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 11.82,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 15.09,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.575,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 15.36,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 18.68,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.6,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 1,
+       "dV_cm3": 17.39,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 21.2,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.625,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 1,
+       "dV_cm3": 17.93,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 22.16,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 1,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.65,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 1,
+       "dV_cm3": 17.04,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 21.62,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 4,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.675,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 1,
+       "dV_cm3": 14.77,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 19.63,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 4,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.7,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 1,
+       "dV_cm3": 11.16,
+       "volume_ok": true,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 14.2,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 4,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.725,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 1,
+       "dV_cm3": 6.27,
+       "volume_ok": true,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 7.4,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 5,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.925,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 1,
+       "dV_cm3": 20.53,
+       "volume_ok": true,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 25.31,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 16,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.95,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 1,
+       "dV_cm3": 16.42,
+       "volume_ok": true,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 21.86,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 19,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "hip_flex70_xneg",
+      "frac": 0.975,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 1,
+       "dV_cm3": 10.82,
+       "volume_ok": true,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 16.85,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 20,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.3,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 57.46,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 21.33,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.325,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 54.5,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 15.41,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.35,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 50.34,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 8.3,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.375,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 45.0,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 0.02,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.50833,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 2.76,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -22.96,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 1,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.525,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 6.9,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -16.35,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 2,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.55,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 12.09,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -7.43,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 2,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.575,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 16.04,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 0.27,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 2,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.6,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 18.75,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 6.76,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 2,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.625,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 20.21,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 12.01,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 3,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.75833,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 11.99,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -2.17,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 5,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.775,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 18.34,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 2.73,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 5,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.8,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 26.81,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 9.02,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 5,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "trunk_twist_30",
+      "frac": 0.825,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 34.0,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 14.03,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 5,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.625,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 6.14,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 11.6,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.65,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.88,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 11.57,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.85,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 4.96,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 16.0,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.875,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.25,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 17.14,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.9,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 5.16,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 17.8,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.925,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 4.72,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 17.97,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.95,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 3.91,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 17.65,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "lower_axial_flex_25",
+      "frac": 0.975,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 2.76,
+       "volume_ok": true,
+       "regions": [
+        "pelvis"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 16.85,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "elbow_130_xpos",
+      "frac": 0.875,
+      "before": {
+       "rig_flips": 11,
+       "rig_pen": 11,
+       "rig_tears": 0,
+       "dV_cm3": -15.21,
+       "volume_ok": true,
+       "regions": [
+        "elbow"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -14.1,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 141,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "elbow_130_xneg",
+      "frac": 0.75192,
+      "before": {
+       "rig_flips": 1,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -0.6,
+       "volume_ok": true,
+       "regions": [
+        "elbow"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 0.0,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 144,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "anatomical",
+      "pose": "elbow_130_xneg",
+      "frac": 0.875,
+      "before": {
+       "rig_flips": 2,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -29.03,
+       "volume_ok": true,
+       "regions": [
+        "elbow"
+       ]
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 0.69,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 162,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "special_gate",
+      "pose": "tail_up_60",
+      "frac": 1.0,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 112.68,
+       "volume_ok": false,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 0.1,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "k_max_cm": 0.02135,
+      "before_fails": true,
+      "after_fails": false
+     },
+     {
+      "kind": "special_gate",
+      "pose": "tail_down_60",
+      "frac": 1.0,
+      "before": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": -106.1,
+       "volume_ok": false,
+       "regions": []
+      },
+      "after": {
+       "rig_flips": 0,
+       "rig_pen": 0,
+       "rig_tears": 0,
+       "dV_cm3": 0.08,
+       "volume_ok": true,
+       "regions": []
+      },
+      "lbs_rig_flips": 0,
+      "k_max_cm": 0.020323,
+      "before_fails": true,
+      "after_fails": false
+     }
+    ]
+   },
+   "rp5_literal": {
+    "clean_under_gates": false,
+    "totals": {
+     "rig_flips": 2335,
+     "rig_pen": 4824,
+     "rig_tears": 36,
+     "vol_fail": 27,
+     "comp": 120,
+     "base_rig": 7703,
+     "lbs_rig": 6251,
+     "rigid_max_cm": 0.0,
+     "blend_rig": 7217
+    },
+    "note": "RP5-literal definitions are diagnostics (the pilot retains them as records; gates are on the anatomical suite)"
+   },
+   "artifact": {
+    "json_sha256": "6405626a68d06f85cb536c225a00ec173314e438643020d2619dcfdd5a5a39d4",
+    "npz_sha256": "f7c24d2e580583fdcacfdc33d6b8e738231f596f25fe5bd4bd2f357741e9e7be",
+    "families": 23,
+    "pose_keys": 10,
+    "pose_key_widths_deg": {
+     "elbow_130_xneg@0.7500": 32.5,
+     "elbow_130_xneg@0.7519": 32.501,
+     "elbow_130_xpos@0.8750": 32.5,
+     "elbow_130_xpos@1.0000": 32.5,
+     "elbow_90_xneg@1.0000": 22.5,
+     "elbow_90_xpos@1.0000": 22.5,
+     "hip_flex70_xneg@1.0000": 17.5,
+     "hip_flex70_xpos@1.0000": 17.5,
+     "lower_axial_flex_25@1.0000": 6.25,
+     "shoulder_abd90_xneg@1.0000": 22.5
+    }
+   },
+   "stage_seconds": {
+    "fit": 5139.8,
+    "eval": 1982.3999999999999,
+    "gates": 496.7,
+    "sweep": 4859.5,
+    "motion": 3647.2999999999997,
+    "gate_sweep": 254.5,
+    "dense": 9347.8,
+    "integrity": 1.2,
+    "rp5lit": 432.9,
+    "before_after": 234.2
+   },
+   "stages": [
+    {
+     "stage": "fit",
+     "dir": "it0",
+     "processes": 1,
+     "wall_s": 781.2,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 19:37:03"
+    },
+    {
+     "stage": "eval",
+     "dir": "it0",
+     "processes": 1,
+     "wall_s": 1127.6,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 19:55:51"
+    },
+    {
+     "stage": "gates",
+     "dir": "it0",
+     "processes": 8,
+     "wall_s": 236.0,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 19:59:47"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it0",
+     "processes": 8,
+     "wall_s": 2130.0,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 20:35:17"
+    },
+    {
+     "stage": "motion",
+     "dir": "it0",
+     "processes": 8,
+     "wall_s": 1832.3,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 21:05:49"
+    },
+    {
+     "stage": "fit",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 3378.6,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 22:02:08"
+    },
+    {
+     "stage": "eval",
+     "dir": "it1",
+     "processes": 1,
+     "wall_s": 434.1,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 22:09:22"
+    },
+    {
+     "stage": "gates",
+     "dir": "it1",
+     "processes": 8,
+     "wall_s": 134.2,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 22:11:36"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it1",
+     "processes": 8,
+     "wall_s": 1404.6,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 22:35:01"
+    },
+    {
+     "stage": "gate_sweep",
+     "dir": "gate_sweep",
+     "processes": 2,
+     "wall_s": 128.9,
+     "rc": [
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 22:37:10"
+    },
+    {
+     "stage": "motion",
+     "dir": "it1",
+     "processes": 8,
+     "wall_s": 912.9,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 22:52:23"
+    },
+    {
+     "stage": "fit",
+     "dir": "it2",
+     "processes": 1,
+     "wall_s": 980.0,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 23:08:43"
+    },
+    {
+     "stage": "eval",
+     "dir": "it2",
+     "processes": 1,
+     "wall_s": 420.7,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 23:15:43"
+    },
+    {
+     "stage": "gates",
+     "dir": "it2",
+     "processes": 8,
+     "wall_s": 126.5,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 23:17:50"
+    },
+    {
+     "stage": "sweep",
+     "dir": "it2",
+     "processes": 8,
+     "wall_s": 1324.9,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 23:39:55"
+    },
+    {
+     "stage": "gate_sweep",
+     "dir": "gate_sweep",
+     "processes": 2,
+     "wall_s": 125.6,
+     "rc": [
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 23:42:00"
+    },
+    {
+     "stage": "motion",
+     "dir": "it2",
+     "processes": 8,
+     "wall_s": 902.1,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-19 23:57:02"
+    },
+    {
+     "stage": "dense",
+     "dir": "it2",
+     "processes": 8,
+     "wall_s": 9347.8,
+     "rc": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 02:32:50"
+    },
+    {
+     "stage": "integrity",
+     "dir": "it2",
+     "processes": 1,
+     "wall_s": 1.2,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 02:32:51"
+    },
+    {
+     "stage": "rp5lit",
+     "dir": "rp5lit",
+     "processes": 1,
+     "wall_s": 432.9,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 02:40:04"
+    },
+    {
+     "stage": "before_after",
+     "dir": "it2",
+     "processes": 1,
+     "wall_s": 234.2,
+     "rc": [
+      0
+     ],
+     "attempt": 0,
+     "end": "2026-11-20 02:43:58"
+    }
+   ]
+  }
+ },
+ "superseded": {
+  "END_FAHI_pass2": {
+   "run": "out_v2/END_FAHI",
+   "iteration": "it3",
+   "why_superseded": "pass 2: clean on samples; first-rule motion FAIL hip_flex70_xpos 0.6205 vs 0.6183 (superseded by w25)",
+   "iterations": [
+    {
+     "it": 0,
+     "clean": false,
+     "n_failing_samples": 31,
+     "other": [],
+     "pose_keys": 0
+    },
+    {
+     "it": 1,
+     "clean": false,
+     "n_failing_samples": 7,
+     "other": [
+      [
+       "motion",
+       "hip_flex70_xpos",
+       0.6205,
+       0.6183
+      ]
+     ],
+     "pose_keys": 5
+    },
+    {
+     "it": 2,
+     "clean": false,
+     "n_failing_samples": 1,
+     "other": [
+      [
+       "motion",
+       "hip_flex70_xpos",
+       0.6205,
+       0.6183
+      ]
+     ],
+     "pose_keys": 7
+    },
+    {
+     "it": 3,
+     "clean": false,
+     "n_failing_samples": 0,
+     "other": [
+      [
+       "motion",
+       "hip_flex70_xpos",
+       0.6205,
+       0.6183
+      ]
+     ],
+     "pose_keys": 7
+    }
+   ],
+   "motion_in_run": {
+    "rule": "bake <= max(0.50 cm, prod on the same pose)",
+    "clean": false,
+    "failing": [
+     "hip_flex70_xpos"
+    ],
+    "poses": 34
+   },
+   "pose_key_widths_deg": {
+    "hip_flex70_xpos@0.8750": 8.75,
+    "hip_flex70_xpos@0.9000": 8.75,
+    "hip_flex70_xpos@0.9036": 8.75,
+    "hip_flex70_xpos@1.0000": 8.75,
+    "lower_axial_flex_25@0.6500": 3.125,
+    "shoulder_flex60_xneg@0.7500": 9.0,
+    "shoulder_flex60_xneg@1.0000": 15.0
+   },
+   "artifact_json_sha256": "7388fd32e94e7e6fcc0e29bf1f20ed92d001ccc3ee9ad2d782b5f89745c41181"
+  },
+  "END_FAHI_w25": {
+   "run": "out_v2w/END_FAHI",
+   "iteration": "it2",
+   "why_superseded": "repair 1 (floor 1/4): samples clean, local motion PASS; dense audit 14 leaks (superseded by repair 2)",
+   "iterations": [
+    {
+     "it": 0,
+     "clean": false,
+     "n_failing_samples": 31,
+     "other": [],
+     "pose_keys": 0
+    },
+    {
+     "it": 1,
+     "clean": false,
+     "n_failing_samples": 1,
+     "other": [
+      [
+       "motion",
+       "hip_flex70_xpos",
+       0.6198,
+       0.6183
+      ]
+     ],
+     "pose_keys": 6
+    },
+    {
+     "it": 2,
+     "clean": false,
+     "n_failing_samples": 0,
+     "other": [
+      [
+       "motion",
+       "hip_flex70_xpos",
+       0.6198,
+       0.6183
+      ]
+     ],
+     "pose_keys": 6
+    }
+   ],
+   "dense": {
+    "clean": false,
+    "step": 0.0025,
+    "samples": 4049,
+    "bake_failing": 14,
+    "bake_added": 0,
+    "prod_failing": 326,
+    "poses": 10,
+    "failing": {
+     "hip_flex70_xpos": [
+      "0.90500",
+      "0.90750",
+      "0.91",
+      "0.91250",
+      "0.91500",
+      "0.91750"
+     ],
+     "shoulder_abd45_xneg": [
+      "0.98",
+      "0.98250",
+      "0.98500"
+     ],
+     "shoulder_abd90_xneg": [
+      "0.49",
+      "0.49250",
+      "0.50500",
+      "0.57750",
+      "0.58"
+     ]
+    }
+   },
+   "motion_local": {
+    "rule": "per frame pair and vertex: bake <= max(0.50 cm, prod + 0.05 cm); pass_original: max bake <= max(0.50, max prod)",
+    "clean": true,
+    "failing": [],
+    "poses": 34,
+    "failing_original_rule": [
+     "hip_flex70_xpos"
+    ],
+    "tightest": {
+     "pose": "hip_flex70_xpos",
+     "worst_excess_cm": -0.0296,
+     "bake_cm": 0.4807,
+     "prod_cm": 0.4602,
+     "allowance_cm": 0.5102,
+     "at": [
+      0.775,
+      0.808333
+     ],
+     "at_deg": [
+      54.25,
+      56.58
+     ],
+     "vertex": 21366,
+     "region": "hip"
+    },
+    "max_bake": [
+     "hip_flex70_xpos",
+     0.6198,
+     0.6183
+    ],
+    "max_k": [
+     "hip_flex70_xpos",
+     0.371,
+     [
+      54.54,
+      56.88
+     ],
+     "hip"
+    ]
+   },
+   "motion_in_run": {
+    "rule": "bake <= max(0.50 cm, prod on the same pose)",
+    "clean": false,
+    "failing": [
+     "hip_flex70_xpos"
+    ],
+    "poses": 34
+   },
+   "pose_key_widths_deg": {
+    "hip_flex70_xpos@0.9000": 17.5,
+    "hip_flex70_xpos@1.0000": 17.5,
+    "lower_axial_flex_25@0.5000": 6.25,
+    "lower_axial_flex_25@0.6500": 6.25,
+    "shoulder_flex60_xneg@0.7500": 15.0,
+    "shoulder_flex60_xneg@1.0000": 15.0
+   },
+   "artifact_json_sha256": "27056dbd1c724c94f89b837acf327174185be1bdd0faebbd158c00ea940a1af3"
+  },
+  "END_MUFAHI_pass2": {
+   "run": "out_v2/END_MUFAHI",
+   "iteration": "it3",
+   "why_superseded": "pass 2: 2 sweep samples failing (fit ping-pong); dense audit 11 leaks (superseded)",
+   "iterations": [
+    {
+     "it": 0,
+     "clean": false,
+     "n_failing_samples": 56,
+     "other": [],
+     "pose_keys": 0
+    },
+    {
+     "it": 1,
+     "clean": false,
+     "n_failing_samples": 3,
+     "other": [],
+     "pose_keys": 11
+    },
+    {
+     "it": 2,
+     "clean": false,
+     "n_failing_samples": 2,
+     "other": [],
+     "pose_keys": 13
+    },
+    {
+     "it": 3,
+     "clean": false,
+     "n_failing_samples": 2,
+     "other": [],
+     "pose_keys": 13
+    }
+   ],
+   "dense": {
+    "clean": false,
+    "step": 0.0025,
+    "samples": 6919,
+    "bake_failing": 11,
+    "bake_added": 0,
+    "prod_failing": 675,
+    "poses": 17,
+    "failing": {
+     "trunk_twist_30": [
+      "0.58500",
+      "0.58750",
+      "0.59",
+      "0.59166",
+      "0.59167",
+      "0.59250",
+      "0.64",
+      "0.64250",
+      "0.64500",
+      "0.64750"
+     ],
+     "hip_flex70_xpos": [
+      "0.21250"
+     ]
+    }
+   },
+   "motion_in_run": {
+    "rule": "bake <= max(0.50 cm, prod on the same pose)",
+    "clean": true,
+    "failing": [],
+    "poses": 34
+   },
+   "pose_key_widths_deg": {
+    "elbow_130_xneg@0.7500": 16.25,
+    "elbow_130_xneg@0.7519": 16.25,
+    "elbow_130_xpos@1.0000": 16.25,
+    "elbow_90_xneg@1.0000": 22.5,
+    "elbow_90_xpos@1.0000": 22.5,
+    "hip_flex70_xneg@1.0000": 8.75,
+    "hip_flex70_xpos@1.0000": 17.5,
+    "lower_axial_flex_25@1.0000": 3.125,
+    "shoulder_abd90_xneg@1.0000": 11.25,
+    "trunk_twist_30@0.5750": 3.75,
+    "trunk_twist_30@0.5833": 3.75,
+    "trunk_twist_30@0.5917": 3.75,
+    "trunk_twist_30@0.6000": 3.75
+   },
+   "artifact_json_sha256": "fcf7107b74ea50484d94f00341178b3b1c1f798bae0fb2b69747567f4b678b40"
+  },
+  "END_MUFAHI_dense": {
+   "run": "out_v2d/END_MUFAHI",
+   "iteration": "it5",
+   "why_superseded": "repair 1 (pass 2 continued + dense): it4 dense cleared the trunk_twist_30 leaks, 1 left (hip_flex70_xpos 0.2125, it4/DS); it5 refit clean on samples but LOCAL motion FAIL shoulder_abd90_xneg (pose key width 11.25 deg, 2.77 cm: trunk 0.73 cm in one frame), so its dense stage did not run (superseded by repair 2)",
+   "dense_it4": {
+    "clean": false,
+    "step": 0.0025,
+    "samples": 6919,
+    "bake_failing": 1,
+    "bake_added": 0,
+    "prod_failing": 675,
+    "poses": 17,
+    "failing": {
+     "hip_flex70_xpos": [
+      "0.21250"
+     ]
+    }
+   },
+   "iterations": [
+    {
+     "it": 0,
+     "clean": false,
+     "n_failing_samples": 56,
+     "other": [],
+     "pose_keys": 0
+    },
+    {
+     "it": 1,
+     "clean": false,
+     "n_failing_samples": 3,
+     "other": [],
+     "pose_keys": 11
+    },
+    {
+     "it": 2,
+     "clean": false,
+     "n_failing_samples": 2,
+     "other": [],
+     "pose_keys": 13
+    },
+    {
+     "it": 3,
+     "clean": false,
+     "n_failing_samples": 2,
+     "other": [],
+     "pose_keys": 13
+    },
+    {
+     "it": 4,
+     "clean": false,
+     "n_failing_samples": 1,
+     "other": [],
+     "pose_keys": 13
+    },
+    {
+     "it": 5,
+     "clean": false,
+     "n_failing_samples": 0,
+     "other": [
+      [
+       "motion",
+       "shoulder_abd90_xneg",
+       0.5558,
+       0.5558
+      ]
+     ],
+     "pose_keys": 13
+    }
+   ],
+   "motion_in_run": {
+    "rule": "per frame pair and vertex: bake <= max(0.50 cm, prod + 0.05 cm); pass_original: max bake <= max(0.50, max prod)",
+    "clean": false,
+    "failing": [
+     "shoulder_abd90_xneg"
+    ],
+    "poses": 34,
+    "failing_original_rule": [],
+    "tightest": {
+     "pose": "shoulder_abd90_xneg",
+     "worst_excess_cm": 0.0033,
+     "bake_cm": 0.5033,
+     "prod_cm": 0.2364,
+     "allowance_cm": 0.5,
+     "at": [
+      0.875,
+      0.908333
+     ],
+     "at_deg": [
+      78.75,
+      81.75
+     ],
+     "vertex": 4169,
+     "region": "trunk"
+    },
+    "max_bake": [
+     "shoulder_abd90_xneg",
+     0.5558,
+     0.5558
+    ],
+    "max_k": [
+     "shoulder_abd90_xneg",
+     0.7303,
+     [
+      78.75,
+      81.75
+     ],
+     "trunk"
+    ]
+   },
+   "pose_key_widths_deg": {
+    "elbow_130_xneg@0.7500": 16.25,
+    "elbow_130_xneg@0.7519": 16.25,
+    "elbow_130_xpos@1.0000": 16.25,
+    "elbow_90_xneg@1.0000": 22.5,
+    "elbow_90_xpos@1.0000": 22.5,
+    "hip_flex70_xneg@1.0000": 8.75,
+    "hip_flex70_xpos@1.0000": 17.5,
+    "lower_axial_flex_25@1.0000": 3.125,
+    "shoulder_abd90_xneg@1.0000": 11.25,
+    "trunk_twist_30@0.5750": 3.75,
+    "trunk_twist_30@0.5833": 3.75,
+    "trunk_twist_30@0.5917": 3.75,
+    "trunk_twist_30@0.6000": 3.75
+   },
+   "artifact_json_sha256": "5a08dba37166de501b18af61a8df80cdfe719aac7ff58e21eeac81cfbff7df39"
+  }
+ }
+}
