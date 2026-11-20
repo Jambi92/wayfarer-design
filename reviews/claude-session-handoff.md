@@ -2,7 +2,23 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-11-18) — PER-BODY BAKE FEASIBILITY ORDER a13cae71 DONE — FEASIBLE on the benchmark (with adaptive refits); STOP for ChatGPT / author review
+## LATEST (2026-11-20) — OFFLINE BAKE VALIDATION ORDER 8e3b7b4d DONE — 4/4 roster bodies clean; STOP for ChatGPT / author review
+- Report: reviews/claude-rac-rp6-saurin-offline-bake-validation-report.md. Evidence: reviews/rac-rp6-evidence/saurin/rig_pilot/offline_bake/
+  (SA_RP6_offline_bake_results_v001.json, manifest 380 files, bodies/<body>/ final runs, superseded/, pass1/, tail/, motion/, PC runners + logs).
+  Evidence commit: c74bbe5c. Status RP6 RIG PILOT / NOT FROZEN.
+- Roster: NO author-designated shipping roster exists -> fallback BASE_c1, BASE_c2 + END_FAHI / END_MUFAHI regression controls (flagged).
+- Final bakes (all clean: EV 34x4, GT 50x4, sweep, gate sweep, neutral 0, rigid <= 0.0013, integrity, BA 89 -> 0, dense 0.0025 audit, local motion gate):
+  BASE_c1 / BASE_c2 = pass 2 it1 (PC out_v2); END_FAHI = repair 2 it3 (out_v2wd); END_MUFAHI = repair 2 it2 (out_v3, rebake floor 1/4).
+- Added during the order (proposals, need approval): motion gate sa6_bake_motion.py (LOCAL rule: bake <= max(0.50, blend + 0.05 cm) per frame pair and vertex;
+  first rule kept as pass_original), dense audit sa6_bake_dense.py (BAKE_DENSE=1 driver stage), pose-key floor BAKE_PK_MINW (1/8 bases, 1/4 endpoints),
+  tail criterion sa6_tail_criterion.py (C <= 2.0 PASS, <= 2.5 REVIEW; roster bake 1760/1760 PASS).
+- PC: E:/UnrealProjects/Wayfarer 5.8/RaceBodies/SaurinRP6_offline (out_v2, out_v2w, out_v2wd, out_v2d, out_v3, out_dense, out_mo). Gotcha: device_commit_files reuses
+  an earlier upload of the same staged path -> always stage into a NEW folder before committing to the PC, and verify byte-for-byte.
+- DECISION NEEDED (report §9): shipping roster; adopt motion gate / dense audit / tail criterion; uniform recipe (floor 1/4 + dense -> rebake bases?);
+  elbow C1 break (layer change?); fit contact ping-pong (bypassed, not fixed).
+- NEXT: wait for ChatGPT / author review. Do not start new RP6 work.
+
+## (2026-11-18) — PER-BODY BAKE FEASIBILITY ORDER a13cae71 DONE — FEASIBLE on the benchmark (with adaptive refits); STOP for ChatGPT / author review
 - Report: reviews/claude-rac-rp6-saurin-per-body-bake-feasibility-report.md. Evidence: reviews/rac-rp6-evidence/saurin/rig_pilot/bake_feasibility/
   (SA_RP6_bake_results_v001.json with every sha256, SA_RP6_bake_timings_v001.json PC vs cloud OFF_PC, artifacts/<body>/ final BK/EV/SW + pre_gate_refit/,
   special_gates/ GT + dense, controls/ SW). Evidence commit: e2de557b. Status RP6 RIG PILOT / NOT FROZEN.
