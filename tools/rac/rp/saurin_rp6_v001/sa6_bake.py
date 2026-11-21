@@ -37,6 +37,7 @@ PK_FLOOR = {}       # per-pose floor override: poses that failed the motion gate
 # at rest) -- a clearance; gates unchanged (PEN_TOL 0.02 cm inside).  Without clearance, adjacent adaptive samples 0.25 deg apart
 # (END_MUFAHI trunk_twist_30 0.58333 / 0.59167, offline bake pass 2) ping-pong: each solve clears its own sample exactly and leaves the neighbour 1 vertex in.
 PEN_MARGIN = float(os.environ.get('BAKE_PEN_MARGIN', '0'))
+LOCAL_MARGIN = float(os.environ.get('BAKE_LOCAL_MARGIN', '0')); NEAR = float(os.environ.get('BAKE_LOCAL_NEAR', '0.02'))   # standard: 0.03 cm, 0.02 of the pose
 ONLY = set(x for x in os.environ.get('BAKE_ONLY_POSES', '').split(',') if x)     # experiments: restrict the fit to these poses (never set for a bake)
 def peak_mb():
     """peak resident memory of this process (MB): getrusage on Linux, PeakWorkingSetSize on Windows"""
@@ -63,7 +64,7 @@ class BakeProxy:
         """bake pose keys are per angle fraction ('pose@0.75'): their tents span exactly to the neighbouring fraction samples (width = 0.25 of the pose's full
         angle per driver), so the keys of one pose at 25 / 50 / 75 / 100 % interpolate like hat samples instead of overlapping (an overlapping 0 -> s -> 2s tent
         made the 75 % and 100 % fixes of hip_flex70 undo each other round after round)"""
-        new = name not in self.K.PK; self.K.add_pose_key(name, drivers, idx, dd)
+        n0 = len(self.K.PK); name = self.K.add_pose_key(name, drivers, idx, dd) or name; new = len(self.K.PK) > n0      # (merged into an equivalent key: not new)
         if new and os.environ.get('BAKE_PK_TENT', 'fraction') == 'fraction' and '@' in name:
             pn_, fr = name.rsplit('@', 1); fr = float(fr); gap = max(GAPS.get((pn_, round(fr, 4)), STEP), PK_FLOOR.get(pn_, PK_MINW))
             self.K.PK[name]['width'] = [abs(s_) * gap / fr for _, _, s_ in self.K.PK[name]['drivers']]
@@ -118,6 +119,22 @@ if __name__ == '__main__':
         def _pen_margin(R_, P_, F_, w0_): return _raw(R_, P_, F_, w0_) | ((_out(P_, F_) > 0.5) & (_w0m < 0.5))
         if hasattr(FT, '_pen_raw'): FT._pen_raw = _pen_margin
         else: FT.penetration = _pen_margin
+    CLEAR = set(); CURM = [False]; ENT = {}
+    if LOCAL_MARGIN > 0 and not PEN_MARGIN:
+        # neighbouring-contact ping-pong (order 07a3f24c §3 regression case: END_MUFAHI pass 2 trunk_twist_30 0.58333 / 0.59167): two samples of a pose a few
+        # tenths of a degree apart share the same family sample / key; each solve clears its own contact exactly and leaves the neighbour touching, so the rounds
+        # alternate.  Detected at the end of a round (a sample entering while a same-pose sample within NEAR entered this or the previous round), both
+        # samples are then solved with a local clearance: contact also counts where the point LOCAL_MARGIN outside the vertex is inside the body (and was not
+        # at rest).  Only those samples; gates unchanged.
+        import igl
+        _raw2 = getattr(FT, '_pen_raw', FT.penetration)
+        def _out2(P_, F_): return igl.fast_winding_number(P_, F_, P_ + LOCAL_MARGIN * igl.per_vertex_normals(P_, F_))
+        _w0m2 = _out2(R.V, F)
+        def _pen_local(R_, P_, F_, w0_):
+            p_ = _raw2(R_, P_, F_, w0_)
+            return (p_ | ((_out2(P_, F_) > 0.5) & (_w0m2 < 0.5))) if CURM[0] else p_
+        if hasattr(FT, '_pen_raw'): FT._pen_raw = _pen_local
+        else: FT.penetration = _pen_local
     if ONLY: PS = {k: v for k, v in PS.items() if k in ONLY}
     order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k]))); log, r0, i0, tot0, el0 = [], 0, 0, 0, 0.0
     if os.path.exists(ck):
@@ -166,7 +183,7 @@ if __name__ == '__main__':
         tot = tot0 if rnd == r0 else 0
         for ii, (pn, fr) in enumerate(items):
             if rnd == r0 and ii < i0: continue
-            spec = [(bb, p, a, dg * fr) for bb, p, a, dg in PS[pn]]; t = time.time(); PF.start_pose(R, P, spec, F, w0, Sv); CUR[0] = pn
+            spec = [(bb, p, a, dg * fr) for bb, p, a, dg in PS[pn]]; t = time.time(); CURM[0] = (pn, fr) in CLEAR; PF.start_pose(R, P, spec, F, w0, Sv); CUR[0] = pn
             n0 = NF.defects(R, P, Sv, spec, F, w0); snap = copy.deepcopy((K.F, K.PK)) if n0 else None
             a, c, _ = FT.solve_one(R, P, Sv, spec, F, w0, log, pose_key=pk_name(pn, fr) if rnd >= 1 else None); tot += a
             if n0:
@@ -177,8 +194,15 @@ if __name__ == '__main__':
                     log.append(dict(round=rnd, pose=pn, frac=fr, fade_ring=k_, after=c)) if k_ else None
             if a or c: print('%s round %d %-24s x%.2f before %4d after %4d  %.1fs' % (nm, rnd, pn, fr, a, c, time.time() - t), flush=True)
             log.append(dict(round=rnd, pose=pn, frac=fr, flips_before=a, flips_after_solve=c))
+            if a: ENT.setdefault((pn, fr), set()).add(rnd)
             if a or c or ii % 16 == 15: K.save(ck, dict(name=nm, fit_log=log, ck_round=rnd, ck_next=ii + 1, ck_tot=tot, ck_fit_seconds=el0 + time.time() - t1))
         n_entering[rnd] = tot; print(nm, 'round', rnd, 'total entering', tot, flush=True)
+        if LOCAL_MARGIN > 0 and not PEN_MARGIN:
+            for (pn_, f_), rs_ in list(ENT.items()):
+                if rnd not in rs_: continue
+                for (pm_, g_), qs_ in ENT.items():
+                    if pm_ == pn_ and g_ != f_ and abs(g_ - f_) <= NEAR and (rnd in qs_ or rnd - 1 in qs_) and not {(pn_, f_), (pm_, g_)} <= CLEAR:
+                        CLEAR.update({(pn_, f_), (pm_, g_)}); log.append(dict(round=rnd, local_clearance=[pn_, f_, g_], margin_cm=LOCAL_MARGIN)); print(nm, 'local clearance', pn_, f_, g_, flush=True)
         if tot == 0: break
     t_fit = el0 + time.time() - t1; t2 = time.time()
     pk = os.path.join(H.PKG, H.LAYERS)
@@ -187,7 +211,7 @@ if __name__ == '__main__':
                      body_vs_sha256=body_sha(BD, nm), body_json_sha256=b.get('sha256'), initialised_from=dict(layers=H.LAYERS, layers_sha256=C.sha(pk),
                      base=C.BASE_CORR, rig_version=C.RIGV, base_arrays_sha256={c: C.sha(os.path.join(H.PKG, H._js(C.BASE_CORR)['arrays'][c])) for c in 'MF'}),
                      semantics='baked(T) = packaged blend(T) + K(T); K = pose-driven corrective set on this exact body (0 at neutral)',
-                     converged=bool(tot == 0), bake_fracs=list(FRACS), pk_min_width=PK_MINW, pk_floor_per_pose=PK_FLOOR or None, motion_refit=dict(grid=PK_GRID, dropped_keys=MOT_DROPPED) if PK_GRID else None, pen_margin_cm=PEN_MARGIN, only_poses=sorted(ONLY) or None, adaptive_samples=EXTRA, initialised_from_artifact=ini or None, rounds_entering=n_entering, fit_log=log,
+                     converged=bool(tot == 0), bake_fracs=list(FRACS), pk_min_width=PK_MINW, pk_floor_per_pose=PK_FLOOR or None, motion_refit=dict(grid=PK_GRID, dropped_keys=MOT_DROPPED) if PK_GRID else None, pen_margin_cm=PEN_MARGIN, local_clearance=dict(margin_cm=LOCAL_MARGIN, near=NEAR, samples=sorted([list(x_) for x_ in CLEAR])) if LOCAL_MARGIN else None, only_poses=sorted(ONLY) or None, adaptive_samples=EXTRA, initialised_from_artifact=ini or None, rounds_entering=n_entering, fit_log=log,
                      timing=dict(setup_s=round(t_setup, 1), fit_s=round(t_fit, 1), peak_mb=round(peak_mb(), 1), host=platform.node(), cpu=platform.processor(), os=platform.platform(), cpus_used=1,
                                  threads=os.environ.get('OMP_NUM_THREADS'))))
     t_write = time.time() - t2

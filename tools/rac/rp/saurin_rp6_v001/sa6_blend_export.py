@@ -84,7 +84,7 @@ for pk in cj.get('pose_keys', []):
     co = V.copy(); idx = cz[pk['name'] + '_idx']; co[idx] += cz[pk['name'] + '_d'].astype(np.float64); kb.data.foreach_set('co', co.astype(np.float32).ravel())
     props = []; terms = []
     for j, dr in enumerate(pk['drivers']):
-        vn = 'abcdef'[j]; props.append((vn, twprop(dr['bone'], dr['axis_parent_frame']))); terms.append('clamp(1-abs(%s-(%.4f))/%.4f,0,1)' % (vn, dr['sample_deg'], abs(dr['sample_deg'])))
+        vn = 'abcdef'[j]; props.append((vn, twprop(dr['bone'], dr['axis_parent_frame']))); terms.append('clamp(1-abs(%s-(%.4f))/%.4f,0,1)' % (vn, dr['sample_deg'], abs(dr.get('width_deg', dr['sample_deg']))))
     keydriver(kb, props, '*'.join(terms)); nkeys += 1
 # ---- rig-prep action ----
 act = bpy.data.actions.new('RIG_PREP'); act.use_fake_user = True
@@ -107,7 +107,9 @@ if C.RIGV != 'v001':
     if SP_.GIRDLE:
         for t in ('l', 'r'):
             cb, ub = 'clavicle_' + t, 'upperarm_' + t; M = Bm[cb].T @ Bm[ub]
-            ga = '%.7f*max(0,2*acos(min(1,sqrt(w*w+y*y)))-%.7f)' % (0.5 * SP_.GIRDLE_RATIO, np.radians(SP_.GIRDLE_START))   # = g/2 (rad)
+            Mu = Bm[ub]          # elevation factor k = 1 - max(0, -s.y), s = Mu (a x e_y) / |a x e_y| (same as sa6_pose.girdle_split)
+            kx = '(1-max(0,(%.7f*z-%.7f*x)*w/max(abs(w),1e-9)/max(sqrt(x*x+z*z),1e-9)))' % (Mu[1, 0], Mu[1, 2])
+            ga = '%.7f*%s*max(0,2*acos(min(1,sqrt(w*w+y*y)))-%.7f)' % (0.5 * SP_.GIRDLE_RATIO, kx, np.radians(SP_.GIRDLE_START))   # = g/2 (rad)
             nrm = '*w/max(abs(w),1e-9)/max(sqrt(x*x+y*y+z*z),1e-9)'
             exprs = ['cos(%s)' % ga] + ['sin(%s)*(%.7f*x+%.7f*y+%.7f*z)%s' % ((ga,) + tuple(M[i]) + (nrm,)) for i in range(3)]
             pb = arm.pose.bones[cb]; pb.rotation_mode = 'QUATERNION'

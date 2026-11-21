@@ -31,6 +31,7 @@ RISK = ['shoulder_abd45_xpos', 'shoulder_abd45_xneg', 'shoulder_abd90_xpos', 'sh
         'hip_flex70_xpos', 'hip_flex70_xneg', 'trunk_twist_30', 'lower_axial_flex_25']
 kp = [pn for pn, spec in suite.items() if pn in pkp or R.bones_of(spec) & kb]
 poses = sorted(set(kp) | {pn for pn in RISK if pn in suite})
+if os.environ.get('DENSE_ONLY'): poses = [p for p in poses if p in os.environ['DENSE_ONLY'].split(',')]     # diagnostics only (never set in a bake)
 FAM = list(K.F.values()) + [f for st in [P0.B] + [s_ for _, s_ in P0.S] for f in getattr(st, 'F', {}).values()]
 SH = os.environ.get('DENSE_SHARD'); si, sn = (int(x) for x in SH.split('/')) if SH else (0, 1); tag = '.s%dof%d' % (si, sn) if SH else ''
 OUT = os.path.join(OD, 'DS_%s%s.json' % (nm, tag))

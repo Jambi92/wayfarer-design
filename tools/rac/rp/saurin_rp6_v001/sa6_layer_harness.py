@@ -39,6 +39,7 @@ def _set(rig, fams, pks, arr_of):
         if f.get('layer'): c.F[key]['layer'] = f['layer']; c.F[key]['layer_params'] = f.get('layer_params', {})
     for p in pks:
         idx, d = arr_of(p); c.PK[p['pose']] = dict(drivers=[(x['bone'], x['axis_parent_frame'], x['sample_deg']) for x in p['drivers']], idx=idx, d=d, name=p.get('name', p['pose']))
+        if all('width_deg' in x for x in p['drivers']): c.PK[p['pose']]['width'] = [x['width_deg'] for x in p['drivers']]
     return c
 def load_base(rig, cfg):
     j = _js(C.BASE_CORR)['configurations'][cfg]; z = _npz(_js(C.BASE_CORR)['arrays'][cfg])

@@ -30,12 +30,12 @@
 #   python sa6_bake_full.py --recipe prints the effective recipe and exits.  Acceptance record -> OUTDIR/ACCEPT_<NAME>.json.
 import sys, os, json, time, shutil, subprocess, hashlib, glob
 STANDARD = dict(BAKE_PK_MINW='0.25', BAKE_DENSE='1', DENSE_STEP='0.0025', BAKE_GATE_ALIGNED_ALLOW='1', BAKE_MOTION='1', BAKE_MOTION_RULE='local',
-                BAKE_MOTION_REFIT='1', BAKE_MOTION_REFIT_MODE='grid', BAKE_MOTION_GRID='step')    # motion-fed pose: refit from the initialisation layer on the step grid (order 07a3f24c §3)
+                BAKE_MOTION_REFIT='1', BAKE_MOTION_REFIT_MODE='grid', BAKE_MOTION_GRID='step', BAKE_LOCAL_MARGIN='0.03')    # motion-fed pose: refit from the initialisation layer on the step grid (order 07a3f24c §3)
 ARCHIVED = dict(BAKE_PK_MINW='0', BAKE_DENSE='0', DENSE_STEP='0.0025', BAKE_MOTION='1', BAKE_MOTION_RULE='original', BAKE_MOTION_REFIT='0')
 RECIPE = os.environ.get('BAKE_RECIPE', 'standard')
 if RECIPE not in ('standard', 'archived'): raise SystemExit('BAKE_RECIPE must be standard or archived')
 for k_, v_ in (STANDARD if RECIPE == 'standard' else ARCHIVED).items(): os.environ.setdefault(k_, v_)
-RECIPE_KEYS = sorted(set(STANDARD) | set(ARCHIVED) | {'BAKE_SEED_EXTRA', 'BAKE_PEN_MARGIN', 'BAKE_FRACS', 'ROUNDS', 'RP6_LAYERS', 'BAKE_PK_TENT', 'RP6_RIG', 'BAKE_PK_GRID_ALL'})
+RECIPE_KEYS = sorted(set(STANDARD) | set(ARCHIVED) | {'BAKE_LOCAL_NEAR', 'BAKE_SEED_EXTRA', 'BAKE_PEN_MARGIN', 'BAKE_FRACS', 'ROUNDS', 'RP6_LAYERS', 'BAKE_PK_TENT', 'RP6_RIG', 'BAKE_PK_GRID_ALL'})
 def effective_recipe(): return dict(recipe=RECIPE, env={k: os.environ.get(k) for k in RECIPE_KEYS if os.environ.get(k) is not None})
 if len(sys.argv) > 1 and sys.argv[1] == '--recipe': print(json.dumps(effective_recipe(), indent=1)); sys.exit(0)
 T = os.path.dirname(os.path.abspath(__file__)); PY = sys.executable

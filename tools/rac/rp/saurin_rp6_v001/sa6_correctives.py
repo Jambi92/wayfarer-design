@@ -52,8 +52,26 @@ class Correctives:
     def add_pose_key(self, name, drivers, idx, dd):
         """pose-space key (resolves conflicts between poses that share joint angles but need different local shapes): driver = product over its driving
         joints of tent(x_j; 0 -> s_j -> 2 s_j), s_j = the joint's measured twist in the owning pose."""
-        if name not in self.PK: self.PK[name] = dict(drivers=[(b, list(np.asarray(a, float)), float(s_)) for b, a, s_ in drivers], idx=np.zeros(0, np.int64), d=np.zeros((0, 3)))
+        if name not in self.PK and os.environ.get('PK_MERGE_SAME', '1') == '1':
+            # an existing key with the same drivers (same joints / axes / angles) is the same pose under another name (rig v002: shoulder_abd45 at 1.0 =
+            # shoulder_abd90 at 0.5, total 45 deg): a second key would double-apply at that pose and the two names' solves ping-pong -> add to the existing key
+            dn = [(b, np.asarray(a, float) / np.linalg.norm(a), float(s_)) for b, a, s_ in drivers]
+            for k_, pk_ in self.PK.items():
+                if len(pk_['drivers']) == len(dn) and all(b1 == b2 and abs(float(np.dot(np.asarray(a1, float) / np.linalg.norm(a1), a2))) > 0.9999 and abs(s1 - s2) < 0.05
+                                                          for (b1, a1, s1), (b2, a2, s2) in zip(pk_['drivers'], dn)):
+                    name = k_; break
+        if name not in self.PK:
+            self.PK[name] = dict(drivers=[(b, list(np.asarray(a, float)), float(s_)) for b, a, s_ in drivers], idx=np.zeros(0, np.int64), d=np.zeros((0, 3)))
+            hs = float(os.environ.get('PK_HAT_STEP', '0.25' if __import__('sa6_common').RIGV != 'v001' else '0'))
+            if hs > 0 and '@' in name:
+                # rig v002 fits: a fraction key 'pose@f' spans to the neighbouring fraction samples (half-width = step x |s| / f), like the per-body bake keys.
+                # The default 0 -> s -> 2s tent made the 75 % and 100 % keys of shoulder_abd90 overlap (weights 0.73 / 0.79 at each other's angle): the creator-
+                # state fits alternated between them for 8 rounds (17 of 19 states unconverged).
+                try: fr = float(name.rsplit('@', 1)[1])
+                except ValueError: fr = 0.0
+                if fr > 0: self.PK[name]['width'] = [abs(float(s_)) * hs / fr for _, _, s_ in drivers]
         pk = self.PK[name]; full = np.zeros((self.r.nv, 3)); full[pk['idx']] = pk['d']; full[idx] += dd; nz = np.nonzero(np.abs(full).sum(1) > 1e-9)[0]; pk['idx'] = nz; pk['d'] = full[nz]
+        return name
     def interp_at(self, f, x):
         n = self.r.nv; d = np.zeros((n, 3))
         for k, w in self.hat(f['samples'], x):

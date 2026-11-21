@@ -38,7 +38,11 @@ class Rig:
         t = bn.split('_')[-1]; cb = 'clavicle_' + t
         if not GIRDLE or cb not in self.P: return [(bn, piv, ax, deg)]
         u = self.Tl(bn) - self.H(bn); u = u / np.linalg.norm(u)
-        def g(th): sw = np.degrees(np.arccos(np.clip(u @ (rot(ax, th) @ u), -1, 1))); return GIRDLE_RATIO * max(0.0, sw - GIRDLE_START)
+        # elevation only: the rhythm describes raising the arm (flexion / abduction).  k = 1 - max(0, -s.ANT), s = the direction the arm tip moves (axis x upper-arm
+        # axis, rest frame), ANT = anterior (+y): k = 1 for flexion (s.ANT ~ +0.98) and abduction (0), ~0 for extension (the RP5-literal flex60 = backward 60 deg:
+        # with the full rhythm the retracted clavicle drove a front-axilla crease no corrective could clear).  The packaged driver uses the same factor.
+        sd = np.cross(np.asarray(ax, float), u) * (1.0 if deg >= 0 else -1.0); n_ = np.linalg.norm(sd); k_ = 1.0 - max(0.0, -(sd[1] / n_)) if n_ > 1e-9 else 1.0
+        def g(th): sw = np.degrees(np.arccos(np.clip(u @ (rot(ax, th) @ u), -1, 1))); return k_ * GIRDLE_RATIO * max(0.0, sw - GIRDLE_START)
         lo, hi = 0.0, abs(float(deg))
         for _ in range(60):          # humeral angle h with h + g(h) = |total| (g is monotone, slope <= GIRDLE_RATIO)
             m = 0.5 * (lo + hi); lo, hi = (m, hi) if m + g(m) < abs(deg) else (lo, m)

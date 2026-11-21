@@ -49,10 +49,13 @@ def solve_one(R, C, S, spec, F, w0, log, pose_key=None):
     # its parent), and (b) contact sites (vertices interpenetrating at the incoming state or the DQS start)
     # dilated 4 rings.  Everything else is pinned for this solve (added to the protected set) -> no anatomy drift far from the joint.
     bz = np.zeros(R.nv, bool)
-    for b_, _, _ in ent:
+    lb = [b_ for b_, _, _ in ent]
+    if hasattr(R, 'expand') and len(R.expand(spec)) != len(spec):     # rig v002: the girdle-coupled clavicle moves too -> its blend zone / flesh is local
+        lb += [e[0] for e in R.expand(spec) if e[0] not in lb and abs(e[3]) > 1e-6]
+    for b_ in lb:
         ws_ = R.W[:, [R.bi[x] for x in R.sub(b_) if x in R.bi]].sum(1); bz |= (ws_ > 1e-3) & (ws_ < 1 - 1e-3)
     dom = np.array(R.DB)[R.W.argmax(1)]; seg = np.zeros(R.nv, bool)
-    for b_, _, _ in ent:
+    for b_ in lb:
         seg |= np.isin(dom, [b_] + ([R.par[b_]] if R.par[b_] in R.bi else []))                   # flesh of the two segments the joint connects
         if b_.startswith('thigh'): seg |= dom == 'tail_01'          # caudofemoral coupling: hip motion deforms the tail-root segment (tail_01 only)
     allowed = S.dilate(bz, LOC_RING) | seg | S.dilate(pen | penetration(R, R.dqs(T, R.V + d), F, w0) | S.tear_verts(Pc), CONTACT_RING)   # contact and tear sites (local defects)
@@ -72,8 +75,8 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
         f0 = np.nonzero(R.relcos(P0, T) < 0)[0]; p0 = penetration(R, P0, F, w0)
         if not len(f0) and not p0.any() and not S.tear_edges(P0)[0].any(): return ((0, 0.0), P0, np.zeros(0, int), 0)
         casc = sorted(CASC, key=lambda c_: (not c_[3], not c_[1])) if (p0.any() and hinge) else CASC   # contact poses: hinge contact plane first
-        best = None
-        for ring, plane, rounds, pin in casc:
+        best = ((len(f0) + int(p0.sum()) + int(S.tear_edges(P0)[0].sum()), 0.0), P0, f0, 0)   # never worse than the start (v002: a variant scoring above the
+        for ring, plane, rounds, pin in casc:                                                      # incoming state was kept and stored, 8 -> 32 flips)
             if plane and not hinge: continue
             S.pin = pin; Ps, I, M = S.solve(T, P0, f0, iters=1, ring=ring, spread_tol=1e-4, local=True, seed=p0); ncont = 0
             if plane and penetration(R, Ps, F, w0).any(): Ps, ncont = S.contact_plane(T, Ps, ent[0][0], ent[0][1])
