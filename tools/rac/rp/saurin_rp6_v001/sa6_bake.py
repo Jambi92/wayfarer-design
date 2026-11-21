@@ -20,6 +20,16 @@ STEP = min(abs(a - b) for a in FRACS + (0.0,) for b in FRACS + (0.0,) if a != b)
 # 0.025 or 0.25 deg apart, so their tents became 0.25-1.75 deg wide and a 0.2-1.8 cm key switched on inside one 30 fps frame (a pop in motion; offline bake
 # order 8e3b7b4d, END_FAHI / END_MUFAHI).  With a floor the key ramps over at least MINW x full angle; neighbouring keys may overlap (Gauss-Seidel rounds settle it).
 PK_MINW = float(os.environ.get('BAKE_PK_MINW', '0'))
+MOT_REFIT = os.environ.get('BAKE_MOTION_REFIT', '0') == '1'      # standard recipe: 1 (order 07a3f24c §3); archived: 0 (keys widened in place)
+PK_GRID = {}; MOT_DROPPED = []; CUR = [None]      # CUR[0] = the pose being solved
+MOT_MODE = os.environ.get('BAKE_MOTION_REFIT_MODE', 'nokeys')    # experiment switch: grid (keys + family samples on the floor grid) | gridkeys | nokeys
+MOT_SNAP = MOT_MODE == 'grid'
+def pk_name(pn, fr):
+    """pose-key name of a fit sample: the sample's own fraction, or (motion refit) the nearest key of the pose's grid"""
+    if pn in PK_GRID:
+        if MOT_MODE == 'nokeys': return None          # the motion-fed pose is refit with families only (no fraction pose keys)
+        fr = min(PK_GRID[pn], key=lambda g: (abs(g - fr), -g))
+    return '%s@%.4f' % (pn, fr)
 PK_FLOOR = {}       # per-pose floor override: poses that failed the motion gate ('motion:<pose>' in BAKE_EXTRA) get twice the floor (standards approval order)
 # BAKE_PEN_MARGIN (cm, default 0 = off): the FIT also treats a vertex as in contact when the point MARGIN OUTSIDE its surface lies inside the body (and did not
 # at rest) -- a clearance; gates unchanged (PEN_TOL 0.02 cm inside).  Without clearance, adjacent adaptive samples 0.25 deg apart
@@ -42,7 +52,11 @@ class BakeProxy:
     def delta(self, T): return self.P0.delta(T) + self.K.delta(T)
     def driver(self, T, f): return self.K.driver(T, f)
     def resolve(self, bone, axis, tol_deg=30.0): return self.K.resolve(bone, axis, tol_deg)
-    def add(self, key, bone, axis, pivot, x, idx, dd): self.K.add(key, bone, axis, pivot, x, idx, dd)
+    def add(self, key, bone, axis, pivot, x, idx, dd):
+        if MOT_SNAP and CUR[0] in PK_GRID and bone in self.r.bones_of(globals()['PS'][CUR[0]]):      # motion refit: family sample on the pose's grid angle
+            sp_ = globals()['PS'][CUR[0]]; xs = [self.K.driver(self.r.pose([(b_, p_, a_, dg * g) for b_, p_, a_, dg in sp_]), dict(bone=bone, axis=axis)) for g in PK_GRID[CUR[0]]]
+            x = min(xs, key=lambda v: abs(v - x))
+        self.K.add(key, bone, axis, pivot, x, idx, dd)
     def add_pose_key(self, name, drivers, idx, dd):
         """bake pose keys are per angle fraction ('pose@0.75'): their tents span exactly to the neighbouring fraction samples (width = 0.25 of the pose's full
         angle per driver), so the keys of one pose at 25 / 50 / 75 / 100 % interpolate like hat samples instead of overlapping (an overlapping 0 -> s -> 2s tent
@@ -51,6 +65,12 @@ class BakeProxy:
         if new and os.environ.get('BAKE_PK_TENT', 'fraction') == 'fraction' and '@' in name:
             pn_, fr = name.rsplit('@', 1); fr = float(fr); gap = max(GAPS.get((pn_, round(fr, 4)), STEP), PK_FLOOR.get(pn_, PK_MINW))
             self.K.PK[name]['width'] = [abs(s_) * gap / fr for _, _, s_ in self.K.PK[name]['drivers']]
+            sp = globals().get('PS', {}).get(pn_)
+            if C.RIGV != 'v001' and sp is not None and len(self.r.expand(sp)) != len(sp):
+                # rig v002 coupled pose: the humeral driver is not linear in the fraction, so the tent spans to the driver value at the neighbouring
+                # fraction sample (fr - gap) measured on the rig (equal to |s| gap / fr when linear)
+                Tg = self.r.pose([(bb, p, a, dg * max(0.0, fr - gap)) for bb, p, a, dg in sp])
+                self.K.PK[name]['width'] = [abs(s_ - self.K.driver(Tg, dict(bone=b_, axis=a_))) for b_, a_, s_ in self.K.PK[name]['drivers']]
 def body_sha(BD, nm): return hashlib.sha256(np.ascontiguousarray(np.load(os.path.join(BD, nm + '.npz'))['Vs']).tobytes()).hexdigest()
 if __name__ == '__main__':
     mode, nm, BD, OD = sys.argv[1:5]; os.makedirs(OD + '/ckpt', exist_ok=True); b = json.load(open(os.path.join(BD, 'bodies.json')))['bodies'][nm]
@@ -116,6 +136,21 @@ if __name__ == '__main__':
             if fr_ is not None and pn_ in PK_FLOOR:
                 fr_ = float(fr_); ws = pk_.get('width') or [abs(s_) for _, _, s_ in pk_['drivers']]
                 pk_['width'] = [max(w_, abs(s_) * PK_FLOOR[pn_] / fr_) for w_, (_, _, s_) in zip(ws, pk_['drivers'])]
+        if MOT_REFIT:
+            # convergence fix (order 07a3f24c §3): widening the existing keys in place made neighbouring fraction keys overlap (tents of half-width 0.5 at
+            # 0.75 / 0.875 / 0.908 / 1.0: at any fraction 2-3 keys are active with weights summing to > 1), so a fix at one fraction moved its neighbours
+            # and the rounds ping-ponged (7, 15, 15, 11, 4, 13, 3, 7 entering, never clean).  Instead the motion-fed pose is REFIT from the initialisation
+            # layer: its bake pose keys are dropped and rebuilt on a uniform grid of spacing = the doubled floor (keys at w, 2w, ..., 1; hat tents of
+            # half-width w = a partition of unity, like family samples).  Every fit sample of the pose (standard fractions, motion frames, sweep / dense
+            # extras) is solved at its own fraction and its pose-key correction goes to the nearest grid key (snap, as family samples snap within 4 deg).
+            # the restart also drops the bake FAMILIES driven by the pose's joints (their samples sat a few degrees apart from earlier dense refits: a
+            # 1.2 cm step between 83 and 86 deg once the wide key was gone); every pose using those joints is refit from the initialisation layer, and
+            # while the motion-fed pose is solved its family corrections snap to the same grid angles (sample spacing >= the floor).
+            for name_ in [k_ for k_ in K.PK if '@' in k_ and k_.rsplit('@', 1)[0] in PK_FLOOR]: del K.PK[name_]; MOT_DROPPED.append(name_)
+            mb_ = set().union(*[R.bones_of(PS[pn_]) for pn_ in PK_FLOOR])
+            for k_ in [k_ for k_, f_ in K.F.items() if f_['bone'] in mb_]: del K.F[k_]; MOT_DROPPED.append('family ' + k_)
+            for pn_, w_ in PK_FLOOR.items(): PK_GRID[pn_] = [round(min(1.0, k_ * w_), 4) for k_ in range(1, int(np.ceil(1.0 / w_ - 1e-9)) + 1)]
+            print(nm, 'motion refit: dropped', MOT_DROPPED, 'grid', PK_GRID, flush=True)
         print(nm, 'motion feedback: poses', sorted(PK_FLOOR), 'floor', sorted(set(PK_FLOOR.values())), flush=True)
     if ONLY: order = [k for k in order if k in ONLY]
     items = [(pn, fr) for pn in order for fr in sorted(set(FRACS) | set(EXTRA.get(pn, [])), reverse=True)]
@@ -127,9 +162,9 @@ if __name__ == '__main__':
         tot = tot0 if rnd == r0 else 0
         for ii, (pn, fr) in enumerate(items):
             if rnd == r0 and ii < i0: continue
-            spec = [(bb, p, a, dg * fr) for bb, p, a, dg in PS[pn]]; t = time.time(); PF.start_pose(R, P, spec, F, w0, Sv)
+            spec = [(bb, p, a, dg * fr) for bb, p, a, dg in PS[pn]]; t = time.time(); PF.start_pose(R, P, spec, F, w0, Sv); CUR[0] = pn
             n0 = NF.defects(R, P, Sv, spec, F, w0); snap = copy.deepcopy((K.F, K.PK)) if n0 else None
-            a, c, _ = FT.solve_one(R, P, Sv, spec, F, w0, log, pose_key=('%s@%.4f' % (pn, fr)) if rnd >= 1 else None); tot += a
+            a, c, _ = FT.solve_one(R, P, Sv, spec, F, w0, log, pose_key=pk_name(pn, fr) if rnd >= 1 else None); tot += a
             if n0:
                 n1 = NF.defects(R, P, Sv, spec, F, w0)
                 if n1 > n0: K.F.clear(); K.F.update(snap[0]); K.PK.clear(); K.PK.update(snap[1]); log.append(dict(round=rnd, pose=pn, frac=fr, reverted=[n0, n1])); n1 = n0
@@ -146,9 +181,9 @@ if __name__ == '__main__':
     K.save(art, dict(status='RP6 RIG PILOT / NOT FROZEN', name='SA_RP6_bake_%s' % nm, body=nm, recipe=dict(base_config=b['cfg'], weights=b['w'], kind=b.get('kind'),
                      geometry='sa6_blend dense convex body blend (bodies.json method), frozen barycentric cage embedding, RP6 joints recomputed on the body, base-config weights'),
                      body_vs_sha256=body_sha(BD, nm), body_json_sha256=b.get('sha256'), initialised_from=dict(layers=H.LAYERS, layers_sha256=C.sha(pk),
-                     base='SA_RP6_correctives_v002.json', base_arrays_sha256={c: C.sha(os.path.join(H.PKG, 'SA_RP6_correctives_%s_v001.npz' % c)) for c in 'MF'}),
+                     base=C.BASE_CORR, rig_version=C.RIGV, base_arrays_sha256={c: C.sha(os.path.join(H.PKG, H._js(C.BASE_CORR)['arrays'][c])) for c in 'MF'}),
                      semantics='baked(T) = packaged blend(T) + K(T); K = pose-driven corrective set on this exact body (0 at neutral)',
-                     converged=bool(tot == 0), bake_fracs=list(FRACS), pk_min_width=PK_MINW, pk_floor_per_pose=PK_FLOOR or None, pen_margin_cm=PEN_MARGIN, only_poses=sorted(ONLY) or None, adaptive_samples=EXTRA, initialised_from_artifact=ini or None, rounds_entering=n_entering, fit_log=log,
+                     converged=bool(tot == 0), bake_fracs=list(FRACS), pk_min_width=PK_MINW, pk_floor_per_pose=PK_FLOOR or None, motion_refit=dict(grid=PK_GRID, dropped_keys=MOT_DROPPED) if PK_GRID else None, pen_margin_cm=PEN_MARGIN, only_poses=sorted(ONLY) or None, adaptive_samples=EXTRA, initialised_from_artifact=ini or None, rounds_entering=n_entering, fit_log=log,
                      timing=dict(setup_s=round(t_setup, 1), fit_s=round(t_fit, 1), peak_mb=round(peak_mb(), 1), host=platform.node(), cpu=platform.processor(), os=platform.platform(), cpus_used=1,
                                  threads=os.environ.get('OMP_NUM_THREADS'))))
     t_write = time.time() - t2

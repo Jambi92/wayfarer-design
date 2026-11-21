@@ -1,0 +1,913 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "c1": {
+  "config": "M",
+  "file": "SA_RP6_weights_M_v002.npz",
+  "method": "capsule segmentation in semantic masks + region-scaled mesh diffusion {\"digit\": 12, \"handfoot\": 30, \"tail\": 70, \"body\": 220} + prune 4; v002 shoulder merge into v001 {\"set_S\": 15505, \"rings\": 4, \"blended\": 1594, \"v001_rows\": 173849, \"small_islands_removed\": 0}",
+  "vertex_groups": [
+   "pelvis",
+   "spine_01",
+   "spine_02",
+   "spine_03",
+   "spine_04",
+   "neck_01",
+   "neck_02",
+   "head",
+   "jaw",
+   "tail_01",
+   "tail_02",
+   "tail_03",
+   "tail_04",
+   "tail_05",
+   "tail_06",
+   "tail_07",
+   "tail_08",
+   "tail_09",
+   "tail_10",
+   "tail_11",
+   "tail_12",
+   "tail_13",
+   "tail_14",
+   "tail_15",
+   "tail_16",
+   "clavicle_l",
+   "upperarm_l",
+   "forearm_l",
+   "hand_l",
+   "meta_1_l",
+   "finger_1_01_l",
+   "finger_1_02_l",
+   "finger_1_03_l",
+   "meta_2_l",
+   "finger_2_01_l",
+   "finger_2_02_l",
+   "finger_2_03_l",
+   "meta_3_l",
+   "finger_3_01_l",
+   "finger_3_02_l",
+   "finger_3_03_l",
+   "meta_4_l",
+   "finger_4_01_l",
+   "finger_4_02_l",
+   "finger_4_03_l",
+   "thumb_01_l",
+   "thumb_02_l",
+   "thumb_03_l",
+   "thigh_l",
+   "shin_l",
+   "foot_l",
+   "toe_1_01_l",
+   "toe_1_02_l",
+   "toe_1_03_l",
+   "toe_2_01_l",
+   "toe_2_02_l",
+   "toe_2_03_l",
+   "toe_3_01_l",
+   "toe_3_02_l",
+   "toe_3_03_l",
+   "toe_4_01_l",
+   "toe_4_02_l",
+   "toe_4_03_l",
+   "toe_5_01_l",
+   "toe_5_02_l",
+   "toe_5_03_l",
+   "clavicle_r",
+   "upperarm_r",
+   "forearm_r",
+   "hand_r",
+   "meta_1_r",
+   "finger_1_01_r",
+   "finger_1_02_r",
+   "finger_1_03_r",
+   "meta_2_r",
+   "finger_2_01_r",
+   "finger_2_02_r",
+   "finger_2_03_r",
+   "meta_3_r",
+   "finger_3_01_r",
+   "finger_3_02_r",
+   "finger_3_03_r",
+   "meta_4_r",
+   "finger_4_01_r",
+   "finger_4_02_r",
+   "finger_4_03_r",
+   "thumb_01_r",
+   "thumb_02_r",
+   "thumb_03_r",
+   "thigh_r",
+   "shin_r",
+   "foot_r",
+   "toe_1_01_r",
+   "toe_1_02_r",
+   "toe_1_03_r",
+   "toe_2_01_r",
+   "toe_2_02_r",
+   "toe_2_03_r",
+   "toe_3_01_r",
+   "toe_3_02_r",
+   "toe_3_03_r",
+   "toe_4_01_r",
+   "toe_4_02_r",
+   "toe_4_03_r",
+   "toe_5_01_r",
+   "toe_5_02_r",
+   "toe_5_03_r"
+  ],
+  "n_groups": 107,
+  "deform_groups_only": true,
+  "influence_histogram": {
+   "0": 0,
+   "1": 83620,
+   "2": 70407,
+   "3": 22699,
+   "4": 14222
+  },
+  "max_influences": 4,
+  "weight_sum_abs_error_max": 1.1920928955078125e-07,
+  "zero_weight_vertices": 0,
+  "min_nonzero_weight": 0.0010003852657973766,
+  "orphan_groups": [],
+  "islands": {},
+  "spike_vertices_gt_0.5": 0,
+  "max_one_ring_deviation": 0.2774,
+  "left_right": {
+   "pairs": {
+    "clavicle": {
+     "count_l": 1557,
+     "count_r": 1448,
+     "bone_length_rel_diff": 0.068,
+     "mass_rel_diff": 0.1113,
+     "label_distribution_total_variation": 0.0648
+    },
+    "upperarm": {
+     "count_l": 4994,
+     "count_r": 4938,
+     "bone_length_rel_diff": 0.0431,
+     "mass_rel_diff": 0.0107,
+     "label_distribution_total_variation": 0.0061
+    },
+    "forearm": {
+     "count_l": 5664,
+     "count_r": 5664,
+     "bone_length_rel_diff": 0.0038,
+     "mass_rel_diff": 0.0,
+     "label_distribution_total_variation": 0.0053
+    },
+    "hand": {
+     "count_l": 2139,
+     "count_r": 1970,
+     "bone_length_rel_diff": 0.041,
+     "mass_rel_diff": 0.0552,
+     "label_distribution_total_variation": 0.143
+    },
+    "meta_1": {
+     "count_l": 4611,
+     "count_r": 4886,
+     "bone_length_rel_diff": 0.0055,
+     "mass_rel_diff": 0.0209,
+     "label_distribution_total_variation": 0.0048
+    },
+    "finger_1_01": {
+     "count_l": 1936,
+     "count_r": 1959,
+     "bone_length_rel_diff": 0.0999,
+     "mass_rel_diff": 0.0181,
+     "label_distribution_total_variation": 0.0049
+    },
+    "finger_1_02": {
+     "count_l": 1557,
+     "count_r": 1546,
+     "bone_length_rel_diff": 0.0326,
+     "mass_rel_diff": 0.0029,
+     "label_distribution_total_variation": 0.0033
+    },
+    "finger_1_03": {
+     "count_l": 572,
+     "count_r": 563,
+     "bone_length_rel_diff": 0.0112,
+     "mass_rel_diff": 0.0259,
+     "label_distribution_total_variation": 0.0115
+    },
+    "meta_2": {
+     "count_l": 3994,
+     "count_r": 3786,
+     "bone_length_rel_diff": 0.041,
+     "mass_rel_diff": 0.0581,
+     "label_distribution_total_variation": 0.0502
+    },
+    "finger_2_01": {
+     "count_l": 2072,
+     "count_r": 2064,
+     "bone_length_rel_diff": 0.1529,
+     "mass_rel_diff": 0.0496,
+     "label_distribution_total_variation": 0.0358
+    },
+    "finger_2_02": {
+     "count_l": 1556,
+     "count_r": 1555,
+     "bone_length_rel_diff": 0.0946,
+     "mass_rel_diff": 0.0033,
+     "label_distribution_total_variation": 0.0231
+    },
+    "finger_2_03": {
+     "count_l": 565,
+     "count_r": 591,
+     "bone_length_rel_diff": 0.2256,
+     "mass_rel_diff": 0.0211,
+     "label_distribution_total_variation": 0.075
+    },
+    "meta_3": {
+     "count_l": 4165,
+     "count_r": 4342,
+     "bone_length_rel_diff": 0.0169,
+     "mass_rel_diff": 0.0747,
+     "label_distribution_total_variation": 0.0451
+    },
+    "finger_3_01": {
+     "count_l": 2387,
+     "count_r": 2378,
+     "bone_length_rel_diff": 0.055,
+     "mass_rel_diff": 0.0173,
+     "label_distribution_total_variation": 0.0397
+    },
+    "finger_3_02": {
+     "count_l": 1565,
+     "count_r": 1561,
+     "bone_length_rel_diff": 0.0278,
+     "mass_rel_diff": 0.0048,
+     "label_distribution_total_variation": 0.0006
+    },
+    "finger_3_03": {
+     "count_l": 565,
+     "count_r": 567,
+     "bone_length_rel_diff": 0.0517,
+     "mass_rel_diff": 0.0131,
+     "label_distribution_total_variation": 0.0114
+    },
+    "meta_4": {
+     "count_l": 5481,
+     "count_r": 5209,
+     "bone_length_rel_diff": 0.0082,
+     "mass_rel_diff": 0.0665,
+     "label_distribution_total_variation": 0.0033
+    },
+    "finger_4_01": {
+     "count_l": 1918,
+     "count_r": 1904,
+     "bone_length_rel_diff": 0.0085,
+     "mass_rel_diff": 0.0104,
+     "label_distribution_total_variation": 0.0098
+    },
+    "finger_4_02": {
+     "count_l": 1555,
+     "count_r": 1558,
+     "bone_length_rel_diff": 0.0387,
+     "mass_rel_diff": 0.0,
+     "label_distribution_total_variation": 0.0001
+    },
+    "finger_4_03": {
+     "count_l": 572,
+     "count_r": 572,
+     "bone_length_rel_diff": 0.0013,
+     "mass_rel_diff": 0.0001,
+     "label_distribution_total_variation": 0.0007
+    },
+    "thumb_01": {
+     "count_l": 2754,
+     "count_r": 2959,
+     "bone_length_rel_diff": 0.0877,
+     "mass_rel_diff": 0.1164,
+     "label_distribution_total_variation": 0.101
+    },
+    "thumb_02": {
+     "count_l": 1761,
+     "count_r": 1774,
+     "bone_length_rel_diff": 0.0877,
+     "mass_rel_diff": 0.0172,
+     "label_distribution_total_variation": 0.0008
+    },
+    "thumb_03": {
+     "count_l": 579,
+     "count_r": 560,
+     "bone_length_rel_diff": 0.0908,
+     "mass_rel_diff": 0.0642,
+     "label_distribution_total_variation": 0.046
+    },
+    "thigh": {
+     "count_l": 6339,
+     "count_r": 6314,
+     "bone_length_rel_diff": 0.0125,
+     "mass_rel_diff": 0.0009,
+     "label_distribution_total_variation": 0.0051
+    },
+    "shin": {
+     "count_l": 15707,
+     "count_r": 15891,
+     "bone_length_rel_diff": 0.008,
+     "mass_rel_diff": 0.0159,
+     "label_distribution_total_variation": 0.0111
+    },
+    "foot": {
+     "count_l": 12429,
+     "count_r": 12722,
+     "bone_length_rel_diff": 0.0008,
+     "mass_rel_diff": 0.0099,
+     "label_distribution_total_variation": 0.0225
+    },
+    "toe_1_01": {
+     "count_l": 3003,
+     "count_r": 2993,
+     "bone_length_rel_diff": 0.046,
+     "mass_rel_diff": 0.0366,
+     "label_distribution_total_variation": 0.0227
+    },
+    "toe_1_02": {
+     "count_l": 1562,
+     "count_r": 1529,
+     "bone_length_rel_diff": 0.0589,
+     "mass_rel_diff": 0.0344,
+     "label_distribution_total_variation": 0.0699
+    },
+    "toe_1_03": {
+     "count_l": 589,
+     "count_r": 594,
+     "bone_length_rel_diff": 0.2872,
+     "mass_rel_diff": 0.0915,
+     "label_distribution_total_variation": 0.2934
+    },
+    "toe_2_01": {
+     "count_l": 3442,
+     "count_r": 3312,
+     "bone_length_rel_diff": 0.0441,
+     "mass_rel_diff": 0.0583,
+     "label_distribution_total_variation": 0.0122
+    },
+    "toe_2_02": {
+     "count_l": 1555,
+     "count_r": 1562,
+     "bone_length_rel_diff": 0.0263,
+     "mass_rel_diff": 0.0075,
+     "label_distribution_total_variation": 0.0132
+    },
+    "toe_2_03": {
+     "count_l": 589,
+     "count_r": 599,
+     "bone_length_rel_diff": 0.0332,
+     "mass_rel_diff": 0.0064,
+     "label_distribution_total_variation": 0.0529
+    },
+    "toe_3_01": {
+     "count_l": 2755,
+     "count_r": 2829,
+     "bone_length_rel_diff": 0.0441,
+     "mass_rel_diff": 0.0338,
+     "label_distribution_total_variation": 0.0196
+    },
+    "toe_3_02": {
+     "count_l": 1570,
+     "count_r": 1564,
+     "bone_length_rel_diff": 0.0054,
+     "mass_rel_diff": 0.0087,
+     "label_distribution_total_variation": 0.0002
+    },
+    "toe_3_03": {
+     "count_l": 579,
+     "count_r": 577,
+     "bone_length_rel_diff": 0.0502,
+     "mass_rel_diff": 0.004,
+     "label_distribution_total_variation": 0.0004
+    },
+    "toe_4_01": {
+     "count_l": 3261,
+     "count_r": 3229,
+     "bone_length_rel_diff": 0.0243,
+     "mass_rel_diff": 0.0094,
+     "label_distribution_total_variation": 0.01
+    },
+    "toe_4_02": {
+     "count_l": 1567,
+     "count_r": 1572,
+     "bone_length_rel_diff": 0.0245,
+     "mass_rel_diff": 0.0067,
+     "label_distribution_total_variation": 0.0123
+    },
+    "toe_4_03": {
+     "count_l": 570,
+     "count_r": 585,
+     "bone_length_rel_diff": 0.0209,
+     "mass_rel_diff": 0.0086,
+     "label_distribution_total_variation": 0.0416
+    },
+    "toe_5_01": {
+     "count_l": 3505,
+     "count_r": 3565,
+     "bone_length_rel_diff": 0.0681,
+     "mass_rel_diff": 0.0077,
+     "label_distribution_total_variation": 0.0095
+    },
+    "toe_5_02": {
+     "count_l": 1574,
+     "count_r": 1576,
+     "bone_length_rel_diff": 0.0702,
+     "mass_rel_diff": 0.0029,
+     "label_distribution_total_variation": 0.0003
+    },
+    "toe_5_03": {
+     "count_l": 582,
+     "count_r": 579,
+     "bone_length_rel_diff": 0.0354,
+     "mass_rel_diff": 0.0206,
+     "label_distribution_total_variation": 0.0166
+    }
+   },
+   "mass_rel_diff_max": 0.1164,
+   "label_tv_max": 0.2934,
+   "worst": "thumb_01",
+   "note": "the frozen stance / digits are not mirror-symmetric; pairs with mass difference > 5 % are listed with their l / r bone-length difference (same method both sides, no side-specific tuning)"
+  },
+  "leakage": {
+   "finger_web_l_non_adjacent_digit_weight_max": 0.0,
+   "toe_web_l_non_adjacent_digit_weight_max": 0.0,
+   "axilla_trunk_wall_arm_weight_max_l": 0.0,
+   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_l": 788,
+   "axilla_arm_vertices_spine_weight_max_l": 0.0,
+   "groin_opposite_leg_weight_max_l": 0.0,
+   "groin_leg_vertices_tail_weight_max_l": 0.0,
+   "tail_root_tail_vertices_leg_weight_max_l": 0.0,
+   "opposite_side_any_weight_max_l": 0.0,
+   "finger_web_r_non_adjacent_digit_weight_max": 0.0,
+   "toe_web_r_non_adjacent_digit_weight_max": 0.0,
+   "axilla_trunk_wall_arm_weight_max_r": 0.0,
+   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_r": 730,
+   "axilla_arm_vertices_spine_weight_max_r": 0.0,
+   "groin_opposite_leg_weight_max_r": 0.0,
+   "groin_leg_vertices_tail_weight_max_r": 0.0,
+   "tail_root_tail_vertices_leg_weight_max_r": 0.0,
+   "opposite_side_any_weight_max_r": 0.0,
+   "mouth_upper_jaw_vertices_jaw_weight_max": 0.0,
+   "orbit_eye_display_jaw_weight_max": 0.0,
+   "throat_neck_vertices_jaw_weight_max": 0.0,
+   "jaw_weighted_vertices": 6192
+  },
+  "leakage_pass": true,
+  "shoulder_blend_note": "the upper arm deliberately weights trunk / neck vertices within 0.45 x its length of the glenohumeral joint (and the clavicle the proximal upper arm within 0.35 x) to avoid the LBS shoulder pinch; the leakage test checks the trunk wall beyond that zone"
+ },
+ "c2": {
+  "config": "F",
+  "file": "SA_RP6_weights_F_v002.npz",
+  "method": "capsule segmentation in semantic masks + region-scaled mesh diffusion {\"digit\": 12, \"handfoot\": 30, \"tail\": 70, \"body\": 220} + prune 4; v002 shoulder merge into v001 {\"set_S\": 15518, \"rings\": 4, \"blended\": 1590, \"v001_rows\": 173840, \"small_islands_removed\": 1}",
+  "vertex_groups": [
+   "pelvis",
+   "spine_01",
+   "spine_02",
+   "spine_03",
+   "spine_04",
+   "neck_01",
+   "neck_02",
+   "head",
+   "jaw",
+   "tail_01",
+   "tail_02",
+   "tail_03",
+   "tail_04",
+   "tail_05",
+   "tail_06",
+   "tail_07",
+   "tail_08",
+   "tail_09",
+   "tail_10",
+   "tail_11",
+   "tail_12",
+   "tail_13",
+   "tail_14",
+   "tail_15",
+   "tail_16",
+   "clavicle_l",
+   "upperarm_l",
+   "forearm_l",
+   "hand_l",
+   "meta_1_l",
+   "finger_1_01_l",
+   "finger_1_02_l",
+   "finger_1_03_l",
+   "meta_2_l",
+   "finger_2_01_l",
+   "finger_2_02_l",
+   "finger_2_03_l",
+   "meta_3_l",
+   "finger_3_01_l",
+   "finger_3_02_l",
+   "finger_3_03_l",
+   "meta_4_l",
+   "finger_4_01_l",
+   "finger_4_02_l",
+   "finger_4_03_l",
+   "thumb_01_l",
+   "thumb_02_l",
+   "thumb_03_l",
+   "thigh_l",
+   "shin_l",
+   "foot_l",
+   "toe_1_01_l",
+   "toe_1_02_l",
+   "toe_1_03_l",
+   "toe_2_01_l",
+   "toe_2_02_l",
+   "toe_2_03_l",
+   "toe_3_01_l",
+   "toe_3_02_l",
+   "toe_3_03_l",
+   "toe_4_01_l",
+   "toe_4_02_l",
+   "toe_4_03_l",
+   "toe_5_01_l",
+   "toe_5_02_l",
+   "toe_5_03_l",
+   "clavicle_r",
+   "upperarm_r",
+   "forearm_r",
+   "hand_r",
+   "meta_1_r",
+   "finger_1_01_r",
+   "finger_1_02_r",
+   "finger_1_03_r",
+   "meta_2_r",
+   "finger_2_01_r",
+   "finger_2_02_r",
+   "finger_2_03_r",
+   "meta_3_r",
+   "finger_3_01_r",
+   "finger_3_02_r",
+   "finger_3_03_r",
+   "meta_4_r",
+   "finger_4_01_r",
+   "finger_4_02_r",
+   "finger_4_03_r",
+   "thumb_01_r",
+   "thumb_02_r",
+   "thumb_03_r",
+   "thigh_r",
+   "shin_r",
+   "foot_r",
+   "toe_1_01_r",
+   "toe_1_02_r",
+   "toe_1_03_r",
+   "toe_2_01_r",
+   "toe_2_02_r",
+   "toe_2_03_r",
+   "toe_3_01_r",
+   "toe_3_02_r",
+   "toe_3_03_r",
+   "toe_4_01_r",
+   "toe_4_02_r",
+   "toe_4_03_r",
+   "toe_5_01_r",
+   "toe_5_02_r",
+   "toe_5_03_r"
+  ],
+  "n_groups": 107,
+  "deform_groups_only": true,
+  "influence_histogram": {
+   "0": 0,
+   "1": 83175,
+   "2": 70793,
+   "3": 22771,
+   "4": 14209
+  },
+  "max_influences": 4,
+  "weight_sum_abs_error_max": 1.1920928955078125e-07,
+  "zero_weight_vertices": 0,
+  "min_nonzero_weight": 0.0010001660557463765,
+  "orphan_groups": [],
+  "islands": {},
+  "spike_vertices_gt_0.5": 0,
+  "max_one_ring_deviation": 0.2774,
+  "left_right": {
+   "pairs": {
+    "clavicle": {
+     "count_l": 1565,
+     "count_r": 1437,
+     "bone_length_rel_diff": 0.0707,
+     "mass_rel_diff": 0.124,
+     "label_distribution_total_variation": 0.0669
+    },
+    "upperarm": {
+     "count_l": 5004,
+     "count_r": 4935,
+     "bone_length_rel_diff": 0.0447,
+     "mass_rel_diff": 0.0028,
+     "label_distribution_total_variation": 0.0062
+    },
+    "forearm": {
+     "count_l": 5664,
+     "count_r": 5664,
+     "bone_length_rel_diff": 0.0039,
+     "mass_rel_diff": 0.008,
+     "label_distribution_total_variation": 0.0056
+    },
+    "hand": {
+     "count_l": 2139,
+     "count_r": 1971,
+     "bone_length_rel_diff": 0.041,
+     "mass_rel_diff": 0.0551,
+     "label_distribution_total_variation": 0.143
+    },
+    "meta_1": {
+     "count_l": 4611,
+     "count_r": 4886,
+     "bone_length_rel_diff": 0.0055,
+     "mass_rel_diff": 0.0209,
+     "label_distribution_total_variation": 0.0048
+    },
+    "finger_1_01": {
+     "count_l": 1936,
+     "count_r": 1959,
+     "bone_length_rel_diff": 0.0999,
+     "mass_rel_diff": 0.0181,
+     "label_distribution_total_variation": 0.0049
+    },
+    "finger_1_02": {
+     "count_l": 1557,
+     "count_r": 1546,
+     "bone_length_rel_diff": 0.0326,
+     "mass_rel_diff": 0.0029,
+     "label_distribution_total_variation": 0.0033
+    },
+    "finger_1_03": {
+     "count_l": 572,
+     "count_r": 563,
+     "bone_length_rel_diff": 0.0112,
+     "mass_rel_diff": 0.0259,
+     "label_distribution_total_variation": 0.0115
+    },
+    "meta_2": {
+     "count_l": 3994,
+     "count_r": 3786,
+     "bone_length_rel_diff": 0.041,
+     "mass_rel_diff": 0.0581,
+     "label_distribution_total_variation": 0.0502
+    },
+    "finger_2_01": {
+     "count_l": 2072,
+     "count_r": 2064,
+     "bone_length_rel_diff": 0.1529,
+     "mass_rel_diff": 0.0496,
+     "label_distribution_total_variation": 0.0358
+    },
+    "finger_2_02": {
+     "count_l": 1556,
+     "count_r": 1555,
+     "bone_length_rel_diff": 0.0947,
+     "mass_rel_diff": 0.0033,
+     "label_distribution_total_variation": 0.0231
+    },
+    "finger_2_03": {
+     "count_l": 565,
+     "count_r": 591,
+     "bone_length_rel_diff": 0.2255,
+     "mass_rel_diff": 0.0211,
+     "label_distribution_total_variation": 0.075
+    },
+    "meta_3": {
+     "count_l": 4165,
+     "count_r": 4342,
+     "bone_length_rel_diff": 0.0169,
+     "mass_rel_diff": 0.0747,
+     "label_distribution_total_variation": 0.0451
+    },
+    "finger_3_01": {
+     "count_l": 2387,
+     "count_r": 2378,
+     "bone_length_rel_diff": 0.055,
+     "mass_rel_diff": 0.0173,
+     "label_distribution_total_variation": 0.0397
+    },
+    "finger_3_02": {
+     "count_l": 1565,
+     "count_r": 1561,
+     "bone_length_rel_diff": 0.0278,
+     "mass_rel_diff": 0.0048,
+     "label_distribution_total_variation": 0.0006
+    },
+    "finger_3_03": {
+     "count_l": 565,
+     "count_r": 567,
+     "bone_length_rel_diff": 0.0517,
+     "mass_rel_diff": 0.0131,
+     "label_distribution_total_variation": 0.0114
+    },
+    "meta_4": {
+     "count_l": 5481,
+     "count_r": 5209,
+     "bone_length_rel_diff": 0.0082,
+     "mass_rel_diff": 0.0665,
+     "label_distribution_total_variation": 0.0033
+    },
+    "finger_4_01": {
+     "count_l": 1918,
+     "count_r": 1904,
+     "bone_length_rel_diff": 0.0085,
+     "mass_rel_diff": 0.0104,
+     "label_distribution_total_variation": 0.0098
+    },
+    "finger_4_02": {
+     "count_l": 1555,
+     "count_r": 1558,
+     "bone_length_rel_diff": 0.0388,
+     "mass_rel_diff": 0.0,
+     "label_distribution_total_variation": 0.0001
+    },
+    "finger_4_03": {
+     "count_l": 572,
+     "count_r": 572,
+     "bone_length_rel_diff": 0.0013,
+     "mass_rel_diff": 0.0001,
+     "label_distribution_total_variation": 0.0007
+    },
+    "thumb_01": {
+     "count_l": 2754,
+     "count_r": 2959,
+     "bone_length_rel_diff": 0.0877,
+     "mass_rel_diff": 0.1165,
+     "label_distribution_total_variation": 0.101
+    },
+    "thumb_02": {
+     "count_l": 1761,
+     "count_r": 1774,
+     "bone_length_rel_diff": 0.0877,
+     "mass_rel_diff": 0.0172,
+     "label_distribution_total_variation": 0.0008
+    },
+    "thumb_03": {
+     "count_l": 579,
+     "count_r": 560,
+     "bone_length_rel_diff": 0.0908,
+     "mass_rel_diff": 0.0642,
+     "label_distribution_total_variation": 0.046
+    },
+    "thigh": {
+     "count_l": 6362,
+     "count_r": 6334,
+     "bone_length_rel_diff": 0.0122,
+     "mass_rel_diff": 0.0003,
+     "label_distribution_total_variation": 0.0059
+    },
+    "shin": {
+     "count_l": 15827,
+     "count_r": 16294,
+     "bone_length_rel_diff": 0.0081,
+     "mass_rel_diff": 0.0348,
+     "label_distribution_total_variation": 0.0227
+    },
+    "foot": {
+     "count_l": 12809,
+     "count_r": 12277,
+     "bone_length_rel_diff": 0.0008,
+     "mass_rel_diff": 0.0411,
+     "label_distribution_total_variation": 0.0448
+    },
+    "toe_1_01": {
+     "count_l": 3003,
+     "count_r": 2992,
+     "bone_length_rel_diff": 0.046,
+     "mass_rel_diff": 0.0367,
+     "label_distribution_total_variation": 0.0227
+    },
+    "toe_1_02": {
+     "count_l": 1562,
+     "count_r": 1529,
+     "bone_length_rel_diff": 0.059,
+     "mass_rel_diff": 0.0344,
+     "label_distribution_total_variation": 0.0699
+    },
+    "toe_1_03": {
+     "count_l": 589,
+     "count_r": 594,
+     "bone_length_rel_diff": 0.2871,
+     "mass_rel_diff": 0.0915,
+     "label_distribution_total_variation": 0.2934
+    },
+    "toe_2_01": {
+     "count_l": 3442,
+     "count_r": 3312,
+     "bone_length_rel_diff": 0.0441,
+     "mass_rel_diff": 0.0583,
+     "label_distribution_total_variation": 0.0122
+    },
+    "toe_2_02": {
+     "count_l": 1555,
+     "count_r": 1562,
+     "bone_length_rel_diff": 0.0263,
+     "mass_rel_diff": 0.0075,
+     "label_distribution_total_variation": 0.0132
+    },
+    "toe_2_03": {
+     "count_l": 589,
+     "count_r": 599,
+     "bone_length_rel_diff": 0.0332,
+     "mass_rel_diff": 0.0064,
+     "label_distribution_total_variation": 0.0529
+    },
+    "toe_3_01": {
+     "count_l": 2755,
+     "count_r": 2829,
+     "bone_length_rel_diff": 0.0441,
+     "mass_rel_diff": 0.0338,
+     "label_distribution_total_variation": 0.0196
+    },
+    "toe_3_02": {
+     "count_l": 1570,
+     "count_r": 1564,
+     "bone_length_rel_diff": 0.0055,
+     "mass_rel_diff": 0.0087,
+     "label_distribution_total_variation": 0.0002
+    },
+    "toe_3_03": {
+     "count_l": 579,
+     "count_r": 577,
+     "bone_length_rel_diff": 0.0503,
+     "mass_rel_diff": 0.004,
+     "label_distribution_total_variation": 0.0004
+    },
+    "toe_4_01": {
+     "count_l": 3261,
+     "count_r": 3229,
+     "bone_length_rel_diff": 0.0243,
+     "mass_rel_diff": 0.0094,
+     "label_distribution_total_variation": 0.01
+    },
+    "toe_4_02": {
+     "count_l": 1567,
+     "count_r": 1572,
+     "bone_length_rel_diff": 0.0246,
+     "mass_rel_diff": 0.0067,
+     "label_distribution_total_variation": 0.0123
+    },
+    "toe_4_03": {
+     "count_l": 570,
+     "count_r": 585,
+     "bone_length_rel_diff": 0.0209,
+     "mass_rel_diff": 0.0086,
+     "label_distribution_total_variation": 0.0416
+    },
+    "toe_5_01": {
+     "count_l": 3505,
+     "count_r": 3565,
+     "bone_length_rel_diff": 0.0681,
+     "mass_rel_diff": 0.0077,
+     "label_distribution_total_variation": 0.0095
+    },
+    "toe_5_02": {
+     "count_l": 1574,
+     "count_r": 1576,
+     "bone_length_rel_diff": 0.0702,
+     "mass_rel_diff": 0.0029,
+     "label_distribution_total_variation": 0.0003
+    },
+    "toe_5_03": {
+     "count_l": 582,
+     "count_r": 579,
+     "bone_length_rel_diff": 0.0353,
+     "mass_rel_diff": 0.0206,
+     "label_distribution_total_variation": 0.0166
+    }
+   },
+   "mass_rel_diff_max": 0.124,
+   "label_tv_max": 0.2934,
+   "worst": "clavicle",
+   "note": "the frozen stance / digits are not mirror-symmetric; pairs with mass difference > 5 % are listed with their l / r bone-length difference (same method both sides, no side-specific tuning)"
+  },
+  "leakage": {
+   "finger_web_l_non_adjacent_digit_weight_max": 0.0,
+   "toe_web_l_non_adjacent_digit_weight_max": 0.0,
+   "axilla_trunk_wall_arm_weight_max_l": 0.0,
+   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_l": 798,
+   "axilla_arm_vertices_spine_weight_max_l": 0.0,
+   "groin_opposite_leg_weight_max_l": 0.0,
+   "groin_leg_vertices_tail_weight_max_l": 0.0,
+   "tail_root_tail_vertices_leg_weight_max_l": 0.0,
+   "opposite_side_any_weight_max_l": 0.0,
+   "finger_web_r_non_adjacent_digit_weight_max": 0.0,
+   "toe_web_r_non_adjacent_digit_weight_max": 0.0,
+   "axilla_trunk_wall_arm_weight_max_r": 0.0,
+   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_r": 727,
+   "axilla_arm_vertices_spine_weight_max_r": 0.0,
+   "groin_opposite_leg_weight_max_r": 0.0,
+   "groin_leg_vertices_tail_weight_max_r": 0.0,
+   "tail_root_tail_vertices_leg_weight_max_r": 0.0,
+   "opposite_side_any_weight_max_r": 0.0,
+   "mouth_upper_jaw_vertices_jaw_weight_max": 0.0,
+   "orbit_eye_display_jaw_weight_max": 0.0,
+   "throat_neck_vertices_jaw_weight_max": 0.0,
+   "jaw_weighted_vertices": 6191
+  },
+  "leakage_pass": true,
+  "shoulder_blend_note": "the upper arm deliberately weights trunk / neck vertices within 0.45 x its length of the glenohumeral joint (and the clavicle the proximal upper arm within 0.35 x) to avoid the LBS shoulder pinch; the leakage test checks the trunk wall beyond that zone"
+ },
+ "c1_c2": {
+  "per_vertex_weight_abs_diff_max": 0.9971,
+  "p99": 0.0463,
+  "vertices_identical": 146622,
+  "note": "c2 weights are computed by the same method on the c2 realisation and c2 joint placement (not copied from c1)"
+ }
+}

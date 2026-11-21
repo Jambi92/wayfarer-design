@@ -53,6 +53,30 @@ class Rig:
             if e[0].startswith('upperarm_') and 'clavicle_' + e[0].split('_')[-1] not in has: out += self.girdle_split(*e)
             else: out.append(e)
         return out
+    def bones_of(self, spec):
+        """bones the full pose actually rotates (v002: includes the coupled clavicle)"""
+        return {e[0] for e in self.expand(spec)}
+    def scaled(self, spec, f): return [(b, p, a, dg * f) for b, p, a, dg in spec]
+    def fracs_at(self, spec, drv, vals, lo=0.0, hi=1.0, key=None):
+        """fractions f of the pose (entries scaled by f) at which drv(self.pose(f x spec)) equals each value in vals.
+        v001, or a v002 pose the coupling does not change: the driver is linear in f, f = v / drv(full) (the historical formula).
+        v002 coupled pose: humeral and girdle angles are not linear in f; crossings are bracketed on a 1/960 grid and bisected (30 steps)."""
+        x1 = drv(self.pose(spec))
+        if abs(x1) < 1e-6: return []
+        if C.RIGV == 'v001' or len(self.expand(spec)) == len(spec): return [v / x1 for v in vals]
+        ck = (tuple((b, tuple(np.round(a, 9)), float(dg)) for b, _, a, dg in spec), key if key is not None else id(drv)); fc = self.__dict__.setdefault('_fc', {})
+        if ck not in fc:
+            F = np.linspace(0, 1, 961); fc[ck] = (F, np.array([drv(self.pose(self.scaled(spec, f))) for f in F]))
+        F, D = fc[ck]; out = []
+        for v in vals:
+            s = D - v
+            for i in np.nonzero((s[:-1] == 0) | (np.sign(s[:-1]) != np.sign(s[1:])))[0]:
+                a, b = F[i], F[i + 1]; sa = s[i]
+                for _ in range(30):
+                    m = 0.5 * (a + b); sm = drv(self.pose(self.scaled(spec, m))) - v
+                    a, b, sa = (m, b, sm) if np.sign(sm) == np.sign(sa) and sm != 0 else (a, m, sa)
+                out.append(0.5 * (a + b))
+        return out
     def pose(self, spec):
         T = {b: (np.eye(3), np.zeros(3)) for b in self.P}
         for bn, piv, ax, deg in self.expand(spec):

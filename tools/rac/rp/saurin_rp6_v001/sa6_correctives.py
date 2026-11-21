@@ -14,7 +14,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 def twist(R, a):
     q = Rot.from_matrix(R).as_quat(); a = np.asarray(a, float); a = a / np.linalg.norm(a); t = 2 * np.degrees(np.arctan2(q[:3] @ a, q[3]))
     return (t + 180) % 360 - 180
-def fam_key(b, ax): ax = np.asarray(ax, float); ax = ax / np.linalg.norm(ax); return b + '|' + ','.join('%.5f' % x for x in ax)
+def fam_key(b, ax, layer=None): ax = np.asarray(ax, float); ax = ax / np.linalg.norm(ax); return ('%s:' % layer if layer else '') + b + '|' + ','.join('%.5f' % x for x in ax)
+#   layer families (rig v002, order 07a3f24c §2): f['layer'] = 'muscle' marks an authored elbow-driven muscle family (sa6_muscle.py).  It evaluates like any
+#   family (same driver, hat interpolation, Blender shape keys) but is never chosen by resolve(): the fit adds its corrections to its own families on top.
 class Correctives:
     def __init__(self, rig, snap=4.0): self.r = rig; self.F = {}; self.snap = snap; self.PK = {}          # key -> dict(bone, axis, pivot, samples[list], D[list of (idx, delta)])
     def driver(self, T, f):
@@ -62,6 +64,7 @@ class Correctives:
         joint degree of freedom: nearly parallel axes would double-activate), else a new family key."""
         a = np.asarray(axis, float); a = a / np.linalg.norm(a)
         for k, f in self.F.items():
+            if f.get('layer'): continue
             if f['bone'] == bone and abs(np.dot(f['axis'], a)) > np.cos(np.radians(tol_deg)): return k, np.asarray(f['axis'])
         return fam_key(bone, a), a
     def add(self, key, bone, axis, pivot, x, idx, dd):
@@ -76,9 +79,11 @@ class Correctives:
         out = dict(meta); out['families'] = []
         arrays = {}
         for j, (key, f) in enumerate(sorted(self.F.items())):
-            o = order = np.argsort(f['samples']); rec = dict(id='CF%03d' % j, bone=f['bone'], axis_parent_frame=f['axis'], pivot_rest_cm=f['pivot'], samples_deg=[f['samples'][k] for k in o], keys=[])
+            pre = 'MU' if f.get('layer') == 'muscle' else 'CF'
+            o = order = np.argsort(f['samples']); rec = dict(id='%s%03d' % (pre, j), bone=f['bone'], axis_parent_frame=f['axis'], pivot_rest_cm=f['pivot'], samples_deg=[f['samples'][k] for k in o], keys=[])
+            if f.get('layer'): rec['layer'] = f['layer']; rec['layer_params'] = f.get('layer_params', {})
             for k in o:
-                idx, dd = f['D'][k]; nm = '%s_%s_%+.1f' % ('CF%03d' % j, f['bone'], f['samples'][k]); arrays[nm + '_idx'] = idx.astype(np.int32); arrays[nm + '_d'] = dd.astype(np.float32)
+                idx, dd = f['D'][k]; nm = '%s_%s_%+.1f' % ('%s%03d' % (pre, j), f['bone'], f['samples'][k]); arrays[nm + '_idx'] = idx.astype(np.int32); arrays[nm + '_d'] = dd.astype(np.float32)
                 rec['keys'].append(dict(name=nm, sample_deg=f['samples'][k], n_vertices=int(len(idx)), max_delta_cm=float(np.linalg.norm(dd, axis=1).max()) if len(idx) else 0.0,
                                         mean_delta_cm=float(np.linalg.norm(dd, axis=1).mean()) if len(idx) else 0.0))
             out['families'].append(rec)
@@ -92,9 +97,10 @@ class Correctives:
     def load(cls, rig, path):
         c = cls(rig); js = json.load(open(path)); z = np.load(path.replace('.json', '.npz'))
         for f in js['families']:
-            key = fam_key(f['bone'], f['axis_parent_frame'])
+            key = fam_key(f['bone'], f['axis_parent_frame'], f.get('layer'))
             c.F[key] = dict(bone=f['bone'], axis=f['axis_parent_frame'], pivot=f['pivot_rest_cm'], samples=[k['sample_deg'] for k in f['keys']],
                             D=[(z[k['name'] + '_idx'].astype(np.int64), z[k['name'] + '_d'].astype(np.float64)) for k in f['keys']])
+            if f.get('layer'): c.F[key]['layer'] = f['layer']; c.F[key]['layer_params'] = f.get('layer_params', {})
         for pk in js.get('pose_keys', []):
             c.PK[pk['pose']] = dict(drivers=[(d_['bone'], d_['axis_parent_frame'], d_['sample_deg']) for d_ in pk['drivers']], idx=z[pk['name'] + '_idx'].astype(np.int64), d=z[pk['name'] + '_d'].astype(np.float64), name=pk['name'])
             if all('width_deg' in d_ for d_ in pk['drivers']): c.PK[pk['pose']]['width'] = [d_['width_deg'] for d_ in pk['drivers']]

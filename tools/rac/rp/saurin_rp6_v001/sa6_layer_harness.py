@@ -23,7 +23,7 @@
 import os, sys, json, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_common as C, sa6_correctives as CC
-PKG = os.environ.get('RP6_PKG', C.EV6)
+PKG = os.environ.get('RP6_PKG', C.PKGDIR)
 _cache = {}
 def _npz(name):
     if name not in _cache: _cache[name] = np.load(os.path.join(PKG, name))
@@ -34,13 +34,14 @@ def _js(name):
 def _set(rig, fams, pks, arr_of):
     c = CC.Correctives(rig)
     for f in fams:
-        key = CC.fam_key(f['bone'], f['axis_parent_frame'])
+        key = CC.fam_key(f['bone'], f['axis_parent_frame'], f.get('layer'))
         c.F[key] = dict(bone=f['bone'], axis=f['axis_parent_frame'], pivot=f['pivot_rest_cm'], samples=[k['sample_deg'] for k in f['keys']], D=[arr_of(k) for k in f['keys']])
+        if f.get('layer'): c.F[key]['layer'] = f['layer']; c.F[key]['layer_params'] = f.get('layer_params', {})
     for p in pks:
         idx, d = arr_of(p); c.PK[p['pose']] = dict(drivers=[(x['bone'], x['axis_parent_frame'], x['sample_deg']) for x in p['drivers']], idx=idx, d=d, name=p.get('name', p['pose']))
     return c
 def load_base(rig, cfg):
-    j = _js('SA_RP6_correctives_v002.json')['configurations'][cfg]; z = _npz(_js('SA_RP6_correctives_v002.json')['arrays'][cfg])
+    j = _js(C.BASE_CORR)['configurations'][cfg]; z = _npz(_js(C.BASE_CORR)['arrays'][cfg])
     return _set(rig, j['families'], j['pose_keys'], lambda k: (z[k['name'] + '_idx'].astype(np.int64), z[k['name'] + '_d'].astype(np.float64)))
 LAYERS = os.environ.get('RP6_LAYERS', 'SA_RP6_creator_layers_v002.json')
 def hats(knots, w):
@@ -74,7 +75,7 @@ class StateLayer:
         return d
 def load_state(rig, nm):
     L = _js(LAYERS); s = L['states'][nm]; cfg = s['base_config']
-    zb = _npz(_js('SA_RP6_correctives_v002.json')['arrays'][cfg]); zl = _npz(L['arrays'])
+    zb = _npz(_js(C.BASE_CORR)['arrays'][cfg]); zl = _npz(L['arrays'])
     def arr(k):
         if k['source'] == 'base': return zb[k['base_key'] + '_idx'].astype(np.int64), zb[k['base_key'] + '_d'].astype(np.float64)
         return zl[k['array'] + '_idx'].astype(np.int64), zl[k['array'] + '_d'].astype(np.float64)

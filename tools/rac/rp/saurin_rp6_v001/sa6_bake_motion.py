@@ -44,13 +44,12 @@ ONLY = [x for x in os.environ.get('MOTION_ONLY', '').split(',') if x]
 for pn in [p_ for p_ in sorted(suite) if not ONLY or p_ in ONLY][si::sn]:
     if pn in out['poses']: continue
     t0 = time.time(); spec = suite[pn]; T1 = R.pose(spec); full = max(abs(dg) for _, _, _, dg in spec); fr = set(np.round(np.arange(0, 1.0 + 1e-9, 1.0 / GRID), 6))
-    for f in FAM:
-        if not any(e[0] == f['bone'] for e in spec): continue
-        x1 = K.driver(T1, f)
-        if abs(x1) > 1e-6: fr.update(round(s_ / x1, 6) for s_ in f['samples'])
+    for f in FAM:                        # transitions as pose fractions; R.fracs_at inverts the coupled (v002) driver exactly
+        if f['bone'] not in R.bones_of(spec): continue
+        fr.update(round(x, 6) for x in R.fracs_at(spec, lambda T_: K.driver(T_, f), list(f['samples']), key=(f['bone'], tuple(f['axis']))))
     for k, pk in K.PK.items():
-        x1 = K.driver(T1, dict(bone=pk['drivers'][0][0], axis=pk['drivers'][0][1])); s_ = pk['drivers'][0][2]; w = (pk.get('width') or [abs(s_)])[0]
-        if abs(x1) > 1e-6 and any(e[0] == pk['drivers'][0][0] for e in spec): fr.update(round(c / x1, 6) for c in (s_ - w, s_, s_ + w))
+        dd = dict(bone=pk['drivers'][0][0], axis=pk['drivers'][0][1]); s_ = pk['drivers'][0][2]; w = (pk.get('width') or [abs(s_)])[0]
+        if dd['bone'] in R.bones_of(spec): fr.update(round(x, 6) for x in R.fracs_at(spec, lambda T_: K.driver(T_, dd), [s_ - w, s_, s_ + w], key=(dd['bone'], tuple(dd['axis']))))
     FR = np.array(sorted(f for f in fr if 0 <= f <= 1)); rel = {'prod': [], 'bake': []}; kact = 0.0
     for f in FR:
         T = R.pose([(bb, p, a, dg * f) for bb, p, a, dg in spec]); L = R.skin(T); dP = P0.delta(T); dK = K.delta(T); kact = max(kact, float(np.abs(dK).max()))

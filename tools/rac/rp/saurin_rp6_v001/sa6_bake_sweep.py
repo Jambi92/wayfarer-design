@@ -21,7 +21,7 @@ kb = {f['bone'] for f in K.F.values()}; pkp = {k.rsplit('@', 1)[0] for k in K.PK
 RISK = ['shoulder_abd45_xpos', 'shoulder_abd45_xneg', 'shoulder_abd90_xpos', 'shoulder_abd90_xneg', 'shoulder_flex60_xpos', 'shoulder_flex60_xneg',
         'hip_flex70_xpos', 'hip_flex70_xneg', 'trunk_twist_30', 'lower_axial_flex_25']
 SET = os.environ.get('SWEEP_SET', 'risk'); STEP_O = float(os.environ.get('SWEEP_STEP_OTHER', '0.125'))
-kp = [pn for pn, spec in suite.items() if pn in pkp or any(e[0] in kb for e in spec)]
+kp = [pn for pn, spec in suite.items() if pn in pkp or R.bones_of(spec) & kb]
 dense = kp + ([pn for pn in RISK if pn in suite and pn not in kp] if SET in ('risk', 'all') else [])
 poses = dense + ([pn for pn in suite if pn not in dense] if SET == 'all' else [])
 FAM = list(K.F.values()) + [f for st in [P0.B] + [s_ for _, s_ in P0.S] for f in getattr(st, 'F', {}).values()]
@@ -33,18 +33,13 @@ if os.path.exists(PART): out['poses'].update(json.load(open(PART))['poses'])
 for pn in poses[si::sn]:
     if pn in out['poses']: continue
     spec = suite[pn]; T1 = R.pose(spec); fr = set(np.round(np.arange(0, 1.0001, 0.025 if pn in dense else STEP_O), 4))
-    for f in FAM:
-        if not any(e[0] == f['bone'] for e in spec): continue
-        x1 = K.driver(T1, f)
-        if abs(x1) < 1e-6: continue
-        for s_ in f['samples']:
-            for e in (-0.25, 0.25): fr.add(round((s_ + e * np.sign(x1)) / x1, 5))
+    for f in FAM:                    # transitions as pose fractions; R.fracs_at inverts the coupled (v002) driver exactly
+        if f['bone'] not in R.bones_of(spec): continue
+        fr.update(round(x, 5) for x in R.fracs_at(spec, lambda T_: K.driver(T_, f), [s_ + e for s_ in f['samples'] for e in (-0.25, 0.25)], key=(f['bone'], tuple(f['axis']))))
     for k, pk in K.PK.items():
         if k.rsplit('@', 1)[0] != pn: continue
-        x1 = K.driver(T1, dict(bone=pk['drivers'][0][0], axis=pk['drivers'][0][1])); s_ = pk['drivers'][0][2]; w = (pk.get('width') or [abs(s_)])[0]
-        if abs(x1) < 1e-6: continue
-        for c in (s_ - w, s_, s_ + w):
-            for e in (-0.25, 0.25): fr.add(round((c + e * np.sign(x1)) / x1, 5))
+        dd = dict(bone=pk['drivers'][0][0], axis=pk['drivers'][0][1]); s_ = pk['drivers'][0][2]; w = (pk.get('width') or [abs(s_)])[0]
+        fr.update(round(x, 5) for x in R.fracs_at(spec, lambda T_: K.driver(T_, dd), [c + e for c in (s_ - w, s_, s_ + w) for e in (-0.25, 0.25)], key=(dd['bone'], tuple(dd['axis']))))
     fr = sorted(f for f in fr if 0 <= f <= 1)
     if os.environ.get('SWEEP_DRY'): print(pn, len(fr)); continue
     r = BL.evaluate(nm, b, BD, fr, [pn], bake=art)

@@ -138,7 +138,31 @@ for c in ('digit', 'handfoot', 'tail', 'body'):
 # prune
 order = np.argsort(-Wd, 1)[:, :MAXINF]; Wp = np.zeros_like(Wd); r = np.arange(nv)[:, None]; Wp[r, order] = Wd[r, order]
 Wp[Wp < 1e-3] = 0; Wp /= Wp.sum(1, keepdims=True)
+MERGE = None
+if C.RIGV != 'v001' and os.environ.get('RP6_WMERGE', '1') == '1':
+    # rig v002 (order 07a3f24c §1): the shoulder correction changes the SHOULDER weights only.  A full regeneration also moves weights far from the shoulder
+    # (the diffusion is global: head / pelvis rows up to 0.06; and the c2 run is not bit-reproducible: ankle rows differ between runs of the same code).
+    # So v002 = the committed v001 weights, with the regenerated rows on every vertex that carries clavicle / upper-arm weight in either version
+    # (set S), blended to v001 over NR edge rings outside S (alpha 1 -> 0), then pruned / renormalised as above.  Rows beyond the rings are v001 exactly.
+    z1 = np.load(C.EV6 + '/SA_RP6_weights_%s_v001.npz' % CFG); assert [str(b) for b in z1['bones']] == DB
+    W1 = sp.csr_matrix((z1['data'], z1['indices'], z1['indptr']), shape=tuple(z1['shape'])).toarray().astype(np.float64)
+    sb = [i for i, b in enumerate(DB) if b.startswith(('clavicle', 'upperarm'))]; mS = (W1[:, sb].sum(1) > 0) | (Wp[:, sb].sum(1) > 0)
+    NR = int(os.environ.get('RP6_WMERGE_RINGS', 4)); alpha = mS.astype(np.float64); cur = mS.copy()
+    for k in range(1, NR + 1): nb = (A @ cur.astype(np.float64) > 0) & ~cur; alpha[nb] = 1 - k / (NR + 1); cur |= nb
+    Wm = alpha[:, None] * Wp + (1 - alpha[:, None]) * W1; order = np.argsort(-Wm, 1)[:, :MAXINF]; Wp = np.zeros_like(Wm); Wp[r, order] = Wm[r, order]
+    Wp[Wp < 1e-3] = 0; Wp /= Wp.sum(1, keepdims=True); keep = alpha == 0; Wp[keep] = W1[keep]
+    from scipy.sparse.csgraph import connected_components as _cc
+    nisl = 0                                         # a merged row can leave a bone's weight on a few vertices cut off from its main region: drop such islands
+    for j in np.nonzero((Wp > 0).any(0))[0]:
+        vv = np.nonzero(Wp[:, j] > 0.01)[0]; nc, lab_ = _cc(A[vv][:, vv])        # same island rule as sa6_weight_audit (w > 0.01)
+        if nc > 1:
+            big = np.argmax(np.bincount(lab_))
+            for ci in range(nc):
+                if ci != big and (lab_ == ci).sum() < 5 and not keep[vv[lab_ == ci]].any(): Wp[vv[lab_ == ci], j] = 0; nisl += 1
+    assert (Wp.sum(1) > 0).all(); Wp /= Wp.sum(1, keepdims=True)
+    MERGE = dict(set_S=int(mS.sum()), rings=NR, blended=int(((alpha > 0) & ~mS).sum()), v001_rows=int(keep.sum()), small_islands_removed=nisl)
+    print('v002 merge', MERGE)
 S = sp.csr_matrix(Wp.astype(np.float32)); S.eliminate_zeros()
 np.savez_compressed(OUT, data=S.data, indices=S.indices, indptr=S.indptr, shape=np.array(S.shape), bones=np.array(DB), config=np.array(CFG),
-                    method=np.array('capsule segmentation in semantic masks + region-scaled mesh diffusion %s + prune %d' % (json.dumps(ITERS), MAXINF)))
+                    method=np.array('capsule segmentation in semantic masks + region-scaled mesh diffusion %s + prune %d' % (json.dumps(ITERS), MAXINF) + ('; v002 shoulder merge into v001 ' + json.dumps(MERGE) if MERGE else '')))
 nnz = np.diff(S.indptr); print(CFG, 'bones', len(DB), 'influences hist', np.bincount(nnz).tolist(), 'max sum err %.2e' % np.abs(np.asarray(S.sum(1)).ravel() - 1).max())

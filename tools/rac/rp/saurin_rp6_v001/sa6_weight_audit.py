@@ -59,7 +59,7 @@ def audit(cfg, wf, d):
                 others = [stem % (k, j) + t for k in range(1, n + 1) if k not in near for j in (1, 2, 3)]; mk = np.zeros(nv, bool); mk[vv] = True; worst = max(worst, wsum(mk, others))
             L['%s_%s_non_adjacent_digit_weight_max' % (lab, t)] = worst
         arm = ['upperarm_' + t, 'forearm_' + t, 'hand_' + t] + [b for b in DB if b.endswith('_' + t) and b.startswith(('meta', 'finger', 'thumb'))]
-        Pp_ = json.load(open(C.EV6 + '/SA_RP6_joint_placement_%s_v001.json' % cfg))['bones']; g_ = np.array(Pp_['upperarm_' + t]['head']); La_ = Pp_['upperarm_' + t]['length_cm']
+        Pp_ = json.load(open(C.jp_path(cfg)))['bones']; g_ = np.array(Pp_['upperarm_' + t]['head']); La_ = Pp_['upperarm_' + t]['length_cm']
         beyond = np.linalg.norm(V - g_, axis=1) > 0.45 * La_          # outside the deliberate shoulder blend zone (sa6_weights SH_R)
         L['axilla_trunk_wall_arm_weight_max_' + t] = wsum(verts(['trunk'], t) & beyond, arm)
         L['shoulder_blend_zone_trunk_vertices_with_upperarm_weight_' + t] = int((verts(['trunk', 'neck'], t) & ~beyond & (W[:, bi['upperarm_' + t]] > 0)).sum())

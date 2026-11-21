@@ -66,18 +66,13 @@ def run(nm, BD, AD):
         vflag = not any('jaw' in e[0] for e in spec); res['poses'][pn] = {}; fset = set(FRACS)
         if TR:
             T1 = R.pose(spec)
-            for f in FAM:
-                if not any(e[0] == f['bone'] for e in spec): continue
-                x1 = Kb.driver(T1, f)
-                if abs(x1) < 1e-6: continue
-                for s_ in f['samples']:
-                    for e in (-0.25, 0.25): fset.add(round((s_ + e * np.sign(x1)) / x1, 5))
+            for f in FAM:                    # transitions as pose fractions; R.fracs_at inverts the coupled (v002) driver exactly
+                if f['bone'] not in R.bones_of(spec): continue
+                fset.update(round(x, 5) for x in R.fracs_at(spec, lambda T_: Kb.driver(T_, f), [s_ + e for s_ in f['samples'] for e in (-0.25, 0.25)], key=(f['bone'], tuple(f['axis']))))
             for k, pk in Kb.PK.items():
                 if k.rsplit('@', 1)[0] not in (pn, 'gate:' + pn): continue
-                x1 = Kb.driver(T1, dict(bone=pk['drivers'][0][0], axis=pk['drivers'][0][1])); s_ = pk['drivers'][0][2]; w = (pk.get('width') or [abs(s_)])[0]
-                if abs(x1) < 1e-6: continue
-                for c in (s_ - w, s_, s_ + w):
-                    for e in (-0.25, 0.25): fset.add(round((c + e * np.sign(x1)) / x1, 5))
+                dd = dict(bone=pk['drivers'][0][0], axis=pk['drivers'][0][1]); s_ = pk['drivers'][0][2]; w = (pk.get('width') or [abs(s_)])[0]
+                fset.update(round(x, 5) for x in R.fracs_at(spec, lambda T_: Kb.driver(T_, dd), [c + e for c in (s_ - w, s_, s_ + w) for e in (-0.25, 0.25)], key=(dd['bone'], tuple(dd['axis']))))
         for fr in sorted((f for f in fset if 0 < f <= 1), reverse=True):
             T = R.pose([(bb, p, a, dg * fr) for bb, p, a, dg in spec]); dP = Pc.delta(T); dK = Kb.delta(T); km = float(np.abs(dK).max())
             cols = [('lbs', None), ('bake', dP + dK)] + ([('prod', dP)] if km > 0 else []); o = {}

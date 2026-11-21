@@ -69,17 +69,20 @@ sample = [k for k in ('knee_90_xpos', 'elbow_130_xneg', 'fist_xpos', 'grasp_xneg
                       'tail_twist_30', 'jaw_open_20', 'neck_rot_40', 'trunk_twist_30', 'gate:tail_combined', 'gate:hand_splay_xneg', 'gate:jaw32_head_pitch_up') if k in PS]
 Mr = {b.name: np.array(b.matrix_local) for b in ad.bones}
 def m4(Rm, t): M = np.eye(4); M[:3, :3] = Rm; M[:3, 3] = t; return M
-ev = {}
+ev = {}; DRIVEN = json.loads(arm.get('girdle_coupling', '{}')).get('driven', []); res['girdle_coupling'] = arm.get('girdle_coupling')
+def basis_rot(b, T): Tp = m4(*T[b.parent.name]) if b.parent else np.eye(4); return (np.linalg.inv(Mr[b.name]) @ np.linalg.inv(Tp) @ m4(*T[b.name]) @ Mr[b.name])[:3, :3]
 for pn in sample:
     T = R.pose(PS[pn])
     for b in ad.bones:
+        if b.name in DRIVEN: arm.pose.bones[b.name].matrix_basis = mathutils.Matrix.Identity(4); continue     # v002: the clavicle follows its driver (animator sets the upper arm only)
         Tb = m4(*T[b.name]); Tp = m4(*T[b.parent.name]) if b.parent else np.eye(4)
         basis_m = np.linalg.inv(Mr[b.name]) @ np.linalg.inv(Tp) @ Tb @ Mr[b.name]; pb = arm.pose.bones[b.name]; pb.rotation_mode = 'QUATERNION'; pb.matrix_basis = mathutils.Matrix(basis_m.tolist())
     bpy.context.view_layer.update(); bpy.context.scene.frame_set(1); dg = bpy.context.evaluated_depsgraph_get(); dg.update()
     oe = ob.evaluated_get(dg); m2 = oe.to_mesh(); pe = np.zeros(nv * 3, np.float32); m2.vertices.foreach_get('co', pe); pe = pe.reshape(-1, 3); oe.to_mesh_clear()
     Pp = R.skin(T, R.V + Cr.delta(T)); e = np.linalg.norm(pe - Pp, axis=1); fl = int((R.relcos(pe.astype(float), T) < 0).sum())
     act = sum(1 for kb in me.shape_keys.key_blocks[1:] if kb.value > 1e-6)
-    ev[pn] = dict(max_err_cm=round(float(e.max()), 6), p99_err_cm=round(float(np.percentile(e, 99)), 6), blender_eval_flips=fl, active_keys=act); print(pn, ev[pn], flush=True)
+    ev[pn] = dict(max_err_cm=round(float(e.max()), 6), p99_err_cm=round(float(np.percentile(e, 99)), 6), blender_eval_flips=fl, active_keys=act)
+    if DRIVEN: ev[pn]['driven_clavicle_rot_err'] = round(max(float(np.abs(np.array(oa.pose.bones[cb].matrix_basis.to_3x3()) - basis_rot(ad.bones[cb], T)).max()) for oa in [arm.evaluated_get(dg)] for cb in DRIVEN), 8); print(pn, ev[pn], flush=True)
 for pb in arm.pose.bones: pb.matrix_basis = mathutils.Matrix.Identity(4)
 res['blender_vs_audit_evaluator'] = ev; res['blender_vs_audit_max_err_cm'] = max(v['max_err_cm'] for v in ev.values()); res['blender_eval_flips_total'] = sum(v['blender_eval_flips'] for v in ev.values())
 json.dump(res, open(OUT, 'w'), indent=1); print(json.dumps({k: v for k, v in res.items() if k not in ('objects', 'blender_vs_audit_evaluator')}, indent=0))

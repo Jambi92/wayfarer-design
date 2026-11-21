@@ -214,4 +214,4 @@ if __name__ == '__main__':
         print('round', rnd, 'total flips entering', tot, flush=True)
         C.save(out, dict(status='RP6 RIG PILOT / NOT FROZEN (partial: after round %d)' % rnd, config=cfg, weights=os.path.basename(wf), fit_log=log))
         if tot == 0: break
-    C.save(out, dict(status='RP6 RIG PILOT / NOT FROZEN', config=cfg, weights=os.path.basename(wf), method=open(CC.__file__).read().split('import')[0], fit_log=log))
+    C.save(out, dict(status='RP6 RIG PILOT / NOT FROZEN', config=cfg, weights=os.path.basename(wf), rig_version=__import__('sa6_common').RIGV, converged=bool(tot == 0), init=os.environ.get('INIT'), method=open(CC.__file__).read().split('import')[0], fit_log=log))

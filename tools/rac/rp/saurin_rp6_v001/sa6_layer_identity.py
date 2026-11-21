@@ -14,7 +14,7 @@ man = json.load(open(os.path.join(H.PKG, 'SA_RP6_rig_manifest_v001.json')))['fil
 res = dict(status='RP6 RIG PILOT / NOT FROZEN', name='SA_RP6_layer_identity_v001', package=H.PKG, inputs={}, base={}, states={})
 for f in ('SA_RP6_correctives_M_v001.npz', 'SA_RP6_correctives_F_v001.npz', 'SA_RP6_weights_M_v001.npz', 'SA_RP6_weights_F_v001.npz', 'SA_RP6_creator_layers_v001.npz'):
     p = os.path.join(H.PKG, f); h = C.sha(p); res['inputs'][f] = dict(sha256=h, bytes=os.path.getsize(p), manifest_match=bool(man.get(f, {}).get('sha256') == h and man[f]['bytes'] == os.path.getsize(p)))
-c2 = json.load(open(os.path.join(H.PKG, 'SA_RP6_correctives_v002.json'))); l2 = json.load(open(os.path.join(H.PKG, 'SA_RP6_creator_layers_v002.json')))
+c2 = json.load(open(os.path.join(H.PKG, C.BASE_CORR))); l2 = json.load(open(os.path.join(H.PKG, 'SA_RP6_creator_layers_v002.json')))
 res['inputs']['v002_array_hashes_match'] = bool(all(c2['array_sha256'][c] == res['inputs']['SA_RP6_correctives_%s_v001.npz' % c]['sha256'] for c in 'MF') and l2['array_sha256'] == res['inputs']['SA_RP6_creator_layers_v001.npz']['sha256'])
 def keys_equal(a, b):
     bad = []; ka = {(f['bone'], tuple(np.round(f['axis'], 6))): f for f in a.F.values()}; kb = {(f['bone'], tuple(np.round(f['axis'], 6))): f for f in b.F.values()}

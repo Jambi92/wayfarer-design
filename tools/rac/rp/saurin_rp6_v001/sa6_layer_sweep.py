@@ -63,16 +63,23 @@ res = dict(status='RP6 RIG PILOT / NOT FROZEN', name='SA_RP6_layer_sweeps_v001',
 bm = json.load(open(os.path.join(os.environ.get('BODYDIR', '/tmp/claude-0/rp6/blend_bodies'), 'bodies.json')))['bodies']
 for bn, pn in ANGLE_CASES:
     t0 = time.time(); b = bm[bn]; R, P, B, own = body(b['cfg'], b['w']); g = Gate(R, own); spec = R.suite('anat')[pn]; mx = max(abs(e[3]) for e in spec); vol = not any('jaw' in e[0] for e in spec)
-    knots = set()
-    for f in P.B.F.values():
-        if any(f['bone'] == e[0] for e in spec): knots |= {abs(sv) for sv in f['samples']}
-    for _, s_ in P.S:
-        for f in s_.F.values():
+    knots = set(); bs = R.bones_of(spec)
+    if C.RIGV == 'v001':          # historical: driver = |total| angle
+        for f in P.B.F.values():
             if any(f['bone'] == e[0] for e in spec): knots |= {abs(sv) for sv in f['samples']}
-        for k in s_.PK.values():
-            for b_, _, sv in k['drivers']:
-                if any(b_ == e[0] for e in spec): knots.add(abs(sv))
-    fr = sorted({round(i * 0.02, 4) for i in range(51)} | {round((k + e) / mx, 6) for k in knots for e in (-0.25, 0.25) if 0 <= (k + e) / mx <= 1})
+        for _, s_ in P.S:
+            for f in s_.F.values():
+                if any(f['bone'] == e[0] for e in spec): knots |= {abs(sv) for sv in f['samples']}
+            for k in s_.PK.values():
+                for b_, _, sv in k['drivers']:
+                    if any(b_ == e[0] for e in spec): knots.add(abs(sv))
+        kf = {round((k + e) / mx, 6) for k in knots for e in (-0.25, 0.25) if 0 <= (k + e) / mx <= 1}
+    else:                         # v002: transitions inverted through the coupled rig (R.fracs_at), both signs of every sample
+        kf = set(); dv = CC.Correctives(R)
+        fams = list(P.B.F.values()) + [f for _, s_ in P.S for f in s_.F.values()] + [dict(bone=b_, axis=a_, samples=[sv]) for _, s_ in P.S for k in s_.PK.values() for b_, a_, sv in k['drivers']]
+        for f in fams:
+            if f['bone'] in bs: kf |= {round(x, 6) for x in R.fracs_at(spec, lambda T_: dv.driver(T_, f), [sg * abs(sv) + e for sv in f['samples'] for sg in (-1, 1) for e in (-0.25, 0.25)], key=(f['bone'], tuple(f['axis']))) if 0 <= x <= 1}
+    fr = sorted({round(i * 0.02, 4) for i in range(51)} | kf)
     seq = fr + fr[::-1]; ds = []; rows = []
     for x in seq:
         T = R.pose([(b_, p, a, dg * x) for b_, p, a, dg in spec]); dl = P.delta(T); ds.append(dl); rows.append(dict(frac=x, **g(T, dl, vol)))

@@ -88,7 +88,7 @@ for pk in cj.get('pose_keys', []):
     keydriver(kb, props, '*'.join(terms)); nkeys += 1
 # ---- rig-prep action ----
 act = bpy.data.actions.new('RIG_PREP'); act.use_fake_user = True
-prep = json.load(open(C.EV6 + '/SA_RP6_rig_prep_%s_v001.json' % CFG)) if os.path.exists(C.EV6 + '/SA_RP6_rig_prep_%s_v001.json' % CFG) else None
+PF_ = C.RIGDIR + '/SA_RP6_rig_prep_%s_%s.json' % (CFG, C.RIGV); prep = json.load(open(PF_)) if os.path.exists(PF_) else None
 arm.animation_data_create(); arm.animation_data.action = act
 for b in ad.bones: arm.pose.bones[b.name].rotation_mode = 'QUATERNION'
 if prep:
@@ -96,9 +96,33 @@ if prep:
         pb = arm.pose.bones[b]; pb.rotation_quaternion = q; pb.keyframe_insert('rotation_quaternion', frame=1)
         pb.rotation_quaternion = (1, 0, 0, 0)
 arm.animation_data.action = None
+# ---- rig v002 shoulder-girdle coupling (order 07a3f24c §1): clavicle_<t> local rotation driven from upperarm_<t> local rotation ----
+#   The animator rotates the upper arm (glenohumeral rotation h about axis a, local quaternion q = (w, x, y, z)); the clavicle follows about the SAME
+#   world axis by g = GIRDLE_RATIO x max(0, swing - GIRDLE_START), swing = 2 acos(sqrt(w^2 + y^2)) (the bone axis is local +y: the swing of the upper-arm
+#   axis, twist-free).  Clavicle local quaternion = (cos g/2, sin g/2 . Mc^T Mu . (x, y, z) sgn(w) / |(x, y, z)|).  Same function as sa6_pose.girdle_split,
+#   so a total arm angle evaluates identically here and in the audit evaluator.  Simple expressions only; rest -> g = 0 -> clavicle identity.
+GIRDLE_DRV = []
+if C.RIGV != 'v001':
+    import sa6_pose as SP_
+    if SP_.GIRDLE:
+        for t in ('l', 'r'):
+            cb, ub = 'clavicle_' + t, 'upperarm_' + t; M = Bm[cb].T @ Bm[ub]
+            ga = '%.7f*max(0,2*acos(min(1,sqrt(w*w+y*y)))-%.7f)' % (0.5 * SP_.GIRDLE_RATIO, np.radians(SP_.GIRDLE_START))   # = g/2 (rad)
+            nrm = '*w/max(abs(w),1e-9)/max(sqrt(x*x+y*y+z*z),1e-9)'
+            exprs = ['cos(%s)' % ga] + ['sin(%s)*(%.7f*x+%.7f*y+%.7f*z)%s' % ((ga,) + tuple(M[i]) + (nrm,)) for i in range(3)]
+            pb = arm.pose.bones[cb]; pb.rotation_mode = 'QUATERNION'
+            for i, ex in enumerate(exprs):
+                fc = pb.driver_add('rotation_quaternion', i); drv = fc.driver; drv.type = 'SCRIPTED'
+                for j, vn in enumerate('wxyz'):        # the upper arm's own quaternion channel (SINGLE_PROP): a TRANSFORMS read of a child bone makes a depsgraph cycle
+                    var = drv.variables.new(); var.name = vn; var.type = 'SINGLE_PROP'; tg = var.targets[0]; tg.id_type = 'OBJECT'; tg.id = arm
+                    tg.data_path = 'pose.bones["%s"].rotation_quaternion[%d]' % (ub, j)
+                drv.expression = ex
+                while fc.modifiers: fc.modifiers.remove(fc.modifiers[0])
+            GIRDLE_DRV.append(cb)
+        arm['girdle_coupling'] = json.dumps(dict(driven=GIRDLE_DRV, ratio=SP_.GIRDLE_RATIO, start_deg=SP_.GIRDLE_START, note='clavicle rotation is driver-owned (follows the upper arm)'))
 for k, v in dict(status='RP6 RIG PILOT / NOT FROZEN', race='Saurin', stage='RP6', configuration='c1 SA-M188' if CFG == 'M' else 'c2 SA-F188', topology_sha256=topo,
                  frozen_source='reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation (SAURIN_RP5_FREEZE.json); RP5 files not modified',
-                 weights=os.path.basename(WF), correctives=os.path.basename(CF), skeleton='SA_RP6_skeleton_v001.json', semantic_table=json.dumps(labs),
+                 weights=os.path.basename(WF), correctives=os.path.basename(CF), skeleton='SA_RP6_skeleton_%s.json' % C.RIGV, rig_version=C.RIGV, semantic_table=json.dumps(labs),
                  units='mesh / armature data in cm; object scale 0.01 (cm -> m)', frame='x right (+x = subject left, _l), y forward, z up', deformation='linear blend skinning + pose-driven corrective shape keys').items():
     ob[k] = v
 arm['status'] = 'RP6 RIG PILOT / NOT FROZEN'; sc['status'] = 'RP6 RIG PILOT / NOT FROZEN'

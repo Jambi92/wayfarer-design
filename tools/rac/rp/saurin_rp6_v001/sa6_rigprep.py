@@ -34,4 +34,4 @@ out = dict(status='RP6 RIG PILOT / NOT FROZEN', configuration=cfg, method=open(_
            head_neck='no offset', basis_quaternions_wxyz=quats, rig_prep_flips=flips, rig_prep_active_corrective_keys=int(sum(len(v[1]) > 0 for v in Cr.delta(T, True)[1].values())),
            round_trip_a_armature='exact (identity transforms, all drivers 0)', round_trip_b_rebind_lbs_inverse=dict(max_cm=round(float(e_b.max()), 5), p99_cm=round(float(np.percentile(e_b[moved], 99)), 5), n_moved=int(moved.sum())),
            round_trip_c_exact_inverse_max_cm=float(e_c.max()))
-json.dump(out, open(C.EV6 + '/SA_RP6_rig_prep_%s_v001.json' % cfg, 'w'), indent=1); print(json.dumps({k: v for k, v in out.items() if k != 'method'}, indent=0)[:1500])
+json.dump(out, open(C.RIGDIR + '/SA_RP6_rig_prep_%s_%s.json' % (cfg, C.RIGV), 'w'), indent=1); print(json.dumps({k: v for k, v in out.items() if k != 'method'}, indent=0)[:1500])
