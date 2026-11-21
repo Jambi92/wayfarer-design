@@ -3,13 +3,15 @@
 import os, json, numpy as np, scipy.sparse as sp
 import sa6_common as C
 X, Y, Z = np.eye(3)
+GIRDLE = C.RIGV != 'v001' and os.environ.get('RP6_GIRDLE', '1') == '1'          # v002 shoulder-girdle coupling (RP6_GIRDLE=0: comparison without it)
+GIRDLE_RATIO = float(os.environ.get('RP6_GIRDLE_RATIO', '0.5')); GIRDLE_START = float(os.environ.get('RP6_GIRDLE_START', '30'))
 def rot(axis, deg):
     a = np.asarray(axis, float); a = a / np.linalg.norm(a); t = np.radians(deg); K = np.array([[0, -a[2], a[1]], [a[2], 0, -a[0]], [-a[1], a[0], 0]])
     return np.eye(3) + np.sin(t) * K + (1 - np.cos(t)) * K @ K
 class Rig:
     def __init__(self, cfg, wfile=None):
         d = C.load(); self.cfg = cfg; self.Q = d['Q']; self.V = (d['V1'] if cfg == 'M' else d['V2']).copy(); self.nv = len(self.V); self.ql = d['qlab']
-        self.P = json.load(open(C.EV6 + '/SA_RP6_joint_placement_%s_v001.json' % cfg))['bones']; self.LM = d['LM']
+        self.P = json.load(open(C.jp_path(cfg)))['bones']; self.LM = d['LM']
         self.DB = [b for b, v in self.P.items() if v['deform']]; self.bi = {b: i for i, b in enumerate(self.DB)}
         self.par = {b: v['parent'] for b, v in self.P.items()}
         self.kids_ = {b: [c for c in self.P if self.par[c] == b] for b in self.P}
@@ -23,9 +25,37 @@ class Rig:
         for c in self.kids_[b]: out += self.sub(c)
         return out
     def qn(self, P): Q = self.Q; return np.cross(P[Q[:, 2]] - P[Q[:, 0]], P[Q[:, 3]] - P[Q[:, 1]])
+    def girdle_split(self, bn, piv, ax, deg):
+        """rig v002 shoulder-girdle coupling (shoulder / elbow correction order 07a3f24c §1).  A pose entry on upperarm_<t> gives the TOTAL arm rotation
+        relative to the trunk (angle `deg` about `ax`, the pose definitions are unchanged).  It is realised as a clavicle rotation about the
+        sterno-clavicular joint (clavicle head) plus a glenohumeral rotation about the corrected humeral pivot, about the same axis:
+            girdle = GIRDLE_RATIO x max(0, swing(humeral) - GIRDLE_START)     (default 0.5 x (swing - 30 deg): above 30 deg the arm's elevation splits 2 : 1
+                                                                               glenohumeral : girdle, the scapulohumeral rhythm)
+            humeral + girdle = total.
+        swing(humeral) = the angle the upper-arm axis (head -> tail) turns under the humeral rotation alone, so axial twist does not raise the girdle.
+        The packaged rig drives the clavicle from the humeral swing with the same function (SA_RP6 v002 driver), so a given total pose evaluates identically.
+        Returns [(clavicle entry), (upperarm entry)] or the entry unchanged."""
+        t = bn.split('_')[-1]; cb = 'clavicle_' + t
+        if not GIRDLE or cb not in self.P: return [(bn, piv, ax, deg)]
+        u = self.Tl(bn) - self.H(bn); u = u / np.linalg.norm(u)
+        def g(th): sw = np.degrees(np.arccos(np.clip(u @ (rot(ax, th) @ u), -1, 1))); return GIRDLE_RATIO * max(0.0, sw - GIRDLE_START)
+        lo, hi = 0.0, abs(float(deg))
+        for _ in range(60):          # humeral angle h with h + g(h) = |total| (g is monotone, slope <= GIRDLE_RATIO)
+            m = 0.5 * (lo + hi); lo, hi = (m, hi) if m + g(m) < abs(deg) else (lo, m)
+        h = 0.5 * (lo + hi); sg = 1.0 if deg >= 0 else -1.0; gd = g(h)
+        if gd <= 1e-9: return [(bn, piv, ax, deg)]
+        return [(cb, self.H(cb), ax, sg * gd), (bn, piv, ax, sg * h)]
+    def expand(self, spec):
+        """the spec as realised by the rig version (v002: girdle coupling on upper-arm entries without an explicit clavicle entry for that side)"""
+        if C.RIGV == 'v001': return list(spec)
+        has = {e[0] for e in spec}; out = []
+        for e in spec:
+            if e[0].startswith('upperarm_') and 'clavicle_' + e[0].split('_')[-1] not in has: out += self.girdle_split(*e)
+            else: out.append(e)
+        return out
     def pose(self, spec):
         T = {b: (np.eye(3), np.zeros(3)) for b in self.P}
-        for bn, piv, ax, deg in spec:
+        for bn, piv, ax, deg in self.expand(spec):
             R0p, t0p = T[bn]; piv = R0p @ np.asarray(piv, float) + t0p; ax = R0p @ np.asarray(ax, float); Rm = rot(ax, deg)
             for k in self.sub(bn): R0, t0 = T[k]; T[k] = (Rm @ R0, Rm @ (t0 - piv) + piv)
         return T

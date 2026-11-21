@@ -32,7 +32,7 @@ res['mesh'] = dict(vertices=nv, faces=len(me.polygons), all_quads=bool((lt == 4)
                    neutral_vs_float64_embedding_max_abs_cm=float(np.abs(co.astype(float) - Vf).max()), float32_half_ulp_at_max_coord_cm=float(np.spacing(np.float32(np.abs(Vf).max())) / 2))
 os.makedirs(os.environ.get('RB_DIR', '/tmp/claude-0/rp6'), exist_ok=True); np.save(os.path.join(os.environ.get('RB_DIR', '/tmp/claude-0/rp6'), 'neutral_disp_%s.npy' % CFG), np.linalg.norm(co.astype(float) - V5.astype(float), axis=1))
 # armature
-P = json.load(open(C.EV6 + '/SA_RP6_joint_placement_%s_v001.json' % CFG))['bones']; ad = arm.data
+P = json.load(open(C.jp_path(CFG)))['bones']; ad = arm.data
 bh = max(max(np.abs(np.array(b.head_local) - P[b.name]['head']).max(), np.abs(np.array(b.tail_local) - P[b.name]['tail']).max()) for b in ad.bones)
 res['armature'] = dict(bones=len(ad.bones), deform=sum(b.use_deform for b in ad.bones), control=[b.name for b in ad.bones if not b.use_deform],
                        parents_match=all((b.parent.name if b.parent else None) == P[b.name]['parent'] for b in ad.bones), head_tail_max_abs_cm=float(bh),

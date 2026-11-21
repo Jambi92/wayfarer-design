@@ -9,6 +9,13 @@ FROZEN = {'SA_RP5_full_cage_freeze_candidate_v001.npz': 'ca1c635c1c3c234cc675c24
           'SA_F_REF_RP5_freeze_candidate_v001.blend': 'fd5dad4f3cc5ba598ba0f2198f062c8845f17f1317e948399398bc8e5c6403d7'}
 TOPO = '255645a12a8dc59ae8dace55dcf2af2b196a4f5a799fdf425b394b831ffb2d49'
 def sha(p): return hashlib.sha256(open(p, 'rb').read()).hexdigest()
+# RIG VERSION (shoulder / elbow correction order 07a3f24c): RP6_RIG=v001 (default; every archived run) | v002 (corrected glenohumeral pivot, shoulder-girdle
+# coupling, elbow muscle response).  v001 files stay in EV6; a newer rig's skeleton / placement / weights live in EV6/rig_<ver>/ with the version in the name.
+RIGV = os.environ.get('RP6_RIG', 'v001')
+if RIGV not in ('v001', 'v002'): raise SystemExit('RP6_RIG must be v001 or v002')
+RIGDIR = EV6 if RIGV == 'v001' else EV6 + '/rig_' + RIGV
+def jp_path(cfg): return RIGDIR + '/SA_RP6_joint_placement_%s_%s.json' % (cfg, RIGV)
+def w_path(cfg, pkg=None): return (pkg or EV6) + '/SA_RP6_weights_%s_v001.npz' % cfg if RIGV == 'v001' else RIGDIR + '/SA_RP6_weights_%s_%s.npz' % (cfg, RIGV)
 PORTABLE = os.path.exists(W + '/cage_V/V1.npy')   # portable bundle (sa6_portable.py): cage-level arrays pre-realised from the verified clean workspace
 def check_frozen():
     for f, h in FROZEN.items():

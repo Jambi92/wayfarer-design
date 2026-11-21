@@ -10,7 +10,7 @@ import sys, os, json, numpy as np, scipy.sparse as sp
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import sa6_common as C
 CFG, OUT = sys.argv[1:3]; MAXINF = int(os.environ.get('MAXINF', 4))
 d = C.load(); Q = d['Q']; V = d['V1'] if CFG == 'M' else d['V2']; nv = len(V); ql = d['qlab']
-P = json.load(open(C.EV6 + '/SA_RP6_joint_placement_%s_v001.json' % CFG))['bones']
+P = json.load(open(C.jp_path(CFG)))['bones']
 DB = [b for b, v in P.items() if v['deform']]; bi = {b: i for i, b in enumerate(DB)}
 # per-vertex label sets
 QLU = sorted(set(ql)); qli = {q: i for i, q in enumerate(QLU)}
@@ -79,6 +79,16 @@ for t in ('l', 'r'):
     near = np.linalg.norm(V - g, axis=1); trunkv = VL[:, [qli[q] for q in ('trunk', 'neck') if q in qli]].any(1); armv = VL[:, [qli[q] for q in ('upper_arm',) if q in qli]].any(1)
     OK[side & trunkv & (near < float(os.environ.get('SH_R', 0.45)) * La), bi['upperarm_' + t]] = True
     OK[side & armv & (near < float(os.environ.get('SH_C', 0.35)) * La), bi['clavicle_' + t]] = True
+# rig v002 (shoulder / elbow correction order 07a3f24c §1): the clavicle now MOVES (girdle coupling), so its capsule may no longer capture the whole upper
+# chest / trapezius (in v001 it took every trunk / neck vertex nearer to the sterno-clavicular -> glenohumeral segment than to the spine, which a girdle
+# rotation would drag up with the shoulder).  It keeps the shoulder band and only the trunk / neck vertices within SH_G x upper-arm length of the
+# glenohumeral joint (the girdle zone: cap, upper trapezius slope, lateral pectoral / scapular region); the spine takes the rest and the diffusion
+# below blends the two.
+if C.RIGV != 'v001':
+    for t in ('l', 'r'):
+        g = np.array(P['upperarm_' + t]['head']); La = P['upperarm_' + t]['length_cm']; side = (xs > 0) if t == 'l' else (xs < 0)
+        trunkv = VL[:, [qli[q] for q in ('trunk', 'neck') if q in qli]].any(1) & ~VL[:, qli['shoulder']]
+        OK[side & trunkv & (np.linalg.norm(V - g, axis=1) >= float(os.environ.get('SH_G', 0.45)) * La), bi['clavicle_' + t]] = False
 OK[~OK.any(1)] = True
 # capsule distances
 D = np.full((nv, len(DB)), 1e6)

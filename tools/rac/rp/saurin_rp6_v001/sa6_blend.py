@@ -66,13 +66,13 @@ def precompute(OUT, B=None):
     json.dump(dict(status=ST, name='SA_RP6_blend_bodies_v001', method=open(__file__).read().split('import os')[0], bodies=man), open(os.path.join(OUT, 'bodies.json'), 'w'), indent=1)
 def rig_of(nm, b, BD):
     z = np.load(os.path.join(BD, nm + '.npz')); Vs = z['Vs']; cfg = b['cfg']
-    R = SP.Rig(cfg, os.path.join(H.PKG, 'SA_RP6_weights_%s_v001.npz' % cfg)); J, M = SK.build(Vs, 'state'); R.V = Vs; R.P = SK.rec(J, M, 'creator body ' + nm); R.n0 = R.qn(Vs); R.cfg = 'state'
+    R = SP.Rig(cfg, C.w_path(cfg, H.PKG)); J, M = SK.build(Vs, 'state'); R.V = Vs; R.P = SK.rec(J, M, 'creator body ' + nm); R.n0 = R.qn(Vs); R.cfg = 'state'
     return R, z
 _RID = {}
 def rigid_ids(cfg):
     """protected rigid set of the BASE configuration (head-rigid unit, rigid claw caps, rigid landmark vertices + 2 rings), as vertex ids: carried to
     every creator body by topology (the same set the base fit protects and the c1 / c2 rigidity gate checks)"""
-    if cfg not in _RID: _RID[cfg] = CC.Solver(SP.Rig(cfg, os.path.join(H.PKG, 'SA_RP6_weights_%s_v001.npz' % cfg))).protect
+    if cfg not in _RID: _RID[cfg] = CC.Solver(SP.Rig(cfg, C.w_path(cfg, H.PKG))).protect
     return _RID[cfg]
 def evaluate(nm, b, BD, fracs=FRACS, poses=None, bake=None):
     """bake: path of a per-body bake artifact (sa6_bake.py, K set): adds column 'bake' = packaged blend + K, re-opened from disk; the gates then apply to it"""

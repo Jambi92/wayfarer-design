@@ -16,7 +16,7 @@ for t in ('l', 'r'):
     b = 'upperarm_' + t; h, tl = R.H(b), R.Tl(b); dv = (tl - h) / np.linalg.norm(tl - h); ang0 = np.degrees(np.arccos(-dv[2])); ax = np.cross([0, 0, -1.0], dv); ax /= np.linalg.norm(ax)
     spec.append((b, h, ax, 45.0 - ang0)); rec[b] = dict(reference_angle_from_vertical_deg=round(float(ang0), 3), rig_prep_angle_deg=45.0, rotation_deg=round(float(45 - ang0), 3), axis_world=np.round(ax, 6).tolist())
 T = R.pose(spec); dl = R.V * 0 + Cr.delta(T); Pp = R.skin(T, R.V + dl)
-import json as _j; Pl = _j.load(open(C.EV6 + '/SA_RP6_joint_placement_%s_v001.json' % cfg))['bones']
+import json as _j; Pl = _j.load(open(C.jp_path(cfg)))['bones']
 def bmat(b):
     a = Pl[b]['local_axes']; return np.c_[a['x'], a['y_bone'], a['z']]
 quats = {}

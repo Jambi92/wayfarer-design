@@ -34,7 +34,7 @@ def poses(R):
         for fr in FR: yield pn, fr, R.pose([(b, p, a, dg * fr) for b, p, a, dg in spec])
 bm = json.load(open(os.path.join(BD, 'bodies.json')))['bodies']
 for cfg in 'MF':
-    R = SP.Rig(cfg, os.path.join(H.PKG, 'SA_RP6_weights_%s_v001.npz' % cfg)); B = H.load_base(R, cfg); r = dict(n_families=len(B.F), n_keys=sum(len(f['D']) for f in B.F.values()), n_pose_keys=len(B.PK))
+    R = SP.Rig(cfg, C.w_path(cfg, H.PKG)); B = H.load_base(R, cfg); r = dict(n_families=len(B.F), n_keys=sum(len(f['D']) for f in B.F.values()), n_pose_keys=len(B.PK))
     if FD:
         Bf = CC.Correctives.load(R, os.path.join(FD, 'CF_%s.json' % cfg)); r['keys_equal_production'] = keys_equal(B, Bf) == []
         r['max_delta_diff_cm'] = max(float(np.abs(B.delta(T) - Bf.delta(T)).max()) for _, _, T in poses(R))

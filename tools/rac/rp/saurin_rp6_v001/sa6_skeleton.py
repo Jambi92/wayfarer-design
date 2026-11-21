@@ -20,6 +20,35 @@ def clawtip(V, s_, pre, k):
     r2 = V[loops['%s_th_r2' % s_ if pre == 'th' else '%s_%s%d_r2' % (s_, pre, k)]].mean(0); u = (r2 - base) / np.linalg.norm(r2 - base)
     return V[comp[np.argmax((V[comp] - base) @ u)]]
 TAILN = 16
+GH_METHOD_V2 = ('rig v002 glenohumeral centre (shoulder / elbow correction order 07a3f24c §1): the v001 pivot (shoulder_ring0 centroid + landmark offset = the '
+                'RP5 "glenohumeral" SHOULDER SECTION centroid) lies at the axillary apex level.  v002 = on the upper-arm centreline (line fit through the '
+                'upper-arm section centroids at 30-80 % of pivot -> elbow), moved proximally to where the tissue cover straight above equals the lateral '
+                'cover (the joint centred under the shoulder cap); bilateral mean of that distance, applied on each side\'s own centreline')
+def gh_v002(V, gh, elbow):
+    """-> ({side: corrected glenohumeral centre}, method).  Uses the frozen quad labels (upper_arm) and the body surface only."""
+    import igl
+    d = C.load(); Q = d['Q']; F = np.r_[Q[:, [0, 1, 2]], Q[:, [0, 2, 3]]].astype(np.int64); Vf = np.asarray(V, np.float64)
+    ua_all = np.unique(Q[d['qlab'] == 'upper_arm'].ravel())
+    def cover(p, dirn, maxd=40.0):
+        ts = np.linspace(0, maxd, 1601); w = igl.fast_winding_number(Vf, F, p[None] + ts[:, None] * dirn[None]); ins = w > 0.5
+        return float(ts[np.argmax(~ins)]) if ins[0] else 0.0
+    line, dts = {}, []
+    for s_ in ('xpos', 'xneg'):
+        g0 = gh(s_); e = np.asarray(elbow(s_), float); ax = (e - g0) / np.linalg.norm(e - g0); L = np.linalg.norm(e - g0)
+        ua = ua_all[np.sign(Vf[ua_all, 0]) == (1 if s_ == 'xpos' else -1)]; cents = []
+        for f in np.linspace(0.3, 0.8, 11):
+            p = g0 + f * L * ax; m = np.abs((Vf[ua] - p) @ ax) < 0.4
+            if m.sum() >= 10: cents.append(Vf[ua][m].mean(0))
+        cents = np.array(cents); cc = cents.mean(0); u = np.linalg.svd(cents - cc)[2][0]; u = u if u @ ax > 0 else -u
+        p0 = cc + ((g0 - cc) @ u) * u; lat = np.array([1.0 if s_ == 'xpos' else -1.0, 0, 0]); prev = None
+        for dt in np.arange(0, 20.01, 0.25):
+            p = p0 - dt * u; diff = cover(p, np.array([0, 0, 1.0])) - cover(p, lat)
+            if prev is not None and prev[1] > 0 >= diff: dts.append(prev[0] + (dt - prev[0]) * prev[1] / (prev[1] - diff)); break
+            prev = (dt, diff)
+        else: raise RuntimeError('gh_v002: no cover crossing on ' + s_)
+        line[s_] = (p0, u)
+    dm = float(np.mean(dts)); out = {s_: line[s_][0] - dm * line[s_][1] for s_ in line}
+    return out, GH_METHOD_V2 + ' (per-side crossing %.2f / %.2f cm, applied %.2f cm)' % (dts[0], dts[1], dm)
 def build(V, cfg):
     J = {}; M = {}
     def lm(k): return LM[k] if cfg == 'c1' else transfer(LM[k], V)
@@ -45,10 +74,13 @@ def build(V, cfg):
     gh_off = 0.5 * ((lm('glenohumeral_xpos') - ring('xpos')) * mirr('xpos') + (lm('glenohumeral_xneg') - ring('xneg')) * mirr('xneg'))
     gh = lambda s_: ring(s_) + gh_off * mirr(s_)
     GHM = 'shoulder_ring0 centroid + bilateral mean glenohumeral-landmark offset (lateral mirrored)'
+    GH2 = gh_v002(V, gh, lambda s_: lm('elbow_' + s_)) if C.RIGV != 'v001' else None
     for s_ in ('xpos', 'xneg'):
         t = C.side_tag(s_)
         put('clavicle_%s_h' % t, lm('neck_base') + 0.22 * (gh(s_) - lm('neck_base')) - np.array([0, 4.0, 0]) * 0, 'neck_base + 22 %% toward glenohumeral (sterno-clavicular region)')
-        put('upperarm_%s_h' % t, gh(s_), GHM); put('forearm_%s_h' % t, lm('elbow_' + s_), 'landmark elbow (section)')
+        if GH2: put('upperarm_%s_h' % t, GH2[0][s_], GH2[1])
+        else: put('upperarm_%s_h' % t, gh(s_), GHM)
+        put('forearm_%s_h' % t, lm('elbow_' + s_), 'landmark elbow (section)')
         put('hand_%s_h' % t, lm('wrist_' + s_), 'landmark wrist (section)')
         for k in range(1, 5):
             put('meta_%d_%s_h' % (k, t), lm('wrist_' + s_) + 0.15 * (lcen('%s_f%d_base' % (s_, k), V) - lm('wrist_' + s_)), 'wrist + 15 % toward the finger base ring (carpal)')
@@ -102,7 +134,7 @@ def rec(J, M, cfg, B=None):
                       configuration=cfg, c2_relation='same definition re-evaluated on this configuration' if not cfg.startswith('c1') else 'source (c1)')
     return out
 if __name__ == '__main__':
-    OUT = sys.argv[1] if len(sys.argv) > 1 else C.EV6; os.makedirs(OUT, exist_ok=True)
+    OUT = sys.argv[1] if len(sys.argv) > 1 else C.RIGDIR; os.makedirs(OUT, exist_ok=True)
     J1, M1 = build(V1, 'c1'); J2, M2 = build(V2, 'c2'); B = bones(J1)
     P1 = rec(J1, M1, 'c1 SA-M188'); P2 = rec(J2, M2, 'c2 SA-F188')
     skel = dict(name='SA_RP6_skeleton_v001', status='RP6 RIG PILOT / NOT FROZEN', scope='Saurin-specific production-rig pilot hierarchy; NOT a universal game skeleton',
@@ -111,8 +143,11 @@ if __name__ == '__main__':
                 notes=['jaw: single hinge bone; no independent moving rostrum (rostrum is part of head)', 'cranial display / eyes: rigid with head; no biological mobility added',
                        'no twist bones in the pilot baseline: the 34-pose suite has no forearm / upper-arm axial twist pose (added only if deformation evidence requires)',
                        'metacarpals are deform bones so palm cupping is distributed (fist / grasp)', 'root is the only control bone; all other bones deform'])
-    json.dump(skel, open(OUT + '/SA_RP6_skeleton_v001.json', 'w'), indent=1)
-    json.dump(dict(configuration='c1 SA-M188', bones=P1), open(OUT + '/SA_RP6_joint_placement_M_v001.json', 'w'), indent=1)
-    json.dump(dict(configuration='c2 SA-F188', bones=P2), open(OUT + '/SA_RP6_joint_placement_F_v001.json', 'w'), indent=1)
+    if C.RIGV != 'v001':
+        skel['name'] = 'SA_RP6_skeleton_' + C.RIGV; skel['supersedes'] = 'SA_RP6_skeleton_v001.json (hierarchy unchanged; upperarm heads corrected)'
+        skel['notes'] += ['v002: corrected glenohumeral pivot (upperarm_l/_r heads); shoulder-girdle coupling clavicle <- humeral swing (sa6_pose.Rig.girdle_split)']
+    json.dump(skel, open(OUT + '/SA_RP6_skeleton_%s.json' % C.RIGV, 'w'), indent=1)
+    json.dump(dict(configuration='c1 SA-M188', rig=C.RIGV, bones=P1), open(OUT + '/SA_RP6_joint_placement_M_%s.json' % C.RIGV, 'w'), indent=1)
+    json.dump(dict(configuration='c2 SA-F188', rig=C.RIGV, bones=P2), open(OUT + '/SA_RP6_joint_placement_F_%s.json' % C.RIGV, 'w'), indent=1)
     dd = {b: float(np.linalg.norm(np.array(P2[b]['head']) - np.array(P1[b]['head']))) for b in B}
     print('bones', len(B), 'deform', skel['counts']['deform'], '| c1->c2 head offset max %.2f cm (%s)' % (max(dd.values()), max(dd, key=dd.get)))

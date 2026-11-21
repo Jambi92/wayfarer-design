@@ -15,7 +15,7 @@
 import sys, os, json, hashlib, numpy as np, bpy, mathutils
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import sa6_common as C
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]; CFG, WF, CF, OUT = argv[:4]
-d = C.load(); Q = d['Q']; V = d['V1'] if CFG == 'M' else d['V2']; P = json.load(open(C.EV6 + '/SA_RP6_joint_placement_%s_v001.json' % CFG))['bones']
+d = C.load(); Q = d['Q']; V = d['V1'] if CFG == 'M' else d['V2']; P = json.load(open(C.jp_path(CFG)))['bones']
 z = np.load(WF); import scipy.sparse as sp; S = sp.csr_matrix((z['data'], z['indices'], z['indptr']), shape=tuple(z['shape'])).tocsc(); DB = [str(b) for b in z['bones']]
 cj = json.load(open(CF)); cz = np.load(CF.replace('.json', '.npz'))
 fsem = d['face_sem']; labs = sorted(set(map(str, fsem))); lid = {l: i for i, l in enumerate(labs)}; fsi = np.array([lid[str(x)] for x in fsem], np.int32)
