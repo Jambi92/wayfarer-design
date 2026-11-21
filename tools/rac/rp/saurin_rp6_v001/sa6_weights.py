@@ -151,6 +151,43 @@ if C.RIGV != 'v001' and os.environ.get('RP6_WMERGE', '1') == '1':
     for k in range(1, NR + 1): nb = (A @ cur.astype(np.float64) > 0) & ~cur; alpha[nb] = 1 - k / (NR + 1); cur |= nb
     Wm = alpha[:, None] * Wp + (1 - alpha[:, None]) * W1; order = np.argsort(-Wm, 1)[:, :MAXINF]; Wp = np.zeros_like(Wm); Wp[r, order] = Wm[r, order]
     Wp[Wp < 1e-3] = 0; Wp /= Wp.sum(1, keepdims=True); keep = alpha == 0; Wp[keep] = W1[keep]
+    AXI = None
+    if os.environ.get('RP6_AXILLA', '1') == '1':
+        # AXILLARY TRANSITION (order 07a3f24c §1): with the pivot 8.4 cm higher, the arm / trunk weight change in the armpit spans a few short edges
+        # (0.5 cm on the right) -> plain LBS stretched them up to 5.3x at shoulder_abd90 (198 tear edges; the corrective fits could not clear the right arm in
+        # 17 of 19 creator states).  Metric (1 / L^2 edge-weighted) projected diffusion of all weights over the axilla zone: below the pivot, within
+        # AX_R x upper-arm length of the v002 pivot OR of the v001 pivot (the RP5 axilla-height landmark, where the v001 blend zone sat), trunk / shoulder /
+        # upper-arm labels.  Constraints held every iteration (the weight-audit leakage rules): no arm weight on trunk vertices beyond 0.45 La of both
+        # pivots, no spine weight on upper-arm / elbow vertices.  LBS abd90: xneg 198 -> 13 tears (max 5.26 -> 2.84 x), xpos 70 -> 0.
+        P1_ = json.load(open(C.EV6 + '/SA_RP6_joint_placement_%s_v001.json' % CFG))['bones']; AX_R = float(os.environ.get('RP6_AX_R', 0.6)); AX_IT = int(os.environ.get('RP6_AX_IT', 2000))
+        vl_ = np.array([QLU[i] for i in VL.argmax(1)], object)
+        L0_ = np.linalg.norm(V[E[:, 0]] - V[E[:, 1]], axis=1); wE_ = 1.0 / np.maximum(L0_, 0.05) ** 2
+        Am = sp.coo_matrix((np.r_[wE_, wE_], (np.r_[E[:, 0], E[:, 1]], np.r_[E[:, 1], E[:, 0]])), shape=(nv, nv)).tocsr(); dm = np.asarray(Am.sum(1)).ravel()
+        vlab_ = np.array([''] * nv, object)
+        for q_, l_ in zip(Q, ql): vlab_[q_] = l_          # vertex label = its last quad's label (as sa6_pose.Rig.ql -> the prototype in the evidence)
+        lab_any = lambda names: np.isin(vlab_, names)
+        zone = np.zeros(nv, bool); forb = np.zeros_like(Wp, bool)
+        for t_ in 'lr':
+            gh_ = np.array(P['upperarm_' + t_]['head']); g1_ = np.array(P1_['upperarm_' + t_]['head']); La_ = np.linalg.norm(np.array(P['forearm_' + t_]['head']) - gh_)
+            side_ = (V[:, 0] > 0) if t_ == 'l' else (V[:, 0] < 0); dd_ = np.minimum(np.linalg.norm(V - gh_, axis=1), np.linalg.norm(V - g1_, axis=1))
+            zone |= side_ & (dd_ < AX_R * La_) & (V[:, 2] < gh_[2] - 0.05 * La_) & lab_any(['trunk', 'shoulder', 'upper_arm'])
+            arm_ = [i for i, b in enumerate(DB) if b.endswith('_' + t_) and b.startswith(('upperarm', 'forearm', 'hand', 'thumb', 'index', 'middle', 'ring', 'pinky'))]
+            forb[np.ix_(np.nonzero(lab_any(['trunk']) & side_ & (dd_ > 0.45 * La_))[0], arm_)] = True
+            spn_ = [DB.index(b) for b in ('spine_01', 'spine_02', 'spine_03', 'spine_04', 'pelvis') if b in DB]
+            forb[np.ix_(np.nonzero(lab_any(['upper_arm', 'elbow']) & side_)[0], spn_)] = True
+        zi_ = np.nonzero(zone)[0]
+        # only the upper-arm share u = W[:, upperarm_t] is diffused (the rest of each row keeps its proportions, scaled to 1 - u): the arm / trunk split
+        # spreads over metric distance without mixing every spine bone into every row (which the 4-influence prune would then cut into seams)
+        for t_ in 'lr':
+            ua_ = DB.index('upperarm_' + t_); zt_ = zi_[((V[zi_, 0] > 0) if t_ == 'l' else (V[zi_, 0] < 0))]; u = Wp[:, ua_].copy()
+            fz_ = forb[zt_, ua_]; rest_ = Wp[zt_].copy(); rest_[:, ua_] = 0; rs_ = rest_.sum(1)
+            fixed_ = (rs_ <= 1e-9)               # rows with no other bone keep u = 1
+            for _ in range(AX_IT):
+                un_ = 0.5 * u[zt_] + 0.5 * (Am @ u)[zt_] / dm[zt_]; un_[fz_] = 0; un_[fixed_] = u[zt_][fixed_]; u[zt_] = np.clip(un_, 0, 1)
+            Wp[zt_] = rest_ * ((1 - u[zt_]) / np.maximum(rs_, 1e-12))[:, None]; Wp[zt_, ua_] = u[zt_]
+        order = np.argsort(-Wp, 1)[:, :MAXINF]; Wq = np.zeros_like(Wp); Wq[r, order] = Wp[r, order]; Wp = Wq; Wp[Wp < 1e-3] = 0; Wp /= Wp.sum(1, keepdims=True)
+        AXI = dict(zone_vertices=int(len(zi_)), radius_La=AX_R, iterations=AX_IT, anchors='v002 pivot and v001 pivot', constraints='audit leakage rules held', field='upper-arm share only')
+        print('v002 axilla', AXI, flush=True)
     from scipy.sparse.csgraph import connected_components as _cc
     nisl = 0                                         # a merged row can leave a bone's weight on a few vertices cut off from its main region: drop such islands
     for j in np.nonzero((Wp > 0).any(0))[0]:
@@ -160,7 +197,7 @@ if C.RIGV != 'v001' and os.environ.get('RP6_WMERGE', '1') == '1':
             for ci in range(nc):
                 if ci != big and (lab_ == ci).sum() < 5 and not keep[vv[lab_ == ci]].any(): Wp[vv[lab_ == ci], j] = 0; nisl += 1
     assert (Wp.sum(1) > 0).all(); Wp /= Wp.sum(1, keepdims=True)
-    MERGE = dict(set_S=int(mS.sum()), rings=NR, blended=int(((alpha > 0) & ~mS).sum()), v001_rows=int(keep.sum()), small_islands_removed=nisl)
+    MERGE = dict(set_S=int(mS.sum()), rings=NR, blended=int(((alpha > 0) & ~mS).sum()), v001_rows=int(keep.sum()), small_islands_removed=nisl, axilla=AXI)
     print('v002 merge', MERGE)
 S = sp.csr_matrix(Wp.astype(np.float32)); S.eliminate_zeros()
 np.savez_compressed(OUT, data=S.data, indices=S.indices, indptr=S.indptr, shape=np.array(S.shape), bones=np.array(DB), config=np.array(CFG),

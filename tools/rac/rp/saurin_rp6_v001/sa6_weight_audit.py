@@ -61,6 +61,8 @@ def audit(cfg, wf, d):
         arm = ['upperarm_' + t, 'forearm_' + t, 'hand_' + t] + [b for b in DB if b.endswith('_' + t) and b.startswith(('meta', 'finger', 'thumb'))]
         Pp_ = json.load(open(C.jp_path(cfg)))['bones']; g_ = np.array(Pp_['upperarm_' + t]['head']); La_ = Pp_['upperarm_' + t]['length_cm']
         beyond = np.linalg.norm(V - g_, axis=1) > 0.45 * La_          # outside the deliberate shoulder blend zone (sa6_weights SH_R)
+        if C.RIGV != 'v001':     # rig v002: the blend zone keeps its v001 extent at the axilla too (the v001 pivot = the RP5 axilla-height landmark)
+            g1_ = np.array(json.load(open(C.EV6 + '/SA_RP6_joint_placement_%s_v001.json' % cfg))['bones']['upperarm_' + t]['head']); beyond &= np.linalg.norm(V - g1_, axis=1) > 0.45 * La_
         L['axilla_trunk_wall_arm_weight_max_' + t] = wsum(verts(['trunk'], t) & beyond, arm)
         L['shoulder_blend_zone_trunk_vertices_with_upperarm_weight_' + t] = int((verts(['trunk', 'neck'], t) & ~beyond & (W[:, bi['upperarm_' + t]] > 0)).sum())
         L['axilla_arm_vertices_spine_weight_max_' + t] = wsum(verts(['upper_arm', 'elbow'], t), ['spine_01', 'spine_02', 'spine_03', 'spine_04', 'pelvis'])

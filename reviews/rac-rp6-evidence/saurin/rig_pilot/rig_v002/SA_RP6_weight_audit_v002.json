@@ -3,7 +3,7 @@
  "c1": {
   "config": "M",
   "file": "SA_RP6_weights_M_v002.npz",
-  "method": "capsule segmentation in semantic masks + region-scaled mesh diffusion {\"digit\": 12, \"handfoot\": 30, \"tail\": 70, \"body\": 220} + prune 4; v002 shoulder merge into v001 {\"set_S\": 15505, \"rings\": 4, \"blended\": 1594, \"v001_rows\": 173849, \"small_islands_removed\": 0}",
+  "method": "capsule segmentation in semantic masks + region-scaled mesh diffusion {\"digit\": 12, \"handfoot\": 30, \"tail\": 70, \"body\": 220} + prune 4; v002 shoulder merge into v001 {\"set_S\": 15505, \"rings\": 4, \"blended\": 1594, \"v001_rows\": 173849, \"small_islands_removed\": 0, \"axilla\": {\"zone_vertices\": 7412, \"radius_La\": 0.6, \"iterations\": 2000, \"anchors\": \"v002 pivot and v001 pivot\", \"constraints\": \"audit leakage rules held\", \"field\": \"upper-arm share only\"}}",
   "vertex_groups": [
    "pelvis",
    "spine_01",
@@ -118,9 +118,9 @@
   "influence_histogram": {
    "0": 0,
    "1": 83620,
-   "2": 70407,
-   "3": 22699,
-   "4": 14222
+   "2": 70416,
+   "3": 22666,
+   "4": 14246
   },
   "max_influences": 4,
   "weight_sum_abs_error_max": 1.1920928955078125e-07,
@@ -133,18 +133,18 @@
   "left_right": {
    "pairs": {
     "clavicle": {
-     "count_l": 1557,
-     "count_r": 1448,
+     "count_l": 1549,
+     "count_r": 1434,
      "bone_length_rel_diff": 0.068,
-     "mass_rel_diff": 0.1113,
-     "label_distribution_total_variation": 0.0648
+     "mass_rel_diff": 0.1131,
+     "label_distribution_total_variation": 0.0654
     },
     "upperarm": {
-     "count_l": 4994,
-     "count_r": 4938,
+     "count_l": 5307,
+     "count_r": 5289,
      "bone_length_rel_diff": 0.0431,
-     "mass_rel_diff": 0.0107,
-     "label_distribution_total_variation": 0.0061
+     "mass_rel_diff": 0.0042,
+     "label_distribution_total_variation": 0.0062
     },
     "forearm": {
      "count_l": 5664,
@@ -429,7 +429,7 @@
    "finger_web_l_non_adjacent_digit_weight_max": 0.0,
    "toe_web_l_non_adjacent_digit_weight_max": 0.0,
    "axilla_trunk_wall_arm_weight_max_l": 0.0,
-   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_l": 788,
+   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_l": 1101,
    "axilla_arm_vertices_spine_weight_max_l": 0.0,
    "groin_opposite_leg_weight_max_l": 0.0,
    "groin_leg_vertices_tail_weight_max_l": 0.0,
@@ -438,7 +438,7 @@
    "finger_web_r_non_adjacent_digit_weight_max": 0.0,
    "toe_web_r_non_adjacent_digit_weight_max": 0.0,
    "axilla_trunk_wall_arm_weight_max_r": 0.0,
-   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_r": 730,
+   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_r": 1081,
    "axilla_arm_vertices_spine_weight_max_r": 0.0,
    "groin_opposite_leg_weight_max_r": 0.0,
    "groin_leg_vertices_tail_weight_max_r": 0.0,
@@ -455,7 +455,7 @@
  "c2": {
   "config": "F",
   "file": "SA_RP6_weights_F_v002.npz",
-  "method": "capsule segmentation in semantic masks + region-scaled mesh diffusion {\"digit\": 12, \"handfoot\": 30, \"tail\": 70, \"body\": 220} + prune 4; v002 shoulder merge into v001 {\"set_S\": 15518, \"rings\": 4, \"blended\": 1590, \"v001_rows\": 173840, \"small_islands_removed\": 1}",
+  "method": "capsule segmentation in semantic masks + region-scaled mesh diffusion {\"digit\": 12, \"handfoot\": 30, \"tail\": 70, \"body\": 220} + prune 4; v002 shoulder merge into v001 {\"set_S\": 15518, \"rings\": 4, \"blended\": 1590, \"v001_rows\": 173840, \"small_islands_removed\": 1, \"axilla\": {\"zone_vertices\": 7340, \"radius_La\": 0.6, \"iterations\": 2000, \"anchors\": \"v002 pivot and v001 pivot\", \"constraints\": \"audit leakage rules held\", \"field\": \"upper-arm share only\"}}",
   "vertex_groups": [
    "pelvis",
    "spine_01",
@@ -570,9 +570,9 @@
   "influence_histogram": {
    "0": 0,
    "1": 83175,
-   "2": 70793,
-   "3": 22771,
-   "4": 14209
+   "2": 70801,
+   "3": 22736,
+   "4": 14236
   },
   "max_influences": 4,
   "weight_sum_abs_error_max": 1.1920928955078125e-07,
@@ -585,18 +585,18 @@
   "left_right": {
    "pairs": {
     "clavicle": {
-     "count_l": 1565,
-     "count_r": 1437,
+     "count_l": 1557,
+     "count_r": 1425,
      "bone_length_rel_diff": 0.0707,
-     "mass_rel_diff": 0.124,
-     "label_distribution_total_variation": 0.0669
+     "mass_rel_diff": 0.1272,
+     "label_distribution_total_variation": 0.0675
     },
     "upperarm": {
-     "count_l": 5004,
-     "count_r": 4935,
+     "count_l": 5322,
+     "count_r": 5289,
      "bone_length_rel_diff": 0.0447,
-     "mass_rel_diff": 0.0028,
-     "label_distribution_total_variation": 0.0062
+     "mass_rel_diff": 0.0046,
+     "label_distribution_total_variation": 0.0052
     },
     "forearm": {
      "count_l": 5664,
@@ -872,7 +872,7 @@
      "label_distribution_total_variation": 0.0166
     }
    },
-   "mass_rel_diff_max": 0.124,
+   "mass_rel_diff_max": 0.1272,
    "label_tv_max": 0.2934,
    "worst": "clavicle",
    "note": "the frozen stance / digits are not mirror-symmetric; pairs with mass difference > 5 % are listed with their l / r bone-length difference (same method both sides, no side-specific tuning)"
@@ -881,7 +881,7 @@
    "finger_web_l_non_adjacent_digit_weight_max": 0.0,
    "toe_web_l_non_adjacent_digit_weight_max": 0.0,
    "axilla_trunk_wall_arm_weight_max_l": 0.0,
-   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_l": 798,
+   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_l": 1116,
    "axilla_arm_vertices_spine_weight_max_l": 0.0,
    "groin_opposite_leg_weight_max_l": 0.0,
    "groin_leg_vertices_tail_weight_max_l": 0.0,
@@ -890,7 +890,7 @@
    "finger_web_r_non_adjacent_digit_weight_max": 0.0,
    "toe_web_r_non_adjacent_digit_weight_max": 0.0,
    "axilla_trunk_wall_arm_weight_max_r": 0.0,
-   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_r": 727,
+   "shoulder_blend_zone_trunk_vertices_with_upperarm_weight_r": 1081,
    "axilla_arm_vertices_spine_weight_max_r": 0.0,
    "groin_opposite_leg_weight_max_r": 0.0,
    "groin_leg_vertices_tail_weight_max_r": 0.0,
