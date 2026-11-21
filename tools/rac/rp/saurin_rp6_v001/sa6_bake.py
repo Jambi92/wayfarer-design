@@ -12,6 +12,7 @@
 import sys, os, json, time, copy, hashlib, platform, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
+os.environ['PK_HAT_EXACT'] = '0'      # bake keys keep the bake's own tents (floor / neighbour gaps); the exact-hat regroup is for the layer fits only
 import sa6_common as C, sa6_correctives as CC, sa6_fit as FT, sa6_pd2_fit as PF, sa6_layer_harness as H, sa6_blend as BL, sa6_node_fit as NF
 ROUNDS = int(os.environ.get('ROUNDS', 8));   # early exit on the first clean round; 8 allows Gauss-Seidel trades between fractions to settle
 FRACS = tuple(float(x) for x in os.environ.get('BAKE_FRACS', '1.0,0.75,0.5,0.25').split(','))   # bake angle fractions (uniform spacing)

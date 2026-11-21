@@ -5,6 +5,7 @@
 import sys, os, json, time, numpy as np, igl
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_pose as SP, sa6_correctives as CC
+os.environ.setdefault('PK_HAT_EXACT', '1')    # rig v002 fits: fraction keys as an exact hat partition (sa6_correctives.rehat); no effect on v001 (PK_HAT_STEP 0)
 def pose_set(R, gates=True):
     import sa6_gates as GT
     A = R.suite('anat'); L = R.suite('rp5'); P = dict(A)

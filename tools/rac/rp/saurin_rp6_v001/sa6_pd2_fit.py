@@ -10,6 +10,7 @@
 import sys, os, json, time, numpy as np, igl
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_common as C, sa6_pose as SP, sa6_correctives as CC, sa6_skeleton as SK, sa6_fit as FT
+os.environ.setdefault('PK_HAT_EXACT', '1')    # rig v002 fits: fraction keys as an exact hat partition (sa6_correctives.rehat); no effect on v001 (PK_HAT_STEP 0)
 WD = os.environ.get('RP6_WD', '/tmp/claude-0/rp6'); ROUNDS = int(os.environ.get('ROUNDS', 4)); FRACS = tuple(float(x) for x in os.environ.get('FRACS', '1.0,0.5').split(','))   # layer v002 (corrective-layer validation): FRACS=1.0,0.5,0.75,0.25
 d = C.load(); z = np.load(C.FZ + '/SA_RP5_full_cage_freeze_candidate_v001.npz'); w = None if C.PORTABLE else np.load(C.W + '/work/SA_RP5_WORK_v001.npz'); Fd = None if C.PORTABLE else w['f'].astype(np.int64)
 def _canon_cage():

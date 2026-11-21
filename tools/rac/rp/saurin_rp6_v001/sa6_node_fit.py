@@ -15,6 +15,7 @@
 import sys, os, json, time, copy, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_correctives as CC, sa6_fit as FT, sa6_pd2_fit as PF, sa6_layer_harness as H, sa6_blend as BL
+os.environ.setdefault('PK_HAT_EXACT', '1')    # rig v002 fits: fraction keys as an exact hat partition (sa6_correctives.rehat); no effect on v001 (PK_HAT_STEP 0)
 ROUNDS = int(os.environ.get('ROUNDS', 4)); FRACS = (1.0, 0.75, 0.5, 0.25)
 class NodeProxy:
     """the corrective set the solver sees on the node body: production = (1 - w) B + w (S + E + K); increments are written to K scaled by 1 / w.

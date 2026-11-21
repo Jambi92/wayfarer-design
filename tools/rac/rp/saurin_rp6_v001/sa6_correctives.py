@@ -49,6 +49,20 @@ class Correctives:
             x = self.driver(T, dict(bone=b, axis=ax)); w *= max(0.0, 1.0 - abs(x - s) / (abs(wd[j]) if wd else abs(s)))
             if w == 0: break
         return w
+    def rehat(self, bone, axis):
+        """rig v002 fits (PK_HAT_EXACT=1): the single-driver fraction keys on one joint axis form a partition of unity over the driver angle: each key's
+        half-width = the distance to its nearer neighbouring key on the same side of 0 (the first key: its own angle).  With the girdle coupling the humeral
+        angles of shoulder_abd90 fractions are not proportional to the fraction (22.5 / 40.2 / 55.3 / 70.4 deg), so step x |s| / f still overlapped by ~20 %
+        and the 75 % / 100 % solves kept alternating; exact neighbour spacing removes the overlap."""
+        a = np.asarray(axis, float) / np.linalg.norm(axis); grp = []
+        for k, pk in self.PK.items():
+            if '@' in k and len(pk['drivers']) == 1 and pk['drivers'][0][0] == bone and abs(float(np.dot(np.asarray(pk['drivers'][0][1], float) / np.linalg.norm(pk['drivers'][0][1]), a))) > 0.9999:
+                grp.append((float(pk['drivers'][0][2]) * float(np.sign(np.dot(pk['drivers'][0][1], a))), k))
+        for sg in (1, -1):
+            ss = sorted((abs(v), k) for v, k in grp if np.sign(v) == sg and abs(v) > 1e-6)
+            for i, (v, k) in enumerate(ss):
+                lo = v - (ss[i - 1][0] if i else 0.0); hi = (ss[i + 1][0] - v) if i + 1 < len(ss) else lo
+                self.PK[k]['width'] = [max(1e-3, min(lo, hi))]
     def add_pose_key(self, name, drivers, idx, dd):
         """pose-space key (resolves conflicts between poses that share joint angles but need different local shapes): driver = product over its driving
         joints of tent(x_j; 0 -> s_j -> 2 s_j), s_j = the joint's measured twist in the owning pose."""
@@ -70,6 +84,7 @@ class Correctives:
                 try: fr = float(name.rsplit('@', 1)[1])
                 except ValueError: fr = 0.0
                 if fr > 0: self.PK[name]['width'] = [abs(float(s_)) * hs / fr for _, _, s_ in drivers]
+                if os.environ.get('PK_HAT_EXACT') == '1' and len(drivers) == 1: self.rehat(drivers[0][0], drivers[0][1])
         pk = self.PK[name]; full = np.zeros((self.r.nv, 3)); full[pk['idx']] = pk['d']; full[idx] += dd; nz = np.nonzero(np.abs(full).sum(1) > 1e-9)[0]; pk['idx'] = nz; pk['d'] = full[nz]
         return name
     def interp_at(self, f, x):
