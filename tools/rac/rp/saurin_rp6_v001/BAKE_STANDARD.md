@@ -60,6 +60,8 @@ Composition ownership needs the pre-rig evidence: within 1.0 cm of a pre-rig def
   - that pose's key half-width floor doubles, to min(1, 2 × max(floor, sample step));
   - existing keys of the pose are widened to it.
 
+  It is tested to fix the motion failure. Convergence of the full refit loop after widening is not yet demonstrated (standards closure §1).
+
 ## 3. Provisional motion rule (`sa6_bake_motion.py`)
 
 For every frame pair (f, g) one frame apart and every vertex v:

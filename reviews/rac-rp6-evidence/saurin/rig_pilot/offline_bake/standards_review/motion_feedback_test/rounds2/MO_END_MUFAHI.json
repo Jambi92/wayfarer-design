@@ -1,0 +1,79 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "name": "END_MUFAHI",
+ "artifact": "BK_END_MUFAHI.json",
+ "gate": {
+  "measure": "frame excursion: max_f max_{f<g<=f+1/30} max_v |rel(g)-rel(f)|, rel = corrected - plain LBS (posed), cm",
+  "frame": "1/30 of the full angle",
+  "grid": "1/240 of the full angle + every driver transition",
+  "pass_rule": "per frame pair and vertex: bake <= max(0.50 cm, prod + 0.05 cm); pass_original: max bake <= max(0.50, max prod)"
+ },
+ "poses": {
+  "shoulder_abd90_xneg": {
+   "n_samples": 243,
+   "full_deg": 90.0,
+   "k_max_cm": 3.15785,
+   "prod": {
+    "frame_excursion_cm": 0.5558,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     87.0,
+     90.0
+    ],
+    "vertex": 45100,
+    "region": "upper_arm"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.5558,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     87.0,
+     90.0
+    ],
+    "vertex": 45100,
+    "region": "upper_arm"
+   },
+   "k": {
+    "frame_excursion_cm": 0.3479,
+    "at": [
+     0.75,
+     0.783333
+    ],
+    "at_deg": [
+     67.5,
+     70.5
+    ],
+    "vertex": 20593,
+    "region": "trunk"
+   },
+   "limit_cm": 0.5558,
+   "pass_original": true,
+   "local": {
+    "worst_excess_cm": -0.0297,
+    "bake_cm": 0.4703,
+    "prod_cm": 0.1946,
+    "allowance_cm": 0.5,
+    "at": [
+     0.75,
+     0.783333
+    ],
+    "at_deg": [
+     67.5,
+     70.5
+    ],
+    "vertex": 3040,
+    "region": "trunk"
+   },
+   "pass": true,
+   "seconds": 157.1
+  }
+ },
+ "seconds": 157.4,
+ "peak_mb": 2341.3
+}

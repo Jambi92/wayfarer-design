@@ -65,7 +65,7 @@ Gate, sweep and dense failures already fed the fit.
 | `--recipe` | standard → floor 0.25, dense 1 at 0.0025, aligned 1, motion local. archived → floor 0, dense 0, motion original. An explicit override wins under both. |
 | Standard runner (dry run, missing body) | Writes `RECIPE.json` = standard and ignores a stray `BAKE_PK_MINW=0.125` from the caller. The worker then stops on the missing body, as intended. |
 | Failure collection on recorded runs | END_MUFAHI repair 1, it5: standard/local gives `{'motion:shoulder_abd90_xneg': [0.875, 0.90833]}`; archived/original gives no failure, matching that run's first-rule record. END_FAHI repair 1, it2 (first-rule record): standard gives `motion:hip_flex70_xpos [0.96667, 1.0]`. |
-| Motion feedback in the fit | Run on the END_MUFAHI repair-1 it5 artifact (the 0.73 cm trunk pop), with `motion:shoulder_abd90_xneg` and floor 1/8 as that run used. The pose's keys widened from 11.25° to 45° half-width (floor 0.5), and the motion rule then **passes** on that pose (excess −0.030 cm). With 2 fit rounds the pose still had 2–4 rig tears or flips at 75–100 %. ⟨FIT8⟩ |
+| Motion feedback in the fit | Run on the END_MUFAHI repair-1 it5 artifact (the 0.73 cm trunk pop), with `motion:shoulder_abd90_xneg` and floor 1/8 as that run used. The pose's keys widened from 11.25° to 45° half-width (floor 0.5), and the motion rule then **passes** on that pose (excess −0.030 cm). With 2 fit rounds the pose still had 2–4 rig tears or flips at 75–100 %. With the full 8 rounds the motion rule still passes (bake 0.542 cm against blend 0.556 cm, excess −0.016 cm). Folds and contact are cleared, but 1–3 rig tears remain at 87.5–100 %, and the fit did not converge (entering per round 7, 15, 15, 11, 4, 13, 3, 7). **So the mechanism fixes the motion failure as designed, but one refit does not fully re-clear the widened pose.** In a driver run those tears would come back as refit samples, within the 3 refits allowed. That full loop was not run here, because a bake batch needs its own order. **Open point:** the doubling step may be too coarse. A smaller step, or rebaking the pose from the initialisation layer with the wider floor (which is what cleared END_MUFAHI in repair 2), may converge better. Evidence: `standards_review/motion_feedback_test/`. |
 
 **Tool version of the archived PC fits.** They ran `sa6_bake.py` at 35c120d8, which did not write `pk_min_width` into artifacts. The floors of those artifacts are evidenced by their runner settings and key widths. Standard runs record the floor, plus the per-pose motion floor `pk_floor_per_pose`.
 
@@ -261,6 +261,7 @@ The original reports and measured verdicts are unchanged, as historical evidence
 2. **SAURIN-RP6-DEF-ELBOW-MUSCLE-1** (§3.6): decide whether muscle-response shapes are in scope for RP6 (separate order).
 3. Designate the shipping-preset roster.
 4. Optionally view the remaining speed-step GIFs. The author found no timing "kick" in the three reviewed.
+5. **Motion feedback convergence** (§1): the motion failure is fixed, but convergence of the full refit loop is not demonstrated. The doubling step may need refinement.
 
 Everything else listed as out of scope in the order needs a separate order. That includes:
 - further bake batches;

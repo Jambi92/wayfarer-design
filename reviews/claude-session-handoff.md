@@ -2,7 +2,29 @@
 
 Purpose: if a conversation runs out of room, a new Claude conversation reads this file first and continues.
 
-## LATEST (2026-11-20) — OFFLINE BAKE VALIDATION ORDER 8e3b7b4d DONE — 4/4 roster bodies clean; STOP for ChatGPT / author review
+## LATEST (2026-11-20 evening) — BAKE STANDARDS APPROVAL ORDER c65e6c93 CLOSED — STOP for ChatGPT / author review (Tyler: address all issues at once)
+- Closure: reviews/claude-rac-rp6-saurin-offline-bake-standards-closure.md. Instructions: tools/rac/rp/saurin_rp6_v001/BAKE_STANDARD.md.
+  Evidence: reviews/rac-rp6-evidence/saurin/rig_pilot/offline_bake/standards_review/ (playback, tail, author_review, motion_feedback_test).
+  Final evidence commit cited by this order: c74bbe5c (offline bake). Standards commits: 0911792d, 0f90f8eb, 897d4d25 + closure commit. Status RP6 RIG PILOT / NOT FROZEN.
+- Done:
+  - Approved recipe is the default of sa6_bake_full.py (BAKE_RECIPE=standard: floor 0.25 half-width, dense 0.0025, aligned, local motion, <=3 refits).
+  - BAKE_RECIPE=archived plus the per-run settings reproduce the archived runs.
+  - Motion failures feed the fit (motion:<pose>). Acceptance record ACCEPT_<body>.json. Standard PC runner pc_bake/run_standard.py.
+  - Tail and motion criteria provisionally approved; visual reviews recorded.
+  - BASE_c1 / BASE_c2 retained by hash (1/8 floor exception). FAHI / MUFAHI stay regression controls.
+  - Interface doc, carry-forward register (Saurin RP6 section) and this handoff updated.
+- AUTHOR PLAYBACK REVIEW (Tyler, whole-body GIFs):
+  - SHOULDER abduction anatomically wrong: bends low in the upper arm and armpit, no rotation at the top, clavicle static. Logged as SAURIN-RP6-DEF-SHOULDER-1, with a proposed girdle / pivot / reweight / corrective-refit fix.
+  - ELBOW lacks muscle contraction and extension. Logged as SAURIN-RP6-DEF-ELBOW-MUSCLE-1 (new muscle-shape layer).
+  - HIP accepted. No timing "kick" noticed.
+- Other open points:
+  - The motion-feedback widening fixes motion, but one refit left 1-3 tears (full-loop convergence not shown).
+  - v004 speed steps (CF-SLOPE-1).
+  - Shipping roster (CF-ROSTER-1).
+  - Fit ping-pong (CF-FIT-1).
+- NEXT: wait for ChatGPT's combined order. No new RP6 work.
+
+## (2026-11-20) — OFFLINE BAKE VALIDATION ORDER 8e3b7b4d DONE — 4/4 roster bodies clean; STOP for ChatGPT / author review
 - Report: reviews/claude-rac-rp6-saurin-offline-bake-validation-report.md. Evidence: reviews/rac-rp6-evidence/saurin/rig_pilot/offline_bake/
   (SA_RP6_offline_bake_results_v001.json, manifest 380 files, bodies/<body>/ final runs, superseded/, pass1/, tail/, motion/, PC runners + logs).
   Evidence commit: c74bbe5c. Status RP6 RIG PILOT / NOT FROZEN.

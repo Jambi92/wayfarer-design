@@ -1,0 +1,1 @@
+Motion-feedback test (standards closure section 1). Input: END_MUFAHI repair-1 it5 artifact (PC out_v2d, superseded/END_MUFAHI_dense/it5 in evidence), BAKE_EXTRA=extra.json, BAKE_PK_MINW=0.125, BAKE_GATE_ALIGNED_ALLOW=1, BAKE_ONLY_POSES=shoulder_abd90_xneg, ROUNDS=2 / 8; cloud, sa6_bake.py at commit 0911792d. npz artifacts not kept (reproducible).
