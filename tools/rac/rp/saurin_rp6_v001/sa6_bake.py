@@ -22,10 +22,12 @@ STEP = min(abs(a - b) for a in FRACS + (0.0,) for b in FRACS + (0.0,) if a != b)
 PK_MINW = float(os.environ.get('BAKE_PK_MINW', '0'))
 MOT_REFIT = os.environ.get('BAKE_MOTION_REFIT', '0') == '1'      # standard recipe: 1 (order 07a3f24c §3); archived: 0 (keys widened in place)
 PK_GRID = {}; MOT_DROPPED = []; CUR = [None]      # CUR[0] = the pose being solved
-MOT_MODE = os.environ.get('BAKE_MOTION_REFIT_MODE', 'nokeys')    # experiment switch: grid (keys + family samples on the floor grid) | gridkeys | nokeys
+MOT_MODE = os.environ.get('BAKE_MOTION_REFIT_MODE', 'grid')    # experiment switch: grid (keys + family samples on the floor grid) | gridkeys | nokeys
 MOT_SNAP = MOT_MODE == 'grid'
+PK_GRID_ALL = os.environ.get('BAKE_PK_GRID_ALL', '0') == '1'   # every pose's fraction keys on the step grid (adaptive samples snap to the nearest grid key)
 def pk_name(pn, fr):
     """pose-key name of a fit sample: the sample's own fraction, or (motion refit) the nearest key of the pose's grid"""
+    if PK_GRID_ALL and pn not in PK_GRID: fr = min([round(k_ * max(PK_MINW, STEP), 4) for k_ in range(1, int(np.ceil(1.0 / max(PK_MINW, STEP) - 1e-9)) + 1)], key=lambda g: (abs(g - fr), -g))
     if pn in PK_GRID:
         if MOT_MODE == 'nokeys': return None          # the motion-fed pose is refit with families only (no fraction pose keys)
         fr = min(PK_GRID[pn], key=lambda g: (abs(g - fr), -g))
@@ -149,6 +151,8 @@ if __name__ == '__main__':
             for name_ in [k_ for k_ in K.PK if '@' in k_ and k_.rsplit('@', 1)[0] in PK_FLOOR]: del K.PK[name_]; MOT_DROPPED.append(name_)
             mb_ = set().union(*[R.bones_of(PS[pn_]) for pn_ in PK_FLOOR])
             for k_ in [k_ for k_, f_ in K.F.items() if f_['bone'] in mb_]: del K.F[k_]; MOT_DROPPED.append('family ' + k_)
+            if os.environ.get('BAKE_MOTION_GRID', 'floor') == 'step':      # grid spacing = the sample step (max(floor, step)) instead of the doubled floor
+                for pn_ in PK_FLOOR: PK_FLOOR[pn_] = max(PK_MINW, STEP)
             for pn_, w_ in PK_FLOOR.items(): PK_GRID[pn_] = [round(min(1.0, k_ * w_), 4) for k_ in range(1, int(np.ceil(1.0 / w_ - 1e-9)) + 1)]
             print(nm, 'motion refit: dropped', MOT_DROPPED, 'grid', PK_GRID, flush=True)
         print(nm, 'motion feedback: poses', sorted(PK_FLOOR), 'floor', sorted(set(PK_FLOOR.values())), flush=True)

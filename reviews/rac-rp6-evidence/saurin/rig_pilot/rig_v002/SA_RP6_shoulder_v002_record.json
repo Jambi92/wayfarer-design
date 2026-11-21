@@ -1,0 +1,164 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "order": "07a3f24c \u00a71",
+ "defect": "SAURIN-RP6-DEF-SHOULDER-1",
+ "diagnosis": "rig v001 glenohumeral pivot = RP5 landmark \"glenohumeral\" = a shoulder-section centroid at axilla height (about 8.4 cm below the cap), so abduction / flexion bent the arm low (inside the armpit) instead of rotating at the top of the joint; the clavicle never moved in any pose and carried 0.43 mean weight over the whole upper chest",
+ "pivot_rule": "rig v002 glenohumeral centre (shoulder / elbow correction order 07a3f24c \u00a71): the v001 pivot (shoulder_ring0 centroid + landmark offset = the RP5 \"glenohumeral\" SHOULDER SECTION centroid) lies at the axillary apex level.  v002 = on the upper-arm centreline (line fit through the upper-arm section centroids at 30-80 % of pivot -> elbow), moved proximally to where the tissue cover straight above equals the lateral cover (the joint centred under the shoulder cap); bilateral mean of that distance, applied on each side's own centreline",
+ "girdle": {
+  "rule": "upper-arm pose entry = TOTAL arm angle; clavicle (sterno-clavicular joint) rotates about the same axis by g = 0.50 x max(0, swing_humeral - 30 deg), humeral h with h + g = total",
+  "ratio": 0.5,
+  "start_deg": 30.0,
+  "hypothesis": "2:1 glenohumeral : scapulothoracic rhythm above 30 deg (order start point)"
+ },
+ "clavicle_weight": "clavicle may not weight trunk / neck vertices farther than 0.45 x upper-arm length from GH (sa6_weights SH_G); v002 weights = v001 + regenerated shoulder rows (set S + 4-ring blend), weight audit clean",
+ "configs": {
+  "M": {
+   "gh_v001": {
+    "l": [
+     18.29794,
+     -6.54046,
+     146.13859
+    ],
+    "r": [
+     -19.90956,
+     -6.30844,
+     144.99251
+    ]
+   },
+   "gh_v002": {
+    "l": [
+     18.32116,
+     -8.9052,
+     154.86908
+    ],
+    "r": [
+     -18.55252,
+     -8.85974,
+     153.4119
+    ]
+   },
+   "shift_cm": {
+    "l": 9.045,
+    "r": 8.902
+   },
+   "clavicle_head": {
+    "l": [
+     4.2037,
+     4.8376,
+     153.83049
+    ],
+    "r": [
+     -4.20195,
+     4.88865,
+     153.57835
+    ]
+   },
+   "angles": {
+    "shoulder_abd45_xpos": {
+     "total_deg": -45.0,
+     "girdle_clavicle_deg": -4.704,
+     "humeral_deg": -40.296
+    },
+    "shoulder_abd90_xpos": {
+     "total_deg": -90.0,
+     "girdle_clavicle_deg": -19.432,
+     "humeral_deg": -70.568
+    },
+    "shoulder_flex60_xpos": {
+     "total_deg": 60.0,
+     "girdle_clavicle_deg": 8.961,
+     "humeral_deg": 51.039
+    },
+    "shoulder_abd45_xneg": {
+     "total_deg": 45.0,
+     "girdle_clavicle_deg": 4.779,
+     "humeral_deg": 40.221
+    },
+    "shoulder_abd90_xneg": {
+     "total_deg": 90.0,
+     "girdle_clavicle_deg": 19.575,
+     "humeral_deg": 70.425
+    },
+    "shoulder_flex60_xneg": {
+     "total_deg": 60.0,
+     "girdle_clavicle_deg": 8.593,
+     "humeral_deg": 51.407
+    }
+   }
+  },
+  "F": {
+   "gh_v001": {
+    "l": [
+     18.03115,
+     -6.46608,
+     146.50324
+    ],
+    "r": [
+     -19.71496,
+     -6.22744,
+     145.37087
+    ]
+   },
+   "gh_v002": {
+    "l": [
+     17.94367,
+     -8.98694,
+     155.02251
+    ],
+    "r": [
+     -18.35772,
+     -8.80753,
+     153.63185
+    ]
+   },
+   "shift_cm": {
+    "l": 8.885,
+    "r": 8.76
+   },
+   "clavicle_head": {
+    "l": [
+     4.15008,
+     4.78451,
+     154.09341
+    ],
+    "r": [
+     -4.15407,
+     4.83702,
+     153.84429
+    ]
+   },
+   "angles": {
+    "shoulder_abd45_xpos": {
+     "total_deg": -45.0,
+     "girdle_clavicle_deg": -4.689,
+     "humeral_deg": -40.311
+    },
+    "shoulder_abd90_xpos": {
+     "total_deg": -90.0,
+     "girdle_clavicle_deg": -19.402,
+     "humeral_deg": -70.598
+    },
+    "shoulder_flex60_xpos": {
+     "total_deg": 60.0,
+     "girdle_clavicle_deg": 8.933,
+     "humeral_deg": 51.067
+    },
+    "shoulder_abd45_xneg": {
+     "total_deg": 45.0,
+     "girdle_clavicle_deg": 4.774,
+     "humeral_deg": 40.226
+    },
+    "shoulder_abd90_xneg": {
+     "total_deg": 90.0,
+     "girdle_clavicle_deg": 19.566,
+     "humeral_deg": 70.434
+    },
+    "shoulder_flex60_xneg": {
+     "total_deg": 60.0,
+     "girdle_clavicle_deg": 8.596,
+     "humeral_deg": 51.404
+    }
+   }
+  }
+ }
+}
