@@ -82,6 +82,7 @@ if __name__ == '__main__':
         print(nm, 'composition-masked quads', int(comp.sum()), flush=True); ini = os.environ.get('INIT_LAYER', '') and os.path.join(os.environ['INIT_LAYER'], 'CF_state_%s.json' % nm)   # refine an earlier layer
         Cs = CC.Correctives.load(R, ini if ini and os.path.exists(ini) else WD + '/CF_%s.json' % cfg); print(nm, 'start from', ini if ini and os.path.exists(ini) else 'base', flush=True); S = CC.Solver(R); S.V0 = S.body_volume(R.V)
         F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F); PS = R.suite('anat')
+        if os.environ.get('PD2_ONLY'): PS = {k: v for k, v in PS.items() if k in os.environ['PD2_ONLY'].split(',')}     # diagnostics only
         order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k]))); log = []
         ck = OD + '/ckpt/CF_ckpt_%s.json' % nm; os.makedirs(OD + '/ckpt', exist_ok=True); r0, i0, tot0 = 0, 0, 0
         if os.path.exists(ck):                              # resume after a killed run (checkpoint written after every pose solve)
