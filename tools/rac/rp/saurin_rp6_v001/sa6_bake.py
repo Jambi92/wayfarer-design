@@ -20,6 +20,7 @@ STEP = min(abs(a - b) for a in FRACS + (0.0,) for b in FRACS + (0.0,) if a != b)
 # 0.025 or 0.25 deg apart, so their tents became 0.25-1.75 deg wide and a 0.2-1.8 cm key switched on inside one 30 fps frame (a pop in motion; offline bake
 # order 8e3b7b4d, END_FAHI / END_MUFAHI).  With a floor the key ramps over at least MINW x full angle; neighbouring keys may overlap (Gauss-Seidel rounds settle it).
 PK_MINW = float(os.environ.get('BAKE_PK_MINW', '0'))
+PK_FLOOR = {}       # per-pose floor override: poses that failed the motion gate ('motion:<pose>' in BAKE_EXTRA) get twice the floor (standards approval order)
 # BAKE_PEN_MARGIN (cm, default 0 = off): the FIT also treats a vertex as in contact when the point MARGIN OUTSIDE its surface lies inside the body (and did not
 # at rest) -- a clearance; gates unchanged (PEN_TOL 0.02 cm inside).  Without clearance, adjacent adaptive samples 0.25 deg apart
 # (END_MUFAHI trunk_twist_30 0.58333 / 0.59167, offline bake pass 2) ping-pong: each solve clears its own sample exactly and leaves the neighbour 1 vertex in.
@@ -48,7 +49,7 @@ class BakeProxy:
         made the 75 % and 100 % fixes of hip_flex70 undo each other round after round)"""
         new = name not in self.K.PK; self.K.add_pose_key(name, drivers, idx, dd)
         if new and os.environ.get('BAKE_PK_TENT', 'fraction') == 'fraction' and '@' in name:
-            pn_, fr = name.rsplit('@', 1); fr = float(fr); gap = max(GAPS.get((pn_, round(fr, 4)), STEP), PK_MINW)
+            pn_, fr = name.rsplit('@', 1); fr = float(fr); gap = max(GAPS.get((pn_, round(fr, 4)), STEP), PK_FLOOR.get(pn_, PK_MINW))
             self.K.PK[name]['width'] = [abs(s_) * gap / fr for _, _, s_ in self.K.PK[name]['drivers']]
 def body_sha(BD, nm): return hashlib.sha256(np.ascontiguousarray(np.load(os.path.join(BD, nm + '.npz'))['Vs']).tobytes()).hexdigest()
 if __name__ == '__main__':
@@ -105,6 +106,17 @@ if __name__ == '__main__':
         for k in EXTRA:
             if k.startswith('gate:'): PS[k] = GP[k[5:]]
         order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k])))
+    MOT = {k[7:]: v for k, v in EXTRA.items() if k.startswith('motion:')}
+    if MOT:     # motion-gate failure (standard recipe): the failing frame pair's fractions become fit samples of that pose, and its pose keys ramp over at
+        #         least twice the floor (half-width min(1, 2 x max(BAKE_PK_MINW, sample step)) of the full angle); keys kept from BAKE_INIT are widened to it.
+        for pn_, fs_ in MOT.items():
+            if pn_ in PS: EXTRA[pn_] = sorted(set(EXTRA.get(pn_, [])) | {float(x) for x in fs_}); PK_FLOOR[pn_] = min(1.0, 2.0 * max(PK_MINW, STEP))
+        for name_, pk_ in K.PK.items():
+            pn_, fr_ = name_.rsplit('@', 1) if '@' in name_ else (name_, None)
+            if fr_ is not None and pn_ in PK_FLOOR:
+                fr_ = float(fr_); ws = pk_.get('width') or [abs(s_) for _, _, s_ in pk_['drivers']]
+                pk_['width'] = [max(w_, abs(s_) * PK_FLOOR[pn_] / fr_) for w_, (_, _, s_) in zip(ws, pk_['drivers'])]
+        print(nm, 'motion feedback: poses', sorted(PK_FLOOR), 'floor', sorted(set(PK_FLOOR.values())), flush=True)
     if ONLY: order = [k for k in order if k in ONLY]
     items = [(pn, fr) for pn in order for fr in sorted(set(FRACS) | set(EXTRA.get(pn, [])), reverse=True)]
     for pn in order:
@@ -136,7 +148,7 @@ if __name__ == '__main__':
                      body_vs_sha256=body_sha(BD, nm), body_json_sha256=b.get('sha256'), initialised_from=dict(layers=H.LAYERS, layers_sha256=C.sha(pk),
                      base='SA_RP6_correctives_v002.json', base_arrays_sha256={c: C.sha(os.path.join(H.PKG, 'SA_RP6_correctives_%s_v001.npz' % c)) for c in 'MF'}),
                      semantics='baked(T) = packaged blend(T) + K(T); K = pose-driven corrective set on this exact body (0 at neutral)',
-                     converged=bool(tot == 0), bake_fracs=list(FRACS), pk_min_width=PK_MINW, pen_margin_cm=PEN_MARGIN, only_poses=sorted(ONLY) or None, adaptive_samples=EXTRA, initialised_from_artifact=ini or None, rounds_entering=n_entering, fit_log=log,
+                     converged=bool(tot == 0), bake_fracs=list(FRACS), pk_min_width=PK_MINW, pk_floor_per_pose=PK_FLOOR or None, pen_margin_cm=PEN_MARGIN, only_poses=sorted(ONLY) or None, adaptive_samples=EXTRA, initialised_from_artifact=ini or None, rounds_entering=n_entering, fit_log=log,
                      timing=dict(setup_s=round(t_setup, 1), fit_s=round(t_fit, 1), peak_mb=round(peak_mb(), 1), host=platform.node(), cpu=platform.processor(), os=platform.platform(), cpus_used=1,
                                  threads=os.environ.get('OMP_NUM_THREADS'))))
     t_write = time.time() - t2

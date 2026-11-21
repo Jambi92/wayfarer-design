@@ -50,6 +50,27 @@ Between accepted states, the creator blends the layer deltas with the same conve
 
 The base c1 and c2 correctives are unchanged; they were not refit.
 
+### Adopted: per-body offline bake (author decision 2026-11-20, standards approval order c65e6c93)
+
+This supersedes the creator-state corrective layer above as the shipping route. That design and its evidence stay as history.
+
+**Runtime interface.** Each shipped body carries its own baked corrective set:
+
+```
+corrective(body, pose) = packaged blend v004 (body, pose) + K_body(pose)
+```
+
+- K_body is fitted offline at creator commit on that exact body. It is 0 at neutral, and it changes no base, layer, weight or rest geometry.
+- Between bodies nothing is interpolated at runtime: a new body is a new bake.
+
+**Recipe, gates and acceptance:** `tools/rac/rp/saurin_rp6_v001/BAKE_STANDARD.md`, which also covers the provisional motion rule and the provisional tail criterion.
+
+**Accepted artifacts** (offline bake evidence `c74bbe5c`):
+- BASE_c1 and BASE_c2, with the recorded 1/8 pose-key floor as an accepted existing-artifact exception;
+- END_FAHI and END_MUFAHI, kept as regression controls.
+
+No shipping-preset roster is designated yet (author decision).
+
 ### What the future composition solver must deliver before rig deformation
 
 - A body on the frozen W2I6 face list, or the frozen cage realised from it through the frozen barycentric map. Same vertex order and quad order (topology sha256 `255645a1…`).

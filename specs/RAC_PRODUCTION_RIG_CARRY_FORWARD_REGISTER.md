@@ -66,6 +66,24 @@ No Saurin topology carry-forward ID: the 4-step deformation audit has 0 TOPOLOGY
 - Accepted non-blocking residuals (frozen evidence, not rig items): T-4 angle register 65 / 166; T-6 1.03 / 1.02 mm.
 - Evidence: `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/validation/SA_deformation_4step.json`, `.../SA_PD2_ownership.json`. Record: `reviews/rac-rp5-evidence/saurin/full_cage/final_consolidation/SAURIN_RP5_FREEZE.json`.
 
+## Saurin RP6 (RIG PILOT / NOT FROZEN; bake standards decided 2026-11-20)
+
+Adopted workflow: per-body offline bake (packaged blend v004 + K_body). The standard recipe, gates and acceptance are in `tools/rac/rp/saurin_rp6_v001/BAKE_STANDARD.md`, approved by `reviews/chatgpt-rac-rp6-saurin-offline-bake-standards-approval-order.md`. The closure is `reviews/claude-rac-rp6-saurin-offline-bake-standards-closure.md`.
+
+**Retained artifacts** (evidence `reviews/rac-rp6-evidence/saurin/rig_pilot/offline_bake/`, commit `c74bbe5c`):
+- BASE_c1 `BK_BASE_c1` json `8ba88348…c6b2b9`;
+- BASE_c2 `BK_BASE_c2` json `acf789e3…19b84`.
+
+Both have a 1/8 pose-key floor, accepted as an existing-artifact exception; the full hashes are in `BAKE_STANDARD.md` §6. END_FAHI and END_MUFAHI are regression controls only.
+
+| ID | Item | Class / owning stage | Evidence |
+|---|---|---|---|
+| SAURIN-RP6-CF-ROSTER-1 | No author-designated shipping-preset roster; only the bases are baked. | **AUTHOR DECISION**, before production bakes | offline bake report §1, §9 |
+| SAURIN-RP6-CF-MOTION-1 | Motion rule is provisional: a frame-excursion regression check at the full range in 1 s, 30 fps. It inherits the initialisation layer's motion, and says nothing about acceleration or other speeds. Acceptance also needs playback review of the worst cases. | **PROVISIONAL STANDARD**, review with more evidence | `BAKE_STANDARD.md` §3; closure §3 |
+| SAURIN-RP6-CF-TAIL-1 | Tail criterion is provisional and scoped to the frozen tail topology (181 rings) and the sampled motions. A visible kink, collapse, tear or inversion is a defect even when it passes. | **PROVISIONAL STANDARD** | `BAKE_STANDARD.md` §4; closure §2 |
+| SAURIN-RP6-CF-SLOPE-1 | Initialisation-layer (v004) corrective-rate slope breaks at family driver samples: elbow at 90°, and others recorded in the closure playback review. These are C¹ breaks, not positional jumps. | **AUTHOR REVIEW**; any change is an elbow / driver-family layer change (separate order) | offline bake report §5; closure §3 |
+| SAURIN-RP6-CF-FIT-1 | The fit can alternate between neighbouring contact samples (END_MUFAHI pass 2). It was bypassed by the 1/4 floor rebake, not fixed in the solver. | **SOLVER FOLLOW-UP** if it recurs | offline bake report §3.4, §9 |
+
 ## Cogling RP4 (FROZEN by record 2026-10-30, `COGLING_RP4_FREEZE.json`)
 
 No Cogling carry-forward ID. The scoped toe-station validator exception (`PASS_COGLING_TOE_PROBE_GEOMETRY_EXCEPTION`) and the 76 cm T-7 small-body sampling exception (`PASS_COGLING_T7_SMALL_BODY_SAMPLING_EXCEPTION`) are frozen validator history, not rig items. Accepted non-blocking notes (author ruling): CGF91-NAT c2 narrower-core ratio residual; Cogling sex-related anatomy OPEN; same-class thumb-opposition strain differences report-only. Record: `reviews/rac-rp4-evidence/cogling/final/COGLING_RP4_FREEZE.json`.
