@@ -5,6 +5,7 @@ import os, sys, time, json, subprocess
 B = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(B, 'out'); ND = os.path.join(OUT, 'nodes'); os.makedirs(ND, exist_ok=True)
 NODES = ['MUFAHI@0.25', 'MUFAHI@0.50', 'MUFAHI@0.75', 'FAHI@0.25', 'FAHI@0.50', 'FAHI@0.75', 'MUHI@0.25', 'MUHI@0.50', 'MUHI@0.75', 'M208-B@0.25', 'M208-B@0.50',
          'M208-B@0.75', 'T80@0.25', 'T80@0.50', 'T80@0.75', 'F-N@0.25', 'F-N@0.50', 'BRD@0.50', 'LT90@0.50', 'NAR@0.50']
+LN = max([n for n in range(2, 10) if os.path.isdir(os.path.join(OUT, 'layers%d' % n))] or [1]); LD = os.path.join(OUT, 'layers%d' % LN if LN > 1 else 'layers')   # latest state-layer pass
 nw = int(sys.argv[1]) if len(sys.argv) > 1 else max(1, (os.cpu_count() or 2) - 2); D = os.path.join(B, 'data'); T = os.path.join(B, 'tools')
 env = dict(os.environ, RP6_RIG='v002', RP6_REPO=os.path.join(B, 'repo'), SA_W=D, RP6_WD=D, OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1')
 jobs = [n for n in NODES if not os.path.exists(os.path.join(ND, 'CK_%s.json' % n))]
@@ -14,7 +15,7 @@ flags = 0x00004000 if os.name == 'nt' else 0; run = {}; fails = {}
 while jobs or run:
     while jobs and len(run) < nw:
         n = jobs.pop(0); lg = open(os.path.join(OUT, 'logs', 'node_' + n + '.log'), 'a')
-        run[n] = (subprocess.Popen([sys.executable, os.path.join(T, 'sa6_node_fit.py'), n, os.path.join(B, 'bodies'), os.path.join(OUT, 'layers'), ND], env=env, stdout=lg, stderr=subprocess.STDOUT, creationflags=flags), lg, time.time())
+        run[n] = (subprocess.Popen([sys.executable, os.path.join(T, 'sa6_node_fit.py'), n, os.path.join(B, 'bodies'), LD, ND], env=env, stdout=lg, stderr=subprocess.STDOUT, creationflags=flags), lg, time.time())
         rec.setdefault(n, []).append(dict(start=time.strftime('%Y-%m-%d %H:%M:%S'))); json.dump(rec, open(JR, 'w'), indent=1); print(time.strftime('%H:%M'), 'started', n, flush=True)
     time.sleep(20)
     for n in list(run):
