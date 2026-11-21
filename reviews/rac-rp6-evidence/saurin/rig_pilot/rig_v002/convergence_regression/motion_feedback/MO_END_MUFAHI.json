@@ -1,0 +1,207 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "name": "END_MUFAHI",
+ "artifact": "BK_END_MUFAHI.json",
+ "gate": {
+  "measure": "frame excursion: max_f max_{f<g<=f+1/30} max_v |rel(g)-rel(f)|, rel = corrected - plain LBS (posed), cm",
+  "frame": "1/30 of the full angle",
+  "grid": "1/240 of the full angle + every driver transition",
+  "pass_rule": "per frame pair and vertex: bake <= max(0.50 cm, prod + 0.05 cm); pass_original: max bake <= max(0.50, max prod)"
+ },
+ "poses": {
+  "shoulder_abd45_xneg": {
+   "n_samples": 241,
+   "full_deg": 45.0,
+   "k_max_cm": 0.46978,
+   "prod": {
+    "frame_excursion_cm": 0.0881,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.5
+    ],
+    "vertex": 32525,
+    "region": "trunk"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.0881,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.5
+    ],
+    "vertex": 32525,
+    "region": "trunk"
+   },
+   "k": {
+    "frame_excursion_cm": 0.0157,
+    "at": [
+     0.004167,
+     0.0375
+    ],
+    "at_deg": [
+     0.19,
+     1.69
+    ],
+    "vertex": 64219,
+    "region": "shoulder"
+   },
+   "limit_cm": 0.5,
+   "pass_original": true,
+   "local": {
+    "worst_excess_cm": -0.4119,
+    "bake_cm": 0.0881,
+    "prod_cm": 0.0881,
+    "allowance_cm": 0.5,
+    "at": [
+     0.0,
+     0.033333
+    ],
+    "at_deg": [
+     0.0,
+     1.5
+    ],
+    "vertex": 32525,
+    "region": "trunk"
+   },
+   "pass": true,
+   "seconds": 388.4
+  },
+  "shoulder_abd90_xneg": {
+   "n_samples": 241,
+   "full_deg": 90.0,
+   "k_max_cm": 2.60133,
+   "prod": {
+    "frame_excursion_cm": 0.5558,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     87.0,
+     90.0
+    ],
+    "vertex": 45100,
+    "region": "upper_arm"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.5558,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     87.0,
+     90.0
+    ],
+    "vertex": 45100,
+    "region": "upper_arm"
+   },
+   "k": {
+    "frame_excursion_cm": 0.367,
+    "at": [
+     0.75,
+     0.783333
+    ],
+    "at_deg": [
+     67.5,
+     70.5
+    ],
+    "vertex": 4169,
+    "region": "trunk"
+   },
+   "limit_cm": 0.5558,
+   "pass_original": true,
+   "local": {
+    "worst_excess_cm": -0.05,
+    "bake_cm": 0.4511,
+    "prod_cm": 0.4511,
+    "allowance_cm": 0.5011,
+    "at": [
+     0.925,
+     0.958333
+    ],
+    "at_deg": [
+     83.25,
+     86.25
+    ],
+    "vertex": 15634,
+    "region": "upper_arm"
+   },
+   "pass": true,
+   "seconds": 223.3
+  },
+  "shoulder_flex60_xneg": {
+   "n_samples": 241,
+   "full_deg": 60.0,
+   "k_max_cm": 0.0,
+   "prod": {
+    "frame_excursion_cm": 0.2091,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     30.0,
+     32.0
+    ],
+    "vertex": 45113,
+    "region": "shoulder"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.2091,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     30.0,
+     32.0
+    ],
+    "vertex": 45113,
+    "region": "shoulder"
+   },
+   "k": {
+    "frame_excursion_cm": 0.0,
+    "at": [
+     0.0,
+     0.0
+    ],
+    "at_deg": [
+     0.0,
+     0.0
+    ],
+    "vertex": 0,
+    "region": "trunk"
+   },
+   "limit_cm": 0.5,
+   "pass_original": true,
+   "local": {
+    "worst_excess_cm": -0.2909,
+    "bake_cm": 0.2091,
+    "prod_cm": 0.2091,
+    "allowance_cm": 0.5,
+    "at": [
+     0.5,
+     0.533333
+    ],
+    "at_deg": [
+     30.0,
+     32.0
+    ],
+    "vertex": 45113,
+    "region": "shoulder"
+   },
+   "pass": true,
+   "seconds": 189.7
+  }
+ },
+ "seconds": 802.1,
+ "peak_mb": 4588.2
+}
