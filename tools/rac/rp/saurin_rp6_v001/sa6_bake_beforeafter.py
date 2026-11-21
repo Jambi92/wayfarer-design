@@ -5,7 +5,7 @@
 #   'before' = packaged blend v004 (the unbaked production), 'after' = baked.  -> FINAL_DIR/BA_<NAME>.json
 import sys, os, json, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
+os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v005.json' if os.environ.get('RP6_RIG') == 'v002' else 'SA_RP6_creator_layers_v004.json')   # rig v002: layers v005
 import sa6_blend as BL, sa6_bake_gates as GTS
 nm, BD, UD, FD = sys.argv[1:5]; b = json.load(open(os.path.join(BD, 'bodies.json')))['bodies'][nm]; art = os.path.join(FD, 'BK_%s.json' % nm); t0 = time.time()
 def bad(r): return bool(r['rig_flips'] or r['rig_pen'] or r['rig_tears'] or not r['volume_ok'])

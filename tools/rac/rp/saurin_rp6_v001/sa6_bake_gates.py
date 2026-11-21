@@ -8,7 +8,7 @@
 #   -> OUTDIR/GT_<NAME>.json  (OUTDIR defaults to ARTDIR)
 import sys, os, json, time, numpy as np, igl
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
+os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v005.json' if os.environ.get('RP6_RIG') == 'v002' else 'SA_RP6_creator_layers_v004.json')   # rig v002: layers v005
 import sa6_common as C, sa6_correctives as CC, sa6_fit as FT, sa6_layer_harness as H, sa6_blend as BL, sa6_gates as GT
 from scipy.spatial import cKDTree
 from sa6_bake import peak_mb

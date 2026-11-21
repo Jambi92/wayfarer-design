@@ -10,7 +10,7 @@
 #   The evaluator is stateless (corrective = f(T) only), so the return sweep equals the forward sweep by construction (recorded, not recomputed).
 import sys, os, json, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
+os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v005.json' if os.environ.get('RP6_RIG') == 'v002' else 'SA_RP6_creator_layers_v004.json')   # rig v002: layers v005
 import sa6_blend as BL, sa6_layer_harness as H, sa6_correctives as CC, time
 from sa6_bake import peak_mb
 t_start = time.time()

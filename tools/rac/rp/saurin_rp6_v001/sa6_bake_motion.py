@@ -19,7 +19,7 @@
 #   Stateless evaluator: reverse playback equals forward.  MOTION_SHARD='i/n' -> poses[i::n] (merge with --merge).  -> OUTDIR/MO_<NAME>.json
 import sys, os, json, time, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
+os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v005.json' if os.environ.get('RP6_RIG') == 'v002' else 'SA_RP6_creator_layers_v004.json')   # rig v002: layers v005
 CAP, KCAP, GRID, FRAME = 0.50, 0.05, 240, 1.0 / 30.0
 if sys.argv[1] == '--merge':        # sa6_bake_motion.py --merge NAME OUTDIR
     nm, OD = sys.argv[2:4]; import glob; out = None

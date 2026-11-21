@@ -11,7 +11,7 @@
 #   -> OUTDIR/IN_<NAME>.json
 import sys, os, json, hashlib, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
+os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v005.json' if os.environ.get('RP6_RIG') == 'v002' else 'SA_RP6_creator_layers_v004.json')   # rig v002: layers v005
 import sa6_common as C, sa6_correctives as CC, sa6_layer_harness as H, sa6_blend as BL, sa6_gates as GT
 def h(a): return hashlib.sha256(np.ascontiguousarray(a).tobytes()).hexdigest()
 nm, BD, AD = sys.argv[1:4]; OD = sys.argv[4] if len(sys.argv) > 4 else AD; os.makedirs(OD, exist_ok=True)

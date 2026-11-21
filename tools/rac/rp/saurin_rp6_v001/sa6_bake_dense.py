@@ -7,7 +7,7 @@
 #   is told apart from a defect the bake adds (prod clean, bake fails).  DENSE_SHARD='i/n' -> poses[i::n], per-pose resume; --merge NAME OUTDIR -> DS_<NAME>.json
 import sys, os, json, time, glob, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
+os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v005.json' if os.environ.get('RP6_RIG') == 'v002' else 'SA_RP6_creator_layers_v004.json')   # rig v002: layers v005
 if sys.argv[1] == '--merge':
     nm, OD = sys.argv[2:4]; out = None
     for p in sorted(glob.glob(os.path.join(OD, 'DS_%s.s*of*.json' % nm))):

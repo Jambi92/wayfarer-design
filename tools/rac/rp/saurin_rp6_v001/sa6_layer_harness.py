@@ -44,7 +44,7 @@ def _set(rig, fams, pks, arr_of):
 def load_base(rig, cfg):
     j = _js(C.BASE_CORR)['configurations'][cfg]; z = _npz(_js(C.BASE_CORR)['arrays'][cfg])
     return _set(rig, j['families'], j['pose_keys'], lambda k: (z[k['name'] + '_idx'].astype(np.int64), z[k['name'] + '_d'].astype(np.float64)))
-LAYERS = os.environ.get('RP6_LAYERS', 'SA_RP6_creator_layers_v002.json')
+LAYERS = os.environ.get('RP6_LAYERS', 'SA_RP6_creator_layers_v005.json' if C.RIGV == 'v002' else 'SA_RP6_creator_layers_v002.json')   # rig v002: v005
 def hats(knots, w):
     """piecewise-linear hats over 0 < knots < 1 (implicit zero knots at 0 and 1): weight of every node at creator weight w"""
     xs = [0.0] + list(knots) + [1.0]; out = [0.0] * len(knots)

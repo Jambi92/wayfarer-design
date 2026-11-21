@@ -9,7 +9,7 @@
 import sys, os, json, numpy as np, matplotlib
 matplotlib.use('Agg'); import matplotlib.pyplot as plt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v004.json')
+os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v005.json' if os.environ.get('RP6_RIG') == 'v002' else 'SA_RP6_creator_layers_v004.json')   # rig v002: layers v005
 import sa6_correctives as CC, sa6_layer_harness as H, sa6_blend as BL
 OD, BD, nm = sys.argv[1:4]; AD = sys.argv[4] if len(sys.argv) > 4 and sys.argv[4] != '-' else None
 pn = sys.argv[5] if len(sys.argv) > 5 else 'elbow_130_xneg'; F0 = float(sys.argv[6]) if len(sys.argv) > 6 else 0.50; F1 = float(sys.argv[7]) if len(sys.argv) > 7 else 1.0
