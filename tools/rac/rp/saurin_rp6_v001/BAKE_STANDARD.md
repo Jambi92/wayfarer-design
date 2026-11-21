@@ -84,6 +84,8 @@ The playback runs at the test speed (30 fps, full range in 1 s, forward + revers
 
 Record the playback speed and the visual conclusion in the acceptance notes.
 
+Show a person whole-body playback as well (`sa6_bake_playback_view.py`: plain skin, fixed camera, real time plus ×4 slow), and record their verdict. The close-up review images are hard to read for anyone but the tool's author. The 2026-11-20 author review found visible defects that no gate measures: SAURIN-RP6-DEF-SHOULDER-1 and DEF-ELBOW-MUSCLE-1 (carry-forward register).
+
 ## 4. Provisional tail criterion (`sa6_tail_criterion.py`)
 
 **Scope.** The frozen Saurin tail topology only: 181 rings, an 11-junction window, and the sampled tail special-gate motions.

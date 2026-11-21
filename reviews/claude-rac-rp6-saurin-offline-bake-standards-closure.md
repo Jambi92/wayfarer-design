@@ -10,7 +10,11 @@
 The author's decisions are recorded, and the approved recipe is now the default of the bake entry point.
 - **No new bake was run.** The retained bases and the regression controls are reused as they were measured.
 - **Playback and tail reviews of the existing bakes** found no positional pop, crease, collapse, tear or inversion caused by a bake.
-- **One item is flagged for the author's own viewing.** The initialisation layer v004 has abrupt steps in corrective speed at several driver samples, not only at the elbow (§3). Whether they read as a visible "kick" at full speed needs a human to watch the playback, and real-time GIFs are provided.
+- **The author watched real-time playback and found two visible problems that no current gate measures** (§3.6). Both are in the shared rig and initialisation layer, so every body inherits them; the bakes neither cause nor fix them.
+  - **Shoulder abduction is anatomically wrong.** The arm bends low in the upper arm and armpit instead of rotating at the top of the joint.
+  - **The elbow has no muscle response.** The biceps and triceps do not contract or extend with flexion.
+
+  The hip was judged good. Both problems are reported below as new defects with a proposed correction. Fixing them needs a separate order.
 
 ## 1. Standard recipe — implemented
 
@@ -160,6 +164,53 @@ This is expected under the approved rule, because the bake inherits the initiali
 
 **Scope of the rule.** The numerical rule checks frame excursion at one speed only. These reviews make no claim about acceleration smoothness or other speeds.
 
+### 3.6 Author visual review (Tyler, 2026-11-20)
+
+**What was shown.** Whole-body real-time playback (full move in 1 s at 30 fps), plus ×4 slow copies, made with `sa6_bake_playback_view.py`. The files are in `standards_review/author_review/`, with still strips at 0 / 33 / 67 / 100 %:
+
+| GIF | Body | Pose | View |
+|---|---|---|---|
+| `review_shoulder.gif` | BASE_c1 | `shoulder_abd90_xneg` | front |
+| `review_elbow.gif` | BASE_c1 | `elbow_130_xneg` | side |
+| `review_hip.gif` | END_FAHI | `hip_flex70_xpos` | side |
+
+**The author's verdicts:**
+
+| Joint | Verdict |
+|---|---|
+| Shoulder | *"way off — it shouldn't bend like that, it should be more of a rotation and all bending is more at the top of the joint."* **Visible defect.** |
+| Elbow | *"when the arm bends, the muscles in the arm should extend and contract based off of movement."* **Visible defect: missing muscle response.** |
+| Hip | *"looks pretty good."* **Accepted.** |
+
+The author did not call out a speed "kick" at any of the steps in §3 item 3. The visible problems are of shape, not of timing.
+
+#### New defect SAURIN-RP6-DEF-SHOULDER-1: shoulder abduction pivots and bends in the wrong place
+
+- **Where.** Every body, since it is a rig / initialisation-layer property that the bake inherits. Shown on BASE_c1 `shoulder_abd90_xneg` (and `_xpos`), 0–90°, worst from about 45° to 90°.
+- **What.**
+  - The shoulder cap and deltoid stay almost fixed while the arm swings up.
+  - The bend forms lower down, in the upper arm and armpit. At 60–90° the upper arm creases and crumples under the shoulder (`shoulder_strip.png`).
+  - The reading is a hinge below the shoulder, not a ball joint rotating at the top.
+- **Evidence.** `review_shoulder.gif` and `shoulder_strip.png`. The pose definition rotates only `upperarm_r` by 90° about its parent-frame y axis, with its head at (−19.9, −6.3, 145.0) cm. `clavicle_r` exists in the skeleton but does not move in this pose. All gates pass, because none of them measures where a joint pivots or how the shoulder girdle moves.
+- **Proposed correction (for review).** Three parts, in order:
+  1. **Shoulder-girdle participation.** Drive `clavicle` elevation and rotation from upper-arm abduction, roughly a 2 : 1 glenohumeral-to-girdle ratio above about 30°. The shoulder cap then rises and rotates with the arm, in the rig and runtime and in the pose suite.
+  2. **Pivot location.** Check that the `upperarm` head sits at the glenohumeral centre under the acromion; move it there if it is low or medial.
+  3. **Deformation.** Reweight the deltoid and shoulder cap so they follow the humerus and girdle. Then refit the shoulder correctives for the new motion.
+
+  This changes the joint placement, the weights, the pose suite and the corrective layer. The existing bakes would be rebaked under the standard recipe afterwards.
+
+#### New defect SAURIN-RP6-DEF-ELBOW-MUSCLE-1: no muscle response to elbow flexion
+
+- **Where.** Every body. Shown on BASE_c1 `elbow_130_xneg` (and `_xpos`), 0–130°.
+- **What.** The biceps does not shorten and bulge, and the triceps does not lengthen and flatten, as the elbow bends. The upper arm keeps its rest shape and only the crease region is corrected.
+- **Evidence.** `review_elbow.gif` and `elbow_strip.png`. The current correctives only prevent folds, contact and volume loss; nothing models muscle-driven shape.
+- **Proposed correction (for review).** Add flexion-driven muscle shapes, starting with the elbow (biceps / brachialis bulge, triceps stretch) and extending to the other major joints if approved. Each shape would be:
+  - a smooth, bounded, volume-aware delta;
+  - keyed to the elbow angle;
+  - authored, or fitted from an anatomical reference, as a new layer.
+
+  It would be validated with the existing gates plus visual playback review. This is a new feature, not a gate failure.
+
 ## 4. Retained bakes and controls
 
 **BASE_c1 and BASE_c2 are retained exactly** as identified in `offline_bake/SA_RP6_offline_bake_results_v001.json` at `c74bbe5`:
@@ -206,8 +257,10 @@ The original reports and measured verdicts are unchanged, as historical evidence
 
 ## 6. Open for the author
 
-1. View the speed-step GIFs (§3, items 3–5) and decide whether any is a visible problem.
-2. Designate the shipping-preset roster.
+1. **SAURIN-RP6-DEF-SHOULDER-1** (§3.6): approve or redirect the proposed shoulder correction, which needs a separate order.
+2. **SAURIN-RP6-DEF-ELBOW-MUSCLE-1** (§3.6): decide whether muscle-response shapes are in scope for RP6 (separate order).
+3. Designate the shipping-preset roster.
+4. Optionally view the remaining speed-step GIFs. The author found no timing "kick" in the three reviewed.
 
 Everything else listed as out of scope in the order needs a separate order. That includes:
 - further bake batches;
