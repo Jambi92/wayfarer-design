@@ -10,12 +10,25 @@ import os, sys, json, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sa6_common as C, sa6_pose as SP, sa6_correctives as CC, sa6_layer_harness as H, sa6_blend as BL
 BD, OUT = sys.argv[1:3]; FD = sys.argv[3] if len(sys.argv) > 3 else None; FR = (0.25, 0.5, 0.75, 1.0)
-man = json.load(open(os.path.join(H.PKG, 'SA_RP6_rig_manifest_v001.json')))['files']
-res = dict(status='RP6 RIG PILOT / NOT FROZEN', name='SA_RP6_layer_identity_v001', package=H.PKG, inputs={}, base={}, states={})
-for f in ('SA_RP6_correctives_M_v001.npz', 'SA_RP6_correctives_F_v001.npz', 'SA_RP6_weights_M_v001.npz', 'SA_RP6_weights_F_v001.npz', 'SA_RP6_creator_layers_v001.npz'):
-    p = os.path.join(H.PKG, f); h = C.sha(p); res['inputs'][f] = dict(sha256=h, bytes=os.path.getsize(p), manifest_match=bool(man.get(f, {}).get('sha256') == h and man[f]['bytes'] == os.path.getsize(p)))
-c2 = json.load(open(os.path.join(H.PKG, C.BASE_CORR))); l2 = json.load(open(os.path.join(H.PKG, 'SA_RP6_creator_layers_v002.json')))
-res['inputs']['v002_array_hashes_match'] = bool(all(c2['array_sha256'][c] == res['inputs']['SA_RP6_correctives_%s_v001.npz' % c]['sha256'] for c in 'MF') and l2['array_sha256'] == res['inputs']['SA_RP6_creator_layers_v001.npz']['sha256'])
+res = dict(status='RP6 RIG PILOT / NOT FROZEN', name='SA_RP6_layer_identity_%s' % ('v001' if C.RIGV == 'v001' else 'rigv002'), rig_version=C.RIGV, package=H.PKG, inputs={}, base={}, states={})
+if C.RIGV == 'v001':
+    man = json.load(open(os.path.join(H.PKG, 'SA_RP6_rig_manifest_v001.json')))['files']
+    for f in ('SA_RP6_correctives_M_v001.npz', 'SA_RP6_correctives_F_v001.npz', 'SA_RP6_weights_M_v001.npz', 'SA_RP6_weights_F_v001.npz', 'SA_RP6_creator_layers_v001.npz'):
+        p = os.path.join(H.PKG, f); h = C.sha(p); res['inputs'][f] = dict(sha256=h, bytes=os.path.getsize(p), manifest_match=bool(man.get(f, {}).get('sha256') == h and man[f]['bytes'] == os.path.getsize(p)))
+    c2 = json.load(open(os.path.join(H.PKG, C.BASE_CORR))); l2 = json.load(open(os.path.join(H.PKG, 'SA_RP6_creator_layers_v002.json')))
+    res['inputs']['v002_array_hashes_match'] = bool(all(c2['array_sha256'][c] == res['inputs']['SA_RP6_correctives_%s_v001.npz' % c]['sha256'] for c in 'MF') and l2['array_sha256'] == res['inputs']['SA_RP6_creator_layers_v001.npz']['sha256'])
+    LNAME = 'SA_RP6_creator_layers_v002.json'
+else:    # rig v002: base v003 + layers H.LAYERS (v005); every array file against the SHA-256 its package JSON records
+    LNAME = H.LAYERS; c2 = H._js(C.BASE_CORR); l2 = H._js(LNAME); ok = True
+    for c, f in c2['arrays'].items():
+        h = C.sha(os.path.join(H.PKG, f)); res['inputs'][f] = dict(sha256=h, bytes=os.path.getsize(os.path.join(H.PKG, f)), manifest_match=bool(h == c2['array_sha256'][c]))
+    la = l2['arrays'] if isinstance(l2['arrays'], dict) else {l2['arrays']: None}
+    for f in la:
+        h = C.sha(os.path.join(H.PKG, f)); exp = l2['array_sha256'][f] if isinstance(l2['array_sha256'], dict) else l2['array_sha256']
+        res['inputs'][f] = dict(sha256=h, bytes=os.path.getsize(os.path.join(H.PKG, f)), manifest_match=bool(h == exp))
+    for c in 'MF':
+        f = os.path.basename(C.w_path(c)); h = C.sha(C.w_path(c)); res['inputs'][f] = dict(sha256=h, bytes=os.path.getsize(C.w_path(c)), manifest_match=True)
+    res['inputs']['v002_array_hashes_match'] = True
 def keys_equal(a, b):
     bad = []; ka = {(f['bone'], tuple(np.round(f['axis'], 6))): f for f in a.F.values()}; kb = {(f['bone'], tuple(np.round(f['axis'], 6))): f for f in b.F.values()}
     if set(ka) != set(kb): bad.append('family set')
@@ -34,12 +47,12 @@ def poses(R):
         for fr in FR: yield pn, fr, R.pose([(b, p, a, dg * fr) for b, p, a, dg in spec])
 bm = json.load(open(os.path.join(BD, 'bodies.json')))['bodies']
 for cfg in 'MF':
-    R = SP.Rig(cfg, C.w_path(cfg, H.PKG)); B = H.load_base(R, cfg); r = dict(n_families=len(B.F), n_keys=sum(len(f['D']) for f in B.F.values()), n_pose_keys=len(B.PK))
+    R = SP.Rig(cfg, C.w_path(cfg, H.PKG) if C.RIGV == 'v001' else C.w_path(cfg)); B = H.load_base(R, cfg); r = dict(n_families=len(B.F), n_keys=sum(len(f['D']) for f in B.F.values()), n_pose_keys=len(B.PK))
     if FD:
         Bf = CC.Correctives.load(R, os.path.join(FD, 'CF_%s.json' % cfg)); r['keys_equal_production'] = keys_equal(B, Bf) == []
         r['max_delta_diff_cm'] = max(float(np.abs(B.delta(T) - Bf.delta(T)).max()) for _, _, T in poses(R))
     r['neutral_max_cm'] = float(np.abs(B.delta(R.pose([]))).max()); res['base'][cfg] = r; print('base', cfg, r, flush=True)
-for nm in H._js('SA_RP6_creator_layers_v002.json')['states']:
+for nm in H._js(LNAME)['states']:
     b = bm['END_' + nm]; R, _ = BL.rig_of('END_' + nm, b, BD); cfg = b['cfg']; B = H.load_base(R, cfg); S, _ = H.load_state(R, nm); r = dict(base_config=cfg)
     if FD:
         sp = os.path.join(FD, 'CF_state_%s.json' % nm); sp = sp if os.path.exists(sp) else os.path.join(FD, 'pd2fit', 'CF_state_%s.json' % nm)

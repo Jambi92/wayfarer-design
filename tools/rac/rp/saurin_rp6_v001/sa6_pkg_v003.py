@@ -51,6 +51,17 @@ for p in sorted(glob.glob(LD + '/CF_state_*.json')):
         ent['creator_keys'].append(dict(node_weight=kj['node_weight'], body=kj['body'], converged=kj['converged'], composite=kj.get('composite', []), source_sha256=C.sha(q.replace('.json', '.npz')),
                                         n_keys=sk['new'], families=kf, pose_keys=kp))
     lay['states'][nm] = ent; stats[nm] = (st, [k['node_weight'] for k in ent['creator_keys']])
-np.savez_compressed(C.PKGDIR + '/SA_RP6_creator_layers_%s.npz' % VER, **{k: (v.astype(np.int32) if k.endswith('_idx') else v.astype(np.float32)) for k, v in arr.items()})
-lay['array_sha256'] = C.sha(C.PKGDIR + '/SA_RP6_creator_layers_%s.npz' % VER); json.dump(lay, open(C.PKGDIR + '/SA_RP6_creator_layers_%s.json' % VER, 'w'), indent=1)
+cast = lambda k, v: v.astype(np.int32) if k.endswith('_idx') else v.astype(np.float32)
+NPART = int(os.environ.get('PKG_PARTS', '8' if VER >= 'v005' else '1'))   # v005: the arrays exceed one 100 MB repository file (and the 25 MB transfer limit) -> split by state (arrays = {part file: [states]})
+if NPART == 1:
+    np.savez_compressed(C.PKGDIR + '/SA_RP6_creator_layers_%s.npz' % VER, **{k: cast(k, v) for k, v in arr.items()})
+    lay['array_sha256'] = C.sha(C.PKGDIR + '/SA_RP6_creator_layers_%s.npz' % VER)
+else:
+    sts = sorted(lay['states']); parts = [sts[i::NPART] for i in range(NPART)]; lay['arrays'] = {}; lay['array_sha256'] = {}
+    for i, ps in enumerate(parts):
+        fn = 'SA_RP6_creator_layers_%s_part%d.npz' % (VER, i + 1); own = lambda k: any(k.startswith(('S_%s__' % s, 'K_%s@' % s)) for s in ps)
+        np.savez_compressed(C.PKGDIR + '/' + fn, **{k: cast(k, v) for k, v in arr.items() if own(k)}); lay['arrays'][fn] = ps; lay['array_sha256'][fn] = C.sha(C.PKGDIR + '/' + fn)
+    old_ = C.PKGDIR + '/SA_RP6_creator_layers_%s.npz' % VER
+    if os.path.exists(old_): os.remove(old_)
+json.dump(lay, open(C.PKGDIR + '/SA_RP6_creator_layers_%s.json' % VER, 'w'), indent=1)
 for k, v in stats.items(): print(k, v)

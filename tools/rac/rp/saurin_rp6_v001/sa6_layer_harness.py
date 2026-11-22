@@ -74,9 +74,13 @@ class StateLayer:
         for (n, K), h in zip(self.keys, hats([k[0] for k in self.keys], w)):
             if h: d = d + h * self.key_delta(T, n, memo)
         return d
+def layer_arrays(L, nm):
+    """the arrays file of state nm: one file (v001..v004) or {part file: [states]} (v005, split for the 100 MB repository file limit)"""
+    a = L['arrays']
+    return a if isinstance(a, str) else next(f for f, ss in a.items() if nm in ss)
 def load_state(rig, nm):
     L = _js(LAYERS); s = L['states'][nm]; cfg = s['base_config']
-    zb = _npz(_js(C.BASE_CORR)['arrays'][cfg]); zl = _npz(L['arrays'])
+    zb = _npz(_js(C.BASE_CORR)['arrays'][cfg]); zl = _npz(layer_arrays(L, nm))
     def arr(k):
         if k['source'] == 'base': return zb[k['base_key'] + '_idx'].astype(np.int64), zb[k['base_key'] + '_d'].astype(np.float64)
         return zl[k['array'] + '_idx'].astype(np.int64), zl[k['array'] + '_d'].astype(np.float64)
