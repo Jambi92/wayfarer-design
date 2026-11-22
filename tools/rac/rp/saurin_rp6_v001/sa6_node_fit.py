@@ -92,6 +92,7 @@ if __name__ == '__main__':
     P = NodeProxy(B, S, K, w, E)
     Sv = CC.Solver(R); Sv.V0 = Sv.body_volume(R.V); Sv.protect = Sv.protect | BL.rigid_ids(b['cfg'])   # + the base configuration's rigid ids (rigid gate set)
     F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F); PS = R.suite('anat')
+    if os.environ.get('PD2_GATES') == '1': PS.update(PF.gate_set(R))   # rig v002 pass 7: special gates in the knot fit too (sa6_pd2_fit.gate_set)
     order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k]))); log, r0, i0, tot0 = [], 0, 0, 0
     if os.path.exists(ck):
         m = json.load(open(ck)); log, r0, i0, tot0 = m['fit_log'], m['ck_round'], m['ck_next'], m['ck_tot']; print(node, 'resume round', r0, 'item', i0, flush=True)

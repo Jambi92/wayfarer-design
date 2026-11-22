@@ -30,6 +30,13 @@ def state_rig(nm):
     # rig result).  Recorded here; the PD-2 audit assigns them to COMPOSITION/PD-2 and the layer fit ignores them.
     nC = R.qn(V1C); R.rest_inverted = (nC * R.n0).sum(1) < 0
     return R, cfg
+def gate_set(R):
+    """rig v002 (order 07a3f24c, pass 7): the 56 special-gate poses (sa6_gates, incl. the combined shoulder + elbow gates) as fit poses 'gate:<pose>', exactly as
+    the base fit (sa6_fit.pose_set) uses them.  Before pass 7 the state layers / knots were fitted on the 34 anatomical poses only, and their family samples beyond
+    the anatomical range (gate-only angles, e.g. foot +-25, jaw -24 / -32) were carried from the rig v001 state sets: on FAHI / MUFAHI they folded the ankle /
+    foot / jaw special gates (584 rig flips on the unbaked END bodies, v004: 0)."""
+    import sa6_gates as GT
+    return {'gate:' + k: v for k, v in GT.gate_poses(R).items()}
 def comp_mask(nm, R):
     """quads owned by the PRE-RIG composition (same rule as the sa6_pd2 ownership screen): rest quad centroid within 1 cm of a dense-source fold
     (canonical-base triangle whose normal flips or whose area collapses below 5 %) or of a neutral cage flip of the state."""
@@ -82,6 +89,7 @@ if __name__ == '__main__':
         print(nm, 'composition-masked quads', int(comp.sum()), flush=True); ini = os.environ.get('INIT_LAYER', '') and os.path.join(os.environ['INIT_LAYER'], 'CF_state_%s.json' % nm)   # refine an earlier layer
         Cs = CC.Correctives.load(R, ini if ini and os.path.exists(ini) else WD + '/CF_%s.json' % cfg); print(nm, 'start from', ini if ini and os.path.exists(ini) else 'base', flush=True); S = CC.Solver(R); S.V0 = S.body_volume(R.V)
         F = np.r_[R.Q[:, [0, 1, 2]], R.Q[:, [0, 2, 3]]].astype(np.int64); w0 = FT.wn_out(R.V, F); PS = R.suite('anat')
+        if C.RIGV != 'v001' and os.environ.get('PD2_GATES') == '1': PS.update(gate_set(R))   # rig v002 pass 7: the special gates enter the state fit (as in the base fit)
         if os.environ.get('PD2_ONLY'): PS = {k: v for k, v in PS.items() if k in os.environ['PD2_ONLY'].split(',')}     # diagnostics only
         order = sorted(PS, key=lambda k: (len(PS[k]), max(abs(e[3]) for e in PS[k]))); log = []
         ck = OD + '/ckpt/CF_ckpt_%s.json' % nm; os.makedirs(OD + '/ckpt', exist_ok=True); r0, i0, tot0 = 0, 0, 0
