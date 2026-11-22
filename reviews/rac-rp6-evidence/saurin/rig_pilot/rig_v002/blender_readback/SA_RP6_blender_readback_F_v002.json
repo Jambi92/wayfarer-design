@@ -1,0 +1,241 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "configuration": "F",
+ "file": "SA_F_REF_RP6_rigpilot_v002.blend",
+ "sha256": "63fec134320e0f250cf0684535498b0908c7f0cb78b4d322e00f18ad0c3dcbb4",
+ "objects": {
+  "SA_F_REF_RP6_body": {
+   "type": "MESH",
+   "parent": null,
+   "twist_properties": 82,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582
+   ],
+   "modifiers": [
+    [
+     "Armature",
+     "ARMATURE"
+    ]
+   ],
+   "constraints": 0
+  },
+  "SA_F_REF_RP6_rig": {
+   "type": "ARMATURE",
+   "parent": null,
+   "twist_properties": 0,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "scale": [
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582
+   ],
+   "modifiers": [],
+   "constraints": 0
+  }
+ },
+ "external": {
+  "images": 0,
+  "libraries": 0,
+  "materials": 0,
+  "node_groups": 0,
+  "texts": 0,
+  "uv_layers": 0,
+  "pose_constraints": 0
+ },
+ "mesh": {
+  "vertices": 190948,
+  "faces": 190946,
+  "all_quads": true,
+  "face_order_equal": true,
+  "topology_sha256": "255645a12a8dc59ae8dace55dcf2af2b196a4f5a799fdf425b394b831ffb2d49",
+  "topology_match": true,
+  "semantic_equal": true,
+  "neutral_vs_frozen_RP5_blend_max_abs": 0.0,
+  "neutral_vs_frozen_RP5_blend_identical": true,
+  "neutral_vs_float64_embedding_max_abs_cm": 7.6293775919111795e-06,
+  "float32_half_ulp_at_max_coord_cm": 7.62939453125e-06
+ },
+ "armature": {
+  "bones": 108,
+  "deform": 107,
+  "control": [
+   "root"
+  ],
+  "parents_match": true,
+  "head_tail_max_abs_cm": 7.431640625554792e-06,
+  "deform_flags_match": true
+ },
+ "weights": {
+  "groups": 107,
+  "groups_equal_deform_bones": true,
+  "max_abs_vs_npz": 0.0,
+  "max_influences": 4,
+  "sum_err_max": 1.1920928955078125e-07
+ },
+ "shape_keys": {
+  "count": 211,
+  "expected": 211,
+  "basis_equal_neutral": true,
+  "delta_max_abs_vs_npz_cm": 1.524435356259346e-05,
+  "drivers": 293,
+  "drivers_simple_expression": 293,
+  "drivers_valid": 293,
+  "rest_values_max": 0.0,
+  "relative_to_basis": true
+ },
+ "rig_prep_action": {
+  "present": true,
+  "assigned": false
+ },
+ "units": {
+  "object_scale": [
+   0.009999999776482582,
+   0.009999999776482582,
+   0.009999999776482582
+  ],
+  "armature_scale": [
+   0.009999999776482582,
+   0.009999999776482582,
+   0.009999999776482582
+  ],
+  "note": "mesh / armature data in cm; object scale 0.01 (cm -> m)"
+ },
+ "girdle_coupling": "{\"driven\": [\"clavicle_l\", \"clavicle_r\"], \"ratio\": 0.5, \"start_deg\": 30.0, \"note\": \"clavicle rotation is driver-owned (follows the upper arm)\"}",
+ "blender_vs_audit_evaluator": {
+  "knee_90_xpos": {
+   "max_err_cm": 0.000126,
+   "p99_err_cm": 0.000113,
+   "blender_eval_flips": 0,
+   "active_keys": 1,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "elbow_130_xneg": {
+   "max_err_cm": 5.8e-05,
+   "p99_err_cm": 3.5e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 3,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "fist_xpos": {
+   "max_err_cm": 5.8e-05,
+   "p99_err_cm": 3.5e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 15,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "grasp_xneg": {
+   "max_err_cm": 5.8e-05,
+   "p99_err_cm": 3.4e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 15,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "thumb_opposition_xpos": {
+   "max_err_cm": 5.8e-05,
+   "p99_err_cm": 3.4e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 3,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "shoulder_abd90_xpos": {
+   "max_err_cm": 6.3e-05,
+   "p99_err_cm": 4.8e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 1,
+   "driven_clavicle_rot_err": 1e-07
+  },
+  "hip_flex70_xneg": {
+   "max_err_cm": 0.000194,
+   "p99_err_cm": 0.000186,
+   "blender_eval_flips": 0,
+   "active_keys": 1,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "toe_ext30_xpos": {
+   "max_err_cm": 5.8e-05,
+   "p99_err_cm": 3.4e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 5,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "tail_root_lateral_30": {
+   "max_err_cm": 5.8e-05,
+   "p99_err_cm": 3.5e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 1,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "tail_twist_30": {
+   "max_err_cm": 5.8e-05,
+   "p99_err_cm": 3.5e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 2,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "jaw_open_20": {
+   "max_err_cm": 5.8e-05,
+   "p99_err_cm": 3.4e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 1,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "neck_rot_40": {
+   "max_err_cm": 5.9e-05,
+   "p99_err_cm": 3.4e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 1,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "trunk_twist_30": {
+   "max_err_cm": 4.5e-05,
+   "p99_err_cm": 3.5e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 1,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "gate:tail_combined": {
+   "max_err_cm": 5.8e-05,
+   "p99_err_cm": 3.4e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 4,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "gate:hand_splay_xneg": {
+   "max_err_cm": 5.8e-05,
+   "p99_err_cm": 3.4e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 0,
+   "driven_clavicle_rot_err": 3e-08
+  },
+  "gate:jaw32_head_pitch_up": {
+   "max_err_cm": 0.000101,
+   "p99_err_cm": 4.2e-05,
+   "blender_eval_flips": 0,
+   "active_keys": 7,
+   "driven_clavicle_rot_err": 3e-08
+  }
+ },
+ "blender_vs_audit_max_err_cm": 0.000194,
+ "blender_eval_flips_total": 0
+}
