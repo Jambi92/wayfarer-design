@@ -32,7 +32,7 @@ def body(cfg, wts):
     Vs = (z['bc'][:, :, None] * VB[F[z['tri']]]).sum(1); nfl = (q0 * np.cross(Vs[Q[:, 2]] - Vs[Q[:, 0]], Vs[Q[:, 3]] - Vs[Q[:, 1]])).sum(1) < 0
     pts = np.r_[VB[F[bad]].mean(1) if bad.any() else np.zeros((0, 3)), Vs[Q[nfl]].mean(1) if nfl.any() else np.zeros((0, 3))]
     comp = cKDTree(pts).query(Vs[Q].mean(1))[0] <= 1.0 if len(pts) else np.zeros(len(Q), bool)
-    R = SP.Rig(cfg, C.w_path(cfg, H.PKG)); J, M_ = SK.build(Vs, 'state'); R.V = Vs; R.P = SK.rec(J, M_, 'sweep'); R.n0 = R.qn(Vs); R.cfg = 'state'
+    R = SP.Rig(cfg, C.w_path(cfg, H.PKG)); J, M_ = SK.build(Vs, 'state'); R.V = Vs; R.P = SK.rec(J, M_, 'sweep'); R.n0 = R.qn(Vs); R.cfg = 'state'; R.base_cfg = cfg
     B = H.load_base(R, cfg); P = H.Blend(B, [(x, H.load_state(R, s)[0]) for s, x in wts.items()])
     return R, P, B, dict(pts=pts, comp=comp, inv=nfl)
 class Gate:

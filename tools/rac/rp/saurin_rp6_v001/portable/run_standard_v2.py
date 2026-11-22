@@ -3,10 +3,13 @@
 #   allowance, local motion rule + motion feedback with the grid-step restart, local contact clearance 0.03, <= 3 adaptive refits), with:
 #     RP6_RIG=v002, repo = this bundle's repo\ (rig_v002\: skeleton, weights, base correctives v003, creator layers v005), SA_W = this bundle's data\,
 #     bodies = ..\SaurinRP6_ctrl\bodies (the same blend bodies), empty-K control artifacts = ctrl_v2\<body>\BK_<body>.json (baked == packaged blend v005).
-#   One worker per body, SHARDS (default 8) pose shards per stage, 1 numerical thread per process, below-normal priority.  Output out_std\<body>\; resumable.
+#   One worker per body, SHARDS (default 8) pose shards per stage, 1 numerical thread per process, below-normal priority.  Output out_std_<package hash>\<body>\; resumable.
 #   Writes out_std\<body>\RECIPE.json first, and out_std\run_meta.json (hardware, worker settings, tool hashes, start / end, peak memory via the workers' logs).
 import os, sys, json, time, subprocess, hashlib, platform, glob
-B = os.path.dirname(os.path.abspath(__file__)); RB = os.path.dirname(B); T = os.path.join(B, 'tools'); OUT = os.path.join(B, 'out_std'); os.makedirs(OUT, exist_ok=True)
+B = os.path.dirname(os.path.abspath(__file__)); RB = os.path.dirname(B); T = os.path.join(B, 'tools')
+_PK = os.path.join(B, 'repo', 'reviews', 'rac-rp6-evidence', 'saurin', 'rig_pilot', 'rig_v002')
+_h = hashlib.sha256(b''.join(open(os.path.join(_PK, f), 'rb').read() for f in ('SA_RP6_correctives_v003.json', 'SA_RP6_creator_layers_v005.json'))).hexdigest()[:8]
+OUT = os.path.join(B, 'out_std_' + _h); os.makedirs(OUT, exist_ok=True)   # one output dir per package state: a resumed run never mixes packages
 BD = os.path.join(RB, 'SaurinRP6_ctrl', 'bodies'); UA = os.path.join(B, 'ctrl_v2'); SHARDS = os.environ.get('SHARDS', '8')
 NAMES = sys.argv[1:] or ['BASE_c1', 'BASE_c2', 'END_FAHI', 'END_MUFAHI']
 env = dict(os.environ, BAKE_RECIPE='standard', RP6_RIG='v002', RP6_REPO=os.path.join(B, 'repo'), SA_W=os.path.join(B, 'data'), RP6_WD=os.path.join(B, 'data'),

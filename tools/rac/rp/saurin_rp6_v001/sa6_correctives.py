@@ -139,6 +139,13 @@ class Correctives:
             if all('width_deg' in d_ for d_ in pk['drivers']): c.PK[pk['pose']]['width'] = [d_['width_deg'] for d_ in pk['drivers']]
         return c
 # ---------------- solver ----------------
+_BP = {}
+def base_protect(cfg):
+    """the base configuration's protected set (vertex ids, carried to every creator body by topology)"""
+    if cfg not in _BP:
+        import sa6_pose as _SP, sa6_common as _C
+        _BP[cfg] = Solver(_SP.Rig(cfg, _C.w_path(cfg))).protect.copy()
+    return _BP[cfg]
 class Solver:
     def __init__(self, rig):
         self.r = rig; Q = rig.Q; nv = rig.nv
@@ -161,6 +168,11 @@ class Solver:
         m_ = lmv & self.rigid
         for _ in range(2): m_ = m_ | (self.A1 @ m_.astype(np.float32) > 0)
         self.protect |= m_ & self.rigid
+        # rig v002: on a creator state / body rig (landmarks re-found on its own geometry) ALSO protect the BASE configuration's set by vertex id -- the
+        # set every rigidity gate measures (sa6_blend.rigid_ids); without it a state-layer or bake fit can move base-protected vertices it does not know
+        # are rigid (found by the v002 END_MUFAHI bake: blend rigid 0.139 cm at hip_flex70 / tail poses).
+        bc = getattr(rig, 'base_cfg', None)
+        if rig.cfg == 'state' and bc and _C.RIGV == 'v002': self.protect |= base_protect(bc)
     TEAR_RATIO, TEAR_CM = 2.5, 0.75
     def tear_edges(self, P):
         """tension tears: quad edges stretched beyond TEAR_RATIO x rest AND by more than TEAR_CM (weight-seam / contact-projection artifacts)"""

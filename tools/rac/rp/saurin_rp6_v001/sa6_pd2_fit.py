@@ -24,7 +24,7 @@ def state_rig(nm):
     if C.PORTABLE: Vs = np.load(C.W + '/cage_V/S_%s.npy' % nm)
     else: VB = np.load(C.W + '/cr_%s.npy' % nm).astype(float); Vs = (z['bc'][:, :, None] * VB[Fd[z['tri']]]).sum(1)
     J, M = SK.build(Vs, 'state'); Pst = SK.rec(J, M, 'creator state ' + nm)
-    R = SP.Rig(cfg, WD + '/W_%s.npz' % cfg); R.V = Vs; R.P = Pst; R.n0 = R.qn(Vs); R.cfg = 'state'
+    R = SP.Rig(cfg, WD + '/W_%s.npz' % cfg); R.V = Vs; R.P = Pst; R.n0 = R.qn(Vs); R.cfg = 'state'; R.base_cfg = cfg
     # closure v003: quads that the creator composition INVERTS in the neutral (normal flipped vs the canonical base cage = RP5 'neutral cage flips')
     # have no valid rest orientation: their posed orientation is composition-owned in every pose (neither 'folding' nor 'straightening' them is a
     # rig result).  Recorded here; the PD-2 audit assigns them to COMPOSITION/PD-2 and the layer fit ignores them.
