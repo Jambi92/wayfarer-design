@@ -20,7 +20,7 @@ for cfg, wf, cf in (('M', WM, CM), ('F', WF, CFF)):
                 if w > 1e-6: own.setdefault((key, k), []).append((pn, round(float(w), 3)))
     recs = []; regs_all = set()
     for fj in js['families']:
-        key = CC.fam_key(fj['bone'], fj['axis_parent_frame']); f = Cr.F[key]; piv = np.array(fj['pivot_rest_cm']); smp = sorted(f['samples']); pts = sorted(smp + [0.0])
+        key = CC.fam_key(fj['bone'], fj['axis_parent_frame'], fj.get('layer')); f = Cr.F[key]; piv = np.array(fj['pivot_rest_cm']); smp = sorted(f['samples']); pts = sorted(smp + [0.0])
         for kj in fj['keys']:
             k = f['samples'].index(kj['sample_deg']); idx, dd = f['D'][k]; mag = np.linalg.norm(dd, axis=1); sig = idx[mag > 1e-4]
             vl = np.zeros(R.nv, bool); vl[sig] = True; labs = sorted({str(x) for x in R.ql[vl[R.Q].any(1)]}); regs_all |= set(labs)
