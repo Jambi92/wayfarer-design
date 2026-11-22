@@ -98,9 +98,9 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
             if best is None or score < best[0]: best = (score, Ps, f2, ncont)
             if score[0] == 0: break
         if best[0][0] > 0 and FOLD_ALIGN:                # rig v002: smooth-sheet residual folds / tears -> local fold align (kept only when it scores better)
-            for ring in (6, 10):
-                Ps = S.align(T, best[1], ring=ring); pq = penetration(R, Ps, F, w0)
-                if pq.any(): Ps, _ = S.contact_general(Ps, pq); Ps = S.align(T, Ps, ring=ring)
+            for ring, mu, nu, it in ((6, 20.0, 0.05, 300), (10, 20.0, 0.05, 300), (4, 2.0, 0.01, 600), (6, 0.2, 0.005, 1000)):   # last two: a stretched
+                Ps = S.align(T, best[1], ring=ring, mu=mu, nu=nu, it=it); pq = penetration(R, Ps, F, w0)                          # sliver quad needs its edges free
+                if pq.any(): Ps, _ = S.contact_general(Ps, pq); Ps = S.align(T, Ps, ring=ring, mu=mu, nu=nu, it=it)
                 f2 = np.nonzero(R.relcos(Ps, T) < 0)[0]; score = (len(f2) + int(penetration(R, Ps, F, w0).sum()) + int(S.tear_edges(Ps)[0].sum()), float(np.abs(Ps - P0).sum()))
                 if os.environ.get('PDEBUG'): print('   fold align ring %d: %d -> %d' % (ring, best[0][0], score[0]), flush=True)
                 if score < best[0]: best = (score, Ps, f2, best[3])
