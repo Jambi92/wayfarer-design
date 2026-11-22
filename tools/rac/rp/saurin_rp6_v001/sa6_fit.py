@@ -29,6 +29,7 @@ VOL_ACCEPT = 60.0  # cm3: the volume path's result is accepted when the closed-b
 NONREAL = ('tail_root_lateral_30_rp5lit', 'tail_root_vertical_25_rp5lit', 'tail_twist_30_rp5lit')
 LOC_RING = int(os.environ.get('LOC_RING', 8))
 CONTACT_RING = int(os.environ.get('CONTACT_RING', 10))
+FOLD_ALIGN = os.environ.get('FOLD_ALIGN', '1' if os.environ.get('RP6_RIG') == 'v002' else '0') == '1'   # rig v002: Solver.align after the cascade (v001 archived: off)
 VOL_TRIG = 60.0    # cm3: |dV| above which the volume corrective is (re)solved (hysteresis: fold / contact fixes may lose a little volume afterwards)
 VOL_BONES = {'clavicle', 'upperarm', 'forearm', 'hand', 'thigh', 'shin', 'foot', 'pelvis', 'spine_01', 'spine_02', 'spine_03', 'spine_04', 'neck_01', 'neck_02'} | {'tail_%02d' % k for k in range(1, 17)}
 #   tissue-volume joints only: the jaw opens a cavity (the closed mesh volume legitimately changes), digits are below the volume tolerance
@@ -95,6 +96,14 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
             npen = int(penetration(R, Ps, F, w0).sum()); nt = int(S.tear_edges(Ps)[0].sum()); score = (len(f2) + npen + nt, float(np.abs(Ps - P0).sum()))
             if best is None or score < best[0]: best = (score, Ps, f2, ncont)
             if score[0] == 0: break
+        if best[0][0] > 0 and FOLD_ALIGN:                # rig v002: smooth-sheet residual folds / tears -> local fold align (kept only when it scores better)
+            for ring in (6, 10):
+                Ps = S.align(T, best[1], ring=ring); pq = penetration(R, Ps, F, w0)
+                if pq.any(): Ps, _ = S.contact_general(Ps, pq); Ps = S.align(T, Ps, ring=ring)
+                f2 = np.nonzero(R.relcos(Ps, T) < 0)[0]; score = (len(f2) + int(penetration(R, Ps, F, w0).sum()) + int(S.tear_edges(Ps)[0].sum()), float(np.abs(Ps - P0).sum()))
+                if os.environ.get('PDEBUG'): print('   fold align ring %d: %d -> %d' % (ring, best[0][0], score[0]), flush=True)
+                if score < best[0]: best = (score, Ps, f2, best[3])
+                if best[0][0] == 0: break
         return best
     def polish(Ps):
         """volume polish on a clean result: up to 3 cycles of broad self-masking bulge -> (small tear fix if the bulge tore an edge) -> unfold;

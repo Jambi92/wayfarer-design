@@ -227,6 +227,38 @@ class Solver:
             u, s_, vt = np.linalg.svd(Sx[I]); Rn = np.einsum('kji,klj->kil', vt, u)  # R = V U^T
             dn = np.linalg.det(Rn) < 0; vt[dn, -1, :] *= -1; Rn = np.einsum('kji,klj->kil', vt, u); Rall[I] = Rn
         return P, I, M
+    def align(self, T, P, ring=6, margin=0.15, mu=20.0, nu=0.05, it=300):
+        """FOLD ALIGN (rig v002, order 07a3f24c §1/§3): residual folds on a SMOOTH stretched sheet (the right posterior axillary fold at shoulder_abd90:
+        quads whose posed normal has turned just past 90 deg from their dominant bone's frame, relcos -0.03 .. -0.2, which the ARAP / Laplacian cascade cannot
+        clear -- Laplacian relaxation shrinks the sheet and adds folds) and tension tears around them.  Local L-BFGS on the vertices of the flipped quads and
+        tearing edges dilated `ring` rings (protected vertices fixed):  sum_q max(0, margin - cos_q)^2  (cos_q = the same relcos as the fold test)
+        + mu sum_e ((L - Lc) / Lc)^2 (edge lengths held at their current value, capped below the tear limit) + 50 sum_e (max(0, L - Lmax) / L0)^2 (Lmax =
+        0.97 x the tear limit) + nu |P - P_start|^2.  The fold / tear thresholds themselves are unchanged; the caller keeps the result only if it scores better."""
+        r = self.r
+        if not hasattr(self, '_E1'): self.tear_edges(P)
+        if not hasattr(r, '_dom'): r.relcos(P, T)
+        fl = np.nonzero(r.relcos(P, T) < 0)[0]; m0 = self.tear_verts(P); m0[r.Q[fl].ravel()] = True
+        if not m0.any(): return P
+        m = self.dilate(m0, ring) & ~self.protect; fv = np.nonzero(m)[0]
+        if not len(fv): return P
+        qs = np.nonzero(m[r.Q].any(1))[0]; Qs = r.Q[qs]
+        Rq = np.stack([T[r.DB[b]][0] for b in range(len(r.DB))])[r._dom[qs]]; ref = np.einsum('qij,qj->qi', Rq, r.n0[qs]); ref /= np.linalg.norm(ref, axis=1)[:, None]
+        es = np.nonzero(m[self._E1].any(1))[0]; Es = self._E1[es]; L0 = self._L0[es]
+        Lmax = np.maximum(0.97 * self.TEAR_RATIO * L0, L0 + 0.97 * self.TEAR_CM); Lc = np.minimum(np.linalg.norm(P[Es[:, 0]] - P[Es[:, 1]], axis=1), Lmax)
+        def f(x):
+            Q_ = P.copy(); Q_[fv] = x.reshape(-1, 3); G = np.zeros_like(Q_)
+            a = Q_[Qs[:, 2]] - Q_[Qs[:, 0]]; b = Q_[Qs[:, 3]] - Q_[Qs[:, 1]]; n = np.cross(a, b); nn = np.linalg.norm(n, axis=1) + 1e-12; c = (ref * n).sum(1) / nn
+            h = np.maximum(0, margin - c); e = (h ** 2).sum(); g = (-2 * h)[:, None] * (ref - c[:, None] * n / nn[:, None]) / nn[:, None]
+            ga = np.cross(b, g); gb = np.cross(g, a)
+            np.add.at(G, Qs[:, 2], ga); np.add.at(G, Qs[:, 0], -ga); np.add.at(G, Qs[:, 3], gb); np.add.at(G, Qs[:, 1], -gb)
+            d = Q_[Es[:, 0]] - Q_[Es[:, 1]]; L = np.linalg.norm(d, axis=1) + 1e-12; rr = (L - Lc) / Lc; t = np.maximum(0, L - Lmax) / L0
+            e += mu * (rr ** 2).sum() + 50 * (t ** 2).sum(); ge = (2 * mu * rr / Lc / L + 100 * t / L0 / L)[:, None] * d
+            np.add.at(G, Es[:, 0], ge); np.add.at(G, Es[:, 1], -ge)
+            dp = Q_[fv] - P[fv]; e += nu * (dp ** 2).sum(); G[fv] += 2 * nu * dp
+            return e, G[fv].ravel()
+        from scipy.optimize import minimize
+        res = minimize(f, P[fv].ravel(), jac=True, method='L-BFGS-B', options=dict(maxiter=it))
+        Pn = P.copy(); Pn[fv] = res.x.reshape(-1, 3); return Pn
     def unfold(self, T, P, relcos, rounds=40, it=10, grow=2, lam=0.5, pin_rigid=True):
         """flip removal: uniform-Laplacian relaxation restricted to the flipped quads' vertices (dilated by `grow`, growing each round the flips
         persist); everything else held.  Returns P, remaining flips."""
