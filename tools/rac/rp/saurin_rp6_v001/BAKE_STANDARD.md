@@ -165,3 +165,35 @@ Set the run's recorded values on top:
 - The pass-1 runs predate the motion gate.
 - The pass-2 motion verdicts in their own records are the first rule. The bases' local-rule results are in `out_mo/v2L`, `MO_*.local.json`.
 - The fit tool for every row is `sa6_bake.py` at 35c120d8.
+
+## 8. Rig v002 (shoulder / elbow refit correction, order 07a3f24c) — RP6 RIG PILOT / NOT FROZEN
+
+Rig v002 is selected by `RP6_RIG=v002`. Without it every tool keeps the archived rig v001 behaviour above, bit for bit.
+
+  baked(T) = packaged blend v005 (T) + K_body(T),  with K_body = 0 at neutral.
+
+**Package (`reviews/rac-rp6-evidence/saurin/rig_pilot/rig_v002/`):**
+- skeleton and weights v002: GH pivot at the shoulder cap, girdle coupling girdle = 0.5·max(0, humeral swing − 30°) with humeral + girdle = total (`sa6_pose.girdle_split`), axillary transition weights;
+- base correctives `SA_RP6_correctives_v003.json` (+ M / F npz), including the elbow muscle layer (families tagged `layer: muscle`);
+- creator layers `SA_RP6_creator_layers_v005.json` + `_part1 … _part8.npz`. `arrays` maps each part file to its states and `array_sha256` hashes each part. Loaders resolve a state's arrays with `sa6_layer_harness.layer_arrays`. Each part stays under 25 MB.
+
+**Recipe additions (defaults of `sa6_bake_full.py`, `BAKE_RECIPE=standard`; `--recipe` prints them):**
+
+| Setting | Value | Meaning |
+|---|---|---|
+| `BAKE_MOTION_REFIT` / `_MODE` / `BAKE_MOTION_GRID` | 1 / grid / step | A motion-fed pose restarts from the initialisation layer: its keys and the families on its joints are dropped, and keys and family samples are rebuilt on the sample-step grid. This replaces the doubled-floor widening of §2 that diverged (convergence regression `motion_feedback/`). |
+| `BAKE_LOCAL_MARGIN` / `BAKE_LOCAL_NEAR` | 0.03 cm / 0.02 | Local contact clearance for neighbouring samples that ping-pong (convergence regression `pingpong/`). |
+
+MAXIT 3 and all gate thresholds are unchanged.
+
+**Fit-side corrections (rig v002 only):**
+- *Fold alignment* (`FOLD_ALIGN`, `Solver.align`): a local L-BFGS pass on the remaining fold / tear quads after the cascade. It runs with fallbacks (ring, μ, ν, iterations) = (6, 20, .05, 300), (10, 20, .05, 300), (4, 2, .01, 600), (6, .2, .005, 1000).
+- *Fairing* (`FAIR`, `FAIR_IT=20`): a Laplacian low-pass of the fitted displacement after each clean solve. It is kept only if the solve stays clean and |dV| is no worse. This removes the lumpy shoulder cap that no metric caught.
+- *Base protected set*: state and body rigs also hold the **base** configuration's rigid set by vertex id (`sa6_correctives.base_protect`: head unit, rigid claw caps, rigid landmarks + 2 rings), so state layers and bakes cannot drift rigid landmarks.
+- *Combined gates*: shoulder_abd90 + elbow90, shoulder_flex60 + elbow130 and shoulder_abd45 + elbow130, on both sides.
+
+**Running it on the PC:** use `portable/run_standard_v2.py` (+ `START_STANDARD_V2.bat`) in the `SaurinRP6_v2` bundle. It forces `RP6_RIG=v002` and the standard recipe, and removes stray overrides. It also records hardware, worker settings, tool and package sha256 and timings in `run_meta.json` / `timings.jsonl`.
+
+Output goes to `out_std_<sha8 of correctives v003 json + layers v005 json>`, so a resumed run never mixes packages. Before running, verify the deployed tools against the commit, byte for byte.
+
+**Acceptance** needs everything in §5, plus the motion playback (real time and ×4 slow) and the tail review, both on the v002 artifact.
