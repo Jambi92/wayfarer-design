@@ -52,4 +52,11 @@ def gate_poses(R):
     G['head_roll_20'] = [('neck_02', N2, Y, 20)]
     G['jaw20_head_yaw_pitch'] = [('neck_02', N2, Z, 30), ('neck_02', N2, X, 15), ('jaw', J, X, -20)]
     G['jaw32_head_pitch_up'] = [('neck_02', N2, X, 20), ('jaw', J, X, -32)]
+    # ---- rig v002: combined shoulder + elbow (order 07a3f24c §2 "with the corrected shoulder so the two systems work together") ----
+    if C.RIGV == 'v002':
+        A_ = R.suite('anat'); sc_ = lambda sp, f: [(b, p, a, d * f) for b, p, a, d in sp]
+        for s in ('xpos', 'xneg'):
+            G['shoulder_abd90_elbow90_' + s] = list(A_['shoulder_abd90_' + s]) + sc_(A_['elbow_130_' + s], 90 / 130.)
+            G['shoulder_flex60_elbow130_' + s] = list(A_['shoulder_flex60_' + s]) + list(A_['elbow_130_' + s])
+            G['shoulder_abd45_elbow130_' + s] = list(A_['shoulder_abd45_' + s]) + list(A_['elbow_130_' + s])
     return G

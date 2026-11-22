@@ -29,6 +29,7 @@ VOL_ACCEPT = 60.0  # cm3: the volume path's result is accepted when the closed-b
 NONREAL = ('tail_root_lateral_30_rp5lit', 'tail_root_vertical_25_rp5lit', 'tail_twist_30_rp5lit')
 LOC_RING = int(os.environ.get('LOC_RING', 8))
 CONTACT_RING = int(os.environ.get('CONTACT_RING', 10))
+FAIR = os.environ.get('FAIR', '1' if os.environ.get('RP6_RIG') == 'v002' else '0') == '1'; FAIR_IT = int(os.environ.get('FAIR_IT', 20))   # rig v002: fair()
 FOLD_ALIGN = os.environ.get('FOLD_ALIGN', '1' if os.environ.get('RP6_RIG') == 'v002' else '0') == '1'   # rig v002: Solver.align after the cascade (v001 archived: off)
 VOL_TRIG = 60.0    # cm3: |dV| above which the volume corrective is (re)solved (hysteresis: fold / contact fixes may lose a little volume afterwards)
 VOL_BONES = {'clavicle', 'upperarm', 'forearm', 'hand', 'thigh', 'shin', 'foot', 'pelvis', 'spine_01', 'spine_02', 'spine_03', 'spine_04', 'neck_01', 'neck_02'} | {'tail_%02d' % k for k in range(1, 17)}
@@ -165,9 +166,31 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
             Pt = Ps + sc * (Pv - Ps)
             if clean(Pt, Ps): return Pt
         return Ps
+    def fair(Ps):
+        """FAIRING (rig v002, order 07a3f24c §1): the clean result's displacement field (relative to the incoming state) is low-pass filtered over its
+        support (uniform Laplacian, FAIR_IT iterations, protected vertices fixed) -- the fold / contact / volume steps can leave a lumpy, faceted field
+        (the v002 shoulder cap at abduction 90: a jagged ridge on the cap) that no fold / tear / volume metric sees.  The filtered field is re-cleaned by
+        the fold align; kept only when the result is still fold-, penetration- and tear-free with no worse volume error, else the strongest clean
+        filter of FAIR_IT, FAIR_IT / 2 is used, else the unfiltered result."""
+        D = Ps - Pc0; sup = np.linalg.norm(D, axis=1) > 1e-6
+        if not sup.any(): return Ps
+        m = S.dilate(sup, 2) & ~S.protect; idx = np.nonzero(m)[0]; deg = np.asarray(S.A1.sum(1)).ravel(); e0 = abs(S.body_volume(Ps) - S.V0)
+        for it in (FAIR_IT, FAIR_IT // 2):
+            Dk = D.copy()
+            for _ in range(it): Dk[idx] = 0.5 * Dk[idx] + 0.5 * ((S.A1 @ Dk) / deg[:, None])[idx]
+            Pf = Pc0 + Dk
+            if (R.relcos(Pf, T) < 0).any() or S.tear_edges(Pf)[0].any(): Pf = S.align(T, Pf, ring=6)
+            pq = penetration(R, Pf, F, w0)
+            if pq.any(): Pf, _ = S.contact_general(Pf, pq); Pf = S.align(T, Pf, ring=6)
+            ok = not (R.relcos(Pf, T) < 0).any() and not penetration(R, Pf, F, w0).any() and not S.tear_edges(Pf)[0].any()
+            ev = abs(S.body_volume(Pf) - S.V0)
+            if os.environ.get('PDEBUG'): print('   fair %d: clean %s dV %.0f (was %.0f)' % (it, ok, ev, e0), flush=True)
+            if ok and (not vol_pose or ev <= max(e0, VOL_ACCEPT)): return Pf
+        return Ps
     def finish(c_):
         sc_, Ps, f2, ncont = c_
         if vol_pose and sc_[0] == 0: Ps = polish(Ps)
+        if FAIR and sc_[0] == 0: Ps = fair(Ps)
         return ((sc_[0], max(0.0, abs(S.body_volume(Ps) - S.V0) - VOL_ACCEPT) if vol_pose else 0.0, sc_[1]), Ps, f2, ncont)
     out = [finish(cascade(Pc))]
     if vol_pose and out[0][0][:2] != (0, 0.0) and abs(dV) > VOL_TRIG / 3 and os.environ.get('VOLPATH', '1') == '1':
