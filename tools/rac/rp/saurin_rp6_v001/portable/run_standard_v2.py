@@ -6,13 +6,15 @@
 #   One worker per body, SHARDS (default 8) pose shards per stage, 1 numerical thread per process, below-normal priority.  Output out_std_<package hash>\<body>\; resumable.
 #   Writes out_std\<body>\RECIPE.json first, and out_std\run_meta.json (hardware, worker settings, tool hashes, start / end, peak memory via the workers' logs).
 import os, sys, json, time, subprocess, hashlib, platform, glob
-B = os.path.dirname(os.path.abspath(__file__)); RB = os.path.dirname(B); T = os.path.join(B, 'tools')
-_PK = os.path.join(B, 'repo', 'reviews', 'rac-rp6-evidence', 'saurin', 'rig_pilot', 'rig_v002')
+B = os.path.dirname(os.path.abspath(__file__)); RB = os.path.dirname(B)
+RDIR, TDIR = os.environ.get('STD_REPO', 'repo'), os.environ.get('STD_TOOLS', 'tools')   # pass 7: repo7 / tools7 (a second package state baked beside a running one)
+T = os.path.join(B, TDIR)
+_PK = os.path.join(B, RDIR, 'reviews', 'rac-rp6-evidence', 'saurin', 'rig_pilot', 'rig_v002')
 _h = hashlib.sha256(b''.join(open(os.path.join(_PK, f), 'rb').read() for f in ('SA_RP6_correctives_v003.json', 'SA_RP6_creator_layers_v005.json'))).hexdigest()[:8]
 OUT = os.path.join(B, 'out_std_' + _h); os.makedirs(OUT, exist_ok=True)   # one output dir per package state: a resumed run never mixes packages
 BD = os.path.join(RB, 'SaurinRP6_ctrl', 'bodies'); UA = os.path.join(B, 'ctrl_v2'); SHARDS = os.environ.get('SHARDS', '8')
 NAMES = sys.argv[1:] or ['BASE_c1', 'BASE_c2', 'END_FAHI', 'END_MUFAHI']
-env = dict(os.environ, BAKE_RECIPE='standard', RP6_RIG='v002', RP6_REPO=os.path.join(B, 'repo'), SA_W=os.path.join(B, 'data'), RP6_WD=os.path.join(B, 'data'),
+env = dict(os.environ, BAKE_RECIPE='standard', RP6_RIG='v002', RP6_REPO=os.path.join(B, RDIR), SA_W=os.path.join(B, 'data'), RP6_WD=os.path.join(B, 'data'),
            RP6_LAYERS='SA_RP6_creator_layers_v005.json', OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1', PYTHONIOENCODING='utf-8')
 for k in ('BAKE_PK_MINW', 'BAKE_DENSE', 'DENSE_STEP', 'BAKE_GATE_ALIGNED_ALLOW', 'BAKE_MOTION', 'BAKE_MOTION_RULE', 'BAKE_MOTION_REFIT', 'BAKE_MOTION_REFIT_MODE',
           'BAKE_MOTION_GRID', 'BAKE_LOCAL_MARGIN', 'PK_HAT_EXACT'): env.pop(k, None)   # the standard, never a stray override
@@ -20,7 +22,7 @@ def sha(p): return hashlib.sha256(open(p, 'rb').read()).hexdigest()
 meta = dict(status='RP6 RIG PILOT / NOT FROZEN', order='07a3f24c', rig='v002', node=platform.node(), cpu=platform.processor(), logical_cpus=os.cpu_count(), python=sys.version.split()[0],
             workers=len(NAMES), shards_per_stage=int(SHARDS), threads_per_process=1, priority='BELOW_NORMAL_PRIORITY_CLASS', bodies=NAMES, started=time.strftime('%Y-%m-%d %H:%M:%S'),
             tool_sha256={os.path.basename(p): sha(p) for p in sorted(glob.glob(os.path.join(T, 'sa6_*.py')))},
-            package_sha256={os.path.basename(p): sha(p) for p in sorted(glob.glob(os.path.join(B, 'repo', 'reviews', 'rac-rp6-evidence', 'saurin', 'rig_pilot', 'rig_v002', '*'))) if os.path.isfile(p)})
+            repo=RDIR, tools=TDIR, package_sha256={os.path.basename(p): sha(p) for p in sorted(glob.glob(os.path.join(B, RDIR, 'reviews', 'rac-rp6-evidence', 'saurin', 'rig_pilot', 'rig_v002', '*'))) if os.path.isfile(p)})
 json.dump(meta, open(os.path.join(OUT, 'run_meta.json'), 'w'), indent=1)
 ps = []
 for nm in NAMES:
