@@ -71,6 +71,34 @@ corrective(body, pose) = packaged blend v004 (body, pose) + K_body(pose)
 
 No shipping-preset roster is designated yet (author decision).
 
+### Rig v002 (shoulder / elbow correction, order 07a3f24c) — RP6 RIG PILOT / NOT FROZEN, for review
+
+This is the same runtime contract with new package versions. It is selected by `RP6_RIG=v002`; rig v001 and its artifacts stay unchanged as the comparison baseline.
+
+```
+corrective(body, pose) = packaged blend v005 (body, pose) + K_body(pose)
+packaged blend v005    = base correctives v003 (configuration of the body) + Σ creator weight × creator layer v005 (+ knots)
+```
+
+**Rig changes:**
+- **Skeleton and weights v002:** the GH pivot sits at the shoulder cap.
+- **Girdle coupling:** girdle = 0.5·max(0, humeral swing − 30°), with humeral + girdle = total.
+- **Axillary transition weights.**
+
+**Base correctives v003:** refit on rig v002 with fold alignment and fairing. They include the **elbow muscle layer**: biceps contraction and bulge and triceps stretch, as families tagged `layer: muscle` that ride on elbow flexion.
+
+**Creator layers v005:**
+- **Contents:** 19 state layers and 20 creator-weight knots. Every one is fitted on the 34 anatomical poses **and the 56 special gates** (pass 7, `PD2_GATES=1`) and holds the base protected set by vertex id.
+- **Storage:** `SA_RP6_creator_layers_v005.json` + `_part1 … _part8.npz`. `arrays` maps each part file to its states.
+- **Loading:** an engine loader reads the json, then for each state the part file that holds it (`sa6_layer_harness.layer_arrays`), checking `array_sha256[part]`.
+
+**Identity (`SA_RP6_layer_identity_rigv002.json`), exact on every state:**
+- zero creator influence = base correctives v003;
+- unit influence = the fitted state set;
+- neutral = 0.
+
+The per-body bake standard is unchanged (`BAKE_STANDARD.md`); the v002 additions are in §8. An existing rig v001 bake does not carry over: each body is rebaked on v002.
+
 ### What the future composition solver must deliver before rig deformation
 
 - A body on the frozen W2I6 face list, or the frozen cage realised from it through the frozen barycentric map. Same vertex order and quad order (topology sha256 `255645a1…`).
