@@ -14,6 +14,7 @@ from matplotlib.collections import PolyCollection, LineCollection
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v005.json' if os.environ.get('RP6_RIG') == 'v002' else 'SA_RP6_creator_layers_v004.json')   # rig v002: layers v005
+PBL = 'packaged blend ' + os.environ['RP6_LAYERS'].rsplit('_', 1)[-1].replace('.json', '')   # legend label: packaged blend v004 / v005
 import sa6_correctives as CC, sa6_layer_harness as H, sa6_blend as BL
 src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sa6_render.py')).read()   # shaded mesh = sa6_render.draw (not re-implemented)
 exec(compile(ast.Module([n for n in ast.parse(src).body if isinstance(n, ast.FunctionDef) and n.name in ('view_basis', 'draw')], []), 'sa6_render', 'exec'))
@@ -37,7 +38,7 @@ for q in np.nonzero((R.Q == v).any(1))[0]:
 view = nrm / (np.linalg.norm(nrm) + 1e-12)
 def frame(k, dpi=70):
     fig, ax = plt.subplots(1, 2, figsize=(9, 4.8))
-    for j, (c, t) in enumerate((('bake', 'baked'), ('prod', 'packaged blend v004'))):
+    for j, (c, t) in enumerate((('bake', 'baked'), ('prod', PBL))):
         P_ = PC[k][j]; draw(ax[j], R, P_, view, centre=P_[v], rad=RAD, vals=ch[c][k][R.Q].mean(1), vmax=0.5, cmap='YlOrRd')   # per-quad mean of the vertex change
         ax[j].set_title('%s  frame change max %.3f cm' % (t, ch[c][k][reg].max()), fontsize=8); ax[j].set_xticks([]); ax[j].set_yticks([]); ax[j].set_aspect('equal')
     fig.suptitle('%s  %s  frame %d/%d = %.1f deg  (30 fps, full range in 1 s; colour 0-0.5 cm change since previous frame)' % (nm, pn, k, NF, fr[k] * full), fontsize=8)
@@ -55,7 +56,7 @@ ks2 = list(range(max(1, kb - 3), min(NF, kb + 2) + 1)); sheet2 = Image.new('RGB'
 for i, k in enumerate(ks2): sheet2.paste(ims[k], ((i % cols) * W, (i // cols) * Hh))
 sheet2.save(base + '_break_sheet.png')
 fig, ax = plt.subplots(figsize=(7, 3)); x = fr * full
-for c, col, t in (('bake', 'r', 'baked'), ('prod', 'b', 'packaged blend v004')): ax.plot(x[1:], ch[c][1:, reg].max(1), col + '.-', lw=1, ms=3, label=t)
+for c, col, t in (('bake', 'r', 'baked'), ('prod', 'b', PBL)): ax.plot(x[1:], ch[c][1:, reg].max(1), col + '.-', lw=1, ms=3, label=t)
 ax.axhline(0.5, color='k', ls='--', lw=0.8, label='0.50 cm cap'); ax.set_xlabel('angle at frame end (deg)'); ax.set_ylabel('region max change per frame (cm)')
 ax.set_title('%s %s: per-frame surface change vs plain LBS (30 fps, full range in 1 s)' % (nm, pn), fontsize=8); ax.legend(fontsize=7); fig.tight_layout(); fig.savefig(base + '_curve.png', dpi=90); plt.close(fig)
 out = dict(status='RP6 RIG PILOT / NOT FROZEN', name=nm, pose=pn, artifact=os.path.join(AD, 'BK_%s.json' % nm), vertex=v, radius_cm=RAD, playback='full range in 1 s at 30 fps (frame = 1/30 of %.1f deg), forward + reverse' % full,

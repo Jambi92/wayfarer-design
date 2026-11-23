@@ -10,6 +10,7 @@ from matplotlib.collections import PolyCollection, LineCollection
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 os.environ.setdefault('RP6_LAYERS', 'SA_RP6_creator_layers_v005.json' if os.environ.get('RP6_RIG') == 'v002' else 'SA_RP6_creator_layers_v004.json')   # rig v002: layers v005
+PBL = 'packaged blend ' + os.environ['RP6_LAYERS'].rsplit('_', 1)[-1].replace('.json', '')   # legend label: packaged blend v004 / v005
 import sa6_correctives as CC, sa6_layer_harness as H, sa6_blend as BL
 src = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sa6_render.py')).read()
 exec(compile(ast.Module([n for n in ast.parse(src).body if isinstance(n, ast.FunctionDef) and n.name in ('view_basis', 'draw')], []), 'sa6_render', 'exec'))
@@ -33,7 +34,7 @@ for k in range(NF + 1):
         ax = fig.add_subplot(g[0, j]); draw(ax, R, PB[k], VV, vals=vals, vmax=0.5, cmap='YlOrRd') if vals is not None else draw(ax, R, PB[k], VV)
         ax.set_xlim(ctr[0] - CROP, ctr[0] + CROP); ax.set_ylim(ctr[1] - CROP, ctr[1] + CROP); ax.set_aspect('equal'); ax.set_xticks([]); ax.set_yticks([]); ax.set_title(t, fontsize=8)
     ax = fig.add_subplot(g[1, :]); m = cb[1:].max(1); mp = cp[1:].max(1)
-    ax.plot(deg[1:], m, 'r-', lw=1.5, label='baked'); ax.plot(deg[1:], mp, 'b--', lw=1, label='packaged blend v004'); ax.axhline(0.5, color='0.5', lw=0.7, ls=':')
+    ax.plot(deg[1:], m, 'r-', lw=1.5, label='baked'); ax.plot(deg[1:], mp, 'b--', lw=1, label=PBL); ax.axhline(0.5, color='0.5', lw=0.7, ls=':')
     if k: ax.plot(deg[k], m[k - 1], 'ko', ms=7)
     ax.set_xlabel('joint angle (deg)'); ax.set_ylabel('max skin movement\nper frame (cm)', fontsize=8); ax.legend(fontsize=7, loc='upper left'); ax.set_xlim(0, full)
     fig.suptitle('%s  %s   %.0f deg  (frame %d/30, real time = whole move in 1 second)' % (nm, pn, deg[k], k), fontsize=10)
