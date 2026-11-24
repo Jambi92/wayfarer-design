@@ -146,7 +146,7 @@ def base_protect(cfg):
         import sa6_pose as _SP, sa6_common as _C
         _BP[cfg] = Solver(_SP.Rig(cfg, _C.w_path(cfg))).protect.copy()
     return _BP[cfg]
-PLEAT_GATE = os.environ.get('PLEAT_GATE', '0') == '1'; PLEAT_DEG = float(os.environ.get('PLEAT_DEG', 90))   # rig v002 pass 9 (Solver.pleat_edges)
+PLEAT_GATE = os.environ.get('PLEAT_GATE', '0') == '1'; PLEAT_DEG = float(os.environ.get('PLEAT_DEG', 90)); PLEAT_MOUTH = ('head', 'rostrum_cap')   # rig v002 pass 9 (Solver.pleat_edges)
 class Solver:
     def __init__(self, rig):
         self.r = rig; Q = rig.Q; nv = rig.nv
@@ -186,7 +186,9 @@ class Solver:
     def pleat_edges(self, P):
         """PLEAT GATE (rig v002 pass 9, PLEAT_GATE=1; regression found by sa6_pleat_audit.py): a quad edge whose dihedral angle changes by more than
         PLEAT_DEG from rest is a pleat -- two neighbouring quads folded against each other into a sharp ridge while each stays short of the flip test
-        (relcos > 0).  Counted with the tension tears (same masks, allowances and repair: seeded local ARAP + fold align), over the _E1 edge list."""
+        (relcos > 0).  Counted with the tension tears (same masks, allowances and repair: seeded local ARAP + fold align), over the _E1 edge list.
+        Not gated: edges inside the mouth slit (both quads labelled head / rostrum_cap) -- the slit's lip quads turn > 90 deg when the jaw opens under plain
+        LBS (the opening itself, accepted on rig v001); the pleat audit (sa6_pleat_audit.py) checks the mouth against plain LBS of each pose instead."""
         if not hasattr(self, '_pq'):
             Q = self.r.Q; E = {}
             for qi, q in enumerate(Q):
@@ -194,7 +196,9 @@ class Solver:
             ks = [k for k, v in E.items() if len(v) == 2]; self._pq = np.array([E[k] for k in ks]); ev = np.array(ks)
             key = lambda e: e[:, 0].astype(np.int64) * (self.r.nv + 1) + e[:, 1]; k1 = key(self._E1); o = np.argsort(k1)
             self._pe = o[np.searchsorted(k1[o], key(ev))]; self._d0 = self._dih(self.r.V)
-        m = np.zeros(len(self._E1), bool); m[self._pe[np.abs(self._dih(P) - self._d0) > PLEAT_DEG]] = True; return m
+            ql = np.asarray(self.r.ql); mq = np.isin(ql, PLEAT_MOUTH); self._pmouth = mq[self._pq].all(1)
+        x = np.abs(self._dih(P) - self._d0) > PLEAT_DEG; x &= ~self._pmouth
+        m = np.zeros(len(self._E1), bool); m[self._pe[x]] = True; return m
     def _dih(self, P):
         Q = self.r.Q; n = np.cross(P[Q[:, 2]] - P[Q[:, 0]], P[Q[:, 3]] - P[Q[:, 1]]); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12
         return np.degrees(np.arccos(np.clip((n[self._pq[:, 0]] * n[self._pq[:, 1]]).sum(1), -1, 1)))

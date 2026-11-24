@@ -8,12 +8,13 @@
 #     KIND state : NAME = creator state, CORR = CF_state json (or 'pkg' = the packaged state set of the active rig version / layer package)
 #     KIND body  : NAME = creator body, CORR = bodies dir (sa6_blend bodies.json): the packaged blend (knots included) of the active package
 #     Run once per rig version (RP6_RIG unset = archived rig v001 = the accepted baseline).
-#   compare: PLEAT = edge change > 90 deg.  Per pose / fraction: pleats on edges dominated by the corrected systems (clavicle / upperarm / forearm,
+#   compare: PLEAT = edge change > 90 deg (mouth-slit edges that plain LBS of the pose already pleats are the jaw opening and are not counted).  Per pose / fraction: pleats on edges dominated by the corrected systems (clavicle / upperarm / forearm,
 #     reported for visual review) and on every other edge (must not exceed the baseline count: a new pleat outside the corrected systems is a regression).
 import sys, os, json, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ARM = ('clavicle_', 'upperarm_', 'forearm_')
 LIM = 90.0
+MOUTH = ('head', 'rostrum_cap')   # mouth slit: a pleat plain LBS of the pose already shows there is the jaw opening, not a corrective defect
 FRS = tuple(float(x) for x in os.environ.get('PLEAT_FRACS', '0.25,0.5,0.75,1.0').split(','))   # pass 9: all four fit fractions (pass 8 audit: 0.5, 1.0)
 if sys.argv[1] == 'measure':
     import sa6_common as C, sa6_pose as SP, sa6_correctives as CC, sa6_layer_harness as H, sa6_gates as GT
@@ -35,12 +36,13 @@ if sys.argv[1] == 'measure':
         n = np.cross(P[Q[:, 2]] - P[Q[:, 0]], P[Q[:, 3]] - P[Q[:, 1]]); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12
         return np.degrees(np.arccos(np.clip((n[pr[:, 0]] * n[pr[:, 1]]).sum(1), -1, 1)))
     d0 = dih(R.V); PS = dict(R.suite('anat')); PS.update({'gate:' + k: v for k, v in GT.gate_poses(R).items()})
-    names, X = [], []
+    names, X, XL = [], [], []
     for pn, spec in PS.items():
         for fr in FRS:
             T = R.pose(R.scaled(spec, fr)); P = R.skin(T, R.V + K.delta(T)); names.append('%s@%.2f' % (pn, fr)); X.append(np.abs(dih(P) - d0).astype(np.float16))
-    dom = R.W[ev].mean(1).argmax(1)
-    np.savez_compressed(OUT, names=np.array(names), X=np.stack(X), arm=np.array([R.DB[i].startswith(ARM) for i in dom]), ev=ev, rigv=C.RIGV, kind=kind, name=nm, corr=corr)
+            XL.append(np.packbits(np.abs(dih(R.skin(T)) - d0) > LIM))
+    dom = R.W[ev].mean(1).argmax(1); mouth = np.isin(np.asarray(R.ql), MOUTH)[pr].all(1)
+    np.savez_compressed(OUT, names=np.array(names), X=np.stack(X), XL=np.stack(XL), mouth=mouth, arm=np.array([R.DB[i].startswith(ARM) for i in dom]), ev=ev, rigv=C.RIGV, kind=kind, name=nm, corr=corr)
     print(kind, nm, C.RIGV, 'measured', len(names), flush=True)
 else:
     A, B, OUT = np.load(sys.argv[2]), np.load(sys.argv[3]), sys.argv[4]
@@ -48,7 +50,8 @@ else:
     ia = {n: i for i, n in enumerate(A['names'])}; arm = B['arm']; rows = {}; bad = {}
     for i, n in enumerate(B['names']):
         if n not in ia: continue
-        xa, xb = A['X'][ia[n]].astype(float), B['X'][i].astype(float)
+        xa, xb = A['X'][ia[n]].astype(float), B['X'][i].astype(float); ne = len(xa)
+        xa[A['mouth'] & np.unpackbits(A['XL'][ia[n]])[:ne].astype(bool)] = 0; xb[B['mouth'] & np.unpackbits(B['XL'][i])[:ne].astype(bool)] = 0
         r = dict(other_baseline=int(((xa > LIM) & ~arm).sum()), other_new=int(((xb > LIM) & ~arm).sum()), arm_baseline=int(((xa > LIM) & arm).sum()), arm_new=int(((xb > LIM) & arm).sum()))
         if any(r.values()): rows[n] = r
         if r['other_new'] > r['other_baseline']: bad[n] = r
