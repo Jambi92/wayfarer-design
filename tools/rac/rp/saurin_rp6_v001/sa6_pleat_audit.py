@@ -2,7 +2,8 @@
 #   Hidden-pleat audit (rig v002, order 07a3f24c §4 "check other unaffected systems for regressions").  The quad-flip gate (relcos < 0) cannot see a pleat:
 #   two neighbouring quads rotated to opposite sides of the rest-rotated normal, both just short of flipping (found on base v003: ankle_dorsi20 relcos 0.15,
 #   posed dihedral 179 deg where v001 has 8 deg; toes, tail root, pelvis, thumb likewise).
-#   measure: per quad edge, |posed dihedral - rest dihedral| (deg) for the 34 anatomical poses and all special gates at 0.5 and 1.0.
+#   measure: per quad edge, |posed dihedral - rest dihedral| (deg) for the 34 anatomical poses and all special gates at 0.25 / 0.5 / 0.75 / 1.0
+#     (PLEAT_FRACS; the pass-8 audit used 0.5 and 1.0 and missed a pleat at 0.75, found by the pass-9 fit).
 #     KIND base  : NAME = M | F, CORR = correctives json (or 'pkg' = the packaged base of the active rig version)
 #     KIND state : NAME = creator state, CORR = CF_state json (or 'pkg' = the packaged state set of the active rig version / layer package)
 #     Run once per rig version (RP6_RIG unset = archived rig v001 = the accepted baseline).
@@ -12,6 +13,7 @@ import sys, os, json, numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ARM = ('clavicle_', 'upperarm_', 'forearm_')
 LIM = 90.0
+FRS = tuple(float(x) for x in os.environ.get('PLEAT_FRACS', '0.25,0.5,0.75,1.0').split(','))   # pass 9: all four fit fractions (pass 8 audit: 0.5, 1.0)
 if sys.argv[1] == 'measure':
     import sa6_common as C, sa6_pose as SP, sa6_correctives as CC, sa6_layer_harness as H, sa6_gates as GT
     kind, nm, corr, OUT = sys.argv[2:6]
@@ -30,7 +32,7 @@ if sys.argv[1] == 'measure':
     d0 = dih(R.V); PS = dict(R.suite('anat')); PS.update({'gate:' + k: v for k, v in GT.gate_poses(R).items()})
     names, X = [], []
     for pn, spec in PS.items():
-        for fr in (0.5, 1.0):
+        for fr in FRS:
             T = R.pose(R.scaled(spec, fr)); P = R.skin(T, R.V + K.delta(T)); names.append('%s@%.2f' % (pn, fr)); X.append(np.abs(dih(P) - d0).astype(np.float16))
     dom = R.W[ev].mean(1).argmax(1)
     np.savez_compressed(OUT, names=np.array(names), X=np.stack(X), arm=np.array([R.DB[i].startswith(ARM) for i in dom]), ev=ev, rigv=C.RIGV, kind=kind, name=nm, corr=corr)
