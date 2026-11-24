@@ -101,10 +101,62 @@ The first v002 standard bakes found a regression (`pass7_gates/README.md`). On t
 - Each part is under 25 MB, and `array_sha256` hashes each part.
 - The runtime contract is in the PD-2 interface doc, in the rig v002 section.
 
-<!-- BAKES -->
+### 4.4 Standard bakes (BASE_c1, BASE_c2, END_FAHI, END_MUFAHI)
+The record is `standard_bakes/README.md`; the per-body `ACCEPT_*.json`, `FULL_*.json`, logs and the final-iteration records are next to it.
+
+**Where and how:**
+- They ran on the PC (TylersPC, 16 logical CPUs) with `portable/run_standard_v2.py`: standard recipe (`BAKE_PK_MINW=0.25`, `BAKE_DENSE=1`, `DENSE_STEP=0.0025`), 8 shards per stage, 1 thread per process, below-normal priority, MAXIT 3.
+- Each run records the hash of every deployed tool and package file (`run_meta_*.json`). The tools were checked against the committed versions before each run.
+- **Stages per iteration:** the 34 anatomical poses at 25 / 50 / 75 / 100 % plus neutral, the 56 special gates (the 50 named in the order, plus the 6 combined shoulder + elbow gates) at the same fractions, the full sweep, gate transitions, motion at the documented playback speed, and the dense audit. Then integrity (save, reopen, re-evaluate) and before / after.
+
+| Body | Package | Accepted at | Unbaked failing samples | After | Dense audit (bake failing) | Wall | Peak memory per process |
+|---|---|---|---|---|---|---|---|
+| BASE_c1 | `7bf72d1d` | it1 | 1 (knee_90_xpos contact) | 0 | 4457 samples, 0 | 14.1 h | 3.57 GB |
+| BASE_c2 | `7bf72d1d` | it1 | 8 (shoulder_abd90_xneg volume, knee contact) | 0 | 4474 samples, 0 | 14.9 h | 3.57 GB |
+| END_FAHI | `248508ec` | it3 | 28 (shoulder abd45 / abd90, hip_flex70) | 0 | 4094 samples, 0 | 29.1 h | 3.60 GB |
+| END_MUFAHI | `248508ec` | it3 | 18 | 0 | 0 | 29.5 h | 3.62 GB |
+
+- Wall is the sum of the stage wall times. The two pairs ran in parallel.
+- **Why BASE uses `7bf72d1d`:** a BASE body has every creator weight at 0, and zero influence reproduces the base exactly. So pass 7, which changed only the creator layers, does not change a BASE bake.
+- **Motion review:** passes on all four. The worst case is END_MUFAHI shoulder_abd90_xpos at 0.93 cm/frame, where bake = prod.
+- **Integrity:** clean on all four. Neutral is 0, and the rigid landmarks stay at 0.
+
+**Interruptions:**
+- The first END_FAHI and END_MUFAHI bakes ran on the pass-6 package. They were stopped when their unbaked special gates failed (§4.2), and then rebaked from scratch on the pass-7 package.
+- No other stage was restarted: `attempt` is 0 on every stage of every `FULL_*.json`.
+
+**Tail review** (`tail_review/`): <!-- TAIL -->
+
+**Playback** (`visual/playback/`):
+- region and whole-body views, real-time and slow, forward / reverse, with stills at key angles;
+- BASE_c1 and BASE_c2: shoulder_abd90_xneg, shoulder_flex60_xneg, elbow_130_xneg;
+- END_FAHI and END_MUFAHI: their worst motion poses; these are the worst heavy-body cases. <!-- PB -->
 
 <!-- HELDOUT -->
 
-<!-- PACKAGES -->
+## 6. Packages and readback
+
+**Blender** (`SA_M_REF_RP6_rigpilot_v002.blend.xz`, `SA_F_REF_RP6_rigpilot_v002.blend.xz`; readback in `blender_readback/`):
+- Each file was reopened in a fresh Blender process and read back against the npz data and the external evaluator.
+
+| Check | M | F |
+|---|---|---|
+| Bones (deform), parents, head / tail error | 108 (107), match, 7.4e-6 cm | 108 (107), match, 7.4e-6 cm |
+| Weights vs npz, max influences | 0.0, 4 | 0.0, 4 |
+| Shape keys (expected), delta error vs npz | 210 (210), 1.5e-5 cm | 211 (211), 1.5e-5 cm |
+| Drivers valid | 292 / 292 | 293 / 293 |
+| Basis = frozen RP5 neutral; corrective values at rest | yes; 0 | yes; 0 |
+| Posed geometry vs external evaluator, max error | 0.000394 cm | 0.000194 cm |
+| Flips in the Blender evaluation | 0 | 0 |
+
+- The girdle coupling is driver-owned in Blender: clavicle_l and clavicle_r follow the upper arm with ratio 0.5 from 30°.
+
+**Portable package:**
+- **The PC bundle** (`sa6_portable_v2.py`): tools, the frozen RP5 files the loaders need, the rig v002 skeleton, weights and joint placements, and the cage-level data. `bundle_manifest.json` lists SHA-256 for every file.
+- **Readback of PC outputs:** every layer and knot the PC produced was checked in the cloud before packaging (the PD-2 recheck, state checks and layer identity in §4.2).
+
+**Frozen sources:** <!-- FROZEN -->
+
+**Manifest:** <!-- MANIFEST -->
 
 <!-- CARRY -->
