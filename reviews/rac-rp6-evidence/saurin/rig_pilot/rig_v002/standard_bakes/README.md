@@ -22,5 +22,18 @@ The bakes ran on the PC (TylersPC, AMD 16 logical CPUs) with `portable/run_stand
 - The final `rp5lit` line in each log is the RP5-literal diagnostic. It is not a gate.
 
 ## END_FAHI and END_MUFAHI
-- **Run:** `out_std_248508ec`, on the pass-7 package from `repo7\` and `tools7\`.
-- These rows are filled in when that run finishes.
+- **Run:** `out_std_248508ec`, on the pass-7 package from `repo7\` and `tools7\`. Started 2026-11-22 19:03 (PC time); finished 11-23 23:16 (END_FAHI) and 11-24 00:34 (END_MUFAHI).
+- **END_FAHI:** accepted candidate at it3.
+  - The unbaked run had 28 failing samples: shoulder_abd45_xneg 6, shoulder_abd90_xneg 3, hip_flex70_xpos 16, hip_flex70_xneg 3.
+  - it1 added 3 families and 1 pose key; 1 sweep sample remained.
+  - it2 added 3 pose keys; dense audit found 2 hip_flex70_xpos samples at 0.915 / 0.9175.
+  - it3 is clean on every stage, including the dense audit (4094 samples, 0 bake failing; 294 prod failing) and integrity.
+  - Before / after: 28 failing → 0.
+- **END_MUFAHI:** accepted candidate at it3.
+  - The unbaked run had 18 failing samples.
+  - it1 added 5 families and 4 pose keys.
+  - it2's dense audit found 4 hip_flex70_xpos samples.
+  - it3 is clean on every stage, including the dense audit (0 bake failing) and integrity.
+  - Before / after: 18 failing → 0.
+- **Motion review (both):** passes. The worst case is END_MUFAHI shoulder_abd90_xpos at 0.93 cm/frame, with bake = prod. The baked body adds no motion of its own there.
+- **Before/after label:** the `unbaked` field in `BA_*.json` says "packaged blend v004". That is a fixed label in `sa6_bake_beforeafter.py`, now corrected to name the package actually loaded. These runs loaded v005 (`RP6_LAYERS`, `run_meta_248508ec.json` package_sha256).

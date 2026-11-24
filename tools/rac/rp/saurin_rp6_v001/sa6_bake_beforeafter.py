@@ -20,7 +20,7 @@ for pn, rows in json.load(open(os.path.join(UD, 'GT_%s.json' % nm)))['poses'].it
     for fr, r in rows.items():
         if bad(r['bake']): gate.setdefault(pn, set()).add(float(fr))
 K = ('rig_flips', 'rig_pen', 'rig_tears', 'dV_cm3', 'volume_ok', 'regions')
-out = dict(status='RP6 RIG PILOT / NOT FROZEN', name=nm, unbaked='packaged blend v004 (empty K)', baked=os.path.relpath(art, FD), rows=[])
+out = dict(status='RP6 RIG PILOT / NOT FROZEN', name=nm, unbaked='packaged blend %s (empty K)' % os.environ['RP6_LAYERS'].rsplit('_', 1)[-1].replace('.json', ''), baked=os.path.relpath(art, FD), rows=[])
 for pn, fs in anat.items():
     r = BL.evaluate(nm, b, BD, sorted(fs), [pn], bake=art)
     for fr, row in r['poses'][pn].items():
