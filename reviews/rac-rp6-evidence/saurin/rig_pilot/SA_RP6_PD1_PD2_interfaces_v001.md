@@ -76,8 +76,8 @@ No shipping-preset roster is designated yet (author decision).
 This is the same runtime contract with new package versions. It is selected by `RP6_RIG=v002`; rig v001 and its artifacts stay unchanged as the comparison baseline.
 
 ```
-corrective(body, pose) = packaged blend v005 (body, pose) + K_body(pose)
-packaged blend v005    = base correctives v003 (configuration of the body) + Σ creator weight × creator layer v005 (+ knots)
+corrective(body, pose) = packaged blend v006 (body, pose) + K_body(pose)
+packaged blend v006    = base correctives v004 (configuration of the body) + Σ creator weight × creator layer v006 (+ knots)
 ```
 
 **Rig changes:**
@@ -85,15 +85,15 @@ packaged blend v005    = base correctives v003 (configuration of the body) + Σ 
 - **Girdle coupling:** girdle = 0.5·max(0, humeral swing − 30°), with humeral + girdle = total.
 - **Axillary transition weights.**
 
-**Base correctives v003:** refit on rig v002 with fold alignment and fairing. They include the **elbow muscle layer**: biceps contraction and bulge and triceps stretch, as families tagged `layer: muscle` that ride on elbow flexion.
+**Base correctives v004:** the shoulder / clavicle / upper-arm / forearm systems refit on rig v002 with fold alignment and fairing (from v003). They include the **elbow muscle layer**: biceps contraction and bulge and triceps stretch, as families tagged `layer: muscle` that ride on elbow flexion. Every other system is the unfaired pass-4 fit (`sa6_base_merge.py`). v003 faired every system and left hidden pleats outside the arm; v003 and layers v005 are superseded.
 
-**Creator layers v005:**
-- **Contents:** 19 state layers and 20 creator-weight knots. Every one is fitted on the 34 anatomical poses **and the 56 special gates** (pass 7, `PD2_GATES=1`) and holds the base protected set by vertex id.
-- **Storage:** `SA_RP6_creator_layers_v005.json` + `_part1 … _part8.npz`. `arrays` maps each part file to its states.
+**Creator layers v006:**
+- **Contents:** 19 state layers and 20 creator-weight knots, fitted on base v004. Every one is fitted on the 34 anatomical poses **and the 56 special gates** (`PD2_GATES=1`) with the pleat gate (`PLEAT_GATE=1`, passes 8–9), and holds the base protected set by vertex id.
+- **Storage:** `SA_RP6_creator_layers_v006.json` + `_part*.npz`. `arrays` maps each part file to its states.
 - **Loading:** an engine loader reads the json, then for each state the part file that holds it (`sa6_layer_harness.layer_arrays`), checking `array_sha256[part]`.
 
 **Identity (`SA_RP6_layer_identity_rigv002.json`), exact on every state:**
-- zero creator influence = base correctives v003;
+- zero creator influence = base correctives v004;
 - unit influence = the fitted state set;
 - neutral = 0.
 
