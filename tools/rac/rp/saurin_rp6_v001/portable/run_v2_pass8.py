@@ -1,7 +1,7 @@
 # run_v2_pass8.py [WORKERS] : rig v002 pass 8 (order 07a3f24c §4; regression found by the v002 tail review + sa6_pleat_audit.py).
 #   Base correctives v004 = sa6_base_merge.py (corrected shoulder from v003 + every other system unfaired from pass 4).  The pass-5..7 state layers and knots
 #   were faired everywhere like base v003; pass 8 refits them on base v004:
-#   Stage 1: sa6_pd2_fit.py per state, INIT_LAYER = data8/init_layer8 (sa6_base_merge.py per state: clavicle / upperarm from pass 7, everything else from
+#   Stage 1: sa6_pd2_fit.py per state, INIT_LAYER = data8/init_layer8 (sa6_base_merge.py per state: clavicle / upperarm / forearm from pass 7, everything else from
 #            pass 4), PD2_GATES=1 (the 56 special gates), FAIR_SCOPE=arm (fairing only on poses that drive the corrected shoulder / elbow), FRACS
 #            1.0,0.75,0.5,0.25, COMP_MASK 1, SEGBULGE 1, ROUNDS 8 -> out/layers8.
 #   Stage 2: sa6_node_fit.py per knot on out/layers8 -> out/nodes8 (base from repo8 = packaged base v004).
