@@ -6,6 +6,7 @@
 #     (PLEAT_FRACS; the pass-8 audit used 0.5 and 1.0 and missed a pleat at 0.75, found by the pass-9 fit).
 #     KIND base  : NAME = M | F, CORR = correctives json (or 'pkg' = the packaged base of the active rig version)
 #     KIND state : NAME = creator state, CORR = CF_state json (or 'pkg' = the packaged state set of the active rig version / layer package)
+#     KIND body  : NAME = creator body, CORR = bodies dir (sa6_blend bodies.json): the packaged blend (knots included) of the active package
 #     Run once per rig version (RP6_RIG unset = archived rig v001 = the accepted baseline).
 #   compare: PLEAT = edge change > 90 deg.  Per pose / fraction: pleats on edges dominated by the corrected systems (clavicle / upperarm / forearm,
 #     reported for visual review) and on every other edge (must not exceed the baseline count: a new pleat outside the corrected systems is a regression).
@@ -19,6 +20,10 @@ if sys.argv[1] == 'measure':
     kind, nm, corr, OUT = sys.argv[2:6]
     if kind == 'base':
         R = SP.Rig(nm, C.w_path(nm, H.PKG)); K = H.load_base(R, nm) if corr == 'pkg' else CC.Correctives.load(R, corr)
+    elif kind == 'body':      # NAME = creator body (e.g. a knot body c1-MUFAHI@0.25), CORR = bodies dir: the packaged blend of the active package (base + layers + knots)
+        import json as _j, sa6_blend as BL
+        b = _j.load(open(os.path.join(corr, 'bodies.json')))['bodies'][nm]; R, _ = BL.rig_of(nm, b, corr)
+        K = H.Blend(H.load_base(R, b['cfg']), [(ws, H.load_state(R, s_)[0]) for s_, ws in b['w'].items()])
     else:
         import sa6_pd2_fit as PF
         R, cfg = PF.state_rig(nm); K = H.load_state(R, nm)[0] if corr == 'pkg' else CC.Correctives.load(R, corr)

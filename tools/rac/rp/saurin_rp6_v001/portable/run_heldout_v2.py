@@ -5,20 +5,22 @@
 #   standard fit settings (pose-key floor, aligned allowance).  Not run here: the motion and dense stages (BAKE_MOTION=0, BAKE_DENSE=0) - a held-out body
 #   is feasibility evidence, not an accepted artifact (an artifact submitted as passing runs run_standard_v2.py).
 #   repo7\ / tools7\ (pass-7 package), bodies_ho\, ctrl_ho\<body>\BK_<body>.json; one process per body (1 shard), single-threaded, below-normal priority,
-#   resumable.  Output out_ho_<package hash>\<body>\ ; timings out_ho_*\timings.jsonl.
+#   resumable.  Pass 9: STD_REPO / STD_TOOLS (default repo9 / tools9), STD_BASE / STD_LAYERS (default base v004 / creator layers v006), PLEAT_GATE=1.
+#   Output out_ho_<package hash>\<body>\ ; timings out_ho_*\timings.jsonl.
 import os, sys, json, time, subprocess, hashlib, platform, glob
-B = os.path.dirname(os.path.abspath(__file__)); T = os.path.join(B, 'tools7'); R = os.path.join(B, 'repo7')
+B = os.path.dirname(os.path.abspath(__file__)); T = os.path.join(B, os.environ.get('STD_TOOLS', 'tools9')); R = os.path.join(B, os.environ.get('STD_REPO', 'repo9'))
 _PK = os.path.join(R, 'reviews', 'rac-rp6-evidence', 'saurin', 'rig_pilot', 'rig_v002')
-_h = hashlib.sha256(b''.join(open(os.path.join(_PK, f), 'rb').read() for f in ('SA_RP6_correctives_v003.json', 'SA_RP6_creator_layers_v005.json'))).hexdigest()[:8]
-OUT = os.path.join(B, 'out_ho_' + _h); os.makedirs(OUT, exist_ok=True); BD = os.path.join(B, 'bodies_ho'); UA = os.path.join(B, 'ctrl_ho')
+SB, SL = os.environ.get('STD_BASE', 'SA_RP6_correctives_v004.json'), os.environ.get('STD_LAYERS', 'SA_RP6_creator_layers_v006.json')
+_h = hashlib.sha256(b''.join(open(os.path.join(_PK, f), 'rb').read() for f in (SB, SL))).hexdigest()[:8]
+OUT = os.path.join(B, 'out_ho_' + _h); os.makedirs(OUT, exist_ok=True); BD = os.path.join(B, 'bodies_ho'); UA = os.path.join(B, os.environ.get('STD_CTRL_HO', 'ctrl_ho3'))
 NAMES = ['c1-MUHI@0.625', 'c1-MUFAHI@0.625', 'c1-FAHI@0.9375', 'c1-MUFAHI@0.875', 'c1-T80@0.375', 'c1-M208-B@0.75', 'c2-F-N@0.25', 'c2-F-N@0.40', 'c1-M208-B@0.25',
          'BK-X2a', 'BK-X2b', 'BK-X2c', 'BK-X3', 'c1-MUHI@0.375', 'c1-FAHI@0.375', 'c1-FAHI@0.625', 'c1-MUFAHI@0.375', 'c1-MUFAHI@0.0625']
 nw = int(sys.argv[1]) if len(sys.argv) > 1 else 8
 if len(sys.argv) > 2 and sys.argv[2] == 'rev': NAMES = NAMES[::-1]   # a second runner works from the other end; RUNNING.lock keeps two runners off one body
 env = dict(os.environ, BAKE_RECIPE='standard', BAKE_MOTION='0', BAKE_DENSE='0', RP6_RIG='v002', RP6_REPO=R, SA_W=os.path.join(B, 'data'), RP6_WD=os.path.join(B, 'data'),
-           RP6_LAYERS='SA_RP6_creator_layers_v005.json', OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1', PYTHONIOENCODING='utf-8')
+           RP6_LAYERS=SL, RP6_BASE_CORR=SB, PLEAT_GATE='1', OMP_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1', MKL_NUM_THREADS='1', PYTHONIOENCODING='utf-8')
 def sha(p): return hashlib.sha256(open(p, 'rb').read()).hexdigest()
-json.dump(dict(runner=('rev' if len(sys.argv) > 2 else 'fwd'), status='RP6 RIG PILOT / NOT FROZEN', order='07a3f24c', rig='v002', node=platform.node(), logical_cpus=os.cpu_count(), workers=nw, bodies=NAMES,
+json.dump(dict(runner=('rev' if len(sys.argv) > 2 else 'fwd'), status='RP6 RIG PILOT / NOT FROZEN', order='07a3f24c', rig='v002', base_correctives=SB, creator_layers=SL, pleat_gate='1', node=platform.node(), logical_cpus=os.cpu_count(), workers=nw, bodies=NAMES,
                started=time.strftime('%Y-%m-%d %H:%M:%S'), stages='unbaked + fit + EV/GT/SW/GS per iteration, MAXIT 3, 1 shard; motion / dense off',
                tool_sha256={os.path.basename(p): sha(p) for p in sorted(glob.glob(os.path.join(T, 'sa6_*.py')))},
                package_sha256={os.path.basename(p): sha(p) for p in sorted(glob.glob(os.path.join(_PK, '*'))) if os.path.isfile(p)}), open(os.path.join(OUT, 'run_meta_%s.json' % ('rev' if len(sys.argv) > 2 else 'fwd')), 'w'), indent=1)
