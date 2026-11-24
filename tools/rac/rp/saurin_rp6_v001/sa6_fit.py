@@ -108,6 +108,14 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
                 if os.environ.get('PDEBUG'): print('   fold align ring %d: %d -> %d' % (ring, best[0][0], score[0]), flush=True)
                 if score < best[0]: best = (score, Ps, f2, best[3])
                 if best[0][0] == 0: break
+        if best[0][0] > 0 and CC.PLEAT_GATE and S.tear_edges(best[1])[0].any():      # rig v002 pass 9b: pleats the tear fix / fold align keep -> local smoothing
+            for ring, it in ((2, 10), (3, 20), (5, 30), (8, 60)):
+                Ps = S.unpleat(best[1], ring=ring, it=it); Ps, _ = S.unfold(T, Ps, R.relcos, rounds=20, pin_rigid=True); pq = penetration(R, Ps, F, w0)
+                if pq.any(): Ps, _ = S.contact_general(Ps, pq)
+                f2 = np.nonzero(R.relcos(Ps, T) < 0)[0]; score = (len(f2) + int(penetration(R, Ps, F, w0).sum()) + int(S.tear_edges(Ps)[0].sum()), float(np.abs(Ps - P0).sum()))
+                if os.environ.get('PDEBUG'): print('   unpleat ring %d: %d -> %d' % (ring, best[0][0], score[0]), flush=True)
+                if score < best[0]: best = (score, Ps, f2, best[3])
+                if best[0][0] == 0: break
         return best
     def polish(Ps):
         """volume polish on a clean result: up to 3 cycles of broad self-masking bulge -> (small tear fix if the bulge tore an edge) -> unfold;

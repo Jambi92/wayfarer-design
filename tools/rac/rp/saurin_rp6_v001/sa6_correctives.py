@@ -147,6 +147,7 @@ def base_protect(cfg):
         _BP[cfg] = Solver(_SP.Rig(cfg, _C.w_path(cfg))).protect.copy()
     return _BP[cfg]
 PLEAT_GATE = os.environ.get('PLEAT_GATE', '0') == '1'; PLEAT_DEG = float(os.environ.get('PLEAT_DEG', 90)); PLEAT_MOUTH = ('head', 'rostrum_cap')   # rig v002 pass 9 (Solver.pleat_edges)
+PLEAT_ARM = os.environ.get('PLEAT_ARM', '0') == '1'; PLEAT_ARM_BONES = ('clavicle_', 'upperarm_', 'forearm_')   # pass 9b: gate scope = the pleat audit's regression scope
 class Solver:
     def __init__(self, rig):
         self.r = rig; Q = rig.Q; nv = rig.nv
@@ -187,8 +188,14 @@ class Solver:
         """PLEAT GATE (rig v002 pass 9, PLEAT_GATE=1; regression found by sa6_pleat_audit.py): a quad edge whose dihedral angle changes by more than
         PLEAT_DEG from rest is a pleat -- two neighbouring quads folded against each other into a sharp ridge while each stays short of the flip test
         (relcos > 0).  Counted with the tension tears (same masks, allowances and repair: seeded local ARAP + fold align), over the _E1 edge list.
-        Not gated: edges inside the mouth slit (both quads labelled head / rostrum_cap) -- the slit's lip quads turn > 90 deg when the jaw opens under plain
-        LBS (the opening itself, accepted on rig v001); the pleat audit (sa6_pleat_audit.py) checks the mouth against plain LBS of each pose instead."""
+        Scope (pass 9b) = the audit's regression scope: edges dominated by the corrected systems (clavicle / upperarm / forearm) are not gated (PLEAT_ARM=0;
+        the audit reports them for visual review: a deep skin fold, e.g. F-N shoulder_abd90 at the upperarm / spine_02 seam, plain LBS 67-75 deg + 21 flips,
+        layer ~100 deg, which smoothing only deepens), and edges the accepted reference already pleats at the pose being solved are allowed (_pallow, set per
+        pose by sa6_pd2_fit from PLEAT_ALLOW = the rig v001 state's pleat masks: v001 knuckle creases in fist / hand_opposition, 2-4 edges of 3-18).
+        Not gated: edges of the mouth slit (both quads labelled head / rostrum_cap AND pleated by plain LBS in a jaw pose, Solver._slit) -- the slit's lip
+        quads turn > 90 deg when the jaw opens under plain LBS (the opening itself, accepted on rig v001); the pleat audit (sa6_pleat_audit.py) checks the
+        mouth against plain LBS of each pose."""
+        if not hasattr(self, '_E1'): self.tear_edges(P)
         if not hasattr(self, '_pq'):
             Q = self.r.Q; E = {}
             for qi, q in enumerate(Q):
@@ -196,9 +203,33 @@ class Solver:
             ks = [k for k, v in E.items() if len(v) == 2]; self._pq = np.array([E[k] for k in ks]); ev = np.array(ks)
             key = lambda e: e[:, 0].astype(np.int64) * (self.r.nv + 1) + e[:, 1]; k1 = key(self._E1); o = np.argsort(k1)
             self._pe = o[np.searchsorted(k1[o], key(ev))]; self._d0 = self._dih(self.r.V)
-            ql = np.asarray(self.r.ql); mq = np.isin(ql, PLEAT_MOUTH); self._pmouth = mq[self._pq].all(1)
-        x = np.abs(self._dih(P) - self._d0) > PLEAT_DEG; x &= ~self._pmouth
+            ql = np.asarray(self.r.ql); mq = np.isin(ql, PLEAT_MOUTH); self._pmouth = mq[self._pq].all(1) & self._slit()
+            dom = self.r.W[ev].mean(1).argmax(1); self._parm = np.array([self.r.DB[i].startswith(PLEAT_ARM_BONES) for i in dom]) & (not PLEAT_ARM); self._pev = ev
+        x = np.abs(self._dih(P) - self._d0) > PLEAT_DEG; x &= ~self._pmouth & ~self._parm
+        if getattr(self, '_pallow', None) is not None: x &= ~self._pallow
         m = np.zeros(len(self._E1), bool); m[self._pe[x]] = True; return m
+    def unpleat(self, P, ring=3, it=20, lam=0.5):
+        """PLEAT REPAIR (rig v002 pass 9b): umbrella smoothing of the posed surface on the pleated quads + ring quad rings (protected / pinned vertices fixed).
+        A pleat is an angle defect between two quads, not a stretch: the tear fix (edge-length ARAP) and the fold align (relcos) keep it (found on F-N
+        shoulder_abd90_xneg: plain LBS 67-75 deg at the upperarm / spine_02 seam, layer 99-111 deg, unchanged by every cascade variant)."""
+        if not hasattr(self, '_pq'): self.pleat_edges(P)
+        x = np.abs(self._dih(P) - self._d0) > PLEAT_DEG; x &= ~self._pmouth
+        m = np.zeros(self.r.nv, bool); m[self.r.Q[self._pq[x].ravel()].ravel()] = True
+        if not m.any(): return P
+        m = self.dilate(m, ring) & ~self.protect & ~(self.rigid & getattr(self, 'pin', True)); deg = np.asarray(self.A1.sum(1)).ravel(); P = P.copy()
+        for _ in range(it): P[m] += lam * ((self.A1 @ P)[m] / deg[m, None] - P[m])
+        return P
+    def _slit(self):
+        """the mouth slit proper: head / rostrum_cap edges that plain LBS pleats in some jaw pose (anatomical suite + special gates, at 0.25 / 0.5 / 0.75 / 1.0).
+        Pass 9 first exempted every head / rostrum_cap edge (25k edges); the pleat audit then found 10 new head pleats beside the slit at gate:jaw_open_32
+        on LT90 that plain LBS does not have.  The slit itself is 83 edges."""
+        import sa6_gates as GT
+        PS = dict(self.r.suite('anat')); PS.update(GT.gate_poses(self.r)); s = np.zeros(len(self._pq), bool)
+        for pn, spec in PS.items():
+            if 'jaw' not in pn: continue
+            for fr in (0.25, 0.5, 0.75, 1.0):
+                T = self.r.pose(self.r.scaled(spec, fr)); s |= np.abs(self._dih(self.r.skin(T)) - self._d0) > PLEAT_DEG
+        return s
     def _dih(self, P):
         Q = self.r.Q; n = np.cross(P[Q[:, 2]] - P[Q[:, 0]], P[Q[:, 3]] - P[Q[:, 1]]); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12
         return np.degrees(np.arccos(np.clip((n[self._pq[:, 0]] * n[self._pq[:, 1]]).sum(1), -1, 1)))

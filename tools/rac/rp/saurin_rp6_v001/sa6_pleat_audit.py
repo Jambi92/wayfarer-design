@@ -49,9 +49,10 @@ else:
     assert (A['ev'] == B['ev']).all(), 'topology differs'
     ia = {n: i for i, n in enumerate(A['names'])}; arm = B['arm']; rows = {}; bad = {}
     for i, n in enumerate(B['names']):
-        if n not in ia: continue
-        xa, xb = A['X'][ia[n]].astype(float), B['X'][i].astype(float); ne = len(xa)
-        xa[A['mouth'] & np.unpackbits(A['XL'][ia[n]])[:ne].astype(bool)] = 0; xb[B['mouth'] & np.unpackbits(B['XL'][i])[:ne].astype(bool)] = 0
+        xb = B['X'][i].astype(float); ne = len(xb)     # a pose the baseline rig does not have (rig v002 combined gates) has baseline 0 everywhere
+        xa = A['X'][ia[n]].astype(float) if n in ia else np.zeros(ne)
+        if n in ia: xa[A['mouth'] & np.unpackbits(A['XL'][ia[n]])[:ne].astype(bool)] = 0
+        xb[B['mouth'] & np.unpackbits(B['XL'][i])[:ne].astype(bool)] = 0
         r = dict(other_baseline=int(((xa > LIM) & ~arm).sum()), other_new=int(((xb > LIM) & ~arm).sum()), arm_baseline=int(((xa > LIM) & arm).sum()), arm_new=int(((xb > LIM) & arm).sum()))
         if any(r.values()): rows[n] = r
         if r['other_new'] > r['other_baseline']: bad[n] = r

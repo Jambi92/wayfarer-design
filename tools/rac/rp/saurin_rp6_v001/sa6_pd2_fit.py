@@ -97,12 +97,18 @@ if __name__ == '__main__':
             m = json.load(open(ck)); Cs = CC.Correctives.load(R, ck); log = m['fit_log']; r0, i0, tot0 = m['ck_round'], m['ck_next'], m['ck_tot']
             print(nm, 'resume round', r0, 'item', i0, flush=True)
         items = [(pn, fr) for pn in order for fr in FRACS]
+        PA = None; pa = os.environ.get('PLEAT_ALLOW', '') and os.path.join(os.environ['PLEAT_ALLOW'], 'pleat_allow_%s.npz' % nm)   # pass 9b: accepted-reference pleats
+        if pa and os.path.exists(pa):
+            PA = dict(np.load(pa)); S.pleat_edges(R.V); PA_n = len(S._pq); PA_i = {str(n_): i_ for i_, n_ in enumerate(PA['names'])}
+            assert (PA['ev'] == S._pev).all(), 'pleat allowance edge order differs'; print(nm, 'pleat allowance', pa, len(PA_i), 'poses', flush=True)
         for rnd in range(r0, ROUNDS):
             tot = tot0 if rnd == r0 else 0
             for ii, (pn, fr) in enumerate(items):
                 if rnd == r0 and ii < i0: continue
                 if True:
                     spec = [(b, p, a, dg * fr) for b, p, a, dg in PS[pn]]; t = time.time(); start_pose(R, Cs, spec, F, w0, S)
+                    if PA is not None:
+                        pa_k = '%s@%.2f' % (pn, fr); S._pallow = np.unpackbits(PA['P'][PA_i[pa_k]])[:PA_n].astype(bool) if pa_k in PA_i else None
                     a, b, c = FT.solve_one(R, Cs, S, spec, F, w0, log, pose_key=('%s@%.2f' % (pn, fr)) if rnd >= 1 else None); tot += a
                     if a or b: print('%s round %d %-24s x%.2f before %4d after %4d  %.1fs' % (nm, rnd, pn, fr, a, b, time.time() - t), flush=True)
                     log.append(dict(round=rnd, pose=pn, frac=fr, flips_before=a, flips_after_solve=b))
