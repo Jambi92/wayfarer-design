@@ -146,6 +146,7 @@ def base_protect(cfg):
         import sa6_pose as _SP, sa6_common as _C
         _BP[cfg] = Solver(_SP.Rig(cfg, _C.w_path(cfg))).protect.copy()
     return _BP[cfg]
+PLEAT_GATE = os.environ.get('PLEAT_GATE', '0') == '1'; PLEAT_DEG = float(os.environ.get('PLEAT_DEG', 90))   # rig v002 pass 9 (Solver.pleat_edges)
 class Solver:
     def __init__(self, rig):
         self.r = rig; Q = rig.Q; nv = rig.nv
@@ -179,7 +180,24 @@ class Solver:
         if not hasattr(self, '_E1'):
             Q = self.r.Q; self._E1 = np.unique(np.sort(np.r_[Q[:, [0, 1]], Q[:, [1, 2]], Q[:, [2, 3]], Q[:, [3, 0]]], 1), axis=0)
             self._L0 = np.linalg.norm(self.r.V[self._E1[:, 0]] - self.r.V[self._E1[:, 1]], axis=1)
-        L = np.linalg.norm(P[self._E1[:, 0]] - P[self._E1[:, 1]], axis=1); return (L > self.TEAR_RATIO * self._L0) & (L - self._L0 > self.TEAR_CM), L - self._L0
+        L = np.linalg.norm(P[self._E1[:, 0]] - P[self._E1[:, 1]], axis=1); m = (L > self.TEAR_RATIO * self._L0) & (L - self._L0 > self.TEAR_CM)
+        if PLEAT_GATE: m = m | self.pleat_edges(P)
+        return m, L - self._L0
+    def pleat_edges(self, P):
+        """PLEAT GATE (rig v002 pass 9, PLEAT_GATE=1; regression found by sa6_pleat_audit.py): a quad edge whose dihedral angle changes by more than
+        PLEAT_DEG from rest is a pleat -- two neighbouring quads folded against each other into a sharp ridge while each stays short of the flip test
+        (relcos > 0).  Counted with the tension tears (same masks, allowances and repair: seeded local ARAP + fold align), over the _E1 edge list."""
+        if not hasattr(self, '_pq'):
+            Q = self.r.Q; E = {}
+            for qi, q in enumerate(Q):
+                for a, b in ((0, 1), (1, 2), (2, 3), (3, 0)): E.setdefault((min(q[a], q[b]), max(q[a], q[b])), []).append(qi)
+            ks = [k for k, v in E.items() if len(v) == 2]; self._pq = np.array([E[k] for k in ks]); ev = np.array(ks)
+            key = lambda e: e[:, 0].astype(np.int64) * (self.r.nv + 1) + e[:, 1]; k1 = key(self._E1); o = np.argsort(k1)
+            self._pe = o[np.searchsorted(k1[o], key(ev))]; self._d0 = self._dih(self.r.V)
+        m = np.zeros(len(self._E1), bool); m[self._pe[np.abs(self._dih(P) - self._d0) > PLEAT_DEG]] = True; return m
+    def _dih(self, P):
+        Q = self.r.Q; n = np.cross(P[Q[:, 2]] - P[Q[:, 0]], P[Q[:, 3]] - P[Q[:, 1]]); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12
+        return np.degrees(np.arccos(np.clip((n[self._pq[:, 0]] * n[self._pq[:, 1]]).sum(1), -1, 1)))
     def tear_verts(self, P):
         m, _ = self.tear_edges(P); v = np.zeros(self.r.nv, bool); v[self._E1[m].ravel()] = True; return v
     def tear_fix(self, T, P, relcos, ring=12, iters=4):
