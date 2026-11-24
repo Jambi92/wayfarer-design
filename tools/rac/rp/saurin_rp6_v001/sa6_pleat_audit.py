@@ -45,7 +45,7 @@ if sys.argv[1] == 'measure':
     np.savez_compressed(OUT, names=np.array(names), X=np.stack(X), XL=np.stack(XL), mouth=mouth, arm=np.array([R.DB[i].startswith(ARM) for i in dom]), ev=ev, rigv=C.RIGV, kind=kind, name=nm, corr=corr)
     print(kind, nm, C.RIGV, 'measured', len(names), flush=True)
 else:
-    A, B, OUT = np.load(sys.argv[2]), np.load(sys.argv[3]), sys.argv[4]
+    A, B, OUT = dict(np.load(sys.argv[2])), dict(np.load(sys.argv[3])), sys.argv[4]   # dict: NpzFile re-decompresses an array on every access
     assert (A['ev'] == B['ev']).all(), 'topology differs'
     ia = {n: i for i, n in enumerate(A['names'])}; arm = B['arm']; rows = {}; bad = {}
     for i, n in enumerate(B['names']):
