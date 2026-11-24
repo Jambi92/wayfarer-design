@@ -30,6 +30,9 @@ NONREAL = ('tail_root_lateral_30_rp5lit', 'tail_root_vertical_25_rp5lit', 'tail_
 LOC_RING = int(os.environ.get('LOC_RING', 8))
 CONTACT_RING = int(os.environ.get('CONTACT_RING', 10))
 FAIR = os.environ.get('FAIR', '1' if os.environ.get('RP6_RIG') == 'v002' else '0') == '1'; FAIR_IT = int(os.environ.get('FAIR_IT', 20))   # rig v002: fair()
+# FAIR_SCOPE (rig v002 base v004 / pass 8): 'arm' = fair only solves of poses that drive the corrected systems (clavicle / upperarm / forearm); every other
+#   system keeps its accepted unfaired shape (pass 5 faired everything: hidden pleats at ankle / toes / tail root / pelvis / thumb, sa6_pleat_audit.py).
+FAIR_SCOPE = os.environ.get('FAIR_SCOPE', 'all'); FAIR_ARM = ('clavicle_', 'upperarm_', 'forearm_')
 FOLD_ALIGN = os.environ.get('FOLD_ALIGN', '1' if os.environ.get('RP6_RIG') == 'v002' else '0') == '1'   # rig v002: Solver.align after the cascade (v001 archived: off)
 VOL_TRIG = 60.0    # cm3: |dV| above which the volume corrective is (re)solved (hysteresis: fold / contact fixes may lose a little volume afterwards)
 VOL_BONES = {'clavicle', 'upperarm', 'forearm', 'hand', 'thigh', 'shin', 'foot', 'pelvis', 'spine_01', 'spine_02', 'spine_03', 'spine_04', 'neck_01', 'neck_02'} | {'tail_%02d' % k for k in range(1, 17)}
@@ -190,7 +193,7 @@ def _solve_rest(R, C, S, spec, F, w0, T, d, Pc, Pc0, fl, pen, dV, vol_pose, ntea
     def finish(c_):
         sc_, Ps, f2, ncont = c_
         if vol_pose and sc_[0] == 0: Ps = polish(Ps)
-        if FAIR and sc_[0] == 0: Ps = fair(Ps)
+        if FAIR and sc_[0] == 0 and (FAIR_SCOPE == 'all' or any(e[0].startswith(FAIR_ARM) for e in spec)): Ps = fair(Ps)
         return ((sc_[0], max(0.0, abs(S.body_volume(Ps) - S.V0) - VOL_ACCEPT) if vol_pose else 0.0, sc_[1]), Ps, f2, ncont)
     out = [finish(cascade(Pc))]
     if vol_pose and out[0][0][:2] != (0, 0.0) and abs(dV) > VOL_TRIG / 3 and os.environ.get('VOLPATH', '1') == '1':

@@ -15,7 +15,7 @@ RIGV = os.environ.get('RP6_RIG', 'v001')
 if RIGV not in ('v001', 'v002'): raise SystemExit('RP6_RIG must be v001 or v002')
 RIGDIR = EV6 if RIGV == 'v001' else EV6 + '/rig_' + RIGV
 PKGDIR = EV6 if RIGV == 'v001' else RIGDIR                                    # corrective package of the rig version
-BASE_CORR = 'SA_RP6_correctives_v002.json' if RIGV == 'v001' else 'SA_RP6_correctives_v003.json'   # base corrective package (v003 = rig v002 refit + muscle layer)
+BASE_CORR = os.environ.get('RP6_BASE_CORR', 'SA_RP6_correctives_v002.json' if RIGV == 'v001' else 'SA_RP6_correctives_v003.json')   # base corrective package (v003 = rig v002 refit + muscle layer; v004 = shoulder from v003 + other systems unfaired)
 def jp_path(cfg): return RIGDIR + '/SA_RP6_joint_placement_%s_%s.json' % (cfg, RIGV)
 def w_path(cfg, pkg=None): return (pkg or EV6) + '/SA_RP6_weights_%s_v001.npz' % cfg if RIGV == 'v001' else RIGDIR + '/SA_RP6_weights_%s_%s.npz' % (cfg, RIGV)
 PORTABLE = os.path.exists(W + '/cage_V/V1.npy')   # portable bundle (sa6_portable.py): cage-level arrays pre-realised from the verified clean workspace
