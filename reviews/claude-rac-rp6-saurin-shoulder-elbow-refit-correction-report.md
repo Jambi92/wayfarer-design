@@ -125,6 +125,27 @@ The record is `standard_bakes/README.md`; the per-body `ACCEPT_*.json`, `FULL_*.
 - The first END_FAHI and END_MUFAHI bakes ran on the pass-6 package. They were stopped when their unbaked special gates failed (§4.2), and then rebaked from scratch on the pass-7 package.
 - No other stage was restarted: `attempt` is 0 on every stage of every `FULL_*.json`.
 
+<!-- BAKES-V006 -->
+
+### 4.5 Hidden pleats: base v004, passes 8, 9 and 9b (creator layers v006)
+The v002 tail review of the bakes above found a crease at the tail root. The cause, and further findings, are in `rig_v002/pleat_audit/README.md`.
+
+**What no gate saw.** Two neighbouring quads folded into a near-vertical ridge, each just short of the flip test (relcos 0.13–0.86): a **pleat**. `sa6_pleat_audit.py` measures, for every quad edge, the change of its dihedral angle from rest on every anatomical pose and special gate at 0.25 / 0.5 / 0.75 / 1.0, and compares with the same measurement on the accepted rig v001. A pleat (> 90°) outside the corrected systems (clavicle / upperarm / forearm) that v001 does not have is a regression. Pleats on the corrected systems are listed for visual review; v002-only gates (the combined shoulder + elbow gates) count against zero.
+
+**Base v003 → v004.** Base v003 had been faired everywhere (meant for the shoulder cap only). That weakened the unaffected systems and left pleats at the ankle, toes, tail root, pelvis and thumb. Base v004 (`sa6_base_merge.py`) = the corrected shoulder / elbow systems of v003 + every other system from the unfaired pass 4. M and F are clean at all four fractions.
+
+**Pass 8** refit the 19 states and 20 knots on base v004 with fairing limited to the arm poses (`FAIR_SCOPE=arm`). Its audit found new pleats on BRD, B-T80 (toe flex, foot push-off, ankle plantar), LT90 (toe, jaw 32) and MUFAHI (lower axial flex) — created by the fit itself.
+
+**Pass 9** added a pleat gate to the fit (`PLEAT_GATE=1`: an edge turned > 90° from rest is repaired like a tension tear). Two mismatches with the audit surfaced:
+- It exempted every head / rostrum_cap edge as "mouth" (25k edges); LT90 then grew 10 new pleats under the jaw at gate:jaw_open_32. The exemption is now the slit proper: head / rostrum_cap edges that plain LBS pleats in a jaw pose (83 edges).
+- It demanded zero pleats where v001 itself has them (knuckle creases) and on the corrected systems, where a deep skin fold forms (F-N shoulder_abd90: plain LBS 67–75° with 21 flips, layer ~100°; local smoothing only deepens it). F-N, DSP-LOW and LT90 cycled on the same 4 edges for 8 rounds.
+
+**Pass 9b** gives the gate exactly the audit's scope: edges outside the corrected systems, less the edges the v001 state already turns > 88° at that pose (`sa6_pleat_allow.py`; 90° less 2° measurement tolerance). Each state started from its most advanced pass-9 result. MUFAHI and FAHI restarted from pass 8: the pass-9 strict gate had left corrective pleats and volume losses in their composition-masked belly / pelvis (MUFAHI hip_flex70_xpos 50 %: dV −1435 cm³) that the 9b refit could not remove.
+
+**Results, pass 9b:** all 19 state layers converged; all 19 are clean against rig v001 at all four fractions (`SA_RP6_pleat_audit_state_*_pass9b.json`). <!-- KNOTS9B -->
+
+**Arm pleats for visual review** (not regressions by the audit rule; renders in `rig_v002/pleat_audit/arm/`): MUHI shoulder_abd90_xneg 14 edges (plain LBS has pleats at the same armpit fold), F-N 4, FAHI 12; elbow_130 on NAR, ORB+3, RDG0.90, RDG1.30, FAHI 4–25, the range base v004 itself has at the elbow crease (14–25, v001 25–27). <!-- ARMREVIEW -->
+
 **Tail review** (`tail_review/`): <!-- TAIL -->
 
 **Playback** (`visual/playback/`):
