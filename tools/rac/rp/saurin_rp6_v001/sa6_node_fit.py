@@ -99,11 +99,17 @@ if __name__ == '__main__':
     if os.path.exists(ck):
         m = json.load(open(ck)); log, r0, i0, tot0 = m['fit_log'], m['ck_round'], m['ck_next'], m['ck_tot']; print(node, 'resume round', r0, 'item', i0, flush=True)
     items = [(pn, fr) for pn in order for fr in FRACS]; tot = 0
+    PA = None; pa = os.environ.get('PLEAT_ALLOW', '') and os.path.join(os.environ['PLEAT_ALLOW'], 'pleat_allow_%s.npz' % bn)   # pass 9b: the v001 knot body's pleats
+    if pa and os.path.exists(pa):
+        PA = dict(np.load(pa)); Sv.pleat_edges(R.V); PA_n = len(Sv._pq); PA_i = {str(n_): i_ for i_, n_ in enumerate(PA['names'])}
+        assert (PA['ev'] == Sv._pev).all(), 'pleat allowance edge order differs'; print(node, 'pleat allowance', pa, len(PA_i), 'poses', flush=True)
     for rnd in range(r0, ROUNDS):
         tot = tot0 if rnd == r0 else 0
         for ii, (pn, fr) in enumerate(items):
             if rnd == r0 and ii < i0: continue
             spec = [(bb, p, a, dg * fr) for bb, p, a, dg in PS[pn]]; t = time.time(); PF.start_pose(R, P, spec, F, w0, Sv)
+            if PA is not None:
+                pa_k = '%s@%.2f' % (pn, fr); Sv._pallow = np.unpackbits(PA['P'][PA_i[pa_k]])[:PA_n].astype(bool) if pa_k in PA_i else None
             n0 = defects(R, P, Sv, spec, F, w0); snap = copy.deepcopy((K.F, K.PK)) if n0 else None
             a, c, _ = FT.solve_one(R, P, Sv, spec, F, w0, log, pose_key=('%s@%.2f' % (pn, fr)) if rnd >= 1 else None); tot += a
             if n0:      # GUARD (layer v003): a solve that leaves this pose worse than it found it is reverted; remaining folds -> local fade fallback
