@@ -7,6 +7,7 @@
 #     KIND base  : NAME = M | F, CORR = correctives json (or 'pkg' = the packaged base of the active rig version)
 #     KIND state : NAME = creator state, CORR = CF_state json (or 'pkg' = the packaged state set of the active rig version / layer package)
 #     KIND body  : NAME = creator body, CORR = bodies dir (sa6_blend bodies.json): the packaged blend (knots included) of the active package
+#                  (+ BAKE_ART = a baked artifact BK_<body>.json: packaged blend + the bake's K, recorded as kind 'bake')
 #     Run once per rig version (RP6_RIG unset = archived rig v001 = the accepted baseline).
 #   compare: PLEAT = edge change > 90 deg (mouth-slit edges that plain LBS of the pose already pleats are the jaw opening and are not counted).  Per pose / fraction: pleats on edges dominated by the corrected systems (clavicle / upperarm / forearm,
 #     reported for visual review) and on every other edge (must not exceed the baseline count: a new pleat outside the corrected systems is a regression).
@@ -25,6 +26,11 @@ if sys.argv[1] == 'measure':
         import json as _j, sa6_blend as BL
         b = _j.load(open(os.path.join(corr, 'bodies.json')))['bodies'][nm]; R, _ = BL.rig_of(nm, b, corr)
         K = H.Blend(H.load_base(R, b['cfg']), [(ws, H.load_state(R, s_)[0]) for s_, ws in b['w'].items()])
+        if os.environ.get('BAKE_ART'):   # KIND body + BAKE_ART = a baked artifact (BK_<body>.json, sa6_bake_full.py): packaged blend + the bake's K
+            class _BK:
+                def __init__(s, P0, K_): s.P0, s.K = P0, K_
+                def delta(s, T): return s.P0.delta(T) + s.K.delta(T)
+            K = _BK(K, CC.Correctives.load(R, os.environ['BAKE_ART'])); kind = 'bake'
     else:
         import sa6_pd2_fit as PF
         R, cfg = PF.state_rig(nm); K = H.load_state(R, nm)[0] if corr == 'pkg' else CC.Correctives.load(R, corr)

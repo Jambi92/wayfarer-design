@@ -194,7 +194,10 @@ class Solver:
         pose by sa6_pd2_fit from PLEAT_ALLOW = the rig v001 state's pleat masks: v001 knuckle creases in fist / hand_opposition, 2-4 edges of 3-18).
         Not gated: edges of the mouth slit (both quads labelled head / rostrum_cap AND pleated by plain LBS in a jaw pose, Solver._slit) -- the slit's lip
         quads turn > 90 deg when the jaw opens under plain LBS (the opening itself, accepted on rig v001); the pleat audit (sa6_pleat_audit.py) checks the
-        mouth against plain LBS of each pose."""
+        mouth against plain LBS of each pose.
+        Per-body bakes (PLEAT_ALLOW_UNION = sa6_pleat_union.py npz): the bake tools evaluate poses without a pose name, so the allowance there is the union over
+        all poses of the edges the body's rig v001 references (base configuration + every state in the body's weights) turn > 88 deg (crease edges: knuckles,
+        lip corners, the heavy belly fold); the per-pose verdict is the pleat audit of the baked artifact against the same references."""
         if not hasattr(self, '_E1'): self.tear_edges(P)
         if not hasattr(self, '_pq'):
             Q = self.r.Q; E = {}
@@ -205,8 +208,13 @@ class Solver:
             self._pe = o[np.searchsorted(k1[o], key(ev))]; self._d0 = self._dih(self.r.V)
             ql = np.asarray(self.r.ql); mq = np.isin(ql, PLEAT_MOUTH); self._pmouth = mq[self._pq].all(1) & self._slit()
             dom = self.r.W[ev].mean(1).argmax(1); self._parm = np.array([self.r.DB[i].startswith(PLEAT_ARM_BONES) for i in dom]) & (not PLEAT_ARM); self._pev = ev
+            self._punion = None
+            if os.environ.get('PLEAT_ALLOW_UNION'):   # per-body bakes (sa6_bake*.py: pose-agnostic tools): edges the rig v001 references of the body pleat at ANY pose
+                U = np.load(os.environ['PLEAT_ALLOW_UNION']); assert (U['ev'] == ev).all(), 'pleat union edge order differs'   # (sa6_pleat_union.py)
+                self._punion = np.unpackbits(U['P'])[:len(ev)].astype(bool)
         x = np.abs(self._dih(P) - self._d0) > PLEAT_DEG; x &= ~self._pmouth & ~self._parm
         if getattr(self, '_pallow', None) is not None: x &= ~self._pallow
+        if self._punion is not None: x &= ~self._punion
         m = np.zeros(len(self._E1), bool); m[self._pe[x]] = True; return m
     def unpleat(self, P, ring=3, it=20, lam=0.5):
         """PLEAT REPAIR (rig v002 pass 9b): umbrella smoothing of the posed surface on the pleated quads + ring quad rings (protected / pinned vertices fixed).

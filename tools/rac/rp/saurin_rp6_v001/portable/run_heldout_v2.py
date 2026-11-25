@@ -12,7 +12,7 @@ B = os.path.dirname(os.path.abspath(__file__)); T = os.path.join(B, os.environ.g
 _PK = os.path.join(R, 'reviews', 'rac-rp6-evidence', 'saurin', 'rig_pilot', 'rig_v002')
 SB, SL = os.environ.get('STD_BASE', 'SA_RP6_correctives_v004.json'), os.environ.get('STD_LAYERS', 'SA_RP6_creator_layers_v006.json')
 _h = hashlib.sha256(b''.join(open(os.path.join(_PK, f), 'rb').read() for f in (SB, SL))).hexdigest()[:8]
-OUT = os.path.join(B, 'out_ho_' + _h); os.makedirs(OUT, exist_ok=True); BD = os.path.join(B, 'bodies_ho'); UA = os.path.join(B, os.environ.get('STD_CTRL_HO', 'ctrl_ho3'))
+OUT = os.path.join(B, 'out_ho_' + _h); os.makedirs(OUT, exist_ok=True); BD = os.path.join(B, 'bodies_ho'); UN = os.path.join(B, os.environ.get('STD_UNION', os.path.join('data9b', 'union'))); UA = os.path.join(B, os.environ.get('STD_CTRL_HO', 'ctrl_ho3'))
 NAMES = ['c1-MUHI@0.625', 'c1-MUFAHI@0.625', 'c1-FAHI@0.9375', 'c1-MUFAHI@0.875', 'c1-T80@0.375', 'c1-M208-B@0.75', 'c2-F-N@0.25', 'c2-F-N@0.40', 'c1-M208-B@0.25',
          'BK-X2a', 'BK-X2b', 'BK-X2c', 'BK-X3', 'c1-MUHI@0.375', 'c1-FAHI@0.375', 'c1-FAHI@0.625', 'c1-MUFAHI@0.375', 'c1-MUFAHI@0.0625']
 nw = int(sys.argv[1]) if len(sys.argv) > 1 else 8
@@ -35,7 +35,8 @@ while todo or run:
         n = todo.pop(0)
         if locked(n): continue
         od = os.path.join(OUT, n); os.makedirs(od, exist_ok=True); lg = open(os.path.join(od, 'worker.log'), 'a')
-        run[n] = (subprocess.Popen([sys.executable, os.path.join(T, 'sa6_bake_full.py'), n, BD, os.path.join(UA, n), od, '3', '1'], env=env, stdout=lg, stderr=subprocess.STDOUT,
+        u = os.path.join(UN, 'pleat_union_%s.npz' % n); assert os.path.exists(u), u   # pass 9b: per-body pleat allowance (sa6_pleat_union.py)
+        run[n] = (subprocess.Popen([sys.executable, os.path.join(T, 'sa6_bake_full.py'), n, BD, os.path.join(UA, n), od, '3', '1'], env=dict(env, PLEAT_ALLOW_UNION=u), stdout=lg, stderr=subprocess.STDOUT,
                                    creationflags=0x00004000 if os.name == 'nt' else 0), lg, time.time()); print(time.strftime('%H:%M'), 'start', n, flush=True)
     time.sleep(30)
     for n in list(run):
