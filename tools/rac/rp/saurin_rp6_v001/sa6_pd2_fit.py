@@ -79,9 +79,16 @@ def start_pose(R, Cs, spec, F, w0, S=None):
         if not hasattr(S, '_tear_raw'):
             S._tear_raw = S.tear_edges; S._allow_e = None
             def te(P_, S=S):
-                m, dl = S._tear_raw(P_); return (m & ~S._allow_e if S._allow_e is not None else m), dl
+                m, dl = S._tear_raw(P_)
+                if S._allow_e is None: return m, dl
+                if S._allow_n is not None and (m & S._comp_e).sum() <= S._allow_n: return m & ~S._comp_e, dl   # PLEAT_COMP_COUNT (below)
+                return m & ~S._allow_e, dl
             S.tear_edges = te
-        m0, _ = S._tear_raw(P); S._allow_e = m0 & R._compv[S._E1].all(1)
+        m0, _ = S._tear_raw(P); S._comp_e = R._compv[S._E1].all(1); S._allow_e = m0 & S._comp_e
+        # rig v002 pass 9b, PLEAT_COMP_COUNT=1: inside the composition zone the allowance is a COUNT -- no more tear / pleat edges than plain LBS of the pose
+        # shows there (the creator body's own folds: the heavy belly fold moves by an edge or two as it is corrected; found on knot FAHI@0.50
+        # lower_axial_flex_25: LBS 10 pleated composition edges, blend 6, knot 1, and every local fade of that one moves it to a neighbouring edge)
+        S._allow_n = int(S._allow_e.sum()) if os.environ.get('PLEAT_COMP_COUNT') == '1' else None
 if __name__ == '__main__':
     STATES, OD = sys.argv[1].split(','), sys.argv[2]; os.makedirs(OD, exist_ok=True)
     for nm in STATES:

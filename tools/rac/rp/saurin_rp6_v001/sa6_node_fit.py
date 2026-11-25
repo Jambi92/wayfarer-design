@@ -40,24 +40,26 @@ def fade(R, P, Sv, spec, F, w0, rig):
     k = 1 .. 16) -- starting from the current production d, or from the creator blend without this node's key d0 (when the node key itself has made the
     pose worse); the first candidate with no fold, no new contact / tear and |dV| <= VOL_ACCEPT is kept and stored in K as a sample of the driving family"""
     T = R.pose(spec); d = P.delta(T); d0 = (1 - P.w) * P.B.delta(T) + P.w * P.S.delta(T); Pc = R.skin(T, R.V + d)
-    if not (R.relcos(Pc, T) < 0).any(): return False
     p0, t0 = int(FT.penetration(R, Pc, F, w0).sum()), int(Sv.tear_edges(Pc)[0].sum())
+    tear_only = not (R.relcos(Pc, T) < 0).any()        # rig v002 pass 9b: a pleat / tear the knot itself made (no fold) is faded the same way
+    if tear_only and (not t0 or os.environ.get('PLEAT_GATE') != '1'): return False
     for base in (d, d0):
         Pb = R.skin(T, R.V + base); seed = np.zeros(R.nv, bool); seed[R.Q[np.nonzero((R.relcos(Pb, T) < 0) | (R.relcos(Pc, T) < 0))[0]].ravel()] = True
+        if tear_only: seed |= Sv.tear_verts(Pc)
         for k in (1, 2, 3, 4, 6, 8, 12, 16):
             rings = [seed]
             for _ in range(k): rings.append(Sv.dilate(rings[-1], 1))
             f = np.zeros(R.nv)
             for j, m in enumerate(rings): f[m & (f == 0)] = 1.0 - j / (k + 1.0)
             f[rig] = 0.0; dn = base * (1 - f[:, None]); Pn = R.skin(T, R.V + dn)
-            if (R.relcos(Pn, T) < 0).any() or FT.penetration(R, Pn, F, w0).sum() > p0 or Sv.tear_edges(Pn)[0].sum() > t0 or abs(Sv.body_volume(Pn) - Sv.V0) > FT.VOL_ACCEPT: continue
+            if (R.relcos(Pn, T) < 0).any() or FT.penetration(R, Pn, F, w0).sum() > p0 or Sv.tear_edges(Pn)[0].sum() > (t0 - 1 if tear_only else t0) or abs(Sv.body_volume(Pn) - Sv.V0) > FT.VOL_ACCEPT: continue
             I = np.nonzero(np.abs(dn - d).sum(1) > 1e-9)[0]; bone, pv, ax = FT.entries(R, spec, T)[0]; key, axf = P.resolve(bone, ax); x = P.driver(T, dict(bone=bone, axis=axf))
             if abs(x) < 0.5: return False
             P.add(key, bone, axf, pv, x, I, (dn - d)[I]); return k
     # last resort (per-body bake, crease-edge quads): bounded local search on the remaining folds' vertices + 1 ring (deterministic seed, |change| <= 1 cm,
     # target relcos >= 0.05 on the neighbourhood); accepted only with no fold, no new contact / tear, |dV| <= VOL_ACCEPT; stored like the fade
     Pc = R.skin(T, R.V + d); f0 = np.nonzero(R.relcos(Pc, T) < 0)[0]
-    if len(f0) > 6: return False
+    if len(f0) > 6 or tear_only: return False
     seed = np.zeros(R.nv, bool); seed[R.Q[f0].ravel()] = True; m = Sv.dilate(seed, 1) & ~rig; vs = np.nonzero(m)[0]
     loc = np.nonzero(np.isin(R.Q, np.nonzero(Sv.dilate(m, 1))[0]).any(1))[0]
     def obj(dl): Pq = R.skin(T, R.V + dl); rc = R.relcos(Pq, T); return np.minimum(rc[loc] - 0.05, 0).sum(), int((rc < 0).sum())
