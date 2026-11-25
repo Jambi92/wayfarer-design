@@ -142,7 +142,14 @@ The v002 tail review of the bakes above found a crease at the tail root. The cau
 
 **Pass 9b** gives the gate exactly the audit's scope: edges outside the corrected systems, less the edges the v001 state already turns > 88° at that pose (`sa6_pleat_allow.py`; 90° less 2° measurement tolerance). Each state started from its most advanced pass-9 result. MUFAHI and FAHI restarted from pass 8: the pass-9 strict gate had left corrective pleats and volume losses in their composition-masked belly / pelvis (MUFAHI hip_flex70_xpos 50 %: dV −1435 cm³) that the 9b refit could not remove.
 
-**Results, pass 9b:** all 19 state layers converged; all 19 are clean against rig v001 at all four fractions (`SA_RP6_pleat_audit_state_*_pass9b.json`). <!-- KNOTS9B -->
+**Results, pass 9b:** all 19 state layers converged; all 19 are clean against rig v001 at all four fractions (`SA_RP6_pleat_audit_state_*_pass9b.json`).
+
+**Knots, pass 9b:** all 20 converged, with three further rules:
+- per-knot-body v001 allowance;
+- composition-zone pleats counted against plain LBS (`PLEAT_COMP_COUNT=1`): the heavy belly fold moves by an edge as it is corrected;
+- a knot fade back to the creator blend around a pleat the knot key itself made.
+
+Knot-body audit of the packaged blend v006: 20 / 20 clean against v001 (`SA_RP6_pleat_audit_knotbody_*_v006.json`). The first v006 package had M208-B@0.75 at jaw_open_20 with 10 pleats against v001's 7, because the fit's slit exemption and 88° allowance are wider than the audit's per-pose rule. Without the knot's jaw keys every jaw pose matches v001, and the refit from there converged in round 0 with no defect on any pose. The package was rebuilt (`b9f3b808` = sha8 of correctives v004 + layers v006).
 
 **Arm pleats for visual review** (not regressions by the audit rule; renders in `rig_v002/pleat_audit/arm/`): MUHI shoulder_abd90_xneg 14 edges (plain LBS has pleats at the same armpit fold), F-N 4, FAHI 12; elbow_130 on NAR, ORB+3, RDG0.90, RDG1.30, FAHI 4–25, the range base v004 itself has at the elbow crease (14–25, v001 25–27). <!-- ARMREVIEW -->
 
