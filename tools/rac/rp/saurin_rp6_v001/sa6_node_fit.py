@@ -56,6 +56,19 @@ def fade(R, P, Sv, spec, F, w0, rig):
             I = np.nonzero(np.abs(dn - d).sum(1) > 1e-9)[0]; bone, pv, ax = FT.entries(R, spec, T)[0]; key, axf = P.resolve(bone, ax); x = P.driver(T, dict(bone=bone, axis=axf))
             if abs(x) < 0.5: return False
             P.add(key, bone, axf, pv, x, I, (dn - d)[I]); return k
+    if tear_only:   # pass 9b: the knot key itself pleated a crease the creator blend keeps below 90 deg (M208-B@0.75 jaw_open_20 lip corners: v001 84-87 deg,
+        # blend 84-87, production 91.5) -> fade the production corrective back to the creator blend d0 (not to plain LBS, which folds the jaw) around the pleats
+        seed = Sv.tear_verts(Pc)
+        for k in (2, 4, 8, 12, 16, 24, 32):
+            rings = [seed]
+            for _ in range(k): rings.append(Sv.dilate(rings[-1], 1))
+            f = np.zeros(R.nv)
+            for j, m in enumerate(rings): f[m & (f == 0)] = 1.0 - j / (k + 1.0)
+            f[rig] = 0.0; dn = d * (1 - f[:, None]) + d0 * f[:, None]; Pn = R.skin(T, R.V + dn)
+            if (R.relcos(Pn, T) < 0).any() or FT.penetration(R, Pn, F, w0).sum() > p0 or Sv.tear_edges(Pn)[0].sum() > t0 - 1 or abs(Sv.body_volume(Pn) - Sv.V0) > FT.VOL_ACCEPT: continue
+            I = np.nonzero(np.abs(dn - d).sum(1) > 1e-9)[0]; bone, pv, ax = FT.entries(R, spec, T)[0]; key, axf = P.resolve(bone, ax); x = P.driver(T, dict(bone=bone, axis=axf))
+            if abs(x) < 0.5: return False
+            P.add(key, bone, axf, pv, x, I, (dn - d)[I]); return 'blend%d' % k
     # last resort (per-body bake, crease-edge quads): bounded local search on the remaining folds' vertices + 1 ring (deterministic seed, |change| <= 1 cm,
     # target relcos >= 0.05 on the neighbourhood); accepted only with no fold, no new contact / tear, |dV| <= VOL_ACCEPT; stored like the fade
     Pc = R.skin(T, R.V + d); f0 = np.nonzero(R.relcos(Pc, T) < 0)[0]
