@@ -37,3 +37,20 @@ The bakes ran on the PC (TylersPC, AMD 16 logical CPUs) with `portable/run_stand
   - Before / after: 18 failing → 0.
 - **Motion review (both):** passes. The worst case is END_MUFAHI shoulder_abd90_xpos at 0.93 cm/frame, with bake = prod. The baked body adds no motion of its own there.
 - **Before/after label:** the `unbaked` field in `BA_*.json` says "packaged blend v004". That is a fixed label in `sa6_bake_beforeafter.py`, now corrected to name the package actually loaded. These runs loaded v005 (`RP6_LAYERS`, `run_meta_248508ec.json` package_sha256).
+
+## Pass 9b rebakes on package `b9f3b808` (base correctives v004 + creator layers v006) — `b9f3b808/`
+These supersede the bakes above. Those were baked on base correctives v003, which pass 8 replaced with v004 (§4.5 of the report), so the BASE bodies had to be rebaked too.
+- **Run:** `out_std_b9f3b808` (`run_meta_b9f3b808.json`), started 2026-11-25 07:24 (PC time) from `START_P9B_BAKES.bat`: `repo9\` + `tools10\`, `PLEAT_GATE=1` with the per-body v001 crease union (`PLEAT_ALLOW_UNION`, `data9b\union`). The four bodies ran in parallel beside the 18-body held-out recheck.
+- **Per-pose pleat audit of each final baked artifact** against rig v001 (`sa6_pleat_audit.py` with `BAKE_ART`, 360 poses / fractions): `../pleat_audit/SA_RP6_pleat_audit_bake_<body>_b9f3b808_it*.json`.
+- **BASE_c1:** accepted candidate at it2 (finished 11-26 01:09; 17.7 h of stage wall; every stage attempt 0).
+  - Unbaked / it0 sweep: 3 failing samples, fist_xpos tears at 0.825–0.875 (3–4 tear edges; LBS-owned, no region).
+  - it1 added 2 families and 1 pose key, which cleared them, but left 1 rig flip at gate:hand_opposition_f2_xpos.
+  - it2 is clean on every stage: EV, the 56 special gates, the sweep, gate transitions, motion (worst shoulder_abd90_xneg 0.73 cm/frame), dense (4863 samples, 0 bake failing; 80 prod failing), integrity. Before / after 3 → 0.
+  - Pleat audit of the it2 artifact: clean.
+- **BASE_c2:** accepted candidate at it2 (finished 11-26 01:31; 18.1 h).
+  - Unbaked / it0 sweep: 10 failing samples, shoulder_abd90_xneg 7 and fist_xpos 3.
+  - it1 added 3 families and 7 pose keys; 1 rig flip remained at gate:hand_opposition_f2_xpos.
+  - it2 is clean on every stage: motion worst shoulder_abd90_xneg 0.66 cm/frame, dense 4880 samples with 0 bake failing (161 prod failing), integrity. Before / after 10 → 0.
+  - Pleat audit of the it2 artifact: clean.
+- Peak memory per process: 3.58 GB (the motion stage), the same as the earlier bakes.
+- The `clean False` line before BEFORE/AFTER in each log is the RP5-literal diagnostic (`rp5lit`), not a gate.
