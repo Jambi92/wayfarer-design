@@ -1,0 +1,79 @@
+{
+ "status": "RP6 RIG PILOT / NOT FROZEN",
+ "name": "END_FAHI",
+ "artifact": "BK_END_FAHI.json",
+ "gate": {
+  "measure": "frame excursion: max_f max_{f<g<=f+1/30} max_v |rel(g)-rel(f)|, rel = corrected - plain LBS (posed), cm",
+  "frame": "1/30 of the full angle",
+  "grid": "1/240 of the full angle + every driver transition",
+  "pass_rule": "per frame pair and vertex: bake <= max(0.50 cm, prod + 0.05 cm); pass_original: max bake <= max(0.50, max prod)"
+ },
+ "poses": {
+  "hip_flex70_xpos": {
+   "n_samples": 243,
+   "full_deg": 70.0,
+   "k_max_cm": 1.97406,
+   "prod": {
+    "frame_excursion_cm": 0.6183,
+    "at": [
+     0.966667,
+     1.0
+    ],
+    "at_deg": [
+     67.67,
+     70.0
+    ],
+    "vertex": 41489,
+    "region": "hip"
+   },
+   "bake": {
+    "frame_excursion_cm": 0.7734,
+    "at": [
+     0.875,
+     0.908333
+    ],
+    "at_deg": [
+     61.25,
+     63.58
+    ],
+    "vertex": 8695,
+    "region": "hip"
+   },
+   "k": {
+    "frame_excursion_cm": 0.6718,
+    "at": [
+     0.875,
+     0.908333
+    ],
+    "at_deg": [
+     61.25,
+     63.58
+    ],
+    "vertex": 50241,
+    "region": "pelvis"
+   },
+   "limit_cm": 0.6183,
+   "pass_original": false,
+   "local": {
+    "worst_excess_cm": 0.1925,
+    "bake_cm": 0.6925,
+    "prod_cm": 0.3174,
+    "allowance_cm": 0.5,
+    "at": [
+     0.875,
+     0.908333
+    ],
+    "at_deg": [
+     61.25,
+     63.58
+    ],
+    "vertex": 64332,
+    "region": "hip"
+   },
+   "pass": false,
+   "seconds": 237.1
+  }
+ },
+ "seconds": 307.9,
+ "peak_mb": 2573.2
+}

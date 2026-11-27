@@ -169,8 +169,14 @@ if __name__ == '__main__':
             for name_ in [k_ for k_ in K.PK if '@' in k_ and k_.rsplit('@', 1)[0] in PK_FLOOR]: del K.PK[name_]; MOT_DROPPED.append(name_)
             mb_ = set().union(*[R.bones_of(PS[pn_]) for pn_ in PK_FLOOR])
             for k_ in [k_ for k_, f_ in K.F.items() if f_['bone'] in mb_]: del K.F[k_]; MOT_DROPPED.append('family ' + k_)
-            if os.environ.get('BAKE_MOTION_GRID', 'floor') == 'step':      # grid spacing = the sample step (max(floor, step)) instead of the doubled floor
+            MG_ = os.environ.get('BAKE_MOTION_GRID', 'floor')
+            if MG_ == 'step':      # grid spacing = the sample step (max(floor, step)) instead of the doubled floor
                 for pn_ in PK_FLOOR: PK_FLOOR[pn_] = max(PK_MINW, STEP)
+            elif MG_ not in ('floor', ''):      # a number: explicit grid spacing (pass 9b END_FAHI local-motion experiments, mfx/)
+                for pn_ in PK_FLOOR: PK_FLOOR[pn_] = float(MG_)
+            for it_ in [x_ for x_ in os.environ.get('BAKE_MOTION_GRID_POSE', '').split(',') if x_]:      # per-pose spacing override, pose=spacing (pass 9b END_FAHI
+                pn_, w_ = it_.split('=')                                                                     # hip_flex70_xpos=0.33333: the step grid misses the local
+                if pn_ in PK_FLOOR: PK_FLOOR[pn_] = float(w_)                                                # motion allowance by 0.044 cm, the doubled floor diverges)
             for pn_, w_ in PK_FLOOR.items(): PK_GRID[pn_] = [round(min(1.0, k_ * w_), 4) for k_ in range(1, int(np.ceil(1.0 / w_ - 1e-9)) + 1)]
             print(nm, 'motion refit: dropped', MOT_DROPPED, 'grid', PK_GRID, flush=True)
         print(nm, 'motion feedback: poses', sorted(PK_FLOOR), 'floor', sorted(set(PK_FLOOR.values())), flush=True)
