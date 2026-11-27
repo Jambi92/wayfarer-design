@@ -42,11 +42,17 @@ if sys.argv[1] == 'measure':
         n = np.cross(P[Q[:, 2]] - P[Q[:, 0]], P[Q[:, 3]] - P[Q[:, 1]]); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-12
         return np.degrees(np.arccos(np.clip((n[pr[:, 0]] * n[pr[:, 1]]).sum(1), -1, 1)))
     d0 = dih(R.V); PS = dict(R.suite('anat')); PS.update({'gate:' + k: v for k, v in GT.gate_poses(R).items()})
-    names, X, XL = [], [], []
+    if os.environ.get('PLEAT_ONLY'): PS = {k: v for k, v in PS.items() if k in os.environ['PLEAT_ONLY'].split(',')}   # diagnostics: restrict to these poses
+    names, X, XL = [], [], []; nmax = 0
+    # PLEAT_MAXONLY=1 (allowance input for sa6_pleat_union.py at a dense fraction step): one row = the per-edge maximum over all pose-fractions
+    MAXONLY = os.environ.get('PLEAT_MAXONLY') == '1'
     for pn, spec in PS.items():
         for fr in FRS:
-            T = R.pose(R.scaled(spec, fr)); P = R.skin(T, R.V + K.delta(T)); names.append('%s@%.2f' % (pn, fr)); X.append(np.abs(dih(P) - d0).astype(np.float16))
+            T = R.pose(R.scaled(spec, fr)); P = R.skin(T, R.V + K.delta(T)); x_ = np.abs(dih(P) - d0).astype(np.float16)
+            if MAXONLY: X = [x_ if not X else np.maximum(X[0], x_)]; nmax += 1; continue
+            names.append(('%s@%.2f' if abs(fr * 100 - round(fr * 100)) < 1e-9 else '%s@%.4f') % (pn, fr)); X.append(x_)
             XL.append(np.packbits(np.abs(dih(R.skin(T)) - d0) > LIM))
+    if MAXONLY: names = ['max over %d pose-fractions (PLEAT_FRACS %s)' % (nmax, ','.join('%g' % f for f in FRS))]; XL = [np.packbits(np.zeros(len(ev), bool))]
     dom = R.W[ev].mean(1).argmax(1); mouth = np.isin(np.asarray(R.ql), MOUTH)[pr].all(1)
     np.savez_compressed(OUT, names=np.array(names), X=np.stack(X), XL=np.stack(XL), mouth=mouth, arm=np.array([R.DB[i].startswith(ARM) for i in dom]), ev=ev, rigv=C.RIGV, kind=kind, name=nm, corr=corr)
     print(kind, nm, C.RIGV, 'measured', len(names), flush=True)

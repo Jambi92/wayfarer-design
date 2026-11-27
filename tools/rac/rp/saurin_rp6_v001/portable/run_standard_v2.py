@@ -11,6 +11,8 @@
 #   STD_MAXIT (default 3, the standard): adaptive refits.  Pass 9b END_FAHI ended it3 with one local-motion miss (hip_flex70_xpos, 0.044 cm over the
 #   allowance); a resumed run with STD_MAXIT=5 continues the same loop (it0-it3 are reused, the it3 failures feed it4).  A resumed run keeps the first
 #   run_meta.json and writes its own run_meta_resume_<time>.json.
+#   STD_OUT_TAG (default empty): suffix of the output dir, for a fresh rebake of a body on the same package with a changed allowance (pass 9c END_MUFAHI:
+#   out_std_<hash>_u2 with the dense pleat union data9c\union, see standard_bakes/README.md).
 #   Writes out_std\<body>\RECIPE.json first, and out_std\run_meta.json (hardware, worker settings, tool hashes, start / end, peak memory via the workers' logs).
 import os, sys, json, time, subprocess, hashlib, platform, glob
 B = os.path.dirname(os.path.abspath(__file__)); RB = os.path.dirname(B)
@@ -19,7 +21,7 @@ T = os.path.join(B, TDIR)
 _PK = os.path.join(B, RDIR, 'reviews', 'rac-rp6-evidence', 'saurin', 'rig_pilot', 'rig_v002')
 SB, SL = os.environ.get('STD_BASE', 'SA_RP6_correctives_v004.json'), os.environ.get('STD_LAYERS', 'SA_RP6_creator_layers_v006.json')
 _h = hashlib.sha256(b''.join(open(os.path.join(_PK, f), 'rb').read() for f in (SB, SL))).hexdigest()[:8]
-OUT = os.path.join(B, 'out_std_' + _h); os.makedirs(OUT, exist_ok=True)   # one output dir per package state: a resumed run never mixes packages
+OUT = os.path.join(B, 'out_std_' + _h + os.environ.get('STD_OUT_TAG', '')); os.makedirs(OUT, exist_ok=True)   # one output dir per package state: a resumed run never mixes packages
 BD = os.path.join(RB, 'SaurinRP6_ctrl', 'bodies'); UN = os.path.join(B, os.environ.get('STD_UNION', os.path.join('data9b', 'union'))); UA = os.path.join(B, os.environ.get('STD_CTRL', 'ctrl_v3')); SHARDS = os.environ.get('SHARDS', '8')
 NAMES = sys.argv[1:] or ['BASE_c1', 'BASE_c2', 'END_FAHI', 'END_MUFAHI']
 env = dict(os.environ, BAKE_RECIPE='standard', RP6_RIG='v002', RP6_REPO=os.path.join(B, RDIR), SA_W=os.path.join(B, 'data'), RP6_WD=os.path.join(B, 'data'),
