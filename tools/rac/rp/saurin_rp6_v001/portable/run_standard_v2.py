@@ -8,6 +8,9 @@
 #   control dir (default ctrl_v3), and the fit runs with PLEAT_GATE=1 (sa6_correctives.Solver.pleat_edges: a > 90 deg dihedral change is a defect like a tear).
 #   Pass 9b: the bake tools see no pose names, so the pleat gate's allowance is per body: PLEAT_ALLOW_UNION = STD_UNION\pleat_union_<body>.npz (default
 #   data9b\union; sa6_pleat_union.py: the edges the body's rig v001 references pleat at any pose); the per-pose verdict is the pleat audit of the baked artifact.
+#   STD_MAXIT (default 3, the standard): adaptive refits.  Pass 9b END_FAHI ended it3 with one local-motion miss (hip_flex70_xpos, 0.044 cm over the
+#   allowance); a resumed run with STD_MAXIT=5 continues the same loop (it0-it3 are reused, the it3 failures feed it4).  A resumed run keeps the first
+#   run_meta.json and writes its own run_meta_resume_<time>.json.
 #   Writes out_std\<body>\RECIPE.json first, and out_std\run_meta.json (hardware, worker settings, tool hashes, start / end, peak memory via the workers' logs).
 import os, sys, json, time, subprocess, hashlib, platform, glob
 B = os.path.dirname(os.path.abspath(__file__)); RB = os.path.dirname(B)
@@ -28,7 +31,9 @@ meta = dict(status='RP6 RIG PILOT / NOT FROZEN', order='07a3f24c', rig='v002', b
             workers=len(NAMES), shards_per_stage=int(SHARDS), threads_per_process=1, priority='BELOW_NORMAL_PRIORITY_CLASS', bodies=NAMES, started=time.strftime('%Y-%m-%d %H:%M:%S'),
             tool_sha256={os.path.basename(p): sha(p) for p in sorted(glob.glob(os.path.join(T, 'sa6_*.py')))},
             repo=RDIR, tools=TDIR, package_sha256={os.path.basename(p): sha(p) for p in sorted(glob.glob(os.path.join(B, RDIR, 'reviews', 'rac-rp6-evidence', 'saurin', 'rig_pilot', 'rig_v002', '*'))) if os.path.isfile(p)})
-json.dump(meta, open(os.path.join(OUT, 'run_meta.json'), 'w'), indent=1)
+MAXIT = os.environ.get('STD_MAXIT', '3'); meta['maxit'] = int(MAXIT)
+MF = os.path.join(OUT, 'run_meta.json') if not os.path.exists(os.path.join(OUT, 'run_meta.json')) else os.path.join(OUT, 'run_meta_resume_%s.json' % time.strftime('%Y%m%d_%H%M'))
+json.dump(meta, open(MF, 'w'), indent=1)
 ps = []
 for nm in NAMES:
     od = os.path.join(OUT, nm); os.makedirs(od, exist_ok=True)
@@ -37,10 +42,10 @@ for nm in NAMES:
     lg = open(os.path.join(od, 'worker.log'), 'a'); print(time.strftime('%H:%M'), 'start', nm, flush=True)
     eb = dict(env); u = os.path.join(UN, 'pleat_union_%s.npz' % nm)
     if env['PLEAT_GATE'] == '1': assert os.path.exists(u), u; eb['PLEAT_ALLOW_UNION'] = u   # the body's v001 crease edges (sa6_pleat_union.py)
-    ps.append((nm, time.time(), subprocess.Popen([sys.executable, os.path.join(T, 'sa6_bake_full.py'), nm, BD, os.path.join(UA, nm), od, '3', SHARDS], env=eb, stdout=lg,
+    ps.append((nm, time.time(), subprocess.Popen([sys.executable, os.path.join(T, 'sa6_bake_full.py'), nm, BD, os.path.join(UA, nm), od, MAXIT, SHARDS], env=eb, stdout=lg,
                                                  stderr=subprocess.STDOUT, creationflags=0x00004000 if os.name == 'nt' else 0)))
 for nm, ts, p in ps:
     rc = p.wait(); print(time.strftime('%H:%M'), nm, 'rc', rc, '%.1f h' % ((time.time() - ts) / 3600), flush=True)
     open(os.path.join(OUT, 'timings.jsonl'), 'a').write(json.dumps(dict(body=nm, recipe='standard', rig='v002', wall_s=round(time.time() - ts, 1), rc=rc, end=time.strftime('%Y-%m-%d %H:%M:%S'))) + '\n')
-meta['ended'] = time.strftime('%Y-%m-%d %H:%M:%S'); json.dump(meta, open(os.path.join(OUT, 'run_meta.json'), 'w'), indent=1)
+meta['ended'] = time.strftime('%Y-%m-%d %H:%M:%S'); json.dump(meta, open(MF, 'w'), indent=1)
 open(os.path.join(OUT, 'ALLDONE.txt'), 'w').write(meta['ended'] + '\n'); print('ALL DONE - tell Claude.', flush=True)
