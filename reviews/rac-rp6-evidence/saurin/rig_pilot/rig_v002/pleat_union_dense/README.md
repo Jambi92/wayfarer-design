@@ -20,3 +20,10 @@
 - `diag.py`: the defect breakdown of the checkpoints. It shows K on the 1/3 grid making 34 folds and 42 tear/pleat edges at 0.8, against 7–10 folds with no tears on the plain blend.
 
 **Run.** `portable/START_P9C_END_MUFAHI.bat` stops the 9b END_MUFAHI run (its record stays in `out_std_b9f3b808\END_MUFAHI`) and starts a fresh standard bake. It uses `tools11`, `STD_UNION=data9c\union` and `STD_OUT_TAG=_u2`, so the output goes to `out_std_b9f3b808_u2\END_MUFAHI`. STD_MAXIT is the standard 3.
+
+## END_FAHI (pass 9c)
+
+- **Dense union** `pleat_union_END_FAHI.npz`: 488 edges, against 416 in the 4-fraction union.
+- **Unbaked hip_flex70_xpos:** one edge pleats from 0.40 to 0.95 that rig v001 does not pleat at any fraction. That is a real v006 difference and the fit removes it, so the dense allowance changes little for this body.
+- **it4 failure:** the END_FAHI it4 (MAXIT 4, 1/3 motion grid) sweep failures at 0.275 / 0.30 are one edge that K pleats (`b9f3b808_END_FAHI_it4_hip70xpos_d025.npz`). It is outside both allowances.
+- **Next run:** END_FAHI is therefore resumed for a 5th refit on its own allowance (data9b\union) with the same 1/3 grid, so the it4 failures feed it5 (`portable/START_P9C.bat`). END_MUFAHI gets the fresh dense-allowance rebake.
