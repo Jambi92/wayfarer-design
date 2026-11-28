@@ -24,6 +24,7 @@ SET = os.environ.get('SWEEP_SET', 'risk'); STEP_O = float(os.environ.get('SWEEP_
 kp = [pn for pn, spec in suite.items() if pn in pkp or R.bones_of(spec) & kb]
 dense = kp + ([pn for pn in RISK if pn in suite and pn not in kp] if SET in ('risk', 'all') else [])
 poses = dense + ([pn for pn in suite if pn not in dense] if SET == 'all' else [])
+if os.environ.get('SWEEP_ONLY'): poses = [p_ for p_ in poses if p_ in os.environ['SWEEP_ONLY'].split(',')]     # diagnostics only (never set in a bake)
 FAM = list(K.F.values()) + [f for st in [P0.B] + [s_ for _, s_ in P0.S] for f in getattr(st, 'F', {}).values()]
 out = dict(status='RP6 RIG PILOT / NOT FROZEN', name=nm, artifact=os.path.basename(art), sweep_set=SET, step_dense=0.025, step_other=STEP_O, poses={}, return_sweep='identical by construction (stateless evaluator)')
 SH = os.environ.get('SWEEP_SHARD')   # 'i/n': this process sweeps poses[i::n] only (poses are independent); sa6_bake_sweep_merge.py joins the shards into SW_<NAME>.json
