@@ -35,7 +35,7 @@ ARCHIVED = dict(BAKE_PK_MINW='0', BAKE_DENSE='0', DENSE_STEP='0.0025', BAKE_MOTI
 RECIPE = os.environ.get('BAKE_RECIPE', 'standard')
 if RECIPE not in ('standard', 'archived'): raise SystemExit('BAKE_RECIPE must be standard or archived')
 for k_, v_ in (STANDARD if RECIPE == 'standard' else ARCHIVED).items(): os.environ.setdefault(k_, v_)
-RECIPE_KEYS = sorted(set(STANDARD) | set(ARCHIVED) | {'BAKE_LOCAL_NEAR', 'BAKE_SEED_EXTRA', 'BAKE_PEN_MARGIN', 'BAKE_FRACS', 'ROUNDS', 'RP6_LAYERS', 'BAKE_PK_TENT', 'RP6_RIG', 'BAKE_PK_GRID_ALL'})
+RECIPE_KEYS = sorted(set(STANDARD) | set(ARCHIVED) | {'BAKE_LOCAL_NEAR', 'BAKE_SEED_EXTRA', 'BAKE_PEN_MARGIN', 'BAKE_FRACS', 'ROUNDS', 'RP6_LAYERS', 'BAKE_PK_TENT', 'RP6_RIG', 'BAKE_PK_GRID_ALL', 'BAKE_MOTION_GRID_POSE', 'BAKE_MOTION_RAMP'})
 def effective_recipe(): return dict(recipe=RECIPE, env={k: os.environ.get(k) for k in RECIPE_KEYS if os.environ.get(k) is not None})
 if len(sys.argv) > 1 and sys.argv[1] == '--recipe': print(json.dumps(effective_recipe(), indent=1)); sys.exit(0)
 T = os.path.dirname(os.path.abspath(__file__)); PY = sys.executable

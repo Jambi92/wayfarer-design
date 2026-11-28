@@ -186,31 +186,55 @@ if __name__ == '__main__':
         fs = sorted(set(FRACS) | set(EXTRA.get(pn, [])) | {0.0})
         for i, f in enumerate(fs[1:], 1): GAPS[(pn, round(f, 4))] = min(f - fs[i - 1], (fs[i + 1] - f) if i + 1 < len(fs) else f - fs[i - 1])
     tot = 0; t1 = time.time(); n_entering = {}
-    for rnd in range(r0, ROUNDS):
-        tot = tot0 if rnd == r0 else 0
-        for ii, (pn, fr) in enumerate(items):
-            if rnd == r0 and ii < i0: continue
-            spec = [(bb, p, a, dg * fr) for bb, p, a, dg in PS[pn]]; t = time.time(); CURM[0] = (pn, fr) in CLEAR; PF.start_pose(R, P, spec, F, w0, Sv); CUR[0] = pn
-            n0 = NF.defects(R, P, Sv, spec, F, w0); snap = copy.deepcopy((K.F, K.PK)) if n0 else None
-            a, c, _ = FT.solve_one(R, P, Sv, spec, F, w0, log, pose_key=pk_name(pn, fr) if rnd >= 1 else None); tot += a
-            if n0:
-                n1 = NF.defects(R, P, Sv, spec, F, w0)
-                if n1 > n0: K.F.clear(); K.F.update(snap[0]); K.PK.clear(); K.PK.update(snap[1]); log.append(dict(round=rnd, pose=pn, frac=fr, reverted=[n0, n1])); n1 = n0
-                if n1:
-                    k_ = NF.fade(R, P, Sv, spec, F, w0, Sv.protect); c = NF.defects(R, P, Sv, spec, F, w0) if k_ else n1
-                    log.append(dict(round=rnd, pose=pn, frac=fr, fade_ring=k_, after=c)) if k_ else None
-            if a or c: print('%s round %d %-24s x%.2f before %4d after %4d  %.1fs' % (nm, rnd, pn, fr, a, c, time.time() - t), flush=True)
-            log.append(dict(round=rnd, pose=pn, frac=fr, flips_before=a, flips_after_solve=c))
-            if a: ENT.setdefault((pn, fr), set()).add(rnd)
-            if a or c or ii % 16 == 15: K.save(ck, dict(name=nm, fit_log=log, ck_round=rnd, ck_next=ii + 1, ck_tot=tot, ck_fit_seconds=el0 + time.time() - t1))
-        n_entering[rnd] = tot; print(nm, 'round', rnd, 'total entering', tot, flush=True)
-        if LOCAL_MARGIN > 0 and not PEN_MARGIN:
-            for (pn_, f_), rs_ in list(ENT.items()):
-                if rnd not in rs_: continue
-                for (pm_, g_), qs_ in ENT.items():
-                    if pm_ == pn_ and g_ != f_ and abs(g_ - f_) <= NEAR and (rnd in qs_ or rnd - 1 in qs_) and not {(pn_, f_), (pm_, g_)} <= CLEAR:
-                        CLEAR.update({(pn_, f_), (pm_, g_)}); log.append(dict(round=rnd, local_clearance=[pn_, f_, g_], margin_cm=LOCAL_MARGIN)); print(nm, 'local clearance', pn_, f_, g_, flush=True)
-        if tot == 0: break
+    # motion ramp (pass 9c, BAKE_MOTION_RAMP=beta, motion-fed poses only, default off): the converged grid keys of a motion-fed pose put the whole contact
+    # correction into the last key interval (END_FAHI hip_flex70_xpos: K 0.2 -> 3.3 cm between 0.75 and 1.0, a 0.42 cm/frame local excursion).  After
+    # convergence each lower key D_i moves toward the linear ramp g_i * D_top (D_i + beta * (g_i * D_top - D_i)); the rounds then run again from round 1,
+    # so every sample that the pre-load breaks is refit as usual.  The checkpoint records the phase, so a resumed fit does not ramp twice.
+    RAMP = float(os.environ.get('BAKE_MOTION_RAMP', '0')); PH = m.get('ck_phase', 0) if os.path.exists(ck) else 0
+    def _ramp():
+        for pn_, g_ in PK_GRID.items():
+            ks_ = sorted([k_ for k_ in K.PK if '@' in k_ and k_.rsplit('@', 1)[0] == pn_], key=lambda k_: float(k_.rsplit('@', 1)[1]))
+            if len(ks_) < 2: continue
+            def full_(k_): f_ = np.zeros((R.nv, 3)); f_[K.PK[k_]['idx']] = K.PK[k_]['d']; return f_
+            top_ = full_(ks_[-1]); gt_ = float(ks_[-1].rsplit('@', 1)[1]); mv_ = []
+            for gi_ in [g__ for g__ in g_ if g__ < gt_ - 1e-6]:          # every grid key below the top one, created if the fit never needed it
+                k_ = '%s@%.4f' % (pn_, gi_); d_ = full_(k_) if k_ in K.PK else np.zeros((R.nv, 3)); d_ = d_ + RAMP * (gi_ / gt_ * top_ - d_)
+                nz_ = np.nonzero(np.abs(d_).sum(1) > 1e-9)[0]
+                if k_ in K.PK: K.PK[k_]['idx'] = nz_; K.PK[k_]['d'] = d_[nz_]
+                else:
+                    Tg_ = R.pose([(bb, p, a, dg * gi_) for bb, p, a, dg in PS[pn_]])
+                    k_ = P.add_pose_key(k_, [(b_, a_, K.driver(Tg_, dict(bone=b_, axis=a_))) for b_, a_, _ in K.PK[ks_[-1]]['drivers']], nz_, d_[nz_]) or k_
+                mv_.append([k_, round(float(np.linalg.norm(d_, axis=1).max()), 4)])
+            log.append(dict(motion_ramp=pn_, beta=RAMP, keys_after_max_cm=mv_, top=[ks_[-1], round(float(np.linalg.norm(top_, axis=1).max()), 4)])); print(nm, 'motion ramp', pn_, mv_, flush=True)
+    while True:
+        for rnd in range(r0, ROUNDS):
+            tot = tot0 if rnd == r0 else 0
+            for ii, (pn, fr) in enumerate(items):
+                if rnd == r0 and ii < i0: continue
+                spec = [(bb, p, a, dg * fr) for bb, p, a, dg in PS[pn]]; t = time.time(); CURM[0] = (pn, fr) in CLEAR; PF.start_pose(R, P, spec, F, w0, Sv); CUR[0] = pn
+                n0 = NF.defects(R, P, Sv, spec, F, w0); snap = copy.deepcopy((K.F, K.PK)) if n0 else None
+                a, c, _ = FT.solve_one(R, P, Sv, spec, F, w0, log, pose_key=pk_name(pn, fr) if rnd >= 1 else None); tot += a
+                if n0:
+                    n1 = NF.defects(R, P, Sv, spec, F, w0)
+                    if n1 > n0: K.F.clear(); K.F.update(snap[0]); K.PK.clear(); K.PK.update(snap[1]); log.append(dict(round=rnd, pose=pn, frac=fr, reverted=[n0, n1])); n1 = n0
+                    if n1:
+                        k_ = NF.fade(R, P, Sv, spec, F, w0, Sv.protect); c = NF.defects(R, P, Sv, spec, F, w0) if k_ else n1
+                        log.append(dict(round=rnd, pose=pn, frac=fr, fade_ring=k_, after=c)) if k_ else None
+                if a or c: print('%s round %d %-24s x%.2f before %4d after %4d  %.1fs' % (nm, rnd, pn, fr, a, c, time.time() - t), flush=True)
+                log.append(dict(round=rnd, pose=pn, frac=fr, flips_before=a, flips_after_solve=c))
+                if a: ENT.setdefault((pn, fr), set()).add(rnd)
+                if a or c or ii % 16 == 15: K.save(ck, dict(name=nm, fit_log=log, ck_round=rnd, ck_next=ii + 1, ck_tot=tot, ck_fit_seconds=el0 + time.time() - t1, ck_phase=PH))
+            n_entering[rnd if not PH else 'ramp%d' % rnd] = tot; print(nm, 'round', rnd, 'ramp phase' if PH else '', 'total entering', tot, flush=True)
+            if LOCAL_MARGIN > 0 and not PEN_MARGIN:
+                for (pn_, f_), rs_ in list(ENT.items()):
+                    if rnd not in rs_: continue
+                    for (pm_, g_), qs_ in ENT.items():
+                        if pm_ == pn_ and g_ != f_ and abs(g_ - f_) <= NEAR and (rnd in qs_ or rnd - 1 in qs_) and not {(pn_, f_), (pm_, g_)} <= CLEAR:
+                            CLEAR.update({(pn_, f_), (pm_, g_)}); log.append(dict(round=rnd, local_clearance=[pn_, f_, g_], margin_cm=LOCAL_MARGIN)); print(nm, 'local clearance', pn_, f_, g_, flush=True)
+            if tot == 0: break
+        if PH == 0 and RAMP > 0 and PK_GRID and tot == 0:
+            _ramp(); PH = 1; r0, i0, tot0 = 1, 0, 0; K.save(ck, dict(name=nm, fit_log=log, ck_round=1, ck_next=0, ck_tot=0, ck_fit_seconds=el0 + time.time() - t1, ck_phase=1)); continue
+        break
     t_fit = el0 + time.time() - t1; t2 = time.time()
     pk = os.path.join(H.PKG, H.LAYERS)
     K.save(art, dict(status='RP6 RIG PILOT / NOT FROZEN', name='SA_RP6_bake_%s' % nm, body=nm, recipe=dict(base_config=b['cfg'], weights=b['w'], kind=b.get('kind'),

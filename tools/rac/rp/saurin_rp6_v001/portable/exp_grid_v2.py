@@ -1,6 +1,6 @@
 # Saurin RP6 pass 9c diagnostics (not a bake): one motion-fed pose refit from a bake iteration with several key-grid spacings, in parallel,
 # each checked on that pose with the standard motion (local rule), sweep (0.025) and dense (0.0025) stages. RP6 RIG PILOT / NOT FROZEN.
-#   python exp_grid_v2.py BODY POSE INIT_DIR EXTRA_JSON UNION_NPZ OUT_DIR w1,w2,...
+#   python exp_grid_v2.py BODY POSE INIT_DIR EXTRA_JSON UNION_NPZ OUT_DIR w1,w2:beta,...   (w = key-grid spacing, beta = BAKE_MOTION_RAMP)
 # Env as run_standard_v2.py (STD_REPO / STD_TOOLS / STD_LAYERS / STD_BASE). Writes OUT_DIR\<w>\{BK,MO,SW,DS}_<BODY>.json and OUT_DIR\SUMMARY.json.
 import os, sys, json, time, subprocess, shutil
 B = os.path.dirname(os.path.abspath(__file__)); RB = os.path.dirname(B)
@@ -15,7 +15,7 @@ LOW = 0x00004000 if os.name == 'nt' else 0
 os.makedirs(od, exist_ok=True)
 def run(w):
     d = os.path.join(od, w); os.makedirs(d, exist_ok=True); shutil.copy(extra, os.path.join(d, 'extra.json')); L = open(os.path.join(d, 'log.txt'), 'a'); t = time.time()
-    e = dict(env, BAKE_ONLY_POSES=pose, BAKE_INIT=os.path.join(init, 'BK_%s.json' % nm), BAKE_EXTRA=os.path.join(d, 'extra.json'), BAKE_MOTION_GRID_POSE='%s=%s' % (pose, w))
+    e = dict(env, BAKE_ONLY_POSES=pose, BAKE_INIT=os.path.join(init, 'BK_%s.json' % nm), BAKE_EXTRA=os.path.join(d, 'extra.json'), BAKE_MOTION_GRID_POSE='%s=%s' % (pose, w.split(':')[0]), BAKE_MOTION_RAMP=(w.split(':') + ['0'])[1])   # variant 'w' or 'w:ramp beta'
     steps = [('fit', [os.path.join(T, 'sa6_bake.py'), 'fit', nm, BD, d], e, 'BK_%s.json' % nm),
              ('motion', [os.path.join(T, 'sa6_bake_motion.py'), nm, BD, d, d], dict(env, MOTION_ONLY=pose), 'MO_%s.json' % nm),
              ('sweep', [os.path.join(T, 'sa6_bake_sweep.py'), nm, BD, d, d], dict(env, SWEEP_SET='all', SWEEP_ONLY=pose), 'SW_%s.json' % nm),
