@@ -14,7 +14,7 @@ env = dict(os.environ, BAKE_RECIPE='standard', RP6_RIG='v002', RP6_REPO=os.path.
 LOW = 0x00004000 if os.name == 'nt' else 0
 os.makedirs(od, exist_ok=True)
 def run(w):
-    d = os.path.join(od, w); os.makedirs(d, exist_ok=True); shutil.copy(extra, os.path.join(d, 'extra.json')); L = open(os.path.join(d, 'log.txt'), 'a'); t = time.time()
+    d = os.path.join(od, w.replace(':', '_r')); os.makedirs(d, exist_ok=True); shutil.copy(extra, os.path.join(d, 'extra.json')); L = open(os.path.join(d, 'log.txt'), 'a'); t = time.time()
     e = dict(env, BAKE_ONLY_POSES=pose, BAKE_INIT=os.path.join(init, 'BK_%s.json' % nm), BAKE_EXTRA=os.path.join(d, 'extra.json'), BAKE_MOTION_GRID_POSE='%s=%s' % (pose, w.split(':')[0]), BAKE_MOTION_RAMP=(w.split(':') + ['0'])[1])   # variant 'w' or 'w:ramp beta'
     steps = [('fit', [os.path.join(T, 'sa6_bake.py'), 'fit', nm, BD, d], e, 'BK_%s.json' % nm),
              ('motion', [os.path.join(T, 'sa6_bake_motion.py'), nm, BD, d, d], dict(env, MOTION_ONLY=pose), 'MO_%s.json' % nm),
